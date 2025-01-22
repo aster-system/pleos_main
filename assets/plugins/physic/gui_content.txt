@@ -1,0 +1,20 @@
+//***************************************************
+//
+//   NAVIGATION
+//
+//***************************************************
+
+<gui_object name="physic_navigation" type="scroller_choice" visible>
+	<border bottom=1 left=1 right=1 top=1>
+	<height value=7/8 type=scale>
+	<width value=1/5 type=scale>
+	<x attach=left>
+	<y attach=top>
+
+	<choice name="home">Accueil</choice>
+	<sub_choice name="matter" displayer="La matière">
+		<choice name="matter_scale">Les échelles de matières</choice>
+	</sub_choice>
+</gui_object>
+
+<include src="physic_gui_content_matter.txt">

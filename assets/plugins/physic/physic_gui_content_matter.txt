@@ -1,0 +1,21 @@
+//***************************************************
+//
+//   HOME
+//
+//***************************************************
+
+<gui_object name="physic_matter_page" type="body" sub_page>
+	<border bottom=1 left=1 right=1 top=1>
+	<height value=1 type=scale>
+	<width value=4/5 type=scale>
+	<x attach=right>
+	<y attach=top>
+</gui_object>
+<gui_object name="physic_matter_title" type="text">
+    <content font_size=80>La matière</content>
+	<height value=1/8 type=scale>
+    <parent name="physic_matter_page">
+	<width value=1 type=scale>
+	<x value=1/2 type=object_scale>
+	<y attach=top>
+</gui_object>
