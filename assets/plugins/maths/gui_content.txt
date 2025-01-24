@@ -17,13 +17,15 @@
 	<sub_choice name="functions" displayer="Fonctions">
 		<choice name="functions_definitions">Définitions basiques</choice>
 		<choice name="functions_forms">Des formes bien connues</choice>
-		<choice name="functions_redaction">Calcul rédigé</choice>
+		<choice name="functions_redaction">Calculs rédigés</choice>
 		<choice name="functions_graphic">Représentation graphique</choice>
 	</sub_choice>
 	<sub_choice name="geometry" displayer="Géométrie">
 		<choice name="geometry_definitions">Définition</choice>
+		<choice name="geometry_vector">Les vecteurs</choice>
 		<choice name="geometry_complex_numbers">Utilisation des nombres complexes</choice>
-		<choice name="geometry_redaction">Espace géométrique</choice>
+		<choice name="geometry_redaction">Calculs rédigés</choice>
+		<choice name="geometry_redaction_graphic">Espace géométrique</choice>
 	</sub_choice>
 </gui_object>
 

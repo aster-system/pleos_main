@@ -1,0 +1,17 @@
+L'élément le plus important en géométrie est le vecteur.
+Bien qu'il peut s'agir de plusieurs notions, la définition brute d'un vecteur est un ensemble de nombres, en général réels (autant que de dimensions dans l'espace du vecteur).
+Les vecteurs peuvent aussi être assimilés à des matrices.
+</br></br>
+<math>
+<vec>V</vec><mi>(x, y, z)</mi>
+</math>
+</br></br>
+La longueur totale d'un vecteur est nommée la norme de ce vecteur.
+Si vous projetez visuellement le vecteur dans son espace, et que vous calculez sa longueur, vous obtenez la norme.
+La particularité de cette ensemble de nombres est que ces valeurs peuvent ne dépendre de rien d'autres que de leur espace.
+En d'autres termes, il est possible d'utiliser des vecteurs comme une base (arbitraire) pour d'autres vecteurs.
+Pour des raisons de simplicités, les vecteurs constituant une base doivent avoir une norme de 1, et être représentés comme partant du même point, nommé l'origine.
+Le combo origine et bases de vecteurs formes un repère de l'espace.
+</br>
+Les vecteurs peuvent représenter plusieurs objets.
+Pour en citer quelques-uns : points, mouvements, repères...

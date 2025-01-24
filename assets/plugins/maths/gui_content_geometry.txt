@@ -47,6 +47,19 @@
 </gui_object>
 
 //***************************************************
+// Vector
+//***************************************************
+
+<gui_object name="maths_geometry_vector_body" type="text" sub_page>
+	<content max_width=0 src="geometry/geometry_vector.txt"></content>
+	<height value=7/8 type=scale>
+	<parent name="maths_geometry_page">
+    <width value=1 type=scale>
+	<x value=1/2 type=object_scale>
+	<y attach=bottom>
+</gui_object>
+
+//***************************************************
 // Redaction
 //***************************************************
 
@@ -70,6 +83,16 @@
 	<x attach=right>
 	<y attach=top>
 </gui_object>
+// Graphic
+<gui_object name="maths_geometry_redaction_graphic" type="graphic" sub_page>
+	<border bottom=1 left=1 right=1 top=1>
+	<height value=1/2 type=scale>
+	<parent name="maths_geometry_redaction_body">
+	<texture alignment_vertical=top>
+	<width value=4/5 type=scale>
+	<x attach=right>
+	<y attach=top>
+</gui_object>
 
 // Elements
 <gui_object name="maths_geometry_redaction_elements_choice" type="scroller_choice">
@@ -81,6 +104,7 @@
 	<y attach=top>
 
 	<sub_choice name="vector" displayer="Vecteurs">
+		<choice name="vector_angle">Angle</choice>
 		<choice name="vector_norm">Norme</choice>
 	</sub_choice>
 </gui_object>

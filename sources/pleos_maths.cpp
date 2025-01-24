@@ -56,9 +56,11 @@ namespace pleos {
         if(object_name == "maths_geometry_redaction_elements_chosen"){a_geometry_redaction_elements_chosen = *parent->new_object<scls::GUI_Scroller_Choice>(object_name);return a_geometry_redaction_elements_chosen;}
         if(object_name == "maths_geometry_redaction_elements_created"){a_geometry_redaction_elements_created = *parent->new_object<scls::GUI_Scroller_Choice>(object_name);return a_geometry_redaction_elements_created;}
         if(object_name == "maths_geometry_redaction_elements_creation"){a_geometry_redaction_elements_creation = *parent->new_object<scls::GUI_Scroller_Choice>(object_name);return a_geometry_redaction_elements_creation;}
+        if(object_name == "maths_geometry_redaction_graphic"){a_geometry_redaction_graphic = *parent->new_object<Graphic>(object_name);return a_geometry_redaction_graphic;}
         if(object_name == "maths_geometry_redaction_vector_name"){a_geometry_redaction_vector_name = *parent->new_object<scls::GUI_Text_Input>(object_name);return a_geometry_redaction_vector_name;}
         if(object_name == "maths_geometry_redaction_vector_x"){a_geometry_redaction_vector_x = *parent->new_object<scls::GUI_Text_Input>(object_name);return a_geometry_redaction_vector_x;}
         if(object_name == "maths_geometry_redaction_vector_y"){a_geometry_redaction_vector_y = *parent->new_object<scls::GUI_Text_Input>(object_name);return a_geometry_redaction_vector_y;}
+        if(object_name == "maths_geometry_vector_body"){a_geometry_vector_page = *parent->new_object<scls::GUI_Text>(object_name);return a_geometry_vector_page;}
 
         // Pages
         if(object_name == "maths_functions_page") {a_functions_page = *parent->new_object<scls::GUI_Object>(object_name);return a_functions_page;}
@@ -76,6 +78,8 @@ namespace pleos {
         std::string final_choice = current_choice;
         if(current_choice == "vector"){
             final_choice += std::string("-") + std::to_string(geometry_redaction_elements_chosen()->count_object_similar("vector", "-"));
+        } else if(current_choice == "vector_angle"){
+            final_choice += std::string("-") + std::to_string(geometry_redaction_elements_chosen()->count_object_similar("vector_angle", "-"));
         }
 
         // Get the good current choice
@@ -86,7 +90,10 @@ namespace pleos {
             int needed_height = 30;
             std::string needed_title = "";
             // Creation settings
-            if(current_choice == "vector_norm"){
+            if(current_choice == "vector_angle"){
+                needed_height = 90;
+                needed_title = std::string("Angle");
+            } else if(current_choice == "vector_norm"){
                 needed_height = 60;
                 needed_title = std::string("Norme");
             }
@@ -122,6 +129,40 @@ namespace pleos {
                 name_input.get()->set_width_in_scale(scls::Fraction(1, 5));
                 name_input.get()->set_x_in_object_scale(scls::Fraction(3, 4));
             }
+            else // Finalise the creation
+            if(current_choice == "vector_angle"){
+                // Create the title of the name of the needed vector
+                std::shared_ptr<scls::GUI_Text> name_title = *object->get()->new_object<scls::GUI_Text>(final_choice + "_title_name");
+                name_title.get()->attach_bottom_of_object_in_parent(title);
+                name_title.get()->set_height_in_pixel(30);
+                name_title.get()->set_width_in_scale(scls::Fraction(1, 2));
+                name_title.get()->set_x_in_object_scale(scls::Fraction(1, 4));
+                name_title.get()->set_text(std::string("Vecteur :"));
+
+                // Create the name of the needed vector
+                std::shared_ptr<scls::GUI_Text_Input> name_input = *object->get()->new_object<scls::GUI_Text_Input>(final_choice + "_name");
+                name_input.get()->attach_bottom_of_object_in_parent(title);
+                name_input.get()->set_border_width_in_pixel(1);
+                name_input.get()->set_height_in_pixel(30);
+                name_input.get()->set_width_in_scale(scls::Fraction(1, 5));
+                name_input.get()->set_x_in_object_scale(scls::Fraction(3, 4));
+
+                // Create the title of the reference of the needed vector
+                std::shared_ptr<scls::GUI_Text> reference_title = *object->get()->new_object<scls::GUI_Text>(final_choice + "_title_reference");
+                reference_title.get()->attach_bottom_of_object_in_parent(name_title);
+                reference_title.get()->set_height_in_pixel(30);
+                reference_title.get()->set_width_in_scale(scls::Fraction(1, 2));
+                reference_title.get()->set_x_in_object_scale(scls::Fraction(1, 4));
+                reference_title.get()->set_text(std::string("Référence :"));
+
+                // Create the name of the needed vector
+                std::shared_ptr<scls::GUI_Text_Input> reference_input = *object->get()->new_object<scls::GUI_Text_Input>(final_choice + "_reference");
+                reference_input.get()->attach_bottom_of_object_in_parent(name_title);
+                reference_input.get()->set_border_width_in_pixel(1);
+                reference_input.get()->set_height_in_pixel(30);
+                reference_input.get()->set_width_in_scale(scls::Fraction(1, 5));
+                reference_input.get()->set_x_in_object_scale(scls::Fraction(3, 4));
+            }
         }
     }
 
@@ -142,6 +183,50 @@ namespace pleos {
         // Get the good current choice
         std::shared_ptr<scls::GUI_Text>* object = geometry_redaction_elements_created()->add_object(final_choice, needed_title);
         if(object != 0){currently_selected_vector()->set_connected_object(*object);}
+    }
+
+    // Redacts the needed redaction for the geometry part
+    void Maths_Page::geometry_redact() {
+        // Do the redaction
+        check_geometry_hiding(); geometry_redaction_graphic()->reset();
+        std::string redaction = std::string();
+        if(static_cast<int>(geometry_vectors_created().size()) > 1){redaction += std::string("Nous allons définir ") + std::to_string(geometry_vectors_created().size()) + std::string(" vecteurs. ");}
+        for(int i = 0;i<static_cast<int>(geometry_vectors_created().size());i++) {
+            redaction += geometry_vectors_created()[i].get()->introduction();
+            if(i < static_cast<int>(geometry_vectors_created().size()) - 1){redaction += std::string(" ");}
+            // Add the needed vector
+            geometry_redaction_graphic()->add_vector(geometry_vectors_created()[i].get()->name(), *geometry_vectors_created()[i].get());
+        } redaction += std::string("</br></br>");
+
+        // Add the needed arguments
+        std::vector<scls::GUI_Scroller_Choice::GUI_Scroller_Single_Choice>& objects = geometry_redaction_elements_chosen()->objects();
+        for(int i = 0;i<static_cast<int>(objects.size());i++) {
+            redaction += std::string("</br></br>");
+            std::string complete_name = objects[i].name(); std::vector<std::string> cutted = scls::cut_string(complete_name, std::string("-"));
+            std::string type = cutted[0];
+
+            // Analyse the argument
+            if(type == "vector_norm") {
+                std::string needed_vector_name = reinterpret_cast<scls::GUI_Text_Input*>(objects[i].object()->child_by_name(objects[i].object()->name() + "_name"))->text();
+                std::shared_ptr<Vector> needed_vector = geometry_vector_created(needed_vector_name);
+                if(needed_vector.get() != 0){needed_vector.get()->norm(&redaction);}
+            }
+            else if(type == "vector_angle") {
+                std::string needed_vector_name = reinterpret_cast<scls::GUI_Text_Input*>(objects[i].object()->child_by_name(objects[i].object()->name() + "_name"))->text();
+                std::shared_ptr<Vector> needed_vector = geometry_vector_created(needed_vector_name);
+                needed_vector_name = reinterpret_cast<scls::GUI_Text_Input*>(objects[i].object()->child_by_name(objects[i].object()->name() + "_reference"))->text();
+                std::shared_ptr<Vector> needed_reference = geometry_vector_created(needed_vector_name);
+                if(needed_vector.get() != 0 && needed_reference.get() != 0) {
+                    needed_vector.get()->angle(needed_reference.get(), &redaction);
+                }
+            } redaction += std::string("</br></br>");
+        }//*/
+
+        // Check the graphic part
+        geometry_redaction_graphic()->add_circle("C", Vector("Cc", 0, 0), scls::Fraction(1, 5));
+
+        geometry_redaction_graphic()->update_texture();
+        geometry_redaction()->set_text(redaction);
     }
 
     // Selects a geometry vector
@@ -260,28 +345,7 @@ namespace pleos {
     // Check the events of geometry
     void Maths_Page::check_geometry() {
         // Analyse the geometry
-        if(geometry_redaction_analyse()->is_clicked_during_this_frame(GLFW_MOUSE_BUTTON_LEFT)) {
-            // Do the redaction
-            check_geometry_hiding();
-            std::string redaction = std::string();
-            if(static_cast<int>(geometry_vectors_created().size()) > 1){redaction += std::string("Nous allons définir ") + std::to_string(geometry_vectors_created().size()) + std::string(" vecteurs. ");}
-            for(int i = 0;i<static_cast<int>(geometry_vectors_created().size());i++) {
-                redaction += geometry_vectors_created()[i].get()->introduction();
-                if(i < static_cast<int>(geometry_vectors_created().size()) - 1){redaction += std::string(" ");}
-            } redaction += std::string("</br></br>");
-
-            // Add the needed arguments
-            std::vector<scls::GUI_Scroller_Choice::GUI_Scroller_Single_Choice>& objects = geometry_redaction_elements_chosen()->objects();
-            for(int i = 0;i<static_cast<int>(objects.size());i++) {
-                redaction += std::string("</br></br>");
-                std::string complete_name = objects[i].name(); std::vector<std::string> cutted = scls::cut_string(complete_name, std::string("-"));
-                std::string type = cutted[0];
-
-                // Analyse the argument
-            }//*/
-
-            geometry_redaction()->set_text(redaction);
-        }
+        if(geometry_redaction_analyse()->is_clicked_during_this_frame(GLFW_MOUSE_BUTTON_LEFT)) {geometry_redact();}
 
         // Add a chosen element
         if(geometry_redaction_elements()->selection_modified()) {
@@ -338,6 +402,8 @@ namespace pleos {
             else if(page == "functions_redaction"){display_functions_redaction_page();}
             else if(page == "geometry_complex_numbers"){display_geometry_complex_numbers_page();}
             else if(page == "geometry_redaction"){display_geometry_redaction_page();}
+            else if(page == "geometry_redaction_graphic"){display_geometry_redaction_graphic_page();}
+            else if(page == "geometry_vector"){display_geometry_vector_page();}
         }
     }
 

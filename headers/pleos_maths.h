@@ -71,12 +71,15 @@ namespace pleos {
         // Adds an element to create
         void add_element_created(std::string current_choice);
 
+        // Redacts the needed redaction for the geometry part
+        void geometry_redact();
         // Selects a geometry vector
-        void geometry_select_vector(std::shared_ptr<pleos::Vector>);
+        void geometry_select_vector(std::shared_ptr<pleos::Vector> needed_vector);
 
         // Getters and setters
         inline pleos::Vector* currently_selected_vector() const {return a_current_state.a_geometry_currently_selected_vector.get();}
         inline std::shared_ptr<pleos::Vector>& currently_selected_vector_shared_ptr() {return a_current_state.a_geometry_currently_selected_vector;}
+        inline std::shared_ptr<pleos::Vector> geometry_vector_created(std::string vector_name) {for(int i = 0;i<static_cast<int>(a_current_state.a_geometry_vectors_created.size());i++){if(a_current_state.a_geometry_vectors_created[i].get()->name() == vector_name){return a_current_state.a_geometry_vectors_created[i];}}return std::shared_ptr<Vector>();};
         inline std::vector<std::shared_ptr<pleos::Vector>>& geometry_vectors_created() {return a_current_state.a_geometry_vectors_created;};
 
         //******************
@@ -115,7 +118,9 @@ namespace pleos {
         // Displays the geometry page
         void display_geometry_page(){hide_all();geometry_page()->set_visible(true);};
         void display_geometry_complex_numbers_page(){display_geometry_page();geometry_complex_numbers_page()->set_visible(true);};
+        void display_geometry_redaction_graphic_page(){set_current_page(PLEOS_MATHS_GEOMETRY_REDACTION_PAGE);display_geometry_page();geometry_redaction_page()->set_visible(true);geometry_redaction_graphic()->set_visible(true);};
         void display_geometry_redaction_page(){set_current_page(PLEOS_MATHS_GEOMETRY_REDACTION_PAGE);display_geometry_page();geometry_redaction_page()->set_visible(true);geometry_redaction()->set_visible(true);};
+        void display_geometry_vector_page(){display_geometry_page();geometry_vector_page()->set_visible(true);};
 
         // Hides all the pages
         void hide_all(){hide_sub_pages(true);check_hiding();};
@@ -154,7 +159,9 @@ namespace pleos {
         inline scls::GUI_Scroller_Choice* geometry_redaction_elements_chosen() const {return a_geometry_redaction_elements_chosen.get();};
         inline scls::GUI_Scroller_Choice* geometry_redaction_elements_created() const {return a_geometry_redaction_elements_created.get();};
         inline scls::GUI_Scroller_Choice* geometry_redaction_elements_creation() const {return a_geometry_redaction_elements_creation.get();};
+        inline Graphic* geometry_redaction_graphic() const {return a_geometry_redaction_graphic.get();};
         inline scls::GUI_Object* geometry_redaction_page() const {return a_geometry_redaction_page.get();};
+        inline scls::GUI_Text* geometry_vector_page() const {return a_geometry_vector_page.get();};
         // Vector redaction
         inline scls::GUI_Text_Input* geometry_redaction_vector_name() const {return a_geometry_redaction_vector_name.get();};
         inline scls::GUI_Text_Input* geometry_redaction_vector_x() const {return a_geometry_redaction_vector_x.get();};
@@ -201,7 +208,9 @@ namespace pleos {
         std::shared_ptr<scls::GUI_Scroller_Choice> a_geometry_redaction_elements_chosen;
         std::shared_ptr<scls::GUI_Scroller_Choice> a_geometry_redaction_elements_created;
         std::shared_ptr<scls::GUI_Scroller_Choice> a_geometry_redaction_elements_creation;
+        std::shared_ptr<Graphic> a_geometry_redaction_graphic;
         std::shared_ptr<scls::GUI_Object> a_geometry_redaction_page;
+        std::shared_ptr<scls::GUI_Text> a_geometry_vector_page;
         // Redaction vector
         std::shared_ptr<scls::GUI_Text_Input> a_geometry_redaction_vector_name;
         std::shared_ptr<scls::GUI_Text_Input> a_geometry_redaction_vector_x;
