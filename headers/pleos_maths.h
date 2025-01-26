@@ -60,9 +60,25 @@ namespace pleos {
         //
         //******************
 
+        // Adds an element to create
+        void functions_add_element_created(std::string current_choice);
+
+        // Redacts the needed redaction for the functions part
+        void functions_redact();
+        // Resets the function part of the software
+        inline void functions_reset(){functions_add_element_created(std::string("function"));};
+        // Selects a functions vector
+        void functions_select_function(std::shared_ptr<pleos::Function_Studied> needed_function);
+
+        // Getters and setters
+        inline pleos::Function_Studied* currently_selected_function() const {return a_current_state.a_functions_currently_selected_function.get();}
+        inline std::shared_ptr<pleos::Function_Studied>& currently_selected_function_shared_ptr() {return a_current_state.a_functions_currently_selected_function;}
+        inline std::shared_ptr<pleos::Function_Studied> function_created(std::string vector_name) {for(int i = 0;i<static_cast<int>(a_current_state.a_functions_created.size());i++){if(a_current_state.a_functions_created[i].get()->name() == vector_name){return a_current_state.a_functions_created[i];}}return std::shared_ptr<pleos::Function_Studied>();};
+        inline std::vector<std::shared_ptr<pleos::Function_Studied>>& functions_created() {return a_current_state.a_functions_created;};
+
         //******************
         //
-        // Geoemtry handling
+        // Geometry handling
         //
         //******************
 
@@ -92,6 +108,8 @@ namespace pleos {
         virtual void after_xml_loading(){scls::GUI_Page::after_xml_loading();hide_sub_pages(true);a_functions_redaction_elements_chosen.get()->unselected_objects_style().cursor = GLFW_ARROW_CURSOR;};
         // Checks the events of functions
         void check_functions();
+        // Checks the events of hiding functions page
+        void check_functions_hiding();
         // Checks the events of geometry
         void check_geometry();
         // Checks the events of hiding geometry page
@@ -113,8 +131,10 @@ namespace pleos {
         void display_functions_page(){hide_all();functions_page()->set_visible(true);};
         void display_functions_definitions_page(){display_functions_page();functions_definitions_page()->set_visible(true);};
         void display_functions_forms_page(){display_functions_page();functions_forms_page()->set_visible(true);};
-        void display_functions_redaction_page(){set_current_page(PLEOS_MATHS_FUNCTIONS_REDACTION_PAGE);display_functions_page();functions_redaction_page()->set_visible(true);functions_redaction()->set_visible(true);};
-        void display_functions_redaction_graphic_page(){set_current_page(PLEOS_MATHS_FUNCTIONS_REDACTION_PAGE);display_functions_page();functions_redaction_page()->set_visible(true);functions_redaction_graphic()->set_visible(true);};
+        void display_functions_redaction_page(bool reset){if(current_page()!=PLEOS_MATHS_FUNCTIONS_REDACTION_PAGE&&reset){functions_reset();}set_current_page(PLEOS_MATHS_FUNCTIONS_REDACTION_PAGE);display_functions_page();functions_redaction_page()->set_visible(true);functions_redaction()->set_visible(true);};
+        inline void display_functions_redaction_page(){display_functions_redaction_page(true);};
+        void display_functions_redaction_graphic_page(bool reset){if(current_page()!=PLEOS_MATHS_FUNCTIONS_REDACTION_PAGE&&reset){functions_reset();}set_current_page(PLEOS_MATHS_FUNCTIONS_REDACTION_PAGE);display_functions_page();functions_redaction_page()->set_visible(true);functions_redaction_graphic()->set_visible(true);};
+        inline void display_functions_redaction_graphic_page(){display_functions_redaction_graphic_page(true);};
         // Displays the geometry page
         void display_geometry_page(){hide_all();geometry_page()->set_visible(true);};
         void display_geometry_complex_numbers_page(){display_geometry_page();geometry_complex_numbers_page()->set_visible(true);};
@@ -148,6 +168,8 @@ namespace pleos {
         inline scls::GUI_Object* functions_redaction_analyse() const {return a_functions_redaction_analyse.get();};
         inline scls::GUI_Scroller_Choice* functions_redaction_elements() const {return a_functions_redaction_elements.get();};
         inline scls::GUI_Scroller_Choice* functions_redaction_elements_chosen() const {return a_functions_redaction_elements_chosen.get();};
+        inline scls::GUI_Scroller_Choice* functions_redaction_elements_created() const {return a_functions_redaction_elements_created.get();};
+        inline scls::GUI_Scroller_Choice* functions_redaction_elements_creation() const {return a_functions_redaction_elements_creation.get();};
         inline scls::GUI_Text_Input* functions_redaction_expression() const {return a_functions_redaction_expression.get();};
         inline pleos::Graphic* functions_redaction_graphic() const {return a_functions_redaction_graphic.get();};
 
@@ -171,6 +193,12 @@ namespace pleos {
 
         // Current state of the page
         struct {
+            // Functions
+            // Created functions
+            std::vector<std::shared_ptr<pleos::Function_Studied>> a_functions_created = std::vector<std::shared_ptr<pleos::Function_Studied>>();
+            // Currently selected vector
+            std::shared_ptr<pleos::Function_Studied> a_functions_currently_selected_function = std::shared_ptr<pleos::Function_Studied>();
+
             // Geometry
             // Created vectors
             std::vector<std::shared_ptr<pleos::Vector>> a_geometry_vectors_created = std::vector<std::shared_ptr<pleos::Vector>>();
@@ -196,6 +224,8 @@ namespace pleos {
         std::shared_ptr<scls::GUI_Object> a_functions_redaction_page;
         std::shared_ptr<scls::GUI_Scroller_Choice> a_functions_redaction_elements;
         std::shared_ptr<scls::GUI_Scroller_Choice> a_functions_redaction_elements_chosen;
+        std::shared_ptr<scls::GUI_Scroller_Choice> a_functions_redaction_elements_created;
+        std::shared_ptr<scls::GUI_Scroller_Choice> a_functions_redaction_elements_creation;
         std::shared_ptr<scls::GUI_Text_Input> a_functions_redaction_expression;
         std::shared_ptr<Graphic> a_functions_redaction_graphic;
 

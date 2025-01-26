@@ -83,10 +83,9 @@
 </gui_object>
 
 // Elements
-
 <gui_object name="maths_functions_redaction_elements" type="scroller_choice">
 	<border bottom=1 left=1 right=1 top=1>
-	<height value=1 type=scale>
+	<height value=1/2 type=scale>
 	<parent name="maths_functions_redaction_body">
 	<width value=1/5 type=scale>
 	<x attach=left>
@@ -95,12 +94,32 @@
 	<choice name="image">Image</choice>
 	<choice name="definition_set">Ensemble de définition</choice>
 </gui_object>
+<gui_object name="maths_functions_redaction_elements_creation" type="scroller_choice">
+	<border bottom=1 left=1 right=1 top=1>
+	<height value=3/7 type=scale>
+	<parent name="maths_functions_redaction_body">
+	<width value=1/5 type=scale>
+	<x attach=left>
+	<y attach=bottom>
+
+	<choice name="function">Fonction</choice>
+</gui_object>
+// Elements chosen
 <gui_object name="maths_functions_redaction_elements_chosen" type="scroller_choice">
 	<border bottom=1 left=1 right=1 top=1>
 	<height value=3/7 type=scale>
 	<parent name="maths_functions_redaction_body">
-	<width value=2/5 type=scale>
+	<width value=1/5 type=scale>
 	<x attach=right attached_object=maths_functions_redaction_elements>
+	<y attach=bottom>
+</gui_object>
+// Elements created
+<gui_object name="maths_functions_redaction_elements_created" type="scroller_choice">
+	<border bottom=1 left=1 right=1 top=1>
+	<height value=3/7 type=scale>
+	<parent name="maths_functions_redaction_body">
+	<width value=1/5 type=scale>
+	<x attach=right attached_object=maths_functions_redaction_elements_chosen>
 	<y attach=bottom>
 </gui_object>
 <gui_object name="maths_functions_redaction_elements_chosen_title" type="text">
