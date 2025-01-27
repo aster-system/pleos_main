@@ -32,6 +32,12 @@
 // Include PLEOS Maths
 #include "pleos_maths.h"
 
+// Possible pages
+#define PLEOS_PHYSIC_HOME_PAGE 0
+// Matter pages
+#define PLEOS_PHYSIC_MATTER_SCALE_PAGE 101
+#define PLEOS_PHYSIC_MATTER_BOHR_MODEL_SIMULATION_PAGE 120
+
 // The namespace "pleos" is used to simplify the all.
 namespace pleos {
 
@@ -44,17 +50,17 @@ namespace pleos {
         // Loads an object in a page from XML
         virtual std::shared_ptr<scls::GUI_Object> __create_loaded_object_from_type(std::string object_name, std::string object_type, scls::GUI_Object* parent);
 
-        // Displays the arithmetic page
-        void display_matter_bohr_model_simulation_page(){display_matter_page();matter_bohr_model_simulation_page()->set_visible(true);};
-        void display_matter_page(){hide_all();matter_page()->set_visible(true);};
-        void display_matter_scale_page(){display_matter_page();matter_scale_page()->set_visible(true);}
+        //******************
+        //
+        // Matter page
+        //
+        //******************
 
-        // Hides all the pages
-        void hide_all(){hide_sub_pages(true);};
+        // Loads the bohr model simulation
+        void matter_load_bohr_model_simulation();
 
-        // Returns / resets the current page
-        inline unsigned short current_page() const {return a_current_state.current_page;};
-        inline void set_current_page(unsigned short new_page) {a_current_state.current_page = new_page;};
+        // Getters and setters
+        inline std::vector<std::shared_ptr<Circle>>& matter_bohr_model_simulation_electrons() {return a_current_state.matter_bohr_model_simulation_electrons;};
 
         //******************
         //
@@ -64,8 +70,28 @@ namespace pleos {
 
         // Checks the events of navigation
         void check_navigation();
+        // Updates the page
+        virtual void update();
         // Updates the events
         virtual void update_event();
+
+        //******************
+        //
+        // Handle pages
+        //
+        //******************
+
+        // Displays the arithmetic page
+        void display_matter_bohr_model_simulation_page(){set_current_page(PLEOS_PHYSIC_MATTER_BOHR_MODEL_SIMULATION_PAGE);display_matter_page();matter_bohr_model_simulation_page()->set_visible(true);matter_load_bohr_model_simulation();};
+        void display_matter_page(){hide_all();matter_page()->set_visible(true);};
+        void display_matter_scale_page(){set_current_page(PLEOS_PHYSIC_MATTER_SCALE_PAGE);display_matter_page();matter_scale_page()->set_visible(true);}
+
+        // Hides all the pages
+        void hide_all(){hide_sub_pages(true);};
+
+        // Returns / resets the current page
+        inline unsigned short current_page() const {return a_current_state.current_page;};
+        inline void set_current_page(unsigned short new_page) {a_current_state.current_page = new_page;};
 
         //******************
         //
@@ -85,6 +111,10 @@ namespace pleos {
 
         // Current state of the page
         struct {
+            // Matter
+            // Electrons in the Bohr model simulation
+            std::vector<std::shared_ptr<Circle>> matter_bohr_model_simulation_electrons;
+
             // Current page
             unsigned short current_page = PLEOS_MATHS_HOME_PAGE;
         } a_current_state;

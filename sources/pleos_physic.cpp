@@ -47,6 +47,50 @@ namespace pleos {
         return scls::GUI_Page::__create_loaded_object_from_type(object_name, object_type, parent);
     }
 
+    // Loads the bohr model simulation
+    double __matter_bohr_model_simulation_start = 0;
+    void Physic_Page::matter_load_bohr_model_simulation() {
+        // Add the core
+        int protons = 8; int neutrons = 8; int total = protons + neutrons;
+        for(int i = 0;i<total;i++) {
+            int random = rand()%2;
+            if((random == 0 && protons > 0) || neutrons <= 0) {
+                std::string needed_name = std::string("proton_") + std::to_string(protons);
+                scls::Formula x = scls::Fraction(rand()%3, 5);
+                scls::Formula y = scls::Fraction(rand()%3, 5);
+                std::shared_ptr<Circle> current_particule = *matter_bohr_model_simulation()->add_circle(needed_name, Vector(needed_name, x, y), scls::Fraction(1, 4));
+                current_particule.get()->set_border_color(scls::Color(150, 0, 0));current_particule.get()->set_border_radius(3);
+                current_particule.get()->set_color(scls::Color(255, 0, 0));
+                protons--;
+            }
+            else {
+                std::string needed_name = std::string("neutron_") + std::to_string(neutrons);
+                scls::Formula x = scls::Fraction(rand()%3, 5);
+                scls::Formula y = scls::Fraction(rand()%3, 5);
+                std::shared_ptr<Circle> current_particule = *matter_bohr_model_simulation()->add_circle(needed_name, Vector(needed_name, x, y), scls::Fraction(1, 4));
+                current_particule.get()->set_border_color(scls::Color(0, 150, 0));current_particule.get()->set_border_radius(3);
+                current_particule.get()->set_color(scls::Color(0, 255, 0));
+                neutrons--;
+            }
+        }
+
+        // Add the electrons
+        int electrons = 8;
+        for(int i = 0;i<static_cast<int>(electrons);i++) {
+            std::string needed_name = std::string("electron_") + std::to_string(protons);
+            scls::Formula x = scls::Fraction(-i, 3) - scls::Fraction(3, 4);
+            scls::Formula y = 0;
+            std::shared_ptr<Circle> current_particule = *matter_bohr_model_simulation()->add_circle(needed_name, Vector(needed_name, x, y), scls::Fraction(1, 7));
+            current_particule.get()->set_border_color(scls::Color(0, 0, 150));current_particule.get()->set_border_radius(2);
+            current_particule.get()->set_color(scls::Color(0, 0, 255));
+            matter_bohr_model_simulation_electrons().push_back(current_particule);
+        }
+
+        // Update the texture
+        __matter_bohr_model_simulation_start = scls::time_ns() / std::pow(10, 9);
+        matter_bohr_model_simulation()->update_texture();
+    }
+
     // Check the events of navigation
     void Physic_Page::check_navigation() {
         // Check the selected page
@@ -56,6 +100,24 @@ namespace pleos {
             // Arithmetic pages
             if(page == "matter_bohr_model_simulation"){display_matter_bohr_model_simulation_page();}
             else if(page == "matter_scale"){display_matter_scale_page();}
+        }
+    }
+
+    // Updates the page
+    void Physic_Page::update() {
+        scls::GUI_Page::update();
+
+        if(current_page() == PLEOS_PHYSIC_MATTER_BOHR_MODEL_SIMULATION_PAGE) {
+            // Simulate the Bohr model
+            for(int i = 0;i<static_cast<int>(matter_bohr_model_simulation_electrons().size());i++) {
+                std::shared_ptr<Circle> current_particule = matter_bohr_model_simulation_electrons()[i];
+                double* rotated = scls::__rotate_vector_3d(-0.75 - static_cast<double>(i) / 3.0, 0, 0, 0, (__matter_bohr_model_simulation_start - window_struct()->execution_time()) * 180.0, 0);
+                Vector needed_vector = Vector(std::string(""), rotated[0] * 100.0, rotated[2] * 100.0); delete rotated;
+                needed_vector.set_x(*needed_vector.x() / scls::Fraction(100));
+                needed_vector.set_y(*needed_vector.y() / scls::Fraction(100));
+                current_particule.get()->set_center(needed_vector);
+            }
+            matter_bohr_model_simulation()->update_texture();
         }
     }
 
