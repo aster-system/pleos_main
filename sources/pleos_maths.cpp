@@ -35,6 +35,9 @@ namespace pleos {
 
     // Loads an object in a page from XML
     std::shared_ptr<scls::GUI_Object> Maths_Page::__create_loaded_object_from_type(std::string object_name, std::string object_type, scls::GUI_Object* parent) {
+        // Arithmetic
+        if(object_name == "maths_arithmetic_definitions_body") {a_arithmetic_definitions_page = *parent->new_object<scls::GUI_Text>(object_name);return a_arithmetic_definitions_page;}
+
         // Functions
         if(object_name == "maths_functions_definitions_body") {a_functions_definitions_page = *parent->new_object<scls::GUI_Text>(object_name);return a_functions_definitions_page;}
         if(object_name == "maths_functions_forms_body") {a_functions_forms_page = *parent->new_object<scls::GUI_Text>(object_name);return a_functions_forms_page;}
@@ -65,6 +68,7 @@ namespace pleos {
         if(object_name == "maths_geometry_vector_body"){a_geometry_vector_page = *parent->new_object<scls::GUI_Text>(object_name);return a_geometry_vector_page;}
 
         // Pages
+        if(object_name == "maths_arithmetic_page"){a_arithmetic_page = *parent->new_object<scls::GUI_Object>(object_name);return a_arithmetic_page;}
         if(object_name == "maths_functions_page") {a_functions_page = *parent->new_object<scls::GUI_Object>(object_name);return a_functions_page;}
         if(object_name == "maths_geometry_page"){a_geometry_page = *parent->new_object<scls::GUI_Object>(object_name);return a_geometry_page;}
 
@@ -455,17 +459,20 @@ namespace pleos {
         else if(current_page() == PLEOS_MATHS_FUNCTIONS_REDACTION_PAGE){check_functions_hiding();}
     }
 
-     // Check the events of navigation
+    // Check the events of navigation
     void Maths_Page::check_navigation() {
         // Check the selected page
         if(a_navigation.get()->selection_modified()){
             std::string page = a_navigation.get()->currently_selected_objects_during_this_frame()[0].name();
 
+            // Arithmetic pages
+            if(page == "arithmetic_definitions"){display_arithmetic_definitions_page();}
             // Functions pages
-            if(page == "functions_definitions"){display_functions_definitions_page();}
+            else if(page == "functions_definitions"){display_functions_definitions_page();}
             else if(page == "functions_forms"){display_functions_forms_page();}
             else if(page == "functions_graphic"){display_functions_redaction_graphic_page();}
             else if(page == "functions_redaction"){display_functions_redaction_page();}
+            // Geometry pages
             else if(page == "geometry_complex_numbers"){display_geometry_complex_numbers_page();}
             else if(page == "geometry_redaction"){display_geometry_redaction_page();}
             else if(page == "geometry_redaction_graphic"){display_geometry_redaction_graphic_page();}

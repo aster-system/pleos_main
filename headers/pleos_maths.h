@@ -127,6 +127,9 @@ namespace pleos {
         //
         //******************
 
+        // Displays the arithmetic page
+        void display_arithmetic_page(){hide_all();arithmetic_page()->set_visible(true);};
+        void display_arithmetic_definitions_page(){display_arithmetic_page();arithmetic_definitions_page()->set_visible(true);}
         // Displays the functions page
         void display_functions_page(){hide_all();functions_page()->set_visible(true);};
         void display_functions_definitions_page(){display_functions_page();functions_definitions_page()->set_visible(true);};
@@ -162,6 +165,10 @@ namespace pleos {
         inline scls::GUI_Object* functions_redaction_page() const {return a_functions_redaction_page.get();};
         inline scls::GUI_Object* geometry_page() const {return a_geometry_page.get();};
         inline scls::GUI_Scroller_Choice* navigation() const {return a_navigation.get();};
+
+        // Returns arithmetic
+        inline scls::GUI_Object* arithmetic_page() const {return a_arithmetic_page.get();};
+        inline scls::GUI_Text* arithmetic_definitions_page() const {return a_arithmetic_definitions_page.get();};
 
         //  Returns functions
         inline scls::GUI_Text* functions_redaction() const {return a_functions_redaction.get();};
@@ -213,8 +220,12 @@ namespace pleos {
         std::shared_ptr<scls::GUI_Scroller_Choice> a_navigation;
 
         // Pages
+        std::shared_ptr<scls::GUI_Object> a_arithmetic_page;
         std::shared_ptr<scls::GUI_Object> a_functions_page;
         std::shared_ptr<scls::GUI_Object> a_geometry_page;
+
+        // Arithmetic page
+        std::shared_ptr<scls::GUI_Text> a_arithmetic_definitions_page;
 
         // Functions page
         std::shared_ptr<scls::GUI_Text> a_functions_definitions_page;

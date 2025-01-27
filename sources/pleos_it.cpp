@@ -1,6 +1,6 @@
 //******************
 //
-// pleos_physic.cpp
+// pleos_it.h
 //
 //******************
 // Presentation :
@@ -11,9 +11,10 @@
 // The software is made in french, because the main goal is France educational system.
 // For more information, see : https://aster-system.github.io/aster-system/projects/pleos.html.
 //
-// The "Physic" part provides some datas about physic.
+// The "IT" part aims IT lessons.
+// Its goal is to teach everyone about IT, easily, and with cool informations and animations.
 //
-// This file contains the source code of "pleos_physic.h".
+// This file contains the source code of "pleos_it.h".
 //
 //******************
 //
@@ -27,40 +28,35 @@
 //
 
 // Include PLEOS Libs
-#include "../headers/pleos_physic.h"
+#include "../headers/pleos_it.h"
 
 // The namespace "pleos" is used to simplify the all.
 namespace pleos {
     // Loads an object in a page from XML
-    std::shared_ptr<scls::GUI_Object> Physic_Page::__create_loaded_object_from_type(std::string object_name, std::string object_type, scls::GUI_Object* parent) {
-        // Matter
-        if(object_name == "physic_matter_bohr_model_simulation") {a_physic_matter_bohr_model_simulation = *parent->new_object<Graphic>(object_name);return a_physic_matter_bohr_model_simulation;}
-        else if(object_name == "physic_matter_bohr_model_simulation_body"){a_physic_matter_bohr_model_simulation_body = *parent->new_object<scls::GUI_Object>(object_name);return a_physic_matter_bohr_model_simulation_body;}
-        else if(object_name == "physic_matter_scale_body"){a_physic_matter_scale_body = *parent->new_object<scls::GUI_Text>(object_name);return a_physic_matter_scale_body;}
-
+    std::shared_ptr<scls::GUI_Object> IT_Page::__create_loaded_object_from_type(std::string object_name, std::string object_type, scls::GUI_Object* parent) {
         // Pages
-        else if(object_name == "physic_matter_page"){a_physic_matter_page = *parent->new_object<scls::GUI_Object>(object_name);return a_physic_matter_page;}
+        if(object_name == "it_data_structures_page") {a_data_structures_page = *parent->new_object<scls::GUI_Object>(object_name);return a_data_structures_page;}
+        if(object_name == "it_data_structures_tree_body"){a_data_structures_tree_page = *parent->new_object<scls::GUI_Text>(object_name);return a_data_structures_tree_page;}
 
         // Navigation
-        else if(object_name == "physic_navigation") {a_navigation = *parent->new_object<scls::GUI_Scroller_Choice>(object_name);return a_navigation;}
+        if(object_name == "it_navigation") {a_navigation = *parent->new_object<scls::GUI_Scroller_Choice>(object_name);return a_navigation;}
 
         return scls::GUI_Page::__create_loaded_object_from_type(object_name, object_type, parent);
     }
 
     // Check the events of navigation
-    void Physic_Page::check_navigation() {
+    void IT_Page::check_navigation() {
         // Check the selected page
         if(a_navigation.get()->selection_modified()){
             std::string page = a_navigation.get()->currently_selected_objects_during_this_frame()[0].name();
 
-            // Arithmetic pages
-            if(page == "matter_bohr_model_simulation"){display_matter_bohr_model_simulation_page();}
-            else if(page == "matter_scale"){display_matter_scale_page();}
+            // IT pages
+            if(page == "data_structures_trees"){display_data_structures_trees_page();}
         }
     }
 
     // Update the events
-    void Physic_Page::update_event() {
+    void IT_Page::update_event() {
         // Basic events
         scls::GUI_Page::update_event();
         check_navigation();

@@ -19,3 +19,42 @@
 	<x value=1/2 type=object_scale>
 	<y attach=top>
 </gui_object>
+
+//***************************************************
+//
+//   SCALES
+//
+//***************************************************
+
+<gui_object name="physic_matter_scale_body" type="text" sub_page>
+    <content max_width=0 src="matter/scale.txt"></content>
+	<height value=7/8 type=scale>
+	<parent name="physic_matter_page">
+    <width value=9/10 type=scale>
+	<x value=1/2 type=object_scale>
+	<y attach=bottom>
+</gui_object>
+
+//***************************************************
+//
+//   BOHR MODEL SIMULATION
+//
+//***************************************************
+
+<gui_object name="physic_matter_bohr_model_simulation_body" type="object" sub_page>
+	<height value=7/8 type=scale>
+	<parent name="physic_matter_page">
+    <width value=9/10 type=scale>
+	<x value=1/2 type=object_scale>
+	<y attach=bottom>
+</gui_object>
+// Graphic
+<gui_object name="physic_matter_bohr_model_simulation" type="graphic">
+	<border bottom=1 left=1 right=1 top=1>
+	<height value=1/2 type=scale>
+	<parent name="physic_matter_bohr_model_simulation_body">
+	<texture alignment_vertical=top>
+	<width value=4/5 type=scale>
+	<x attach=right>
+	<y attach=top>
+</gui_object>

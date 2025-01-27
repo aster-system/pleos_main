@@ -2,9 +2,12 @@
 <page_2d name="hub" type="gui" displayed>
 	<content src="hub_gui_content.txt" sub_paged></content>
 </page_2d>
-<page_2d name="maths">
+<page_2d name="it" type="gui">
+	<content src="plugins/it/gui_content.txt" sub_paged></content>
+</page_2d>
+<page_2d name="maths" type="gui">
 	<content src="plugins/maths/gui_content.txt" sub_paged></content>
 </page_2d>
-<page_2d name="physic">
+<page_2d name="physic" type="gui">
 	<content src="plugins/physic/gui_content.txt" sub_paged></content>
 </page_2d>

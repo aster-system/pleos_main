@@ -4,7 +4,7 @@
 //
 //***************************************************
 
-<gui_object name="physic_navigation" type="scroller_choice" visible>
+<gui_object name="it_navigation" type="scroller_choice" visible>
 	<border bottom=1 left=1 right=1 top=1>
 	<height value=7/8 type=scale>
 	<width value=1/5 type=scale>
@@ -12,10 +12,10 @@
 	<y attach=top>
 
 	<choice name="home">Accueil</choice>
-	<sub_choice name="matter" displayer="La matière">
-		<choice name="matter_scale">Les échelles de matières</choice>
-		<choice name="matter_bohr_model_simulation">Simuler le modèle de Bohr</choice>
+	<sub_choice name="data_structures" displayer="Structures de données">
+		<choice name="data_structures_trees">Les arbres</choice>
+        <choice name="data_structures_trees_graphic">Simuler un arbre</choice>
 	</sub_choice>
 </gui_object>
 
-<include src="physic_gui_content_matter.txt">
+<include src="gui_content_data_structures.txt">

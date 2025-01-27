@@ -13,13 +13,18 @@
 
 	<choice name="home">Accueil</choice>
 	<choice name="algebra_basis">Les bases de l'algèbre</choice>
-	<choice name="arithmetic">L'arithmétique</choice>
+	<sub_choice name="arithmetic" displayer="L'arithmétique">
+		<choice name="arithmetic_definitions">Définitions basiques</choice>
+		<choice name="arithmetic_calculator">Calculatrice</choice>
+	</sub_choice>
+
 	<sub_choice name="functions" displayer="Fonctions">
 		<choice name="functions_definitions">Définitions basiques</choice>
 		<choice name="functions_forms">Des formes bien connues</choice>
 		<choice name="functions_redaction">Calculs rédigés</choice>
 		<choice name="functions_graphic">Représentation graphique</choice>
 	</sub_choice>
+	
 	<sub_choice name="geometry" displayer="Géométrie">
 		<choice name="geometry_definitions">Définition</choice>
 		<choice name="geometry_vector">Les vecteurs</choice>
@@ -29,5 +34,6 @@
 	</sub_choice>
 </gui_object>
 
+<include src="gui_content_arithmetic.txt">
 <include src="gui_content_function.txt">
 <include src="gui_content_geometry.txt">

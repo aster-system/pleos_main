@@ -1,6 +1,6 @@
 //******************
 //
-// pleos_physic.h
+// pleos_it.h
 //
 //******************
 // Presentation :
@@ -11,9 +11,10 @@
 // The software is made in french, because the main goal is France educational system.
 // For more information, see : https://aster-system.github.io/aster-system/projects/pleos.html.
 //
-// The "Physic" part provides some datas about physic.
+// The "IT" part aims IT lessons.
+// Its goal is to teach everyone about IT, easily, and with cool informations and animations.
 //
-// This file contains the main "Physic" page.
+// This file contains the page of the IT plugin.
 //
 //******************
 //
@@ -26,28 +27,43 @@
 // You should have received a copy of the GNU General Public License along with PLEOS. If not, see <https://www.gnu.org/licenses/>.
 //
 
-#ifndef PLEOS_PHYSIC_PAGE
-#define PLEOS_PHYSIC_PAGE
+#ifndef PLEOS_IT
+#define PLEOS_IT
 
-// Include PLEOS Maths
-#include "pleos_maths.h"
+// Include PLEOS Libs
+#include "../../pleos_libs/pleos_it.h"
+#include "../../pleos_libs/pleos_mathematics.h"
+
+// Possible pages
+#define PLEOS_IT_HOME_PAGE 0
+// Data structures
+#define PLEOS_IT_DATA_STRUCTURES_TREES_PAGE 150
 
 // The namespace "pleos" is used to simplify the all.
 namespace pleos {
-
-    class Physic_Page : public scls::GUI_Page {
-        // Class representating the "Physic" page for PLEOS
+    class IT_Page : public scls::GUI_Page {
+        // Class representating the "IT" page for PLEOS
     public:
 
-        // Physic_Page constructor
-        Physic_Page(scls::_Window_Advanced_Struct* window_struct, std::string name):scls::GUI_Page(window_struct, name){};
+        // IT_Page constructor
+        IT_Page(scls::_Window_Advanced_Struct* window_struct, std::string name):scls::GUI_Page(window_struct, name){};
         // Loads an object in a page from XML
         virtual std::shared_ptr<scls::GUI_Object> __create_loaded_object_from_type(std::string object_name, std::string object_type, scls::GUI_Object* parent);
 
-        // Displays the arithmetic page
-        void display_matter_bohr_model_simulation_page(){display_matter_page();matter_bohr_model_simulation_page()->set_visible(true);};
-        void display_matter_page(){hide_all();matter_page()->set_visible(true);};
-        void display_matter_scale_page(){display_matter_page();matter_scale_page()->set_visible(true);}
+        // Checks the events of navigation
+        void check_navigation();
+        // Updates the events
+        virtual void update_event();
+
+        //******************
+        //
+        // Handle the pages
+        //
+        //******************:
+
+        // Displays the data structure page
+        void display_data_structures_page(){hide_all();data_structures_page()->set_visible(true);};
+        void display_data_structures_trees_page(){set_current_page(PLEOS_IT_DATA_STRUCTURES_TREES_PAGE);display_data_structures_page();data_structures_tree_page()->set_visible(true);};
 
         // Hides all the pages
         void hide_all(){hide_sub_pages(true);};
@@ -58,52 +74,28 @@ namespace pleos {
 
         //******************
         //
-        // Check the events
-        //
-        //******************
-
-        // Checks the events of navigation
-        void check_navigation();
-        // Updates the events
-        virtual void update_event();
-
-        //******************
-        //
         // GUI handling
         //
         //******************
 
         // Returns pages
-        inline scls::GUI_Object* matter_page() const {return a_physic_matter_page.get();};
-        inline scls::GUI_Text* matter_scale_page() const {return a_physic_matter_scale_body.get();};
-        inline scls::GUI_Object* matter_bohr_model_simulation_page() const {return a_physic_matter_bohr_model_simulation_body.get();};
+        inline scls::GUI_Object* data_structures_page() const {return a_data_structures_page.get();};
+        inline scls::GUI_Object* data_structures_tree_page() const {return a_data_structures_tree_page.get();};
 
-        // Matter
-        inline Graphic* matter_bohr_model_simulation() const {return a_physic_matter_bohr_model_simulation.get();};
-
-   private:
-
+    private:
         // Current state of the page
         struct {
             // Current page
-            unsigned short current_page = PLEOS_MATHS_HOME_PAGE;
+            unsigned short current_page = PLEOS_IT_HOME_PAGE;
         } a_current_state;
 
-        //******************
-        // GUI handling
-        //******************
-
-        // Matter
-        std::shared_ptr<Graphic> a_physic_matter_bohr_model_simulation;
-        std::shared_ptr<scls::GUI_Object> a_physic_matter_bohr_model_simulation_body;
-        std::shared_ptr<scls::GUI_Text> a_physic_matter_scale_body;
+        // Global navigation
+        std::shared_ptr<scls::GUI_Scroller_Choice> a_navigation;
 
         // Pages
-        std::shared_ptr<scls::GUI_Object> a_physic_matter_page;
-
-        // Navigation
-        std::shared_ptr<scls::GUI_Scroller_Choice> a_navigation;
+        std::shared_ptr<scls::GUI_Object> a_data_structures_page;
+        std::shared_ptr<scls::GUI_Object> a_data_structures_tree_page;
     };
 }
 
-#endif // PLEOS_PHYSIC_PAGE
+#endif // PLEOS_IT
