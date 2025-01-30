@@ -128,7 +128,8 @@ namespace pleos {
         for(int i = 0;i<static_cast<int>(matter_bohr_model_simulation_electrons().size());i++) {
             std::shared_ptr<Bohr_Model::Electron> current_electron = matter_bohr_model_simulation_electrons()[i];
             std::shared_ptr<Circle> current_particule = current_electron.get()->circle;
-            double* rotated = scls::__rotate_vector_3d(-0.75 - current_electron.get()->distance.to_double(), 0, 0, 0, current_electron.get()->angle.to_double() + (__matter_bohr_model_simulation_start - window_struct()->execution_time()) * 180.0, 0);
+            scls::Fraction needed_distance = current_electron.get()->distance + (scls::Fraction(1, 2) * current_electron.get()->energy);
+            double* rotated = scls::__rotate_vector_3d(-0.75 - needed_distance.to_double(), 0, 0, 0, current_electron.get()->angle.to_double() + (__matter_bohr_model_simulation_start - window_struct()->execution_time()) * 180.0, 0);
             Vector needed_vector = Vector(std::string(""), rotated[0] * 100.0, rotated[2] * 100.0); delete rotated;
             needed_vector.set_x(*needed_vector.x() / scls::Fraction(100));
             needed_vector.set_y(*needed_vector.y() / scls::Fraction(100));
@@ -144,46 +145,84 @@ namespace pleos {
                 Vector new_position = (current_photon.get()->end_position - current_photon.get()->start_position);
                 new_position *= duration;
                 current_particule.get()->set_center(current_photon.get()->start_position + new_position);
-            } else {
-                // Delete the photon
-                matter_bohr_model_simulation_photons().erase(matter_bohr_model_simulation_photons().begin() + i);
-                matter_bohr_model_simulation()->remove_circle(current_particule.get()->name());
             }
+            else if(current_photon.get()->electron.get() != 0) {
+                // Delete the photon
+                scls::Fraction peak_energy = scls::Fraction(2);
+                matter_bohr_model_simulation()->remove_circle(current_particule.get()->name());
+                if(duration < 1.5) {
+                    current_photon.get()->electron.get()->energy = peak_energy * (duration - scls::Fraction(1));
+                }
+                else if(duration < 2) {
+                    // Emits the photon
+                    current_photon.get()->electron.get()->energy = peak_energy - peak_energy * (duration - scls::Fraction(1));
+                    if(current_photon.get()->electron.get()->has_photon) {
+                        current_photon.get()->electron.get()->has_photon = false;
+                        // Create the particule
+                        std::shared_ptr<Bohr_Model::Photon> new_photon = matter_bohr_model().photon_datas(0);
+                        new_photon.get()->creation_time = scls::time_ns();
+                        new_photon.get()->start_position = current_photon.get()->electron.get()->center();
+                        double needed_angle = current_photon.get()->electron.get()->angle.to_double() + (__matter_bohr_model_simulation_start - window_struct()->execution_time()) * 180.0;
+                        double* rotated = scls::__rotate_vector_3d(5.0, 0, 0, 0, needed_angle + 180.0, 0);
+                        new_photon.get()->end_position = new_photon.get()->start_position + Vector("", scls::Fraction(rotated[0] * 100, 100), scls::Fraction(rotated[2] * 200, 200));
+                        matter_bohr_model_simulation_photons().push_back(new_photon); delete rotated;
+                        // Create the particule
+                        std::shared_ptr<Circle>& current_particule = new_photon.get()->circle;
+                        current_particule = *matter_bohr_model_simulation()->add_circle(current_photon.get()->circle.get()->name() + std::string("_emitted"), new_photon.get()->start_position, scls::Fraction(1, 7));
+                        current_particule.get()->set_border_color(scls::Color(150, 150, 0));current_particule.get()->set_border_radius(2);
+                        current_particule.get()->set_color(scls::Color(255, 255, 0));
+                    }
+                }
+                else {
+                    // Delete the photon
+                    current_photon.get()->electron.get()->energy = 0;
+                    current_photon.get()->electron.get()->has_photon_attached = false;
+                    matter_bohr_model_simulation_photons().erase(matter_bohr_model_simulation_photons().begin() + i);
+                }
+            }
+            else {matter_bohr_model_simulation_photons().erase(matter_bohr_model_simulation_photons().begin() + i);}
         }
 
         // Introduce a photon
-        if(window_struct()->key_pressed_during_this_frame("m")) {
-            std::string needed_name = std::string("photon_") + std::to_string(matter_bohr_model_simulation_photons_number());
-            matter_bohr_model_simulation_photons_number()++;
-            std::shared_ptr<Bohr_Model::Photon> current_photon = matter_bohr_model().photon_datas(0);
-            current_photon.get()->creation_time = scls::time_ns();
-            scls::Formula x = -2; scls::Formula y = 0;
-
-            // Get the final electron
-            int movement_duration = 1;
+        if(window_struct()->key_pressed_during_this_frame("m") || window_struct()->key_pressed("l")) {
+            // Choose an electron
             int n = rand()%matter_bohr_model().electron_number();
             std::shared_ptr<Bohr_Model::Electron> current_electron = matter_bohr_model_simulation_electrons()[n];
-            double needed_angle = current_electron.get()->angle.to_double() + ((__matter_bohr_model_simulation_start + movement_duration) - window_struct()->execution_time()) * 180.0;
-            double* rotated = scls::__rotate_vector_3d(-0.75 - current_electron.get()->distance.to_double(), 0, 0, 0, needed_angle, 0);
-            Vector target_vector = Vector(std::string(""), rotated[0] * 100.0, rotated[2] * 100.0); delete rotated;
-            target_vector.set_x(*target_vector.x() / scls::Fraction(100));
-            target_vector.set_y(*target_vector.y() / scls::Fraction(100));
-            current_photon.get()->end_position = target_vector;
-            // Get the start position
-            rotated = scls::__rotate_vector_3d(-4.0, 0, 0, 0, needed_angle, 0);
-            Vector start_vector = Vector(std::string(""), rotated[0] * 100.0, rotated[2] * 100.0); delete rotated;
-            start_vector.set_x(*start_vector.x() / scls::Fraction(100));
-            start_vector.set_y(*start_vector.y() / scls::Fraction(100));
-            start_vector += target_vector;
-            current_photon.get()->start_position = start_vector;
+            if(!current_electron.get()->has_photon_attached){
+                // Create the photon
+                std::string needed_name = std::string("photon_") + std::to_string(matter_bohr_model_simulation_photons_number());
+                matter_bohr_model_simulation_photons_number()++;
+                std::shared_ptr<Bohr_Model::Photon> current_photon = matter_bohr_model().photon_datas(0);
+                current_photon.get()->creation_time = scls::time_ns();
+                scls::Formula x = -2; scls::Formula y = 0;
 
-            // Create the particule
-            std::shared_ptr<Circle>& current_particule = current_photon.get()->circle;
-            current_particule = *matter_bohr_model_simulation()->add_circle(needed_name, start_vector, scls::Fraction(1, 7));
-            current_particule.get()->set_border_color(scls::Color(150, 150, 0));current_particule.get()->set_border_radius(2);
-            current_particule.get()->set_color(scls::Color(255, 255, 0));
-            // Add the photon
-            matter_bohr_model_simulation_photons().push_back(current_photon);
+                // Get the final electron
+                int movement_duration = 1;
+                double needed_angle = current_electron.get()->angle.to_double() + ((__matter_bohr_model_simulation_start + movement_duration) - window_struct()->execution_time()) * 180.0;
+                double* rotated = scls::__rotate_vector_3d(-0.75 - current_electron.get()->distance.to_double(), 0, 0, 0, needed_angle, 0);
+                Vector target_vector = Vector(std::string(""), rotated[0] * 100.0, rotated[2] * 100.0); delete rotated;
+                target_vector.set_x(*target_vector.x() / scls::Fraction(100));
+                target_vector.set_y(*target_vector.y() / scls::Fraction(100));
+                current_photon.get()->end_position = target_vector;
+                current_photon.get()->electron = current_electron;
+                current_electron->has_photon = true;
+                current_electron->has_photon_attached = true;
+                // Get the start position
+                rotated = scls::__rotate_vector_3d(-4.0, 0, 0, 0, needed_angle, 0);
+                Vector start_vector = Vector(std::string(""), rotated[0] * 100.0, rotated[2] * 100.0); delete rotated;
+                start_vector.set_x(*start_vector.x() / scls::Fraction(100));
+                start_vector.set_y(*start_vector.y() / scls::Fraction(100));
+                start_vector += target_vector;
+                current_photon.get()->start_position = start_vector;
+
+                // Create the particule
+                std::shared_ptr<Circle>& current_particule = current_photon.get()->circle;
+                current_particule = *matter_bohr_model_simulation()->add_circle(needed_name, start_vector, scls::Fraction(1, 7));
+                current_particule.get()->set_border_color(scls::Color(150, 150, 0));current_particule.get()->set_border_radius(2);
+                current_particule.get()->set_color(scls::Color(255, 255, 0));
+                // Add the photon
+                matter_bohr_model_simulation_photons().push_back(current_photon);
+            }
         }
 
         matter_bohr_model_simulation()->update_texture();

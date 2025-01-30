@@ -32,3 +32,26 @@
 	<x value=1/2 type=object_scale>
 	<y attach=bottom>
 </gui_object>
+
+//***************************************************
+// Trees simulation
+//***************************************************
+
+<gui_object name="it_data_structures_tree_simulation_body" type="object" sub_page>
+    <height value=7/8 type=scale>
+	<parent name="it_data_structures_page">
+    <width value=9/10 type=scale>
+	<x value=1/2 type=object_scale>
+	<y attach=bottom>
+</gui_object>
+
+// Graphic simulation
+<gui_object name="it_data_structures_tree_simulation" type="graphic">
+	<border bottom=1 left=1 right=1 top=1>
+	<height value=1/2 type=scale>
+	<parent name="it_data_structures_tree_simulation_body">
+	<texture alignment_vertical=top>
+	<width value=4/5 type=scale>
+	<x attach=right>
+	<y attach=top>
+</gui_object>

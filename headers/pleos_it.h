@@ -27,8 +27,8 @@
 // You should have received a copy of the GNU General Public License along with PLEOS. If not, see <https://www.gnu.org/licenses/>.
 //
 
-#ifndef PLEOS_IT
-#define PLEOS_IT
+#ifndef PLEOS_IT_PAGE
+#define PLEOS_IT_PAGE
 
 // Include PLEOS Libs
 #include "../../pleos_libs/pleos_it.h"
@@ -38,6 +38,7 @@
 #define PLEOS_IT_HOME_PAGE 0
 // Data structures
 #define PLEOS_IT_DATA_STRUCTURES_TREES_PAGE 150
+#define PLEOS_IT_DATA_STRUCTURES_TREES_SIMULATION_PAGE 151
 
 // The namespace "pleos" is used to simplify the all.
 namespace pleos {
@@ -64,6 +65,7 @@ namespace pleos {
         // Displays the data structure page
         void display_data_structures_page(){hide_all();data_structures_page()->set_visible(true);};
         void display_data_structures_trees_page(){set_current_page(PLEOS_IT_DATA_STRUCTURES_TREES_PAGE);display_data_structures_page();data_structures_tree_page()->set_visible(true);};
+        void display_data_structures_trees_simulation_page(){set_current_page(PLEOS_IT_DATA_STRUCTURES_TREES_SIMULATION_PAGE);display_data_structures_page();data_structures_tree_simulation_page()->set_visible(true);};
 
         // Hides all the pages
         void hide_all(){hide_sub_pages(true);};
@@ -81,6 +83,10 @@ namespace pleos {
         // Returns pages
         inline scls::GUI_Object* data_structures_page() const {return a_data_structures_page.get();};
         inline scls::GUI_Object* data_structures_tree_page() const {return a_data_structures_tree_page.get();};
+        inline scls::GUI_Object* data_structures_tree_simulation_page() const {return a_data_structures_tree_simulation_page.get();};
+
+        // Trees simulation
+        inline Graphic* data_structures_tree_simulation() const {return a_data_structures_tree_simulation.get();};
 
     private:
         // Current state of the page
@@ -95,7 +101,11 @@ namespace pleos {
         // Pages
         std::shared_ptr<scls::GUI_Object> a_data_structures_page;
         std::shared_ptr<scls::GUI_Object> a_data_structures_tree_page;
+        std::shared_ptr<scls::GUI_Object> a_data_structures_tree_simulation_page;
+
+        // Tree simulation
+        std::shared_ptr<Graphic> a_data_structures_tree_simulation;
     };
 }
 
-#endif // PLEOS_IT
+#endif // PLEOS_IT_PAGE

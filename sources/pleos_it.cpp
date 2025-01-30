@@ -34,12 +34,16 @@
 namespace pleos {
     // Loads an object in a page from XML
     std::shared_ptr<scls::GUI_Object> IT_Page::__create_loaded_object_from_type(std::string object_name, std::string object_type, scls::GUI_Object* parent) {
+        // Trees simulation
+        if(object_name == "it_data_structures_tree_simulation"){a_data_structures_tree_simulation = *parent->new_object<Graphic>(object_name);return a_data_structures_tree_simulation;}
+
         // Pages
-        if(object_name == "it_data_structures_page") {a_data_structures_page = *parent->new_object<scls::GUI_Object>(object_name);return a_data_structures_page;}
-        if(object_name == "it_data_structures_tree_body"){a_data_structures_tree_page = *parent->new_object<scls::GUI_Text>(object_name);return a_data_structures_tree_page;}
+        else if(object_name == "it_data_structures_page") {a_data_structures_page = *parent->new_object<scls::GUI_Object>(object_name);return a_data_structures_page;}
+        else if(object_name == "it_data_structures_tree_body"){a_data_structures_tree_page = *parent->new_object<scls::GUI_Text>(object_name);return a_data_structures_tree_page;}
+        else if(object_name == "it_data_structures_tree_simulation_body"){a_data_structures_tree_simulation_page = *parent->new_object<scls::GUI_Text>(object_name);return a_data_structures_tree_simulation_page;}
 
         // Navigation
-        if(object_name == "it_navigation") {a_navigation = *parent->new_object<scls::GUI_Scroller_Choice>(object_name);return a_navigation;}
+        else if(object_name == "it_navigation") {a_navigation = *parent->new_object<scls::GUI_Scroller_Choice>(object_name);return a_navigation;}
 
         return scls::GUI_Page::__create_loaded_object_from_type(object_name, object_type, parent);
     }
@@ -52,6 +56,7 @@ namespace pleos {
 
             // IT pages
             if(page == "data_structures_trees"){display_data_structures_trees_page();}
+            else if(page == "data_structures_trees_graphic"){display_data_structures_trees_simulation_page();}
         }
     }
 
