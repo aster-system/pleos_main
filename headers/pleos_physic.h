@@ -29,13 +29,15 @@
 #ifndef PLEOS_PHYSIC_PAGE
 #define PLEOS_PHYSIC_PAGE
 
-// Include PLEOS Maths
+// Include PLEOS Maths and PLEOS physic
 #include "pleos_maths.h"
+#include "../../pleos_libs/pleos_physic.h"
 
 // Possible pages
 #define PLEOS_PHYSIC_HOME_PAGE 0
 // Matter pages
 #define PLEOS_PHYSIC_MATTER_SCALE_PAGE 101
+#define PLEOS_PHYSIC_MATTER_BOHR_MODEL_PAGE 110
 #define PLEOS_PHYSIC_MATTER_BOHR_MODEL_SIMULATION_PAGE 120
 
 // The namespace "pleos" is used to simplify the all.
@@ -60,7 +62,10 @@ namespace pleos {
         void matter_load_bohr_model_simulation();
 
         // Getters and setters
-        inline std::vector<std::shared_ptr<Circle>>& matter_bohr_model_simulation_electrons() {return a_current_state.matter_bohr_model_simulation_electrons;};
+        inline Bohr_Model& matter_bohr_model() {return a_current_state.matter_bohr_model;};
+        inline std::vector<std::shared_ptr<Bohr_Model::Electron>>& matter_bohr_model_simulation_electrons() {return a_current_state.matter_bohr_model_simulation_electrons;};
+        inline std::vector<std::shared_ptr<Bohr_Model::Photon>>& matter_bohr_model_simulation_photons() {return a_current_state.matter_bohr_model_simulation_photons;};
+        inline int& matter_bohr_model_simulation_photons_number() {return a_current_state.matter_bohr_model_simulation_photons_number;};
 
         //******************
         //
@@ -72,6 +77,8 @@ namespace pleos {
         void check_navigation();
         // Updates the page
         virtual void update();
+        // Updates the Bohr model simulation
+        void update_bohr_model_simulation();
         // Updates the events
         virtual void update_event();
 
@@ -82,6 +89,7 @@ namespace pleos {
         //******************
 
         // Displays the arithmetic page
+        void display_matter_bohr_model_page(){set_current_page(PLEOS_PHYSIC_MATTER_BOHR_MODEL_PAGE);display_matter_page();matter_bohr_model_page()->set_visible(true);};
         void display_matter_bohr_model_simulation_page(){set_current_page(PLEOS_PHYSIC_MATTER_BOHR_MODEL_SIMULATION_PAGE);display_matter_page();matter_bohr_model_simulation_page()->set_visible(true);matter_load_bohr_model_simulation();};
         void display_matter_page(){hide_all();matter_page()->set_visible(true);};
         void display_matter_scale_page(){set_current_page(PLEOS_PHYSIC_MATTER_SCALE_PAGE);display_matter_page();matter_scale_page()->set_visible(true);}
@@ -100,9 +108,10 @@ namespace pleos {
         //******************
 
         // Returns pages
+        inline scls::GUI_Text* matter_bohr_model_page() const {return a_physic_matter_bohr_model_body.get();};
+        inline scls::GUI_Object* matter_bohr_model_simulation_page() const {return a_physic_matter_bohr_model_simulation_body.get();};
         inline scls::GUI_Object* matter_page() const {return a_physic_matter_page.get();};
         inline scls::GUI_Text* matter_scale_page() const {return a_physic_matter_scale_body.get();};
-        inline scls::GUI_Object* matter_bohr_model_simulation_page() const {return a_physic_matter_bohr_model_simulation_body.get();};
 
         // Matter
         inline Graphic* matter_bohr_model_simulation() const {return a_physic_matter_bohr_model_simulation.get();};
@@ -112,8 +121,13 @@ namespace pleos {
         // Current state of the page
         struct {
             // Matter
+            // Current bohr model
+            Bohr_Model matter_bohr_model;
             // Electrons in the Bohr model simulation
-            std::vector<std::shared_ptr<Circle>> matter_bohr_model_simulation_electrons;
+            std::vector<std::shared_ptr<Bohr_Model::Electron>> matter_bohr_model_simulation_electrons;
+            // Photons in the Bohr model simulation
+            std::vector<std::shared_ptr<Bohr_Model::Photon>> matter_bohr_model_simulation_photons;
+            int matter_bohr_model_simulation_photons_number = 0;
 
             // Current page
             unsigned short current_page = PLEOS_MATHS_HOME_PAGE;
@@ -124,8 +138,9 @@ namespace pleos {
         //******************
 
         // Matter
-        std::shared_ptr<Graphic> a_physic_matter_bohr_model_simulation;
+        std::shared_ptr<scls::GUI_Text> a_physic_matter_bohr_model_body;
         std::shared_ptr<scls::GUI_Object> a_physic_matter_bohr_model_simulation_body;
+        std::shared_ptr<Graphic> a_physic_matter_bohr_model_simulation;
         std::shared_ptr<scls::GUI_Text> a_physic_matter_scale_body;
 
         // Pages

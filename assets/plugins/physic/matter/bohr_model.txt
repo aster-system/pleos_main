@@ -1,0 +1,26 @@
+<p>
+Après la découverte du noyau atomique par Joseph John Thomson (1856 - 1940) et Ernest Rutherford (1871 - 1937) en 1909, la question était de savoir comment se comporter les électrons avec ce noyau.
+Plusieurs théories ont été proposées, dont celle de Rutherford en personne, supposant que les électrons tournés autour du noyau.
+Cependant, elle n'offrait pas de directives précises sur la façon de tourner des électrons.
+Cette directive sera offert par le physicien danois Niels Bohr (1885 - 1962) en 1913.
+Pour lui, les électrons tournent de manière très précise : ils se situent en temps normal sur des orbites stables et stationnaire, de rayon une valeur très précise et de moment cinétique un multiple (entier) de la constante de Plank.
+Il modélise cela dans une simple équation :
+</p>
+<math><mi>||</mi><vec>L</vec><mi>||</mi><mo>=</mo><mi>nh</mi></math>
+<p>
+Avec L le moment cinétique de l'orbite, n un nombre entier naturel et h la constante de Plank.
+Cependant, si un électron reçoit de l'énergie de l'extérieur (sous forme d'ondes électromagnétiques / photons), il peut changer d'orbite.
+Cependant, ce changement ne peux pas avoir lieu n'importe comment.
+Il doit recevoir assez d'énergie pour aller à une autre orbite stable de l'atome.
+C'est ce que l'on appelle une absorption.
+Bien que l'orbite soit stable, le total des orbites dans l'atome ne le seront plus, et l'électron va devoir repasser à une orbite moins énergétique, en émettant son excédent d'énergie (sous forme d'ondes électromagnétiques / photons).
+C'est ce que l'on appelle un rayonnement.
+</p>
+<p>
+Cette théorie présente l'avantage d'expliquer pas mal de résultats spectroscopiques, discipline grandement développée pendant le siècle précédent.
+Elle permet notamment d'expliquer les résultats spectroscopiques de l'hydrogène.
+Cependant, elle ne suffit pas pour des atomes (et molécules) plus complexes.
+Elle a aussi permis de faire le lien entre le photon et les ondes électromagnétiques : à échelle quantique, les ondes électromagnétiques peuvent être perçus comme des particules.
+Cette théorie est nommée la théorie des quantas, introduites par Albert Einstein (1879 - 1955) et Max Planck au début du XXème siècle.
+Cette théorie est l'une des théories parents de la physique quantique.
+</p>

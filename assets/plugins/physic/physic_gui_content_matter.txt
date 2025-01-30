@@ -37,6 +37,21 @@
 
 //***************************************************
 //
+//   BOHR MODEL
+//
+//***************************************************
+
+<gui_object name="physic_matter_bohr_model_body" type="text" sub_page>
+    <content max_width=0 src="matter/bohr_model.txt"></content>
+	<height value=7/8 type=scale>
+	<parent name="physic_matter_page">
+    <width value=9/10 type=scale>
+	<x value=1/2 type=object_scale>
+	<y attach=bottom>
+</gui_object>
+
+//***************************************************
+//
 //   BOHR MODEL SIMULATION
 //
 //***************************************************

@@ -14,6 +14,7 @@
 	<choice name="home">Accueil</choice>
 	<sub_choice name="matter" displayer="La matière">
 		<choice name="matter_scale">Les échelles de matières</choice>
+		<choice name="matter_bohr_model">Le modèle de Bohr</choice>
 		<choice name="matter_bohr_model_simulation">Simuler le modèle de Bohr</choice>
 	</sub_choice>
 </gui_object>
