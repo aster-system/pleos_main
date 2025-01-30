@@ -105,7 +105,7 @@ namespace pleos {
         //******************
 
         // Function called after the XML loading
-        virtual void after_xml_loading(){scls::GUI_Page::after_xml_loading();hide_sub_pages(true);a_functions_redaction_elements_chosen.get()->unselected_objects_style().cursor = GLFW_ARROW_CURSOR;};
+        virtual void after_xml_loading();
         // Checks the events of functions
         void check_functions();
         // Checks the events of hiding functions page
@@ -157,6 +157,9 @@ namespace pleos {
         // GUI handling
         //
         //******************
+
+        // Returns navigation
+        inline scls::GUI_Text* hub_button() const {return a_hub_button.get();};
 
         // Returns pages
         inline scls::GUI_Text* functions_definitions_page() const {return a_functions_definitions_page.get();};
@@ -217,6 +220,7 @@ namespace pleos {
         } a_current_state;
 
         // Global navigation
+        std::shared_ptr<scls::GUI_Text> a_hub_button;
         std::shared_ptr<scls::GUI_Scroller_Choice> a_navigation;
 
         // Pages

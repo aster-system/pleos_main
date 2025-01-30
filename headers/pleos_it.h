@@ -80,6 +80,9 @@ namespace pleos {
         //
         //******************
 
+        // Returns navigation
+        inline scls::GUI_Text* hub_button() const {return a_hub_button.get();};
+
         // Returns pages
         inline scls::GUI_Object* data_structures_page() const {return a_data_structures_page.get();};
         inline scls::GUI_Object* data_structures_tree_page() const {return a_data_structures_tree_page.get();};
@@ -96,6 +99,7 @@ namespace pleos {
         } a_current_state;
 
         // Global navigation
+        std::shared_ptr<scls::GUI_Text> a_hub_button;
         std::shared_ptr<scls::GUI_Scroller_Choice> a_navigation;
 
         // Pages

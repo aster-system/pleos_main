@@ -43,6 +43,7 @@ namespace pleos {
         else if(object_name == "it_data_structures_tree_simulation_body"){a_data_structures_tree_simulation_page = *parent->new_object<scls::GUI_Text>(object_name);return a_data_structures_tree_simulation_page;}
 
         // Navigation
+        else if(object_name == "it_hub"){a_hub_button = *parent->new_object<scls::GUI_Text>(object_name);return a_hub_button;}
         else if(object_name == "it_navigation") {a_navigation = *parent->new_object<scls::GUI_Scroller_Choice>(object_name);return a_navigation;}
 
         return scls::GUI_Page::__create_loaded_object_from_type(object_name, object_type, parent);
@@ -58,6 +59,9 @@ namespace pleos {
             if(page == "data_structures_trees"){display_data_structures_trees_page();}
             else if(page == "data_structures_trees_graphic"){display_data_structures_trees_simulation_page();}
         }
+
+        // Check the hub button
+        if(hub_button()->is_clicked_during_this_frame(GLFW_MOUSE_BUTTON_LEFT)) {window_struct()->hide_all_pages_2d();window_struct()->display_page_2d("hub");}
     }
 
     // Update the events

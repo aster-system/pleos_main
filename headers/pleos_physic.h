@@ -107,6 +107,9 @@ namespace pleos {
         //
         //******************
 
+        // Navigation
+        inline scls::GUI_Text* hub_button() const {return a_hub_button.get();};
+
         // Returns pages
         inline scls::GUI_Text* matter_bohr_model_page() const {return a_physic_matter_bohr_model_body.get();};
         inline scls::GUI_Object* matter_bohr_model_simulation_page() const {return a_physic_matter_bohr_model_simulation_body.get();};
@@ -147,6 +150,7 @@ namespace pleos {
         std::shared_ptr<scls::GUI_Object> a_physic_matter_page;
 
         // Navigation
+        std::shared_ptr<scls::GUI_Text> a_hub_button;
         std::shared_ptr<scls::GUI_Scroller_Choice> a_navigation;
     };
 }
