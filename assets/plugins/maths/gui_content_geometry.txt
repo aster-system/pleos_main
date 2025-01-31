@@ -106,6 +106,7 @@
 	<sub_choice name="vector" displayer="Vecteurs">
 		<choice name="vector_angle">Angle</choice>
 		<choice name="vector_norm">Norme</choice>
+		<choice name="vector_complex_number">Complexe number</choice>
 	</sub_choice>
 </gui_object>
 <gui_object name="maths_geometry_redaction_elements_creation" type="scroller_choice">

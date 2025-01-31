@@ -32,3 +32,34 @@
 	<x value=1/2 type=object_scale>
 	<y attach=bottom>
 </gui_object>
+
+//***************************************************
+// Calculator
+//***************************************************
+
+<gui_object name="maths_arithmetic_calculator_body" type="object" sub_page>
+	<height value=7/8 type=scale>
+	<parent name="maths_arithmetic_page">
+    <width value=9/10 type=scale>
+	<x value=1/2 type=object_scale>
+	<y attach=bottom>
+</gui_object>
+// Redaction part
+<gui_object name="maths_arithmetic_calculator_redaction" type="text">
+	<border bottom=1 left=1 right=1 top=1>
+	<content max_width=0>Pas de rédaction à afficher</content>
+	<height value=1/2 type=scale>
+	<parent name="maths_arithmetic_calculator_body">
+	//<texture alignment_vertical=top>
+	<width value=4/5 type=scale>
+	<x attach=right>
+	<y attach=top>
+</gui_object>
+<gui_object name="maths_arithmetic_calculator_input" type="text_input">
+	<border bottom=1 left=1 right=1 top=1>
+	<height value=1/10 type=scale>
+	<parent name="maths_arithmetic_calculator_body">
+	<width value=4/5 type=scale>
+	<x attach=right>
+	<y attach=bottom attached_object=maths_arithmetic_calculator_redaction>
+</gui_object>

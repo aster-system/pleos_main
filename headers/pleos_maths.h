@@ -35,12 +35,15 @@
 
 // Possible pages
 #define PLEOS_MATHS_HOME_PAGE 0
+// Arithmetic pages
+#define PLEOS_MATHS_ARITHMETIC_PAGE 200
+#define PLEOS_MATHS_ARITHMETIC_CALCULATOR_PAGE 250
 // Functions pages
-#define PLEOS_MATHS_FUNCTIONS_PAGE 100
-#define PLEOS_MATHS_FUNCTIONS_REDACTION_PAGE 101
+#define PLEOS_MATHS_FUNCTIONS_PAGE 300
+#define PLEOS_MATHS_FUNCTIONS_REDACTION_PAGE 301
 // Geometry pages
-#define PLEOS_MATHS_GEOMETRY_PAGE 100
-#define PLEOS_MATHS_GEOMETRY_REDACTION_PAGE 101
+#define PLEOS_MATHS_GEOMETRY_PAGE 400
+#define PLEOS_MATHS_GEOMETRY_REDACTION_PAGE 401
 
 // The namespace "pleos" is used to simplify the all.
 namespace pleos {
@@ -106,6 +109,8 @@ namespace pleos {
 
         // Function called after the XML loading
         virtual void after_xml_loading();
+        // Checks the events of arithmetic
+        void check_arithmetic();
         // Checks the events of functions
         void check_functions();
         // Checks the events of hiding functions page
@@ -129,6 +134,7 @@ namespace pleos {
 
         // Displays the arithmetic page
         void display_arithmetic_page(){hide_all();arithmetic_page()->set_visible(true);};
+        void display_arithmetic_calculator_page(){set_current_page(PLEOS_MATHS_ARITHMETIC_CALCULATOR_PAGE);display_arithmetic_page();arithmetic_calculator_page()->set_visible(true);}
         void display_arithmetic_definitions_page(){display_arithmetic_page();arithmetic_definitions_page()->set_visible(true);}
         // Displays the functions page
         void display_functions_page(){hide_all();functions_page()->set_visible(true);};
@@ -172,6 +178,9 @@ namespace pleos {
         // Returns arithmetic
         inline scls::GUI_Object* arithmetic_page() const {return a_arithmetic_page.get();};
         inline scls::GUI_Text* arithmetic_definitions_page() const {return a_arithmetic_definitions_page.get();};
+        inline scls::GUI_Text_Input* arithmetic_calculator_input() const {return a_arithmetic_calculator_input.get();};
+        inline scls::GUI_Text* arithmetic_calculator_page() const {return a_arithmetic_calculator_page.get();};
+        inline scls::GUI_Text* arithmetic_calculator_redaction() const {return a_arithmetic_calculator_redaction.get();};
 
         //  Returns functions
         inline scls::GUI_Text* functions_redaction() const {return a_functions_redaction.get();};
@@ -230,6 +239,9 @@ namespace pleos {
 
         // Arithmetic page
         std::shared_ptr<scls::GUI_Text> a_arithmetic_definitions_page;
+        std::shared_ptr<scls::GUI_Text_Input> a_arithmetic_calculator_input;
+        std::shared_ptr<scls::GUI_Text> a_arithmetic_calculator_page;
+        std::shared_ptr<scls::GUI_Text> a_arithmetic_calculator_redaction;
 
         // Functions page
         std::shared_ptr<scls::GUI_Text> a_functions_definitions_page;

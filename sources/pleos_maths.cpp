@@ -37,6 +37,9 @@ namespace pleos {
     std::shared_ptr<scls::GUI_Object> Maths_Page::__create_loaded_object_from_type(std::string object_name, std::string object_type, scls::GUI_Object* parent) {
         // Arithmetic
         if(object_name == "maths_arithmetic_definitions_body") {a_arithmetic_definitions_page = *parent->new_object<scls::GUI_Text>(object_name);return a_arithmetic_definitions_page;}
+        else if(object_name == "maths_arithmetic_calculator_body"){a_arithmetic_calculator_page = *parent->new_object<scls::GUI_Text>(object_name);return a_arithmetic_calculator_page;}
+        else if(object_name == "maths_arithmetic_calculator_input"){a_arithmetic_calculator_input = *parent->new_object<scls::GUI_Text_Input>(object_name);return a_arithmetic_calculator_input;}
+        else if(object_name == "maths_arithmetic_calculator_redaction"){a_arithmetic_calculator_redaction = *parent->new_object<scls::GUI_Text>(object_name);return a_arithmetic_calculator_redaction;}
 
         // Functions
         else if(object_name == "maths_functions_definitions_body") {a_functions_definitions_page = *parent->new_object<scls::GUI_Text>(object_name);return a_functions_definitions_page;}
@@ -85,7 +88,11 @@ namespace pleos {
         std::string final_choice = current_choice;
         if(current_choice == "vector"){
             final_choice += std::string("-") + std::to_string(geometry_redaction_elements_chosen()->count_object_similar("vector", "-"));
-        } else if(current_choice == "vector_angle"){
+        }
+        else if(current_choice == "vector_complex_number"){
+            final_choice += std::string("-") + std::to_string(geometry_redaction_elements_chosen()->count_object_similar("vector_complex_number", "-"));
+        }
+        else if(current_choice == "vector_angle"){
             final_choice += std::string("-") + std::to_string(geometry_redaction_elements_chosen()->count_object_similar("vector_angle", "-"));
         }
 
@@ -100,6 +107,10 @@ namespace pleos {
             if(current_choice == "vector_angle"){
                 needed_height = 90;
                 needed_title = std::string("Angle");
+            }
+            if(current_choice == "vector_complex_number"){
+                needed_height = 60;
+                needed_title = std::string("Nombre complexe");
             } else if(current_choice == "vector_norm"){
                 needed_height = 60;
                 needed_title = std::string("Norme");
@@ -119,7 +130,24 @@ namespace pleos {
             title.get()->set_text(needed_title);
 
             // Finalise the creation
-            if(current_choice == "vector_norm"){
+            if(current_choice == "vector_complex_number"){
+                // Create the title of the name of the needed vector
+                std::shared_ptr<scls::GUI_Text> name_title = *object->get()->new_object<scls::GUI_Text>(final_choice + "_title_name");
+                name_title.get()->attach_bottom_of_object_in_parent(title);
+                name_title.get()->set_height_in_pixel(30);
+                name_title.get()->set_width_in_scale(scls::Fraction(1, 2));
+                name_title.get()->set_x_in_object_scale(scls::Fraction(1, 4));
+                name_title.get()->set_text(std::string("Objet :"));
+
+                // Create the name of the needed vector
+                std::shared_ptr<scls::GUI_Text_Input> name_input = *object->get()->new_object<scls::GUI_Text_Input>(final_choice + "_name");
+                name_input.get()->attach_bottom_of_object_in_parent(title);
+                name_input.get()->set_border_width_in_pixel(1);
+                name_input.get()->set_height_in_pixel(30);
+                name_input.get()->set_width_in_scale(scls::Fraction(1, 5));
+                name_input.get()->set_x_in_object_scale(scls::Fraction(3, 4));
+            }
+            else if(current_choice == "vector_norm"){
                 // Create the title of the name of the needed vector
                 std::shared_ptr<scls::GUI_Text> name_title = *object->get()->new_object<scls::GUI_Text>(final_choice + "_title_name");
                 name_title.get()->attach_bottom_of_object_in_parent(title);
@@ -136,8 +164,7 @@ namespace pleos {
                 name_input.get()->set_width_in_scale(scls::Fraction(1, 5));
                 name_input.get()->set_x_in_object_scale(scls::Fraction(3, 4));
             }
-            else // Finalise the creation
-            if(current_choice == "vector_angle"){
+            else if(current_choice == "vector_angle"){
                 // Create the title of the name of the needed vector
                 std::shared_ptr<scls::GUI_Text> name_title = *object->get()->new_object<scls::GUI_Text>(final_choice + "_title_name");
                 name_title.get()->attach_bottom_of_object_in_parent(title);
@@ -302,6 +329,11 @@ namespace pleos {
                 std::shared_ptr<Vector> needed_vector = geometry_vector_created(needed_vector_name);
                 if(needed_vector.get() != 0){needed_vector.get()->norm(&redaction);}
             }
+            else if(type == "vector_complex_number") {
+                std::string needed_vector_name = reinterpret_cast<scls::GUI_Text_Input*>(objects[i].object()->child_by_name(objects[i].object()->name() + "_name"))->text();
+                std::shared_ptr<Vector> needed_vector = geometry_vector_created(needed_vector_name);
+                if(needed_vector.get() != 0){needed_vector.get()->complex_number(&redaction);}
+            }
             else if(type == "vector_angle") {
                 std::string needed_vector_name = reinterpret_cast<scls::GUI_Text_Input*>(objects[i].object()->child_by_name(objects[i].object()->name() + "_name"))->text();
                 std::shared_ptr<Vector> needed_vector = geometry_vector_created(needed_vector_name);
@@ -329,6 +361,20 @@ namespace pleos {
         geometry_redaction_vector_name()->set_text(needed_vector.get()->name());
         geometry_redaction_vector_x()->set_text(needed_vector.get()->x()->to_std_string());
         geometry_redaction_vector_y()->set_text(needed_vector.get()->y()->to_std_string());
+    }
+
+    // Checks the events of arithmetic
+    void Maths_Page::check_arithmetic() {
+        if(window_struct()->key_pressed_during_this_frame("left control")) {
+            // Do the calculation in the calculator
+            std::string needed_text = arithmetic_calculator_input()->text();
+            scls::Formula needed_formula = scls::string_to_formula(needed_text);
+            std::string current_text = arithmetic_calculator_redaction()->text();
+            if(current_text.size() == 29 && current_text == std::string("Pas de rédaction à afficher")){current_text = std::string("");}
+            if(current_text != ""){current_text += std::string("</br>");}
+            current_text += needed_formula.to_std_string();
+            arithmetic_calculator_redaction()->set_text(current_text);
+        }
     }
 
     // Check the events of functions
@@ -476,6 +522,7 @@ namespace pleos {
 
             // Arithmetic pages
             if(page == "arithmetic_definitions"){display_arithmetic_definitions_page();}
+            else if(page == "arithmetic_calculator"){display_arithmetic_calculator_page();}
             // Functions pages
             else if(page == "functions_definitions"){display_functions_definitions_page();}
             else if(page == "functions_forms"){display_functions_forms_page();}
@@ -499,8 +546,8 @@ namespace pleos {
         check_navigation();
 
         // Check the good page
-        if(current_page() == PLEOS_MATHS_FUNCTIONS_REDACTION_PAGE){check_functions();}
-        // Check the good page
-        if(current_page() == PLEOS_MATHS_GEOMETRY_REDACTION_PAGE){check_geometry();}
+        if(current_page() == PLEOS_MATHS_ARITHMETIC_CALCULATOR_PAGE){check_arithmetic();}
+        else if(current_page() == PLEOS_MATHS_FUNCTIONS_REDACTION_PAGE){check_functions();}
+        else if(current_page() == PLEOS_MATHS_GEOMETRY_REDACTION_PAGE){check_geometry();}
     }
 }
