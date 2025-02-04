@@ -1,0 +1,70 @@
+<p>
+Les matrices représentent un moyen d'effectuer des opérations sur plusieurs nombres en même temps.
+Elles sont beaucoup utilisées en algèbres linéaires.
+Une matrice représentent un ensemble structuré de plusieurs nombres, représentable comme une sorte de tableau.
+Elle est définie par le nombre de dimension qu'elle contient, ainsi que la taille de chacune de ses dimensions.
+Ici, une dimension représente une "colonne dans l'espace" de nombres, similaire à la notion de dimensions en géometrie.
+Donc, une matrice à deux dimensions représente un tableau de nombres.
+Les plus utilisées sont les matrices à deux dimensions.
+</p>
+<math>
+<mmat x=5 y=2>
+<mmat><mi>4</mi><mi>-8</mi><mi>-2</mi></mmat>
+<mmat><mi>-5</mi><mi>3</mi><mi>8</mi></mmat>
+</mmat>
+</math>
+<p>
+L'algèbre des matrices forment une extension de l'algèbre de l'objet qu'elles couvrent.
+Si l'objet couvert le permet, la structure algébrique des matrices est un groupe abélien (ou groupe commutatif).
+En d'autres termes, il existe une opération (loi de composition interne) représentant une addition de matrices.
+Cette même opération contient un élément nul (qui ne modifiera pas le calcul) : la matrice nulle (une matrice remplie de l'élément nul de l'algèbre de l'objet contenu dans la matrice).
+Bien évidemment, il est possible de définir pleins d'autres opérations (lois de composition externe) grâce à ces vecteurs.
+Par exemple, il est possible de multiplier une matrice par un objet, si cet objet est multipliable avec les objets contenus dans la matrice.
+Il est aussi possible de multiplier deux matrices entre elles, dans ce que l'on appelle le produit matriciel.
+</p>
+<math>
+
+<mmat x=2 y=2>
+<mmat><mi>4</mi><mi>-8</mi></mmat>
+<mmat><mi>-5</mi><mi>3</mi></mmat>
+</mmat>
+
+<mo>+</mo>
+
+<mmat x=2 y=2>
+<mmat><mi>2</mi><mi>3</mi></mmat>
+<mmat><mi>-1</mi><mi>4</mi></mmat>
+</mmat>
+
+<mo>=</mo>
+
+<mmat x=2 y=2>
+<mmat><mi>6</mi><mi>-5</mi></mmat>
+<mmat><mi>-6</mi><mi>7</mi></mmat>
+</mmat>
+
+<mi>,</mi>
+
+<mi>3</mi>
+<mo>*</mo>
+
+<mmat x=2 y=2>
+<mmat><mi>2</mi><mi>3</mi></mmat>
+<mmat><mi>-1</mi><mi>4</mi></mmat>
+</mmat>
+
+<mo>=</mo>
+
+<mmat x=2 y=2>
+<mmat><mi>6</mi><mi>9</mi></mmat>
+<mmat><mi>-3</mi><mi>12</mi></mmat>
+</mmat>
+
+</math>
+<p>
+Les matrices ont beaucoup d'utilités en mathématiques.
+Elles permettent de définir des vecteurs (avec des matrices à 1 dimension, de la même taille que le nombre de dimension de l'espace vectoriel).
+Il est possible de définir plusieurs types de matrices permettant d'effectuer des opérations facilement sur ces vecteurs, comme des applications linéaires.
+Un exemple assez simple représente les matrices rotations, permettant d'effectuer une rotation sur un vecteur.
+Elles permettent aussi de résoudre plusieurs types d'équations linéaires.
+</p>

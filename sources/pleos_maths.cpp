@@ -35,8 +35,12 @@ namespace pleos {
 
     // Loads an object in a page from XML
     std::shared_ptr<scls::GUI_Object> Maths_Page::__create_loaded_object_from_type(std::string object_name, std::string object_type, scls::GUI_Object* parent) {
+        // Algebra
+        if(object_name == "maths_algebra_definitions_body") {a_algebra_definitions_page = *parent->new_object<scls::GUI_Text>(object_name);return a_algebra_definitions_page;}
+        else if(object_name == "maths_algebra_matrices_body") {a_algebra_matrices_page = *parent->new_object<scls::GUI_Text>(object_name);return a_algebra_matrices_page;}
+
         // Arithmetic
-        if(object_name == "maths_arithmetic_definitions_body") {a_arithmetic_definitions_page = *parent->new_object<scls::GUI_Text>(object_name);return a_arithmetic_definitions_page;}
+        else if(object_name == "maths_arithmetic_definitions_body") {a_arithmetic_definitions_page = *parent->new_object<scls::GUI_Text>(object_name);return a_arithmetic_definitions_page;}
         else if(object_name == "maths_arithmetic_calculator_body"){a_arithmetic_calculator_page = *parent->new_object<scls::GUI_Text>(object_name);return a_arithmetic_calculator_page;}
         else if(object_name == "maths_arithmetic_calculator_input"){a_arithmetic_calculator_input = *parent->new_object<scls::GUI_Text_Input>(object_name);return a_arithmetic_calculator_input;}
         else if(object_name == "maths_arithmetic_calculator_redaction"){a_arithmetic_calculator_redaction = *parent->new_object<scls::GUI_Text>(object_name);return a_arithmetic_calculator_redaction;}
@@ -71,6 +75,7 @@ namespace pleos {
         else if(object_name == "maths_geometry_vector_body"){a_geometry_vector_page = *parent->new_object<scls::GUI_Text>(object_name);return a_geometry_vector_page;}
 
         // Pages
+        else if(object_name == "maths_algebra_page"){a_algebra_page = *parent->new_object<scls::GUI_Object>(object_name);return a_algebra_page;}
         else if(object_name == "maths_arithmetic_page"){a_arithmetic_page = *parent->new_object<scls::GUI_Object>(object_name);return a_arithmetic_page;}
         else if(object_name == "maths_functions_page") {a_functions_page = *parent->new_object<scls::GUI_Object>(object_name);return a_functions_page;}
         else if(object_name == "maths_geometry_page"){a_geometry_page = *parent->new_object<scls::GUI_Object>(object_name);return a_geometry_page;}
@@ -520,8 +525,11 @@ namespace pleos {
         if(a_navigation.get()->selection_modified()){
             std::string page = a_navigation.get()->currently_selected_objects_during_this_frame()[0].name();
 
+            // Algebra pages
+            if(page == "algebra_definitions"){display_algebra_definition_page();}
+            else if(page == "algebra_matrices"){display_algebra_matrices_page();}
             // Arithmetic pages
-            if(page == "arithmetic_definitions"){display_arithmetic_definitions_page();}
+            else if(page == "arithmetic_definitions"){display_arithmetic_definitions_page();}
             else if(page == "arithmetic_calculator"){display_arithmetic_calculator_page();}
             // Functions pages
             else if(page == "functions_definitions"){display_functions_definitions_page();}

@@ -1,0 +1,49 @@
+//***************************************************
+//
+//   HOME
+//
+//***************************************************
+
+<gui_object name="maths_algebra_page" type="body" sub_page>
+	<border bottom=1 left=1 right=1 top=1>
+	<height value=1 type=scale>
+	<width value=4/5 type=scale>
+	<x attach=right>
+	<y attach=top>
+</gui_object>
+<gui_object name="maths_algebra_title" type="text">
+    <content font_size=80>L'algèbre</content>
+	<height value=1/8 type=scale>
+    <parent name="maths_algebra_page">
+	<width value=1 type=scale>
+	<x value=1/2 type=object_scale>
+	<y attach=top>
+</gui_object>
+
+//***************************************************
+// Definitions
+//***************************************************
+
+<gui_object name="maths_algebra_definitions_body" type="text" sub_page>
+    <content max_width=0 src="algebra/algebra_definition.txt"></content>
+	<height value=7/8 type=scale>
+	<parent name="maths_algebra_page">
+	<texture alignment_horizontal=left alignment_vertical=top>
+    <width value=9/10 type=scale>
+	<x value=1/2 type=object_scale>
+	<y attach=bottom>
+</gui_object>
+
+//***************************************************
+// Matrices
+//***************************************************
+
+<gui_object name="maths_algebra_matrices_body" type="text" sub_page>
+    <content max_width=0 src="algebra/algebra_matrices.txt"></content>
+	<height value=7/8 type=scale>
+	<parent name="maths_algebra_page">
+	<texture alignment_horizontal=left alignment_vertical=top>
+    <width value=9/10 type=scale>
+	<x value=1/2 type=object_scale>
+	<y attach=bottom>
+</gui_object>

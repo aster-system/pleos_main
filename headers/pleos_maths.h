@@ -132,6 +132,10 @@ namespace pleos {
         //
         //******************
 
+        // Displays the algebra page
+        void display_algebra_page(){hide_all();algebra_page()->set_visible(true);};
+        void display_algebra_definition_page(){display_algebra_page();algebra_definitions_page()->set_visible(true);};
+        void display_algebra_matrices_page(){display_algebra_page();algebra_matrices_page()->set_visible(true);};
         // Displays the arithmetic page
         void display_arithmetic_page(){hide_all();arithmetic_page()->set_visible(true);};
         void display_arithmetic_calculator_page(){set_current_page(PLEOS_MATHS_ARITHMETIC_CALCULATOR_PAGE);display_arithmetic_page();arithmetic_calculator_page()->set_visible(true);}
@@ -174,6 +178,11 @@ namespace pleos {
         inline scls::GUI_Object* functions_redaction_page() const {return a_functions_redaction_page.get();};
         inline scls::GUI_Object* geometry_page() const {return a_geometry_page.get();};
         inline scls::GUI_Scroller_Choice* navigation() const {return a_navigation.get();};
+
+        // Returns algebra
+        inline scls::GUI_Object* algebra_page() const {return a_algebra_page.get();};
+        inline scls::GUI_Text* algebra_definitions_page() const {return a_algebra_definitions_page.get();};
+        inline scls::GUI_Text* algebra_matrices_page() const {return a_algebra_matrices_page.get();};
 
         // Returns arithmetic
         inline scls::GUI_Object* arithmetic_page() const {return a_arithmetic_page.get();};
@@ -233,9 +242,14 @@ namespace pleos {
         std::shared_ptr<scls::GUI_Scroller_Choice> a_navigation;
 
         // Pages
+        std::shared_ptr<scls::GUI_Object> a_algebra_page;
         std::shared_ptr<scls::GUI_Object> a_arithmetic_page;
         std::shared_ptr<scls::GUI_Object> a_functions_page;
         std::shared_ptr<scls::GUI_Object> a_geometry_page;
+
+        // Algebra page
+        std::shared_ptr<scls::GUI_Text> a_algebra_definitions_page;
+        std::shared_ptr<scls::GUI_Text> a_algebra_matrices_page;
 
         // Arithmetic page
         std::shared_ptr<scls::GUI_Text> a_arithmetic_definitions_page;
