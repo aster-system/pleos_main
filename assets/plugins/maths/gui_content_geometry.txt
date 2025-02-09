@@ -4,7 +4,7 @@
 //
 //***************************************************
 
-<gui_object name="maths_geometry_page" type="body" sub_page>
+<gui_object name="maths_geometry_page" type="body" sub_page no_load>
 	<border bottom=1 left=1 right=1 top=1>
 	<height value=1 type=scale>
 	<width value=4/5 type=scale>
@@ -12,7 +12,7 @@
 	<y attach=top>
 </gui_object>
 <gui_object name="maths_geometry_title" type="text">
-    <content font_size=80>La géometrie</content>
+    <content font_size=80 alignment_horizontal=center>La géometrie</content>
 	<height value=1/8 type=scale>
     <parent name="maths_geometry_page">
 	<width value=1 type=scale>
@@ -25,9 +25,10 @@
 //***************************************************
 
 <gui_object name="maths_geometry_definitions_body" type="text" sub_page>
-    <content max_width=0>A</content>
+    <content max_width=0 src="geometry/geometry_definitions.txt"></content>
 	<height value=7/8 type=scale>
 	<parent name="maths_geometry_page">
+	<texture alignment_horizontal=left alignment_vertical=top>
     <width value=9/10 type=scale>
 	<x value=1/2 type=object_scale>
 	<y attach=bottom>
@@ -54,6 +55,7 @@
 	<content max_width=0 src="geometry/geometry_vector.txt"></content>
 	<height value=7/8 type=scale>
 	<parent name="maths_geometry_page">
+	<texture alignment_horizontal=left alignment_vertical=top>
     <width value=1 type=scale>
 	<x value=1/2 type=object_scale>
 	<y attach=bottom>
@@ -153,7 +155,7 @@
 	<parent name="maths_geometry_redaction_body">
 	<width value=2/5 type=scale>
 	<x attach=right>
-	<y attach=bottom attached_object=maths_functions_redaction>
+	<y attach=bottom attached_object=maths_geometry_redaction>
 </gui_object>
 
 // Vector

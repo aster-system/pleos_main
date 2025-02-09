@@ -4,7 +4,7 @@
 //
 //***************************************************
 
-<gui_object name="maths_arithmetic_page" type="body" sub_page>
+<gui_object name="maths_arithmetic_page" type="body" sub_page no_load>
 	<border bottom=1 left=1 right=1 top=1>
 	<height value=1 type=scale>
 	<width value=4/5 type=scale>
@@ -12,7 +12,7 @@
 	<y attach=top>
 </gui_object>
 <gui_object name="maths_arithmetic_title" type="text">
-    <content font_size=80>L'arithmétique</content>
+    <content font_size=80 alignment_horizontal=center>L'arithmétique</content>
 	<height value=1/8 type=scale>
     <parent name="maths_arithmetic_page">
 	<width value=1 type=scale>

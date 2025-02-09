@@ -12,7 +12,7 @@
 	<y attach=top>
 </gui_object>
 <gui_object name="hub_title" type="text">
-    <content font_size=80>PLEOS</content>
+    <content font_size=80 alignment_horizontal=center>PLEOS</content>
 	<height value=80 type=pixel>
     <parent name="hub_page">
 	<width value=1 type=scale>
@@ -24,7 +24,7 @@
 
 <gui_object name="hub_navigation_maths_button" type="text">
     <border bottom=1 left=1 right=1 top=1>
-    <content font_size=60>Mathématiques et logique</content>
+    <content font_size=60 alignment_horizontal=center>Mathématiques et logique</content>
 	<height value=1/6 type=scale>
     <parent name="hub_page">
 	<width value=1/4 type=scale>
@@ -37,7 +37,7 @@
 </gui_object>
 <gui_object name="hub_navigation_physic_button" type="text">
     <border bottom=1 left=1 right=1 top=1>
-    <content font_size=60>Physique</content>
+    <content font_size=60 alignment_horizontal=center>Physique</content>
 	<height value=1/6 type=scale>
     <parent name="hub_page">
 	<width value=1/4 type=scale>
@@ -50,7 +50,7 @@
 </gui_object>
 <gui_object name="hub_navigation_it_button" type="text">
     <border bottom=1 left=1 right=1 top=1>
-    <content font_size=60>Informatique</content>
+    <content font_size=60 alignment_horizontal=center>Informatique</content>
 	<height value=1/6 type=scale>
     <parent name="hub_page">
 	<width value=1/4 type=scale>

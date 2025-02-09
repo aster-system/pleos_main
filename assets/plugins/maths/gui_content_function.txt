@@ -4,7 +4,7 @@
 //
 //***************************************************
 
-<gui_object name="maths_functions_page" type="body" sub_page>
+<gui_object name="maths_functions_page" type="body" sub_page no_load>
 	<border bottom=1 left=1 right=1 top=1>
 	<height value=1 type=scale>
 	<width value=4/5 type=scale>
@@ -12,7 +12,7 @@
 	<y attach=top>
 </gui_object>
 <gui_object name="maths_functions_title" type="text">
-    <content font_size=80>Les fonctions</content>
+    <content font_size=80 alignment_horizontal=center>Les fonctions</content>
 	<height value=1/8 type=scale>
     <parent name="maths_functions_page">
 	<width value=1 type=scale>
@@ -93,6 +93,7 @@
 
 	<choice name="image">Image</choice>
 	<choice name="definition_set">Ensemble de définition</choice>
+	<choice name="roots">Racines</choice>
 </gui_object>
 <gui_object name="maths_functions_redaction_elements_creation" type="scroller_choice">
 	<border bottom=1 left=1 right=1 top=1>
@@ -123,7 +124,7 @@
 	<y attach=bottom>
 </gui_object>
 <gui_object name="maths_functions_redaction_elements_chosen_title" type="text">
-	<content font_size=40>Éléments à analyser</content>
+	<content font_size=40 alignment_horizontal=center>Éléments à analyser</content>
 	<height value=1/14 type=scale>
 	<parent name="maths_functions_redaction_body">
 	<width value=2/5 type=scale>
@@ -134,20 +135,36 @@
 // Function to analyse
 
 <gui_object name="maths_functions_redaction_title" type="text">
-	<content font_size=40>Fonctions à analyser</content>
+	<content font_size=40 alignment_horizontal=center>Fonctions à analyser</content>
 	<height value=1/14 type=scale>
 	<parent name="maths_functions_redaction_body">
 	<width value=2/5 type=scale>
 	<x attach=right>
 	<y attach=bottom attached_object=maths_functions_redaction>
 </gui_object>
+<gui_object name="maths_functions_redaction_name_title" type="text">
+	<content font_size=30 alignment_horizontal=center>Nom de la fonction</content>
+	<height value=40 type=pixel>
+	<parent name="maths_functions_redaction_body">
+	<width value=1/10 type=scale>
+	<x value=7/10 type=object_scale>
+	<y attach=bottom attached_object=maths_functions_redaction_title>
+</gui_object>
+<gui_object name="maths_functions_redaction_name" type="text_input">
+	<border bottom=1 left=1 right=1 top=1>
+	<height value=40 type=pixel>
+	<parent name="maths_functions_redaction_body">
+	<width value=1/10 type=scale>
+	<x value=9/10 type=object_scale>
+	<y attach=bottom attached_object=maths_functions_redaction_title>
+</gui_object>
 <gui_object name="maths_functions_redaction_expression_title" type="text">
-	<content font_size=30>Expression de la fonction</content>
+	<content font_size=30 alignment_horizontal=center>Expression de la fonction</content>
 	<height value=1/14 type=scale>
 	<parent name="maths_functions_redaction_body">
 	<width value=2/5 type=scale>
 	<x attach=right>
-	<y attach=bottom attached_object=maths_functions_redaction_title>
+	<y attach=bottom attached_object=maths_functions_redaction_name_title>
 </gui_object>
 <gui_object name="maths_functions_redaction_expression" type="text_input">
 	<border bottom=1 left=1 right=1 top=1>
@@ -161,7 +178,7 @@
 // Analyse button
 <gui_object name="maths_functions_redaction_analyse" type="text">
 	<border bottom=1 left=1 right=1 top=1>
-	<content font_size=30>Analyser</content>
+	<content font_size=30 alignment_horizontal=center>Analyser</content>
 	<height value=30 type=pixel>
 	<parent name="maths_functions_redaction_body">
 	<width value=3/10 type=scale>

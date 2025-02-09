@@ -1,5 +1,8 @@
+<h1>Définitions des matrices</h1>
+<h2>Qu'est ce qu'est une matrice ?</h2>
+<h3>La définition précise</h3>
 <p>
-Les matrices représentent un moyen d'effectuer des opérations sur plusieurs nombres en même temps.
+<important>Les matrices représentent un moyen d'effectuer des opérations sur plusieurs nombres en même temps</important>.
 Elles sont beaucoup utilisées en algèbres linéaires.
 Une matrice représentent un ensemble structuré de plusieurs nombres, représentable comme une sorte de tableau.
 Elle est définie par le nombre de dimension qu'elle contient, ainsi que la taille de chacune de ses dimensions.
@@ -13,10 +16,11 @@ Les plus utilisées sont les matrices à deux dimensions.
 <mmat><mi>-5</mi><mi>3</mi><mi>8</mi></mmat>
 </mmat>
 </math>
+<h3>L'algèbre des matrices</h3>
 <p>
 L'algèbre des matrices forment une extension de l'algèbre de l'objet qu'elles couvrent.
 Si l'objet couvert le permet, la structure algébrique des matrices est un groupe abélien (ou groupe commutatif).
-En d'autres termes, il existe une opération (loi de composition interne) représentant une addition de matrices.
+<important>En d'autres termes, il existe une opération (loi de composition interne) représentant une addition de matrices</important>.
 Cette même opération contient un élément nul (qui ne modifiera pas le calcul) : la matrice nulle (une matrice remplie de l'élément nul de l'algèbre de l'objet contenu dans la matrice).
 Bien évidemment, il est possible de définir pleins d'autres opérations (lois de composition externe) grâce à ces vecteurs.
 Par exemple, il est possible de multiplier une matrice par un objet, si cet objet est multipliable avec les objets contenus dans la matrice.

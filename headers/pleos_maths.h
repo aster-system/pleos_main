@@ -144,13 +144,14 @@ namespace pleos {
         void display_functions_page(){hide_all();functions_page()->set_visible(true);};
         void display_functions_definitions_page(){display_functions_page();functions_definitions_page()->set_visible(true);};
         void display_functions_forms_page(){display_functions_page();functions_forms_page()->set_visible(true);};
-        void display_functions_redaction_page(bool reset){if(current_page()!=PLEOS_MATHS_FUNCTIONS_REDACTION_PAGE&&reset){functions_reset();}set_current_page(PLEOS_MATHS_FUNCTIONS_REDACTION_PAGE);display_functions_page();functions_redaction_page()->set_visible(true);functions_redaction()->set_visible(true);};
+        void display_functions_redaction_page(bool reset){unsigned short last_page=current_page();set_current_page(PLEOS_MATHS_FUNCTIONS_REDACTION_PAGE);display_functions_page();functions_redaction_page()->set_visible(true);functions_redaction()->set_visible(true);if(last_page!=PLEOS_MATHS_FUNCTIONS_REDACTION_PAGE&&reset){functions_reset();}};
         inline void display_functions_redaction_page(){display_functions_redaction_page(true);};
         void display_functions_redaction_graphic_page(bool reset){if(current_page()!=PLEOS_MATHS_FUNCTIONS_REDACTION_PAGE&&reset){functions_reset();}set_current_page(PLEOS_MATHS_FUNCTIONS_REDACTION_PAGE);display_functions_page();functions_redaction_page()->set_visible(true);functions_redaction_graphic()->set_visible(true);};
         inline void display_functions_redaction_graphic_page(){display_functions_redaction_graphic_page(true);};
         // Displays the geometry page
         void display_geometry_page(){hide_all();geometry_page()->set_visible(true);};
         void display_geometry_complex_numbers_page(){display_geometry_page();geometry_complex_numbers_page()->set_visible(true);};
+        void display_geometry_definitions_page(){display_geometry_page();geometry_definitions_page()->set_visible(true);};
         void display_geometry_redaction_graphic_page(){set_current_page(PLEOS_MATHS_GEOMETRY_REDACTION_PAGE);display_geometry_page();geometry_redaction_page()->set_visible(true);geometry_redaction_graphic()->set_visible(true);};
         void display_geometry_redaction_page(){set_current_page(PLEOS_MATHS_GEOMETRY_REDACTION_PAGE);display_geometry_page();geometry_redaction_page()->set_visible(true);geometry_redaction()->set_visible(true);};
         void display_geometry_vector_page(){display_geometry_page();geometry_vector_page()->set_visible(true);};
@@ -200,9 +201,11 @@ namespace pleos {
         inline scls::GUI_Scroller_Choice* functions_redaction_elements_creation() const {return a_functions_redaction_elements_creation.get();};
         inline scls::GUI_Text_Input* functions_redaction_expression() const {return a_functions_redaction_expression.get();};
         inline pleos::Graphic* functions_redaction_graphic() const {return a_functions_redaction_graphic.get();};
+        inline scls::GUI_Text_Input* functions_redaction_name() const {return a_functions_redaction_name.get();};
 
         // Returns geometry
         inline scls::GUI_Object* geometry_complex_numbers_page() const {return a_geometry_complex_numbers_page.get();};
+        inline scls::GUI_Object* geometry_definitions_page() const {return a_geometry_definitions_body.get();};
         inline scls::GUI_Text* geometry_redaction() const {return a_geometry_redaction.get();};
         inline scls::GUI_Object* geometry_redaction_analyse() const {return a_geometry_redaction_analyse.get();};
         inline scls::GUI_Scroller_Choice* geometry_redaction_elements() const {return a_geometry_redaction_elements.get();};
@@ -269,6 +272,7 @@ namespace pleos {
         std::shared_ptr<scls::GUI_Scroller_Choice> a_functions_redaction_elements_creation;
         std::shared_ptr<scls::GUI_Text_Input> a_functions_redaction_expression;
         std::shared_ptr<Graphic> a_functions_redaction_graphic;
+        std::shared_ptr<scls::GUI_Text_Input> a_functions_redaction_name;
 
         // Geometry page
         std::shared_ptr<scls::GUI_Object> a_geometry_complex_numbers_page;
