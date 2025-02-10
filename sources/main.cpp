@@ -34,6 +34,11 @@
 SCLS_INIT
 
 int main(int argc, char* argv[]) {
+    /*pleos::Tree<std::string> tree;
+    tree.set_value("Formats");
+    tree.image().get()->save_png("tests/tree.png");
+    //*/
+
     pleos::Pleos_Window window(900, 600, argv[0]);
     window.load_from_xml("assets/window.txt");
 
