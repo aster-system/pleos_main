@@ -21,6 +21,19 @@
 </gui_object>
 
 //***************************************************
+// Explainations
+//***************************************************
+
+<gui_object name="maths_geometry_explainations_body" type="text" sub_page>
+	<height value=7/8 type=scale>
+	<parent name="maths_geometry_page">
+	<texture alignment_horizontal=left alignment_vertical=top>
+    <width value=9/10 type=scale>
+	<x value=1/2 type=object_scale>
+	<y attach=bottom>
+</gui_object>
+
+//***************************************************
 // Definitions
 //***************************************************
 
@@ -42,7 +55,7 @@
 	<content max_width=0 src="geometry/geometry_complex_numbers.txt"></content>
 	<height value=7/8 type=scale>
 	<parent name="maths_geometry_page">
-    <width value=1 type=scale>
+    <width value=9/10 type=scale>
 	<x value=1/2 type=object_scale>
 	<y attach=bottom>
 </gui_object>
@@ -56,7 +69,7 @@
 	<height value=7/8 type=scale>
 	<parent name="maths_geometry_page">
 	<texture alignment_horizontal=left alignment_vertical=top>
-    <width value=1 type=scale>
+    <width value=9/10 type=scale>
 	<x value=1/2 type=object_scale>
 	<y attach=bottom>
 </gui_object>
@@ -120,6 +133,8 @@
 	<y attach=bottom>
 
 	<choice name="vector">Vecteur</choice>
+	<choice name="point">Point</choice>
+	<choice name="form">Forme</choice>
 </gui_object>
 <gui_object name="maths_geometry_redaction_elements_chosen_title" type="text">
 	<content font_size=40>Éléments à analyser</content>
@@ -150,68 +165,17 @@
 
 // Object to analyse
 <gui_object name="maths_geometry_redaction_title" type="text">
-	<content font_size=40>Objets à analyser</content>
+	<content font_size=40 alignment_horizontal=center>Objets à analyser</content>
 	<height value=1/14 type=scale>
 	<parent name="maths_geometry_redaction_body">
 	<width value=2/5 type=scale>
 	<x attach=right>
 	<y attach=bottom attached_object=maths_geometry_redaction>
 </gui_object>
-
-// Vector
-<gui_object name="maths_geometry_redaction_vector_name_title" type="text">
-	<content font_size=30>Nom du vecteur :</content>
-	<height value=30 type=pixel>
-	<parent name="maths_geometry_redaction_body">
-	<width value=1/5 type=scale>
-	<x value=7/10 type=object_scale>
-	<y attach=bottom attached_object=maths_geometry_redaction_title>
-</gui_object>
-<gui_object name="maths_geometry_redaction_vector_name" type="text_input">
-	<border bottom=1 left=1 right=1 top=1>
-	<height value=30 type=pixel>
-	<parent name="maths_geometry_redaction_body">
-	<width value=1/10 type=scale>
-	<x value=9/10 type=object_scale>
-	<y attach=bottom attached_object=maths_geometry_redaction_title>
-</gui_object>
-<gui_object name="maths_geometry_redaction_vector_x_title" type="text">
-	<content font_size=30>Avec x = </content>
-	<height value=30 type=pixel>
-	<parent name="maths_geometry_redaction_body">
-	<width value=1/5 type=scale>
-	<x value=7/10 type=object_scale>
-	<y attach=bottom attached_object=maths_geometry_redaction_vector_name_title>
-</gui_object>
-<gui_object name="maths_geometry_redaction_vector_x" type="text_input">
-	<border bottom=1 left=1 right=1 top=1>
-	<height value=30 type=pixel>
-	<parent name="maths_geometry_redaction_body">
-	<width value=1/10 type=scale>
-	<x value=9/10 type=object_scale>
-	<y attach=bottom attached_object=maths_geometry_redaction_vector_name_title>
-</gui_object>
-<gui_object name="maths_geometry_redaction_vector_y_title" type="text">
-	<content font_size=30>Avec y = </content>
-	<height value=30 type=pixel>
-	<parent name="maths_geometry_redaction_body">
-	<width value=1/5 type=scale>
-	<x value=7/10 type=object_scale>
-	<y attach=bottom attached_object=maths_geometry_redaction_vector_x_title>
-</gui_object>
-<gui_object name="maths_geometry_redaction_vector_y" type="text_input">
-	<border bottom=1 left=1 right=1 top=1>
-	<height value=30 type=pixel>
-	<parent name="maths_geometry_redaction_body">
-	<width value=1/10 type=scale>
-	<x value=9/10 type=object_scale>
-	<y attach=bottom attached_object=maths_geometry_redaction_vector_x_title>
-</gui_object>
-
 // Analyse button
 <gui_object name="maths_geometry_redaction_analyse" type="text">
 	<border bottom=1 left=1 right=1 top=1>
-	<content font_size=30>Analyser</content>
+	<content font_size=30 alignment_horizontal=center>Analyser</content>
 	<height value=30 type=pixel>
 	<parent name="maths_geometry_redaction_body">
 	<width value=3/10 type=scale>
@@ -221,4 +185,102 @@
 	<when event="overflighted">
 		<cursor type="pointing_hand_cursor">
 	</when>
+</gui_object>
+
+// Form
+<gui_object name="maths_geometry_redaction_form" type="object" sub_page>
+	<height value=3/7 type=scale>
+	<parent name="maths_geometry_redaction_body">
+	<width value=2/5 type=scale>
+	<x attach=right attached_object=maths_geometry_redaction_elements_created>
+	<y attach=bottom attached_object=maths_geometry_redaction_title>
+</gui_object>
+<gui_object name="maths_geometry_redaction_form_name_title" type="text">
+	<content font_size=30>Nom de la forme :</content>
+	<height value=30 type=pixel>
+	<parent name="maths_geometry_redaction_form">
+	<width value=1/2 type=scale>
+	<x value=1/4 type=object_scale>
+	<y attach=top>
+</gui_object>
+<gui_object name="maths_geometry_redaction_form_name" type="text_input">
+	<border bottom=1 left=1 right=1 top=1>
+	<height value=30 type=pixel>
+	<parent name="maths_geometry_redaction_form">
+	<width value=1/2 type=scale>
+	<x value=3/4 type=object_scale>
+	<y attach=top>
+</gui_object>
+<gui_object name="maths_geometry_redaction_form_points_title" type="text">
+	<content font_size=30>Points (séparés par un ;) :</content>
+	<height value=30 type=pixel>
+	<parent name="maths_geometry_redaction_form">
+	<width value=1 type=scale>
+	<x value=1/2 type=object_scale>
+	<y attach=bottom attached_object=maths_geometry_redaction_form_name_title>
+</gui_object>
+<gui_object name="maths_geometry_redaction_form_points" type="text_input">
+	<border bottom=1 left=1 right=1 top=1>
+	<height value=30 type=pixel>
+	<parent name="maths_geometry_redaction_form">
+	<width value=1/2 type=scale>
+	<x value=1/2 type=object_scale>
+	<y attach=bottom attached_object=maths_geometry_redaction_form_points_title offset=10>
+</gui_object>
+
+// Vector
+<gui_object name="maths_geometry_redaction_vector" type="object" sub_page>
+	<height value=3/7 type=scale>
+	<parent name="maths_geometry_redaction_body">
+	<width value=2/5 type=scale>
+	<x attach=right attached_object=maths_geometry_redaction_elements_created>
+	<y attach=bottom attached_object=maths_geometry_redaction_title>
+</gui_object>
+<gui_object name="maths_geometry_redaction_vector_name_title" type="text">
+	<content font_size=30>Nom du vecteur :</content>
+	<height value=30 type=pixel>
+	<parent name="maths_geometry_redaction_vector">
+	<width value=1/2 type=scale>
+	<x value=1/4 type=object_scale>
+	<y attach=top>
+</gui_object>
+<gui_object name="maths_geometry_redaction_vector_name" type="text_input">
+	<border bottom=1 left=1 right=1 top=1>
+	<height value=30 type=pixel>
+	<parent name="maths_geometry_redaction_vector">
+	<width value=1/2 type=scale>
+	<x value=3/4 type=object_scale>
+	<y attach=top>
+</gui_object>
+<gui_object name="maths_geometry_redaction_vector_x_title" type="text">
+	<content font_size=30>Avec x = </content>
+	<height value=30 type=pixel>
+	<parent name="maths_geometry_redaction_vector">
+	<width value=1/2 type=scale>
+	<x value=1/4 type=object_scale>
+	<y attach=bottom attached_object=maths_geometry_redaction_vector_name_title>
+</gui_object>
+<gui_object name="maths_geometry_redaction_vector_x" type="text_input">
+	<border bottom=1 left=1 right=1 top=1>
+	<height value=30 type=pixel>
+	<parent name="maths_geometry_redaction_vector">
+	<width value=1/2 type=scale>
+	<x value=3/4 type=object_scale>
+	<y attach=bottom attached_object=maths_geometry_redaction_vector_name_title>
+</gui_object>
+<gui_object name="maths_geometry_redaction_vector_y_title" type="text">
+	<content font_size=30>Avec y = </content>
+	<height value=30 type=pixel>
+	<parent name="maths_geometry_redaction_vector">
+	<width value=1/2 type=scale>
+	<x value=1/4 type=object_scale>
+	<y attach=bottom attached_object=maths_geometry_redaction_vector_x_title>
+</gui_object>
+<gui_object name="maths_geometry_redaction_vector_y" type="text_input">
+	<border bottom=1 left=1 right=1 top=1>
+	<height value=30 type=pixel>
+	<parent name="maths_geometry_redaction_vector">
+	<width value=1/2 type=scale>
+	<x value=3/4 type=object_scale>
+	<y attach=bottom attached_object=maths_geometry_redaction_vector_x_title>
 </gui_object>

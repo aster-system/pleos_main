@@ -69,7 +69,11 @@ namespace pleos {
         else if(object_name == "maths_geometry_redaction_elements_chosen"){a_geometry_redaction_elements_chosen = *parent->new_object<scls::GUI_Scroller_Choice>(object_name);return a_geometry_redaction_elements_chosen;}
         else if(object_name == "maths_geometry_redaction_elements_created"){a_geometry_redaction_elements_created = *parent->new_object<scls::GUI_Scroller_Choice>(object_name);return a_geometry_redaction_elements_created;}
         else if(object_name == "maths_geometry_redaction_elements_creation"){a_geometry_redaction_elements_creation = *parent->new_object<scls::GUI_Scroller_Choice>(object_name);return a_geometry_redaction_elements_creation;}
+        else if(object_name == "maths_geometry_redaction_form"){a_geometry_redaction_form = *parent->new_object<scls::GUI_Object>(object_name);return a_geometry_redaction_form;}
+        else if(object_name == "maths_geometry_redaction_form_name"){a_geometry_redaction_form_name = *parent->new_object<scls::GUI_Text_Input>(object_name);return a_geometry_redaction_form_name;}
+        else if(object_name == "maths_geometry_redaction_form_points"){a_geometry_redaction_form_points = *parent->new_object<scls::GUI_Text_Input>(object_name);return a_geometry_redaction_form_points;}
         else if(object_name == "maths_geometry_redaction_graphic"){a_geometry_redaction_graphic = *parent->new_object<Graphic>(object_name);return a_geometry_redaction_graphic;}
+        else if(object_name == "maths_geometry_redaction_vector"){a_geometry_redaction_vector = *parent->new_object<scls::GUI_Object>(object_name);return a_geometry_redaction_vector;}
         else if(object_name == "maths_geometry_redaction_vector_name"){a_geometry_redaction_vector_name = *parent->new_object<scls::GUI_Text_Input>(object_name);return a_geometry_redaction_vector_name;}
         else if(object_name == "maths_geometry_redaction_vector_x"){a_geometry_redaction_vector_x = *parent->new_object<scls::GUI_Text_Input>(object_name);return a_geometry_redaction_vector_x;}
         else if(object_name == "maths_geometry_redaction_vector_y"){a_geometry_redaction_vector_y = *parent->new_object<scls::GUI_Text_Input>(object_name);return a_geometry_redaction_vector_y;}
@@ -211,18 +215,42 @@ namespace pleos {
         // Creation name
         std::string final_choice = current_choice;
         std::string needed_title = "";
+        int object_created = 0;
         if(current_choice == "vector"){
             final_choice += std::string("-") + std::to_string(geometry_redaction_elements_created()->count_object_similar("vector", "-"));
             needed_title = std::string("Vecteur");
+            object_created = PLEOS_MATHEMATICS_GEOMETRY_VECTOR;
 
             // Create the needed vector
             geometry_vectors_created().push_back(std::make_shared<pleos::Vector>("", 1, 1));
             geometry_select_vector(geometry_vectors_created()[geometry_vectors_created().size() - 1]);
         }
+        else if(current_choice == "form"){
+            final_choice += std::string("-") + std::to_string(geometry_redaction_elements_created()->count_object_similar("form", "-"));
+            needed_title = std::string("Forme");
+            object_created = PLEOS_MATHEMATICS_GEOMETRY_FORM;
+
+            // Create the needed form
+            geometry_form_2d_created().push_back(std::make_shared<pleos::Form_2D>(""));
+            geometry_select_form_2d(geometry_form_2d_created()[geometry_form_2d_created().size() - 1]);
+        }
+        else if(current_choice == "point"){
+            final_choice += std::string("-") + std::to_string(geometry_redaction_elements_created()->count_object_similar("point", "-"));
+            needed_title = std::string("Point");
+            object_created = PLEOS_MATHEMATICS_GEOMETRY_POINT;
+
+            // Create the needed vector
+            geometry_vectors_created().push_back(std::make_shared<pleos::Vector>("", 1, 1));
+            geometry_vectors_created()[geometry_vectors_created().size() - 1].get()->set_type(Vector_Type::VT_Point);
+            geometry_select_vector(geometry_vectors_created()[geometry_vectors_created().size() - 1]);
+        }
 
         // Get the good current choice
         std::shared_ptr<scls::GUI_Text>* object = geometry_redaction_elements_created()->add_object(final_choice, needed_title);
-        if(object != 0){currently_selected_vector()->set_connected_object(*object);}
+        if(object != 0){
+            if(object_created == PLEOS_MATHEMATICS_GEOMETRY_FORM){currently_selected_form_2d()->set_connected_object(*object);}
+            else if(object_created == PLEOS_MATHEMATICS_GEOMETRY_POINT || object_created == PLEOS_MATHEMATICS_GEOMETRY_VECTOR){currently_selected_vector()->set_connected_object(*object);}
+        }
     }
 
     // Function called after the XML loading
@@ -316,17 +344,109 @@ namespace pleos {
         functions_redaction_name()->set_text(needed_function.get()->function_name);
     }
 
+    // Shows a demonstration of the Pythagoras theorem
+    void Maths_Page::display_geometry_pythagorean_theorem_demonstration() {
+        // Set the good page
+        geometry_reset();
+        display_geometry_redaction_graphic_page();
+
+        // Create the main form
+        // First triangle
+        add_element_created("point");
+        currently_selected_vector()->set_name("A");
+        currently_selected_vector()->set_x(0);
+        currently_selected_vector()->set_y(1);
+        currently_selected_vector_shared_ptr().reset();
+        add_element_created("point");
+        currently_selected_vector()->set_name("B");
+        currently_selected_vector()->set_x(0);
+        currently_selected_vector()->set_y(0);
+        currently_selected_vector_shared_ptr().reset();
+        add_element_created("point");
+        currently_selected_vector()->set_name("C");
+        currently_selected_vector()->set_x(3);
+        currently_selected_vector()->set_y(0);
+        currently_selected_vector_shared_ptr().reset();
+        // Form
+        add_element_created("form");
+        currently_selected_form_2d()->set_name("ABC");
+        currently_selected_form_2d()->add_point(geometry_vector_created(std::string("A")));
+        currently_selected_form_2d()->add_point(geometry_vector_created(std::string("B")));
+        currently_selected_form_2d()->add_point(geometry_vector_created(std::string("C")));
+        currently_selected_form_2d_shared_ptr().reset(); currently_selected_vector_shared_ptr().reset();
+
+        // Create the others forms
+        // Second triangle
+        add_element_created("point");
+        currently_selected_vector()->set_name("D");
+        currently_selected_vector()->set_x(4);
+        currently_selected_vector()->set_y(0);
+        currently_selected_vector_shared_ptr().reset();
+        add_element_created("point");
+        currently_selected_vector()->set_name("E");
+        currently_selected_vector()->set_x(4);
+        currently_selected_vector()->set_y(3);
+        currently_selected_vector_shared_ptr().reset();
+        add_element_created("form");
+        currently_selected_form_2d()->set_name("CDE");
+        currently_selected_form_2d()->add_point(geometry_vector_created(std::string("C")));
+        currently_selected_form_2d()->add_point(geometry_vector_created(std::string("D")));
+        currently_selected_form_2d()->add_point(geometry_vector_created(std::string("E")));
+        currently_selected_form_2d_shared_ptr().reset(); currently_selected_vector_shared_ptr().reset();
+        // Third triangle
+        add_element_created("point");
+        currently_selected_vector()->set_name("F");
+        currently_selected_vector()->set_x(0);
+        currently_selected_vector()->set_y(4);
+        currently_selected_vector_shared_ptr().reset();
+        add_element_created("point");
+        currently_selected_vector()->set_name("G");
+        currently_selected_vector()->set_x(1);
+        currently_selected_vector()->set_y(4);
+        currently_selected_vector_shared_ptr().reset();
+        add_element_created("form");
+        currently_selected_form_2d()->set_name("AFG");
+        currently_selected_form_2d()->add_point(geometry_vector_created(std::string("A")));
+        currently_selected_form_2d()->add_point(geometry_vector_created(std::string("F")));
+        currently_selected_form_2d()->add_point(geometry_vector_created(std::string("G")));
+        currently_selected_form_2d_shared_ptr().reset(); currently_selected_vector_shared_ptr().reset();
+        // Fourth triangle
+        add_element_created("point");
+        currently_selected_vector()->set_name("H");
+        currently_selected_vector()->set_x(4);
+        currently_selected_vector()->set_y(4);
+        currently_selected_vector_shared_ptr().reset();
+        add_element_created("form");
+        currently_selected_form_2d()->set_name("GEH");
+        currently_selected_form_2d()->add_point(geometry_vector_created(std::string("G")));
+        currently_selected_form_2d()->add_point(geometry_vector_created(std::string("E")));
+        currently_selected_form_2d()->add_point(geometry_vector_created(std::string("H")));
+        currently_selected_form_2d_shared_ptr().reset(); currently_selected_vector_shared_ptr().reset();//*/
+
+        // Finish the demonstration
+        geometry_redact();
+    }
+
     // Redacts the needed redaction for the geometry part
     void Maths_Page::geometry_redact() {
         // Do the redaction
         check_geometry_hiding(); geometry_redaction_graphic()->reset();
         std::string redaction = std::string();
+        // Add the vectors
         if(static_cast<int>(geometry_vectors_created().size()) > 1){redaction += std::string("Nous allons définir ") + std::to_string(geometry_vectors_created().size()) + std::string(" vecteurs. ");}
         for(int i = 0;i<static_cast<int>(geometry_vectors_created().size());i++) {
             redaction += geometry_vectors_created()[i].get()->introduction();
             if(i < static_cast<int>(geometry_vectors_created().size()) - 1){redaction += std::string(" ");}
             // Add the needed vector
             geometry_redaction_graphic()->add_vector(*geometry_vectors_created()[i].get());
+        } redaction += std::string("</br></br>");
+        // Add the forms
+        if(static_cast<int>(geometry_form_2d_created().size()) > 1){redaction += std::string("Nous allons définir ") + std::to_string(geometry_form_2d_created().size()) + std::string(" formes. ");}
+        for(int i = 0;i<static_cast<int>(geometry_form_2d_created().size());i++) {
+            redaction += geometry_form_2d_created()[i].get()->introduction();
+            if(i < static_cast<int>(geometry_form_2d_created().size()) - 1){redaction += std::string(" ");}
+            // Add the needed vector
+            geometry_redaction_graphic()->add_form(geometry_form_2d_created()[i]);
         } redaction += std::string("</br></br>");
 
         // Add the needed arguments
@@ -358,11 +478,24 @@ namespace pleos {
             } redaction += std::string("</br></br>");
         }//*/
 
-        // Check the graphic part
-        geometry_redaction_graphic()->add_circle("C", Vector("Cc", 0, 0), scls::Fraction(1, 5));
-
         geometry_redaction_graphic()->update_texture();
         geometry_redaction()->set_text(redaction);
+    }
+
+    // Selects a geometry form 2D
+    void Maths_Page::geometry_select_form_2d(std::shared_ptr<pleos::Form_2D> needed_form_2d) {
+        check_geometry_hiding();
+        currently_selected_form_2d_shared_ptr() = needed_form_2d;
+
+        if(needed_form_2d.get() != 0) {
+            // Set the needed text
+            geometry_redaction_form()->set_visible(true);geometry_redaction_vector()->set_visible(false);
+            geometry_redaction_form_name()->set_text(needed_form_2d.get()->name());
+            std::string needed_points = std::string("");
+            for(int i = 0;i<static_cast<int>(needed_form_2d.get()->points().size());i++){needed_points+=needed_form_2d.get()->points()[i].get()->name();if(i<needed_form_2d.get()->points().size()-1){needed_points+=std::string(";");}}
+            geometry_redaction_form_points()->set_text(needed_points);
+        }
+        else {geometry_redaction_form()->set_visible(false);geometry_redaction_vector()->set_visible(false);}
     }
 
     // Selects a geometry vector
@@ -370,10 +503,14 @@ namespace pleos {
         check_geometry_hiding();
         currently_selected_vector_shared_ptr() = needed_vector;
 
-        // Set the needed text
-        geometry_redaction_vector_name()->set_text(needed_vector.get()->name());
-        geometry_redaction_vector_x()->set_text(needed_vector.get()->x()->to_std_string());
-        geometry_redaction_vector_y()->set_text(needed_vector.get()->y()->to_std_string());
+        if(needed_vector.get() != 0) {
+            // Set the needed text
+            geometry_redaction_form()->set_visible(false);geometry_redaction_vector()->set_visible(true);
+            geometry_redaction_vector_name()->set_text(needed_vector.get()->name());
+            geometry_redaction_vector_x()->set_text(needed_vector.get()->x()->to_std_string());
+            geometry_redaction_vector_y()->set_text(needed_vector.get()->y()->to_std_string());
+        }
+        else {geometry_redaction_form()->set_visible(false);geometry_redaction_vector()->set_visible(false);}
     }
 
     //******************
@@ -523,20 +660,43 @@ namespace pleos {
         // Add a created element
         if(geometry_redaction_elements_creation()->selection_modified()) {
             std::string current_choice = geometry_redaction_elements_creation()->currently_selected_objects_during_this_frame()[0].name();
-            geometry_redaction_elements_creation()->unselect_object(geometry_redaction_elements_creation()->currently_selected_objects()[0]);
+            if(current_choice == "vector") {geometry_redaction_graphic()->set_operation_at_click(PLEOS_OPERATION_VECTOR);}
+            else if(current_choice == "point"){geometry_redaction_graphic()->set_operation_at_click(PLEOS_OPERATION_POINT);}
+        }
+        if(geometry_redaction_elements_creation()->currently_confirmed_objects().size() > 0) {
+            std::string current_choice = geometry_redaction_elements_creation()->currently_confirmed_objects()[0];
             add_element_created(current_choice);
         }
 
         // Select a created element
+        // Select a vector
         for(int i = 0;i<static_cast<int>(a_current_state.a_geometry_vectors_created.size());i++) {
             if(a_current_state.a_geometry_vectors_created[i].get()->connected_object()->is_clicked_during_this_frame(GLFW_MOUSE_BUTTON_LEFT)) {
                 geometry_select_vector(a_current_state.a_geometry_vectors_created[i]);
+            }
+        }
+        // Select a form 2D
+        for(int i = 0;i<static_cast<int>(a_current_state.a_geometry_form_2d_created.size());i++) {
+            if(a_current_state.a_geometry_form_2d_created[i].get()->connected_object()->is_clicked_during_this_frame(GLFW_MOUSE_BUTTON_LEFT)) {
+                geometry_select_form_2d(a_current_state.a_geometry_form_2d_created[i]);
             }
         }
     }
 
     // Checks the events of hiding geometry page
     void Maths_Page::check_geometry_hiding() {
+        // Asserts
+        if(current_page() != PLEOS_MATHS_GEOMETRY_REDACTION_PAGE){return;}
+
+        if(currently_selected_form_2d() != 0) {
+            // Get the points
+            std::vector<std::string> cutted = scls::cut_string(geometry_redaction_form_points()->text(), ";");
+
+            // Set the needed values
+            currently_selected_form_2d()->points().clear();
+            currently_selected_form_2d()->set_name(geometry_redaction_form_name()->text());
+            for(int i = 0;i<static_cast<int>(cutted.size());i++){currently_selected_form_2d()->add_point(geometry_vector_created(cutted[i]));}
+        }
         if(currently_selected_vector() != 0) {
             // Get the X and Y
             scls::Formula needed_x = scls::string_to_formula(geometry_redaction_vector_x()->text());
@@ -585,15 +745,29 @@ namespace pleos {
         if(hub_button()->is_clicked_during_this_frame(GLFW_MOUSE_BUTTON_LEFT)) {window_struct()->hide_all_pages_2d();window_struct()->display_page_2d("hub");}
     }
 
+    // Checks the redaction parts
+    void Maths_Page::check_redaction(scls::GUI_Text* redaction_part) {
+        int x = window_struct()->mouse_x() - redaction_part->x_in_absolute_pixel();
+        int y = (window_struct()->window_height() - window_struct()->mouse_y()) - redaction_part->y_in_absolute_pixel();
+        std::shared_ptr<scls::XML_Text> current_xml = redaction_part->text_clicked_at_position(x, y);
+        if(current_xml.get() != 0) {std::cout << "R " << current_xml.get() << " " << current_xml.get()->xml_balise() << " " << current_xml.get()->text() << std::endl;}
+    }
+
     // Update the events
     void Maths_Page::update_event() {
         // Basic events
         scls::GUI_Page::update_event();
         check_navigation();
 
+        if(window_struct()->key_pressed_during_this_frame("left control")){display_geometry_pythagorean_theorem_demonstration();}
+
         // Check the good page
         if(current_page() == PLEOS_MATHS_ARITHMETIC_CALCULATOR_PAGE){check_arithmetic();}
         else if(current_page() == PLEOS_MATHS_FUNCTIONS_REDACTION_PAGE){check_functions();}
         else if(current_page() == PLEOS_MATHS_GEOMETRY_REDACTION_PAGE){check_geometry();}
+
+        // Check the redactions
+        if(current_page() == PLEOS_MATHS_GEOMETRY_DEFINITION_PAGE && geometry_definitions_page()->is_clicked_during_this_frame(GLFW_MOUSE_BUTTON_LEFT)){check_redaction(geometry_definitions_page());}
+        if(current_page() == PLEOS_MATHS_GEOMETRY_VECTOR_PAGE && geometry_vector_page()->is_clicked_during_this_frame(GLFW_MOUSE_BUTTON_LEFT)){check_redaction(geometry_vector_page());}
     }
 }

@@ -43,7 +43,9 @@
 #define PLEOS_MATHS_FUNCTIONS_REDACTION_PAGE 301
 // Geometry pages
 #define PLEOS_MATHS_GEOMETRY_PAGE 400
-#define PLEOS_MATHS_GEOMETRY_REDACTION_PAGE 401
+#define PLEOS_MATHS_GEOMETRY_DEFINITION_PAGE 401
+#define PLEOS_MATHS_GEOMETRY_VECTOR_PAGE 402
+#define PLEOS_MATHS_GEOMETRY_REDACTION_PAGE 450
 
 // The namespace "pleos" is used to simplify the all.
 namespace pleos {
@@ -90,14 +92,26 @@ namespace pleos {
         // Adds an element to create
         void add_element_created(std::string current_choice);
 
+        // Shows a demonstration of the Pythagoras theorem
+        void display_geometry_pythagorean_theorem_demonstration();
+
         // Redacts the needed redaction for the geometry part
         void geometry_redact();
+        // Resets the geometry part
+        inline void geometry_reset(){geometry_redaction_elements_created()->reset();geometry_redaction_elements_chosen()->reset();a_current_state.a_geometry_form_2d_created.clear();a_current_state.a_geometry_vectors_created.clear();currently_selected_form_2d_shared_ptr().reset();currently_selected_vector_shared_ptr().reset();};
+        // Selects a geometry form 2D
+        void geometry_select_form_2d(std::shared_ptr<pleos::Form_2D> needed_form_2d);
+        inline void geometry_select_form_2d(){geometry_select_form_2d(std::shared_ptr<pleos::Form_2D>());};
         // Selects a geometry vector
         void geometry_select_vector(std::shared_ptr<pleos::Vector> needed_vector);
+        inline void geometry_select_vector(){geometry_select_vector(std::shared_ptr<pleos::Vector>());};
 
         // Getters and setters
+        inline pleos::Form_2D* currently_selected_form_2d() const {return a_current_state.a_geometry_currently_selected_form_2d.get();}
+        inline std::shared_ptr<pleos::Form_2D>& currently_selected_form_2d_shared_ptr() {return a_current_state.a_geometry_currently_selected_form_2d;}
         inline pleos::Vector* currently_selected_vector() const {return a_current_state.a_geometry_currently_selected_vector.get();}
         inline std::shared_ptr<pleos::Vector>& currently_selected_vector_shared_ptr() {return a_current_state.a_geometry_currently_selected_vector;}
+        inline std::vector<std::shared_ptr<pleos::Form_2D>>& geometry_form_2d_created() {return a_current_state.a_geometry_form_2d_created;};
         inline std::shared_ptr<pleos::Vector> geometry_vector_created(std::string vector_name) {for(int i = 0;i<static_cast<int>(a_current_state.a_geometry_vectors_created.size());i++){if(a_current_state.a_geometry_vectors_created[i].get()->name() == vector_name){return a_current_state.a_geometry_vectors_created[i];}}return std::shared_ptr<Vector>();};
         inline std::vector<std::shared_ptr<pleos::Vector>>& geometry_vectors_created() {return a_current_state.a_geometry_vectors_created;};
 
@@ -123,6 +137,8 @@ namespace pleos {
         void check_hiding();
         // Checks the events of navigation
         void check_navigation();
+        // Checks the redaction parts
+        void check_redaction(scls::GUI_Text* redaction_part);
         // Updates the events
         virtual void update_event();
 
@@ -151,10 +167,10 @@ namespace pleos {
         // Displays the geometry page
         void display_geometry_page(){hide_all();geometry_page()->set_visible(true);};
         void display_geometry_complex_numbers_page(){display_geometry_page();geometry_complex_numbers_page()->set_visible(true);};
-        void display_geometry_definitions_page(){display_geometry_page();geometry_definitions_page()->set_visible(true);};
+        void display_geometry_definitions_page(){display_geometry_page();set_current_page(PLEOS_MATHS_GEOMETRY_DEFINITION_PAGE);geometry_definitions_page()->set_visible(true);};
         void display_geometry_redaction_graphic_page(){set_current_page(PLEOS_MATHS_GEOMETRY_REDACTION_PAGE);display_geometry_page();geometry_redaction_page()->set_visible(true);geometry_redaction_graphic()->set_visible(true);};
         void display_geometry_redaction_page(){set_current_page(PLEOS_MATHS_GEOMETRY_REDACTION_PAGE);display_geometry_page();geometry_redaction_page()->set_visible(true);geometry_redaction()->set_visible(true);};
-        void display_geometry_vector_page(){display_geometry_page();geometry_vector_page()->set_visible(true);};
+        void display_geometry_vector_page(){display_geometry_page();set_current_page(PLEOS_MATHS_GEOMETRY_VECTOR_PAGE);geometry_vector_page()->set_visible(true);};
 
         // Hides all the pages
         void hide_all(){hide_sub_pages(true);check_hiding();};
@@ -205,7 +221,7 @@ namespace pleos {
 
         // Returns geometry
         inline scls::GUI_Object* geometry_complex_numbers_page() const {return a_geometry_complex_numbers_page.get();};
-        inline scls::GUI_Object* geometry_definitions_page() const {return a_geometry_definitions_body.get();};
+        inline scls::GUI_Text* geometry_definitions_page() const {return a_geometry_definitions_body.get();};
         inline scls::GUI_Text* geometry_redaction() const {return a_geometry_redaction.get();};
         inline scls::GUI_Object* geometry_redaction_analyse() const {return a_geometry_redaction_analyse.get();};
         inline scls::GUI_Scroller_Choice* geometry_redaction_elements() const {return a_geometry_redaction_elements.get();};
@@ -214,7 +230,12 @@ namespace pleos {
         inline scls::GUI_Scroller_Choice* geometry_redaction_elements_creation() const {return a_geometry_redaction_elements_creation.get();};
         inline Graphic* geometry_redaction_graphic() const {return a_geometry_redaction_graphic.get();};
         inline scls::GUI_Object* geometry_redaction_page() const {return a_geometry_redaction_page.get();};
+        inline scls::GUI_Object* geometry_redaction_vector() const {return a_geometry_redaction_vector.get();};
         inline scls::GUI_Text* geometry_vector_page() const {return a_geometry_vector_page.get();};
+        // Form redaction
+        inline scls::GUI_Object* geometry_redaction_form() const {return a_geometry_redaction_form.get();};
+        inline scls::GUI_Text_Input* geometry_redaction_form_name() const {return a_geometry_redaction_form_name.get();};
+        inline scls::GUI_Text_Input* geometry_redaction_form_points() const {return a_geometry_redaction_form_points.get();};
         // Vector redaction
         inline scls::GUI_Text_Input* geometry_redaction_vector_name() const {return a_geometry_redaction_vector_name.get();};
         inline scls::GUI_Text_Input* geometry_redaction_vector_x() const {return a_geometry_redaction_vector_x.get();};
@@ -231,6 +252,10 @@ namespace pleos {
             std::shared_ptr<pleos::Function_Studied> a_functions_currently_selected_function = std::shared_ptr<pleos::Function_Studied>();
 
             // Geometry
+            // Created forms
+            std::vector<std::shared_ptr<pleos::Form_2D>> a_geometry_form_2d_created = std::vector<std::shared_ptr<pleos::Form_2D>>();
+            // Currently selected form
+            std::shared_ptr<pleos::Form_2D> a_geometry_currently_selected_form_2d = std::shared_ptr<pleos::Form_2D>();
             // Created vectors
             std::vector<std::shared_ptr<pleos::Vector>> a_geometry_vectors_created = std::vector<std::shared_ptr<pleos::Vector>>();
             // Currently selected vector
@@ -286,7 +311,12 @@ namespace pleos {
         std::shared_ptr<Graphic> a_geometry_redaction_graphic;
         std::shared_ptr<scls::GUI_Object> a_geometry_redaction_page;
         std::shared_ptr<scls::GUI_Text> a_geometry_vector_page;
+        // Redaction form
+        std::shared_ptr<scls::GUI_Object> a_geometry_redaction_form;
+        std::shared_ptr<scls::GUI_Text_Input> a_geometry_redaction_form_name;
+        std::shared_ptr<scls::GUI_Text_Input> a_geometry_redaction_form_points;
         // Redaction vector
+        std::shared_ptr<scls::GUI_Object> a_geometry_redaction_vector;
         std::shared_ptr<scls::GUI_Text_Input> a_geometry_redaction_vector_name;
         std::shared_ptr<scls::GUI_Text_Input> a_geometry_redaction_vector_x;
         std::shared_ptr<scls::GUI_Text_Input> a_geometry_redaction_vector_y;

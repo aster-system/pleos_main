@@ -31,6 +31,7 @@
 	<sub_choice name="geometry" displayer="Géométrie">
 		<choice name="geometry_definitions">Définition</choice>
 		<choice name="geometry_vector">Les vecteurs</choice>
+		<choice name="geometry_2d">La géométre 2D</choice>
 		<choice name="geometry_complex_numbers">Utilisation des nombres complexes</choice>
 		<choice name="geometry_redaction">Calculs rédigés</choice>
 		<choice name="geometry_redaction_graphic">Espace géométrique</choice>
@@ -40,7 +41,7 @@
 // Hub button
 <gui_object name="maths_hub" type="text" visible>
 	<border bottom=1 left=1 right=1 top=1>
-	<content font_size=30>Retour au hub</content>
+	<content font_size=30 alignment_horizontal=center>Retour au hub</content>
 	<height value=1/8 type=scale>
 	<width value=1/5 type=scale>
 	<x attach=left>
