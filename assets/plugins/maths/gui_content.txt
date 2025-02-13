@@ -12,10 +12,17 @@
 	<y attach=top>
 
 	<choice name="home">Accueil</choice>
+
+	<sub_choice name="logic" displayer="La logique">
+		<choice name="logic_definitions">Définitions basiques</choice>
+		<choice name="logic_language">Le langage logique</choice>
+	</sub_choice>
+
 	<sub_choice name="algebra" displayer="L'algèbre">
 		<choice name="algebra_definitions">Définitions basiques</choice>
 		<choice name="algebra_matrices">Les matrices</choice>
 	</sub_choice>
+
 	<sub_choice name="arithmetic" displayer="L'arithmétique">
 		<choice name="arithmetic_definitions">Définitions basiques</choice>
 		<choice name="arithmetic_calculator">Calculatrice</choice>
@@ -56,3 +63,4 @@
 <include src="gui_content_arithmetic.txt">
 <include src="gui_content_function.txt">
 <include src="gui_content_geometry.txt">
+<include src="gui_content_logic.txt">

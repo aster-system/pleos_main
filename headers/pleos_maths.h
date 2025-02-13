@@ -171,6 +171,10 @@ namespace pleos {
         void display_geometry_redaction_graphic_page(){set_current_page(PLEOS_MATHS_GEOMETRY_REDACTION_PAGE);display_geometry_page();geometry_redaction_page()->set_visible(true);geometry_redaction_graphic()->set_visible(true);};
         void display_geometry_redaction_page(){set_current_page(PLEOS_MATHS_GEOMETRY_REDACTION_PAGE);display_geometry_page();geometry_redaction_page()->set_visible(true);geometry_redaction()->set_visible(true);};
         void display_geometry_vector_page(){display_geometry_page();set_current_page(PLEOS_MATHS_GEOMETRY_VECTOR_PAGE);geometry_vector_page()->set_visible(true);};
+        // Displays the logic page
+        void display_logic_page(){hide_all();logic_page()->set_visible(true);};
+        void display_logic_definitions_page(){display_logic_page();logic_definitions_page()->set_visible(true);};
+        void display_logic_language_page(){display_logic_page();logic_language_page()->set_visible(true);};
 
         // Hides all the pages
         void hide_all(){hide_sub_pages(true);check_hiding();};
@@ -194,6 +198,7 @@ namespace pleos {
         inline scls::GUI_Object* functions_page() const {return a_functions_page.get();};
         inline scls::GUI_Object* functions_redaction_page() const {return a_functions_redaction_page.get();};
         inline scls::GUI_Object* geometry_page() const {return a_geometry_page.get();};
+        inline scls::GUI_Object* logic_page() const {return a_logic_page.get();};
         inline scls::GUI_Scroller_Choice* navigation() const {return a_navigation.get();};
 
         // Returns algebra
@@ -241,6 +246,10 @@ namespace pleos {
         inline scls::GUI_Text_Input* geometry_redaction_vector_x() const {return a_geometry_redaction_vector_x.get();};
         inline scls::GUI_Text_Input* geometry_redaction_vector_y() const {return a_geometry_redaction_vector_y.get();};
 
+        // Returns logic
+        inline scls::GUI_Text* logic_definitions_page() const {return a_logic_definitions_page.get();};
+        inline scls::GUI_Text* logic_language_page() const {return a_logic_language_page.get();};
+
     private:
 
         // Current state of the page
@@ -274,6 +283,7 @@ namespace pleos {
         std::shared_ptr<scls::GUI_Object> a_arithmetic_page;
         std::shared_ptr<scls::GUI_Object> a_functions_page;
         std::shared_ptr<scls::GUI_Object> a_geometry_page;
+        std::shared_ptr<scls::GUI_Object> a_logic_page;
 
         // Algebra page
         std::shared_ptr<scls::GUI_Text> a_algebra_definitions_page;
@@ -320,6 +330,10 @@ namespace pleos {
         std::shared_ptr<scls::GUI_Text_Input> a_geometry_redaction_vector_name;
         std::shared_ptr<scls::GUI_Text_Input> a_geometry_redaction_vector_x;
         std::shared_ptr<scls::GUI_Text_Input> a_geometry_redaction_vector_y;
+
+        // Logic page
+        std::shared_ptr<scls::GUI_Text> a_logic_definitions_page;
+        std::shared_ptr<scls::GUI_Text> a_logic_language_page;
     };
 }
 

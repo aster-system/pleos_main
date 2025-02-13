@@ -1,1 +1,19 @@
-L'algèbre représente la branche des mathématiques étudiant les règles (opérations, équations, interprétations...) d'une certaine catégorie d'objets.
+<h1>L'algèbre</h1>
+<h2>Qu'est ce qu'est l'algèbre ?</h2>
+<h3>La définition pure</h3>
+<p>
+<important>L'algèbre représente la branche des mathématiques étudiant les règles (opérations, équations, interprétations...)</important> d'une certaine catégorie d'objets.
+L'algèbre la plus connue est l'arithmétique : l'algèbre des nombres (aussi nommée algèbre classique)
+L'ensemble de règles d'un objet se joignent dans un objet nommé une structure algébrique.
+</p>
+<h3>Les structures algébriques</h3>
+<p>
+<important>Une structure algébrique est un moyen de définir ces règles (avec, bien évidemment, des axiomes), permettant une certaine cohérence entre chaque structures</important>.
+Selon l'objet étudier, une structure peut être munie de certains règles / opérations bien connues et définies, comme l'addition, la multiplication...
+Les opérations sont aussi nommées "lois de compositions internes" dans ce contexte là.
+De même, une loi de composition interne peut aussi obéir à certaines propriétés (plus technique), comme l'associativité, la commutativité...
+Ici, une loi est associative si x # (y # z) = (x # y) # z, avec # l'opérateur permettant l'application de cette règle.
+Une loi est commutative si x # y = y # z, avec # l'opérateur permettant l'application de cette règle.
+Par exemple, dans l'algèbre classique, l'addition obéit à ces deux principes, mais pas la division (vous pouvez le tester en essayant un calcul vite fait).
+Selon le nombre de lois et leurs propriétés, la structure peut appartenir à une certaine famille de structures algébriques.
+</p>

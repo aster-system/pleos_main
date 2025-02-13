@@ -1,1 +1,7 @@
-L'arithmétique représente l'étude des nombres en mathématique.
+<h1>L'arithmétique</h1>
+<h2>Qu'est ce qu'est l'arithmétique ?</h2>
+<h3>La définition algébrique</h3>
+<p>
+<important>L'arithmétique représente l'étude des nombres en mathématiques<important>.
+
+</p>

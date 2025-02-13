@@ -1,0 +1,12 @@
+<h1>Le langage de la logique</h1>
+<h2>L'alphabet de la logique</h2>
+<h3>La théorie des langages</h3>
+<p>
+Avant de définir les symbôles mathématiques, nous allons déjà revoir quelques bases de la théorie des langages (oui, ça existe) en mathématiques.
+Selon cette théorie, <important>un langage représente un ensemble de mots</important>.
+Cependant, selon le contexte, un "mot" peut avoir plusieurs définitions (dans le cas du français, un mot est, bien évidemment, une suite de lettres).
+En mathématiques, <important>un "mot" représente un ensemble d'éléments mathématiques, nommés des... lettres</important>.
+Les différents symbôles sont tous présents dans un ensemble nommé un alphabet.
+<important>Les règles permettant de donner sens à un langage se nomme la grammaire</important>.
+En <a href="algebra_definitions">algèbre</a>, cela est nommé la grammaire algébrique.
+</p>
