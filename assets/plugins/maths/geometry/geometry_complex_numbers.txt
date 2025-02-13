@@ -1,15 +1,21 @@
-Il est possible d'utiliser les nombres complexes pour faire de la géometrie.
-
-</br></br>
-
-Les propriétés multiplicatives sont aussi applicables.
-Définissons deux nombres complexes I et J tel que.
-Si l'on dérive cette fonction, on se rend compte que :
+<h1>Les nombres complexes en géométrie</h1>
+<h2>Le plan complexe</h2>
+<h3>Utilisation basique</h3>
+<p>
+Prenez un nombre complexe "Z = a + bi".
+<important>Vous pouvez représenter ce nombre dans un plan 2D (avec un repère canonique orthonormée) via un vecteur V(a, b), nommé le plan complexe</important>.
+Le nombre complexe "Z" sera nommé l'affixe de "V", et "V" sera nommé l'image de "Z".
+Dans ce cas, la norme du vecteur est nommée le module M du nombre complexe, et l'angle formé par le vecteur par rapport au vecteur u(1, 0) est nommé l'argument A du nombre complexe. 
+Cependant, il est aussi possible de les définir grâce à des coordonnées polaires.
+En effet, grâce à cet écriture, on peut en déduire une forme très spécial pour un nombre complexe : la multiplication du module du nombre avec un autre nombre complexe (de module 1), dont la valeur est la représentation trigonométrique de son vecteur (selon les règles du cercle trigonométrique).
+Cette forme s'écrit :
 </br>
-<math>
-<mi>R'(x)</mi><mo>=</mo><mi>i</mi><mo>*</mo><mi>R(x)</mi>
-</math>
+<math><mi>Z</mi><mo>=</mo><mi>M</mi><mo>*</mo><mi>(</mi><mi>cos(A)</mi><mo>+</mo><mi>i</mi><mo>*</mo><mi>sin(A)</mi><mi>)</mi></math>
 </br>
-Il y a une relation entre R et sa dérivée : il s'agit d'une équation différentielle.
-Donc, les nombres complexes sont aussi définissable avec des coordonnées polaires.
-Ici, l'angle est nommé l'argument et le rayon est nommé le module.
+Nous pouvons démontrer facilement que la dérivée de "cos(x) + i * sin(x)" représente "i * (cos(x) + i * sin(x))" : elle même multipliée par "i".
+Dans ce cas, nous pouvons utiliser une écriture exponentielle, sous la forme :
+</br>
+<math><mi>Z</mi><mo>=</mo><mi>M</mi><mi>e</mi><msup>iA</msup></math>
+</br>
+Avec cette propriété, <important>on peut effectuer des translations sur le vecteur grâce à une simple addition de son affixe, des rotations grâce à des multiplications de l'affixe par un complexe de module 1 et d'argument l'angle voulu et des remises à l'échelle avec des multiplications de l'affixe par un réel</important>.
+</p>
