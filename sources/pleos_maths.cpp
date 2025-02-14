@@ -667,6 +667,7 @@ namespace pleos {
             std::string current_choice = geometry_redaction_elements_creation()->currently_selected_objects_during_this_frame()[0].name();
             if(current_choice == "vector") {geometry_redaction_graphic()->set_operation_at_click(PLEOS_OPERATION_VECTOR);}
             else if(current_choice == "point"){geometry_redaction_graphic()->set_operation_at_click(PLEOS_OPERATION_POINT);}
+            else if(current_choice == "form"){geometry_redaction_graphic()->set_operation_at_click(PLEOS_OPERATION_FORM);}
         }
         if(geometry_redaction_elements_creation()->currently_confirmed_objects().size() > 0) {
             std::string current_choice = geometry_redaction_elements_creation()->currently_confirmed_objects()[0];
