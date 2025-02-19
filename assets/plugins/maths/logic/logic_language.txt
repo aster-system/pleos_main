@@ -8,5 +8,5 @@ Cependant, selon le contexte, un "mot" peut avoir plusieurs définitions (dans l
 En mathématiques, <important>un "mot" représente un ensemble d'éléments mathématiques, nommés des... lettres</important>.
 Les différents symbôles sont tous présents dans un ensemble nommé un alphabet.
 <important>Les règles permettant de donner sens à un langage se nomme la grammaire</important>.
-En <a href="algebra_definitions">algèbre</a>, cela est nommé la grammaire algébrique.
+Pour les langages dans <a href="algebra_definitions">l'algèbre</a>, cela est nommé la grammaire algébrique.
 </p>

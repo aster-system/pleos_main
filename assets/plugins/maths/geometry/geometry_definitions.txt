@@ -8,6 +8,9 @@ En général, on parle de figures en 2 dimensions (par exemple, sur papier) ou e
 Cette géométrie est la plus utilisée, et de loin, puisque, à notre échelle, elle est omniprésente.
 </p>
 <p>
+Heuresement pour nous, <important>la géométrie euclidienne est <a href="./logic/logic_definition">précisément axiomatisée</a> avec 5 axiomes clés</important>.
+</p>
+<p>
 En géométrie euclidienne, nous pouvons définir plusieurs objets "basiques", racines de tous les objets existants.
 <important>Le premier est le point (applicable dans toutes les dimensions possibles)</important>.
 Un point représente une (et une seule) position / partie d'un espace géométrique.

@@ -37,6 +37,7 @@ namespace pleos {
         if(object_name == "physic_matter_bohr_model_body"){a_physic_matter_bohr_model_body = *parent->new_object<scls::GUI_Text>(object_name);return a_physic_matter_bohr_model_body;}
         else if(object_name == "physic_matter_bohr_model_simulation") {a_physic_matter_bohr_model_simulation = *parent->new_object<Graphic>(object_name);return a_physic_matter_bohr_model_simulation;}
         else if(object_name == "physic_matter_bohr_model_simulation_body"){a_physic_matter_bohr_model_simulation_body = *parent->new_object<scls::GUI_Object>(object_name);return a_physic_matter_bohr_model_simulation_body;}
+        else if(object_name == "physic_matter_bosons_body") {a_physic_matter_bosons_body = *parent->new_object<scls::GUI_Text>(object_name);return a_physic_matter_bosons_body;}
         else if(object_name == "physic_matter_scale_body"){a_physic_matter_scale_body = *parent->new_object<scls::GUI_Text>(object_name);return a_physic_matter_scale_body;}
 
         // Pages
@@ -111,6 +112,7 @@ namespace pleos {
             // Arithmetic pages
             if(page == "matter_bohr_model"){display_matter_bohr_model_page();}
             else if(page == "matter_bohr_model_simulation"){display_matter_bohr_model_simulation_page();}
+            else if(page == "matter_bosons"){display_matter_bosons_page();}
             else if(page == "matter_scale"){display_matter_scale_page();}
         }
 

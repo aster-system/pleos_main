@@ -35,6 +35,10 @@
 
 // Possible pages
 #define PLEOS_MATHS_HOME_PAGE 0
+// Logic pages
+#define PLEOS_MATHS_LOGIC_PAGE 100
+#define PLEOS_MATHS_LOGIC_DEFINITIONS_PAGE 101
+#define PLEOS_MATHS_LOGIC_LANGUAGE_PAGE 110
 // Arithmetic pages
 #define PLEOS_MATHS_ARITHMETIC_PAGE 200
 #define PLEOS_MATHS_ARITHMETIC_CALCULATOR_PAGE 250
@@ -123,17 +127,14 @@ namespace pleos {
 
         // Function called after the XML loading
         virtual void after_xml_loading();
-        // Checks the events of arithmetic
+        // Checks the events of each pages
         void check_arithmetic();
-        // Checks the events of functions
         void check_functions();
-        // Checks the events of hiding functions page
-        void check_functions_hiding();
-        // Checks the events of geometry
         void check_geometry();
-        // Checks the events of hiding geometry page
+        void check_logic();
+        // Checks the events of hiding each pages
+        void check_functions_hiding();
         void check_geometry_hiding();
-        // Checks the events of hiding all pages
         void check_hiding();
         // Checks the events of navigation
         void check_navigation();
@@ -159,6 +160,7 @@ namespace pleos {
         // Displays the functions page
         void display_functions_page(){hide_all();functions_page()->set_visible(true);};
         void display_functions_definitions_page(){display_functions_page();functions_definitions_page()->set_visible(true);};
+        void display_functions_exponential_page(){display_functions_page();functions_exponential_page()->set_visible(true);};
         void display_functions_forms_page(){display_functions_page();functions_forms_page()->set_visible(true);};
         void display_functions_redaction_page(bool reset){unsigned short last_page=current_page();set_current_page(PLEOS_MATHS_FUNCTIONS_REDACTION_PAGE);display_functions_page();functions_redaction_page()->set_visible(true);functions_redaction()->set_visible(true);if(last_page!=PLEOS_MATHS_FUNCTIONS_REDACTION_PAGE&&reset){functions_reset();}};
         inline void display_functions_redaction_page(){display_functions_redaction_page(true);};
@@ -172,9 +174,9 @@ namespace pleos {
         void display_geometry_redaction_page(){set_current_page(PLEOS_MATHS_GEOMETRY_REDACTION_PAGE);display_geometry_page();geometry_redaction_page()->set_visible(true);geometry_redaction()->set_visible(true);};
         void display_geometry_vector_page(){display_geometry_page();set_current_page(PLEOS_MATHS_GEOMETRY_VECTOR_PAGE);geometry_vector_page()->set_visible(true);};
         // Displays the logic page
-        void display_logic_page(){hide_all();logic_page()->set_visible(true);};
-        void display_logic_definitions_page(){display_logic_page();logic_definitions_page()->set_visible(true);};
-        void display_logic_language_page(){display_logic_page();logic_language_page()->set_visible(true);};
+        void display_logic_page(){hide_all();logic_page()->set_visible(true);set_current_page(PLEOS_MATHS_LOGIC_PAGE);};
+        void display_logic_definitions_page(){display_logic_page();set_current_page(PLEOS_MATHS_LOGIC_DEFINITIONS_PAGE);logic_definitions_page()->set_visible(true);};
+        void display_logic_language_page(){display_logic_page();set_current_page(PLEOS_MATHS_LOGIC_LANGUAGE_PAGE);logic_language_page()->set_visible(true);};
 
         // Hides all the pages
         void hide_all(){hide_sub_pages(true);check_hiding();};
@@ -214,6 +216,7 @@ namespace pleos {
         inline scls::GUI_Text* arithmetic_calculator_redaction() const {return a_arithmetic_calculator_redaction.get();};
 
         //  Returns functions
+        inline scls::GUI_Text* functions_exponential_page() const {return a_functions_exponential_page.get();};
         inline scls::GUI_Text* functions_redaction() const {return a_functions_redaction.get();};
         inline scls::GUI_Object* functions_redaction_analyse() const {return a_functions_redaction_analyse.get();};
         inline scls::GUI_Scroller_Choice* functions_redaction_elements() const {return a_functions_redaction_elements.get();};
@@ -297,7 +300,8 @@ namespace pleos {
 
         // Functions page
         std::shared_ptr<scls::GUI_Text> a_functions_definitions_page;
-        std::shared_ptr<scls::GUI_Object> a_functions_forms_page;
+        std::shared_ptr<scls::GUI_Text> a_functions_exponential_page;
+        std::shared_ptr<scls::GUI_Text> a_functions_forms_page;
         std::shared_ptr<scls::GUI_Text> a_functions_redaction;
         std::shared_ptr<scls::GUI_Text> a_functions_redaction_analyse;
         std::shared_ptr<scls::GUI_Object> a_functions_redaction_page;

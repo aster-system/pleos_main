@@ -39,6 +39,7 @@
 #define PLEOS_PHYSIC_MATTER_SCALE_PAGE 101
 #define PLEOS_PHYSIC_MATTER_BOHR_MODEL_PAGE 110
 #define PLEOS_PHYSIC_MATTER_BOHR_MODEL_SIMULATION_PAGE 120
+#define PLEOS_PHYSIC_MATTER_BOSONS_PAGE 150
 
 // The namespace "pleos" is used to simplify the all.
 namespace pleos {
@@ -91,6 +92,7 @@ namespace pleos {
         // Displays the arithmetic page
         void display_matter_bohr_model_page(){set_current_page(PLEOS_PHYSIC_MATTER_BOHR_MODEL_PAGE);display_matter_page();matter_bohr_model_page()->set_visible(true);};
         void display_matter_bohr_model_simulation_page(){set_current_page(PLEOS_PHYSIC_MATTER_BOHR_MODEL_SIMULATION_PAGE);display_matter_page();matter_bohr_model_simulation_page()->set_visible(true);matter_load_bohr_model_simulation();};
+        void display_matter_bosons_page(){set_current_page(PLEOS_PHYSIC_MATTER_BOSONS_PAGE);display_matter_page();matter_bosons_body_page()->set_visible(true);};
         void display_matter_page(){hide_all();matter_page()->set_visible(true);};
         void display_matter_scale_page(){set_current_page(PLEOS_PHYSIC_MATTER_SCALE_PAGE);display_matter_page();matter_scale_page()->set_visible(true);}
 
@@ -113,6 +115,7 @@ namespace pleos {
         // Returns pages
         inline scls::GUI_Text* matter_bohr_model_page() const {return a_physic_matter_bohr_model_body.get();};
         inline scls::GUI_Object* matter_bohr_model_simulation_page() const {return a_physic_matter_bohr_model_simulation_body.get();};
+        inline scls::GUI_Text* matter_bosons_body_page() const {return a_physic_matter_bosons_body.get();};
         inline scls::GUI_Object* matter_page() const {return a_physic_matter_page.get();};
         inline scls::GUI_Text* matter_scale_page() const {return a_physic_matter_scale_body.get();};
 
@@ -143,6 +146,7 @@ namespace pleos {
         // Matter
         std::shared_ptr<scls::GUI_Text> a_physic_matter_bohr_model_body;
         std::shared_ptr<scls::GUI_Object> a_physic_matter_bohr_model_simulation_body;
+        std::shared_ptr<scls::GUI_Text> a_physic_matter_bosons_body;
         std::shared_ptr<Graphic> a_physic_matter_bohr_model_simulation;
         std::shared_ptr<scls::GUI_Text> a_physic_matter_scale_body;
 

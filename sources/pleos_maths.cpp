@@ -47,6 +47,7 @@ namespace pleos {
 
         // Functions
         else if(object_name == "maths_functions_definitions_body") {a_functions_definitions_page = *parent->new_object<scls::GUI_Text>(object_name);return a_functions_definitions_page;}
+        else if(object_name == "maths_functions_exponential_body") {a_functions_exponential_page = *parent->new_object<scls::GUI_Text>(object_name);return a_functions_exponential_page;}
         else if(object_name == "maths_functions_forms_body") {a_functions_forms_page = *parent->new_object<scls::GUI_Text>(object_name);return a_functions_forms_page;}
         else if(object_name == "maths_functions_redaction_body") {a_functions_redaction_page = *parent->new_object<scls::GUI_Object>(object_name);return a_functions_redaction_page;}
         else if(object_name == "maths_functions_redaction") {a_functions_redaction = *parent->new_object<scls::GUI_Text>(object_name);return a_functions_redaction;}
@@ -674,6 +675,10 @@ namespace pleos {
             add_element_created(current_choice);
         }
 
+        // Check the redactions
+        if(current_page() == PLEOS_MATHS_GEOMETRY_DEFINITION_PAGE && geometry_definitions_page()->is_clicked_during_this_frame(GLFW_MOUSE_BUTTON_LEFT)){check_redaction(geometry_definitions_page());}
+        if(current_page() == PLEOS_MATHS_GEOMETRY_VECTOR_PAGE && geometry_vector_page()->is_clicked_during_this_frame(GLFW_MOUSE_BUTTON_LEFT)){check_redaction(geometry_vector_page());}
+
         // Select a created element
         // Select a vector
         for(int i = 0;i<static_cast<int>(a_current_state.a_geometry_vectors_created.size());i++) {
@@ -722,6 +727,13 @@ namespace pleos {
         else if(current_page() == PLEOS_MATHS_FUNCTIONS_REDACTION_PAGE){check_functions_hiding();}
     }
 
+    // Checks the events of logic pages
+    void Maths_Page::check_logic() {
+        // Check the redactions
+        if(current_page() == PLEOS_MATHS_LOGIC_DEFINITIONS_PAGE){check_redaction(logic_definitions_page());}
+        if(current_page() == PLEOS_MATHS_LOGIC_LANGUAGE_PAGE){check_redaction(logic_language_page());}
+    }
+
     // Check the events of navigation
     void Maths_Page::check_navigation() {
         // Check the selected page
@@ -736,6 +748,7 @@ namespace pleos {
             else if(page == "arithmetic_calculator"){display_arithmetic_calculator_page();}
             // Functions pages
             else if(page == "functions_definitions"){display_functions_definitions_page();}
+            else if(page == "functions_exponential"){display_functions_exponential_page();}
             else if(page == "functions_forms"){display_functions_forms_page();}
             else if(page == "functions_graphic"){display_functions_redaction_graphic_page();}
             else if(page == "functions_redaction"){display_functions_redaction_page();}
@@ -756,6 +769,9 @@ namespace pleos {
 
     // Checks the redaction parts
     void Maths_Page::check_redaction(scls::GUI_Text* redaction_part) {
+        // Asserts
+        if(!redaction_part->is_clicked_during_this_frame(GLFW_MOUSE_BUTTON_LEFT)){return;}
+
         int x = window_struct()->mouse_x() - redaction_part->x_in_absolute_pixel();
         int y = (window_struct()->window_height() - window_struct()->mouse_y()) - redaction_part->y_in_absolute_pixel();
         std::shared_ptr<scls::XML_Text> current_xml = redaction_part->text_clicked_at_position(x, y);
@@ -773,10 +789,7 @@ namespace pleos {
         // Check the good page
         if(current_page() == PLEOS_MATHS_ARITHMETIC_CALCULATOR_PAGE){check_arithmetic();}
         else if(current_page() == PLEOS_MATHS_FUNCTIONS_REDACTION_PAGE){check_functions();}
-        else if(current_page() == PLEOS_MATHS_GEOMETRY_REDACTION_PAGE){check_geometry();}
-
-        // Check the redactions
-        if(current_page() == PLEOS_MATHS_GEOMETRY_DEFINITION_PAGE && geometry_definitions_page()->is_clicked_during_this_frame(GLFW_MOUSE_BUTTON_LEFT)){check_redaction(geometry_definitions_page());}
-        if(current_page() == PLEOS_MATHS_GEOMETRY_VECTOR_PAGE && geometry_vector_page()->is_clicked_during_this_frame(GLFW_MOUSE_BUTTON_LEFT)){check_redaction(geometry_vector_page());}
+        else if(current_page() == PLEOS_MATHS_GEOMETRY_REDACTION_PAGE || current_page() == PLEOS_MATHS_GEOMETRY_DEFINITION_PAGE){check_geometry();}
+        else if(current_page() == PLEOS_MATHS_LOGIC_DEFINITIONS_PAGE || current_page() == PLEOS_MATHS_LOGIC_LANGUAGE_PAGE){check_logic();}
     }
 }

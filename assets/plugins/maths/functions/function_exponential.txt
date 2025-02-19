@@ -1,0 +1,27 @@
+<h1>La fonction exponentielle</h1>
+<h2>Qu'est ce qu'est la fonction exponentielle ?</h2>
+<h3>La définition brute</h3>
+<p>
+En analyse fonctionelle réelle, <important>la fonction exponentielle est une fonction n'ayant qu'une seule dérivée : elle même</important>.
+Cette fonction est assez facilement déductible avec des équations différentielles.
+En gros, en cherchant une valeur commune aux tengantes de cette fonction, on remarque que cette fonction, n'ayant qu'une seule dérivée (elle même), est un nombre élevé à la puissance x.
+Ce nombre est appelé nombre exponentiel, est appelé "e" (ou nombre d'Euler), et vaut approximativement 2,71828.
+Elle est continue et dérivable sur R.
+Donc, pour tout x appartenant à R :
+</p>
+<math><mi>exp(x)</mi><mo>=</mo><mi>e</mi><msup>x</msup><mo>|</mo><mi>exp'(x)</mi><mo>=</mo><mi>exp(x)</mi><mo>=</mo><mi>e</mi><msup>x</msup></math>
+<p>
+Cependant, le nom "fonction exponentielle" peut aussi désigner des fonctions similaires, mais pas exactement égales à la fonction que nous venons de voir.
+En effet, <important>une fonction exponentielle peut être n'importe qu'elle fonction suivant cette forme</important> :
+</p>
+<math><mi>exp(x)</mi><mo>=</mo><mi>ae</mi><msup>bx</msup></math>
+<h3>Les logarithmes</h3>
+<p>
+<important>La fonction réciproque de la fonction exponentielle est nommée la fonction logarithme</important>.
+Elle permet de faire le lien entre la valeur d'une puissance et la puissance utilisé.
+D'un point de vu mathématique :
+</p>
+<math><mi>exp(log(x))</mi><mo>=</mo><mi>e</mi><msup>log(x)</msup><mo>=</mo><mi>x</mi></math>
+<p>
+Grâce aux propriétés de l'exponentiel, on peut généraliser pour n'importe quelle valeur.
+</p>

@@ -28,6 +28,7 @@
     <content max_width=0 src="functions/function_definition.txt"></content>
 	<height value=7/8 type=scale>
 	<parent name="maths_functions_page">
+	<texture alignment_horizontal=left alignment_vertical=top>
     <width value=9/10 type=scale>
 	<x value=1/2 type=object_scale>
 	<y attach=bottom>
@@ -41,6 +42,21 @@
     <content max_width=0 src="functions/function_forms.txt"></content>
 	<height value=7/8 type=scale>
 	<parent name="maths_functions_page">
+	<texture alignment_horizontal=left alignment_vertical=top>
+    <width value=9/10 type=scale>
+	<x value=1/2 type=object_scale>
+	<y attach=bottom>
+</gui_object>
+
+//***************************************************
+// Exponential form
+//***************************************************
+
+<gui_object name="maths_functions_exponential_body" type="text" sub_page>
+    <content max_width=0 src="functions/function_exponential.txt"></content>
+	<height value=7/8 type=scale>
+	<parent name="maths_functions_page">
+	<texture alignment_horizontal=left alignment_vertical=top>
     <width value=9/10 type=scale>
 	<x value=1/2 type=object_scale>
 	<y attach=bottom>

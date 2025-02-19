@@ -16,6 +16,9 @@
 		<choice name="matter_scale">Les échelles de matières</choice>
 		<choice name="matter_bohr_model">Le modèle de Bohr</choice>
 		<choice name="matter_bohr_model_simulation">Simuler le modèle de Bohr</choice>
+		<choice name="matter_quantum_mechanic">La mécanique quantique</choice>
+		<choice name="matter_standard_model">Le modèle standard</choice>
+		<choice name="matter_bosons">Les bosons</choice>
 	</sub_choice>
 </gui_object>
 

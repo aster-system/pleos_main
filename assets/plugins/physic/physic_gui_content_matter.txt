@@ -12,7 +12,7 @@
 	<y attach=top>
 </gui_object>
 <gui_object name="physic_matter_title" type="text">
-    <content font_size=80>La matière</content>
+    <content font_size=80 alignment_horizontal=center>La matière</content>
 	<height value=1/8 type=scale>
     <parent name="physic_matter_page">
 	<width value=1 type=scale>
@@ -30,6 +30,7 @@
     <content max_width=0 src="matter/scale.txt"></content>
 	<height value=7/8 type=scale>
 	<parent name="physic_matter_page">
+	<texture alignment_horizontal=left alignment_vertical=top>
     <width value=9/10 type=scale>
 	<x value=1/2 type=object_scale>
 	<y attach=bottom>
@@ -45,6 +46,7 @@
     <content max_width=0 src="matter/bohr_model.txt"></content>
 	<height value=7/8 type=scale>
 	<parent name="physic_matter_page">
+	<texture alignment_horizontal=left alignment_vertical=top>
     <width value=9/10 type=scale>
 	<x value=1/2 type=object_scale>
 	<y attach=bottom>
@@ -72,4 +74,20 @@
 	<width value=4/5 type=scale>
 	<x attach=right>
 	<y attach=top>
+</gui_object>
+
+//***************************************************
+//
+//   BOSONS
+//
+//***************************************************
+
+<gui_object name="physic_matter_bosons_body" type="text" sub_page>
+    <content max_width=0 src="matter/bosons.txt"></content>
+	<height value=7/8 type=scale>
+	<parent name="physic_matter_page">
+	<texture alignment_horizontal=left alignment_vertical=top>
+    <width value=9/10 type=scale>
+	<x value=1/2 type=object_scale>
+	<y attach=bottom>
 </gui_object>

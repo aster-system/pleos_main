@@ -1,0 +1,30 @@
+<h1>Les bosons</h1>
+<h2>Qu'est ce qu'est un boson ?</h2>
+<h3>La définition brute</h3>
+<p>
+<important>Un boson est une particule du modèle standard de spin entier</important>.
+Donc, ils sont soumis à la statistique de Bose-Einstein, et pas au principe d'exclusion de Pauli.
+Ici, cela veut dire que plusieurs bosons peuvent être dans le même état quantique (absence du principe d'exclusion de Pauli).
+</p>
+<h3>Les bosons de jauge</h3>
+<p>
+<important>Certains bosons peuvent être représentés comme vecteurs de forces élémentaires</important>.
+Ces bosons sont appelés <important>bosons de jauge</important>.
+Ils sont généralement décrit comme des particules virtuelles.
+</p>
+<h2>Le photon</h2>
+<h3>Qu'est ce qu'est un photon ?</h3>
+<p>
+Selon le modèle standard, <important>le photon est un boson de jauge, vecteur de la force électromagnétique</important>.
+Il est décrit comme un quantum d'énergie dans une onde électromagnétique.
+Selon la façon dont une expérience est menée (et les résultats sont obtenus) sur une onde électromagnétique, on peut parfois l'observer comme une onde, ou comme un photon (une particule).
+Par exemple, c'est l'explication aux résultats de l'expérience de la fente de Young.
+Dans le cas du photon, <important>la longueur d'onde de l'onde est proportionelle à l'énergie transporté par le photon (un multiple d'une quantité élémentaire d'énergie : la constante de Planck)</important>.
+Pour être plus précis, de manière parfaitement quantique, une onde électromagnétique représente la probabilité de trouver un photon à un certain endroit.
+</p>
+<h3>Le cas du laser</h3>
+<p>
+Selon le modèle de Bohr, <important>l'absorption d'énergie via un photon excite un atome</important>, qui pourra rayonnée un autre photon un peu plus tard de lui même, de manière assez aléatoire.
+Or, <important>si l'émission est provoquée par un photon externe, alors le photon émis aura la même direction que le photon externe</important>.
+En plaçant des miroirs de manière astucieuse, vous pouvez créer un enchaînement de ce phénomène, et créer un faisceau de photon ayant la même direction : vous venez de créer un laser.
+</p>
