@@ -20,6 +20,9 @@
 		<choice name="matter_standard_model">Le modèle standard</choice>
 		<choice name="matter_bosons">Les bosons</choice>
 	</sub_choice>
+	<sub_choice name="mechanic" displayer="La mécanique">
+		<choice name="mechanic_kinematic">La cinématique</choice>
+	</sub_choice>
 </gui_object>
 
 // Hub button
@@ -37,3 +40,4 @@
 </gui_object>
 
 <include src="physic_gui_content_matter.txt">
+<include src="physic_gui_content_mechanic.txt">

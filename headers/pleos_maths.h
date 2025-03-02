@@ -32,6 +32,7 @@
 
 // Include PLEOS Libs
 #include "../../pleos_libs/pleos_mathematics.h"
+#include "../../pleos_libs/pleos_text.h"
 
 // Possible pages
 #define PLEOS_MATHS_HOME_PAGE 0
@@ -139,7 +140,7 @@ namespace pleos {
         // Checks the events of navigation
         void check_navigation();
         // Checks the redaction parts
-        void check_redaction(scls::GUI_Text* redaction_part);
+        void check_redaction(scls::__GUI_Text_Metadatas* redaction_part);
         // Updates the events
         virtual void update_event();
 
@@ -162,9 +163,9 @@ namespace pleos {
         void display_functions_definitions_page(){display_functions_page();functions_definitions_page()->set_visible(true);};
         void display_functions_exponential_page(){display_functions_page();functions_exponential_page()->set_visible(true);};
         void display_functions_forms_page(){display_functions_page();functions_forms_page()->set_visible(true);};
-        void display_functions_redaction_page(bool reset){unsigned short last_page=current_page();set_current_page(PLEOS_MATHS_FUNCTIONS_REDACTION_PAGE);display_functions_page();functions_redaction_page()->set_visible(true);functions_redaction()->set_visible(true);if(last_page!=PLEOS_MATHS_FUNCTIONS_REDACTION_PAGE&&reset){functions_reset();}};
+        void display_functions_redaction_page(bool reset){unsigned short last_page=current_page();set_current_page(PLEOS_MATHS_FUNCTIONS_REDACTION_PAGE);display_functions_page();functions_redaction_page()->load_with_children();functions_redaction_page()->set_visible(true);functions_redaction()->set_visible(true);if(last_page!=PLEOS_MATHS_FUNCTIONS_REDACTION_PAGE&&reset){functions_reset();}};
         inline void display_functions_redaction_page(){display_functions_redaction_page(true);};
-        void display_functions_redaction_graphic_page(bool reset){if(current_page()!=PLEOS_MATHS_FUNCTIONS_REDACTION_PAGE&&reset){functions_reset();}set_current_page(PLEOS_MATHS_FUNCTIONS_REDACTION_PAGE);display_functions_page();functions_redaction_page()->set_visible(true);functions_redaction_graphic()->set_visible(true);};
+        void display_functions_redaction_graphic_page(bool reset){unsigned short last_page=current_page();set_current_page(PLEOS_MATHS_FUNCTIONS_REDACTION_PAGE);display_functions_page();functions_redaction_page()->load_with_children();functions_redaction_page()->set_visible(true);functions_redaction_graphic()->set_visible(true);if(last_page!=PLEOS_MATHS_FUNCTIONS_REDACTION_PAGE&&reset){functions_reset();}};
         inline void display_functions_redaction_graphic_page(){display_functions_redaction_graphic_page(true);};
         // Displays the geometry page
         void display_geometry_page(){hide_all();geometry_page()->set_visible(true);};
@@ -224,7 +225,7 @@ namespace pleos {
         inline scls::GUI_Scroller_Choice* functions_redaction_elements_created() const {return a_functions_redaction_elements_created.get();};
         inline scls::GUI_Scroller_Choice* functions_redaction_elements_creation() const {return a_functions_redaction_elements_creation.get();};
         inline scls::GUI_Text_Input* functions_redaction_expression() const {return a_functions_redaction_expression.get();};
-        inline pleos::Graphic* functions_redaction_graphic() const {return a_functions_redaction_graphic.get();};
+        inline Graphic_Object* functions_redaction_graphic() const {return a_functions_redaction_graphic.get();};
         inline scls::GUI_Text_Input* functions_redaction_name() const {return a_functions_redaction_name.get();};
 
         // Returns geometry
@@ -236,10 +237,10 @@ namespace pleos {
         inline scls::GUI_Scroller_Choice* geometry_redaction_elements_chosen() const {return a_geometry_redaction_elements_chosen.get();};
         inline scls::GUI_Scroller_Choice* geometry_redaction_elements_created() const {return a_geometry_redaction_elements_created.get();};
         inline scls::GUI_Scroller_Choice* geometry_redaction_elements_creation() const {return a_geometry_redaction_elements_creation.get();};
-        inline Graphic* geometry_redaction_graphic() const {return a_geometry_redaction_graphic.get();};
+        inline Graphic_Object* geometry_redaction_graphic() const {return a_geometry_redaction_graphic.get();};
         inline scls::GUI_Object* geometry_redaction_page() const {return a_geometry_redaction_page.get();};
         inline scls::GUI_Object* geometry_redaction_vector() const {return a_geometry_redaction_vector.get();};
-        inline scls::GUI_Text* geometry_vector_page() const {return a_geometry_vector_page.get();};
+        inline scls::GUI_Text_Base<Text>* geometry_vector_page() const {return a_geometry_vector_page.get();};
         // Form redaction
         inline scls::GUI_Object* geometry_redaction_form() const {return a_geometry_redaction_form.get();};
         inline scls::GUI_Text_Input* geometry_redaction_form_name() const {return a_geometry_redaction_form_name.get();};
@@ -310,7 +311,7 @@ namespace pleos {
         std::shared_ptr<scls::GUI_Scroller_Choice> a_functions_redaction_elements_created;
         std::shared_ptr<scls::GUI_Scroller_Choice> a_functions_redaction_elements_creation;
         std::shared_ptr<scls::GUI_Text_Input> a_functions_redaction_expression;
-        std::shared_ptr<Graphic> a_functions_redaction_graphic;
+        std::shared_ptr<Graphic_Object> a_functions_redaction_graphic;
         std::shared_ptr<scls::GUI_Text_Input> a_functions_redaction_name;
 
         // Geometry page
@@ -322,9 +323,9 @@ namespace pleos {
         std::shared_ptr<scls::GUI_Scroller_Choice> a_geometry_redaction_elements_chosen;
         std::shared_ptr<scls::GUI_Scroller_Choice> a_geometry_redaction_elements_created;
         std::shared_ptr<scls::GUI_Scroller_Choice> a_geometry_redaction_elements_creation;
-        std::shared_ptr<Graphic> a_geometry_redaction_graphic;
+        std::shared_ptr<Graphic_Object> a_geometry_redaction_graphic;
         std::shared_ptr<scls::GUI_Object> a_geometry_redaction_page;
-        std::shared_ptr<scls::GUI_Text> a_geometry_vector_page;
+        std::shared_ptr<scls::GUI_Text_Base<Text>> a_geometry_vector_page;
         // Redaction form
         std::shared_ptr<scls::GUI_Object> a_geometry_redaction_form;
         std::shared_ptr<scls::GUI_Text_Input> a_geometry_redaction_form_name;

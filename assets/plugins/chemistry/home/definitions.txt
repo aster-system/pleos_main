@@ -1,0 +1,38 @@
+<h1>La chimie</h1>
+
+<h2>Qu'est ce qu'est la chimie ?</h2>
+<h3>Définitions basiques</h3>
+<p>
+Parmi toutes les échelles d'études possibles de la matière, la plus petite permettant de différencier la matière macroscopique est celle de l'atome.
+L'étude des atomes est habituellement reservée au domaine de la physique.
+Cependant, elle ne s'étend généralement pas jusqu'à des échelles plus grandes.
+En effet, <important>la chimie représente l'étude de la matière à partir de l'échelle au dessus de l'atome</important>.
+</p>
+<h3>Les éléments chimiques</h3>
+<p>
+Pour faire de la chimie, nous devons utiliser un modèle simplifier de l'atome.
+Ici, <important>un élément chimique représente une classe d'atomes ayant le même nombre de protons</important>.
+Tous ces éléments sont parfaitement rangés sous-forme de tableau : le célèbre tableau périodique des éléments.
+Ce tableau compte 118 éléments, tous aussi originaux les uns que les autres.
+Dans un élément chimique, <important>la distribution des électrons est nommée la configuration électronique de l'élément</important>.
+Si l'atome n'est pas électriquement, il devient un ion (cations si il est chargé positivement, et anions si il est chargé négativement).
+Grâce à cette configuration électronique, on peut facilement étudier les liens possibles entre atomes.
+</p>
+
+<h2>Les objets d'études en chimie</h2>
+<h3>Les liaisons chimiques</h3>
+<p>
+Grâce aux multiples propriétés des éléments chimiques, <important>certains de ces éléments peuvent se lier entr eux, de manière plus ou moins stable</important>.
+<important>Ce genre de liaison est nommée une liaison chimique</important>.
+Des liaisons chimiques particulières permettent des propriétés toutes aussi particulières.
+</p>
+<h3>Les molécules</h3>
+<p>
+Après liaison, <important>un assemblage lié a peu prés stable d'éléments chimiques est nommée une molécule</important>.
+Il est à noter qu'un assemblage lié de molécules (donc, un assemblage lié d'assemblages liés d'éléments chimiques) représente juste une molécule plus grosse.
+De plus, <important>il existe une aberrante quantité de familles (et sous familles) de molécules, selon, entre autres, ses constituants et les liens associés</important>.
+À échelle plus élevée, une forte présence d'une même molécule étudiée indépendament du milieu extérieur sera toujours similaire.
+En chimie, <important>si une substance étudiée indépendament du milieu extérieur est toujours similaire, quelque soit l'étude, alors cette substance est appelée une substance chimique (ou produit chimique)</important>.
+C'est le cas pour une forte présence d'une même molécule.
+Selon l'ACS (American Chemical Society, société américane de recensement de substances chimiques), 142 millions (!!!) de substances chimiques sont recensées, et plusieurs millions s'ajoutent chaque année.
+</p>

@@ -61,3 +61,16 @@
         <cursor type="pointing_hand_cursor">
     </when>
 </gui_object>
+<gui_object name="hub_navigation_chemistry_button" type="text">
+    <border bottom=1 left=1 right=1 top=1>
+    <content font_size=60 alignment_horizontal=center>Chimie</content>
+	<height value=1/6 type=scale>
+    <parent name="hub_page">
+	<width value=1/4 type=scale>
+	<x value=2/3 type=object_scale>
+	<y attach=bottom attached_object=hub_navigation_physic_button offset=20>
+
+    <when event=overflighted>
+        <cursor type="pointing_hand_cursor">
+    </when>
+</gui_object>

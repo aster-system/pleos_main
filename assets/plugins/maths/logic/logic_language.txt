@@ -1,5 +1,9 @@
 <h1>Le langage de la logique</h1>
+
+
+
 <h2>L'alphabet de la logique</h2>
+
 <h3>La théorie des langages</h3>
 <p>
 Avant de définir les symbôles mathématiques, nous allons déjà revoir quelques bases de la théorie des langages (oui, ça existe) en mathématiques.
@@ -7,6 +11,57 @@ Selon cette théorie, <important>un langage représente un ensemble de mots</imp
 Cependant, selon le contexte, un "mot" peut avoir plusieurs définitions (dans le cas du français, un mot est, bien évidemment, une suite de lettres).
 En mathématiques, <important>un "mot" représente un ensemble d'éléments mathématiques, nommés des... lettres</important>.
 Les différents symbôles sont tous présents dans un ensemble nommé un alphabet.
-<important>Les règles permettant de donner sens à un langage se nomme la grammaire</important>.
+D'ailleurs, il existe une opération pour les lettres : la concaténation.
+Ici, <important>la concaténation représente la création d'un mot en ajoutant un mot (ou une lettre) à la suite d'un autre</important>.
+Voici un exemple de cette opération.
+</p>
+<p>Salut + ation = Salutation</p>
+<p>
+L'exemple le plus utilisé ici est la langue française.
+Dans ce cas, <important>l'alphabet utilisé est l'alphabet latin, avec 26 letters différentes</important> (sans compter les versions modifiées : ç, à...).
+En mathématique, cela est très similaire.
+En effet, <important>l'alphabet représente un assemblage de chiffre, d'opérateurs et de variables</important>.
+Cependant, elle implique beaucoup plus de domaines d'études qu'implique la théorie des langages.
+</p>
+
+<h3>La grammaire formelle</h3>
+<p>
+Si nous parlons de cette théorie ici, c'est essentiellement pour ce concept.
+<important>La grammaire formelle représente l'ensemble des règles permettant de donner sens à un langage</important>.
 Pour les langages dans <a href="algebra_definitions">l'algèbre</a>, cela est nommé la grammaire algébrique.
+Bien que ce concept puisse faire peur, il s'agit en réalité de la base de tous les langages existant.
+Un exemple (infiniment évident) de règle est : "les mots sont séparés par des espaces".
+</p>
+<p>
+La définition mathématique de ses règles est un peu plus complexe que ça.
+Premièrement, <important>nous allons définir un ensemble symbôles, que nous appellerons symbôles terminaux</important> (ici, il faut interpréter "terminaux" comme "derniers").
+Deuxièmement, nous allons définir un autre ensemble de symbôles (différents de la 1ère), que nous appellerons symbôles non-terminaux (ici, il faut interpréter "non-terminaux" comme "pas les derniers").
+Troisièmement, nous allons choisir un des symbôles non-terminaux, qui sera la base de notre mot (ou phrase) : nous allons l'appeller l'axiome.
+Finalement, nous allons devoir définir les règles des symbôles non-terminaux.
+En effet, <important>l'idée ici est de partir d'éléments non-terminaux, et de les remplacer par autre chose</important> (comme un mot).
+C'est pour cela qu'on les appelle non-terminaux ("pas les derniers", ils vont être remplacés par autre chose).
+Les règles permettent de savoir par quoi les remplacer.
+On peut en définir plusieurs, que l'utilisateur peut utiliser comme il le souhaite.
+L'idée est de les remplacer par une suite de symbôles terminaux ("derniers", qui ne seront plus remplacés), ou de symbôles non-terminaux (qui, plus tard, seront remplacer par une suite de symbôles terminaux), voir par rien du tout si l'on veut.
+Il s'agit donc d'une construction récursive.
+</p>
+<p>
+Pour noter ce genre de règle, <important>nous pouvons utiliser une notation précise : la forme de Backus-Naur</important>.
+Dans cette notation, les symbôles non-terminaux sont entre chevrons et les symbôles terminaux ne sont pas entre chevrons.
+De plus, l'espace texte est coupé en 2 (par des |) : la partie gauche représente les symbôles terminaux, et la partie droite représente les règles de ses symbôles (un par ligne).
+Il est à noter que cette façon de faire est généralement utilisé pour des langages de programmations informatiques, mais peuvent aussi être utilisé pour des langages mathématiques.
+</p>
+<p>
+Selon les règles précises de sa grammaire, un langage peut être interpréter mathématiquement de manière différente.
+<important>Pour classer les langages, nous pouvons utiliser une hiérarchie précise : la hiérarchie de Chomsky</important>.
+Un langage est de type 3 si chaque règles des non-terminaux les transforment en une quelconque suite de symbôles terminaux ou non-terminaux SAUF eux-mêmes.
+Ces langages sont dit rationnels.
+Un langage est de type 2 si chaque règles des non-terminaux les transforment en une quelconque suite de symbôles terminaux ou non-terminaux.
+Dans ce cas, ces langages sont dis algébriques (ou non-contextuelles).
+Un langage est de type 1 si il est de type 2 ou 3 et certaines règles des non-terminaux demandent à ce que les non terminaux se trouvent dans un certain contexte.
+Par exemple, un remplacement ne peut avoir lieu que si un non-terminaux est entouré de certains symbôles spécifiques.
+Bien évidemment, l'axiome ne doit pas être contextuel, car sinon il ne peut pas exister.
+<important>Ces langages sont dit contextuels, et englobent les langages naturels (le français, l'anglais...)</important>.
+Finalement, un langage est de type 0 si il est défini par une grammaire quelconque.
+Plus un langage est de type élevé, plus il est facile à étudier.
 </p>

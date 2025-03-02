@@ -1,0 +1,49 @@
+<h1>La cinématique</h1>
+<h2>Qu'est ce qu'est la cinématique</h2>
+<h3>La définition brute</h3>
+<p>
+<important>La cinématique représente l'étude des mouvements possibles d'un système</important>.
+Ce domaine représente l'extension de la géométrie, en y ajoutant une valeur temporelle, permettant l'étude d'un mouvement.
+Cependant, il représente le socle de la mécanique, parce qu'à l'inverse de cette dernière, on n'étudie ni les causes, ni les conséquences de ces mouvements.
+Pour étudier quoique ce soit en cinématique, <important>il nous faut définir un espace géométrique, et un repère géométrique dans cette espace, mais aussi un repère temporel, comme une horloge</important>.
+Comme en géométrie, nous allons étudier des points et des figures.
+</p>
+<h3>Les référentiels en cinématique</h3>
+<p>
+En cinématique, <important>chaque objet a son propre repère</important>.
+Pour étudier un objet, <important>nous avons besoin d'un repère d'un autre objet, appeler le référentiel d'étude</important>.
+Ce référentiel est généralement utilisé géométriquement, mais il peut aussi l'être temporellement, bien que ce soit plus rare.
+</p>
+<p>
+Pour réaliser l'étude, <important>le référentiel est considéré comme géométriquement "fixe" par rapport aux autres : tous les objets (et donc référentiels) sont en mouvement, sauf lui</important>.
+Dans ce cas, il est préférable de prendre pour l'étude un référentiel simple à utiliser.
+Par exemple, sur Terre, le référentiel de la Terre (le sol), nommé référentiel terrestre, peut très facilement être considéré comme "fixe" par rapport à tout ce qui existe à notre échelle, puisque tout ce qui existe à notre échelle voient la Terre comme parfaitement inaltérable, et donc stable.
+De plus, <important>dans un ensemble de référentiel possible, le référentiel le plus "fixe" est dit "absolu"</important>.
+À notre échelle, le référentiel terrestre en est le meilleur exemple.
+Pour le système solaire, le meilleur référentiel est le soleil.
+</p>
+<h2>Les liens géométrie - temps</h2>
+<h3>Le concept de mouvement</h3>
+<p>
+En cinématique, <important>un mouvement représente une application géométrique (translation, rotation...) dans le temps d'un objet</important>.
+Pour l'étudier, nous avons obligatoirement besoin d'un référentiel extérieur.
+Pour un mouvement, <important>la ligne tracée par l'objet en mouvement est nommée la trajectoire</important>.
+Si cette ligne est une droite, la trajectoire est dite "rectiligne".
+</p>
+<p>
+Le mouvement total d'un point représente la somme des mouvements subis par ce point.
+De plus, il existe des mouvements "primaires" pour un point.
+<important>En 3D, ces mouvements primaires représentent des mouvements dont la trajectoire est modélisable sur un plan, nommés mouvement plan</important>.
+Avec un peu de recherche, tous les mouvements cinématiques peuvent se décomposer comme ça.
+Pour rappel, en cinématique, <important>on n'étudie que le mouvement, et pas ces causes / conséquences : les mouvements ne changent pas dans le temps</important>.
+Ce n'est pas le cas en mécanique (c'est ce qui différencie les deux).
+Grâce à ces mouvement primaires, on peut décomposer tous mouvements 3D en une suite d'objets géométriques 2D, permettant de les étudier très facilement.
+</p>
+<h3>Les vitesses et les accélérations</h3>
+<p>
+Une trajectoire n'est pas suffisante pour décrire un mouvement.
+En effet, <important>en plus de la trajectoire, un mouvement nécessite une accélération pour être distinguer</important>.
+En cinématique, une accélération représente la modification à un instant T de la vitesse d'un mouvement.
+De plus la vitesse représente la modification à un instant T de l'état de l'objet soumit au mouvement.
+Mathématiquement, l'accélération est la dérivée de la vitesse, et la vitesse est la dérivée de l'état de l'objet.
+</p>

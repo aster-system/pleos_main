@@ -57,7 +57,7 @@ namespace pleos {
         else if(object_name == "maths_functions_redaction_elements_created"){a_functions_redaction_elements_created = *parent->new_object<scls::GUI_Scroller_Choice>(object_name);return a_functions_redaction_elements_created;}
         else if(object_name == "maths_functions_redaction_elements_creation"){a_functions_redaction_elements_creation = *parent->new_object<scls::GUI_Scroller_Choice>(object_name);return a_functions_redaction_elements_creation;}
         else if(object_name == "maths_functions_redaction_expression"){a_functions_redaction_expression = *parent->new_object<scls::GUI_Text_Input>(object_name);return a_functions_redaction_expression;}
-        else if(object_name == "maths_functions_redaction_graphic"){a_functions_redaction_graphic = *parent->new_object<Graphic>(object_name);return a_functions_redaction_graphic;}
+        else if(object_name == "maths_functions_redaction_graphic"){a_functions_redaction_graphic = *parent->new_object<Graphic_Object>(object_name);return a_functions_redaction_graphic;}
         else if(object_name == "maths_functions_redaction_name"){a_functions_redaction_name = *parent->new_object<scls::GUI_Text_Input>(object_name);return a_functions_redaction_name;}
 
         // Geometry
@@ -73,12 +73,12 @@ namespace pleos {
         else if(object_name == "maths_geometry_redaction_form"){a_geometry_redaction_form = *parent->new_object<scls::GUI_Object>(object_name);return a_geometry_redaction_form;}
         else if(object_name == "maths_geometry_redaction_form_name"){a_geometry_redaction_form_name = *parent->new_object<scls::GUI_Text_Input>(object_name);return a_geometry_redaction_form_name;}
         else if(object_name == "maths_geometry_redaction_form_points"){a_geometry_redaction_form_points = *parent->new_object<scls::GUI_Text_Input>(object_name);return a_geometry_redaction_form_points;}
-        else if(object_name == "maths_geometry_redaction_graphic"){a_geometry_redaction_graphic = *parent->new_object<Graphic>(object_name);return a_geometry_redaction_graphic;}
+        else if(object_name == "maths_geometry_redaction_graphic"){a_geometry_redaction_graphic = *parent->new_object<Graphic_Object>(object_name);return a_geometry_redaction_graphic;}
         else if(object_name == "maths_geometry_redaction_vector"){a_geometry_redaction_vector = *parent->new_object<scls::GUI_Object>(object_name);return a_geometry_redaction_vector;}
         else if(object_name == "maths_geometry_redaction_vector_name"){a_geometry_redaction_vector_name = *parent->new_object<scls::GUI_Text_Input>(object_name);return a_geometry_redaction_vector_name;}
         else if(object_name == "maths_geometry_redaction_vector_x"){a_geometry_redaction_vector_x = *parent->new_object<scls::GUI_Text_Input>(object_name);return a_geometry_redaction_vector_x;}
         else if(object_name == "maths_geometry_redaction_vector_y"){a_geometry_redaction_vector_y = *parent->new_object<scls::GUI_Text_Input>(object_name);return a_geometry_redaction_vector_y;}
-        else if(object_name == "maths_geometry_vector_body"){a_geometry_vector_page = *parent->new_object<scls::GUI_Text>(object_name);return a_geometry_vector_page;}
+        else if(object_name == "maths_geometry_vector_body"){a_geometry_vector_page = *parent->new_object<scls::GUI_Text_Base<Text>>(object_name);return a_geometry_vector_page;}
 
         // Logic
         else if(object_name == "maths_logic_definitions_body") {a_logic_definitions_page = *parent->new_object<scls::GUI_Text>(object_name);return a_logic_definitions_page;}
@@ -768,7 +768,7 @@ namespace pleos {
     }
 
     // Checks the redaction parts
-    void Maths_Page::check_redaction(scls::GUI_Text* redaction_part) {
+    void Maths_Page::check_redaction(scls::__GUI_Text_Metadatas* redaction_part) {
         // Asserts
         if(!redaction_part->is_clicked_during_this_frame(GLFW_MOUSE_BUTTON_LEFT)){return;}
 

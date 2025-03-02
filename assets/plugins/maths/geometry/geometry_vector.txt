@@ -1,14 +1,23 @@
 <h1>Les vecteurs en géométrie</h1>
+
 <h2>Qu'est ce qu'est un vecteur ?</h2>
 <h3>La définition pure</h3>
 <p>
 L'élément le plus important en géométrie est le vecteur.
 Bien qu'il peut s'agir de plusieurs notions, <important>la définition brute d'un vecteur est un ensemble de nombres, en général réels</important> (autant que de dimensions dans l'espace du vecteur).
 Les vecteurs peuvent aussi être assimilés à des matrices.
+Pour écrire un vecteur, il faut mettre une petite flèche au dessus de lui, et faire suivre ses coordonnées (si nécessaire) juste après, entre parenthèses, comme ça :
 </p>
 <math>
 <vec>V</vec><mi>(x, y, z)</mi>
 </math>
+<p>
+Pour représenter un vecteur en géométrie, il est conseillé (pas obligatoire mais conseillé) de le faire partir de sa base jusqu'à la coordonnée qu'il représente, comme ça :
+</p>
+<graphic>
+    <base width=10 height=10>
+    <vec x=-4 y=3>
+</graphic>
 <p>
 <important>La caractéristique principale d'un vecteur est de représenter un point de l'espace</important>.
 En effet, il peut représenter une seule position de l'espace, et donc un point.
@@ -32,6 +41,7 @@ Le combo origine et bases de vecteurs formes un repère de l'espace.
 Les vecteurs peuvent représenter plusieurs objets.
 Pour en citer quelques-uns : points, mouvements, repères...
 </p>
+
 <h2>L'utilisation des vecteurs</h2>
 <h3>Les figures géométriques</h3>
 <p>
@@ -39,6 +49,14 @@ En géométrie, <important>une figure représente un ensemble de points (un nomb
 En général, ce terme est confondu avec le terme de "forme géométrique".
 De plus, une figure géométrique peut être accompagner d'informations pour rendre son ensemble de point cohérent (liens / segments entre les points, angles formés...).
 </p>
+<graphic>
+    <base width=10 height=10>
+    <point name="A" x=-4 y=3>
+    <point name="B" x=-2 y=-4>
+    <point name="C" x=4 y=-1>
+    <point name="D" x=1 y=4>
+    <form name="ABDC" points="A;B;C;D">
+</graphic>
 <p>
 <important>Le type de figures les plus utilisées représentent les figures "polytopes"</important>.
 Bien que le terme "polytope" soit peu connu, il s'agit juste de la généralisation du terme 2D "polygône" et 3D "polyhèdres" en X dimensions.

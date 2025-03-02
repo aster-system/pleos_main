@@ -30,6 +30,7 @@
 #define PLEOS_HUB
 
 // Include PLEOS plugins
+#include "pleos_chemistry.h"
 #include "pleos_it.h"
 #include "pleos_maths.h"
 #include "pleos_physic.h"
@@ -74,6 +75,7 @@ namespace pleos {
         //******************
 
         // Navigation
+        std::shared_ptr<scls::GUI_Text> a_navigation_chemistry_button;
         std::shared_ptr<scls::GUI_Text> a_navigation_it_button;
         std::shared_ptr<scls::GUI_Text> a_navigation_maths_button;
         std::shared_ptr<scls::GUI_Text> a_navigation_physic_button;
@@ -88,6 +90,7 @@ namespace pleos {
         // Create an object in the window
         std::shared_ptr<scls::Object> __create_loaded_object_from_type(std::string object_name, std::string object_type) {
             if(object_name == "hub") {std::shared_ptr<Hub_Page> hub = *new_page_2d<Hub_Page>(object_name);return hub;}
+            else if(object_name == "chemistry") {std::shared_ptr<Chemistry_Page> hub = *new_page_2d<Chemistry_Page>(object_name);return hub;}
             else if(object_name == "it") {std::shared_ptr<IT_Page> hub = *new_page_2d<IT_Page>(object_name);return hub;}
             else if(object_name == "maths") {std::shared_ptr<Maths_Page> hub = *new_page_2d<Maths_Page>(object_name);return hub;}
             else if(object_name == "physic") {std::shared_ptr<Physic_Page> hub = *new_page_2d<Physic_Page>(object_name);return hub;}

@@ -34,7 +34,8 @@ namespace pleos {
     // Loads an object in a page from XML
     std::shared_ptr<scls::GUI_Object> Hub_Page::__create_loaded_object_from_type(std::string object_name, std::string object_type, scls::GUI_Object* parent) {
         // Navigation
-        if(object_name == "hub_navigation_it_button"){a_navigation_it_button = *parent->new_object<scls::GUI_Text>(object_name);return a_navigation_it_button;}
+        if(object_name == "hub_navigation_chemistry_button"){a_navigation_chemistry_button = *parent->new_object<scls::GUI_Text>(object_name);return a_navigation_chemistry_button;}
+        else if(object_name == "hub_navigation_it_button"){a_navigation_it_button = *parent->new_object<scls::GUI_Text>(object_name);return a_navigation_it_button;}
         else if(object_name == "hub_navigation_maths_button") {a_navigation_maths_button = *parent->new_object<scls::GUI_Text>(object_name);return a_navigation_maths_button;}
         else if(object_name == "hub_navigation_physic_button"){a_navigation_physic_button = *parent->new_object<scls::GUI_Text>(object_name);return a_navigation_physic_button;}
 
@@ -43,15 +44,12 @@ namespace pleos {
 
     // Checks the events of navigation
     void Hub_Page::check_navigation() {
+        if(a_navigation_chemistry_button.get()->is_clicked_during_this_frame(GLFW_MOUSE_BUTTON_LEFT)) {window_struct()->hide_all_pages_2d();window_struct()->display_page_2d("chemistry");}
         if(a_navigation_it_button.get()->is_clicked_during_this_frame(GLFW_MOUSE_BUTTON_LEFT)) {window_struct()->hide_all_pages_2d();window_struct()->display_page_2d("it");}
         if(a_navigation_maths_button.get()->is_clicked_during_this_frame(GLFW_MOUSE_BUTTON_LEFT)) {window_struct()->hide_all_pages_2d();window_struct()->display_page_2d("maths");}
         if(a_navigation_physic_button.get()->is_clicked_during_this_frame(GLFW_MOUSE_BUTTON_LEFT)) {window_struct()->hide_all_pages_2d();window_struct()->display_page_2d("physic");}
     }
 
     // Updates the events
-    void Hub_Page::update_event() {
-        GUI_Page::update_event();
-
-        check_navigation();
-    }
+    void Hub_Page::update_event() {GUI_Page::update_event();check_navigation();}
 }
