@@ -1,0 +1,12 @@
+<tree name="Particule">
+    <node name="Baryons">
+        <node name="Bosons">
+            <node name="Photons"></node>
+            <node name="Gluons"></node>
+        </node>
+        <node name="Quarks">
+            <node name="Down"></node>
+            <node name="Up"></node>
+        </node>
+    </node>
+</tree>

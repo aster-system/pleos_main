@@ -33,6 +33,7 @@
 // Include PLEOS Libs
 #include "../../pleos_libs/pleos_it.h"
 #include "../../pleos_libs/pleos_mathematics.h"
+#include "../../pleos_libs/pleos_text.h"
 
 // Possible pages
 #define PLEOS_IT_HOME_PAGE 0
