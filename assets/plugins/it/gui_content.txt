@@ -16,6 +16,9 @@
 		<choice name="data_structures_trees">Les arbres</choice>
         <choice name="data_structures_trees_graphic">Simuler un arbre</choice>
 	</sub_choice>
+	<sub_choice name="algorithms" displayer="Algorithmes">
+		<choice name="algorithms_sort">Les tris</choice>
+	</sub_choice>
 </gui_object>
 
 // Hub button
@@ -33,3 +36,4 @@
 </gui_object>
 
 <include src="gui_content_data_structures.txt">
+<include src="gui_content_algorithms.txt">

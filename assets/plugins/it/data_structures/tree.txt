@@ -1,12 +1,15 @@
-<tree name="Particule">
-    <node name="Baryons">
-        <node name="Bosons">
-            <node name="Photons"></node>
-            <node name="Gluons"></node>
+<tree name="Tri fusion">
+    <node name="(5,3,2,4,1)">
+        <node name="(5,3,2)">
+            <node name="(5,3)">
+                <node name="(3,)"></node>
+                <node name="(5,)"></node>
+            </node>
+            <node name="(2,)"><node name="(2,)"></node></node>
         </node>
-        <node name="Quarks">
-            <node name="Down"></node>
-            <node name="Up"></node>
+        <node name="(4,1)">
+            <node name="(1,)"><node name="(1,)"></node></node>
+            <node name="(4,)"><node name="(4,)"></node></node>
         </node>
     </node>
 </tree>

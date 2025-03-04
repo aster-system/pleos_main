@@ -63,6 +63,10 @@ namespace pleos {
         //
         //******************:
 
+        //Displays the algorithms page
+        void display_algorithms_page(){hide_all();algorithms_page()->set_visible(true);}
+        void display_algorithms_sort_page(){display_algorithms_page();algorithms_sort_page()->set_visible(true);}
+
         // Displays the data structure page
         void display_data_structures_page(){hide_all();data_structures_page()->set_visible(true);};
         void display_data_structures_trees_page(){set_current_page(PLEOS_IT_DATA_STRUCTURES_TREES_PAGE);display_data_structures_page();data_structures_tree_page()->set_visible(true);};
@@ -85,6 +89,8 @@ namespace pleos {
         inline scls::GUI_Text* hub_button() const {return a_hub_button.get();};
 
         // Returns pages
+        inline scls::GUI_Object* algorithms_page() const {return a_algorithms_page.get();};
+        inline scls::GUI_Text_Base<Text>* algorithms_sort_page() const {return a_algorithms_sort_page.get();};
         inline scls::GUI_Object* data_structures_page() const {return a_data_structures_page.get();};
         inline scls::GUI_Object* data_structures_tree_page() const {return a_data_structures_tree_page.get();};
         inline scls::GUI_Object* data_structures_tree_simulation_page() const {return a_data_structures_tree_simulation_page.get();};
@@ -104,6 +110,8 @@ namespace pleos {
         std::shared_ptr<scls::GUI_Scroller_Choice> a_navigation;
 
         // Pages
+        std::shared_ptr<scls::GUI_Object> a_algorithms_page;
+        std::shared_ptr<scls::GUI_Text_Base<Text>> a_algorithms_sort_page;
         std::shared_ptr<scls::GUI_Object> a_data_structures_page;
         std::shared_ptr<scls::GUI_Object> a_data_structures_tree_page;
         std::shared_ptr<scls::GUI_Object> a_data_structures_tree_simulation_page;

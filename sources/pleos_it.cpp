@@ -38,6 +38,8 @@ namespace pleos {
         if(object_name == "it_data_structures_tree_simulation"){a_data_structures_tree_simulation = *parent->new_object<Graphic_Object>(object_name);return a_data_structures_tree_simulation;}
 
         // Pages
+        else if(object_name == "it_algorithms_page") {a_algorithms_page = *parent->new_object<scls::GUI_Object>(object_name);return a_algorithms_page;}
+        else if(object_name == "it_algorithms_sort_body") {a_algorithms_sort_page = *parent->new_object<scls::GUI_Text_Base<Text>>(object_name);return a_algorithms_sort_page;}
         else if(object_name == "it_data_structures_page") {a_data_structures_page = *parent->new_object<scls::GUI_Object>(object_name);return a_data_structures_page;}
         else if(object_name == "it_data_structures_tree_body"){a_data_structures_tree_page = *parent->new_object<scls::GUI_Text_Base<Text>>(object_name);return a_data_structures_tree_page;}
         else if(object_name == "it_data_structures_tree_simulation_body"){a_data_structures_tree_simulation_page = *parent->new_object<scls::GUI_Text>(object_name);return a_data_structures_tree_simulation_page;}
@@ -56,7 +58,9 @@ namespace pleos {
             std::string page = a_navigation.get()->currently_selected_objects_during_this_frame()[0].name();
 
             // IT pages
-            if(page == "data_structures_trees"){display_data_structures_trees_page();}
+            if(page == "algorithms"){display_algorithms_page();}
+            else if(page == "algorithms_sort"){display_algorithms_sort_page();}
+            else if(page == "data_structures_trees"){display_data_structures_trees_page();}
             else if(page == "data_structures_trees_graphic"){display_data_structures_trees_simulation_page();}
         }
 
