@@ -1,0 +1,60 @@
+<h1>La théorie des ensembles</h1>
+
+
+
+<h2>Qu'est ce qu'est la théorie des ensembles ?</h2>
+
+<h3>La base de la théorie</h3>
+<p>
+L'idée de la théorie des ensembles, comme introduite par Georg Cantor à la fin du 19ème siècle, est de proposer un fondement solide aux mathématiques.
+<important>Elle représente l'étude d'objets mathématiques, nommés des ensembles</important>.
+De manière parfaitement intuitive, <important>un ensemble représente un... ensemble d'éléments</important>.
+Si un élément se trouve dans un ensemble, on dit que cet élément appartient à l'ensemble : c'est la relation (élément - ensemble) d'appartenance.
+Cependant, il est aussi possible de définir un ensemble sans aucun élément, nommée un ensemble vide.
+De plus, <important>dans certains cas, un objet ressemblant à un ensemble (contenant d'autres objets mathématiques) ne peut pas appartenir à un autre ensemble : il s'agit dans ce cas d'une classe</important>.
+</p>
+<p>
+Nous pouvons faire pas mal d'opérations basiques avec ces ensembles.
+<important>Si TOUS les éléments d'un ensemble A appartiennent à un autre ensemble B, alors on dit que A est inclu dans B</important>.
+La réciproque n'est pas vraie : l'ensemble des nombres premiers est inclu dans l'ensemble des nombres (tous les nombres premiers sont des nombres), mais l'ensemble des nombres n'est pas inclu dans l'ensemble des nombres premiers (8 est un nombre, mais n'est pas premier).
+Dans ce cas, nous pouvons dire que A est un sous-ensemble (ou une partie) de A.
+</p>
+<p>
+En théorie des ensembles, <important>l'axiomatisation la plus utilisée est l'axiomatisation Zermelo - Fraenkel; abrégée axiomatisation ZF</important>.
+Commençons par les axiomes de Zermelo.
+Le premier axiome, l'axiome d'extensionnalité, dit que, si deux ensembles ont les mêmes éléments, ils sont égaux.
+Cet axiome assure l'unicité des ensembles.
+Le deuxième axiome, l'axiome de paire, indique que l'union des éléments de plusieurs ensembles ne peut contenir un élément x si (et seulement si) x est contenu dans au moins l'un des ensembles formant la paire.
+Il implique que la paire de plusieurs ensembles est unique et existe toujours.
+Le troisième axiome, l'axiome de la réunion, dit que, pour tous ensembles A constitué intégralement d'ensembles (un ensemble d'ensemble), il existe un autre ensemble contenant l'union des éléments tous les ensembles contenus dans A.
+Si vous n'avez pas compris, nous vous encourageons à relire cette phrase lentement, et faire un schéma en même temps (le plus dur est de comprendre la phrase, le concept est tout à fait évident).
+Le quatrième axiome, l'axiome de l'ensemble de paires, dit que, pour un ensemble A, il est possible de représenter TOUS les sous-ensembles possibles de A dans un autre ensemble.
+Le cinquième axiome, l'axiome de l'infini, assure qu'il est toujours possible d'obtenir une suite d'ensemble pouvant être représente comme la suite des entiers naturels.
+En gros, on permet l'existence d'un ensemble correspondant parfaitement à celui des entiers naturels.
+Finalement, le dernier axiome, le schéma d'axiome de compréhension, admet que pour un ensemble E et une propriété P pouvant être appliquée sur certains éléments de E, il existe un sous-ensemble de E tel que ses éléments respectent P.
+Cependant, ces axiomes sont insuffisants, et il faut en rajouter quelques-uns pour compléter la théorie.
+En effet, <important>nous allons généraliser le schéma d'axiome de compréhension si P est une transformation, en admettant l'existence d'un ensemble F, représentant les images (possibles) des valeurs de E après P</important>.
+On peut aussi rajouter l'axiome de fondation, garantissant qu'un ensemble E ne peut pas appartenir à un autre ensemble F si E et F ont des éléments (généralement des ensembles) en commun.
+Cet axiome permet de dire qu'un ensemble ne peut pas appartenir à lui même, ou à une suite d'ensembles le possédant.
+Un dernier axiome (indépendant des autres) est l'axiome du choix.
+<important>L'axiome du choix indique qu'il est possible de construire un ensemble à partir de pleins d'autres ensembles X, auquel on choisit un élément (par ensemble) grâce à une fonction quelconque (préalablement définie ou non) nommée fonction de choix</important>.
+Cet axiome n'est pas toujours nécessaire.
+</p>
+
+<h3>Les ensembles</h3>
+<p>
+Les ensembles ont beaucoup de propriétés très intéressantes.
+<important>Si un ensemble possède un plus petit élément, il est dit bien ordonné</important>.
+Cela implique que les éléments de cet ensemble sont comparables : il s'agit d'une relation dite d'ordre total sur l'ensemble.
+Ce système de comparaison implique un ordre précis, et distinguable par une syntaxe.
+Cependant, certains types de comparaisons (défini par l'algèbre des éléments de l'ensemble) combiné à la définition de l'ensemble nécessitent un système de syntaxe particulièrement complexe.
+Par exemple, dans le cas d'un ensemble infini de couples (x, y), on définit la comparaison de ses couples comme la comparaison de x, puis y.
+Donc, (1, 0) &gt; (0, 10) et (2, 4) &lt; (3, 1).
+Or, si x est infini, alors le tri sera compliqué, puisque n'importe quel couple de position un nombre entier sera inférieur à (1, 0), ce qui n'est pas très pratique.
+Pour cela, la position x représentera un multiple d'une valeur ω de la position du couple.
+Donc, la position de (4, 0) sera 4ω, celle de (2, 3) sera de 2ω + 3 et celle de (0, 8) sera 8.
+D'ailleurs, si nous avons à étudier des triplets (x, y, z), alors le nombre ordinal d'un triplet serait "xω² + yω + z". 
+<important>Dans ce cas là, la position sera nommée le nombre ordinal du couple dans l'ensemble</important>.
+D'un point de vue "clasique", ω """serait""" le nombre suivant l'ensemble des entiers naturels.
+L'adaptation de ce que représente le multiple de ω dépend du contexte actuel dans lequel le nombre est utilisé (ici, un exemple évident avec des couples est utilisé).
+</p>

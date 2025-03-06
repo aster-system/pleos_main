@@ -39,6 +39,7 @@
 // Logic pages
 #define PLEOS_MATHS_LOGIC_PAGE 100
 #define PLEOS_MATHS_LOGIC_DEFINITIONS_PAGE 101
+#define PLEOS_MATHS_LOGIC_SET_THEORY_PAGE 102
 #define PLEOS_MATHS_LOGIC_LANGUAGE_PAGE 110
 // Arithmetic pages
 #define PLEOS_MATHS_ARITHMETIC_PAGE 200
@@ -178,6 +179,7 @@ namespace pleos {
         void display_logic_page(){hide_all();logic_page()->set_visible(true);set_current_page(PLEOS_MATHS_LOGIC_PAGE);};
         void display_logic_definitions_page(){display_logic_page();set_current_page(PLEOS_MATHS_LOGIC_DEFINITIONS_PAGE);logic_definitions_page()->set_visible(true);};
         void display_logic_language_page(){display_logic_page();set_current_page(PLEOS_MATHS_LOGIC_LANGUAGE_PAGE);logic_language_page()->set_visible(true);};
+        void display_logic_set_theory_page(){display_logic_page();set_current_page(PLEOS_MATHS_LOGIC_SET_THEORY_PAGE);logic_set_theory_page()->set_visible(true);};
 
         // Hides all the pages
         void hide_all(){hide_sub_pages(true);check_hiding();};
@@ -253,6 +255,7 @@ namespace pleos {
         // Returns logic
         inline scls::GUI_Text* logic_definitions_page() const {return a_logic_definitions_page.get();};
         inline scls::GUI_Text* logic_language_page() const {return a_logic_language_page.get();};
+        inline scls::GUI_Text_Base<Text>* logic_set_theory_page() const {return a_logic_set_theory_page.get();};
 
     private:
 
@@ -339,6 +342,7 @@ namespace pleos {
         // Logic page
         std::shared_ptr<scls::GUI_Text> a_logic_definitions_page;
         std::shared_ptr<scls::GUI_Text> a_logic_language_page;
+        std::shared_ptr<scls::GUI_Text_Base<Text>> a_logic_set_theory_page;
     };
 }
 

@@ -47,3 +47,17 @@
 	<x value=1/2 type=object_scale>
 	<y attach=bottom>
 </gui_object>
+
+//***************************************************
+// Set theory
+//***************************************************
+
+<gui_object name="maths_logic_set_theory_body" type="text" sub_page>
+    <content max_width=0 src="logic/logic_set_theory.txt"></content>
+	<height value=7/8 type=scale>
+	<parent name="maths_logic_page">
+	<texture alignment_horizontal=left alignment_vertical=top>
+    <width value=9/10 type=scale>
+	<x value=1/2 type=object_scale>
+	<y attach=bottom>
+</gui_object>

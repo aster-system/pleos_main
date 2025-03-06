@@ -83,6 +83,7 @@ namespace pleos {
         // Logic
         else if(object_name == "maths_logic_definitions_body") {a_logic_definitions_page = *parent->new_object<scls::GUI_Text>(object_name);return a_logic_definitions_page;}
         else if(object_name == "maths_logic_language_body"){a_logic_language_page = *parent->new_object<scls::GUI_Text>(object_name);return a_logic_language_page;}
+        else if(object_name == "maths_logic_set_theory_body"){a_logic_set_theory_page = *parent->new_object<scls::GUI_Text_Base<Text>>(object_name);return a_logic_set_theory_page;}
 
         // Pages
         else if(object_name == "maths_algebra_page"){a_algebra_page = *parent->new_object<scls::GUI_Object>(object_name);return a_algebra_page;}
@@ -761,6 +762,7 @@ namespace pleos {
             // Logic pages
             else if(page == "logic_definitions"){display_logic_definitions_page();}
             else if(page == "logic_language"){display_logic_language_page();}
+            else if(page == "logic_set_theory"){display_logic_set_theory_page();}
         }
 
         // Check the hub button

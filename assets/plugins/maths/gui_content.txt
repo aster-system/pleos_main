@@ -16,6 +16,7 @@
 	<sub_choice name="logic" displayer="La logique">
 		<choice name="logic_definitions">Définitions basiques</choice>
 		<choice name="logic_language">Le langage logique</choice>
+		<choice name="logic_set_theory">La théorie des ensembles</choice>
 	</sub_choice>
 
 	<sub_choice name="algebra" displayer="L'algèbre">
