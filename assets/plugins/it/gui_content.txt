@@ -14,7 +14,7 @@
 	<choice name="home">Accueil</choice>
 	<sub_choice name="data_structures" displayer="Structures de données">
 		<choice name="data_structures_trees">Les arbres</choice>
-        <choice name="data_structures_trees_graphic">Simuler un arbre</choice>
+        <choice name="data_structures_trees_graphic">Simuler un graphe / arbre</choice>
 	</sub_choice>
 	<sub_choice name="algorithms" displayer="Algorithmes">
 		<choice name="algorithms_sort">Les tris</choice>

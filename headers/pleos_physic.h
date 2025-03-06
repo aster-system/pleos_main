@@ -97,6 +97,7 @@ namespace pleos {
         void display_matter_scale_page(){set_current_page(PLEOS_PHYSIC_MATTER_SCALE_PAGE);display_matter_page();matter_scale_page()->set_visible(true);}
 
         // Displays the mechanic pages
+        void display_mechanic_dynamic_page(){display_mechanic_page();mechanic_dynamic_page()->set_visible(true);}
         void display_mechanic_kinematic_page(){display_mechanic_page();mechanic_kinematic_page()->set_visible(true);}
         void display_mechanic_page(){hide_all();mechanic_page()->set_visible(true);};
 
@@ -128,6 +129,7 @@ namespace pleos {
         inline Graphic_Object* matter_bohr_model_simulation() const {return a_physic_matter_bohr_model_simulation.get();};
 
         // Mechanic
+        inline scls::GUI_Text* mechanic_dynamic_page() const {return a_physic_mechanic_dynamic_body.get();};
         inline scls::GUI_Text* mechanic_kinematic_page() const {return a_physic_mechanic_kinematic_body.get();};
 
    private:
@@ -159,6 +161,7 @@ namespace pleos {
         std::shared_ptr<scls::GUI_Text> a_physic_matter_scale_body;
 
         // Mechanic
+        std::shared_ptr<scls::GUI_Text> a_physic_mechanic_dynamic_body;
         std::shared_ptr<scls::GUI_Text> a_physic_mechanic_kinematic_body;
 
         // Pages

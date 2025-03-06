@@ -12,7 +12,7 @@
 	<y attach=top>
 </gui_object>
 <gui_object name="it_data_structures_page_title" type="text">
-    <content font_size=70>Les structures de données</content>
+    <content font_size=70 alignment_horizontal=center>Les structures de données</content>
 	<height value=1/8 type=scale>
     <parent name="it_data_structures_page">
 	<width value=1 type=scale>
@@ -28,6 +28,7 @@
     <content max_width=0 src="data_structures/tree.txt"></content>
 	<height value=7/8 type=scale>
 	<parent name="it_data_structures_page">
+	<texture alignment_horizontal=left alignment_vertical=top>
     <width value=9/10 type=scale>
 	<x value=1/2 type=object_scale>
 	<y attach=bottom>
@@ -46,7 +47,7 @@
 </gui_object>
 
 // Graphic simulation
-<gui_object name="it_data_structures_tree_simulation" type="graphic">
+<gui_object name="it_data_structures_tree_simulation" type="object">
 	<border bottom=1 left=1 right=1 top=1>
 	<height value=1/2 type=scale>
 	<parent name="it_data_structures_tree_simulation_body">

@@ -22,6 +22,7 @@
 	</sub_choice>
 	<sub_choice name="mechanic" displayer="La mécanique">
 		<choice name="mechanic_kinematic">La cinématique</choice>
+		<choice name="mechanic_dynamic">La dynamique</choice>
 	</sub_choice>
 </gui_object>
 

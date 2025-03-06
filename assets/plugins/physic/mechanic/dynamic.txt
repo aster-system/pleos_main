@@ -1,0 +1,13 @@
+<h1>La dynamique</h1>
+
+
+
+<h2>Qu'est ce qu'est la dynamique ?</h2>
+
+<h3>Un domaine de la mécanique</h3>
+<p>
+Nous avons déjà défini la cinématique un peu plus tôt.
+Or, en cinématique, on étudie le mouvement sans implications extérieures.
+<important>La dynamique représente l'étude des mouvements (via la cinématique), et de leurs causes et conséquences</important>.
+Elle fait donc intervenir des concepts très connus : force, couple, action...
+</p>

@@ -96,7 +96,7 @@ namespace pleos {
         inline scls::GUI_Object* data_structures_tree_simulation_page() const {return a_data_structures_tree_simulation_page.get();};
 
         // Trees simulation
-        inline Graphic_Object* data_structures_tree_simulation() const {return a_data_structures_tree_simulation.get();};
+        inline scls::GUI_Object* data_structures_tree_simulation() const {return a_data_structures_tree_simulation.get();};
 
     private:
         // Current state of the page
@@ -117,7 +117,7 @@ namespace pleos {
         std::shared_ptr<scls::GUI_Object> a_data_structures_tree_simulation_page;
 
         // Tree simulation
-        std::shared_ptr<Graphic_Object> a_data_structures_tree_simulation;
+        std::shared_ptr<scls::GUI_Object> a_data_structures_tree_simulation;
     };
 }
 
