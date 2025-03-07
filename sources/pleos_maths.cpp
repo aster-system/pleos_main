@@ -531,11 +531,21 @@ namespace pleos {
         if(window_struct()->key_pressed_during_this_frame("left control")) {
             // Do the calculation in the calculator
             std::string needed_text = arithmetic_calculator_input()->text();
-            scls::Formula needed_formula = scls::string_to_formula(needed_text);
+            // Prepare the redaction
             std::string current_text = arithmetic_calculator_redaction()->text();
             if(current_text.size() == 29 && current_text == std::string("Pas de rédaction à afficher")){current_text = std::string("");}
             if(current_text != ""){current_text += std::string("</br>");}
-            current_text += needed_formula.to_std_string();
+
+            // TEMP
+            current_text = "";
+            std::vector<std::string> cutted = scls::cut_string(needed_text, ";");
+            arithmetic_gcd(std::stoi(cutted[0]), std::stoi(cutted[1]), &current_text);
+
+            // NORMAL
+            //scls::Formula needed_formula = scls::string_to_formula(needed_text);
+            //current_text += needed_formula.to_std_string();
+
+            // Finish the redaction
             arithmetic_calculator_redaction()->set_text(current_text);
         }
     }
