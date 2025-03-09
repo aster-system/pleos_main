@@ -11,6 +11,15 @@
 	<x attach=left>
 	<y attach=top>
 
+	<when event="selected">
+		<background_color red=128 green=128 blue=128>
+	</when>
+
+	<when event="unselected">
+		<background_color red=255 green=255 blue=255>
+		<font_size value=20>
+	</when>
+
 	<choice name="home">Accueil</choice>
 
 	<sub_choice name="logic" displayer="La logique">
@@ -26,6 +35,8 @@
 
 	<sub_choice name="arithmetic" displayer="L'arithmétique">
 		<choice name="arithmetic_definitions">Définitions basiques</choice>
+		<choice name="arithmetic_numbers_sets">Ensembles de nombres</choice>
+		<choice name="arithmetic_division">La division</choice>
 		<choice name="arithmetic_calculator">Calculatrice</choice>
 	</sub_choice>
 

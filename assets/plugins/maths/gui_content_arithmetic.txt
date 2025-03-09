@@ -35,32 +35,113 @@
 </gui_object>
 
 //***************************************************
+// Division
+//***************************************************
+
+<gui_object name="maths_arithmetic_division_body" type="text" sub_page>
+    <content max_width=0 src="arithmetic/arithmetic_division.txt"></content>
+	<height value=7/8 type=scale>
+	<parent name="maths_arithmetic_page">
+	<texture alignment_horizontal=left alignment_vertical=top>
+    <width value=9/10 type=scale>
+	<x value=1/2 type=object_scale>
+	<y attach=bottom>
+</gui_object>
+
+//***************************************************
+// Numbers sets
+//***************************************************
+
+<gui_object name="maths_arithmetic_numbers_sets_body" type="text" sub_page>
+    <content max_width=0 src="arithmetic/arithmetic_numbers_sets.txt"></content>
+	<height value=7/8 type=scale>
+	<parent name="maths_arithmetic_page">
+	<texture alignment_horizontal=left alignment_vertical=top>
+    <width value=9/10 type=scale>
+	<x value=1/2 type=object_scale>
+	<y attach=bottom>
+</gui_object>
+
+//***************************************************
 // Calculator
 //***************************************************
 
 <gui_object name="maths_arithmetic_calculator_body" type="object" sub_page>
 	<height value=7/8 type=scale>
 	<parent name="maths_arithmetic_page">
-    <width value=9/10 type=scale>
+    <width value=1 type=scale>
 	<x value=1/2 type=object_scale>
 	<y attach=bottom>
 </gui_object>
+
 // Redaction part
 <gui_object name="maths_arithmetic_calculator_redaction" type="text">
 	<border bottom=1 left=1 right=1 top=1>
 	<content max_width=0>Pas de rédaction à afficher</content>
-	<height value=1/2 type=scale>
+	<height value=4/7 type=scale>
 	<parent name="maths_arithmetic_calculator_body">
 	//<texture alignment_vertical=top>
 	<width value=4/5 type=scale>
 	<x attach=right>
 	<y attach=top>
 </gui_object>
-<gui_object name="maths_arithmetic_calculator_input" type="text_input">
+// Congruence circle part
+<gui_object name="maths_arithmetic_calculator_congruence_circle" type="object">
 	<border bottom=1 left=1 right=1 top=1>
-	<height value=1/10 type=scale>
+	<height value=4/7 type=scale>
+	<parent name="maths_arithmetic_calculator_body">
+	//<texture alignment_vertical=top>
+	<width value=4/5 type=scale>
+	<x attach=right>
+	<y attach=top>
+</gui_object>
+
+// Elements
+<gui_object name="maths_arithmetic_calculator_elements" type="scroller_choice">
+	<border bottom=1 left=1 right=1 top=1>
+	<height value=1/2 type=scale>
+	<parent name="maths_arithmetic_calculator_body">
+	<width value=1/5 type=scale>
+	<x attach=left>
+	<y attach=top>
+
+	<choice name="gcd">PGCD</choice>
+	<choice name="decomposition">Décomposition</choice>
+	<choice name="congruence_circle">Cercle de congruence</choice>
+	<choice name="eratosthenes_sieve">Crible d'Ératosthène</choice>
+</gui_object>
+<gui_object name="maths_arithmetic_calculator_elements_chosen" type="scroller_choice">
+	<border bottom=1 left=1 right=1 top=1>
+	<height value=3/7 type=scale>
+	<parent name="maths_arithmetic_calculator_body">
+	<width value=1/5 type=scale>
+	<x attach=left>
+	<y attach=bottom>
+</gui_object>
+<gui_object name="maths_arithmetic_calculator_elements_chosen_title" type="text">
+	<content font_size=30 alignment_horizontal=center>Éléments à analyser</content>
+	<height value=1/14 type=scale>
+	<parent name="maths_arithmetic_calculator_body">
+	<width value=1/5 type=scale>
+	<x attach=left>
+	<y attach=bottom attached_object=maths_arithmetic_calculator_elements>
+</gui_object>
+
+// Datas about the element
+<gui_object name="maths_arithmetic_calculator_elements_datas" type="scroller_choice">
+	<border bottom=1 left=1 right=1 top=1>
+	<height value=3/7 type=scale>
 	<parent name="maths_arithmetic_calculator_body">
 	<width value=4/5 type=scale>
 	<x attach=right>
-	<y attach=bottom attached_object=maths_arithmetic_calculator_redaction>
+	<y attach=bottom>
+</gui_object>
+<gui_object name="maths_arithmetic_calculator_elements_datas_title" type="text">
+	<content font_size=30 alignment_horizontal=center>Aucun élément sélectionné</content>
+	<height value=1/6 type=scale>
+	<parent name="maths_arithmetic_calculator_elements_datas">
+	<texture alignment_vertical=top>
+	<width value=1 type=scale>
+	<x attach=left>
+	<y attach=top>
 </gui_object>

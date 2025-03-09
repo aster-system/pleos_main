@@ -10,4 +10,43 @@ Nous avons déjà défini la cinématique un peu plus tôt.
 Or, en cinématique, on étudie le mouvement sans implications extérieures.
 <important>La dynamique représente l'étude des mouvements (via la cinématique), et de leurs causes et conséquences</important>.
 Elle fait donc intervenir des concepts très connus : force, couple, action...
+En réalité, <important>elle comprend aussi les cas de corps soumis à aucune modification, nommée la statique</important>.
+En effet, si un objet ne subit aucune modification extérieure, il est dit statique / en équilibre.
+Il est à noter que ces deux concepts (mécanique et dynamique) sont souvent tellement mélés qu'ils en deviennent difficile à distinguer entre eux (ce qui n'est pas vraiment un problème, puisque cette distinction n'est pas vraiment utile).
 </p>
+<h3>Le principe fondamental de la dynamique</h3>
+<p>
+Avant d'énumérer ce principe, rappelons en un autre : le principe d'inertie.
+En dynamique, <important>le principe le plus utilisé représentent la deuxième lois de Newton : l'accélération d'un objet est proportionnel à la force qui la génère</important>.
+En effet, l'accélération représente la force qui la génère divisée par la masse de l'objet.
+On peut donc en obtenir un autre principe très important : le principe d'inertie (ou première loi de Newton).
+Selon le principe d'inertie, <important>si la somme des forces exercées sur l'objet est nulle, alors il n'accélère pas (la réciproque est vraie)</important>.
+Donc, sa vitesse et sa trajectoire ne change pas.
+</p>
+<math><vec>F</vec><mo>=</mo><mi>m</mi><mo>*</mo><vec>a</vec></math>
+<p>
+Dans le cas d'une rotation, le calcul est plus compliqué.
+Pour bien comprendre la suite, <important>nous allons exprimer le nombre de tour de l'objet en rotation en tours par seconde (sans unités), et utiliser le terme de vitesse angulaire pour parler de l'angle du cercle parcouru par seconde (en degrés par secondes)</important>.
+En effet, en toute logique, pour un disque tournant, plus on s'éloigne du centre de rotation, plus la taille d'un cercle (de centre le centre de rotation) est grande.
+Or, le nombre de tour par seconde (et donc, la vitesse angulaire) sera le même pour les deux cercles, et le plus grand sera entièrement parcouru en un temps similaire aux plus petits.
+Dans ce cas, <important>nous allons parler de vitesse, qui sera toujours plus importante pour un cercle éloigné que pour un cercle proche du centre</important>.
+Donc, plus on s'éloigne, plus la vitesse de rotation est grande, et donc plus il faut une accélération importante pour atteindre une vitesse similaire que pour un cercle plus proche (et plus petit).
+</p>
+<h3>Le théorème de l'équilibre</h3>
+<p>
+Si il existe un principe fondamental de dynamique, il en existe aussi un en statique : le théorème de l'équilibre.
+Ce théorème est très simple : <important>un objet est à l'équilibre (par rapport à un référentiel quelconque) si la somme de toutes les forces appliquées sur lui est nulle</important>.
+En gros, selon le principe d'inertie, dans un objet à l'équilibre, la vitesse et la trajectoire ne change pas.
+</p>
+<h3>Les tenseurs</h3>
+<p>
+Pour se représenter tout ça mathématiquement, il existe un outil très pratique : le tenseur.
+En mathématique, <important>un torseur représente un champ de vecteurs 3D</important>.
+L'objet principal pour décrire un torseur est nommée la résultante.
+Il peut s'agit d'un pseudovecteur, comme d'un vecteur simple.
+Une seule règle est nécessaire : les pseudovecteurs engendrant les vecteurs (ou vice versa) tournent autour d'un axe précis.
+Une relation existe entre la résultante de cette axe et les vecteurs du tenseur : la relation (mécanique) de Varignon.
+En dynamique, <important>il est possible d'utiliser cet objet, pour savoir comment un objet réagit à une force</important>.
+</p>
+
+<h2>Les différentes formes de dynamique</h2>

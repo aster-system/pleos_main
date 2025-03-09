@@ -32,6 +32,7 @@
 
 // Include PLEOS Libs
 #include "../../pleos_libs/pleos_mathematics.h"
+#include "../../pleos_libs/pleos_table.h"
 #include "../../pleos_libs/pleos_text.h"
 
 // Possible pages
@@ -43,7 +44,10 @@
 #define PLEOS_MATHS_LOGIC_LANGUAGE_PAGE 110
 // Arithmetic pages
 #define PLEOS_MATHS_ARITHMETIC_PAGE 200
+#define PLEOS_MATHS_ARITHMETIC_NUMBERS_SETS_PAGE 205
+#define PLEOS_MATHS_ARITHMETIC_DIVISION_PAGE 210
 #define PLEOS_MATHS_ARITHMETIC_CALCULATOR_PAGE 250
+#define PLEOS_MATHS_ARITHMETIC_CALCULATOR_CONGRUENCE_CIRCLE_PAGE 255
 // Functions pages
 #define PLEOS_MATHS_FUNCTIONS_PAGE 300
 #define PLEOS_MATHS_FUNCTIONS_REDACTION_PAGE 301
@@ -64,6 +68,26 @@ namespace pleos {
         Maths_Page(scls::_Window_Advanced_Struct* window_struct, std::string name):scls::GUI_Page(window_struct, name){};
         // Loads an object in a page from XML
         virtual std::shared_ptr<scls::GUI_Object> __create_loaded_object_from_type(std::string object_name, std::string object_type, scls::GUI_Object* parent);
+
+        //******************
+        //
+        // Arithmetic handling
+        //
+        //******************
+
+        // Adds an element to create
+        void arithmetic_add_element_created(std::string current_choice);
+
+        // Updates the congruence circle
+        void arithmetic_update_congruence_circle();
+        // Redacts the needed redaction for the arithmetic part
+        void arithmetic_redact();
+        // Selects an arithmetic object
+        void arithmetic_select_object(std::shared_ptr<Arithmetic_Object> arithmetic_object);
+
+        // Getters and setters
+        inline std::vector<std::shared_ptr<Arithmetic_Object>>& arithmetic_objects_created(){return a_current_state.a_arithmetic_objects_created;};
+        inline Arithmetic_Object* arithmetic_currently_selected_object(){return a_current_state.a_arithmetic_currently_selected_object.get();};
 
         //******************
         //
@@ -135,6 +159,7 @@ namespace pleos {
         void check_geometry();
         void check_logic();
         // Checks the events of hiding each pages
+        void check_arithmetic_hiding();
         void check_functions_hiding();
         void check_geometry_hiding();
         void check_hiding();
@@ -194,6 +219,13 @@ namespace pleos {
         //
         //******************
 
+        // Define a macro to easily add an object
+        #define GUI_PAGE(type, gui, gui_page, function, display_function, display_function_parent) private: std::shared_ptr<type> gui; \
+        public: inline type* function() const {return gui.get();} \
+        public: void display_function(){display_function_parent();set_current_page(gui_page);function()->set_visible(true);}
+        #define GUI_OBJECT_CREATION(type, gui, name) else if(object_name == name){gui = *parent->new_object<type>(object_name);return gui;}
+        #define GUI_OBJECT_SELECTION(display_function, name) else if(page == name){display_function;}
+
         // Returns navigation
         inline scls::GUI_Text* hub_button() const {return a_hub_button.get();};
 
@@ -214,9 +246,16 @@ namespace pleos {
         // Returns arithmetic
         inline scls::GUI_Object* arithmetic_page() const {return a_arithmetic_page.get();};
         inline scls::GUI_Text* arithmetic_definitions_page() const {return a_arithmetic_definitions_page.get();};
-        inline scls::GUI_Text_Input* arithmetic_calculator_input() const {return a_arithmetic_calculator_input.get();};
+        inline scls::GUI_Scroller_Choice* arithmetic_calculator_elements() const {return a_arithmetic_calculator_elements.get();};
+        inline scls::GUI_Scroller_Choice* arithmetic_calculator_elements_chosen() const {return a_arithmetic_calculator_elements_chosen.get();};
+        inline std::vector<std::shared_ptr<scls::GUI_Object>>& arithmetic_created_object_for_selected_object() {return a_current_state.a_arithmetic_created_object_for_selected_object;};
+        inline scls::GUI_Object* arithmetic_calculator_elements_datas() const {return a_arithmetic_calculator_elements_datas.get();};
+        inline scls::GUI_Text* arithmetic_calculator_elements_datas_title() const {return a_arithmetic_calculator_elements_datas_title.get();};
         inline scls::GUI_Text* arithmetic_calculator_page() const {return a_arithmetic_calculator_page.get();};
         inline scls::GUI_Text* arithmetic_calculator_redaction() const {return a_arithmetic_calculator_redaction.get();};
+        GUI_PAGE(scls::GUI_Text_Base<Text>, a_arithmetic_division_page, PLEOS_MATHS_ARITHMETIC_DIVISION_PAGE, arithmetic_division_page, display_arithmetic_division_page, display_arithmetic_page);
+        GUI_PAGE(scls::GUI_Text_Base<Text>, a_arithmetic_numbers_sets_page, PLEOS_MATHS_ARITHMETIC_NUMBERS_SETS_PAGE, arithmetic_numbers_sets_page, display_arithmetic_numbers_sets_page, display_arithmetic_page);
+        GUI_PAGE(scls::GUI_Object, a_arithmetic_calculator_congruence_circle, PLEOS_MATHS_ARITHMETIC_CALCULATOR_CONGRUENCE_CIRCLE_PAGE, arithmetic_calculator_congruence_circle, display_arithmetic_calculator_congruence_circle, arithmetic_calculator_page);
 
         //  Returns functions
         inline scls::GUI_Text* functions_exponential_page() const {return a_functions_exponential_page.get();};
@@ -261,6 +300,17 @@ namespace pleos {
 
         // Current state of the page
         struct {
+            // Arithmetic
+            // Created arithmetic object
+            std::vector<std::shared_ptr<Arithmetic_Object>> a_arithmetic_objects_created = std::vector<std::shared_ptr<Arithmetic_Object>>();
+            // Created object for the arithmetic selected object
+            std::vector<std::shared_ptr<scls::GUI_Object>> a_arithmetic_created_object_for_selected_object = std::vector<std::shared_ptr<scls::GUI_Object>>();
+            // Currently arithmetic vector
+            std::shared_ptr<Arithmetic_Object> a_arithmetic_currently_selected_object = std::shared_ptr<Arithmetic_Object>();
+            // Congruence circle
+            double a_arithmetic_congruence_circle_modulo = 20;
+            double a_arithmetic_congruence_circle_points = 50;
+
             // Functions
             // Created functions
             std::vector<std::shared_ptr<pleos::Function_Studied>> a_functions_created = std::vector<std::shared_ptr<pleos::Function_Studied>>();
@@ -297,10 +347,13 @@ namespace pleos {
         std::shared_ptr<scls::GUI_Text> a_algebra_matrices_page;
 
         // Arithmetic page
-        std::shared_ptr<scls::GUI_Text> a_arithmetic_definitions_page;
-        std::shared_ptr<scls::GUI_Text_Input> a_arithmetic_calculator_input;
         std::shared_ptr<scls::GUI_Text> a_arithmetic_calculator_page;
+        std::shared_ptr<scls::GUI_Scroller_Choice> a_arithmetic_calculator_elements;
+        std::shared_ptr<scls::GUI_Scroller_Choice> a_arithmetic_calculator_elements_chosen;
+        std::shared_ptr<scls::GUI_Object> a_arithmetic_calculator_elements_datas;
+        std::shared_ptr<scls::GUI_Text> a_arithmetic_calculator_elements_datas_title;
         std::shared_ptr<scls::GUI_Text> a_arithmetic_calculator_redaction;
+        std::shared_ptr<scls::GUI_Text> a_arithmetic_definitions_page;
 
         // Functions page
         std::shared_ptr<scls::GUI_Text> a_functions_definitions_page;

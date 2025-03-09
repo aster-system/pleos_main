@@ -51,7 +51,6 @@
 	<border bottom=1 left=1 right=1 top=1>
 	<height value=1/2 type=scale>
 	<parent name="it_data_structures_tree_simulation_body">
-	<texture alignment_vertical=top>
 	<width value=4/5 type=scale>
 	<x attach=right>
 	<y attach=top>

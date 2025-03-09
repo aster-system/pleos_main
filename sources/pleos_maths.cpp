@@ -42,8 +42,14 @@ namespace pleos {
         // Arithmetic
         else if(object_name == "maths_arithmetic_definitions_body") {a_arithmetic_definitions_page = *parent->new_object<scls::GUI_Text>(object_name);return a_arithmetic_definitions_page;}
         else if(object_name == "maths_arithmetic_calculator_body"){a_arithmetic_calculator_page = *parent->new_object<scls::GUI_Text>(object_name);return a_arithmetic_calculator_page;}
-        else if(object_name == "maths_arithmetic_calculator_input"){a_arithmetic_calculator_input = *parent->new_object<scls::GUI_Text_Input>(object_name);return a_arithmetic_calculator_input;}
+        else if(object_name == "maths_arithmetic_calculator_elements"){a_arithmetic_calculator_elements = *parent->new_object<scls::GUI_Scroller_Choice>(object_name);return a_arithmetic_calculator_elements;}
+        else if(object_name == "maths_arithmetic_calculator_elements_chosen"){a_arithmetic_calculator_elements_chosen = *parent->new_object<scls::GUI_Scroller_Choice>(object_name);return a_arithmetic_calculator_elements_chosen;}
+        else if(object_name == "maths_arithmetic_calculator_elements_datas"){a_arithmetic_calculator_elements_datas = *parent->new_object<scls::GUI_Object>(object_name);return a_arithmetic_calculator_elements_datas;}
+        else if(object_name == "maths_arithmetic_calculator_elements_datas_title"){a_arithmetic_calculator_elements_datas_title = *parent->new_object<scls::GUI_Text>(object_name);return a_arithmetic_calculator_elements_datas_title;}
+        GUI_OBJECT_CREATION(scls::GUI_Object, a_arithmetic_calculator_congruence_circle, "maths_arithmetic_calculator_congruence_circle")
+        GUI_OBJECT_CREATION(scls::GUI_Text_Base<Text>, a_arithmetic_division_page, "maths_arithmetic_division_body")
         else if(object_name == "maths_arithmetic_calculator_redaction"){a_arithmetic_calculator_redaction = *parent->new_object<scls::GUI_Text>(object_name);return a_arithmetic_calculator_redaction;}
+        GUI_OBJECT_CREATION(scls::GUI_Text_Base<Text>, a_arithmetic_numbers_sets_page, "maths_arithmetic_numbers_sets_body")
 
         // Functions
         else if(object_name == "maths_functions_definitions_body") {a_functions_definitions_page = *parent->new_object<scls::GUI_Text>(object_name);return a_functions_definitions_page;}
@@ -98,6 +104,153 @@ namespace pleos {
 
         return scls::GUI_Page::__create_loaded_object_from_type(object_name, object_type, parent);
     }
+
+    //******************
+    //
+    // Arithmetic handling
+    //
+    //******************
+
+    // Adds an element to create
+    void Maths_Page::arithmetic_add_element_created(std::string current_choice){
+        // Direct elements
+        if(current_choice == "congruence_circle"){arithmetic_calculator_redaction()->set_visible(false);display_arithmetic_calculator_congruence_circle();arithmetic_update_congruence_circle();return;}
+        arithmetic_calculator_redaction()->set_visible(true);arithmetic_calculator_congruence_circle()->set_visible(false);
+
+        // Create the needed object
+        arithmetic_objects_created().push_back(std::make_shared<Arithmetic_Object>());
+        std::shared_ptr<Arithmetic_Object> arithmetic_object_shared_ptr = arithmetic_objects_created()[arithmetic_objects_created().size() - 1];
+        Arithmetic_Object* arithmetic_object = arithmetic_object_shared_ptr.get();
+
+        // Creation name
+        std::string final_choice = current_choice;
+        std::string needed_title = "";
+        if(current_choice == "gcd"){
+            int number = arithmetic_calculator_elements_chosen()->count_object_similar(current_choice, "-");
+            final_choice += std::string("-") + std::to_string(number);
+            needed_title = std::string("PGCD ") + std::to_string(number + 1);
+        }
+
+        // Get the good current choice
+        arithmetic_object->choice = current_choice;
+        std::shared_ptr<scls::GUI_Text>* object = arithmetic_calculator_elements_chosen()->add_object(final_choice, needed_title);
+        if(object != 0){arithmetic_object->connected_object = *object;}
+        arithmetic_select_object(arithmetic_object_shared_ptr);
+    };
+
+    // Redacts the needed redaction for the arithmetic part
+    void Maths_Page::arithmetic_redact() {
+        // Do the calculation in the calculator
+        check_arithmetic_hiding();
+        // Prepare the redaction
+        std::string current_text = arithmetic_calculator_redaction()->text();
+        if(current_text.size() == 29 && current_text == std::string("Pas de rédaction à afficher")){current_text = std::string("");}
+        if(current_text != ""){current_text += std::string("</br>");}
+
+        // Get the good redaction
+        current_text = "";
+        for(int i = 0;i<static_cast<int>(arithmetic_objects_created().size());i++) {
+            if(arithmetic_objects_created()[i].get()->choice == std::string("gcd")) {
+                // Get the GCD
+                arithmetic_gcd(arithmetic_objects_created()[i].get(), &current_text);
+
+                if(arithmetic_objects_created()[i].get()->choice_1) {
+                    // Get the Bezout identity
+                    current_text += std::string("</br></br>");
+                    arithmetic_bezout_identity(arithmetic_objects_created()[i].get(), &current_text);
+                }
+            }
+
+            // Add a separation
+            if(i < static_cast<int>(arithmetic_objects_created().size()) - 1){current_text += std::string("</br></br>");}
+        }
+
+        // Finish the redaction
+        arithmetic_calculator_redaction()->set_text(current_text);
+    }
+
+    // Selects an arithmetic object
+    int __arithmetic_object_created = 0;
+    void Maths_Page::arithmetic_select_object(std::shared_ptr<Arithmetic_Object> arithmetic_object) {
+        // Set the current object
+        check_arithmetic_hiding();
+        a_current_state.a_arithmetic_currently_selected_object = arithmetic_object;
+
+        // Set the good graphic datas
+        arithmetic_calculator_elements_datas_title()->set_text(arithmetic_object.get()->connected_object.get()->text());
+
+        // Finalise the creation
+        if(arithmetic_object->choice == "gcd"){
+            // Create the title of the name of the first number
+            std::shared_ptr<scls::GUI_Text> first_title = *arithmetic_calculator_elements_datas()->new_object<scls::GUI_Text>(arithmetic_calculator_elements_datas()->name() + "-first_title_" + std::to_string(__arithmetic_object_created));
+            first_title.get()->set_height_in_pixel(30);
+            first_title.get()->set_text_alignment_horizontal(scls::H_Right);
+            first_title.get()->set_width_in_scale(scls::Fraction(1, 5));
+            first_title.get()->set_x_in_object_scale(scls::Fraction(1, 5));
+            first_title.get()->set_y_in_object_scale(scls::Fraction(3, 4));
+            first_title.get()->set_text(std::string("Premier nombre"));
+            arithmetic_created_object_for_selected_object().push_back(first_title);
+
+            // Create the name of the first number
+            std::shared_ptr<scls::GUI_Text_Input> first_input = *arithmetic_calculator_elements_datas()->new_object<scls::GUI_Text_Input>(arithmetic_calculator_elements_datas()->name() + "-first_input_" + std::to_string(__arithmetic_object_created));
+            first_input.get()->set_border_width_in_pixel(1);
+            first_input.get()->set_height_in_pixel(30);
+            first_input.get()->set_width_in_scale(scls::Fraction(1, 6));
+            first_input.get()->set_x_in_object_scale(scls::Fraction(2, 5));
+            first_input.get()->set_y_in_object_scale(scls::Fraction(3, 4));
+            first_input.get()->set_text(arithmetic_object.get()->value_1.to_std_string());
+            arithmetic_object.get()->input_1 = first_input;
+            arithmetic_created_object_for_selected_object().push_back(first_input);
+
+            // Create the title of the name of the second number
+            std::shared_ptr<scls::GUI_Text> second_title = *arithmetic_calculator_elements_datas()->new_object<scls::GUI_Text>(arithmetic_calculator_elements_datas()->name() + "-second_title_" + std::to_string(__arithmetic_object_created));
+            second_title.get()->set_height_in_pixel(30);
+            second_title.get()->set_text_alignment_horizontal(scls::H_Right);
+            second_title.get()->set_width_in_scale(scls::Fraction(1, 5));
+            second_title.get()->set_x_in_object_scale(scls::Fraction(3, 5));
+            second_title.get()->set_y_in_object_scale(scls::Fraction(3, 4));
+            second_title.get()->set_text(std::string("Second nombre"));
+            arithmetic_created_object_for_selected_object().push_back(second_title);
+
+            // Create the name of the second number
+            std::shared_ptr<scls::GUI_Text_Input> second_input = *arithmetic_calculator_elements_datas()->new_object<scls::GUI_Text_Input>(arithmetic_calculator_elements_datas()->name() + "-second_input_" + std::to_string(__arithmetic_object_created));
+            second_input.get()->set_border_width_in_pixel(1);
+            second_input.get()->set_height_in_pixel(30);
+            second_input.get()->set_width_in_scale(scls::Fraction(1, 6));
+            second_input.get()->set_x_in_object_scale(scls::Fraction(4, 5));
+            second_input.get()->set_y_in_object_scale(scls::Fraction(3, 4));
+            second_input.get()->set_text(arithmetic_object.get()->value_2.to_std_string());
+            arithmetic_object.get()->input_2 = second_input;
+            arithmetic_created_object_for_selected_object().push_back(second_input);
+
+            // If the Bezout identity must be find or not
+            std::shared_ptr<scls::GUI_Scroller_Choice> bezout_choice = *arithmetic_calculator_elements_datas()->new_object<scls::GUI_Scroller_Choice>(arithmetic_calculator_elements_datas()->name() + "-first_choice_" + std::to_string(__arithmetic_object_created));
+            bezout_choice.get()->set_border_width_in_pixel(1);
+            bezout_choice.get()->set_height_in_pixel(30);
+            bezout_choice.get()->set_width_in_scale(scls::Fraction(1, 6));
+            bezout_choice.get()->set_x_in_object_scale(scls::Fraction(1, 5));
+            bezout_choice.get()->set_y_in_object_scale(scls::Fraction(1, 2));
+            bezout_choice.get()->add_object(std::string("bezout_identity"), std::string("Identité de Bezout"));
+            bezout_choice.get()->selected_objects_style().a_background_color = scls::Color(0, 102, 0);
+            if(arithmetic_object.get()->choice_1){bezout_choice.get()->select_object("bezout_identity");}
+            arithmetic_object.get()->choice_input_1 = bezout_choice;
+            arithmetic_created_object_for_selected_object().push_back(bezout_choice);
+        }
+
+        __arithmetic_object_created++;
+    }
+
+    // Updates the congruence circle
+    void Maths_Page::arithmetic_update_congruence_circle() {
+        std::shared_ptr<scls::Image> img = division_circle(arithmetic_calculator_congruence_circle()->height_in_pixel(), static_cast<double>(arithmetic_calculator_congruence_circle()->height_in_pixel()) * 0.4, a_current_state.a_arithmetic_congruence_circle_modulo, a_current_state.a_arithmetic_congruence_circle_points);
+        arithmetic_calculator_congruence_circle()->texture()->set_image(img);
+    }
+
+    //******************
+    //
+    // Functions handling
+    //
+    //******************
 
     // Adds an element to analyse
     void Maths_Page::add_element(std::string current_choice) {
@@ -351,6 +504,12 @@ namespace pleos {
         functions_redaction_name()->set_text(needed_function.get()->function_name);
     }
 
+    //******************
+    //
+    // Geometry handling
+    //
+    //******************
+
     // Shows a demonstration of the Pythagoras theorem
     void Maths_Page::display_geometry_pythagorean_theorem_demonstration() {
         // Set the good page
@@ -528,25 +687,77 @@ namespace pleos {
 
     // Checks the events of arithmetic
     void Maths_Page::check_arithmetic() {
-        if(window_struct()->key_pressed_during_this_frame("left control")) {
-            // Do the calculation in the calculator
-            std::string needed_text = arithmetic_calculator_input()->text();
-            // Prepare the redaction
-            std::string current_text = arithmetic_calculator_redaction()->text();
-            if(current_text.size() == 29 && current_text == std::string("Pas de rédaction à afficher")){current_text = std::string("");}
-            if(current_text != ""){current_text += std::string("</br>");}
+        // Do the arithmetic redaction
+        if(window_struct()->key_pressed_during_this_frame("left control")) {arithmetic_redact();}
 
-            // TEMP
-            current_text = "";
-            std::vector<std::string> cutted = scls::cut_string(needed_text, ";");
-            arithmetic_gcd(std::stoi(cutted[0]), std::stoi(cutted[1]), &current_text);
+        // Adds a created element
+        if(arithmetic_calculator_elements()->selection_modified()) {
+            std::string current_choice = arithmetic_calculator_elements()->currently_selected_objects_during_this_frame()[0].name();
+            arithmetic_calculator_elements()->unselect_object(arithmetic_calculator_elements()->currently_selected_objects()[0]);
+            arithmetic_add_element_created(current_choice);
+        }
 
-            // NORMAL
-            //scls::Formula needed_formula = scls::string_to_formula(needed_text);
-            //current_text += needed_formula.to_std_string();
+        // Select a created element
+        for(int i = 0;i<static_cast<int>(arithmetic_objects_created().size());i++) {
+            if(arithmetic_objects_created()[i].get()->connected_object.get()->is_clicked_during_this_frame(GLFW_MOUSE_BUTTON_LEFT)) {
+                arithmetic_select_object(arithmetic_objects_created()[i]);
+            }
+        }
 
-            // Finish the redaction
-            arithmetic_calculator_redaction()->set_text(current_text);
+        // Updates the congruence circle
+        #define MODULO_SPEED 1.0
+        #define POINTS_SPEED 25.0
+        if(current_page() == PLEOS_MATHS_ARITHMETIC_CALCULATOR_CONGRUENCE_CIRCLE_PAGE) {
+            bool modified = false;
+
+            // Handle modulo
+            if(window_struct()->key_pressed("left arrow")) {a_current_state.a_arithmetic_congruence_circle_modulo += MODULO_SPEED * window_struct()->delta_time();modified = true;}
+            if(window_struct()->key_pressed("right arrow")) {
+                a_current_state.a_arithmetic_congruence_circle_modulo -= MODULO_SPEED * window_struct()->delta_time();
+                if(a_current_state.a_arithmetic_congruence_circle_modulo < 1) {a_current_state.a_arithmetic_congruence_circle_modulo = 1;}
+                modified = true;
+            }
+
+            // Handle points
+            if(window_struct()->key_pressed("up arrow")) {a_current_state.a_arithmetic_congruence_circle_points += POINTS_SPEED * window_struct()->delta_time();modified = true;}
+            if(window_struct()->key_pressed("down arrow")) {
+                a_current_state.a_arithmetic_congruence_circle_points -= POINTS_SPEED * window_struct()->delta_time();
+                if(a_current_state.a_arithmetic_congruence_circle_points < 5) {a_current_state.a_arithmetic_congruence_circle_points = 5;}
+                modified = true;
+            }
+
+            // Update the circle
+            if(modified){arithmetic_update_congruence_circle();}
+        }
+    }
+
+    // Checks the events of hiding arithmetic page
+    void Maths_Page::check_arithmetic_hiding() {
+        if(arithmetic_currently_selected_object() != 0) {
+            // Set the needed values
+            if(arithmetic_currently_selected_object()->choice == std::string("gcd")) {
+                // GCD
+                // Choices
+                if(arithmetic_currently_selected_object()->choice_input_1.get() != 0) {
+                    arithmetic_currently_selected_object()->choice_1 = arithmetic_currently_selected_object()->choice_input_1.get()->contains_selected_object("bezout_identity");;
+                }
+                // Values
+                if(arithmetic_currently_selected_object()->input_1.get() != 0) {
+                    arithmetic_currently_selected_object()->value_1 = scls::string_to_formula(arithmetic_currently_selected_object()->input_1.get()->text());
+                }
+                if(arithmetic_currently_selected_object()->input_2.get() != 0) {
+                    arithmetic_currently_selected_object()->value_2 = scls::string_to_formula(arithmetic_currently_selected_object()->input_2.get()->text());
+                }
+            }
+
+            // Reset the object
+            arithmetic_currently_selected_object()->choice_input_1.reset();
+            arithmetic_currently_selected_object()->input_1.reset();
+            arithmetic_currently_selected_object()->input_2.reset();
+            for(int i = 0;i<static_cast<int>(arithmetic_created_object_for_selected_object().size());i++){
+                arithmetic_calculator_elements_datas()->delete_child(arithmetic_created_object_for_selected_object()[i].get());
+            }
+            arithmetic_calculator_elements_datas_title()->set_text(std::string("Aucun élément sélectionné"));
         }
     }
 
@@ -733,8 +944,9 @@ namespace pleos {
 
     // Checks the events of hiding all pages
     void Maths_Page::check_hiding() {
-        // Check geometry hiding
-        if(current_page() == PLEOS_MATHS_GEOMETRY_REDACTION_PAGE){check_geometry_hiding();}
+        // Check hiding
+        if(current_page() == PLEOS_MATHS_ARITHMETIC_CALCULATOR_PAGE){check_arithmetic_hiding();}
+        else if(current_page() == PLEOS_MATHS_GEOMETRY_REDACTION_PAGE){check_geometry_hiding();}
         else if(current_page() == PLEOS_MATHS_FUNCTIONS_REDACTION_PAGE){check_functions_hiding();}
     }
 
@@ -757,6 +969,8 @@ namespace pleos {
             // Arithmetic pages
             else if(page == "arithmetic_definitions"){display_arithmetic_definitions_page();}
             else if(page == "arithmetic_calculator"){display_arithmetic_calculator_page();}
+            GUI_OBJECT_SELECTION(display_arithmetic_division_page(), "arithmetic_division")
+            GUI_OBJECT_SELECTION(display_arithmetic_numbers_sets_page(), "arithmetic_numbers_sets")
             // Functions pages
             else if(page == "functions_definitions"){display_functions_definitions_page();}
             else if(page == "functions_exponential"){display_functions_exponential_page();}
@@ -799,7 +1013,7 @@ namespace pleos {
         if(current_page() != PLEOS_MATHS_ARITHMETIC_CALCULATOR_PAGE && window_struct()->key_pressed_during_this_frame("left control")){display_geometry_pythagorean_theorem_demonstration();}
 
         // Check the good page
-        if(current_page() == PLEOS_MATHS_ARITHMETIC_CALCULATOR_PAGE){check_arithmetic();}
+        if(current_page() == PLEOS_MATHS_ARITHMETIC_CALCULATOR_PAGE || current_page() == PLEOS_MATHS_ARITHMETIC_CALCULATOR_CONGRUENCE_CIRCLE_PAGE){check_arithmetic();}
         else if(current_page() == PLEOS_MATHS_FUNCTIONS_REDACTION_PAGE){check_functions();}
         else if(current_page() == PLEOS_MATHS_GEOMETRY_REDACTION_PAGE || current_page() == PLEOS_MATHS_GEOMETRY_DEFINITION_PAGE){check_geometry();}
         else if(current_page() == PLEOS_MATHS_LOGIC_DEFINITIONS_PAGE || current_page() == PLEOS_MATHS_LOGIC_LANGUAGE_PAGE){check_logic();}

@@ -1,5 +1,9 @@
 <h1>La cinématique</h1>
+
+
+
 <h2>Qu'est ce qu'est la cinématique</h2>
+
 <h3>La définition brute</h3>
 <p>
 <important>La cinématique représente l'étude des mouvements possibles d'un système</important>.
@@ -22,6 +26,7 @@ De plus, <important>dans un ensemble de référentiel possible, le référentiel
 À notre échelle, le référentiel terrestre en est le meilleur exemple.
 Pour le système solaire, le meilleur référentiel est le soleil.
 </p>
+
 <h2>Les liens géométrie - temps</h2>
 <h3>Le concept de mouvement</h3>
 <p>

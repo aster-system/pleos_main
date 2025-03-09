@@ -1,0 +1,30 @@
+<h1>Les ensembles de nombres</h1>
+
+
+
+<h2>Les nombres réels</h2>
+
+<h3>Les nombres naturels</h3>
+<p>
+L'ensemble de nombre le plus intuitif est l'ensemble des nombres naturels.
+<important>L'ensemble des nombres naturels représente tous les nombres qui peuvent représenter dans la réalité une quantité entière</important>.
+Par exemple, si nous voulons compter le nombre d'un certain objet dans un système, les nombres naturels sont largement suffisants.
+</p>
+<p>
+Bien évidemment, <important>l'écriture d'un nombre entier naturel se fait par l'assemblage de chiffres</important>.
+En général, les chiffres sont : 0, 1, 2, 3, 4, 5, 6, 7, 8 et 9.
+Quand on arrive au nombre après 9, alors on rajoute un "1" avant, et un "0" après : le nombre suivant "9" est "10".
+Ce même 0 deviendra un 9, qui demandera en suite d'ajouter 1 au nombre d'avant, pour devenir un "2" suivi d'un "0" : le nombre suivant "19" est "20".
+</p>
+<p>
+Pour définir les entiers naturels, <important>il existe une axiomatisation particulièrement simple : les axiomes de Peano</important>.
+Le premier axiome admet l'existence du premier élément des entiers naturels : 0.
+Le deuxième axiome admet que tout nombre naturel possède un successeur (dans le cas de 0, le successeur est 1).
+Le troisième axiome dit que 0 ne peut pas être un successeur d'un autre nombre.
+Le quatrième définit deux entiers naturels ayant le même successeur comme égaux.
+Finalement, le dernier axiome décrit l'ensemble (de manière ensembliste) des entiers naturels comme un ensemble ayant 0, et le successeurs de 0 et les successeurs de tous les autres successeurs.
+Avec cette axiome, <important>nous pouvons créer une algèbre des nombres entiers naturels, comme un groupe contenant une opération interne d'addition</important>.
+L'axiome 3 garanti que 0 est l'élément neutre du groupe des entiers naturels.
+Grâce à l'axiome 2 et 4, <important>nous pouvons définir l'addition dans le groupe des entiers naturels :  a + b représente la valeur obtenue après être passé de successeur en successeur b fois, en partant de a</important>.
+C'est une reformulation de la définition intuitive de l'addition.
+</p>

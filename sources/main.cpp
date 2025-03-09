@@ -34,7 +34,24 @@
 SCLS_INIT
 
 int main(int argc, char* argv[]) {
-    pleos::Pleos_Window window(900, 600, argv[0]);
+    pleos::Table test;
+    scls::Text_Image_Generator tig;scls::Text_Style style;style.set_background_color(scls::Color(0, 0, 0, 0));style.set_font_size(100);
+    test.case_at(0, 0)->set_background_color(scls::Color(0, 255, 0));
+    test.image_at(0, 0) = tig.image_shared_ptr<pleos::__Text_Block>("x", style);
+    test.case_at(0, 1)->set_background_color(scls::Color(0, 255, 0));
+    test.image_at(0, 1) = tig.image_shared_ptr<pleos::__Text_Block>("f(x)", style);
+    test.image_at(1, 0) = tig.image_shared_ptr<pleos::__Text_Block>("- infini", style);
+    test.image_at(1, 1) = tig.image_shared_ptr<pleos::__Text_Block>("5", style);
+    test.image_at(2, 0) = tig.image_shared_ptr<pleos::__Text_Block>("2", style);
+    test.image_at(2, 1) = tig.image_shared_ptr<pleos::__Text_Block>("0", style);
+    test.image_at(3, 0) = tig.image_shared_ptr<pleos::__Text_Block>("+ infini", style);
+    test.image_at(3, 1) = tig.image_shared_ptr<pleos::__Text_Block>("+ infini", style);
+    test.case_at(1, 0)->set_background_color(scls::Color(180, 180, 180));
+    test.case_at(2, 0)->set_background_color(scls::Color(180, 180, 180));
+    test.case_at(3, 0)->set_background_color(scls::Color(180, 180, 180));
+    test.to_image().get()->save_png("tests/table.png");
+
+    /*pleos::Pleos_Window window(900, 600, argv[0]);
     window.load_from_xml("assets/window.txt");
 
     while(window.run()) {
