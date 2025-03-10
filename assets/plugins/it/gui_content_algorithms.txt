@@ -33,3 +33,26 @@
 	<x value=1/2 type=object_scale>
 	<y attach=bottom>
 </gui_object>
+
+//***************************************************
+// Sort comparaison
+//***************************************************
+
+<gui_object name="it_algorithms_sort_comparaison_body" type="object" sub_page>
+	<height value=7/8 type=scale>
+	<parent name="it_algorithms_page">
+    <texture alignment_horizontal=left alignment_vertical=top>
+    <width value=9/10 type=scale>
+	<x value=1/2 type=object_scale>
+	<y attach=bottom>
+</gui_object>
+
+// Graphic simulation
+<gui_object name="it_algorithms_sort_comparaison_simulation" type="object">
+	<border bottom=1 left=1 right=1 top=1>
+	<height value=1/2 type=scale>
+	<parent name="it_algorithms_sort_comparaison_body">
+	<width value=4/5 type=scale>
+	<x attach=right>
+	<y attach=top>
+</gui_object>

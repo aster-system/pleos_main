@@ -18,6 +18,7 @@
 	</sub_choice>
 	<sub_choice name="algorithms" displayer="Algorithmes">
 		<choice name="algorithms_sort">Les tris</choice>
+		<choice name="algorithms_sort_comparaison">Comparer les tris</choice>
 	</sub_choice>
 </gui_object>
 

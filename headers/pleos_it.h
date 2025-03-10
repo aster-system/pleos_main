@@ -40,6 +40,10 @@
 // Data structures
 #define PLEOS_IT_DATA_STRUCTURES_TREES_PAGE 150
 #define PLEOS_IT_DATA_STRUCTURES_TREES_SIMULATION_PAGE 151
+// DAlgorithms
+#define PLEOS_IT_ALGORITHMS_SORT_PAGE 210
+#define PLEOS_IT_ALGORITHMS_SORT_COMPARAISON_PAGE 215
+#define PLEOS_IT_ALGORITHMS_SORT_COMPARAISON_SIMULATION_PAGE 216
 
 // The namespace "pleos" is used to simplify the all.
 namespace pleos {
@@ -52,6 +56,13 @@ namespace pleos {
         // Loads an object in a page from XML
         virtual std::shared_ptr<scls::GUI_Object> __create_loaded_object_from_type(std::string object_name, std::string object_type, scls::GUI_Object* parent);
 
+        // Starts the comparaison part of the algorithm
+        void algorithm_comparaison_start();
+        // Updates the texture of the comparaison part of the algorithm
+        void algorithm_update_comparaison();
+
+        // Checks the events of algorithms
+        void check_algorithms();
         // Checks the events of navigation
         void check_navigation();
         // Updates the events
@@ -64,8 +75,10 @@ namespace pleos {
         //******************:
 
         //Displays the algorithms page
-        void display_algorithms_page(){hide_all();algorithms_page()->set_visible(true);}
-        void display_algorithms_sort_page(){display_algorithms_page();algorithms_sort_page()->set_visible(true);}
+        void display_algorithms_page(){hide_all();algorithms_page()->set_visible(true);};
+        void display_algorithms_sort_page(){display_algorithms_page();algorithms_sort_page()->set_visible(true);};
+        GUI_PAGE(scls::GUI_Object, a_algorithms_sort_comparaison_page, PLEOS_IT_ALGORITHMS_SORT_COMPARAISON_PAGE, algorithms_sort_comparaison_page, display_algorithms_sort_comparaison_page, display_algorithms_page);
+        GUI_PAGE(scls::GUI_Object, a_algorithms_sort_comparaison_simulation, PLEOS_IT_ALGORITHMS_SORT_COMPARAISON_SIMULATION_PAGE, algorithms_sort_comparaison_simulation, display_algorithms_sort_comparaison_simulation, display_algorithms_sort_comparaison_page);
 
         // Displays the data structure page
         void display_data_structures_page(){hide_all();data_structures_page()->set_visible(true);};
@@ -85,6 +98,9 @@ namespace pleos {
         //
         //******************
 
+        // Algorithms
+        inline std::vector<double>& algorithms_sort_comparaison_values(){return a_current_state.algorithms_sort_comparaison_values;};
+
         // Returns navigation
         inline scls::GUI_Text* hub_button() const {return a_hub_button.get();};
 
@@ -101,6 +117,12 @@ namespace pleos {
     private:
         // Current state of the page
         struct {
+            // Algorithms
+            // Current index of the algorithm
+            int algorithms_sort_comparaison_index = 0;
+            // Sort comparaison
+            std::vector<double> algorithms_sort_comparaison_values = std::vector<double>();
+
             // Current page
             unsigned short current_page = PLEOS_IT_HOME_PAGE;
         } a_current_state;

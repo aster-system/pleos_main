@@ -44,11 +44,75 @@ namespace pleos {
         else if(object_name == "it_data_structures_tree_body"){a_data_structures_tree_page = *parent->new_object<scls::GUI_Text_Base<Text>>(object_name);return a_data_structures_tree_page;}
         else if(object_name == "it_data_structures_tree_simulation_body"){a_data_structures_tree_simulation_page = *parent->new_object<scls::GUI_Text>(object_name);return a_data_structures_tree_simulation_page;}
 
+        // Algorithms
+        GUI_OBJECT_CREATION(scls::GUI_Object, a_algorithms_sort_comparaison_page, "it_algorithms_sort_comparaison_body")
+        GUI_OBJECT_CREATION(scls::GUI_Object, a_algorithms_sort_comparaison_simulation, "it_algorithms_sort_comparaison_simulation")
+
         // Navigation
         else if(object_name == "it_hub"){a_hub_button = *parent->new_object<scls::GUI_Text>(object_name);return a_hub_button;}
         else if(object_name == "it_navigation") {a_navigation = *parent->new_object<scls::GUI_Scroller_Choice>(object_name);return a_navigation;}
 
         return scls::GUI_Page::__create_loaded_object_from_type(object_name, object_type, parent);
+    }
+
+    // Starts the comparaison part of the algorithm
+    void IT_Page::algorithm_comparaison_start() {
+        // Values in the algorithm
+        int maximum_value = 50; int value_number = 50;
+        std::vector<double>& values = algorithms_sort_comparaison_values();
+        values = std::vector<double>(value_number, 0);
+        for(int i = 0;i<value_number;i++){values[i] = i + 1;}
+
+        // Shuffle the list
+        std::random_shuffle(values.begin(), values.end());
+
+        // Update the graphic
+        algorithm_update_comparaison();
+    }
+
+    // Update the texture of the algorithm comparaison simulation part
+    void IT_Page::algorithm_update_comparaison(){
+        // Create the image
+        scls::Color background_color = scls::Color(255, 255, 255);
+        int needed_width = algorithms_sort_comparaison_simulation()->height_in_pixel();
+        std::shared_ptr<scls::Image> image = std::make_shared<scls::Image>(needed_width, needed_width, background_color);
+
+        // Draw the values
+        int current_x = 0;
+        double maximum_height = image.get()->height();
+        std::vector<double>& values = algorithms_sort_comparaison_values();
+        double value_number = values.size();
+        for(int i = 0;i<static_cast<int>(values.size());i++) {
+            scls::Color current_color = scls::Color(255, 0, 0);
+            int needed_height = round((values[i] / value_number) * maximum_height);
+            int part_width = static_cast<double>(image.get()->width()) / value_number;
+            image.get()->fill_rect(current_x, image.get()->height() - needed_height, part_width, needed_height, current_color);
+            current_x += part_width;
+        }
+
+        algorithms_sort_comparaison_simulation()->texture()->set_image(image);
+        image.get()->save_png("tests/sort.png");
+    }
+
+    // Checks the events of algorithms
+    void IT_Page::check_algorithms() {
+        if(window_struct()->key_pressed("a")) {
+            if(a_current_state.algorithms_sort_comparaison_index < algorithms_sort_comparaison_values().size()) {
+                int min_index = 0;
+                int i = a_current_state.algorithms_sort_comparaison_index + 1;
+                while(i < algorithms_sort_comparaison_values().size()) {
+                    if(algorithms_sort_comparaison_values()[i] < algorithms_sort_comparaison_values()[min_index]) {
+                        min_index = i;
+                    }
+                }
+                int temp = algorithms_sort_comparaison_values()[a_current_state.algorithms_sort_comparaison_index];
+                algorithms_sort_comparaison_values()[a_current_state.algorithms_sort_comparaison_index] = algorithms_sort_comparaison_values()[min_index];
+                algorithms_sort_comparaison_values()[min_index] = temp;
+
+                a_current_state.algorithms_sort_comparaison_index++;
+            }
+            algorithm_update_comparaison();
+        }
     }
 
     // Check the events of navigation
@@ -60,6 +124,7 @@ namespace pleos {
             // IT pages
             if(page == "algorithms"){display_algorithms_page();}
             else if(page == "algorithms_sort"){display_algorithms_sort_page();}
+            GUI_OBJECT_SELECTION(display_algorithms_sort_comparaison_page();algorithm_comparaison_start(), "algorithms_sort_comparaison")
             else if(page == "data_structures_trees"){display_data_structures_trees_page();}
             else if(page == "data_structures_trees_graphic"){
                 display_data_structures_trees_simulation_page();
@@ -81,5 +146,7 @@ namespace pleos {
         // Basic events
         scls::GUI_Page::update_event();
         check_navigation();
+
+        if(current_page() == PLEOS_IT_ALGORITHMS_SORT_COMPARAISON_SIMULATION_PAGE){check_algorithms();}
     }
 }
