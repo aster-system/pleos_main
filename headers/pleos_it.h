@@ -56,10 +56,22 @@ namespace pleos {
         // Loads an object in a page from XML
         virtual std::shared_ptr<scls::GUI_Object> __create_loaded_object_from_type(std::string object_name, std::string object_type, scls::GUI_Object* parent);
 
+        //******************
+        //
+        // Algorithms handling
+        //
+        //******************
+
+        // Adds an element to create
+        void algorithms_add_element_created(std::string current_choice);
+        // Do a comparaison part of the algorithm with the needed algorithm
+        void algorithms_comparaison_bubble();
+        void algorithms_comparaison_insertion();
+        void algorithms_comparaison_selection();
         // Starts the comparaison part of the algorithm
-        void algorithm_comparaison_start();
+        void algorithms_comparaison_start();
         // Updates the texture of the comparaison part of the algorithm
-        void algorithm_update_comparaison();
+        void algorithms_update_comparaison();
 
         // Checks the events of algorithms
         void check_algorithms();
@@ -72,11 +84,14 @@ namespace pleos {
         //
         // Handle the pages
         //
-        //******************:
+        //******************
 
         //Displays the algorithms page
         void display_algorithms_page(){hide_all();algorithms_page()->set_visible(true);};
         void display_algorithms_sort_page(){display_algorithms_page();algorithms_sort_page()->set_visible(true);};
+        GUI_OBJECT(scls::GUI_Scroller_Choice, a_algorithms_sort_comparaison_elements, algorithms_sort_comparaison_elements);
+        GUI_OBJECT(scls::GUI_Object, a_algorithms_sort_comparaison_elements_datas, algorithms_sort_comparaison_elements_datas);
+        GUI_OBJECT(scls::GUI_Text, a_algorithms_sort_comparaison_elements_datas_title, algorithms_sort_comparaison_elements_datas_title);
         GUI_PAGE(scls::GUI_Object, a_algorithms_sort_comparaison_page, PLEOS_IT_ALGORITHMS_SORT_COMPARAISON_PAGE, algorithms_sort_comparaison_page, display_algorithms_sort_comparaison_page, display_algorithms_page);
         GUI_PAGE(scls::GUI_Object, a_algorithms_sort_comparaison_simulation, PLEOS_IT_ALGORITHMS_SORT_COMPARAISON_SIMULATION_PAGE, algorithms_sort_comparaison_simulation, display_algorithms_sort_comparaison_simulation, display_algorithms_sort_comparaison_page);
 
@@ -99,6 +114,7 @@ namespace pleos {
         //******************
 
         // Algorithms
+        inline std::vector<std::shared_ptr<scls::GUI_Object>>& algorithms_created_object_for_selected_object(){return a_current_state.a_algorithms_created_object_for_selected_object;};
         inline std::vector<double>& algorithms_sort_comparaison_values(){return a_current_state.algorithms_sort_comparaison_values;};
 
         // Returns navigation
@@ -118,8 +134,15 @@ namespace pleos {
         // Current state of the page
         struct {
             // Algorithms
+            // Created object for the arithmetic selected object
+            std::vector<std::shared_ptr<scls::GUI_Object>> a_algorithms_created_object_for_selected_object = std::vector<std::shared_ptr<scls::GUI_Object>>();
             // Current index of the algorithm
             int algorithms_sort_comparaison_index = 0;
+            // Moved index of the comparaison
+            int algorithms_sort_comparaison_moved_index_max = -1;
+            int algorithms_sort_comparaison_moved_index_min = -1;
+            // Scroller containing the needed comparaison type
+            std::shared_ptr<scls::GUI_Scroller_Choice> algorithms_sort_comparaison_type;
             // Sort comparaison
             std::vector<double> algorithms_sort_comparaison_values = std::vector<double>();
 

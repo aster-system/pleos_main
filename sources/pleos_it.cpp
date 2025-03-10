@@ -46,6 +46,9 @@ namespace pleos {
 
         // Algorithms
         GUI_OBJECT_CREATION(scls::GUI_Object, a_algorithms_sort_comparaison_page, "it_algorithms_sort_comparaison_body")
+        GUI_OBJECT_CREATION(scls::GUI_Scroller_Choice, a_algorithms_sort_comparaison_elements, "it_algorithms_sort_comparaison_elements")
+        GUI_OBJECT_CREATION(scls::GUI_Object, a_algorithms_sort_comparaison_elements_datas, "it_algorithms_sort_comparaison_elements_datas")
+        GUI_OBJECT_CREATION(scls::GUI_Text, a_algorithms_sort_comparaison_elements_datas_title, "it_algorithms_sort_comparaison_elements_datas_title")
         GUI_OBJECT_CREATION(scls::GUI_Object, a_algorithms_sort_comparaison_simulation, "it_algorithms_sort_comparaison_simulation")
 
         // Navigation
@@ -55,10 +58,109 @@ namespace pleos {
         return scls::GUI_Page::__create_loaded_object_from_type(object_name, object_type, parent);
     }
 
+    //******************
+    //
+    // Algorithms handling
+    //
+    //******************
+
+    // Adds an element to create
+    int __algorithms_object_created = 0;
+    void IT_Page::algorithms_add_element_created(std::string current_choice) {
+        // Direct elements
+        if(current_choice == "visual_representation"){
+            display_algorithms_sort_comparaison_simulation();algorithms_comparaison_start();
+            algorithms_sort_comparaison_elements_datas_title()->set_text("Représentation visuelle");
+
+            // Add the sort type needed
+            std::shared_ptr<scls::GUI_Scroller_Choice>& sort_type = a_current_state.algorithms_sort_comparaison_type;
+            sort_type = *algorithms_sort_comparaison_elements_datas()->new_object<scls::GUI_Scroller_Choice>(algorithms_sort_comparaison_elements_datas()->name() + "-first_input_" + std::to_string(__algorithms_object_created));
+            sort_type.get()->set_border_width_in_pixel(1);
+            sort_type.get()->set_height_in_scale(scls::Fraction(5, 6));
+            sort_type.get()->set_width_in_scale(scls::Fraction(1, 5));
+            sort_type.get()->attach_left_in_parent();
+            sort_type.get()->attach_bottom_in_parent();
+            // Add the needed sort
+            sort_type.get()->add_object("selection", "Tri par sélection");
+            sort_type.get()->add_object("bubble", "Tri bulle");
+            sort_type.get()->add_object("insertion", "Tri par insertion");
+            sort_type.get()->select_object("selection");
+            algorithms_created_object_for_selected_object().push_back(sort_type);
+
+            return;
+        }
+    }
+
+    // Do a comparaison part of the algorithm with the bubble algorithm
+    void IT_Page::algorithms_comparaison_bubble() {
+        if(a_current_state.algorithms_sort_comparaison_index < algorithms_sort_comparaison_values().size()) {
+            int min_index = a_current_state.algorithms_sort_comparaison_index;
+            int i = algorithms_sort_comparaison_values().size() - 2;
+            while(i >= min_index) {
+                if(algorithms_sort_comparaison_values()[i] > algorithms_sort_comparaison_values()[i + 1]) {
+                    double temp = algorithms_sort_comparaison_values()[i];
+                    algorithms_sort_comparaison_values()[i] = algorithms_sort_comparaison_values()[i + 1];
+                    algorithms_sort_comparaison_values()[i + 1] = temp;
+                }
+                i--;
+            }
+
+            a_current_state.algorithms_sort_comparaison_moved_index_max = min_index;
+            a_current_state.algorithms_sort_comparaison_moved_index_min = i;
+            a_current_state.algorithms_sort_comparaison_index++;
+        }
+    }
+
+    // Do a comparaison part of the algorithm with the insertion algorithm
+    void IT_Page::algorithms_comparaison_insertion() {
+        if(a_current_state.algorithms_sort_comparaison_index < algorithms_sort_comparaison_values().size()) {
+            int current_index = a_current_state.algorithms_sort_comparaison_index;
+            int i = 0;
+            while(i < a_current_state.algorithms_sort_comparaison_index) {
+                if(algorithms_sort_comparaison_values()[i] > algorithms_sort_comparaison_values()[current_index]) {break;}
+                i++;
+            }
+
+            // Permute the next variables
+            int needed_index = i;
+            while(i < a_current_state.algorithms_sort_comparaison_index) {
+                double temp = algorithms_sort_comparaison_values()[current_index];
+                algorithms_sort_comparaison_values()[current_index] = algorithms_sort_comparaison_values()[i];
+                algorithms_sort_comparaison_values()[i] = temp;
+                i++;
+            }
+
+            a_current_state.algorithms_sort_comparaison_moved_index_max = needed_index;
+            a_current_state.algorithms_sort_comparaison_moved_index_min = current_index;
+            a_current_state.algorithms_sort_comparaison_index++;
+        }
+    }
+
+    // Do a comparaison part of the algorithm with the selection algorithm
+    void IT_Page::algorithms_comparaison_selection() {
+        if(a_current_state.algorithms_sort_comparaison_index < algorithms_sort_comparaison_values().size()) {
+            int min_index = a_current_state.algorithms_sort_comparaison_index;
+            int i = a_current_state.algorithms_sort_comparaison_index + 1;
+            while(i < algorithms_sort_comparaison_values().size()) {
+                if(algorithms_sort_comparaison_values()[i] < algorithms_sort_comparaison_values()[min_index]) {
+                    min_index = i;
+                }
+                i++;
+            }
+            double temp = algorithms_sort_comparaison_values()[a_current_state.algorithms_sort_comparaison_index];
+            algorithms_sort_comparaison_values()[a_current_state.algorithms_sort_comparaison_index] = algorithms_sort_comparaison_values()[min_index];
+            algorithms_sort_comparaison_values()[min_index] = temp;
+
+            a_current_state.algorithms_sort_comparaison_moved_index_max = min_index;
+            a_current_state.algorithms_sort_comparaison_moved_index_min = a_current_state.algorithms_sort_comparaison_index;
+            a_current_state.algorithms_sort_comparaison_index++;
+        }
+    }
+
     // Starts the comparaison part of the algorithm
-    void IT_Page::algorithm_comparaison_start() {
+    void IT_Page::algorithms_comparaison_start() {
         // Values in the algorithm
-        int maximum_value = 50; int value_number = 50;
+        int value_number = 200;
         std::vector<double>& values = algorithms_sort_comparaison_values();
         values = std::vector<double>(value_number, 0);
         for(int i = 0;i<value_number;i++){values[i] = i + 1;}
@@ -67,11 +169,14 @@ namespace pleos {
         std::random_shuffle(values.begin(), values.end());
 
         // Update the graphic
-        algorithm_update_comparaison();
+        a_current_state.algorithms_sort_comparaison_index = 0;
+        a_current_state.algorithms_sort_comparaison_moved_index_max = -1;
+        a_current_state.algorithms_sort_comparaison_moved_index_min = -1;
+        algorithms_update_comparaison();
     }
 
     // Update the texture of the algorithm comparaison simulation part
-    void IT_Page::algorithm_update_comparaison(){
+    void IT_Page::algorithms_update_comparaison(){
         // Create the image
         scls::Color background_color = scls::Color(255, 255, 255);
         int needed_width = algorithms_sort_comparaison_simulation()->height_in_pixel();
@@ -86,32 +191,47 @@ namespace pleos {
             scls::Color current_color = scls::Color(255, 0, 0);
             int needed_height = round((values[i] / value_number) * maximum_height);
             int part_width = static_cast<double>(image.get()->width()) / value_number;
+
+            // Set the color
+            if(i == a_current_state.algorithms_sort_comparaison_moved_index_max){current_color = scls::Color(255, 128, 0);}
+            else if(i == a_current_state.algorithms_sort_comparaison_moved_index_min){current_color = scls::Color(204, 204, 0);}
+
+            // Draw the line
             image.get()->fill_rect(current_x, image.get()->height() - needed_height, part_width, needed_height, current_color);
             current_x += part_width;
         }
 
         algorithms_sort_comparaison_simulation()->texture()->set_image(image);
-        image.get()->save_png("tests/sort.png");
     }
 
     // Checks the events of algorithms
     void IT_Page::check_algorithms() {
-        if(window_struct()->key_pressed("a")) {
-            if(a_current_state.algorithms_sort_comparaison_index < algorithms_sort_comparaison_values().size()) {
-                int min_index = 0;
-                int i = a_current_state.algorithms_sort_comparaison_index + 1;
-                while(i < algorithms_sort_comparaison_values().size()) {
-                    if(algorithms_sort_comparaison_values()[i] < algorithms_sort_comparaison_values()[min_index]) {
-                        min_index = i;
-                    }
-                }
-                int temp = algorithms_sort_comparaison_values()[a_current_state.algorithms_sort_comparaison_index];
-                algorithms_sort_comparaison_values()[a_current_state.algorithms_sort_comparaison_index] = algorithms_sort_comparaison_values()[min_index];
-                algorithms_sort_comparaison_values()[min_index] = temp;
+        // Adds a created element
+        if(algorithms_sort_comparaison_elements()->selection_modified()) {
+            std::string current_choice = algorithms_sort_comparaison_elements()->currently_selected_objects_during_this_frame()[0].name();
+            algorithms_sort_comparaison_elements()->unselect_object(algorithms_sort_comparaison_elements()->currently_selected_objects()[0]);
+            algorithms_add_element_created(current_choice);
+        }
 
-                a_current_state.algorithms_sort_comparaison_index++;
+        // Handle a new type of sort for visual representation
+        if(a_current_state.algorithms_sort_comparaison_type.get() != 0 && a_current_state.algorithms_sort_comparaison_type.get()->selection_modified()) {
+            algorithms_comparaison_start();
+        }
+
+        if(current_page() == PLEOS_IT_ALGORITHMS_SORT_COMPARAISON_SIMULATION_PAGE) {
+           // Restart the comparaison
+            if(window_struct()->key_pressed_during_this_frame("z")){algorithms_comparaison_start();}
+
+            // Animate the comparaison
+            if(window_struct()->key_pressed("a")) {
+                if(a_current_state.algorithms_sort_comparaison_type.get() != 0) {
+                    if(a_current_state.algorithms_sort_comparaison_type.get()->contains_selected_object("bubble")) {algorithms_comparaison_bubble();}
+                    else if(a_current_state.algorithms_sort_comparaison_type.get()->contains_selected_object("insertion")) {algorithms_comparaison_insertion();}
+                    else{algorithms_comparaison_selection();}
+                }
+                else{algorithms_comparaison_selection();}
+                algorithms_update_comparaison();
             }
-            algorithm_update_comparaison();
         }
     }
 
@@ -124,7 +244,7 @@ namespace pleos {
             // IT pages
             if(page == "algorithms"){display_algorithms_page();}
             else if(page == "algorithms_sort"){display_algorithms_sort_page();}
-            GUI_OBJECT_SELECTION(display_algorithms_sort_comparaison_page();algorithm_comparaison_start(), "algorithms_sort_comparaison")
+            GUI_OBJECT_SELECTION(display_algorithms_sort_comparaison_page(), "algorithms_sort_comparaison")
             else if(page == "data_structures_trees"){display_data_structures_trees_page();}
             else if(page == "data_structures_trees_graphic"){
                 display_data_structures_trees_simulation_page();
@@ -147,6 +267,6 @@ namespace pleos {
         scls::GUI_Page::update_event();
         check_navigation();
 
-        if(current_page() == PLEOS_IT_ALGORITHMS_SORT_COMPARAISON_SIMULATION_PAGE){check_algorithms();}
+        if(current_page() == PLEOS_IT_ALGORITHMS_SORT_COMPARAISON_PAGE || current_page() == PLEOS_IT_ALGORITHMS_SORT_COMPARAISON_SIMULATION_PAGE){check_algorithms();}
     }
 }

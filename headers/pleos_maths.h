@@ -208,6 +208,8 @@ namespace pleos {
 
         // Hides all the pages
         void hide_all(){hide_sub_pages(true);check_hiding();};
+        // Displays a page by its name
+        void display_page(std::string needed_page);
 
         // Returns / resets the current page
         inline unsigned short current_page() const {return a_current_state.current_page;};

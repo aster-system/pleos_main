@@ -42,7 +42,7 @@
 	<height value=7/8 type=scale>
 	<parent name="it_algorithms_page">
     <texture alignment_horizontal=left alignment_vertical=top>
-    <width value=9/10 type=scale>
+    <width value=1 type=scale>
 	<x value=1/2 type=object_scale>
 	<y attach=bottom>
 </gui_object>
@@ -54,5 +54,36 @@
 	<parent name="it_algorithms_sort_comparaison_body">
 	<width value=4/5 type=scale>
 	<x attach=right>
+	<y attach=top>
+</gui_object>
+
+// Elements
+<gui_object name="it_algorithms_sort_comparaison_elements" type="scroller_choice">
+	<border bottom=1 left=1 right=1 top=1>
+	<height value=1/2 type=scale>
+	<parent name="it_algorithms_sort_comparaison_body">
+	<width value=1/5 type=scale>
+	<x attach=left>
+	<y attach=top>
+
+	<choice name="visual_representation">Représentation visuelle</choice>
+</gui_object>
+
+// Datas about the element
+<gui_object name="it_algorithms_sort_comparaison_elements_datas" type="object">
+	<border bottom=1 left=1 right=1 top=1>
+	<height value=3/7 type=scale>
+	<parent name="it_algorithms_sort_comparaison_body">
+	<width value=4/5 type=scale>
+	<x attach=right>
+	<y attach=bottom>
+</gui_object>
+<gui_object name="it_algorithms_sort_comparaison_elements_datas_title" type="text">
+	<content font_size=30 alignment_horizontal=center>Aucun élément sélectionné</content>
+	<height value=1/6 type=scale>
+	<parent name="it_algorithms_sort_comparaison_elements_datas">
+	<texture alignment_vertical=top>
+	<width value=1 type=scale>
+	<x attach=left>
 	<y attach=top>
 </gui_object>

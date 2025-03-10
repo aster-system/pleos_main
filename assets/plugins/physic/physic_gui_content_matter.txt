@@ -4,7 +4,7 @@
 //
 //***************************************************
 
-<gui_object name="physic_matter_page" type="body" sub_page>
+<gui_object name="physic_matter_page" type="body" sub_page no_load>
 	<border bottom=1 left=1 right=1 top=1>
 	<height value=1 type=scale>
 	<width value=4/5 type=scale>

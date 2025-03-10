@@ -897,10 +897,6 @@ namespace pleos {
             add_element_created(current_choice);
         }
 
-        // Check the redactions
-        if(current_page() == PLEOS_MATHS_GEOMETRY_DEFINITION_PAGE && geometry_definitions_page()->is_clicked_during_this_frame(GLFW_MOUSE_BUTTON_LEFT)){check_redaction(geometry_definitions_page());}
-        if(current_page() == PLEOS_MATHS_GEOMETRY_VECTOR_PAGE && geometry_vector_page()->is_clicked_during_this_frame(GLFW_MOUSE_BUTTON_LEFT)){check_redaction(geometry_vector_page());}
-
         // Select a created element
         // Select a vector
         for(int i = 0;i<static_cast<int>(a_current_state.a_geometry_vectors_created.size());i++) {
@@ -962,31 +958,7 @@ namespace pleos {
         // Check the selected page
         if(a_navigation.get()->selection_modified()){
             std::string page = a_navigation.get()->currently_selected_objects_during_this_frame()[0].name();
-
-            // Algebra pages
-            if(page == "algebra_definitions"){display_algebra_definition_page();}
-            else if(page == "algebra_matrices"){display_algebra_matrices_page();}
-            // Arithmetic pages
-            else if(page == "arithmetic_definitions"){display_arithmetic_definitions_page();}
-            else if(page == "arithmetic_calculator"){display_arithmetic_calculator_page();}
-            GUI_OBJECT_SELECTION(display_arithmetic_division_page(), "arithmetic_division")
-            GUI_OBJECT_SELECTION(display_arithmetic_numbers_sets_page(), "arithmetic_numbers_sets")
-            // Functions pages
-            else if(page == "functions_definitions"){display_functions_definitions_page();}
-            else if(page == "functions_exponential"){display_functions_exponential_page();}
-            else if(page == "functions_forms"){display_functions_forms_page();}
-            else if(page == "functions_graphic"){display_functions_redaction_graphic_page();}
-            else if(page == "functions_redaction"){display_functions_redaction_page();}
-            // Geometry pages
-            else if(page == "geometry_complex_numbers"){display_geometry_complex_numbers_page();}
-            else if(page == "geometry_definitions"){display_geometry_definitions_page();}
-            else if(page == "geometry_redaction"){display_geometry_redaction_page();}
-            else if(page == "geometry_redaction_graphic"){display_geometry_redaction_graphic_page();}
-            else if(page == "geometry_vector"){display_geometry_vector_page();}
-            // Logic pages
-            else if(page == "logic_definitions"){display_logic_definitions_page();}
-            else if(page == "logic_language"){display_logic_language_page();}
-            else if(page == "logic_set_theory"){display_logic_set_theory_page();}
+            display_page(page);
         }
 
         // Check the hub button
@@ -1001,7 +973,62 @@ namespace pleos {
         int x = window_struct()->mouse_x() - redaction_part->x_in_absolute_pixel();
         int y = (window_struct()->window_height() - window_struct()->mouse_y()) - redaction_part->y_in_absolute_pixel();
         std::shared_ptr<scls::XML_Text> current_xml = redaction_part->text_clicked_at_position(x, y);
-        if(current_xml.get() != 0) {std::cout << "R " << current_xml.get() << " " << current_xml.get()->xml_balise() << " " << current_xml.get()->text() << std::endl;}
+        if(current_xml.get() != 0) {
+            // Link balise
+            if(current_xml.get()->xml_balise_name() == std::string("a")) {
+                std::string link = std::string();
+                for(int j = 0;j<static_cast<int>(current_xml.get()->xml_balise_attributes().size());j++) {
+                    scls::XML_Attribute& current_attribute = current_xml.get()->xml_balise_attributes()[j];
+                    std::string current_attribute_name = current_attribute.name;
+                    std::string current_attribute_value = current_attribute.value;
+                    if(current_attribute_value[0] == '\"'){current_attribute_value = current_attribute_value.substr(1, current_attribute_value.size() - 1);}
+                    if(current_attribute_value[current_attribute_value.size()-1] == '\"'){current_attribute_value = current_attribute_value.substr(0, current_attribute_value.size() - 1);}
+
+                    // Load the link
+                    if(current_attribute_name == "href") {link = current_attribute_value;}
+                }
+
+                // Parse the link
+                while(link.size() > 0 && link[0] == '.' || link[0] == '/'){link = link.substr(1, link.size() - 1);}
+                std::vector<std::string> cutted = scls::cut_string(link, "#");
+                std::string page = cutted[0];
+                // Display the page
+                display_page(page);
+            }
+            //std::cout << "R " << current_xml.get() << " " << current_xml.get()->xml_balise() << " " << current_xml.get()->text() << std::endl;
+        }
+    }
+
+    // Displays a page by its name
+    void Maths_Page::display_page(std::string page) {
+        // Algebra pages
+        if(page == "algebra_definitions"){display_algebra_definition_page();}
+        else if(page == "algebra_matrices"){display_algebra_matrices_page();}
+        // Arithmetic pages
+        else if(page == "arithmetic_definitions"){display_arithmetic_definitions_page();}
+        else if(page == "arithmetic_calculator"){display_arithmetic_calculator_page();}
+        GUI_OBJECT_SELECTION(display_arithmetic_division_page(), "arithmetic_division")
+        GUI_OBJECT_SELECTION(display_arithmetic_numbers_sets_page(), "arithmetic_numbers_sets")
+        // Functions pages
+        else if(page == "functions_definitions"){display_functions_definitions_page();}
+        else if(page == "functions_exponential"){display_functions_exponential_page();}
+        else if(page == "functions_forms"){display_functions_forms_page();}
+        else if(page == "functions_graphic"){display_functions_redaction_graphic_page();}
+        else if(page == "functions_redaction"){display_functions_redaction_page();}
+        // Geometry pages
+        else if(page == "geometry_complex_numbers"){display_geometry_complex_numbers_page();}
+        else if(page == "geometry_definitions"){display_geometry_definitions_page();}
+        else if(page == "geometry_redaction"){display_geometry_redaction_page();}
+        else if(page == "geometry_redaction_graphic"){display_geometry_redaction_graphic_page();}
+        else if(page == "geometry_vector"){display_geometry_vector_page();}
+        // Logic pages
+        else if(page == "logic_definitions"){display_logic_definitions_page();}
+        else if(page == "logic_language"){display_logic_language_page();}
+        else if(page == "logic_set_theory"){display_logic_set_theory_page();}
+        else {scls::print("PLEOS Maths", std::string("Unknown page \"") + page + std::string("\"."));return;}
+
+        // Handle navigation
+        if(!a_navigation.get()->contains_selected_object(page)){a_navigation.get()->select_object(page);}
     }
 
     // Update the events
@@ -1015,7 +1042,9 @@ namespace pleos {
         // Check the good page
         if(current_page() == PLEOS_MATHS_ARITHMETIC_CALCULATOR_PAGE || current_page() == PLEOS_MATHS_ARITHMETIC_CALCULATOR_CONGRUENCE_CIRCLE_PAGE){check_arithmetic();}
         else if(current_page() == PLEOS_MATHS_FUNCTIONS_REDACTION_PAGE){check_functions();}
-        else if(current_page() == PLEOS_MATHS_GEOMETRY_REDACTION_PAGE || current_page() == PLEOS_MATHS_GEOMETRY_DEFINITION_PAGE){check_geometry();}
+        else if(current_page() == PLEOS_MATHS_GEOMETRY_DEFINITION_PAGE){check_redaction(geometry_definitions_page());}
+        else if(current_page() == PLEOS_MATHS_GEOMETRY_REDACTION_PAGE){check_geometry();}
+        else if(current_page() == PLEOS_MATHS_GEOMETRY_VECTOR_PAGE){check_redaction(geometry_vector_page());}
         else if(current_page() == PLEOS_MATHS_LOGIC_DEFINITIONS_PAGE || current_page() == PLEOS_MATHS_LOGIC_LANGUAGE_PAGE){check_logic();}
     }
 }
