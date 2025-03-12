@@ -34,6 +34,7 @@
 #include "pleos_it.h"
 #include "pleos_maths.h"
 #include "pleos_physic.h"
+#include "pleos_settings.h"
 
 // The namespace "pleos" is used to simplify the all.
 namespace pleos {
@@ -79,6 +80,7 @@ namespace pleos {
         std::shared_ptr<scls::GUI_Text> a_navigation_it_button;
         std::shared_ptr<scls::GUI_Text> a_navigation_maths_button;
         std::shared_ptr<scls::GUI_Text> a_navigation_physic_button;
+        std::shared_ptr<scls::GUI_Text> a_navigation_settings_button;
     };
 
     class Pleos_Window : public scls::Window {
@@ -87,6 +89,14 @@ namespace pleos {
         // Pleos_Window constructor
         Pleos_Window(unsigned int w, unsigned int h, std::string path) : scls::Window(w, h, path) { set_window_title(std::string("PLEOS - Hub")); }
 
+        // Render the window
+        virtual void render(){
+            bool good = false;
+            for(int i = 0;i<static_cast<int>(displayed_pages_2d().size());i++) {if(displayed_pages_2d().at(i).get()->should_render_during_this_frame()){good = true;break;}}
+            if(good || displayed_pages_2d_modified_during_this_frame()){scls::Window::render();}
+            else{scls::Window::render_always();}
+        };
+
         // Create an object in the window
         std::shared_ptr<scls::Object> __create_loaded_object_from_type(std::string object_name, std::string object_type) {
             if(object_name == "hub") {std::shared_ptr<Hub_Page> hub = *new_page_2d<Hub_Page>(object_name);return hub;}
@@ -94,6 +104,7 @@ namespace pleos {
             else if(object_name == "it") {std::shared_ptr<IT_Page> hub = *new_page_2d<IT_Page>(object_name);return hub;}
             else if(object_name == "maths") {std::shared_ptr<Maths_Page> hub = *new_page_2d<Maths_Page>(object_name);return hub;}
             else if(object_name == "physic") {std::shared_ptr<Physic_Page> hub = *new_page_2d<Physic_Page>(object_name);return hub;}
+            else if(object_name == "settings") {std::shared_ptr<Settings_Page> hub = *new_page_2d<Settings_Page>(object_name);return hub;}
             return scls::Window::__create_loaded_object_from_type(object_name, object_type);
         }
     };

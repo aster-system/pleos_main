@@ -4,4 +4,38 @@
 
 <h2>La division de nombres entiers</h2>
 
-<h3></h3>
+<h3>Multiples et division euclidienne</h3>
+<p>
+En arithmétique de nombres naturels, la division est une opération assez peut utiliser, puisque le résultat qu'elle retourne n'est pas toujours un nombre naturel.
+Par exemple, 4 divisé par 3 est 1.333..., qui n'est pas un nombre naturel.
+Il est préférable d'inverser les rôles, en parlant de multiples.
+En effet, <important>un nombre a est multiple d'un autre nombre b si a représente b multiplié par un nombre entier quelconque c, donc a = b * c</important>.
+Dans ce cas, la division de a par b est entière, est b est un diviseur de a.
+Cependant, dans certains cas, a n'est pas un multiple de b.
+Donc, a représente la multiplication de b d'un nombre entier quelconque, auquelle on additione un autre nombre entier d.
+Dans ce cas, <important>nous obtenons a = b * c + r : cette opération représente la division euclidienne de a par b, avec c nommé le quotient de la division et r nommé le reste de la division</important>.
+Pour que cette opération soit simple, nous prenons le c le plus grand possible, et le r le plus petit possible.
+De plus, r doit être inférieur à b, car un r égal ou supérieur à b implique qu'il est possible d'additionner 1 à c, qui n'est donc pas le plus grand possible.
+</p>
+<h3>Modulos et congruences</h3>
+<p>
+Pour deux nombres entiers quelconques b et a, leur division euclidienne donne un certain reste r.
+Cependant, pour d'autres entiers quelconques c et a, leur division euclidienne peut donner le même reste r.
+<important>Si deux nombres b et c (différents) ont le même reste pour une division par a (supérieure à 0), alors b et c sont dit congrus modulo a</important>.
+Cela implique une autre propriétés similaires : leur différence est divise par a.
+En effet :
+</p>
+<math><mi>b = d * a + r</mi></math></br>
+<math><mi>c = e * a + r</mi></math></br>
+<math><mi>c - b = e * a + r - (d * a + r)</mi><mo>=</mo><mi>a(d - e)</mi></math>
+<p>
+Les restes de nombres crées par une congruence modulo n sont liés par une relation d'équivalence.
+Venons en au fait : <important>la somme de deux nombres a et b entiers congrus à c et d modulo n est congru à la somme de c et d</important>.
+De plus, <important>le produit de deux nombres a et b entiers congrus à c et d modulo n est congru au produit de c et d</important>.
+En toute logique, l'exposant possède la même propriété.
+La démonstration est assez simple.
+</p>
+<math><mi>a = c * n + e</mi></math></br>
+<math><mi>b = d * n + f</mi></math></br>
+<math><mi>a + b = c * n + e + d * n + f</mi><mo>=</mo><mi>n(c + d) + (e + f)</mi><mequiv><mi>(e + f) [n]</mi></math></br>
+<math><mi>a * b = (c * n + e) * (d * n + f)</mi><mo>=</mo><mi>n</mi><msup>2</msup><mi>(c + d) + n(c * f + d * e) + (e * f)</mi><mequiv><mi>(e * f) [n]</mi></math>

@@ -14,3 +14,6 @@
 <page_2d name="physic" type="gui">
 	<content src="plugins/physic/gui_content.txt" sub_paged></content>
 </page_2d>
+<page_2d name="settings" type="gui">
+	<content src="settings/settings_gui_content.txt" sub_paged></content>
+</page_2d>

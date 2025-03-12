@@ -23,7 +23,7 @@ Le deuxième axiome admet que tout nombre naturel possède un successeur (dans l
 Le troisième axiome dit que 0 ne peut pas être un successeur d'un autre nombre.
 Le quatrième définit deux entiers naturels ayant le même successeur comme égaux.
 Finalement, le dernier axiome décrit l'ensemble (de manière ensembliste) des entiers naturels comme un ensemble ayant 0, et le successeurs de 0 et les successeurs de tous les autres successeurs.
-Avec cette axiome, <important>nous pouvons créer une algèbre des nombres entiers naturels, comme un groupe contenant une opération interne d'addition</important>.
+Avec cette axiome, <important>nous pouvons créer une algèbre des nombres entiers naturels, comme un groupe contenant une opération de composition interne d'addition</important>.
 L'axiome 3 garanti que 0 est l'élément neutre du groupe des entiers naturels.
 Grâce à l'axiome 2 et 4, <important>nous pouvons définir l'addition dans le groupe des entiers naturels :  a + b représente la valeur obtenue après être passé de successeur en successeur b fois, en partant de a</important>.
 C'est une reformulation de la définition intuitive de l'addition.

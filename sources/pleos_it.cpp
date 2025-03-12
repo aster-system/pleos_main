@@ -288,6 +288,7 @@ namespace pleos {
         }
 
         algorithms_sort_comparaison_simulation()->texture()->set_image(image);
+        set_should_render_during_this_frame(true);
 
         // Set the text
         if(a_current_state.algorithms_sort_comparaison_number_display.get() != 0) {
