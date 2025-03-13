@@ -1,5 +1,5 @@
 <tree graph="merge_sort" name="Tri fusion">
-    <tree name="(5,3,2,4,1)">
+    <tree name="15">
         <tree name="(5,3,2)">
             <tree name="(5,3)">
                 <tree name="(3,)"></tree>
@@ -7,18 +7,9 @@
             </tree>
             <tree name="(2,)"><tree name="(2,)"></tree></tree>
         </tree>
-        <tree name="(4,1)">
+        <tree name="40">
             <tree name="(1,)"><tree name="(1,)"></tree></tree>
             <tree name="(4,)"><tree name="(4,)"></tree></tree>
         </tree>
     </tree>
-
-    <node name="(3,5)" x=-3/2 y=-5><link id=4><link id=5></node>
-    <node name="(2,)" x=0 y=-5><link id=7></node>
-    <node name="(1,4)" x=3/2 y=-5><link id=10><link id=12></node>
-
-    <node name="(2,3,5)" x=-1 y=-6><link id=13><link id=14></node>
-    <node name="(1,4)" x=3/2 y=-6><link id=15></node>
-
-    <node name="(1,2,3,4,5)" x=0 y=-7><link id=16><link id=17></node>
 </tree>

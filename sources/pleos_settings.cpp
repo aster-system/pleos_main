@@ -40,7 +40,11 @@ namespace pleos {
         else if(object_name == "settings_navigation") {a_navigation = *parent->new_object<scls::GUI_Scroller_Choice>(object_name);return a_navigation;}
 
         // Pages
+        GUI_OBJECT_CREATION(scls::GUI_Object, a_about_page, "settings_about_page")
         GUI_OBJECT_CREATION(scls::GUI_Object, a_law_page, "settings_law_page")
+
+        // About part
+        GUI_OBJECT_CREATION(scls::GUI_Text_Base<Text>, a_about_presentation_page, "settings_about_presentation_body")
 
         // Law part
         GUI_OBJECT_CREATION(scls::GUI_Text_Base<Text>, a_law_license_page, "settings_law_license_body")

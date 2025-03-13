@@ -38,7 +38,8 @@
 // Matter pages
 #define PLEOS_PHYSIC_MATTER_SCALE_PAGE 101
 #define PLEOS_PHYSIC_MATTER_BOHR_MODEL_PAGE 110
-#define PLEOS_PHYSIC_MATTER_BOHR_MODEL_SIMULATION_PAGE 120
+#define PLEOS_PHYSIC_MATTER_BOHR_MODEL_SIMULATION_PAGE 115
+#define PLEOS_PHYSIC_MATTER_QUANTUM_MECHANIC_PAGE 120
 #define PLEOS_PHYSIC_MATTER_BOSONS_PAGE 150
 
 // The namespace "pleos" is used to simplify the all.
@@ -127,6 +128,7 @@ namespace pleos {
 
         // Matter
         inline Graphic_Object* matter_bohr_model_simulation() const {return a_physic_matter_bohr_model_simulation.get();};
+        GUI_PAGE(scls::GUI_Text_Base<Text>, a_physic_matter_quantum_mechanic_page, PLEOS_PHYSIC_MATTER_QUANTUM_MECHANIC_PAGE, matter_quantum_mechanic_page, display_matter_quantum_mechanic_page, display_matter_page);
 
         // Mechanic
         inline scls::GUI_Text* mechanic_dynamic_page() const {return a_physic_mechanic_dynamic_body.get();};

@@ -22,6 +22,22 @@
 
 //***************************************************
 //
+//   QUANTUM MECHANIC
+//
+//***************************************************
+
+<gui_object name="physic_matter_quantum_mechanic_body" type="text" sub_page>
+    <content max_width=0 src="matter/physic_quantum_mechanic.txt"></content>
+	<height value=7/8 type=scale>
+	<parent name="physic_matter_page">
+	<texture alignment_horizontal=left alignment_vertical=top>
+    <width value=9/10 type=scale>
+	<x value=1/2 type=object_scale>
+	<y attach=bottom>
+</gui_object>
+
+//***************************************************
+//
 //   SCALES
 //
 //***************************************************

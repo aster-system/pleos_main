@@ -1,0 +1,34 @@
+<h1>La mécanique quantique</h1>
+
+
+<h2>La mécanique à petite échelle</h2>
+
+<h3>Définir la mécanique quantique</h3>
+<p>
+Au début des années 1930, les physiciens étaient unanimes : la physique à petite échelle est très bizarre.
+Il faut accepter que certaines lois "classiques" de notre monde n'existent pas à petite échelle, et que certaines lois à petites échelles ne veulent rien dire à notre échelle.
+Après pas mal de rencontres, <important>les physiciens ont pris la décisions d'utiliser une nouvelle mécanique à petite échelle : la mécanique quantique</important>.
+</p>
+<h3>Les postulats de mécanique quantique</h3>
+<p>
+Comme tout théorie physique, la physique quantique est basée sur des postulats relativement solides.
+Le premier postulat défini un état quantique.
+En effet,  <important>un état quantique représente une propriété observée pour un objet quantique, et peut être décrit par un vecteur complexe géométrique</important>.</br>
+Le deuxième postulat est le postulat de correspondance.
+Il fait correspondre à chaque état quantique existant une manière de les mesurer.
+Ce postulat défini aussi les état quantique observables, nommés... des observables.
+En effet, un état quantique peut représenter un simple état de mécanique classique (comme une vitesse ou une possition) pour des objets quantiques.
+Or, si l'on fait l'observation comme ça à partir d'une observable, on obtient une erreur.
+Le principe de correspondance permet de corriger cette erreur, <important>en appliquant une transformation à chaque état quantique, pour passer d'une forme classique à une forme quantique</important>.</br>
+Le troisième postulat décrit les valeurs mesurées via les observables, comme des valeurs propres de l'observable.
+En gros, la mesure doit être faite de telle manière que le référentiel géométrique de l'observable et de sa mesure soit (à un redimensionnement près) pareil.</br>
+Le quatrième postulat, le postulat de Born décrit comment utiliser les valeurs mesurées via les observables.
+En effet, <important>les valeurs osbervées n'ont qu'une certaine probabilités d'être vrai, selon l'observable utilisée (ce qui est différent de la physique classique : une valeur observée est toujours vraie)</important>.
+Selon ce postulat, les valeurs observées doivent passer par une fonction pour que l'on obtienne sa probabilité réelle : la célèbre fonction d'onde.</br>
+Le cinquième postulat, le postulat de réduction d'onde, énonce que une mesure d'un système provoque l'effondrement du système.
+En physique quantique, l'effondrement d'un système représente le fait que l'état mesuré va directement prendre comme valeur l'état mesuré.
+C'est une confirmation que une mesure en physique quantique est possible.</br>
+Finalement, le sixième postulat décrit l'évolution temporelle d'un objet quantique après mesure.
+<important>L'étude d'un système dans le temps se fait via un système d'équation assez célèbre : les équations de Schrodinger</important>.
+Les valeurs décrites par ce système sont l'évolution de l'objet dans le temps.
+</p>

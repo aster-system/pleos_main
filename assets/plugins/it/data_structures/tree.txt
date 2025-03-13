@@ -21,5 +21,6 @@ En informatique, <important>ces liens représentent des moyens d'accés aux donn
 
 <h3>L'objet "arbre"</h3>
 <p>
-
+Dans un arbre binaire, le plus grand nombre de noeud est log2(n+1).
+La complexité est donc logarithmique.
 </p>

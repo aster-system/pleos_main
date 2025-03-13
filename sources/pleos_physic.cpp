@@ -38,6 +38,7 @@ namespace pleos {
         else if(object_name == "physic_matter_bohr_model_simulation") {a_physic_matter_bohr_model_simulation = *parent->new_object<Graphic_Object>(object_name);return a_physic_matter_bohr_model_simulation;}
         else if(object_name == "physic_matter_bohr_model_simulation_body"){a_physic_matter_bohr_model_simulation_body = *parent->new_object<scls::GUI_Object>(object_name);return a_physic_matter_bohr_model_simulation_body;}
         else if(object_name == "physic_matter_bosons_body") {a_physic_matter_bosons_body = *parent->new_object<scls::GUI_Text>(object_name);return a_physic_matter_bosons_body;}
+        GUI_OBJECT_CREATION(scls::GUI_Text_Base<Text>, a_physic_matter_quantum_mechanic_page, "physic_matter_quantum_mechanic_body")
         else if(object_name == "physic_matter_scale_body"){a_physic_matter_scale_body = *parent->new_object<scls::GUI_Text>(object_name);return a_physic_matter_scale_body;}
 
         // Mechanic
@@ -114,11 +115,14 @@ namespace pleos {
         if(a_navigation.get()->selection_modified()){
             std::string page = a_navigation.get()->currently_selected_objects_during_this_frame()[0].name();
 
-            // Arithmetic pages
+            // Matter pages
             if(page == "matter_bohr_model"){display_matter_bohr_model_page();}
             else if(page == "matter_bohr_model_simulation"){display_matter_bohr_model_simulation_page();}
             else if(page == "matter_bosons"){display_matter_bosons_page();}
             else if(page == "matter_scale"){display_matter_scale_page();}
+            GUI_OBJECT_SELECTION(display_matter_quantum_mechanic_page(), "matter_quantum_mechanic")
+
+            // Mechanic pages
             else if(page == "mechanic_dynamic"){display_mechanic_dynamic_page();}
             else if(page == "mechanic_kinematic"){display_mechanic_kinematic_page();}
         }

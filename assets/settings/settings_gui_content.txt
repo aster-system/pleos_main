@@ -22,6 +22,10 @@
 
 	<choice name="home">Accueil</choice>
 
+	<sub_choice name="about" displayer="À propos">
+		<choice name="about_presentation">Présentation</choice>
+	</sub_choice>
+	
 	<sub_choice name="law" displayer="Aspect juridique">
 		<choice name="law_license">Licence d'utilisation</choice>
 	</sub_choice>
@@ -41,4 +45,5 @@
     </when>
 </gui_object>
 
+<include src="settings_gui_content_about.txt">
 <include src="settings_gui_content_law.txt">

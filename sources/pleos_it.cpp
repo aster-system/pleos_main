@@ -299,6 +299,12 @@ namespace pleos {
         }
     }
 
+    //******************
+    //
+    // Check events
+    //
+    //******************
+
     // Checks the events of algorithms
     void IT_Page::check_algorithms() {
         // Adds a created element
@@ -350,8 +356,9 @@ namespace pleos {
             else if(page == "data_structures_trees_graphic"){
                 display_data_structures_trees_simulation_page();
 
-                std::string content = "<tree><node name=\"Ville 1\" x=0 y=0></node><node name=\"Ville 2\" x=0 y=-1><link id=0></node><node name=\"Ville 3\" x=3/2 y=1/2><link id=1></node><node name=\"Ville 4\" x=-1 y=1/2><link id=2><link id=0></node><node name=\"Ville 5\" x=1/2 y=-1/2><link id=3></node></tree>";
-                std::shared_ptr<Tree<std::string>> tree = tree_from_xml(content, window_struct()->balises_shared_ptr());
+                std::string content = "<tree graph=\"animals\" name=\"Animal\"><tree name=\"Félins\"><tree name=\"Chats\"></tree><tree name=\"Léopards\"></tree><tree name=\"Panthères\"></tree></tree><tree name=\"Canidés\"><tree name=\"Loups\"></tree><tree name=\"Chiens\"></tree><tree name=\"Coyotes\"></tree></tree></tree>";
+                scls::Text_Style style;style.set_border_width(1);
+                std::shared_ptr<Tree<std::string>> tree = tree_from_xml(content, style, window_struct()->balises_shared_ptr());
                 std::shared_ptr<scls::Image> needed_image = tree.get()->to_image() ;
                 needed_image.get()->save_png("tests/arbre.png");
                 data_structures_tree_simulation()->texture()->set_image(needed_image);

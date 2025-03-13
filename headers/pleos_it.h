@@ -105,16 +105,33 @@ namespace pleos {
         // Updates the texture of the comparaison part of the algorithm
         void algorithms_update_comparaison();
 
+        // Getters and setters
+        inline int algorithms_sort_comparaison_number(){return a_current_state.algorithms_sort_comparaison_number();};
+        inline int algorithms_sort_comparaison_permutation_number(){return a_current_state.algorithms_sort_comparaison_permutation_number();};
+
+        //******************
+        //
+        // Data structures
+        //
+        //******************
+
+        // Getters and setters
+        inline Tree<std::string>* data_structures_current_tree(){return a_current_state.data_structures_current_tree.get();};
+        inline std::shared_ptr<Tree<std::string>> data_structures_current_tree_shared_ptr(){return a_current_state.data_structures_current_tree;};
+        inline void data_structures_set_current_tree(std::shared_ptr<Tree<std::string>> new_tree){a_current_state.data_structures_current_tree = new_tree;};
+
+        //******************
+        //
+        // Check events
+        //
+        //******************
+
         // Checks the events of algorithms
         void check_algorithms();
         // Checks the events of navigation
         void check_navigation();
         // Updates the events
         virtual void update_event();
-
-        // Getters and setters
-        inline int algorithms_sort_comparaison_number(){return a_current_state.algorithms_sort_comparaison_number();};
-        inline int algorithms_sort_comparaison_permutation_number(){return a_current_state.algorithms_sort_comparaison_permutation_number();};
 
         //******************
         //
@@ -190,6 +207,10 @@ namespace pleos {
             std::shared_ptr<scls::GUI_Scroller_Choice> algorithms_sort_comparaison_type;
             // Sort comparaison
             std::vector<double> algorithms_sort_comparaison_values = std::vector<double>();
+
+            // Data structures
+            // Current used tree
+            std::shared_ptr<Tree<std::string>> data_structures_current_tree;
 
             // Current page
             unsigned short current_page = PLEOS_IT_HOME_PAGE;

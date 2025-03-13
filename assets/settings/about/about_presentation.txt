@@ -1,0 +1,7 @@
+<h1>Présentation</h1>
+
+<h2>Qu'est ce qu'est PLEOS ?</h2>
+
+<p>
+PLEOS, pour Pack de Logiciels Éducatifs Open Source, est un logiciel édité par l'organisation Aster Système.
+</p>

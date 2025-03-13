@@ -37,6 +37,8 @@
 
 // Pages
 #define PLEOS_SETTINGS_HOME_PAGE 0
+#define PLEOS_SETTINGS_ABOUT_PAGE 1
+#define PLEOS_SETTINGS_ABOUT_PRESENTATION_PAGE 2
 // Law pages
 #define PLEOS_SETTINGS_LAW_PAGE 100
 #define PLEOS_SETTINGS_LAW_LICENSE_PAGE 110
@@ -52,6 +54,10 @@ namespace pleos {
         Settings_Page(scls::_Window_Advanced_Struct* window_struct, std::string name):scls::GUI_Page(window_struct, name){};
         // Loads an object in a page from XML
         virtual std::shared_ptr<scls::GUI_Object> __create_loaded_object_from_type(std::string object_name, std::string object_type, scls::GUI_Object* parent);
+
+        // About part
+        GUI_PAGE(scls::GUI_Object, a_about_page, PLEOS_SETTINGS_ABOUT_PAGE, about_page, display_about_page, hide_all);
+        GUI_PAGE(scls::GUI_Text_Base<Text>, a_about_presentation_page, PLEOS_SETTINGS_ABOUT_PRESENTATION_PAGE, about_presentation_page, display_about_presentation_page, display_about_page);
 
         // Law part
         GUI_PAGE(scls::GUI_Object, a_law_page, PLEOS_SETTINGS_LAW_PAGE, law_page, display_law_page, hide_all);
@@ -77,7 +83,7 @@ namespace pleos {
         //******************
 
         // Display a page by its name
-        inline void display_page(std::string needed_page){if(needed_page == std::string("law_license")){display_law_license_page();}};
+        inline void display_page(std::string needed_page){if(needed_page == std::string("about_presentation")){display_about_presentation_page();}else if(needed_page == std::string("law_license")){display_law_license_page();}};
 
         // Hides all the pages
         void hide_all(){hide_sub_pages(true);};
