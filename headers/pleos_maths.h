@@ -120,6 +120,8 @@ namespace pleos {
         // Adds an element to analyse
         void add_element(std::string current_choice);
         // Adds an element to create
+        void add_element_created_button(std::string final_choice, std::string needed_title, int object_created);
+        std::string add_element_created_final_choice(std::string current_choice);
         void add_element_created(std::string current_choice);
 
         // Shows a demonstration of the Pythagoras theorem

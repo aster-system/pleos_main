@@ -1,0 +1,8 @@
+Nous avons l'équation diophantienne <>.
+Trouvons les coefficients de Bézout de cette forme.
+<>
+Donc, nous pouvons écrire cette forme telle que <>.
+On en conclut que <>.
+Or, <> et <> sont premiers entre eux.
+D'après le théorème de Gauss, <> divise <> et <> divise <>.
+Donc, <>.

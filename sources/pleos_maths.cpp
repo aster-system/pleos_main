@@ -253,6 +253,103 @@ namespace pleos {
     //
     //******************
 
+    // Function called after the XML loading
+    void Maths_Page::after_xml_loading(){
+        scls::GUI_Page::after_xml_loading();
+        hide_sub_pages(true);
+        a_functions_redaction_elements_chosen.get()->unselected_objects_style().cursor = GLFW_ARROW_CURSOR;
+        geometry_redaction_graphic()->set_operation_at_click(PLEOS_OPERATION_VECTOR);
+    }
+
+    // Adds an element to create
+    void Maths_Page::functions_add_element_created(std::string current_choice) {
+        // Creation name
+        std::string final_choice = current_choice;
+        std::string needed_title = "";
+        if(current_choice == "function"){
+            final_choice += std::string("-") + std::to_string(functions_redaction_elements_created()->count_object_similar(current_choice, "-"));
+            needed_title = std::string("Fonction f");
+
+            // Create the needed vector
+            functions_created().push_back(std::make_shared<pleos::Function_Studied>());
+            functions_created()[functions_created().size() - 1].get()->set_name("f");
+            functions_select_function(functions_created()[functions_created().size() - 1]);
+        }
+
+        // Get the good current choice
+        std::shared_ptr<scls::GUI_Text>* object = functions_redaction_elements_created()->add_object(final_choice, needed_title);
+        if(object != 0){currently_selected_function()->set_connected_object(*object);}
+    }
+
+    // Redacts the needed redaction for the functions part
+    void Maths_Page::functions_redact() {
+        // Starts the redaction
+        check_functions_hiding(); functions_redaction_graphic()->reset();
+        std::string redaction = std::string();
+        if(static_cast<int>(functions_created().size()) > 1){redaction += std::string("Nous allons définir ") + std::to_string(functions_created().size()) + std::string(" fonctions. ");}
+        // Create the introduction of the redaction
+        for(int i = 0;i<static_cast<int>(functions_created().size());i++) {
+            redaction += functions_created()[i].get()->introduction();
+            if(i < static_cast<int>(functions_created().size()) - 1){redaction += std::string(" ");}
+        } redaction += std::string("</br></br>");
+
+        // Get datas for each functions
+        for(int i = 0;i<static_cast<int>(functions_created().size());i++) {
+            std::shared_ptr<pleos::Function_Studied> needed_function = functions_created()[i];
+            std::string& function_name = needed_function.get()->function_name;
+            scls::Formula& needed_formula = needed_function.get()->function_formula;
+
+            // Do the redaction
+            redaction += std::string("Nous avons la fonction ") + function_name + std::string(" tel que :</br></br>");
+            redaction += std::string("<math><mi>") + function_name + std::string("(x") + std::string(")</mi><mo>=</mo>") + needed_formula.to_mathml() + std::string("</math></br></br>");
+
+            // Add the needed arguments
+            std::vector<scls::GUI_Scroller_Choice::GUI_Scroller_Single_Choice>& objects = functions_redaction_elements_chosen()->objects();
+            for(int j = 0;j<static_cast<int>(objects.size());j++) {
+                std::string complete_name = objects[j].name(); std::vector<std::string> cutted = scls::cut_string(complete_name, std::string("-"));
+                std::string current_function_name = reinterpret_cast<scls::GUI_Text_Input*>(objects[j].object()->child_by_name(objects[j].object()->name() + "_input_name"))->text();
+                std::string type = cutted[0];
+
+                if(current_function_name == function_name) {
+                    // Analyse the argument
+                    if(type == "definition_set") {function_definition_set(needed_function.get(), &redaction);}
+                    else if(type == "image") {
+                        // Calculate an image of the function
+                        scls::Formula needed_value = scls::string_to_formula(reinterpret_cast<scls::GUI_Text_Input*>(objects[j].object()->child_by_name(objects[j].object()->name() + "_input_x"))->text());
+                        function_image(*needed_function.get(), needed_value, redaction);
+                    }
+                    else if(type == "roots") {function_roots(needed_function.get(), redaction);}
+                    redaction += std::string("</br></br>");
+                }
+            }
+
+            // Check the graphic part
+            if(needed_function.get()->definition_set.get() == 0){function_definition_set(needed_function.get(), 0);}
+            functions_redaction_graphic()->add_function(needed_function);
+            redaction += std::string("</br></br>");
+        }
+
+        // Finish the redaction
+        functions_redaction_graphic()->update_texture();
+        functions_redaction()->set_text(redaction);
+    }
+
+    // Selects a functions vector
+    void Maths_Page::functions_select_function(std::shared_ptr<pleos::Function_Studied> needed_function) {
+        check_functions_hiding();
+        currently_selected_function_shared_ptr() = needed_function;
+
+        // Set the needed text
+        functions_redaction_expression()->set_text(needed_function.get()->function_formula.to_std_string());
+        functions_redaction_name()->set_text(needed_function.get()->function_name);
+    }
+
+    //******************
+    //
+    // Geometry handling
+    //
+    //******************
+
     // Adds an element to analyse
     void Maths_Page::add_element(std::string current_choice) {
         // Creation name
@@ -371,14 +468,41 @@ namespace pleos {
         }
     }
 
+    // Adds the button for the element created
+    void Maths_Page::add_element_created_button(std::string final_choice, std::string needed_title, int object_created) {
+        // Get the good current choice
+        std::shared_ptr<scls::GUI_Text>* object = geometry_redaction_elements_created()->add_object(final_choice, needed_title);
+        if(object != 0){
+            if(object_created == PLEOS_MATHEMATICS_GEOMETRY_FORM){currently_selected_form_2d()->set_connected_object(*object);}
+            else if(object_created == PLEOS_MATHEMATICS_GEOMETRY_POINT || object_created == PLEOS_MATHEMATICS_GEOMETRY_VECTOR){currently_selected_vector()->set_connected_object(*object);}
+        }
+    }
+
+    // Returns the final choice for the element created
+    std::string Maths_Page::add_element_created_final_choice(std::string current_choice) {
+        std::string final_choice = current_choice;
+
+        // Get the choice
+        if(current_choice == "vector"){
+            final_choice += std::string("-") + std::to_string(geometry_redaction_elements_created()->count_object_similar("vector", "-"));
+        }
+        else if(current_choice == "form"){
+            final_choice += std::string("-") + std::to_string(geometry_redaction_elements_created()->count_object_similar("form", "-"));
+        }
+        else if(current_choice == "point"){
+            final_choice += std::string("-") + std::to_string(geometry_redaction_elements_created()->count_object_similar("point", "-"));
+        }
+
+        return final_choice;
+    }
+
     // Adds an element to create
     void Maths_Page::add_element_created(std::string current_choice) {
         // Creation name
-        std::string final_choice = current_choice;
+        std::string final_choice = add_element_created_final_choice(current_choice);
         std::string needed_title = "";
         int object_created = 0;
         if(current_choice == "vector"){
-            final_choice += std::string("-") + std::to_string(geometry_redaction_elements_created()->count_object_similar("vector", "-"));
             needed_title = std::string("Vecteur");
             object_created = PLEOS_MATHEMATICS_GEOMETRY_VECTOR;
 
@@ -387,7 +511,6 @@ namespace pleos {
             geometry_select_vector(geometry_vectors_created()[geometry_vectors_created().size() - 1]);
         }
         else if(current_choice == "form"){
-            final_choice += std::string("-") + std::to_string(geometry_redaction_elements_created()->count_object_similar("form", "-"));
             needed_title = std::string("Forme");
             object_created = PLEOS_MATHEMATICS_GEOMETRY_FORM;
 
@@ -396,7 +519,6 @@ namespace pleos {
             geometry_select_form_2d(geometry_form_2d_created()[geometry_form_2d_created().size() - 1]);
         }
         else if(current_choice == "point"){
-            final_choice += std::string("-") + std::to_string(geometry_redaction_elements_created()->count_object_similar("point", "-"));
             needed_title = std::string("Point");
             object_created = PLEOS_MATHEMATICS_GEOMETRY_POINT;
 
@@ -406,110 +528,9 @@ namespace pleos {
             geometry_select_vector(geometry_vectors_created()[geometry_vectors_created().size() - 1]);
         }
 
-        // Get the good current choice
-        std::shared_ptr<scls::GUI_Text>* object = geometry_redaction_elements_created()->add_object(final_choice, needed_title);
-        if(object != 0){
-            if(object_created == PLEOS_MATHEMATICS_GEOMETRY_FORM){currently_selected_form_2d()->set_connected_object(*object);}
-            else if(object_created == PLEOS_MATHEMATICS_GEOMETRY_POINT || object_created == PLEOS_MATHEMATICS_GEOMETRY_VECTOR){currently_selected_vector()->set_connected_object(*object);}
-        }
+        // Set the current choice
+        add_element_created_button(final_choice, needed_title, object_created);
     }
-
-    // Function called after the XML loading
-    void Maths_Page::after_xml_loading(){
-        scls::GUI_Page::after_xml_loading();
-        hide_sub_pages(true);
-        a_functions_redaction_elements_chosen.get()->unselected_objects_style().cursor = GLFW_ARROW_CURSOR;
-        geometry_redaction_graphic()->set_operation_at_click(PLEOS_OPERATION_VECTOR);
-    }
-
-    // Adds an element to create
-    void Maths_Page::functions_add_element_created(std::string current_choice) {
-        // Creation name
-        std::string final_choice = current_choice;
-        std::string needed_title = "";
-        if(current_choice == "function"){
-            final_choice += std::string("-") + std::to_string(functions_redaction_elements_created()->count_object_similar(current_choice, "-"));
-            needed_title = std::string("Fonction f");
-
-            // Create the needed vector
-            functions_created().push_back(std::make_shared<pleos::Function_Studied>());
-            functions_created()[functions_created().size() - 1].get()->set_name("f");
-            functions_select_function(functions_created()[functions_created().size() - 1]);
-        }
-
-        // Get the good current choice
-        std::shared_ptr<scls::GUI_Text>* object = functions_redaction_elements_created()->add_object(final_choice, needed_title);
-        if(object != 0){currently_selected_function()->set_connected_object(*object);}
-    }
-
-    // Redacts the needed redaction for the functions part
-    void Maths_Page::functions_redact() {
-        // Starts the redaction
-        check_functions_hiding(); functions_redaction_graphic()->reset();
-        std::string redaction = std::string();
-        if(static_cast<int>(functions_created().size()) > 1){redaction += std::string("Nous allons définir ") + std::to_string(functions_created().size()) + std::string(" fonctions. ");}
-        // Create the introduction of the redaction
-        for(int i = 0;i<static_cast<int>(functions_created().size());i++) {
-            redaction += functions_created()[i].get()->introduction();
-            if(i < static_cast<int>(functions_created().size()) - 1){redaction += std::string(" ");}
-        } redaction += std::string("</br></br>");
-
-        // Get datas for each functions
-        for(int i = 0;i<static_cast<int>(functions_created().size());i++) {
-            std::shared_ptr<pleos::Function_Studied> needed_function = functions_created()[i];
-            std::string& function_name = needed_function.get()->function_name;
-            scls::Formula& needed_formula = needed_function.get()->function_formula;
-
-            // Do the redaction
-            redaction += std::string("Nous avons la fonction ") + function_name + std::string(" tel que :</br></br>");
-            redaction += std::string("<math><mi>") + function_name + std::string("(x") + std::string(")</mi><mo>=</mo>") + needed_formula.to_mathml() + std::string("</math></br></br>");
-
-            // Add the needed arguments
-            std::vector<scls::GUI_Scroller_Choice::GUI_Scroller_Single_Choice>& objects = functions_redaction_elements_chosen()->objects();
-            for(int j = 0;j<static_cast<int>(objects.size());j++) {
-                std::string complete_name = objects[j].name(); std::vector<std::string> cutted = scls::cut_string(complete_name, std::string("-"));
-                std::string current_function_name = reinterpret_cast<scls::GUI_Text_Input*>(objects[j].object()->child_by_name(objects[j].object()->name() + "_input_name"))->text();
-                std::string type = cutted[0];
-
-                if(current_function_name == function_name) {
-                    // Analyse the argument
-                    if(type == "definition_set") {function_definition_set(needed_function.get(), &redaction);}
-                    else if(type == "image") {
-                        // Calculate an image of the function
-                        scls::Formula needed_value = scls::string_to_formula(reinterpret_cast<scls::GUI_Text_Input*>(objects[j].object()->child_by_name(objects[j].object()->name() + "_input_x"))->text());
-                        function_image(*needed_function.get(), needed_value, redaction);
-                    }
-                    else if(type == "roots") {function_roots(needed_function.get(), redaction);}
-                    redaction += std::string("</br></br>");
-                }
-            }
-
-            // Check the graphic part
-            if(needed_function.get()->definition_set.get() == 0){function_definition_set(needed_function.get(), 0);}
-            functions_redaction_graphic()->add_function(needed_function);
-            redaction += std::string("</br></br>");
-        }
-
-        // Finish the redaction
-        functions_redaction_graphic()->update_texture();
-        functions_redaction()->set_text(redaction);
-    }
-
-    // Selects a functions vector
-    void Maths_Page::functions_select_function(std::shared_ptr<pleos::Function_Studied> needed_function) {
-        check_functions_hiding();
-        currently_selected_function_shared_ptr() = needed_function;
-
-        // Set the needed text
-        functions_redaction_expression()->set_text(needed_function.get()->function_formula.to_std_string());
-        functions_redaction_name()->set_text(needed_function.get()->function_name);
-    }
-
-    //******************
-    //
-    // Geometry handling
-    //
-    //******************
 
     // Shows a demonstration of the Pythagoras theorem
     void Maths_Page::display_geometry_pythagorean_theorem_demonstration() {
@@ -909,6 +930,21 @@ namespace pleos {
         for(int i = 0;i<static_cast<int>(a_current_state.a_geometry_form_2d_created.size());i++) {
             if(a_current_state.a_geometry_form_2d_created[i].get()->connected_object()->is_clicked_during_this_frame(GLFW_MOUSE_BUTTON_LEFT)) {
                 geometry_select_form_2d(a_current_state.a_geometry_form_2d_created[i]);
+            }
+        }
+
+        // Check operation at click
+        for(int i = 0;i<static_cast<int>(geometry_redaction_graphic()->created_vectors_at_click().size());i++) {
+            std::shared_ptr<Vector> current_vector = geometry_redaction_graphic()->created_vectors_at_click().at(i);
+            geometry_vectors_created().push_back(current_vector);
+            geometry_select_vector(current_vector);
+            if(current_vector.get()->type() == Vector_Type::VT_Vector) {
+                std::string  final_choice = add_element_created_final_choice(std::string("vector"));
+                add_element_created_button(final_choice, std::string("Vector"), PLEOS_MATHEMATICS_GEOMETRY_VECTOR);
+            }
+            else {
+                std::string final_choice = add_element_created_final_choice(std::string("point"));
+                add_element_created_button(final_choice, std::string("Point"), PLEOS_MATHEMATICS_GEOMETRY_POINT);
             }
         }
     }
