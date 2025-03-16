@@ -15,6 +15,7 @@ Pour écrire un vecteur, il faut mettre une petite flèche au dessus de lui, et 
 Pour représenter un vecteur en géométrie, il est conseillé (pas obligatoire mais conseillé) de le faire partir de sa base jusqu'à la coordonnée qu'il représente, comme ça :
 </p>
 <graphic>
+    <background_color red=255 green=255 blue=255>
     <base width=10 height=10>
     <vec x=-4 y=3>
 </graphic>
@@ -50,6 +51,7 @@ En général, ce terme est confondu avec le terme de "forme géométrique".
 De plus, une figure géométrique peut être accompagner d'informations pour rendre son ensemble de point cohérent (liens / segments entre les points, angles formés...).
 </p>
 <graphic>
+    <background_color red=255 green=255 blue=255>
     <base width=10 height=10>
     <point name="A" x=-4 y=3>
     <point name="B" x=-2 y=-4>

@@ -41,6 +41,8 @@
 #define PLEOS_PHYSIC_MATTER_BOHR_MODEL_SIMULATION_PAGE 115
 #define PLEOS_PHYSIC_MATTER_QUANTUM_MECHANIC_PAGE 120
 #define PLEOS_PHYSIC_MATTER_BOSONS_PAGE 150
+// Mechanic pages
+#define PLEOS_PHYSIC_MECHANIC_SHOCKS_PAGE 120
 
 // The namespace "pleos" is used to simplify the all.
 namespace pleos {
@@ -53,6 +55,9 @@ namespace pleos {
         Physic_Page(scls::_Window_Advanced_Struct* window_struct, std::string name):scls::GUI_Page(window_struct, name){};
         // Loads an object in a page from XML
         virtual std::shared_ptr<scls::GUI_Object> __create_loaded_object_from_type(std::string object_name, std::string object_type, scls::GUI_Object* parent);
+
+        // Function called after the XML loading
+        virtual void after_xml_loading(){display_home_definition_body();};
 
         //******************
         //
@@ -119,6 +124,7 @@ namespace pleos {
         inline scls::GUI_Text* hub_button() const {return a_hub_button.get();};
 
         // Returns pages
+        GUI_PAGE(scls::GUI_Object, a_home_body, PLEOS_PHYSIC_HOME_PAGE, home_body, display_home_body, hide_all);
         inline scls::GUI_Text* matter_bohr_model_page() const {return a_physic_matter_bohr_model_body.get();};
         inline scls::GUI_Object* matter_bohr_model_simulation_page() const {return a_physic_matter_bohr_model_simulation_body.get();};
         inline scls::GUI_Text* matter_bosons_body_page() const {return a_physic_matter_bosons_body.get();};
@@ -126,11 +132,15 @@ namespace pleos {
         inline scls::GUI_Text* matter_scale_page() const {return a_physic_matter_scale_body.get();};
         inline scls::GUI_Object* mechanic_page() const {return a_physic_mechanic_page.get();};
 
+        // Home
+        GUI_PAGE(scls::GUI_Text_Base<Text>, a_home_definition_body, PLEOS_PHYSIC_HOME_PAGE, home_definition_body, display_home_definition_body, display_home_body);
+
         // Matter
         inline Graphic_Object* matter_bohr_model_simulation() const {return a_physic_matter_bohr_model_simulation.get();};
         GUI_PAGE(scls::GUI_Text_Base<Text>, a_physic_matter_quantum_mechanic_page, PLEOS_PHYSIC_MATTER_QUANTUM_MECHANIC_PAGE, matter_quantum_mechanic_page, display_matter_quantum_mechanic_page, display_matter_page);
 
         // Mechanic
+        GUI_PAGE(scls::GUI_Text_Base<Text>, a_physic_mechanic_shocks_body, PLEOS_PHYSIC_MECHANIC_SHOCKS_PAGE, mechanic_shocks_body, display_mechanic_shocks_body, display_mechanic_page);
         inline scls::GUI_Text* mechanic_dynamic_page() const {return a_physic_mechanic_dynamic_body.get();};
         inline scls::GUI_Text* mechanic_kinematic_page() const {return a_physic_mechanic_kinematic_body.get();};
 

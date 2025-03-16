@@ -27,7 +27,7 @@
 //***************************************************
 
 <gui_object name="chemistry_home_definitions_body" type="text" sub_page>
-    <content max_width=0 src="home/definitions.txt"></content>
+    <content max_width=0 src="home/home.txt"></content>
 	<height value=7/8 type=scale>
 	<parent name="chemistry_home_page">
 	<texture alignment_horizontal=left alignment_vertical=top>

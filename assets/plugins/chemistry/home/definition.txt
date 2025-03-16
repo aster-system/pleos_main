@@ -1,0 +1,6 @@
+<p>
+Parmi toutes les échelles d'études possibles de la matière, la plus petite permettant de différencier la matière macroscopique est celle de l'atome.
+L'étude des atomes est habituellement reservée au domaine de la physique.
+Cependant, elle ne s'étend généralement pas jusqu'à des échelles plus grandes.
+En effet, <important>la chimie représente l'étude de la matière à partir de l'échelle au dessus de l'atome</important>.
+</p>

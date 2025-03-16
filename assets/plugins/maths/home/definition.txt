@@ -1,0 +1,12 @@
+<p>
+<span class="important">Les mathématiques représentent un langage permettant d'interpréter de la "logique" pure</span>.
+Ici, la "logique" représente l'ensemble des règles d'argumentation, appliquées à l'étude de mondes abstraits.
+Donc, les mathématiques sont un langage permettant de décrire le monde via des concepts abstraits (rendus concrets par un mélange avec d'autres sciences, comme la physique ou la biologie).
+</p>
+<p>
+Si l'on parle de "mathématiques" au pluriel, <span class="important">c'est parce qu'elles sont découpées en plusieurs branches, étudiant chacunes la logique de façon différentes</span>.
+Il est très difficile de toutes les nommer et de toutes les délimiter parfaitement.
+Nous pouvons noter en vrac la géométrie, l'algèbre, l'analyse...
+De plus, un théorème mathématique utilisable dans une science plus concrète fait partie des mathématiques appliquées (théorème de Pythagore, équation de Maxwell, lois de Newton...).
+Mais, à l'inverse, un théorème n'ayant pas d'application concrète (ce qui est assez rare de nos jours) fait partie des mathématiques pures.
+</p>

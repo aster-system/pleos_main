@@ -72,6 +72,39 @@
     </when>
 </gui_object>
 
+//***************************************************
+// Home
+//***************************************************
+
+<gui_object name="maths_home_page" type="body" sub_page no_load>
+	<border bottom=1 left=1 right=1 top=1>
+	<height value=1 type=scale>
+	<width value=4/5 type=scale>
+	<x attach=right>
+	<y attach=top>
+</gui_object>
+<gui_object name="maths_home_title" type="text">
+    <content font_size=80 alignment_horizontal=center>Les mathématiques</content>
+	<height value=1/8 type=scale>
+    <parent name="maths_home_page">
+	<width value=1 type=scale>
+	<x value=1/2 type=object_scale>
+	<y attach=top>
+</gui_object>
+<gui_object name="maths_home_definitions_body" type="text">
+    <content max_width=0 src="home/home.txt"></content>
+	<height value=7/8 type=scale>
+	<parent name="maths_home_page">
+	<texture alignment_horizontal=left alignment_vertical=top>
+    <width value=9/10 type=scale>
+	<x value=1/2 type=object_scale>
+	<y attach=bottom>
+</gui_object>
+
+//***************************************************
+// Pages
+//***************************************************
+
 <include src="gui_content_algebra.txt">
 <include src="gui_content_arithmetic.txt">
 <include src="gui_content_function.txt">

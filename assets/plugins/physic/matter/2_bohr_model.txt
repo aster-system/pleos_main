@@ -1,3 +1,4 @@
+<h1>Le modèle de Bohr</h1>
 <p>
 Après la découverte du noyau atomique par Joseph John Thomson (1856 - 1940) et Ernest Rutherford (1871 - 1937) en 1909, la question était de savoir comment se comporter les électrons avec ce noyau.
 Plusieurs théories ont été proposées, dont celle de Rutherford en personne, supposant que les électrons tournés autour du noyau.

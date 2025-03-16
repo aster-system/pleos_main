@@ -1,0 +1,8 @@
+<h1>Les mathématiques</h1>
+
+
+
+<h2>Qu'est ce que sont les mathématiques ?</h2>
+
+<h3>Une définition générale</h3>
+<include src="definition.txt">

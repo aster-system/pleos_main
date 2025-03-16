@@ -1,0 +1,35 @@
+<h1>Les chocs et collisions</h1>
+
+
+
+<h2>Qu'est ce qu'est un choc ?</h2>
+
+<h3>La notion de collision</h3>
+<p>
+Par soucis de simplicité, nous allons commencer par définir une collision.
+En mécanique, <important>une collision représente un contact entre deux (ou plus, bien que ce soit rare) objets</important>.
+Ce genre de contact génère une force sur les deux objets (selon le <a href="./dynamic.txt">principe mécanique d'inertie</a>), proportionnel à la vitesse relative des deux objets.
+</p>
+<p>
+Il existe plusieurs types de collisions différentes.
+Le type de collision le plus simple est la collision élastique
+<important>Une collision élastique est une collision où l'entiereté de la force provoquée par la collision est utilisée pour modifier la trajectoire et la vitesse des deux objets</important>.
+Le principe de conservation de l'énergie est parfaitement respecté et retrouvable ici.
+La somme de l'énergie des deux objets est donc constante.
+Mathématiquement, si l'objet est parfaitement circulaire ou sphérique, un calcul vectoriel (dans un plan 2D) suffit à trouver la force réelle exercée.
+Il faut juste penser à utiliser le bon référentiel à chaque fois.
+Cependant, si l'objet est plus complexe, il faut aussi prendre en compte son moment précis et sa forme, rendant les calculs plus complexes.
+</p>
+<h3>Les chocs mécaniques</h3>
+<p>
+Parler de choc est plus facile après avoir assimilé la notion de collision.
+En effet, <important>un choc mécanique représente un moment où un objet quelconque perd (ou gagne) une certaine vitesse, presque instantanément</important>.
+Donc, une collision représente un choc exercé sur les deux objets : la force générée sur les deux objets leur fait changer de vitesse extrêmement vite.
+</p>
+<p>
+Mathématiquement, il est (bien évidemment) possible de représenter la vitesse d'un objet sous la forme d'une fonction (plus ou moins précise), prenant comme paramètre le moment précis de la vitesse étudiée.
+Dans ce cas, <important>un choc rend cette fonction presque discontinue au moment du choc</important>.
+En effet, le changement est tellement rapide que l'on peut presque le considérer comme mathématiquement discontinue.
+Donc, une étude de la fonction vitesse comportant ce moment doit se faire avec une fonction de Heaviside (ou, du moins, son approximation).
+Grâce à ça, <important>on peut en déduire mathématiquement que le choc provoque une forte accélération, et le calculer facilement</important>.
+</p>

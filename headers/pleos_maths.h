@@ -232,6 +232,7 @@ namespace pleos {
         inline scls::GUI_Object* functions_page() const {return a_functions_page.get();};
         inline scls::GUI_Object* functions_redaction_page() const {return a_functions_redaction_page.get();};
         inline scls::GUI_Object* geometry_page() const {return a_geometry_page.get();};
+        GUI_PAGE(scls::GUI_Object, a_home_page, PLEOS_MATHS_HOME_PAGE, home_page, display_home_page, hide_all);
         inline scls::GUI_Object* logic_page() const {return a_logic_page.get();};
         inline scls::GUI_Scroller_Choice* navigation() const {return a_navigation.get();};
 
@@ -287,6 +288,9 @@ namespace pleos {
         inline scls::GUI_Text_Input* geometry_redaction_vector_name() const {return a_geometry_redaction_vector_name.get();};
         inline scls::GUI_Text_Input* geometry_redaction_vector_x() const {return a_geometry_redaction_vector_x.get();};
         inline scls::GUI_Text_Input* geometry_redaction_vector_y() const {return a_geometry_redaction_vector_y.get();};
+
+        // Home
+        GUI_PAGE(scls::GUI_Text_Base<Text>, a_home_definition_page, PLEOS_MATHS_HOME_PAGE, home_definition_page, display_home_definition_page, display_home_page);
 
         // Returns logic
         inline scls::GUI_Text* logic_definitions_page() const {return a_logic_definitions_page.get();};

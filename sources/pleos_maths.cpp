@@ -86,6 +86,9 @@ namespace pleos {
         else if(object_name == "maths_geometry_redaction_vector_y"){a_geometry_redaction_vector_y = *parent->new_object<scls::GUI_Text_Input>(object_name);return a_geometry_redaction_vector_y;}
         else if(object_name == "maths_geometry_vector_body"){a_geometry_vector_page = *parent->new_object<scls::GUI_Text_Base<Text>>(object_name);return a_geometry_vector_page;}
 
+        // Home
+        GUI_OBJECT_CREATION(scls::GUI_Text_Base<Text>, a_home_definition_page, "maths_home_definitions_body")
+
         // Logic
         else if(object_name == "maths_logic_definitions_body") {a_logic_definitions_page = *parent->new_object<scls::GUI_Text>(object_name);return a_logic_definitions_page;}
         else if(object_name == "maths_logic_language_body"){a_logic_language_page = *parent->new_object<scls::GUI_Text>(object_name);return a_logic_language_page;}
@@ -96,6 +99,7 @@ namespace pleos {
         else if(object_name == "maths_arithmetic_page"){a_arithmetic_page = *parent->new_object<scls::GUI_Object>(object_name);return a_arithmetic_page;}
         else if(object_name == "maths_functions_page") {a_functions_page = *parent->new_object<scls::GUI_Object>(object_name);return a_functions_page;}
         else if(object_name == "maths_geometry_page"){a_geometry_page = *parent->new_object<scls::GUI_Object>(object_name);return a_geometry_page;}
+        GUI_OBJECT_CREATION(scls::GUI_Object, a_home_page, "maths_home_page")
         else if(object_name == "maths_logic_page"){a_logic_page = *parent->new_object<scls::GUI_Object>(object_name);return a_logic_page;}
 
         // Navigation
@@ -259,6 +263,7 @@ namespace pleos {
         hide_sub_pages(true);
         a_functions_redaction_elements_chosen.get()->unselected_objects_style().cursor = GLFW_ARROW_CURSOR;
         geometry_redaction_graphic()->set_operation_at_click(PLEOS_OPERATION_VECTOR);
+        display_home_definition_page();
     }
 
     // Adds an element to create
@@ -1058,6 +1063,8 @@ namespace pleos {
         else if(page == "geometry_redaction"){display_geometry_redaction_page();}
         else if(page == "geometry_redaction_graphic"){display_geometry_redaction_graphic_page();}
         else if(page == "geometry_vector"){display_geometry_vector_page();}
+        // Home pages
+        GUI_OBJECT_SELECTION(display_home_definition_page(), "home")
         // Logic pages
         else if(page == "logic_definitions"){display_logic_definitions_page();}
         else if(page == "logic_language"){display_logic_language_page();}

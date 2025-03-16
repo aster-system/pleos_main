@@ -44,8 +44,13 @@ namespace pleos {
         // Mechanic
         else if(object_name == "physic_mechanic_dynamic_body"){a_physic_mechanic_dynamic_body = *parent->new_object<scls::GUI_Text>(object_name);return a_physic_mechanic_dynamic_body;}
         else if(object_name == "physic_mechanic_kinematic_body"){a_physic_mechanic_kinematic_body = *parent->new_object<scls::GUI_Text>(object_name);return a_physic_mechanic_kinematic_body;}
+        GUI_OBJECT_CREATION(scls::GUI_Text_Base<Text>, a_physic_mechanic_shocks_body, "physic_mechanic_shocks_body")
+
+        // Home
+        GUI_OBJECT_CREATION(scls::GUI_Text_Base<Text>, a_home_definition_body, "physic_home_definition_body")
 
         // Pages
+        GUI_OBJECT_CREATION(scls::GUI_Object, a_home_body, "physic_home_page")
         else if(object_name == "physic_matter_page"){a_physic_matter_page = *parent->new_object<scls::GUI_Object>(object_name);return a_physic_matter_page;}
         else if(object_name == "physic_mechanic_page"){a_physic_mechanic_page = *parent->new_object<scls::GUI_Object>(object_name);return a_physic_mechanic_page;}
 
@@ -123,8 +128,12 @@ namespace pleos {
             GUI_OBJECT_SELECTION(display_matter_quantum_mechanic_page(), "matter_quantum_mechanic")
 
             // Mechanic pages
+            GUI_OBJECT_SELECTION(display_mechanic_shocks_body(), "mechanic_shocks")
             else if(page == "mechanic_dynamic"){display_mechanic_dynamic_page();}
             else if(page == "mechanic_kinematic"){display_mechanic_kinematic_page();}
+
+            // Home pages
+            GUI_OBJECT_SELECTION(display_home_definition_body(), "home")
         }
 
         // Check the hub button

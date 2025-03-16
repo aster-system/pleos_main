@@ -1,0 +1,8 @@
+<p>
+La physique est la science qui s'intéresse à l'étude du monde.
+Cette définition est très large, car elle englobe une quantité aberrantes de domaines : physique classique, physique quantique...
+</p>
+<p>
+Elle est cependant différente de la chimie.
+En effet, la chimie ne s'intéresse qu'à la matière et à ses propriétés, là où la physique va beaucoup plus loin, dans l'étude de la matière, où d'un quelconque autre effet dans l'univers.
+</p> 
