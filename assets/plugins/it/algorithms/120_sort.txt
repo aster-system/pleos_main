@@ -1,3 +1,5 @@
+<h1>Les tris</h1>
+
 <tree graph="merge_sort" name="Tri fusion">
     <tree name="15">
         <tree name="(5,3,2)">

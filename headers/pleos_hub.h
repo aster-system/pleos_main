@@ -36,10 +36,8 @@
 #include "pleos_physic.h"
 #include "pleos_settings.h"
 
-// Include SCLS documentalist Agatha if needed (you can ignore it if you are not the main developer of PLEOS)
-#ifdef PLEOS_SAASF_PART
+// Include SCLS documentalist Agatha if needed
 #include "../../../scls-documentalist-agatha/scls_documentalist.h"
-#endif // PLEOS_SAASF_PART
 
 // The namespace "pleos" is used to simplify the all.
 namespace pleos {
@@ -74,8 +72,13 @@ namespace pleos {
         //
         //******************
 
-        #ifdef PLEOS_SAASF_PART
+        // Create SAASF
         void to_saasf(std::string assets, std::string path);
+
+        #ifdef PLEOS_SAASF_PART
+        void handle_saasf(){if(window_struct()->key_pressed_during_this_frame("a")) {to_saasf(std::string("./assets/"), std::string("./tests/"));}};
+        #else
+        void handle_saasf(){};
         #endif // PLEOS_SAASF_PART
 
    private:

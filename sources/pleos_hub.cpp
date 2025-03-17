@@ -53,7 +53,11 @@ namespace pleos {
     }
 
     // Updates the events
-    void Hub_Page::update_event() {GUI_Page::update_event();check_navigation();if(window_struct()->key_pressed_during_this_frame("a")){to_saasf(std::string("./assets/"), std::string("./tests/"));}}
+    void Hub_Page::update_event() {
+        GUI_Page::update_event();
+        check_navigation();
+        handle_saasf();
+    }
 
     //******************
     //
@@ -131,6 +135,8 @@ namespace pleos {
     std::string __saasf_global_footer_content = std::string("&lt;footer&gt;</br>    &lt;h1&gt;Plus d'informations&lt;/h1&gt;</br> &lt;div class=\"open-sans-regular\"&gt;</br>SAASF est proposé par l'organisation &lt;a href=\"https://aster-system.github.io/aster-system/\" target=\"_blank\"&gt;Aster Système&lt;/a&gt;.&lt;br&gt;</br>  Le site web est disponible sur Github, &lt;a href=\"https://github.com/aster-system/saasf\" target=\"_blank\"&gt;dans ce repositorie&lt;/a&gt;.&lt;br&gt;</br>  &lt;span xmlns:cc=\"http://creativecommons.org/ns#\" xmlns:dct=\"http://purl.org/dc/terms/\"&gt;</br>  &lt;a property=\"dct:title\" rel=\"cc:attributionURL\" href=\"https://aster-system.github.io/saasf/\"&gt;SAASF&lt;/a&gt; par</br>  &lt;span property=\"cc:attributionName\"&gt;Aster Système&lt;/span&gt; est proposé sous license &lt;a href=\"https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1\" target=\"_blank\" rel=\"license noopener noreferrer\" style=\"display:inline-block;\"&gt;CC BY-SA 4.0&lt;img style=\"height:22px!important;margin-left:3px;vertical-align:text-bottom;\" src=\"https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1\" alt=\"\"&gt;&lt;img style=\"height:22px!important;margin-left:3px;vertical-align:text-bottom;\" src=\"https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1\" alt=\"\"&gt;&lt;img style=\"height:22px!important;margin-left:3px;vertical-align:text-bottom;\" src=\"https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1\" alt=\"\"&gt;&lt;/a&gt;</br>  &lt;/span&gt;</br>  &lt;/div&gt;</br>&lt;/footer&gt;");
     std::string __saasf_global_font_content = std::string("&lt;link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"&gt;</br>&lt;link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin=\"\"&gt;</br>&lt;link href=\"https://fonts.googleapis.com/css2?family=Hammersmith+One&amp;display=swap\" rel=\"stylesheet\"&gt;</br>&lt;link href=\"https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap\" rel=\"stylesheet\"&gt;</br>");
     std::string __saasf_global_header_content = std::string("&lt;header class=\"hammersmith-one-regular\"&gt;</br>&lt;a href=\"&lt;scls_var path_to_root&gt;/index.html\"&gt;</br>    &lt;img alt=\"Logo de SAASF\" src=\"&lt;scls_var path_to_root&gt;/images/aster_system_logo.png\" style=\"max-height:150px;\"&gt;</br>&lt;/a&gt;</br>&lt;/header&gt;");
+    struct __SAASF_Subjet_Part {std::string name;int number=0;std::string path;};
+    bool __saasf_sort_subjects(__SAASF_Subjet_Part& subject_1, __SAASF_Subjet_Part& subject_2){return subject_1.number < subject_2.number;};
     std::string __saasf_style = std::string("a {color: white;}.arrow {transform: rotate(90deg);height: 0.6em;}body {background-color: rgb(0, 33, 91);box-sizing: border-box;color: white;font-size: 18px;margin: 0;max-width: 100vw;}.code_sample {background-color: rgb(30, 30, 30);border: black solid 3px;color: white;margin: 2px;padding: 5px;}footer {background-color: white;color: black;padding: 4px;}footer a {color: black;}footer h1 {font-size: 2em;margin: 0;}header {background-color: white;color: black;display: flex;height: 150px;width: 100%;}header nav {height: 100%;position: relative;display: flex;flex: 1;justify-content: space-around;}header nav div {align-content: center;font-size: 300%;height: 100%;}header nav div a {color: black;}h4 {background-color: rgb(51, 51, 255);color: white;}.important {color: red;}.important a {color: red;}.left_arrow_right_text {display: flex;flex-direction: column;width: 100%;}.left_arrow_right_text_child {display: grid;grid-auto-columns: max-content;}.left_arrow_right_text_arrow {grid-column: 1;grid-row: 2;height: 2em;max-width: 15vw;}.left_arrow_right_text_text {grid-column: 2;grid-row: 2;max-width: 85vw;width: 100%;}.left_arrow_right_text_title {grid-column: 2;grid-row: 1;max-width: 85vw;}#main_div {margin: 8px;}#main_div h1 {font-size: 4em;}#main_div h2 {font-size: 2.5em;}table {background-color: white;color: black;}table, th, td {border: 1px solid black;border-collapse: collapse;}.voc {background-color: rgb(220, 220, 220);}.hammersmith-one-regular {font-family: \"Hammersmith One\", sans-serif;font-weight: 400;font-style: normal;}.open-sans-bold {font-family: \"Open Sans\", sans-serif;font-optical-sizing: auto;font-weight: 700;font-style: normal;font-variation-settings: \"wdth\" 100;}.open-sans-regular {font-family: \"Open Sans\", sans-serif;font-optical-sizing: auto;font-weight: 400;font-style: normal;font-variation-settings: \"wdth\" 100;}");
     void Hub_Page::to_saasf(std::string assets, std::string path){
         // Get the needed datas
@@ -187,6 +193,7 @@ namespace pleos {
             explaination_content = std::string("Voici la liste de tous les savoirs accessibles sur ") + __saasf_translate(subjects.at(i), true, false) + std::string(" sur les médias (Youtube, Tiktok, Instagram...) d'Aster Système Learn pour l'instant :&lt;ul&gt;");
             std::vector<std::string> sub_subjects = scls::directory_content(assets + std::string("/plugins/") + subjects[i]);
             std::vector<std::string> cutted;
+            // Get the sub-files
             for(int j = 0;j<static_cast<int>(sub_subjects.size());j++){
                 if(std::filesystem::is_directory(sub_subjects[j])){
                     cutted = scls::cut_string(sub_subjects[j], "/");
@@ -204,8 +211,25 @@ namespace pleos {
 
                         // Set the good content
                         cutted = scls::directory_content(assets + std::string("/plugins/") + subjects[i] + std::string("/") + sub_subject_name + std::string("/"));
-                        for(int k = 0;k<static_cast<int>(cutted.size());k++) {
-                            std::shared_ptr<scls::XML_Text> file_content = scls::xml(window_struct()->balises_shared_ptr(), scls::format_string_break_line(scls::read_file(cutted[k]), std::string(" ")));
+                        std::vector<__SAASF_Subjet_Part> parts;
+                        for(int j = 0;j<static_cast<int>(cutted.size());j++){
+                            std::vector<std::string>cutted_temp=scls::cut_string(cutted[j],std::string("/"));
+                            cutted_temp=scls::cut_string(cutted_temp[cutted_temp.size() - 1],std::string("\\"));
+                            cutted_temp=scls::cut_string(cutted_temp[cutted_temp.size() - 1],std::string("_"));
+                            std::cout << "M " << cutted_temp[0] << std::endl;
+                            if(cutted_temp.size() > 0 && scls::string_is_number(cutted_temp[0])){
+                                std::cout << "N " << cutted_temp[0] << std::endl;
+                                __SAASF_Subjet_Part to_add;
+                                to_add.name = cutted_temp[0];
+                                to_add.number = std::stoi(cutted_temp[0]);
+                                to_add.path = cutted[j];
+
+                                parts.push_back(to_add);
+                            }
+                        }
+                        std::sort(parts.begin(), parts.end(), __saasf_sort_subjects);
+                        for(int k = 0;k<static_cast<int>(parts.size());k++) {
+                            std::shared_ptr<scls::XML_Text> file_content = scls::xml(window_struct()->balises_shared_ptr(), scls::format_string_break_line(scls::read_file(parts[k].path), std::string(" ")));
                             file_content.get()->replace_balise_by_name("h3", "h4");file_content.get()->replace_balise_by_name("h2", "h3");
                             file_content.get()->replace_balise_by_name("important", "span class=\"important\"");
                             __saasf_images(file_content, needed_replica.get()->export_path(path));

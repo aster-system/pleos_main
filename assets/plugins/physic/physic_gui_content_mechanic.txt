@@ -27,7 +27,7 @@
 //***************************************************
 
 <gui_object name="physic_mechanic_dynamic_body" type="text" sub_page>
-    <content max_width=0 src="mechanic/2_dynamic.txt"></content>
+    <content max_width=0 src="mechanic/105_dynamic.txt"></content>
 	<height value=7/8 type=scale>
 	<parent name="physic_mechanic_page">
 	<texture alignment_horizontal=left alignment_vertical=top>
@@ -43,7 +43,7 @@
 //***************************************************
 
 <gui_object name="physic_mechanic_kinematic_body" type="text" sub_page>
-    <content max_width=0 src="mechanic/1_kinematic.txt"></content>
+    <content max_width=0 src="mechanic/101_kinematic.txt"></content>
 	<height value=7/8 type=scale>
 	<parent name="physic_mechanic_page">
 	<texture alignment_horizontal=left alignment_vertical=top>
@@ -59,7 +59,7 @@
 //***************************************************
 
 <gui_object name="physic_mechanic_shocks_body" type="text" sub_page>
-    <content max_width=0 src="mechanic/3_shocks.txt"></content>
+    <content max_width=0 src="mechanic/130_shocks.txt"></content>
 	<height value=7/8 type=scale>
 	<parent name="physic_mechanic_page">
 	<texture alignment_horizontal=left alignment_vertical=top>

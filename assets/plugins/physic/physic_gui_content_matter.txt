@@ -27,7 +27,7 @@
 //***************************************************
 
 <gui_object name="physic_matter_quantum_mechanic_body" type="text" sub_page>
-    <content max_width=0 src="matter/3_physic_quantum_mechanic.txt"></content>
+    <content max_width=0 src="matter/30_physic_quantum_mechanic.txt"></content>
 	<height value=7/8 type=scale>
 	<parent name="physic_matter_page">
 	<texture alignment_horizontal=left alignment_vertical=top>
@@ -59,7 +59,7 @@
 //***************************************************
 
 <gui_object name="physic_matter_bohr_model_body" type="text" sub_page>
-    <content max_width=0 src="matter/2_bohr_model.txt"></content>
+    <content max_width=0 src="matter/10_bohr_model.txt"></content>
 	<height value=7/8 type=scale>
 	<parent name="physic_matter_page">
 	<texture alignment_horizontal=left alignment_vertical=top>
@@ -99,7 +99,7 @@
 //***************************************************
 
 <gui_object name="physic_matter_bosons_body" type="text" sub_page>
-    <content max_width=0 src="matter/4_bosons.txt"></content>
+    <content max_width=0 src="matter/35_bosons.txt"></content>
 	<height value=7/8 type=scale>
 	<parent name="physic_matter_page">
 	<texture alignment_horizontal=left alignment_vertical=top>
