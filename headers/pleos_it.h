@@ -40,10 +40,14 @@
 // Data structures
 #define PLEOS_IT_DATA_STRUCTURES_TREES_PAGE 150
 #define PLEOS_IT_DATA_STRUCTURES_TREES_SIMULATION_PAGE 151
-// DAlgorithms
+// Algorithms
 #define PLEOS_IT_ALGORITHMS_SORT_PAGE 210
 #define PLEOS_IT_ALGORITHMS_SORT_COMPARAISON_PAGE 215
 #define PLEOS_IT_ALGORITHMS_SORT_COMPARAISON_SIMULATION_PAGE 216
+// School
+#define PLEOS_IT_SCHOOL_PAGE -1
+#define PLEOS_IT_SCHOOL_TERM_1_PAGE -2
+#define PLEOS_IT_SCHOOL_TERM_2_PAGE -3
 
 // The namespace "pleos" is used to simplify the all.
 namespace pleos {
@@ -139,7 +143,7 @@ namespace pleos {
         //
         //******************
 
-        //Displays the algorithms page
+        // Displays the algorithms page
         void display_algorithms_page(){hide_all();algorithms_page()->set_visible(true);};
         void display_algorithms_sort_page(){display_algorithms_page();algorithms_sort_page()->set_visible(true);};
         GUI_OBJECT(scls::GUI_Scroller_Choice, a_algorithms_sort_comparaison_elements, algorithms_sort_comparaison_elements);
@@ -152,6 +156,11 @@ namespace pleos {
         void display_data_structures_page(){hide_all();data_structures_page()->set_visible(true);};
         void display_data_structures_trees_page(){set_current_page(PLEOS_IT_DATA_STRUCTURES_TREES_PAGE);display_data_structures_page();data_structures_tree_page()->set_visible(true);};
         void display_data_structures_trees_simulation_page(){set_current_page(PLEOS_IT_DATA_STRUCTURES_TREES_SIMULATION_PAGE);display_data_structures_page();data_structures_tree_simulation_page()->set_visible(true);};
+
+        // Displays the school page
+        GUI_PAGE(scls::GUI_Object, a_school_page, PLEOS_IT_SCHOOL_PAGE, school_page, display_school_page, hide_all);
+        GUI_PAGE(scls::GUI_Text_Base<Text>, a_school_term_1_page, PLEOS_IT_SCHOOL_TERM_1_PAGE, school_term_1_page, display_school_term_1_page, display_school_page);
+        GUI_PAGE(scls::GUI_Text_Base<Text>, a_school_term_2_page, PLEOS_IT_SCHOOL_TERM_2_PAGE, school_term_2_page, display_school_term_2_page, display_school_page);
 
         // Hides all the pages
         void hide_all(){hide_sub_pages(true);};

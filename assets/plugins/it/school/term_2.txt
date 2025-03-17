@@ -1,0 +1,30 @@
+<h1>Trimeste 2 de NSI Terminale</h1>
+
+
+
+<h2>Les structures de données</h2>
+
+<h3>La liste chainée</h3>
+<p>
+Pour commencer avec les structures de données, nous allons voir une structure assez pratique : la liste chainée.
+En informatique, <span class="important">une liste chainée est une liste, où l'accés à la prochaine valeur de la liste se fait via la valeur actuelle de la liste</span>.
+En effet, dans les listes normales, nous pouvons accéder directement à chaque élément (stockés 1 à 1 dans la mémoire).
+</p>
+<table>
+    <case content="0" x=0 y=0>
+    <case content="1" x=1 y=0>
+    <case content="2" x=2 y=0>
+    <case content="3" x=3 y=0>
+    <case content="4" x=4 y=0>
+</table>
+<p>
+Dans une liste chainée, le prochain élément peut se trouver n'importe où dans la mémoire, et le seul moyen d'y accéder est un lien vers le prochain élément.
+Ici, <span class="important">ce lien est nommé un pointeur</span>.
+</p>
+<linked_list>
+    <case content="0">
+    <case content="1">
+    <case content="2">
+    <case content="3">
+    <case content="4">
+</linked_list>

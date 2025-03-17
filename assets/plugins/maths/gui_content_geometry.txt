@@ -38,7 +38,7 @@
 //***************************************************
 
 <gui_object name="maths_geometry_definitions_body" type="text" sub_page>
-    <content max_width=0 src="geometry/geometry_definitions.txt"></content>
+    <content max_width=0 src="geometry/401_geometry_definitions.txt"></content>
 	<height value=7/8 type=scale>
 	<parent name="maths_geometry_page">
 	<texture alignment_horizontal=left alignment_vertical=top>
@@ -52,7 +52,7 @@
 //***************************************************
 
 <gui_object name="maths_geometry_complex_numbers_body" type="text" sub_page>
-	<content max_width=0 src="geometry/geometry_complex_numbers.txt"></content>
+	<content max_width=0 src="geometry/450_geometry_complex_numbers.txt"></content>
 	<height value=7/8 type=scale>
 	<parent name="maths_geometry_page">
 	<texture alignment_horizontal=left alignment_vertical=top>
@@ -66,7 +66,7 @@
 //***************************************************
 
 <gui_object name="maths_geometry_vector_body" type="text" sub_page>
-	<content max_width=0 src="geometry/geometry_vector.txt"></content>
+	<content max_width=0 src="geometry/405_geometry_vector.txt"></content>
 	<height value=7/8 type=scale>
 	<parent name="maths_geometry_page">
 	<texture alignment_horizontal=left alignment_vertical=top>

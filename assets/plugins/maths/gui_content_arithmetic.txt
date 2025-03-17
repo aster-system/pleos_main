@@ -25,7 +25,7 @@
 //***************************************************
 
 <gui_object name="maths_arithmetic_definitions_body" type="text" sub_page>
-    <content max_width=0 src="arithmetic/arithmetic_definition.txt"></content>
+    <content max_width=0 src="arithmetic/201_arithmetic_definition.txt"></content>
 	<height value=7/8 type=scale>
 	<parent name="maths_arithmetic_page">
 	<texture alignment_horizontal=left alignment_vertical=top>
@@ -39,7 +39,7 @@
 //***************************************************
 
 <gui_object name="maths_arithmetic_division_body" type="text" sub_page>
-    <content max_width=0 src="arithmetic/arithmetic_division.txt"></content>
+    <content max_width=0 src="arithmetic/210_arithmetic_division.txt"></content>
 	<height value=7/8 type=scale>
 	<parent name="maths_arithmetic_page">
 	<texture alignment_horizontal=left alignment_vertical=top>
@@ -53,7 +53,7 @@
 //***************************************************
 
 <gui_object name="maths_arithmetic_numbers_sets_body" type="text" sub_page>
-    <content max_width=0 src="arithmetic/arithmetic_numbers_sets.txt"></content>
+    <content max_width=0 src="arithmetic/205_arithmetic_numbers_sets.txt"></content>
 	<height value=7/8 type=scale>
 	<parent name="maths_arithmetic_page">
 	<texture alignment_horizontal=left alignment_vertical=top>

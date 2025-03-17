@@ -1,0 +1,11 @@
+<h1>Trimeste 1 de NSI Terminale</h1>
+
+
+
+<h2>Les structures de données</h2>
+
+<p>
+Un des thèmes principaux lors de l'année de terminale sont les structures de données.
+En toute logique, les premières structures officielles que vous avez dû traiter sont les piles et les files.
+Officieusement, il est toujours possible que vous ayez vu d'autres systèmes très simples et concrets (cartes, livres, fractions...), s'apparentant aux structure de données, avant les autres.
+</p>

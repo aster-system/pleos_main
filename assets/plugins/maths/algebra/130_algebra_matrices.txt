@@ -1,4 +1,4 @@
-<h1>Définitions des matrices</h1>
+<h1>Les matrices</h1>
 <h2>Qu'est ce qu'est une matrice ?</h2>
 <h3>La définition précise</h3>
 <p>

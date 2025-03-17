@@ -20,6 +20,10 @@
 		<choice name="algorithms_sort">Les tris</choice>
 		<choice name="algorithms_sort_comparaison">Comparer les tris</choice>
 	</sub_choice>
+	<sub_choice name="school" displayer="Lycée">
+		<choice name="school_term_1">Terminale, trimestre 1</choice>
+		<choice name="school_term_2">Terminale, trimestre 2</choice>
+	</sub_choice>
 </gui_object>
 
 // Hub button
@@ -38,3 +42,4 @@
 
 <include src="gui_content_data_structures.txt">
 <include src="gui_content_algorithms.txt">
+<include src="gui_content_school.txt">

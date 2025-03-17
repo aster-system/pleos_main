@@ -51,6 +51,11 @@ namespace pleos {
         GUI_OBJECT_CREATION(scls::GUI_Text, a_algorithms_sort_comparaison_elements_datas_title, "it_algorithms_sort_comparaison_elements_datas_title")
         GUI_OBJECT_CREATION(scls::GUI_Object, a_algorithms_sort_comparaison_simulation, "it_algorithms_sort_comparaison_simulation")
 
+        // School
+        GUI_OBJECT_CREATION(scls::GUI_Object, a_school_page, "it_school_page")
+        GUI_OBJECT_CREATION(scls::GUI_Text_Base<Text>, a_school_term_1_page, "it_school_term_1_body")
+        GUI_OBJECT_CREATION(scls::GUI_Text_Base<Text>, a_school_term_2_page, "it_school_term_2_body")
+
         // Navigation
         else if(object_name == "it_hub"){a_hub_button = *parent->new_object<scls::GUI_Text>(object_name);return a_hub_button;}
         else if(object_name == "it_navigation") {a_navigation = *parent->new_object<scls::GUI_Scroller_Choice>(object_name);return a_navigation;}
@@ -363,6 +368,8 @@ namespace pleos {
                 needed_image.get()->save_png("tests/arbre.png");
                 data_structures_tree_simulation()->texture()->set_image(needed_image);
             }
+            GUI_OBJECT_SELECTION(display_school_term_1_page(), "school_term_1")
+            GUI_OBJECT_SELECTION(display_school_term_2_page(), "school_term_2")
         }
 
         // Check the hub button

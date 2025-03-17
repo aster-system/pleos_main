@@ -1,3 +1,6 @@
+<h1>Les formes de fonctions</h1>
+
+
 L'avantage de l'utilisation des fonctions est la possibilité de généraliser certaines transformations mathématiques, et de les étudier plus facilement.
 
 </br></br>

@@ -72,7 +72,7 @@ namespace pleos {
         std::shared_ptr<scls::Text_Style> style = std::make_shared<scls::Text_Style>();
         for(int i = 0;i<static_cast<int>(content.get()->sub_texts().size());i++) {
             std::string attribute_name = content.get()->sub_texts().at(i).get()->xml_balise_name();
-            if(attribute_name == std::string("graphic") || attribute_name == std::string("tree")) {
+            if(attribute_name == std::string("graphic") || attribute_name == std::string("linked_list") || attribute_name == std::string("table") || attribute_name == std::string("tree")) {
                 std::shared_ptr<scls::Image> img = generate_text_image(content.get()->sub_texts().at(i), style);
                 std::string img_path = path + std::string("/images/img") + std::to_string(__saasf_image_number) + std::string(".png");
                 img.get()->save_png(img_path);
@@ -191,15 +191,16 @@ namespace pleos {
             scls::Replica_File_Variable_Element* element = current_file.get()->variable_list(std::string("explaination_parts[]"))->new_element<scls::Replica_File_Variable_Element>();
             element->set_variable_value(std::string("explaination_title"), std::string("Les différentes parties"));
             explaination_content = std::string("Voici la liste de tous les savoirs accessibles sur ") + __saasf_translate(subjects.at(i), true, false) + std::string(" sur les médias (Youtube, Tiktok, Instagram...) d'Aster Système Learn pour l'instant :&lt;ul&gt;");
+            std::string explaination_content_school = std::string("Certains cours proposé ici parlent aussi des programmes proposés par l'éducation nationale au lycée. En général, ils sont accompagnés de commentaires, visant leur contenu. Voici les programmes décrits :&lt;ul&gt;");
             std::vector<std::string> sub_subjects = scls::directory_content(assets + std::string("/plugins/") + subjects[i]);
-            std::vector<std::string> cutted;
+            std::vector<std::string> cutted;bool use_school = false;
             // Get the sub-files
             for(int j = 0;j<static_cast<int>(sub_subjects.size());j++){
                 if(std::filesystem::is_directory(sub_subjects[j])){
                     cutted = scls::cut_string(sub_subjects[j], "/");
                     cutted = scls::cut_string(cutted[cutted.size() - 1], "\\");
                     std::string sub_subject_name = cutted[cutted.size() - 1];
-                    if(sub_subject_name != std::string("home")) {
+                    if(sub_subject_name != std::string("home") && sub_subject_name != std::string("school")) {
                         std::string file_name = subjects[i] + std::string("/") + sub_subject_name + std::string(".html");
                         explaination_content += std::string("&lt;li&gt;&lt;a href=\"./") + file_name + std::string("\"&gt;") + __saasf_translate(sub_subject_name, true, true) + std::string("&lt;/a&gt;&lt;/li&gt;");
 
@@ -216,9 +217,7 @@ namespace pleos {
                             std::vector<std::string>cutted_temp=scls::cut_string(cutted[j],std::string("/"));
                             cutted_temp=scls::cut_string(cutted_temp[cutted_temp.size() - 1],std::string("\\"));
                             cutted_temp=scls::cut_string(cutted_temp[cutted_temp.size() - 1],std::string("_"));
-                            std::cout << "M " << cutted_temp[0] << std::endl;
                             if(cutted_temp.size() > 0 && scls::string_is_number(cutted_temp[0])){
-                                std::cout << "N " << cutted_temp[0] << std::endl;
                                 __SAASF_Subjet_Part to_add;
                                 to_add.name = cutted_temp[0];
                                 to_add.number = std::stoi(cutted_temp[0]);
@@ -239,9 +238,58 @@ namespace pleos {
                             current_part->set_variable_value(std::string("explaination_content"), scls::format_string_from_plain_text(file_content.get()->full_text()));
                         }
                     }
+                    else if(sub_subject_name == std::string("school")) {
+                        use_school = true;
+                        std::string file_name = subjects[i] + std::string("/") + sub_subject_name + std::string(".html");
+                        explaination_content_school += std::string("&lt;li&gt;&lt;a href=\"./") + file_name + std::string("\"&gt;") + std::string("Lycée") + std::string("&lt;/a&gt;&lt;/li&gt;");
+
+                        // Add the needed file
+                        std::shared_ptr<scls::Replica_File> needed_file = needed_replica.get()->new_replica_file(file_name, needed_pattern.get()->pattern_by_name("main"));
+                        needed_file.get()->set_variable_value(std::string("main_title"), std::string("Au lycée"));
+                        needed_file.get()->set_variable_value(std::string("main_description"), std::string());
+                        needed_file.get()->set_variable_value(std::string("page_title"), std::string("SAASF - Lycée"));
+
+                        // Set the good content
+                        cutted = scls::directory_content(assets + std::string("/plugins/") + subjects[i] + std::string("/") + sub_subject_name);
+                        std::vector<__SAASF_Subjet_Part> parts;
+                        for(int j = 0;j<static_cast<int>(cutted.size());j++){
+                            std::vector<std::string>cutted_temp=scls::cut_string(cutted[j],std::string("/"));
+                            cutted_temp=scls::cut_string(cutted_temp[cutted_temp.size() - 1],std::string("\\"));
+                            cutted_temp=scls::cut_string(cutted_temp[cutted_temp.size() - 1],std::string("."));
+                            cutted_temp=scls::cut_string(cutted_temp[0],std::string("_"));
+                            if(cutted_temp.size() > 1 && scls::string_is_number(cutted_temp[1])){
+                                __SAASF_Subjet_Part to_add;
+                                to_add.name = cutted_temp[0];
+                                to_add.number = std::stoi(cutted_temp[1]);
+                                to_add.path = cutted[j];
+
+                                parts.push_back(to_add);
+                            }
+                        }
+                        std::sort(parts.begin(), parts.end(), __saasf_sort_subjects);
+                        // Add each parts
+                        for(int k = 0;k<static_cast<int>(parts.size());k++) {
+                            std::shared_ptr<scls::XML_Text> file_content = scls::xml(window_struct()->balises_shared_ptr(), scls::format_string_break_line(scls::read_file(parts[k].path), std::string(" ")));
+                            file_content.get()->replace_balise_by_name("h3", "h4");file_content.get()->replace_balise_by_name("h2", "h3");
+                            file_content.get()->replace_balise_by_name("important", "span class=\"important\"");
+                            __saasf_images(file_content, needed_replica.get()->export_path(path));
+                            scls::Replica_File_Variable_Element* current_part = needed_file.get()->variable_list(std::string("explaination_parts[]"))->new_element<scls::Replica_File_Variable_Element>();
+                            std::shared_ptr<scls::XML_Text> title = file_content.get()->remove_balise_by_name("h1");
+                            if(title.get() != 0){current_part->set_variable_value(std::string("explaination_title"), title.get()->text());}
+                            current_part->set_variable_value(std::string("explaination_content"), scls::format_string_from_plain_text(file_content.get()->full_text()));
+                        }
+                    }
                 }
             }
             element->set_variable_value(std::string("explaination_content"), explaination_content);
+
+            if(use_school) {
+                // School part
+                explaination_content_school += std::string("&lt;/ul&gt;");
+                element = current_file.get()->variable_list(std::string("explaination_parts[]"))->new_element<scls::Replica_File_Variable_Element>();
+                element->set_variable_value(std::string("explaination_title"), std::string("Les programmes de lycée"));
+                element->set_variable_value(std::string("explaination_content"), explaination_content_school);
+            }
         }
 
         // Create the main file

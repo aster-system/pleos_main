@@ -25,7 +25,7 @@
 //***************************************************
 
 <gui_object name="maths_logic_definitions_body" type="text" sub_page>
-    //<content max_width=0 src="logic/logic_definition.txt"></content>
+    //<content max_width=0 src="logic/1_logic_definition.txt"></content>
 	<height value=7/8 type=scale>
 	<parent name="maths_logic_page">
 	<texture alignment_horizontal=left alignment_vertical=top>
@@ -39,7 +39,7 @@
 //***************************************************
 
 <gui_object name="maths_logic_language_body" type="text" sub_page>
-    //<content max_width=0 src="logic/logic_language.txt"></content>
+    //<content max_width=0 src="logic/5_logic_language.txt"></content>
 	<height value=7/8 type=scale>
 	<parent name="maths_logic_page">
 	<texture alignment_horizontal=left alignment_vertical=top>
@@ -53,7 +53,7 @@
 //***************************************************
 
 <gui_object name="maths_logic_set_theory_body" type="text" sub_page>
-    <content max_width=0 src="logic/logic_set_theory.txt"></content>
+    <content max_width=0 src="logic/20_logic_set_theory.txt"></content>
 	<height value=7/8 type=scale>
 	<parent name="maths_logic_page">
 	<texture alignment_horizontal=left alignment_vertical=top>
