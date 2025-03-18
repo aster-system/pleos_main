@@ -20,6 +20,7 @@ En effet, dans les listes normales, nous pouvons accéder directement à chaque 
 <p>
 Dans une liste chainée, le prochain élément peut se trouver n'importe où dans la mémoire, et le seul moyen d'y accéder est un lien vers le prochain élément.
 Ici, <span class="important">ce lien est nommé un pointeur</span>.
+La représentation habituelle de cette structure est un ensemble de valeurs, liées entre elles par des liens (d'où le nom : liste chainée).
 </p>
 <linked_list>
     <case content="0">
@@ -28,3 +29,58 @@ Ici, <span class="important">ce lien est nommé un pointeur</span>.
     <case content="3">
     <case content="4">
 </linked_list>
+<p>
+Pour pouvoir distinguer l'élément, nous allons utiliser le pointeur.
+En effet, nous allons définir le dernier élément comme un élément tel qu'il n'y en a pas d'autres après.
+Donc, cet élément ne doit pointer vers rien du tout.
+En informatique, <span class="important">un pointeur ne pointant vers rien est nommé un pointeur vide, et le pointeur du dernier élément d'une liste chainée est donc un pointeur vide</span>.
+En Python, nous disons que ce pointeur est de valeur "None".
+</p>
+<p>
+Ce type de liste a donc pas mal de caractéristiques.
+Chaque élément doit donc représenter deux variables (au moins) : sa valeur et le prochain pointeur.
+Donc, <span class="important">insérer un élément à la liste revient à changer le pointeur de l'élément d'avant vers le nouvel élément, et mettre le pointeur du nouvel élément vers le prochain élément (ou vide si il est le dernier élément)</span>.
+</p>
+<linked_list>
+    <case content="0">
+    <case content="1">
+    <case content="2">
+    <case content="3">
+    <case content="3,5" ignore_for_placement y=1/2>
+    <case content="4">
+</linked_list>
+<p>
+En toute logique, la suppression d'un élément revient à supprimer le pointeur qui pointe vers lui, pour pointer vers l'élément suivant.
+L'accés à un élément doit se faire en passant du premier élément jusqu'à l'élément souhaité (de même pour la mesure de la taille).
+De plus, <span class="important">un élément d'une liste chainée peut représenter une sous-liste chainée de la liste de départ (bien évidemment, que si elle a un enfant)</span>.
+Donc, cette struture peut se représenter de manière totalement récursive.
+</p>
+<p>
+Beaucoup d'implémentations Python sont possibles.
+Pour en citer quelques unes : avec des éléments sous forme de tuple, de liste, de dictionnaire...
+En général, <span class="important">celle utilisée en priorité est l'implémentation via une classe</span>.
+L'idée est de créer une classe, représentant un élémént, contenant un pointeur vers le prochain élément et la valeur de l'élément actuel.
+Voici un petit exemple d'implémentation :
+</p>
+<div>
+def Liste_Chainee:</br>
+&nbsp;&nbsp;&nbsp;&nbsp;"""Classe représentant une liste chainée (et donc, un élément de liste chainée)"""</br></br>
+&nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, valeur, prochain = None):</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"""Constructeur de la classe"""</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.valeur = valeur</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.prochain = prochain</br></br>
+&nbsp;&nbsp;&nbsp;&nbsp;def prochain(self):</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"""Retourne la valeur de l'élément"""</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return self.prochain</br></br>
+&nbsp;&nbsp;&nbsp;&nbsp;def valeur(self):</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"""Retourne la valeur de l'élément"""</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return self.valeur
+</div>
+<p>
+Pleins d'autres méthodes sont possibles, selon ce qui est demandé.
+</p>
+<p>
+Comme pour toutes les structures de données ici : ce qui est vu ici est abstrait.
+Théoriquement <span class="important"> tout ce qui contient, de prés ou de loin, une valeur et un pointeur vers la prochaine valeur peut être appelé une liste chainée</span>.
+L'idée ici est (comme pour le premier trimestre) de donner aux élèves une nouvelle façon possible de structurer des données, ici de manière chainée.
+</p>
