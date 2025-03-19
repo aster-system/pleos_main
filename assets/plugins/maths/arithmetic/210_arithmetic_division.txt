@@ -17,6 +17,7 @@ Dans ce cas, <important>nous obtenons a = b * c + r : cette opération représen
 Pour que cette opération soit simple, nous prenons le c le plus grand possible, et le r le plus petit possible.
 De plus, r doit être inférieur à b, car un r égal ou supérieur à b implique qu'il est possible d'additionner 1 à c, qui n'est donc pas le plus grand possible.
 </p>
+
 <h3>Modulos et congruences</h3>
 <p>
 Pour deux nombres entiers quelconques b et a, leur division euclidienne donne un certain reste r.
@@ -39,3 +40,37 @@ La démonstration est assez simple.
 <math><mi>b = d * n + f</mi></math></br>
 <math><mi>a + b = c * n + e + d * n + f</mi><mo>=</mo><mi>n(c + d) + (e + f)</mi><mequiv><mi>(e + f) [n]</mi></math></br>
 <math><mi>a * b = (c * n + e) * (d * n + f)</mi><mo>=</mo><mi>n</mi><msup>2</msup><mi>(c + d) + n(c * f + d * e) + (e * f)</mi><mequiv><mi>(e * f) [n]</mi></math>
+
+<h3>Plus grand commun diviseur</h3>
+<p>
+En arithmétique, deux nombres entiers naturels ont au moins 2 diviseurs, dont 1 pour les deux : 1 est un diviseur commun de tous les nombres entiers naturels.
+Cependant, <span class="important">deux nombres peuvent avoir d'autres diviseurs en commun : le plus grand de ces diviseurs communs est nommé le plus grand commun diviseur, ou PGCD</span>.
+Pour trouver ce diviseur, il existe un algorithme assez pratique : l'algorithme d'Euclide.
+L'idée est de trouver le reste de la division euclidienne ces deux nombres, et de continuer la recherche en remplaçant le plus grand des deux nombres par le reste.
+On s'arrête quand le reste est égal à 0 : le dernier reste est le plus grand commun diviseur des deux nombres.
+En toute logique, pour chaque étape de l'algorithme, on peut écrire le reste comme une combinaison linéaire des deux nombres.
+Donc, à la prochaine étape, on peut écrire le prochain reste comme une combinaison linéaire du petit nombre et du reste (et donc une combinaison linéaire plus complexe), mais parfaitement fonctionnel.
+Cela sera aussi le cas pour le dernier reste : le PGCD.
+Donc, <span class="important">le PGCD de deux nombres a et b peut s'écrire avec une combinaison linéaire des nombres de départ : cela s'appelle l'identité de Bézout</span>.
+</p>
+<math><mi>a</mi><mo>*</mo><mi>u</mi><mo>+</mo><mi>b</mi><mo>*</mo><mi>v</mi><mo>=</mo><mi>PGCD(a, b)</mi></math>
+<p>
+Ce théorème peut être très pratique dans certains cas spéciaux.
+Mais, avant, il faut savoir que certains nombres n'ont que 1 comme diviseur commun.
+<span class="important">Deux nombres entiers naturels n'ayant que 1 comme diviseur commun sont dits premiers entre eux</span>.
+Donc, leur PGCD est de 1.
+Donc, <span class="important">pour a et b deux nombres entiers naturels premiers entre eux, leur identité de Bézout vaut 1 : leur existence est justifiée par le théorème de Bézout</span>.
+</p>
+<math><mi>a</mi><mo>*</mo><mi>u</mi><mo>+</mo><mi>b</mi><mo>*</mo><mi>v</mi><mo>=</mo><mi>PGCD(a, b)</mi><mo>=</mo><mi>1</mi></math>
+<p>
+Cette définition permet quelque chose de très pratique : <span class="important">multiplié des 2 côtés par un nombre entier x permet de trouver une combinaison linéaire de a et b valant x</span>.
+Ce théorème permet d'en démontrer un autre assez utile : le lemme de Gauss.
+En effet, <span class="important">le lemme de Gauss dit que si deux nombres entiers a et b sont premiers entre eux et que a divise b * c, alors a divise c</span>.
+La démonstration est assez simple : PGCD(a, b) = 1 et a = b * c, donc a divise ac (logique) et bc, mais aussi PGCD(ac, bc) selon le théorème de Bézout (propriété des combinaisons linéaires), qui est c : a divise c.
+Grâce à ce lemme, on peut en déduire un autre beaucoup plus ancien : le lemme d'Euclide (proposition 32 du livre 7 des éléments d'Euclide).
+Le lemme d'Euclide stipule qui si un nombre entier a divise le produit de deux nombres entiers b et c, alors a divise b ou c (version moins générale du lemme de Gauss).
+Ces deux théorèmes provoquent une conséquence très importante : <span class="important">les nombres premiers ne peuvent jamais être un produit, et donc a n'existe pas : ils sont irréductibles</span>.
+Les autres ne le sont pas, et ont peut leur appliquer le lemme de Gauss pour obtenir des b et c soit premiers (et donc irréductibles), soit non-premiers, auquel on peut réitérer l'expérience.
+À la fin, on aura toujours des produits de nombres premiers, et donc irréductibles.
+Donc, <span class="important">un nombre peut toujours s'écrire comme le produit de nombres premiers : c'est le théorème fondamental de l'arithmétique</span>.
+</p>

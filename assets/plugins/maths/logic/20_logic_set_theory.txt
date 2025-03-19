@@ -18,6 +18,7 @@ Nous pouvons faire pas mal d'opérations basiques avec ces ensembles.
 <important>Si TOUS les éléments d'un ensemble A appartiennent à un autre ensemble B, alors on dit que A est inclu dans B</important>.
 La réciproque n'est pas vraie : l'ensemble des nombres premiers est inclu dans l'ensemble des nombres (tous les nombres premiers sont des nombres), mais l'ensemble des nombres n'est pas inclu dans l'ensemble des nombres premiers (8 est un nombre, mais n'est pas premier).
 Dans ce cas, nous pouvons dire que A est un sous-ensemble (ou une partie) de A.
+D'ailleurs, il ne faut pas confondre l'inclusion et l'appartenance : un élément appartient à un ensemble, et un ensemble est inclu dans un autre ensemble (ils partagent des éléments en commun).
 </p>
 <p>
 En théorie des ensembles, <important>l'axiomatisation la plus utilisée est l'axiomatisation Zermelo - Fraenkel; abrégée axiomatisation ZF</important>.
@@ -44,17 +45,32 @@ Cet axiome n'est pas toujours nécessaire.
 <h3>Les ensembles</h3>
 <p>
 Les ensembles ont beaucoup de propriétés très intéressantes.
-<important>Si un ensemble possède un plus petit élément, il est dit bien ordonné</important>.
-Cela implique que les éléments de cet ensemble sont comparables : il s'agit d'une relation dite d'ordre total sur l'ensemble.
+<important>Si les éléments d'un ensemble sont tous comparables entre eux, l'ensemble est dit ordonné : il s'agit d'une relation dite "d'ordre total" sur l'ensemble</important>.
+Dans certains cas (mais pas tous), un ensemble peut avoir un plus petit élément : il est dit bien ordonné.
 Ce système de comparaison implique un ordre précis, et distinguable par une syntaxe.
+Si nous pouvons positionner les éléments d'un ensemble bien ordonné via une suite de nombres entiers naturels finie, alors l'ensemble est dit cardinal.
+De plus, <span class="important">le terme "cardinal" d'un ensemble est aussi utilisé pour désigner le nombres d'éléments présents dans cet ensemble</span>.
+D'ailleurs, ce nombre peut être infini : on parle d'infini dénombrable (l'infini des nombres naturels), noté ℵ0.
+Ici, nous utilisons l'opération "positionner les éléments d'un ensemble bien ordonné via une suite de nombres entiers naturels finie" : cela équivaut à dire que nous attribuons à chaque élément d'un ensemble un unique nombre entier naturel.
+Cela représente une relation précise : l'équipotence.
+En effet, <span class="important">deux ensembles A et B sont équipotents si il est possible de lier chaque éléments de A à un unique élément de B (et inversement)</span> (c'est une bijection d'ensemble).
+En toute logique, A et B ont donc le même cardinal.
+Cela peut créer certaines idées bizarres avec des ensembles infinis (à noter que, dans ces ensembles, le concept de taille d'ensemble ne veut plus rien dire).
+Par exemple, l'ensemble des entiers naturels est équipotent à l'ensemble des entiers naturels privés de 0.
+En effet, la bijection existe : elle est représentable par la fonction f(x) qui, a tout x appartenant à l'ensemble des entiers naturels, correspond un unique y tel que y = x + 1 : il y a un lien, et donc une équipotence.
+Avec cette opération, <span class="important">on peut en déduire que les ensembles (infinis) de nombres entiers naturels, entiers relatifs et nombres rationnels ont le même cardinal (l'ensemble des nombres réels n'a pas le même)</span>.
+De manière très (voir même trop) vulgarisée : infini + 1 = infini.
+</p>
+<p>
 Cependant, certains types de comparaisons (défini par l'algèbre des éléments de l'ensemble) combiné à la définition de l'ensemble nécessitent un système de syntaxe particulièrement complexe.
 Par exemple, dans le cas d'un ensemble infini de couples (x, y), on définit la comparaison de ses couples comme la comparaison de x, puis y.
 Donc, (1, 0) &gt; (0, 10) et (2, 4) &lt; (3, 1).
 Or, si x est infini, alors le tri sera compliqué, puisque n'importe quel couple de position un nombre entier sera inférieur à (1, 0), ce qui n'est pas très pratique.
-Pour cela, la position x représentera un multiple d'une valeur ω de la position du couple.
+Pour cela, la position x représentera un multiple d'une valeur "ω" de la position du couple.
 Donc, la position de (4, 0) sera 4ω, celle de (2, 3) sera de 2ω + 3 et celle de (0, 8) sera 8.
-D'ailleurs, si nous avons à étudier des triplets (x, y, z), alors le nombre ordinal d'un triplet serait "xω² + yω + z". 
-<important>Dans ce cas là, la position sera nommée le nombre ordinal du couple dans l'ensemble</important>.
-D'un point de vue "clasique", ω """serait""" le nombre suivant l'ensemble des entiers naturels.
+Pour faire le lien avec la notion de cardinal vue plus bas, <span class="important">ω peut représenter le cardinal de l'ensemble (infini) des entiers naturels</span>.
+L'addition "ω + x" représente donc "x valeurs après la dernière valeur de (0, a) avec a infini", soit (1, 0).
+D'ailleurs, si nous avons à étudier des triplets (x, y, z), alors la position d'un triplet serait "xω² + yω + z". 
+<important>Dans ce cas là, l'ensemble est dit ordinal</important>.
 L'adaptation de ce que représente le multiple de ω dépend du contexte actuel dans lequel le nombre est utilisé (ici, un exemple évident avec des couples est utilisé).
 </p>

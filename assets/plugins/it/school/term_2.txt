@@ -1,4 +1,4 @@
-<h1>Trimeste 2 de NSI Terminale</h1>
+<h1>Trimestre 2 de NSI Terminale</h1>
 
 
 
@@ -62,7 +62,7 @@ En général, <span class="important">celle utilisée en priorité est l'implém
 L'idée est de créer une classe, représentant un élémént, contenant un pointeur vers le prochain élément et la valeur de l'élément actuel.
 Voici un petit exemple d'implémentation :
 </p>
-<div>
+<div class="code_sample">
 def Liste_Chainee:</br>
 &nbsp;&nbsp;&nbsp;&nbsp;"""Classe représentant une liste chainée (et donc, un élément de liste chainée)"""</br></br>
 &nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, valeur, prochain = None):</br>
@@ -79,8 +79,139 @@ def Liste_Chainee:</br>
 <p>
 Pleins d'autres méthodes sont possibles, selon ce qui est demandé.
 </p>
+<h3>L'arbre de données</h3>
+<p>
+Maintenant que nous avons vu les listes chainées, nous allons voir une structure utilisant le même concept de manière légèrement différente : l'arbre.
+En informatique, <span class="important">un arbre de données représente une structure de données où chaque élément permet d'accéder aux prochains éléments (en sachant qu'ils peuvent être plusieurs)</span>.
+La seule différence avec la liste chainée est que un élément d'une liste chainée ne pointer que vers un seul autre élément (le prochaine), là où un élément d'un arbre peut pointer vers plusieurs (ou aucun) éléments.
+Le nom arbre vient de la représentation la plus célèbre de cette structure : un arbre inversé.
+</p>
+<tree name="Monde">
+    <tree name="Europe">
+        <tree name="France">
+            <tree name="Paris"></tree>
+            <tree name="Brest"></tree>
+        </tree>
+        <tree name="Allemagne">
+            <tree name="Berlin"></tree>
+            <tree name="Munich"></tree>
+        </tree>
+    </tree>
+    <tree name="Afrique">
+        <tree name="Maroc">
+            <tree name="Rabat"></tree>
+            <tree name="Marrakech"></tree>
+        </tree>
+        <tree name="Égypte">
+            <tree name="Le Caire"></tree>
+            <tree name="Memphis"></tree>
+        </tree>
+    </tree>
+</tree>
+<p>
+De manière assez logique, <span class="important">cette structure partage pas mal de points communs avec la liste chainée</span>.
+Dans un arbre, un élément représente lui même un arbre.
+L'ajout d'un élément demande d'ajouter un pointeur vers cette élément, le retrait d'un élément demande d'effacer le pointeur...
+Cette structure a pas mal d'utilisation en informatique : page web (les balises forment un arbre), le référencement web...
+Cependant, le vocabulaire utilisé est légèrement différent.
+En effet, <span class="important">les sous-arbres peuvent être appelés noeuds (ou branche), les derniers éléments sont appelé feuilles, le premier est appelé racine, le nombre total de données est appelé taille, et le nombre maximal de chemins entre la racine et les feuilles est appelé hauteur de l'arbre</span>.
+Comme pour les autres structures, des milliers d'implémentations sont possible, dont voici un exemple :
+</p>
+<div class="code_sample">
+def Arbre:</br>
+&nbsp;&nbsp;&nbsp;&nbsp;"""Classe représentant un arbre (et donc, un élément d'arbre), avec une liste de pointeurs pour les enfants"""</br></br>
+&nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, valeur, enfants = []):</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"""Constructeur de la classe"""</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.valeur = valeur</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.enfants = enfants</br></br>
+&nbsp;&nbsp;&nbsp;&nbsp;def enfants(self):</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"""Retourne les enfants de l'élément"""</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return self.enfants</br></br>
+&nbsp;&nbsp;&nbsp;&nbsp;def valeur(self):</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"""Retourne la valeur de l'élément"""</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return self.valeur
+</div>
+<p>
+Certains arbres possèdent des propriétés spéciales, étudiées en terminale.
+Le plus célèbre est l'arbre binaire.
+<span class="important">Un arbre est binaire si chacun de ses noeuds / branches à au plus 2 sous-arbres</span> (c'est le cas pour l'abre "Monde" plus haut).
+Il est souvent utile de distinguer ces deux sous-arbres, qu'on appelle sous-arbre gauche et sous-arbre droit.
+Cette propriété permet d'en définir pas mals d'autres assez simple, comme la formule de la taille t maximale d'un arbre de hauteur n :
+</p>
+<math><mi>t</mi><mo>=</mo><mi>1 - 2</mi><msup>(n + 1)</msup><mo>/</mo><mi>1 - 2</mi></math></br>
+<math><mi>t</mi><mo>=</mo><mi>2</mi><msup>(n + 1)</msup><mo>-</mo><mi>1</mi></math>
+<p>
+Cette formule se déduit facilement avec quelques connaissances basiques en suites mathématiques (vues en seconde et en première).
+Grâce à ces arbres binaires, on peut créer d'autres types d'arbres.
+Ici, nous allons parler de l'arbre binaire de recherche.
+<span class="important">Un arbre binaire de recherche est un arbre binaire adapté pour ranger (trier et chercher) des données</span>.
+Son fonctionnement est assez simple : chaque noeud contient une donnée, et toutes les données de son sous-arbre gauche sont inférieures à lui, et les données de son sous-arbre droit sont supérieures à lui.
+Cet arbre permet d'implémenter des algortihmes de recherche particulièrement efficaces.
+</p>
+<tree name="30">
+    <tree name="15">
+        <tree name="10">
+            <tree name="2"></tree>
+            <tree name="12"></tree>
+        </tree>
+        <tree name="20">
+            <tree name="17"></tree>
+            <tree name="28"></tree>
+        </tree>
+    </tree>
+    <tree name="70">
+        <tree name="50">
+            <tree name="41"></tree>
+            <tree name="51"></tree>
+        </tree>
+        <tree name="90">
+            <tree name="89"></tree>
+            <tree name="91"></tree>
+        </tree>
+    </tree>
+</tree>
+<p>
+En parlant d'algorithmes de recherche, il est aussi à noter que ceci sont abordés pour les arbres binaires.
+En effet, <span class="important">4 algorithmes de parcours sont vus : le parcours préfixe, infixe, suffixe et en largeur</span>.
+Le parcours préfixe consiste à regarder dans cet ordre précis : la valeur de la racine d'un arbre, puis le sous arbre gauche (via récursion), puis le sous arbre droit (via récursion).
+Le parcours infixe change cet ordre : on regarde le sous arbre gauche (via récursion), puis la valeur de la racine, puis le sous arbre droit (via récursion).
+Finalement, le parcours suffixe change (encore) l'ordre : on regarde le sous arbre gauche (via récursion), puis le sous arbre droit (via récursion), puis la valeur de la racine.
+Le parcours en largeur est un peu plus original : on regarde la valeur de la racine d'un arbre, puis celle de tous les sous-arbres (que la racine), puis celle des sous-sous-arbres...
+L'algorithme le plus efficace dépend grandement du contexte, bien que le parcours préfixe soit généralement le plus utilisé.
+Voici un exemple de comment les noeuds sont parcourus pour un parcours en largeur.
+</p>
+<tree name="1">
+    <tree name="2">
+        <tree name="4">
+            <tree name="8"></tree>
+            <tree name="9"></tree>
+        </tree>
+        <tree name="5">
+            <tree name="10"></tree>
+            <tree name="11"></tree>
+        </tree>
+    </tree>
+    <tree name="3">
+        <tree name="6">
+            <tree name="12"></tree>
+            <tree name="13"></tree>
+        </tree>
+        <tree name="7">
+            <tree name="14"></tree>
+            <tree name="15"></tree>
+        </tree>
+    </tree>
+</tree>
 <p>
 Comme pour toutes les structures de données ici : ce qui est vu ici est abstrait.
-Théoriquement <span class="important"> tout ce qui contient, de prés ou de loin, une valeur et un pointeur vers la prochaine valeur peut être appelé une liste chainée</span>.
+Théoriquement, <span class="important">tout ce qui contient, de prés ou de loin, une valeur et un pointeur vers la prochaine valeur peut être appelé une liste chainée</span>.
+De plus, <span class="important">tout ce qui contient, de prés ou de loin, une valeur et des pointeurs vers plusieurs autres valeurs peut être appelé un arbre</span>.
 L'idée ici est (comme pour le premier trimestre) de donner aux élèves une nouvelle façon possible de structurer des données, ici de manière chainée.
+</p>
+
+<h2>Les systèmes d'exploitation</h2>
+
+<h3>Les tâches et processus</h3>
+<p>
+
 </p>

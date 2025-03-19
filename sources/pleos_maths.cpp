@@ -134,6 +134,11 @@ namespace pleos {
             final_choice += std::string("-") + std::to_string(number);
             needed_title = std::string("PGCD ") + std::to_string(number + 1);
         }
+        else if(current_choice == std::string("decomposition")) {
+            int number = arithmetic_calculator_elements_chosen()->count_object_similar(current_choice, "-");
+            final_choice += std::string("-") + std::to_string(number);
+            needed_title = std::string("Décomposition ") + std::to_string(number + 1);
+        }
 
         // Get the good current choice
         arithmetic_object->choice = current_choice;
@@ -163,6 +168,10 @@ namespace pleos {
                     current_text += std::string("</br></br>");
                     arithmetic_bezout_identity(arithmetic_objects_created()[i].get(), &current_text);
                 }
+            }
+            else if(arithmetic_objects_created()[i].get()->choice == std::string("decomposition")) {
+                // Get the decomposition
+                arithmetic_decomposition(arithmetic_objects_created()[i].get(), &current_text);
             }
 
             // Add a separation
@@ -239,6 +248,28 @@ namespace pleos {
             if(arithmetic_object.get()->choice_1){bezout_choice.get()->select_object("bezout_identity");}
             arithmetic_object.get()->choice_input_1 = bezout_choice;
             arithmetic_created_object_for_selected_object().push_back(bezout_choice);
+        }
+        else if(arithmetic_object->choice == "decomposition"){
+            // Create the title of the name of the first number
+            std::shared_ptr<scls::GUI_Text> first_title = *arithmetic_calculator_elements_datas()->new_object<scls::GUI_Text>(arithmetic_calculator_elements_datas()->name() + "-first_title_" + std::to_string(__arithmetic_object_created));
+            first_title.get()->set_height_in_pixel(30);
+            first_title.get()->set_text_alignment_horizontal(scls::H_Right);
+            first_title.get()->set_width_in_scale(scls::Fraction(1, 5));
+            first_title.get()->set_x_in_object_scale(scls::Fraction(1, 5));
+            first_title.get()->set_y_in_object_scale(scls::Fraction(3, 4));
+            first_title.get()->set_text(std::string("Nombre à décomposer"));
+            arithmetic_created_object_for_selected_object().push_back(first_title);
+
+            // Create the name of the first number
+            std::shared_ptr<scls::GUI_Text_Input> first_input = *arithmetic_calculator_elements_datas()->new_object<scls::GUI_Text_Input>(arithmetic_calculator_elements_datas()->name() + "-first_input_" + std::to_string(__arithmetic_object_created));
+            first_input.get()->set_border_width_in_pixel(1);
+            first_input.get()->set_height_in_pixel(30);
+            first_input.get()->set_width_in_scale(scls::Fraction(1, 6));
+            first_input.get()->set_x_in_object_scale(scls::Fraction(2, 5));
+            first_input.get()->set_y_in_object_scale(scls::Fraction(3, 4));
+            first_input.get()->set_text(arithmetic_object.get()->value_1.to_std_string());
+            arithmetic_object.get()->input_1 = first_input;
+            arithmetic_created_object_for_selected_object().push_back(first_input);
         }
 
         __arithmetic_object_created++;
@@ -774,6 +805,13 @@ namespace pleos {
                 }
                 if(arithmetic_currently_selected_object()->input_2.get() != 0) {
                     arithmetic_currently_selected_object()->value_2 = scls::string_to_formula(arithmetic_currently_selected_object()->input_2.get()->text());
+                }
+            }
+            else if(arithmetic_currently_selected_object()->choice == std::string("decomposition")) {
+                // GCD
+                // Values
+                if(arithmetic_currently_selected_object()->input_1.get() != 0) {
+                    arithmetic_currently_selected_object()->value_1 = scls::string_to_formula(arithmetic_currently_selected_object()->input_1.get()->text());
                 }
             }
 
