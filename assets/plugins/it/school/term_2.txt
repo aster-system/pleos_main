@@ -213,5 +213,106 @@ L'idée ici est (comme pour le premier trimestre) de donner aux élèves une nou
 
 <h3>Les tâches et processus</h3>
 <p>
+Le fonctionnement global d'un système d'exploitation est abordé au programme de terminale.
+En informatique, <span class="important">une tâche représente l'ensemble du néccessaire pour faire faire quelque chose à l'ordinateur</span>.
+Sur Internet, il est difficile de trouver une définition précise et acceptée par tout le monde : une tâche peut représenter (selon le système utilisé) un fil d'exécution, une action brute, une action complète...
+Un terme mieux définit est le terme de processus.
+En effet, <span class="important">un processus représente un ensemble de tâches permettant le déroulement d'un programme, et les ressources allouées</span>.
+Par exemple, ouvrir un logiciel revient à créer un (ou plusieurs) processus : ceux qui permettent de faire marche le logiciel.
+</p>
+<p>
+Dans un ordinateur, plusieurs logiciels peuvent tourner en même temps.
+En effet, <span class="important">le système d'exploitation se débrouille pour exécuter tous les processus de manière quasi-simultanée</span>.
+Or, qu'une partie limité d'un processus peuvent avoir lieu à la fois.
+Pour créer l'illusion de simultanéité, <span class="important">le système d'exploitation va pouvoir exécuter une partie d'un processus, puis une partie d'un autre processus...</span>
+Grâce à la grande vitesse des ordinateurs modernes, une illusion de simultanéité est crée.
+<span class="important">Le fait de ranger les processus dans un ordre permettant de les exécuter un à un est nommé l'ordonnancement</span> (ou scheduler en anglais).
+Or, cela implique que, à un moment précis, un processus peut : soit attendre d'être exécuté, soit attendre une signal permettant de le mettre sur liste d'attente pour l'exécution, soit être exécuté, soit être fini.
+<span class="important">Ces états, respectivement "prêt", "endormi", "élu" et "terminé" sont nommés états de processus</span>.
+Ils permettent à l'ordonnanceur de proprement trier les processus.
+</p>
+<tree name="Création">
+    <node name="Prêt" x=1 y=0><link id=0></node>
+    <node name="Élu" x=2 y=0><link id=1></node>
+    <node name="En attente / endormi" x=3/2 y=1/2><link id=2><link id=1></node>
+    <node name="Terminé" x=3 y=0><link id=2></node>
+</tree>
+<p>
+Les techniques utilisées par l'ordonnanceur pour gérer les processus sont aussi étudiés en terminale.
+Déjà, nous allons introduire la possibilité de représenter un processus comme un ensemble (fini, et dont on connait la taille) de tâches plus petite, et définir le moment où le processus est élu comme l'exécution d'une de ses tâches.
+Dans ce cas, <span class="important">nous allons simplement classer les tâches à trier dans l'ordre nécessaire</span>.
+Pour cela, plusieurs algorithmes sont possibles.
+<span class="important">Le premier consite à les enfiler un à un par ordre d'arrivé</span>.
+Il est extrêmement simple à comprendre, mais ne permet pas vraiment de donner l'impression de quasi-simultanéité de l'ordinateur (si vous lancez un logiciel, il faudrait attendre que tous les autres se ferme pour l'utiliser).
+Le deuxième, assez similaire, consiste à trier les processus du plus long au moins long.
+Dans ce cas, le tri à lieu à chaque fois qu'un nouveau processus est lancé (il est inséré après un processus plus long et avant un processus moins long).
+Il présente le même problème que l'algorithme d'avant : quasi-simultanéité inexistante.
+Finalement, le dernier algorithme consiste à exécuter une tâche d'un processus, puis d'un autre processus...
+Après avoir exécuter une tâche de tous les processus, on recommence.
+<span class="important">Cet algorithme est nommé le tourniquet</span>.
+</p>
+<table>
+    <case content="A et B rejoignent" x=0 y=0>
+    <case content="A" x=0 y=1>
+    <case content="B" x=1 y=1>
+    <case content="A" x=2 y=1>
+    <case content="C rejoint" x=3 y=0>
+    <case content="B" x=3 y=1>
+    <case content="C" x=4 y=1>
+    <case content="A" x=5 y=1>
+    <case content="B" x=6 y=1>
+    <case content="C finit" x=7 y=0>
+    <case content="C" x=7 y=1>
+    <case content="A" x=8 y=1>
+    <case content="B finit" x=9 y=0>
+    <case content="B" x=9 y=1>
+    <case content="A finit" x=10 y=0>
+    <case content="A" x=10 y=1>
+</table>
+<p>
+L'idée ici est de <span class="important">comprendre les bases du système d'attribution de ressources dans un ordinateur</span>.
+Bien évidemment, ce n'est qu'une base, mais elle est quand même importante pour comprendre le fonctionnement global d'un système.
+Elle permet aussi l'introduction au multitâche, utile pour les systèmes de multithreads, très utilisés en programmation.
+</p>
 
+<h3>Linux</h3>
+<p>
+Tout ceux qui font de l'informatique le savent : le système d'exploitation préféré des développeurs est Linux.
+Cela tombe bien : <span class="important">les bases de Linux sont abordées dans le programme de terminale NSI</span>.
+Pour rappel : Linux est un noyau de système d'exploitation (nommé dans le jargon un kernel), qui est la base de beaucoups de systèmes d'exploitations, nommés des distributions Linux : Ubuntu, Debian, Mint...
+<span class="important">Il est basé sur une norme très précise de systèmes d'exploitation : UNIX</span> (qui, lui même, est basé sur d'autres normes : POSIX).
+UNIX a été développé au début des années 70 (avec pleins de versions par ci, par là), par pas mal de personnes, dont Ken Thompson et Dennis Ritchie (l'inventeur du langage C, crée pour UNIX en 1972).
+En 1977, une version plus complète d'UNIX, nommée BSD est publiée par AT&T (l'ancêtre des systèmes modernes FreeBSD ou OpenBSD).
+En 1983, Richard Stallman trouve la licence d'UNIX trop privative, et décide de développer une version plus libre : GNU. 
+D'ailleurs, avec ce système, le nom "UNIX" devient plus un ensemble de normes qu'un système d'exploitation.
+<span class="important">En 1991, Linus Torvald crée un noyau de système d'exploitation particulièrement adapté aux serveurs : Linux</span>.
+Au fil du temps, toutes les versions de Linux apparaîtront elles aussi (Debian en 1993 par Ian Murdock, Ubuntu en 2004 par Mark Shuttleworth...), pour rendre le système facilement utiliasble par le grand public.
+Cependant, des systèmes d'exploitations non-libres respectent aussi les normes UNIX : Windows NT par Microsoft, ou même MacOS par Apple.
+</p>
+<p>
+L'avantage de Windows est qu'il respecte les normes UNIX.
+Donc, <span class="important">les normes de Windows ne sont pas bien différentes des normes UNIX</span>.
+Ces normes incluent le système de processus vu plus haut.
+Mais aussi, <span class="important">elles incluent la possibilité de gérer les fichiers sous forme d'arborescence, et de chemin d'accés (chemin vers un fichier)</span>.
+Sur Linux, l'arborescence respecte des normes particulièrement précises.
+</p>
+<tree name="/">
+    <tree name="/bin"></tree>
+    <tree name="/home"></tree>
+    <tree name="/etc"></tree>
+    <tree name="/opt"></tree>
+    <tree name="/tmp"></tree>
+    <tree name="/usr"></tree>
+    <tree name="/var"></tree>
+</tree>
+<p>
+Lors de la création d'UNIX, le contrôle de l'ordinateur se faisait par un système de commande.
+En effet, <span class="important">pour interagir avec l'ordinateur, il n'y avait qu'une zone de texte, dans laquelle on pouvait noter les actions que doivent faire l'ordinateurs, nommées des commandes</span>.
+Ce système existe toujours de nos jours (sur Linux, ou même Windows et MacOS), bien qu'il ne soit pas le plus utilisé (l'interface graphique reste plus efficace, sauf dans certains cas précis, comme pour des serveurs à distance).
+</p>
+<p>
+En informatique, <span class="important">connaître Linux est toujours un plus</span>.
+Il est plus simple pour le développement informatique, tout en restant très accessible.
+Cependant, comme il n'est pas extrêmement utilisé, il pêche sur certains domaines, comme le multimédia ou le jeu vidéo.
+Donc, n'hésitez pas à aller y jeter un coup d'oeil si ce système pourrait vous intéresser.
 </p>
