@@ -1,11 +1,16 @@
 <h1>L'algèbre</h1>
+
+
+
 <h2>Qu'est ce qu'est l'algèbre ?</h2>
+
 <h3>La définition pure</h3>
 <p>
 <important>L'algèbre représente la branche des mathématiques étudiant les règles (opérations, équations, interprétations...)</important> d'une certaine catégorie d'objets.
 L'algèbre la plus connue est l'arithmétique : l'algèbre des nombres (aussi nommée algèbre classique)
 L'ensemble de règles d'un objet se joignent dans un objet nommé une structure algébrique.
 </p>
+
 <h3>Les structures algébriques</h3>
 <p>
 <important>Une structure algébrique est un moyen de définir ces règles (avec, bien évidemment, des axiomes), permettant une certaine cohérence entre chaque structures</important>.
@@ -17,3 +22,9 @@ Une loi est commutative si x # y = y # z, avec # l'opérateur permettant l'appli
 Par exemple, dans l'algèbre classique, l'addition obéit à ces deux principes, mais pas la division (vous pouvez le tester en essayant un calcul vite fait).
 Selon le nombre de lois et leurs propriétés, la structure peut appartenir à une certaine famille de structures algébriques.
 </p>
+
+<h3>Les polynômes</h3>
+<p>
+En algèbre, <important>un polynôme est une forme d'expression représentant une somme de puissances d'une variable, multiplié par une autre valeur</important>.
+</p>
+<math><mi>4</mi><mo>*</mo><mi>x</mi><msup>3</msup><mo>+</mo><mi>2</mi><mo>*</mo><mi>x</mi><msup>2</msup><mo>+</mo><mi>3</mi><mo>*</mo><mi>x</mi><mo>+</mo><mi>5</mi></math>

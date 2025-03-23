@@ -115,184 +115,20 @@ namespace pleos {
         }
     }
 
-    // Do a comparaison part of the algorithm with the bubble algorithm
-    void IT_Page::algorithms_comparaison_bubble() {
-        if(a_current_state.algorithms_sort_comparaison_index < algorithms_sort_comparaison_values().size()) {
-            int min_index = a_current_state.algorithms_sort_comparaison_index;
-            int i = algorithms_sort_comparaison_values().size() - 2;
-            while(i >= min_index) {
-                if(algorithms_sort_comparaison_values()[i] > algorithms_sort_comparaison_values()[i + 1]) {
-                    double temp = algorithms_sort_comparaison_values()[i];
-                    algorithms_sort_comparaison_values()[i] = algorithms_sort_comparaison_values()[i + 1];
-                    algorithms_sort_comparaison_values()[i + 1] = temp;
-                    a_current_state.algorithms_sort_comparaison_current.get()->a_algorithms_sort_comparaison_permutation_number++;
-                }
-                i--;
-                a_current_state.algorithms_sort_comparaison_current.get()->a_algorithms_sort_comparaison_number++;
-            }
-
-            a_current_state.algorithms_sort_comparaison_moved_index_max = min_index;
-            a_current_state.algorithms_sort_comparaison_moved_index_min = i;
-            a_current_state.algorithms_sort_comparaison_index++;
-        }
-    }
-
-    // Do a comparaison part of the algorithm with the insertion algorithm
-    void IT_Page::algorithms_comparaison_insertion() {
-        if(a_current_state.algorithms_sort_comparaison_index < algorithms_sort_comparaison_values().size()) {
-            int current_index = a_current_state.algorithms_sort_comparaison_index;
-            int i = 0;
-            while(i < a_current_state.algorithms_sort_comparaison_index) {
-                a_current_state.algorithms_sort_comparaison_current.get()->a_algorithms_sort_comparaison_number++;
-                if(algorithms_sort_comparaison_values()[i] > algorithms_sort_comparaison_values()[current_index]) {break;}
-                i++;
-            }
-
-            // Permute the next variables
-            int needed_index = i;
-            while(i < a_current_state.algorithms_sort_comparaison_index) {
-                double temp = algorithms_sort_comparaison_values()[current_index];
-                algorithms_sort_comparaison_values()[current_index] = algorithms_sort_comparaison_values()[i];
-                algorithms_sort_comparaison_values()[i] = temp;
-                i++;
-                a_current_state.algorithms_sort_comparaison_current.get()->a_algorithms_sort_comparaison_permutation_number++;
-            }
-
-            a_current_state.algorithms_sort_comparaison_moved_index_max = needed_index;
-            a_current_state.algorithms_sort_comparaison_moved_index_min = current_index;
-            a_current_state.algorithms_sort_comparaison_index++;
-        }
-    }
-
-    // Do a comparaison part of the algorithm with the fusion algorithm
-    void IT_Page::__algorithms_comparaison_fusion_division(Sort_Datas* datas) {
-        // Division
-        if(datas->values_end == datas->values_start || datas->values_start + 1 == datas->values_end){return;}
-        std::vector<double>::iterator middle = datas->values_start + (datas->values_end - datas->values_start) / 2;
-        std::shared_ptr<Sort_Datas> sort_1 = std::make_shared<Sort_Datas>();
-        sort_1.get()->values_start = datas->values_start;
-        sort_1.get()->values_end = middle;
-        datas->sub_sorts.push_back(sort_1);
-        __algorithms_comparaison_fusion_division(sort_1.get());
-        std::shared_ptr<Sort_Datas> sort_2 = std::make_shared<Sort_Datas>();
-        sort_2.get()->values_start = middle;
-        sort_2.get()->values_end = datas->values_end;
-        datas->sub_sorts.push_back(sort_2);
-        __algorithms_comparaison_fusion_division(sort_2.get());
-    }
-    void IT_Page::__algorithms_comparaison_fusion(Sort_Datas* datas) {
-        // Sub sorts
-        if(datas->sub_sorts.size() < 2){return;}
-
-        // Fusion
-        std::vector<double> buf_1 = datas->sub_sorts[0].get()->buffer(); int i_1 = 0;
-        std::vector<double> buf_2 = datas->sub_sorts[1].get()->buffer(); int i_2 = 0;
-        std::vector<double>::iterator current = datas->values_start;
-        while(i_1 < buf_1.size() && i_2 < buf_2.size()) {
-            if(buf_1[i_1] < buf_2[i_2]){(*current) = buf_1[i_1];i_1++;}
-            else{(*current) = buf_2[i_2];i_2++;}
-            current++;
-            datas->a_algorithms_sort_comparaison_permutation_number++;
-        }
-        while(i_1 < buf_1.size()) {
-            (*current) = buf_1[i_1];i_1++;
-            current++;
-            datas->a_algorithms_sort_comparaison_permutation_number++;
-        }
-        while(i_2 < buf_2.size()) {
-            (*current) = buf_2[i_2];i_2++;
-            current++;
-            datas->a_algorithms_sort_comparaison_permutation_number++;
-        }
-
-        // End the algorithm
-        datas->sub_sorts.clear();
-        datas->good = true;
-    }
-    bool IT_Page::algorithms_comparaison_fusion(Sort_Datas* datas) {
-        if(datas->sub_sorts.size() > datas->current_sub_sort) {
-            if(algorithms_comparaison_fusion(datas->sub_sorts[datas->current_sub_sort].get())){
-                datas->current_sub_sort++;
-            }
-        }
-        else {__algorithms_comparaison_fusion(datas);return true;}
-        return false;
-    }
-
-    // Do a comparaison part of the algorithm with the selection algorithm
-    void IT_Page::algorithms_comparaison_selection() {
-        if(a_current_state.algorithms_sort_comparaison_index < algorithms_sort_comparaison_values().size()) {
-            int min_index = a_current_state.algorithms_sort_comparaison_index;
-            int i = a_current_state.algorithms_sort_comparaison_index + 1;
-            while(i < algorithms_sort_comparaison_values().size()) {
-                if(algorithms_sort_comparaison_values()[i] < algorithms_sort_comparaison_values()[min_index]) {
-                    min_index = i;
-                }
-                i++;
-                a_current_state.algorithms_sort_comparaison_current.get()->a_algorithms_sort_comparaison_number++;
-            }
-            double temp = algorithms_sort_comparaison_values()[a_current_state.algorithms_sort_comparaison_index];
-            algorithms_sort_comparaison_values()[a_current_state.algorithms_sort_comparaison_index] = algorithms_sort_comparaison_values()[min_index];
-            algorithms_sort_comparaison_values()[min_index] = temp;
-            a_current_state.algorithms_sort_comparaison_current.get()->a_algorithms_sort_comparaison_permutation_number++;
-
-            a_current_state.algorithms_sort_comparaison_moved_index_max = min_index;
-            a_current_state.algorithms_sort_comparaison_moved_index_min = a_current_state.algorithms_sort_comparaison_index;
-            a_current_state.algorithms_sort_comparaison_index++;
-        }
-    }
-
     // Starts the comparaison part of the algorithm
     void IT_Page::algorithms_comparaison_start() {
-        // Values in the algorithm
-        int value_number = 200;
-        std::vector<double>& values = algorithms_sort_comparaison_values();
-        values = std::vector<double>(value_number, 0);
-        for(int i = 0;i<value_number;i++){values[i] = i + 1;}
-
-        // Shuffle the list
-        std::random_shuffle(values.begin(), values.end());
+        // Create the datas
+        a_current_state.algorithms_sort_comparaison_current = algorithms_sort_creation(200);
 
         // Update the graphic
-        a_current_state.algorithms_sort_comparaison_index = 0;
-        a_current_state.algorithms_sort_comparaison_moved_index_max = -1;
-        a_current_state.algorithms_sort_comparaison_moved_index_min = -1;
-        a_current_state.algorithms_sort_comparaison_current = std::make_shared<Sort_Datas>();
-        a_current_state.algorithms_sort_comparaison_current.get()->a_algorithms_sort_comparaison_number = 0;
-        a_current_state.algorithms_sort_comparaison_current.get()->a_algorithms_sort_comparaison_permutation_number = 0;
-        a_current_state.algorithms_sort_comparaison_current.get()->sub_sorts.clear();
-        a_current_state.algorithms_sort_comparaison_current.get()->values_start = values.begin();
-        a_current_state.algorithms_sort_comparaison_current.get()->values_end = values.end();
         algorithms_update_comparaison();
     }
 
     // Update the texture of the algorithm comparaison simulation part
     void IT_Page::algorithms_update_comparaison(){
         // Create the image
-        scls::Color background_color = scls::Color(255, 255, 255);
-        int needed_width = algorithms_sort_comparaison_simulation()->height_in_pixel();
-        std::shared_ptr<scls::Image> image = std::make_shared<scls::Image>(needed_width, needed_width, background_color);
-
-        // Draw the values
-        int current_x = 0;
-        double maximum_height = image.get()->height();
-        std::vector<double>& values = algorithms_sort_comparaison_values();
-        double value_number = values.size();
-        for(int i = 0;i<static_cast<int>(values.size());i++) {
-            scls::Color current_color = scls::Color(255, 0, 0);
-            int needed_height = round((values[i] / value_number) * maximum_height);
-            int part_width = static_cast<double>(image.get()->width()) / value_number;
-
-            // Set the color
-            if(i == a_current_state.algorithms_sort_comparaison_moved_index_max){current_color = scls::Color(255, 128, 0);}
-            else if(i == a_current_state.algorithms_sort_comparaison_moved_index_min){current_color = scls::Color(204, 204, 0);}
-
-            // Draw the line
-            image.get()->fill_rect(current_x, image.get()->height() - needed_height, part_width, needed_height, current_color);
-            current_x += part_width;
-        }
-
-        algorithms_sort_comparaison_simulation()->texture()->set_image(image);
+        std::shared_ptr<scls::Image> needed_image = algorithms_sort_image(a_current_state.algorithms_sort_comparaison_current.get(), algorithms_sort_comparaison_simulation()->height_in_pixel());
+        algorithms_sort_comparaison_simulation()->texture()->set_image(needed_image);
         set_should_render_during_this_frame(true);
 
         // Set the text
@@ -320,9 +156,7 @@ namespace pleos {
         }
 
         // Handle a new type of sort for visual representation
-        if(a_current_state.algorithms_sort_comparaison_type.get() != 0 && a_current_state.algorithms_sort_comparaison_type.get()->selection_modified()) {
-            algorithms_comparaison_start();
-        }
+        if(a_current_state.algorithms_sort_comparaison_type.get() != 0 && a_current_state.algorithms_sort_comparaison_type.get()->selection_modified()) {algorithms_comparaison_start();}
 
         if(current_page() == PLEOS_IT_ALGORITHMS_SORT_COMPARAISON_SIMULATION_PAGE) {
            // Restart the comparaison
@@ -331,17 +165,12 @@ namespace pleos {
             // Animate the comparaison
             if(window_struct()->key_pressed("a")) {
                 if(a_current_state.algorithms_sort_comparaison_type.get() != 0) {
-                    if(a_current_state.algorithms_sort_comparaison_type.get()->contains_selected_object("bubble")) {algorithms_comparaison_bubble();}
-                    else if(a_current_state.algorithms_sort_comparaison_type.get()->contains_selected_object("insertion")) {algorithms_comparaison_insertion();}
-                    else if(a_current_state.algorithms_sort_comparaison_type.get()->contains_selected_object("fusion")) {
-                        if(!a_current_state.algorithms_sort_comparaison_current.get()->good && a_current_state.algorithms_sort_comparaison_current.get()->sub_sorts.size() <= 0){
-                            __algorithms_comparaison_fusion_division();
-                        }
-                        algorithms_comparaison_fusion();
-                    }
-                    else{algorithms_comparaison_selection();}
+                    if(a_current_state.algorithms_sort_comparaison_type.get()->contains_selected_object("bubble")) {algorithms_comparaison_bubble(a_current_state.algorithms_sort_comparaison_current.get());}
+                    else if(a_current_state.algorithms_sort_comparaison_type.get()->contains_selected_object("insertion")) {algorithms_comparaison_insertion(a_current_state.algorithms_sort_comparaison_current.get());}
+                    else if(a_current_state.algorithms_sort_comparaison_type.get()->contains_selected_object("fusion")) {algorithms_comparaison_fusion(a_current_state.algorithms_sort_comparaison_current.get());}
+                    else{algorithms_comparaison_selection(a_current_state.algorithms_sort_comparaison_current.get());}
                 }
-                else{algorithms_comparaison_selection();}
+                else{algorithms_comparaison_selection(a_current_state.algorithms_sort_comparaison_current.get());}
                 algorithms_update_comparaison();
             }
         }

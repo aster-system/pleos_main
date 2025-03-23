@@ -55,33 +55,6 @@ namespace pleos {
         // Class representating the "IT" page for PLEOS
     public:
 
-        // Datas for a sorting algorithm
-        struct Sort_Datas {
-            // Current index of the algorithm
-            int algorithms_sort_comparaison_index = 0;
-            // Moved index of the comparaison
-            int algorithms_sort_comparaison_moved_index_max = -1;
-            int algorithms_sort_comparaison_moved_index_min = -1;
-            // Number of comparaisons
-            int a_algorithms_sort_comparaison_number = 0;
-            inline int algorithms_sort_comparaison_number(){int to_return=a_algorithms_sort_comparaison_number;for(int i=0;i<static_cast<int>(sub_sorts.size());i++){to_return += sub_sorts.at(i).get()->algorithms_sort_comparaison_number();}return to_return;};;
-            // Number of permutations
-            int a_algorithms_sort_comparaison_permutation_number = 0;
-            inline int algorithms_sort_comparaison_permutation_number(){int to_return=a_algorithms_sort_comparaison_permutation_number;for(int i=0;i<static_cast<int>(sub_sorts.size());i++){to_return += sub_sorts.at(i).get()->algorithms_sort_comparaison_permutation_number();}return to_return;};
-
-            // If the list is usable or not
-            bool good = false;
-            // Sub sorts for this short
-            int current_sub_sort = 0;
-            std::vector<std::shared_ptr<Sort_Datas>> sub_sorts;
-            // Values for the sorting
-            std::vector<double>::iterator values_end;
-            std::vector<double>::iterator values_start;
-
-            // Returns the buffer of the datats
-            inline std::vector<double> buffer(){std::vector<double> to_return;std::vector<double>::iterator current = values_start;while(current!=values_end){to_return.push_back(*current);current++;}return to_return;};
-        };
-
         // IT_Page constructor
         IT_Page(scls::_Window_Advanced_Struct* window_struct, std::string name):scls::GUI_Page(window_struct, name){};
         // Loads an object in a page from XML
@@ -95,15 +68,6 @@ namespace pleos {
 
         // Adds an element to create
         void algorithms_add_element_created(std::string current_choice);
-        // Do a comparaison part of the algorithm with the needed algorithm
-        void algorithms_comparaison_bubble();
-        void __algorithms_comparaison_fusion_division(Sort_Datas* datas);
-        inline void __algorithms_comparaison_fusion_division(){__algorithms_comparaison_fusion_division(a_current_state.algorithms_sort_comparaison_current.get());};
-        void __algorithms_comparaison_fusion(Sort_Datas* datas);
-        bool algorithms_comparaison_fusion(Sort_Datas* datas);
-        inline void algorithms_comparaison_fusion(){algorithms_comparaison_fusion(a_current_state.algorithms_sort_comparaison_current.get());};
-        void algorithms_comparaison_insertion();
-        void algorithms_comparaison_selection();
         // Starts the comparaison part of the algorithm
         void algorithms_comparaison_start();
         // Updates the texture of the comparaison part of the algorithm
@@ -177,7 +141,7 @@ namespace pleos {
 
         // Algorithms
         inline std::vector<std::shared_ptr<scls::GUI_Object>>& algorithms_created_object_for_selected_object(){return a_current_state.a_algorithms_created_object_for_selected_object;};
-        inline std::vector<double>& algorithms_sort_comparaison_values(){return a_current_state.algorithms_sort_comparaison_values;};
+        inline std::vector<double>& algorithms_sort_comparaison_values(){return a_current_state.algorithms_sort_comparaison_current.get()->values();};
 
         // Returns navigation
         inline scls::GUI_Text* hub_button() const {return a_hub_button.get();};
@@ -203,19 +167,12 @@ namespace pleos {
             std::shared_ptr<Sort_Datas> algorithms_sort_comparaison_current;
             inline int algorithms_sort_comparaison_number(){return algorithms_sort_comparaison_current.get()->algorithms_sort_comparaison_number();};
             inline int algorithms_sort_comparaison_permutation_number(){return algorithms_sort_comparaison_current.get()->algorithms_sort_comparaison_permutation_number();};
-            // Current index of the algorithm
-            int algorithms_sort_comparaison_index = 0;
-            // Moved index of the comparaison
-            int algorithms_sort_comparaison_moved_index_max = -1;
-            int algorithms_sort_comparaison_moved_index_min = -1;
             // Text displaying the number of comparaisons
             std::shared_ptr<scls::GUI_Text> algorithms_sort_comparaison_number_display;
             // Text displaying the number of permutations
             std::shared_ptr<scls::GUI_Text> algorithms_sort_comparaison_permutation_number_display;
             // Scroller containing the needed comparaison type
             std::shared_ptr<scls::GUI_Scroller_Choice> algorithms_sort_comparaison_type;
-            // Sort comparaison
-            std::vector<double> algorithms_sort_comparaison_values = std::vector<double>();
 
             // Data structures
             // Current used tree

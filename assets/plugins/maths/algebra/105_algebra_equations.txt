@@ -1,0 +1,68 @@
+<h1>Les équations</h1>
+
+
+
+<h2>Les équations en mathématiques</h2>
+
+<h3>Une relation précise</h3>
+<p>
+En mathématiques pures, <span class="important">une équation représente une relation entre deux objets mathématiques</span>.
+Cette relation est en général une égalité, mais aussi une comparaison de plus grand / plus petit, de congruence...
+Dans cette équation, <span class="important">il y a en général des objets qui peuvent prendre n'importe quelle valeur, nommées des variables / inconnues</span>.
+La variable la plus utilisée est "x", bien qu'elle peut techniquement prendre tous les noms existants ("y", "t", "var"...).
+Si l'équation représente seulement un multiple d'une inconnue égale à une valeur quelconque, l'équation (et toutes ses équivalences) est dite linéaire.
+Cependant, seulement certaines valeurs rendent la relation définie par l'équation juste, ces valeurs sont nommées des solutions.
+L'étape consistant à trouver les solutions d'une équation est nommée la résolution de l'équation.
+À l'inverse, <span class="important">une équation où toutes les valeurs possibles des variables sont vraies est nommée une identité</span>.
+Une équation s'écrit en général comme ça :
+</p>
+<math><mi>42</mi><mo>*</mo><mi>x</mi><mo>+</mo><mi>7</mi><mo>=</mo><mi>32</mi></math>
+<p>
+Pour résoudre une équation, <span class="important">l'idée est de la transformer en une équation équivalente, jusqu'à isoler les inconnues pour en obtenir leurs valeurs</span>.
+Deux équations sont dites équivalentes si elles partagent le même ensemble de solutions.
+Pour cela, pas mal de techniques sont possibles.
+Par exemple, <span class="important">effectuer la même opération sur les deux membres de l'équation donne une nouvelle équation légèrement différent, mais parfaitement équivalente à la première</span>.
+</p>
+<math><mi>42</mi><mo>*</mo><mi>x</mi><mo>+</mo><mi>7</mi><mo>=</mo><mi>32</mi></math></br></br>
+<math><mequi><mi>42</mi><mo>*</mo><mi>x</mi><mo>=</mo><mi>25</mi></math></br></br>
+<math><mequi><mi>x</mi><mo>=</mo><mfrac><mi>25</mi><mi>42</mi></mfrac></math>
+<p>
+Pour généraliser les résolutions d'équations numériques, <span class="important">le plus simple est de ramener un des membres à 0</span>.
+Dans le cas d'équations linéaires, cela ne sert pas à grand chose.
+Par contre, quand l'équation se complique, alors la ramener à 0 peut être très utile.
+<span class="important">Le cas le plus connu est le cas des équations contenant des polynômes, nommées équations polymoniales</span>.
+Dans le cas d'équations de degrés 2, un très simple algorithme de calcul existe.
+Dans le cas d'équations de degrés 3 ou 4, des algorithmes un peu plus complexe existent.
+Dans les autres cas, des algorithmes existent pour estimer les solutions, comme l'algorithme de Newton, mais il n'existe pas de moyen général pour les trouver (démontré par le théorème d'Abel).
+</p>
+
+<h3>Le lien fonction - équation</h3>
+<p>
+Il est possible de faire assez facilement un lien entre équation et fonction.
+En effet, <span class="important">résoudre une équation consiste à trouver toutes les valeurs où une fonction définie comme le membre de gauche est égale à une fonction définie comme le membre de droite</span>.
+Cela à l'avantage de nous donner un moyen graphique de résoudre une équation.
+</p>
+<math><mforall><mi>x</mi><min><mi>R</mi><mo>,</mo><mi>f(x)</mi><mo>=</mo><mi>42</mi><mo>*</mo><mi>x</mi><mo>+</mo><mi>7</mi><mo>,</mo><mi>g(x)</mi><mo>=</mo><mi>32</mi></math></br></br>
+<math><mi>42</mi><mo>*</mo><mi>x</mi><mo>+</mo><mi>7</mi><mo>=</mo><mi>32</mi><mequi><mi>42</mi><mo>*</mo><mi>x</mi><mo>-</mo><mi>25</mi><mo>=</mo><mi>0</mi></math></br></br>
+<math><mequi><mi>f(x)</mi><mo>=</mo><mi>g(x)</mi><mequi><mi>h(x)</mi><mo>=</mo><mi>0</mi></math>
+<p>
+Dans certains cas, la fonction à gauche et la fonction à droite peuvent être la même fonction, mais admettant un paramètre différent.
+<span class="important">Si la fonction est injective (chaque valeur de son ensemble de définition admet une unique image différente de toutes les autres images), alors on peut enlever la fonction des deux côtes de l'équation</span>.
+</p>
+<math><mforall><mi>a</mi><min><mi>R</mi><mo>,</mo><mi>f(a)</mi><mo>=</mo><mi>5</mi><mo>*</mo><mi>a</mi><mo>+</mo><mi>3</mi><mo></math></br></br>
+<math><mi>f(45 * x)</mi><mo>=</mo><mi>f(32)</mi></math></br></br>
+<math><mequi><mi>45</mi><mo>*</mo><mi>x</mi><mo>=</mo><mi>32</mi><mequi><mi>x</mi><mo>=</mo><mfrac><mi>32</mi><mi>45</mi></mfrac></math>
+
+<h3>Les systèmes d'équations</h3>
+<p>
+Dans certains cas, il est possible qu'un problème quelconque nécessite que plusieurs équations différentes soit résolues pour obtenir la solution.
+Pour cela, <span class="important">nous pouvons étudier un ensemble d'équations, nommé un système d'équations</span>.
+En général, ce genre de système est utilisé si plusieurs variables différentes sont nécessaires dans les équations (comme x et y).
+C'est le cas de certaines équations nécessitant des vecteurs.
+</p>
+
+<h2>Les différents types d'équations</h2>
+
+<h3>Les équations fonctionnelles</h3>
+
+<h3>Les équations carthésiennes</h3>

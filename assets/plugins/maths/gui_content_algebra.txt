@@ -35,6 +35,20 @@
 </gui_object>
 
 //***************************************************
+// Equations
+//***************************************************
+
+<gui_object name="maths_algebra_equations_body" type="text" sub_page>
+    <content max_width=0 src="algebra/105_algebra_equations.txt"></content>
+	<height value=7/8 type=scale>
+	<parent name="maths_algebra_page">
+	<texture alignment_horizontal=left alignment_vertical=top>
+    <width value=9/10 type=scale>
+	<x value=1/2 type=object_scale>
+	<y attach=bottom>
+</gui_object>
+
+//***************************************************
 // Matrices
 //***************************************************
 
@@ -46,4 +60,36 @@
     <width value=9/10 type=scale>
 	<x value=1/2 type=object_scale>
 	<y attach=bottom>
+</gui_object>
+
+//***************************************************
+// Solver
+//***************************************************
+
+<gui_object name="maths_algebra_solver_body" type="object" sub_page>
+	<height value=7/8 type=scale>
+	<parent name="maths_algebra_page">
+    <width value=1 type=scale>
+	<x value=1/2 type=object_scale>
+	<y attach=bottom>
+</gui_object>
+
+// Redaction part
+<gui_object name="maths_algebra_solver_redaction" type="text">
+	<border bottom=1 left=1 right=1 top=1>
+	<content max_width=0>Pas de rédaction à afficher</content>
+	<height value=4/7 type=scale>
+	<parent name="maths_algebra_solver_body">
+	//<texture alignment_vertical=top>
+	<width value=4/5 type=scale>
+	<x attach=right>
+	<y attach=top>
+</gui_object>
+<gui_object name="maths_algebra_solver_redaction_input" type="text_input">
+	<border bottom=1 left=1 right=1 top=1>
+	<height value=1/15 type=scale>
+	<parent name="maths_algebra_solver_body">
+	<width value=4/5 type=scale>
+	<x attach=right>
+	<y attach=bottom attached_object="maths_algebra_solver_redaction">
 </gui_object>

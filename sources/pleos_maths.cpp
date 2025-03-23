@@ -38,6 +38,10 @@ namespace pleos {
         // Algebra
         if(object_name == "maths_algebra_definitions_body") {a_algebra_definitions_page = *parent->new_object<scls::GUI_Text>(object_name);return a_algebra_definitions_page;}
         else if(object_name == "maths_algebra_matrices_body") {a_algebra_matrices_page = *parent->new_object<scls::GUI_Text>(object_name);return a_algebra_matrices_page;}
+        GUI_OBJECT_CREATION(scls::GUI_Text_Base<Text>, a_algebra_equations_page, "maths_algebra_equations_body")
+        GUI_OBJECT_CREATION(scls::GUI_Object, a_algebra_solver_page, "maths_algebra_solver_body")
+        GUI_OBJECT_CREATION(scls::GUI_Text_Base<Text>, a_algebra_solver_redaction, "maths_algebra_solver_redaction")
+        GUI_OBJECT_CREATION(scls::GUI_Text_Input, a_algebra_solver_redaction_input, "maths_algebra_solver_redaction_input")
 
         // Arithmetic
         else if(object_name == "maths_arithmetic_definitions_body") {a_arithmetic_definitions_page = *parent->new_object<scls::GUI_Text>(object_name);return a_arithmetic_definitions_page;}
@@ -107,6 +111,48 @@ namespace pleos {
         else if(object_name == "maths_navigation") {a_navigation = *parent->new_object<scls::GUI_Scroller_Choice>(object_name);return a_navigation;}
 
         return scls::GUI_Page::__create_loaded_object_from_type(object_name, object_type, parent);
+    }
+
+    //******************
+    //
+    // Algebra handling
+    //
+    //******************
+
+    // Redacts the needed redaction for the algebra part
+    void Maths_Page::algebra_redact() {
+        std::string input = algebra_solver_redaction_input()->text();
+        std::string redaction = std::string();
+
+        // Get all the part of the input
+        std::vector<scls::Formula> formulas = std::vector<scls::Formula>();
+        std::vector<std::string> input_cutted = scls::cut_string(input, std::string(";"));
+
+        // Load all the formula
+        for(int i = 0;i<static_cast<int>(input_cutted.size());i++) {
+            std::vector<std::string> cutted = scls::cut_string(input_cutted.at(i), std::string("="));
+            if(cutted.size() == 2) {
+                if(formulas.size() > 0) {
+                    // An unknown is precised
+                    std::string current_redaction = input_cutted.at(i);
+                    scls::Formula needed_value = scls::string_to_formula(cutted.at(1));
+                    scls::__Formula_Base::Formula needed_formula = formulas[formulas.size() - 1].replace_unknown(cutted.at(0), needed_value);
+                    formulas[formulas.size() - 1] = *needed_formula.formula_base();
+                    current_redaction += std::string(" = ") + needed_formula.to_std_string();
+                    if(i < input_cutted.size()){current_redaction += std::string("</br></br>");}
+                    redaction += current_redaction;
+                }
+            }
+            else {
+                std::string current_redaction = input_cutted.at(i);
+                scls::Formula needed_formula = scls::string_to_formula(input_cutted.at(i));
+                current_redaction += std::string(" = ") + needed_formula.to_std_string();
+                if(i < input_cutted.size()){current_redaction += std::string("</br></br>");}
+                redaction += current_redaction;formulas.push_back(needed_formula);
+            }
+        }
+
+        algebra_solver_redaction()->set_text(redaction);
     }
 
     //******************
@@ -743,6 +789,12 @@ namespace pleos {
     //
     //******************
 
+    // Checks the events of algebra
+    void Maths_Page::check_algebra() {
+        // Do the algebra redaction
+        if(window_struct()->key_pressed_during_this_frame("left control")) {algebra_redact();}
+    }
+
     // Checks the events of arithmetic
     void Maths_Page::check_arithmetic() {
         // Do the arithmetic redaction
@@ -1083,7 +1135,9 @@ namespace pleos {
     void Maths_Page::display_page(std::string page) {
         // Algebra pages
         if(page == "algebra_definitions"){display_algebra_definition_page();}
+        GUI_OBJECT_SELECTION(display_algebra_equations_page(), "algebra_equations")
         else if(page == "algebra_matrices"){display_algebra_matrices_page();}
+        GUI_OBJECT_SELECTION(display_algebra_solver_redaction(), "algebra_solver")
         // Arithmetic pages
         else if(page == "arithmetic_definitions"){display_arithmetic_definitions_page();}
         else if(page == "arithmetic_calculator"){display_arithmetic_calculator_page();}
@@ -1119,10 +1173,11 @@ namespace pleos {
         scls::GUI_Page::update_event();
         check_navigation();
 
-        if(current_page() != PLEOS_MATHS_ARITHMETIC_CALCULATOR_PAGE && window_struct()->key_pressed_during_this_frame("left control")){display_geometry_pythagorean_theorem_demonstration();}
+        if(current_page() != PLEOS_MATHS_ALGEBRA_SOLVER_PAGE && current_page() != PLEOS_MATHS_ARITHMETIC_CALCULATOR_PAGE && current_page() != PLEOS_MATHS_ARITHMETIC_CALCULATOR_CONGRUENCE_CIRCLE_PAGE && window_struct()->key_pressed_during_this_frame("left control")){display_geometry_pythagorean_theorem_demonstration();}
 
         // Check the good page
-        if(current_page() == PLEOS_MATHS_ARITHMETIC_CALCULATOR_PAGE || current_page() == PLEOS_MATHS_ARITHMETIC_CALCULATOR_CONGRUENCE_CIRCLE_PAGE){check_arithmetic();}
+        if(current_page() == PLEOS_MATHS_ALGEBRA_EQUATIONS_PAGE || current_page() == PLEOS_MATHS_ALGEBRA_SOLVER_PAGE){check_algebra();}
+        else if(current_page() == PLEOS_MATHS_ARITHMETIC_CALCULATOR_PAGE || current_page() == PLEOS_MATHS_ARITHMETIC_CALCULATOR_CONGRUENCE_CIRCLE_PAGE){check_arithmetic();}
         else if(current_page() == PLEOS_MATHS_FUNCTIONS_REDACTION_PAGE){check_functions();}
         else if(current_page() == PLEOS_MATHS_GEOMETRY_DEFINITION_PAGE){check_redaction(geometry_definitions_page());}
         else if(current_page() == PLEOS_MATHS_GEOMETRY_REDACTION_PAGE){check_geometry();}

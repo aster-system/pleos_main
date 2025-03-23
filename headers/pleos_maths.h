@@ -42,6 +42,9 @@
 #define PLEOS_MATHS_LOGIC_DEFINITIONS_PAGE 101
 #define PLEOS_MATHS_LOGIC_SET_THEORY_PAGE 102
 #define PLEOS_MATHS_LOGIC_LANGUAGE_PAGE 110
+// Algebra pages
+#define PLEOS_MATHS_ALGEBRA_EQUATIONS_PAGE 505
+#define PLEOS_MATHS_ALGEBRA_SOLVER_PAGE 580
 // Arithmetic pages
 #define PLEOS_MATHS_ARITHMETIC_PAGE 200
 #define PLEOS_MATHS_ARITHMETIC_NUMBERS_SETS_PAGE 205
@@ -68,6 +71,15 @@ namespace pleos {
         Maths_Page(scls::_Window_Advanced_Struct* window_struct, std::string name):scls::GUI_Page(window_struct, name){};
         // Loads an object in a page from XML
         virtual std::shared_ptr<scls::GUI_Object> __create_loaded_object_from_type(std::string object_name, std::string object_type, scls::GUI_Object* parent);
+
+        //******************
+        //
+        // Algebra handling
+        //
+        //******************
+
+        // Redacts the needed redaction for the algebra part
+        void algebra_redact();
 
         //******************
         //
@@ -156,6 +168,7 @@ namespace pleos {
         // Function called after the XML loading
         virtual void after_xml_loading();
         // Checks the events of each pages
+        void check_algebra();
         void check_arithmetic();
         void check_functions();
         void check_geometry();
@@ -240,6 +253,10 @@ namespace pleos {
         inline scls::GUI_Object* algebra_page() const {return a_algebra_page.get();};
         inline scls::GUI_Text* algebra_definitions_page() const {return a_algebra_definitions_page.get();};
         inline scls::GUI_Text* algebra_matrices_page() const {return a_algebra_matrices_page.get();};
+        GUI_PAGE(scls::GUI_Text_Base<Text>, a_algebra_equations_page, PLEOS_MATHS_ALGEBRA_EQUATIONS_PAGE, algebra_equations_page, display_algebra_equations_page, display_algebra_page);
+        GUI_PAGE(scls::GUI_Object, a_algebra_solver_page, PLEOS_MATHS_ALGEBRA_SOLVER_PAGE, algebra_solver_page, display_algebra_solver_page, display_algebra_page);
+        GUI_PAGE(scls::GUI_Text_Base<Text>, a_algebra_solver_redaction, PLEOS_MATHS_ALGEBRA_SOLVER_PAGE, algebra_solver_redaction, display_algebra_solver_redaction, display_algebra_solver_page);
+        GUI_OBJECT(scls::GUI_Text_Input, a_algebra_solver_redaction_input, algebra_solver_redaction_input);
 
         // Returns arithmetic
         inline scls::GUI_Object* arithmetic_page() const {return a_arithmetic_page.get();};

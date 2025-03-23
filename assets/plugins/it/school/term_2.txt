@@ -23,6 +23,8 @@ Ici, <span class="important">ce lien est nommé un pointeur</span>.
 La représentation habituelle de cette structure est un ensemble de valeurs, liées entre elles par des liens (d'où le nom : liste chainée).
 </p>
 <linked_list>
+    <border bottom=1 left=1 right=1 top=1>
+    <padding bottom=5 left=5 right=5 top=5>
     <case content="0">
     <case content="1">
     <case content="2">
@@ -42,6 +44,8 @@ Chaque élément doit donc représenter deux variables (au moins) : sa valeur et
 Donc, <span class="important">insérer un élément à la liste revient à changer le pointeur de l'élément d'avant vers le nouvel élément, et mettre le pointeur du nouvel élément vers le prochain élément (ou vide si il est le dernier élément)</span>.
 </p>
 <linked_list>
+    <border bottom=1 left=1 right=1 top=1>
+    <padding bottom=5 left=5 right=5 top=5>
     <case content="0">
     <case content="1">
     <case content="2">
@@ -297,22 +301,136 @@ Mais aussi, <span class="important">elles incluent la possibilité de gérer les
 Sur Linux, l'arborescence respecte des normes particulièrement précises.
 </p>
 <tree name="/">
-    <tree name="/bin"></tree>
-    <tree name="/home"></tree>
-    <tree name="/etc"></tree>
-    <tree name="/opt"></tree>
-    <tree name="/tmp"></tree>
-    <tree name="/usr"></tree>
-    <tree name="/var"></tree>
+    <tree name="bin/"></tree>
+    <tree name="home/"></tree>
+    <tree name="etc/"></tree>
+    <tree name="opt/"></tree>
+    <tree name="tmp/"></tree>
+    <tree name="usr/"></tree>
+    <tree name="var/"></tree>
 </tree>
 <p>
 Lors de la création d'UNIX, le contrôle de l'ordinateur se faisait par un système de commande.
 En effet, <span class="important">pour interagir avec l'ordinateur, il n'y avait qu'une zone de texte, dans laquelle on pouvait noter les actions que doivent faire l'ordinateurs, nommées des commandes</span>.
 Ce système existe toujours de nos jours (sur Linux, ou même Windows et MacOS), bien qu'il ne soit pas le plus utilisé (l'interface graphique reste plus efficace, sauf dans certains cas précis, comme pour des serveurs à distance).
+Il permet aussi de faire de l'édition de fichiers textes directement dans cette zone de texte (bien que ce ne soit pas extrêmement pratique).
+Plusieurs programmes différents existent pour cela, comme nano ou vim.
+En parlant de programme, l'exécution d'un programme via ces commandes se fait en appellant directement le programme (via son chemin d'accés) en tant que commande.
+Cependant, pour les cas où les commandes sont nécessaires, il faut connaître les commandes basiques de Linux.
+Pour commencer, il faut savoir que l'endroit où l'on tape les commandes (et où les réponses sont affichées) est nommé le terminal (CLI ou shell en anglais).
+À chaque instant, <span class="important">le terminal va travailler dans un dossier précis de l'arborescence, nommé répertoire actuel</span>.
+Si vous créez un fichier, il sera crée dans le répertoire actuel.
+Ces mêmes commandes ont toutes un nom précis, et aussi des paramètres possibles (qui peuvent d'ailleurs être vide).
+En plus, elles peuvent aussi comporter des options spéciales, qui sont facilement reconnaissable, car on les écrit avec un "-" devant.
+À partir de là, vous pouvez comprendre toutes les commandes basiques, exposées dans un tableau.
+</p>
+<table>
+    <case content="Commande" x=0 y=0>
+    <case content="Utilisation" x=1 y=0>
+    <case content="cd chemin_acces" x=0 y=1>
+    <case content="Change le répertoire actuel pour chemin_acces." x=1 y=1>
+    <case content="ls chemin_acces" x=0 y=2>
+    <case content="Affiche tous les sous-dossiers de chemin_acces (ou du répertoir actuel si chemin_acces est vide)." x=1 y=2>
+    <case content="mkdir chemin_acces" x=0 y=3>
+    <case content="Crée le dossier au chemin d'accès chemin_acces." x=1 y=3>
+    <case content="nano chemin_acces" x=0 y=4>
+    <case content="Ouvre (ou crée) le fichier texte chemin_acces dans le terminal." x=1 y=4>
+    <case content="sudo commande" x=0 y=5>
+    <case content="Effectue la commande demandée en tant qu'administrateur (utile si une autre commande demande des droits administrateurs)." x=1 y=5>
+</table>
+<p>
+En tout, <span class="important">il y a plus d'un millier de commandes sur Linux</span>, tout personnalible à souhait.
+Le principal est de connaître les commandes basiques, et leur syntaxe.
+En plus, <span class="important">il existe un langage de programmation qui consiste entièrement en des commandes de ce genre : Bash</span>.
+Il permet d'automatiser l'exécution d'une grande quantité de commandes similaires.
 </p>
 <p>
 En informatique, <span class="important">connaître Linux est toujours un plus</span>.
 Il est plus simple pour le développement informatique, tout en restant très accessible.
 Cependant, comme il n'est pas extrêmement utilisé, il pêche sur certains domaines, comme le multimédia ou le jeu vidéo.
 Donc, n'hésitez pas à aller y jeter un coup d'oeil si ce système pourrait vous intéresser.
+</p>
+
+<h3>Réseau et routage</h3>
+<p>
+Finissons ce trimestre en beauté, avec du réseau.
+Cette partie sur le réseau est la suite logique de la partie vue en première.
+Pour rappel du premier trimestre, <span class="important">une IP (pour Internet Protocol) représente une adresse d'une machine sur un réseau</span>.
+Ce même réseau peut être constitué de toute sorte de machine : ordinateur, tablette, téléphone...
+Pour transiter, <span class="important">une information circule sous forme de requête, découpée par petit morceau dans ce que l'on appelle des paquets</span>.
+Certaines machines permettent de diriger précisément les requêtes : ce sont des routeurs.
+Tout cela représente le nécessaire pour voir les choses vues en terminale.
+</p>
+<p>
+Pour commencer, il faut savoir que la notion d'adresse IP est très approfondie en terminale.
+Déjà, <span class="important">une IP n'est valable que dans un seul réseau, et une même machine peut avoir plusieurs IPs dans plusieurs réseaux différents</span>.
+Cette même IP est distribuée par le fournisseur du réseau (qui, en tout logique, s'occupe aussi du routage).
+D'ailleurs, le réseau entier à lui aussi une IP un peu spéciale.
+En effet, <span class="important">toutes les IPs du réseaux partagent un même début (permettant d'identifier le réseau auquel elle appartient), que l'on peut obtenir avec ce que l'on appelle le masque de réseau</span>.
+Ce masque de réseau contient une IP précise.
+Pour bien le comprendre, rappellons nous qu'une IP correspond à un nombre, comme 145.68.168.32.
+On peut représenter cette IP sous-forme binaire : 10010001.01000100.10101000.00100000.
+Dans ce cas, une IP masque est une IP où tous les premiers chiffres sont des 1, puis que des 0.
+Par exemple, 255.255.240.0 (ou 11111111.11111111.11110000.00000000) peut être une IP masque.
+À partir de là, <span class="important">nous pouvons obtenir l'IP du réseau, en obtenant l'IP tel que, pour chaque 1 de cette IP, l'IP d'une machine et l'IP du masque est 1, sinon le nombre est 0</span>.
+Cette opération est une opération binaire, nommée ET (1 ET 1 = 1, 1 ET 0 = 0, 0 ET 1 = 0, 0 ET 0 = 0).
+Dans notre cas, nous pouvons facilement obtenir l'IP du réseau.
+</p>
+<table>
+    <case content="11111111" x=1 y=0><case content="11111111" x=2 y=0><case content="11110000" x=3 y=0><case content="00000000" x=4 y=0>
+    <case content="ET" x=0 y=1>
+    <case content="10010001" x=1 y=1><case content="01000100" x=2 y=1><case content="10101000" x=3 y=1><case content="00100000" x=4 y=1>
+    <case content="Fait" x=0 y=2>
+    <case content="10010001" x=1 y=2><case content="01000100" x=2 y=2><case content="10100000" x=3 y=2><case content="00000000" x=4 y=2>
+    <case content="Qui vaut" x=0 y=3>
+    <case content="145" x=1 y=3><case content="68" x=2 y=3><case content="160" x=3 y=3><case content="0" x=4 y=3>
+</table>
+<p>
+Vous avez donc l'IP de réseau 145.68.160.0.
+Pour indiquer simplement le masque dans une adresse IP quelconque, il existe une notation assez simple : la notation CIDR.
+<span class="important">La notation CIDR consiste à rajouter un nombre après l'IP, qui représente le nombre de 1 dans le masque de réseau</span>.
+Dans le cas vu plus haut, l'adresse IP CIDR de notre machine serait 145.68.168.32/20.
+</p>
+<p>
+Avec ce système d'IP, le routage est possible via des routeurs.
+En terminale, deux algorithmes de routages sont étudiés.
+Le premier est le plus simple et le plus intuitif : RIP (pour Routing Information Protocol).
+<span class="important">Le protocole RIP consiste à connaître tous les sous-réseaux disponibles dans le réseau, et à lui envoyer la requete directement</span>.
+Ce protocole implique de connaître tous les sous-réseaux du réseaux, et donc de les stocker en mémoire (et de l'actualiser souvent en cas de panne).
+De plus, les sous-réseaux doivent être particulièrement bien ordonnés, pour ne pas qu'un routeur n'est à stocker trop d'autres routeurs en une fois.
+Pour être précis, <span class="important">le routeur va aussi stocker le nombre de routeur le séparant de chaque sous-réseau, ainsi que le premier routeur du chemin allant à chaque sous-réseau</span>.
+Donc, ce protocole permet d'avoir une idée de la distance entre un routeur de départ et un routeur cible (bien que cette façon de faire n'est pas la plus optimisée).
+Voici un exemple de réseau, et la façon dont le routeur 128.34.0.0 traiterait les informations selon ce protocole.
+</p>
+<tree>
+    <node name="128.34.2.0" x=0 y=0></node>
+    <node name="128.34.1.0" x=0 y=-1><link id=0></node>
+    <node name="128.34.0.0" x=3/2 y=1/2><link id=1></node>
+    <node name="128.34.3.0" x=-1 y=1/2><link id=2><link id=0></node>
+    <node name="128.34.4.0" x=2 y=3/2><link id=3></node>
+</tree></br>
+<table>
+    <case content="Routeur" x=0 y=0><case content="Distance" x=1 y=0><case content="Prochain routeur" x=2 y=0>
+    <case content="128.34.4.0" x=0 y=1><case content="1" x=1 y=1><case content="128.34.4.0" x=2 y=1>
+    <case content="128.34.2.0" x=0 y=2><case content="1" x=1 y=2><case content="128.34.2.0" x=2 y=2>
+    <case content="128.34.1.0" x=0 y=3><case content="2" x=1 y=3><case content="128.34.2.0" x=2 y=3>
+    <case content="128.34.3.0" x=0 y=4><case content="2" x=1 y=4><case content="128.34.2.0" x=2 y=4>
+</table>
+<p>
+Le prochain protocole est un protocole bien plus rapide, mais un peu plus complexe.
+Il s'agit du protocole OSPF (Open Shortest Path First).
+<span class="important">Le protocole OSPF consiste aussi à connaître tous les sous-réseaux disponibles dans le réseau, et à lui envoyer la requete directement</span>.
+Il est très similaire au protocole RIP, mais il a quand même une différence.
+Cette différence ce joue sur la manière dont le protocole calcul la distance entre deux routeurs.
+En effet, <span class="important">là où le protocole RIP calcul le nombre de routeurs entre l'envoyeur et la cible, le protocole OSPF prend en compte la vitesse de chaque routeurs (et de chaque connection entre deux routeurs)</span>.
+Par exemple, un câble fibre est bien plus rapide qu'un câble ADSL, et sera considéré comme moins long à parcourir par le protocole OSPF.
+Pour être précis, le choix va se faire par rapport à une valeur précise, nommée le coût de la connection.
+Ce coût se calcule en divisant 100 millions par le nombre de bits transférables par seconde (aussi nommé la bande passante de la connection).
+Cependant, dans certains sujets de BAC, ce n'est pas 100 millions mais une autre valeur quelconque.
+Par exemple, une connection à 1 Gb / seconde aura un côut de 0.1, et une connection à 10 Mb / secondes aura un côut de 10.
+Grâce à ça, le transfert d'information est beaucoup plus rapide.
+</p>
+<p>
+Avec cette partie, <span class="important">nous entrons dans les bases de l'administration réseau, pour donner un avant goût de comment configurer un réseau</span>.
+C'est une partie qui devrait plaire à tous les gens aimant bien cette partie.
 </p>
