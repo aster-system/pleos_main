@@ -231,6 +231,7 @@ namespace pleos {
                             std::shared_ptr<scls::XML_Text> file_content = scls::xml(window_struct()->balises_shared_ptr(), scls::format_string_break_line(scls::read_file(parts[k].path), std::string(" ")));
                             file_content.get()->replace_balise_by_name("h3", "h4");file_content.get()->replace_balise_by_name("h2", "h3");
                             file_content.get()->replace_balise_by_name("important", "span class=\"important\"");
+                            utf_8_symbol_xml(file_content, true);
                             __saasf_images(file_content, needed_replica.get()->export_path(path));
                             scls::Replica_File_Variable_Element* current_part = needed_file.get()->variable_list(std::string("explaination_parts[]"))->new_element<scls::Replica_File_Variable_Element>();
                             std::shared_ptr<scls::XML_Text> title = file_content.get()->remove_balise_by_name("h1");
@@ -272,6 +273,7 @@ namespace pleos {
                             std::shared_ptr<scls::XML_Text> file_content = scls::xml(window_struct()->balises_shared_ptr(), scls::format_string_break_line(scls::read_file(parts[k].path), std::string(" ")));
                             file_content.get()->replace_balise_by_name("h3", "h4");file_content.get()->replace_balise_by_name("h2", "h3");
                             file_content.get()->replace_balise_by_name("important", "span class=\"important\"");
+                            utf_8_symbol_xml(file_content, true);
                             __saasf_images(file_content, needed_replica.get()->export_path(path));
                             scls::Replica_File_Variable_Element* current_part = needed_file.get()->variable_list(std::string("explaination_parts[]"))->new_element<scls::Replica_File_Variable_Element>();
                             std::shared_ptr<scls::XML_Text> title = file_content.get()->remove_balise_by_name("h1");

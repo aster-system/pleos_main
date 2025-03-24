@@ -106,6 +106,10 @@ namespace pleos {
         GUI_OBJECT_CREATION(scls::GUI_Object, a_home_page, "maths_home_page")
         else if(object_name == "maths_logic_page"){a_logic_page = *parent->new_object<scls::GUI_Object>(object_name);return a_logic_page;}
 
+        // Random
+        GUI_OBJECT_CREATION(scls::GUI_Object, a_random_page, "maths_random_page")
+        GUI_OBJECT_CREATION(scls::GUI_Text_Base<Text>, a_random_probability_page, "maths_random_probability_body")
+
         // Navigation
         else if(object_name == "maths_hub"){a_hub_button = *parent->new_object<scls::GUI_Text>(object_name);return a_hub_button;}
         else if(object_name == "maths_navigation") {a_navigation = *parent->new_object<scls::GUI_Scroller_Choice>(object_name);return a_navigation;}
@@ -1161,7 +1165,12 @@ namespace pleos {
         else if(page == "logic_definitions"){display_logic_definitions_page();}
         else if(page == "logic_language"){display_logic_language_page();}
         else if(page == "logic_set_theory"){display_logic_set_theory_page();}
+        // Random pages
+        GUI_OBJECT_SELECTION(display_random_probability_page(), "random_probability")
+
+        // If the page is unknown
         else {scls::print("PLEOS Maths", std::string("Unknown page \"") + page + std::string("\"."));return;}
+
 
         // Handle navigation
         if(!a_navigation.get()->contains_selected_object(page)){a_navigation.get()->select_object(page);}

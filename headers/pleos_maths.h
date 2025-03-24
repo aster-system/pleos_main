@@ -59,6 +59,8 @@
 #define PLEOS_MATHS_GEOMETRY_DEFINITION_PAGE 401
 #define PLEOS_MATHS_GEOMETRY_VECTOR_PAGE 402
 #define PLEOS_MATHS_GEOMETRY_REDACTION_PAGE 450
+// Random pages
+#define PLEOS_MATHS_RANDOM_PAGE 500
 
 // The namespace "pleos" is used to simplify the all.
 namespace pleos {
@@ -305,6 +307,10 @@ namespace pleos {
         inline scls::GUI_Text_Input* geometry_redaction_vector_name() const {return a_geometry_redaction_vector_name.get();};
         inline scls::GUI_Text_Input* geometry_redaction_vector_x() const {return a_geometry_redaction_vector_x.get();};
         inline scls::GUI_Text_Input* geometry_redaction_vector_y() const {return a_geometry_redaction_vector_y.get();};
+
+        // Returns random
+        GUI_PAGE(scls::GUI_Object, a_random_page, PLEOS_MATHS_RANDOM_PAGE, random_page, display_random_page, hide_all);
+        GUI_PAGE(scls::GUI_Text_Base<Text>, a_random_probability_page, PLEOS_MATHS_RANDOM_PAGE, random_probability_page, display_random_probability_page, display_random_page);
 
         // Home
         GUI_PAGE(scls::GUI_Text_Base<Text>, a_home_definition_page, PLEOS_MATHS_HOME_PAGE, home_definition_page, display_home_definition_page, display_home_page);

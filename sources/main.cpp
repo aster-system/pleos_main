@@ -65,18 +65,6 @@ void draw(std::shared_ptr<scls::Image> img, std::vector<double>& value_1, std::v
 }*/
 
 int main(int argc, char* argv[]) {
-    /*pleos::Matrice mat = pleos::Matrice("Mat", 3, 3);
-    mat.set(0, 0, 0);mat.set(1, 0, scls::Fraction(1, 2));mat.set(2, 0, scls::Fraction(1, 2));
-    mat.set(0, 1, scls::Fraction(1, 2));mat.set(1, 1, 0);mat.set(2, 1, scls::Fraction(1, 2));
-    mat.set(0, 2, scls::Fraction(1, 3));mat.set(1, 2, scls::Fraction(1, 3));mat.set(2, 2, scls::Fraction(1, 3));
-    pleos::Matrice mat_base = pleos::Matrice("M", 3);
-    mat_base.set(0, 1);mat_base.set(1, 0);mat_base.set(2, 0);
-    for(int i = 0;i<static_cast<int>(10);i++) {
-        std::cout << "R " << mat_base.to_std_string() << std::endl;
-        mat_base = mat_base * mat;
-    }
-    return 0;//*/
-
     pleos::Pleos_Window window(900, 600, argv[0]);
     window.load_from_xml("assets/window.txt");
 

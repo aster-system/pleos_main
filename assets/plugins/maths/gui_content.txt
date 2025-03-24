@@ -116,3 +116,4 @@
 <include src="gui_content_function.txt">
 <include src="gui_content_geometry.txt">
 <include src="gui_content_logic.txt">
+<include src="gui_content_random.txt">

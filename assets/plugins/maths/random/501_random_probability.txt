@@ -1,0 +1,32 @@
+<h1>Les probabilités</h1>
+
+
+
+<h2>La théorie des probabilités</h2>
+
+<h3>Qu'est ce qu'est une probabilité ?</h3>
+<p>
+Bien que la notion de "probabilité" soit assez triviale, la définir précisément est assez complexe (comme pour un axiome).
+En mathématiques pure, <span class="important">une probabilité représente une quantité de possibilités (entre 0 et 1) qu'une chose (ici nommé un évènement) étudiée se passe</span>.
+Cette quantité de possibilités peut aussi être appelée "chance" (ou "risque" selon le contexte), et peut s'exprimer en une valeur entre 0 et 100, nommé un pourcentage, en multipliant la valeur entre 0 et 1 par 100 (une simple remise à l'échelle).
+Pour étudier des probabilités, il faut étudier un objet qui pourra y faire face.
+Pour cela, nous allons définir ce que l'on appelle un espace de probabilité.
+Pour commencer, <span class="important">un espace de probabilité comprend un ensemble d'évènements possibles, nommé un univers</span>.
+Un univers peut être détaché d'un espace de probabilité, mais utiliser un espace de probabilité avec est plus simple pour l'étudier, surtout si l'univers contient une quantité vraiment trop grande (voir infini) d'évènements.
+En effet, <span class="important">on peut utiliser dans notre espace de probabilité un ensemble restreint d'évènements possibles, nommée une tribu (ou corps de Borel) d'évènements</span>.
+D'un point de vue algébrique, une tribu doit contenir un évènement impossible (de probabilité 0, souvent un ensemble vide) et un évènement certain (qui représente l'univers en lui même).
+Cela peut être intéressant si, par exemple, votre univers est l'intervalle de nombre entre 0 et 1 (donc, une infinité de nombre).
+Dans ce cas, vous pouvez définir une tribu d'évènements, comme l'évènement "nombre plus petit que 0.5" ou "nombre plus grand ou égal que 0.5" (avec un évènement impossible et un évènement certain).
+Cependant, pour être valable, votre tribu doit avoir une probabilité certaine (de 1) que l'un de ces évènements arrive : on dit qu'il partitionne l'univers (c'est le cas de l'exemple vu plus tôt).
+Si vous ne prenez que ça, vous avez ce que l'on appelle un espace probabilisable (qui permet ensuite de définir un espace de probabilité).
+Pour compléter notre espace, <span class="important">nous allons lui ajouter la possibilité d'effectuer un évènement aléatoire, dans ce que l'on appelle une mesure</span>.
+</p>
+<p>
+En mathématiques, <span class="important">la théorie qui étudie les probabilités est nommée la théorie des probabilités</span>.
+En réalité, cette théorie est assez récente (fin du 19ème siècle), bien que le concept soit vieux de plusieurs millénaires.
+Dans cette théorie, nous pouvons compter 3 axiomes principaux, introduits par le soviétique Andreï Nikolaïevitch Kolmogorov (1903 - 1987).
+Premièrement, le premier axiome pose <span class="important">qu'une probabilité ne peut être que entre 0 et 1</span>.
+Le deuxième axiome dit que la probabilité que l'évènement soit dans l'univers de définition est (en toute logique) de 1, dont une certitude.
+Le troisième est un peu plus complexe.
+Il établi que la somme de tous les probabilités des évènements (tous différents) d'une tribu quelconque de l'univers est égale à la probabilité qu'un évènement soit dans cette tribu.
+</p>
