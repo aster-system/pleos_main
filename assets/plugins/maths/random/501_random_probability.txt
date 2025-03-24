@@ -18,6 +18,9 @@ D'un point de vue algébrique, une tribu doit contenir un évènement impossible
 Cela peut être intéressant si, par exemple, votre univers est l'intervalle de nombre entre 0 et 1 (donc, une infinité de nombre).
 Dans ce cas, vous pouvez définir une tribu d'évènements, comme l'évènement "nombre plus petit que 0.5" ou "nombre plus grand ou égal que 0.5" (avec un évènement impossible et un évènement certain).
 Cependant, pour être valable, votre tribu doit avoir une probabilité certaine (de 1) que l'un de ces évènements arrive : on dit qu'il partitionne l'univers (c'est le cas de l'exemple vu plus tôt).
+D'ailleurs, selon les définitions, les éléments d'une tribu peuvent (pour certains d'entre eux) se chevaucher (comme rajouter un élémént "nombre plus grand que 0.2 et plus petit que 0.8" à l'exemple d'avant), ce qui ne pose pas vraiment de problème dans la défintion.
+Cependant, <span class="important">deux évènements d'une tribu qui ne partagent aucune possibilité de chevauchement sont dit incompatibles</span>.
+Ne soyez donc pas étonné si votre tribu peut partitionner l'univers d'une infinité de manière différente (il faut qu'il le partitionne au moins une fois pour exister).
 Si vous ne prenez que ça, vous avez ce que l'on appelle un espace probabilisable (qui permet ensuite de définir un espace de probabilité).
 Pour compléter notre espace, <span class="important">nous allons lui ajouter la possibilité d'effectuer un évènement aléatoire, dans ce que l'on appelle une mesure</span>.
 </p>
@@ -28,5 +31,5 @@ Dans cette théorie, nous pouvons compter 3 axiomes principaux, introduits par l
 Premièrement, le premier axiome pose <span class="important">qu'une probabilité ne peut être que entre 0 et 1</span>.
 Le deuxième axiome dit que la probabilité que l'évènement soit dans l'univers de définition est (en toute logique) de 1, dont une certitude.
 Le troisième est un peu plus complexe.
-Il établi que la somme de tous les probabilités des évènements (tous différents) d'une tribu quelconque de l'univers est égale à la probabilité qu'un évènement soit dans cette tribu.
+Il établi que la somme de toutes les probabilités des évènements incompatibles d'une tribu quelconque de l'univers est égale à la probabilité qu'un évènement soit dans cette tribu (et donc, égale à 1).
 </p>
