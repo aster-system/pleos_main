@@ -58,6 +58,10 @@
 		<choice name="geometry_redaction">Calculs rédigés</choice>
 		<choice name="geometry_redaction_graphic">Espace géométrique</choice>
 	</sub_choice>
+
+	<sub_choice name="random" displayer="Sciences du hasard">
+		<choice name="random_probability">Probabilités</choice>
+	</sub_choice>
 </gui_object>
 
 // Hub button
