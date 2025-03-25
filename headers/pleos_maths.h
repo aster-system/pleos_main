@@ -43,6 +43,7 @@
 #define PLEOS_MATHS_LOGIC_SET_THEORY_PAGE 102
 #define PLEOS_MATHS_LOGIC_LANGUAGE_PAGE 110
 // Algebra pages
+#define PLEOS_MATHS_ALGEBRA_STRUCTURES_PAGE 503
 #define PLEOS_MATHS_ALGEBRA_EQUATIONS_PAGE 505
 #define PLEOS_MATHS_ALGEBRA_SOLVER_PAGE 580
 // Arithmetic pages
@@ -257,6 +258,7 @@ namespace pleos {
         inline scls::GUI_Text* algebra_matrices_page() const {return a_algebra_matrices_page.get();};
         GUI_PAGE(scls::GUI_Text_Base<Text>, a_algebra_equations_page, PLEOS_MATHS_ALGEBRA_EQUATIONS_PAGE, algebra_equations_page, display_algebra_equations_page, display_algebra_page);
         GUI_PAGE(scls::GUI_Object, a_algebra_solver_page, PLEOS_MATHS_ALGEBRA_SOLVER_PAGE, algebra_solver_page, display_algebra_solver_page, display_algebra_page);
+        GUI_PAGE(scls::GUI_Object, a_algebra_structures_page, PLEOS_MATHS_ALGEBRA_STRUCTURES_PAGE, algebra_structures_page, display_algebra_structures_page, display_algebra_page);
         GUI_PAGE(scls::GUI_Text_Base<Text>, a_algebra_solver_redaction, PLEOS_MATHS_ALGEBRA_SOLVER_PAGE, algebra_solver_redaction, display_algebra_solver_redaction, display_algebra_solver_page);
         GUI_OBJECT(scls::GUI_Text_Input, a_algebra_solver_redaction_input, algebra_solver_redaction_input);
 

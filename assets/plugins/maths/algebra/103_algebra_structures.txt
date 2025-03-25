@@ -1,0 +1,27 @@
+<h1>Les structures algébriques</h1>
+
+
+
+<h2>Axiomatiser les opérations mathématiques</h2>
+
+<h3>La définition pure</h3>
+<p>
+Pour bénéficier d'une rigueur absolue lors de l'utilisation de nombres, les ensembles de nombres ne sont pas suffisants pour faire de l'arithmétique.
+En effet, il vous faut aussi préciser les opérations possibles sur ces nombres.
+Pour faire cela, <important>il faut lier les opérations possibles avec l'ensemble concerné, avec ce que l'on appelle une structure algébrique</important>.
+Parmi ces mêmes opérations, certaines peuvent être appliquer à deux opérandes similaires (par exemple, pour un nombre a, alors "a + a" est définie) : ce genre d'opérations sont nommées lois de composition interne.
+Les opérations de ce type les plus connues sont l'addition (et la soustraction) et la multiplication.
+En plus, <span class="important">ces mêmes opérations peuvent nécessiter des relations précises entre les opérandes</span>.
+Une opération est dite associativité si l'ordre d'opération lors de l'introduction d'un 3ème élément n'importe pas (quelque soit l'ordre et les éléments).
+</p>
+<math><mforall><mi>a, b, c</mi><min><mi>E</mi><mo>,</mo><mi>(a . b) . c</mi><mo>=</mo><mi>a . (b . c)</mi><mo>=</mo><mi>a . b . c</mi></math>
+<p>
+Dans la même idée, une opération est dite commuattive si l'ordre d'opération des deux opérandes n'importe pas (quelque soit l'ordre et les éléments).
+Ce n'est, par exemple, pas le cas de la division (3 / 2 n'est pas 2 / 3).
+</p>
+<math><mforall><mi>a, b</mi><min><mi>E</mi><mo>,</mo><mi>a . b</mi><mo>=</mo><mi>b . a</mi></math>
+
+<h3>Les types de structures algébriques</h3>
+<p>
+Selon la façon dont les opérations sont définies, la structure peut être de pleins de types différents.
+</p>

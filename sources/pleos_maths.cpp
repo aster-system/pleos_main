@@ -42,6 +42,7 @@ namespace pleos {
         GUI_OBJECT_CREATION(scls::GUI_Object, a_algebra_solver_page, "maths_algebra_solver_body")
         GUI_OBJECT_CREATION(scls::GUI_Text_Base<Text>, a_algebra_solver_redaction, "maths_algebra_solver_redaction")
         GUI_OBJECT_CREATION(scls::GUI_Text_Input, a_algebra_solver_redaction_input, "maths_algebra_solver_redaction_input")
+        GUI_OBJECT_CREATION(scls::GUI_Text_Base<Text>, a_algebra_structures_page, "maths_algebra_structures_body")
 
         // Arithmetic
         else if(object_name == "maths_arithmetic_definitions_body") {a_arithmetic_definitions_page = *parent->new_object<scls::GUI_Text>(object_name);return a_arithmetic_definitions_page;}
@@ -1142,6 +1143,7 @@ namespace pleos {
         GUI_OBJECT_SELECTION(display_algebra_equations_page(), "algebra_equations")
         else if(page == "algebra_matrices"){display_algebra_matrices_page();}
         GUI_OBJECT_SELECTION(display_algebra_solver_redaction(), "algebra_solver")
+        GUI_OBJECT_SELECTION(display_algebra_structures_page(), "algebra_structures")
         // Arithmetic pages
         else if(page == "arithmetic_definitions"){display_arithmetic_definitions_page();}
         else if(page == "arithmetic_calculator"){display_arithmetic_calculator_page();}
