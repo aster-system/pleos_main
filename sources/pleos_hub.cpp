@@ -118,6 +118,8 @@ namespace pleos {
         else if(word == std::string("logic")){if(add_determinant){to_return = std::string("la logique");}else{to_return = std::string("logique");};}
         else if(word == std::string("matter")){if(add_determinant){to_return = std::string("la matière");}else{to_return = std::string("matière");};}
         else if(word == std::string("mechanic")){if(add_determinant){to_return = std::string("la mécanique");}else{to_return = std::string("mécanique");};}
+        else if(word == std::string("probability")){if(add_determinant){to_return = std::string("les probabilités");}else{to_return = std::string("probabilités");};}
+        else if(word == std::string("random")){if(add_determinant){to_return = std::string("les sciences du hasard");}else{to_return = std::string("sciences du hasard");};}
 
         // Capitalise the first letter
         if(to_return == std::string()) {scls::print("PLEOS", std::string("Can't translate the word \"") + word + "\" for SAASF.");}

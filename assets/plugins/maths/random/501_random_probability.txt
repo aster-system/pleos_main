@@ -12,6 +12,24 @@ Cette quantité de possibilités peut aussi être appelée "chance" (ou "risque"
 Pour étudier des probabilités, il faut étudier un objet qui pourra y faire face.
 Pour cela, nous allons définir ce que l'on appelle un espace de probabilité.
 Pour commencer, <span class="important">un espace de probabilité comprend un ensemble d'évènements possibles, nommé un univers</span>.
+<p>
+</br><graphic width=700 ratio_base>
+    <background_color red=255 green=255 blue=255>
+    <base draw=0 width=10 height=10>
+    <circle border_radius=20 color=(255,100,100) radius=3 x=0 y=-1>
+
+    <text_style background_color=(0,0,0,0) font_size=70>
+
+    <text content="Univers d'un dé" x=0 y=4>
+
+    <text content="1" x=-3/2 y=-0>
+    <text content="2" x=0 y=-0>
+    <text content="3" x=3/2 y=-0>
+    <text content="4" x=-3/2 y=-2>
+    <text content="5" x=0 y=-2>
+    <text content="6" x=3/2 y=-2>
+</graphic></br>
+</p>
 Un univers peut être détaché d'un espace de probabilité, mais utiliser un espace de probabilité avec est plus simple pour l'étudier, surtout si l'univers contient une quantité vraiment trop grande (voir infini) d'évènements.
 En effet, <span class="important">on peut utiliser dans notre espace de probabilité un ensemble restreint d'évènements possibles, nommée une tribu (ou corps de Borel) d'évènements</span>.
 D'un point de vue algébrique, une tribu doit contenir un évènement impossible (de probabilité 0, souvent un ensemble vide) et un évènement certain (qui représente l'univers en lui même).
@@ -20,8 +38,29 @@ Dans ce cas, vous pouvez définir une tribu d'évènements, comme l'évènement 
 Cependant, pour être valable, votre tribu doit avoir une probabilité certaine (de 1) que l'un de ces évènements arrive : on dit qu'il partitionne l'univers (c'est le cas de l'exemple vu plus tôt).
 D'ailleurs, selon les définitions, les éléments d'une tribu peuvent (pour certains d'entre eux) se chevaucher (comme rajouter un élémént "nombre plus grand que 0.2 et plus petit que 0.8" à l'exemple d'avant), ce qui ne pose pas vraiment de problème dans la défintion.
 Cependant, <span class="important">deux évènements d'une tribu qui ne partagent aucune possibilité de chevauchement sont dit incompatibles</span>.
+En toute logique, une tribu doit contenir tous les éléments incompatibles de chacun de ces éléments.
+Par exemple, dans le cas que nous venons de voir, la tribu doit donc aussi contenir un élément "nombre plus petit ou égal que 0.2 ou plus grand ou égal que 0.8" (ou possiblement deux évènements "nombre plus petit ou égal que 0.2" et "nombre plus grand ou égal que 0.8").
 Ne soyez donc pas étonné si votre tribu peut partitionner l'univers d'une infinité de manière différente (il faut qu'il le partitionne au moins une fois pour exister).
 Si vous ne prenez que ça, vous avez ce que l'on appelle un espace probabilisable (qui permet ensuite de définir un espace de probabilité).
+</br><graphic width=700 ratio_base>
+    <background_color red=255 green=255 blue=255>
+    <base draw=0 width=10 height=10>
+    <circle border_radius=20 color=(255,100,100) radius=3 x=0 y=-1>
+
+    <text_style background_color=(0,0,0,0) font_size=70>
+
+    <text content="Tribu de l'univers dé" x=0 y=4>
+
+    <text content="1" x=-3/2 y=-0>
+    <text content="2" x=0 y=-0>
+    <text content="3" x=3/2 y=-0>
+    <text content="4" x=-3/2 y=-2>
+    <text content="5" x=0 y=-2>
+    <text content="6" x=3/2 y=-2>
+
+    <point name="p1" x=-3 y=-1><point name="p2" x=3 y=-1>
+    <form border_color=(0,0,0) border_radius=20 name="f1" points="p1;p2">
+</graphic></br>
 Pour compléter notre espace, <span class="important">nous allons lui ajouter la possibilité d'effectuer un évènement aléatoire, dans ce que l'on appelle une mesure</span>.
 </p>
 <p>
