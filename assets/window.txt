@@ -11,6 +11,9 @@
 <page_2d name="maths" type="gui">
 	<content src="plugins/maths/gui_content.txt" sub_paged></content>
 </page_2d>
+<page_2d name="notes" type="gui">
+	<content src="notes/notes_gui_content.txt" sub_paged></content>
+</page_2d>
 <page_2d name="physic" type="gui">
 	<content src="plugins/physic/gui_content.txt" sub_paged></content>
 </page_2d>

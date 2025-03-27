@@ -16,9 +16,9 @@ Pour commencer, <span class="important">un espace de probabilité comprend un en
 </br><graphic width=200 ratio_base>
     <background_color red=255 green=255 blue=255>
     <base draw=0 width=10 height=10>
-    <circle border_radius=20 color=(255,100,100) radius=3 x=0 y=-1>
+    <circle border_radius=5 color=(255,100,100) radius=3 x=0 y=-1>
 
-    <text_style background_color=(0,0,0,0) font_size=70>
+    <text_style background_color=(0,0,0,0) font_size=20>
 
     <text content="Univers d'un dé" x=0 y=4>
 
@@ -45,9 +45,9 @@ Si vous ne prenez que ça, vous avez ce que l'on appelle un espace probabilisabl
 </br><graphic width=200 ratio_base>
     <background_color red=255 green=255 blue=255>
     <base draw=0 width=10 height=10>
-    <circle border_radius=20 color=(255,100,100) radius=3 x=0 y=-1>
+    <circle border_radius=5 color=(255,100,100) radius=3 x=0 y=-1>
 
-    <text_style background_color=(0,0,0,0) font_size=70>
+    <text_style background_color=(0,0,0,0) font_size=20>
 
     <text content="Tribu de l'univers dé" x=0 y=4>
 
@@ -59,7 +59,7 @@ Si vous ne prenez que ça, vous avez ce que l'on appelle un espace probabilisabl
     <text content="6" x=3/2 y=-2>
 
     <point name="p1" x=-3 y=-1><point name="p2" x=3 y=-1>
-    <form border_color=(0,0,0) border_radius=20 name="f1" points="p1;p2">
+    <form border_color=(0,0,0) border_radius=5 name="f1" points="p1;p2">
 </graphic></br>
 Pour compléter notre espace, <span class="important">nous allons lui ajouter la possibilité d'effectuer un évènement aléatoire, dans ce que l'on appelle une mesure</span>.
 </p>

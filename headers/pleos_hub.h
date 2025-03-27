@@ -33,6 +33,7 @@
 #include "pleos_chemistry.h"
 #include "pleos_it.h"
 #include "pleos_maths.h"
+#include "pleos_notes.h"
 #include "pleos_physic.h"
 #include "pleos_settings.h"
 
@@ -121,6 +122,7 @@ namespace pleos {
             else if(object_name == "chemistry") {std::shared_ptr<Chemistry_Page> hub = *new_page_2d<Chemistry_Page>(object_name);return hub;}
             else if(object_name == "it") {std::shared_ptr<IT_Page> hub = *new_page_2d<IT_Page>(object_name);return hub;}
             else if(object_name == "maths") {std::shared_ptr<Maths_Page> hub = *new_page_2d<Maths_Page>(object_name);return hub;}
+            else if(object_name == "notes") {std::shared_ptr<Notes_Page> hub = *new_page_2d<Notes_Page>(object_name);return hub;}
             else if(object_name == "physic") {std::shared_ptr<Physic_Page> hub = *new_page_2d<Physic_Page>(object_name);return hub;}
             else if(object_name == "settings") {std::shared_ptr<Settings_Page> hub = *new_page_2d<Settings_Page>(object_name);return hub;}
             return scls::Window::__create_loaded_object_from_type(object_name, object_type);

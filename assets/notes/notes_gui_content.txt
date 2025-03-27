@@ -1,0 +1,67 @@
+//***************************************************
+//
+//   NAVIGATION
+//
+//***************************************************
+
+<gui_object name="notes_navigation" type="scroller_choice" visible>
+	<border bottom=1 left=1 right=1 top=1>
+	<height value=7/8 type=scale>
+	<width value=1/5 type=scale>
+	<x attach=left>
+	<y attach=top>
+
+	<when event="selected">
+		<background_color red=128 green=128 blue=128>
+	</when>
+
+	<when event="unselected">
+		<background_color red=255 green=255 blue=255>
+		<font_size value=20>
+	</when>
+
+	<choice name="home">Accueil</choice>
+    <choice name="input">Entrée (test)</choice>
+</gui_object>
+
+// Hub button
+<gui_object name="notes_hub" type="text" visible>
+	<border bottom=1 left=1 right=1 top=1>
+	<content font_size=30 alignment_horizontal=center>Retour au hub</content>
+	<height value=1/8 type=scale>
+	<width value=1/5 type=scale>
+	<x attach=left>
+	<y attach=bottom>
+
+	<when event=overflighted>
+        <cursor type="pointing_hand_cursor">
+    </when>
+</gui_object>
+
+//***************************************************
+//
+//   HOME
+//
+//***************************************************
+
+<gui_object name="notes_home_page" type="body" sub_page no_load>
+	<border bottom=1 left=1 right=1 top=1>
+	<height value=1 type=scale>
+	<width value=4/5 type=scale>
+	<x attach=right>
+	<y attach=top>
+</gui_object>
+<gui_object name="notes_home_title" type="text">
+    <content font_size=80 alignment_horizontal=center>Notes</content>
+	<height value=1/8 type=scale>
+    <parent name="notes_home_page">
+	<width value=1 type=scale>
+	<x value=1/2 type=object_scale>
+	<y attach=top>
+</gui_object>
+
+//***************************************************
+// Pages
+//***************************************************
+
+<include src="notes_gui_content_input.txt">
