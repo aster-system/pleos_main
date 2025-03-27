@@ -13,7 +13,7 @@ Pour étudier des probabilités, il faut étudier un objet qui pourra y faire fa
 Pour cela, nous allons définir ce que l'on appelle un espace de probabilité.
 Pour commencer, <span class="important">un espace de probabilité comprend un ensemble d'évènements possibles, nommé un univers</span>.
 <p>
-</br><graphic width=700 ratio_base>
+</br><graphic width=200 ratio_base>
     <background_color red=255 green=255 blue=255>
     <base draw=0 width=10 height=10>
     <circle border_radius=20 color=(255,100,100) radius=3 x=0 y=-1>
@@ -42,7 +42,7 @@ En toute logique, une tribu doit contenir tous les éléments incompatibles de c
 Par exemple, dans le cas que nous venons de voir, la tribu doit donc aussi contenir un élément "nombre plus petit ou égal que 0.2 ou plus grand ou égal que 0.8" (ou possiblement deux évènements "nombre plus petit ou égal que 0.2" et "nombre plus grand ou égal que 0.8").
 Ne soyez donc pas étonné si votre tribu peut partitionner l'univers d'une infinité de manière différente (il faut qu'il le partitionne au moins une fois pour exister).
 Si vous ne prenez que ça, vous avez ce que l'on appelle un espace probabilisable (qui permet ensuite de définir un espace de probabilité).
-</br><graphic width=700 ratio_base>
+</br><graphic width=200 ratio_base>
     <background_color red=255 green=255 blue=255>
     <base draw=0 width=10 height=10>
     <circle border_radius=20 color=(255,100,100) radius=3 x=0 y=-1>

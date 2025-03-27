@@ -36,21 +36,6 @@ SCLS_INIT
 /*
 double max_double(std::vector<double>& doubles){double current_max = doubles[0];for(int i = 1;i<static_cast<int>(doubles.size());i++){if(doubles[i] > current_max){current_max = doubles[i];}}return current_max;}
 
-    int width = 1000;
-    std::shared_ptr<scls::Image> img = std::make_shared<scls::Image>(width, width, scls::Color(255, 255, 255));
-
-    std::vector<double> value_1_exp_1 = {27.26, 26.98, 26.93, 26.07, 25.06, 17.99, 12.93, 9.07, 6.95, 5.63, 4.73, 3.57, 0.98};
-    std::vector<double> value_2_exp_1 = {0.409, 0.967, 1.39, 1.86, 2.05, 2.43, 2.64, 2.76, 2.8, 2.83, 2.84, 2.86, 2.93};
-
-    std::vector<double> value_1_exp_2 = {11.25, 11.27, 11.12, 11.10, 11.02, 10.01, 9.37, 8.44, 7.5, 5.63, 4.37, 2.5, 0.35};
-    std::vector<double> value_2_exp_2 = {0.182, 0.409, 0.75, 1.02, 1.26, 1.71, 1.86, 1.99, 2.09, 2.27, 2.46, 2.52, 2.7};
-
-    double max_value_1 = std::max(max_double(value_1_exp_1), max_double(value_1_exp_2));double max_value_2 = std::max(max_double(value_2_exp_1), max_double(value_2_exp_2));
-    draw(img, value_1_exp_1, value_2_exp_1, max_value_1, max_value_2);
-    draw(img, value_1_exp_2, value_2_exp_2, max_value_1, max_value_2);
-    img.get()->draw_circle(1, img.get()->width() - 1, img.get()->width(), scls::Color(255, 0, 0), 3);
-    img.get()->save_png("tests/lux.png");
-
 void draw(std::shared_ptr<scls::Image> img, std::vector<double>& value_1, std::vector<double>& value_2, double& max_value_1, double& max_value_2) {
     int last_x = 0; int last_y = 0;int width = img.get()->width();
     int separation_x = width / (value_1.size() - 1);
@@ -62,7 +47,44 @@ void draw(std::shared_ptr<scls::Image> img, std::vector<double>& value_1, std::v
         last_x = current_x;
         last_y = current_y;
     }
-}*/
+}
+
+    int width = 1000;
+    std::shared_ptr<scls::Image> img = std::make_shared<scls::Image>(width, width, scls::Color(255, 255, 255));
+
+    std::vector<double> value_1_exp_1 = {27.26, 26.98, 26.93, 26.07, 25.06, 17.99, 12.93, 9.07, 6.95, 5.63, 4.73, 3.57, 0.98};
+    std::vector<double> value_2_exp_1 = {0.409, 0.967, 1.39, 1.86, 2.05, 2.43, 2.64, 2.76, 2.8, 2.83, 2.84, 2.86, 2.93};
+
+    value_1_exp_1 = {20.8, 19.9, 18.88, 17.5, 15.8, 13.5, 7.5, 4.4, 0.061};
+    value_2_exp_1 = {0, 45.5, 84.1, 116, 150, 173, 200, 210, 224};
+
+    std::vector<double> value_1_exp_2 = {11.25, 11.27, 11.12, 11.10, 11.02, 10.01, 9.37, 8.44, 7.5, 5.63, 4.37, 2.5, 0.35};
+    std::vector<double> value_2_exp_2 = {0.182, 0.409, 0.75, 1.02, 1.26, 1.71, 1.86, 1.99, 2.09, 2.27, 2.46, 2.52, 2.7};
+
+    double max_value_1 = std::max(max_double(value_1_exp_1), max_double(value_1_exp_2));double max_value_2 = std::max(max_double(value_2_exp_1), max_double(value_2_exp_2));
+    draw(img, value_1_exp_1, value_2_exp_1, max_value_1, max_value_2);
+    //draw(img, value_1_exp_2, value_2_exp_2, max_value_1, max_value_2);
+    img.get()->draw_circle(1, img.get()->width() - 1, img.get()->width(), scls::Color(255, 0, 0), 3);
+
+    scls::Text_Image_Generator tig;
+    std::shared_ptr<pleos::Table> needed_table_shared_ptr = std::make_shared<pleos::Table>();
+    pleos::Table* needed_table = needed_table_shared_ptr.get();
+    std::shared_ptr<scls::Text_Style> needed_style = std::make_shared<scls::Text_Style>();
+    needed_table->case_at(0, 0)->image = tig.image_shared_ptr("Intensité", *needed_style.get());
+    needed_table->case_at(1, 0)->image = tig.image_shared_ptr("Tension", *needed_style.get());
+    needed_table->case_at(2, 0)->image = tig.image_shared_ptr("Puissance", *needed_style.get());
+    needed_table->case_at(3, 0)->image = tig.image_shared_ptr("Résistance", *needed_style.get());
+    for(int i = 0;i<static_cast<int>(value_1_exp_1.size());i++){
+        needed_table->case_at(0, i + 1)->image = tig.image_shared_ptr(scls::format_number_to_text(value_2_exp_1[i]), *needed_style.get());
+        needed_table->case_at(1, i + 1)->image = tig.image_shared_ptr(scls::format_number_to_text(value_1_exp_1[i]), *needed_style.get());
+        needed_table->case_at(2, i + 1)->image = tig.image_shared_ptr(scls::format_number_to_text(value_1_exp_1[i] * value_2_exp_1[i]), *needed_style.get());
+        needed_table->case_at(3, i + 1)->image = tig.image_shared_ptr(scls::format_number_to_text(value_2_exp_1[i] / value_1_exp_1[i]), *needed_style.get());
+    }
+
+    img.get()->save_png("tests/lux.png");
+    needed_table->to_image().get()->save_png("tests/table.png");
+
+//*/
 
 int main(int argc, char* argv[]) {
     pleos::Pleos_Window window(900, 600, argv[0]);
