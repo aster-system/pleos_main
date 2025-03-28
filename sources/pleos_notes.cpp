@@ -44,6 +44,7 @@ namespace pleos {
 
         // Input page
         GUI_OBJECT_CREATION(scls::GUI_Object, a_input_page, "notes_input_page")
+        GUI_OBJECT_CREATION(scls::GUI_Text_Base<Text>, a_input_representation, "notes_input_representation")
 
         return scls::GUI_Page::__create_loaded_object_from_type(object_name, object_type, parent);
     }

@@ -1184,7 +1184,7 @@ namespace pleos {
         scls::GUI_Page::update_event();
         check_navigation();
 
-        if(window_struct()->key_pressed_during_this_frame("right control")){window_struct()->hide_all_pages_2d();window_struct()->display_page_2d("notes");}
+        if(window_struct()->key_pressed_during_this_frame("up arrow")){window_struct()->hide_all_pages_2d();window_struct()->display_page_2d("notes");}
 
         if(current_page() != PLEOS_MATHS_ALGEBRA_SOLVER_PAGE && current_page() != PLEOS_MATHS_ARITHMETIC_CALCULATOR_PAGE && current_page() != PLEOS_MATHS_ARITHMETIC_CALCULATOR_CONGRUENCE_CIRCLE_PAGE && window_struct()->key_pressed_during_this_frame("left control")){display_geometry_pythagorean_theorem_demonstration();}
 

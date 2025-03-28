@@ -19,3 +19,13 @@
 	<x value=1/2 type=object_scale>
 	<y attach=top>
 </gui_object>
+
+<gui_object name="notes_input_representation" type="text">
+	<content max_width=0 src="../tests/math_28_03_25.txt"></content>
+	<height value=1 type=scale>
+	<parent name="notes_input_page">
+	<texture alignment_horizontal=left alignment_vertical=top>
+	<width value=4/5 type=scale>
+	<x attach=right>
+	<y attach=top>
+</gui_object>

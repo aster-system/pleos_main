@@ -92,7 +92,7 @@ namespace pleos {
         GUI_PAGE(scls::GUI_Object, a_input_page, PLEOS_NOTES_INPUT_PAGE, input_page, display_input_page, hide_all);
 
         // Input handling
-
+        GUI_OBJECT(scls::GUI_Text_Base<Text>, a_input_representation, input_representation);
 
     private:
 

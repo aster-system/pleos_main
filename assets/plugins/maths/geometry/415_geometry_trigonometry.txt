@@ -1,1 +1,10 @@
 <h1>La trigonométrie</h1>
+
+
+
+<h3>Les propriétés des équations trigonométriques</h3>
+<p>
+Certaines équations font intervenir des fonctions trigonométriques : <span class="important">ces équations sont dites trigonométriques</span>.
+D'un point de vue pûrement géométrique, le plus simple pour résoudre ce genre d'équations est d'utiliser les propriétés du cercle trigonométrique (chercher un point ou un intervalle, grâce aux valeurs remarquables).
+
+</p>
