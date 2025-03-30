@@ -49,6 +49,9 @@ namespace pleos {
         // Loads an object in a page from XML
         virtual std::shared_ptr<scls::GUI_Object> __create_loaded_object_from_type(std::string object_name, std::string object_type, scls::GUI_Object* parent);
 
+        // Loads the representation of the input
+        std::shared_ptr<scls::Image> input_load_presentation_image(std::string input);
+
         //******************
         //
         // Check the events
@@ -93,6 +96,7 @@ namespace pleos {
 
         // Input handling
         GUI_OBJECT(scls::GUI_Text_Base<Text>, a_input_representation, input_representation);
+        GUI_OBJECT(scls::GUI_Text_Input, a_input_user, input_user);
 
     private:
 

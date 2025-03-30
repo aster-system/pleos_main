@@ -399,6 +399,7 @@ FodyWeavers.xsd
 *.sln.iml
 
 # Added by developer
+assets/tests/
 glad.c
 dev_part/
 matix/

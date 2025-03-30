@@ -45,8 +45,16 @@ namespace pleos {
         // Input page
         GUI_OBJECT_CREATION(scls::GUI_Object, a_input_page, "notes_input_page")
         GUI_OBJECT_CREATION(scls::GUI_Text_Base<Text>, a_input_representation, "notes_input_representation")
+        GUI_OBJECT_CREATION(scls::GUI_Text_Input, a_input_user, "notes_input_user")
 
         return scls::GUI_Page::__create_loaded_object_from_type(object_name, object_type, parent);
+    }
+
+    // Loads the representation of the input
+    std::shared_ptr<scls::Image> Notes_Page::input_load_presentation_image(std::string input) {
+        scls::Text_Image_Generator tig;scls::Text_Style needed_style;
+        std::shared_ptr<scls::Image> image = tig.image_shared_ptr(input, needed_style);
+        return image;
     }
 
     //******************
@@ -80,6 +88,8 @@ namespace pleos {
         check_navigation();
         if(hub_button()->is_clicked_during_this_frame(GLFW_MOUSE_BUTTON_LEFT)) {window_struct()->hide_all_pages_2d();window_struct()->display_page_2d("hub");}
 
-        if(window_struct()->key_pressed_during_this_frame("right control")){window_struct()->hide_all_pages_2d();window_struct()->display_page_2d("maths");}
+        if(window_struct()->key_pressed_during_this_frame("up arrow")){window_struct()->hide_all_pages_2d();window_struct()->display_page_2d("maths");}
+
+        if(window_struct()->key_pressed_during_this_frame("left control")){input_representation()->set_text(scls::format_string_as_plain_text(input_user()->text()));}
     }
 }

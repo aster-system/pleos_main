@@ -7,9 +7,18 @@
 <h3>L'objet "graphe"</h3>
 <p>
 Le graphe est une structure mathématique, qu'il est possible d'implémenter en structure de données informatique.
-Donc, <important>un graphe représente un ensemble, dans lequel les éléments sont en relation entre eux</important>.
+Mathématiquement, <important>un graphe représente un couple entre un ensemble d'éléments, et un ensemble dans lequel des relations entre éléments sont spécifiées</important>.
 Dans un arbre, chaque élément est nommé un noeud, et les relations sont nommés des liens.
-En informatique, <important>ces liens représentent des moyens d'accés aux données liées</important>.
+Selon la façon dont sont représentés les liens, l'arbre peut avoir plusieurs charactéristiques différentes.
+Si deux éléments sont liés dans un seul sens possible, alors le graphe est dit orienté, sinon il est non-orienté.
+<span class="important">Si les liens contiennent aussi une valeur, le graphe est dit pondéré</span>.
+Dans le cas d'une représentation d'un réseau sous forme de graphe, chaque valeurs des liens peut représenter la bande passante du réseau.
+C'est la même chose pour les noeuds : <span class="important">si les noeuds contiennent une valeur, le graphe est dit étiqueté</span>.
+Topologiquement, l'étude des combinaisons des liens des graphes permettent d'avoir plus de données sur ce graphe.
+Par exemple, si il existe un chemin dans le graphe permettant d'aller d'un noeud à... lui même en passant par d'autres noeuds, le graphe est dit cyclique (sinon, il est acyclique).
+De plus, un graphe où il est possible d'aller vers tous les éléments (quelque soit l'élément de départ) est dit connexe.
+Des graphes peuvent interdire l'accès de certains noeuds par d'autres : ils sont dit non connexes.
+De plus, <span class="important">nous pouvons représenter les liens d'un graphe de pleins de manières possibles, comme avec une matrice (dite adjacente)</span>.
 </p>
 <tree>
     <node name="Ville 1" x=0 y=0></node>
@@ -18,6 +27,9 @@ En informatique, <important>ces liens représentent des moyens d'accés aux donn
     <node name="Ville 4" x=-1 y=1/2><link id=2><link id=0></node>
     <node name="Ville 5" x=1/2 y=-1/2><link id=3></node>
 </tree>
+<p>
+En informatique, <important>ces liens représentent des moyens d'accés aux données liées</important>.
+</p>
 
 <h3>L'objet "arbre"</h3>
 <p>
