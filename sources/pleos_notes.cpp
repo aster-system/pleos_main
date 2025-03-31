@@ -93,7 +93,7 @@ namespace pleos {
         if(window_struct()->key_pressed_during_this_frame("left control")){input_representation()->set_text(scls::format_string_as_plain_text(input_user()->text()));}
 
         // Temporary load / save
-        if(window_struct()->key_pressed_during_this_frame("s") && (window_struct()->key_pressed_during_this_frame("left control") || window_struct()->key_pressed_during_this_frame("right control"))){scls::write_in_file("tests/lesson.txt", input_user()->text());}
+        if(window_struct()->key_pressed_during_this_frame("s") && (window_struct()->key_pressed("left control") || window_struct()->key_pressed("right control"))){scls::write_in_file("tests/lesson.txt", input_user()->text());}
         if(window_struct()->key_pressed_during_this_frame("$") && window_struct()->key_pressed_during_this_frame("left shift")){input_user()->set_text(scls::read_file("tests/lesson.txt"));}
     }
 }
