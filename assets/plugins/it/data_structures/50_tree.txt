@@ -22,8 +22,8 @@ De plus, <span class="important">nous pouvons représenter les liens d'un graphe
 </p>
 <tree>
     <node name="Ville 1" x=0 y=0></node>
-    <node name="Ville 2" x=0 y=-1><link id=0></node>
-    <node name="Ville 3" x=3/2 y=1/2><link id=1></node>
+    <node name="Ville 2" x=0 y=-1><link id=0 value="2km"></node>
+    <node name="Ville 3" x=3/2 y=1/2><link id=1 value="15km"></node>
     <node name="Ville 4" x=-1 y=1/2><link id=2><link id=0></node>
     <node name="Ville 5" x=1/2 y=-1/2><link id=3></node>
 </tree>

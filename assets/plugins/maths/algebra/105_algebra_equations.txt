@@ -64,5 +64,24 @@ C'est le cas de certaines équations nécessitant des vecteurs.
 <h2>Les différents types d'équations</h2>
 
 <h3>Les équations fonctionnelles</h3>
+<p>
+Algébriquement, <span class="important">il est possible de définir une équation ayant des fonctions comme inconnues : ce sont des équations fonctionelles</span>.
+</p>
+<p>
+Des fois, <span class="important">nous cherchons une relation entre une fonction et sa dérivée (ou une forme ressemblant à sa dérivée) : ces équations sont dites différentielles</span>.
+En général, les équations étudiées, (dites différentielles d'ordre un), ont cette forme :
+</p>
+<math><mexists>a, b, f<min>R vers R, f' - a * f = b <mequi> f' = a * f + b</math>
+<p>
+Ce genre d'équations sont assez simple à résoudre, grâce à la fonction exponentielle (sa dérivée étant elle même).
+En effet :
+</p>
+<math><mforall>r<min>R, f = r * e<msup>a * x</msup><mo>-</mo><mfrac><mi>b</mi><mi>a</mi></mfrac></math>
+<p>
+Comme "r" peut être n'importe quel nombre, <span class="important">il y a une infinité de valeur possibles</span>.
+Si b est égal à 0, l'équation est dite homogène.
+Dans certains cas, la valeur "y" pour un certain "x" de cette fonction peut être connue.
+Donc <span class="important">pour résoudre l'équation, il faut prendre la valeur pour ce "x", ce qui donne a * f = b - 1</span>.
+</p>
 
 <h3>Les équations carthésiennes</h3>
