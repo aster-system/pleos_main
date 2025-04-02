@@ -45,6 +45,7 @@ namespace pleos {
         else if(object_name == "physic_mechanic_dynamic_body"){a_physic_mechanic_dynamic_body = *parent->new_object<scls::GUI_Text>(object_name);return a_physic_mechanic_dynamic_body;}
         else if(object_name == "physic_mechanic_kinematic_body"){a_physic_mechanic_kinematic_body = *parent->new_object<scls::GUI_Text>(object_name);return a_physic_mechanic_kinematic_body;}
         GUI_OBJECT_CREATION(scls::GUI_Text_Base<Text>, a_physic_mechanic_shocks_body, "physic_mechanic_shocks_body")
+        GUI_OBJECT_CREATION(scls::GUI_Text_Base<Text>, a_physic_mechanic_thermodynamic_body, "physic_mechanic_thermodynamic_body")
 
         // Home
         GUI_OBJECT_CREATION(scls::GUI_Text_Base<Text>, a_home_definition_body, "physic_home_definition_body")
@@ -128,9 +129,10 @@ namespace pleos {
             GUI_OBJECT_SELECTION(display_matter_quantum_mechanic_page(), "matter_quantum_mechanic")
 
             // Mechanic pages
-            GUI_OBJECT_SELECTION(display_mechanic_shocks_body(), "mechanic_shocks")
             else if(page == "mechanic_dynamic"){display_mechanic_dynamic_page();}
             else if(page == "mechanic_kinematic"){display_mechanic_kinematic_page();}
+            GUI_OBJECT_SELECTION(display_mechanic_shocks_body(), "mechanic_shocks")
+            GUI_OBJECT_SELECTION(display_mechanic_thermodynamic_body(), "mechanic_thermodynamic")
 
             // Home pages
             GUI_OBJECT_SELECTION(display_home_definition_body(), "home")

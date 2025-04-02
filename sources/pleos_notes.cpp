@@ -39,15 +39,45 @@ namespace pleos {
         if(object_name == "notes_home_page") {a_home_page = *parent->new_object<scls::GUI_Object>(object_name);return a_home_page;}
 
         // Navigation
+        GUI_OBJECT_CREATION(scls::GUI_File_Explorer, a_file_explorer_page, "notes_file_explorer_page")
         else if(object_name == "notes_hub"){a_hub_button = *parent->new_object<scls::GUI_Text>(object_name);return a_hub_button;}
         else if(object_name == "notes_navigation") {a_navigation = *parent->new_object<scls::GUI_Scroller_Choice>(object_name);return a_navigation;}
+        GUI_OBJECT_CREATION(scls::GUI_Object, a_project_page, "notes_project_page")
+        GUI_OBJECT_CREATION(scls::GUI_Object, a_project_note_creator_page, "notes_project_note_creator_page")
+
+        // Home page
+        GUI_OBJECT_CREATION(scls::GUI_Text, a_home_new_notes, "notes_home_new_notes")
 
         // Input page
         GUI_OBJECT_CREATION(scls::GUI_Object, a_input_page, "notes_input_page")
         GUI_OBJECT_CREATION(scls::GUI_Text_Base<Text>, a_input_representation, "notes_input_representation")
         GUI_OBJECT_CREATION(scls::GUI_Text_Input, a_input_user, "notes_input_user")
 
+        // Project page
+        GUI_OBJECT_CREATION(scls::GUI_Text, a_project_new_note, "notes_project_new_note")
+        GUI_OBJECT_CREATION(scls::GUI_Text_Input, a_project_note_creator_name, "notes_project_note_creator_name")
+        GUI_OBJECT_CREATION(scls::GUI_Text, a_project_note_creator_validate, "notes_project_note_creator_validate")
+
         return scls::GUI_Page::__create_loaded_object_from_type(object_name, object_type, parent);
+    }
+
+    // Loads the navigation
+    void Notes_Page::load_navigation() {
+        // Re-load the navigation
+        navigation()->reset();
+        navigation()->add_object("home", "Accueil");
+        navigation()->add_object("notes_project", "Notes actuelles");
+
+        // Loads the notes
+        for(int i = 0;i<static_cast<int>(current_notes()->replica_files().size());i++) {
+            navigation()->add_object("input-" + std::to_string(i), current_notes()->replica_files()[i].get()->internal_path);
+        }
+    }
+
+    // Loads the notes pattern
+    void Notes_Page::load_notes_pattern() {
+        std::shared_ptr<scls::Pattern_Project>& pattern = a_current_state.notes_pattern;
+        pattern = std::make_shared<scls::Pattern_Project>("notes_pattern", "");
     }
 
     // Loads the representation of the input
@@ -55,6 +85,28 @@ namespace pleos {
         scls::Text_Image_Generator tig;scls::Text_Style needed_style;
         std::shared_ptr<scls::Image> image = tig.image_shared_ptr(input, needed_style);
         return image;
+    }
+
+    // Creates new notes in the input
+    void Notes_Page::input_new_notes(std::string needed_path) {
+        // Check the pattern
+        if(notes_pattern() == 0){load_notes_pattern();}
+
+        // Create the project
+        std::shared_ptr<scls::Replica_Project>& notes = a_current_state.current_notes;
+        notes = std::make_shared<scls::Replica_Project>("notes", needed_path, notes_pattern_shared_ptr());
+
+        // Load the navigation
+        load_navigation();
+    }
+
+    // Creates a new note in the project
+    void Notes_Page::project_create_note(std::string note_name) {
+        // Create the note
+        current_notes()->new_replica_file(note_name, 0);
+
+        // Load the navigation
+        load_navigation();
     }
 
     //******************
@@ -66,8 +118,23 @@ namespace pleos {
     // Function called after the XML loading
     void Notes_Page::after_xml_loading(){scls::GUI_Page::after_xml_loading();display_home_page();}
 
+    // Checks the events of file explorer
+    void Notes_Page::check_file_explorer() {
+        if(file_explorer_page()->file_chosen()) {
+            // Creates notes
+            std::string needed_path = file_explorer_page()->current_path();
+            if(current_file_explorer_page() == PLEOS_NOTES_FILE_EXPLORER_NEW_NOTES) {input_new_notes(needed_path);}
+        }
+    }
+
     // Checks the events of hiding each pages
     void Notes_Page::check_hiding(){}
+
+    // Checks the events of home
+    void Notes_Page::check_home() {
+        // Create new notes
+        if(home_new_notes()->is_clicked_during_this_frame(GLFW_MOUSE_BUTTON_LEFT)) {display_file_explorer_page();file_explorer_page()->set_current_user_document_directory();set_current_file_explorer_page(PLEOS_NOTES_FILE_EXPLORER_NEW_NOTES);}
+    }
 
     // Checks the events of navigation
     void Notes_Page::check_navigation(){
@@ -78,7 +145,20 @@ namespace pleos {
             // Home pages
             if(page == "home"){display_home_page();}
             GUI_OBJECT_SELECTION(display_input_page(), "input")
+            GUI_OBJECT_SELECTION(display_project_page(), "notes_project")
         }
+    }
+
+    // Checks the events of project
+    void Notes_Page::check_project() {
+        // Create a note
+        if(project_new_note()->is_clicked_during_this_frame(GLFW_MOUSE_BUTTON_LEFT)){display_project_note_creator_page();}
+    }
+
+    // Checks the events of project note creator
+    void Notes_Page::check_project_note_creator() {
+        // Validate a note
+        if(project_note_creator_validate()->is_clicked_during_this_frame(GLFW_MOUSE_BUTTON_LEFT)){project_create_note(project_note_creator_name()->text());}
     }
 
     // Updates the events
@@ -86,6 +166,17 @@ namespace pleos {
         // Basic events
         scls::GUI_Page::update_event();
         check_navigation();
+
+        // File explorer events
+        if(current_page() == PLEOS_NOTES_FILE_EXPLORER_PAGE){check_file_explorer();}
+
+        // Home events
+        if(current_page() == PLEOS_NOTES_HOME_PAGE){check_home();}
+
+        // Project events
+        if(current_page() == PLEOS_NOTES_PROJECT_PAGE){check_project();}
+        if(current_page() == PLEOS_NOTES_PROJECT_NOTE_CREATOR_PAGE){check_project_note_creator();}
+
         if(hub_button()->is_clicked_during_this_frame(GLFW_MOUSE_BUTTON_LEFT)) {window_struct()->hide_all_pages_2d();window_struct()->display_page_2d("hub");}
 
         if(window_struct()->key_pressed_during_this_frame("up arrow")){window_struct()->hide_all_pages_2d();window_struct()->display_page_2d("maths");}

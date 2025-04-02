@@ -24,6 +24,7 @@
 		<choice name="mechanic_kinematic">La cinématique</choice>
 		<choice name="mechanic_dynamic">La dynamique</choice>
 		<choice name="mechanic_shocks">Les chocs et collisions</choice>
+		<choice name="mechanic_thermodynamic">La thermodynamique</choice>
 	</sub_choice>
 </gui_object>
 

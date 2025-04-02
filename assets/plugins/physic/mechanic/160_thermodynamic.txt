@@ -1,0 +1,69 @@
+<h1>La thermodynamique</h1>
+
+
+
+<h2>Une forme de dynamique</h2>
+
+<h3>Qu'est ce qu'est la thermodynamique ?</h3>
+<p>
+Pour comprendre ce mot, il suffit simplement de le composer.
+En effet, <span class="important">la thermodynamique représente l'étude de la dynamique (et donc, du comportement) de la température, et d'objets soumis à la température</span>.
+Nous pouvons étudier la thermodynamique de deux façons différentes : phénoménologique ou statistique.
+La thermodynamique phénoménologique consiste à ne prendre en compte que les phénomènes macroscopiques de la matière soumise à la température.
+Cependant, elle est obsolète, puisqu'elle ne permet pas de faire des prédictions très précises.
+<span class="important">La thermodynamique statistique consiste à étudier la matière directement au stade de molécules, et d'utiliser les statistiques dans l'étude</span>.
+En effet, avec plusieurs milliards de milliards (souvent) de molécules par grammes, nous sommes obliger de faire via des statistiques, et non une-par-une.
+Cela est possible car la température dépend directement de la matière, au stade de molécules.
+</p>
+<p>
+Pour faire de la thermodynamique, il y a un concept très important à connaitre : les systèmes thermodynamiques.
+Dans ce contexte, <span class="important">un système thermodynamique représente une partie de l'univers global, contenant donc un nombre fini (mais extrêmement élevé) de molécules</span>.
+Ce concept peut être bien réel (comme pour une bouteille de gaz), ou purement mathématique.
+Les limites du système sont nommées les parois du systèmes.
+Si le système peut échanger de la matière et de l'énergie avec l'extérieur, il est dit ouvert.
+<span class="important">Si le système ne peut qu'échanger de l'énergie avec l'extérieur, il est dit fermé</span> (ça peut être le cas d'une bouteille de gaz).
+Finalement, si il n'échange rien avec l'extérieur (ou si l'extérieur n'existe pas), le système est dit isolé (il représente son propre univers).
+<span class="important">L'idée avec ces système est de faire des moyennes de l'énergie que ses molécules contiennent pour faciliter les calculs</span>.
+Donc, il ne dois pas être trop grand pour rester représentatif de son contenu, mais pas trop petit pour rester simple à étudier.
+Voici deux exemples de deux systèmes, comportant 5 particules chacun.
+</p>
+<graphic>
+    <background_color white>
+    <base x=0 y=0 width=10 height=10>
+    
+    <circle color=red x=-3 y=2 radius=1/2>
+    <circle color=red x=3 y=1 radius=1/2>
+    <circle color=red x=4 y=-1 radius=1/2>
+    <circle color=red x=-1 y=-3 radius=1/2>
+    <circle color=red x=-2 y=4 radius=1/2>
+</graphic>
+<graphic>
+    <background_color white>
+    <base x=0 y=0 width=10 height=10>
+
+    <circle color=red x=-4 y=3 radius=1/2>
+    <circle color=red x=1 y=1 radius=1/2>
+    <circle color=red x=2 y=-4 radius=1/2>
+    <circle color=red x=-2 y=-2 radius=1/2>
+    <circle color=red x=3 y=1 radius=1/2>
+</graphic>
+<p>
+Pour comprendre la thermodynamique, il faut comprendre le concept de température.
+En physique, <span class="important">la température d'un corps représente le degré d'agitation de ses molécules</span>.
+Comme une agitation est un mouvement, alors (d'un point de vue très microscopique) l'énergie thermique est une forme d'énergie cinétique.
+Bien évidemment, cette agitation n'est pas visible à l'oeil nue (et, en réalité, ne l'est presque pas non plus au microscope optique).
+</p>
+<p>
+La thermodynamique est régit par 4 principes très importants (numérotés de 0 à 3).</br>
+Le principe zéro est très simple : <span class="important">si deux systèmes sont en équilibre thermique, et qu'on introduit un troisième système en équilibre thermique avec un seul (ou plus) des deux systèmes, alors il sera en équilibre avec l'autre</span>.
+En gros, deux système ayant une même température ne vont (ou, du moins, il est extrêmement peu probable) pas changer de température à eux tout seul.</br>
+Le premier principe de thermodynamique stipule que <span class="important">une modification de l'énergie totale dans un système fermée est toujours égale à la quantité d'énergie échangée avec l'extérieure</span>.
+L'énergie ne peut pas se créer (ou disparaître) comme par magie, elle vient toujours de quelque part : ce principe est aussi nommé le principe de conservation de l'énergie.
+En toute logique, si le système est isolé, alors l'énergie totale du système est toujours la même.</br>
+Le deuxième logique implique le concept d'entropie : <span class="important">la modification d'un système fermé provoque une modification de l'entropie, qui, dans sa totalité, ne peut qu'augmenter</span>.
+Selon le principe vue plus haut, une baisse d'entropie est possible si l'extérieur en gagne autant.
+On dit de l'entropie gagnée qu'elle est crée par le système.
+D'un point de vue thermique, cela consiste à dire "le chaud va toujours vers le froid" : le chaud représente peu d'entropie, et le froid représente beaucoup d'entropie.</br>
+Le troisième principe de la thermodynamique, le principe de Nernst, s'intéresse aussi à l'entropie : un corps dont la température tend vers le zéro absolu voit son entropie tendre vers le zéro absolu.</br>
+Ces 4 postulats peuvent aussi s'écrire sous forme axiome mathématique.
+</p>

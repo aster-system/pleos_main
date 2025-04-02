@@ -42,7 +42,8 @@
 #define PLEOS_PHYSIC_MATTER_QUANTUM_MECHANIC_PAGE 120
 #define PLEOS_PHYSIC_MATTER_BOSONS_PAGE 150
 // Mechanic pages
-#define PLEOS_PHYSIC_MECHANIC_SHOCKS_PAGE 120
+#define PLEOS_PHYSIC_MECHANIC_SHOCKS_PAGE 220
+#define PLEOS_PHYSIC_MECHANIC_THERMODYNAMIC_PAGE 260
 
 // The namespace "pleos" is used to simplify the all.
 namespace pleos {
@@ -140,9 +141,10 @@ namespace pleos {
         GUI_PAGE(scls::GUI_Text_Base<Text>, a_physic_matter_quantum_mechanic_page, PLEOS_PHYSIC_MATTER_QUANTUM_MECHANIC_PAGE, matter_quantum_mechanic_page, display_matter_quantum_mechanic_page, display_matter_page);
 
         // Mechanic
-        GUI_PAGE(scls::GUI_Text_Base<Text>, a_physic_mechanic_shocks_body, PLEOS_PHYSIC_MECHANIC_SHOCKS_PAGE, mechanic_shocks_body, display_mechanic_shocks_body, display_mechanic_page);
         inline scls::GUI_Text* mechanic_dynamic_page() const {return a_physic_mechanic_dynamic_body.get();};
         inline scls::GUI_Text* mechanic_kinematic_page() const {return a_physic_mechanic_kinematic_body.get();};
+        GUI_PAGE(scls::GUI_Text_Base<Text>, a_physic_mechanic_shocks_body, PLEOS_PHYSIC_MECHANIC_SHOCKS_PAGE, mechanic_shocks_body, display_mechanic_shocks_body, display_mechanic_page);
+        GUI_PAGE(scls::GUI_Text_Base<Text>, a_physic_mechanic_thermodynamic_body, PLEOS_PHYSIC_MECHANIC_THERMODYNAMIC_PAGE, mechanic_thermodynamic_body, display_mechanic_thermodynamic_body, display_mechanic_page);
 
    private:
 

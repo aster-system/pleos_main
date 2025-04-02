@@ -36,6 +36,15 @@
 // Possible pages
 #define PLEOS_NOTES_HOME_PAGE 0
 #define PLEOS_NOTES_INPUT_PAGE 100
+#define PLEOS_NOTES_PROJECT_PAGE 200
+#define PLEOS_NOTES_PROJECT_NOTE_CREATOR_PAGE 210
+// File explorer
+#define PLEOS_NOTES_FILE_EXPLORER_PAGE 10000
+#define PLEOS_NOTES_FILE_EXPLORER_NEW_NOTES 10001
+#define PLEOS_NOTES_FILE_EXPLORER_OPEN_NOTES 10002
+
+// Include SCLS documentalist Agatha if needed
+#include "../../../scls-documentalist-agatha/scls_documentalist.h"
 
 // The namespace "pleos" is used to simplify the all.
 namespace pleos {
@@ -49,8 +58,22 @@ namespace pleos {
         // Loads an object in a page from XML
         virtual std::shared_ptr<scls::GUI_Object> __create_loaded_object_from_type(std::string object_name, std::string object_type, scls::GUI_Object* parent);
 
+        // Loads the navigation
+        void load_navigation();
+        // Loads the notes pattern
+        void load_notes_pattern();
         // Loads the representation of the input
         std::shared_ptr<scls::Image> input_load_presentation_image(std::string input);
+        // Creates new notes in the input
+        void input_new_notes(std::string needed_path);
+
+        // Creates a new note in the project
+        void project_create_note(std::string note_name);
+
+        // Getters and setters
+        inline scls::Replica_Project* current_notes() const {return a_current_state.current_notes.get();};
+        inline scls::Pattern_Project* notes_pattern() const {return a_current_state.notes_pattern.get();};
+        inline std::shared_ptr<scls::Pattern_Project> notes_pattern_shared_ptr() const {return a_current_state.notes_pattern;};
 
         //******************
         //
@@ -60,10 +83,17 @@ namespace pleos {
 
         // Function called after the XML loading
         virtual void after_xml_loading();
+        // Checks the events of file explorer
+        void check_file_explorer();
         // Checks the events of hiding each pages
         void check_hiding();
+        // Checks the events of input
+        void check_home();
         // Checks the events of navigation
         void check_navigation();
+        // Checks the events of project
+        void check_project();
+        void check_project_note_creator();
         // Updates the events
         virtual void update_event();
 
@@ -77,7 +107,9 @@ namespace pleos {
         inline void hide_all(){hide_sub_pages(true);check_hiding();};
 
         // Returns / resets the current page
+        inline unsigned short current_file_explorer_page() const {return a_current_state.current_file_explorer_page;};
         inline unsigned short current_page() const {return a_current_state.current_page;};
+        inline void set_current_file_explorer_page(unsigned short new_page) {a_current_state.current_file_explorer_page = new_page;};
         inline void set_current_page(unsigned short new_page) {a_current_state.current_page = new_page;};
 
         //******************
@@ -91,17 +123,35 @@ namespace pleos {
         inline scls::GUI_Scroller_Choice* navigation() const {return a_navigation.get();};
 
         // Returns pages
+        GUI_PAGE(scls::GUI_File_Explorer, a_file_explorer_page, PLEOS_NOTES_FILE_EXPLORER_PAGE, file_explorer_page, display_file_explorer_page, hide_all);
         GUI_PAGE(scls::GUI_Object, a_home_page, PLEOS_NOTES_HOME_PAGE, home_page, display_home_page, hide_all);
         GUI_PAGE(scls::GUI_Object, a_input_page, PLEOS_NOTES_INPUT_PAGE, input_page, display_input_page, hide_all);
+        GUI_PAGE(scls::GUI_Object, a_project_page, PLEOS_NOTES_PROJECT_PAGE, project_page, display_project_page, hide_all);
+        GUI_PAGE(scls::GUI_Object, a_project_note_creator_page, PLEOS_NOTES_PROJECT_NOTE_CREATOR_PAGE, project_note_creator_page, display_project_note_creator_page, hide_all);
+
+        // Home handling
+        GUI_OBJECT(scls::GUI_Text, a_home_new_notes, home_new_notes);
 
         // Input handling
         GUI_OBJECT(scls::GUI_Text_Base<Text>, a_input_representation, input_representation);
         GUI_OBJECT(scls::GUI_Text_Input, a_input_user, input_user);
 
+        // Project handling
+        GUI_OBJECT(scls::GUI_Text, a_project_new_note, project_new_note);
+        GUI_OBJECT(scls::GUI_Text_Input, a_project_note_creator_name, project_note_creator_name);
+        GUI_OBJECT(scls::GUI_Text, a_project_note_creator_validate, project_note_creator_validate);
+
     private:
 
         // Current state of the page
         struct {
+            // Current notes
+            std::shared_ptr<scls::Replica_Project> current_notes;
+            // Pattern needed for notes
+            std::shared_ptr<scls::Pattern_Project> notes_pattern;
+
+            // Current file explorer page
+            unsigned short current_file_explorer_page = PLEOS_NOTES_FILE_EXPLORER_NEW_NOTES;
             // Current page
             unsigned short current_page = PLEOS_NOTES_HOME_PAGE;
         } a_current_state;
