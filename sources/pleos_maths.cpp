@@ -400,9 +400,13 @@ namespace pleos {
                 if(current_function_name == function_name) {
                     // Analyse the argument
                     if(type == "area_under_curve") {
-                        int point_number = 0;int rect_number = 10;
+                        int point_number = 0;int rect_number = 20;
                         for(int i = 0;i<rect_number;i++) {
-                            functions_redaction_graphic()->add_vector(scls::Fraction(i, rect_number), scls::Fraction(needed_formula.value(scls::Fraction(i, rect_number)).real()));
+                            scls::Fraction needed_value = needed_formula.value(scls::Fraction(i, rect_number)).real();
+                            if(needed_value != 0) {
+                                std::shared_ptr<pleos::Form_2D> new_form = functions_redaction_graphic()->new_square(std::string("square_") + std::to_string(i), scls::Fraction(i, rect_number), 0, scls::Fraction(1, rect_number), needed_value);
+                                new_form.get()->set_border_width(1);
+                            }
                         }
                     }
                     else if(type == "definition_set") {function_definition_set(needed_function.get(), &redaction);}
