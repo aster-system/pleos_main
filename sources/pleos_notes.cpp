@@ -47,6 +47,7 @@ namespace pleos {
 
         // Home page
         GUI_OBJECT_CREATION(scls::GUI_Text, a_home_new_notes, "notes_home_new_notes")
+        GUI_OBJECT_CREATION(scls::GUI_Text, a_home_open_notes, "notes_home_open_notes")
 
         // Input page
         GUI_OBJECT_CREATION(scls::GUI_Object, a_input_page, "notes_input_page")
@@ -59,6 +60,13 @@ namespace pleos {
         GUI_OBJECT_CREATION(scls::GUI_Text, a_project_note_creator_validate, "notes_project_note_creator_validate")
 
         return scls::GUI_Page::__create_loaded_object_from_type(object_name, object_type, parent);
+    }
+
+    // Displays a note of the project
+    void Notes_Page::display_project_note(std::shared_ptr<scls::Replica_File> file) {
+        display_input_page();
+        input_user()->set_text(file.get()->content_out_pattern);
+        a_current_state.current_note = file;
     }
 
     // Loads the navigation
@@ -93,8 +101,26 @@ namespace pleos {
         if(notes_pattern() == 0){load_notes_pattern();}
 
         // Create the project
+        needed_path += std::string("/notes/");
+        if(!std::filesystem::exists(needed_path)){std::filesystem::create_directory(needed_path);}
         std::shared_ptr<scls::Replica_Project>& notes = a_current_state.current_notes;
         notes = std::make_shared<scls::Replica_Project>("notes", needed_path, notes_pattern_shared_ptr());
+
+        // Load the navigation
+        load_navigation();
+    }
+
+    // Opens an existing note in the project
+    void Notes_Page::input_open_notes(std::string note_path) {
+        // Check the pattern
+        if(notes_pattern() == 0){load_notes_pattern();}
+
+        // Create the project
+        if(!scls::contains_string(note_path, ".sdr")){note_path += std::string("/maths.sdr");}
+        if(std::filesystem::exists(note_path)){
+            std::shared_ptr<scls::Replica_Project>& notes = a_current_state.current_notes;
+            notes.reset(scls::Replica_Project::load_sda_0_2(note_path, notes_pattern_shared_ptr()));
+        }
 
         // Load the navigation
         load_navigation();
@@ -103,10 +129,11 @@ namespace pleos {
     // Creates a new note in the project
     void Notes_Page::project_create_note(std::string note_name) {
         // Create the note
-        current_notes()->new_replica_file(note_name, 0);
+        std::shared_ptr<scls::Replica_File> new_note = current_notes()->new_replica_file(note_name, 0);
 
         // Load the navigation
         load_navigation();
+        display_project_note(new_note);
     }
 
     //******************
@@ -121,19 +148,30 @@ namespace pleos {
     // Checks the events of file explorer
     void Notes_Page::check_file_explorer() {
         if(file_explorer_page()->file_chosen()) {
-            // Creates notes
+            // Create notes
             std::string needed_path = file_explorer_page()->current_path();
             if(current_file_explorer_page() == PLEOS_NOTES_FILE_EXPLORER_NEW_NOTES) {input_new_notes(needed_path);}
+            else if(current_file_explorer_page() == PLEOS_NOTES_FILE_EXPLORER_OPEN_NOTES) {input_open_notes(needed_path);}
         }
     }
 
     // Checks the events of hiding each pages
-    void Notes_Page::check_hiding(){}
+    void Notes_Page::check_hiding(){if(current_page() == PLEOS_NOTES_INPUT_PAGE){check_project_note_hiding();} }
 
     // Checks the events of home
     void Notes_Page::check_home() {
-        // Create new notes
-        if(home_new_notes()->is_clicked_during_this_frame(GLFW_MOUSE_BUTTON_LEFT)) {display_file_explorer_page();file_explorer_page()->set_current_user_document_directory();set_current_file_explorer_page(PLEOS_NOTES_FILE_EXPLORER_NEW_NOTES);}
+        if(home_new_notes()->is_clicked_during_this_frame(GLFW_MOUSE_BUTTON_LEFT)) {
+            // Create new notes
+            display_file_explorer_page();
+            file_explorer_page()->set_current_user_document_directory();
+            set_current_file_explorer_page(PLEOS_NOTES_FILE_EXPLORER_NEW_NOTES);
+        }
+        else if(home_open_notes()->is_clicked_during_this_frame(GLFW_MOUSE_BUTTON_LEFT)) {
+            // Open new notes
+            display_file_explorer_page();
+            file_explorer_page()->set_current_user_document_directory();
+            set_current_file_explorer_page(PLEOS_NOTES_FILE_EXPLORER_OPEN_NOTES);
+        }
     }
 
     // Checks the events of navigation
@@ -146,6 +184,10 @@ namespace pleos {
             if(page == "home"){display_home_page();}
             GUI_OBJECT_SELECTION(display_input_page(), "input")
             GUI_OBJECT_SELECTION(display_project_page(), "notes_project")
+            else if(page.substr(0, 5) == std::string("input")) {
+                int needed_number = std::stoi(page.substr(6, page.size() - 6));
+                display_project_note(current_notes()->replica_files()[needed_number]);
+            }
         }
     }
 
@@ -153,6 +195,12 @@ namespace pleos {
     void Notes_Page::check_project() {
         // Create a note
         if(project_new_note()->is_clicked_during_this_frame(GLFW_MOUSE_BUTTON_LEFT)){display_project_note_creator_page();}
+    }
+
+    // Checks the events when the project is hide
+    void Notes_Page::check_project_note_hiding() {
+        // Save the current replica file
+        if(current_note() != 0) {current_note()->content_out_pattern = input_user()->text();}
     }
 
     // Checks the events of project note creator
@@ -181,10 +229,9 @@ namespace pleos {
 
         if(window_struct()->key_pressed_during_this_frame("up arrow")){window_struct()->hide_all_pages_2d();window_struct()->display_page_2d("maths");}
 
-        if(window_struct()->key_pressed_during_this_frame("left control")){input_representation()->set_text(scls::format_string_as_plain_text(input_user()->text()));}
+        if(window_struct()->key_pressed_during_this_frame("left control")){input_representation()->set_text(scls::format_string_as_plain_text(input_user()->plain_text()));}
 
         // Temporary load / save
-        if(window_struct()->key_pressed_during_this_frame("s") && (window_struct()->key_pressed("left control") || window_struct()->key_pressed("right control"))){scls::write_in_file("tests/lesson.txt", input_user()->text());}
-        if(window_struct()->key_pressed_during_this_frame("$") && window_struct()->key_pressed_during_this_frame("left shift")){input_user()->set_text(scls::read_file("tests/lesson.txt"));}
+        if(current_notes() != 0 && window_struct()->key_pressed_during_this_frame("s") && (window_struct()->key_pressed("left control") || window_struct()->key_pressed("right control"))){check_project_note_hiding();current_notes()->save_sda_0_2();}
     }
 }

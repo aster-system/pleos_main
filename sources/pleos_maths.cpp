@@ -399,7 +399,13 @@ namespace pleos {
 
                 if(current_function_name == function_name) {
                     // Analyse the argument
-                    if(type == "definition_set") {function_definition_set(needed_function.get(), &redaction);}
+                    if(type == "area_under_curve") {
+                        int point_number = 0;int rect_number = 10;
+                        for(int i = 0;i<rect_number;i++) {
+                            functions_redaction_graphic()->add_vector(scls::Fraction(i, rect_number), scls::Fraction(needed_formula.value(scls::Fraction(i, rect_number)).real()));
+                        }
+                    }
+                    else if(type == "definition_set") {function_definition_set(needed_function.get(), &redaction);}
                     else if(type == "image") {
                         // Calculate an image of the function
                         scls::Formula needed_value = scls::string_to_formula(reinterpret_cast<scls::GUI_Text_Input*>(objects[j].object()->child_by_name(objects[j].object()->name() + "_input_x"))->text());
@@ -907,7 +913,11 @@ namespace pleos {
                 int needed_height = 30;
                 std::string needed_title = "";
                 // Creation settings
-                if(current_choice == "definition_set"){
+                if(current_choice == "area_under_curve"){
+                    needed_height = 60;
+                    needed_title = std::string("Aire sous la courbe");
+                }
+                else if(current_choice == "definition_set"){
                     needed_height = 60;
                     needed_title = std::string("Ensemble de définition");
                 }

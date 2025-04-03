@@ -58,6 +58,9 @@ namespace pleos {
         // Loads an object in a page from XML
         virtual std::shared_ptr<scls::GUI_Object> __create_loaded_object_from_type(std::string object_name, std::string object_type, scls::GUI_Object* parent);
 
+        // Displays a note of the project
+        void display_project_note(std::shared_ptr<scls::Replica_File> file);
+
         // Loads the navigation
         void load_navigation();
         // Loads the notes pattern
@@ -66,11 +69,14 @@ namespace pleos {
         std::shared_ptr<scls::Image> input_load_presentation_image(std::string input);
         // Creates new notes in the input
         void input_new_notes(std::string needed_path);
+        // Opens an existing note in the project
+        void input_open_notes(std::string note_name);
 
         // Creates a new note in the project
         void project_create_note(std::string note_name);
 
         // Getters and setters
+        inline scls::Replica_File* current_note() const {return a_current_state.current_note.get();};
         inline scls::Replica_Project* current_notes() const {return a_current_state.current_notes.get();};
         inline scls::Pattern_Project* notes_pattern() const {return a_current_state.notes_pattern.get();};
         inline std::shared_ptr<scls::Pattern_Project> notes_pattern_shared_ptr() const {return a_current_state.notes_pattern;};
@@ -94,6 +100,7 @@ namespace pleos {
         // Checks the events of project
         void check_project();
         void check_project_note_creator();
+        void check_project_note_hiding();
         // Updates the events
         virtual void update_event();
 
@@ -131,6 +138,7 @@ namespace pleos {
 
         // Home handling
         GUI_OBJECT(scls::GUI_Text, a_home_new_notes, home_new_notes);
+        GUI_OBJECT(scls::GUI_Text, a_home_open_notes, home_open_notes);
 
         // Input handling
         GUI_OBJECT(scls::GUI_Text_Base<Text>, a_input_representation, input_representation);
@@ -146,6 +154,7 @@ namespace pleos {
         // Current state of the page
         struct {
             // Current notes
+            std::shared_ptr<scls::Replica_File> current_note;
             std::shared_ptr<scls::Replica_Project> current_notes;
             // Pattern needed for notes
             std::shared_ptr<scls::Pattern_Project> notes_pattern;

@@ -110,6 +110,7 @@
 	<choice name="image">Image</choice>
 	<choice name="definition_set">Ensemble de définition</choice>
 	<choice name="roots">Racines</choice>
+	<choice name="area_under_curve">Aire sous la courbe</choice>
 </gui_object>
 <gui_object name="maths_functions_redaction_elements_creation" type="scroller_choice">
 	<border bottom=1 left=1 right=1 top=1>
