@@ -1,0 +1,17 @@
+<h1>L'intégration de fonctions</h1>
+
+
+
+<h2>Une opération de calcul infinitésimal</h2>
+
+<h3>La défintion, via un graphique</h3>
+<p>
+Pour une fonction continue prenant un inconnu, on peut tracer sa représentation sur un graphique.
+Dans ce même graphique, <span class="important">l'aire entre la droite des abscisses et la courbe tracé par la fonction "f" entre deux absisse "a" et "b" est nommée "intégrale de f entre a et b"</span>.
+Pour obtenir cette aire, on peut définir "n" rectangles entre la courbe et la droite des abscisses, et obtenir une approximation de l'aire avec la somme de l'aire de ces rectangles.
+</p>
+<h3>Le théorème fondamental de l'analyse</h3>
+<p>
+En réalité, <span class="important">l'intégrale de la fonction "f" entre "a" et "b" est est la primitive de "f" en b, moins la primitive de "f" en "a", auquel on ajoute une valeur "c"</span>.
+
+</p>

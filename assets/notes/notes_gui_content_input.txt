@@ -43,6 +43,7 @@
 	<y attach=bottom attached_object=notes_input_title>
 </gui_object>
 <gui_object name="notes_input_representation" type="text">
+	<content max_width=0></content>
 	<height value=1/2 type=scale>
 	<parent name="notes_input_page">
 	<texture alignment_horizontal=left alignment_vertical=top>
