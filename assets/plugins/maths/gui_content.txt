@@ -46,6 +46,7 @@
 	<sub_choice name="functions" displayer="Fonctions">
 		<choice name="functions_definitions">Définitions basiques</choice>
 		<choice name="functions_forms">Des formes bien connues</choice>
+		<choice name="functions_integration">L'intégration de fonctions</choice>
 		<choice name="functions_exponential">La fonction exponentielle</choice>
 		<choice name="functions_redaction">Calculs rédigés</choice>
 		<choice name="functions_graphic">Représentation graphique</choice>

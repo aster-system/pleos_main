@@ -55,6 +55,7 @@
 // Functions pages
 #define PLEOS_MATHS_FUNCTIONS_PAGE 300
 #define PLEOS_MATHS_FUNCTIONS_REDACTION_PAGE 301
+#define PLEOS_MATHS_FUNCTION_INTEGRATION_PAGE 315
 // Geometry pages
 #define PLEOS_MATHS_GEOMETRY_PAGE 400
 #define PLEOS_MATHS_GEOMETRY_DEFINITION_PAGE 401
@@ -110,6 +111,8 @@ namespace pleos {
         //
         //******************
 
+        // Adds an element to analyse
+        void functions_add_element(std::string current_choice);
         // Adds an element to create
         void functions_add_element_created(std::string current_choice);
 
@@ -278,6 +281,7 @@ namespace pleos {
 
         //  Returns functions
         inline scls::GUI_Text* functions_exponential_page() const {return a_functions_exponential_page.get();};
+        GUI_PAGE(scls::GUI_Text_Base<Text>, a_functions_integration_page, PLEOS_MATHS_FUNCTION_INTEGRATION_PAGE, functions_integration_page, display_functions_integration_page, display_functions_page);
         inline scls::GUI_Text* functions_redaction() const {return a_functions_redaction.get();};
         inline scls::GUI_Object* functions_redaction_analyse() const {return a_functions_redaction_analyse.get();};
         inline scls::GUI_Scroller_Choice* functions_redaction_elements() const {return a_functions_redaction_elements.get();};

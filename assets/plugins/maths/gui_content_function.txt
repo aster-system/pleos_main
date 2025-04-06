@@ -63,6 +63,20 @@
 </gui_object>
 
 //***************************************************
+// Integration
+//***************************************************
+
+<gui_object name="maths_functions_integration_body" type="text" sub_page>
+    <content max_width=0 src="functions/315_function_integration.txt"></content>
+	<height value=7/8 type=scale>
+	<parent name="maths_functions_page">
+	<texture alignment_horizontal=left alignment_vertical=top>
+    <width value=9/10 type=scale>
+	<x value=1/2 type=object_scale>
+	<y attach=bottom>
+</gui_object>
+
+//***************************************************
 // Redaction
 //***************************************************
 
@@ -110,7 +124,11 @@
 	<choice name="image">Image</choice>
 	<choice name="definition_set">Ensemble de définition</choice>
 	<choice name="roots">Racines</choice>
-	<choice name="area_under_curve">Aire sous la courbe</choice>
+
+	<sub_choice name="functions_analysis" displayer="Analyse">
+		<choice name="functions_analysis_derivate">Fonction dérivée</choice>
+		<choice name="area_under_curve">Aire sous la courbe</choice>
+	</sub_choice>
 </gui_object>
 <gui_object name="maths_functions_redaction_elements_creation" type="scroller_choice">
 	<border bottom=1 left=1 right=1 top=1>

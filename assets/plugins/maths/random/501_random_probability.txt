@@ -62,6 +62,10 @@ Si vous ne prenez que ça, vous avez ce que l'on appelle un espace probabilisabl
     <form border_color=(0,0,0) border_radius=5 name="f1" points="p1;p2">
 </graphic></br>
 Pour compléter notre espace, <span class="important">nous allons lui ajouter la possibilité d'effectuer un évènement aléatoire, dans ce que l'on appelle une mesure</span>.
+Pour être précis, en mathématique, <span class="important">une mesure est une fonction attribuant une probabilité à chaque évènements définis dans la tribu (et donc, dans l'univers)</span>.
+En pratique, ce genre de fonctions sont faites pour être utilisées.
+Le fait de prendre aléatoirement un des évènements (définis dans la tribu) de l'univers est nommé une expérience (ou épreuve) aléatoire.
+<span class="important">Cet espace est ainsi nommé espace probabilisé</span>.
 </p>
 <p>
 En mathématiques, <span class="important">la théorie qui étudie les probabilités est nommée la théorie des probabilités</span>.
@@ -71,4 +75,27 @@ Premièrement, le premier axiome pose <span class="important">qu'une probabilit�
 Le deuxième axiome dit que la probabilité que l'évènement soit dans l'univers de définition est (en toute logique) de 1, dont une certitude.
 Le troisième est un peu plus complexe.
 Il établi que la somme de toutes les probabilités des évènements incompatibles d'une tribu quelconque de l'univers est égale à la probabilité qu'un évènement soit dans cette tribu (et donc, égale à 1).
+</p>
+
+
+
+<h2>Utilisation basique d'un espace probabilisé</h2>
+
+<h3>Les variables aléatoires</h3>
+<p>
+Certains espace probabilisé ne sont pas intéressant à étudier tout seul.
+Cependant, nous pouvons déduire un nouveau espace probabilisé via un ancien, grâce à ce que l'on appelle une variable aléatoire.
+En effet, <span class="important">une variable aléatoire "X" est une fonction associant à un élément (d'un espace probabilisé existant) une probabilité d'un autre espace probabilisé</span> (qui est, au minimum, inclu dans l'ancien espace probabilisé).
+D'un point de vue direct, cette définition peut paraitre abstraite, mais elle implique des concepts très utiles.
+Par exemple, vous pouvez définir un espace probabilisé d'un dé (comme vu plus haut), avec une tribu contenant deux élément : valeur supérieure ou inférieur à 3,5.
+Via une variable aléatoire, vous pouvez directement utiliser cette espace, pour le cas où nous avons besoin d'une tribu avec d'autres éléments, comme "valeur paire ou impaire", ou "valeur 1 ou pas 1".
+Nous pouvons utiliser cette variable aléatoire "X" avec la mesure de l'ancien espace probabilisé.
+Dans ce cas, <span class="important">cette mesure est nommée la loi de probabilité de X</span>.
+En général, si "P" est la mesure de l'ancien espace probabilisé, elle se note comme ça :
+</p>
+<math>P<msub>X</msub><mo>=</mo>P(X)</math>
+<p>
+Dans certains cas, <span class="important">nous avons une variable aléatoire quelconque, qui ne contient qu'un nombre fini (ou dénombrable) de possibilités : ces lois sont dites "discrètes"</span>.
+Par exemple, les lois que nous pouvons définir via notre dé vu plus haut sont discrètes ("valeur supérieure ou inférieur à 3,5" a 2 possibilités, "valeur paire ou impaire" a aussi 2 possibilités...).
+<span class="important">Une épreuve se passant sur espace probabilisé offrant deux évènements possibles est nommée une épreuve de Bernoulli</span>.
 </p>

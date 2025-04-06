@@ -60,6 +60,7 @@ namespace pleos {
         else if(object_name == "maths_functions_definitions_body") {a_functions_definitions_page = *parent->new_object<scls::GUI_Text>(object_name);return a_functions_definitions_page;}
         else if(object_name == "maths_functions_exponential_body") {a_functions_exponential_page = *parent->new_object<scls::GUI_Text>(object_name);return a_functions_exponential_page;}
         else if(object_name == "maths_functions_forms_body") {a_functions_forms_page = *parent->new_object<scls::GUI_Text>(object_name);return a_functions_forms_page;}
+        GUI_OBJECT_CREATION(scls::GUI_Text_Base<Text>, a_functions_integration_page, "maths_functions_integration_body")
         else if(object_name == "maths_functions_redaction_body") {a_functions_redaction_page = *parent->new_object<scls::GUI_Object>(object_name);return a_functions_redaction_page;}
         else if(object_name == "maths_functions_redaction") {a_functions_redaction = *parent->new_object<scls::GUI_Text>(object_name);return a_functions_redaction;}
         else if(object_name == "maths_functions_redaction_analyse") {a_functions_redaction_analyse = *parent->new_object<scls::GUI_Text>(object_name);return a_functions_redaction_analyse;}
@@ -348,6 +349,94 @@ namespace pleos {
         display_home_definition_page();
     }
 
+    // Adds an element to analyse
+    void Maths_Page::functions_add_element(std::string current_choice) {
+        // Creation name
+        std::string final_choice = current_choice;
+        if(current_choice == "image"){
+            final_choice += std::string("-") + std::to_string(functions_redaction_elements_chosen()->count_object_similar("image", "-"));
+        }
+
+        // Get the good current choice
+        std::shared_ptr<scls::GUI_Object>* object = functions_redaction_elements_chosen()->add_object(final_choice);
+
+        // Do the good configuration
+        if(object != 0) {
+            int needed_height = 30;
+            std::string needed_title = "";
+            // Creation settings
+            if(current_choice == "area_under_curve"){
+                needed_height = 60;
+                needed_title = std::string("Aire sous la courbe");
+            }
+            else if(current_choice == "definition_set"){
+                needed_height = 60;
+                needed_title = std::string("Ensemble de définition");
+            }
+            else if(current_choice == "functions_analysis_derivate"){
+                needed_height = 60;
+                needed_title = std::string("Fonction dérivée");
+            }
+            else if(current_choice == "image"){
+                needed_height = 90;
+                needed_title = std::string("Image");
+            }
+            else if(current_choice == "roots"){
+                needed_height = 60;
+                needed_title = std::string("Racines");
+            }
+
+            final_choice = object->get()->name();
+            object->get()->set_border_width_in_pixel(1);
+            object->get()->set_height_in_pixel(needed_height);
+            functions_redaction_elements_chosen()->place_objects();
+
+            // Create the title
+            std::shared_ptr<scls::GUI_Text> title = *object->get()->new_object<scls::GUI_Text>(final_choice + "_title");
+            title.get()->attach_top_in_parent();
+            title.get()->set_height_in_pixel(30);
+            title.get()->set_width_in_scale(1);
+            title.get()->set_x_in_object_scale(scls::Fraction(1, 2));
+            title.get()->set_text(needed_title);
+
+            // Neeeded function
+            // Create the title
+            std::shared_ptr<scls::GUI_Text> title_name = *object->get()->new_object<scls::GUI_Text>(final_choice + "_title_name");
+            title_name.get()->attach_bottom_of_object_in_parent(title);
+            title_name.get()->attach_left_in_parent();
+            title_name.get()->set_height_in_pixel(30);
+            title_name.get()->set_text(std::string("Pour la fonction"));
+            title_name.get()->set_width_in_scale(scls::Fraction(1, 2));
+
+            // Create the input
+            std::shared_ptr<scls::GUI_Text_Input> input_name = *object->get()->new_object<scls::GUI_Text_Input>(final_choice + "_input_name");
+            input_name.get()->attach_bottom_of_object_in_parent(title);
+            input_name.get()->attach_right_in_parent();
+            input_name.get()->set_border_width_in_pixel(1);
+            input_name.get()->set_height_in_pixel(30);
+            input_name.get()->set_width_in_scale(scls::Fraction(1, 2));
+
+            // Finalise the creation
+            if(current_choice == "image"){
+                // Create the title
+                std::shared_ptr<scls::GUI_Text> title_x = *object->get()->new_object<scls::GUI_Text>(final_choice + "_title_x");
+                title_x.get()->attach_bottom_of_object_in_parent(title_name);
+                title_x.get()->attach_left_in_parent();
+                title_x.get()->set_height_in_pixel(30);
+                title_x.get()->set_text(std::string("Pour x = "));
+                title_x.get()->set_width_in_scale(scls::Fraction(1, 2));
+
+                // Create the input
+                std::shared_ptr<scls::GUI_Text_Input> input_x = *object->get()->new_object<scls::GUI_Text_Input>(final_choice + "_input_x");
+                input_x.get()->attach_bottom_of_object_in_parent(title_name);
+                input_x.get()->attach_right_in_parent();
+                input_x.get()->set_border_width_in_pixel(1);
+                input_x.get()->set_height_in_pixel(30);
+                input_x.get()->set_width_in_scale(scls::Fraction(1, 2));
+            }
+        }
+    }
+
     // Adds an element to create
     void Maths_Page::functions_add_element_created(std::string current_choice) {
         // Creation name
@@ -410,6 +499,7 @@ namespace pleos {
                         }
                     }
                     else if(type == "definition_set") {function_definition_set(needed_function.get(), &redaction);}
+                    else if(type == "functions_analysis_derivate") {function_derivation(needed_function.get(), &redaction);}
                     else if(type == "image") {
                         // Calculate an image of the function
                         scls::Formula needed_value = scls::string_to_formula(reinterpret_cast<scls::GUI_Text_Input*>(objects[j].object()->child_by_name(objects[j].object()->name() + "_input_x"))->text());
@@ -902,87 +992,7 @@ namespace pleos {
         if(functions_redaction_elements()->selection_modified()) {
             std::string current_choice = functions_redaction_elements()->currently_selected_objects_during_this_frame()[0].name();
             functions_redaction_elements()->unselect_object(functions_redaction_elements()->currently_selected_objects()[0]);
-
-            // Creation name
-            std::string final_choice = current_choice;
-            if(current_choice == "image"){
-                final_choice += std::string("-") + std::to_string(functions_redaction_elements_chosen()->count_object_similar("image", "-"));
-            }
-
-            // Get the good current choice
-            std::shared_ptr<scls::GUI_Object>* object = functions_redaction_elements_chosen()->add_object(final_choice);
-
-            // Do the good configuration
-            if(object != 0) {
-                int needed_height = 30;
-                std::string needed_title = "";
-                // Creation settings
-                if(current_choice == "area_under_curve"){
-                    needed_height = 60;
-                    needed_title = std::string("Aire sous la courbe");
-                }
-                else if(current_choice == "definition_set"){
-                    needed_height = 60;
-                    needed_title = std::string("Ensemble de définition");
-                }
-                else if(current_choice == "image"){
-                    needed_height = 90;
-                    needed_title = std::string("Image");
-                }
-                else if(current_choice == "roots"){
-                    needed_height = 60;
-                    needed_title = std::string("Racines");
-                }
-
-                final_choice = object->get()->name();
-                object->get()->set_border_width_in_pixel(1);
-                object->get()->set_height_in_pixel(needed_height);
-                functions_redaction_elements_chosen()->place_objects();
-
-                // Create the title
-                std::shared_ptr<scls::GUI_Text> title = *object->get()->new_object<scls::GUI_Text>(final_choice + "_title");
-                title.get()->attach_top_in_parent();
-                title.get()->set_height_in_pixel(30);
-                title.get()->set_width_in_scale(1);
-                title.get()->set_x_in_object_scale(scls::Fraction(1, 2));
-                title.get()->set_text(needed_title);
-
-                // Neeeded function
-                // Create the title
-                std::shared_ptr<scls::GUI_Text> title_name = *object->get()->new_object<scls::GUI_Text>(final_choice + "_title_name");
-                title_name.get()->attach_bottom_of_object_in_parent(title);
-                title_name.get()->attach_left_in_parent();
-                title_name.get()->set_height_in_pixel(30);
-                title_name.get()->set_text(std::string("Pour la fonction"));
-                title_name.get()->set_width_in_scale(scls::Fraction(1, 2));
-
-                // Create the input
-                std::shared_ptr<scls::GUI_Text_Input> input_name = *object->get()->new_object<scls::GUI_Text_Input>(final_choice + "_input_name");
-                input_name.get()->attach_bottom_of_object_in_parent(title);
-                input_name.get()->attach_right_in_parent();
-                input_name.get()->set_border_width_in_pixel(1);
-                input_name.get()->set_height_in_pixel(30);
-                input_name.get()->set_width_in_scale(scls::Fraction(1, 2));
-
-                // Finalise the creation
-                if(current_choice == "image"){
-                    // Create the title
-                    std::shared_ptr<scls::GUI_Text> title_x = *object->get()->new_object<scls::GUI_Text>(final_choice + "_title_x");
-                    title_x.get()->attach_bottom_of_object_in_parent(title_name);
-                    title_x.get()->attach_left_in_parent();
-                    title_x.get()->set_height_in_pixel(30);
-                    title_x.get()->set_text(std::string("Pour x = "));
-                    title_x.get()->set_width_in_scale(scls::Fraction(1, 2));
-
-                    // Create the input
-                    std::shared_ptr<scls::GUI_Text_Input> input_x = *object->get()->new_object<scls::GUI_Text_Input>(final_choice + "_input_x");
-                    input_x.get()->attach_bottom_of_object_in_parent(title_name);
-                    input_x.get()->attach_right_in_parent();
-                    input_x.get()->set_border_width_in_pixel(1);
-                    input_x.get()->set_height_in_pixel(30);
-                    input_x.get()->set_width_in_scale(scls::Fraction(1, 2));
-                }
-            }
+            functions_add_element(current_choice);
         }
 
         // Adds a created element
@@ -1167,6 +1177,7 @@ namespace pleos {
         else if(page == "functions_definitions"){display_functions_definitions_page();}
         else if(page == "functions_exponential"){display_functions_exponential_page();}
         else if(page == "functions_forms"){display_functions_forms_page();}
+        GUI_OBJECT_SELECTION(display_functions_integration_page(), "functions_integration")
         else if(page == "functions_graphic"){display_functions_redaction_graphic_page();}
         else if(page == "functions_redaction"){display_functions_redaction_page();}
         // Geometry pages

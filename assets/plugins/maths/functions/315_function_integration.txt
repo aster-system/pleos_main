@@ -10,8 +10,27 @@ Pour une fonction continue prenant un inconnu, on peut tracer sa représentation
 Dans ce même graphique, <span class="important">l'aire entre la droite des abscisses et la courbe tracé par la fonction "f" entre deux absisse "a" et "b" est nommée "intégrale de f entre a et b"</span>.
 Pour obtenir cette aire, on peut définir "n" rectangles entre la courbe et la droite des abscisses, et obtenir une approximation de l'aire avec la somme de l'aire de ces rectangles.
 </p>
+<graphic>
+    <base width=5 height=5>
+    <function expression="x/3">
+        <curve_area number=5 area_end=2>
+    </function>
+</graphic>
+
 <h3>Le théorème fondamental de l'analyse</h3>
 <p>
-En réalité, <span class="important">l'intégrale de la fonction "f" entre "a" et "b" est est la primitive de "f" en b, moins la primitive de "f" en "a", auquel on ajoute une valeur "c"</span>.
-
+Le théorème fondamental de l'analyse, démontré par (entre autre) Isaac Newton, affirme que l'intégrale d'une fonction peut s'obtenir avec sa primitive.
+En réalité, <span class="important">l'intégrale de la fonction "f" entre "a" et "b" est une fonction primitive de "f" (idéalement, s'annulant en "a") à la valeur "b", auquelle on enlève une valeur constante (qui dépend de la primitive utilisée)</span>.
+Cette constante est dû au fait que une fonction a une infinité de primitives, avec une seule correspondant exactement à son intégrale (et les autres devant être corrigés par une valeur constante).
+Donc, <span class="important">cela équivaut à dire que l'intégrale de la fonction "f" entre "a" et "b" est la différence entre la primitive généralisée de "f" pour b et la primitive généralisée de "f" pour a</span>.
+</p>
+<math><mi>F(x)</mi><mo>=</mo><mi>f(t)dt</mi></math>
+<p>
+D'un point de vue "épistémologique", ce théorème est parfaitement logique.
+En effet, <span class="important">le nombre dérivé d'une valeur de fonction est la variation infinitésimal de la fonction à cette valeur</span>.
+Pour rappel, une variation infinitésimal de la fonction de départ fait... varier la fonction de départ.
+En toute logique, l'obstention d'une fonction par sa dérivée se fait en appliquant toutes les valeurs de la dérivée en tant que variation infinitésimale de la fonction.
+Donc, <span class="important">la primitive d'une fonction en "x" représente la somme infinitésimale de toutes les valeurs précédentes de "x" dans la fonction, interprétées comme variations de la primitive</span>.
+On peut représenter ces valeurs infinitésimals comme l'aire précise sous cette valeur de la fonction (de largeur infinitésimale).
+Donc, <span class="important">la primitive d'une fonction représente la somme de toutes ces aires, et donc l'intégrale (aire sous la courbe) de la fonction</span>.
 </p>
