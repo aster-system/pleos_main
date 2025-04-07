@@ -127,6 +127,7 @@
 
 	<sub_choice name="functions_analysis" displayer="Analyse">
 		<choice name="functions_analysis_derivate">Fonction dérivée</choice>
+		<choice name="functions_analysis_primitive">Fonction primitive</choice>
 		<choice name="area_under_curve">Aire sous la courbe</choice>
 	</sub_choice>
 </gui_object>

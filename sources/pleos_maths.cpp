@@ -377,6 +377,10 @@ namespace pleos {
                 needed_height = 60;
                 needed_title = std::string("Fonction dérivée");
             }
+            else if(current_choice == "functions_analysis_primitive"){
+                needed_height = 60;
+                needed_title = std::string("Fonction primitive");
+            }
             else if(current_choice == "image"){
                 needed_height = 90;
                 needed_title = std::string("Image");
@@ -500,6 +504,7 @@ namespace pleos {
                     }
                     else if(type == "definition_set") {function_definition_set(needed_function.get(), &redaction);}
                     else if(type == "functions_analysis_derivate") {function_derivation(needed_function.get(), &redaction);}
+                    else if(type == "functions_analysis_primitive") {function_primitive(needed_function.get(), &redaction);}
                     else if(type == "image") {
                         // Calculate an image of the function
                         scls::Formula needed_value = scls::string_to_formula(reinterpret_cast<scls::GUI_Text_Input*>(objects[j].object()->child_by_name(objects[j].object()->name() + "_input_x"))->text());
