@@ -20,6 +20,10 @@
 		<choice name="algorithms_sort">Les tris</choice>
 		<choice name="algorithms_sort_comparaison">Comparer les tris</choice>
 	</sub_choice>
+	<sub_choice name="network" displayer="Réseau">
+		<choice name="algorithms_sort">Les tris</choice>
+		<choice name="algorithms_sort_comparaison">Comparer les tris</choice>
+	</sub_choice>
 	<sub_choice name="school" displayer="Lycée">
 		<choice name="school_term_1">Terminale, trimestre 1</choice>
 		<choice name="school_term_2">Terminale, trimestre 2</choice>

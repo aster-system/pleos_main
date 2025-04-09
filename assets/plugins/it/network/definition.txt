@@ -1,0 +1,11 @@
+<p>
+Une des principales utilités de l'informatique moderne est de connecter les machines entre elles.
+Une telle ensemble d'équipements reliés entre eux est nommé un réseau informatique.
+Ces réseaux permettent de transmettre (en très grande majorité) des informations, via différents supports (ADSL, WiFi, 4G, Fibre...).
+Le réseau informatique le plus connu est aussi le plus grand : Internet.
+</p>
+<p>
+Comme pour la communication via un langage, la communication sur un réseau demande des normes précises.
+La façon dont sont formatées les informations sont décrites dans ce que l'on appelle des protocoles (IP, TCP, UDP...).
+Le moyen d'accés d'une machine à l'autre se gère via un protocole : le protocole IP (adresser chaque machines avec une adresse précise : une adresse IP).
+</p>
