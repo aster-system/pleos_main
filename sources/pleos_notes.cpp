@@ -91,7 +91,7 @@ namespace pleos {
     // Loads the representation of the input
     std::shared_ptr<scls::Image> Notes_Page::input_load_presentation_image(std::string input) {
         scls::Text_Image_Generator tig;scls::Text_Style needed_style;
-        std::shared_ptr<scls::Image> image = tig.image_shared_ptr(input, needed_style);
+        std::shared_ptr<scls::Image> image = tig.image_shared_ptr(scls::format_string_break_line(input, std::string(" ")), needed_style);
         return image;
     }
 
@@ -229,7 +229,10 @@ namespace pleos {
 
         if(window_struct()->key_pressed_during_this_frame("up arrow")){window_struct()->hide_all_pages_2d();window_struct()->display_page_2d("maths");}
 
-        if(window_struct()->key_pressed_during_this_frame("left control")){input_representation()->set_text(scls::format_string_as_plain_text(input_user()->plain_text()));}
+        if(window_struct()->key_pressed_during_this_frame("left control")){
+            std::string input = scls::format_string_break_line(input_user()->plain_text(), std::string(" "));
+            input_representation()->set_text(input);
+        }
 
         // Temporary load / save
         if(current_notes() != 0 && window_struct()->key_pressed_during_this_frame("s") && (window_struct()->key_pressed("left control") || window_struct()->key_pressed("right control"))){check_project_note_hiding();current_notes()->save_sda_0_2();}

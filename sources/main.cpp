@@ -87,6 +87,7 @@ void draw(std::shared_ptr<scls::Image> img, std::vector<double>& value_1, std::v
 //*/
 
 int main(int argc, char* argv[]) {
+
     pleos::Pleos_Window window(900, 600, argv[0]);
     window.load_from_xml("assets/window.txt");
 

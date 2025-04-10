@@ -34,3 +34,7 @@ Donc, <span class="important">la primitive d'une fonction en "x" représente la 
 On peut représenter ces valeurs infinitésimals comme l'aire précise sous cette valeur de la fonction (de largeur infinitésimale).
 Donc, <span class="important">la primitive d'une fonction représente la somme de toutes ces aires, et donc l'intégrale (aire sous la courbe) de la fonction</span>.
 </p>
+<p>
+Ce théorème permet de démontrer rigoureusement pleins de propriétés (en réalité, assez triviales).
+Par exemple, <span class="important">les intégrales peuvent se calculer avec la relation de Chasles</span>.
+</p>
