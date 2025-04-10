@@ -48,6 +48,7 @@ namespace pleos {
         // Home page
         GUI_OBJECT_CREATION(scls::GUI_Text, a_home_new_notes, "notes_home_new_notes")
         GUI_OBJECT_CREATION(scls::GUI_Text, a_home_open_notes, "notes_home_open_notes")
+        GUI_OBJECT_CREATION(scls::GUI_Scroller_Choice, a_home_recents_notes, "notes_home_recents_notes")
 
         // Input page
         GUI_OBJECT_CREATION(scls::GUI_Object, a_input_page, "notes_input_page")
@@ -88,6 +89,32 @@ namespace pleos {
         pattern = std::make_shared<scls::Pattern_Project>("notes_pattern", "");
     }
 
+    // Loads the recents notes
+    void Notes_Page::load_recents_notes() {
+        // Load the notes
+        std::string needed_path = scls::current_user_home_directory() + std::string("/AppData/Local/Pleos/");
+        if(std::filesystem::exists(needed_path)){
+            needed_path += std::string("srn.txt");
+            std::string content = scls::read_file(needed_path);
+            std::vector<std::string> temp = scls::cut_string(content, std::string(";"));
+            for(int i = 0;i<static_cast<int>(temp.size());i++){if(std::filesystem::exists(temp.at(i))){recents_notes().push_back(temp.at(i));}}
+        }
+    }
+
+    // Loads the recents notes GUI
+    int __gen = 0;int __gen_current = 0;
+    void Notes_Page::load_recents_notes_gui() {
+        home_recents_notes()->reset();
+
+        // Add each parts
+        __gen_current = __gen;
+        for(int i = 0;i<static_cast<int>(recents_notes().size());i++){
+            int current_i = (static_cast<int>(recents_notes().size()) - (i + 1));int current_gen = __gen_current + (static_cast<int>(recents_notes().size()) - (i + 1));
+            if(std::filesystem::exists(recents_notes().at(current_i))) {home_recents_notes()->add_object(std::to_string(current_gen), recents_notes().at(current_i));}
+        }
+        __gen += static_cast<int>(recents_notes().size());
+    }
+
     // Loads the representation of the input
     std::shared_ptr<scls::Image> Notes_Page::input_load_presentation_image(std::string input) {
         scls::Text_Image_Generator tig;scls::Text_Style needed_style;
@@ -106,6 +133,13 @@ namespace pleos {
         std::shared_ptr<scls::Replica_Project>& notes = a_current_state.current_notes;
         notes = std::make_shared<scls::Replica_Project>("notes", needed_path, notes_pattern_shared_ptr());
 
+        // Save the recents notes
+        needed_path += notes.get()->name() + std::string(".sdr");
+        for(int i = 0;i<static_cast<int>(recents_notes().size());i++){if(recents_notes().at(i)==needed_path){recents_notes().erase(recents_notes().begin()+i);i--;}}
+        recents_notes().push_back(needed_path);
+        load_recents_notes_gui();
+        save_recents_notes();
+
         // Load the navigation
         load_navigation();
     }
@@ -116,14 +150,24 @@ namespace pleos {
         if(notes_pattern() == 0){load_notes_pattern();}
 
         // Create the project
-        if(!scls::contains_string(note_path, ".sdr")){note_path += std::string("/maths.sdr");}
+        if(!scls::contains_string(note_path, ".sdr")){
+            if(std::filesystem::exists(note_path + std::string("/maths.sdr"))){note_path += std::string("/maths.sdr");}
+            else if(std::filesystem::exists(note_path + std::string("/notes.sdr"))){note_path += std::string("/notes.sdr");}
+        }
         if(std::filesystem::exists(note_path)){
             std::shared_ptr<scls::Replica_Project>& notes = a_current_state.current_notes;
             notes.reset(scls::Replica_Project::load_sda_0_2(note_path, notes_pattern_shared_ptr()));
+
+            // Save the recents notes
+            for(int i = 0;i<static_cast<int>(recents_notes().size());i++){if(recents_notes().at(i)==note_path){recents_notes().erase(recents_notes().begin()+i);i--;}}
+            recents_notes().push_back(note_path);
+            load_recents_notes_gui();
+            save_recents_notes();
         }
 
         // Load the navigation
         load_navigation();
+        display_project_page();
     }
 
     // Creates a new note in the project
@@ -136,6 +180,19 @@ namespace pleos {
         display_project_note(new_note);
     }
 
+    // Saves the recents notes
+    void Notes_Page::save_recents_notes() {
+        // Get the needed text
+        std::string content = std::string();
+        for(int i = 0;i<static_cast<int>(recents_notes().size());i++){content+=recents_notes().at(i);if(i<static_cast<int>(recents_notes().size())-1){content+=std::string(";");}}
+
+        // Saves the notes
+        std::string needed_path = scls::current_user_home_directory() + std::string("/AppData/Local/Pleos/");
+        if(!std::filesystem::exists(needed_path)){std::filesystem::create_directory(needed_path);}
+        needed_path += std::string("srn.txt");
+        scls::write_in_file(needed_path, content);
+    }
+
     //******************
     //
     // Check the events
@@ -143,7 +200,7 @@ namespace pleos {
     //******************
 
     // Function called after the XML loading
-    void Notes_Page::after_xml_loading(){scls::GUI_Page::after_xml_loading();display_home_page();}
+    void Notes_Page::after_xml_loading(){scls::GUI_Page::after_xml_loading();load_recents_notes();load_recents_notes_gui();display_home_page();}
 
     // Checks the events of file explorer
     void Notes_Page::check_file_explorer() {
@@ -172,6 +229,12 @@ namespace pleos {
             file_explorer_page()->set_current_user_document_directory();
             set_current_file_explorer_page(PLEOS_NOTES_FILE_EXPLORER_OPEN_NOTES);
         }
+
+        // Check the recents notes
+        if(home_recents_notes()->selection_modified()) {
+            int id = std::stoi(home_recents_notes()->currently_selected_objects_during_this_frame()[0].name()) - __gen_current;
+            input_open_notes(recents_notes().at(id));
+        }
     }
 
     // Checks the events of navigation
@@ -181,7 +244,7 @@ namespace pleos {
             std::string page = navigation()->currently_selected_objects_during_this_frame()[0].name();
 
             // Home pages
-            if(page == "home"){display_home_page();}
+            if(page == "home"){load_recents_notes_gui();display_home_page();}
             GUI_OBJECT_SELECTION(display_input_page(), "input")
             GUI_OBJECT_SELECTION(display_project_page(), "notes_project")
             else if(page.substr(0, 5) == std::string("input")) {

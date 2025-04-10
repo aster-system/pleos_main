@@ -65,12 +65,18 @@ namespace pleos {
         void load_navigation();
         // Loads the notes pattern
         void load_notes_pattern();
+        // Loads the recents notes
+        void load_recents_notes();
+        // Loads the recents notes GUI
+        void load_recents_notes_gui();
         // Loads the representation of the input
         std::shared_ptr<scls::Image> input_load_presentation_image(std::string input);
         // Creates new notes in the input
         void input_new_notes(std::string needed_path);
         // Opens an existing note in the project
         void input_open_notes(std::string note_name);
+        // Saves the recents notes
+        void save_recents_notes();
 
         // Creates a new note in the project
         void project_create_note(std::string note_name);
@@ -80,6 +86,7 @@ namespace pleos {
         inline scls::Replica_Project* current_notes() const {return a_current_state.current_notes.get();};
         inline scls::Pattern_Project* notes_pattern() const {return a_current_state.notes_pattern.get();};
         inline std::shared_ptr<scls::Pattern_Project> notes_pattern_shared_ptr() const {return a_current_state.notes_pattern;};
+        inline std::vector<std::string>& recents_notes(){return a_current_state.recents_notes;};
 
         //******************
         //
@@ -139,6 +146,7 @@ namespace pleos {
         // Home handling
         GUI_OBJECT(scls::GUI_Text, a_home_new_notes, home_new_notes);
         GUI_OBJECT(scls::GUI_Text, a_home_open_notes, home_open_notes);
+        GUI_OBJECT(scls::GUI_Scroller_Choice, a_home_recents_notes, home_recents_notes);
 
         // Input handling
         GUI_OBJECT(scls::GUI_Text_Base<Text>, a_input_representation, input_representation);
@@ -158,6 +166,9 @@ namespace pleos {
             std::shared_ptr<scls::Replica_Project> current_notes;
             // Pattern needed for notes
             std::shared_ptr<scls::Pattern_Project> notes_pattern;
+
+            // Recents notes
+            std::vector<std::string> recents_notes;
 
             // Current file explorer page
             unsigned short current_file_explorer_page = PLEOS_NOTES_FILE_EXPLORER_NEW_NOTES;
