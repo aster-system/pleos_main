@@ -92,7 +92,7 @@ namespace pleos {
     // Loads the recents notes
     void Notes_Page::load_recents_notes() {
         // Load the notes
-        std::string needed_path = scls::current_user_home_directory() + std::string("/AppData/Local/Pleos/");
+        std::string needed_path = recents_notes_directory_path();
         if(std::filesystem::exists(needed_path)){
             needed_path += std::string("srn.txt");
             std::string content = scls::read_file(needed_path);
@@ -187,7 +187,7 @@ namespace pleos {
         for(int i = 0;i<static_cast<int>(recents_notes().size());i++){content+=recents_notes().at(i);if(i<static_cast<int>(recents_notes().size())-1){content+=std::string(";");}}
 
         // Saves the notes
-        std::string needed_path = scls::current_user_home_directory() + std::string("/AppData/Local/Pleos/");
+        std::string needed_path = recents_notes_directory_path();
         if(!std::filesystem::exists(needed_path)){std::filesystem::create_directory(needed_path);}
         needed_path += std::string("srn.txt");
         scls::write_in_file(needed_path, content);

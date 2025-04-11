@@ -75,6 +75,14 @@ namespace pleos {
         void input_new_notes(std::string needed_path);
         // Opens an existing note in the project
         void input_open_notes(std::string note_name);
+        // Returns the path of the recents notes
+        std::string recents_notes_directory_path(){
+            #if defined(__WIN32__) || defined(__WIN64__)
+            return scls::current_user_home_directory() + std::string("/AppData/Local/Pleos/");
+            #elif defined(__linux__)
+            return scls::current_user_home_directory() + std::string("/.pleos/");
+            #endif // defined
+        };
         // Saves the recents notes
         void save_recents_notes();
 

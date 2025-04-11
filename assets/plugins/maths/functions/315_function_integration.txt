@@ -38,3 +38,17 @@ Donc, <span class="important">la primitive d'une fonction représente la somme d
 Ce théorème permet de démontrer rigoureusement pleins de propriétés (en réalité, assez triviales).
 Par exemple, <span class="important">les intégrales peuvent se calculer avec la relation de Chasles</span>.
 </p>
+<math>
+<mint><msubsup><mi>x</mi><mi>y</mi></msubsup>f(t)dt<mo>+</mo>
+<mint><msubsup><mi>y</mi><mi>z</mi></msubsup>f(t)dt<mo>=</mo>
+<mint><msubsup><mi>x</mi><mi>z</mi></msubsup>f(t)dt
+</math>
+<p>
+Il est aussi possible de découper des intégrales pour calculer ces parties dans des intégrales différentes (et plus simple).
+<span class="important">Ce concept s'appelle l'intégration par partie</span>.
+</p>
+<math>
+<mint><msubsup><mi>x</mi><mi>y</mi></msubsup>u(t)*v'(t)dt<mo>=</mo>
+<mi>[u(t)*v(t)]</mi><msubsup><mi>x</mi><mi>y</mi></msubsup><mo>-</mo>
+<mint><msubsup><mi>x</mi><mi>y</mi></msubsup>u'(t)*v(t)dt
+</math>
