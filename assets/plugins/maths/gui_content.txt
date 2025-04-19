@@ -25,6 +25,7 @@
 	<sub_choice name="logic" displayer="La logique">
 		<choice name="logic_definitions">Définitions basiques</choice>
 		<choice name="logic_language">Le langage logique</choice>
+		<choice name="logic_propositional">Le calcul propositionnel</choice>
 		<choice name="logic_set_theory">La théorie des ensembles</choice>
 	</sub_choice>
 
@@ -64,6 +65,12 @@
 	<sub_choice name="random" displayer="Sciences du hasard">
 		<choice name="random_probability">Probabilités</choice>
 	</sub_choice>
+
+	<sub_choice name="maths_school" displayer="Lycée">
+		<choice name="maths_school_term_1">Terminale, trimestre 1</choice>
+		<choice name="maths_school_term_2">Terminale, trimestre 2</choice>
+	</sub_choice>
+	
 </gui_object>
 
 // Hub button
@@ -119,3 +126,4 @@
 <include src="gui_content_geometry.txt">
 <include src="gui_content_logic.txt">
 <include src="gui_content_random.txt">
+<include src="gui_content_school.txt">

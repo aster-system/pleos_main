@@ -30,6 +30,9 @@
 // Include PLEOS Hub header
 #include "../headers/pleos_hub.h"
 
+// Include PLEOS Test header
+#include "../headers/pleos_test.h"
+
 // Init SCLS
 SCLS_INIT
 
@@ -87,6 +90,7 @@ void draw(std::shared_ptr<scls::Image> img, std::vector<double>& value_1, std::v
 //*/
 
 int main(int argc, char* argv[]) {
+    //pleos::test("tests");
 
     pleos::Pleos_Window window(900, 600, argv[0]);
     window.load_from_xml("assets/window.txt");

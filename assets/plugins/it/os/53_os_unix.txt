@@ -1,0 +1,31 @@
+<h1>Unix, GNU et Linux</h1>
+
+
+
+<h2>L'un après l'autre</h2>
+
+<h3>Unix, le plus ancien</h3>
+<p>
+Quand on parle de système d'exploitation, <span class="important">nous devons parler d'un des plus anciens qui existe : <a href="https://fr.wikipedia.org/wiki/Unix" target="_blank">Unix</a></span>.
+En effet, les premières version de Unix ont vu le jour au début des années 70.
+L'idée de ce système était de créer un système d'exploitation pour les ordinateurs d'une des plus grandes entreprises techs de l'époque : <a href="https://fr.wikipedia.org/wiki/Laboratoires_Bell" target="_blank">les Laboratoires Bell</a>.
+À une époque où seules les universitaires avez accés aux ordinateurs, Unix fût très rapidement pris en main par ces derniers, s'imposant au fil de la décennie 70 comme un des systèmes les plus utilisées par les universitaires.
+Parallèlement, il accompagna toutes les avancées technologiques de l'époque (arrivée de la <a href="https://fr.wikipedia.org/wiki/Defense_Advanced_Research_Projects_Agency" target="_blank">DARPA</a>, <a href="https://fr.wikipedia.org/wiki/ARPANET" target="_blank">ARPANET</a>).
+Il est majoritairement écrit dans le langage C (d'ailleurs crée pour l'occasion par <a href="https://fr.wikipedia.org/wiki/Dennis_Ritchie">Dennis Ritchie</a>).
+Comme DOS, <span class="important">son utilsation dépendait grandement d'un système de shell</span>.
+</p>
+
+<h3>L'arrivée de l'Open Source</h3>
+<p>
+Au début des années 80, <span class="important">pleins de catégories différentes d'Unix sont crées</span>.
+De plus, le standard "Unix" a été posé en tant que marque par <a href="https://fr.wikipedia.org/wiki/Open_Group" target="_blank">l'Open Group</a>, permettant à tous les systèmes validés de disposer du nom "Unix" (respectant les <a href="https://fr.wikipedia.org/wiki/Single_UNIX_Specification" target="_blank">standards Unix</a>).
+La première catégorie de systèmes Unix est la catégorie des BSD.
+<span class="important">Les systèmes BSD sont toutes les catégories de systèmes Unix, diffusées sous la license <a href="https://fr.wikipedia.org/wiki/Berkeley_Software_Distribution" target="_blank">BSD</a>, assez permissive pour l'époque</span>.
+Cependant, cette liberté de lincese a mené à de nombreux problèmes juridiques, qui ont mit des années à se régler pour la plupart.
+De nombreuses versions BSD d'Unix sont toujours accessibles aujourd'hui, comme <a href="https://www.openbsd.org/" target="_blank">OpenBSD</a>, <a href="https://www.freebsd.org/" target="_blank">FreeBSD</a> ou même <a href="https://fr.wikipedia.org/wiki/Solaris_(syst%C3%A8me_d%27exploitation)">Solaris</a>.
+Cependant, bien que BSD soit permissif, il pouvait ne pas être entièrement libre.
+Pour y remédier, <span class="important"><a href="https://fr.wikipedia.org/wiki/Richard_Stallman">Richard Stallman</a>  1983 le systèmes d'exploitaiton <a href="https://www.gnu.org/" target="_blank">GNU</a>, entièrement libre</span>
+En 1993, pour assister GNU, <span class="important">un jeune étudiant, <a href="https://fr.wikipedia.org/wiki/Linus_Torvalds">Linus Torvalds</a>, lui créa un noyau, nommé <a href="https://www.linux.org/pages/download/">Linux</a></span>.
+De nombreuses versions de GNU couplé avec Linux (ou GNU/Linux) sont disponibles de nos jours, comme <a href="https://www.ubuntu-fr.org/" target="_blank">Ubuntu</a> ou <a href="https://www.linuxmint.com/" target="_blank">Linux Mint</a>.
+Pour finir, <span class="important">nous devons citer le deuxième système le plus utilisé sur ordinateur : MacOS, qui est devenu un système compatible aux standards Unix en 2007</span>.
+</p>

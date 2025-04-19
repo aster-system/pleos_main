@@ -48,12 +48,6 @@ Voici deux exemples de deux systèmes, comportant 5 particules chacun.
     <circle color=red x=3 y=1 radius=1/2>
 </graphic>
 <p>
-Pour comprendre la thermodynamique, il faut comprendre le concept de température.
-En physique, <span class="important">la température d'un corps représente le degré d'agitation de ses molécules</span>.
-Comme une agitation est un mouvement, alors (d'un point de vue très microscopique) l'énergie thermique est une forme d'énergie cinétique.
-Bien évidemment, cette agitation n'est pas visible à l'oeil nue (et, en réalité, ne l'est presque pas non plus au microscope optique).
-</p>
-<p>
 La thermodynamique est régit par 4 principes très importants (numérotés de 0 à 3).</br>
 Le principe zéro est très simple : <span class="important">si deux systèmes sont en équilibre thermique, et qu'on introduit un troisième système en équilibre thermique avec un seul (ou plus) des deux systèmes, alors il sera en équilibre avec l'autre</span>.
 En gros, deux système ayant une même température ne vont (ou, du moins, il est extrêmement peu probable) pas changer de température à eux tout seul.</br>
@@ -66,4 +60,50 @@ On dit de l'entropie gagnée qu'elle est crée par le système.
 D'un point de vue thermique, cela consiste à dire "le chaud va toujours vers le froid" : le chaud représente peu d'entropie, et le froid représente beaucoup d'entropie.</br>
 Le troisième principe de la thermodynamique, le principe de Nernst, s'intéresse aussi à l'entropie : un corps dont la température tend vers le zéro absolu voit son entropie tendre vers le zéro absolu.</br>
 Ces 4 postulats peuvent aussi s'écrire sous forme axiome mathématique.
+</p>
+
+<h3>Les états de matières</h3>
+<p>
+Selon le comportement des molécules et des atomes dans un objet à échelle microscopique.
+<span class="important">Les états de la matières provoquant des ensembles de comportement spécifiques à cet état sont nommés... états de la matière</span>.
+Ces "comportements" spécifiques représentent généralement beaucoup de paramètres différents (généralement corrélés) : densité, volume, viscosité...
+<span class="important">Les 4 états les plus connus sont : solide, liquide, gazeux et plasma</span>.
+Selon la variation du comportement des molécules dans la matière, l'état de cette matière peut passer de l'un à l'autre, de manière plus ou moins brusque (si elle est brusque, elle est dite discontinue, et nous parlons de "transformation de phase").
+L'étude de l'état précis d'un matériau selon certaines de ces caractéristiques précise peut se faire dans ce que l'on appelle un diagramme de phase.
+</p>
+<p>
+<span class="important">L'état solide représente un état où les atomes / molécules n'ont quasiment par de liberté de mouvement dans l'objet, et sont assez solidement liés pour préserver cette absence de liberté</span>.
+Ce type de matériaux provoque quelques caractéristiques importantes à échelle macroscopique, permettant de les différencier des autres états.
+En effet, un objet à l'état solide a une forme et un volume propre.
+</p>
+<p>
+<span class="important">L'état liquide représente un état où les atomes / molécules ont une grande liberté de mouvement dans l'objet, mais sont légèrement liés entre eux</span>.
+Donc, un liquide n'a pas de forme précise, mais a une volume précis grâce à la faible liaison.
+Un objet à l'état liquide peut être appelé un fluide.
+En physique, <span class="important">un fluide est un objet parfaitement déformable</span> (c'est le cas du liquide).
+</p>
+<p>
+<span class="important">L'état gazeux représente un état où les atomes / molécules ont une extrême liberté de mouvement dans l'objet, et presque aucun lien entre eux</span>.
+De ce fait, un gaz n'a ni forme, ni volume : il occupe toujours tout l'espace possible.
+Un gaz est aussi un fluide, puisqu'il est facilement déformable.
+Il s'agit aussi de l'état le plus simple à étudier.
+<span class="important">L'état plasma représente un état gazeux encore plus énergétique, où les électrons sont détachés des atomes</span>.
+</p>
+
+
+
+<h2>La théorie cinétique des gaz</h2>
+
+<h3>Le concept de température</h3>
+<p>
+Pour comprendre la thermodynamique, il faut comprendre le concept de température.
+En théorie cinétique des gaz, <span class="important">la température d'un corps représente le degré d'agitation des atomes dans ses molécules</span>.
+Comme une agitation est un mouvement, alors (d'un point de vue très microscopique) l'énergie thermique est une forme d'énergie cinétique.
+Bien évidemment, cette agitation n'est pas visible à l'oeil nue (et, en réalité, ne l'est presque pas non plus au microscope optique).
+</p>
+<p>
+En réalité, il existe plusieurs modèles décrivant la température (degré Celsius, degré Fahrenheit...).
+Pour la mesure directe de la température dans le sens "agitation des atomes", <span class="important">on utilise une unité précise : le kelvin</span>.
+Une température d'un objet à 0 kelvin (nommé le zéro absolu) implique que les atomes dans cet objet ne s'agitent absolument pas (ce qui, d'un point de vue quantique, représente un état d'énergie minimal de l'objet, ce qui n'est pas possible selon le principe quantique d'incertitude).
+
 </p>

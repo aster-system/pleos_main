@@ -1,0 +1,175 @@
+<h1>Trimestre 2 de Maths. Terminale</h1>
+
+
+
+<h2>L'analyse mathématique</h2>
+
+<h3>Le principe de continuité</h3>
+<p>
+En mathématique, le principe de continuité est présent à beaucoup d'endroits : analyse, algèbre, topologie...
+En terminale, nous allons nous intéresser au principe de continuité en analyse de fonctions réelles.
+Effectivement, pour définir ce principe, nous aurons besoin de celui de limites, vue au premier trimestre.
+D'un point de vue logique, <span class="important">une fonction est continue entre deux valeurs de x si, pour la tracer sur un graphique, il n'y a pas besoin de lever le crayon</span>.
+On peut aussi dire qu'elle est discontinue pour une valeur précise (la valeur où nous devons lever le stylo).
+Une fonction qui n'est pas continue est dite discontinue.
+Par exemple, cette fonction (avec f(x) = 3x + 2) est parfaitement continue.
+</p>
+<graphic><background_color white><function expression=3x+2></function></graphic>
+<p>
+En revanche, celle-ci (fonction d'Heaviside, pas au programme de terminale, mais utilisée comme représentation de fonction discontinue) ne l'est pas.
+</p>
+<graphic>
+    <background_color white>
+    <line y_1=1 x_2=5 y_2=1>
+    <vec x=-5>
+</graphic>
+<p>
+Cependant, il y a une définition plus mathématique que "pas besoin de lever le crayon".
+Mathématiquement, <span class="important">une fonction est continue pour une valeur de "x" si la limite de la fonction vers "x" est la même si nous la calculons en partant d'avant et d'après x</span>.
+Si elle est continue entre deux valeurs de "x", alors la fonction est continue sur toutes les valeurs entre ces deux valeurs.
+Une reformulation de cette définition consiste à dire que, quelque soit la valeur d'un réel "a" de plus en plus proche de x, il existera toujours une valeur inférieure à |f(x) - f(a)|.
+</p>
+<graphic>
+    <background_color white>
+    <line y_1=1 x_2=5 y_2=1>
+    <vec x=-5>
+</graphic>
+<p>
+Dans le cas ci-dessus, la limite de la fonction en 0 vaut 0 si l'on part de la gauche, et 1 si l'on part de la droite : <span class="important">elle est discontinue en 0</span>.
+Si la valeur précise de la fonction en x est égale à la limite en partant de la gauche, la fonction est dite continue à gauche en x.
+Si la valeur précise de la fonction en x est égale à la limite en partant de la droite, la fonction est dite continue à droite en x.
+En toute logique, la fonction est dite continue en x si elle est continue à gauche et à droite en x.
+Donc, <span class="important">si une fonction est continue en x, alors la limite de la fonction "f" tendant vers x est... "f(x)"</span>.
+Dans la même dynamique, une fonction dérivable en "x" est continue en "x".
+<span class="important">Pour des valeurs de "x" hors de l'ensemble de définition de la fonction, la notion de continuité est indéfinie</span>.
+Donc, la fonction inverse est belle est bien continue sur son ensemble de définition, puisque l'endroit où il faut "lever le crayon" (en x = 0) est hors de l'ensemble de définition.
+</p>
+<p>
+Une autre propriété importante : <span class="important">la composée de fonction continue est aussi continue</span>.
+Cela implique qu'une fonction quelconque est continue si toutes les fonctions qui la composent le sont aussi.
+En gros, vous pouvez remonter petit à petit toutes les fonctions composant une fonctions complexes, pour arriver à des formes de fonctions facilement démontrables comme continues.
+En parlant de formes de fonctions continues, <span class="important">pleins de ces formes de fonctions sont continues sur leur ensemble de définition : polynômes, logarithmes, racines</span>...
+Démontrer qu'une fonction est continue est, en réalite, assez simple avec cette technique.
+</p>
+
+<h3>Le théorème des valeurs intermédiaires</h3>
+<p>
+Le théorème des valeurs intermédiaires est un théorème requis dans le programme de mathématique en terminale.
+Ce théorème s'énonce ainsi : <span class="important">si une fonction définie sur l'ensemble des réels est continue entre deux valeurs "a" et "b", alors elle prendra TOUTES les valeurs possibles entre "f(a)" et "f(b)"</span>.
+C'est une conséquence directe du concept de continuité, mais aussi d'un autre concept plus complexe : les connexes (qui ne sont pas abordés en terminale).
+Ce théorème permet d'en démontrer un autre : le théorème de Bolzano.
+<span class="important">Le théorème de Bolzano énonce que, dans le cadre du théorème des valeurs intermédiaires, si "f(a)" et "f(b)" sont de signes opposés, alors la fonction passera (entre "a" et "b") par 0</span>.
+Les démonstrations de ces deux théorèmes reposent sur des concepts topologiques, qui ne sont pas vus en terminale.
+Il sont donc considérés admis.
+D'ailleurs, un des corololaires du théorème des valeurs intermédiaires énonce que, si la fonction est strictement monotone entre "a" et "b", alors chaque valeur entre "f(a)" et "f(b)" ne seront atteintes qu'une fois.
+</p>
+<graphic>
+    <background_color white>
+    <function expression="x*x*x+x*x-4x"></function>
+    <line x_1=-3 y_1=-4 x_2=2 y_2=-4 color=blue>
+    <line x_1=2 y_1=-4 x_2=2 y_2=4 color=blue>
+</graphic>
+
+
+
+<h2>La géométrie dans l'espace</h2>
+
+<h3>Le produit scalaire dans l'espace</h3>
+<p>
+L'idée de cette partie est d'étendre le concept de produit scalaire entre deux vecteurs, vue en première pour un plan 2D, à un espace 3D.
+Pour rappel, l'idée d'un produit scalaire est d'introduire une opération de produit entre deux vecteurs, en prenant en compte leur longueur et l'angle qu'ils forment.
+En fait, <span class="important">l'idée est de calculer le produit scalaire en 2D, sur le plan formé par les deux vecteurs</span>.
+Pour rappel, le produit scalaire entre deux vecteurs "u" et "v" se note :
+</p>
+<math><mo>||</mo><mvec>u</mvec><mo>||</mo><mi>*</mi><mo>||</mo><mvec>v</mvec><mo>||</mo><mo>*</mo><mi>cos(</mi><mvec>u</mvec><mi>,</mi><mvec>v</mvec><mi>)</mi></math>
+<p>
+On peut déduire quelque chose d'assez important avec cette formule : deux vecteurs sont orthogonaux si leur produit scalaire est nul.
+Algébriquement, <span class="important">le produit scalaire fonctionne avec les normes de vecteurs de la même manière que n'importe qu'elle produit de nombres</span>.
+Elle est par exemple compatible avec les identités remarquables.
+En effet :
+</p>
+<math><mi>||</mi><mvec>u</mvec><mo>+</mo><mvec>v</mvec><mi>||</mi><mi>²</mi><mo>=</mo><mi>||</mi><mvec>u</mvec><mi>||</mi><mi>²</mi><mo>+</mo><mi>2</mi><mo>*</mo><mvec>u</mvec><mo>.</mo><mvec>v</mvec><mo>+</mo><mi>||</mi><mvec>v</mvec><mi>||</mi><mi>²</mi></math></br>
+<math><mequi><mvec>u</mvec><mo>.</mo><mvec>v</mvec><mo>=</mo><mfrac><mi>1</mi><mi>2</mi></mfrac><mo>(</mo><mi>||</mi><mvec>u</mvec><mi>||</mi><mi>²</mi><mo>+</mo><mi>||</mi><mvec>v</mvec><mi>||</mi><mi>²</mi><mo>-</mo><mi>||</mi><mvec>u</mvec><mo>+</mo><mvec>v</mvec><mi>||</mi><mi>²</mi><mo>)</mo></math>
+<p>
+Grâce à toutes ces formules, <span class="important">vous pouvez en déduire une autre, pour calculer des produits scalaires dans un plan orthonormé (i, j, k)</span>.
+Si nous avons deux vecteurs i et j, avec i(x, y, z) et j(x', y', z') :
+</p>
+<math><mvec>u</mvec><mo>.</mo><mvec>v</mvec><mo>=</mo><mi>x</mi><mo>*</mo><mi>x'</mi><mo>+</mo><mi>y</mi><mo>*</mo><mi>y'</mi><mo>+</mo><mi>z</mi><mo>*</mo><mi>z'</mi></math></br>
+<p>
+Cette formule dépend directement du caractère algébrique du produit scalaire.
+</p>
+
+<h3>Calcul 2D en 3D</h3>
+<p>
+L'introduction ici de l'algèbre du produit scalaire est une approche vers le calcul généralement 2D appliqué à la 3D (un prolongement de ce qui est vu au premier trimestre).
+Pour rappel, <span class="important">les calculs 2D en 3D se font en considérant les objets nécessaires comme appartenant / inclus à un plan 2D</span>.
+Grâce au produit scalaire (et aux formules intégrés), <span class="important">on peut savoir si des vecteurs (et donc, des droites ou des plans) sont orthogonaux entre eux</span>.
+Dans le cas du plan, il faut vérifier que le vecteur / droite soit orthogonal à deux vecteurs directeurs / droites du plans pour être orthogonal à l'entiereté du plan (et donc, de ce qui le constitue).
+Grâce à toutes les propriétés très basiques de la géométrie euclidienne, vous pouvez trouver pleins de propriétés facilement calculables de cette manière (plans orthogonaux entre eux, plans parallèles entre eux...).
+</p>
+<p>
+Nous allons maintenant nous concentrer sur l'étude de plans 2D en 3D.
+Pour cela, nous allons introduire la notion de vecteur normal.
+<span class="important">Un vecteur est normal à un plan si il est orthogonal à ce plan</span> (avec les méthodes vues précédemment).
+En toute logique, toutes les versions rétrécies / agrandies de ce vecteur sont aussi normales au plan.
+Grâce à ce genre de vecteur, <span class="important">nous pouvons définir une équation pour caractériser un plan dans un repère orthonormé, nommée une équation carthésienne de plan</span>.
+Pour un plan "P" de vecteur normal "n(x, y, z)", une équation carthésienne de ce plan est :
+</p>
+<math><mi>x</mi><mo>*</mo><mi>a</mi><mo>+</mo><mi>y</mi><mo>*</mo><mi>b</mi><mo>+</mo><mi>z</mi><mo>*</mo><mi>c</mi><mo>+</mo><mi>d</mi><mo>=</mo><mi>0</mi></math></br>
+<p>
+Si un point "p(a, b, c)" respecte cette équation, alors il est inclu dans le plan.
+La démonstration de cette équation repose directement sur les formules vues plus haut (et les propriétés de géométrie euclidienne basiques).
+En utilisant d'autres formules de plans ou des formules de droites, <span class="important">vous pouvez créer des systèmes d'équations permettant de trouver les points / droites représentant les intersections plans / plans (des droites) ou les intersections plans / droites (des points)</span>.
+Grâce à ce concept, vous pouvez en utiliser un autre : la projection orthogonale de point sur une plan / une droite.
+<span class="important">Le projeté orthogonal d'un point sur une ligne ou une droite est le point sécant à la droite / au plan, tel que la droite formé par le point de départ et son projeté soit orthogonale à la droite / au plan</span>.
+Ce concept peut être très utile en géométrie, dans pleins de concepts différents.
+</p>
+
+
+
+<h2>L'algèbre</h2>
+
+<h3>Introduction du logarithme népérien</h3>
+<p>
+Le logarithme est une fonction très utilisée en mathématique.
+En terminale, <span class="important">la fonction logarithme népérien (notée "ln") est introduite comme la fonction réciproque de la fonction exponentielle</span>.
+Elle permet de donner la valeur de "x" tel que "e(x) = y" grâce à la valeur y : "x = ln(y)".
+Elle est définie (continue, croissante, concave et dérivable) sur R*+ (de 0 exclu à + l'infini), et l'ensemble de ses images est l'ensemble des réels.
+Par ailleurs, <span class="important">chaque antécédent n'a qu'une seule image : la fonction est dite bijective (dans une équation, on peut passer ou enlever cette fonction des deux côtés en même temps sans problèmes)</span>.
+Sa dérivée est la fonction inverse, sa limite en 0 est + l'infini, et sa limite en + l'infini est + l'infini.
+Il est à noter que "ln(1) = 0" et "ln(e) = 1".
+Cependant, il existe des formes de cette fonction où, pour "ln(x) = 1", x n'est pas "e".
+En effet, il faut rappeler que la fonction exponentielle est "e" exposant "x" : le logarithme népérien permet d'obtenir la réciproque de l'exposant de "e".
+Or, d'autres formes de fonctions logarithmes permettent d'obtenir la réciproque d'autres exposants "a", comme 10 ou 2, qui sont très utilisés.
+On dit que le logarithme est de base "a", et que "f(a) = 1" (le logarithme népérien est de base "e", nous le noterons "ln" pour éviter les confusions).
+</p>
+<graphic><background_color white><base width=6 height=6><function expression="ln(x)"></function><function expression="exp(x)"></function></graphic>
+<p>
+L'obstention d'un logarithme de base "a" peut se faire assez facile via le logarithme népérien.
+</p>
+<math><mi>log</mi><msub>a</msub><mi>(x)</mi><mo>=</mo><mfrac><mi>ln(x)</mi><mi>ln(a)</mi></mfrac></math>
+<p>
+Historiquement, <span class="important">cette fonction permet de transformer des produits en sommes</span>.
+En effet, une des propriétés extraordinaires du logarithme népérien est la suivante : <span class="important">ln(x * y) = ln(x) + ln(y)</span>.
+C'est une simple conséquence des propriétés vues au dessus :
+</p>
+<math><mi>e</mi><msup>ln(x)</msup><mo>=</mo><mi>x</mi><mo>,</mo><mi>e</mi><msup>ln(y)</msup><mo>=</mo><mi>y</mi></math></br>
+<math><mequi><mi>x</mi><mo>*</mo><mi>y</mi><mo>=</mo><mi>e</mi><msup>ln(x)</msup><mo>*</mo><mi>e</mi><msup>ln(y)</msup><mo>=</mo><mi>e</mi><msup>ln(x)+ln(y)</msup></math></br>
+<math><mequi><mi>ln(x * y)</mi><mo>=</mo><mi>ln(x)+ln(y)</mi></math>
+<p>
+Avec cette propriété, on peut en déduire d'autres équivalentes :
+</p>
+<math><mequi><mi>ln(</mi><mfrac><mi>x</mi><mi>y</mi></mfrac><mi>)</mi><mo>=</mo><mi>ln(x)-ln(y)</mi></math></br>
+<math><mequi><mi>ln(</mi><mi>x</mi><msup>n</msup><mi>)</mi><mo>=</mo><mi>n * ln(x)</mi></math></br>
+<math><mequi><mi>ln(</mi><msqrt>x</msqrt><mi>)</mi><mo>=</mo><mfrac><mi>1</mi><mi>2</mi></mfrac><mi>ln(x)</mi></math>
+<p>
+Pour l'étude de limite, <span class="important">elle est soumise au théorème de croissances comparées</span>.
+En effet :
+</p>
+<math><munder><mo>lim</mo><mi>x<mto>0</mi></munder><mi>x * ln(x)</mi><mo>=</mo><mi>0</mi></math></br>
+<math><munder><mo>lim</mo><mi>x<mto>+inf</mi></munder><mfrac><mi>ln(x)</mi><mi>x</mi></mfrac><mo>=</mo><mi>0</mi></math>
+<p>
+Pour l'étude de fonction dérivée utilisant la fonction logarithme, <span class="important">il existe une façon de faire très précise, nommée la dérivée logarithmique</span>.
+Pour une fonction u(x) quelconque (avec, comme intervalle de définition, l'intersection de l'intervalle de définition de "u" et de toutes les valeurs "x" où de "u(x)" est supérieur à 0) :
+</p>
+<math><mi>f(x)</mi><mo>=</mo><mi>ln(u(x))</mi><mo>,</mo><mi>f'(x)</mi><mo>=</mo><mfrac><mi>u'(x)</mi><mi>u(x)</mi></mfrac></math></br>

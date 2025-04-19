@@ -83,6 +83,36 @@ namespace pleos {
                 content.get()->sub_texts().at(i).get()->balise_datas().is_paragraph = false;
                 __saasf_image_number++;
             }
+            else if((attribute_name == std::string("msqrt"))){
+                // HMLT square root
+                if(content.get()->sub_texts().at(i).get()->sub_texts().size() == 0){
+                    std::shared_ptr<scls::XML_Text> content_copy = std::make_shared<scls::XML_Text>(*content.get()->sub_texts().at(i).get());
+                    content_copy.get()->set_xml_balise_name(std::string("mi"));
+                    content.get()->sub_texts().at(i).get()->clear();
+                    content.get()->sub_texts().at(i).get()->set_xml_balise_name(attribute_name);
+                    content.get()->sub_texts().at(i).get()->add_sub_balise(content_copy);
+                }
+            }
+            else if((attribute_name == std::string("msub") || attribute_name == std::string("msup")) && i > 0){
+                // HMLT a sup
+                std::shared_ptr<scls::XML_Text> content_copy = std::make_shared<scls::XML_Text>(*content.get()->sub_texts().at(i - 1).get());
+                std::shared_ptr<scls::XML_Text> content_copy_sup = std::make_shared<scls::XML_Text>(*content.get()->sub_texts().at(i).get());
+                content_copy_sup.get()->set_xml_balise_name(std::string("mi"));
+                content.get()->sub_texts().at(i - 1).get()->clear();
+                content.get()->sub_texts().at(i - 1).get()->set_xml_balise_name(attribute_name);
+                content.get()->sub_texts().at(i - 1).get()->add_sub_balise(content_copy);
+                content.get()->sub_texts().at(i - 1).get()->add_sub_balise(content_copy_sup);
+                content.get()->sub_texts().erase(content.get()->sub_texts().begin() + i);i--;
+            }
+            else if(attribute_name == std::string("mvec") || attribute_name == std::string("vec")){
+                // HMLT a vector
+                std::shared_ptr<scls::XML_Text> content_copy = std::make_shared<scls::XML_Text>(*content.get()->sub_texts().at(i).get());
+                content_copy.get()->set_xml_balise_name(std::string("mi"));
+                content.get()->sub_texts().at(i).get()->clear();
+                content.get()->sub_texts().at(i).get()->set_xml_balise_name(std::string("mover"));
+                content.get()->sub_texts().at(i).get()->add_sub_balise(content_copy);
+                content.get()->sub_texts().at(i).get()->add_sub_balise(std::string("<mo stretchy=\"false\">&#x2192;</mo>"));
+            }
             else{__saasf_images(content.get()->sub_texts().at(i), path);}
         }
     }
@@ -118,6 +148,8 @@ namespace pleos {
         else if(word == std::string("logic")){if(add_determinant){to_return = std::string("la logique");}else{to_return = std::string("logique");};}
         else if(word == std::string("matter")){if(add_determinant){to_return = std::string("la matière");}else{to_return = std::string("matière");};}
         else if(word == std::string("mechanic")){if(add_determinant){to_return = std::string("la mécanique");}else{to_return = std::string("mécanique");};}
+        else if(word == std::string("network")){if(add_determinant){to_return = std::string("le réseau");}else{to_return = std::string("réseau");};}
+        else if(word == std::string("os")){if(add_determinant){to_return = std::string("les systèmes d'exploitation");}else{to_return = std::string("systèmes d'exploitation");};}
         else if(word == std::string("probability")){if(add_determinant){to_return = std::string("les probabilités");}else{to_return = std::string("probabilités");};}
         else if(word == std::string("random")){if(add_determinant){to_return = std::string("les sciences du hasard");}else{to_return = std::string("sciences du hasard");};}
 

@@ -1,0 +1,76 @@
+<h1>Le calcul propositionnel</h1>
+
+
+
+<h2>Une façon de voir la logique</h2>
+
+<h3>Qu'est ce qu'est une proposition ?</h3>
+<p>
+En logique mathématique, <span class="important">une proposition représente une information quelconque</span>.
+Cependant, cette information ne peut avoir qu'une valeur : elle peut être vraie ou fausse.
+Par exemple, "je suis beau" est une proposition, puis ce qu'elle représente une information est soit vraie, soit fausse.
+<span class="important">Une logique n'utilisant que ce genre de propositions (vraies ou fausses) est dite bivalente</span>.
+</p>
+
+<table>
+    <case x=0 y=0 content="Proposition"><case x=1 y=0 content="Pas une proposition">
+    <case x=0 y=1 content="J'ai 20 euros."><case x=1 y=1 content="Combien d'euros as tu ? (Pas une information)">
+    <case x=0 y=2 content="La voiture est prête"><case x=1 y=2 content="Vas plus vite ! (Pas une information)">
+    <case x=0 y=3 content="Ce système est dangereux"><case x=1 y=3 content="Si tel est le cas. (Pas une information)">
+</table>
+
+<h3>Qu'est ce qu'est un prédicat ?</h3>
+<p>
+Le concept de prédicat représente le concept de proposition, exprimé de manière plus générale.
+En effet, <span class="important">un prédicat représente une information quelconque, comportant une valeur inconnue</span>.
+Donc, en modifiant cette valeur inconnue par une valeur connue, vous obtenez une proposition précise.
+Il existe donc un ensemble de valeurs pour lequelle la proposition obtenue est vraie, et un autre ensemble de valeurs pour lequelle la proposition obtenue est fausse.
+</p>
+
+<table>
+    <case x=0 y=0 content="Prédicat"><case x=1 y=0 content="Pas un prédicat">
+    <case x=0 y=1 content="Monsieur X a 20 euros."><case x=1 y=1 content="J'ai 20 euros. (Pas de valeur inconnue)">
+    <case x=0 y=2 content="L'objet X est prêt."><case x=1 y=2 content="La voiture est prête. (Pas de valeur inconnue)">
+    <case x=0 y=3 content="J'ai X euros."><case x=1 y=3 content="Combien d'euros as tu ? (Pas une proposition)">
+</table>
+
+<h3>Utiliser les propositions et les prédicats</h3>
+<p>
+L'idée avec ces propositions et prédicats est <span class="important">de les assembler pour obtenir (de manière précise) toutes les opérations nécessaires à la démonstration d'une proposition, tout aussi complexe soit elle</span>.
+Pour cela, il faut souvent utiliser plusieurs propositions / prédicats assembler de manière très précise.
+Cette assemblage utilise son propre langage.
+Ici, <span class="important">les propositions utilisées sont nommées variables propositionnels (ou propositions atomiques)</span>.
+Il est possible de les lier entre elles, avec des connecteurs logiques.
+En fait, <span class="important">les connecteurs logiques permettent de créer des propositions plus complexes, avec une (ou plusieurs) autres expressions plus simples</span>.
+Bien que ce concept puisse être compliqué, il s'agit en réalité de concepts assez simples.
+Par exemple, le "ET" logique permet de créer une expression avec deux autres expressions "p" et "q", vraie si "p" et "q" le sont aussi.
+Dans les connecteurs importants, ont peut aussi citer "OU", "NON" ou "IMPLIQUE".
+</p>
+
+<table>
+    <case x=0 y=0 content="Connecteur"><case x=1 y=0 content="Utilité"><case x=1 y=0 content="Notation">
+    <case x=0 y=1 content="NON"><case x=1 y=1 content="Forme une proposition avec une autre proposition p, vraie si p est fausse (inverse de p).">
+    <case x=0 y=2 content="ET"><case x=1 y=2 content="Forme une proposition avec une deux autres propositions p et q, vraie si p et q sont vraies.">
+    <case x=0 y=3 content="OU"><case x=1 y=3 content="Forme une proposition avec une deux autres propositions p et q, vraie si p ou q (ou les deux) est vraie.">
+</table>
+
+<p>
+Une autre utilité de ces concepts est la déduction mathématique.
+Comme vu auparavant, <span class="important">la déduction mathématique consiste à former un ensemble de propositions / prédicats et connecteurs logiques, pour former des démonstrations concrètes</span>.
+Le passage de l'un à l'autre est régit par une notation assez précise.
+Les propositions permettant la vérification de la conclusion sont nommés les prémisses.
+</p>
+<math><mfrac><mi>Prémisse_1 Prémisse_2 ... Prémisse_x</mi><mi>Conclusion</mi></mfrac></math>
+<p>
+Bien évidemment, utiliser des propositions "p" et "q", c'est bien, mais extrêmement abstrait.
+<span class="important">Les méthodes d'attributions de propositions bien réelles à ces propositions abstraites représentent ce que l'on appelle la sémantique</span>.
+Par exemple, en arithmétique, un nombre entier est pair si il peut s'écrire sous la forme "2 * k", avec "k" un entier quelconque.
+Définissons la proposition "p" tel que, pour un n quelconque, "n est pair".
+De plus, un nombre entier est impair si il peut s'écrire sous la forme "2 * k + 1", avec "k" un entier quelconque.
+Définissons la proposition "q" tel que "n est impair".
+Dans un cadre logique, la proposition "p ET q" énonce un "n" pair et impair, et donc "2 * k = 2 * l + 1".
+Or, ce n'est pas vrai, donc "p IMPLIQUE q" n'est jamais vraie dans ce contexte, mais "p IMPLIQUE NON q" l'est toujours (de manière assez évidente).
+Il est possible de pousser le raisonnement plus loin pour plus de rigueur, mais le résultat est le même.
+Il est à noter que, dans le cas d'exemples aussi simples, les résultats obtenus sont particulièrement évidents.
+<span class="important">Les règles précises utilisées dans une sémantique sont définies dans ce que l'on appelle un modèle</span>.
+</p>

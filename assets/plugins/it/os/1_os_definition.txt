@@ -1,0 +1,33 @@
+<h1>Les systèmes d'exploitation</h1>
+
+
+
+<h2>Utiliser un ordinateur</h2>
+
+<h3>Qu'est ce qu'est un système d'exploitation ?</h3>
+<p>
+<span class="important"><a href="https://fr.wikipedia.org/wiki/Syst%C3%A8me_d'exploitation" target="_blank">Un système d'exploitation</a> est, par définition, une suite de programme permettant d'utiliser un ordinateur</span>.
+En effet, ce n'est pas un seul programme, mais un ensemble de programmes permettant l'utilsation d'un ordinateur.
+Il agit à plusieurs niveaux de l'ordinateur, que ce soit très proche de l'hardware, comme proche de l'utilisateur.
+</p>
+
+<h3>Les composants d'un système d'exploitation</h3>
+<p>
+Le premier programme lancé est un programme appelé le bootloader (ou chargeur d'amorçage en français).
+<span class="important">Le bootloader permet d'amorcer le système d'exploitation pour qu'il puisse démarer</span>.
+Il est lancé par le logiciel le plus bas niveau de l'ordinateur : le BIOS.
+Le BIOS peut savoir où se situe le bootloader sur le disque grâce à un très précis système de cartographie du disque.
+<span class="important">Un des plus célèbres bootloader est le bootloader possible pour Linux : <a href="https://doc.ubuntu-fr.org/grub-pc">GRUB</a></span>.
+</p>
+<p>
+Le logiciel venant juste après est le kernel (ou noyau du système d'exploitation).
+<span class="important">Le kernel permet de faire l'interface entre les logiciels de l'ordinateur et l'hardware</span>.
+C'est lui qui gère en vrac : la gestion de la mémoire, le travail du processeur, les interfaces IN / OUT...
+C'est lui qui rend l'ordinateur utilisable.
+Il est cependant très complexe, et doit gérer une quantité aberrante de choses.
+</p>
+<p>
+Finalement, viens au dessus l'interface utilisateur.
+<span class="important">Elle permet l'utilisation de l'ordinateur par l'utilisateur</span>.
+Plein de façons de faire existent, comme <a href="https://fr.wikipedia.org/wiki/Unix">Unix</a> (avec des lignes de commandes, dans un bien connu shell).
+</p>

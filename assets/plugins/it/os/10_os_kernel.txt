@@ -1,0 +1,58 @@
+<h1>Le kernel</h1>
+
+
+
+<h2>Les tâches du kernel</h2>
+
+<h3>Distribuer les performances</h3>
+<p>
+Sur un ordinateur, vous pouvez lancer plusieurs logiciels en même temps.
+En effet, chaque logiciel fonctionne en même temps que tous les autres.
+<span class="important">Ceci est possible grâce au système de <a href="https://fr.wikipedia.org/wiki/Thread_(informatique)" target="_blank">fil d'éxecution</a>, aussi nommé "thread"</span>.
+Un thread représente une suite d'instructions à exécuter par l'ordinateur.
+<span class="important">Le rôle du kernel ici est de gérer plusieurs threads, de tel manière à exécuter une partie d'un thread, puis d'un autre, puis d'un autre...</span>
+Grâce à cela, tous les threads s'exécutent petit à petit, en même temps.
+Chaque thread est exécuté pendant plus ou moins de temps selon son importance.
+Le thread primaire d'un programme est appelé un processus, et est visible via le gestionnaire de tâche (pour l'afficher, il faut saisir les touches contrôle + shift + échap).
+Le processus inclut ses sous-threads dans son exécution et les regroupe aux yeux du gestionnaire de tâche.
+</p>
+
+<h3>Le stockage de données</h3>
+<p>
+Le kernel permet de facilement <span class="important">gérer et stocker des données via des périphériques de stockage, interne ou externe</span>.
+Pour cela, premièrement, il décompose chaque périphérique en partition de stockage.
+Pour <span class="important">manipuler les données dans ces partitions, il utilise des normes strictes nommées les <a href="https://fr.wikipedia.org/wiki/Syst%C3%A8me_de_fichiers">systèmes de fichiers</a></span>.
+Elles permettent d'oganiser proprement les données, stockées dans des groupes nommés "fichiers", pour rendre la partition utilisable.
+Il y a pas mal d'exemples de systèmes de fichiers célèbres, comme <a href="https://fr.wikipedia.org/wiki/NTFS" target="_blank">NTFS</a> de Microsoft, ou <a href="https://fr.wikipedia.org/wiki/FAT32" target="_blank">FAT32</a>.
+Pour créer un système de fichiers, il existe certains standards permettant de rendre les systèmes cross-plateforme, comme <a href="https://fr.wikipedia.org/wiki/POSIX">POSIX</a>.
+</p>
+<p>
+Cela représente la partie cachée de l'iceberg.
+Cependant, un utilisateur classique n'aura jamais besoin de tout ça.
+Le système est grandement simplifié pour lui, <span class="important">avec un système de stockage par fichiers, dossiers (pouvant contenir des fichiers) et chemins d'accés</span>.
+<span class="important">Le chemin d'accés représente l'adresse d'un fichier pour y accéder via le système d'exploitation</span>.
+Il est entièremement sour format textuel.
+La première partie du chemin représente la partition sur laquelle aller chercher le fichier, qui, dans ce cas là, est considérée comme un dossier.
+Sur Windows, un fichier commençant par "C:" se trouve sur la partition "C" (ici, celle où est installé Windows).
+Sur Linux, un fichier commençant par "./" se trouve sur la partition où est installé la distribution Linux.
+L'accés à l'intérieur d'un dossier est possible grâce au caractère "/" (ou "\" des fois sur Windows).
+<span class="important">L'avantage de ce système est la possibilité de l'utiliser, non en partant de la partition, mais en partant d'un autre chemin d'accés</span>.
+Un chemin d'accés utilisé comme tel est appelé un chemin d'accés relatif.
+Par exemple, si vous partez du chemin d'accés vers le dossier "C:/documents/images/", le chemin d'accés relatif "photo.png" serez ici en entier "C:/documents/images/photo.png".
+En utilisant les caractères "../", vous pouvez accéder aux dossier contenant le chemin d'accés d'où vous partez.
+Par exemple, si vous partez du chemin d'accés vers le dossier "C:/documents/images/", le chemin d'accés relatif "../cours/science.pdf" serez ici en entier "C:/documents/cours/science.pdf".
+</p>
+
+<h3>L'intégration des périphériques</h3>
+<p>
+Un ordinateur peut être connecté à beaucoup de choses.
+En général, il s'agit de chose assez générale, ne posant aucun problèmes.
+Cependant, certains périphériques complexes peuvent nécessiter une communication spécifiques, via un programme spécifique.
+<span class="important">Ce programme est nommé un pilote (ou, en anglais, un driver)</span>.
+Les périphériques les plus communs utilise une fonctionnalité nommé "Plug-And-Play", pour très vite détecter le périphérique, sans chose à faire pour l'utilisateur.
+D'ailleurs, si vous avez une erreur de pilotes dans un logiciel, c'est que vous n'avez pas le pilote nécessaire d'installer (ils sont en général disponibles sur le site web du fabricant).
+Cette erreur arrive souvent aux utilisateurs de nouvelle carte graphique, car les pilotes de la carte graphique (AMD Software pour AMD et NVidia Geforce Experience pour NVidia) ne sont pas encore installés.
+De plus, utiliser les pilotes n'est pas chose facile, puis ce que chaque système d'exploitation utilise des techniques différentes, nécessitant un pilote par système d'exploitation.
+Ils sont trouvables dans le dossier "drivers" de System32 sous Windows, ou via le gestionnaire de périphériques.
+Sur Windows, les drivers sont généralement automatique mis à jour si nécessaire.
+</p>

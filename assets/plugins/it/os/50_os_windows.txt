@@ -1,0 +1,48 @@
+<h1>Windows et DOS</h1>
+
+
+
+<h2>DOS : l'ancêtre de Windows</h2>
+
+<h3>Un système très important</h3>
+<p>
+DOS est un des systèmes d'exploitation les plus importants de l'histoire.
+<span class="important">Il s'agit du système d'exploitation installé sur le très célèbre ordinateur de IBM : le PC (personnal computer), et ses dérivés</span>.
+En réalité, DOS, pour "disk operating system" n'est pas UN système d'exploitation, mais une famille de système d'exploitaiton, fonctionnant selon le système de terminal.
+Le plus connu de la famille est MS-DOS, ancêtre de Windows, développé par Microsoft.
+Les systèmes DOS contenaient une aberrante quantité de commande, <a href="https://fr.wikipedia.org/wiki/Commande_DOS" target="_blank">disponible en partie ici</a>.
+<span class="important">Ces commandes ont modelé le fonctionnement moderne des ordinateurs (chemin d'accés, tâches...)</span>, même si l'interface (seulement un simple terminal) est décrite comme assez inconfortable.
+</p>
+
+
+
+<h2>Windows, le plus célèbre</h2>
+
+<h3>Le succès de Microsoft</h3>
+<p>
+Bien évidemment, <span class="important">le système d'exploitation le plus connu est <a href="https://fr.wikipedia.org/wiki/Microsoft_Windows" target="_blank">"Windows"</a></span>.
+Il est développé par Microsoft (une des plus grandes entreprises du monde).
+Pour être précis, "Windows" est une gamme de systèmes d'exploitation, contenant plusieurs systèmes (comme Windows 10 ou Windows 11) et familles de systèmes, détaillées plus bas.
+La première version de ce système est apparû en 1985 sous le nom de "Windows 1".
+En réalité, <span class="important">il s'agit de la suite d'un autre système d'exploitations vus plus haut : MS-DOS</span>.
+</p>
+<p>
+Si Windows est le système d'exploitation le plus utilisé de nos jours, il y a plusieurs raisons.
+<span class="important">Windows est fait pour être le plus simple d'utilisation possible pour le grand public</span> (et aussi un des premiers systèmes à proposer une interface graphique avec <a href="https://fr.wikipedia.org/wiki/MacOS#Historique">MacOS</a>).
+Pour cela, il dispose de toute une interface graphique et suite de logiciels, favorisant la simplicité.
+Ces logiciels vont de logiciels très accés utilisateur, comme <a href="https://www.microsoft.com/fr-fr/microsoft-365/onedrive/online-cloud-storage">OneDrive</a> ou <a href="https://www.microsoft.com/fr-fr/microsoft-365">Microsoft 365 (nouveau nom de Microsoft Office)</a>, à des logiciels beaucoup plus axés vers l'appareil, comme le gestionnaire de périphérique ou le gestionnaire de disques.
+Malgré ça, il reste quand même assez peu demandant et très modulable, et donc utilisable à des prix très accessibles.
+De plus, il dispose d'une documentation et d'un centre d'aide particulièrement efficace.
+<span class="important">Tout cela on fait de lui le système le plus utilisé de nos jours, pour les utilisations du grand public, comme des professionels.</span>
+</p>
+
+<h3>Les différents Windows</h3>
+<p>
+Il existe une grande quantité de version différentes de Windows.
+<span class="important">La famille de Windows plus utilisée actuellement est <a href="https://fr.wikipedia.org/wiki/Windows_NT" target="_blank">Windows NT</a></span>.
+Elle représente les systèmes d'exploitation modernes : multitâche, multi-utilisateur, interface graphique...
+Elle commence avec Windows 2000 pour les serveurs et Windows XP pour le tout public, et regroupe tous les systèmes les plus connus : Windows 7, Windows 8, Windows 10...
+Elle englobe aussi les versions mobiles de Windows (car oui, Windows est disponible sur certains téléphones), comme <a href="https://fr.wikipedia.org/wiki/Windows_10_Mobile" target="_blank">Windows 10 Mobile</a>.
+<span class="important">La famille précedant Windows NT est <a href="https://fr.wikipedia.org/wiki/Windows_9x" target="_blank">Windows 9x</a></span>, regroupant les systèmes basés sur Windows 95 (Windows 98, Windows ME...).
+Des familles pour les systèmes embarquées existées aussi, avec <a href="https://fr.wikipedia.org/wiki/Windows_CE" target="_blank">Windows CE</a> ou <a href="https://fr.wikipedia.org/wiki/Windows_RT" target="_blank">Windows RT</a>, vite rendu obsolète par les progrés technologiques des systèmes embarquées.
+</p>

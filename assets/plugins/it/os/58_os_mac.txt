@@ -1,0 +1,11 @@
+<h1>MacOS</h1>
+
+
+
+<h2>MacOS par Apple</h2>
+
+<h3>Le second</h3>
+<p>
+Si l'on parle de Windows, <span class="important">nous devons aussi parler du second système d'exploitation le plus utilisé sur ordinateur : <a href="https://fr.wikipedia.org/wiki/MacOS" target="_blank">MacOS</a></span>.
+Il s'agit du système d'exploitation proposé par <a href="https://fr.wikipedia.org/wiki/Apple" target="_blank">Apple</a>.
+</p>

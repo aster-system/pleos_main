@@ -51,6 +51,14 @@ namespace pleos {
         GUI_OBJECT_CREATION(scls::GUI_Text, a_algorithms_sort_comparaison_elements_datas_title, "it_algorithms_sort_comparaison_elements_datas_title")
         GUI_OBJECT_CREATION(scls::GUI_Object, a_algorithms_sort_comparaison_simulation, "it_algorithms_sort_comparaison_simulation")
 
+        // OS
+        GUI_OBJECT_CREATION(scls::GUI_Object, a_os_page, "it_os_page")
+        GUI_OBJECT_CREATION(pleos::GUI_Text, a_os_home_page, "it_os_home_body")
+        GUI_OBJECT_CREATION(pleos::GUI_Text, a_os_kernel_page, "it_os_kernel_body")
+        GUI_OBJECT_CREATION(pleos::GUI_Text, a_os_mac_page, "it_os_mac_body")
+        GUI_OBJECT_CREATION(pleos::GUI_Text, a_os_unix_page, "it_os_unix_body")
+        GUI_OBJECT_CREATION(pleos::GUI_Text, a_os_windows_page, "it_os_windows_body")
+
         // School
         GUI_OBJECT_CREATION(scls::GUI_Object, a_school_page, "it_school_page")
         GUI_OBJECT_CREATION(scls::GUI_Text_Base<Text>, a_school_term_1_page, "it_school_term_1_body")
@@ -197,6 +205,13 @@ namespace pleos {
                 needed_image.get()->save_png("tests/arbre.png");
                 data_structures_tree_simulation()->texture()->set_image(needed_image);
             }
+            // OS
+            GUI_OBJECT_SELECTION(display_os_home_page(), "os_home")
+            GUI_OBJECT_SELECTION(display_os_kernel_page(), "os_kernel")
+            GUI_OBJECT_SELECTION(display_os_mac_page(), "os_mac")
+            GUI_OBJECT_SELECTION(display_os_unix_page(), "os_unix")
+            GUI_OBJECT_SELECTION(display_os_windows_page(), "os_windows")
+            // School
             GUI_OBJECT_SELECTION(display_school_term_1_page(), "school_term_1")
             GUI_OBJECT_SELECTION(display_school_term_2_page(), "school_term_2")
         }

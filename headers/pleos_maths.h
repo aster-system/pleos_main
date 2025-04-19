@@ -41,6 +41,7 @@
 #define PLEOS_MATHS_LOGIC_PAGE 100
 #define PLEOS_MATHS_LOGIC_DEFINITIONS_PAGE 101
 #define PLEOS_MATHS_LOGIC_SET_THEORY_PAGE 102
+#define PLEOS_MATHS_LOGIC_PROPOSITIONAL_PAGE 103
 #define PLEOS_MATHS_LOGIC_LANGUAGE_PAGE 110
 // Algebra pages
 #define PLEOS_MATHS_ALGEBRA_STRUCTURES_PAGE 503
@@ -63,6 +64,10 @@
 #define PLEOS_MATHS_GEOMETRY_REDACTION_PAGE 450
 // Random pages
 #define PLEOS_MATHS_RANDOM_PAGE 500
+// School pages
+#define PLEOS_MATHS_SCHOOL_PAGE 1000
+#define PLEOS_MATHS_SCHOOL_TERM_1_PAGE 1001
+#define PLEOS_MATHS_SCHOOL_TERM_2_PAGE 1002
 
 // The namespace "pleos" is used to simplify the all.
 namespace pleos {
@@ -324,7 +329,13 @@ namespace pleos {
         // Returns logic
         inline scls::GUI_Text* logic_definitions_page() const {return a_logic_definitions_page.get();};
         inline scls::GUI_Text* logic_language_page() const {return a_logic_language_page.get();};
+        GUI_PAGE(pleos::GUI_Text, a_logic_propositional_page, PLEOS_MATHS_LOGIC_PROPOSITIONAL_PAGE, logic_propositional_page, display_logic_propositional_page, display_logic_page);
         inline scls::GUI_Text_Base<Text>* logic_set_theory_page() const {return a_logic_set_theory_page.get();};
+
+        // Displays the school page
+        GUI_PAGE(scls::GUI_Object, a_school_page, PLEOS_MATHS_SCHOOL_PAGE, school_page, display_school_page, hide_all);
+        GUI_PAGE(pleos::GUI_Text, a_school_term_1_page, PLEOS_MATHS_SCHOOL_TERM_1_PAGE, school_term_1_page, display_school_term_1_page, display_school_page);
+        GUI_PAGE(pleos::GUI_Text, a_school_term_2_page, PLEOS_MATHS_SCHOOL_TERM_2_PAGE, school_term_2_page, display_school_term_2_page, display_school_page);
 
     private:
 

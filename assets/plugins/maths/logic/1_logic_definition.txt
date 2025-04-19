@@ -1,5 +1,9 @@
 <h1>La logique</h1>
+
+
+
 <h2>La logique pure</h2>
+
 <h3>Qu'est ce que la logique ?</h3>
 <p>
 En termes généraux, <important>la logique représente un ensemble de règles permettant de justifier correctement un propos</important>.
@@ -8,7 +12,11 @@ Cependant, l'affirmation "je suis un homme", qui demande une justification logiq
 Elle rend aussi possible la jonction de plusieurs affirmations pour en former une nouvelle, comme les deux affirmations "la carte d'identité permet de prouver mon genre" et "ma carte d'identité indique que je suis un homme", qui permettent de prouver "je suis un homme".
 Cette definition là est applicable pour tout ce qui se passe dans nos vies.
 </p>
+
+
+
 <h2>La logique mathématique</h2>
+
 <h3>Appliquer la logique aux mathématiques</h3>
 <p>
 En mathématiques, le sens est très similaire, mais plus précis pour mieux coller à la discipline.
@@ -16,6 +24,7 @@ En mathématiques, <important>la logique représente un ensemble de règles perm
 Elle fait intervenir la possibilité d'utilisation des outils mathématiques, comme les nombres ou les inconnus (et tout ce qui en découle : théorèmes, calculs...).
 Comme tous concepts de ce genre, <important>elle utilise son propre langage, décrit plus loin</important>.
 </p>
+
 <h3>Les axiomes</h3>
 <p>
 Comme pour la logique simple, la logique en mathématique permet de former une affirmation à partir d'autres affirmations plus primaires.

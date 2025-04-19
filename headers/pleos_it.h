@@ -44,6 +44,13 @@
 #define PLEOS_IT_ALGORITHMS_SORT_PAGE 210
 #define PLEOS_IT_ALGORITHMS_SORT_COMPARAISON_PAGE 215
 #define PLEOS_IT_ALGORITHMS_SORT_COMPARAISON_SIMULATION_PAGE 216
+// OS
+#define PLEOS_IT_OS_PAGE 300
+#define PLEOS_IT_OS_HOME_PAGE 301
+#define PLEOS_IT_OS_KERNEL_PAGE 310
+#define PLEOS_IT_OS_MAC_PAGE 358
+#define PLEOS_IT_OS_UNIX_PAGE 353
+#define PLEOS_IT_OS_WINDOWS_PAGE 350
 // School
 #define PLEOS_IT_SCHOOL_PAGE -1
 #define PLEOS_IT_SCHOOL_TERM_1_PAGE -2
@@ -120,6 +127,14 @@ namespace pleos {
         void display_data_structures_page(){hide_all();data_structures_page()->set_visible(true);};
         void display_data_structures_trees_page(){set_current_page(PLEOS_IT_DATA_STRUCTURES_TREES_PAGE);display_data_structures_page();data_structures_tree_page()->set_visible(true);};
         void display_data_structures_trees_simulation_page(){set_current_page(PLEOS_IT_DATA_STRUCTURES_TREES_SIMULATION_PAGE);display_data_structures_page();data_structures_tree_simulation_page()->set_visible(true);};
+
+        // Displays the OS page
+        GUI_PAGE(scls::GUI_Object, a_os_page, PLEOS_IT_OS_PAGE, os_page, display_os_page, hide_all);
+        GUI_PAGE(pleos::GUI_Text, a_os_home_page, PLEOS_IT_OS_HOME_PAGE, os_home_page, display_os_home_page, display_os_page);
+        GUI_PAGE(pleos::GUI_Text, a_os_kernel_page, PLEOS_IT_OS_KERNEL_PAGE, os_kernel_page, display_os_kernel_page, display_os_page);
+        GUI_PAGE(pleos::GUI_Text, a_os_mac_page, PLEOS_IT_OS_MAC_PAGE, os_mac_page, display_os_mac_page, display_os_page);
+        GUI_PAGE(pleos::GUI_Text, a_os_unix_page, PLEOS_IT_OS_UNIX_PAGE, os_unix_page, display_os_unix_page, display_os_page);
+        GUI_PAGE(pleos::GUI_Text, a_os_windows_page, PLEOS_IT_OS_WINDOWS_PAGE, os_windows_page, display_os_windows_page, display_os_page);
 
         // Displays the school page
         GUI_PAGE(scls::GUI_Object, a_school_page, PLEOS_IT_SCHOOL_PAGE, school_page, display_school_page, hide_all);

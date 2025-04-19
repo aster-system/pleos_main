@@ -1,0 +1,91 @@
+//***************************************************
+//
+//   HOME
+//
+//***************************************************
+
+<gui_object name="it_os_page" type="body" sub_page no_load>
+	<border bottom=1 left=1 right=1 top=1>
+	<height value=1 type=scale>
+	<width value=4/5 type=scale>
+	<x attach=right>
+	<y attach=top>
+</gui_object>
+<gui_object name="it_os_page_title" type="text">
+    <content font_size=70 alignment_horizontal=center>Les systèmes d'exploitation</content>
+	<height value=1/8 type=scale>
+    <parent name="it_os_page">
+	<width value=1 type=scale>
+	<x value=1/2 type=object_scale>
+	<y attach=top>
+</gui_object>
+
+//***************************************************
+// Home
+//***************************************************
+
+<gui_object name="it_os_home_body" type="text" sub_page>
+    <content max_width=0 src="os/1_os_definition.txt"></content>
+	<height value=7/8 type=scale>
+	<parent name="it_os_page">
+    <texture alignment_horizontal=left alignment_vertical=top>
+    <width value=9/10 type=scale>
+	<x value=1/2 type=object_scale>
+	<y attach=bottom>
+</gui_object>
+
+//***************************************************
+// Kernel
+//***************************************************
+
+<gui_object name="it_os_kernel_body" type="text" sub_page>
+    <content max_width=0 src="os/10_os_kernel.txt"></content>
+	<height value=7/8 type=scale>
+	<parent name="it_os_page">
+    <texture alignment_horizontal=left alignment_vertical=top>
+    <width value=9/10 type=scale>
+	<x value=1/2 type=object_scale>
+	<y attach=bottom>
+</gui_object>
+
+//***************************************************
+// MacOS
+//***************************************************
+
+<gui_object name="it_os_mac_body" type="text" sub_page>
+    <content max_width=0 src="os/58_os_mac.txt"></content>
+	<height value=7/8 type=scale>
+	<parent name="it_os_page">
+    <texture alignment_horizontal=left alignment_vertical=top>
+    <width value=9/10 type=scale>
+	<x value=1/2 type=object_scale>
+	<y attach=bottom>
+</gui_object>
+
+//***************************************************
+// Unix
+//***************************************************
+
+<gui_object name="it_os_unix_body" type="text" sub_page>
+    <content max_width=0 src="os/53_os_unix.txt"></content>
+	<height value=7/8 type=scale>
+	<parent name="it_os_page">
+    <texture alignment_horizontal=left alignment_vertical=top>
+    <width value=9/10 type=scale>
+	<x value=1/2 type=object_scale>
+	<y attach=bottom>
+</gui_object>
+
+//***************************************************
+// Windows
+//***************************************************
+
+<gui_object name="it_os_windows_body" type="text" sub_page>
+    <content max_width=0 src="os/50_os_windows.txt"></content>
+	<height value=7/8 type=scale>
+	<parent name="it_os_page">
+    <texture alignment_horizontal=left alignment_vertical=top>
+    <width value=9/10 type=scale>
+	<x value=1/2 type=object_scale>
+	<y attach=bottom>
+</gui_object>
