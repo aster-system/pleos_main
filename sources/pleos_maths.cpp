@@ -33,6 +33,15 @@
 // The namespace "pleos" is used to simplify the all.
 namespace pleos {
 
+    // Log datas in a log file for PLEOS
+    std::string pleos_log_content(){std::string needed_path = "tests/log.txt";return scls::read_file(needed_path);};
+    void pleos_log(std::string content) {
+        std::string needed_path = "tests/log.txt";
+        std::string file_content = pleos_log_content();
+        file_content += content + std::string("\n");
+        scls::write_in_file(needed_path, file_content);
+    }
+
     // Loads an object in a page from XML
     std::shared_ptr<scls::GUI_Object> Maths_Page::__create_loaded_object_from_type(std::string object_name, std::string object_type, scls::GUI_Object* parent) {
         // Algebra
@@ -111,7 +120,8 @@ namespace pleos {
 
         // Random
         GUI_OBJECT_CREATION(scls::GUI_Object, a_random_page, "maths_random_page")
-        GUI_OBJECT_CREATION(scls::GUI_Text_Base<Text>, a_random_probability_page, "maths_random_probability_body")
+        GUI_OBJECT_CREATION(pleos::GUI_Text, a_random_probability_page, "maths_random_probability_body")
+        GUI_OBJECT_CREATION(pleos::GUI_Text, a_random_probability_law_page, "maths_random_probability_law_body")
 
         // School
         GUI_OBJECT_CREATION(scls::GUI_Object, a_school_page, "maths_school_page")
@@ -477,13 +487,17 @@ namespace pleos {
         for(int i = 0;i<static_cast<int>(functions_created().size());i++) {
             redaction += functions_created()[i].get()->introduction();
             if(i < static_cast<int>(functions_created().size()) - 1){redaction += std::string(" ");}
+            pleos_log(functions_created()[i].get()->formula()->to_std_string());
         } redaction += std::string("</br></br>");
+
+        std::cout << pleos_log_content << std::endl;
 
         // Get datas for each functions
         for(int i = 0;i<static_cast<int>(functions_created().size());i++) {
             std::shared_ptr<pleos::Function_Studied> needed_function = functions_created()[i];
             std::string function_name = needed_function.get()->name();
             scls::Formula* needed_formula = needed_function.get()->formula();
+            std::cout << i << " " << needed_formula->to_std_string() << std::endl;
 
             // Do the redaction
             redaction += std::string("Nous avons la fonction ") + function_name + std::string(" tel que :</br></br>");
@@ -499,7 +513,7 @@ namespace pleos {
                 if(current_function_name == function_name) {
                     // Analyse the argument
                     if(type == "area_under_curve") {
-                        int point_number = 0;int rect_number = 20;
+                        int rect_number = 20;
                         for(int i = 0;i<rect_number;i++) {
                             scls::Fraction needed_value = needed_formula->value(scls::Fraction(i, rect_number)).real();
                             if(needed_value != 0) {
@@ -1206,6 +1220,7 @@ namespace pleos {
         else if(page == "logic_set_theory"){display_logic_set_theory_page();}
         // Random pages
         GUI_OBJECT_SELECTION(display_random_probability_page(), "random_probability")
+        GUI_OBJECT_SELECTION(display_random_probability_law_page(), "random_probability_law")
         // School pages
         GUI_OBJECT_SELECTION(display_school_term_1_page(), "maths_school_term_1")
         GUI_OBJECT_SELECTION(display_school_term_2_page(), "maths_school_term_2")

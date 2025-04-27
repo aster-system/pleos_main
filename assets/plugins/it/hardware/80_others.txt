@@ -1,0 +1,26 @@
+<h1>Les autres pièces</h1>
+
+
+
+<h2>L'alimentation électrique</h2>
+
+<h3>Apporter l'énergie à l'ordinateur</h3>
+<p>
+Bien que souvent sous-côté, l'<a href="https://fr.wikipedia.org/wiki/Bloc_d%27alimentation" target="_blank">alimentation électrique</a>, aussi appelée PSU, est l'origine de l'énergie de l'ordinateur.
+<span class="important">Son rôle est d'apporter l'électricité nécessaire au fonctionnement des différentes pièces de l'ordinateur</span>.
+Pour cela, elle découpe le courant qui lui parvient (en général, avec une intensité de 230-240 V) en différents courants, selon les besoins du système.
+Le courant est apporté au système via un réseau de câbles électriques, comme les câbles ATX pour la carte mère, ou bien les câbles SATA pour de potentiels périphèriques externes.
+Pour éviter de trop chauffer, elle est aussi en général accompagnée d'un ventilateur, dessus ou sur le côté.</p>
+
+<h3>Des normes très précises</h3>
+<p>
+<span class="important">La puissance électrique totale qu'elle peut apporter au système est utilisée comme unité de comparaison entre les différentes alimentations</span> (500W, 750W...).
+La qualité des matériaux utilisés peut aussi être un argument de vente, notée selon un label nommé <a href="https://fr.wikipedia.org/wiki/80_PLUS">80 PLUS</a>.
+Le label le plus haut étant titane, et le plus bas étant bronze.
+Plus elle est élevée, plus le rendement de l'alimentation est haut, moins elle consomme d'énergie de la prise pour une puissance d'ordinateur donnée.
+</p>
+<p>
+<span class="important">Chaque câble utilise ses propres normes pour apporter le courant électrique</span>.
+En général, ces câbles sont eux même composés de fils de différentes couleurs.
+Les fils jaunes apportent 12V, les fils rouges 5V, les fils oranges 3.3V, les fils noirs représentent la masse (0V)...
+</p>

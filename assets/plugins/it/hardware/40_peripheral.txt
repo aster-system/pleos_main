@@ -1,0 +1,26 @@
+<h1>Les périphériques</h1>
+
+
+
+<h2>Les capteurs de l'ordinateur</h2>
+
+<h3>Communiquer avec l'ordinateur</h3>
+<p>
+Nous, pauvres humains, ne pouvons pas (encore) connecter nos cerveaux aux ordinateurs pour communiquer avec lui.
+Donc, <span class="important">pour communiquer avec lui, nous devons utiliser des outils bien physiques, nommés des<a href="https://fr.wikipedia.org/wiki/P%C3%A9riph%C3%A9rique_informatique" target="_blank">périphériques entrées / sorties</a></span>.
+Pour connecter ces mêmes périphériques, on peut, soit faire sans fils (Bluetooth, WiFi...) soit via un fil, brancher dans un trou de l'ordinateur nommé un port matériel.
+Les formes de ports les plus connus sont USB, HDMI, Ethernet...
+Une autre catégorie de port existe pour les composants internes (et non pour l'entrée / sortie), contenant les sockets de processeurs, les ports SATA...
+Ils sont en général beaucoup moins connus que les autres.
+</p>
+
+<h3>Le concept de port</h3>
+<p>
+Même si cela peut paraître bizarre, les données transmises via les ports ne dépendent en général pas du port en question.
+Par exemple, un port USB peut en même temps transférer des données de souris, comme de clavier, de clé USB...
+La branche de l'ingénieurie étudiant ces communications est nommées <span class="https://fr.wikipedia.org/wiki/Connectique" target="_blank">la connectique</span>.
+Pour chaque ports, <span class="important">les informations importantes sont l'arrangement physique des câbles (la forme du port), le courant électrique supporté par le port et les protocoles de transport des signaux électriques physiques</span>.
+Par exemple, le port USB A 3.0 est constitué de 4 fils internes (2 d'alimentations électrique et 2 de transfert de données), communiquant avec des signaux alternant entre 0 et 5 V pour le transfert et jusqu'à 20 pour l'alimentation.
+Cependant, à l'échelle logicielle, les données peuvent être transférées selon n'importe quelle norme, et décodées via un programme nommé un pilote (déjà abordé dans la page des <a href="../../astersystemelearn/it/os.html">systèmes d'exploitation</a>).
+Par exemple, pour les périphériques utilisant de la vidéo (comme une caméra), les données sont (en général) codées avec la norme H.264, qui requiet des pilotes de décodage spécifique.
+</p>

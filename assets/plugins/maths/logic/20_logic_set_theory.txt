@@ -59,8 +59,49 @@ Cela peut créer certaines idées bizarres avec des ensembles infinis (à noter 
 Par exemple, l'ensemble des entiers naturels est équipotent à l'ensemble des entiers naturels privés de 0.
 En effet, la bijection existe : elle est représentable par la fonction f(x) qui, a tout x appartenant à l'ensemble des entiers naturels, correspond un unique y tel que y = x + 1 : il y a un lien, et donc une équipotence.
 Avec cette opération, <span class="important">on peut en déduire que les ensembles (infinis) de nombres entiers naturels, entiers relatifs et nombres rationnels ont le même cardinal (l'ensemble des nombres réels n'a pas le même)</span>.
+Ces 4 résultats sont démontrés plus bas.
 De manière très (voir même trop) vulgarisée : infini + 1 = infini.
 </p>
+
+<table title="Équipotence de N et N*">
+<case x=0 y=0 content="0"><case x=1 y=0 content="1"><case x=2 y=0 content="2"><case x=3 y=0 content="3"><case x=4 y=0 content="4"><case x=5 y=0 content="..."><case x=6 y=0 content="x">
+<case right_border=0 x=0 y=1 content="|"><case right_border=0 x=1 y=1 content="|"><case right_border=0 x=2 y=1 content="|"><case right_border=0 x=3 y=1 content="|"><case right_border=0 x=4 y=1 content="|"><case right_border=0 x=5 y=1 content="|"><case right_border=0 x=6 y=1 content="|">
+<case x=0 y=2 content="1"><case x=1 y=2 content="2"><case x=2 y=2 content="3"><case x=3 y=2 content="4"><case x=4 y=2 content="5"><case x=5 y=2 content="..."><case x=6 y=2 content="x + 1">
+</table>
+
+</br>
+<table title="Équipotence de N et Z">
+<case x=0 y=0 content="0"><case x=1 y=0 content="1"><case x=2 y=0 content="2"><case x=3 y=0 content="3"><case x=4 y=0 content="4"><case x=5 y=0 content="..."><case x=6 y=0 content="2 * k"><case x=7 y=0 content="2 * k + 1">
+<case right_border=0 x=0 y=1 content="|"><case right_border=0 x=1 y=1 content="|"><case right_border=0 x=2 y=1 content="|"><case right_border=0 x=3 y=1 content="|"><case right_border=0 x=4 y=1 content="|"><case right_border=0 x=5 y=1 content="|"><case right_border=0 x=6 y=1 content="|"><case right_border=0 x=7 y=1 content="|">
+<case x=0 y=2 content="0"><case x=1 y=2 content="-1"><case x=2 y=2 content="1"><case x=3 y=2 content="-2"><case x=4 y=2 content="2"><case x=5 y=2 content="..."><case x=6 y=2 content="k"><case x=7 y=2 content="-k">
+</table>
+
+</br>
+<table title="Équipotence de N et Q">
+<case_plus x=0 y=0>
+<tree load="stern_brocot(3)"></tree>
+</case_plus>
+<case_plus x=0 y=1 max_width=900>
+L'arbre de Stern-Borcot démontre l'équipotence entre N et Q+.
+L'utilisation de deux arbres (un positif et un négatif) et d'une technique d'attribution pair-positif et impair-négatif démontre l'équipotence entre N et Q.
+</case_plus>
+</table>
+
+</br>
+<table minimum_case_width=100 title="Non équipotence de N et R">
+<case x=0 y=0 content="1" color="red"><case x=1 y=0 content="2"><case x=2 y=0 content="3"><case x=3 y=0 content="4"><case x=4 y=0 content="5"><case x=5 y=0 content="...">
+<case x=0 y=1 content="5"><case x=1 y=1 content="5" color="red"><case x=2 y=1 content="5"><case x=3 y=1 content="5"><case x=4 y=1 content="5"><case x=5 y=1 content="...">
+<case x=0 y=2 content="7"><case x=1 y=2 content="5"><case x=2 y=2 content="2" color="red"><case x=3 y=2 content="3"><case x=4 y=2 content="4"><case x=5 y=2 content="...">
+<case x=0 y=3 content="3"><case x=1 y=3 content="1"><case x=2 y=3 content="4"><case x=3 y=3 content="1" color="red"><case x=4 y=3 content="5"><case x=5 y=3 content="...">
+<case x=0 y=4 content="2"><case x=1 y=4 content="7"><case x=2 y=4 content="1"><case x=3 y=4 content="5"><case x=4 y=4 content="6" color="red"><case x=5 y=4 content="...">
+<case x=0 y=5 content="..."><case x=1 y=5 content="..."><case x=2 y=5 content="..."><case x=3 y=5 content="..."><case x=4 y=5 content="..."><case x=5 y=5 content="..." color="red">
+<case_plus max_width=-1 width=6 x=0 y=6>
+La tentative d'équipotence entre N et R mène à une configuration des nombres réels sous forme de suite.
+Or, nous pouvons trouver des nombres réels qui ne sont pas dans cette suite.
+Donc, il n'y a pas équipotence.
+</case_plus>
+</table>
+
 <p>
 Cependant, certains types de comparaisons (défini par l'algèbre des éléments de l'ensemble) combiné à la définition de l'ensemble nécessitent un système de syntaxe particulièrement complexe.
 Par exemple, dans le cas d'un ensemble infini de couples (x, y), on définit la comparaison de ses couples comme la comparaison de x, puis y.

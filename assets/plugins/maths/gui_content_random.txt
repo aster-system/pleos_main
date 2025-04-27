@@ -25,7 +25,21 @@
 //***************************************************
 
 <gui_object name="maths_random_probability_body" type="text" sub_page>
-    //<content max_width=0 src="random/501_random_probability.txt"></content>
+    <content max_width=0 src="random/501_random_probability.txt"></content>
+	<height value=7/8 type=scale>
+	<parent name="maths_random_page">
+	<texture alignment_horizontal=left alignment_vertical=top>
+    <width value=9/10 type=scale>
+	<x value=1/2 type=object_scale>
+	<y attach=bottom>
+</gui_object>
+
+//***************************************************
+// Probability law
+//***************************************************
+
+<gui_object name="maths_random_probability_law_body" type="text" sub_page>
+    <content max_width=0 src="random/505_random_probability_law.txt"></content>
 	<height value=7/8 type=scale>
 	<parent name="maths_random_page">
 	<texture alignment_horizontal=left alignment_vertical=top>

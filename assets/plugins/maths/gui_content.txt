@@ -64,6 +64,7 @@
 
 	<sub_choice name="random" displayer="Sciences du hasard">
 		<choice name="random_probability">Probabilités</choice>
+		<choice name="random_probability_law">Loi de probabilités</choice>
 	</sub_choice>
 
 	<sub_choice name="maths_school" displayer="Lycée">

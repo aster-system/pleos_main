@@ -1,0 +1,17 @@
+<p>
+<span class="important"><a href="https://fr.wikipedia.org/wiki/Mat%C3%A9riel_informatique" target="_blank">L'hardware</a> est, par définition, tout ce qui touche à la partie physique d'un ordinateur (processeur, mémoire...).</span>
+Par son architecture précise, <u>il doit permettre de fournir tous les outils</u> (ici, les instructions qu'il permet de réaliser) <span class="important">pour faire fonctionner dessus des logiciels, appelés "software"</span>. 
+<span class="important">Les logiciels utilisant directement l'hardware sont appelés <a href="https://fr.wikipedia.org/wiki/Firmware" target="_blank">"des firmwares"</a></span>. 
+Par exemple, le BIOS ou le noyau du système d'exploitation de votre ordinateur sont des firmwares.
+Les softwares, eux, utilisent les firmwares pour fonctionner.
+</p>
+
+<p>
+<span class="important">Chaque composant de l'hardware est synchronisé par un système nommé l'horloge du système </span>.
+En fait, <u>chaque composant va remplir une instruction de sa tâche courante pendant une courtes période (quelques nano-secondes), où chaque composant de l'ordinateur est électriquement alimenté en même temps</u>.
+Le terme utilisé pour nommé le nombre d'alimentation pour l'ordinateur est le terme de fréquence.
+La source primaire de ce système provient <span class="important">du processeur de l'ordinateur, qui va actualiser le système à une certaine fréquence : sa fréquence d'horloge</span>.
+Bien évidemment, pour que cela fonctionne, <u>il faut que les composants soient structurés de telle manière à être utilisable selon ce système : ne pas s'exécuter au mauvais moment, rendre les données accessible pour les prochaines exécutions</u>...
+Certain composants ont des fréquences différents (comme la mémoire), <u>et doivent donc être structurés pour que la différence de fréquence ne pose pas de problème au système</u> (par exemple, en évitant certaines alimentations du processeur). 
+En synchronisant bien tout cela, vous pouvez utiliser correctement l'ordinateur.
+</p>

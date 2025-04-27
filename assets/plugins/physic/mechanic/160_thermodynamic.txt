@@ -120,7 +120,7 @@ Cependant, ils ne modifient pas la façon d'obtenir "Z" (le quotient de V * P pa
 Donc, "Z" en devient très complexe à calculer, pour démeler proprement les paramètres nécessaires et les paramètres ajoutés.
 Cependant, elles offrent une utilité particulière à cette valeur.
 En effet, <span class="important">les équations modernes de thermodynamique représente "Z" dans une équation sous la forme de d'un polynôme de degré 3, mathématiquement parfaitement soluble</span>.
-Ces équations sont dites cubique, et s'écrivent sous la forme :
+Ces équations sont dites cubiques, et s'écrivent sous la forme :
 </p>
 <math><mi>Z</mi><msup>3</msup><mo>+</mo><mi>c</mi><msub>2</msub><mo>*</mo><mi>Z</mi><msup>2</msup><mo>+</mo><mi>c</mi><msub>1</msub><mo>*</mo><mi>Z</mi><mo>+</mo><mi>c</mi><msub>0</msub></math>
 <p>

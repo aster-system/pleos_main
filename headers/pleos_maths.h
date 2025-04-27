@@ -64,6 +64,7 @@
 #define PLEOS_MATHS_GEOMETRY_REDACTION_PAGE 450
 // Random pages
 #define PLEOS_MATHS_RANDOM_PAGE 500
+#define PLEOS_MATHS_RANDOM_PROBABILITY_LAW_PAGE 505
 // School pages
 #define PLEOS_MATHS_SCHOOL_PAGE 1000
 #define PLEOS_MATHS_SCHOOL_TERM_1_PAGE 1001
@@ -321,7 +322,8 @@ namespace pleos {
 
         // Returns random
         GUI_PAGE(scls::GUI_Object, a_random_page, PLEOS_MATHS_RANDOM_PAGE, random_page, display_random_page, hide_all);
-        GUI_PAGE(scls::GUI_Text_Base<Text>, a_random_probability_page, PLEOS_MATHS_RANDOM_PAGE, random_probability_page, display_random_probability_page, display_random_page);
+        GUI_PAGE(pleos::GUI_Text, a_random_probability_page, PLEOS_MATHS_RANDOM_PAGE, random_probability_page, display_random_probability_page, display_random_page);
+        GUI_PAGE(pleos::GUI_Text, a_random_probability_law_page, PLEOS_MATHS_RANDOM_PROBABILITY_LAW_PAGE, random_probability_law_page, display_random_probability_law_page, display_random_page);
 
         // Home
         GUI_PAGE(scls::GUI_Text_Base<Text>, a_home_definition_page, PLEOS_MATHS_HOME_PAGE, home_definition_page, display_home_definition_page, display_home_page);

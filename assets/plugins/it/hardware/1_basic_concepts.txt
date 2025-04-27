@@ -1,0 +1,46 @@
+<h1>Les bases de l'hardware</h1>
+
+
+
+<h2>Les différents types d'hardware</h2>
+
+<h3>Les circuits imprimés</h3>
+<p>
+Comme nous l'avons déjà dit, c'est l'architecture d'un hardware qui permet de lui faire faire une tâche quelconque.
+Pour cela, <span class="important">il utilise tout un système mécanique extrêmement petit, qui permet de réaliser mécaniquement les tâches</span>.
+Si cette mécanique nous est invisible, c'est car les pièces mécaniques utilisées sont vraiment minuscules, et utilisent l'électricité.
+Plusieurs pièces de ce genre existe, <span class="important">mais la plus connue est <a href="https://fr.wikipedia.org/wiki/Transistor" target="_blank">le transistor</a> (une pièce ne dépassant pas 10nm)</span>.
+</p>
+<p>
+Pour réaliser des pièces aussi petites, il faut utiliser une technologie extraordinaire : l'impression d'un circuit.
+<span class="important">Le <a href="https://fr.wikipedia.org/wiki/Circuit_imprim%C3%A9" target="_blank">circuit imprimé</a> (ou PCB en anglais) dispose de tous les composants électroniques nécessaires pour fonctionner comme un ordinateur</span>.
+Il est aussi possible d'y ajouter des ports pour moduler son fonctionnement.
+Leur fabrication est assez simple : il s'agit d'une succession de couches (isolantes ou non) qui, assemblées, forment un circuit.
+Dans chaque couches, il peut aussi y avoir des composants électroniques, comme des transistors ou des diodes par exemple.
+Pleins de techniques différentes existent pour créer ces circuits : collage, gravure, soudure...
+Avec un circuit efficace et une réalisation ingénieuse, vous pouvez obtenir des puces permettant de faire tourner nos ordinateurs classiques.
+</p>
+
+<h3>L'hardware embarqué</h3>
+<p>
+Dans le cas où vous devez utiliser un système électronique dans une quelconque machine, il est rare que vous ayez besoin de la puissance de tout un ordinateur pour faire fonctionner la machine.
+Pour cela, <span class="important">l'hardware présent dans une machine est regroupé dans ce que l'on appelle <a href="https://fr.wikipedia.org/wiki/Syst%C3%A8me_embarqu%C3%A9" target="_blank">un système embarqué</a>.</span>.
+Il s'agit, comme dans un ordinateur, d'une carte mère, avec les composants dessus. 
+Cependant, ces composants sont en général ultra adapté à la tâche qui leur est attribué, et optimiser pour ne servir que cette tâche (et être donc moins imposants, moins cher, moins demandant en énergie mais aucunement modulable).
+Le système embarqué dépend entièrement de son fabricant pour le partage de ses caractéristiques internes, de son maniement, sa modulabilité...
+</p>
+<p>
+<span class="important">N'importe qui en capacité de moduler un circuit imprimé peut réaliser un système embarqué</span>.
+Les contraintes du systèmes (taille, consommation électrique...) dépendent des besoins de la machine l'utilisant.
+Plusieurs bases existent pour réaliser des systèmes embarqués, comme <a href="https://www.arduino.cc/" target="_blank">Arduino</a> ou <a href="https://www.raspberrypi.com/" target="_blank">Raspberry</a>.
+</p>
+
+<h3>L'hardware à distance</h3>
+<p>
+Imagineons que vous utiliser un logiciel quelconque, <span class="important">mais que l'hardware le faisant tourner n'est pas le votre, mais un hardware distant</span>. 
+<span class="important">Cette pratique est appelée <a href="https://fr.wikipedia.org/wiki/Cloud_computing" target="_blank">le cloud</a></span>.
+La tâche réalisée par le logiciel peut être de plein de natures différentes, comme le stockage de données (OneDrive), le jeu vidéo (Aternos ou Hostinger), le rendu de jeu vidéo (Stadia)... 
+L'hardware de l'ordinateur distant est en général adapté à la tâche à réaliser (ou, au moins, plus adapté qu'un ordinateur classique), comme une abondance de stockage dans les clouds de stockage.
+Ils sont aussi accessibles partout via Internet et, en général, tout le temps. 
+Plusieurs services existent pour utiliser des ordinateurs en cloud, comme le géant français <a href="https://www.ovhcloud.com/fr/" target="_blank">OVHcloud</a>.
+</p>

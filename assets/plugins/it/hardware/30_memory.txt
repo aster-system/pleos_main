@@ -1,0 +1,19 @@
+<h1>La mémoire et le stockage</h1>
+
+
+
+<h2>Retenir des informations</h2>
+
+<h3>La mémoire vive</h3>
+<p>
+La <a href="https://fr.wikipedia.org/wiki/M%C3%A9moire_vive_dynamique" target="_blank">mémoire vive</a>, aussi appelé RAM, permet à l'ordinateur d'utiliser des données dans le temps.
+En effet, à un instant T, le processeur ne peut conserver qu'une quantité limité de données dans ces registres, en général, se mesurant en MO, souvent insuffisant pour permettre à des logiciels de fonctionner.
+<span class="important">La mémoire vive permet d'agrandir le nombre de données stockables dans un ordinateur, en général, en GO</span>.
+Elle offre aussi une vitesse satisfaisante, bien que plus lente que les registres de processeur.
+</p>
+<p>
+Quelque soit le type de mémoire vive, <span class="important">les données qu'elles stockent le sont de manière physique (bien réelle)</span>.
+Elle doit aussi permettre de <span class="important">les transmettre physiquement aux autres pièces de l'ordinateur</span>, via des bus.
+La façon de faire tout ça physiquement dépend du type de mémoire vive (DDR4, VRAM...).
+<span class="important">La vitesse de transmission des données se mesure en Hertz, ou 1 Hertz représente 1 octet par seconde</span>.
+</p>

@@ -24,6 +24,16 @@
 		<choice name="algorithms_sort">Les tris</choice>
 		<choice name="algorithms_sort_comparaison">Comparer les tris</choice>
 	</sub_choice>
+	<sub_choice name="hardware" displayer="L'hardware">
+		<choice name="hardware_home">Les notions de base</choice>
+		<choice name="hardware_cpu">Le processeur</choice>
+		<choice name="hardware_motherboard">La carte mère</choice>
+		<choice name="hardware_memory">La mémoire et le stockage</choice>
+		<choice name="hardware_gpu">La carte graphique</choice>
+		<choice name="hardware_peripheral">Les périphériques</choice>
+		<choice name="hardware_screen">L'écran</choice>
+		<choice name="hardware_other">Les autres pièces</choice>
+	</sub_choice>
 	<sub_choice name="os" displayer="Systèmes d'exploitation">
 		<choice name="os_home">Définitions</choice>
 		<choice name="os_kernel">Le kernel</choice>
@@ -53,5 +63,6 @@
 
 <include src="gui_content_data_structures.txt">
 <include src="gui_content_algorithms.txt">
+<include src="gui_content_hardware.txt">
 <include src="gui_content_os.txt">
 <include src="gui_content_school.txt">

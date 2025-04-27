@@ -1,0 +1,135 @@
+<h1>Les lois probabilités</h1>
+
+
+
+<h2>Étudier des probabilités</h2>
+
+<h3>Les variables aléatoires</h3>
+<p>
+Certains <a href="maths/random_probability">espaces probabilisés</a> ne sont pas intéressant à étudier tout seul.
+Cependant, nous pouvons déduire un nouvel espace probabilisé via un ancien, grâce à ce que l'on appelle une variable aléatoire.
+En effet, <span class="important">une variable aléatoire "X" est une fonction associant à un élément (d'un espace probabilisé existant) une probabilité d'un autre espace probabilisé</span> (qui est, au minimum, inclu dans l'ancien espace probabilisé).
+D'un point de vue direct, cette définition peut paraitre abstraite, mais elle implique des concepts très utiles.
+Par exemple, vous pouvez définir un espace probabilisé d'un dé (comme vu plus haut), avec une tribu contenant deux élément : valeur supérieure ou inférieur à 3,5.
+Via une variable aléatoire, vous pouvez directement utiliser cette espace, pour le cas où nous avons besoin d'une tribu avec d'autres éléments, comme "valeur paire ou impaire", ou "valeur 1 ou pas 1".
+</p>
+<graphic width=400 ratio_base>
+    <background_color red=255 green=255 blue=255>
+    <base draw=0 width=20 height=10>
+    <circle border_radius=5 color=(255,100,100) radius=3 x=-5 y=-1>
+
+    <text_style background_color=(0,0,0,0) font_size=20>
+
+    <text content="Univers dé" x=-5 y=4>
+
+    <text content="1" x=-13/2 y=-0>
+    <text content="2" x=-5 y=-0>
+    <text content="3" x=-7/2 y=-0>
+    <text content="4" x=-13/2 y=-2>
+    <text content="5" x=-5 y=-2>
+    <text content="6" x=-7/2 y=-2>
+
+    <text content="Tribu de l'univers dé" x=5 y=4>
+
+    <circle border_radius=5 color=(255,100,100) radius=3 x=5 y=-1>
+    <text content="1" x=7/2 y=-0>
+    <text content="2" x=5 y=-0>
+    <text content="3" x=13/2 y=-0>
+    <text content="4" x=7/2 y=-2>
+    <text content="5" x=5 y=-2>
+    <text content="6" x=13/2 y=-2>
+
+    <point name="p1" x=2 y=-1><point name="p2" x=8 y=-1>
+    <form border_color=(0,0,0) border_radius=5 name="f1" points="p1;p2">
+
+    <arrow name="a1" x_start=-5/3 y_start=-1 x_end=5/3 y_end=-1>
+    <line color=black width=2 x_1=0 y_1=-1 x_2=0 y_2=-3>
+    <text content="Variable aléatoire" x=0 y=-4>
+</graphic>
+<p>
+Nous pouvons utiliser cette variable aléatoire "X" avec la mesure de l'ancien espace probabilisé.
+Dans ce cas, <span class="important">cette mesure est nommée la loi de probabilité de X</span>.
+En général, si "P" est la mesure de l'ancien espace probabilisé, elle se note comme ça :
+</p>
+<math>P<msub>X</msub><mo>=</mo>P(X)</math>
+<p>
+Dans certains cas, <span class="important">nous avons une variable aléatoire quelconque, qui ne contient qu'un nombre fini (ou dénombrable) de possibilités : ces lois sont dites "discrètes"</span>.
+Par exemple, les lois que nous pouvons définir via notre dé vu plus haut sont discrètes ("valeur supérieure ou inférieur à 3,5" a 2 possibilités, "valeur paire ou impaire" a aussi 2 possibilités...).
+<span class="important">Une épreuve se passant sur espace probabilisé offrant deux évènements possibles est nommée une épreuve de Bernoulli</span>.
+En général, une de ces propabilités est appelée "succès" de probabilité "p", et l'autre est appelée "échec" de probabilité "p - 1".
+</p>
+<p>
+Différentes méthodes existent pour représenter une loi de probabilité.
+Si l'univers / la tribu représente un ensemble de nombre (réel, naturel, relatif...) fini ou infini, nous pouvons représenter la loi sous la forme d'une courbe, nommée courbe de densité.
+En fait, <span class="important">la courbe de densité d'une loi est la correspondance entre un élément de la tribu est et sa probabilité</span>.
+Si la loi est discrète, cette courbe peut être représentée avec un simple histogramme.
+</p>
+<graphic width=200 ratio_base>
+    <background_color red=255 green=255 blue=255>
+    <base draw=1 width=10 height=10>
+
+    <histogram start=1 end=7 x=0 y=0 width=10 height=10>
+        <data value=1 number=2>
+        <data value=2 number=4>
+        <data value=3 number=8>
+        <data value=4 number=1>
+        <data value=5 number=5>
+        <data value=6 number=7>
+    </histogram>
+</graphic>
+<p>
+Cependant, si la loi est continue (avec une tribu de réels), alors nous devons la représenter avec une fonction.
+Dans ce cas, <span class="important">la probabilité que "x" se trouve entre deux valeurs "a" et "b" est l'intégrale de la fonction entre "a" et "b"</span>.
+</p>
+<graphic width=200 ratio_base>
+    <background_color red=255 green=255 blue=255>
+    <base draw=1 width=3 height=3>
+
+    <function expression="exp(-(x*x)*8)/sqrt(34/7)"></function>
+</graphic>
+
+<h3>Espérance</h3>
+<p>
+<span class="important">Si vous avez une loi de probabilité réelle quelconque, et que vous répétez une épreuve beaucoup de fois, la moyenne de toutes les valeurs obtenus représente un nombre bien précis : l'espérance de la loi de probabilité</span>.
+Comme son nom l'indique, il s'agit d'une quantification de la valeur moyenne que vous pouvez espérer avec cette loi de probabilité après un grand nombre d'épreuves.
+Dans un ensemble dénombrable de valeur (donc, par exemple, N ou un sous-ensemble de N), cette valeur vaut simplement la somme de toutes les valeurs possibles par la tribu, multipliée par la somme des probabilités des valeurs de la tribu.
+Cependant, si la tribu de la loi n'est pas bornée, alors ce calcul devient faux, et l'espérance de la loi ne peut pas être définie correctement.
+Si la loi est indénombrable, alors le calcul est le même, mais nous utilisons une intégrale à la place d'une somme (et l'exception est la même : la tribu doit être bornée).
+</p>
+<graphic>
+    <background_color red=255 green=255 blue=255>
+    <base draw=1 width=10 height=10>
+
+    <point_cloud start=1 end=7 x=0 y=0 width=10 height=10>
+        <data value=1 number=2>
+        <data value=2 number=4>
+        <data value=3 number=8>
+        <data value=4 number=1>
+        <data value=5 number=5>
+        <data value=6 number=7>
+    </point_cloud>
+</graphic>
+
+<h3>Les processus aléatoires</h3>
+<p>
+Les lois de probabilités peuvent être modifiées en même temps que les évènements de leur tribu arrivent.
+<span class="important">L'objet décrivant les variations d'une variable aléatoire dans le temps est nommé un processus aléatoire (ou processus stochastique)</span>.
+Pour décrire cela, nous avons besoin de deux objets spéciaux.
+Premièrement, nous allons définir un ensemble "S" de valeurs correspondant à toutes les valeurs possibles de la variable aléatoire étudiée.
+Pour être précis, nous n'étudions pas qu'une seule variable aléatoire, mais une famille, définie dans "S".
+<span class="important">Cet ensemble contenant toutes les valeurs possibles de la famille de variables aléatoires étudiées est nommé ensemble d'état</span>.
+En suite, nous allons indexer ces variables, avec des valeurs définies dans un autre ensemble "T", nommé ensemble d'indice.
+En toute logique, il y'a équipotence entre ces deux ensembles.
+</p>
+
+<table title="Probabilité de X &gt; 0.5 pour X une variable aléatoire réel uniforme entre 0 et 1, après t épreuves">
+<case x=0 y=0 content="t"><case x=1 y=0 content="0"><case x=2 y=0 content="1"><case x=3 y=0 content="2"><case x=4 y=0 content="3"><case x=5 y=0 content="...">
+<case right_border=0 x=0 y=1 content="|"><case right_border=0 x=1 y=1 content="|"><case right_border=0 x=2 y=1 content="|"><case right_border=0 x=3 y=1 content="|"><case right_border=0 x=4 y=1 content="|"><case right_border=0 x=5 y=1 content="|">
+<case x=0 y=2 content="S"><case x=1 y=2 content="P(X &gt; 0.5) = 1"><case x=2 y=2 content="P(X &gt; 0.5) = 0.75"><case x=3 y=2 content="P(X &gt; 0.5) = 0.625"><case x=4 y=2 content="P(X &gt; 0.5) = 0.5625"><case x=5 y=2 content="...">
+</table>
+
+<p>
+<span class="important">L'application / la fonction permettant de prévoir (de manière plus ou moins précise) les variations des variables aléatoires étudiées au fil des épreuves est nommée la trajectoire du processus</span>.
+Selon les caractéristiques de cette application, le processus peut être étudié de pleins de manières différentes.
+Si l'ensemble "T" est dénombrable, le processus est aussi dit dénombrable, et si "T" est indénombrable, le processus est dit "continu".
+</p>

@@ -1,0 +1,29 @@
+<h1>Les écrans</h1>
+
+
+
+<h2>Un périphérique de sortie</h2>
+
+<h3>Un périphérique graphique</h3>
+<p>
+Sans affichage graphique, un ordinateur ne peut pas faire grand chose.
+En général, le périphérique graphique le plus utilisé sur un ordinateur est un écran.
+<span class="important">Un écran est un périphérique permettant d'afficher une (ou plutôt "des") images provenant de l'ordinateur</span>.
+Pour cela, on peut connecter les deux via différents types de ports (et de protocoles associés) différents : HDMI, Display Port, USB-C...
+Le nombre maximal d'images que l'écran peut afficher par seconde est une fréquence (exprimé donc en hertz) nommé le taux de rafraichissement.
+Pour afficher chaque parties de l'image, <span class="important">l'écran est composé de pixels</span>.
+Un circuit embarqué dans l'écran s'occupe de décoder l'image et de l'afficher pixels par pixels sur l'écran.
+L'écran peut se démarquer par sa taille réelle (souvent exprimé en pouces, avec 1 pouce = 2,54 cm) et le nombre de pixels sur l'écran, nommé la définition de l'écran.
+Le nombre de pixels pour une certaine unité de taille réelle (comme le pouce, en général) est nommée la résolution de l'écran.
+Le nombre de pixels de large de l'écran divisé par le nombre de pixels de haut de l'écran est nommée le ratio de l'écran (16/9, 4/3...).
+</p>
+
+
+
+<h2>Fonctionner grâce à la physique</h2>
+
+<h3>Les écrans à cristaux liquides</h3>
+<p>
+Parmi les différents écrans, <span class="important">la seule différence autre que les unités "basiques" de l'écran (définition, taille...) est la technologie utilisée dans l'affichage des pixels</span>.
+Actuellement, la technologie la plus utilisée est la technologie <a href="https://fr.wikipedia.org/wiki/%C3%89cran_%C3%A0_cristaux_liquides" target="_blank">LCD (plus communément appelée écrans à cristaux liquides)</a>.
+</p>

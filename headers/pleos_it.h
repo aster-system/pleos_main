@@ -44,6 +44,16 @@
 #define PLEOS_IT_ALGORITHMS_SORT_PAGE 210
 #define PLEOS_IT_ALGORITHMS_SORT_COMPARAISON_PAGE 215
 #define PLEOS_IT_ALGORITHMS_SORT_COMPARAISON_SIMULATION_PAGE 216
+// Hardware
+#define PLEOS_IT_HARDWARE_PAGE 400
+#define PLEOS_IT_HARDWARE_HOME_PAGE 401
+#define PLEOS_IT_HARDWARE_CPU_PAGE 420
+#define PLEOS_IT_HARDWARE_GPU_PAGE 435
+#define PLEOS_IT_HARDWARE_MEMORY_PAGE 430
+#define PLEOS_IT_HARDWARE_MOTHERBOARD_PAGE 425
+#define PLEOS_IT_HARDWARE_PERIPHERAL_PAGE 440
+#define PLEOS_IT_HARDWARE_OTHER_PAGE 480
+#define PLEOS_IT_HARDWARE_SCREEN_PAGE 445
 // OS
 #define PLEOS_IT_OS_PAGE 300
 #define PLEOS_IT_OS_HOME_PAGE 301
@@ -114,6 +124,9 @@ namespace pleos {
         //
         //******************
 
+        // Displays a page by its name
+        void display_page(std::string needed_page);
+
         // Displays the algorithms page
         void display_algorithms_page(){hide_all();algorithms_page()->set_visible(true);};
         void display_algorithms_sort_page(){display_algorithms_page();algorithms_sort_page()->set_visible(true);};
@@ -127,6 +140,17 @@ namespace pleos {
         void display_data_structures_page(){hide_all();data_structures_page()->set_visible(true);};
         void display_data_structures_trees_page(){set_current_page(PLEOS_IT_DATA_STRUCTURES_TREES_PAGE);display_data_structures_page();data_structures_tree_page()->set_visible(true);};
         void display_data_structures_trees_simulation_page(){set_current_page(PLEOS_IT_DATA_STRUCTURES_TREES_SIMULATION_PAGE);display_data_structures_page();data_structures_tree_simulation_page()->set_visible(true);};
+
+        // Displays the hardware page
+        GUI_PAGE(scls::GUI_Object, a_hardware_page, PLEOS_IT_HARDWARE_PAGE, hardware_page, display_hardware_page, hide_all);
+        GUI_PAGE(pleos::GUI_Text, a_hardware_home_page, PLEOS_IT_HARDWARE_HOME_PAGE, hardware_home_page, display_hardware_home_page, display_hardware_page);
+        GUI_PAGE(pleos::GUI_Text, a_hardware_cpu_page, PLEOS_IT_HARDWARE_CPU_PAGE, hardware_cpu_page, display_hardware_cpu_page, display_hardware_page);
+        GUI_PAGE(pleos::GUI_Text, a_hardware_gpu_page, PLEOS_IT_HARDWARE_GPU_PAGE, hardware_gpu_page, display_hardware_gpu_page, display_hardware_page);
+        GUI_PAGE(pleos::GUI_Text, a_hardware_memory_page, PLEOS_IT_HARDWARE_MEMORY_PAGE, hardware_memory_page, display_hardware_memory_page, display_hardware_page);
+        GUI_PAGE(pleos::GUI_Text, a_hardware_motherboard_page, PLEOS_IT_HARDWARE_MOTHERBOARD_PAGE, hardware_motherboard_page, display_hardware_motherboard_page, display_hardware_page);
+        GUI_PAGE(pleos::GUI_Text, a_hardware_peripheral_page, PLEOS_IT_HARDWARE_PERIPHERAL_PAGE, hardware_peripheral_page, display_hardware_peripheral_page, display_hardware_page);
+        GUI_PAGE(pleos::GUI_Text, a_hardware_other_page, PLEOS_IT_HARDWARE_OTHER_PAGE, hardware_other_page, display_hardware_other_page, display_hardware_page);
+        GUI_PAGE(pleos::GUI_Text, a_hardware_screen_page, PLEOS_IT_HARDWARE_SCREEN_PAGE, hardware_screen_page, display_hardware_screen_page, display_hardware_page);
 
         // Displays the OS page
         GUI_PAGE(scls::GUI_Object, a_os_page, PLEOS_IT_OS_PAGE, os_page, display_os_page, hide_all);

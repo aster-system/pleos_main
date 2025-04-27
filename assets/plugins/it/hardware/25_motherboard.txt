@@ -1,0 +1,25 @@
+<h1>La carte mère</h1>
+
+
+
+<h2>Le système nerveux de l'ordinateur</h2>
+
+<h3>Lier les pièces</h3>
+<p>
+La <a href="https://fr.wikipedia.org/wiki/Carte_m%C3%A8re" target="_blank">carte mère</a> est certainement le composant le plus important d'un ordinateur.
+<span class="important">Elle permet de connecter toutes les pièces de l'ordinateur entre elles</span>.
+Pour que les composants puissent correctement communiquer entre eux, la carte mère utilise un ensemble de puces électroniques <span class="important">nommé le <a href="https://fr.wikipedia.org/wiki/Chipset">chipset</a></span>.
+Il est relié à chaque composant par des circuits nommés des bus.
+Chaque bus peut faire passer une certaine quantité de données, certains très rapidement (processeur, PCI...) ou plus lentement (USB, SATA...).
+Certains bus relient le chipset avec des connecteurs externes à la carte mère.
+Par exemple, <span class="important">le bus processeur relie la carte mère avec le connecteur du processeur, nommé le socket</span>.
+Plein d'autres connecteur existe, comme le connecteur PCI, SATA, ATX...
+</p>
+
+<h3>Le programme de la carte mère</h3>
+<p>
+Pour fonctionner de manière plus modulable, <span class="important">le chipset incorpore une puce spéciale contenant un programme permettant la modulabilité du chipset : le BIOS (ou UEFI pour les BIOS récents)</span>.
+Ce sont des exemples de Firmwares, vus en introduction.
+BIOS est la contraction de "Basic Input Output System", et UEFI de "Unified Extensible Firmware Interface".
+<span class="important">Ils permettent tous les deux d'utiliser correctement les composants de l'ordinateur via le système d'exploitation</span>.
+</p>

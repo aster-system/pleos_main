@@ -19,12 +19,28 @@ Par exemple, "je suis beau" est une proposition, puis ce qu'elle représente une
     <case x=0 y=3 content="Ce système est dangereux"><case x=1 y=3 content="Si tel est le cas. (Pas une information)">
 </table>
 
+<p>
+Certaines propositions sont obligatoirement vraie, quoi qu'il arrive.
+<span class="important">Les propositions vraies dans tous les contextes possibles sont nommées des tautologies</span>.
+Un exemple de tautologie est : "SI NON P IMPLIQUE P, ALORS P".
+Cette tautologie est assez étrange : elle exprime que si la véracité de "NON P" implique "P", alors "P" est toujours vraie.
+En réalité, c'est parfaitement logique : si une proposition ne PEUT être fausse que quand elle est vraie, alors elle est toujours vraie (puisqu'elle ne peut pas être fausse autrement, et qu'elle ne peut pas être les deux en même temps).
+De manière vulgarisée, une propriété qui ne peut pas être fausse est vraie (à l'inverse, une propriété qui ne peut pas être vraie est fausse).
+<span class="important">Cette forme de raisonnement est nommée le raisonnement par l'absurde</span>.
+</p>
+
+<table>
+    <case x=0 y=0 content="Tautologie"><case x=1 y=0 content="Proposition">
+    <case x=0 y=1 content="Si j'ai 20 euros, j'ai de l'argent. (Ne dépend pas de mon argent)"><case x=1 y=1 content="J'ai 20 euros. (Je peux avoir seulement 15 euros)">
+</table>
+
 <h3>Qu'est ce qu'est un prédicat ?</h3>
 <p>
 Le concept de prédicat représente le concept de proposition, exprimé de manière plus générale.
 En effet, <span class="important">un prédicat représente une information quelconque, comportant une valeur inconnue</span>.
 Donc, en modifiant cette valeur inconnue par une valeur connue, vous obtenez une proposition précise.
 Il existe donc un ensemble de valeurs pour lequelle la proposition obtenue est vraie, et un autre ensemble de valeurs pour lequelle la proposition obtenue est fausse.
+Un prédicat est, en quelque sorte, une fonction prenant une valeur quelconque en entrée, et soit "vrai" soit "faux" en sortie.
 </p>
 
 <table>
@@ -34,10 +50,29 @@ Il existe donc un ensemble de valeurs pour lequelle la proposition obtenue est v
     <case x=0 y=3 content="J'ai X euros."><case x=1 y=3 content="Combien d'euros as tu ? (Pas une proposition)">
 </table>
 
-<h3>Utiliser les propositions et les prédicats</h3>
+<h3>Les axiomes du calcul propositionnel</h3>
 <p>
-L'idée avec ces propositions et prédicats est <span class="important">de les assembler pour obtenir (de manière précise) toutes les opérations nécessaires à la démonstration d'une proposition, tout aussi complexe soit elle</span>.
-Pour cela, il faut souvent utiliser plusieurs propositions / prédicats assembler de manière très précise.
+Oui, même une branche mathématique aussi axée "logique" a des axiomes.
+En réalité, <span class="important">le calcul propositionnel a 4 axiomes consistant en 4 tautologies, extrêmement simples</span>.
+Premièrement, "Si P OU P, Alors P".
+Deuxièmement, "Si P, Alors P OU Q".
+Troisièmement, "Si P OU Q, Alors Q OU P".
+Quatrièmement, "Si P IMPLIQUE Q, Alors Si P IMPLIQUE R Alors Q IMPLIQUE R".
+Aussi basiques qu'elles puissent être, en leur statut d'axiome, ces propositions sont indémontrée, mais toujours vraies.
+Cependant, <span class="important">on peut rajouter une règle d'interférence tout aussi évidente : le modus ponens</span>.
+Le modus ponens énonce que "Si P IMPLIQUE Q, ET P Est Vrai, Q Est Vrai".
+Il représente une façon d'utiliser l'implication, utile par exemple lors d'une démonstration.
+</p>
+
+
+
+<h2>Utiliser les propositions et les prédicats</h2>
+
+<h3>Le calcul propositionnel</h3>
+
+<p>
+L'idée avec ces propositions est <span class="important">de les assembler pour obtenir (de manière précise) toutes les opérations nécessaires à la démonstration d'une proposition, tout aussi complexe soit elle</span>.
+Pour cela, il faut souvent utiliser plusieurs propositions assembler de manière très précise.
 Cette assemblage utilise son propre langage.
 Ici, <span class="important">les propositions utilisées sont nommées variables propositionnels (ou propositions atomiques)</span>.
 Il est possible de les lier entre elles, avec des connecteurs logiques.
@@ -52,13 +87,16 @@ Dans les connecteurs importants, ont peut aussi citer "OU", "NON" ou "IMPLIQUE".
     <case x=0 y=1 content="NON"><case x=1 y=1 content="Forme une proposition avec une autre proposition p, vraie si p est fausse (inverse de p).">
     <case x=0 y=2 content="ET"><case x=1 y=2 content="Forme une proposition avec une deux autres propositions p et q, vraie si p et q sont vraies.">
     <case x=0 y=3 content="OU"><case x=1 y=3 content="Forme une proposition avec une deux autres propositions p et q, vraie si p ou q (ou les deux) est vraie.">
+    <case x=0 y=4 content="IMPLIQUE"><case x=1 y=4 content="Forme une proposition avec une deux autres propositions p et q, vraie si la véracité de p entraine celle de q (si p alors q, si pas q alors pas p...).">
+    <case x=0 y=5 content="ÉQUIVAUT"><case x=1 y=5 content="Forme une proposition avec une deux autres propositions p et q, vraie si p implique q et q implique p (l'un est vraie si l'autre l'est).">
 </table>
 
 <p>
 Une autre utilité de ces concepts est la déduction mathématique.
-Comme vu auparavant, <span class="important">la déduction mathématique consiste à former un ensemble de propositions / prédicats et connecteurs logiques, pour former des démonstrations concrètes</span>.
+Comme vu auparavant, <span class="important">la déduction mathématique consiste à former un ensemble de propositions et connecteurs logiques, pour former des démonstrations concrètes</span>.
 Le passage de l'un à l'autre est régit par une notation assez précise.
-Les propositions permettant la vérification de la conclusion sont nommés les prémisses.
+Les propositions permettant la vérification de la conclusion sont nommées les prémisses.
+En calcul propositionnel, <span class="important">les règles à suivre pour former / déduire des propositions valides représentent ce que l'on appelle la syntaxe</span>.
 </p>
 <math><mfrac><mi>Prémisse_1 Prémisse_2 ... Prémisse_x</mi><mi>Conclusion</mi></mfrac></math>
 <p>
@@ -69,8 +107,40 @@ Définissons la proposition "p" tel que, pour un n quelconque, "n est pair".
 De plus, un nombre entier est impair si il peut s'écrire sous la forme "2 * k + 1", avec "k" un entier quelconque.
 Définissons la proposition "q" tel que "n est impair".
 Dans un cadre logique, la proposition "p ET q" énonce un "n" pair et impair, et donc "2 * k = 2 * l + 1".
-Or, ce n'est pas vrai, donc "p IMPLIQUE q" n'est jamais vraie dans ce contexte, mais "p IMPLIQUE NON q" l'est toujours (de manière assez évidente).
+Or, selon les lois primaires de l'arithmétique, ce n'est pas possible, donc "p ET q" n'est jamais vraie dans ce contexte, mais "p ET NON q" (ou "NON p ET q") l'est toujours (de manière assez évidente).
 Il est possible de pousser le raisonnement plus loin pour plus de rigueur, mais le résultat est le même.
-Il est à noter que, dans le cas d'exemples aussi simples, les résultats obtenus sont particulièrement évidents.
+Il est à noter que, dans le cas d'exemples aussi simples, les résultats obtenus sont particulièrement évidents (tellement qu'ils peuvent en sembler complexe à déduire).
 <span class="important">Les règles précises utilisées dans une sémantique sont définies dans ce que l'on appelle un modèle</span>.
+Ces modèles permettent de définir des ensembles d'axiomes (et de propositions faites avec ces axiomes) nommés des théories axiomatiques (souvent abrégées en "théories").
+</p>
+
+<h3>Le calcul des prédicats</h3>
+
+<p>
+Bien évidemment, <span class="important">les prédicats obéissent aussi aux propriétés des propositions</span>.
+Hors, ils peuvent aussi (dans un même modèle) avoir des valeurs différentes selon la valeur de leur inconnue.
+Pour bien les définir, il existe d'autres notions très similaires, pour bien spécifier l'opération actuelle nécessaire à l'étude.
+Pour commencer <span class="important">nous allons attribuer à chaque prédicat / fonction nécessaire un symbôle, nommé une signature</span>.
+Ici, nous allons différencier les notions de prédicat et de fonction de manière assez simple : un prédicat retourne une valeur "vraie" ou "faux", et une fonction retourne une autre valeur, qui n'a pas vocation à être directement utilisée en tant que "vrai" ou "faux".
+D'un point de vue algébrique, nous pouvons donner à chaque prédicat / fonction une valeur représentant le nombre de termes nécessaires en entré, que nous appelons l'arité du prédicat / fonction.
+En suite, <span class="important">nous allons utiliser les valeurs avec les fonctions directement (et pas les prédicats), dans ce que l'on appelle un terme</span>.
+Une valeur quelconque n'ayant pas besoin de fonction peut aussi représenter un terme.
+Finalement, <span class="important">nous allons placer plusieurs termes dans un prédicat général, pour former ce que l'on appelle une formule</span>.
+Il est aussi possible de créer des formules via d'autres formules, en les interprétant directement comme des prédicats.
+Si une formule est vraie dans au moins un modèle, elle est dite satisfaisable, et si elle est vraie dans tous les modèles possibles, elle est dite "loi logique".
+</p>
+<math><mforall><mi>x</mi><min><mi>N,</mi><mexists><mi>y</mi><mo>/</mo><mi>y</mi><mo>=</mo><mi>x + 1</mi></math>
+<p>
+Dans une formule, l'interprétation en tant que prédicat nécessite de prendre en compte les inconnus nécessaires.
+<span class="important">Pour spécifier certaines valeurs d'inconnues, nous pouvons utiliser des objets nommés des quantificateurs</span>.
+Il en existe deux principaux : "pour tout" désignant toutes les inconnues possibles, et "il existe" désignant au moins une (ou plusieurs) inconnue.
+Dans ce cas, l'inconnue est dite "liée" à la formule, et dans le cas contraire, elle est dite "libre".
+Si toutes les inconnues d'une formule sont liées, la formule est nommée un enoncé (c'est le cas de l'exemple en haut).
+</p>
+<p>
+Cette même logique est particulièrement efficace, car elle est démontrée comme ayant des caractéristiques très pratiques.
+Déjà, <span class="important">le calcul des prédicats permet, selon le théorème de complétude de Godel, d'être sur que tout théorème (logiquement) vrai est démontrable (dans tous les modèles)</span>.
+Bien que cela puisse paraitre parfaitement évident, ce résultat permet de démontrer une certaine unicité logique dans les théories.
+<span class="important">Le calcul des prédicats admet aussi un théorème de compacité</span>.
+En effet, si toutes les sous-parties quelconques d'une théorie axiomatique sont satisfaisables, alors la théorie entière l'est aussi.
 </p>

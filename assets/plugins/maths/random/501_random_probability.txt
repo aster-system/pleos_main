@@ -77,25 +77,4 @@ Le troisième est un peu plus complexe.
 Il établi que la somme de toutes les probabilités des évènements incompatibles d'une tribu quelconque de l'univers est égale à la probabilité qu'un évènement soit dans cette tribu (et donc, égale à 1).
 </p>
 
-
-
-<h2>Utilisation basique d'un espace probabilisé</h2>
-
-<h3>Les variables aléatoires</h3>
-<p>
-Certains espace probabilisé ne sont pas intéressant à étudier tout seul.
-Cependant, nous pouvons déduire un nouveau espace probabilisé via un ancien, grâce à ce que l'on appelle une variable aléatoire.
-En effet, <span class="important">une variable aléatoire "X" est une fonction associant à un élément (d'un espace probabilisé existant) une probabilité d'un autre espace probabilisé</span> (qui est, au minimum, inclu dans l'ancien espace probabilisé).
-D'un point de vue direct, cette définition peut paraitre abstraite, mais elle implique des concepts très utiles.
-Par exemple, vous pouvez définir un espace probabilisé d'un dé (comme vu plus haut), avec une tribu contenant deux élément : valeur supérieure ou inférieur à 3,5.
-Via une variable aléatoire, vous pouvez directement utiliser cette espace, pour le cas où nous avons besoin d'une tribu avec d'autres éléments, comme "valeur paire ou impaire", ou "valeur 1 ou pas 1".
-Nous pouvons utiliser cette variable aléatoire "X" avec la mesure de l'ancien espace probabilisé.
-Dans ce cas, <span class="important">cette mesure est nommée la loi de probabilité de X</span>.
-En général, si "P" est la mesure de l'ancien espace probabilisé, elle se note comme ça :
-</p>
-<math>P<msub>X</msub><mo>=</mo>P(X)</math>
-<p>
-Dans certains cas, <span class="important">nous avons une variable aléatoire quelconque, qui ne contient qu'un nombre fini (ou dénombrable) de possibilités : ces lois sont dites "discrètes"</span>.
-Par exemple, les lois que nous pouvons définir via notre dé vu plus haut sont discrètes ("valeur supérieure ou inférieur à 3,5" a 2 possibilités, "valeur paire ou impaire" a aussi 2 possibilités...).
-<span class="important">Une épreuve se passant sur espace probabilisé offrant deux évènements possibles est nommée une épreuve de Bernoulli</span>.
-</p>
+<h3>La théorie de la mesure</h3>

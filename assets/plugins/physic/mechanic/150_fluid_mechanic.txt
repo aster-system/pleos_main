@@ -1,0 +1,45 @@
+<h1>La mécanique des fluides</h1>
+
+
+
+<h2>Étudier un fluide</h2>
+
+<h3>Qu'est ce qu'est un fluide ?</h3>
+<p>
+À échelle microscopique, la matière peut être décrite comme un ensemble de particules (atomes ou molécules).
+<span class="important">Un fluide est un ensemble de ces particules parfaitement déformable</span>.
+Les particules peuvent donc prendre plusieurs positions les unes des autres.
+En d'autres termes, un fluide n'a pas de forme propre : il va tout faire pour prendre la forme du milieu dans lequel il est contenu.
+À l'inverse, <span class="important">un milieu déformable, mais gardant une forme est dit "solide déformable", étudié par la mécanique des solides déformables</span>.
+Dans tous les cas, les milieux formés par ces objets (et leurs atomes / molécules) sont appelés milieux continus.
+La caractérisation précise du milieu dépend d'énormément de paramètres, en général venant de la molécule ou de l'atome formant le milieu.
+</p>
+<p>
+Parmi les fluides, il existe deux catégories précises de fluides.
+<span class="important">Un fluide est dit newtonien si les efforts internes aux fluides (forçant son écoulement) sont proportionnels aux déformations du fluide</span>.
+Ici, le taux de proportionnalité entre ces deux valeurs représente la viscosité du fluide.
+En gros, un fluide est newtonien si les efforts appliqués sur le fluide sont similaires aux déformations de ce fluide : sa viscosité est donc constante.
+<span class="important">Dans certains cas, il n'y a pas proportionnalité entre ces deux valeurs, le fluide est dit non newtonien</span>.
+Par exemple, si vous appliquez une grande force sur ce fluide et qu'il ne se déforme pas, la proportionnalité est extrêmement élevé.
+En revanche, si une force plus petite le déforme, alors sa proportionnalité baisse : sa viscosité n'est donc pas constante.
+</p>
+<p>
+Dans un fluide, <span class="important">la propriété permettant au fluide de résister (plus ou moins) aux forces extérieures est nommée la viscosité du fluide</span>.
+Elle se mesure en pascal par secondes.
+Cette propriété en provoque une autre : la contrainte de cisaillement.
+<span class="important">La contrainte de cisaillement dans un fluide représente la différence de mouvement entre deux parties du fluide</span>.
+En effet, si un fluide s'écoule sur un solide, la zone (où, du moins, les particules) en contact avec le solide seront moins rapides que celles qui ne sont pas en contact.
+Cependant, les propriétés du fluide provoquent un ralentissement des particules les plus rapides, attirées par les plus lentes : c'est la contrainte de cisaillement dans le fluide.
+Cette propriété se mesure en pascals, et donc en newtons par mètres carrés.
+D'un point de vue plus claire, <span class="important">la contrainte de cisaillement est la différence de force entre la partie accélérant le plus vite par écoulement naturel et la partie accélérant le moins vite par écoulement naturel</span>.
+Avec cette propriété, on peut en définir une autre, le taux de cisaillement, représentant la façon dont contrainte de cisaillement réagit à une déformation du milieu.
+</p>
+
+
+
+<h2>Une forme complexe de mécanique</h2>
+
+<h3>La mécanique d'un fluide newtonien</h3>
+<p>
+Pour étudier un fluide newtonien, <span class="important">il existe une famille d'équation très utile : les équations de Navier-Stokes</span>.
+</p>

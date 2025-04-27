@@ -12,6 +12,21 @@ Cependant, il représente le socle de la mécanique, parce qu'à l'inverse de ce
 Pour étudier quoique ce soit en cinématique, <important>il nous faut définir un espace géométrique, et un repère géométrique dans cette espace, mais aussi un repère temporel, comme une horloge</important>.
 Comme en géométrie, nous allons étudier des points et des figures.
 </p>
+<table>
+<case_plus x=0 y=0>Le mouvement de cet objet</br>s'étudie via la cinématique</case_plus>
+<case_plus x=0 y=1>
+<graphic width=200>
+<base draw=0><border width=0>
+<point name="A" x=-3 y=-3>
+<point name="B" x=3 y=-3>
+<point name="C" x=3 y=3>
+<point name="D" x=-3 y=3>
+<form name="ABDC" points="A;B;C;D">
+<arrow x_start=0 x_end=4>
+</graphic>
+</case_plus>
+</table>
+
 <h3>Les référentiels en cinématique</h3>
 <p>
 En cinématique, <important>chaque objet a son propre repère</important>.
@@ -26,6 +41,69 @@ De plus, <important>dans un ensemble de référentiel possible, le référentiel
 À notre échelle, le référentiel terrestre en est le meilleur exemple.
 Pour le système solaire, le meilleur référentiel est le soleil.
 </p>
+<table>
+<case_plus x=0 y=0>Référentiel absolu</case_plus>
+<case_plus x=0 y=1>
+<graphic width=200>
+<base draw=0><border width=0>
+
+<point name="A" x=-4 y=-1>
+<point name="B" x=-2 y=-1>
+<point name="C" x=-2 y=1>
+<point name="D" x=-4 y=1>
+<form name="ABDC" points="A;B;C;D">
+
+<point name="E" x=4 y=-1>
+<point name="F" x=2 y=-1>
+<point name="G" x=2 y=1>
+<point name="H" x=4 y=1>
+<form color=blue name="ABDC" points="E;F;G;H">
+
+<arrow x_start=-2 x_end=-1/2>
+<arrow x_start=2 x_end=1/2>
+</graphic>
+</case_plus>
+<case_plus x=1 y=0>Référentiel carré vert</case_plus>
+<case_plus x=1 y=1>
+<graphic width=200>
+<base draw=0><border width=0>
+
+<point name="A" x=-4 y=-1>
+<point name="B" x=-2 y=-1>
+<point name="C" x=-2 y=1>
+<point name="D" x=-4 y=1>
+<form name="ABDC" points="A;B;C;D">
+
+<point name="E" x=4 y=-1>
+<point name="F" x=2 y=-1>
+<point name="G" x=2 y=1>
+<point name="H" x=4 y=1>
+<form color=blue name="ABDC" points="E;F;G;H">
+
+<arrow x_start=2 x_end=-1>
+</graphic>
+</case_plus>
+<case_plus x=2 y=0>Référentiel carré bleu</case_plus>
+<case_plus x=2 y=1>
+<graphic width=200>
+<base draw=0><border width=0>
+
+<point name="A" x=-4 y=-1>
+<point name="B" x=-2 y=-1>
+<point name="C" x=-2 y=1>
+<point name="D" x=-4 y=1>
+<form name="ABDC" points="A;B;C;D">
+
+<point name="E" x=4 y=-1>
+<point name="F" x=2 y=-1>
+<point name="G" x=2 y=1>
+<point name="H" x=4 y=1>
+<form color=blue name="ABDC" points="E;F;G;H">
+
+<arrow x_start=-2 x_end=1>
+</graphic>
+</case_plus>
+</table>
 
 <h2>Les liens géométrie - temps</h2>
 <h3>Le concept de mouvement</h3>
@@ -44,6 +122,23 @@ Pour rappel, en cinématique, <important>on n'étudie que le mouvement, et pas c
 Ce n'est pas le cas en mécanique (c'est ce qui différencie les deux).
 Grâce à ces mouvement primaires, on peut décomposer tous mouvements 3D en une suite d'objets géométriques 2D, permettant de les étudier très facilement.
 </p>
+<table>
+<case_plus x=0 y=0>Mouvements primaires en 2D</br>Translation X, translation Y et rotation</case_plus>
+<case_plus x=0 y=1>
+<graphic width=200 ratio_base>
+<base draw=0 height=12 width=15><border width=0>
+<point name="A" x=-3 y=-3>
+<point name="B" x=3 y=-3>
+<point name="C" x=3 y=3>
+<point name="D" x=-3 y=3>
+<form name="ABDC" points="A;B;C;D">
+
+<arrow x_start=0 x_end=4><arrow y_start=0 y_end=4>
+<circle radius=11/2 width=2><arrow_hat x=11/2 angle=90><arrow_hat x=-11/2 angle=-90>
+</graphic>
+</case_plus>
+</table>
+
 <h3>Les vitesses et les accélérations</h3>
 <p>
 Une trajectoire n'est pas suffisante pour décrire un mouvement.

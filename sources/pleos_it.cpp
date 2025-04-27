@@ -51,6 +51,17 @@ namespace pleos {
         GUI_OBJECT_CREATION(scls::GUI_Text, a_algorithms_sort_comparaison_elements_datas_title, "it_algorithms_sort_comparaison_elements_datas_title")
         GUI_OBJECT_CREATION(scls::GUI_Object, a_algorithms_sort_comparaison_simulation, "it_algorithms_sort_comparaison_simulation")
 
+        // Hardware
+        GUI_OBJECT_CREATION(scls::GUI_Object, a_hardware_page, "it_hardware_page")
+        GUI_OBJECT_CREATION(pleos::GUI_Text, a_hardware_home_page, "it_hardware_basic_concepts_body")
+        GUI_OBJECT_CREATION(pleos::GUI_Text, a_hardware_cpu_page, "it_hardware_cpu_body")
+        GUI_OBJECT_CREATION(pleos::GUI_Text, a_hardware_gpu_page, "it_hardware_gpu_body")
+        GUI_OBJECT_CREATION(pleos::GUI_Text, a_hardware_memory_page, "it_hardware_memory_body")
+        GUI_OBJECT_CREATION(pleos::GUI_Text, a_hardware_motherboard_page, "it_hardware_motherboard_body")
+        GUI_OBJECT_CREATION(pleos::GUI_Text, a_hardware_peripheral_page, "it_hardware_peripheral_body")
+        GUI_OBJECT_CREATION(pleos::GUI_Text, a_hardware_other_page, "it_hardware_others_body")
+        GUI_OBJECT_CREATION(pleos::GUI_Text, a_hardware_screen_page, "it_hardware_screen_body")
+
         // OS
         GUI_OBJECT_CREATION(scls::GUI_Object, a_os_page, "it_os_page")
         GUI_OBJECT_CREATION(pleos::GUI_Text, a_os_home_page, "it_os_home_body")
@@ -214,10 +225,28 @@ namespace pleos {
             // School
             GUI_OBJECT_SELECTION(display_school_term_1_page(), "school_term_1")
             GUI_OBJECT_SELECTION(display_school_term_2_page(), "school_term_2")
+            else{display_page(page);}
         }
 
         // Check the hub button
         if(hub_button()->is_clicked_during_this_frame(GLFW_MOUSE_BUTTON_LEFT)) {window_struct()->hide_all_pages_2d();window_struct()->display_page_2d("hub");}
+    }
+
+    // Displays a page by its name
+    void IT_Page::display_page(std::string page) {
+        // Hardware pages
+        if(page == "a"){}
+        GUI_OBJECT_SELECTION(display_hardware_cpu_page(), "hardware_cpu")
+        GUI_OBJECT_SELECTION(display_hardware_gpu_page(), "hardware_gpu")
+        GUI_OBJECT_SELECTION(display_hardware_home_page(), "hardware_home")
+        GUI_OBJECT_SELECTION(display_hardware_memory_page(), "hardware_memory")
+        GUI_OBJECT_SELECTION(display_hardware_motherboard_page(), "hardware_motherboard")
+        GUI_OBJECT_SELECTION(display_hardware_other_page(), "hardware_other")
+        GUI_OBJECT_SELECTION(display_hardware_peripheral_page(), "hardware_peripheral")
+        GUI_OBJECT_SELECTION(display_hardware_screen_page(), "hardware_screen")
+
+        // Handle navigation
+        if(!a_navigation.get()->contains_selected_object(page)){a_navigation.get()->select_object(page);}
     }
 
     // Update the events

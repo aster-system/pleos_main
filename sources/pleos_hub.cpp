@@ -53,11 +53,7 @@ namespace pleos {
     }
 
     // Updates the events
-    void Hub_Page::update_event() {
-        GUI_Page::update_event();
-        check_navigation();
-        handle_saasf();
-    }
+    void Hub_Page::update_event() {GUI_Page::update_event();check_navigation();handle_saasf();}
 
     //******************
     //
@@ -67,7 +63,7 @@ namespace pleos {
 
     // Apply the images for SAASF
     int __saasf_image_number = 0;
-    void __saasf_images(std::shared_ptr<scls::XML_Text> content, std::string path) {
+    void __saasf_images(scls::Replica_Project* replica, std::shared_ptr<scls::XML_Text> content, std::string path, std::string current_replica_file_path) {
         std::filesystem::create_directory(path + std::string("/images/"));
         std::shared_ptr<scls::Text_Style> style = std::make_shared<scls::Text_Style>();
         for(int i = 0;i<static_cast<int>(content.get()->sub_texts().size());i++) {
@@ -77,7 +73,7 @@ namespace pleos {
                 std::string img_path = path + std::string("/images/img") + std::to_string(__saasf_image_number) + std::string(".png");
                 img.get()->save_png(img_path);
                 content.get()->sub_texts().at(i).get()->clear();
-                content.get()->sub_texts().at(i).get()->add_xml_attribute(std::string("src"), std::string("../images/img") + std::to_string(__saasf_image_number) + std::string(".png"));
+                content.get()->sub_texts().at(i).get()->add_xml_attribute(std::string("src"), replica->attached_pattern()->path_to_root(current_replica_file_path) + std::string("images/img") + std::to_string(__saasf_image_number) + std::string(".png"));
                 content.get()->sub_texts().at(i).get()->set_xml_balise_name(std::string("img"));
                 content.get()->sub_texts().at(i).get()->balise_datas().has_content = false;
                 content.get()->sub_texts().at(i).get()->balise_datas().is_paragraph = false;
@@ -113,12 +109,12 @@ namespace pleos {
                 content.get()->sub_texts().at(i).get()->add_sub_balise(content_copy);
                 content.get()->sub_texts().at(i).get()->add_sub_balise(std::string("<mo stretchy=\"false\">&#x2192;</mo>"));
             }
-            else{__saasf_images(content.get()->sub_texts().at(i), path);}
+            else{__saasf_images(replica, content.get()->sub_texts().at(i), path, current_replica_file_path);}
         }
     }
 
     // Returns the pattern for SAASF
-    std::string __saasf_pattern_content = std::string("&lt;!DOCTYPE html&gt;</br>&lt;html lang=\"fr\"&gt;</br>&lt;head&gt;</br>&lt;link href=\"&lt;scls_var path_to_root&gt;/styles/style.css\" rel=\"stylesheet\"&gt;</br>&lt;title&gt;&lt;scls_var page_title&gt;&lt;/title&gt;</br>&lt;scls_var fonts global&gt;</br>&lt;/head&gt;</br></br>&lt;body class=\"open-sans-bold\"&gt;</br>&lt;scls_var header global&gt;</br>&lt;div id=\"main_div\"&gt;</br>&lt;h1&gt;&lt;scls_var main_title&gt;&lt;/h1&gt;</br>&lt;scls_var main_description&gt;</br>&lt;div class=\"left_arrow_right_text\"&gt;</br>&lt;scls_var explaination_parts[]&gt;</br>&lt;div class=\"left_arrow_right_text_child\"&gt;</br>&lt;img alt=\"Contenu\" class=\"arrow left_arrow_right_text_arrow\" src=\"&lt;scls_var path_to_root&gt;/images/arrow.png\"&gt;</br>&lt;h2 class=\"left_arrow_right_text_title\"&gt;</br>&lt;scls_var explaination_title&gt;</br>&lt;/h2&gt;</br>&lt;div class=\"left_arrow_right_text_text\"&gt;</br>&lt;scls_var explaination_content&gt;</br>&lt;/div&gt;</br>&lt;/div&gt;</br>&lt;/scls_var&gt;</br>&lt;/div&gt;</br>&lt;/div&gt;</br>&lt;/div&gt;</br>&lt;/div&gt;</br>&lt;scls_var footer global&gt;</br>&lt;/body&gt;</br>&lt;/html&gt;");
+    std::string __saasf_pattern_content = std::string("&lt;!DOCTYPE html&gt;</br>&lt;html lang=\"fr\"&gt;</br>&lt;head&gt;</br>&lt;link href=\"&lt;scls_var path_to_root&gt;styles/style.css\" rel=\"stylesheet\"&gt;</br>&lt;title&gt;&lt;scls_var page_title&gt;&lt;/title&gt;</br>&lt;scls_var fonts global&gt;</br>&lt;/head&gt;</br></br>&lt;body class=\"open-sans-bold\"&gt;</br>&lt;scls_var header global&gt;</br>&lt;div id=\"main_div\"&gt;</br>&lt;h1&gt;&lt;scls_var main_title&gt;&lt;/h1&gt;</br>&lt;scls_var main_description&gt;</br>&lt;div class=\"left_arrow_right_text\"&gt;</br>&lt;scls_var explaination_parts[]&gt;</br>&lt;div class=\"left_arrow_right_text_child\"&gt;</br>&lt;img alt=\"Contenu\" class=\"arrow left_arrow_right_text_arrow\" src=\"&lt;scls_var path_to_root&gt;images/arrow.png\"&gt;</br>&lt;h2 class=\"left_arrow_right_text_title\"&gt;</br>&lt;scls_var explaination_title&gt;</br>&lt;/h2&gt;</br>&lt;div class=\"left_arrow_right_text_text\"&gt;</br>&lt;scls_var explaination_content&gt;</br>&lt;/div&gt;</br>&lt;/div&gt;</br>&lt;/scls_var&gt;</br>&lt;/div&gt;</br>&lt;/div&gt;</br>&lt;/div&gt;</br>&lt;/div&gt;</br>&lt;scls_var footer global&gt;</br>&lt;/body&gt;</br>&lt;/html&gt;");
     std::shared_ptr<scls::Pattern_Project> saasf_pattern_project(std::string path){
         std::shared_ptr<scls::Pattern_Project> to_return = std::make_shared<scls::Pattern_Project>(scls::String("pattern_project"), path);
         to_return.get()->new_pattern("main", __saasf_pattern_content);
@@ -145,6 +141,7 @@ namespace pleos {
         else if(word == std::string("data_structures")){if(add_determinant){to_return = std::string("les structures de données");}else{to_return = std::string("structures de données");};}
         else if(word == std::string("functions")){if(add_determinant){to_return = std::string("les fonctions");}else{to_return = std::string("fonctions");};}
         else if(word == std::string("geometry")){if(add_determinant){to_return = std::string("la géométrie");}else{to_return = std::string("géométrie");};}
+        else if(word == std::string("hardware")){if(add_determinant){to_return = std::string("l'hardware");}else{to_return = std::string("hardware");};}
         else if(word == std::string("logic")){if(add_determinant){to_return = std::string("la logique");}else{to_return = std::string("logique");};}
         else if(word == std::string("matter")){if(add_determinant){to_return = std::string("la matière");}else{to_return = std::string("matière");};}
         else if(word == std::string("mechanic")){if(add_determinant){to_return = std::string("la mécanique");}else{to_return = std::string("mécanique");};}
@@ -163,12 +160,12 @@ namespace pleos {
     // Parts of SAASF
     // Index.html
     // Realisation
-    std::string __saasf_index_realisation = std::string("Ce site web est réalisé avec les très célèbres langages HTML et CSS, vu en SNT (même si le niveau néessaire pour créer un site de ce genre est bien supérieur à celui demandé en SNT). Pour la structuration, nous utilisation l'outil \"Agatha\" du logiciel \"SCLS Workspace\" notre organisation. La version actuelle du site web, modifiée le 12/11/2024, n'ai pas encore entièrement équipée de style, ni de structure propre. Cependant, les récents progrets de SCLS Workspace rendent tout cela possible dans très peu de temps.");
+    std::string __saasf_index_realisation = std::string("Ce site web est réalisé avec les très célèbres langages HTML et CSS, vu en SNT (même si le niveau néessaire pour créer un site de ce genre est bien supérieur à celui demandé en SNT). Pour la structuration, nous utilisation les outils \"Agatha\" du logiciel \"SCLS Workspace\", et \"PLEOS\" notre organisation. La version actuelle du site web, modifiée le 25/04/2025, n'ai pas encore entièrement équipée de structure propre. Cependant, les récents progrets de PLEOS rendent tout cela possible dans très peu de temps.");
 
     // Convert the entire software in SAASF
-    std::string __saasf_global_footer_content = std::string("&lt;footer&gt;</br>    &lt;h1&gt;Plus d'informations&lt;/h1&gt;</br> &lt;div class=\"open-sans-regular\"&gt;</br>SAASF est proposé par l'organisation &lt;a href=\"https://aster-system.github.io/aster-system/\" target=\"_blank\"&gt;Aster Système&lt;/a&gt;.&lt;br&gt;</br>  Le site web est disponible sur Github, &lt;a href=\"https://github.com/aster-system/saasf\" target=\"_blank\"&gt;dans ce repositorie&lt;/a&gt;.&lt;br&gt;</br>  &lt;span xmlns:cc=\"http://creativecommons.org/ns#\" xmlns:dct=\"http://purl.org/dc/terms/\"&gt;</br>  &lt;a property=\"dct:title\" rel=\"cc:attributionURL\" href=\"https://aster-system.github.io/saasf/\"&gt;SAASF&lt;/a&gt; par</br>  &lt;span property=\"cc:attributionName\"&gt;Aster Système&lt;/span&gt; est proposé sous license &lt;a href=\"https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1\" target=\"_blank\" rel=\"license noopener noreferrer\" style=\"display:inline-block;\"&gt;CC BY-SA 4.0&lt;img style=\"height:22px!important;margin-left:3px;vertical-align:text-bottom;\" src=\"https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1\" alt=\"\"&gt;&lt;img style=\"height:22px!important;margin-left:3px;vertical-align:text-bottom;\" src=\"https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1\" alt=\"\"&gt;&lt;img style=\"height:22px!important;margin-left:3px;vertical-align:text-bottom;\" src=\"https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1\" alt=\"\"&gt;&lt;/a&gt;</br>  &lt;/span&gt;</br>  &lt;/div&gt;</br>&lt;/footer&gt;");
+    std::string __saasf_global_footer_content = std::string("&lt;footer&gt;</br>    &lt;h1&gt;Plus d'informations&lt;/h1&gt;</br> &lt;div class=\"open-sans-regular\"&gt;</br>SAASF est proposé par l'organisation &lt;a href=\"https://aster-system.github.io/aster-system/\" target=\"_blank\"&gt;Aster Système&lt;/a&gt;.&lt;br&gt;</br>  Le site web est disponible sur Github, &lt;a href=\"https://github.com/aster-system/saasf\" target=\"_blank\"&gt;dans ce repositorie&lt;/a&gt;.&lt;br&gt;</br>  &lt;span xmlns:cc=\"http://creativecommons.org/ns#\" xmlns:dct=\"http://purl.org/dc/terms/\"&gt;</br>Le texte dans &lt;a property=\"dct:title\" rel=\"cc:attributionURL\" href=\"https://aster-system.github.io/saasf/\"&gt;SAASF&lt;/a&gt; par</br>  &lt;span property=\"cc:attributionName\"&gt;Aster Système&lt;/span&gt; est proposé sous license &lt;a href=\"https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1\" target=\"_blank\" rel=\"license noopener noreferrer\" style=\"display:inline-block;\"&gt;CC BY-SA 4.0&lt;img style=\"height:22px!important;margin-left:3px;vertical-align:text-bottom;\" src=\"https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1\" alt=\"\"&gt;&lt;img style=\"height:22px!important;margin-left:3px;vertical-align:text-bottom;\" src=\"https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1\" alt=\"\"&gt;&lt;img style=\"height:22px!important;margin-left:3px;vertical-align:text-bottom;\" src=\"https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1\" alt=\"\"&gt;&lt;/a&gt;</br>  &lt;/span&gt;</br>&lt;/br&gt;Sauf indication contraire, les images sont placées dans le domaine public.&lt;/div&gt;</br>&lt;/footer&gt;");
     std::string __saasf_global_font_content = std::string("&lt;link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"&gt;</br>&lt;link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin=\"\"&gt;</br>&lt;link href=\"https://fonts.googleapis.com/css2?family=Hammersmith+One&amp;display=swap\" rel=\"stylesheet\"&gt;</br>&lt;link href=\"https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap\" rel=\"stylesheet\"&gt;</br>");
-    std::string __saasf_global_header_content = std::string("&lt;header class=\"hammersmith-one-regular\"&gt;</br>&lt;a href=\"&lt;scls_var path_to_root&gt;/index.html\"&gt;</br>    &lt;img alt=\"Logo de SAASF\" src=\"&lt;scls_var path_to_root&gt;/images/aster_system_logo.png\" style=\"max-height:150px;\"&gt;</br>&lt;/a&gt;</br>&lt;/header&gt;");
+    std::string __saasf_global_header_content = std::string("&lt;header class=\"hammersmith-one-regular\"&gt;</br>&lt;a href=\"&lt;scls_var path_to_root&gt;index.html\"&gt;</br>    &lt;img alt=\"Logo de SAASF\" src=\"&lt;scls_var path_to_root&gt;images/aster_system_logo.png\" style=\"max-height:150px;\"&gt;</br>&lt;/a&gt;</br>&lt;/header&gt;");
     struct __SAASF_Subjet_Part {std::string name;int number=0;std::string path;};
     bool __saasf_sort_subjects(__SAASF_Subjet_Part& subject_1, __SAASF_Subjet_Part& subject_2){return subject_1.number < subject_2.number;};
     std::string __saasf_style = std::string("a {color: white;}.arrow {transform: rotate(90deg);height: 0.6em;}body {background-color: rgb(0, 33, 91);box-sizing: border-box;color: white;font-size: 18px;margin: 0;max-width: 100vw;}.code_sample {background-color: rgb(30, 30, 30);border: black solid 3px;color: white;margin: 2px;padding: 5px;}footer {background-color: white;color: black;padding: 4px;}footer a {color: black;}footer h1 {font-size: 2em;margin: 0;}header {background-color: white;color: black;display: flex;height: 150px;width: 100%;}header nav {height: 100%;position: relative;display: flex;flex: 1;justify-content: space-around;}header nav div {align-content: center;font-size: 300%;height: 100%;}header nav div a {color: black;}h4 {background-color: rgb(51, 51, 255);color: white;}.important {color: red;}.important a {color: red;}.left_arrow_right_text {display: flex;flex-direction: column;width: 100%;}.left_arrow_right_text_child {display: grid;grid-auto-columns: max-content;}.left_arrow_right_text_arrow {grid-column: 1;grid-row: 2;height: 2em;max-width: 15vw;}.left_arrow_right_text_text {grid-column: 2;grid-row: 2;max-width: 85vw;width: 100%;}.left_arrow_right_text_title {grid-column: 2;grid-row: 1;max-width: 85vw;}#main_div {margin: 8px;}#main_div h1 {font-size: 4em;}#main_div h2 {font-size: 2.5em;}table {background-color: white;color: black;}table, th, td {border: 1px solid black;border-collapse: collapse;}.voc {background-color: rgb(220, 220, 220);}.hammersmith-one-regular {font-family: \"Hammersmith One\", sans-serif;font-weight: 400;font-style: normal;}.open-sans-bold {font-family: \"Open Sans\", sans-serif;font-optical-sizing: auto;font-weight: 700;font-style: normal;font-variation-settings: \"wdth\" 100;}.open-sans-regular {font-family: \"Open Sans\", sans-serif;font-optical-sizing: auto;font-weight: 400;font-style: normal;font-variation-settings: \"wdth\" 100;}");
@@ -178,6 +175,7 @@ namespace pleos {
         for(int i = 0;i<static_cast<int>(subjects.size());i++){std::vector<std::string>cutted=scls::cut_string(subjects[i], "/");subjects[i]=cutted[cutted.size()-1];}
 
         // Create the pattern project
+        std::filesystem::create_directory(path + std::string("saasf_export/"));
         std::shared_ptr<scls::Pattern_Project> needed_pattern = saasf_pattern_project(path);
 
         // Create the replica project
@@ -205,7 +203,7 @@ namespace pleos {
         element = index.get()->variable_list(std::string("explaination_parts[]"))->new_element<scls::Replica_File_Variable_Element>();
         element->set_variable_value(std::string("explaination_title"), std::string("Aster Système Learn"));
         std::string explaination_content = std::string("Voici la liste de tous les savoirs accessibles sur les médias (Youtube, Tiktok, Instagram...) d'Aster Système Learn pour l'instant :&lt;ul&gt;");
-        for(int i = 0;i<static_cast<int>(subjects.size());i++){explaination_content += std::string("&lt;li&gt;&lt;a href=\"./") + subjects[i] + std::string(".html\"&gt;") + __saasf_translate(subjects.at(i), true, true) + std::string("&lt;/a&gt;&lt;/li&gt;");}
+        for(int i = 0;i<static_cast<int>(subjects.size());i++){explaination_content += std::string("&lt;li&gt;&lt;a href=\"./learn/") + subjects[i] + std::string(".html\"&gt;") + __saasf_translate(subjects.at(i), true, true) + std::string("&lt;/a&gt;&lt;/li&gt;");}
         explaination_content += std::string("&lt;/ul&gt;");
         element->set_variable_value(std::string("explaination_content"), explaination_content);
         // Aster System Creations
@@ -216,7 +214,8 @@ namespace pleos {
         // Subjects main pages
         for(int i = 0;i<static_cast<int>(subjects.size());i++) {
             // Create the file
-            std::shared_ptr<scls::Replica_File> current_file = needed_replica.get()->new_replica_file(subjects[i] + std::string(".html"), needed_pattern.get()->pattern_by_name("main"));
+            std::string subject_file_name = std::string("learn/") + subjects[i] + std::string(".html");
+            std::shared_ptr<scls::Replica_File> current_file = needed_replica.get()->new_replica_file(subject_file_name, needed_pattern.get()->pattern_by_name("main"));
             current_file.get()->set_variable_value(std::string("main_title"), __saasf_translate(subjects.at(i), true, true));
             current_file.get()->set_variable_value(std::string("main_description"), scls::format_string_from_plain_text(scls::format_string_break_line(scls::read_file(assets + std::string("/plugins/") + subjects.at(i) + std::string("/home/definition.txt")), std::string(" "))));
             current_file.get()->set_variable_value(std::string("page_title"), std::string("SAASF - ") + __saasf_translate(subjects.at(i), false, true));
@@ -236,10 +235,11 @@ namespace pleos {
                     std::string sub_subject_name = cutted[cutted.size() - 1];
                     if(sub_subject_name != std::string("home") && sub_subject_name != std::string("school")) {
                         std::string file_name = subjects[i] + std::string("/") + sub_subject_name + std::string(".html");
+                        std::string file_name_complete = std::string("learn/") + file_name;
                         explaination_content += std::string("&lt;li&gt;&lt;a href=\"./") + file_name + std::string("\"&gt;") + __saasf_translate(sub_subject_name, true, true) + std::string("&lt;/a&gt;&lt;/li&gt;");
 
                         // Add the needed file
-                        std::shared_ptr<scls::Replica_File> needed_file = needed_replica.get()->new_replica_file(file_name, needed_pattern.get()->pattern_by_name("main"));
+                        std::shared_ptr<scls::Replica_File> needed_file = needed_replica.get()->new_replica_file(file_name_complete, needed_pattern.get()->pattern_by_name("main"));
                         needed_file.get()->set_variable_value(std::string("main_title"), __saasf_translate(sub_subject_name, true, true));
                         needed_file.get()->set_variable_value(std::string("main_description"), std::string());
                         needed_file.get()->set_variable_value(std::string("page_title"), std::string("SAASF - ") + __saasf_translate(sub_subject_name, false, true));
@@ -266,7 +266,7 @@ namespace pleos {
                             file_content.get()->replace_balise_by_name("h3", "h4");file_content.get()->replace_balise_by_name("h2", "h3");
                             file_content.get()->replace_balise_by_name("important", "span class=\"important\"");
                             utf_8_symbol_xml(file_content, true);
-                            __saasf_images(file_content, needed_replica.get()->export_path(path));
+                            __saasf_images(needed_replica.get(), file_content, needed_replica.get()->export_path(path), file_name_complete);
                             scls::Replica_File_Variable_Element* current_part = needed_file.get()->variable_list(std::string("explaination_parts[]"))->new_element<scls::Replica_File_Variable_Element>();
                             std::shared_ptr<scls::XML_Text> title = file_content.get()->remove_balise_by_name("h1");
                             if(title.get() != 0){current_part->set_variable_value(std::string("explaination_title"), title.get()->text());}
@@ -276,10 +276,11 @@ namespace pleos {
                     else if(sub_subject_name == std::string("school")) {
                         use_school = true;
                         std::string file_name = subjects[i] + std::string("/") + sub_subject_name + std::string(".html");
+                        std::string file_name_complete = std::string("learn/") + file_name;
                         explaination_content_school += std::string("&lt;li&gt;&lt;a href=\"./") + file_name + std::string("\"&gt;") + std::string("Lycée") + std::string("&lt;/a&gt;&lt;/li&gt;");
 
                         // Add the needed file
-                        std::shared_ptr<scls::Replica_File> needed_file = needed_replica.get()->new_replica_file(file_name, needed_pattern.get()->pattern_by_name("main"));
+                        std::shared_ptr<scls::Replica_File> needed_file = needed_replica.get()->new_replica_file(file_name_complete, needed_pattern.get()->pattern_by_name("main"));
                         needed_file.get()->set_variable_value(std::string("main_title"), std::string("Au lycée"));
                         needed_file.get()->set_variable_value(std::string("main_description"), std::string());
                         needed_file.get()->set_variable_value(std::string("page_title"), std::string("SAASF - Lycée"));
@@ -308,7 +309,7 @@ namespace pleos {
                             file_content.get()->replace_balise_by_name("h3", "h4");file_content.get()->replace_balise_by_name("h2", "h3");
                             file_content.get()->replace_balise_by_name("important", "span class=\"important\"");
                             utf_8_symbol_xml(file_content, true);
-                            __saasf_images(file_content, needed_replica.get()->export_path(path));
+                            __saasf_images(needed_replica.get(), file_content, needed_replica.get()->export_path(path), file_name_complete);
                             scls::Replica_File_Variable_Element* current_part = needed_file.get()->variable_list(std::string("explaination_parts[]"))->new_element<scls::Replica_File_Variable_Element>();
                             std::shared_ptr<scls::XML_Text> title = file_content.get()->remove_balise_by_name("h1");
                             if(title.get() != 0){current_part->set_variable_value(std::string("explaination_title"), title.get()->text());}

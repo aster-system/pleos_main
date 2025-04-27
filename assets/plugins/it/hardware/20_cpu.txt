@@ -1,0 +1,28 @@
+<h1>Le processeur</h1>
+
+
+
+<h2>Le cerveau de l'ordinateur</h2>
+
+<h3>Une pièce qui "procède"</h3>
+<p>
+Le <a href="https://fr.wikipedia.org/wiki/Processeur" target="_blank">processeur</a>, parfois appelé CPU, est le cerveau de l'ordinateur.
+<span class="important">Il exécute les actions ce que l'utilisateur lui demande de faire, appelées des instructions</span>.
+L'exécution se déroule grâce à une série de courants électriques.
+Ces courants électriques sont en suite utilisés dans le processeur pour réaliser les actions (grâce au circuit imprimé du processeur), <span class="important">sous forme de bits 0 et 1</span>, grâce à <span class="important">des petits composants nommés les transistors</span>.
+<span class="important">La façon dont les transistors sont disposés est nommées architecture du processeur</span>.
+</p>
+<p>
+Les bits peuvent aussi être <span class="important">stockés dans des petites puces de mémoires directement dans le processeur, nommées les registres de processeur</span>.
+Ils sont beaucoup plus rapides que la mémoire RAM, et améliorent les performances du processeur.
+Il y a plusieurs registres possibles, pouvant stocker instructions, valeurs...
+Les registres peuvent aussi être superposés entre eux, bien que les registres supérieurs soient plus lents que les autres.
+Ces différentes couches sont nommées <span class="important">"mémoire cache L1/2/3", où "L" représente la superposition de la couche</span>.
+</p>
+<p>
+<span class="important">Les transistors sont physiquement repartis dans le processeur dans ce que l'on appelle des coeurs de processeur</span>.
+Plus il y a de coeurs, plus le processeur peut réaliser d'instructions en même temps, plus il est performant.
+Grâce à une ingénieuse disposition des transistors, certains coeurs peuvent être doublés sans rajouter de transistors, <span class="important">en ce que l'on appelle des threads</span>.
+Les coeurs peuvent réaliser des opérations plusieurs milliards de fois par seconde.
+<span class="important">Le nombre de fois qu'il sont utilisés est nommé la fréquence d'horloge, et s'exprime en hertz (ou plutot, en giga hertz, en milliards de hertz)</span>.
+</p>
