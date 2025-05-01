@@ -1,0 +1,88 @@
+<h1>Les statistiques</h1>
+
+
+
+<h2>Étudier des données</h2>
+
+<h3>Qu'est ce que sont les statistiques ?</h3>
+<p>
+Dans tous les domaines en ayant besoin (donc, beaucoup, vraiment beaucoup), <span class="important">les statistiques représentent les ensembles de méthodes utilisées pour étudier des données</span>.
+Ici, ces mêmes données peuvent être absolument n'importe quoi : un nombre, des textes, des images...
+<span class="important">Elle représente une des composantes de la récentes discipline de la science des données, étudiant encore plus précisément les données</span>.
+</p>
+<p>
+Bien qu'elles représentent une branche des mathématiques, <span class="important">cette discipline apparait dans plein de concepts différents</span>.
+Par exemple, elle est utilisée en démographie pour recenser / sonder la population d'un pays / région / tout ce que vous voulez.
+En mathématiques, <span class="important">elle est représentée de façon abstraite, pour coller à tous les domaines possibles</span>.
+Elle englobe donc une grande quantité de sous-domaines différents, propre à des applications plus précises.
+En général, <span class="important">la part des statistiques permettant de représenter complétement un ensemble de données est nommée "statistiques descriptives" (ou "analyse des données")</span>.
+Dans ce cas, il est judicieux d'analyse l'entiereté de l'ensemble, pour avoir les résultats les plus réalistes possibles.
+Cependant, dans certains cas, étudier l'entiereté de l'ensemble est impossible.
+<span class="important">Si nous ne pouvons pas étudier tout l'ensemble, alors nous allons étudier une partie de cet ensemble (nommé un échantillon), et utiliser d'autres outils statistiques pour en déduire les paramètres de l'ensemble : il s'agit des statistiques mathématiques</span>.
+Cette branches des statistiques est très liée à la branche mathématiques des probabilités.
+</p>
+<table>
+<case_plus x=0 y=0>Petit ensemble d'objets</br>Statistiques descriptives</case_plus>
+<case_plus x=0 y=1>
+<graphic width=200>
+    <background_color red=255 green=255 blue=255>
+    <base draw=1 width=10 height=10 x=0 y=0>
+
+    <random_object min_x=-5 min_y=-5 max_x=5 max_y=5 number=5>
+</graphic>
+</case_plus>
+
+<case_plus x=1 y=0>Trop grand ensemble d'objets</br>Statistiques mathématiques</case_plus>
+<case_plus x=1 y=1>
+<graphic width=200>
+    <background_color red=255 green=255 blue=255>
+    <base draw=1 width=10 height=10 x=0 y=0>
+
+    <random_object min_x=-5 min_y=-5 max_x=5 max_y=5 number=100 radius=1/5>
+</graphic>
+</case_plus>
+</table>
+
+<h3>Les domaines des statistiques</h3>
+<p>
+Caractérisons bien tous les domaines couverts par cette discipline.
+<span class="important">Elle prend en compte la collecte des données, nommée l'enquête statistique</span>.
+Par exemple, dans le cadre de la réalisation de statistiques sur des opinions politiques, cette étape consiste à appeler des gens, et leur demander leur avis.
+Cette partie implique la mise en place de données précises à étudier, et de protocoles pour efficacement étudier ces données.
+Les données nécessaires sont récoltés parmi un ensemble d'objets de bases, pouvant représenter pleins de choses selon le contexte (population humaine / animal, mesures...).
+Si tous les objets de l'ensemble sont traités, alors on parle de recueillement, et à l'inverse, si qu'une partie des données est traitée, on parle de sondage.
+Dans certains cas, <span class="important">cette étape peut rencontrer un imprévu, et fausser une données obtenue (avis mal-exprimé, problème de calibrage) : ce genre de problèmes s'appellent une erreur statistique</span>.
+</p>
+<p>
+Dés que vous avez vos données brutes, <span class="important">l'idée suivante est de les traiter, pour pouvoir les étudier plus efficacement : c'est le traitement des données</span>.
+Cette étape dépend beaucoup du contexte de l'étude menée.
+En général, l'idée est de les représenter graphiquement, pour les rendre plus simple à étudier.
+Une des représentations graphiques possibles est l'histogramme : représenter une donnée et un nombre attribué (comme, par exemple, l'occurence de la donnée dans l'ensemble des données de départ) sous forme de barres verticales.
+</p>
+<graphic width=200 ratio_base>
+    <background_color red=255 green=255 blue=255>
+    <base draw=1 width=10 height=10>
+
+    <histogram start=1 end=7 x=0 y=0 width=10 height=10>
+        <data value=1 number=1>
+        <data value=2 number=2>
+        <data value=3 number=8>
+        <data value=4 number=6>
+        <data value=5 number=7>
+        <data value=6 number=4>
+    </histogram>
+</graphic>
+<p>
+Une dernière étape, souvent la plus controversé, arrive : l'interprétation des données.
+En effet, si vous faites une expérience, c'est (en général)... qu'elle sert à quelque chose.
+<span class="important">L'interprétation des données permet de développer des conclusions à partir des données traitées</span>.
+</p>
+
+
+
+<h2>Les différentes méthodes statistiques</h2>
+
+<h3 id="poll">Les sondages</h3>
+<p>
+
+</p>

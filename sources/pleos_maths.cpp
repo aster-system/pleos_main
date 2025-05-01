@@ -151,6 +151,7 @@ namespace pleos {
         std::vector<std::string> input_cutted = scls::cut_string(input, std::string(";"));
 
         // Load all the formula
+        scls::Textual_Math_Settings settings;
         for(int i = 0;i<static_cast<int>(input_cutted.size());i++) {
             std::vector<std::string> cutted = scls::cut_string(input_cutted.at(i), std::string("="));
             if(cutted.size() == 2) {
@@ -160,16 +161,16 @@ namespace pleos {
                     scls::Formula needed_value = scls::string_to_formula(cutted.at(1));
                     scls::__Formula_Base::Formula needed_formula = formulas[formulas.size() - 1].replace_unknown(cutted.at(0), needed_value);
                     formulas[formulas.size() - 1] = *needed_formula.formula_base();
-                    current_redaction += std::string(" = ") + needed_formula.to_std_string();
-                    if(i < input_cutted.size()){current_redaction += std::string("</br></br>");}
+                    current_redaction += std::string(" = ") + needed_formula.to_std_string(&settings);
+                    if(i < static_cast<int>(input_cutted.size())){current_redaction += std::string("</br></br>");}
                     redaction += current_redaction;
                 }
             }
             else {
                 std::string current_redaction = input_cutted.at(i);
                 scls::Formula needed_formula = scls::string_to_formula(input_cutted.at(i));
-                current_redaction += std::string(" = ") + needed_formula.to_std_string();
-                if(i < input_cutted.size()){current_redaction += std::string("</br></br>");}
+                current_redaction += std::string(" = ") + needed_formula.to_std_string(&settings);
+                if(i < static_cast<int>(input_cutted.size())){current_redaction += std::string("</br></br>");}
                 redaction += current_redaction;formulas.push_back(needed_formula);
             }
         }
@@ -261,6 +262,7 @@ namespace pleos {
         arithmetic_calculator_elements_datas_title()->set_text(arithmetic_object.get()->connected_object.get()->text());
 
         // Finalise the creation
+        scls::Textual_Math_Settings settings;
         if(arithmetic_object->choice == "gcd"){
             // Create the title of the name of the first number
             std::shared_ptr<scls::GUI_Text> first_title = *arithmetic_calculator_elements_datas()->new_object<scls::GUI_Text>(arithmetic_calculator_elements_datas()->name() + "-first_title_" + std::to_string(__arithmetic_object_created));
@@ -279,7 +281,7 @@ namespace pleos {
             first_input.get()->set_width_in_scale(scls::Fraction(1, 6));
             first_input.get()->set_x_in_object_scale(scls::Fraction(2, 5));
             first_input.get()->set_y_in_object_scale(scls::Fraction(3, 4));
-            first_input.get()->set_text(arithmetic_object.get()->value_1.to_std_string());
+            first_input.get()->set_text(arithmetic_object.get()->value_1.to_std_string(&settings));
             arithmetic_object.get()->input_1 = first_input;
             arithmetic_created_object_for_selected_object().push_back(first_input);
 
@@ -300,7 +302,7 @@ namespace pleos {
             second_input.get()->set_width_in_scale(scls::Fraction(1, 6));
             second_input.get()->set_x_in_object_scale(scls::Fraction(4, 5));
             second_input.get()->set_y_in_object_scale(scls::Fraction(3, 4));
-            second_input.get()->set_text(arithmetic_object.get()->value_2.to_std_string());
+            second_input.get()->set_text(arithmetic_object.get()->value_2.to_std_string(&settings));
             arithmetic_object.get()->input_2 = second_input;
             arithmetic_created_object_for_selected_object().push_back(second_input);
 
@@ -335,7 +337,7 @@ namespace pleos {
             first_input.get()->set_width_in_scale(scls::Fraction(1, 6));
             first_input.get()->set_x_in_object_scale(scls::Fraction(2, 5));
             first_input.get()->set_y_in_object_scale(scls::Fraction(3, 4));
-            first_input.get()->set_text(arithmetic_object.get()->value_1.to_std_string());
+            first_input.get()->set_text(arithmetic_object.get()->value_1.to_std_string(&settings));
             arithmetic_object.get()->input_1 = first_input;
             arithmetic_created_object_for_selected_object().push_back(first_input);
         }
@@ -484,10 +486,11 @@ namespace pleos {
         std::string redaction = std::string();
         if(static_cast<int>(functions_created().size()) > 1){redaction += std::string("Nous allons définir ") + std::to_string(functions_created().size()) + std::string(" fonctions. ");}
         // Create the introduction of the redaction
+        scls::Textual_Math_Settings settings;
         for(int i = 0;i<static_cast<int>(functions_created().size());i++) {
-            redaction += functions_created()[i].get()->introduction();
+            redaction += functions_created()[i].get()->introduction(&settings);
             if(i < static_cast<int>(functions_created().size()) - 1){redaction += std::string(" ");}
-            pleos_log(functions_created()[i].get()->formula()->to_std_string());
+            pleos_log(functions_created()[i].get()->formula()->to_std_string(&settings));
         } redaction += std::string("</br></br>");
 
         std::cout << pleos_log_content << std::endl;
@@ -497,11 +500,11 @@ namespace pleos {
             std::shared_ptr<pleos::Function_Studied> needed_function = functions_created()[i];
             std::string function_name = needed_function.get()->name();
             scls::Formula* needed_formula = needed_function.get()->formula();
-            std::cout << i << " " << needed_formula->to_std_string() << std::endl;
+            std::cout << i << " " << needed_formula->to_std_string(&settings) << std::endl;
 
             // Do the redaction
             redaction += std::string("Nous avons la fonction ") + function_name + std::string(" tel que :</br></br>");
-            redaction += std::string("<math><mi>") + function_name + std::string("(x") + std::string(")</mi><mo>=</mo>") + needed_formula->to_mathml() + std::string("</math></br></br>");
+            redaction += std::string("<math><mi>") + function_name + std::string("(x") + std::string(")</mi><mo>=</mo>") + needed_formula->to_mathml(&settings) + std::string("</math></br></br>");
 
             // Add the needed arguments
             std::vector<scls::GUI_Scroller_Choice::GUI_Scroller_Single_Choice>& objects = functions_redaction_elements_chosen()->objects();
@@ -522,21 +525,21 @@ namespace pleos {
                             }
                         }
                     }
-                    else if(type == "definition_set") {function_definition_set(needed_function.get(), &redaction);}
-                    else if(type == "functions_analysis_derivate") {function_derivation(needed_function.get(), &redaction);}
-                    else if(type == "functions_analysis_primitive") {function_primitive(needed_function.get(), &redaction);}
+                    else if(type == "definition_set") {function_definition_set(needed_function.get(), &redaction, &settings);}
+                    else if(type == "functions_analysis_derivate") {function_derivation(needed_function.get(), &redaction, &settings);}
+                    else if(type == "functions_analysis_primitive") {function_primitive(needed_function.get(), &redaction, &settings);}
                     else if(type == "image") {
                         // Calculate an image of the function
                         scls::Formula needed_value = scls::string_to_formula(reinterpret_cast<scls::GUI_Text_Input*>(objects[j].object()->child_by_name(objects[j].object()->name() + "_input_x"))->text());
-                        function_image(needed_function.get(), needed_value, redaction);
+                        function_image(needed_function.get(), needed_value, redaction, &settings);
                     }
-                    else if(type == "roots") {function_roots(needed_function.get(), &redaction);}
+                    else if(type == "roots") {function_roots(needed_function.get(), &redaction, &settings);}
                     redaction += std::string("</br></br>");
                 }
             }
 
             // Check the graphic part
-            if(needed_function.get()->definition_set() == 0){function_definition_set(needed_function.get(), 0);}
+            if(needed_function.get()->definition_set() == 0){function_definition_set(needed_function.get(), 0, 0);}
             functions_redaction_graphic()->add_function(needed_function);
             redaction += std::string("</br></br>");
         }
@@ -552,7 +555,8 @@ namespace pleos {
         currently_selected_function_shared_ptr() = needed_function;
 
         // Set the needed text
-        functions_redaction_expression()->set_text(needed_function.get()->formula()->to_std_string());
+        scls::Textual_Math_Settings settings;
+        functions_redaction_expression()->set_text(needed_function.get()->formula()->to_std_string(&settings));
         functions_redaction_name()->set_text(needed_function.get()->name());
     }
 
@@ -833,9 +837,10 @@ namespace pleos {
         check_geometry_hiding(); geometry_redaction_graphic()->reset();
         std::string redaction = std::string();
         // Add the vectors
+        scls::Textual_Math_Settings settings;
         if(static_cast<int>(geometry_vectors_created().size()) > 1){redaction += std::string("Nous allons définir ") + std::to_string(geometry_vectors_created().size()) + std::string(" vecteurs. ");}
         for(int i = 0;i<static_cast<int>(geometry_vectors_created().size());i++) {
-            redaction += geometry_vectors_created()[i].get()->introduction();
+            redaction += geometry_vectors_created()[i].get()->introduction(&settings);
             if(i < static_cast<int>(geometry_vectors_created().size()) - 1){redaction += std::string(" ");}
             // Add the needed vector
             geometry_redaction_graphic()->add_vector(*geometry_vectors_created()[i].get());
@@ -860,21 +865,19 @@ namespace pleos {
             if(type == "vector_norm") {
                 std::string needed_vector_name = reinterpret_cast<scls::GUI_Text_Input*>(objects[i].object()->child_by_name(objects[i].object()->name() + "_name"))->text();
                 std::shared_ptr<Vector> needed_vector = geometry_vector_created(needed_vector_name);
-                if(needed_vector.get() != 0){needed_vector.get()->norm(&redaction);}
+                if(needed_vector.get() != 0){needed_vector.get()->norm(&redaction, &settings);}
             }
             else if(type == "vector_complex_number") {
                 std::string needed_vector_name = reinterpret_cast<scls::GUI_Text_Input*>(objects[i].object()->child_by_name(objects[i].object()->name() + "_name"))->text();
                 std::shared_ptr<Vector> needed_vector = geometry_vector_created(needed_vector_name);
-                if(needed_vector.get() != 0){needed_vector.get()->complex_number(&redaction);}
+                if(needed_vector.get() != 0){needed_vector.get()->complex_number(&redaction, &settings);}
             }
             else if(type == "vector_angle") {
                 std::string needed_vector_name = reinterpret_cast<scls::GUI_Text_Input*>(objects[i].object()->child_by_name(objects[i].object()->name() + "_name"))->text();
                 std::shared_ptr<Vector> needed_vector = geometry_vector_created(needed_vector_name);
                 needed_vector_name = reinterpret_cast<scls::GUI_Text_Input*>(objects[i].object()->child_by_name(objects[i].object()->name() + "_reference"))->text();
                 std::shared_ptr<Vector> needed_reference = geometry_vector_created(needed_vector_name);
-                if(needed_vector.get() != 0 && needed_reference.get() != 0) {
-                    needed_vector.get()->angle(needed_reference.get(), &redaction);
-                }
+                if(needed_vector.get() != 0 && needed_reference.get() != 0) {needed_vector.get()->angle(needed_reference.get(), &redaction, &settings);}
             } redaction += std::string("</br></br>");
         }//*/
 
@@ -892,7 +895,7 @@ namespace pleos {
             geometry_redaction_form()->set_visible(true);geometry_redaction_vector()->set_visible(false);
             geometry_redaction_form_name()->set_text(needed_form_2d.get()->name());
             std::string needed_points = std::string("");
-            for(int i = 0;i<static_cast<int>(needed_form_2d.get()->points().size());i++){needed_points+=needed_form_2d.get()->points()[i].get()->name();if(i<needed_form_2d.get()->points().size()-1){needed_points+=std::string(";");}}
+            for(int i = 0;i<static_cast<int>(needed_form_2d.get()->points().size());i++){needed_points+=needed_form_2d.get()->points()[i].get()->name();if(i<static_cast<int>(needed_form_2d.get()->points().size())-1){needed_points+=std::string(";");}}
             geometry_redaction_form_points()->set_text(needed_points);
         }
         else {geometry_redaction_form()->set_visible(false);geometry_redaction_vector()->set_visible(false);}
@@ -905,10 +908,11 @@ namespace pleos {
 
         if(needed_vector.get() != 0) {
             // Set the needed text
+            scls::Textual_Math_Settings settings;
             geometry_redaction_form()->set_visible(false);geometry_redaction_vector()->set_visible(true);
             geometry_redaction_vector_name()->set_text(needed_vector.get()->name());
-            geometry_redaction_vector_x()->set_text(needed_vector.get()->x()->to_std_string());
-            geometry_redaction_vector_y()->set_text(needed_vector.get()->y()->to_std_string());
+            geometry_redaction_vector_x()->set_text(needed_vector.get()->x()->to_std_string(&settings));
+            geometry_redaction_vector_y()->set_text(needed_vector.get()->y()->to_std_string(&settings));
         }
         else {geometry_redaction_form()->set_visible(false);geometry_redaction_vector()->set_visible(false);}
     }
@@ -1181,7 +1185,6 @@ namespace pleos {
                 // Display the page
                 display_page(page);
             }
-            //std::cout << "R " << current_xml.get() << " " << current_xml.get()->xml_balise() << " " << current_xml.get()->text() << std::endl;
         }
     }
 

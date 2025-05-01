@@ -28,7 +28,7 @@ Cependant, elle implique beaucoup plus de domaines d'études qu'implique la thé
 <p>
 Si nous parlons de cette théorie ici, c'est essentiellement pour ce concept.
 <important>La grammaire formelle représente l'ensemble des règles permettant de donner sens à un langage</important>.
-Pour les langages dans <a href="algebra_definitions">l'algèbre</a>, cela est nommé la grammaire algébrique.
+Pour les langages dans <a href="maths/algebra/definitions">l'algèbre</a>, cela est nommé la grammaire algébrique.
 Bien que ce concept puisse faire peur, il s'agit en réalité de la base de tous les langages existant.
 Un exemple (infiniment évident) de règle est : "les mots sont séparés par des espaces".
 </p>

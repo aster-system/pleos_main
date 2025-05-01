@@ -90,11 +90,7 @@ void draw(std::shared_ptr<scls::Image> img, std::vector<double>& value_1, std::v
 //*/
 
 int main(int argc, char* argv[]) {
-    //pleos::test("tests");
-
-    pleos::erathostene_sieve(200, 1, 150).get()->save_png("tests/sieve.png");
-
-    /*pleos::Pleos_Window window(900, 600, argv[0]);
+    pleos::Pleos_Window window(900, 600, argv[0]);
     window.load_from_xml("assets/window.txt");
 
     while(window.run()) {

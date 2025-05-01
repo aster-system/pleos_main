@@ -39,8 +39,8 @@ namespace pleos {
         while(path.size() > 0 && (path.at(path.size() - 1) == '/' || path.at(path.size() - 1) == '\\')){path = path.substr(0, path.size() - 1);}
 
         // Base text if the test
-        std::vector<std::string> treated_function_expression = {std::string("2x - 2"), std::string("4x*x + 8x - 9"), std::string("(3x*x - 2x - 5)/(5x*x + 9x - 2)"), std::string("sqrt(2x*x + 8x - 2)")};
-        std::vector<std::string> treated_function_name = {std::string("f"), std::string("g"), std::string("h"), std::string("i")};
+        std::vector<std::string> treated_function_expression = {std::string("2x - 2"),  std::string("4x*x + 8x - 9"), std::string("(3x*x - 2x - 5)/(5x*x + 9x - 2)"), std::string("sqrt(2x*x + 8x - 2)"), std::string("(exp(4x*x - 5))/(4x*x+2x-6)")};
+        std::vector<std::string> treated_function_name = {std::string("f"), std::string("g"), std::string("h"), std::string("i"), std::string("j")};
         std::string treated_function_text = std::string();
         for(int i = 0;i<static_cast<int>(treated_function_expression.size());i++) {
             treated_function_text += std::string("<math>f\\{<mforall>x<min>R, x<mto>") + treated_function_expression.at(i) + std::string("}</math></br>");
@@ -48,6 +48,7 @@ namespace pleos {
         std::string page = std::string("<h1>Test de PLEOS</h1><h2>Test de fonctions</h2><p>Voici la liste des fonctions qui seront traitées ici :</br>") + treated_function_text + std::string(".</p>");
 
         // Do each function test
+        scls::Textual_Math_Settings settings;
         for(int i = 0;i<static_cast<int>(treated_function_expression.size());i++) {
             // Create the function to study
             std::shared_ptr<pleos::Function_Studied> fs = pleos::Function_Studied::new_function_studied_shared_ptr(scls::string_to_formula(treated_function_expression.at(i)));
@@ -57,15 +58,17 @@ namespace pleos {
             // Study the function
             std::string current_function_text = std::string();
             current_function_text += std::string("<p>");
-            current_function_text += fs.get()->introduction();current_function_text += std::string("</br>");
-            pleos::function_definition_set(fs.get(), &current_function_text);current_function_text += std::string("</br>");
-            pleos::function_roots(fs.get(), &current_function_text);current_function_text += std::string("</br>");
-            pleos::function_sign(fs.get(), &current_function_text);current_function_text += std::string("</br>");
+            current_function_text += fs.get()->introduction(&settings);current_function_text += std::string("</br>");
+            pleos::function_definition_set(fs.get(), &current_function_text, &settings);current_function_text += std::string("</br>");
+            pleos::function_roots(fs.get(), &current_function_text, &settings);current_function_text += std::string("</br>");
+            pleos::function_sign(fs.get(), &current_function_text, &settings);current_function_text += std::string("</br>");
             current_function_text += std::string("Dressons le tableau de signe de cette fonction.</p>");
-            current_function_text += pleos::function_sign_table(fs.get(), &current_function_text);current_function_text += std::string("</p>");
-            pleos::function_derivation(fs.get(), &current_function_text);current_function_text += std::string("</br>");
+            current_function_text += pleos::function_sign_table(fs.get(), &current_function_text, &settings);current_function_text += std::string("</p>");
+            scls::Formula derivate = pleos::function_derivation(fs.get(), &current_function_text, &settings);current_function_text += std::string("</br>");
+            std::cout << "A " << derivate.to_std_string(&settings) << std::endl;
             current_function_text += std::string("Traçons cette fonction dans un graphique.</br>");
-            current_function_text += std::string("<graphic><function expression=\"") + treated_function_expression.at(i) + std::string("\"></function></graphic>");
+            current_function_text += std::string("<graphic><function expression=\"") + treated_function_expression.at(i) + std::string("\"></function>");
+            current_function_text += std::string("<function color=\"blue\" expression=\"") + derivate.to_std_string(&settings) + std::string("\"></function></graphic>");
 
             // Finish the study
             current_function_text += std::string("</p>");

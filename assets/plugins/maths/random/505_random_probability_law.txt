@@ -1,4 +1,4 @@
-<h1>Les lois probabilités</h1>
+<h1>Les lois de probabilités</h1>
 
 
 
@@ -96,19 +96,17 @@ Dans un ensemble dénombrable de valeur (donc, par exemple, N ou un sous-ensembl
 Cependant, si la tribu de la loi n'est pas bornée, alors ce calcul devient faux, et l'espérance de la loi ne peut pas être définie correctement.
 Si la loi est indénombrable, alors le calcul est le même, mais nous utilisons une intégrale à la place d'une somme (et l'exception est la même : la tribu doit être bornée).
 </p>
-<graphic>
+<table>
+<case_plus x=0 y=0>Moyenne de résultats obtenus</br>Au fil de lancers de dés</case_plus>
+<case_plus x=0 y=1>
+<graphic width=200>
     <background_color red=255 green=255 blue=255>
-    <base draw=1 width=10 height=10>
+    <base draw=1 width=5 height=5 x=5/2 y=5/2>
 
-    <point_cloud start=1 end=7 x=0 y=0 width=10 height=10>
-        <data value=1 number=2>
-        <data value=2 number=4>
-        <data value=3 number=8>
-        <data value=4 number=1>
-        <data value=5 number=5>
-        <data value=6 number=7>
-    </point_cloud>
+    <point_cloud_linked display=average max=6 min=1 x=5/2 y=5/2 width=5 height=5><data_random min=1 max=6 number=50></point_cloud_linked>
 </graphic>
+</case_plus>
+</table>
 
 <h3>Les processus aléatoires</h3>
 <p>

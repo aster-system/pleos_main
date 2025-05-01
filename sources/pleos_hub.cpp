@@ -79,6 +79,25 @@ namespace pleos {
                 content.get()->sub_texts().at(i).get()->balise_datas().is_paragraph = false;
                 __saasf_image_number++;
             }
+            else if(attribute_name == std::string("a")){
+                // HMLT link
+
+                // Get the needed datas
+                std::vector<scls::XML_Attribute>& attributes = content.get()->sub_texts().at(i).get()->xml_balise_attributes();
+                std::string url = std::string();int url_attribute = -1;
+                for(int j = 0;j<static_cast<int>(attributes.size());j++) {
+                    if(attributes[j].name == "href") {url = attributes.at(j).value;url_attribute = j;}
+                }
+
+                // Formats the link
+                std::vector<std::string> cutted = scls::cut_string(url, std::string(":"));
+                if(cutted.size() < 1 || (cutted.at(0) != std::string("https") && cutted.at(0) != std::string("http"))) {
+                    cutted = scls::cut_string(url, std::string("/"));
+                    if(cutted.size() >= 2) {
+                        attributes[url_attribute].value = replica->attached_pattern()->path_to_root(current_replica_file_path) + std::string("learn/") + cutted.at(0) + std::string("/") + cutted.at(1) + std::string(".html");
+                    }
+                }
+            }
             else if((attribute_name == std::string("msqrt"))){
                 // HMLT square root
                 if(content.get()->sub_texts().at(i).get()->sub_texts().size() == 0){
