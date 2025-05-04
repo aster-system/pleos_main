@@ -41,7 +41,7 @@ Cependant, <span class="important">deux évènements d'une tribu qui ne partagen
 En toute logique, une tribu doit contenir tous les éléments incompatibles de chacun de ces éléments.
 Par exemple, dans le cas que nous venons de voir, la tribu doit donc aussi contenir un élément "nombre plus petit ou égal que 0.2 ou plus grand ou égal que 0.8" (ou possiblement deux évènements "nombre plus petit ou égal que 0.2" et "nombre plus grand ou égal que 0.8").
 Ne soyez donc pas étonné si votre tribu peut partitionner l'univers d'une infinité de manière différente (il faut qu'il le partitionne au moins une fois pour exister).
-Si vous ne prenez que ça, vous avez ce que l'on appelle un espace probabilisable (qui permet ensuite de définir un espace de probabilité).
+Si vous ne prenez que ça, vous avez ce que l'on appelle un espace mesurable, appelé dans ce contexte un espace probabilisable (qui permet ensuite de définir un espace de probabilité).
 </br><graphic width=200 ratio_base>
     <background_color red=255 green=255 blue=255>
     <base draw=0 width=10 height=10>
@@ -61,9 +61,7 @@ Si vous ne prenez que ça, vous avez ce que l'on appelle un espace probabilisabl
     <point name="p1" x=-3 y=-1><point name="p2" x=3 y=-1>
     <form border_color=(0,0,0) border_radius=5 name="f1" points="p1;p2">
 </graphic></br>
-Pour compléter notre espace, <span class="important">nous allons lui ajouter la possibilité d'effectuer un évènement aléatoire, dans ce que l'on appelle une mesure</span>.
-Pour être précis, en mathématique, <span class="important">une mesure est une fonction attribuant une probabilité à chaque évènements définis dans la tribu (et donc, dans l'univers)</span>.
-En pratique, ce genre de fonctions sont faites pour être utilisées.
+Pour compléter notre espace, <span class="important">nous allons lui ajouter la possibilité d'effectuer un évènement aléatoire, dans ce que l'on appelle une <a href="#measure_theory">mesure, présentée plus loin</a></span>.
 Le fait de prendre aléatoirement un des évènements (définis dans la tribu) de l'univers est nommé une expérience (ou épreuve) aléatoire.
 <span class="important">Cet espace est ainsi nommé espace probabilisé</span>.
 </p>
@@ -77,4 +75,69 @@ Le troisième est un peu plus complexe.
 Il établi que la somme de toutes les probabilités des évènements incompatibles d'une tribu quelconque de l'univers est égale à la probabilité qu'un évènement soit dans cette tribu (et donc, égale à 1).
 </p>
 
-<h3>La théorie de la mesure</h3>
+
+
+<h2 id="measure_theory">La théorie de la mesure</h2>
+
+<h3>Qu'est ce qu'est une mesure ?</h3>
+<p>
+En mathématiques, <span class="important">une mesure est une application attribuant une valeur numérique à chaque éléments définis dans une tribu (et donc, dans l'univers)</span>.
+Elle est donc indissociable du concept d'espace mesurable.
+</p>
+<math><mo>(</mo><mi>X</mi><mo>,</mo><mi>A</mi><mo>,</mo><phi><mo>)</mo></math>
+<p>
+La mesure <math><phi><mo>(</mo><mi>X</mi><mo>)</mo></math> est donc la valeur maximale possible de cette mesure.
+<span class="important">Si cette valeur maximale est de 1, alors la mesure respecte les axiomes de probabilités : on parle ici d'espace probabilisé</span>.
+Donc, chaque évènement à une valeur inférieure ou égale à 1.
+Il existe des cas (qui, en réalité, sont assez évidents) où cette valeur maximale n'est pas 1.
+Par exemple, imaginez un plan 2D fini, et une figure sur ce plan.
+</p>
+<graphic>
+    <background_color red=255 green=255 blue=255>
+    <base width=10 height=10>
+    <point name="A" x=-4 y=3>
+    <point name="B" x=-2 y=-4>
+    <point name="C" x=4 y=-1>
+    <point name="D" x=1 y=4>
+    <form name="ABDC" points="A;B;C;D">
+</graphic>
+<p>
+Vous pouvez définir l'ensemble des points sur ce plan comme un ensemble (indénombrable et continu) de vecteurs.
+De plus, <span class="important">vous pouvez créer une tribu contenant au moins deux éléments : l'ensemble des points dans la figure et l'ensemble des points hors de la figure</span>.
+Vous avez donc un espace mesurable, que nous allons étendre en espace probabilisable (et donc, que la mesure de tout l'espace soit de 1) pour des raisons de clareté.
+Grâce à ça, <span class="important">vous pouvez définir une mesure sur cet espace, et donc lui donner une valeur correspondant à la probabilité qu'un point tiré au hasard soit dans cette figure : cela correspond en réalité à l'aire de la figure, en unité d'aire du plan</span>.
+Avec cette logique, <span class="important">vous pouvez définir n'importe quel mesure de ce genre : longueur, aire, volume</span>...
+</p>
+<p>
+Certains ensembles appartenant à la tribu peuvent avoir une mesure nulle : <span class="important">la sous-partie de l'ensemble de base correspondant à la tribu de mesure nulle est dite négligeable</span>.
+De plus, une mesure est dite complète si tous les éléments négligeables via la mesure possibles dans l'ensemble de départ de l'espace mesuré sont aussi dans la tribu de l'espace.
+</p>
+
+<h3>Les fonctions mesurables</h3>
+<p>
+Le terme de fonction mesurable est utilisée pour définir des transformations sur des espaces mesurables.
+<span class="important">Une fonction mesurable est une fonction transformant un ensemble d'une espace mesurable "E" vers un autre ensemble, d'un autre espace mesurable "F"</span>.
+Cette transformation implique une gestion précise des tribus de ses espaces mesurables : <span class="important">la tribu (sur "F") de l'espace mesurable obtenu doit être inclu dans la tribu (sur "E") du premier espace mesurable</span>.
+Si le nouvel espace est une espace mesuré (et donc que l'espace de départ l'est aussi, en toute logique), la mesure du second espace est nommée mesure image (ou mesure de Lebesgue).
+Une utilité pratique de ces fonctions et, pour un ensemble de départ représentant un plan 2D (comme vu plus haut) et en tribu son ensemble des parties (l'ensemble de toutes les formes possibles dans le plan), la fonction représentant une forme précise quelconque (triangle, cercle...) sous forme d'espace mesurable dans cet espace.
+</p>
+
+<h3>L'intégrale de Lebesgue</h3>
+<p>
+Le concept de fonction mesurable (et de mesure de Lebesgue) permet d'en définir un autre assez pratique : l'intégrale de Lebesgue.
+En effet, <span class="important">l'intégrale de Lebesgue représente une généralisation de l'intégrale de Riemann</span>.
+Pour rappel, l'intégrale de Riemann se base sur une technique de traçage via la somme de l'aire de rectangles pour trouver l'aire sous la courbe d'une fonction.
+</p>
+<graphic>
+    <base width=5 height=5>
+    <function expression="x/3">
+        <curve_area number=5 area_end=2>
+    </function>
+</graphic>
+<p>
+Cependant, cette technique implique que la fonction possède une primitive et une forme très précise, ce qui n'est pas toujours le cas : l'intégrale de Lebesgue fixe se problème.
+En effet, <span class="important">l'intégrale de Lebesgue rend possible les intégrations de fonctions mesurables en utilisant une mesure de Lebesgue</span>.
+Donc, la simple existence et finité de la fonction sur son ensemble de définition la rend intégrable via cette forme d'intégrale.
+Par exemple, la fonction de Dirichlet n'est pas Riemann-intégrable, mais est Lebesgue-intégrable (une intégrale qui vaut 0 en tout point).
+En fait, <span class="important">il s'agit surtout d'un changement de stratégie dans le calcul des intégrales, donnant des résultats similaires pour les fonctions Riemann-intégrable</span>.
+</p>
