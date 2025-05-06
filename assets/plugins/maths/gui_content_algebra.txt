@@ -63,6 +63,20 @@
 </gui_object>
 
 //***************************************************
+// Series
+//***************************************************
+
+<gui_object name="maths_algebra_series_body" type="text" sub_page>
+    <content max_width=0 src="algebra/150_algebra_series.txt"></content>
+	<height value=7/8 type=scale>
+	<parent name="maths_algebra_page">
+	<texture alignment_horizontal=left alignment_vertical=top>
+    <width value=9/10 type=scale>
+	<x value=1/2 type=object_scale>
+	<y attach=bottom>
+</gui_object>
+
+//***************************************************
 // Structures
 //***************************************************
 

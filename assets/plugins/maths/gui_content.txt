@@ -34,6 +34,7 @@
 		<choice name="algebra_structures">Les structures algébriques</choice>
 		<choice name="algebra_equations">Les équations</choice>
 		<choice name="algebra_matrices">Les matrices</choice>
+		<choice name="algebra_series">Les séries</choice>
 		<choice name="algebra_solver">Solveur</choice>
 	</sub_choice>
 

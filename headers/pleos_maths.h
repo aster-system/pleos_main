@@ -46,6 +46,7 @@
 // Algebra pages
 #define PLEOS_MATHS_ALGEBRA_STRUCTURES_PAGE 503
 #define PLEOS_MATHS_ALGEBRA_EQUATIONS_PAGE 505
+#define PLEOS_MATHS_ALGEBRA_SERIES_PAGE 550
 #define PLEOS_MATHS_ALGEBRA_SOLVER_PAGE 580
 // Arithmetic pages
 #define PLEOS_MATHS_ARITHMETIC_PAGE 200
@@ -266,6 +267,7 @@ namespace pleos {
         inline scls::GUI_Text* algebra_definitions_page() const {return a_algebra_definitions_page.get();};
         inline scls::GUI_Text* algebra_matrices_page() const {return a_algebra_matrices_page.get();};
         GUI_PAGE(scls::GUI_Text_Base<Text>, a_algebra_equations_page, PLEOS_MATHS_ALGEBRA_EQUATIONS_PAGE, algebra_equations_page, display_algebra_equations_page, display_algebra_page);
+        GUI_PAGE(pleos::GUI_Text, a_algebra_series_page, PLEOS_MATHS_ALGEBRA_SERIES_PAGE, algebra_series_page, display_algebra_series_page, display_algebra_page);
         GUI_PAGE(scls::GUI_Object, a_algebra_solver_page, PLEOS_MATHS_ALGEBRA_SOLVER_PAGE, algebra_solver_page, display_algebra_solver_page, display_algebra_page);
         GUI_PAGE(scls::GUI_Object, a_algebra_structures_page, PLEOS_MATHS_ALGEBRA_STRUCTURES_PAGE, algebra_structures_page, display_algebra_structures_page, display_algebra_page);
         GUI_PAGE(scls::GUI_Text_Base<Text>, a_algebra_solver_redaction, PLEOS_MATHS_ALGEBRA_SOLVER_PAGE, algebra_solver_redaction, display_algebra_solver_redaction, display_algebra_solver_page);

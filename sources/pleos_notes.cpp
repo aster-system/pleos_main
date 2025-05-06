@@ -237,6 +237,43 @@ namespace pleos {
         }
     }
 
+    // Thread for image presentation
+    std::shared_ptr<scls::Image> a_image_presentation;
+    std::string a_image_presentation_content;
+    bool a_image_presentation_generated = false;
+    std::shared_ptr<scls::Text_Image_Generator> a_image_presentation_generator = std::make_shared<scls::Text_Image_Generator>();;
+    std::thread a_image_presentation_thread;
+    void __image_presentation() {
+        scls::Text_Style needed_style = scls::Text_Style();
+        a_image_presentation = a_image_presentation_generator.get()->image_shared_ptr<pleos::Text>(a_image_presentation_content, needed_style);
+        a_image_presentation_generated = true;
+    }
+
+    // Checks the events of input
+    void Notes_Page::check_input() {
+        // Updates the image in an another thread
+        if(input_user()->input_during_this_frame()) {
+            // Reset the presentation
+            // Reset the thread first
+            if(a_image_presentation_thread.joinable()){a_image_presentation_thread.join();}
+            // Reset the other datas
+            a_image_presentation_content = input_user()->plain_text();
+            a_image_presentation_generated = false;
+            a_image_presentation.reset();
+
+            // Get the text and create the image
+            a_image_presentation_thread = std::thread(__image_presentation);
+        }
+
+        // Finish the thread
+        if(a_image_presentation_generated){
+            std::cout << "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL" << std::endl;
+            if(a_image_presentation_thread.joinable()){a_image_presentation_thread.join();a_image_presentation_thread=std::thread();}
+            input_representation()->set_texture(a_image_presentation);
+            a_image_presentation_generated = false;
+        }
+    }
+
     // Checks the events of navigation
     void Notes_Page::check_navigation(){
         // Check the selected page
@@ -283,6 +320,9 @@ namespace pleos {
 
         // Home events
         if(current_page() == PLEOS_NOTES_HOME_PAGE){check_home();}
+
+        // Input events
+        if(current_page() == PLEOS_NOTES_INPUT_PAGE){check_input();}
 
         // Project events
         if(current_page() == PLEOS_NOTES_PROJECT_PAGE){check_project();}

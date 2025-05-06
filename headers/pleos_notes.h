@@ -108,8 +108,10 @@ namespace pleos {
         void check_file_explorer();
         // Checks the events of hiding each pages
         void check_hiding();
-        // Checks the events of input
+        // Checks the events of home
         void check_home();
+        // Checks the events of input
+        void check_input();
         // Checks the events of navigation
         void check_navigation();
         // Checks the events of project
