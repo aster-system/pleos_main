@@ -11,8 +11,15 @@ Le résultat de cette fonction peut être n'importe quoi : nombre entier, nombre
 </p>
 <math><mforall><mi>n</mi><min><mi>N</mi><mo>, s(n)</mo><mo>=</mo><mi>x</mi></math>
 <p>
+<span class="important">L'utilité d'une suite est de définir un objet de forme abstraite, représentable dans pleins de situations réelles</span>.
+En général, un ensemble dénombrable peut être représenté comme une suite, plus ou moins facile à représenter.
+Via ces formes, <span class="important">nous pouvons en trouver des propriétés / formules très génériques, simples, et applicables dans pleins de cas différents</span>.
+Nous pouvons par exemple trouver la somme des éléments d'une suite directement, selon la forme que prend la suite.
+Il existe beaucoup de suites précises et célèbres : suite de Fibonacci, suite de Conway...
+</p>
+<p>
 Selon la façon dont est définie cette suite, on peut l'étudier plus efficacement grâce à des formules très générales.
-</span>Si la suite nécessite qu'un premier élément soit défini de base pour connaitre les autres, la suite est dite définie par récurrence</span>.
+<span class="important">Si la suite nécessite qu'un premier élément soit défini de base pour connaitre les autres, la suite est dite définie par récurrence</span>.
 Dans ce genre de suite, les termes suivants sont obstensibles via les termes précédents.
 Parmi ces suites, <span class="important">les suites où l'on peut savoir quel sera le prochain élément de la suite via une simple multiplication avec un facteur constant (nommé raison de la suite) de l'élément précédent est nommée une suite géométrique</span>.
 Ce nom vient du fait qu'un terme (qui n'est pas le premier) est la moyenne géométrique du terme le précédant et du terme le suivant.
@@ -36,7 +43,3 @@ Toutes les formules de ces suites sont énumérées dans un tableau en dessous.
 <case_plus x=2 y=2><math><mi>s</mi><msub><mi>n</mi></msub><mo>=</mo><mi>s</mi><msub><mi>0</mi></msub><mo>*</mo><mi>q</mi><msup><mi>n</mi></msup></math></case_plus>
 <case_plus x=3 y=2><math><mi>S</mi><mo>=</mo><mi>s</mi><msub><mi>0</mi></msub><mfrac><mrow><mi>1-q</mi><msup>n+1</msup></mrow><mi>1-q</mi></mfrac></math></case_plus>
 </table>
-<p>
-Bien que ce concept puisse être très étendu, la propriété que nous allons étudier ici est la possibilité de réaliser des opérations précises sur un ensemble des éléments de la suite, qui représente un sous-ensemble de celui des nombres entiers naturels (dénombrable), assez facile à étudier.
-
-</p>
