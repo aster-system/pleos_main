@@ -9,14 +9,18 @@
 Pour bénéficier d'une rigueur absolue lors de l'utilisation de nombres, les ensembles de nombres ne sont pas suffisants pour faire de l'arithmétique.
 En effet, il vous faut aussi préciser les opérations possibles sur ces nombres.
 Pour faire cela, <important>il faut lier les opérations possibles avec l'ensemble concerné, avec ce que l'on appelle une structure algébrique</important>.
+</p>
+
+<h3>Les lois de compositions</h3>
+<p>
 Parmi ces mêmes opérations, certaines peuvent être appliquer à deux opérandes similaires (par exemple, pour un nombre a, alors "a + a" est définie) : ce genre d'opérations sont nommées lois de composition interne.
-Les opérations de ce type les plus connues sont l'addition (et la soustraction) et la multiplication.
+<span class="important">Les opérations de ce type les plus connues sont l'addition et la multiplication</span>.
 En plus, <span class="important">ces mêmes opérations peuvent nécessiter des relations précises entre les opérandes</span>.
 Une opération est dite associativité si l'ordre d'opération lors de l'introduction d'un 3ème élément n'importe pas (quelque soit l'ordre et les éléments).
 </p>
 <math><mforall><mi>a, b, c</mi><min><mi>E</mi><mo>,</mo><mi>(a . b) . c</mi><mo>=</mo><mi>a . (b . c)</mi><mo>=</mo><mi>a . b . c</mi></math>
 <p>
-Dans la même idée, <span class="important">une opération est dite commutative  si l'ordre d'opération des deux opérandes n'importe pas</span> (quelque soit l'ordre et les éléments).
+Dans la même idée, <span class="important">une opération est dite commutative si l'ordre d'opération des deux opérandes n'importe pas</span> (quelque soit l'ordre et les éléments).
 Ce n'est, par exemple, pas le cas de la division (3 / 2 n'est pas 2 / 3).
 </p>
 <math><mforall><mi>a, b</mi><min><mi>E</mi><mo>,</mo><mi>a . b</mi><mo>=</mo><mi>b . a</mi></math>
@@ -24,9 +28,27 @@ Ce n'est, par exemple, pas le cas de la division (3 / 2 n'est pas 2 / 3).
 Si, dans une équation, il existe un moyen de simplifier les deux membres en elevant l'opération, l'opération est dite régulaire.
 Par exemple, l'addition l'est : il est possible de simplifier des membres d'équations en y appliquant une soustraction.
 Pour une quelconque opération, <span class="important">un élément (si il existe) qui ne modifie pas l'autre opérande de l'opération est dit neutre</span>.
-Pour l'addition de nombre, il s'agit du nombre 0, et pour la multiplication de nombre, il s'agit du nombre 1.
+Pour l'addition de nombres, il s'agit du nombre 0, et pour la multiplication de nombres, il s'agit du nombre 1.
 </p>
 <math><mforall><mi>a</mi><min><mi>E</mi><mo>,</mo><mi>a . n</mi><mo>=</mo><mi>a</mi></math>
+<p>
+Via un élément, <span class="important">vous pouvez retrouver l'élément neutre d'une loi de composition interne A avec un élément E : cet élément s'appelle le symétrique de E par A</span>.
+Dans le cas de l'addition, cet élément est nommé l'opposé de E.
+Dans le cas de la multiplication, cet élément est nommé l'inverse de E.
+Via ces éléments, vous pouvez définir de nouvelles lois de compositions (internes ou externes selon le contexte).
+En effet, <span class="important">l'addition d'un élément F avec l'opposé d'un autre élément G est nommée la soustraction de F par G</span>.
+De plus, <span class="important">la multiplication d'un élément F avec l'inverse d'un autre élément G est nommée la division de F par G</span>.
+</p>
+<table>
+<case x=0 y=0 content="Loi de composition"><case x=1 y=0 content="Loi de composition symétrique">
+<case x=0 y=1 content="Addition"><case x=1 y=1 content="Soustraction">
+<case x=0 y=2 content="Multiplication"><case x=1 y=2 content="Division">
+</table>
+<p>
+Il est à noter que la fonction inverse est souvent connue comme la fonction "f(x)=1/x", formant deux courbes précises.
+Or, <span class="important">cette forme n'est valable que pour l'ensemble des nombres réels, elle est différente dans d'autres algèbres</span>.
+</p>
+<graphic><function expression="1/x"></function></graphic>
 
 <h3>Les types de structures algébriques</h3>
 <p>
