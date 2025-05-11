@@ -1,0 +1,41 @@
+<h1>La physique statistique</h1>
+
+
+
+<h2>Étudier des systèmes complexes</h2>
+
+<h3>Décrire un système physique</h3>
+<p>
+En physique, <span class="important">un système est un ensemble d'objets quelconques, nommés de particules, en interactions les-unes-les-autres</span>.
+L'étude de ces systèmes peut se faire de pleins de façons différentes, selon le système étudié.
+Parmi ces études, <span class="important">nous pouvons définir un ensemble représentant toutes les configurations possibles du système, nommé ensemble statistique</span>.
+Si le système est assez petit, représenter cet ensemble est assez simple.
+Or, si le système est plus grand, représenter précisément cet ensemble devient extrêmement complexe.
+</p>
+<p>
+Bien que les grandeurs précises étudiées dépendent grandement du système étudié, certaines sont (de manières assez évidentes) communes à tous les systèmes.
+Déjà, <span class="important">le volume du système est très souvent utilisé dans les calculs</span>.
+En effet, étudier un système infini n'a pas vraiment de sens.
+De plus, <span class="important">l'énergie totale du système est aussi utilisée</span>.
+Elle se calcule assez simplement : il s'agit de la somme de l'énergie de chaque particules du système.
+Finalement, <span class="important">on peut citer la quantité de matière du système, représentant le nombre de particules dans le système</span>.
+</p>
+
+<h3>Décrire un système complexe</h3>
+<p>
+Dans un système trop complexe, il en devient très complexe d'étudier l'entiereté de l'ensemble statistique du système d'un coup.
+Donc, <span class="important">l'idée est de n'étudier qu'une partie de ce système (et donc, un sous-ensemble de ce système) de manière complète sous la forme d'une configuration, nommée un micro-état</span>.
+À l'inverse, la configuration de la globalité du système (étudiée de manière moins précise) se nomme macro-état.
+Si le sous-ensemble ne communique pas avec le reste du système, il est dit microcanonique.
+Si il peut communiquer de l'énergie mais pas de particules, il est dit canonique.
+Si il peut communiquer de l'énergie et des particules, il est grand-canonique.
+</p>
+<p>
+Dans un système, on peut définir la notion d'entropie.
+Cette notion est assez complexe à définir, et on peut le faire de plusieurs façon.
+Imagineons un système quelconque de volume et d'énergie interne connue : nous pouvons lui définir un ensemble statistique.
+En fait, <span class="important">l'entropie de ce système représente une quantification du nombre d'état qu'il peut occuper</span>.
+Cependant, selon cette définition, le système a la même entropie quelque soit sa configuration.
+En effet, cette définition seule ne suffit pas : <span class="important>nous allons devoir prendre en compte que certains états ne sont pas possibles</span>.
+Pour cela, nous allons rajouter des informations au système, comme la description d'un (ou de plusieurs) des micro-états du système, voir du macro-état entier directement (si possible). 
+</p>
