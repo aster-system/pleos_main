@@ -1,0 +1,40 @@
+<h1>L'algorithme RSA</h1>
+
+
+
+<h2>Un chiffrement symétrique</h2>
+
+<h3>Chiffrer des messages</h3>
+<p>
+L'algorithme RSA est un algorithme fait pour chiffrer des données.
+En fait, <span class="important">l'algorithme RSA permet de communiquer des informations dans un format rendant leur décryptage extrêmement complexe à un individu externe</span>.
+Pour être précis, le serveur va générer des nombres précis, nommés des clés, qui (via leur propriétés mathématiques) permettent un chiffrement précis du message.
+L'idée, c'est que <span class="important">seul le serveur peut déchiffrer facilement le message avec les clés qu'il va communiquer, et que le client chiffrera via ces informations</span>.
+En réalité, le client ne peut pas non plus déchiffrer le message chiffré : seul le serveur peut. 
+</p>
+
+<graphic>
+    <background_color white><base draw=0>
+    <arrow x_start=-1 y_start=4 x_end=3/2 y_end=4><text content="Serveur" x=-3 y=4><text content="Client" x=3 y=4>
+    <text background_color=transparent content="Clé publique" x=0 y=5/2>
+
+    <line color=black width=2 x_start=-5 y_start=9/5 x_end=5 y_end=9/5>
+
+    <arrow x_start=3/2 y_start=1 x_end=-1 y_end=1><text content="Serveur" x=-3 y=1><text content="Client" x=3 y=1>
+    <text background_color=transparent content="Message publique" x=0 y=-1/2>
+
+    <line color=black width=2 x_start=-5 y_start=-9/5 x_end=5 y_end=-9/5>
+
+    <text content="Serveur" x=0 y=-3>
+    <text background_color=transparent content="Décryptage privé" x=0 y=-4>
+</graphic>
+
+<h3>Utiliser l'arithmétique</h3>
+<p>
+Pour faire cela, <span class="important">nous devons utiliser <a href="one_way_function">une fonction à sens-unique</a> très spéciale</span>.
+En effet, cette fonction doit être à sens-unique, mais permettre une alternative pour rendre le lien image-antécédent facilement résoluble.
+Pour cela, nous allons utiliser l'arithmétique.
+</p>
+<p>
+Prenons deux nombres entiers premiers "p" et "q".
+</p>

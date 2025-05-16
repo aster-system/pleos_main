@@ -1,0 +1,17 @@
+<h1>Les fonctions de hachage</h1>
+
+
+
+<h2>Transformer des données</h2>
+
+<h3>Le principe de hachage</h3>
+<p>
+En informatique, <span class="important">une fonction de hachage a pour but de transformer une (ou des) donnée de taille quelconque en une (ou des) nouvelle donnée de taille fixe</span>.
+En fait, on va couper cette donnée en morceau, et changer chaque morceau par un nouveau morceau précis.
+</p>
+
+<h3>Le hachage cryptographique</h3>
+<p>
+<span class="important">Un hachage cryptographique est une façon de hacher une donnée avec <a href="hash_functions">une fonction à sens unique</a></span>.
+Cette fonction doit aussi ne pas modifier l'information derrière les données.
+</p>

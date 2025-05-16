@@ -1,0 +1,11 @@
+<h1>Les fonctions à sens-unique</h1>
+
+
+
+<h2>Une propriété de fonction</h2>
+
+<h3>Un lien antécédent-image complexe</h3>
+<p>
+En mathématiques, <span class="important">une fonction à sens-unique est une fonction dont l'image est facile à trouver via l'antécédent, mais l'antécédent est très complexe à trouver via l'image</span>.
+
+</p>
