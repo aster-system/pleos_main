@@ -1,5 +1,9 @@
 <h1>Définitions de la géométrie</h1>
+
+
+
 <h2>Qu'est ce qu'est la géométrie ?</h2>
+
 <h3>La géométrie euclidienne</h3>
 <p>
 Pour pouvoir faire de la géométrie complexe, il faut, au moins, comprendre comment l'humain a vu la géométrie pendant presque 2000 ans.
@@ -9,14 +13,6 @@ Cette géométrie est la plus utilisée, et de loin, puisque, à notre échelle,
 </p>
 <p>
 Heuresement pour nous, <important>la géométrie euclidienne est <a href="logic_definitions">précisément axiomatisée</a> avec 5 axiomes clés</important>.
-</p>
-<p>
-En géométrie euclidienne, nous pouvons définir plusieurs objets "basiques", racines de tous les objets existants.
-<important>Le premier est le point (applicable dans toutes les dimensions possibles)</important>.
-Un point représente une (et une seule) position / partie d'un espace géométrique.
-Il n'a donc n'y taille, ni surface, ni volume...
-<important>Le deuxième est la droite (applicable au minimum en deux dimensions)</important>.
-Une droite représente un ensemble (généralement infini) de points alignés.
 Selon le 1er axiome d'Euclide, si vous prenez deux points quelconques, alors ils seront alignés entre eux.
 Selon le 2ème axiome d'Euclide, trois points sont alignés si la droite passant par deux de ces points passe aussi par l'autre point.
 D'un point de vue géométrique, un simple tracé suffit.
@@ -30,4 +26,12 @@ En trois dimensions, un plan représente une surface de l'espace (et donc, un so
 Il est défini par au moins deux droites non parallèles, et permet de réaliser de la géométrie 2D en 3D.
 Il permet aussi de représenter des nombres complexes, des projections...</br>
 Chacunes de ces notions seront approfondies plus tard.
+</p>
+<p>
+En géométrie euclidienne, nous pouvons définir plusieurs objets "basiques", racines de tous les objets existants.
+<important>Le premier est le point (applicable dans toutes les dimensions possibles)</important>.
+Un point représente une (et une seule) position / partie d'un espace géométrique.
+Il n'a donc n'y taille, ni surface, ni volume...
+<important>Le deuxième est la droite (applicable au minimum en deux dimensions)</important>.
+Une droite représente un ensemble (généralement infini) de points alignés.
 </p>

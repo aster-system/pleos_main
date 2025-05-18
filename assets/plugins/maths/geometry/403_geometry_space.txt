@@ -1,0 +1,75 @@
+<h1>Les espaces géométriques</h1>
+
+
+
+<h2>Définir le fonctionnement d'une géométrie</h2>
+
+<h3>Les espaces vectoriels</h3>
+<p>
+En algèbre, <span class="important">un espace vectoriel d'un corps quelconque (comme celui des réels) est un ensemble précis que l'on peut créer avec ce corps, contenant des vecteurs</span>.
+La définition algébrique d'un vecteur est plus complexe que la définition géométrique, assez simple.
+En effet, <span class="important">un espace vectoriel E (sur un corps K) doit définir pour ces éléments une addition (avec un même élément de E) commutative, associative, avec élément neutre et opposé, et une multiplication distributive avec un élément de K</span>.
+La combinaison de ces additions est nommée combinaisons linéaires, représentant la base de l'algèbre linéaire.
+Une grande partie des corps K peuvent être des espaces vectoriels de eux mêmes : l'utilité du concept est ailleurs.
+Effectivement, <span class="important">l'ensemble des n-uplets d'un corps K représente aussi un espace vectoriel sur K</span>.
+En effet, ce genre d'ensembles remplissent toutes les conditions nécessaire pour être des espaces vectoriels de K (addition et multiplication compatible).
+De manière assez évidente, <span class="important">les espaces les plus connus sont les espaces vectoriels définis sur le corps des réels, avec des 2-uplets (espace 2D) ou des 3-uplets (espaces 3D)</span>.
+En effet, ces 2-uplets ou 3-uplets, remplissent toutes les conditions nécessaires pour être des espaces vectoriels du corps des réels, et peuvent en plus se présenter comme des points géométriquement représentable.
+</p>
+<graphic>
+    <background_color red=255 green=255 blue=255>
+    <base width=10 height=10>
+    <point name="A" x=-4 y=2>
+    <point name="B" x=3 y=-1>
+    <point name="C" x=4 y=-2>
+</graphic>
+
+<h3>Les espaces euclidiens</h3>
+<p>
+L'espace euclidien représente l'espace géométrique le plus "basique" que l'on connaisse.
+<span class="important">Un espace euclidien est un espace géométrique continu (comme un espace vectoriel) obéissant parfaitement aux <a href="geometry_definitions#axioms">axiomes d'Euclide</a></span>.
+On y retrouve donc toutes les notions de base : angle, longueur, parallélisme...
+</p>
+<graphic>
+    <background_color red=255 green=255 blue=255>
+    <base width=10 height=10>
+    <point name="A" x=-3 y=4>
+    <point name="B" x=-1 y=-3>
+    <point name="C" x=4 y=-1>
+    <form name="ABDC" points="A;B;C">
+</graphic>
+<p>
+Algébriquement, <span class="important">un espace euclidien est un espace vectoriel du corps des réels</span>.
+L'objet principal est donc <a href="geometry_vector">le vecteur</a>.
+Cependant, <span class="important">l'autre caractéristique d'un espace euclidien est qu'il est muni d'une opération de produit scalaire</span>.
+Algébriquement, il s'agit de la façon la plus "logique" de multiplier des vecteurs.
+Ce produit scalaire se note (pour les dimensions 2 ou 3) :
+</p>
+<math><mo>||</mo><mvec>u</mvec><mo>||</mo><mi>*</mi><mo>||</mo><mvec>v</mvec><mo>||</mo><mo>*</mo><mi>cos(</mi><mvec>u</mvec><mi>,</mi><mvec>v</mvec><mi>)</mi></math>
+<p>
+Pour des dimensions supérieures, son étude est plus complexe.
+Grâce à ça, <span class="important">nous pouvons définir la notion de perpendicularité entre vecteurs (lorsque leur produit scalaire vaut 0), nommée dans ce cas l'orthogonalité</span>.
+Ce même concept permet de définir des bases obéissant à ce principe (les vecteurs de normes orthogonaux entre eux), nommés bases orthogonales.
+Il permet aussi de définir des opérations très intéressante, comme la projection.
+</p>
+
+<h3>Les espaces affines</h3>
+<p>
+En géométrie / algèbre, <span class="important">un espace affine représente un espace géométrique continu obéissant parfaitement aux <a href="geometry_definitions#axioms">axiomes d'Euclide</a>, où les angles et longueurs ne sont pas utilisés</span>.
+En fait, il s'agit algébriquement d'un espace vectoriel défini comme <math><mi>R</mi><msup><mi>2</mi></msup></math> plus général, où les valeurs précises n'importent pas (seule l'existence de ces valeurs sous forme d'inconnues compte).
+Nous y retrouvons quand même les notions de parallélisme, d'alignement et de barycentre, mais pas de produit scalaire et d'orthogonalité.
+Cependant, certains théorèmes sont quand même valables dans ces espaces (ceux n'impliquant ni longueurs précises ni angles précis), comme le théorème de Thalès.
+<span class="important">Un repère définit dans un espace affine est nommé un repère affine</span>.
+</p>
+<p>
+Dans ces espaces, <span class="important">une transformation d'un espace affine vers un autre est dite affine si l'espace le subissant ne modifie pas sa structure affine (et donc celles de ces objets)</span>.
+Cette transformation peut aussi s'appeller une application affine.
+En d'autres termes, une transformation est affine si l'espace peut se transformer de la même façon que les objets.
+</p>
+<p>
+Quand on pense à application affine, on peut penser aux fonctions affines, et c'est tout à fait logique.
+Pour rappel, une fonction transforme un espace en un autre.
+Dans le cas d'une fonction affine, on transforme l'ensemble des réels en un autre ensemble.
+Or, <span class="important">l'ensemble des réels représente une droite (la droite des réels), et l'ensemble obtenu représente... une droite : c'est une application linéaire</span>.
+En fait, la notion d'application affine étend le concept de fonction affine.
+</p>
