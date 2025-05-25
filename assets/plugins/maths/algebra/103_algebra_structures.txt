@@ -16,7 +16,7 @@ Pour faire cela, <important>il faut lier les opérations possibles avec l'ensemb
 Parmi ces mêmes opérations, certaines peuvent être appliquer à deux opérandes similaires (par exemple, pour un nombre a, alors "a + a" est définie) : ce genre d'opérations sont nommées lois de composition interne.
 <span class="important">Les opérations de ce type les plus connues sont l'addition et la multiplication</span>.
 En plus, <span class="important">ces mêmes opérations peuvent nécessiter des relations précises entre les opérandes</span>.
-Une opération est dite associativité si l'ordre d'opération lors de l'introduction d'un 3ème élément n'importe pas (quelque soit l'ordre et les éléments).
+Une opération est dite associative si l'ordre d'opération lors de l'introduction d'un 3ème élément n'importe pas (quelque soit l'ordre et les éléments).
 </p>
 <math><mforall><mi>a, b, c</mi><min><mi>E</mi><mo>,</mo><mi>(a . b) . c</mi><mo>=</mo><mi>a . (b . c)</mi><mo>=</mo><mi>a . b . c</mi></math>
 <p>
@@ -25,7 +25,7 @@ Ce n'est, par exemple, pas le cas de la division (3 / 2 n'est pas 2 / 3).
 </p>
 <math><mforall><mi>a, b</mi><min><mi>E</mi><mo>,</mo><mi>a . b</mi><mo>=</mo><mi>b . a</mi></math>
 <p>
-Si, dans une équation, il existe un moyen de simplifier les deux membres en elevant l'opération, l'opération est dite régulaire.
+Si, dans une équation, il existe un moyen de simplifier les deux membres en elevant l'opération, l'opération est dite régulière.
 Par exemple, l'addition l'est : il est possible de simplifier des membres d'équations en y appliquant une soustraction.
 Pour une quelconque opération, <span class="important">un élément (si il existe) qui ne modifie pas l'autre opérande de l'opération est dit neutre</span>.
 Pour l'addition de nombres, il s'agit du nombre 0, et pour la multiplication de nombres, il s'agit du nombre 1.
@@ -50,7 +50,28 @@ Or, <span class="important">cette forme n'est valable que pour l'ensemble des no
 </p>
 <graphic><function expression="1/x"></function></graphic>
 
-<h3>Les types de structures algébriques</h3>
+<h2>Les types de structures algébriques</h2>
+<h3>Les magmas, monoïdes et groupes</h3>
 <p>
-Selon la façon dont les opérations sont définies, la structure peut être de pleins de types différents.
+En algèbre, <span class="important">un magma est une structure algébrique avec une loi de composition interne quelconque</span>.
+Dans un magma, la loi de composition peur avoir (ou ne pas avoir) n'importe quelle propriété.
+On peut rendre cette notion plus précise.
+En effet, <span class="important">un magma où la loi de composition interne est associative et admet un élément neutre est appelé un monoïde</span>.
+Par exemple, la structure algébrique constituée de l'ensemble des nombres entiers naturels et de la loi d'addition est un monoïde (il obéit aux propriétés nécessaires).
+Finalement, <span class="important">un monoïde admettant pour chacun de ses éléments un autre éléments symétrique (donnant le neutre de l'opération par cette opérande) par sa loi de composition interne est nommé un groupe</span>.
+Par exemple, la structure algébrique constituée de l'ensemble des nombres entiers relatifs et de la loi d'addition est un groupe (l'élement symétrique de "a" est "-a").
+De même, la structure algébrique constituée de l'ensemble des nombres entiers relatifs et de la loi de multiplication est un groupe (l'élement symétrique de "a" est "1/a").
+<span class="important">Si la loi de composition interne est commutative, le groupe est dit abélien</span>.
+</p>
+<graphic>
+<rect background_color=white border_radius=0 x=-5 y=-5 width=10 height=10>
+<text background_color=transparent y=4 content="Magma">
+<rect background_color=green border_radius=1 x=-9/2 y=-4 width=9 height=13/2>
+<text background_color=transparent y=3/2 content="Monoïde">
+<rect background_color=yellow border_radius=1 x=-4 y=-3 width=8 height=7/2>
+<text background_color=transparent y=-1 content="Groupe">
+</graphic>
+<p>
+<span class="important">La théorie étudiant ces structures est nommée la théorie des groupes.
+L'idée même de cette théorie est de définir une base très stable pour toutes les structures de groupe, très communes en mathématiques.
 </p>

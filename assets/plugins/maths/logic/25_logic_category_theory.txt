@@ -1,0 +1,28 @@
+<h1>La théorie des catégories</h1>
+
+
+
+<h2>Catégoriser les objets</h2>
+
+<h3>Les structures mathématiques</h3>
+<p>
+En mathématiques, il est difficile de trouver une définition globale des structures mathématiques, objets étudiés par la théorie des catégories.
+<span class="important">Disons qu'une structure mathématique est une extension de la notion <a href="logic_set_theory">d'ensemble (ou de classe)</a>, en définissant avec cette ensemble des <a href="logic_definition">relations / opérations et axiomes</a> précis</span>.
+Ici, l'ensemble peut être n'importe lequel, comme l'ensemble des nombres entiers naturels, et les "relations et axiomes" peuvent aussi être n'importe lesquelles, comme l'opération d'addition ou les axiomes de Peano (axiomes de bases de l'arithmétique).
+<span class="important">Si nous définissons des règles opératoires en plus de notre ensemble, nous parlons de structure algébrique</span> (corps, groupes...).
+</p>
+
+<h3>Lier différents concepts</h3>
+<p>
+Certaines structures mathématiques distinctes peuvent avoir des points communs très prononcés.
+<span class="important">La théorie des catégories étudie les liens possibles entre certaines structures logiquement très semblables</span>.
+En toute logique, <span class="important">une catégorie est donc la description de l'ensemble des structures respectant certaines propriétés précises</span>.
+Elle est donc le socle de toutes les théories similaires nécessitant de passer d'une structure à une autre, comme la théorie des groupes et les éléments associés (une structure est appelée un groupe si elle a une structure de groupe : une opération interne additive, avec élément neutre et opposé).
+</p>
+
+<h3>Les morphismes</h3>
+<p>
+<span class="important">Le lien (qui n'est pas toujours une application) entre deux structures algébriques gardant ce genre de propriété est nommée un morphisme</span>.
+Par exemple, une fonction définie et à valeur sur l'ensemble des réels transforme la droite des réels en une nouvelle droite décrite par la fonction (morphisme d'un corps de réel vers... un corps de réel).
+Cependant, ce terme est un peu lourd pour l'utiliser avec celui de fonction.
+</p>
