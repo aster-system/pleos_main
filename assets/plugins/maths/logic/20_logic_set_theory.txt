@@ -115,3 +115,62 @@ D'ailleurs, si nous avons à étudier des triplets (x, y, z), alors la position 
 <important>Dans ce cas là, l'ensemble est dit ordinal</important>.
 L'adaptation de ce que représente le multiple de ω dépend du contexte actuel dans lequel le nombre est utilisé (ici, un exemple évident avec des couples est utilisé).
 </p>
+
+
+
+<h2>Les opérations ensemblistes</h2>
+
+<h3>Les applications mathématiques</h3>
+<p>
+En mathématiques, <span class="important">une application est une relation / lien entre deux ensembles</span>.
+Pour être précis, <span class="important">une application relie un élément d'un ensemble vers un (unique) élément d'un autre ensemble</span>.
+On appelle "image" un élément du premier ensemble, nommé ensemble de départ, et "antécédent" un élément du deuxième ensemble, nommé ensemble d'arrivée.
+Tous les éléments de l'ensemble de départ doivent être liés, mais pas forcément tous les éléments de l'ensemble d'arrivée.
+Pour définir correctement ce terme, on doit créer une structure contenant l'ensemble de départ, l'ensemble d'arrivée, et tous les liens entre chaque éléments de ces ensembles.
+</p>
+
+<table title="Application de N vers N*">
+<case x=0 y=0 content="0"><case x=1 y=0 content="1"><case x=2 y=0 content="2"><case x=3 y=0 content="3"><case x=4 y=0 content="4"><case x=5 y=0 content="..."><case x=6 y=0 content="x">
+<case right_border=0 x=0 y=1 content="|"><case right_border=0 x=1 y=1 content="|"><case right_border=0 x=2 y=1 content="|"><case right_border=0 x=3 y=1 content="|"><case right_border=0 x=4 y=1 content="|"><case right_border=0 x=5 y=1 content="|"><case right_border=0 x=6 y=1 content="|">
+<case x=0 y=2 content="1"><case x=1 y=2 content="2"><case x=2 y=2 content="3"><case x=3 y=2 content="4"><case x=4 y=2 content="5"><case x=5 y=2 content="..."><case x=6 y=2 content="x + 1">
+</table>
+
+<p>
+Ce terme est souvent confondu avec celui de fonction.
+En réalité, <span class="important">une fonction représente une application, où il est possible qu'un élément de l'ensemble de départ n'ait pas d'image</span>.
+En général, le terme de fonction est utilisé dans le cadre de nombres numérique (ou d'ensembles de nombres numériques).
+</p>
+
+<table title="Fonction (mais pas application) de N vers N">
+<case x=0 y=0 content="0"><case x=1 y=0 content="1"><case x=2 y=0 content="2"><case x=3 y=0 content="3"><case x=4 y=0 content="4"><case x=5 y=0 content="..."><case x=6 y=0 content="x">
+<case right_border=0 x=1 y=1 content="|"><case right_border=0 x=2 y=1 content="|"><case right_border=0 x=3 y=1 content="|"><case right_border=0 x=4 y=1 content="|"><case right_border=0 x=5 y=1 content="|"><case right_border=0 x=6 y=1 content="|">
+<case x=0 y=2 content="Rien"><case x=1 y=2 content="0"><case x=2 y=2 content="1"><case x=3 y=2 content="2"><case x=4 y=2 content="3"><case x=5 y=2 content="..."><case x=6 y=2 content="x - 1">
+</table>
+
+<p>
+Selon la façon dont son formés les liens, l'application peut avoir plusieurs propriétés intéressantes.
+<span class="important">Si chaque antécédent admet au maximum 1 antécédent, la fonction est dite injective</span>.
+Tous les antécédents ont donc des images différentes, mais pas toutes les images ont forcément un antécédent.
+<span class="important">Si chaque antécédent admet au minimum 1 antécédent, la fonction est dite surjective</span>.
+Ici, deux antécédents peuvent avoir la même image.
+Finalement, <span class="important">si chaque antécédent admet exactement une image, la fonction est dite bijective</span>.
+C'est un renforcement de l'injectivité : toutes les images ont ici un antécédent.
+</p>
+
+<table title="Application injective de N vers N">
+<case x=0 y=0 content="Rien"><case x=1 y=0 content="0"><case x=2 y=0 content="1"><case x=3 y=0 content="2"><case x=4 y=0 content="3"><case x=5 y=0 content="..."><case x=6 y=0 content="x">
+<case right_border=0 x=1 y=1 content="|"><case right_border=0 x=2 y=1 content="|"><case right_border=0 x=3 y=1 content="|"><case right_border=0 x=4 y=1 content="|"><case right_border=0 x=5 y=1 content="|"><case right_border=0 x=6 y=1 content="|">
+<case x=0 y=2 content="0"><case x=1 y=2 content="1"><case x=2 y=2 content="2"><case x=3 y=2 content="3"><case x=4 y=2 content="4"><case x=5 y=2 content="..."><case x=6 y=2 content="x + 1">
+</table></br>
+
+<table title="Application surjective de N vers N">
+<case x=0 y=0 content="0"><case x=1 y=0 content="1"><case x=2 y=0 content="2"><case x=3 y=0 content="3"><case x=4 y=0 content="4"><case x=5 y=0 content="..."><case x=6 y=0 content="x">
+<case right_border=0 x=0 y=1 content="|"><case right_border=0 x=1 y=1 content="|"><case right_border=0 x=2 y=1 content="|"><case right_border=0 x=3 y=1 content="|"><case right_border=0 x=4 y=1 content="|"><case right_border=0 x=5 y=1 content="|"><case right_border=0 x=6 y=1 content="|">
+<case x=0 y=2 content="0"><case x=1 y=2 content="0"><case x=2 y=2 content="1"><case x=3 y=2 content="1"><case x=4 y=2 content="2"><case x=5 y=2 content="..."><case x=6 y=2 content="x // 2">
+</table></br>
+
+<table title="Application bijective de N vers N*">
+<case x=0 y=0 content="0"><case x=1 y=0 content="1"><case x=2 y=0 content="2"><case x=3 y=0 content="3"><case x=4 y=0 content="4"><case x=5 y=0 content="..."><case x=6 y=0 content="x">
+<case right_border=0 x=0 y=1 content="|"><case right_border=0 x=1 y=1 content="|"><case right_border=0 x=2 y=1 content="|"><case right_border=0 x=3 y=1 content="|"><case right_border=0 x=4 y=1 content="|"><case right_border=0 x=5 y=1 content="|"><case right_border=0 x=6 y=1 content="|">
+<case x=0 y=2 content="1"><case x=1 y=2 content="2"><case x=2 y=2 content="3"><case x=3 y=2 content="4"><case x=4 y=2 content="5"><case x=5 y=2 content="..."><case x=6 y=2 content="x + 1">
+</table>
