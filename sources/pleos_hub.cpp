@@ -157,10 +157,13 @@ namespace pleos {
         else if(word == std::string("algebra")){if(add_determinant){to_return = std::string("l'algèbre");}else{to_return = std::string("algèbre");};}
         else if(word == std::string("arithmetic")){if(add_determinant){to_return = std::string("l'arithmétique");}else{to_return = std::string("arithmétique");};}
         else if(word == std::string("algorithms")){if(add_determinant){to_return = std::string("les algorithmes");}else{to_return = std::string("algorithme");};}
+        else if(word == std::string("bases")){if(add_determinant){to_return = std::string("les bases");}else{to_return = std::string("bases");};}
+        else if(word == std::string("cryptography")){if(add_determinant){to_return = std::string("la cryptographie");}else{to_return = std::string("cryptographie");};}
         else if(word == std::string("data_structures")){if(add_determinant){to_return = std::string("les structures de données");}else{to_return = std::string("structures de données");};}
         else if(word == std::string("functions")){if(add_determinant){to_return = std::string("les fonctions");}else{to_return = std::string("fonctions");};}
         else if(word == std::string("geometry")){if(add_determinant){to_return = std::string("la géométrie");}else{to_return = std::string("géométrie");};}
         else if(word == std::string("hardware")){if(add_determinant){to_return = std::string("l'hardware");}else{to_return = std::string("hardware");};}
+        else if(word == std::string("introduction")){if(add_determinant){to_return = std::string("l'introduction");}else{to_return = std::string("introduction");};}
         else if(word == std::string("logic")){if(add_determinant){to_return = std::string("la logique");}else{to_return = std::string("logique");};}
         else if(word == std::string("matter")){if(add_determinant){to_return = std::string("la matière");}else{to_return = std::string("matière");};}
         else if(word == std::string("mechanic")){if(add_determinant){to_return = std::string("la mécanique");}else{to_return = std::string("mécanique");};}
@@ -168,6 +171,7 @@ namespace pleos {
         else if(word == std::string("os")){if(add_determinant){to_return = std::string("les systèmes d'exploitation");}else{to_return = std::string("systèmes d'exploitation");};}
         else if(word == std::string("probability")){if(add_determinant){to_return = std::string("les probabilités");}else{to_return = std::string("probabilités");};}
         else if(word == std::string("random")){if(add_determinant){to_return = std::string("les sciences du hasard");}else{to_return = std::string("sciences du hasard");};}
+        else if(word == std::string("thermodynamic")){if(add_determinant){to_return = std::string("la thermodynamique");}else{to_return = std::string("thermodynamique");};}
 
         // Capitalise the first letter
         if(to_return == std::string()) {scls::print("PLEOS", std::string("Can't translate the word \"") + word + "\" for SAASF.");}

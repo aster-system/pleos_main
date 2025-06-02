@@ -23,6 +23,7 @@ Elle est donc le socle de toutes les théories similaires nécessitant de passer
 <h3>Les morphismes</h3>
 <p>
 <span class="important">Le lien (qui n'est pas toujours une application) entre deux structures algébriques gardant ce genre de propriété est nommée un morphisme</span>.
-Par exemple, une fonction définie et à valeur sur l'ensemble des réels transforme la droite des réels en une nouvelle droite décrite par la fonction (morphisme d'un corps de réel vers... un corps de réel).
+Bien que la relation entre les deux structures ne soient pas toujours une application, la relation entre les ensembles constituant les structures en est bien une (et peut donc aussi être une fonction).
+Par exemple, une fonction définie sur l'ensemble des réels et arrivant sur l'ensemble des réels transforme la droite des réels en une nouvelle droite décrite par la fonction (morphisme d'un corps de réel vers... un corps de réel).
 Cependant, ce terme est un peu lourd pour l'utiliser avec celui de fonction.
 </p>

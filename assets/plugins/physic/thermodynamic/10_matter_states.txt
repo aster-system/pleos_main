@@ -1,0 +1,74 @@
+<h1>Les états de la matière</h1>
+
+
+
+<h2>Un comportement de la matière</h2>
+
+<h3>Qu'est ce qu'est un état de la matière ?</h3>
+<p>
+Selon le comportement des molécules et des atomes dans un objet à échelle microscopique.
+<span class="important">Les états de la matières provoquant des ensembles de comportement spécifiques à cet état sont nommés... états de la matière</span>.
+Ces "comportements" spécifiques représentent généralement beaucoup de paramètres différents (généralement corrélés) : densité, volume, viscosité...
+<span class="important">Les 4 états les plus connus sont : solide, liquide, gazeux et plasma</span>.
+Selon la variation du comportement des molécules dans la matière, l'état de cette matière peut passer de l'un à l'autre, de manière plus ou moins brusque (si elle est brusque, elle est dite discontinue, et nous parlons de "transformation de phase").
+L'étude de l'état précis d'un matériau selon certaines de ces caractéristiques précise peut se faire dans ce que l'on appelle un diagramme de phase.
+</p>
+<p>
+De manière concrète, un état est généralement étudié dans un système thermodynamique, de préférence à l'équilibre.
+<span class="important">Il est possible de lier les paramètres présents dans l'état d'un système thermodynamique le décrivant, grâce à ce que l'on appelle l'équation d'état</span>.
+Il est aussi possible de formuler cette équation dans une fonction nommée fonction d'état, qui permet d'utiliser des outils d'analyses plus complexes sur cette forme.
+</p>
+<p>
+<span class="important">L'état solide représente un état où les atomes / molécules n'ont quasiment par de liberté de mouvement dans l'objet, et sont assez solidement liés pour préserver cette absence de liberté</span>.
+Ce type de matériaux provoque quelques caractéristiques importantes à échelle macroscopique, permettant de les différencier des autres états.
+En effet, un objet à l'état solide a une forme et un volume propre.
+</p>
+<p>
+<span class="important">L'état liquide représente un état où les atomes / molécules ont une grande liberté de mouvement dans l'objet, mais sont légèrement liés entre eux</span>.
+Donc, un liquide n'a pas de forme précise, mais a une volume précis grâce à la faible liaison.
+Un objet à l'état liquide peut être appelé un fluide.
+En physique, <span class="important">un fluide est un objet parfaitement déformable</span> (c'est le cas du liquide).
+</p>
+
+
+<h2>Les états principaux</h2>
+
+<h3>L'état gazeux</h3>
+<p>
+<span class="important">L'état gazeux représente un état où les atomes / molécules ont une extrême liberté de mouvement dans l'objet, et presque aucun lien entre eux</span>.
+De ce fait, un gaz n'a ni forme, ni volume : il occupe toujours tout l'espace possible.
+Un gaz est aussi un fluide, puisqu'il est facilement déformable.
+Il s'agit aussi de l'état le plus simple à étudier.
+<span class="important">L'état plasma représente un état gazeux encore plus énergétique, où les électrons sont détachés des atomes</span>.
+</p>
+<p>
+L'étude d'un gaz peut se faire de pas mal de manière différentes, selon l'état global du gaz.
+La façon la plus simple est via le modèle du gaz parfait.
+<span class="important">Le modèle du gaz parfait est un modèle d'étude d'un gaz, où les molécules / atomes n'interagissent entre eux que par choc direct et ponctuel</span>.
+Ce modèle est théorique, puisqu'il est y a toujours des interactions autres entre les molécules / atomes, comme les interactions éléctromagnétiques de Van Der Waals, et les chocs ne sont pas toujours ponctuel (les particules ont un volume, qu'il faut compter dans les équations).
+<span class="important">Si nous prenons les interactions supplémentaires et le volume des particules en compte, nous utilisons le modèle du gaz réel</span>.
+Plus la pression est basse, moins il y a d'interactions autres que les chocs, et plus le modèle du gaz réel se rapproche du modèle du gaz parfait.
+</p>
+<p>
+Dans un système en l'état de gaz parfait (abordé plus bas) à l'équilibre thermodynamique global, <span class="important">il existe une équation d'état lien pression - volume - température, nommée la loi des gaz parfaits</span>.
+</p>
+<math><mi>P</mi><mo>*</mo><mi>V</mi><mo>=</mo><mi>n</mi><mo>*</mo><mi>R</mi><mo>*</mo><mi>T</mi></math></br>
+<math><mi>Z</mi><mo>=</mo><mi>1</mi></math>
+<p>
+Ici, P est la pression en pascal, V est le volume en en mètres cube, n est le nombre de moles dans le système, R est la constante universelles des gaz parfaits et T est la température (en kelvin).
+Z est le facteur de compressibilité du gaz, qui peut s'obtenir en faisons le quotient de V * P par n * R * T (dans un gaz parfait, ces valeurs sont parfaitement égales).
+Avec cette loi, <span class="important">on peut en déduire beaucoup d'autres : loi de Boyle-Mariotte, loi de Gay-Lussac, loi d'Avogrado...</span>
+Dans le cas d'un gaz réel, quelques autres paramètres sont à prendre en compte.
+Pour cela, d'autres équations sont apparus au fil du temps pour se rapprocher de la réalité : équation de Clausius, équation de Dieterici, équation de Van Der Waals...
+Ces équations rajoutent d'autres paramètres que "P", "V", "n", "R" et "T" (qui restent néanmoins présents).
+Cependant, ils ne modifient pas la façon d'obtenir "Z" (le quotient de V * P par n * R * T).
+Donc, "Z" en devient très complexe à calculer, pour démeler proprement les paramètres nécessaires et les paramètres ajoutés.
+Cependant, elles offrent une utilité particulière à cette valeur.
+En effet, <span class="important">les équations modernes de thermodynamique représente "Z" dans une équation sous la forme de d'un polynôme de degré 3, mathématiquement parfaitement soluble</span>.
+Ces équations sont dites cubiques, et s'écrivent sous la forme :
+</p>
+<math><mi>Z</mi><msup>3</msup><mo>+</mo><mi>c</mi><msub>2</msub><mo>*</mo><mi>Z</mi><msup>2</msup><mo>+</mo><mi>c</mi><msub>1</msub><mo>*</mo><mi>Z</mi><mo>+</mo><mi>c</mi><msub>0</msub></math>
+<p>
+"Z" représente ici le facteur de compressibilité, vu plus haut (et est le seul facteur à contenir une trace du volume).
+Les valeurs de "c" représentent tout le reste nécessaire : pression, température...
+</p>

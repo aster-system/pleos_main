@@ -127,6 +127,8 @@ Pour être précis, <span class="important">une application relie un élément d
 On appelle "image" un élément du premier ensemble, nommé ensemble de départ, et "antécédent" un élément du deuxième ensemble, nommé ensemble d'arrivée.
 Tous les éléments de l'ensemble de départ doivent être liés, mais pas forcément tous les éléments de l'ensemble d'arrivée.
 Pour définir correctement ce terme, on doit créer une structure contenant l'ensemble de départ, l'ensemble d'arrivée, et tous les liens entre chaque éléments de ces ensembles.
+Si les ensembles de départ et d'arrivée peuvent être définis dans des structures algébriques, alors nous pouvons utiliser le terme de <a href="logic_category_theory">morphisme de structures algébriques</a>.
+Dans certains cas, une application peut avoir besoin de plusieurs antécédents, pouvant être contradictoire avec la définition : il faut garder en tête que l'ensemble de départ peut être le produit carthésien de tous les ensembles dans lesquels les antécédents sont contenus, annulant la contradiction.
 </p>
 
 <table title="Application de N vers N*">
@@ -139,6 +141,8 @@ Pour définir correctement ce terme, on doit créer une structure contenant l'en
 Ce terme est souvent confondu avec celui de fonction.
 En réalité, <span class="important">une fonction représente une application, où il est possible qu'un élément de l'ensemble de départ n'ait pas d'image</span>.
 En général, le terme de fonction est utilisé dans le cadre de nombres numérique (ou d'ensembles de nombres numériques).
+Il est aussi très commun de définir une fonction avec la transformation associée à cette fonction, nommée l'expression de la fonction (par exemple "3x + 2").
+Cependant, dans les deux cas, ce n'est pas obligatoire de fournir une expression (bien que très abstrait).
 </p>
 
 <table title="Fonction (mais pas application) de N vers N">
@@ -148,6 +152,19 @@ En général, le terme de fonction est utilisé dans le cadre de nombres numéri
 </table>
 
 <p>
+Il est possible de représenter des applications de pleins de façons possibles.
+La forme la plus connues pour les fonctions numériques est le graphe d'application (ou graphe de fonction, si l'on parle de fonction).
+<span class="important">Le graphe d'application numérique est une représentation graphique présentant les liens entre l'ensemble de définition est l'ensemble d'arrivée</span>.
+Dans le cas de nombre seul (comme pour l'ensemble des réels), on représente en abscisse et en ordonné la droite des réels, et on note les points où le lien entre éléments a lieu.
+C'est... la façon compliquée de définir une fonction tracée dans un graphique.
+</p>
+
+<graphic>
+<background_color white>
+<function expression="x/3+2"></function>
+</graphic>
+
+<p>
 Selon la façon dont son formés les liens, l'application peut avoir plusieurs propriétés intéressantes.
 <span class="important">Si chaque antécédent admet au maximum 1 antécédent, la fonction est dite injective</span>.
 Tous les antécédents ont donc des images différentes, mais pas toutes les images ont forcément un antécédent.
@@ -155,6 +172,9 @@ Tous les antécédents ont donc des images différentes, mais pas toutes les ima
 Ici, deux antécédents peuvent avoir la même image.
 Finalement, <span class="important">si chaque antécédent admet exactement une image, la fonction est dite bijective</span>.
 C'est un renforcement de l'injectivité : toutes les images ont ici un antécédent.
+D'ailleurs, dans ce cas là, il existe une application inverse, avec comme ensemble de départ l'ensemble d'arrivée de l'application de départ, et comme ensemble d'arrivée l'ensemble de départ de l'application de départ.
+Les liens, eux, ne changent pas.
+</span class="important">Cette application est dite réciproque à l'application de départ</span>.
 </p>
 
 <table title="Application injective de N vers N">
