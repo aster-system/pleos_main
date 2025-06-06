@@ -724,7 +724,7 @@ namespace pleos {
             object_created = PLEOS_MATHEMATICS_GEOMETRY_VECTOR;
 
             // Create the needed vector
-            geometry_vectors_created().push_back(std::make_shared<pleos::Vector>("", 1, 1));
+            geometry_vectors_created().push_back(std::make_shared<Point_2D>("", 1, 1));
             geometry_select_vector(geometry_vectors_created()[geometry_vectors_created().size() - 1]);
         }
         else if(current_choice == "form"){
@@ -740,7 +740,7 @@ namespace pleos {
             object_created = PLEOS_MATHEMATICS_GEOMETRY_POINT;
 
             // Create the needed vector
-            geometry_vectors_created().push_back(std::make_shared<pleos::Vector>("", 1, 1));
+            geometry_vectors_created().push_back(std::make_shared<Point_2D>("", 1, 1));
             geometry_vectors_created()[geometry_vectors_created().size() - 1].get()->set_type(Vector_Type::VT_Point);
             geometry_select_vector(geometry_vectors_created()[geometry_vectors_created().size() - 1]);
         }
@@ -865,20 +865,20 @@ namespace pleos {
             // Analyse the argument
             if(type == "vector_norm") {
                 std::string needed_vector_name = reinterpret_cast<scls::GUI_Text_Input*>(objects[i].object()->child_by_name(objects[i].object()->name() + "_name"))->text();
-                std::shared_ptr<Vector> needed_vector = geometry_vector_created(needed_vector_name);
-                if(needed_vector.get() != 0){needed_vector.get()->norm(&redaction, &settings);}
+                std::shared_ptr<Point_2D> needed_vector = geometry_vector_created(needed_vector_name);
+                //if(needed_vector.get() != 0){needed_vector.get()->norm(&redaction, &settings);}
             }
             else if(type == "vector_complex_number") {
                 std::string needed_vector_name = reinterpret_cast<scls::GUI_Text_Input*>(objects[i].object()->child_by_name(objects[i].object()->name() + "_name"))->text();
-                std::shared_ptr<Vector> needed_vector = geometry_vector_created(needed_vector_name);
-                if(needed_vector.get() != 0){needed_vector.get()->complex_number(&redaction, &settings);}
+                std::shared_ptr<Point_2D> needed_vector = geometry_vector_created(needed_vector_name);
+                //if(needed_vector.get() != 0){needed_vector.get()->complex_number(&redaction, &settings);}
             }
             else if(type == "vector_angle") {
                 std::string needed_vector_name = reinterpret_cast<scls::GUI_Text_Input*>(objects[i].object()->child_by_name(objects[i].object()->name() + "_name"))->text();
-                std::shared_ptr<Vector> needed_vector = geometry_vector_created(needed_vector_name);
+                std::shared_ptr<Point_2D> needed_vector = geometry_vector_created(needed_vector_name);
                 needed_vector_name = reinterpret_cast<scls::GUI_Text_Input*>(objects[i].object()->child_by_name(objects[i].object()->name() + "_reference"))->text();
-                std::shared_ptr<Vector> needed_reference = geometry_vector_created(needed_vector_name);
-                if(needed_vector.get() != 0 && needed_reference.get() != 0) {needed_vector.get()->angle(needed_reference.get(), &redaction, &settings);}
+                std::shared_ptr<Point_2D> needed_reference = geometry_vector_created(needed_vector_name);
+                //if(needed_vector.get() != 0 && needed_reference.get() != 0) {needed_vector.get()->angle(needed_reference.get(), &redaction, &settings);}
             } redaction += std::string("</br></br>");
         }//*/
 
@@ -903,7 +903,7 @@ namespace pleos {
     }
 
     // Selects a geometry vector
-    void Maths_Page::geometry_select_vector(std::shared_ptr<pleos::Vector> needed_vector) {
+    void Maths_Page::geometry_select_vector(std::shared_ptr<Point_2D> needed_vector) {
         check_geometry_hiding();
         currently_selected_vector_shared_ptr() = needed_vector;
 
@@ -912,8 +912,8 @@ namespace pleos {
             scls::Textual_Math_Settings settings;
             geometry_redaction_form()->set_visible(false);geometry_redaction_vector()->set_visible(true);
             geometry_redaction_vector_name()->set_text(needed_vector.get()->name());
-            geometry_redaction_vector_x()->set_text(needed_vector.get()->x()->to_std_string(&settings));
-            geometry_redaction_vector_y()->set_text(needed_vector.get()->y()->to_std_string(&settings));
+            geometry_redaction_vector_x()->set_text(needed_vector.get()->x().to_std_string(&settings));
+            geometry_redaction_vector_y()->set_text(needed_vector.get()->y().to_std_string(&settings));
         }
         else {geometry_redaction_form()->set_visible(false);geometry_redaction_vector()->set_visible(false);}
     }
@@ -1089,7 +1089,7 @@ namespace pleos {
 
         // Check operation at click
         for(int i = 0;i<static_cast<int>(geometry_redaction_graphic()->created_vectors_at_click().size());i++) {
-            std::shared_ptr<Vector> current_vector = geometry_redaction_graphic()->created_vectors_at_click().at(i);
+            std::shared_ptr<Point_2D> current_vector = geometry_redaction_graphic()->created_vectors_at_click().at(i);
             geometry_vectors_created().push_back(current_vector);
             geometry_select_vector(current_vector);
             if(current_vector.get()->type() == Vector_Type::VT_Vector) {
@@ -1124,8 +1124,8 @@ namespace pleos {
 
             // Set the needed values
             currently_selected_vector()->set_name(geometry_redaction_vector_name()->text());
-            currently_selected_vector()->set_x(needed_x);
-            currently_selected_vector()->set_y(needed_y);
+            currently_selected_vector()->set_x(needed_x.value_to_double());
+            currently_selected_vector()->set_y(needed_y.value_to_double());
         }
     }
 

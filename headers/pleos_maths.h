@@ -160,17 +160,17 @@ namespace pleos {
         void geometry_select_form_2d(std::shared_ptr<pleos::Form_2D> needed_form_2d);
         inline void geometry_select_form_2d(){geometry_select_form_2d(std::shared_ptr<pleos::Form_2D>());};
         // Selects a geometry vector
-        void geometry_select_vector(std::shared_ptr<pleos::Vector> needed_vector);
-        inline void geometry_select_vector(){geometry_select_vector(std::shared_ptr<pleos::Vector>());};
+        void geometry_select_vector(std::shared_ptr<Point_2D> needed_vector);
+        inline void geometry_select_vector(){geometry_select_vector(std::shared_ptr<Point_2D>());};
 
         // Getters and setters
         inline pleos::Form_2D* currently_selected_form_2d() const {return a_current_state.a_geometry_currently_selected_form_2d.get();}
         inline std::shared_ptr<pleos::Form_2D>& currently_selected_form_2d_shared_ptr() {return a_current_state.a_geometry_currently_selected_form_2d;}
-        inline pleos::Vector* currently_selected_vector() const {return a_current_state.a_geometry_currently_selected_vector.get();}
-        inline std::shared_ptr<pleos::Vector>& currently_selected_vector_shared_ptr() {return a_current_state.a_geometry_currently_selected_vector;}
+        inline Point_2D* currently_selected_vector() const {return a_current_state.a_geometry_currently_selected_vector.get();}
+        inline std::shared_ptr<Point_2D>& currently_selected_vector_shared_ptr() {return a_current_state.a_geometry_currently_selected_vector;}
         inline std::vector<std::shared_ptr<pleos::Form_2D>>& geometry_form_2d_created() {return a_current_state.a_geometry_form_2d_created;};
-        inline std::shared_ptr<pleos::Vector> geometry_vector_created(std::string vector_name) {for(int i = 0;i<static_cast<int>(a_current_state.a_geometry_vectors_created.size());i++){if(a_current_state.a_geometry_vectors_created[i].get()->name() == vector_name){return a_current_state.a_geometry_vectors_created[i];}}return std::shared_ptr<Vector>();};
-        inline std::vector<std::shared_ptr<pleos::Vector>>& geometry_vectors_created() {return a_current_state.a_geometry_vectors_created;};
+        inline std::shared_ptr<Point_2D> geometry_vector_created(std::string vector_name) {for(int i = 0;i<static_cast<int>(a_current_state.a_geometry_vectors_created.size());i++){if(a_current_state.a_geometry_vectors_created[i].get()->name() == vector_name){return a_current_state.a_geometry_vectors_created[i];}}return std::shared_ptr<Point_2D>();};
+        inline std::vector<std::shared_ptr<Point_2D>>& geometry_vectors_created() {return a_current_state.a_geometry_vectors_created;};
 
         //******************
         //
@@ -368,9 +368,9 @@ namespace pleos {
             // Currently selected form
             std::shared_ptr<pleos::Form_2D> a_geometry_currently_selected_form_2d = std::shared_ptr<pleos::Form_2D>();
             // Created vectors
-            std::vector<std::shared_ptr<pleos::Vector>> a_geometry_vectors_created = std::vector<std::shared_ptr<pleos::Vector>>();
+            std::vector<std::shared_ptr<Point_2D>> a_geometry_vectors_created = std::vector<std::shared_ptr<Point_2D>>();
             // Currently selected vector
-            std::shared_ptr<pleos::Vector> a_geometry_currently_selected_vector = std::shared_ptr<pleos::Vector>();
+            std::shared_ptr<Point_2D> a_geometry_currently_selected_vector = std::shared_ptr<Point_2D>();
 
             // Current page
             unsigned short current_page = PLEOS_MATHS_HOME_PAGE;
