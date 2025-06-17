@@ -1,0 +1,61 @@
+<h1>Les polynômes</h1>
+
+
+
+<h2>Une forme d'expression mathématique</h2>
+
+<h3>Les polynômes formels</h3>
+<p>
+Le terme de "polynôme formel" est confondu avec le terme de "polynôme" vu au lycée.
+En mathématiques, <span class="important">un polynôme formel est une forme mathématique, s'écrivant comme la somme de produit d'une puissance d'un inconnu avec un nombre quelconque</span>.
+</p>
+<math><mi>P</mi><mo>=</mo><mi>a</mi><msub>0</msub><mo>+</mo><mi>a</mi><msub>1</msub><mi>x</mi><msup>1</msup><mo>+</mo><mi>a</mi><msub>2</msub><mi>x</mi><msup>2</msup><mo>+</mo><mi>...</mi><mo>+</mo><mi>a</mi><msub>1n</msub><mi>x</mi><msup>n</msup></math>
+<p>
+Algébriquement, les éléments "a" peuvent être n'importe quoi défini dans <a href="structures">un anneau</a>.
+L'ensemble des polynômes possibles sur un anneau "A" est noté "A[x]" : il s'agit lui aussi d'un anneau (plus précisément, "A" est un sous-anneau de "A[x]").
+On peut aussi définir un polynôme avec <a href="series">une série mathématique</a>, surtout si ce dernier a un développement infini.
+<span class="important">La valeur de l'exposant "n" maximal de ce polynôme est nommé le degré du polynôme</span>.
+Un polynôme de degré 1 est nommé un monôme, et un polynôme de degré 0 est constant.
+</p>
+
+<table>
+<case x=0 y=0 content="Degré 0"><case x=1 y=0 content="Degré 1"><case x=2 y=0 content="Degré 4">
+<case x=0 y=1 content="8"><case x=1 y=1 content="3x"><case x=2 y=1 content="x^4">
+<case x=0 y=2 content="-3.1415"><case x=1 y=2 content="7x + 2"><case x=2 y=2 content="4x^4 + 2x^3 + x² - 3x - 2">
+</table>
+
+<p>
+<span class="important">Si l'expression d'une fonction se note comme un polynôme, la fonction est dite polynomiale</span>.
+La fonction forme une courbe, comportant autant d'extremums que son degré auquel on soustrait 1.
+Grâce à ça, on peut appliquer tous les outils des fonctions sur une forme polymoniale.
+</p>
+
+<graphic><background_color white><function expression=3x*x*x+2x*x-6x+2></function></graphic>
+
+<h3>Les racines d'un polynôme</h3>
+<p>
+En algèbre, <span class="important">une équation constituée d'un polynôme "P" tel que "P(x) = 0" est nommée une équation polynomiale</span>.
+L'intérêt de ces équations est la facilité que représente le fait de passer d'une équation quelconque à une équation polymoniale.
+<span class="important">Les valeurs de "x" rendant cette équation vraie sont nommées les racines du polynome "P"</span>.
+Il est à noter qu'un polynôme ne peut avoir au maximum que le même nombre de racines que sont degré, qui peuveut se situer dans un corps supérieur.
+</p>
+
+<graphic><background_color white><function expression=2x*x-4x></function></graphic>
+
+<p>
+Ce concept est décrit par deux théorèmes, généralement appelés "théorème fondamentaux de l'algèbre des polynômes".
+<span class="important">Le premier est le théorème de d'Alembert-Gauss : tout polynôme complexe et non-constant de degré "n" compte "n" racines</span>.
+Ce théorème implique pleins de choses très pratique en algèbre.
+<span class="important">Le deuxième est le théorème de d'Abel : il est impossible de trouver directement les racines d'un polynôme de degré 5 (ou plus) via une formule directe</span>.
+Cela est possible pour un degré 1 (simple résolution d'équation avec un quotient), pour un degré 2 (discriminant et formules basique), pour un degré 3 (méthodes de Cardan entre autres) et même pour un degré 4 (méthode de Ferrari).
+</p>
+
+
+
+<h2>Les opérations sur les polynômes</h2>
+
+<h3>La division</h3>
+<p>
+Il est possible de défnir une division euclidienne dans un anneau de polynômes.
+En effet, <span class="important">pour deux polynômes "X" et "Y", il existe (au moins) deux autres polynômes "Z" et "W" tel que "X = ZY + W"</span>.
+</p>

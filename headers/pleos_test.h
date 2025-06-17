@@ -36,6 +36,9 @@
 // The namespace "pleos" is used to simplify the all.
 namespace pleos {
 
+    // Do a bac subject
+    void bac(std::string path);
+
     // Do the test
     void test(std::string path);
 }

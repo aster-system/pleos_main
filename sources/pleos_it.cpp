@@ -146,7 +146,7 @@ namespace pleos {
     // Update the texture of the algorithm comparaison simulation part
     void IT_Page::algorithms_update_comparaison(){
         // Create the image
-        std::shared_ptr<scls::Image> needed_image = algorithms_sort_image(a_current_state.algorithms_sort_comparaison_current.get(), algorithms_sort_comparaison_simulation()->height_in_pixel());
+        std::shared_ptr<scls::__Image_Base> needed_image = algorithms_sort_image(a_current_state.algorithms_sort_comparaison_current.get(), algorithms_sort_comparaison_simulation()->height_in_pixel());
         algorithms_sort_comparaison_simulation()->texture()->set_image(needed_image);
         set_should_render_during_this_frame(true);
 
@@ -212,7 +212,7 @@ namespace pleos {
                 std::string content = "<tree graph=\"animals\" name=\"Animal\"><tree name=\"Félins\"><tree name=\"Chats\"></tree><tree name=\"Léopards\"></tree><tree name=\"Panthères\"></tree></tree><tree name=\"Canidés\"><tree name=\"Loups\"></tree><tree name=\"Chiens\"></tree><tree name=\"Coyotes\"></tree></tree></tree>";
                 scls::Text_Style style;style.set_border_width(1);
                 std::shared_ptr<Tree<std::string>> tree = tree_from_xml(content, style, window_struct()->balises_shared_ptr());
-                std::shared_ptr<scls::Image> needed_image = tree.get()->to_image() ;
+                std::shared_ptr<scls::__Image_Base> needed_image = tree.get()->to_image() ;
                 needed_image.get()->save_png("tests/arbre.png");
                 data_structures_tree_simulation()->texture()->set_image(needed_image);
             }

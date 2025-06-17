@@ -70,7 +70,7 @@ namespace pleos {
         // Loads the recents notes GUI
         void load_recents_notes_gui();
         // Loads the representation of the input
-        std::shared_ptr<scls::Image> input_load_presentation_image(std::string input);
+        std::shared_ptr<scls::__Image_Base> input_load_presentation_image(std::string input);
         // Creates new notes in the input
         void input_new_notes(std::string needed_path);
         // Opens an existing note in the project

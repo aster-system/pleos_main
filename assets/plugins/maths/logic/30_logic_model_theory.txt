@@ -1,0 +1,61 @@
+<h1>La théorie des modèles</h1>
+
+
+
+<h2>Utiliser la logique en mathématique</h2>
+
+<h3>Les théories axiomatiques</h3>
+<p>
+Avant de créer un modèle, il faut une base où construire notre modèle : cette base représente les théories axiomatiques.
+En mathématique, <span class="important">une théorie axiomatique représente une structure mathématique, composée d'axiomes et des théorèmes obstensibles via ces axiomes</span>.
+Le plus dur ici est de trouver ces théorèmes.
+</p>
+
+<h3>Qu'est ce qu'est la théorie des modèles ?</h3>
+<p>
+Devoir créer une syntaxe précise pour chaque théorie mathématique est très long, et peut intéressant.
+Heuresement, la théorie des modèles est là pour aider.
+En fait, <span class="important">la théorie des modèles permet de faire un lien entre des "formes" syntaxiques provenant de la logique formelle, et les théories axiomatiques, permettant de déruire les théorèmes</span>.
+Elles permettent, via la syntaxe logique, de donner un "sens précis" à la théorie, nommé la sémantique.
+</p>
+<p>
+Pour un concept aussi abstrait, un exemple s'impose.
+Prenons une proposition quelconque du <a href="logic_propositional">calcul des prédicats</a>.
+Pour rappel, une notation comme celle-ci se nomme une formule.
+</p>
+<math><mi>P</mi><mimp><mi>Q</mi></math>
+<p>
+Ici, <span class="important">nous allons utiliser une thérie axiomatique simple pour utiliser cette expression, par exemple l'arithmétique (de Peano)</span>.
+Pour cela, nous allons définir des valeurs précises à P et Q, qui peuvent être soit "vrai", soit "faux" : nous appelons ça des valeurs de vérités.
+Ici, <span class="important">P et Q doivent être des formules atomiques (elle ne peuvent pas être décomposés en formules plus petites)</span>.
+Ces mêmes formules reposent en général sur un ensemble d'objets élémentaires, nommé un domaine (si il est infini, le modèle est aussi appelé infini).
+Disons que P représente la proposition "tout nombre premier x est impair" et Q représente la proposition "tout nombre impair a un reste de 1 via la division par 2".
+Dans notre cas, le domaine représente l'ensemble des nombres premiers.
+Vous pouvez y utiliser des règles logiques parfaitement évidentes, comme le modus ponen.
+</p>
+<math><mi>P</mi><mimp><mi>Q</mi></math></br><math><mi>Q donc P</mi></math>
+<p>
+De manière parfaitement évident, si un nombre est premier, il est impair.
+En quelque sorte, <span class="important">il s'agit d'un théorème mathématique, faisant partie d'une théorie mathématique</span>.
+En prenant d'autres formules (plus intéressantes), vous pouvez démontrer pleins de choses très pratiques.
+Pour être plus précis, <span class="important">un modèle mathématique représente un ensemble de formules, composé de toutes les formules démontrables dans la théorie axiomatique</span>.
+Vous pouvez piocher dans ce même modèle des formules permettant de démontrer un théorème de votre théorie axiomatique.
+</p>
+<p>
+Certaines formules utilisent des propriétés hors du cadre logique de la théorie axiomatique utilisée : elle ne sont valables nulle part dans la théorie.
+Cependant, certaines formules peuvent très bien s'écrire, et être vrai ou fausse.
+<span class="important">Si une formule est vraie dans au moins un modèle de la théorie, la formule est dite satisfaisable</span>.
+De manière similaire, une théorie est satisfaisable si elle admet au moins un modèle où tous ces axiomes sont vrais en même temps (si ils ne le sont pas, la théorie ne sert à rien).
+À l'inverse, <span class="important">il existe un théorème qui explique que, si un théorème existe via une formule dans un modèle d'une théorie axiomatique, alors on peut décortiquer la formule pour trouver la démonstration via les axiomes / autres théorèmes de la théorie : c'est le théorème de complétude de Godel</span>.
+Aussi évident soit ce théorème, il est la base d'une grande partie de la déduction logique en mathématique.
+De plus, <span class="important">la théorie est dite cohérente si elle ne contient aucune contradiction</span>.
+D'un point de vu sémantique, cela revient à dire que la théorie admet au moins un modèle.
+D'un point de vu syntaxique, cela revient à dire que la théorie ne prouve pas en même temps un théorème et sa contradiction.
+Cela implique que certaines formules existantes (les formules contradictoires des formules déjà prouvées) ne sont pas prouvables dans la théorie.
+</p>
+<p>
+Il existe un théorème assez important dans cette théorie : le théorème de Löwenheim-Skolem.
+Selon ce théorème, <span class="important">si une théorie admet un modèle infini, alors elle admet aussi un modèle infini à cardinalité supérieure</span>.
+Dans le cas de l'arithmétique de Peano, on peut démontrer qu'il existe des modèles infinis à cardinalité indénombrable (il ne sont cependant pas considérés comme "classique", et leur étude revient au cadre de l'algèbre non-classique).
+De manière simplifié, ce théorème consiste à dire que, si une formule est vraie dans un modèle, alors elle peut l'être dans d'autres (assez évident).
+</p>

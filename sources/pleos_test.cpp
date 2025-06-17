@@ -33,6 +33,34 @@
 // The namespace "pleos" is used to simplify the all.
 namespace pleos {
 
+    // Do a bac subject
+    void bac(std::string path) {
+        // Asserts
+        while(path.size() > 0 && (path.at(path.size() - 1) == '/' || path.at(path.size() - 1) == '\\')){path = path.substr(0, path.size() - 1);}
+
+        // Base text
+        std::string text = std::string("<h1>Bac de mathématiques</h1>");
+        text += std::string("<h2>Exercice 1 : Probabilités</h2>");
+
+        // First exercice
+        pleos::Probability_Universe universe = pleos::Probability_Universe();
+        universe.add_event("G", scls::Fraction(1, 5));
+        universe.add_event("D", scls::Fraction(41, 500));
+        universe.add_event_conditionally("G", "D", scls::Fraction(2, 1000));
+        std::string universe_redaction;universe.solve(&universe_redaction);text += universe_redaction;
+        universe_redaction=std::string();universe.solve(&universe_redaction);text += universe_redaction;
+        std::string s;std::shared_ptr<pleos::Tree<std::string>> needed_tree = universe.tree(s);
+        std::string tree_to_xml_1 = needed_tree.get()->graph()->to_xml_text();
+        needed_tree = universe.tree(1, 0, s);
+        std::string tree_to_xml_2 = needed_tree.get()->graph()->to_xml_text();
+        text +=  std::string("</br>") + tree_to_xml_1 + std::string("</br></br>") + tree_to_xml_2;
+
+        // Create the page
+        scls::Text_Image_Generator tig;scls::Text_Style style;style.max_width = 1000;
+        std::shared_ptr<scls::__Image_Base> page_1_image = tig.image_shared_ptr<pleos::Text>(text, style);
+        page_1_image.get()->save_png(path + std::string("/bac.png"));
+    }
+
     // Do the test
     void test(std::string path) {
         // Asserts
@@ -77,7 +105,7 @@ namespace pleos {
 
         // Create the page
         scls::Text_Image_Generator tig;scls::Text_Style style;style.max_width = 1000;
-        std::shared_ptr<scls::Image> page_1_image = tig.image_shared_ptr<pleos::Text>(page, style);
+        std::shared_ptr<scls::__Image_Base> page_1_image = tig.image_shared_ptr<pleos::Text>(page, style);
         page_1_image.get()->save_png(path + std::string("/page_1.png"));
     }
 }

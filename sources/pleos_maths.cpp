@@ -348,7 +348,7 @@ namespace pleos {
 
     // Updates the congruence circle
     void Maths_Page::arithmetic_update_congruence_circle() {
-        std::shared_ptr<scls::Image> img = division_circle(arithmetic_calculator_congruence_circle()->height_in_pixel(), static_cast<double>(arithmetic_calculator_congruence_circle()->height_in_pixel()) * 0.4, a_current_state.a_arithmetic_congruence_circle_modulo, a_current_state.a_arithmetic_congruence_circle_points);
+        std::shared_ptr<scls::__Image_Base> img = division_circle(arithmetic_calculator_congruence_circle()->height_in_pixel(), static_cast<double>(arithmetic_calculator_congruence_circle()->height_in_pixel()) * 0.4, a_current_state.a_arithmetic_congruence_circle_modulo, a_current_state.a_arithmetic_congruence_circle_points);
         arithmetic_calculator_congruence_circle()->texture()->set_image(img);
         set_should_render_during_this_frame(true);
     }
@@ -1163,7 +1163,7 @@ namespace pleos {
 
         int x = window_struct()->mouse_x() - redaction_part->x_in_absolute_pixel();
         int y = (window_struct()->window_height() - window_struct()->mouse_y()) - redaction_part->y_in_absolute_pixel();
-        std::shared_ptr<scls::XML_Text> current_xml = redaction_part->text_clicked_at_position(x, y);
+        std::shared_ptr<scls::__XML_Text_Base> current_xml = redaction_part->text_clicked_at_position(x, y);
         if(current_xml.get() != 0) {
             // Link balise
             if(current_xml.get()->xml_balise_name() == std::string("a")) {
@@ -1180,7 +1180,7 @@ namespace pleos {
                 }
 
                 // Parse the link
-                while(link.size() > 0 && link[0] == '.' || link[0] == '/'){link = link.substr(1, link.size() - 1);}
+                while(link.size() > 0 && (link[0] == '.' || link[0] == '/')){link = link.substr(1, link.size() - 1);}
                 std::vector<std::string> cutted = scls::cut_string(link, "#");
                 std::string page = cutted[0];
                 // Display the page

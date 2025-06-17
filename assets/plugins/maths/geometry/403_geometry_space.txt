@@ -45,13 +45,20 @@ Cependant, <span class="important">l'autre caractéristique d'un espace euclidie
 Algébriquement, il s'agit de la façon la plus "logique" de multiplier des vecteurs.
 Ce produit scalaire se note (pour les dimensions 2 ou 3) :
 </p>
-<math><mo>||</mo><mvec>u</mvec><mo>||</mo><mi>*</mi><mo>||</mo><mvec>v</mvec><mo>||</mo><mo>*</mo><mi>cos(</mi><mvec>u</mvec><mi>,</mi><mvec>v</mvec><mi>)</mi></math>
+<math><mvec>u</mvec><mo>.</mo><mvec>u</mvec><mo>=</mo><mo>||</mo><mvec>u</mvec><mo>||</mo><mi>*</mi><mo>||</mo><mvec>v</mvec><mo>||</mo><mo>*</mo><mi>cos(</mi><mvec>u</mvec><mi>,</mi><mvec>v</mvec><mi>)</mi></math>
+<p>
+Dans une base othonormée, cette expression est aussi possible :
+</p>
+<math><mvec>u</mvec><mo>.</mo><mvec>u</mvec><mo>=</mo><mi>x</mi><msub>u</msub><mi>x</mi><msub>v</msub><mo>+</mo><mi>y</mi><msub>u</msub><mi>y</mi><msub>v</msub><mo>+</mo><mi>...</mi></math>
 <p>
 Pour des dimensions supérieures, son étude est plus complexe.
+<span class="important">L'utilisation du cosinus permet d'introduire la notion d'angle entre vecteurs, et de longueur de vecteur</span>.
 Grâce à ça, <span class="important">nous pouvons définir la notion de perpendicularité entre vecteurs (lorsque leur produit scalaire vaut 0), nommée dans ce cas l'orthogonalité</span>.
 Ce même concept permet de définir des bases obéissant à ce principe (les vecteurs de normes orthogonaux entre eux), nommés bases orthogonales.
 Il permet aussi de définir des opérations très intéressante, comme la projection.
+Beaucoup de démonstrations via le produit scalaire se fait via une inégalite (en réalité, assez évidente) : l'inégalité de Cauchy-Schwarz :
 </p>
+<math><mo>|</mo><mvec>u</mvec><mo>.</mo><mvec>u</mvec><mo>|</mo><mo>&lt;=</mo><mo>||</mo><mvec>u</mvec><mo>||</mo><mi>*</mi><mo>||</mo><mvec>v</mvec><mo>||</mo></math>
 
 <h3>Les espaces affines</h3>
 <p>

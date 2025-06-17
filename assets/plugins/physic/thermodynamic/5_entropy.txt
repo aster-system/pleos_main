@@ -1,0 +1,66 @@
+<h1>L'entropie</h1>
+
+
+
+<h2>Une grandeur physique</h2>
+
+<h3>Le potentiel d'énergie d'un système</h3>
+<p>
+L'entropie est une grandeur assez complexe à comprendre.
+Elle se mesure dans un système physique.
+En fait, <span class="important">l'entropie représente une façon de calculer la quantité de travail potentielle encore possible dans un système instant T</span>.
+Pour être précis, plus l'entropie est faible, plus ce potentiel est élevé.
+En réalité, l'énergie permettant de fournir ce travail, nommée énergie libre, s'obtient en multipliant l'entropie par une autre valeur : la température thermodynamique (traitée plus bas).
+En physique statistique, cette quantité de travail dépend de l'arrangement des particules / de l'homogénéité dans le système.
+En général, <span class="important">moins les particules sont ordonnées / plus le système est hétérogène, plus elles peuvent fournir de travail, plus l'entropie est faible</span>.
+À l'équilibre (système homogène), l'entropie est très élevée : aucun travail précis n'est obstensible dans un état à l'équilibre.
+Elle se mesure en joules par kelvins, parce qu'elle peut aussi représenter la quantité de kelvins apportée à un système pour une certaine quantité de joules apportés à un système.
+</p>
+
+<table>
+
+<case x=0 y=0 content="Entropie élevée">
+<case x=1 y=0 content="Entropie faible (travail haut vers bas)">
+
+<case_plus x=0 y=1>
+<graphic>
+<background_color white>
+<random_object max_x=5 max_y=5 min_x=-5 min_y=-5 number=30 object="circle" radius=1/2>
+</graphic>
+</case_plus>
+<case_plus x=1 y=1>
+<graphic>
+<background_color white>
+<random_object max_x=5 max_y=5 min_x=-5 min_y=0 number=30 object="circle" radius=1/2>
+</graphic>
+</case_plus>
+
+</table>
+
+<p>
+<span class="important">Pour calculer une entropie précise, la formule la plus utilisée est le formule de Boltzmann</span>.
+En général, l'entropie est notée "S".
+</p>
+<math><mi>S</mi><mo>=</mo><mi>k</mi><msub>B</msub><mo>ln</mo><mo>(</mo><mi>W</mi><mo>)</mo></math>
+<p>
+Ici, "k" représente la constante de Boltzmann (1,38 * 10 exposant -23 Joules / Kelvins), et "W" représente le nombre de micro-états dans lesquelles le système peut être avec les valeurs mesurées dans le système (aussi nommé nombre de complexions).
+En effet, il existe plusieurs micro-états qui donnerait des résultats infiniment similaires, mais que nous ne pouvons pas distinguer les uns-des-autres à échelle macroscopique : c'est le "W".
+Le calcul précis de ce nombre revient à la discipline mathématique des probabilités, comme avec une intégration sur l'espace des phases.
+</p>
+<p>
+La notion d'entropie est très liée à une autre notion : la température thermodynamique du système.
+<span class="important">La température thermodynamique d'un système, mesurée en kelvins, représente l'agitation des particules qui le constitue</span>.
+Le kelvin est une unité de base du système international.
+Cependant, <span class="important">dans un système à l'équilibre, il est aussi possible de calculer une variation de l'entropie pendant un temps T, correspondant à l'énergie reçu pendant ce temps T divisée par la température thermodynamique du système</span>.
+D'ailleurs, si vous multipliez cette valeur par l'entropie, vous obtenez la quantité d'énergie incapable de créer un travail précis dans le système, nommée énergie libre.
+</p>
+<math><mi>dS</mi><mo>=</mo><mfrac><mi>dQ</mi><mi>T</mi></mfrac></math>
+
+<h3>La seconde loi de la thermodynamique</h3>
+<p>
+Une des lois les plus importantes en thermodynamique est la seconde loi de la thermodynamique.
+En effet, <span class="important">la seconde loi de la thermodynamique énonce que l'entropie ne peut que rester constante ou augmenter</span>.
+Donc, un système ne peut que perdre son potentiel de travail / devenir désordonné.
+En réalité, il est possible que l'entropie diminue dans certains cas précis, mais assez improbables dans l'univers.
+</p>
+<math><mi>dS</mi><mgt><mo>=</mo><mi>0</mi></math>

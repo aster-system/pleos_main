@@ -116,9 +116,9 @@ namespace pleos {
     }
 
     // Loads the representation of the input
-    std::shared_ptr<scls::Image> Notes_Page::input_load_presentation_image(std::string input) {
+    std::shared_ptr<scls::__Image_Base> Notes_Page::input_load_presentation_image(std::string input) {
         scls::Text_Image_Generator tig;scls::Text_Style needed_style;
-        std::shared_ptr<scls::Image> image = tig.image_shared_ptr(scls::format_string_break_line(input, std::string(" ")), needed_style);
+        std::shared_ptr<scls::__Image_Base> image = tig.image_shared_ptr(scls::format_string_break_line(input, std::string(" ")), needed_style);
         return image;
     }
 
@@ -238,7 +238,7 @@ namespace pleos {
     }
 
     // Thread for image presentation
-    std::shared_ptr<scls::Image> a_image_presentation;
+    std::shared_ptr<scls::__Image_Base> a_image_presentation;
     std::string a_image_presentation_content;
     bool a_image_presentation_generated = false;
     std::shared_ptr<scls::Text_Image_Generator> a_image_presentation_generator = std::make_shared<scls::Text_Image_Generator>();;
