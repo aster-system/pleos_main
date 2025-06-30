@@ -16,21 +16,64 @@ Pour faire cela, <important>il faut lier les opérations possibles avec l'ensemb
 Parmi ces mêmes opérations, certaines peuvent être appliquer à deux opérandes similaires (par exemple, pour un nombre a, alors "a + a" est définie) : ce genre d'opérations sont nommées lois de composition interne.
 <span class="important">Les opérations de ce type les plus connues sont l'addition et la multiplication</span>.
 En plus, <span class="important">ces mêmes opérations peuvent nécessiter des relations précises entre les opérandes</span>.
+</p>
+
+<table>
+
+<case x=0 y=0 content="Propriété">
+<case x=1 y=0 content="Définition">
+<case x=2 y=0 content="Exemples">
+
+<case x=0 y=1 content="x # (y # z) = (x # y) # z">
+<case x=1 y=1 content="La loi est associativité">
+<case x=2 y=1 content="3 * (4 * 2) = (3 * 4) * 2 = 24 dans N(*)">
+
+<case x=0 y=2 content="x # y = y # x">
+<case x=1 y=2 content="La loi est commutative">
+<case x=2 y=2 content="7 + 2 = 2 + 7 = 9 dans N(+)">
+
+<case x=0 y=3 content="a # n = a">
+<case_plus x=1 y=3>La loi admet un élément neutre "n"</case_plus>
+<case x=2 y=3 content="4 + 0 = 4 dans N(+)">
+
+<case x=0 y=4 content="a # o = n">
+<case_plus x=1 y=4>La loi permet un élément opposé "o" à l'élément "a"</case_plus>
+<case x=2 y=4 content="7 + (-7) = 0 dans Z(+)">
+
+<case x=0 y=5 content="a # b = b">
+<case_plus x=1 y=5>La loi admet un élément absorbant "b"</case_plus>
+<case x=2 y=5 content="7 * 0 = 0 dans R(*)">
+
+<case x=0 y=6 content="a # b = b ET b n'a pas d'opposé">
+<case_plus x=1 y=6>La loi est dite intègre</case_plus>
+<case x=2 y=6 content="7 * 0 = 0 ET 0 n'a pas d'opposé (d'inverse) dans R(*)">
+
+<case_plus x=0 y=7>Pour tout a et b dans E(.), "a &lt; b ?" est défini</case_plus>
+<case_plus x=1 y=7>La structure est dite complètement ordonnée</case_plus>
+<case_plus x=2 y=7>Pour tout a et b dans R(.), "a &lt; b ?" est défini</case_plus>
+
+<case x=0 y=8 content="a &lt; b ET il existe n tel que a * n &gt; b">
+<case_plus x=1 y=8>La structure est dite archimédienne</case_plus>
+<case x=2 y=8 content="a &lt; b ET a * ((b / a) + 1) &gt; b dans R(.)">
+
+</table>
+
+<p>
 Une opération est dite associative si l'ordre d'opération lors de l'introduction d'un 3ème élément n'importe pas (quelque soit l'ordre et les éléments).
 </p>
-<math><mforall><mi>a, b, c</mi><min><mi>E</mi><mo>,</mo><mi>(a . b) . c</mi><mo>=</mo><mi>a . (b . c)</mi><mo>=</mo><mi>a . b . c</mi></math>
+<math><mforall><mi>a, b, c</mi><min><mi>E</mi><mo>,</mo><mi>(a # b) # c</mi><mo>=</mo><mi>a # (b # c)</mi><mo>=</mo><mi>a # b # c</mi></math>
 <p>
 Dans la même idée, <span class="important">une opération est dite commutative si l'ordre d'opération des deux opérandes n'importe pas</span> (quelque soit l'ordre et les éléments).
 Ce n'est, par exemple, pas le cas de la division (3 / 2 n'est pas 2 / 3).
 </p>
-<math><mforall><mi>a, b</mi><min><mi>E</mi><mo>,</mo><mi>a . b</mi><mo>=</mo><mi>b . a</mi></math>
+<math><mforall><mi>a, b</mi><min><mi>E</mi><mo>,</mo><mi>a # b</mi><mo>=</mo><mi>b # a</mi></math>
 <p>
 Si, dans une équation, il existe un moyen de simplifier les deux membres en elevant l'opération, l'opération est dite régulière.
 Par exemple, l'addition l'est : il est possible de simplifier des membres d'équations en y appliquant une soustraction.
 Pour une quelconque opération, <span class="important">un élément (si il existe) qui ne modifie pas l'autre opérande de l'opération est dit neutre</span>.
 Pour l'addition de nombres, il s'agit du nombre 0, et pour la multiplication de nombres, il s'agit du nombre 1.
 </p>
-<math><mforall><mi>a</mi><min><mi>E</mi><mo>,</mo><mi>a . n</mi><mo>=</mo><mi>a</mi></math>
+<math><mforall><mi>a</mi><min><mi>E</mi><mo>,</mo><mi>a # n</mi><mo>=</mo><mi>a</mi></math>
 <p>
 Via un élément, <span class="important">vous pouvez retrouver l'élément neutre d'une loi de composition interne A avec un élément E : cet élément s'appelle le symétrique de E par A</span>.
 Dans le cas de l'addition, cet élément est nommé l'opposé de E.
@@ -48,10 +91,10 @@ De plus, <span class="important">la multiplication d'un élément F avec l'inver
 Il est à noter que la fonction inverse est souvent connue comme la fonction "f(x)=1/x", formant deux courbes précises.
 Or, <span class="important">cette forme n'est valable que pour l'ensemble des nombres réels, elle est différente dans d'autres algèbres</span>.
 </p>
-<graphic><function expression="1/x"></function></graphic>
+<graphic><background_color white><function expression="1/x"></function></graphic>
 
 <h2>Les types de structures algébriques</h2>
-<h3>Les magmas, monoïdes et groupes</h3>
+<h3 id="groups">Les magmas, monoïdes et groupes</h3>
 <p>
 En algèbre, <span class="important">un magma est une structure algébrique avec une loi de composition interne quelconque</span>.
 Dans un magma, la loi de composition peur avoir (ou ne pas avoir) n'importe quelle propriété.
@@ -64,14 +107,50 @@ De même, la structure algébrique constituée de l'ensemble des nombres entiers
 <span class="important">Si la loi de composition interne est commutative, le groupe est dit abélien</span>.
 </p>
 <graphic>
+<base width=10 height=10>
 <rect background_color=white border_radius=0 x=-5 y=-5 width=10 height=10>
-<text background_color=transparent y=4 content="Magma">
 <rect background_color=green border_radius=1 x=-9/2 y=-4 width=9 height=13/2>
-<text background_color=transparent y=3/2 content="Monoïde">
 <rect background_color=yellow border_radius=1 x=-4 y=-3 width=8 height=7/2>
-<text background_color=transparent y=-1 content="Groupe">
+<text background_color=transparent y=4 content="Magma"></text>
+<text background_color=transparent y=3/2 content="Monoïde"></text>
+<text background_color=transparent y=-1 content="Groupe"></text>
 </graphic>
 <p>
 <span class="important">La théorie étudiant ces structures est nommée la théorie des groupes.
 L'idée même de cette théorie est de définir une base très stable pour toutes les structures de groupe, très communes en mathématiques.
 </p>
+
+
+
+<h2>Les autres opérations possibles</h2>
+
+<h3>La puissance</h3>
+<p>
+Dans une algèbre munie de la multiplication, il est possible de définir une autre opération, qui n'est pas toujours une loi de composition interne : la puissance.
+En algèbre, <span class="important">la définition la plus basique de la puissance est la répétition de l'opération multiplication sur un même élément</span>.
+Cependant, si n est égal à 0, alors le résultat représente l'identité de l'algèbre utilisé.
+Généralement, "n" est appelé "exposant", en raison de sa typographie (petit, en haut).
+</p>
+<math><mi>a</mi><msup>n</msup><mo>=</mo><mi>a</mi><mo>^</mo><mi>n</mi><mo>=</mo><mi>a</mi><mo>*</mo><mi>a</mi><mo>*</mo><mi>... (n times)</mi><mo>*</mo><mi>a</mi></math>
+<p>
+En théorie, "n" ne peut qu'être un entier naturel.
+En pratique, définir cette avec "n" étant un autre type de nombre n'est pas aberrant.
+<span class="important">Si "n" est un entier relatif, il est soit positif (il se comporte comme un nombre entier naturel), soit négatif, ce qui implique d'utiliser l'opération inverse pour changer la forme de la puissance, et revenir à une forme résoluble</span>.
+Si cette inverse n'est pas possible, alors cette puissance est impossible également.
+</p>
+<math><mforall><mi>n</mi><mo>&lt;</mo><mi>0</mi><mo>,</mo><mi>a</mi><mo>^</mo><mi>n</mi><mo>=</mo><mfrac><mrow>1</mrow><mrow><mi>a</mi><msup>-n</msup></mrow></mfrac><mo>&lt;=&gt;</mo><mforall><mi>m</mi><mo>=</mo><mi>-n</mi><mo>ET</mo><mi>m</mi><mo>&gt;</mo><mi>0</mi><mo>,</mo><mi>a</mi><mo>^</mo><mi>n</mi><mo>=</mo><mfrac><mrow>1</mrow><mrow><mi>a</mi><msup>m</msup></mrow></mfrac></math>
+<p>
+Cependant, ce résultat peut aussi se généraliser pour les fractions.
+En effet, <span class="important">si "n" est une fraction, il est soit entier (il se comporte comme un nombre entier relatif), soit non, ce qui se calcul en mettant à la racine base dénominateur le nombre puissance numérateur</span>.
+</p>
+<math><mforall><mi>n</mi><mo>=</mo><mfrac><mi>b</mi><mi>c</mi></mfrac><mo>,</mo><mi>a</mi><msup>n</msup><mo>=</mo><msup>c</msup><msqrt><mrow><mi>a</mi><msup>b</msup></mrow></msqrt></math>
+<p>
+Finalement, il existe aussi une définition pour les nombres réels, voir même complexe.
+Effectivement, <span class="important">si "Z" est un nombre réel / complexe, il est soit une fraction (il se comporte comme une fraction), soit non, ce qui oblige à le calculer en utilisant une formule assez simple utilisant l'exponentielle et le logarithme népérien</span>.
+En fait, l'exponentielle peut représenter une puissance de réel / complexe, bien qu'il soit aussi possible de le calculer via sa forme développée en série entière, bien plus facile à faire (même chose pour le logarithme népérien).
+</p>
+<math><mforall><mi>n</mi><min><mi>R</mi><mo>,</mo><mi>a</mi><msup>n</msup><mo>=</mo><mi>exp(a * ln(n))</mi></math>
+<p>
+Pour rappel, <span class="important">l'exponentielle complexe se calcule via la formule d'Euler</span>.
+</p>
+<math><mforall><mi>z</mi><min><mi>C</mi><mo>,</mo><mi>e</mi><msup>z</msup><mo>=</mo><mi>r</mi><mo>*</mo><mo>(</mo><mi>cos(a)</mi><mo>+</mo><mi>i</mi><mo>*</mo><mi>sin(a)</mi><mo>)</mo></math>

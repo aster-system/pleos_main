@@ -1,0 +1,15 @@
+<new_definition name="physical_quantity">
+    <content>une grandeur physique est une propriété d'un objet ou phénomène physique, mesurable ou calculable pour en obtenir une valeur caractérisant l'objet / le phénomène</content>
+</new_definition>
+<new_definition name="physical_unit">
+    <content>une unité physique représente une valeur (plus ou moins) absolue, comparable avec une mesure d'une grandeur physique d'un objet, pour caractériser plus précisément l'objet / le phénomène étudié</content>
+</new_definition>
+<new_definition name="physical_unit_base">
+    <content>une unité physique est dite fondamentale si elle ne peut pas s'exprimer de manière plus basique qu'avec son unité directement</content>
+</new_definition>
+<new_definition name="physical_unit_derived">
+    <content>une unité physique est dite dérivée si elle utiliser d'autres unités pour s'exprimer</content>
+</new_definition>
+<new_definition name="physical_unit_system">
+    <content>un système d'unité physique représente un ensemble d'unités fondamentales permettant de mesurer toutes les grandeurs possibles</content>
+</new_definition>

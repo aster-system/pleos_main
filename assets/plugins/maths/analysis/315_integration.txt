@@ -11,6 +11,7 @@ Dans ce même graphique, <span class="important">l'aire entre la droite des absc
 Pour obtenir cette aire, on peut définir "n" rectangles entre la courbe et la droite des abscisses, et obtenir une approximation de l'aire avec la somme de l'aire de ces rectangles.
 </p>
 <graphic>
+    <background_color white>
     <base width=5 height=5>
     <function expression="x/3">
         <curve_area number=5 area_end=2>

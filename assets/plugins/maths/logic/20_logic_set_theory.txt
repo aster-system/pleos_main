@@ -45,9 +45,21 @@ Cet axiome n'est pas toujours nécessaire.
 <h3>Les ensembles</h3>
 <p>
 Les ensembles ont beaucoup de propriétés très intéressantes.
+</p>
+<p>
 <important>Si les éléments d'un ensemble sont tous comparables entre eux, l'ensemble est dit ordonné : il s'agit d'une relation dite "d'ordre total" sur l'ensemble</important>.
 Dans certains cas (mais pas tous), un ensemble peut avoir un plus petit élément : il est dit bien ordonné.
 Ce système de comparaison implique un ordre précis, et distinguable par une syntaxe.
+C'est le cas de tous les ensembles de nombres, disposant d'une évidente relation d'ordre entre eux.
+Il peut exister un élément dans / or de l'ensemble ordonné tel que tous les autres éléments de l'ensemble sont inférieurs ou égaux à lui : cette élément est appelé un majorant (et oui, il n'est pas nécessairement dans l'ensemble étudié, et il peut en avoir une infinité selon les cas).
+Si un des majorants (en général, le plus petit) se trouve dans l'ensemble, ce majorant se nomme borne supérieure.
+Dans l'ensemble {1, 2, 3}, 5 est un des majorants, mais 3 est la borne supérieure.
+<span class="important">Si tous les sous-ensembles / parties possibles d'un ensemble possède une borne supérieure, alors l'ensemble de départ possède une propriété nommée propriété de la borne supérieure</span>.
+C'est par exemple le cas des nombres réels (tous ces sous-ensembles / intervalles possèdent une borne supérieure).
+Or, ce n'est pas le cas de l'ensemble des nombres naturel (l'ensemble, par exemple, des carrés de "n" inférieurs à 5 a pour borne supérieure racine de 5, mais n'a que "3" comme plus petit majorant dans N), ni des nombres relatifs et rationnels.
+Tout ça dépend énormément du contexte d'utilisation de l'ensemble, mais il en découle des propriétés très intéressante quand même.
+</p>
+<p>
 Si nous pouvons positionner les éléments d'un ensemble bien ordonné via une suite de nombres entiers naturels finie, alors l'ensemble est dit cardinal.
 De plus, <span class="important">le terme "cardinal" d'un ensemble est aussi utilisé pour désigner le nombres d'éléments présents dans cet ensemble</span>.
 D'ailleurs, ce nombre peut être infini : on parle d'infini dénombrable (l'infini des nombres naturels), noté ℵ0.

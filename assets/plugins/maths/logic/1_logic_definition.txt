@@ -29,9 +29,10 @@ Comme tous concepts de ce genre, <important>elle utilise son propre langage, dé
 <p>
 Comme pour la logique simple, la logique en mathématique permet de former une affirmation à partir d'autres affirmations plus primaires.
 En mathématique, les affirmations les plus primaires de chaque branches sont nommées des axiomes.
-<important>Les axiomes sont des propositions théoriquement indémontrées (mais qui, en pratique, sont tout à fait """"logiques""""", en accord avec les autres sciences et ne nécessitent pas de démonstration) qui servent de bases à toutes les mathématiques</important>.
+<span class="important"><definition name="axiom"></span>.
 En général, chaque branche utilise plusieurs axiomes différents, comme la géométrie qui peut utiliser les 26 axiomes de Hilbert.
-Grâce à ces axiomes, <important>on peut réaliser des propositions un peu plus complexes, nommées des démonstrations</important>.
+Grâce à ces axiomes, on peut réaliser des propositions un peu plus complexes, nommées des démonstrations.
+Pour être précis, <span class="important"><definition name="demonstration"></span>.
 Les démonstrations peuvent utiliser plusieurs axiomes, ou d'autres démonstrations (pouvant utiliser eux même des axiomes ou d'autres démonstrations...).
 Ce phénomène de lien axiomes-théorèmes est nommée la déduction logique.
 D'ailleurs, <important>une affirmation démontrée comme vraie est nommée un théorème</important>.

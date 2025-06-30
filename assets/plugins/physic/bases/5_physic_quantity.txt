@@ -1,0 +1,41 @@
+<h1>Les grandeurs physiques</h1>
+
+
+
+<h2>Caractériser des phénomènes physiques</h2>
+
+<h3>Qu'est ce qu'est une grandeur physique ?</h3>
+<p>
+Aussi évident qu'elle semble, cette partie est assez importante pour comprendre la différence "grandeur" / "unité" / "symbole" / ...
+En physique, <span class="important"><definition name="physical_quantity"></span>.
+Elle est assez difficile à définir sans exemples concrets.
+Un exemple de grandeur physique est la taille d'un objet : on peut la mesurer / la calculer.
+Dans le cas d'un phénomène, on peut citer la vitesse d'une balle.
+</p>
+
+<h3>Les unités physiques</h3>
+<p>
+Pour des raisons de praticité, le plus simple est de comparer la grandeur mesurée avec une grandeur "basique".
+Pour cela, on utilise le concept d'unité physique.
+<span class="important"><definition name="physical_unit"></span>.
+Dans notre exemple pris plus haut, l'unité de la taille d'un objet est le mètre.
+Pour le phénomène, l'unité de sa vitesse est le mètre par secondes.
+En général, <span class="important">chaque unité est définie via une valeur (plus ou moins) absolue pour pouvoir être similaire partout</span>.
+Par exemple, 1 mètre représente (depuis 1983) la longueur parcouru par la lumière en 1/299792458 seconde.
+Cependant, certaines unités dites "dérivées" peuvent être exprimés avec d'autres unités plus basiques nommées "fondamentales".
+Dans ce cas, <span class="important"><definition name="physical_unit_base"></span>.
+Cela implique qu'une unité fondamentale est indépendante de toutes les autres unités existantes.
+C'est le cas du mètre : il n'existe pas d'unité plus "basique" pour décomposer le mètre.
+À l'inverse, <span class="important"><definition name="physical_unit_derived"></span>.
+C'est le cas du mètre par seconde : il se décompose en... mètre et en seconde.
+</p>
+<p>
+Certains unités nécessitent d'utiliser des valeurs très grandes / petites.
+Pour simplifier la notation, les scientifiques ont inventé le concept de préfixe.
+</p>
+<p>
+Dans l'histoire, il a été longtemps envisagé de "catégoriser" la nature des grandeurs utilisées, via leurs unités, et de les réunir sous une structure précise permettant d'entièrement mesuré le monde.
+Ces structures sont nommées les systèmes d'unités.
+<span class="important"><definition name="physical_unit_system"></span>.
+Le plus connu est aussi le plus utilisé : le Système International d'unité.
+</p>

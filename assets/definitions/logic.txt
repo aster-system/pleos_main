@@ -1,0 +1,7 @@
+<new_definition name="axiom">
+    <content>les axiomes sont des propositions théoriquement indémontrées (mais qui, en pratique, sont tout à fait """"logiques""""", en accord avec les autres sciences et ne nécessitent pas de démonstration) qui servent de bases à toutes les mathématiques</content>
+</new_definition>
+
+<new_definition name="demonstration">
+    <content>une démonstration mathématique représente le chemin permettant d'aller des axiomes au théorème recherché</content>
+</new_definition>

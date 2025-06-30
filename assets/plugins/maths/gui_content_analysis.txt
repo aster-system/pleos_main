@@ -25,21 +25,7 @@
 //***************************************************
 
 <gui_object name="maths_functions_definitions_body" type="text" sub_page>
-    <content max_width=0 src="functions/301_function_definition.txt"></content>
-	<height value=7/8 type=scale>
-	<parent name="maths_functions_page">
-	<texture alignment_horizontal=left alignment_vertical=top>
-    <width value=9/10 type=scale>
-	<x value=1/2 type=object_scale>
-	<y attach=bottom>
-</gui_object>
-
-//***************************************************
-// Special forms
-//***************************************************
-
-<gui_object name="maths_functions_forms_body" type="text" sub_page>
-    <content max_width=0 src="functions/305_function_forms.txt"></content>
+    <content max_width=0 src="analysis/301_definitions.txt"></content>
 	<height value=7/8 type=scale>
 	<parent name="maths_functions_page">
 	<texture alignment_horizontal=left alignment_vertical=top>
@@ -53,7 +39,7 @@
 //***************************************************
 
 <gui_object name="maths_functions_exponential_body" type="text" sub_page>
-    <content max_width=0 src="functions/320_function_exponential.txt"></content>
+    <content max_width=0 src="analysis/320_exponential.txt"></content>
 	<height value=7/8 type=scale>
 	<parent name="maths_functions_page">
 	<texture alignment_horizontal=left alignment_vertical=top>
@@ -67,7 +53,7 @@
 //***************************************************
 
 <gui_object name="maths_functions_integration_body" type="text" sub_page>
-    <content max_width=0 src="functions/315_function_integration.txt"></content>
+    <content max_width=0 src="analysis/315_integration.txt"></content>
 	<height value=7/8 type=scale>
 	<parent name="maths_functions_page">
 	<texture alignment_horizontal=left alignment_vertical=top>

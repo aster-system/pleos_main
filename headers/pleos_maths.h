@@ -230,7 +230,6 @@ namespace pleos {
         void display_geometry_vector_page(){display_geometry_page();set_current_page(PLEOS_MATHS_GEOMETRY_VECTOR_PAGE);geometry_vector_page()->set_visible(true);};
         // Displays the logic page
         void display_logic_page(){hide_all();logic_page()->set_visible(true);set_current_page(PLEOS_MATHS_LOGIC_PAGE);};
-        void display_logic_definitions_page(){display_logic_page();set_current_page(PLEOS_MATHS_LOGIC_DEFINITIONS_PAGE);logic_definitions_page()->set_visible(true);};
         void display_logic_language_page(){display_logic_page();set_current_page(PLEOS_MATHS_LOGIC_LANGUAGE_PAGE);logic_language_page()->set_visible(true);};
         void display_logic_set_theory_page(){display_logic_page();set_current_page(PLEOS_MATHS_LOGIC_SET_THEORY_PAGE);logic_set_theory_page()->set_visible(true);};
 
@@ -331,7 +330,7 @@ namespace pleos {
         GUI_PAGE(scls::GUI_Text_Base<Text>, a_home_definition_page, PLEOS_MATHS_HOME_PAGE, home_definition_page, display_home_definition_page, display_home_page);
 
         // Returns logic
-        inline scls::GUI_Text* logic_definitions_page() const {return a_logic_definitions_page.get();};
+        GUI_PAGE(pleos::GUI_Text, a_logic_definitions_page, PLEOS_MATHS_LOGIC_DEFINITIONS_PAGE, logic_definitions_page, display_logic_definitions_page, display_logic_page);
         inline scls::GUI_Text* logic_language_page() const {return a_logic_language_page.get();};
         GUI_PAGE(pleos::GUI_Text, a_logic_propositional_page, PLEOS_MATHS_LOGIC_PROPOSITIONAL_PAGE, logic_propositional_page, display_logic_propositional_page, display_logic_page);
         inline scls::GUI_Text_Base<Text>* logic_set_theory_page() const {return a_logic_set_theory_page.get();};
@@ -438,7 +437,6 @@ namespace pleos {
         std::shared_ptr<scls::GUI_Text_Input> a_geometry_redaction_vector_y;
 
         // Logic page
-        std::shared_ptr<scls::GUI_Text> a_logic_definitions_page;
         std::shared_ptr<scls::GUI_Text> a_logic_language_page;
         std::shared_ptr<scls::GUI_Text_Base<Text>> a_logic_set_theory_page;
     };

@@ -38,20 +38,19 @@
 		<choice name="algebra_solver">Solveur</choice>
 	</sub_choice>
 
+	<sub_choice name="analysis" displayer="L'analyse">
+		<choice name="analysis_definitions">Définitions basiques</choice>
+		<choice name="analysis_integration">L'intégration de fonctions</choice>
+		<choice name="analysis_exponential">La fonction exponentielle</choice>
+		<choice name="analysis_redaction">Calculs rédigés</choice>
+		<choice name="analysis_graphic">Représentation graphique</choice>
+	</sub_choice>
+
 	<sub_choice name="arithmetic" displayer="L'arithmétique">
 		<choice name="arithmetic_definitions">Définitions basiques</choice>
 		<choice name="arithmetic_numbers_sets">Ensembles de nombres</choice>
 		<choice name="arithmetic_division">La division</choice>
 		<choice name="arithmetic_calculator">Calculateur</choice>
-	</sub_choice>
-
-	<sub_choice name="functions" displayer="Fonctions">
-		<choice name="functions_definitions">Définitions basiques</choice>
-		<choice name="functions_forms">Des formes bien connues</choice>
-		<choice name="functions_integration">L'intégration de fonctions</choice>
-		<choice name="functions_exponential">La fonction exponentielle</choice>
-		<choice name="functions_redaction">Calculs rédigés</choice>
-		<choice name="functions_graphic">Représentation graphique</choice>
 	</sub_choice>
 	
 	<sub_choice name="geometry" displayer="Géométrie">
@@ -123,8 +122,8 @@
 //***************************************************
 
 <include src="gui_content_algebra.txt">
+<include src="gui_content_analysis.txt">
 <include src="gui_content_arithmetic.txt">
-<include src="gui_content_function.txt">
 <include src="gui_content_geometry.txt">
 <include src="gui_content_logic.txt">
 <include src="gui_content_random.txt">

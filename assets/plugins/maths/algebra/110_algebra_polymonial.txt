@@ -36,7 +36,7 @@ Grâce à ça, on peut appliquer tous les outils des fonctions sur une forme pol
 <p>
 En algèbre, <span class="important">une équation constituée d'un polynôme "P" tel que "P(x) = 0" est nommée une équation polynomiale</span>.
 L'intérêt de ces équations est la facilité que représente le fait de passer d'une équation quelconque à une équation polymoniale.
-<span class="important">Les valeurs de "x" rendant cette équation vraie sont nommées les racines du polynome "P"</span>.
+<span class="important">Les valeurs de "x" rendant cette équation vraie sont nommées les racines du polynôme "P"</span>.
 Il est à noter qu'un polynôme ne peut avoir au maximum que le même nombre de racines que sont degré, qui peuveut se situer dans un corps supérieur.
 </p>
 
@@ -58,4 +58,11 @@ Cela est possible pour un degré 1 (simple résolution d'équation avec un quoti
 <p>
 Il est possible de défnir une division euclidienne dans un anneau de polynômes.
 En effet, <span class="important">pour deux polynômes "X" et "Y", il existe (au moins) deux autres polynômes "Z" et "W" tel que "X = ZY + W"</span>.
+</p>
+
+<h3>La dérivation</h3>
+<p>
+La dérivation d'un polynôme est une tâche assez simple.
+<span class="important">Pour un monôme quelconque "a * X exposant n", sa dérivée est "(a * n) X exposant n - 1"</span>.
+Comme la dérivée d'une somme est la somme de ces dérivées, alors la dérivée somme de monôme (donc, un polynôme) peut s'exprimer comme la dérivée du polynôme.
 </p>

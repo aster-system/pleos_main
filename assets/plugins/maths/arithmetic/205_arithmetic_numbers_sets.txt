@@ -2,9 +2,9 @@
 
 
 
-<h2>Les nombres réels</h2>
+<h2>Les ensembles dénombrables</h2>
 
-<h3>Les nombres naturels</h3>
+<h3>Les nombres naturels et relatifs</h3>
 <p>
 L'ensemble de nombre le plus intuitif est l'ensemble des nombres naturels.
 <important>L'ensemble des nombres naturels représente tous les nombres qui peuvent représenter dans la réalité une quantité entière</important>.
@@ -17,7 +17,8 @@ Quand on arrive au nombre après 9, alors on rajoute un "1" avant, et un "0" apr
 Ce même 0 deviendra un 9, qui demandera en suite d'ajouter 1 au nombre d'avant, pour devenir un "2" suivi d'un "0" : le nombre suivant "19" est "20".
 </p>
 <p>
-Pour définir les entiers naturels, <important>il existe une axiomatisation particulièrement simple : les axiomes de Peano</important>.
+Les entiers naturels sont très bien <a href="logic#axioms">axiomatisés</a>.
+En effet, pour définir les entiers naturels, <important>il existe une axiomatisation particulièrement simple : les axiomes de Peano</important>.
 Le premier axiome admet l'existence du premier élément des entiers naturels : 0.
 Le deuxième axiome admet que tout nombre naturel possède un successeur (dans le cas de 0, le successeur est 1).
 Le troisième axiome dit que 0 ne peut pas être un successeur d'un autre nombre.
@@ -27,4 +28,56 @@ Avec cette axiome, <important>nous pouvons créer une algèbre des nombres entie
 L'axiome 3 garanti que 0 est l'élément neutre du groupe des entiers naturels.
 Grâce à l'axiome 2 et 4, <important>nous pouvons définir l'addition dans le groupe des entiers naturels :  a + b représente la valeur obtenue après être passé de successeur en successeur b fois, en partant de a</important>.
 C'est une reformulation de la définition intuitive de l'addition.
+</p>
+
+<h3>Les nombres rationnels</h3>
+<p>
+Un ensemble abordé dés l'entré au collège est l'ensemble des nombres rationnels.
+<important>Un nombre rationnel représente l'ensemble de nombres pouvant s'écrire comme une division d'un nombre relatif "a" et d'un nombre naturel positif "b", sous la forme de ce que l'on appelle une fraction</important>.
+Ici, "a" est nommé le numérateur, et "b" est nommé le dénominateur.
+Si "b" est égal à 1, alors la fraction est aussi un nombre entier naturel.
+Cependant, si "b" peut s'exprimer sous la forme d'une puissance de 10, alors le nombre est dit décimal, et il est possible de l'écrire comme un nombre avec virgule, et avec une quantité finie de caractères nécessaires.
+Si ce n'est pas possible, alors une propriété basique des fractions assurent que, au bout d'un moment, leur écriture devient périodique : elle se répète indéfiniment via la même suite de chiffres.
+</p>
+<math><mfrac><mi>a</mi><mi>b</mi></mfrac></math>
+<p>
+Les fractions sont soumise à une algèbre assez connue et intuitive.
+<span class="important">L'addition de deux fractions représente une fraction de numérateur la somme du dénominateur de la première fraction multiplié par le numérateur de la deuxième fraction et du dénominateur de la deuxième fraction multiplié par le dénominateur de la deuxième fraction, et de dénominateur le produit des deux dénominateur</span>.
+Elle permet de donner à la structure algèbrique des fractions munie de l'addition <a href="algebra/groups">la propriété d'être un groupe abélien</a>.
+De plus, <span class="important">la multiplication de deux fractions représente une fraction de numérateur le produit des numérateurs des deux fonctions, et de dénominateur le produit des dénominateurs des deux fonctions</span>.
+Elle permet de donner à la structure algèbrique des fractions munie de l'addition et de la multiplication <a href="algebra/structures">la propriété d'être un corps commutatif</a>.
+Avec des mots plus simples : toutes les techniques opératoires basiques (de collège / lycée) sont applicables aux fonctions.
+De plus, l'addition et la multiplication nécessite les propriétés calculatoires... des nombres naturels / relatifs, rendant le calcul très simple.
+Toutes les opérations en dépendant respectent les mêmes propriétés découlantes.
+Une relation d'égalité est bel est bien définie : deux nombre rationnels sont égaux si le produit du numérateur du premier par le dénominateur du second est égal au produit du numérateur du second par le dénominateur du premier.
+Cela implique quelque chose d'assez étrange : <span class="important">deux nombre rationnels peuvent être égaux même si ils n'ont pas le même numérateur / dénominateur</span>.
+En effet, le quotient de deux nombres peut être le même que celui de deux nombres différents (comme 4/2 = 8/4).
+Ici, <span class="important">la fraction la plus simple représente celle qui est la plus proche de 0, et où aucune simplification n'est possible : on parle de fraction irréductible</span>.
+L'irréductibilité de deux fractions implique que le numérateur et le dénominateur soient premiers entre eux.
+</p>
+<table>
+
+<case x=0 y=0 content="Addition de fraction">
+<case_plus x=0 y=1><math><mfrac><mi>a</mi><mi>b</mi></mfrac><mo>+</mo><mfrac><mi>c</mi><mi>d</mi></mfrac><mo>=</mo><mfrac><mi>a*d+c*b</mi><mi>b*d</mi></mfrac></math> </case_plus>
+<case x=1 y=0 content="Multiplication de fraction">
+<case_plus x=1 y=1><math><mfrac><mi>a</mi><mi>b</mi></mfrac><mo>*</mo><mfrac><mi>c</mi><mi>d</mi></mfrac><mo>=</mo><mfrac><mi>a*c</mi><mi>b*d</mi></mfrac></math></case_plus>
+
+<case x=0 y=2 content="Soustraction de fraction">
+<case_plus x=0 y=3><math><mfrac><mi>a</mi><mi>b</mi></mfrac><mo>-</mo><mfrac><mi>c</mi><mi>d</mi></mfrac><mo>=</mo><mfrac><mi>a*d-c*b</mi><mi>b*d</mi></mfrac></math></case_plus>
+<case x=1 y=2 content="Division de fraction">
+<case_plus x=1 y=3><math><mfrac><mi>a</mi><mi>b</mi></mfrac><mo>/</mo><mfrac><mi>c</mi><mi>d</mi></mfrac><mo>=</mo><mfrac><mi>a*d</mi><mi>b*c</mi></mfrac></math></case_plus>
+
+<case x=0 y=4 content="Exposant de fraction">
+<case_plus x=0 y=5><math><mo>(</mo><mfrac><mi>a</mi><mi>b</mi></mfrac><mo>)</mo><msup>c</msup><mo>=</mo><mfrac><mrow><mi>a</mi><msup>c</msup></mrow><mrow><mi>b</mi><msup>c</msup></mrow></mfrac></math></case_plus>
+<case x=1 y=4 content="Racine de fraction">
+<case_plus x=1 y=5><math><mo>sqrt(</mo><mfrac><mi>a</mi><mi>b</mi></mfrac><mo>)</mo><mo>=</mo><mfrac><mrow><mi>sqrt(a)</mi></mrow><mrow><mi>sqrt(b)</mi></mrow></mfrac></math></case_plus>
+
+</table>
+<p>
+L'obtension de la forme décimale d'un nombre rationnel depuis la fraction est une étape assez intéressante dans leur étude.
+En effet, <span class="important">si la fraction peut être écrite avec, comme dénominateur, une puissance de la base souhaitée (via une multiplication), alors on peut décomposer le numérateur sous la forme de la somme de produit d'une partie du nombre (après multiplication) et d'une puissance de la base souhaitée</span>.
+En suite, vous devez adapter l'écriture à la puissance choisie en dénominateur, pour obtenir le développement nécessaire.
+C'est la façon la plus simple et intuitive de faire.
+Dans le cas de la base 10, alors on obtient le développement précis du nombre décimal.
+Si ce n'est pas possible, <span class="important">alors une autre méthode est de multiplier le nombre par une puissance de la base, et d'effectuer des divisions euclidiennes pour obtenir un développement décimal, jusqu'à trouver une forme périodique</span>.
 </p>

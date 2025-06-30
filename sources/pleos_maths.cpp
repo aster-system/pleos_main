@@ -106,7 +106,7 @@ namespace pleos {
         GUI_OBJECT_CREATION(scls::GUI_Text_Base<Text>, a_home_definition_page, "maths_home_definitions_body")
 
         // Logic
-        else if(object_name == "maths_logic_definitions_body") {a_logic_definitions_page = *parent->new_object<scls::GUI_Text>(object_name);return a_logic_definitions_page;}
+        GUI_OBJECT_CREATION(pleos::GUI_Text, a_logic_definitions_page, "maths_logic_definitions_body")
         else if(object_name == "maths_logic_language_body"){a_logic_language_page = *parent->new_object<scls::GUI_Text>(object_name);return a_logic_language_page;}
         GUI_OBJECT_CREATION(pleos::GUI_Text, a_logic_propositional_page, "maths_logic_propositional_body")
         else if(object_name == "maths_logic_set_theory_body"){a_logic_set_theory_page = *parent->new_object<scls::GUI_Text_Base<Text>>(object_name);return a_logic_set_theory_page;}
@@ -724,7 +724,7 @@ namespace pleos {
             object_created = PLEOS_MATHEMATICS_GEOMETRY_VECTOR;
 
             // Create the needed vector
-            geometry_vectors_created().push_back(std::make_shared<Point_2D>("", 1, 1));
+            geometry_vectors_created().push_back(std::make_shared<Point_2D>(geometry_redaction_graphic()->graphic_base_shared_ptr(), "", 1, 1));
             geometry_select_vector(geometry_vectors_created()[geometry_vectors_created().size() - 1]);
         }
         else if(current_choice == "form"){
@@ -732,7 +732,7 @@ namespace pleos {
             object_created = PLEOS_MATHEMATICS_GEOMETRY_FORM;
 
             // Create the needed form
-            geometry_form_2d_created().push_back(std::make_shared<pleos::Form_2D>(""));
+            geometry_form_2d_created().push_back(std::make_shared<pleos::Form_2D>(geometry_redaction_graphic()->graphic_base_shared_ptr(), ""));
             geometry_select_form_2d(geometry_form_2d_created()[geometry_form_2d_created().size() - 1]);
         }
         else if(current_choice == "point"){
@@ -740,7 +740,7 @@ namespace pleos {
             object_created = PLEOS_MATHEMATICS_GEOMETRY_POINT;
 
             // Create the needed vector
-            geometry_vectors_created().push_back(std::make_shared<Point_2D>("", 1, 1));
+            geometry_vectors_created().push_back(std::make_shared<Point_2D>(geometry_redaction_graphic()->graphic_base_shared_ptr(), "", 1, 1));
             geometry_vectors_created()[geometry_vectors_created().size() - 1].get()->set_type(Vector_Type::VT_Point);
             geometry_select_vector(geometry_vectors_created()[geometry_vectors_created().size() - 1]);
         }
@@ -1204,10 +1204,9 @@ namespace pleos {
         GUI_OBJECT_SELECTION(display_arithmetic_division_page(), "arithmetic_division")
         GUI_OBJECT_SELECTION(display_arithmetic_numbers_sets_page(), "arithmetic_numbers_sets")
         // Functions pages
-        else if(page == "functions_definitions"){display_functions_definitions_page();}
-        else if(page == "functions_exponential"){display_functions_exponential_page();}
-        else if(page == "functions_forms"){display_functions_forms_page();}
-        GUI_OBJECT_SELECTION(display_functions_integration_page(), "functions_integration")
+        else if(page == "analysis_definitions"){display_functions_definitions_page();}
+        else if(page == "analysis_exponential"){display_functions_exponential_page();}
+        GUI_OBJECT_SELECTION(display_functions_integration_page(), "analysis_integration")
         else if(page == "functions_graphic"){display_functions_redaction_graphic_page();}
         else if(page == "functions_redaction"){display_functions_redaction_page();}
         // Geometry pages
