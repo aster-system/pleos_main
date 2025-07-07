@@ -1,0 +1,9 @@
+<new_definition name="heat_capacity">
+    <content>la capacité thermique d'un matériaux représente la quantité d'énergie nécessaire pour faire monter sa température de 1 kelvin</content>
+</new_definition>
+<new_definition name="heat_transfert">
+    <content>un transfert thermique représente un transfert d'énergie thermique d'un système à un autre</content>
+</new_definition>
+<new_definition name="thermal_conductivity">
+    <content>la conductivité thermique représente la capacité à laquelle un matériau peut transférer son énergie dans un système</content>
+</new_definition>

@@ -1,0 +1,44 @@
+<h1>Algorithme de traçage d'ellipses</h1>
+
+
+
+<h2>La complexe conversion géométrie - informatique</h2>
+
+<h3>Les bases géométriques nécessaires</h3>
+<p>
+Cette algorithme repose sur de la géométrie, beaucoup de géométrie.
+Pour rappel, nous avons <a href="learn/maths/geometry">une section entière du site qui est dédiée à la géométrie</a>.
+Cependant, rappelons quelques définitions.
+<span class="important"><definition name="circle"></span>.
+C'est la forme la plus simple de l'ellipse, bien qu'il n'en soit pas une généralité.
+En géométrie pure, <definition name="ellipse">.
+De manière plus simple, purement 2D et suffisante dans notre contexte, <span class="important">une ellipse est un cercle étiré sur un de ces axes (X ou Y)</span>.
+Théoriquement, un cercle n'est pas une ellipse, car un cercle est aussi une projection d'un cône sur un plan 2D, mais avec un plan coplanaire à la base du cône.
+Cependant, il existe un terme mathématique réunissant les deux mondes (ainsi que les points / segments, aussi obstensibles de cette manière) : l'ellispe dégénérée.
+Dans la suite, sauf contre-indication, <span class="important">le terme ellipse correspondra à l'ellipse OU au cercle</span>.
+</p>
+
+<graphic>
+<background_color white><base draw=false height=10>
+<text x=-2 y=3>Cercle</text><text x=5/2 y=3>Ellipse</text>
+<circle x=-2 radius=3/2><circle x=5/2 radius_x=2 radius_y=1>
+</graphic>
+
+<p>
+Une autre notion assez connue est celle de cercle trigonométrique.
+Pour rappel, <span class="important"><definition name="trigonometric_circle"></span>.
+Grâce aux propriétés de ce cercle, nous allons facilement pouvoir tracer le cercle.
+De plus, nous pourront concevoir un lien entre le cercle trigonométrique et une "ellipse" trigonométrique, qui nous sera aussi très utile.
+</p>
+
+<h3>Le cahier des charges de l'algorithme</h3>
+<p>
+Ici, l'algorithme sera coupé en 3 parties :</br>
+- Traçage de cercle / ellipse</br>
+- Traçage d'une bordure au cercle</br>
+- Délimitation du cercle</br>
+- Rotation de l'ellipse
+</p>
+<p>
+Ces tâches sont triées de la même manière qu'elles ont était conçues.
+</p>

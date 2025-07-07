@@ -47,10 +47,33 @@ Ici, "k" représente la constante de Boltzmann (1,38 * 10 exposant -23 Joules / 
 En effet, il existe plusieurs micro-états qui donnerait des résultats infiniment similaires, mais que nous ne pouvons pas distinguer les uns-des-autres à échelle macroscopique : c'est le "W".
 Le calcul précis de ce nombre revient à la discipline mathématique des probabilités, comme avec une intégration sur l'espace des phases.
 </p>
+
+<h3>La température thermodynamique</h3>
 <p>
 La notion d'entropie est très liée à une autre notion : la température thermodynamique du système.
-<span class="important">La température thermodynamique d'un système, mesurée en kelvins, représente l'agitation des particules qui le constitue</span>.
-Le kelvin est une unité de base du système international.
+<span class="important">La température thermodynamique d'un système, mesurée en kelvins, est une représentation l'agitation des particules qui le constitue (et donc, de leur énergie)</span>.
+Le kelvin est une unité de base du système international, correspondant à la température thermodynamique d'un système.
+Cette définition est assez complexe, puisqu'elle est équivalente à bien d'autres, plus ou moins complexes.
+Elle est peut être facilement utilisée avec le concept de transfert thermique.
+En effet, <span class="important"><definition name="heat_transfert"></span>.
+Une équation existe pour représenter cette relation, avec "dS" l'entropie du système, "dQ" l'énergie transférée en joules et "T" la température thermodynamique du système.
+</p>
+<math><mi>dS</mi><mo>=</mo><mfrac><mi>dQ</mi><mi>T</mi></mfrac></math>
+<p>
+Avec une notion comme ça, on peut s'attendre à avoir un lien entre la température thermodynamique et l'énergie totale du système : il y en a bien une.
+Cependant, elle est assez complexe, et dépend de beaucoup d'autre valeurs.
+Déjà, chaque matériaux possède une propriété nommé la capacité thermique.
+<span class="important"><definition name="heat_capacity"></span>.
+En effet, une même quantité d'énergie peut ne pas induire la même modification à deux systèmes de matériaux différents, mais à température similaire (leur entropie est différente selon leur configuration microscopique).
+Elle est caractériser par pas mal d'aspects microscopiques : structures des molécules, degré de liberté des molécules, masse des molécules...
+En toute logique, elle s'exprime en joule par kelvin.
+Cependant, il ne faut pas confondre cette valeur avec la conductivité thermique.
+Effectivement, <span class="important"><definition name="thermal_conductivity"></span>.
+Elle dépend de la capacité des atomes à transmettre l'agitation entre eux (et donc, de leur distance, de leur énergie, du contact entre eux...).
+Son unité est le watt (puissance) par mètre fois kelvin (puissance thermique transmise pour une certaine surface selon la différence de température).
+Par la même occasion, on peut aussi définir le flux thermique, comme la puissance de l'énergie thermique transmise dans un flux (en watt par mètre carré).
+</p>
+<p>
 Cependant, <span class="important">dans un système à l'équilibre, il est aussi possible de calculer une variation de l'entropie pendant un temps T, correspondant à l'énergie reçu pendant ce temps T divisée par la température thermodynamique du système</span>.
 D'ailleurs, si vous multipliez cette valeur par l'entropie, vous obtenez la quantité d'énergie incapable de créer un travail précis dans le système, nommée énergie libre.
 </p>
@@ -63,4 +86,4 @@ En effet, <span class="important">la seconde loi de la thermodynamique énonce q
 Donc, un système ne peut que perdre son potentiel de travail / devenir désordonné.
 En réalité, il est possible que l'entropie diminue dans certains cas précis, mais assez improbables dans l'univers.
 </p>
-<math><mi>dS</mi><mgt><mo>=</mo><mi>0</mi></math>
+<math><mi>dS</mi><mo>&gt;=</mo><mi>0</mi></math>

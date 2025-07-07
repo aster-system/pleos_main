@@ -25,7 +25,7 @@ Elle fait intervenir la possibilité d'utilisation des outils mathématiques, co
 Comme tous concepts de ce genre, <important>elle utilise son propre langage, décrit plus loin</important>.
 </p>
 
-<h3>Les axiomes</h3>
+<h3 id="axioms">Les axiomes</h3>
 <p>
 Comme pour la logique simple, la logique en mathématique permet de former une affirmation à partir d'autres affirmations plus primaires.
 En mathématique, les affirmations les plus primaires de chaque branches sont nommées des axiomes.

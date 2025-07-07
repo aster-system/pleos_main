@@ -62,7 +62,7 @@ Beaucoup de démonstrations via le produit scalaire se fait via une inégalite (
 
 <h3>Les espaces affines</h3>
 <p>
-En géométrie / algèbre, <span class="important">un espace affine représente un espace géométrique continu obéissant parfaitement aux <a href="geometry_definitions#axioms">axiomes d'Euclide</a>, où les angles et longueurs ne sont pas utilisés</span>.
+En géométrie / algèbre, <span class="important">un espace affine représente un espace géométrique continu obéissant parfaitement aux <a href="geometry#axioms">axiomes d'Euclide</a>, où les angles et longueurs ne sont pas utilisés</span>.
 En fait, il s'agit algébriquement d'un espace vectoriel défini comme <math><mi>R</mi><msup><mi>2</mi></msup></math> plus général, où les valeurs précises n'importent pas (seule l'existence de ces valeurs sous forme d'inconnues compte).
 Nous y retrouvons quand même les notions de parallélisme, d'alignement et de barycentre, mais pas de produit scalaire et d'orthogonalité.
 Cependant, certains théorèmes sont quand même valables dans ces espaces (ceux n'impliquant ni longueurs précises ni angles précis), comme le théorème de Thalès.

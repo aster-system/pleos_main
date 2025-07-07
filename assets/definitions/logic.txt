@@ -1,7 +1,24 @@
 <new_definition name="axiom">
     <content>les axiomes sont des propositions théoriquement indémontrées (mais qui, en pratique, sont tout à fait """"logiques""""", en accord avec les autres sciences et ne nécessitent pas de démonstration) qui servent de bases à toutes les mathématiques</content>
 </new_definition>
-
 <new_definition name="demonstration">
     <content>une démonstration mathématique représente le chemin permettant d'aller des axiomes au théorème recherché</content>
+</new_definition>
+
+
+
+<new_definition name="complete_metric_space">
+    <content>un espace métrique est complet si toutes les suites de Cauchy possibles dans cette espace converge vers un élément de ce même espace</content>
+</new_definition>
+<new_definition name="lub_property">
+    <content>un ensemble E possède la propriété de la borne supérieure si, pour tous ses sous-ensembles F possibles majorés, il est possible de trouver le plus petit des majorants dans E (pas forcément dans F, mais au moins dans E)</content>
+</new_definition>
+<new_definition name="metric_space">
+    <content>un espace métrique est un espace où la notion de "distance" entre deux éléments est définie</content>
+</new_definition>
+<new_definition name="totally_ordered_set">
+    <content>un ensemble totalement ordonnée est un ensemble où il est possible de comparer (et d'avoir le résultat) tous les éléments de l'ensemble avec n'importe quel autre élément de l'ensemble</content>
+</new_definition>
+<new_definition name="upper_bounds">
+    <content>le majorant (ou les majorants, vue qu'il n'est pas unique) d'un sous-ensemble F de l'ensemble E est un élément quelconque de E, tel que ce majorant soit supérieur ou égal à tous éléments de F</content>
 </new_definition>

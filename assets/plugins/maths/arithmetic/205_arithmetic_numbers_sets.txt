@@ -81,3 +81,33 @@ C'est la façon la plus simple et intuitive de faire.
 Dans le cas de la base 10, alors on obtient le développement précis du nombre décimal.
 Si ce n'est pas possible, <span class="important">alors une autre méthode est de multiplier le nombre par une puissance de la base, et d'effectuer des divisions euclidiennes pour obtenir un développement décimal, jusqu'à trouver une forme périodique</span>.
 </p>
+
+<h3>Les nombres réels</h3>
+<p>
+En réalité, les nombres réels sont plus complexes qu'ils n'y paraissent.
+Mathématiquement, <span class="important"><definition name="real_number"></span>.
+En général, on utilise cet ensemble dans un corps commutatif algébrique.
+Via cette définition, on peut définir l'ensemble le plus petit qui les contient tous : l'ensemble des nombres réels R.
+<span class="important"><definition name="real_numbers_set"></span>.
+Beaucoup de mots compliqués et de concepts compliqués, que nous allons définir dés à présent.
+Commençons par la notion de "totalement ordonnée".
+En logique mathématique, <span class="important"><definition name="totally_ordered_set"></span>.
+Bien évidemment, chaque nombre réel est soit supérieur, soit inférieur aux autres.
+Voyons maintenant la notion de "complétude".
+En mathématique, <span class="important"><definition name="complete_metric_space"></span>.
+Ici, <definition name="metric_space">, ce qui est bien évidemment le cas entre deux réels.
+Or, pour chaque résultat possible en mathématique ne donnant qu'une seule valeur précise (à une dimension), il existe une suite de Cauchy (de nombre rationnels) divergeant par elle.
+En terme plus simple : <span class="important">tous les nombres présents possibles dans des problèmes mathématiques se trouvent dans R</span>.
+Par exemple, certains nombres comme racine carré de 2 ne peuvent pas s'écrire sous forme de fraction (il ne sont pas rationnel), mais ils peuvent s'écrire avec une suite de Cauchy : ils sont réels.
+Cette propriété est d'ailleurs un implication de l'autre mentionnée plus haut : la propriété de la borne supérieure.
+En effet, <span class="important"><definition name="lub_property"></span>.
+C'est assez logique, puisque, comme nous l'avons vu, tous les nombres présents dans un problèmes mathématiques sont dans R, et donc un majorant se trouve dans F.
+Tout cela permet de rendre l'espace des nombres réels topologiquement connexe.
+Donc, <span class="important">il n'est pas aberrant de représenter les nombres réels sous forme de figure géométrique : une droite</span>.
+</p>
+
+<graphic>
+<background_color white>
+<base draw=0>
+<real_line length=8>
+</graphic>

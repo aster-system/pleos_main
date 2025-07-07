@@ -1,0 +1,9 @@
+<new_definition name="circle">
+    <content>un cercle est une figure géométrique 2D, tel que tous ses points se trouvent à une distance similaire (appelée "rayon" du cercle) d'un même point, dit "centre" du cercle</content>
+</new_definition>
+<new_definition name="ellipse">
+    <content>une ellipse est une figure géométrique 2D résultant de la projection d'un cône 3D sur un plan 2D passant par son axe de rotation, sans passer par le sommet, ni être coplanaire à la base du cône</content>
+</new_definition>
+<new_definition name="trigonometric_circle">
+    <content>le cercle trigonométrique est un cercle de rayon 1 et de centre le repère du plan, permettant de facilement définir les fonctions trigonométriques</content>
+</new_definition>
