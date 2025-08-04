@@ -1,0 +1,114 @@
+<h1>Température et énergie thermique</h1>
+
+
+
+<h2>L'énergie thermique</h2>
+
+<h3>Qu'est ce qu'est l'énergie thermique ?</h3>
+<p>
+En thermodynamique, <span class="important"><definition name="thermal_energy"></span>.
+Les propriétés de la thermodynamique rendent le calcul de l'énergie thermique précise d'un système très complexe.
+</p>
+
+<h3 id="thermodynamic_temperature">La température thermodynamique</h3>
+<p>
+<span class="important">La température thermodynamique d'un système, mesurée en kelvins, est une représentation de l'agitation des particules qui le constitue (et donc, de leur énergie thermique)</span>.
+Le kelvin est une unité de base du système international, correspondant à la température thermodynamique d'un système.
+Cette définition est assez complexe, puisqu'elle est équivalente à bien d'autres, plus ou moins complexes.
+Elle n'est pas parfaitement équivalent au concept d'énergie thermique, car la définition "agitation des particules" implique d'autres variables que l'énergie des particules.
+Cependant, il existe quand même un lien entre la température thermodynamique et l'énergie totale du système.
+Comme prévu, il est assez complexe, et dépend de beaucoup d'autre valeurs, comme la capacité thermique ou la conductivité thermique du système.
+Par la même occasion, on peut aussi définir le flux thermique, comme la puissance de l'énergie thermique transmise dans un flux (en watt par mètre carré).
+</p>
+<p>
+Cependant, <span class="important">dans un système à l'équilibre, il est aussi possible de calculer une variation de l'entropie pendant un temps T, correspondant à l'énergie reçu pendant ce temps T divisée par la température thermodynamique du système</span>.
+D'ailleurs, si vous multipliez cette valeur par l'entropie, vous obtenez la quantité d'énergie incapable de créer un travail précis dans le système, nommée énergie libre.
+</p>
+<math><mi>dS</mi><mo>=</mo><mfrac><mi>dQ</mi><mi>T</mi></mfrac></math>
+
+
+
+<h2>Calculer les variations d'énergie thermique</h2>
+
+<h3>Les transferts thermiques</h3>
+<p>
+La variation de l'énergie thermique d'un système est très utilisée, grâce au concept de transfert thermique.
+<span class="important"><definition name="heat_transfert"></span>.
+Un transfert n'est observable à échelle macroscopique que si les deux états ne sont pas à l'équilibre (principe 1 de la <a href="introduction">thermodynamique</a>).
+Comme nous parlons d'un transfert d'énergie, <span class="important">un transfert thermique se mesure en joule (ou, plus connu, en calorie)</span>.
+En général, cette énergie transférée est nommée "chaleur".
+Nous pouvons aussi définir un flux thermique, en puissance / énergie par secondes (mesurée en watt).
+</p>
+<p>
+Il existe 3 types de transferts thermiques : conduction, convection et rayonnement.
+<span class="important"><definition name="thermal_conduction"></span>.
+C'est généralement le cas dans un solide, grâce au concept de phonon.
+<definition name="phonon">.
+C'est le genre de transfert ayant lieu quand vous chauffez une cuillère dans une marmite.
+Cependant, il est aussi possible qu'un transfert est lieu, impliquant un mouvement : la convection thermique.
+<span class="important"><definition name="thermal_convection"></span>.
+
+</p>
+
+<h3>La capacité thermique</h3>
+<p>
+Dans un corps quelconque, <span class="important"><definition name="heat_capacity"></span>.
+En toute logique, elle s'exprime en joule par kelvin.
+</p>
+
+<p>
+D'un point de vue moléculaire, un des moyens les plus efficaces pour calculer la capacité thermique d'une molécule est son degré de liberté.
+En thermodynamique, <span class="important"><definition name="degrees_of_freedom"></span>.
+De manière parfaitement logique, l'agitation transmise aux particules va évoluer dans des espaces précis, qui sont quantifiés par leur degré de liberté.
+Donc, plus il y a de liberté, plus il y a d'endroits différents où la molécule peut bouger, plus il faut d'énergie pour provoquer tous ces mouvements.
+Donc, <span class="important">plus il y a de degré de liberté, plus la capacité thermique est élevée</span>.
+</p>
+
+<table>
+<case x=0 y=0 content="Haut degré de liberté (translations + autres)">
+<case x=1 y=0 content="Bas degré de liberté (légères translations)">
+
+<case_plus x=0 y=1>
+<graphic>
+<circle x=0 y=0 radius=1><circle x=-2 y=0 radius=1><circle x=2 y=0 radius=1><circle x=-5 y=0 radius=1><circle x=5 y=0 radius=1>
+<circle x=0 y=3 radius=1><circle x=-2 y=3 radius=1><circle x=2 y=3 radius=1><circle x=-5 y=3 radius=1><circle x=5 y=3 radius=1>
+<circle x=0 y=-3 radius=1><circle x=-2 y=-3 radius=1><circle x=2 y=-3 radius=1><circle x=-5 y=-3 radius=1><circle x=5 y=-3 radius=1>
+</graphic>
+</case_plus>
+
+<case_plus x=1 y=1>
+<graphic>
+<circle x=0 y=0 radius=1><circle x=-2 y=0 radius=1><circle x=2 y=0 radius=1>
+<circle x=0 y=2 radius=1><circle x=-2 y=2 radius=1><circle x=2 y=2 radius=1>
+<circle x=0 y=-2 radius=1><circle x=-2 y=-2 radius=1><circle x=2 y=-2 radius=1>
+</graphic>
+</case_plus>
+
+</table>
+
+<p>
+Cependant, à échelle macroscopique, d'autres choses sont à prendre en compte.
+Déjà, <span class="important">nous pouvons lier la capacité thermique d'une molécule à un ensemble de molécules, grâce à sa capacité thermique molaire</span>.
+De manière, évidente, on peut aussi passer à sa capacité thermique massique, et volumique.
+Donc, <span class="important">la capacité thermique réelle volumique d'un matériaux dépend de sa densité, de sa masse, de ses constituants...</span>
+</p>
+
+<p>
+L'équation la plus simple reliant la capacité thermique aux autres grandeurs possibles (à pression constante) est celle-ci :
+</p>
+<math><mi>C</mi><msub>P</msub><mo>=</mo><mfrac><mrow><mi>Q</mi></mrow><mrow><mi>dT</mi></mrow></mfrac><mo>=</mo><mi>T</mi><mfrac><mrow><mpartial><mi>T</mi></mrow><mrow><mpartial><mi>S</mi></mrow></mfrac></math>
+<p>
+Ici, "<math><mi>C</mi><msub>P</msub></math>" est la capacité thermique, "Q" est la quantité d'énergie échangée pendant le transfert thermique, "dT" et le changement de température après le transfert thermique et "S" l'entropie du système.
+Le lien avec l'entropie permet de faire le lien avec plein d'autres équations très pratiques.
+Dans le premier quotient, <span class="important">on comprend que la capacité thermique représente la quantité d'énergie nécessaire pour faire monter la température de 1 kelvin</span>.
+Ici, on admet le volume comme constant pour simplifier les calculs.
+<span class="important">Dans le cas où le volume est constante, on parle de capacité thermique isochore</span>.
+En effet, <definition name="process_isochoric">.
+</p>
+
+<h3>La conductivité thermique</h3>
+<p>
+<span class="important"><definition name="thermal_conductivity"></span>.
+Elle dépend de la capacité des atomes à transmettre l'agitation entre eux (et donc, de leur distance, de leur énergie, du contact entre eux...).
+Son unité est le watt (puissance) par mètre fois kelvin (puissance thermique transmise pour une certaine surface selon la différence de température).
+</p>

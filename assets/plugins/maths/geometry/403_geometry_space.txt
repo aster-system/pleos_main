@@ -2,11 +2,11 @@
 
 
 
-<h2>Définir le fonctionnement d'une géométrie</h2>
+<h2>Définir le fonctionnement d'une géométrie classique</h2>
 
 <h3>Les espaces vectoriels</h3>
 <p>
-En algèbre, <span class="important">un espace vectoriel d'un corps quelconque (comme celui des réels) est un ensemble précis que l'on peut créer avec ce corps, contenant des vecteurs</span>.
+En algèbre, <span class="important">un espace vectoriel d'un <a href="algebra/structures/corps">corps quelconque (comme celui des réels)</a> est un ensemble précis que l'on peut créer avec ce corps, contenant des vecteurs</span>.
 La définition algébrique d'un vecteur est plus complexe que la définition géométrique, assez simple.
 En effet, <span class="important">un espace vectoriel E (sur un corps K) doit définir pour ces éléments une addition (avec un même élément de E) commutative, associative, avec élément neutre et opposé, et une multiplication distributive avec un élément de K</span>.
 La combinaison de ces additions est nommée combinaisons linéaires, représentant la base de l'algèbre linéaire.
@@ -16,6 +16,7 @@ En effet, ce genre d'ensembles remplissent toutes les conditions nécessaire pou
 De manière assez évidente, <span class="important">les espaces les plus connus sont les espaces vectoriels définis sur le corps des réels, avec des 2-uplets (espace 2D) ou des 3-uplets (espaces 3D)</span>.
 En effet, ces 2-uplets ou 3-uplets, remplissent toutes les conditions nécessaires pour être des espaces vectoriels du corps des réels, et peuvent en plus se présenter comme des points géométriquement représentable.
 </p>
+
 <graphic>
     <background_color red=255 green=255 blue=255>
     <base width=10 height=10>
@@ -23,6 +24,22 @@ En effet, ces 2-uplets ou 3-uplets, remplissent toutes les conditions nécessair
     <point name="B" x=3 y=-1>
     <point name="C" x=4 y=-2>
 </graphic>
+
+<p>
+Beaucoup de théorèmes peuvent être utilisés, mais un des plus importants sont celui de la base incomplète.
+</p>
+
+<p>
+Dans un espace vectoriel, un des invariants le plus importants est le concept de dimension.
+<span class="important"><definition name="vectorial_space_dimension-rigorous"></span>.
+En termes plus simples, <span class="important"><definition name="vectorial_space_dimension"></span>.
+Dans le cas d'un "plan", elle est en général de 2, et dans le cas d'un espace 3D, elle est de 3.
+Ce concept repose sur plusieurs théorèmes, dont celui de la base incomplète et celui de la dimension pour les espaces vectoriels.
+Cependant, nous pouvons extraire des sous-espaces vectoriels à ces espaces vectoriels, engendré par une famille de vecteur.
+<span class="important"><definition name="algebra_rank"></span>.
+Dans le cas d'une application linéaire, <definition name="algebra_rank-linear_application">.
+Ce concept est la base d'un théorème très utilisé : le théorème du rang.
+</p>
 
 <h3>Les espaces euclidiens</h3>
 <p>
@@ -79,4 +96,24 @@ Pour rappel, une fonction transforme un espace en un autre.
 Dans le cas d'une fonction affine, on transforme l'ensemble des réels en un autre ensemble.
 Or, <span class="important">l'ensemble des réels représente une droite (la droite des réels), et l'ensemble obtenu représente... une droite : c'est une application linéaire</span>.
 En fait, la notion d'application affine étend le concept de fonction affine.
+</p>
+
+<h3>Les espaces hermitiens</h3>
+<p>
+Un espace hermitien est un espace un peu plus complexe que les autres... sans mauvais jeu de mot.
+En effet, <span class="important"><definition name="hermitian_space"></span>.
+En soit, le seul concept étrange ici est celui de "produit scalaire hermitien", qui est une simple représentation du produit scalaire dans l'algèbre des complexes.
+Effectivement, <definition name="hermitian_scalar_product">.
+Ici, <definition name="sesquilinearity">.
+Beaucoup de mots compliqués pour des concepts assez simples.
+Grâce à ça, plein de théorème y sont aussi valables : théorème de Pythagore, inégalité de Cauchy-Schwarz...
+</p>
+<math><mi>Semi-linéarité : </mi><mi>f</mi><mo>(</mo><mi>a</mi><mo>+</mo><mi>b</mi><mo>*</mo><mi>c</mi><mo>)</mo><mo>=</mo><mi>f</mi><mo>(</mo><mi>a</mi><mo>)</mo><mo>+</mo><mover><mi>b</mi><mo>__</mo></mover><mo>*</mo><mi>f</mi><mo>(</mo><mi>c</mi><mo>)</mo></math>
+</br>
+<math><mi>Symétrie hermitienne : </mi><mi>f</mi><mo>(</mo><mi>x</mi><mo>|</mo><mi>y</mi><mo>)</mo><mo>=</mo><mover><mrow><mi>f</mi><mo>(</mo><mi>y</mi><mo>|</mo><mi>x</mi><mo>)</mo></mrow><mrow><mo>____________</mo></mover></math>
+<p>
+Ce genre d'espaces peut être un peu trompeur sur certains points.
+En effet, quand on pense aux nombres complexes, on pense au plan complexe, qui est effectivement un espace hermitien.
+Or, <span class="important">il s'agit d'un espace hermitien de dimension 1 (et pas 2 comme on pourrait le penser)</span>.
+En effet, tous les éléments du plan complexe représente 1 nombre spécifique, et donc 1 seule dimension suffit à le décrire.
 </p>

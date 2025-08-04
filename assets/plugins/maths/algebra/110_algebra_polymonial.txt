@@ -11,7 +11,7 @@ En mathématiques, <span class="important">un polynôme formel est une forme mat
 </p>
 <math><mi>P</mi><mo>=</mo><mi>a</mi><msub>0</msub><mo>+</mo><mi>a</mi><msub>1</msub><mi>x</mi><msup>1</msup><mo>+</mo><mi>a</mi><msub>2</msub><mi>x</mi><msup>2</msup><mo>+</mo><mi>...</mi><mo>+</mo><mi>a</mi><msub>1n</msub><mi>x</mi><msup>n</msup></math>
 <p>
-Algébriquement, les éléments "a" peuvent être n'importe quoi défini dans <a href="structures">un anneau</a>.
+Algébriquement, les éléments "a" peuvent être n'importe quoi défini dans <a href="ring">un anneau</a>.
 L'ensemble des polynômes possibles sur un anneau "A" est noté "A[x]" : il s'agit lui aussi d'un anneau (plus précisément, "A" est un sous-anneau de "A[x]").
 On peut aussi définir un polynôme avec <a href="series">une série mathématique</a>, surtout si ce dernier a un développement infini.
 <span class="important">La valeur de l'exposant "n" maximal de ce polynôme est nommé le degré du polynôme</span>.

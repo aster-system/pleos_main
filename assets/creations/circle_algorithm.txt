@@ -42,3 +42,94 @@ Ici, l'algorithme sera coupé en 3 parties :</br>
 <p>
 Ces tâches sont triées de la même manière qu'elles ont était conçues.
 </p>
+
+
+
+<h2>Le traçage du cercle</h2>
+
+<h3>L'idée du traçage</h3>
+<p>
+Ici, <span class="important">l'algorithme va dresser une liste des pixels à colorer pour le cercle, puis les colorer</class>.
+L'étape de coloration sera extrêmement rapide, et peut être gérée avec une simple ligne de code.
+</p>
+<span class="code_sample">
+image->set_pixel(x, y, couleur);
+</span>
+<p>
+L'étape complexe ici est l'obstention des coordonnées des pixels nécessaires.
+C'est ici que la trigonométrie nous sera classique.
+Déjà, posons quelque chose : <span class="important">nous allons considérer l'image comme une suite de pixels, les uns à côté des autres</span>.
+Dans cette image, nous allons tracer un segment, représentant le diamètre du cercle à son milieu.
+</p>
+<graphic><background_color white><base width=50 height=50><rect border_color=red x=-20 y=-1/4 width=40 height=1/2></graphic>
+<p>
+En suite, <span class="important">nous allons parcourir cette ligne de gauche à droite, et obtenir la hauteur nécessaire pour le tracé du cercle pour chaque position X</span>.
+Grâce à ça, le cercle sera tracé dans son intégralité sans problème.
+Cette opération demande un peu de mathématiques.
+En effet, pour chaque parcours de la ligne, nous prenons une position "X" différente par rapport au milieu du cercle (allant de 0 jusqu'au rayon du cercle).
+Grâce à ça, <span class="important">nous pouvons définir un triangle rectangle, avec un côté représentant la position "X" nécessaire, un autre représentant le "Y" nécesasire (que l'on cherche), et l'hypothénus représentant le rayon du cercle, comme dans le cercle trigonométrique</span>.
+Avec ça, nous pouvons utiliser les formules classiques de trigonométrie.
+Ici, <span class="important">l'obstention de l'angle nécessaire pour le point du cercle à un "X" donné s'obtient en passant le quotient de ce "X" et de l'hypothénus (le rayon du cercle) à la fonction "arcosinus"</span>.
+En suite, <span class="important">l'obstention du "Y" nécessaire se fait en multipliant le sinus de l'angle obtenu par le rayon du cercle</span>.
+</p>
+<math><mi>y</mi><mo>=</mo><mi>r</mi><mo>*</mo><mi>sin</mi><mo>(</mo><mi>arcos</mi><mo>(</mo><mi>a</mi><mo>/</mo><mi>h</mi><mo>)</mo><mo>)</mo></math>
+<p>
+Ici, on obtient le "Y" au dessus de la ligne que nous avons tracé précédemment.
+Or, <span class="important">les propriétés du cercle nous permettent d'utiliser aussi ces valeurs en dessous, et même à droite du cercle, pour minimiser les calculs</span>.
+En reportant ces données sur notre tracé, et en colorisant tous les pixels entre les deux pixels obtenus pour chaque "X", on obtient un résultat satisfaisant.
+</p>
+<graphic><background_color white><base width=50 height=50><circle x=0 y=0 radius=20 color=black></graphic>
+
+<h3>Le cas d'une ellipse</h3>
+<p>
+Heuresement pour nous, une grande partie des propriétés du cercle marche avec l'ellipse, à quelques différences près.
+La différence principale est la différence entre la largeur et la hauteur de l'ellipse.
+Pour tenir compte de cette différence, <span class="important">nous allons simplement utiliser des rapports de proportionnalités entre les deux tailles (hauteur et largeur)</span>.
+En fait, après l'obstention du "Y", nous avons juste à y multiplier le ratio "vertical / horizontal" (ce qui ne change d'ailleurs pas les calculs de départ).
+</p>
+<graphic><background_color white><base width=50 height=50><circle x=0 y=0 radius_x=20 radius_y=10 color=black></graphic>
+
+
+
+<h2>L'ajout d'une bordure</h2>
+
+<h3>Légèrement modifier les calculs</h3>
+<p>
+Ici, <span class="important">l'idée est de réserver une quantité précise de pixels à la partie externe de l'intérieure du cercle pour tracer une bordure</span>.
+L'idée la plus "simple" est de tracer un plus petit cercle / ellipse dans un de taille demandée, pour laisser la partie bordure au plus gros cercle.
+Or, cette technique demande deux traçages de cercles, donc très peu optimisé.
+À la place, <span class="important">nous allons modifier un peu les calculs, pour tracer la bordure</span>.
+Ici, l'idée est assez simple : <span class="important">pour chaque "X", on va calculer les angles correspondant (avec la technique vue plus haut) du cercle bordure inclue, et du cercle bordure exclue</span>.
+Comme l'un est plus large que l'autre, les deux cercles auront donc des mesures différentes, et des angles différents.
+Le calcul du rayon du cercle sans bordure est extrêmement simple (et logique).
+</p>
+<math><mi>Rx</mi><mo>=</mo><mi>r</mi><mo>-</mo><mi>b</mi></math>
+<p>
+Ici, "Rx" est le rayon du cercle sans bordure, "r" est le rayon du cercle avec bordure, et "b" est la taille de la bordure.
+Or, bien que l'angle change selon le "X" actuel, le rayon des cercles ne changent pas (ou du moins, leur changement est parfaitement calculable avec le "X" seul).
+Donc, <span class="important">nous allons calculer la différence entre les deux cercles pour le "X" actuel (représentant la taille de la bordure à ce "X"), grâce au théorème d'Al-Kashi</span>.
+<definition name="al_kashi_theorem">.
+</p>
+<theorem name="al_kashi_theorem">
+<p>
+Ici, "[AB]" représente la longueur qu'on cherche (celle de la bordure), "[BC]" représente le rayon du cercle interne et "[AC]" celui du cercle externe.
+Grâce à ça, nous pouvons rigoureusement tracer la bordure.
+</p>
+<p>
+Cet algorithme ne fonctionne pas pour les premières valeurs de "X", incluses dans la bordure.
+En toute logique, comme elles sont incluses dans la bordures, <span class="important">nous allons juste entièrement les remplir de bordure</span>.
+L'algorithme fonctionne aussi en prenant en compte les modifications dû au traçage de l'ellipse.
+</p>
+<graphic>
+<background_color white><base width=50 height=50>
+<circle x=0 y=0 radius=10 x=10 y=-10 border_color=black border_width=5 color=white>
+<circle x=0 y=0 radius_x=5 radius_y=20 x=-15 border_color=black border_width=5 color=white>
+<circle x=0 y=0 radius_x=15 radius_y=5 x=5 y=15 border_color=black border_width=5 color=white>
+</graphic>
+
+
+
+<h2>Délimiter le cercle par ses angles</h2>
+
+<h3>Dessiner des arcs de cercles</h3>
+<p>Travail en cours...</p>

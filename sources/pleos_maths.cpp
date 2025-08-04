@@ -494,7 +494,7 @@ namespace pleos {
             pleos_log(functions_created()[i].get()->formula()->to_std_string(&settings));
         } redaction += std::string("</br></br>");
 
-        std::cout << pleos_log_content << std::endl;
+        std::cout << pleos_log_content() << std::endl;
 
         // Get datas for each functions
         for(int i = 0;i<static_cast<int>(functions_created().size());i++) {
@@ -521,7 +521,7 @@ namespace pleos {
                         for(int i = 0;i<rect_number;i++) {
                             scls::Fraction needed_value = needed_formula->value(scls::Fraction(i, rect_number)).real();
                             if(needed_value != 0) {
-                                std::shared_ptr<pleos::Form_2D> new_form = functions_redaction_graphic()->new_square(std::string("square_") + std::to_string(i), scls::Fraction(i, rect_number), 0, scls::Fraction(1, rect_number), needed_value);
+                                std::shared_ptr<pleos::Form_2D> new_form = functions_redaction_graphic()->new_rect(std::string("square_") + std::to_string(i), static_cast<double>(i) / static_cast<double>(rect_number), 0, 1.0 / static_cast<double>(rect_number), needed_value.to_double());
                                 new_form.get()->set_border_width(1);
                             }
                         }
@@ -912,8 +912,8 @@ namespace pleos {
             scls::Textual_Math_Settings settings;
             geometry_redaction_form()->set_visible(false);geometry_redaction_vector()->set_visible(true);
             geometry_redaction_vector_name()->set_text(needed_vector.get()->name());
-            geometry_redaction_vector_x()->set_text(needed_vector.get()->x().to_std_string(&settings));
-            geometry_redaction_vector_y()->set_text(needed_vector.get()->y().to_std_string(&settings));
+            geometry_redaction_vector_x()->set_text(needed_vector.get()->x_formula().to_std_string(&settings));
+            geometry_redaction_vector_y()->set_text(needed_vector.get()->y_formula().to_std_string(&settings));
         }
         else {geometry_redaction_form()->set_visible(false);geometry_redaction_vector()->set_visible(false);}
     }
@@ -1088,11 +1088,11 @@ namespace pleos {
         }
 
         // Check operation at click
-        for(int i = 0;i<static_cast<int>(geometry_redaction_graphic()->created_vectors_at_click().size());i++) {
-            std::shared_ptr<Point_2D> current_vector = geometry_redaction_graphic()->created_vectors_at_click().at(i);
-            geometry_vectors_created().push_back(current_vector);
-            geometry_select_vector(current_vector);
-            if(current_vector.get()->type() == Vector_Type::VT_Vector) {
+        /*for(int i = 0;i<static_cast<int>(geometry_redaction_graphic()->created_objects_at_click_this_frame().size());i++) {
+            std::shared_ptr<__Graphic_Object_Base> current_object = geometry_redaction_graphic()->created_objects_at_click_this_frame().at(i);
+            geometry_vectors_created().push_back(current_object);
+            geometry_select_vector(current_object);
+            if(current_object.get()->type() == Vector_Type::VT_Vector) {
                 std::string  final_choice = add_element_created_final_choice(std::string("vector"));
                 add_element_created_button(final_choice, std::string("Vector"), PLEOS_MATHEMATICS_GEOMETRY_VECTOR);
             }
@@ -1100,7 +1100,7 @@ namespace pleos {
                 std::string final_choice = add_element_created_final_choice(std::string("point"));
                 add_element_created_button(final_choice, std::string("Point"), PLEOS_MATHEMATICS_GEOMETRY_POINT);
             }
-        }
+        }//*/
     }
 
     // Checks the events of hiding geometry page
@@ -1206,9 +1206,9 @@ namespace pleos {
         // Functions pages
         else if(page == "analysis_definitions"){display_functions_definitions_page();}
         else if(page == "analysis_exponential"){display_functions_exponential_page();}
+        GUI_OBJECT_SELECTION(display_functions_redaction_graphic_page(), "analysis_graphic")
         GUI_OBJECT_SELECTION(display_functions_integration_page(), "analysis_integration")
-        else if(page == "functions_graphic"){display_functions_redaction_graphic_page();}
-        else if(page == "functions_redaction"){display_functions_redaction_page();}
+        GUI_OBJECT_SELECTION(display_functions_redaction_page(), "analysis_redaction")
         // Geometry pages
         else if(page == "geometry_complex_numbers"){display_geometry_complex_numbers_page();}
         else if(page == "geometry_definitions"){display_geometry_definitions_page();}

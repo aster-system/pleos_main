@@ -80,14 +80,14 @@ namespace pleos {
             int random = rand()%2;
             if((random == 0 && protons > 0) || neutrons <= 0) {
                 std::string needed_name = std::string("proton_") + std::to_string(protons);
-                std::shared_ptr<Circle> current_particule = *matter_bohr_model_simulation()->add_circle(needed_name, scls::Point_2D(x.value_to_double(), y.value_to_double()), scls::Fraction(1, 4));
+                std::shared_ptr<Circle> current_particule = matter_bohr_model_simulation()->new_circle<Circle>(needed_name, x, y, scls::Fraction(1, 4));
                 current_particule.get()->set_border_color(scls::Color(150, 0, 0));current_particule.get()->set_border_radius(3);
                 current_particule.get()->set_color(scls::Color(255, 0, 0));
                 protons--;
             }
             else {
                 std::string needed_name = std::string("neutron_") + std::to_string(neutrons);
-                std::shared_ptr<Circle> current_particule = *matter_bohr_model_simulation()->add_circle(needed_name, scls::Point_2D(x.value_to_double(), y.value_to_double()), scls::Fraction(1, 4));
+                std::shared_ptr<Circle> current_particule = matter_bohr_model_simulation()->new_circle<Circle>(needed_name, x, y, scls::Fraction(1, 4));
                 current_particule.get()->set_border_color(scls::Color(0, 150, 0));current_particule.get()->set_border_radius(3);
                 current_particule.get()->set_color(scls::Color(0, 255, 0));
                 neutrons--;
@@ -102,7 +102,7 @@ namespace pleos {
             scls::Formula x = current_electron.get()->distance * -1 - scls::Fraction(3, 4);
             // Create the particule
             std::shared_ptr<Circle>& current_particule = current_electron.get()->circle;
-            current_particule = *matter_bohr_model_simulation()->add_circle(needed_name, scls::Point_2D(x.value_to_double(), 0), scls::Fraction(1, 7));
+            current_particule = matter_bohr_model_simulation()->new_circle<Circle>(needed_name, x, 0, scls::Fraction(1, 7));
             current_particule.get()->set_border_color(scls::Color(0, 0, 150));current_particule.get()->set_border_radius(2);
             current_particule.get()->set_color(scls::Color(0, 0, 255));
             // Add the electron
@@ -159,8 +159,8 @@ namespace pleos {
             scls::Fraction needed_distance = current_electron.get()->distance + (scls::Fraction(1, 2) * current_electron.get()->energy);
             double* rotated = scls::__rotate_vector_3d(-0.75 - needed_distance.to_double(), 0, 0, 0, current_electron.get()->angle.to_double() + (__matter_bohr_model_simulation_start - window_struct()->execution_time()) * 180.0, 0);
             scls::Point_2D needed_vector = scls::Point_2D(rotated[0] * 100.0, rotated[2] * 100.0); delete rotated;
-            needed_vector.set_x(needed_vector.x() / scls::Fraction(100));
-            needed_vector.set_y(needed_vector.y() / scls::Fraction(100));
+            needed_vector.set_x(needed_vector.x() / 100);
+            needed_vector.set_y(needed_vector.y() / 100);
             current_particule.get()->set_center(needed_vector);
         }
         // Simulate the photons
@@ -171,7 +171,7 @@ namespace pleos {
             if(duration < 1) {
                 // Move the photon
                 scls::Point_2D new_position = (current_photon.get()->end_position - current_photon.get()->start_position);
-                new_position *= duration;
+                new_position *= duration.to_double();
                 current_particule.get()->set_center(current_photon.get()->start_position + new_position);
             }
             else if(current_photon.get()->electron.get() != 0) {
@@ -192,11 +192,11 @@ namespace pleos {
                         new_photon.get()->start_position = current_photon.get()->electron.get()->center();
                         double needed_angle = current_photon.get()->electron.get()->angle.to_double() + (__matter_bohr_model_simulation_start - window_struct()->execution_time()) * 180.0;
                         double* rotated = scls::__rotate_vector_3d(5.0, 0, 0, 0, needed_angle + 180.0, 0);
-                        new_photon.get()->end_position = new_photon.get()->start_position + scls::Point_2D(scls::Fraction(rotated[0] * 100, 100), scls::Fraction(rotated[2] * 200, 200));
+                        new_photon.get()->end_position = new_photon.get()->start_position + scls::Point_2D(rotated[0], rotated[2]);
                         matter_bohr_model_simulation_photons().push_back(new_photon); delete rotated;
                         // Create the particule
                         std::shared_ptr<Circle>& current_particule = new_photon.get()->circle;
-                        current_particule = *matter_bohr_model_simulation()->add_circle(current_photon.get()->circle.get()->name() + std::string("_emitted"), new_photon.get()->start_position, scls::Fraction(1, 7));
+                        current_particule = matter_bohr_model_simulation()->new_circle<pleos::Circle>(current_photon.get()->circle.get()->name() + std::string("_emitted"), new_photon.get()->start_position, scls::Fraction(1, 7));
                         current_particule.get()->set_border_color(scls::Color(150, 150, 0));current_particule.get()->set_border_radius(2);
                         current_particule.get()->set_color(scls::Color(255, 255, 0));
                     }
@@ -229,8 +229,8 @@ namespace pleos {
                 double needed_angle = current_electron.get()->angle.to_double() + ((__matter_bohr_model_simulation_start + movement_duration) - window_struct()->execution_time()) * 180.0;
                 double* rotated = scls::__rotate_vector_3d(-0.75 - current_electron.get()->distance.to_double(), 0, 0, 0, needed_angle, 0);
                 scls::Point_2D target_vector = scls::Point_2D(rotated[0] * 100.0, rotated[2] * 100.0); delete rotated;
-                target_vector.set_x(target_vector.x() / scls::Fraction(100));
-                target_vector.set_y(target_vector.y() / scls::Fraction(100));
+                target_vector.set_x(target_vector.x() / 100);
+                target_vector.set_y(target_vector.y() / 100);
                 current_photon.get()->end_position = target_vector;
                 current_photon.get()->electron = current_electron;
                 current_electron->has_photon = true;
@@ -238,14 +238,14 @@ namespace pleos {
                 // Get the start position
                 rotated = scls::__rotate_vector_3d(-4.0, 0, 0, 0, needed_angle, 0);
                 scls::Point_2D start_vector = scls::Point_2D(rotated[0] * 100.0, rotated[2] * 100.0); delete rotated;
-                start_vector.set_x(start_vector.x() / scls::Fraction(100));
-                start_vector.set_y(start_vector.y() / scls::Fraction(100));
+                start_vector.set_x(start_vector.x() / 100);
+                start_vector.set_y(start_vector.y() / 100);
                 start_vector += target_vector;
                 current_photon.get()->start_position = start_vector;
 
                 // Create the particule
                 std::shared_ptr<Circle>& current_particule = current_photon.get()->circle;
-                current_particule = *matter_bohr_model_simulation()->add_circle(needed_name, start_vector, scls::Fraction(1, 7));
+                current_particule = matter_bohr_model_simulation()->new_circle<pleos::Circle>(needed_name, start_vector, scls::Fraction(1, 7));
                 current_particule.get()->set_border_color(scls::Color(150, 150, 0));current_particule.get()->set_border_radius(2);
                 current_particule.get()->set_color(scls::Color(255, 255, 0));
                 // Add the photon

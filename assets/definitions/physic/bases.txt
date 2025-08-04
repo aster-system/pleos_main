@@ -13,3 +13,29 @@
 <new_definition name="physical_unit_system">
     <content>un système d'unité physique représente un ensemble d'unités fondamentales permettant de mesurer toutes les grandeurs possibles</content>
 </new_definition>
+
+<new_definition name="process_isochoric">
+    <content>un processus est dit isochore si, pendant son déroulement, le volume reste constant</content>
+</new_definition>
+
+<new_definition name="calendar">
+    <content>un calendrier est un moyen de représentation du temps et de ses composantes principales (jour, semaine...)</content>
+</new_definition>
+<new_definition name="day">
+    <content>un jour représente une période de temps correspondant à une rotation de la Terre sur elle même (un cycle jour-nuit)</content>
+</new_definition>
+<new_definition name="gregorian_calendar">
+    <content>le calendrier grégorien (nommé d'après le pape Grégoire XIII) est un calendrier solaire dérivé du calendrier julien, le plus utilisé en occident : 1 an représente (environ) une révolution de la Terre autour du soleil et l'an 0 représente l'année de naissance de Jésus-Christ</content>
+</new_definition>
+<new_definition name="julian_calendar">
+    <content>le calendrier julien (nommé d'après Jules César) est un calendrier solaire, très utilisé dans l'Europe du moyen-âge : 1 an représente (environ) une révolution de la Terre autour du soleil et l'an 0 représente (en gros) l'année de l'élection des derniers consuls (bien que, des fois, d'autres systèmes étaient utilisés)</content>
+</new_definition>
+<new_definition name="second">
+    <content>une seconde est une unité de temps, représentant un 86400ème d'un jour terrestre</content>
+</new_definition>
+<new_definition name="calendar_solar">
+    <content>un calendrier solaire est un calendrier, dont les composantes principales se basent sur la position de la Terre autour du Soleil dans sa révolution</content>
+</new_definition>
+<new_definition name="year">
+    <content>une année représente, dans un calendrier solaire, une période de temps correspondant à une révolution de la Terre autour du soleil</content>
+</new_definition>

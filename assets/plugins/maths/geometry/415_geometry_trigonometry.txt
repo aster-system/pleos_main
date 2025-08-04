@@ -2,6 +2,49 @@
 
 
 
+<h2>L'étude du triangle</h2>
+
+<h3>Qu'est ce qu'est la trigonométrie</h3>
+<p>
+En géométrie, <span class="important"><definition name="trigonometry"></span>.
+N'importe quel triangle est concerné par cette définition : rectangle, isocèle, quelconque...
+Une grande partie de l'étude du triangle repose sur des fonctions précises.
+</p>
+
+<h3>Les fonctions trigonométriques</h3>
+<p>
+La trigonométrie est surtout connue grâce à ces 3 fonctions principales : cosinus, sinus et tangente.
+Pour être précis, <span class="important"><definition name="trigonometric_function"></span>.
+
+</p>
+<p>
+Une des façons les plus pratiques de comprendre les fonctions trigonométriques est le cercle trigonométrique.
+<span class="important"><definition name="trigonometric_circle"></span>.
+Ici, l'obstention des coordonnées des points du cercle peut entière se faire grâce aux fonctions trigonométriques.
+En fait, on va dire que chaque point sur le cercle se trouve à un angle précis (en radians) par rapport au vecteur (1, 0) (dont la rotation peut donner tous les points du cercle).
+<span class="important">Dans le cercle trigonométrique, le point d'angle "a" se trouve à la coordonnée ("cos(a)", "sin(a)")</span>.
+Comme la figure est une cercle, il permet aussi de mettre en relation l'étude de triangle rectangle d'hypothénus égal à 1 et des fonctions trigonométriques (généralement la façon dont est introduite la trigonométrie).
+D'ailleurs, <span class="important">ce fait permet de démontrer facilement une forme trigonométrique assez célèbre : selon le théorème de Pythagore, "cos(a)² + sin(a²) = 1"</span>.
+</p>
+<graphic>
+<background_color white><base height=3>
+<line x_1=0 y_1=0 x_2=1 y_2=0 color=red>
+<line x_1=0 y_1=0 x_2=1/2 y_2=0 color=black>
+<line x_1=1/2 y_1=0 x_2=1/2 y_2=3/4 color=black>
+<line x_1=1/2 y_1=3/4 x_2=0 y_2=0 color=black>
+<circle x=0 y=0 radius=1 color=transparent>
+</graphic>
+<p>
+Grâce au cercle trigonométrique, on peut définir pleins de fonctions.
+Déjà, <span class="important">on peut définir les fonctions sinus et cosinus comme les coordonnées des points du cercle (comme vu plus haut)</span>.
+On peut aussi définir leur fonctions réciproques : arc sinus et arc cosinus.
+Cependant, on peut aussi définir la fonction tangente.
+<span class="important"><definition name="tangent"></span>.
+D'ailleurs, on peut encore faire un lien assez utile : la fonction tangente représente aussi le quotient de la valeur verticale par la valeur horizontale du triangle rectangle équivalent.
+En changeant astucieusement de référentiel, on obtient la formule "tangente = opposé / adjacent".
+D'autres formes moins utiles de ces fonctions existent : le verse sinus ("1 - cos(a)"), formule de haversine ("(1 - cos(a)) / 2")...
+</p>
+
 <h3>Les propriétés des équations trigonométriques</h3>
 <p>
 Certaines équations font intervenir des fonctions trigonométriques : <span class="important">ces équations sont dites trigonométriques</span>.

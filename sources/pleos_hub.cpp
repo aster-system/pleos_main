@@ -85,6 +85,7 @@ namespace pleos {
             if(is_special_pleos_balise(attribute_name)) {
                 std::shared_ptr<scls::__Image_Base> img = generate_text_image(content.get()->sub_texts().at(i), style, content, __saasf_text_environment);
                 if(img.get() != 0){
+                    // Generate a new image from the special balise
                     std::string img_path = path + std::string("/images/img") + std::to_string(__saasf_image_number) + std::string(".png");
                     img.get()->save_png(img_path);
                     content.get()->sub_texts().at(i).get()->clear();
@@ -111,7 +112,7 @@ namespace pleos {
                 if(cutted.size() < 1 || (cutted.at(0) != std::string("https") && cutted.at(0) != std::string("http"))) {
                     // Parse the link
                     cutted = scls::cut_string(scls::replace(url, std::string("#"), std::string("/")), std::string("/"));
-                    std::string needed_part = current_part;std::string needed_sub_part = std::string();std::string other = std::string();
+                    std::string needed_part = current_part;std::string needed_sub_part = current_sub_part;std::string other = std::string();
                     while(cutted.size() > 0){
                         if(cutted.at(0) != std::string() && cutted.at(0) != std::string("learn")) {
                             // Format
@@ -190,6 +191,7 @@ namespace pleos {
 
         // Creations
         if(word == "circle_algorithm"){if(add_determinant){to_return = std::string("l'algorithme de traçage du cercle");}else{to_return = std::string("algorithme de traçage du cercle");};}
+        else if(word == std::string("calendar")){if(add_determinant){to_return = std::string("le calendrier");}else{to_return = std::string("calendrier");};}
         // Subjects
         else if(word == std::string("chemistry")){if(add_determinant){to_return = std::string("la chimie");}else{to_return = std::string("chimie");};}
         else if(word == std::string("it")){if(add_determinant){to_return = std::string("l'informatique");}else{to_return = std::string("informatique");}}

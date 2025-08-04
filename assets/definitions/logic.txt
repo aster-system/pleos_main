@@ -22,3 +22,10 @@
 <new_definition name="upper_bounds">
     <content>le majorant (ou les majorants, vue qu'il n'est pas unique) d'un sous-ensemble F de l'ensemble E est un élément quelconque de E, tel que ce majorant soit supérieur ou égal à tous éléments de F</content>
 </new_definition>
+
+<new_definition name="morphism">
+    <content>un morphisme est une application entre deux ensembles de même structures, où la structure "d'arrivée" possède les mêmes "propriétés" que la structure de départ, avec possibilité de les interpréter différement</content>
+</new_definition>
+<new_definition name="morphism_ordered_set">
+    <content>un morphisme entre deux ensembles ordonnées est un morphisme de ces deux ensembles, où la structure d'ordre est préservée (x &lt; g implique f(x) &lt; f(g))</content>
+</new_definition>

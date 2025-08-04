@@ -4,7 +4,7 @@
 
 <h2>Étudier des suites mathématiques</h2>
 
-<h3>Qu'est ce qu'est une suite ?</h3>
+<h3 id="series">Qu'est ce qu'est une suite ?</h3>
 <p>
 En mathématiques, <span class="important">une suite est une fonction définie sur l'ensemble des nombres entiers naturels</span>.
 Le résultat de cette fonction peut être n'importe quoi : nombre entier, nombre réel...

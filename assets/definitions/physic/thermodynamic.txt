@@ -1,9 +1,26 @@
 <new_definition name="heat_capacity">
-    <content>la capacité thermique d'un matériaux représente la quantité d'énergie nécessaire pour faire monter sa température de 1 kelvin</content>
+    <content>la capacité thermique d'un corps représente la quantité d'énergie nécessaire pour faire monter sa température de 1 kelvin</content>
 </new_definition>
 <new_definition name="heat_transfert">
     <content>un transfert thermique représente un transfert d'énergie thermique d'un système à un autre</content>
 </new_definition>
+
+<new_definition name="degrees_of_freedom">
+    <content>le degré de liberté d'une particule représente une quantification de la capacité de cette particule à bouger dans son espace environnant</content>
+</new_definition>
+<new_definition name="phonon">
+    <content>un phonon représente l'agitation collective des particules dans un solide, à cause d'une première agitation dans le solide</content>
+</new_definition>
+
+<new_definition name="thermal_conduction">
+    <content>la conduction thermique (ou diffusion thermique) représente un transfert thermique vers l'équilibre entre deux systèmes différents (ou dans un système hétérogène), seulement par transmission de l'agitation des particules (sans mouvements macroscopiques)</content>
+</new_definition>
 <new_definition name="thermal_conductivity">
     <content>la conductivité thermique représente la capacité à laquelle un matériau peut transférer son énergie dans un système</content>
+</new_definition>
+<new_definition name="thermal_convection">
+    <content>la convection thermique est une forme de transfert thermique où l'un des deux systèmes est en mouvement par rapport à l'autre</content>
+</new_definition>
+<new_definition name="thermal_energy">
+    <content>l'énergie thermique d'un système est une partie de l'énergie interne du système, représentant l'énergie provoquant l'agitation des particules dans le système</content>
 </new_definition>

@@ -22,8 +22,23 @@ Elle est donc le socle de toutes les théories similaires nécessitant de passer
 
 <h3>Les morphismes</h3>
 <p>
-<span class="important">Le lien (qui n'est pas toujours une application) entre deux structures algébriques gardant ce genre de propriété est nommée un morphisme</span>.
-Bien que la relation entre les deux structures ne soient pas toujours une application, la relation entre les ensembles constituant les structures en est bien une (et peut donc aussi être une fonction).
-Par exemple, une fonction définie sur l'ensemble des réels et arrivant sur l'ensemble des réels transforme la droite des réels en une nouvelle droite décrite par la fonction (morphisme d'un corps de réel vers... un corps de réel).
-Cependant, ce terme est un peu lourd pour l'utiliser avec celui de fonction.
+Il est possible de lier deux structures / transformer une structure en une autre avec ce que l'on appelle un morphisme.
+En théorie des catégories, <span class="important"><definition name="morphism"></span>.
+Par exemple, dans le cas des structures les plus utilisées, les structures algébriques, les deux structures doivent être de même type (groupe, anneau, espaces vectoriels...).
+Donc, les deux ont les mêmes lois / propriétés, bien que ces mêmes lois peuvent avoir des définitions différentes entre ces deux structures.
+</p>
+
+<table title="Morphisme (de monoïdes) de (N, +) vers (2N, +)">
+<case x=0 y=0 content="0"><case x=1 y=0 content="1"><case x=2 y=0 content="2"><case x=3 y=0 content="3"><case x=4 y=0 content="4"><case x=5 y=0 content="..."><case x=6 y=0 content="x"><case x=7 y=0 content="a + b">
+<case right_border=0 x=0 y=1 content="|"><case right_border=0 x=1 y=1 content="|"><case right_border=0 x=2 y=1 content="|"><case right_border=0 x=3 y=1 content="|"><case right_border=0 x=4 y=1 content="|"><case right_border=0 x=5 y=1 content="|"><case right_border=0 x=6 y=1 content="|"><case right_border=0 x=7 y=1 content="|">
+<case x=0 y=2 content="0"><case x=1 y=2 content="2"><case x=2 y=2 content="4"><case x=3 y=2 content="6"><case x=4 y=2 content="8"><case x=5 y=2 content="..."><case x=6 y=2 content="2x"><case x=7 y=2 content="2(a + b)">
+</table>
+
+<p>
+En fait, un morphisme se comporte comme une fonction.
+En effet, <span class="important">une fonction / application linéaire est un morphisme</span>.
+De plus, des morphismes peuvent aussi exister entre ensembles ordonnées.
+En fait, <span class="important"><definition name="morphism_ordered_set"></span>.
+D'autres morphismes sont possibles dans des espaces topologiques, si il est possible de passer de l'un à l'autre facilement (bien que ce terme ne soit pas très souvent employé).
+C'est la même chose en théorie de la mesure, avec des espaces mesurables.
 </p>

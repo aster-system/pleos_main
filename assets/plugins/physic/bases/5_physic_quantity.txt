@@ -29,6 +29,15 @@ C'est le cas du mètre : il n'existe pas d'unité plus "basique" pour décompose
 À l'inverse, <span class="important"><definition name="physical_unit_derived"></span>.
 C'est le cas du mètre par seconde : il se décompose en... mètre et en seconde.
 </p>
+
+<graphic title="Unité basique" width=300 height=100>
+<base draw=0 width=15 height=5><background_color white>
+<real_line x=1 y=1 width=8 height=2>
+<line x_1=-11/5 y_1=-1 x_2=2/3 y_2=-1 border_color=black>
+<text x=-5 y=1>Unité</text>
+<text x=-5 y=-1>Mesure</text>
+</graphic>
+
 <p>
 Certains unités nécessitent d'utiliser des valeurs très grandes / petites.
 Pour simplifier la notation, les scientifiques ont inventé le concept de préfixe.

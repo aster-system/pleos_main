@@ -1,9 +1,37 @@
+<new_definition name="al_kashi_theorem">
+    <content>le théorème d'Al-Kashi (ou loi des cosinus) est un théorème établissant une relation entre deux longueurs de côtés et la mesure d'un angle (ou la mesure de deux angles et la longueur d'un côté) dans un triangle quelconque</content>
+    <content type="theorem"><math><mforall><mi>A, B, C</mi><min><mi>R</mi><msup>3</msup><mo>,</mo><mi>[AB]²</mi><mo>=</mo><mi>[BC]²</mi><mo>+</mo><mi>[AC]²</mi><mo>-</mo><mi>2</mi><mo>*</mo><mi>[BC]</mi><mo>*</mo><mi>[AC]</mi><mo>*</mo><mi>cos(ACB)</mi></math></content>
+</new_definition>
 <new_definition name="circle">
     <content>un cercle est une figure géométrique 2D, tel que tous ses points se trouvent à une distance similaire (appelée "rayon" du cercle) d'un même point, dit "centre" du cercle</content>
 </new_definition>
 <new_definition name="ellipse">
     <content>une ellipse est une figure géométrique 2D résultant de la projection d'un cône 3D sur un plan 2D passant par son axe de rotation, sans passer par le sommet, ni être coplanaire à la base du cône</content>
 </new_definition>
+<new_definition name="tangent">
+    <content>la fonction tangente représente le coefficient directeur de la droite tangente au cercle en un certain point, à un certain angle "a"</content>
+</new_definition>
 <new_definition name="trigonometric_circle">
     <content>le cercle trigonométrique est un cercle de rayon 1 et de centre le repère du plan, permettant de facilement définir les fonctions trigonométriques</content>
+</new_definition>
+<new_definition name="trigonometric_function">
+    <content>une fonction trigonométrique est une fonction permettant de mettre en relation des longueurs de côtés et des angles dans un triangle</content>
+</new_definition>
+<new_definition name="trigonometry">
+    <content>la trigonométrie est la mesure des longueurs de côtés et des angles dans un triangle ("trigono" vient de "triangle", et "métrie" vient de "mesure")</content>
+</new_definition>
+
+<new_definition name="vectorial_space_dimension">
+    <content>la dimension d'un espace vectoriel représente le nombre d'informations (provenant de son corps de base) nécessaire pour décrire tous les vecteurs de l'espace</content>
+    <content name="rigorous">la dimension (aussi appelée dimension de Hamel) d'un espace vectoriel est le cardinal (commun) de ces bases</content>
+</new_definition>
+
+<new_definition name="hermitian_scalar_product">
+    <content>un produit scalaire hermitien est un produit scalaire adapté au corps des nombres complexes (prenant deux vecteurs complexe et donnant un nombre complexe), à quelques différences prêt : il est sesquilinéaire et possède la symétrie hermitienne</content>
+</new_definition>
+<new_definition name="hermitian_space">
+    <content>un espace hermitien est une espace vectoriel sur le corps (commutatif) des nombres complexes, muni d'un produit scalaire "hermitien"</content>
+</new_definition>
+<new_definition name="sesquilinearity">
+    <content>une application sesquilinéaire représente une application linéaire à droite et semi-linéaire à gauche (où la multiplication par un scalaire se fait via son conjugué)</content>
 </new_definition>

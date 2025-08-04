@@ -65,6 +65,8 @@ Une opération est dite associative si l'ordre d'opération lors de l'introducti
 <p>
 Dans la même idée, <span class="important">une opération est dite commutative si l'ordre d'opération des deux opérandes n'importe pas</span> (quelque soit l'ordre et les éléments).
 Ce n'est, par exemple, pas le cas de la division (3 / 2 n'est pas 2 / 3).
+Si une opération n'est pas entièrement commutative, on peut quand même réunir l'ensemble des éléments qui peuvent commuter avec tous les autres, dans ce que l'on appelle un center.
+En effet, <span class="important" id="algebra_center"><definition name="algebra_center"></span>.
 </p>
 <math><mforall><mi>a, b</mi><min><mi>E</mi><mo>,</mo><mi>a # b</mi><mo>=</mo><mi>b # a</mi></math>
 <p>
@@ -108,16 +110,59 @@ De même, la structure algébrique constituée de l'ensemble des nombres entiers
 </p>
 <graphic>
 <base width=10 height=10>
-<rect background_color=white border_radius=0 x=-5 y=-5 width=10 height=10>
-<rect background_color=green border_radius=1 x=-9/2 y=-4 width=9 height=13/2>
-<rect background_color=yellow border_radius=1 x=-4 y=-3 width=8 height=7/2>
+<rect background_color=white border_radius=0 x=0 y=-5 width=10 height=10>
+<rect background_color=green border_radius=1 x=0 y=-4 width=9 height=13/2>
+<rect background_color=yellow border_radius=1 x=0 y=-3 width=8 height=7/2>
 <text background_color=transparent y=4 content="Magma"></text>
 <text background_color=transparent y=3/2 content="Monoïde"></text>
 <text background_color=transparent y=-1 content="Groupe"></text>
 </graphic>
 <p>
-<span class="important">La théorie étudiant ces structures est nommée la théorie des groupes.
+<span class="important">La théorie étudiant ces structures est nommée la théorie des groupes</span>.
 L'idée même de cette théorie est de définir une base très stable pour toutes les structures de groupe, très communes en mathématiques.
+</p>
+
+<h3 id="corps;ring">Les anneaux et les corps</h3>
+<p>
+Pour l'instant, nous avons défini le "groupe", avec qu'une loi de composition interne.
+Or, il existe des structures avec deux lois de compositions internes, dont la plus basique est l'anneau.
+<span class="important"><definition name="algebra_ring"></span>.
+Dans ce cas, <definition name="algebra_distributivity">.
+C'est cette notion qui est centrale avec le concept d'anneau.
+Pour un anneau défini sur l'ensemble R avec deux opérations "+" et "*", il se note comme ça :
+</p>
+<p>(R, +, *)</p>
+<p>
+<span class="important">L'adjectif "unitaire" dans le nom implique que l'anneau ait un élément neutre de la multiplication (1 dans les réels)</span>.
+En général, les termes "anneau" et "anneau unitaire" sont confondues.
+Or, si un anneau n'a pas d'élement neutre de la multiplication, il est dit "pseudo-anneau".
+Cependant, <span class="important">si la deuxième opération définie dans l'anneau est commutative, l'anneau est aussi dit commutatif</span>.
+Si nous pouvons y définir une division euclidienne (comme dans Z), alors l'anneau est dit euclidien.
+</p>
+<p>
+Dans un anneau, on peut définir ce que l'on appelle un idéal.
+En algèbre, <span class="important"><definition name="algebra_ideal"></span>.
+Un exemple simple est l'exemple "nZ" dans l'anneau "Z".
+En effet, tout élément de "nZ" est... un multiple de "n".
+Or, pour tout "a" de "Z", "a * nZ = (a * n)Z = mZ" : il est stable par la multiplication sur Z.
+</p>
+<table title="Exemple pour l'idéal 5 * Z de Z">
+<case content="5 * 0" x=0><case content="0" x=1><case content="1" x=2><case content="2" x=3><case content="3" x=4><case content="4" x=5>
+<case content="5 * 1" x=0 y=1><case content="5" x=1 y=1><case content="6" x=2 y=1><case content="7" x=3 y=1><case content="8" x=4 y=1><case content="9" x=5 y=1>
+<case content="5 * 2" x=0 y=2><case content="10" x=1 y=2><case content="11" x=2 y=2><case content="12" x=3 y=2><case content="13" x=4 y=2><case content="14" x=5 y=2>
+<case content="5 * a" x=0 y=3><case content="5 * a" x=1 y=3><case content="5 * a + 1" x=2 y=3><case content="5 * a + 2" x=3 y=3><case content="5 * a + 3" x=4 y=3><case content="5 * a + 4" x=5 y=3>
+</table>
+<p>
+Dans certains cas, la multiplication permet à chaque élément non-nul de possèder un élément inverse.
+Dans ce cas, l'anneau de vient un corps.
+Pour être précis, <span class="important"><definition name="algebra_field"></span>.
+Cette structure rend possible toutes les opérations basiques de l'algèbre : addition, soustraction, multiplication, division...
+En fait, il s'agit d'un anneau où l'ensemble des éléments non-nul est aussi un groupe.
+En général, la multiplication est commutative dans ces corps (bien que pas toujours, tout dépend de la définition utilisée dans le contexte utilisé).
+Selon le théorème de Wedderburn, <span class="important">si l'ensemble couvert par la structure est finie, alors le corps est dit fini aussi</span>.
+En effet, <definition name="wedderburn_theorem">.
+Gràce à ces corps, <span class="important">nous pouvons définir un espace de n-uplets d'éléments de ces corps, nommé un espace vectoriel</span>.
+Nous pouvons aussi définir des corps plus petit que le corps de base, nommés des sous-corps, ou même des corps plus grands (contenant le corps de base), nommés des extensions de corps.
 </p>
 
 
@@ -154,3 +199,19 @@ En fait, l'exponentielle peut représenter une puissance de réel / complexe, bi
 Pour rappel, <span class="important">l'exponentielle complexe se calcule via la formule d'Euler</span>.
 </p>
 <math><mforall><mi>z</mi><min><mi>C</mi><mo>,</mo><mi>e</mi><msup>z</msup><mo>=</mo><mi>r</mi><mo>*</mo><mo>(</mo><mi>cos(a)</mi><mo>+</mo><mi>i</mi><mo>*</mo><mi>sin(a)</mi><mo>)</mo></math>
+<p>
+L'opération réciproque de la puissance est nommée la racine.
+En algèbre, <span class="important"><definition name="algebra_root"></span>.
+Pour rappel, on définit la puissance "1/n" comme la racine "n".
+<span class="important">Grâce à la définition de l'exposant avec les nombres réels / complexes, vous pouvez facilement calculer n'importe quelle racine, de n'importe quel nombre</span>.
+Cependant, beaucoup d'autres méthodes existent (dans divers concepts historiques) : méthode de Newton, méthode de la fausse position, méthode de Mullern développement en série de Taylor...
+Néanmoins, la notation utilisée diffère de celle de la puissance.
+En effet, on utilise un autre symbole : le radical, et l'opérande est appelé le "radicande".
+</p>
+<math><msqrt><mi>a</mi></msqrt></math>
+<p>
+Malgré son caractère "primaire", on peut tirer des propriétés assez intéressantes de la racine, comme la racine de l'unité.
+Dans l'algèbre des nombres complexes, <span class="important"><definition name="unity_root"></span>.
+Ici, toutes les racines sont concernées : racine carré, racine cubique, racine 85-ième...
+Ce genre de racines permettent par exemple de définir les polynômes cyclotomiques, très pratiques en algèbre.
+</p>

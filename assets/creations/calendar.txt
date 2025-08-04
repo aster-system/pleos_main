@@ -1,0 +1,68 @@
+<h1>Coder un calendrier</h1>
+
+
+
+<h2>Les consignes de base</h2>
+
+<h3>Qu'est ce qu'est un calendier ?</h3>
+<p>
+Je pense que tout le monde sait ce qu'est un calendrier.
+Cependant, pour être précis, re-définissons ce concept.
+<span class="important"><definition name="calendar"></span>.
+Cependant, il existe plein de type de calendriers différents.
+Par exemple, <definition name="calendar_solar">.
+Parmi ces mêmes types de calendrier, chacun découpe différement le déroulement du temps selon le soleil.
+Celui que nous, occidentaux, utilisons le plus, est le calendrier grégorien.
+<span class="important"><definition name="gregorian_calendar"></span>.
+Historiquement, <definition name="julian_calendar">.
+Ici, nous n'allons utiliser que le calendrier moderne et bien connu : le calendrier grégorien.
+</p>
+<p>
+Maintenant, il ne nous reste plus qu'à parfaitement comprendre ce calendrier, et à trouver un moyen de l'implémenter dans le code.
+Premièrement, la plus grande période de temps auquelle on aura à faire dans le calendrier grégorien est l'année.
+Pour être précis, <span class="important"><definition name="year"></span>.
+Cette même année est découpée en mois, de durée variable (28, 29, 30 ou 31 jours, selon l'année / le mois).
+Or, nous avons aussi des unités plus précises, et fixées sur un phénomène naturel, comme le jour.
+<span class="important"><definition name="day"></span>.
+Dans le calendrier grégorien, une année compte généralement 365 jours, mais il est des fois nécessaire d'en rajouter une, car une révolution de la Terre autour du Soleil ne dure pas 365 jours, mais 365.24219 environ.
+Pour cela, certaines années comportent 366 jours : ce sont les années bissextiles.
+Les années bissextiles représentent les années multiples de 4, sauf celle multiples de 100 et pas multiple de 400 (donc 1600 et 2000 sont bissextiles, mais pas 1900 ou 1800).
+Au final, on obtient une année de 365.24216 jours en moyenne, très proche de la réalité.
+</p>
+<math><mi>365</mi><mo>+</mo><mfrac><mrow><mi>1</mi></mrow><mrow><mi>4</mi></mrow></mfrac><mo>+</mo><mfrac><mrow><mi>1</mi></mrow><mrow><mi>400</mi></mrow></mfrac><mo>-</mo><mfrac><mrow><mi>1</mi></mrow><mrow><mi>100</mi></mrow></mfrac><mo>=</mo><mi>365.2425</mi></math>
+<p>
+Ce résultat n'a été obtenu que tardivement dans l'histoire (à cause de la difficulté des calculs), et est l'une des raisons du passage du calendrier julien ou calendrier grégorien.
+Chaque jour possède une écriture unique, de la forme "Jour/Mois/Année" : cette écriture se nomme une date.
+Ce même jour peut être découpé en plusieurs unités de temps, donc celle qui nous sera la plus utile est la seconde.
+<span class="important"><definition name="second"></span>.
+Nous pouvons aussi la diviser en d'autres unités plus précises : milliseconde, nanoseconde...
+Dans le code, <span class="important">nous pouvons obtenir un nombre de nanosecondes, correspondant aux nombres de nanosecondes depuis 1970</span>.
+Tout l'algorithme reposera la dessus.
+Via ce nombre, on peut donc obtenir le nombre de secondes, de jours...
+Via le nombre de jours, on peut obtenir le nombre d'années, de mois...
+Comme ce nombre est relatif à 1970, nous allons devoir y ajouter quelques modifications mathématiques pour obtenir le bon résultat.
+</p>
+
+<tree name="Nanosecondes">
+    <tree name="Secondes">
+        <tree name="Jour">
+            <tree name="Année"></tree>
+            <tree name="Mois"></tree>
+        </tree>
+    </tree>
+</tree>
+
+<h3>Le cahier des charges du calendrier</h3>
+<p>
+Ici, beaucoup de façon de faire possibles existent : logiciel, image, site web...
+<span class="important">Pour des raisons de praticités, nous allons mettre notre calendrier sur une image, sous format "png"</span>.
+C'est probablement la façon la plus simple et modulable de faire, bien qu'elle manque de réactivité dans des applications rapides (logiciels).
+</p>
+<p>
+Maintenant que les bases sont posées, dressons le cahier des charges :
+</p>
+<p>
+- Afficher le système temporel du calendrier grégorien</br>
+- Permettre un affichage horizontal, semaines après semaines</br>
+- Ajouter les évènements basiques
+</p>
