@@ -215,3 +215,24 @@ Dans l'algèbre des nombres complexes, <span class="important"><definition name=
 Ici, toutes les racines sont concernées : racine carré, racine cubique, racine 85-ième...
 Ce genre de racines permettent par exemple de définir les polynômes cyclotomiques, très pratiques en algèbre.
 </p>
+
+<h3>Les morphismes</h3>
+<p>
+Nous avons déjà traitée les morphismes en <a href="logic/category_theory/morphism">théorie des catégories</a>, mais nous allons en reparler ici, car l'algèbre représente la cause principale de leur existence.
+Pour rappel, en théorie des catégories, <span class="important"><definition name="morphism"></span>.
+Dans le cas des structures algébriques, nous pouvons utiliser d'autres concepts bien plus algébriques avec ces morphismes.
+</p>
+
+<p>
+Un des concepts les plus utilisées avec les morphismes en algèbre est le noyau.
+En algèbre, <span class="important"><definition name="morphism_kernel"></span>.
+Par exemple, dans le cas le plus simple (morphisme d'espace vectoriel vers un autre espace vectoriel) : <span class="important">le noyau est tous les vecteurs du premier espace ayant pour image le vecteur nul</span>.
+Par exemple, si nous projetons horizontalement tout le plan sur la droite "y", le noyau est toutes les parties du plan donnant sur le vecteur (0, 0) : la droite "x".
+Dans le schéma en dessous, l'ensemble d'arrivée est la droite rouge et le noyau est la droite verte.
+</p>
+
+<graphic>
+<background_color white>
+<line color=green x_1=-10 y_1=0 x_2=10 y_1=0>
+<line x_1=0 y_1=-10 x_2=0 y_2=10>
+</graphic>

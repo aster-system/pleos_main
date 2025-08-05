@@ -20,7 +20,7 @@ En toute logique, <span class="important">une catégorie est donc la description
 Elle est donc le socle de toutes les théories similaires nécessitant de passer d'une structure à une autre, comme la théorie des groupes et les éléments associés (une structure est appelée un groupe si elle a une structure de groupe : une opération interne additive, avec élément neutre et opposé).
 </p>
 
-<h3>Les morphismes</h3>
+<h3 id="morphism">Les morphismes</h3>
 <p>
 Il est possible de lier deux structures / transformer une structure en une autre avec ce que l'on appelle un morphisme.
 En théorie des catégories, <span class="important"><definition name="morphism"></span>.

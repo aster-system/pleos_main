@@ -26,6 +26,9 @@
 <new_definition name="morphism">
     <content>un morphisme est une application entre deux ensembles de même structures, où la structure "d'arrivée" possède les mêmes "propriétés" que la structure de départ, avec possibilité de les interpréter différement</content>
 </new_definition>
+<new_definition name="morphism_kernel">
+    <content>le noyau d'un morphisme de groupe est l'ensemble du cors de départ du morphisme qui donne en image l'élément neutre du corps d'arrivée</content>
+</new_definition>
 <new_definition name="morphism_ordered_set">
     <content>un morphisme entre deux ensembles ordonnées est un morphisme de ces deux ensembles, où la structure d'ordre est préservée (x &lt; g implique f(x) &lt; f(g))</content>
 </new_definition>
