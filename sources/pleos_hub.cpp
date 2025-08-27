@@ -79,7 +79,7 @@ namespace pleos {
         if(cutted.size() > 0){current_part = cutted.at(0);if(cutted.size() > 1){current_sub_part = cutted.at(1);}}
 
         std::filesystem::create_directory(path + std::string("/images/"));
-        std::shared_ptr<scls::Text_Style> style = std::make_shared<scls::Text_Style>();
+        scls::Text_Style style = scls::Text_Style();
         for(int i = 0;i<static_cast<int>(content.get()->sub_texts().size());i++) {
             std::string attribute_name = content.get()->sub_texts().at(i).get()->xml_balise_name();
             if(is_special_pleos_balise(attribute_name)) {

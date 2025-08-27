@@ -117,3 +117,15 @@ En effet, quand on pense aux nombres complexes, on pense au plan complexe, qui e
 Or, <span class="important">il s'agit d'un espace hermitien de dimension 1 (et pas 2 comme on pourrait le penser)</span>.
 En effet, tous les éléments du plan complexe représente 1 nombre spécifique, et donc 1 seule dimension suffit à le décrire.
 </p>
+
+<h3>Les espaces de Hilbert</h3>
+<p>
+Les espaces de Hilbert représente une version généralisée de tous les espaces vus plus haut.
+En mathématiques, <span class="important"><definition name="hilbert_space"></span>.
+À l'inverse des espaces euclidiens / hermitiens, <span class="important">il est tolérable qu'un espace de Hilbert ai "n" dimensions, et pas un nombre fixe comme 3 ou 4</span>.
+Cependant, il existe une version affaibli des espaces de Hilbert : les espaces préhilbertiens.
+En effet, <definition name="prehilbert_space">.
+Une grande partie des concepts définies avec les espaces euclidiens sont présent dans les esapces de Hilbert, adaptés à la propriété "n" dimensions.
+Par exemple, <definition name="hilbert_base">.
+Ici, le concept de coordonnées utilise une suite d'un nombre quelconque de vecteur dans une base de Hilbert.
+</p>

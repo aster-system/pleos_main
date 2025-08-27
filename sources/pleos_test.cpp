@@ -56,7 +56,7 @@ namespace pleos {
         text +=  std::string("</br>") + tree_to_xml_1 + std::string("</br></br>") + tree_to_xml_2;
 
         // Create the page
-        scls::Text_Image_Generator tig;scls::Text_Style style;style.max_width = 1000;
+        scls::Text_Image_Generator tig;scls::Text_Style style;style.set_max_width(1000);
         std::shared_ptr<scls::__Image_Base> page_1_image = tig.image_shared_ptr<pleos::Text>(text, style);
         page_1_image.get()->save_png(path + std::string("/bac.png"));
     }
@@ -104,7 +104,7 @@ namespace pleos {
         }
 
         // Create the page
-        scls::Text_Image_Generator tig;scls::Text_Style style;style.max_width = 1000;
+        scls::Text_Image_Generator tig;scls::Text_Style style;style.set_max_width(1000);
         std::shared_ptr<scls::__Image_Base> page_1_image = tig.image_shared_ptr<pleos::Text>(page, style);
         page_1_image.get()->save_png(path + std::string("/page_1.png"));
     }

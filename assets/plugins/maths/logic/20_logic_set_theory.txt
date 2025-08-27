@@ -132,6 +132,30 @@ L'adaptation de ce que représente le multiple de ω dépend du contexte actuel 
 
 <h2>Les opérations ensemblistes</h2>
 
+<h3>Le produit cartésien</h3>
+<p>
+L'opération basique entre deux ensembles est le produit cartésien.
+<span class="important"><definition name="cartesian_product"></span>.
+L'exemple le plus simple de produit cartésien est le produit cartésien entre deux ensembles fini dans N (par exemple, {0, 4}).
+</p>
+
+<table load="cartesian_product"></table>
+
+<p>Ce concept marche aussi avec les nombres réels, ce qui représente le plan 2D.</p>
+
+<graphic><background_color white><base draw=1 height=3 width=3><form color=light_grey border_color=black polygon=5></graphic>
+
+<p>
+Pour créer un plan 3D, il faudrait donc un produit cartésien entre 3 fois l'ensemble des réels, ce qui est possible grâce au produit cartésien fini.
+<span class="important"><definition name="cartesian_product_n_fold"></span>.
+Appart cela, le concept reste le même.
+</p>
+<p>
+Le produit cartésien peut aussi être généralisé pour une infinité d'ensembles.
+<span class="important"><definition name="cartesian_product_infinite"></span>.
+Bien que ce concept semble assez similaire à celui du produit cartésien fini, il demande quelques notions plus complexes pour être correctement défini, comme par exemple celle de famille de fonctions.
+</p>
+
 <h3>Les applications mathématiques</h3>
 <p>
 En mathématiques, <span class="important">une application est une relation / lien entre deux ensembles</span>.
@@ -140,7 +164,7 @@ On appelle "image" un élément du premier ensemble, nommé ensemble de départ,
 Tous les éléments de l'ensemble de départ doivent être liés, mais pas forcément tous les éléments de l'ensemble d'arrivée.
 Pour définir correctement ce terme, on doit créer une structure contenant l'ensemble de départ, l'ensemble d'arrivée, et tous les liens entre chaque éléments de ces ensembles.
 Si les ensembles de départ et d'arrivée peuvent être définis dans des structures algébriques, alors nous pouvons utiliser le terme de <a href="logic_category_theory">morphisme de structures algébriques</a>.
-Dans certains cas, une application peut avoir besoin de plusieurs antécédents, pouvant être contradictoire avec la définition : il faut garder en tête que l'ensemble de départ peut être le produit carthésien de tous les ensembles dans lesquels les antécédents sont contenus, annulant la contradiction.
+Dans certains cas, une application peut avoir besoin de plusieurs antécédents, pouvant être contradictoire avec la définition : il faut garder en tête que l'ensemble de départ peut être le produit cartésien de tous les ensembles dans lesquels les antécédents sont contenus, annulant la contradiction.
 </p>
 
 <table title="Application de N vers N*">
@@ -205,4 +229,48 @@ Les liens, eux, ne changent pas.
 <case x=0 y=0 content="0"><case x=1 y=0 content="1"><case x=2 y=0 content="2"><case x=3 y=0 content="3"><case x=4 y=0 content="4"><case x=5 y=0 content="..."><case x=6 y=0 content="x">
 <case right_border=0 x=0 y=1 content="|"><case right_border=0 x=1 y=1 content="|"><case right_border=0 x=2 y=1 content="|"><case right_border=0 x=3 y=1 content="|"><case right_border=0 x=4 y=1 content="|"><case right_border=0 x=5 y=1 content="|"><case right_border=0 x=6 y=1 content="|">
 <case x=0 y=2 content="1"><case x=1 y=2 content="2"><case x=2 y=2 content="3"><case x=3 y=2 content="4"><case x=4 y=2 content="5"><case x=5 y=2 content="..."><case x=6 y=2 content="x + 1">
+</table>
+
+<h3>Les relations d'équivalences</h3>
+
+<p>
+Le concept de relation d'équivalence est un concept peu expliqué, car considéré comme évident, bien qu'il ne le soit pas tant que ça.
+<span class="important"><definition name="equivalence_relation"></span>.
+Ce concept s'utilise avec celui de classe d'équivalence.
+<span class="important"><definition name="equivalence_class"></span>.
+Cependant, il est à noter que une classe d'équivalence peut être défini avec comme élément de départ n'importe quel élément de la base, en restant parfaitement égale.
+</p>
+
+<table load="cartesian_product;parity" title="Même parité entre deux entiers (deux pairs / impairs)"></table>
+
+<p>
+D'un point de vue très rigoureux (comme, par exemple, la définition donnée sur <a href="https://fr.wikipedia.org/wiki/Relation_d'%C3%A9quivalence">Wikipédia</a>), une relation d'équivalence est une relation binaire réflexive, symétrique et translative.
+Bien que ces mots semblent compliqués, ils représentent en réalité des concepts très simples.
+En mathématiques, <span class="important"><definition name="binary_relation"></span>.
+En mots très simples, c'est une relation entre deux éléments seulement.
+De plus, <span class="important"><definition name="relation_reflexivity"></span>.
+En terme mathématique pure, <definition name="relation_reflexivity-symbols">.
+Par exemple, pour la relation "distance à 0", "x" a la même distance à 0 que... "x" (très évident dans ce cas).
+En suite, <span class="important"><definition name="relation_symetrical"></span>.
+C'est une propriété plus syntaxique qu'autre chose : <definition name="relation_reflexivity-symbols">.
+Finalement, <span class="important"><definition name="relation_transitivity"></span>.
+C'est la "relation de Chasles" du concept, <definition name="relation_transitivity-symbols">.
+</p>
+
+<h3>Les ensembles quotient</h3>
+<p>
+Dans une certaine mesure, l'opération quotient est définie pour les ensembles, en utilisant le concept de relation d'équivalence.
+<span class="important"><definition name="quotient_set"></span>.
+Pour mieux comprendre cette définition, prenons l'exemple le plus connu : la congruence (et le modulo) en arithmétique.
+Pour rappel, <definition name="arithmetic_congruence">.
+Dans ce cas, <span class="important">on peut définir une relation d'équivalence entre chaque congruences possibles (de 0 à "n - 1"), et utiliser cette relation pour créer l'ensemble quotient</span>.
+Voici une représentation de ce que cela peut représenter (chaque couleur représente une classe différente) :
+</p>
+
+<table title="Relation pour le modulo 4">
+    <case x=0 y=0 content="0"><case x=1 y=0 content="1" background_color=(255,200,200)><case x=2 y=0 content="2" background_color=(200,255,200)><case x=3 y=0 content="3" background_color=(200,200,255)>
+    <case x=0 y=1 content="4"><case x=1 y=1 content="5" background_color=(255,200,200)><case x=2 y=1 content="6" background_color=(200,255,200)><case x=3 y=1 content="7" background_color=(200,200,255)>
+    <case x=0 y=2 content="8"><case x=1 y=2 content="9" background_color=(255,200,200)><case x=2 y=2 content="10" background_color=(200,255,200)><case x=3 y=2 content="11" background_color=(200,200,255)>
+    <case x=0 y=3 content="12"><case x=1 y=3 content="13" background_color=(255,200,200)><case x=2 y=3 content="14" background_color=(200,255,200)><case x=3 y=3 content="15" background_color=(200,200,255)>
+    <case x=0 y=4 content="4n"><case x=1 y=4 content="4n + 1" background_color=(255,200,200)><case x=2 y=4 content="4n + 2" background_color=(200,255,200)><case x=3 y=4 content="4n + 3" background_color=(200,200,255)>
 </table>

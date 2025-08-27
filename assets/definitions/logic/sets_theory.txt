@@ -1,0 +1,35 @@
+<new_definition name="cartesian_product">
+    <content>le produit cartésien (aussi nommé produit cartésien binaire) de deux ensembles est une opération sur deux ensembles, permettant d'obtenir un ensemble des couples de chaque élément du premier ensemble vers chaque élément du second ensemble (et vice-versa)</content>
+</new_definition>
+<new_definition name="cartesian_product_infinite">
+    <content>le produit cartésien d'un nombre infini d'ensembles est une opération sur un nombre aussi grand que l'on veut d'ensembles, permettant d'obtenir un ensemble des n-uplets (ensembles de n éléments, avec n aussi grand que l'on veut) de chaque élément des ensembles avec chaque élément des autres ensembles (et vice-versa)</content>
+</new_definition>
+<new_definition name="cartesian_product_n_fold">
+    <content>le produit cartésien fini de n ensembles est une opération sur n ensembles, permettant d'obtenir un ensemble des n-uplets (ensembles de n éléments) de chaque élément des n ensembles avec chaque élément des autres ensembles (et vice-versa)</content>
+</new_definition>
+
+<new_definition name="binary_relation">
+    <content>une relation binaire est une relation (un lien) possible entre deux éléments de deux ensembles</content>
+</new_definition>
+<new_definition name="equivalence_relation">
+    <content>une relation d'équivalence est, dans un ensemble E, une relation (un lien) possible entre deux éléments quelconques, possèdant des propriétés similaires</content>
+</new_definition>
+<new_definition name="equivalence_class">
+    <content>une classe d'équivalence est la classe / l'ensemble des éléments liables par une relation d'équivalence précise (et donc partageant des propriétés similaires) a un élément précis de l'ensemble</content>
+</new_definition>
+<new_definition  name="relation_reflexivity">
+    <content>une relation est dite réflexive si, pour un objet quelconque, elle est toujours similaire entre l'objet et... lui même</content>
+    <content name="symbols">pour la relation "~" et l'élément "x", "~" est réflexive si : "x ~ x"</content>
+</new_definition>
+<new_definition name="relation_symetrical">
+    <content>une relation binaire est dite symétrique si l'ordre des deux éléments n'importe pas dans l'éccriture de la relation</content>
+    <content name="symbols">pour la relation "~" et les éléments "x" et "y", "~" est symétrique si : "x ~ y &lt;=&gt; y ~ x"</content>
+</new_definition>
+<new_definition name="relation_transitivity">
+    <content>une relation binaire est dite transitive si, pour 3 éléments distints, la relation entre les deux premiers et les deux derniers éléments permet de passer directement a une relation entre le premier et le dernier</content>
+    <content name="symbols">pour la relation "~" et les éléments "x", "y" et "z", "~" est transitive si : "x ~ y ET y ~ Z &lt;=&gt; x ~ z"</content>
+</new_definition>
+
+<new_definition name="quotient_set">
+    <content>un ensemble quotient d'un ensemble "E" sur une relation d'équivalence "~" est une découpe de "E", entre chaque classe d'équivalence de "~" dans "E"</content>
+</new_definition>

@@ -35,3 +35,13 @@
 <new_definition name="sesquilinearity">
     <content>une application sesquilinéaire représente une application linéaire à droite et semi-linéaire à gauche (où la multiplication par un scalaire se fait via son conjugué)</content>
 </new_definition>
+
+<new_definition name="hilbert_base">
+    <content>une base de Hilbert est une version généralisée des bases d'espaces euclidiens à un espace de Hilbert à "n" dimensions, avec "n" vecteurs différents dedans</content>
+</new_definition>
+<new_definition name="hilbert_space">
+    <content>un espace de Hilbert est un espace vectoriel réel (ou complexe) muni d'un produit scalaire approprié, avec un nombre quelconque (fini ou infini) de dimensions</content>
+</new_definition>
+<new_definition name="prehilbert_space">
+    <content>un espace préhilbertien est un espace de Hilbert, qui n'est pas forcément complet</content>
+</new_definition>

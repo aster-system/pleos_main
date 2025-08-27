@@ -24,7 +24,22 @@
 <new_definition name="algebra_ring">
     <content>un anneau (aussi nommé anneau unitaire) est une structure algébrique définie sur un élément, avec deux lois de compositions internes : une addition (sous forme de groupe abélien), et une multiplication (sous forme de monoïde) distributive avec l'addition</content>
 </new_definition>
+<new_definition name="algebra_subfield">
+    <content>un sous-corps K d'un corps L est un corps sur un sous-ensemble de l'ensemble de L, dans lequel la structure de corps est conservée (présence d'un neutre, le même que L, et toutes les opérations dans K, les mêmes que dans L, donnent un élément de K)</content>
+</new_definition>
+<new_definition name="algebra_subgroup">
+    <content>un sous-groupe H d'un groupe G est un groupe sur un sous-ensemble de l'ensemble de G, dans lequel la structure de groupe est conservée (présence d'un neutre, le même que G, et toutes les opérations dans H, les mêmes que dans G, donnent un élément de H)</content>
+</new_definition>
+<new_definition name="algebra_subgroup_proper">
+    <content>un sous-groupe H d'un groupe G est dit propre si H n'est pas un groupe trivial de G</content>
+</new_definition>
+<new_definition name="algebra_subgroup_trivial">
+    <content>le sous-groupe trivial d'un groupe G est un sous-groupe de G sur l'ensemble ne contenant que l'élément neutre de G</content>
+</new_definition>
 
+<new_definition name="algebra_lagrange_theorem">
+    <content>le théorème de Lagrange formule que l'ordre d'un groupe G (le cardinal de son ensemble) est divisible par ceux de ses sous-groupes H</content>
+</new_definition>
 <new_definition name="wedderburn_theorem">
     <content>le théorème de Wedderburn est un théorème d'algèbre, affirmant que un corps fini (d'ensemble fini) est obligatoirement commutatif</content>
 </new_definition>

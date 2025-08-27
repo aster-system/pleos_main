@@ -1,0 +1,3 @@
+<new_definition name="combinatorics_counting">
+    <content>le dénombrement est l'opération mathématique correspondant à la recherche du cardinal (la taille) d'un ensemble</content>
+</new_definition>

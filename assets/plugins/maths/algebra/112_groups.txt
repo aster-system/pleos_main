@@ -1,0 +1,41 @@
+<h1>Les groupes algébriques</h1>
+
+
+
+<h2>La structure algébrique de base</h2>
+
+<h3 id="groups">Les magmas, monoïdes et groupes</h3>
+<p>
+En algèbre, <span class="important">un magma est une structure algébrique avec une loi de composition interne quelconque</span>.
+Dans un magma, la loi de composition peur avoir (ou ne pas avoir) n'importe quelle propriété.
+On peut rendre cette notion plus précise.
+En effet, <span class="important">un magma où la loi de composition interne est associative et admet un élément neutre est appelé un monoïde</span>.
+Par exemple, la structure algébrique constituée de l'ensemble des nombres entiers naturels et de la loi d'addition est un monoïde (il obéit aux propriétés nécessaires).
+Finalement, <span class="important">un monoïde admettant pour chacun de ses éléments un autre éléments symétrique (donnant le neutre de l'opération par cette opérande) par sa loi de composition interne est nommé un groupe</span>.
+Par exemple, la structure algébrique constituée de l'ensemble des nombres entiers relatifs et de la loi d'addition est un groupe (l'élement symétrique de "a" est "-a").
+De même, la structure algébrique constituée de l'ensemble des nombres entiers relatifs et de la loi de multiplication est un groupe (l'élement symétrique de "a" est "1/a").
+<span class="important">Si la loi de composition interne est commutative, le groupe est dit abélien</span>.
+</p>
+<graphic>
+<base width=10 height=10>
+<rect background_color=white border_radius=0 x=-5 y=-5 width=10 height=10>
+<rect background_color=green border_radius=1 x=-9/2 y=-4 width=9 height=13/2>
+<rect background_color=yellow border_radius=1 x=-4 y=-3 width=8 height=7/2>
+<text background_color=transparent y=4 content="Magma"></text>
+<text background_color=transparent y=3/2 content="Monoïde"></text>
+<text background_color=transparent y=-1 content="Groupe"></text>
+</graphic>
+<p>
+<span class="important">La théorie étudiant ces structures est nommée la théorie des groupes</span>.
+L'idée même de cette théorie est de définir une base très stable pour toutes les structures de groupe, très communes en mathématiques.
+</p>
+
+
+
+<h2>Les opérations de groupes</h2>
+
+<h3>Les groupes quotients</h3>
+<p>
+Une des manières de construire un groupe est l'opération du groupe quotient.
+
+</p>

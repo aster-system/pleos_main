@@ -165,6 +165,31 @@ Gràce à ces corps, <span class="important">nous pouvons définir un espace de 
 Nous pouvons aussi définir des corps plus petit que le corps de base, nommés des sous-corps, ou même des corps plus grands (contenant le corps de base), nommés des extensions de corps.
 </p>
 
+<h3>Les sous-groupes et sous-corps</h3>
+<p>
+Il est possible d'obtenir une partie plus petite d'un groupe / corps (donc, incluse dans lui), nommé un sous-groupe (ou sous-corps pour les corps).
+En algèbre, <span class="important"><definition name="algebra_subgroup"></span>.
+Dans le cas des corps, <span class="important"><definition name="algebra_subfield"></span>.
+L'exemple suivant est un des sous-groupes sur l'ensemble Z, qui sont tous de la forme "nZ" avec n un entier naturel.
+</p>
+
+<table title="Exemple de sous-groupe sur l'ensemble Z">
+<case content="Groupe "G" (Z, +)" x=0 y=0><case content="Sous-groupe de "G" (2Z, +)" x=0 y=1>
+<case content="-a" x=1 y=0><case content="-1" y=0 x=2><case content="0" y=0 x=3><case content="1" y=0 x=4><case content="a" y=0 x=5><case content="b + c" y=0 x=6>
+<case content="2 * -a" x=1 y=1><case content="-2" y=1 x=2><case content="0" y=1 x=3><case content="2" y=1 x=4><case content="2 * a" y=1 x=5><case content="2 * (b + c)" y=1 x=6>
+</table>
+
+<p>
+Le sous-groupe le plus simple d'un groupe est son groupe trivial.
+En effet, <span class="important"><definition name="algebra_subgroup_trivial"></span>.
+À l'inverse, <definition name="algebra_subgroup_proper">.
+</p>
+
+<p>
+Les groupes finis sont liés à leurs sous-groupes via à un théorème nommé théorème de Lagrange.
+<span class="important"><definition name="algebra_lagrange_theorem"></span>.
+</p>
+
 
 
 <h2>Les autres opérations possibles</h2>

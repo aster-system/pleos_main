@@ -1,0 +1,15 @@
+<h1>La combinatoire</h1>
+
+
+
+<h2>L'union de plein de domaines</h2>
+
+<h3>Qu'est ce qu'est le dénombrement ?</h3>
+<p>
+Le dénombrement est l'une des branches de la combinatoire.
+<span class="important"><definition name="combinatorics_counting"></span>.
+Aussi simple soit elle, elle est soumise à quelques théorèmes assez précis, qui bien qu'assez évidents, permettent une démonstration aux racines mêmes de la logique.
+Par exemple, <span class="important">si un ensemble A est une partie d'un ensemble fini E, alors le cardinal de E est inférieur ou égal à celui de A (si ils ont le même cardinal, alors ils sont égaux)</span>.
+Ce théorème admet énormément de corollaires : toutes applications injectives de l'ensemble A fini vers B implique que le cardinal de B est égal à A celui de B, même chose si l'on remplace A et B...
+
+</p>
