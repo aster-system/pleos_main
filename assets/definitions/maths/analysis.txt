@@ -1,0 +1,5 @@
+<new_definition name="analysis_limit">
+    <content>une limite mathématique est un outil / un opérateur permettant d'approximer une "infinité de fois" une valeur</content>
+    <content name="sequence">une limite de suite est la valeur vers laquelle on se rapproche si on prend des valeurs "toujours plus proches de l'infini"</content>
+    <content name="function">une limite de fonction en une valeur "v" est la valeur vers laquelle on se rapproche si on prend des valeurs "toujours plus proches de v"</content>
+</new_definition>

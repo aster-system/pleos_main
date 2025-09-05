@@ -1,0 +1,42 @@
+<h1>Les limites mathématiques</h1>
+
+
+
+<h2>Utiliser l'infini en mathématiques</h2>
+
+<h3>Qu'est ce qu'est une limite mathématique ?</h3>
+<p>
+En mathématiques, le concept de limite est un moyen de parler d'analyser l'infini.
+En effet, <span class="important"><definition name="analysis_limit"></span>.
+Dans le cas d'une suite, <span class="important"><definition name="analysis_limit-sequence"></span>.
+Dans le cas d'une fonction, <span class="important"><definition name="analysis_limit-function"></span>.
+Bien évidemment, la définition dans le cas de la suite est aussi utilisable avec les fonctions (vers + l'infini ou - l'infini).
+En théorie, ce n'est pas possible "d'approximer une infinité de fois".
+En pratique, ce n'est pas grave.
+Effectivement, <span class="important">dans le cas d'une fonction, l'idée est de pouvoir dire que "plus on se rapproche de la valeur voulue, plus la valeur obtenue est proche de celle de la limite"</span>.
+</p>
+
+<table>
+
+<case x=0 y=0 content="f(x) = 0.5x">
+<case x=1 y=0 content="g(x) = 1/x">
+
+<case_plus x=0 y=1>
+<graphic><function expression="x/2"></graphic>
+</case_plus>
+
+<case_plus x=1 y=1>
+<graphic><function expression="1/x"></graphic>
+</case_plus>
+
+<case x=0 y=2 content="f(10) = 5"><case x=0 y=3 content="f(100) = 50"><case x=0 y=4 content="f(10000) = 5000">
+<case x=0 y=5 content="lim. f(x) pour x tendant vers +∞ = +∞">
+
+<case x=1 y=2 content="g(0.1) = 10"><case x=1 y=3 content="g(0.001) = 1000"><case x=1 y=4 content="g(0.00001) = 100000">
+<case x=1 y=5 content="lim. g(x) pour x tendant vers 0 = +∞">
+
+</table>
+
+<p>
+Cependant, cette définition dépend beaucoup de ce que l'on veut dire / comment on fait pour "approximer une infinité de fois".
+</p>

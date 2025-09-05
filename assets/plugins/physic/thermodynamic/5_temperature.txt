@@ -110,5 +110,8 @@ En effet, <definition name="process_isochoric">.
 <p>
 <span class="important"><definition name="thermal_conductivity"></span>.
 Elle dépend de la capacité des atomes à transmettre l'agitation entre eux (et donc, de leur distance, de leur énergie, du contact entre eux...).
-Son unité est le watt (puissance) par mètre fois kelvin (puissance thermique transmise pour une certaine surface selon la différence de température).
+Son unité est le watt (puissance) par "mètre fois kelvin" (puissance thermique transmise pour une certaine surface selon la différence de température).
+</p>
+<p>
+La meilleure description mathématique de ce concept est la loi de Fourier.
 </p>
