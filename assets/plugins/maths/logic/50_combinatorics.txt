@@ -6,10 +6,47 @@
 
 <h3>Qu'est ce qu'est le dénombrement ?</h3>
 <p>
-Le dénombrement est l'une des branches de la combinatoire.
+Le dénombrement est l'une des branches centrales de la combinatoire.
 <span class="important"><definition name="combinatorics_counting"></span>.
 Aussi simple soit elle, elle est soumise à quelques théorèmes assez précis, qui bien qu'assez évidents, permettent une démonstration aux racines mêmes de la logique.
 Par exemple, <span class="important">si un ensemble A est une partie d'un ensemble fini E, alors le cardinal de E est inférieur ou égal à celui de A (si ils ont le même cardinal, alors ils sont égaux)</span>.
 Ce théorème admet énormément de corollaires : toutes applications injectives de l'ensemble A fini vers B implique que le cardinal de B est égal à A celui de B, même chose si l'on remplace A et B...
+</p>
 
+</br>
+<table title="Dénombrement d'un ensemble de lettres">
+<case x=0 y=0 content="1"><case x=1 y=0 content="2"><case x=2 y=0 content="3"><case x=3 y=0 content="4"><case x=4 y=0 content="5"><case x=5 y=0 content="6"><case x=6 y=0 content="7"><case x=7 y=0 content="8">
+<case right_border=0 x=0 y=1 content="|"><case right_border=0 x=1 y=1 content="|"><case right_border=0 x=2 y=1 content="|"><case right_border=0 x=3 y=1 content="|"><case right_border=0 x=4 y=1 content="|"><case right_border=0 x=5 y=1 content="|"><case right_border=0 x=6 y=1 content="|"><case right_border=0 x=7 y=1 content="|">
+<case right_border=0 x=0 y=2 content="C"><case right_border=0 x=1 y=2 content="O"><case right_border=0 x=2 y=2 content="M"><case right_border=0 x=3 y=2 content="B"><case right_border=0 x=4 y=2 content="I"><case right_border=0 x=5 y=2 content="N"><case right_border=0 x=6 y=2 content="E"><case right_border=0 x=7 y=2 content="R">
+</table>
+
+<h3>Que veut dire "combinatoire" ?</h3>
+<p>
+Définir la combinatoire en terme général est complexe.
+En fait, <span class="important"><definition name="combinatorics"></span>.
+</p>
+
+<h3>La combinatoire énumérative</h3>
+<p>
+Le domaine de combinatoire le plus connu (et le plus évident) est la combinatoire énumérative.
+En mathématiques, <span class="important"><definition name="combinatorics_enumerative"></span>.
+Par exemple, le nombre d'arrangement possibles d'un ensemble de nombre (ou de quoi que ce soit de discernable) est étudiée par cette branche de la combinatoire.
+</p>
+
+<h3>La combinatoire géométrique / topologique</h3>
+<p>
+La combinatoire est aussi utilisable en géométrie.
+Effectivement, <span class="important"><definition name="combinatorics_geometry"></span>.
+L'exemple le plus simple est celui de la recherche d'un cadrillage du plan.
+</p>
+<p>
+En plus de ça, une autre branche de combinatoire très intéressante est la combinatoire topologique.
+En effet, <span class="important"><definition name="combinatorics_topology"></span>.
+C'est une façon plus intuitive de travailler en combinatoire avec des objets topologiques que avec la combinatoire énumérative (en utilisant le formalisme de la topologie).
+En bref, <span class="important">cette branche étudie pas mal de concept très intéressant : graphes (et les problèmes de coloration associés), partition d'espaces</span>...
+</p>
+
+<h3>Autres domaines de combinatoire</h3>
+<p>
+En vérité, tout peut être associé à la combinatoire pour formé un "domaine de combinatoire", plus ou moins poussé.
 </p>

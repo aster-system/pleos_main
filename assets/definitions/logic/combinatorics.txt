@@ -1,3 +1,15 @@
+<new_definition name="combinatorics">
+    <content>la combinatoire est l'analyse du rangement / classement / gestion d'éléments dans un ensemble</content>
+</new_definition>
 <new_definition name="combinatorics_counting">
     <content>le dénombrement est l'opération mathématique correspondant à la recherche du cardinal (la taille) d'un ensemble</content>
+</new_definition>
+<new_definition name="combinatorics_enumerative">
+    <content>la combinatoire énumérative est l'application de la combinatoire à un ensemble fini quelconque d'éléments parfaitement discernables</content>
+</new_definition>
+<new_definition name="combinatorics_geometry">
+    <content>la combinatoire géométrique est l'application de la combinatoire à des formes / espaces géométriques</content>
+</new_definition>
+<new_definition name="combinatorics_topology">
+    <content>la combinatoire topologique est l'application de la combinatoire à des espaces / objets topologiques</content>
 </new_definition>

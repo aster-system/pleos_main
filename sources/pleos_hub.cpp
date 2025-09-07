@@ -218,6 +218,9 @@ namespace pleos {
         else if(word == std::string("random")){if(add_determinant){to_return = std::string("les sciences du hasard");}else{to_return = std::string("sciences du hasard");};}
         else if(word == std::string("thermodynamic")){if(add_determinant){to_return = std::string("la thermodynamique");}else{to_return = std::string("thermodynamique");};}
 
+        // Others
+        else if(word == std::string("definitions")){if(add_determinant){to_return = std::string("les définitions");}else{to_return = std::string("définitions");}}
+
         // Capitalise the first letter
         if(to_return == std::string()) {scls::print("PLEOS", std::string("Can't translate the word \"") + word + "\" for SAASF.");}
         else{if(capitalise_first_letter) {to_return = scls::capitalise_letter(to_return, 0);}}
@@ -275,6 +278,7 @@ namespace pleos {
         element->set_variable_value(std::string("explaination_title"), std::string("Aster Système Learn"));
         std::string explaination_content = std::string("Voici la liste de tous les savoirs accessibles sur les médias (Youtube, Tiktok, Instagram...) d'Aster Système Learn pour l'instant :&lt;ul&gt;");
         for(int i = 0;i<static_cast<int>(subjects.size());i++){explaination_content += std::string("&lt;li&gt;&lt;a href=\"./learn/") + subjects[i] + std::string(".html\"&gt;") + __saasf_translate(subjects.at(i), true, true) + std::string("&lt;/a&gt;&lt;/li&gt;");}
+        explaination_content += std::string("&lt;li&gt;&lt;a href=\"./learn/definitions.html\"&gt;") + __saasf_translate(std::string("definitions"), false, true) + std::string("&lt;/a&gt;&lt;/li&gt;");
         explaination_content += std::string("&lt;/ul&gt;");
         element->set_variable_value(std::string("explaination_content"), explaination_content);
         // Aster System Creations
@@ -406,6 +410,42 @@ namespace pleos {
                 element->set_variable_value(std::string("explaination_content"), explaination_content_school);
             }
         }
+
+        // Definitions page
+        index = needed_replica.get()->new_replica_file("learn/definitions.html", needed_pattern.get()->pattern_by_name("main"));
+        index.get()->set_variable_value(std::string("main_title"), std::string("SAASF - Définitions"));
+        index.get()->set_variable_value(std::string("main_description"), std::string("Le site web est développé avec PLEOS, offrant un système de définition permettant d'efficacement y accéder. Toutes ces définitions sont présentes ici."));
+        index.get()->set_variable_value(std::string("page_title"), std::string("SAASF - Définitions"));
+        // Add each definitions
+        element = index.get()->variable_list(std::string("explaination_parts[]"))->new_element<scls::Replica_File_Variable_Element>();
+        element->set_variable_value(std::string("explaination_title"), std::string("Toutes les définitions"));
+        explaination_content = std::string("Un système de classification plus précis pour chaque définitions est à venir. En attendant, voici toutes les définitions accessibles :&lt;ul&gt;");
+        for(int i = 0;i<static_cast<int>(__saasf_text_environment.get()->definitions().size());i++){
+            explaination_content += std::string("&lt;li&gt;") + __saasf_text_environment.get()->definitions().at(i).get()->content(true) + std::string("&lt;/li&gt;");
+        }
+        explaination_content += std::string("&lt;/ul&gt;");
+        element->set_variable_value(std::string("explaination_content"), explaination_content);
+
+        /*
+        // Explaination
+        scls::Replica_File_Variable_Element* element = index.get()->variable_list(std::string("explaination_parts[]"))->new_element<scls::Replica_File_Variable_Element>();
+        element->set_variable_value(std::string("explaination_title"), std::string("Réalisation"));
+        element->set_variable_value(std::string("explaination_content"), __saasf_index_realisation);
+        // Aster System Learn
+        element = index.get()->variable_list(std::string("explaination_parts[]"))->new_element<scls::Replica_File_Variable_Element>();
+        element->set_variable_value(std::string("explaination_title"), std::string("Aster Système Learn"));
+        std::string explaination_content = std::string("Voici la liste de tous les savoirs accessibles sur les médias (Youtube, Tiktok, Instagram...) d'Aster Système Learn pour l'instant :&lt;ul&gt;");
+        for(int i = 0;i<static_cast<int>(subjects.size());i++){explaination_content += std::string("&lt;li&gt;&lt;a href=\"./learn/") + subjects[i] + std::string(".html\"&gt;") + __saasf_translate(subjects.at(i), true, true) + std::string("&lt;/a&gt;&lt;/li&gt;");}
+        explaination_content += std::string("&lt;/ul&gt;");
+        element->set_variable_value(std::string("explaination_content"), explaination_content);
+        // Aster System Creations
+        element = index.get()->variable_list(std::string("explaination_parts[]"))->new_element<scls::Replica_File_Variable_Element>();
+        element->set_variable_value(std::string("explaination_title"), std::string("Les créations Aster Système"));
+        explaination_content = std::string("Voici la liste de toutes les créations Open Source d'Aster Système :&lt;ul&gt;");
+        for(int i = 0;i<static_cast<int>(creations.size());i++){explaination_content += std::string("&lt;li&gt;&lt;a href=\"./creations/") + creations[i] + std::string(".html\"&gt;") + __saasf_translate(creations.at(i), true, true) + std::string("&lt;/a&gt;&lt;/li&gt;");}
+        explaination_content += std::string("&lt;/ul&gt;");
+        element->set_variable_value(std::string("explaination_content"), explaination_content);
+        //*/
 
         // Creation main pages
         for(int i = 0;i<static_cast<int>(creations.size());i++){

@@ -118,13 +118,13 @@ namespace pleos {
 
         // Create an object in the window
         std::shared_ptr<scls::Object> __create_loaded_object_from_type(std::string object_name, std::string object_type) {
-            if(object_name == "hub") {std::shared_ptr<Hub_Page> hub = *new_page_2d<Hub_Page>(object_name);return hub;}
-            else if(object_name == "chemistry") {std::shared_ptr<Chemistry_Page> hub = *new_page_2d<Chemistry_Page>(object_name);return hub;}
-            else if(object_name == "it") {std::shared_ptr<IT_Page> hub = *new_page_2d<IT_Page>(object_name);return hub;}
-            else if(object_name == "maths") {std::shared_ptr<Maths_Page> hub = *new_page_2d<Maths_Page>(object_name);return hub;}
-            else if(object_name == "notes") {std::shared_ptr<Notes_Page> hub = *new_page_2d<Notes_Page>(object_name);return hub;}
-            else if(object_name == "physic") {std::shared_ptr<Physic_Page> hub = *new_page_2d<Physic_Page>(object_name);return hub;}
-            else if(object_name == "settings") {std::shared_ptr<Settings_Page> hub = *new_page_2d<Settings_Page>(object_name);return hub;}
+            if(object_name == "hub") {std::shared_ptr<Hub_Page> hub = new_page_2d<Hub_Page>(object_name);return hub;}
+            else if(object_name == "chemistry") {std::shared_ptr<Chemistry_Page> hub = new_page_2d<Chemistry_Page>(object_name);return hub;}
+            else if(object_name == "it") {std::shared_ptr<IT_Page> hub = new_page_2d<IT_Page>(object_name);return hub;}
+            else if(object_name == "maths") {std::shared_ptr<Maths_Page> hub = new_page_2d<Maths_Page>(object_name);return hub;}
+            else if(object_name == "notes") {std::shared_ptr<Notes_Page> hub = new_page_2d<Notes_Page>(object_name);return hub;}
+            else if(object_name == "physic") {std::shared_ptr<Physic_Page> hub = new_page_2d<Physic_Page>(object_name);return hub;}
+            else if(object_name == "settings") {std::shared_ptr<Settings_Page> hub = new_page_2d<Settings_Page>(object_name);return hub;}
             return scls::Window::__create_loaded_object_from_type(object_name, object_type);
         }
     };
