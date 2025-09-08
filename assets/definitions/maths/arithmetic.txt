@@ -1,3 +1,7 @@
+<new_definition name="arithmetic_congruence">
+    <content>deux nombres entiers sont dit congrus modulo "n" (avec n un autre entier) si ils ont le même reste par la division par "n"</content>
+</new_definition>
+
 <new_definition name="real_number">
     <content>un nombre réel représente un nombre constitué d'une partie entière (représentant un nombre naturel) et d'une partie décimale quelconque (qui peut être infinie et non-périodique)</content>
 </new_definition>

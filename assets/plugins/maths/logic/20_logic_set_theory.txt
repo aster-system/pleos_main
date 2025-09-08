@@ -132,6 +132,22 @@ L'adaptation de ce que représente le multiple de ω dépend du contexte actuel 
 
 <h2>Les opérations ensemblistes</h2>
 
+<h3>L'ensemble des parties</h3>
+<p>
+L'ensemble des parties est un ensemble induit par un autre ensemble quelconque.
+<span class="important"><definition name="power_set"></span>.
+</p>
+<p>
+Le calcul du cardinal d'un ensemble des parties est un exercice assez intéressant.
+En fait, <span class="important"><definition name="power_set-cardinal"></span>.
+Ce résultat se dénombre de manière logique assez facilement.
+Déjà, <span class="important">un ensemble de taille 0 a un ensemble des parties composé de seulement l'ensemble vide (donc, de taille 1), et un ensemble de taille 1 a un ensemble des parties de taille 2 (lui-même et l'ensemble vide)</span>.
+En suite, pour chaque ensemble de taille supérieure "n", le calcul de la taille de son ensemble des parties peut se faire en prenant en compte tous les éléments présents dans l'ensemble des parties de l'ensemble de taille "n - 1", que l'on duplique en 2 : un avec le nouvel élément et un sans le nouvel élément (quel qu'il soit).
+En d'autres termes, <span class="important">la taille de l'ensemble des parties d'un ensemble de taille "n" représente le double de l'ensemble des parties d'un ensemble de taille "n - 1"</span>.
+Or, la taille de l'ensemble des parties d'un ensemble de taille 0 est de 2 exposant 0, et la taille de l'ensemble des parties d'un ensemble de taille 1 est de 2 exposant 1.
+Donc, <span class="important">nous avons démontré (logiquement) cette formule</span>.
+</p>
+
 <h3>Le produit cartésien</h3>
 <p>
 L'opération basique entre deux ensembles est le produit cartésien.

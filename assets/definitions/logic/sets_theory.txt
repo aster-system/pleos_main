@@ -1,3 +1,8 @@
+<new_definition name="power_set">
+    <content>l'ensemble des parties (ou ensemble puissance) d'un ensemble E est un ensemble contenant la totalité des sous-ensembles (pas forcément ordonnés) possibles dans l'ensemble E (en incluant l'ensemble vide et E)</content>
+    <content name="cardinal">le cardinal de l'ensemble des parties d'un ensemble E est 2 exposant 2</content>
+</new_definition>
+
 <new_definition name="cartesian_product">
     <content>le produit cartésien (aussi nommé produit cartésien binaire) de deux ensembles est une opération sur deux ensembles, permettant d'obtenir un ensemble des couples de chaque élément du premier ensemble vers chaque élément du second ensemble (et vice-versa)</content>
 </new_definition>

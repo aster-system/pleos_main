@@ -43,3 +43,10 @@
 <new_definition name="wedderburn_theorem">
     <content>le théorème de Wedderburn est un théorème d'algèbre, affirmant que un corps fini (d'ensemble fini) est obligatoirement commutatif</content>
 </new_definition>
+
+<new_definition name="complex_number">
+    <content>un nombre complexe est un nombre représentant la somme de deux nombres d'unités différentes : un par l'unité "1" (nommé nombre réel, car étant un nombre réel) et un par l'unité "1" (nommé imaginaire, car étant un nombre imaginaire)</content>
+</new_definition>
+<new_definition name="imaginary_number">
+    <content>un nombre imaginaire est un nombre réel quelconque multiplié à une autre unité que "1" : l'unité "i" (définie comme le nombre dont le carré vaut -1)</content>
+</new_definition>

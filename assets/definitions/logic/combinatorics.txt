@@ -13,3 +13,7 @@
 <new_definition name="combinatorics_topology">
     <content>la combinatoire topologique est l'application de la combinatoire à des espaces / objets topologiques</content>
 </new_definition>
+
+<new_definition name="binomial_coefficient">
+    <content>le coefficient binomial représente le nombre de sous-ensembles (pas nécessairement ordonnés) de taille p dans un ensemble de taille n</content>
+</new_definition>

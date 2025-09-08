@@ -11,6 +11,7 @@ Les concepts énumérés ici sont les concepts formulables dans une logique dire
 <p><a href="">Autres courants mathématiques (constructivisme, imprédicativité...)</a></p>
 <p><a href="logic/sets_theory/axioms">Axiomes de la théorie des ensembles</a></p>
 <p><a href="">Démonstration par l'absurde</a></p>
+<p><a href="">Démonstration par récurrence</a></p>
 
 <h3>En arithmétique</h3>
 <p><a href="">Méthode de la descente infinie</a></p>

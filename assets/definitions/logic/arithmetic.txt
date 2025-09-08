@@ -1,3 +1,0 @@
-<new_definition name="arithmetic_congruence">
-    <content>deux nombres entiers sont dit congrus modulo "n" (avec n un autre entier) si ils ont le même reste par la division par "n"</content>
-</new_definition>

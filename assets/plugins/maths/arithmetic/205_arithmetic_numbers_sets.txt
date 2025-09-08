@@ -111,3 +111,17 @@ Donc, <span class="important">il n'est pas aberrant de représenter les nombres 
 <base draw=0>
 <real_line length=8>
 </graphic>
+
+<h3>Les nombres complexes</h3>
+<p>
+Les nombres complexes représentent... une façon étrange de créer un ensemble "plus grand" que celui des réels.
+Pour commencer, parlons d'un concept intriqué dans celui des complexes : les nombres imaginaires.
+<span class="important"><definition name="imaginary_number"></span>.
+Maintenant, nous pouvons parler des nombres complexes.
+<span class="important"><definition name="complex_number"></span>.
+</p>
+<p>
+On peut aussi les lier avec la géométrie.
+<span class="important">Comme les nombres complexes sont constitués de 2 nombres réels, on peut les représenter comme des vecteurs géométriques</span>.
+Le plan 2D dans lesquelles sont représentés les nombres complexes est nommée le plan complexe.
+</p>
