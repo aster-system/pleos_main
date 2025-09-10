@@ -147,6 +147,11 @@ En d'autres termes, <span class="important">la taille de l'ensemble des parties 
 Or, la taille de l'ensemble des parties d'un ensemble de taille 0 est de 2 exposant 0, et la taille de l'ensemble des parties d'un ensemble de taille 1 est de 2 exposant 1.
 Donc, <span class="important">nous avons démontré (logiquement) cette formule</span>.
 </p>
+<p>
+Un théorème important avec l'ensemble des parties d'un ensemble est le théorème de Cantor.
+<span class="important"><theorem name="cantor_theorem"></span>.
+Ce théorème se prouve grâce à un argument prouvé par Cantor lui même : l'argument diagonal.
+</p>
 
 <h3>Le produit cartésien</h3>
 <p>

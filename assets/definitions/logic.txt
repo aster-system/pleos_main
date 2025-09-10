@@ -7,6 +7,12 @@
 
 
 
+<new_definition name="cantor_theorem">
+    <content type="theorem">le cardinal d'un ensemble est toujours strictement inférieur au cardinal de son ensemble des parties</content>
+</new_definition>
+
+
+
 <new_definition name="complete_metric_space">
     <content>un espace métrique est complet si toutes les suites de Cauchy possibles dans cette espace converge vers un élément de ce même espace</content>
 </new_definition>
