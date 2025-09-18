@@ -20,7 +20,9 @@ En toute logique, <span class="important">une catégorie est donc la description
 Elle est donc le socle de toutes les théories similaires nécessitant de passer d'une structure à une autre, comme la théorie des groupes et les éléments associés (une structure est appelée un groupe si elle a une structure de groupe : une opération interne additive, avec élément neutre et opposé).
 </p>
 
-<h3 id="morphism">Les morphismes</h3>
+<h2>Les morphismes</h2>
+
+<h3 id="morphism">Qu'est ce qu'est un morphisme ?</h3>
 <p>
 Il est possible de lier deux structures / transformer une structure en une autre avec ce que l'on appelle un morphisme.
 En théorie des catégories, <span class="important"><definition name="morphism"></span>.
@@ -41,4 +43,49 @@ De plus, des morphismes peuvent aussi exister entre ensembles ordonnées.
 En fait, <span class="important"><definition name="morphism_ordered_set"></span>.
 D'autres morphismes sont possibles dans des espaces topologiques, si il est possible de passer de l'un à l'autre facilement (bien que ce terme ne soit pas très souvent employé).
 C'est la même chose en théorie de la mesure, avec des espaces mesurables.
+</p>
+
+<h3 id="morphism">Les isomorphismes</h3>
+<p>
+Un type possible de morphisme est l'isomorphisme.
+<span class="important"><definition name="isomorphism"></span>.
+Cela implique une propriété assez pratique en algèbre : <span class="important">un isomorphisme est un morphisme injectif et surjectif, chaque élément de la première structure est lié à un unique élément de la deuxième, et chaque élément de la deuxième est lié à un unique élément du premier</span>.
+</p>
+
+<table>
+<case content="Isomorphisme de (R, *) vers (2R, *)">
+<case_plus y=1>
+<graphic>
+    <background_color white>
+    <base draw=0>
+
+    <line color=black name="l_1" x_1=-2 x_2=-2 y_1=-10 y_2=10>
+    <line color=black name="l_2" x_1=2 x_2=2 y_1=-10 y_2=10>
+
+    <text name="t_1" x=-3 y=0>0</text>
+    <text name="t_2" x=-3 y=1>1</text>
+    <text name="t_3" x=-3 y=2>2</text>
+    <text name="t_4" x=-3 y=-1>-1</text>
+    <text name="t_5" x=-3 y=-2>-2</text>
+
+    <text name="t_11" x=3 y=0>0</text>
+    <text name="t_12" x=3 y=2>2</text>
+    <text name="t_13" x=3 y=4>4</text>
+    <text name="t_14" x=3 y=-2>-2</text>
+    <text name="t_15" x=3 y=-4>-4</text>
+
+    <arrow color=black x_1=-5/3 x_2=5/3 y_1=0 y_2=0>
+    <arrow color=black x_1=-5/3 x_2=5/3 y_1=1 y_2=2>
+    <arrow color=black x_1=-5/3 x_2=5/3 y_1=2 y_2=4>
+    <arrow color=black x_1=-5/3 x_2=5/3 y_1=-1 y_2=-2>
+    <arrow color=black x_1=-5/3 x_2=5/3 y_1=-2 y_2=-4>
+</graphic>type="theorem" 
+</case_plus>
+</table>
+
+<p>
+Les isomorphismes de groupes sont régis par 3 théorèmes assez important.
+Le premier théorème s'énonce comme cela : <span class="important"><theorem name="isomorphism-1"></span>.
+Un des corollaires de ce théorème est le théoreme du rang, <a href="maths/algebra">très utile en algèbre</a>.
+Les deux autres sont un peu plus complexes : <span class="important">ils présentent des isomorphismes possibles entre sous-groupes d'un groupe de départ, selon la façon dont ils sont définis</span>.
 </p>

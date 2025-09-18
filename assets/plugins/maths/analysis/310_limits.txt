@@ -40,3 +40,16 @@ Effectivement, <span class="important">dans le cas d'une fonction, l'idée est d
 <p>
 Cependant, cette définition dépend beaucoup de ce que l'on veut dire / comment on fait pour "approximer une infinité de fois".
 </p>
+
+<h3>La continuité mathématique</h3>
+<p>
+Le concept de limite permet d'introduire à un autre concept : la continuité mathématique.
+En mathématiques, <span class="important"><definition name="analysis_continuity"></span>.
+Prenons l'exemple le plus simple : les fonction mathématiques.
+En effet, <span class="important"><definition name="analysis_continuity-function"></span>.
+Ce concept permet de justifier que nous pouvons nous rapprocher indéfiniment d'une valeur, pour utiliser divers outils (impliquant des limites) sur cette fonction à cette valeur.
+</p>
+
+<p>
+Ce concept permet aussi l'introduction à la topologie.
+</p>

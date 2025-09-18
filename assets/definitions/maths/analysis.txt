@@ -1,3 +1,7 @@
+<new_definition name="analysis_continuity">
+    <content>la continuité mathématique représente un concept suggérant la possibilité de se rapprocher indéfiniment d'une valeur dans un espace, quelque soit la façon dont vous faites</content>
+    <content name="function">une fonction mathématique est continue en une valeur "a" si il existe une limite vers "a"</content>
+</new_definition>
 <new_definition name="analysis_limit">
     <content>une limite mathématique est un outil / un opérateur permettant d'approximer une "infinité de fois" une valeur</content>
     <content name="sequence">une limite de suite est la valeur vers laquelle on se rapproche si on prend des valeurs "toujours plus proches de l'infini"</content>

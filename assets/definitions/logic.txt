@@ -38,3 +38,7 @@
 <new_definition name="morphism_ordered_set">
     <content>un morphisme entre deux ensembles ordonnées est un morphisme de ces deux ensembles, où la structure d'ordre est préservée (x &lt; g implique f(x) &lt; f(g))</content>
 </new_definition>
+<new_definition name="isomorphism">
+    <content>un isomorphisme est un morphisme où il existe un morphisme inverse (un autre isomorphisme), permettant de retrouver un élément du premier ensemble grâce à un élément du second</content>
+    <content type="theorem" name="1">il est possible d'extraire un isomorphisme de tous les morphismes "f" possibles, sous la forme de l'isomorphisme de l'ensemble de départ quotienté par le noyau de "f" vers l'image de "f"</content>
+</new_definition>
