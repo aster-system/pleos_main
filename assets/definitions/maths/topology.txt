@@ -1,0 +1,12 @@
+<new_definition name="topological_boundary">
+    <content>la frontière d'un ouvert (dans un espace topologique) est la partie de l'espace topologique qui limite l'ouvert de l'extérieur de l'ouvert</content>
+</new_definition>
+<new_definition name="topological_neighbourhood">
+    <content>le voisinage d'un point dans un espace topologique est une partie de cette espace contenant un ouvert vers le point de départ</content>
+</new_definition>
+<new_definition name="topological_open_set">
+    <content>un ouvert est une partie d'un ensemble topologique, pouvant contenir tous les points de cette partie qui ne sont pas sa frontière</content>
+</new_definition>
+<new_definition name="topological_space">
+    <content>un espace topologique représente un espace où les points de l'espace peuvent être définis avec les objets / propriétés basiques de topologie</content>
+</new_definition>

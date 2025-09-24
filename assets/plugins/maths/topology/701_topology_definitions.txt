@@ -1,0 +1,29 @@
+<h1>Définitions de la topologie</h1>
+
+
+
+<h2>Qu'est ce qu'est la topologie ?</h2>
+
+<h3>Les espaces topologiques</h3>
+<p>
+L'objet principal en topologie est l'espace topologique.
+En effet, <span class="important"><definition name="topological_space"></span>.
+Cependant, il faut définir ses objets et propriétés basiques.
+La plus importante est certainement l'ouvert (et le fermé).
+En topologie, <span class="important"><definition name="topological_open_set"></span>.
+Ici, <span class="important"><definition name="topological_boundary"></span>.
+Cette définition permet d'en introduire une autre : le voisinage.
+<definition name="topological_neighbourhood">.
+</p>
+
+<table>
+<case_plus x=0 y=0>Dans cet exemple, le plan est un espace topologique,</br>le disque rouge est un ouvert, le cercle noir est la</br>frontière et tout le reste est un fermé.</case_plus>
+<case_plus x=0 y=1>
+    <graphic>
+        <background_color white>
+        <base draw=1 width=3 height=3>
+
+        <circle x=0 y=0 radius=1 color=red>
+    </graphic>
+</case_plus>
+</table>

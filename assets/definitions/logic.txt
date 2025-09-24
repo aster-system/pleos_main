@@ -4,6 +4,12 @@
 <new_definition name="demonstration">
     <content>une démonstration mathématique représente le chemin permettant d'aller des axiomes au théorème recherché</content>
 </new_definition>
+<new_definition name="prenex_form">
+    <content>une formule mathématique est dite prénexe si tous ces quantificateurs se situent avec la proposition de la formule</content>
+</new_definition>
+<new_definition name="quantifier">
+    <content>un quantificateur est un objet mathématique utilisable pour poser le contexte de vérité d'une proposition (dans un / des ensembles précis)</content>
+</new_definition>
 
 
 

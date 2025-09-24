@@ -131,11 +131,13 @@ Si une formule est vraie dans au moins un modèle, elle est dite satisfaisable, 
 </p>
 <math><mforall><mi>x</mi><min><mi>N,</mi><mexists><mi>y</mi><mo>/</mo><mi>y</mi><mo>=</mo><mi>x + 1</mi></math>
 <p>
-Dans une formule, l'interprétation en tant que prédicat nécessite de prendre en compte les inconnus nécessaires.
-<span class="important">Pour spécifier certaines valeurs d'inconnues, nous pouvons utiliser des objets nommés des quantificateurs</span>.
-Il en existe deux principaux : "pour tout" désignant toutes les inconnues possibles, et "il existe" désignant au moins une (ou plusieurs) inconnue.
+Dans une formule, l'interprétation en tant que prédicat nécessite de prendre en compte les inconnus nécessaires, grâce à des objets nommés des quantificateurs.
+<span class="important"><definition name="quantifier"></span>.
+Il en existe deux principaux : "pour tout" désignant toutes les valeurs possibles d'un ensemble, et "il existe" désignant au moins une (ou plusieurs) valeur d'un ensemble.
 Dans ce cas, l'inconnue est dite "liée" à la formule, et dans le cas contraire, elle est dite "libre".
 Si toutes les inconnues d'une formule sont liées, la formule est nommée un enoncé (c'est le cas de l'exemple en haut).
+D'ailleurs, l'ordre des quantificateurs a une importance.
+Par exemple, <span class="important"><definition name="prenex_form"></span> (toute formule peut s'écrire sous forme prénexe).
 </p>
 <p>
 Cette même logique est particulièrement efficace, car elle est démontrée comme ayant des caractéristiques très pratiques.

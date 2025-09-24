@@ -64,7 +64,7 @@ namespace pleos {
     // SAASF datas
     bool __saasf_is_part(std::string to_test){return (to_test == std::string("it") || to_test == std::string("maths") || to_test == std::string("physic"));};
     bool __saasf_is_sub_part(std::string part, std::string to_test){
-        if(part == std::string("maths")){return (to_test == std::string("algebra") || to_test == std::string("arithmetic") || to_test == std::string("geometry") || to_test == std::string("logic"));}
+        if(part == std::string("maths")){return (to_test == std::string("algebra") || to_test == std::string("arithmetic") || to_test == std::string("geometry") || to_test == std::string("logic") || to_test == std::string("topology"));}
         return false;
     };
 
@@ -217,6 +217,7 @@ namespace pleos {
         else if(word == std::string("probability")){if(add_determinant){to_return = std::string("les probabilités");}else{to_return = std::string("probabilités");};}
         else if(word == std::string("random")){if(add_determinant){to_return = std::string("les sciences du hasard");}else{to_return = std::string("sciences du hasard");};}
         else if(word == std::string("thermodynamic")){if(add_determinant){to_return = std::string("la thermodynamique");}else{to_return = std::string("thermodynamique");};}
+        else if(word == std::string("topology")){if(add_determinant){to_return = std::string("la topologie");}else{to_return = std::string("topologie");}}
 
         // Others
         else if(word == std::string("definitions")){if(add_determinant){to_return = std::string("les définitions");}else{to_return = std::string("définitions");}}
@@ -231,7 +232,7 @@ namespace pleos {
     // Parts of SAASF
     // Index.html
     // Realisation
-    std::string __saasf_index_realisation = std::string("Ce site web est réalisé avec les très célèbres langages HTML et CSS, vu en SNT (même si le niveau néessaire pour créer un site de ce genre est bien supérieur à celui demandé en SNT). Pour la structuration, nous utilisation les outils \"Agatha\" du logiciel \"SCLS Workspace\", et \"PLEOS\" notre organisation. La version actuelle du site web, modifiée le 25/04/2025, n'ai pas encore entièrement équipée de structure propre. Cependant, les récents progrets de PLEOS rendent tout cela possible dans très peu de temps.");
+    std::string __saasf_index_realisation = std::string("Ce site web est réalisé avec les très célèbres langages HTML et CSS, vu en SNT (même si le niveau néessaire pour créer un site de ce genre est bien supérieur à celui demandé en SNT). Pour la structuration, nous utilisation les outils \"Agatha\" du logiciel \"SCLS Workspace\", et \"PLEOS\" notre organisation. La version actuelle du site web, modifiée le 22/09/2025, a été soumise à un contrôle précis de toutes les informations transmises par PLEOS, mais ne peut pas garantir que tout fonctionne comme prévu. Cependant, il est déjà possible d'y découvrir des choses assez intéressantes !");
 
     // Convert the entire software in SAASF
     std::string __saasf_global_footer_content = std::string("&lt;footer&gt;</br>    &lt;h1&gt;Plus d'informations&lt;/h1&gt;</br> &lt;div class=\"open-sans-regular\"&gt;</br>SAASF est proposé par l'organisation &lt;a href=\"https://aster-system.github.io/aster-system/\" target=\"_blank\"&gt;Aster Système&lt;/a&gt;.&lt;br&gt;</br>  Le site web est disponible sur Github, &lt;a href=\"https://github.com/aster-system/saasf\" target=\"_blank\"&gt;dans ce repositorie&lt;/a&gt;.&lt;br&gt;</br>  &lt;span xmlns:cc=\"http://creativecommons.org/ns#\" xmlns:dct=\"http://purl.org/dc/terms/\"&gt;</br>Le texte dans &lt;a property=\"dct:title\" rel=\"cc:attributionURL\" href=\"https://aster-system.github.io/saasf/\"&gt;SAASF&lt;/a&gt; par</br>  &lt;span property=\"cc:attributionName\"&gt;Aster Système&lt;/span&gt; est proposé sous license &lt;a href=\"https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1\" target=\"_blank\" rel=\"license noopener noreferrer\" style=\"display:inline-block;\"&gt;CC BY-SA 4.0&lt;img style=\"height:22px!important;margin-left:3px;vertical-align:text-bottom;\" src=\"https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1\" alt=\"\"&gt;&lt;img style=\"height:22px!important;margin-left:3px;vertical-align:text-bottom;\" src=\"https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1\" alt=\"\"&gt;&lt;img style=\"height:22px!important;margin-left:3px;vertical-align:text-bottom;\" src=\"https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1\" alt=\"\"&gt;&lt;/a&gt;</br>  &lt;/span&gt;</br>&lt;/br&gt;Sauf indication contraire, les images sont placées dans le domaine public.&lt;/div&gt;</br>&lt;/footer&gt;");
@@ -352,6 +353,7 @@ namespace pleos {
                             scls::Replica_File_Variable_Element* current_part = needed_file.get()->variable_list(std::string("explaination_parts[]"))->new_element<scls::Replica_File_Variable_Element>();
                             std::shared_ptr<scls::__XML_Text_Base> title = file_content.get()->remove_balise_by_name("h1");
                             if(title.get() != 0){current_part->set_variable_value(std::string("explaination_title"), title.get()->text());}
+                            //if(title.get()->text() == "Définitions de la topologie"){std::cout << "E " << file_content.get()->full_text() << std::endl;}
                             current_part->set_variable_value(std::string("explaination_content"), scls::format_string_from_plain_text(file_content.get()->full_text()));
                         }
                     }
