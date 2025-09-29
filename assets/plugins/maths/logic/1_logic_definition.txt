@@ -13,6 +13,39 @@ Elle rend aussi possible la jonction de plusieurs affirmations pour en former un
 Cette definition là est applicable pour tout ce qui se passe dans nos vies.
 </p>
 
+<h3>La déduction et inférence logique</h3>
+<p>
+Pour "justifier correctement un propos", il faut s'y prendre correctement.
+La façon la plus utilisée est l'inférence.
+<span class="important"><definition name="inference"></span>.
+Aussi effrayante que semble être cette définition, c'est en réalité très simple, et en voici un exemple (probablement le plus connu).
+Nous avons deux propositions de bases : "tous les hommes sont mortels" et "Socrate est un homme".
+Ici, <span class="important">une inférence consiste à dire que "Socrate est un homme, DONC il est mortel"</span>, aussi simple que ça.
+Socrate est utilisé dans l'exemple car il est l'une des grandes inspirations du concept (avec entre autres Aristote, Platon...).
+L'écriture mathématique actuelle (simplifiée) consiste en quelque chose comme ça :
+</p>
+<math><mi>A</mi><mimp><mi>B</mi><mo>ET</mo><mi>A</mi><mo>DONC</mo><mi>B</mi></math>
+<p>
+Il (est admis qu'il) existe trois catégories : la déduction, l'induction et l'abduction.
+<span class="important"><definition name="logic_deduction"></span>.
+C'est la forme la plus mathématique d'inférence.
+Par exemple, "<math><mi>A</mi><mimp><mi>B</mi><mo>ET</mo><mi>A</mi><mo>DONC</mo><mi>B</mi></math>" est une déduction (de B).
+En mathématiques pure, c'est cette forme qui est utilisée pour démontrer quoi que ce soit.
+Cependant, les autres formes diffèrent légèrement.
+<span class="important"><definition name="logic_induction"></span>.
+Ce type d'inférence utilise grandement les statistiques, qui permettent d'établir la "probabilité" de la véracité des prémisses.
+Un exemple est "Le froid affaiblit le système humanitaire" et "Un système humanitaire affaiblit rend problable l'apparition du rhume" induisent "Le froind rend probable l'apparition d'un rhume".
+Bien évidemment, en réalité, cela est juste "probable", sans être absolument vraie.
+Par exemple, <span class="important">c'est sur ce concept même que repose le concept de "sondage"</span>.
+Finalement, il reste "l'abduction".
+<span class="important"><definition name="logic_abduction"></span>.
+C'est un cas assez bizarre, mais central pour réaliser des hypothèses scientifiques.
+Un exemple (calqué sur le précédent) est "Le froid affaiblit le système humanitaire" et "Le froid rend probable l'apparition d'un rhume" nous font penser que "Un système humanitaire affaiblit rend problable l'apparition du rhume".
+D'un point de vu mathématiques, les deux premières propositions sont insuffisantes pour en tirer une conclusion absolue, mais une hypothèse est posée.
+L'écriture mathématique actuelle (simplifiée) consiste en quelque chose comme ça :
+</p>
+<math><mi>A</mi><mimp><mi>B</mi><mo>ET</mo><mi>B</mi><mo>DONC</mo><mi>A</mi></math>
+
 
 
 <h2>La logique mathématique</h2>

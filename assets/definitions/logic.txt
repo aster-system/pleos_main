@@ -1,3 +1,19 @@
+<new_definition name="inference">
+    <content>une inférence est une façon de démontrer logiquement une proposition (nommée "conclusion"), en s'appuyant sur d'autres propositions appelées "prémisses"</content>
+</new_definition>
+<new_definition name="logic_abduction">
+    <content>une abduction est une inférence représentant le passage de deux propositions insuffisantes pour en tirer une déduction, à une proposition permettant de réaliser une hypothèse de déduction</content>
+</new_definition>
+<new_definition name="logic_deduction">
+    <content>une déduction est une inférence représentant le passage de deux propositions obligatoirement vraies vers une proposition, dont on déduit quelle est vraie</content>
+</new_definition>
+<new_definition name="logic_induction">
+    <content>une induction est une inférence représentant le passage de deux propositions probablement vraies vers une proposition, dont on déduit quelle est probablement vraie</content>
+</new_definition>
+<new_definition name="syllogism">
+    <content>un syllogisme est une façon de démontrer logiquement un propos (nommé "conclusion"), en s'appuyant sur d'autres propos appelés "prémisses"</content>
+</new_definition>
+
 <new_definition name="axiom">
     <content>les axiomes sont des propositions théoriquement indémontrées (mais qui, en pratique, sont tout à fait """"logiques""""", en accord avec les autres sciences et ne nécessitent pas de démonstration) qui servent de bases à toutes les mathématiques</content>
 </new_definition>
