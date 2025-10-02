@@ -23,3 +23,20 @@ Une image "i" de "f" pour un certain "x" s'écrit :
 Cependant, quand on connait la fonction, le plus utile est d'indiquer la transformation qu'effectue "f" pour "x", appelée l'expression de la fonction :
 </p>
 <math><mi>f(x)</mi><mo>=</mo><mi>3</mi><mo>*</mo><mi>x</mi><mo>+</mo><mi>2</mi></math>
+
+<h3>Visualiser les fonctions</h3>
+<p>
+Pour visualiser une fonction, la manière la plus simple et connue de faire est le graphe de fonction.
+En analyse, <span class="important"><definition name="function_graph"></span>.
+On rencontre aussi souvent ce concept sous le nom de "représentation graphique de fonction".
+D'un point de vu géométrique, ce graphe est un ensemble de point, formant donc une forme géométrique.
+Bien évidemment, le cas le plus connue est celui pour les fonctions réelles à valeur réelles.
+</p>
+<graphic><background_color white><function expression="3x*x+2x-2"></function></graphic>
+<p>
+Bien évidemment, <span class="important">nous avons besoin d'un plan sur lequel tracer la fonction</span>.
+Cependant, dans des cas de fonctions plus complexes (comme des fonctions sur <math><mi>R</mi><msup>2</msup></math>), un plan ne suffit pas.
+En toute logique, il faudrait représenter ça sur un plan, sur lequel on rajoute en relief les valeurs de chaque point (et donc, dans un espace 3D).
+En effet, <span class="important">un graphe de fonction se dessine sur le produit cartésien de l'ensemble de départ et l'ensemble d'arrivé</span>.
+Par exemple une fonction complexe donnant en résultat un complexe nécessite... 4 dimensions pour être représenté (bien que certaines techniques permettent de remplacer la 4ème avec une couleur, ou de ne représenter que la valeur réelle / imaginaire / argument / module...).
+</p>
