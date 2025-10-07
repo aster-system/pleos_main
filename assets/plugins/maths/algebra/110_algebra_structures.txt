@@ -13,9 +13,18 @@ Pour faire cela, <important>il faut lier les opérations possibles avec l'ensemb
 
 <h3>Les lois de compositions</h3>
 <p>
-Parmi ces mêmes opérations, certaines peuvent être appliquer à deux opérandes similaires (par exemple, pour un nombre a, alors "a + a" est définie) : ce genre d'opérations sont nommées lois de composition interne.
-<span class="important">Les opérations de ce type les plus connues sont l'addition et la multiplication</span>.
-En plus, <span class="important">ces mêmes opérations peuvent nécessiter des relations précises entre les opérandes</span>.
+Parmi ces mêmes opérations, certaines peuvent être appliquer à deux opérandes similaires (par exemple, pour un nombre réel a, alors "a + a" est définie) : ce genre d'opérations sont nommées lois de composition.
+<span class="important"><definition name="algebra_composition_law"></span>.
+Si l'ensemble "A" et l'ensemble "B" sont similaire, <span class="definition">la loi est dite loi de composition interne</span>.
+Il y a cependant des cas où ce n'est pas nécessaire, comme avec la multiplication de vecteur (réel * vecteur = vecteur).
+Dans ce cas, <span class="important">si l'élément de "B" doit être écrit avant celui de "A", l'opération est dite "à gauche", et si l'élément doit être écrit après celui de "A", elle est dite à droite</span>.
+En général, l'opération est très souvent à gauche (c'est le cas de notre exemple "réel * vecteur = vecteur").
+</p>
+
+<p>
+Dans le cas des lois de compositions internes, <span class="important">comme les deux éléments sont du même ensemble, alors il n'y a pas vraiment cette notion de "à gauche" ou "à droite"</span>.
+Les lois de compositions internes les plus connues sont l'addition et la multiplication de réels.
+En plus, <span class="important">ces mêmes lois peuvent permettre des relations précises entre les opérandes, selon les propriétés de l'ensemble "A"</span>.
 </p>
 
 <table>
@@ -31,30 +40,6 @@ En plus, <span class="important">ces mêmes opérations peuvent nécessiter des 
 <case x=0 y=2 content="x # y = y # x">
 <case x=1 y=2 content="La loi est commutative">
 <case x=2 y=2 content="7 + 2 = 2 + 7 = 9 dans N(+)">
-
-<case x=0 y=3 content="a # n = a">
-<case_plus x=1 y=3>La loi admet un élément neutre "n"</case_plus>
-<case x=2 y=3 content="4 + 0 = 4 dans N(+)">
-
-<case x=0 y=4 content="a # o = n">
-<case_plus x=1 y=4>La loi permet un élément opposé "o" à l'élément "a"</case_plus>
-<case x=2 y=4 content="7 + (-7) = 0 dans Z(+)">
-
-<case x=0 y=5 content="a # b = b">
-<case_plus x=1 y=5>La loi admet un élément absorbant "b"</case_plus>
-<case x=2 y=5 content="7 * 0 = 0 dans R(*)">
-
-<case x=0 y=6 content="a # b = b ET b n'a pas d'opposé">
-<case_plus x=1 y=6>La loi est dite intègre</case_plus>
-<case x=2 y=6 content="7 * 0 = 0 ET 0 n'a pas d'opposé (d'inverse) dans R(*)">
-
-<case_plus x=0 y=7>Pour tout a et b dans E(.), "a &lt; b ?" est défini</case_plus>
-<case_plus x=1 y=7>La structure est dite complètement ordonnée</case_plus>
-<case_plus x=2 y=7>Pour tout a et b dans R(.), "a &lt; b ?" est défini</case_plus>
-
-<case x=0 y=8 content="a &lt; b ET il existe n tel que a * n &gt; b">
-<case_plus x=1 y=8>La structure est dite archimédienne</case_plus>
-<case x=2 y=8 content="a &lt; b ET a * ((b / a) + 1) &gt; b dans R(.)">
 
 </table>
 
@@ -72,6 +57,45 @@ En effet, <span class="important" id="algebra_center"><definition name="algebra_
 <p>
 Si, dans une équation, il existe un moyen de simplifier les deux membres en elevant l'opération, l'opération est dite régulière.
 Par exemple, l'addition l'est : il est possible de simplifier des membres d'équations en y appliquant une soustraction.
+</p>
+
+<p>
+Un autre concept assez important : <span class="important">un ensemble peut admettre des éléments donnant des résultats spéciaux par une loi de composition interne</span>.
+</p>
+
+<table>
+
+<case x=0 y=0 content="Propriété">
+<case x=1 y=0 content="Définition">
+<case x=2 y=0 content="Exemples">
+
+<case x=0 y=1 content="a # n = a">
+<case_plus x=1 y=1>La loi admet un élément neutre "n"</case_plus>
+<case x=2 y=1 content="4 + 0 = 4 dans N(+)">
+
+<case x=0 y=2 content="a # o = n">
+<case_plus x=1 y=2>La loi permet un élément opposé "o" à l'élément "a"</case_plus>
+<case x=2 y=2 content="7 + (-7) = 0 dans Z(+)">
+
+<case x=0 y=3 content="a # b = b">
+<case_plus x=1 y=3>La loi admet un élément absorbant "b"</case_plus>
+<case x=2 y=3 content="7 * 0 = 0 dans R(*)">
+
+<case x=0 y=4 content="a # b = b ET b n'a pas d'opposé">
+<case_plus x=1 y=4>La loi est dite intègre</case_plus>
+<case x=2 y=4 content="7 * 0 = 0 ET 0 n'a pas d'opposé (d'inverse) dans R(*)">
+
+<case_plus x=0 y=5>Pour tout a et b dans E(.), "a &lt; b ?" est défini</case_plus>
+<case_plus x=1 y=5>La structure est dite complètement ordonnée</case_plus>
+<case_plus x=2 y=5>Pour tout a et b dans R(.), "a &lt; b ?" est défini</case_plus>
+
+<case x=0 y=6 content="a &lt; b ET il existe n tel que a * n &gt; b">
+<case_plus x=1 y=6>La structure est dite archimédienne</case_plus>
+<case x=2 y=6 content="a &lt; b ET a * ((b / a) + 1) &gt; b dans R(.)">
+
+</table>
+
+<p>
 Pour une quelconque opération, <span class="important">un élément (si il existe) qui ne modifie pas l'autre opérande de l'opération est dit neutre</span>.
 Pour l'addition de nombres, il s'agit du nombre 0, et pour la multiplication de nombres, il s'agit du nombre 1.
 </p>

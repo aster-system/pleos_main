@@ -1,5 +1,116 @@
 <h1>La fonction exponentielle</h1>
+
+
+
+<h2>Introduction historique</h2>
+
+<h3>Les tables de logarithmes</h3>
+<p>
+L'introduction historique est particulièrement pratique dans l'étude des logarithmes.
+Entre le XIIIème et le XVIIème siècle, <span class="important">l'astronomie se développe, et les calculs associés aussi</span>.
+Pour des observations précises, un haut degré de précision est nécessaire, et les mathématiciens vont redoubler d'efforts pour obtenir cette précision plus efficacement, mais aussi plus vite.
+Pour cela, dans le cas de la simplification des multiplications, <span class="important">l'outil nécessaire, déjà observé à de multiples reprises par, entre autres, <scientist name="archimede" type="quote"> ou <scientist name="al-maghribi" type="quote">, est la suite géométrique</span>.
+En effet, selon eux, on peut trouver une correspondance particulièrement pratique entre les indices et les valeurs de la suite à ces indices.
+</p>
+
+<table>
+
+<case_plus x=0 y=0>n</case_plus>
+<case_plus x=0 y=1><math><mi>u</mi><msub>n</msub></math></case_plus>
+
+<cases x=1 y=0 width=4 height=1 load="sequence_arithmetic-0-1">
+<cases x=1 y=1 width=4 height=1 load="sequence_geometric-1-10">
+
+<case_plus x=5 y=0>...</case_plus><case_plus x=5 y=1>...</case_plus>
+
+<case_plus x=6 y=0>a</case_plus><case_plus x=7 y=0>b</case_plus>
+<case_plus x=6 y=1><math><mi>u</mi><msub>a</msub></math></case_plus>
+<case_plus x=7 y=1><math><mi>u</mi><msub>b</msub></math></case_plus>
+
+<case_plus x=8 y=0>...</case_plus><case_plus x=8 y=1>...</case_plus>
+
+<case_plus x=9 y=0>a + b</case_plus>
+<case_plus x=9 y=1><math><mi>u</mi><msub>a</msub><mo>*</mo><mi>u</mi><msub>b</msub></math></case_plus>
+
+</table></br>
+
+<table>
+
+<case_plus x=0 y=0>n</case_plus>
+<case_plus x=0 y=1><math><mi>v</mi><msub>n</msub></math></case_plus>
+
+<cases x=1 y=0 width=4 height=1 load="sequence_arithmetic-0-10">
+<cases x=1 y=1 width=4 height=1 load="sequence_geometric-100000000-10001/10000">
+
+<case_plus x=5 y=0>...</case_plus><case_plus x=5 y=1>...</case_plus>
+
+<case_plus x=6 y=0>a</case_plus><case_plus x=7 y=0>b</case_plus>
+<case_plus x=6 y=1><math><mi>v</mi><msub>a</msub></math></case_plus>
+<case_plus x=7 y=1><math><mi>v</mi><msub>b</msub></math></case_plus>
+
+<case_plus x=8 y=0>...</case_plus><case_plus x=8 y=1>...</case_plus>
+
+<case_plus x=9 y=0>a + b</case_plus>
+<case_plus x=9 y=1><math><mfrac><mrow><mi>v</mi><msub>a</msub><mo>*</mo><mi>v</mi><msub>b</msub></mrow><mrow><mi>v</mi><msub>0</msub></mrow></mfrac></math></case_plus>
+
+</table></br>
+
+<p>
+Cette propriété seule ne sert pas à grand chose.
+En effet, la réalisation d'un calcul, par exemple 21448 * 24147, implique que vous devez chercher ces nombres dans la suite (bonne chance pour trouver ça dans la suite "<math><mi>u</mi><msub>n</msub></math>").
+Il est à noter que le deuxième exemple ci-dessus est "tiré" du mathématicien <scientist name="burgi" type="quote"> dans des travaux datant de entre 1605 et 1620.
+Cependant, l'idée qui va tout changer à l'arrivée du mathématicien <scientist name="neper" type="quote">.
+Pour la présenter, <span class="important">rappelons que la formule pour obtenir la valeur d'une suite géométrique à l'indice "n" est <math><mi>u</mi><msub>n</msub><mo>=</mo><mi>u</mi><msub>0</msub><mo>*</mo><mi>r</mi><msup>n</msup></math></span>.
+Cette règle est bien évidemment vérifier dans tous les cas au dessus.
+Neper va répondre à une question essentielle : <span class="important">peut-on calculer le cas où "n" n'est pas un nombre naturel, et trouver une réponse extraordinaire : oui, même avec uniquement des tables de logarithmes</span>.
+Pour cela, il faut remarquer quelque chose : dans le deuxième exemple, on peut observer que 1,00001 (la raison de la suite) exposant 20 fait monter la première valeur de la suite de 20001.
+En faisant une division entre <math><mi>u</mi><msub>0</msub></math> et <math><mi>u</mi><msub>20</msub></math>, <span class="important">on se rend compte que la première valeur a été multiplié par 1,0002 pour arriver à la 20ème : 1,00001 exposant 20 vaut environ 1,0002</span> (1,000200019 pour être précis, mais résultat trop précis pour l'époque).
+Il est à noter que les premières valeurs des suites des tables de l'époques étaient énormes, pour faciliter les calculs et ne pas se perdre avec des valeurs décimales.
+Pour des raisons de compréhensions (et de modernité), prenons une suite plus simple.
+</p>
+
+<table>
+
+<case_plus x=0 y=0>n</case_plus>
+<case_plus x=0 y=1><math><mi>u</mi><msub>n</msub></math></case_plus>
+
+<cases x=1 y=0 width=4 height=1 load="sequence_arithmetic-0-1">
+<cases x=1 y=1 width=4 height=1 load="sequence_geometric-1-1001/1000">
+
+<case_plus x=5 y=0>...</case_plus><case_plus x=5 y=1>...</case_plus>
+
+<case_plus x=6 y=0>a</case_plus><case_plus x=7 y=0>b</case_plus>
+<case_plus x=6 y=1><math><mi>u</mi><msub>a</msub></math></case_plus>
+<case_plus x=7 y=1><math><mi>u</mi><msub>b</msub></math></case_plus>
+
+<case_plus x=8 y=0>...</case_plus><case_plus x=8 y=1>...</case_plus>
+
+<case_plus x=9 y=0>a + b</case_plus>
+<case_plus x=9 y=1><math><mfrac><mrow><mi>u</mi><msub>a</msub><mo>*</mo><mi>u</mi><msub>b</msub></mrow><mrow><mi>u</mi><msub>0</msub></mrow></mfrac></math></case_plus>
+
+</table></br>
+
+<p>
+Comme on l'a vue, selon la méthode vu plus haut, on comprend que 1,001 exposant 3 vaut environ 1,03003.
+En continuant se raisonnement, on peut atteindre / encadrer n'importe quel chiffre, comme 15, entre 2709 et 2710, et 7, entre 1946 et 1947.
+Maintenant, <span class="important">utilisons l'argument de Neper, pour trouver les valeurs du logarithme base 15, tel que 15 exposant "b" vale ce que bon nous semble</span>.
+Imagineons la distance D entre 0 (premier indice de la suite) et 2710 (la valeur valant environ 15).
+Prenons deux points : "A" et "B" voyageant sur cette distance, et partant du début de la suite (à la valeur 0).
+Dans ce contexte, "A" va nous permettre d'atteindre une valeur "c" choisit à l'avance, disons 7, et donc de savoir à quel "b" la valeur 15 exposant "b" vaut "c" (et donc 7).
+Ici, "B" a une vitesse constante, de disons une fois D par seconde, soit de 2710 unités.
+Or, pendant ce temps là (une seconde), disons que "A" aura voyager jusqu'à la valeur valant "c" dans notre distance, soit 1947 unités.
+On peut commencer à obtenir un ratio de la vitesse à laquelle la suite de raison "1,001" atteint "c" / 7 par rapport à 15, soit <math><mfrac><mi>1947</mi><mi>2710</mi></mfrac><mo>=</mo><mi>0,718</mi></math> environ.
+Reformulons ce calcul, en utilisant les propriétés extrêmement basiques de l'exposant naturel.
+</p>
+
+<math><mi>15</mi><mapprox><mi>u</mi><msub>2710</msub><mequal><mi>1,001</mi><msup>2710</msup></math></br>
+<math><mi>7</mi><mapprox><mi>u</mi><msub>1947</msub><mequal><mi>1,001</mi><msup>1947</msup></math></br>
+<math><mi>7</mi><mapprox><mi>1,001</mi><msup>1947</msup><mequal><mi>1,001</mi><msup>2710 * (1947 / 2710)</msup><mequal><mi>15</mi><msup>(1947 / 2710)</msup></math></br>
+
+
+
 <h2>Qu'est ce qu'est la fonction exponentielle ?</h2>
+
 <h3>La définition brute</h3>
 <p>
 En analyse fonctionelle réelle, <important>la fonction exponentielle est une fonction n'ayant qu'une seule dérivée : elle même</important>.
@@ -15,6 +126,7 @@ Cependant, le nom "fonction exponentielle" peut aussi désigner des fonctions si
 En effet, <important>une fonction exponentielle peut être n'importe qu'elle fonction suivant cette forme</important> :
 </p>
 <math><mi>exp(x)</mi><mo>=</mo><mi>ae</mi><msup>bx</msup></math>
+
 <h3>Les logarithmes</h3>
 <p>
 <important>La fonction réciproque de la fonction exponentielle est nommée la fonction logarithme</important>.

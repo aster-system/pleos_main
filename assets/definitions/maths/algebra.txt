@@ -8,6 +8,9 @@
 <new_definition name="algebra_center">
     <content>le centre d'une structure algébrique représentent l'ensemble des éléments de cette structure commutants avec tous les autres éléments<content>
 </new_definition>
+<new_definition name="algebra_composition_law">
+    <content>une loi de composition est une relation entre tous les éléments d'ensembles "A" et "B" (les opérandes), vers des éléments de "A" (les résultats)</content>
+</new_definition>
 <new_definition name="algebra_distributivity">
     <content>la distributivé d'une opération "*" sur "+" représente le fait que l'opération "*" peut être distribuée sur plusieurs éléments soumis à l'opération "+" : a * (b + c) = a * b + a * c</content>
 </new_definition>
