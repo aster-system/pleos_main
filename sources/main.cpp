@@ -92,7 +92,7 @@ void draw(std::shared_ptr<scls::Image> img, std::vector<double>& value_1, std::v
 int main(int argc, char* argv[]) {
     //pleos::bac(std::string("tests/"));
 
-    pleos::Pleos_Window window(900, 600, argv[0]);
+    /*pleos::Pleos_Window window(900, 600, argv[0]);
     window.load_from_xml("assets/window.txt");
 
     while(window.run()) {
@@ -113,8 +113,8 @@ int main(int argc, char* argv[]) {
     scls::Text_Style style;style.set_max_width(600);
     pleos::string_to_image(content, style).save_png("tests/polynome.png");//*/
 
-    //scls::Text_Style style;style.set_font_size(200);
-    //pleos::string_to_image(scls::read_file("tests/test_note.txt"), style).save_png("tests/polynome.png");
+    scls::Text_Style style;style.set_font_size(24);style.set_max_width(900);
+    pleos::string_to_image(scls::read_file("tests/test_note.txt"), style).save_png("tests/polynome.png");
 
     return 0;
 }
