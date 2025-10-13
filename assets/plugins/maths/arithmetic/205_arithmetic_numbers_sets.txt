@@ -58,7 +58,7 @@ L'irréductibilité de deux fractions implique que le numérateur et le dénomin
 <table>
 
 <case x=0 y=0 content="Addition de fraction">
-<case_plus x=0 y=1><math><mfrac><mi>a</mi><mi>b</mi></mfrac><mo>+</mo><mfrac><mi>c</mi><mi>d</mi></mfrac><mo>=</mo><mfrac><mi>a*d+c*b</mi><mi>b*d</mi></mfrac></math> </case_plus>
+<case_plus x=0 y=1><math><mfrac><mi>a</mi><mi>b</mi></mfrac><mo>+</mo><mfrac><mi>c</mi><mi>d</mi></mfrac><mo>=</mo><mfrac><mi>a*d+c*b</mi><mi>b*d</mi></mfrac></math></case_plus>
 <case x=1 y=0 content="Multiplication de fraction">
 <case_plus x=1 y=1><math><mfrac><mi>a</mi><mi>b</mi></mfrac><mo>*</mo><mfrac><mi>c</mi><mi>d</mi></mfrac><mo>=</mo><mfrac><mi>a*c</mi><mi>b*d</mi></mfrac></math></case_plus>
 
@@ -111,6 +111,20 @@ Donc, <span class="important">il n'est pas aberrant de représenter les nombres 
 <base draw=0>
 <real_line length=8>
 </graphic>
+
+<p>
+L'ensemble des réels a une propriété très intéressante (et parfaitement évidente) : ils disposent d'une relation d'ordre.
+<span class="important"><definition name="order_relation"></span>.
+Dans le cas des nombres réels, il est inutile de présenter comment faire.
+Les relations les plus connues sont "strictement inférieur", "strictement supérieur", "inférieur ou égal" et "supérieur ou égal".
+Cependant, ce ne sont pas les seuls : les relations d'ordres sont mathématiquement définies de manière plus entière.
+En effet, <span class="important"><definition name="order_relation-conditions"></span>.
+Ici, <definition name="relation_reflexivity">.
+De plus, <definition name="relation_transitivity">.
+Finalement, <definition name="relation_symetrical">.
+Donc, <span class="important"><definition name="relation_symetrical-anti">.</span>.
+Tous ces concepts sont creusés dans notre partie sur <a href="../logic/sets_theory#equivalence_relation">les relations en mathématiques</a>.
+</p>
 
 <h3>Les nombres complexes</h3>
 <p>

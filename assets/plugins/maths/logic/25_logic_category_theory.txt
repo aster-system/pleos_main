@@ -45,7 +45,7 @@ D'autres morphismes sont possibles dans des espaces topologiques, si il est poss
 C'est la même chose en théorie de la mesure, avec des espaces mesurables.
 </p>
 
-<h3 id="morphism">Les isomorphismes</h3>
+<h3 id="isomorphism">Les isomorphismes</h3>
 <p>
 Un type possible de morphisme est l'isomorphisme.
 <span class="important"><definition name="isomorphism"></span>.
@@ -55,9 +55,9 @@ Cela implique une propriété assez pratique en algèbre : <span class="importan
 <table>
 <case content="Isomorphisme de (R, *) vers (2R, *)">
 <case_plus y=1>
-<graphic>
+<graphic width=200 height=200>
     <background_color white>
-    <base draw=0>
+    <base width=10 height=10 draw=0>
 
     <line color=black name="l_1" x_1=-2 x_2=-2 y_1=-10 y_2=10>
     <line color=black name="l_2" x_1=2 x_2=2 y_1=-10 y_2=10>
@@ -79,7 +79,7 @@ Cela implique une propriété assez pratique en algèbre : <span class="importan
     <arrow color=black x_1=-5/3 x_2=5/3 y_1=2 y_2=4>
     <arrow color=black x_1=-5/3 x_2=5/3 y_1=-1 y_2=-2>
     <arrow color=black x_1=-5/3 x_2=5/3 y_1=-2 y_2=-4>
-</graphic>type="theorem" 
+</graphic>
 </case_plus>
 </table>
 
@@ -88,4 +88,28 @@ Les isomorphismes de groupes sont régis par 3 théorèmes assez important.
 Le premier théorème s'énonce comme cela : <span class="important"><theorem name="isomorphism-1"></span>.
 Un des corollaires de ce théorème est le théoreme du rang, <a href="maths/algebra">très utile en algèbre</a>.
 Les deux autres sont un peu plus complexes : <span class="important">ils présentent des isomorphismes possibles entre sous-groupes d'un groupe de départ, selon la façon dont ils sont définis</span>.
+</p>
+
+<h3 id="endomorphism;automorphism">Les endomorphismes et automorphisme</h3>
+<p>
+Les deux autres types de morphisme sont l'endomorphisme et l'automorphisme.
+<span class="important"><definition name="endomorphism"></span>.
+Un cas assez simple sont les fonctions polynômiales de degré impair : elles ont pour antécédent tous les éléments de R, et comme image... tous les éléments de R.
+</p>
+<graphic title="Endomorphisme f(x) = 3x^3 + 4x² + 1"><background_color white><function expression=3x*x*x+4x*x+1></function></graphic>
+
+<p>
+L'automorphisme est un concept assez similaire.
+<span class="important"><definition name="automorphism"></span>.
+Donc, elle prend comme antécédent une structure mathématique E, comme image cette même structure E, et relie chaque antécédent à exactement une image (et chaque image a un antécédent).
+Le cas le plus simple est celui des fonctions linéaires : elles ont pour antécédent tous les éléments de R, et comme image... tous les éléments de R, et chaque antécédent a exactement une image (et chaque image a exactement un antécédent).
+</p>
+<graphic title="Automorphisme f(x) = 2x"><background_color white><function expression=2x></function></graphic>
+
+<p>
+Dans une structure quelconque, le concept d'automorphisme permet de déduire une structure similaire : le groupe des automorphismes.
+<span class="important"><definition name="automorphism_group"></span>.
+Il s'agit d'un groupe : on peut faire des opérations sur ces automorphismes.
+Or, sa loi de composition est un peu bizarre : <span class="automorphisme">la loi de composition d'un groupe d'automorphisme est la combinaison de fonction</span>.
+En fait, on peut définir chaque automorphisme comme une fonction (comme vu plus haut), et leur composition permettent de construire un groupe.
 </p>

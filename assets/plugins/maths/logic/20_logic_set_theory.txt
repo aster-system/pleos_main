@@ -252,7 +252,7 @@ Les liens, eux, ne changent pas.
 <case x=0 y=2 content="1"><case x=1 y=2 content="2"><case x=2 y=2 content="3"><case x=3 y=2 content="4"><case x=4 y=2 content="5"><case x=5 y=2 content="..."><case x=6 y=2 content="x + 1">
 </table>
 
-<h3>Les relations d'équivalences</h3>
+<h3 id="equivalence_relation">Les relations d'équivalences</h3>
 
 <p>
 Le concept de relation d'équivalence est un concept peu expliqué, car considéré comme évident, bien qu'il ne le soit pas tant que ça.

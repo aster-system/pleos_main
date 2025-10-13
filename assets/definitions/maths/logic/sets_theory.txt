@@ -1,7 +1,12 @@
+<new_definition name="cantor_theorem">
+    <content type="theorem">le cardinal d'un ensemble est toujours strictement inférieur au cardinal de son ensemble des parties</content>
+</new_definition>
 <new_definition name="power_set">
     <content>l'ensemble des parties (ou ensemble puissance) d'un ensemble E est un ensemble contenant la totalité des sous-ensembles (pas forcément ordonnés) possibles dans l'ensemble E (en incluant l'ensemble vide et E)</content>
     <content name="cardinal">le cardinal de l'ensemble des parties d'un ensemble E est 2 exposant 2</content>
 </new_definition>
+
+
 
 <new_definition name="cartesian_product">
     <content>le produit cartésien (aussi nommé produit cartésien binaire) de deux ensembles est une opération sur deux ensembles, permettant d'obtenir un ensemble des couples de chaque élément du premier ensemble vers chaque élément du second ensemble (et vice-versa)</content>
@@ -12,6 +17,8 @@
 <new_definition name="cartesian_product_n_fold">
     <content>le produit cartésien fini de n ensembles est une opération sur n ensembles, permettant d'obtenir un ensemble des n-uplets (ensembles de n éléments) de chaque élément des n ensembles avec chaque élément des autres ensembles (et vice-versa)</content>
 </new_definition>
+
+
 
 <new_definition name="binary_relation">
     <content>une relation binaire est une relation (un lien) possible entre deux éléments de deux ensembles</content>
@@ -28,12 +35,35 @@
 </new_definition>
 <new_definition name="relation_symetrical">
     <content>une relation binaire est dite symétrique si l'ordre des deux éléments n'importe pas dans l'éccriture de la relation</content>
+    <content name="anti">une relation binaire est dite antisymétrique si l'ordre des deux éléments importe dans l'écriture de la relation</content>
     <content name="symbols">pour la relation "~" et les éléments "x" et "y", "~" est symétrique si : "x ~ y &lt;=&gt; y ~ x"</content>
 </new_definition>
 <new_definition name="relation_transitivity">
     <content>une relation binaire est dite transitive si, pour 3 éléments distints, la relation entre les deux premiers et les deux derniers éléments permet de passer directement a une relation entre le premier et le dernier</content>
     <content name="symbols">pour la relation "~" et les éléments "x", "y" et "z", "~" est transitive si : "x ~ y ET y ~ Z &lt;=&gt; x ~ z"</content>
 </new_definition>
+
+<new_definition name="complete_metric_space">
+    <content>un espace métrique est complet si toutes les suites de Cauchy possibles dans cette espace converge vers un élément de ce même espace</content>
+</new_definition>
+<new_definition name="lub_property">
+    <content>un ensemble E possède la propriété de la borne supérieure si, pour tous ses sous-ensembles F possibles majorés, il est possible de trouver le plus petit des majorants dans E (pas forcément dans F, mais au moins dans E)</content>
+</new_definition>
+<new_definition name="metric_space">
+    <content>un espace métrique est un espace où la notion de "distance" entre deux éléments est définie</content>
+</new_definition>
+<new_definition name="order_relation">
+    <content>une relation d'ordre est un type de relation entre deux éléments (généralement du même ensemble) qui, en terme général, permet de "comparer" ces éléments (supérieur, inférieur...)</content>
+    <content name="conditions">une relation est dite "relation d'ordre" si elle est transitive, antisymétrique et réflexive</content>
+</new_definition>
+<new_definition name="totally_ordered_set">
+    <content>un ensemble totalement ordonné est un ensemble où il est possible de comparer (et d'avoir le résultat) tous les éléments de l'ensemble avec n'importe quel autre élément de l'ensemble, via une relation d'ordre</content>
+</new_definition>
+<new_definition name="upper_bounds">
+    <content>le majorant (ou les majorants, vue qu'il n'est pas unique) d'un sous-ensemble F de l'ensemble E est un élément quelconque de E, tel que ce majorant soit supérieur ou égal à tous éléments de F</content>
+</new_definition>
+
+
 
 <new_definition name="quotient_set">
     <content>un ensemble quotient d'un ensemble "E" sur une relation d'équivalence "~" est une découpe de "E", entre chaque classe d'équivalence de "~" dans "E"</content>

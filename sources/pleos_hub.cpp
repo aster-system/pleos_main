@@ -91,8 +91,8 @@ namespace pleos {
                     content.get()->sub_texts().at(i).get()->clear();
                     content.get()->sub_texts().at(i).get()->add_xml_attribute(std::string("src"), replica->attached_pattern()->path_to_root(current_replica_file_path) + std::string("images/img") + std::to_string(__saasf_image_number) + std::string(".png"));
                     content.get()->sub_texts().at(i).get()->set_xml_balise_name(std::string("img"));
-                    content.get()->sub_texts().at(i).get()->balise_datas().has_content = false;
-                    content.get()->sub_texts().at(i).get()->balise_datas().is_paragraph = false;
+                    content.get()->sub_texts().at(i).get()->balise_datas()->has_content = false;
+                    content.get()->sub_texts().at(i).get()->balise_datas()->is_paragraph = false;
                     __saasf_image_number++;
                 }
                 else{__saasf_images(replica, content.get()->sub_texts().at(i), path, current_replica_file_path);}

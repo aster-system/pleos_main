@@ -39,3 +39,11 @@ L'idée même de cette théorie est de définir une base très stable pour toute
 Une des manières de construire un groupe est l'opération du groupe quotient.
 
 </p>
+
+<h3>Les morphismes de groupes</h3>
+<p>
+Le type de morphisme le plus utile avec les groupes est l'automorphisme.
+Pour rappel, <span class="important"><definition name="automorphism"></span>.
+Ce sujet est introduit dans <a href="../logic/category_theory#automorphism">la page traitant de la théorie des catégories</a>.
+En fait, <span class="important"></span>.
+</p>
