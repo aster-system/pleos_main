@@ -45,3 +45,7 @@
 <new_definition name="prehilbert_space">
     <content>un espace préhilbertien est un espace de Hilbert, qui n'est pas forcément complet</content>
 </new_definition>
+
+<new_definition name="exhaustion_method">
+    <content>la méthode d'exhaustion est une méthode (obsolète) de calcul d'une aire / d'un volume en se rapprochant successivement de cette valeur, par comblement du vide (ou retrait de matière) dans l'endroit calculé par des objets d'aire / volume connu</content>
+</new_definition>

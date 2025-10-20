@@ -1,0 +1,16 @@
+<h1>L'algèbre des nombres naturels</h1>
+
+
+
+<h2>Définir N et ses opérations</h2>
+
+<h3>La factorielle</h3>
+<p>
+Les nombres naturels sont aussi la base d'une autre opération primordiale : la factorielle.
+<span class="important"><definition name="factorial-natural"></span>.
+Elle se note générale "n!", avec un point d'exclamation.
+On peut aussi la définir par récurrence : factorielle de 0 est "1", et factorielle de "n" est "n * (n - 1)!".
+</p>
+<math><mi>1!</mi><mo>=</mo><factorial value=1></math></br>
+<math><mi>3!</mi><mo>=</mo><factorial value=3></math></br>
+<math><mi>10!</mi><mo>=</mo><factorial value=10></math>

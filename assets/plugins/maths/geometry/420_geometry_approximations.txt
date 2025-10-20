@@ -1,0 +1,113 @@
+<h1>Les approximations géométriques</h1>
+
+
+
+<h2>Calculer grâce à la géométrie</h2>
+
+<h3>La méthode d'exhaustion</h3>
+<p>
+Pendant presque 1000 ans, la civilisation grecque a peuplée le sud de la Méditerranée, et a produit une quantité énorme de connaisssances mathématiques.
+Dans la Grèce antique, <span class="important">la géométrie était considérée comme l'une des branches les plus "vraies" possibles de la science</span>.
+C'est donc sous leur "règne" que beaucoup de méthodes de calcul sont apparus, utilisant en grande partie des méthodes géométriques.
+</p>
+<p>
+Parmi ces méthodes, la plus connue est probablement la méthode d'exhaustion.
+En effet, <span class="important"><definition name="exhaustion_method"></span>.
+Historiquement, le père de cette méthode est <scientist name="eudoxe" type="quote">, bien que la date précise de la découverte soit méconnue.
+Dans le cas d'une approximation de surface, on parle de "quadrature" (d'où le nom de la célèbre "quadrature du cercle").
+En effet, il est difficile d'étudier la vie d'une mathématicien aussi ancien.
+La seule preuve de sa contribution envers cette méthode nous vient de <scientist name="archimede" type="quote">, dans "Traité de la Méthode" (traité où Archimède explique ses méthodes de travails).
+Un exemple extrêmement simple de ce procédé illustré est le calcul de l'aire d'un triangle rectangle isocèle.
+</p>
+
+<graphic>
+
+<background_color white>
+<base width=3 height=3>
+
+<line n="l_0" x_1=-1 y_1=-1 x_2=1 y_2=-1>
+<line n="l_1" x_1=-1 y_1=-1 x_2=-1 y_2=1>
+<line n="l_2" x_1=-1 y_1=1 x_2=1 y_2=-1>
+
+<rect name="r_00" color=blue border_color=red x=-1 y=-1 width=1 height=1>
+
+</graphic>
+<graphic>
+
+<background_color white>
+<base width=3 height=3>
+
+<line n="l_0" x_1=-1 y_1=-1 x_2=1 y_2=-1>
+<line n="l_1" x_1=-1 y_1=-1 x_2=-1 y_2=1>
+<line n="l_2" x_1=-1 y_1=1 x_2=1 y_2=-1>
+
+<rect name="r_00" color=blue border_color=red x=-1 y=-1 width=1 height=1>
+<rect name="r_10" color=blue border_color=red x=-1 y=0 width=1/2 height=1/2>
+<rect name="r_11" color=blue border_color=red x=0 y=-1 width=1/2 height=1/2>
+
+</graphic>
+<graphic>
+
+<background_color white>
+<base width=3 height=3>
+
+<line n="l_0" x_1=-1 y_1=-1 x_2=1 y_2=-1>
+<line n="l_1" x_1=-1 y_1=-1 x_2=-1 y_2=1>
+<line n="l_2" x_1=-1 y_1=1 x_2=1 y_2=-1>
+
+<rect name="r_00" color=blue border_color=red x=-1 y=-1 width=1 height=1>
+<rect name="r_10" color=blue border_color=red x=-1 y=0 width=1/2 height=1/2>
+<rect name="r_11" color=blue border_color=red x=0 y=-1 width=1/2 height=1/2>
+<rect name="r_20" color=blue border_color=red x=-1 y=1/2 width=1/4 height=1/4>
+<rect name="r_21" color=blue border_color=red x=-1/2 y=0 width=1/4 height=1/4>
+<rect name="r_22" color=blue border_color=red x=0 y=-1/2 width=1/4 height=1/4>
+<rect name="r_23" color=blue border_color=red x=1/2 y=-1 width=1/4 height=1/4>
+
+</graphic>
+
+<p>
+Dans cet exemple, on commence avec un triangle rectangle isocèle, dont les deux côtés formant l'angle droit ont une longueur de 2 unités.
+On rajoute un premier carré dans le triangle, de largeur 1 unité : l'aire du rectangle est de haut moins 1 unité d'aire.
+En suite, on se rapproche des bords du triangle (en restant strictement dedans), avec 2 autres carrés, de largeur 0.5 : leurs aires combinées est de 0.5 unité d'aire, le triangle fait au moins 1.5 unités d'aire.
+On réitère le processus, avec 4 autres carrés de largeur 0.25 : le triangle fait au moins 1.75 unités d'aire.
+<span class="important">Plus vous faites cette méthode, plus vous vous rapprochez de la valeur 2 : c'est effectivement l'aire de ce triangle</span> (selon la célèbre formule vue au collège).
+</p>
+<math><mi>aire</mi><mo>=</mo><mfrac><mrow><mi>hauteur</mi><mo>*</mo><mi>largeur</mi></mrow><mi>2</mi></mfrac></math>
+<p>
+Il est aussi à noter que vous pouvez formuler ce résultat pour obtenir l'aire obtenu à chaque étape.
+En effet, à chaque étape, vous ajoutez 2 carré de largeur 2 fois plus petit aux derniers, et vous en ajoutez 2 fois plus que lors de la dernière étape.
+Comme un carré 2 fois plus petit a une aire 4 fois plus petite, mais que vous en rajoutez 2 fois plus, vous ajotuez à chaque étape la moitié de l'aire ajoutée à l'étape d'avant.
+Donc, l'aire ajoutée à chaque étape"n + 1" est <math><mi>a</mi><msub>n + 1</msub><mo>=</mo><mi>0.5</mi><mi>a</mi><msub>n</msub></math> : <span class="important">il s'agit d'une suite géométrique (initialisé à l'étape 0 avec une aire de 1)</span>.
+<span class="important">La somme des éléments de cette suite représente la somme totale de l'aire des rectangles, se rapprochant de celle du triangle</span>.
+On peut très facilement démontrer (avec un formalisme moderne) que la limite quand "n" tend vers + l'infini de cette suite est 2.
+</p>
+
+<math>
+<mi>a</mi><msub>0</msub><mo>=</mo><mi>1</mi><mo>,</mo>
+<mi>a</mi><msub>1</msub><mo>=</mo><mi>0.5</mi><mo>,</mo>
+<mi>a</mi><msub>2</msub><mo>=</mo><mi>0.25</mi><mo>,</mo>
+<mi>a</mi><msub>18</msub><mo>=</mo><mi>0.0000038147</mi></math></br>
+<math>
+<mi>somme(a, 0)</mi><mo>=</mo><mi>1</mi><mo>,</mo>
+<mi>somme(a, 1)</mi><mo>=</mo><mi>1.5</mi><mo>,</mo>
+<mi>somme(a, 2)</mi><mo>=</mo><mi>1.75</mi><mo>,</mo>
+<mi>somme(a, 18)</mi><mo>=</mo><mi>1.9999961853</mi>
+</math>
+
+<p>
+Cette méthode était très utilisée par les grecques.
+Par exemple, Archimède en est l'un des plus grands utilisateurs.
+Grâce à cette technique, Archimède commença à travailler sur les cercles, dans son traité "De la mesure du cercle".
+Dans ce traité, <span class="important">Archimède proposa une formule de calcul de l'aire et de la circonférence d'un cercle, qui implique toutes les deux des valeurs précises : approximativement 3.14</span>.
+On sait aujourd'hui que ces deux valeurs sont les mêmes, que l'on appelle actuellement "pi".
+Grâce à ces travaux, il démontra aussi de manière similaire l'aire et le volume du cylindre.
+Toujours grâce à la méthode d'exhaustion (appliquée en 3D), <span class="important">il parvint aussi à trouver l'aire et le volume d'une boule</span>.
+Plus tard, <span class="important">ses travaux seront repris par <scientist name="euclide" type="quote"> dans "Les éléments", pour montrer la proportionnalité des circonférences / aires / volumes de deux disques / boules de rayon différent (toujours avec la méthode d'exhaustion)</span>.
+</p>
+
+<p>
+Cependant, la méthode d'exhaustion n'a pas que des utilités en géométrie.
+Par exemple, <span class="important">Eudoxe, Archimède et même Euclide travailèrent sur l'étude de l'aire dans une parabole, toujours grâce à la méthode d'exhaustion</span>.
+Beaucoup plus tard, au 17ème siècle, de grand nom, comme Grégoire de Saint-Vincent, ont réussi à travailler sur la fonction lgoarithme néperien, grâce à la méthode d'exhaustion appliquée aux hyperboles.
+Aujourd'hui, ce genre de calcul se fait grâce à du calcul intégral (développé grâce à la méthode d'exhaustion).
+</p>

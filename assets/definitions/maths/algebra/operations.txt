@@ -1,0 +1,3 @@
+<new_definition name="factorial">
+    <content name="natural">la factorielle d'un nombre entier naturel "n" est le produit de tous les nombres plus petit que "n" avec "n" (défini pour "n=0" à 1)</content>
+</new_definition>
