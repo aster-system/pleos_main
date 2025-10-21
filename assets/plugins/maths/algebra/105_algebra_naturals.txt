@@ -14,3 +14,8 @@ On peut aussi la définir par récurrence : factorielle de 0 est "1", et factori
 <math><mi>1!</mi><mo>=</mo><factorial value=1></math></br>
 <math><mi>3!</mi><mo>=</mo><factorial value=3></math></br>
 <math><mi>10!</mi><mo>=</mo><factorial value=10></math>
+<p>
+La factorielle peut être approximée grâce à une formule assez connue : <span class="important">la formule de Stirling</span>.
+Elle s'énonce comme ça :
+</p>
+<math><mi>n!</mi><mo>~</mo><msqrt><mpi><mi>2n</mi></msqrt><mo>(</mo><mfrac><mi>n</mi><mi>e</mi></mfrac><mo>)</mo><msup>n</msup></math>
