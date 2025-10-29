@@ -40,7 +40,7 @@ SCLS_INIT
 int main(int argc, char* argv[]) {
     //pleos::bac(std::string("tests/"));
 
-    /*pleos::Pleos_Window window(900, 600, argv[0]);
+    pleos::Pleos_Window window(900, 600, argv[0]);
     window.load_from_xml("assets/window.txt");
 
     while(window.run()) {
@@ -48,7 +48,7 @@ int main(int argc, char* argv[]) {
         window.update();
 
         window.render();
-    } //*/
+    }//*/
 
     /*std::string content = std::string("<h1>Les polynômes</h1>");
     std::string redaction = std::string();pleos::polynomial_roots(scls::string_to_formula(std::string("3")), &redaction);content += std::string("<p>") + redaction + std::string("</p>");
@@ -61,7 +61,7 @@ int main(int argc, char* argv[]) {
     scls::Text_Style style;style.set_max_width(600);
     pleos::string_to_image(content, style).save_png("tests/polynome.png");//*/
 
-    scls::Text_Style style;style.set_font_size(24);style.set_max_width(800);
+    /*scls::Text_Style style;style.set_font_size(24);style.set_max_width(800);
     pleos::string_to_image(scls::read_file("tests/test_note.txt"), style).save_png("tests/polynome.png");//*/
 
     return 0;

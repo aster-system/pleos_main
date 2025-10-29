@@ -40,3 +40,21 @@ En toute logique, il faudrait représenter ça sur un plan, sur lequel on rajout
 En effet, <span class="important">un graphe de fonction se dessine sur le produit cartésien de l'ensemble de départ et l'ensemble d'arrivé</span>.
 Par exemple une fonction complexe donnant en résultat un complexe nécessite... 4 dimensions pour être représenté (bien que certaines techniques permettent de remplacer la 4ème avec une couleur, ou de ne représenter que la valeur réelle / imaginaire / argument / module...).
 </p>
+
+<h3>Les espaces fonctionnels</h3>
+<p>
+Entre deux ensembles, on peut catégoriser l'ensemble des applications possibles entre les deux.
+En effet, <span class="important"><definition name="function_space"></span>.
+Bien que cet espace peut représenter toutes les fonctions possibles, <span class="important">on peut aussi ne spécifier qu'un certains type de fonctions (fonctions linéaires, fonction continue...)</span>.
+</p>
+
+<graphic title="Différentes fonctions linéaires">
+<background_color white>
+<function expression=x/4></function>
+<function expression=x/3></function>
+<function expression=x/2></function>
+<function expression=x></function>
+<function expression=2x></function>
+<function expression=3x></function>
+<function expression=4x></function>
+</graphic>

@@ -1,6 +1,9 @@
 <new_definition name="function_graph">
     <content>un graphe de fonction est une représentation des valeurs de la fonction (généralement facilement représentable sous forme graphique), en liant chaque endroit où la fonction est définie avec sa valeur via cette fonction</content>
 </new_definition>
+<new_definition name="function_space">
+    <content>un espace fonctionnel est un ensemble d'applications (et donc, de fonctions) entre deux ensembles X et Y</content>
+</new_definition>
 
 <new_definition name="analysis_continuity">
     <content>la continuité mathématique représente un concept suggérant la possibilité de se rapprocher indéfiniment d'une valeur dans un espace, quelque soit la façon dont vous faites</content>

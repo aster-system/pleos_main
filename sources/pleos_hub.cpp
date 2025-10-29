@@ -220,6 +220,7 @@ namespace pleos {
         else if(word == std::string("topology")){if(add_determinant){to_return = std::string("la topologie");}else{to_return = std::string("topologie");}}
 
         // Others
+        else if(word == std::string("chapter")){if(add_determinant){to_return = std::string("le chapitre");}else{to_return = std::string("chapitre");}}
         else if(word == std::string("definitions")){if(add_determinant){to_return = std::string("les définitions");}else{to_return = std::string("définitions");}}
 
         // Capitalise the first letter
@@ -302,17 +303,88 @@ namespace pleos {
             current_file.get()->set_variable_value(std::string("main_description"), scls::format_string_from_plain_text(scls::format_string_break_line(scls::read_file(assets + std::string("/plugins/") + subjects.at(i) + std::string("/home/definition.txt")), std::string(" "))));
             current_file.get()->set_variable_value(std::string("page_title"), std::string("SAASF - ") + __saasf_translate(subjects.at(i), false, true));
 
+            // Preparation of the page
+            std::vector<std::string> cutted;
+            std::vector<std::string> sub_subjects = scls::directory_content(assets + std::string("/plugins/") + subjects[i]);
+            int course = -1;for(int i = 0;i<static_cast<int>(sub_subjects.size());i++){std::vector<std::string>cutted=scls::cut_string(sub_subjects.at(i), std::string("\\"));if(cutted.at(cutted.size() - 1) == std::string("course")){course=i;break;}}
+
+            if(course > -1) {
+                // Course
+                scls::Replica_File_Variable_Element* element = current_file.get()->variable_list(std::string("explaination_parts[]"))->new_element<scls::Replica_File_Variable_Element>();
+                element->set_variable_value(std::string("explaination_title"), std::string("Le cours"));
+                explaination_content = std::string("Voici la liste de tous les savoirs accessible sur ") + __saasf_translate(subjects.at(i), true, false) + std::string(" sous le format \"Cours\" pour l'instant :&lt;ul&gt;");
+                std::string explaination_content_school = std::string("Certains cours proposé ici parlent aussi des programmes proposés par l'éducation nationale au lycée. En général, ils sont accompagnés de commentaires, visant leur contenu. Voici les programmes décrits :&lt;ul&gt;");
+
+                // Get the sub-files
+                std::vector<std::string> chapters = scls::directory_content(sub_subjects.at(course));
+                for(int i = 0;i<static_cast<int>(chapters.size());i++){if(static_cast<int>(chapters.at(i).size()) >= 11 && chapters.at(i).substr(chapters.at(i).size() - 11, 11) == std::string("program.txt")){chapters.erase(chapters.begin() + i);break;}}
+                std::vector<std::string> program = scls::cut_string(scls::read_file(sub_subjects.at(course) + std::string("/program.txt")), std::string("\n"));
+                for(int j = 0;j<static_cast<int>(chapters.size());j++){
+                    if(std::filesystem::is_directory(chapters[j])){
+                        cutted = scls::cut_string(chapters[j], "/");
+                        cutted = scls::cut_string(cutted[cutted.size() - 1], "\\");
+                        std::string sub_subject_name = cutted[cutted.size() - 1];
+                        if(sub_subject_name != std::string("home") && sub_subject_name != std::string("school")) {
+                            // Get the precise title
+                            cutted = scls::cut_string(sub_subject_name, std::string("_"));
+                            std::string title = __saasf_translate(cutted.at(0), true, true) + std::string(" ") + cutted.at(1);
+
+                            std::string file_name = subjects[i] + std::string("/") + sub_subject_name + std::string(".html");
+                            std::string file_name_complete = std::string("learn/") + file_name;
+                            if(static_cast<int>(program.size()) <= j){explaination_content += std::string("&lt;li&gt;&lt;a href=\"./") + file_name + std::string("\"&gt;") + title + std::string("&lt;/a&gt;&lt;/li&gt;");}
+                            else{explaination_content += std::string("&lt;li&gt;&lt;a href=\"./") + file_name + std::string("\"&gt;") + title + std::string(" - ") + program.at(j) + std::string("&lt;/a&gt;&lt;/li&gt;");}
+
+                            // Add the needed file
+                            std::shared_ptr<scls::Replica_File> needed_file = needed_replica.get()->new_replica_file(file_name_complete, needed_pattern.get()->pattern_by_name("main"));
+                            needed_file.get()->set_variable_value(std::string("main_title"), title);
+                            needed_file.get()->set_variable_value(std::string("main_description"), std::string());
+                            needed_file.get()->set_variable_value(std::string("page_title"), std::string("SAASF - ") + title);
+
+                            // Set the good content
+                            cutted = scls::directory_content(assets + std::string("/plugins/") + subjects[i] + std::string("/course/") + sub_subject_name + std::string("/"));
+                            std::vector<__SAASF_Subjet_Part> parts;
+                            for(int j = 0;j<static_cast<int>(cutted.size());j++){
+                                std::vector<std::string>cutted_temp=scls::cut_string(cutted[j],std::string("/"));
+                                cutted_temp=scls::cut_string(cutted_temp[cutted_temp.size() - 1],std::string("\\"));
+                                cutted_temp=scls::cut_string(cutted_temp[cutted_temp.size() - 1],std::string("_"));
+                                if(cutted_temp.size() > 0 && scls::string_is_number(cutted_temp[0])){
+                                    __SAASF_Subjet_Part to_add;
+                                    to_add.name = cutted_temp[0];
+                                    to_add.number = std::stoi(cutted_temp[0]);
+                                    to_add.path = cutted[j];
+
+                                    parts.push_back(to_add);
+                                }
+                            }
+                            std::sort(parts.begin(), parts.end(), __saasf_sort_subjects);
+                            for(int k = 0;k<static_cast<int>(parts.size());k++) {
+                                std::shared_ptr<scls::__XML_Text_Base> file_content = scls::xml(window_struct()->balises_shared_ptr(), scls::format_string_break_line(scls::read_file(parts[k].path), std::string(" ")));
+                                file_content.get()->replace_balise_by_name("h3", "h4");file_content.get()->replace_balise_by_name("h2", "h3");
+                                file_content.get()->replace_balise_by_name("important", "span class=\"important\"");
+                                utf_8_symbol_xml(file_content, true);
+                                __saasf_images(needed_replica.get(), file_content, needed_replica.get()->export_path(path), file_name_complete);
+                                scls::Replica_File_Variable_Element* current_part = needed_file.get()->variable_list(std::string("explaination_parts[]"))->new_element<scls::Replica_File_Variable_Element>();
+                                std::shared_ptr<scls::__XML_Text_Base> title = file_content.get()->remove_balise_by_name("h1");
+                                if(title.get() != 0){current_part->set_variable_value(std::string("explaination_title"), title.get()->text());}
+                                current_part->set_variable_value(std::string("explaination_content"), scls::format_string_from_plain_text(file_content.get()->full_text()));
+                            }
+                        }
+                    }
+                }
+                for(int j = chapters.size();j<static_cast<int>(program.size());j++){explaination_content += std::string("&lt;li&gt;") + __saasf_translate(std::string("chapter"), true, true) + std::string(" ") + std::to_string(j) + std::string(" (bientôt disponible) - ") + program.at(j) + std::string("&lt;/li&gt;");}
+                element->set_variable_value(std::string("explaination_content"), explaination_content);
+            }
+
             // Explaination
             scls::Replica_File_Variable_Element* element = current_file.get()->variable_list(std::string("explaination_parts[]"))->new_element<scls::Replica_File_Variable_Element>();
-            element->set_variable_value(std::string("explaination_title"), std::string("Les différentes parties"));
-            explaination_content = std::string("Voici la liste de tous les savoirs accessibles sur ") + __saasf_translate(subjects.at(i), true, false) + std::string(" sur les médias (Youtube, Tiktok, Instagram...) d'Aster Système Learn pour l'instant :&lt;ul&gt;");
+            element->set_variable_value(std::string("explaination_title"), std::string("Les différents brouillons"));
+            explaination_content = std::string("Voici la liste de tous les savoirs en préparation sur ") + __saasf_translate(subjects.at(i), true, false) + std::string(" sur les médias (Youtube, Tiktok, Instagram...) d'Aster Système Learn pour l'instant :&lt;ul&gt;");
             std::string explaination_content_school = std::string("Certains cours proposé ici parlent aussi des programmes proposés par l'éducation nationale au lycée. En général, ils sont accompagnés de commentaires, visant leur contenu. Voici les programmes décrits :&lt;ul&gt;");
-            std::vector<std::string> sub_subjects = scls::directory_content(assets + std::string("/plugins/") + subjects[i]);
-            std::vector<std::string> cutted;bool use_school = false;
+            bool use_school = false;
 
             // Get the sub-files
             for(int j = 0;j<static_cast<int>(sub_subjects.size());j++){
-                if(std::filesystem::is_directory(sub_subjects[j])){
+                if(j != course && std::filesystem::is_directory(sub_subjects[j])){
                     cutted = scls::cut_string(sub_subjects[j], "/");
                     cutted = scls::cut_string(cutted[cutted.size() - 1], "\\");
                     std::string sub_subject_name = cutted[cutted.size() - 1];
@@ -353,7 +425,6 @@ namespace pleos {
                             scls::Replica_File_Variable_Element* current_part = needed_file.get()->variable_list(std::string("explaination_parts[]"))->new_element<scls::Replica_File_Variable_Element>();
                             std::shared_ptr<scls::__XML_Text_Base> title = file_content.get()->remove_balise_by_name("h1");
                             if(title.get() != 0){current_part->set_variable_value(std::string("explaination_title"), title.get()->text());}
-                            //if(title.get()->text() == "Définitions de la topologie"){std::cout << "E " << file_content.get()->full_text() << std::endl;}
                             current_part->set_variable_value(std::string("explaination_content"), scls::format_string_from_plain_text(file_content.get()->full_text()));
                         }
                     }

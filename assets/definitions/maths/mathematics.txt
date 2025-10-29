@@ -1,0 +1,10 @@
+<new_definition name="mathematics">
+    <content>les mathématiques représentent les sciences étudiant la logique pure</content>
+</new_definition>
+<new_definition name="mathematics_philosophy">
+    <content>la philosophie des mathématiques représente la branche de la philosophie étudiant comment et pourquoi faire des mathématiques</content>
+</new_definition>
+
+<new_definition name="abstraction">
+    <content>l'abstraction représente l'action d'imaginer (mentalement) un objet, sans qu'il soit obligatoirement réel</content>
+</new_definition>

@@ -1,0 +1,14 @@
+<new_definition name="course">
+    <content>un cours est une suite de leçon permettant de réaliser un enseignement construit et bien ordonné</content>
+    <content name="chapter">un chapitre de cours est une découpe plus précise que le cours, mais moins que la leçon, pour mieux ordonner le cours</content>
+</new_definition>
+<new_definition name="lesson">
+    <content>une leçon est un "bloc" bien délimité d'informations, transmis pour couvrir une thématique précise d'un cours</content>
+</new_definition>
+<new_definition name="pedagogy">
+    <content>la pédagogie est l'étude / la mise en pratique de l'enseignement et des techniques d'enseignement</content>
+</new_definition>
+<new_definition name="teaching">
+    <content>l'enseignement est la transmission de savoirs / connaissances entre un enseignant (transmetteur) et un élève (receveur)</content>
+    <content name="program">un programme d'enseignement est un plan à suivre, qu'un enseignant doit respecter réaliser son cours</content>
+</new_definition>

@@ -8,3 +8,7 @@
 <new_definition name="real_numbers_set">
     <content>l'ensemble des nombres réels représente l'ensemble contenant TOUS les nombres réels, lui permettant d'être totalement ordonné, complet (et donc connexe), et d'avoir la propriété de la borne supérieure</content>
 </new_definition>
+
+<new_definition name="function_holomorphic">
+    <content>une fonction est dite holomorphe dans un sous-ensemble E de C (voir, dans tout C, ou sur un point unique) si elle est définie et dérivable dans tout E</content>
+</new_definition>

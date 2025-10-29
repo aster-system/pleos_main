@@ -50,7 +50,7 @@ Toutes les formules de ces suites sont énumérées dans un tableau en dessous.
 <p>
 Il est possible d'obtenir la somme de termes d'une suite.
 Or, le terme de "somme" est trop léger si nous voulons obtenir la somme de tous les termes d'une suite (une infinité de terme).
-En fait, <span class="important">une série mathématique représente une somme d'une infinité de terme</span>.
+En fait, <span class="important"><definition name="serie"></span>.
 Un exemple très simple est la série permettant d'écrire le nombre "21748".
 En effet, on peut l'écrire sous la forme d'une série de nombre, représentant la valeur de chaque parties du nombre (unité, décimal, centaine...), multipliée par l'exposant de 10 correspondant.
 Dans cette somme, nous avons donc une infinité de "0", avant la virgule, et après le 2.
@@ -102,6 +102,14 @@ La série peut donner vers une valeur précise, comme devenir chaotique.
 Selon la suite sur lesquelles elles sont construites, on peut y définir différentes propriétés précises.
 <span class="important">Si la suite utilisée est géométrique, alors la série est dite géométrique, et nous pouvons démontrer la valeur vers laquelle elle converge (ou si elle ne converge pas) grâce à la formule de la somme d'une suite géométrique, doublée de la notion de limite</span>.
 Théoriquement, c'est aussi possible pour une suite arithmétique, mais dans ce cas, la suite diverge obligatoirement.
+</p>
+
+<h3>Les séries entières</h3>
+<p>
+Connaître l'idée, c'est bien, mais savoir l'appliquer, c'est mieux.
+Pour cela, un des termes les plus importants est celui de série entière.
+En mathématiques, <span class="important"><definition name="serie_power"></span>.
+C'est une façon légèrement plus spécifique d'écrire une série.
 </p>
 
 <h3>Les séries connues</h3>

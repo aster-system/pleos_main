@@ -1,0 +1,6 @@
+<new_definition name="serie">
+    <content>une série mathématique représente une somme d'une infinité de termes d'une suite</content>
+</new_definition>
+<new_definition name="serie_power">
+    <content>une série entière est une série d'une suite de terme général une fonction quelconque par une variable muette ("x" ou "z" selon qu'elle soit un réel ou un complexe)</content>
+</new_definition>

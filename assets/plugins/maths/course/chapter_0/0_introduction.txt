@@ -1,0 +1,201 @@
+<h1>Introduction</h1>
+
+
+
+<h2>Le concept de "cours"</h2>
+
+<h3>L'envie d'apprendre</h3>
+<p>
+Si vous êtes ici, c'est que, d'une façon ou d'une autre, vous vous intéressez aux mathématiques.
+Dans ce cas, il est fort probable que vous vouliez apprendre des choses par rapport aux mathématiques.
+Ce cours est fait pour ça.
+</p>
+<p>
+Essayons de décrire comment il va fonctionner.
+Ce "document" est un cours.
+En théorie, <span class="important"><definition name="course"></span>.
+Ici, <span class="important"><definition name="lesson"></span>.
+Une leçon utilise en général d'autres concepts similaires : les notions, les méthodes, les définitions...
+Nous parlerons de tout ça plus tard, car la façon dont elles seront introduite sera très influencée par le caractère "mathématique" du cours.
+Dans ce cours, il y aura de nombreuses leçons, consacrés à (en toute logique) plein de domaines mathématiques.
+Cependant, pour rajouter du sens, ce cours sera aussi découpé sous forme de chapitres.
+Ici, <span class="important"><definition name="course-chapter"></span>.
+En général, les chapitres représenteront des niveaux mathématiques différents dans le cours, tel que le chapitre précédent ne nécessite pas le chapitre suivant.
+Des découpes plus précises pourront apparaître dans le futur, mais pour l'instant, ce cours ressemblera à ça :
+</p>
+<graphic width=600 height=200>
+<base draw=0 width=30 height=10>
+<background_color white>
+
+<text background_color=transparent y=4 content="Cours"></text>
+
+<rect background_color=green border_radius=1 x=-14 y=-9/2 width=8 height=15/2>
+<text background_color=transparent x=-10 y=5/2 content="Chapitre 1"></text>
+
+<rect background_color=green border_radius=1 x=-4 y=-9/2 width=8 height=15/2>
+<text background_color=transparent x=0 y=5/2 content="Chapitre 2"></text>
+
+<rect background_color=green border_radius=1 x=6 y=-9/2 width=8 height=15/2>
+<text background_color=transparent x=10 y=5/2 content="Chapitre 3"></text>
+
+<rect background_color=yellow border_radius=1 x=-13 y=0 width=6 height=3/2>
+<text background_color=transparent x=-10 y=3/4 content="Leçon 1"></text>
+
+<rect background_color=yellow border_radius=1 x=-13 y=-2 width=6 height=3/2>
+<text background_color=transparent x=-10 y=-5/4 content="Leçon 2"></text>
+
+<rect background_color=yellow border_radius=1 x=-13 y=-4 width=6 height=3/2>
+<text background_color=transparent x=-10 y=-13/4 content="Leçon 3"></text>
+
+<rect background_color=yellow border_radius=1 x=-3 y=0 width=6 height=3/2>
+<text background_color=transparent x=0 y=3/4 content="Leçon 1"></text>
+
+<rect background_color=yellow border_radius=1 x=-3 y=-2 width=6 height=3/2>
+<text background_color=transparent x=0 y=-5/4 content="Leçon 2"></text>
+
+<rect background_color=yellow border_radius=1 x=-3 y=-4 width=6 height=3/2>
+<text background_color=transparent x=0 y=-13/4 content="Leçon 3"></text>
+
+<rect background_color=yellow border_radius=1 x=7 y=0 width=6 height=3/2>
+<text background_color=transparent x=10 y=3/4 content="Leçon 1"></text>
+
+<rect background_color=yellow border_radius=1 x=7 y=-2 width=6 height=3/2>
+<text background_color=transparent x=10 y=-5/4 content="Leçon 2"></text>
+
+<rect background_color=yellow border_radius=1 x=7 y=-4 width=6 height=3/2>
+<text background_color=transparent x=10 y=-13/4 content="Leçon 3"></text>
+</graphic>
+
+<p>
+Théoriquement, dans l'enseignement "officiel", les cours respectent ce que l'on appelle un programme.
+<span class="important"><definition name="teaching-program"></span>.
+Tout le monde connait le très célèbre programme imposé par l'académie française aux établissements éducatifs français, proposés <a href="https://www.education.gouv.fr/programmes-scolaires-41483">sur ce site web</a>.
+Cependant, les programmes ne servent pas toujours la cause de la matière qu'ils représentent.
+<span class="important">C'est pour cela que j'ai décidé d'opté pour un programme bien plus libre, et qui est inspiré des grands mathématiciens dans l'histoire</span>.
+Or, comme mon programme ne validerai probablement pas les exigences de l'éducation national, je ne peux pas délivrer de diplôme à la fin de ce cours.
+Prenez le donc comme il est : un cours juste fait pour mieux comprendre les mathématiques (et aller valider de "vrais" diplômes plus tard).
+</p>
+
+<h3>Comment utiliser ce cours</h3>
+<p>
+Pour bien comprendre comment ce cours va fonctionner, il peut être très pratique de se plonger un peu dans une branche des sciences humaines : la pédagogie.
+En effet, <span class="important"><definition name="pedagogy"></span>.
+Ici, <span class="important"><definition name="teaching"></span>.
+En réalité, ces définitions changent selon la personne étudiant le concept (en général, des philosophes ou sociologues), mais savoir laquelle est la meilleure n'est pas utile dans le contexte actuel.
+En gros, la pédagogie étudie les meilleurs moyens possibles de transmettre ce savoir.
+Donc, en théorie, <span class="important">tout enseignant doit maitriser un minimum la pédagogie</span> (j'insiste sur le "en théorie").
+Dans ce cours, j'essaierai d'être le plus pédagogue possible.
+Cependant, je me réserve le droit de faire évoluer la pédagogie utilisée dans ce cours pour se rapprocher d'une pédagogie optimale.
+</p>
+<p>
+Bien que ces définitions peuvent être utilisées par l'enseignant pour mieux enseigner, <span class="important">l'élève peut aussi tenter de les comprendre pour mieux acquérir les connaissances</span>.
+Déjà, <span class="important">l'élève doit précisément savoir ce qu'il veut apprendre précisément, et pourquoi</span>.
+Cette stratégie permet de donner une motivation à l'élève, même dans des temps difficiles.
+<span class="important">Il est aussi conseiller à l'élève d'adopter une relative discipline, lui permettant de correctement acquérir les connaissances nécessaires</span>.
+Cette discipline est très difficle à étudier, puisqu'elle est propre à chaque personne.
+Cependant, elle doit inclure les méthodes de travails générales permettant à l'élève d'atteindre ces objectifs (révisions, exercices, méthode de la feuille blanche)...
+Ces concepts sont déjà sur-étudiés partout sur Internet, je ne reviendrai donc pas dessus ici.
+</p>
+
+
+
+<h2>L'enseignement des mathématiques</h2>
+
+<h3>Comment faire des mathématiques ?</h3>
+<p>
+Quand vous demandez à des gens aléatoire leur définition des mathématiques, il y a de fortes chances que des mots du type "calcul" ou "nombres" apparaissent dedans.
+Or, tous ceux qui ont fait un peu de mathématiques avancées savent très bien que, très vite, les nombres disparaissent, pour laisser place à des symbôles plus ou moins abstraits.
+Donc, la question de la définition précise des mathématiques est plus compliquée qu'il n'y paraît.
+</p>
+<p>
+Pour étudier les mathématiques, il faut savoir ce que l'on étudie précisément, et comment cela marche.
+Déjà, <span class="important"><definition name="mathematics"></span>.
+Ici, <span class="important"><definition name="logic"></span>.
+Bien évidément, cette définition est extrêmement générale.
+En effet, cette "logique" s'applique aussi, par exemple, à l'étude du droit (pour justifier l'inocence ou la culpabilité d'un prévenu), en lettres (pour étudier un texte)...
+Il y a donc quelque chose qui différencie la logique mathématique des autres logiques.
+</p>
+<p>
+Les mathématiques étudient toutes (ou presque) leurs théories de manière exacte, en suivant exactement ce que la logique leur dit de faire.
+Donc, deux questions se posent : <span class="important">"qu'est ce qu'est une théorie mathématique" et "qu'est ce que la logique leur dit de faire"</span>.
+Commençons par répondre à la deuxième question.
+En mathématique, on travaille avec propositions logiques.
+Ici, <span class="important"><definition name="proposition"></span>.
+L'idée derrière les mathématiques est de trouver ces valeurs de vérités, pour des propositions diverses.
+Pour cela, <span class="important">nous avons besoin d'un raisonnement, permettant de trouver la valeur de vérité d'une proposition (nommée la conclusion du raisonnement), en s'appuyant sur d'autres propositions dont on connait la valeur de vérité (nommés généralement prémisses du raisonnement)</span>.
+Ici, <span class="important">la logique permet de donner les règles permettant de passer de ces prémisses à la conclusion</span>.
+Voici un exemple dans un cadre parfaitement réel : je cherche à démontrer que je suis un humain.
+Cependant, tout le monde sait qu'un humain a une carte d'idendité, et j'ai une carté d'idendité.
+Ici, la logique me permet de dire que, puisque "un humain a une carte d'idendité" et "j'ai une carté d'idendité", alors je suis un humain.
+</p>
+<graphic width=400 height=200>
+<base draw=0 width=20 height=10>
+<background_color white>
+
+<text background_color=transparent y=4 content="Raisonnement"></text>
+
+<text background_color=transparent x=-5 y=5/2 content="Conclusion"></text>
+<arrow color=black x_1=-4 y_1=-2 x_2=-4 y_2=2>
+<text background_color=transparent x=-5 y=-5/2 content="Prémisse"></text>
+<text background_color=transparent x=5 y=5/2 content="Conclusion"></text>
+<text background_color=transparent x=-6 y=0 content="Logique"></text>
+<arrow color=black x_1=6 y_1=0 x_2=6 y_2=2><line color=black x_1=4 y_1=-2 x_2=6 y_2=0><line color=black x_1=7 y_1=-3 x_2=6 y_2=0><circle radius=1/2 color=black x=6 y=0>
+<text background_color=transparent x=3 y=0 content="Logique"></text>
+<text background_color=transparent x=4 y=-5/2 content="Prémisse 1"></text>
+<text background_color=transparent x=6 y=-7/2 content="Prémisse 2"></text>
+</graphic>
+<p>
+Cependant, <span class="important">en mathématiques, on cherche à ce que TOUTES les propositions puissent être démontré</span>.
+Or, je devrais théoriquement démontrer que "un humain a une carte d'idendité" (et que "j'ai une carté d'idendité", or je ne vais pas leak ma carte d'idendité juste pour ça ¯\_( ͡° ͜ʖ ͡°)_/¯).
+Légalement, la carté d'idendité a été instaurée lors du <a href="https://www.legifrance.gouv.fr/loda/id/LEGISCTA000006096444" target="_blank">décret n°55-1397 du 22 octobre 1955</a> (bien que légèrement modifié depuis).
+Si on continue comme ça, on va creuser dans les propositions : "comment s'assurer qu'il n'y a pas eu d'erreurs à la mairie", "est-ce suffisant pour prouver que son détenteur est un humain", "peut-on faire confiance à la loi française"...
+Or, il faut bien s'arrêter quelque part.
+Dans notre exemple actuel (la loi française), la simple existence de ce décret suffit à ce que, légalement, son contenu soit reconnue (donc, légalement, "un humain a une carte d'idendité" est reconnu).
+Or, en mathématiques, on a le même problème : il faut s'arrêter quelque part.
+Pour cela, il existe un concept très pratique : les axiomes.
+<span class="important"><definition name="axiom"></span>.
+Théoriquement, on peut remonter CHAQUE démonstration de chaque proposition pour arriver à des axiomes.
+Un axiome peut n'avoir aucun équivalent dans le monde réel est être totalement abstraits.
+Pour rappel, <definition name="abstraction">.
+C'est le cas d'une grande partie des objets mathématiques.
+Cependant, <span class="important">ces objets peuvent obéir à certaines règles, nommées des propriétés</span>.
+L'étape de la création (mentale) de cet objet est nommée la définition de l'objet.
+En général, "l'objet O possède une propriété P" est une proposition (ou un axiome), soit vrai soit fausse.
+Dans ce cours, nous exposeront toutes les idées vues sous cette forme.
+</p>
+<p>
+Cependant, pour que vous puissiez démontrer quoi que ce soit, il vous faut plusieurs axiomes différents.
+Pour cela, on utilise ce que l'on appelle une théorie axiomatique.
+<span class="important"><definition name="axiom_theory"></span>.
+Il est à noter qu'une proposition démontrée dans une théorie axiomatique est nommée... un théorème.
+Heuresement pour nous, <span class="important">il existe quelques théories axiomatiques (qui seront introduites au premier cours), qui permettent de formuler toutes les mathématiques classiques</span> (de la maternelle à la L3, voir au master).
+Voici comment fonctionne les mathématiques modernes.
+Nous en reparlerons dans ce cours, mais les idées ne changeront pas beaucoup de tout ça.
+</p>
+<p>
+Avec tout ça, on peut se demander quelles règles de logique utiliser pour démontrer nos propositions.
+Cette question fait partie une discipline philosophique précise : la philosophie des mathématiques.
+<span class="important"><definition name="mathematics_philosophy"></span>.
+Au fil de l'histoire, une quantité aberrante de différentes méthodes sont nées, avec autant d'avantages / inconvénients pour chacune d'entre elles, et autant de réponses différentes à notre question de départ.
+Dans ce cours, j'adopterai une philosophie proche du logicisme et du formalisme.
+</p>
+
+<h3>L'objectif de ce cours</h3>
+<p>
+Dans ce cours, <span class="important">l'idée est de partir du fondement des mathématiques (et donc, de ces fameux axiomes), pour atteindre les plus hauts sommets possibles</span>.
+Cependant, cette façon de faire est basée en très grande partie sur la compréhension brute et totale de ce que l'on est en train de faire, et donc des démonstrations utilisées.
+<span class="important">L'idée est aussi d'aller creuser dans les bases de ce que l'on croit être les mathématiques</span> (qui sont bien souvent erronées).
+Pour cela, nous traiterons les thèmes dans un ordre permettant leur compréhension parfaite.
+En effet, <span class="important">je pense que le savoir mathématique n'a aucune valeur sans compréhension mathématique, alors que la réciproque n'est pas vrai</span>.
+Quand on voit tout ça, on peut s'interroger sur quelques points.
+Dans l'enseignement secondaire, les mathématiques ne sont pas enseignées comme ça, alors pourquoi faire comme cela dans ce cours ?
+Je n'ai pas trouvée la réponse à cette question, bien que les conséquences sont assez visibles sur <a href="https://www.radiofrance.fr/franceinter/enquete-pisa-la-france-enregistre-une-baisse-historique-du-niveau-des-eleves-en-maths-8211583" target="_blank">le classement PISA</a>...
+</p>
+<p>
+Ce cours contiendra beaucoup de démonstrations différentes.
+Pour des raisons de lisibilité, <span class="important">les démonstrations seront placées hors des cours, sur des pages appart</span>.
+De plus, <span class="important">elles seront expliquées sur notre chaîne Youtube</span>.
+</p>
+<p>
+En d'autres termes, <span class="important">suivez ce cours si vous voulez comprendre parfaitement les mathématiques, sans en attendre (directement) un diplôme</span>.
+</p>

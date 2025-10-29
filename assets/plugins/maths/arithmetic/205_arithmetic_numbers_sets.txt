@@ -139,3 +139,8 @@ On peut aussi les lier avec la géométrie.
 <span class="important">Comme les nombres complexes sont constitués de 2 nombres réels, on peut les représenter comme des vecteurs géométriques</span>.
 Le plan 2D dans lesquelles sont représentés les nombres complexes est nommée le plan complexe.
 </p>
+<p>
+Les fonctions complexes sont bien plus "complexes" que les fonctions normales, bien que beaucoup plus intéressantes.
+Déjà, <span class="important"><definition name="function_holomorphic"></span>.
+
+</p>
