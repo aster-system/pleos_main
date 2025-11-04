@@ -194,7 +194,11 @@ Je n'ai pas trouvée la réponse à cette question, bien que les conséquences s
 <p>
 Ce cours contiendra beaucoup de démonstrations différentes.
 Pour des raisons de lisibilité, <span class="important">les démonstrations seront placées hors des cours, sur des pages appart</span>.
+Elles sortiront au fur et à mesure que nous écrivons le cours, dans un ordre... plus ou moins aléatoire.
 De plus, <span class="important">elles seront expliquées sur notre chaîne Youtube</span>.
+Nous tenterons aussi de rédiger quelques petits exercices, bien que cela soit un peu plus compliqué que le reste.
+Aussi, <span class="important">nous utiliserons notre outil "PLEOS" pour illustrer les cours, et les rendre bien plus compréhensibles</span>.
+Finalement, une série de vidéo sortira quand le cours sera considéré comme ayant une "qualité suffisante".
 </p>
 <p>
 En d'autres termes, <span class="important">suivez ce cours si vous voulez comprendre parfaitement les mathématiques, sans en attendre (directement) un diplôme</span>.

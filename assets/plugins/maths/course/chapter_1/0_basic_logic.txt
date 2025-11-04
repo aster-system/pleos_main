@@ -1,0 +1,96 @@
+<h1>Le raisonnement mathématique</h1>
+
+
+
+<h2>Le coeur des mathématiques</h2>
+
+<h3>Le concept de proposition et d'inférence</h3>
+<p>
+Cette partie aura pour tâche de rappeler les concepts vus au <a href="chapter_0">chapitre 0 de ce cours</a>.
+Pour cela, <span class="important">nous avons besoin de la définition des mathématiques et de la logique</span>, que nous ne rappellerons pas ici.
+</p>
+<p>
+En mathématiques, les informations que l'on cherche a démontrer sont formulées dans ce qui est nommé une "proposition".
+En effet, <span class="important"><definition name="proposition"></span>.
+En réalité, cette définition peut s'appliquer à d'autres mots, qui représentent le même objet (tournée de manière plus ou moins similaire) : assertion, énoncé, question...
+Théoriquement, il est possible de considérer tout ce qui a une valeur de vérité comme une proposition.
+</p>
+<table>
+    <case x=0 y=0 content="Proposition"><case x=1 y=0 content="Pas une proposition">
+    <case x=0 y=1 content="J'ai 20 euros."><case x=1 y=1 content="Combien d'euros as tu ? (Pas de valeur de vérité)">
+    <case x=0 y=2 content="La voiture est prête"><case x=1 y=2 content="Vas plus vite ! (Pas de valeur de vérité)">
+    <case x=0 y=3 content="Ce système est dangereux"><case x=1 y=3 content="Si tel est le cas. (Pas de valeur de vérité)">
+</table>
+<p>
+En pratique, les propositions suivent une syntaxe assez précise, et assez claire.
+Pour rappel, <span class="important"><definition class="syntax"></span>.
+L'exemple le plus simple de syntaxe est la langue française.
+C'est la même chose pour les propositions (et pour tout ce qui englobe la logique), ou même les nombres.
+En fait, <span class="important">il faut comprendre que la syntaxe des propositions est très proche de la syntaxe des nombres</span>.
+Par exemple, imaginez que vous travaillez sur la proposition "je suis un homme".
+Vous pouvez la réecrire en entier partout, mais vous allez perdre du temps.
+Or, <span class="important">il est possible "d'enfermer" le sens derrière cette proposition sous la forme d'une "variable", comme avec les nombres</span>.
+En d'autres termes, vous pouvez sans soucis écrire cette proposition sous la forme d'une variable "P", que vous pouvez utiliser comme si elle représenter la phrase entière :
+</p>
+<math><mi>P</mi><mo>=</mo><mi>"je suis un homme"</mi></math>
+<p>
+Pour trouver correctement la valeur de vérité d'une proposition, il faut s'y prendre... correctement.
+La façon la plus utilisée est un procédé nommé l'inférence.
+<span class="important"><definition name="inference"></span>.
+Aussi effrayante que semble être cette définition, c'est en réalité très simple, et en voici un exemple (probablement le plus connu).
+Nous avons deux propositions de bases : "tous les hommes sont mortels" et "Socrate est un homme".
+Ici, <span class="important">une inférence consiste à dire que "Socrate est un homme, DONC il est mortel"</span>, aussi simple que ça.
+Socrate est utilisé dans l'exemple car il est l'une des grandes inspirations du concept (avec entre autres Aristote, Platon...).
+L'écriture mathématique actuelle (simplifiée) consiste en quelque chose comme ça :
+</p>
+<math><mi>A</mi><mimp><mi>B</mi><mo>ET</mo><mi>A</mi><mo>DONC</mo><mi>B</mi></math>
+
+<h3>Les théories mathématiques</h3>
+<p>
+Pour déduire des théorèmes, il faut (comme nous l'avons vu) des propositions "de départs" nommées des axiomes.
+Pour rappel, <span class="important"><definition name="axiom"></span>.
+Cependant, il existe un moyen de créer une quantité "infinie" d'axiomes, en définissant un plan pour définir cette quantité infinie d'axiome : les schémas d'axiomes.
+<span class="important"><definition name="axiom-schema"></span>.
+Cependant, une question peut se poser : pourquoi n'est-il pas possible de formuler ces fameux "schéma" sous la forme d'un seul et unique axiome ?
+En fait, <span class="important">un axiome ne peut pas utiliser directement dans sa formulation l'ensemble des propositions déduites de cette théorie</span>.
+Cependant, <span class="important">certaines théories nécessitent que des axiomes puissent utiliser toutes ces autres propositions, démontrées avec les autres axiomes</span> : ce concept est là pour ça.
+Il est à noter que ce concept est extrêmemnt abstrait : nous en présenterons des exemples clairs dans quelques lignes.
+</p>
+<p>
+Maintenant, faisons un rappel sur les théories en mathématiques.
+Pour rappel, <span class="important"><definition name="axiom_theory"></span>.
+Avant de parler de la théorie axiomatique la plus importante (que nous présenterons dans la suite de ce cours), présentons quelques propriétés importantes sur les théories axiomatiques.
+Déjà, <span class="important"><definition name="axiom_theory-consistency"></span>.
+En logique classique, si "A" est vrai, alors il ne peut pas être faux (parfaitement évident, principe nommé "tiers exclu").
+Cependant, si la théorie dit que "A" est vrai et fausse en même temps, elle est incohérente.
+En général, <span class="important">on ne croise jamais de théorie non-cohérente, car elles sont abandonnées à la premère incohérence trouvée</span>.
+</p>
+
+<h3>Les différentes logiques possible</h3>
+<p>
+Maintenant que nous savons ce qu'est une proposition, et que nous savons déduire des propositions complexes de propositions plus simple, il ne nous reste plus qu'à savoir comment "déduire" des propositions, et donc comment utiliser des inférences.
+En effet, <span class="important">comme nous l'avons vu au <a href="chapter_0">chapitre 0 de ce cours</a>, plusieurs écoles de philosophies des mathématiques existent pour "démontrer" un propos, et donc pour utiliser les inférences</span>.
+Selon les auteurs (et leur "philosophie des mathématiques"), <span class="important">les inférences possibles entre plusieurs propriétés peuvent différer</span>, et il est courant d'appeler les différents ensembles d'inférences possibles des "logiques différentes".
+Il est donc primordial de savoir avec quelle "logique" on va travailler dans la suite.
+</p>
+
+
+
+<h2>La logique des propositions / prédicats</h2>
+
+<h3>La logique classique</h3>
+<p>
+Parmi toutes les "logiques" qui existent, une est assez intéressante pour comprendre comment les mathématiciens en sont arrivés là : la logique classique.
+Historiquement parlant, <span class="important"><definition name="logic-classic"></span>.
+Cette logique apparaît au alentour des années 1880 grâce à <scientist name="frege" type="quote">, et son livre "Begriffsschrift" ("L'idéographie" en français), bien que très vite rendu obsolète dans les années à venir.
+Dans les années 1890, le "prussien" (il est né en Prusse-Orientale) <scientist name="hilbert" type="quote"> propose une logique améliorée, beaucoup plus proche de la logique actuelle.
+</p>
+
+<h3>Travailler avec des propositions</h3>
+<p>
+Dans un certain sens, la "logique des propositions" est la version moderne de la "logique classique".
+En effet, <span class="important"><definition name="logic-propositions"></span>.
+Cette forme de logique va nous permettre d'introduire une syntaxe très importante pour mieux comprendre la logique mathématique.
+Effectivement, <span class="important">la logique propositionnelle nous permet de lier des propositions entre elles, pour faire des propositions plus complexes</span>.
+Bien évidemment, elle introduit aussi la syntaxe nécessaire pour le faire.
+</p>

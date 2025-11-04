@@ -40,7 +40,28 @@ SCLS_INIT
 int main(int argc, char* argv[]) {
     //pleos::bac(std::string("tests/"));
 
-    pleos::Pleos_Window window(900, 600, argv[0]);
+    pleos::Table t;scls::Text_Style s;s.set_font_size(40);scls::Text_Image_Generator tig;
+    for(int i = 0;i<30;i++) {
+        if((i + 1) % 2 == 0){s.set_background_color(scls::Color(170, 255, 170));}
+        else{s.set_background_color(scls::Color(255, 170, 170));}
+        t.set_cases_value(0, i, 1, 1, std::string("P(") + std::to_string(i + 1) + std::string(")"), s, &tig);
+        t.set_cases_value(1, i, 1, 1, std::to_string(i + 1) + std::string(" est pair"), s, &tig);
+        if((i + 1) % 2 == 0){
+            t.set_cases_value(2, i, 1, 1, std::string("Vrai"), s, &tig);
+            t.case_at(0, i)->set_background_color(scls::Color(170, 255, 170));
+            t.case_at(1, i)->set_background_color(scls::Color(170, 255, 170));
+            t.case_at(2, i)->set_background_color(scls::Color(170, 255, 170));
+        }
+        else{
+            t.set_cases_value(2, i, 1, 1, std::string("Faux"), s, &tig);
+            t.case_at(0, i)->set_background_color(scls::Color(255, 170, 170));
+            t.case_at(1, i)->set_background_color(scls::Color(255, 170, 170));
+            t.case_at(2, i)->set_background_color(scls::Color(255, 170, 170));
+        }
+    }
+    t.to_image().save_png("tests/test.png");
+
+    /*pleos::Pleos_Window window(900, 600, argv[0]);
     window.load_from_xml("assets/window.txt");
 
     while(window.run()) {
@@ -55,9 +76,9 @@ int main(int argc, char* argv[]) {
     redaction = std::string();pleos::polynomial_roots(scls::string_to_formula(std::string("0")), &redaction);content += std::string("<p>") + redaction + std::string("</p>");
     redaction = std::string();pleos::polynomial_roots(scls::string_to_formula(std::string("8x")), &redaction);content += std::string("<p>") + redaction + std::string("</p>");
     redaction = std::string();pleos::polynomial_roots(scls::string_to_formula(std::string("-3x+7")), &redaction);content += std::string("<p>") + redaction + std::string("</p>");
-    redaction = std::string();pleos::polynomial_roots(scls::string_to_formula(std::string("2x*x-7x+1")), &redaction);content += std::string("<p>") + redaction + std::string("</p>");
-    redaction = std::string();pleos::polynomial_roots(scls::string_to_formula(std::string("x*x-2x+1")), &redaction);content += std::string("<p>") + redaction + std::string("</p>");
-    redaction = std::string();pleos::polynomial_roots(scls::string_to_formula(std::string("4x*x+x+4")), &redaction);content += std::string("<p>") + redaction + std::string("</p>");
+    redaction = std::string();pleos::polynomial_roots(scls::string_to_formula(std::string("2x*x-8x+1")), &redaction);content += std::string("<p>") + redaction + std::string("</p>");
+    redaction = std::string();pleos::polynomial_roots(scls::string_to_formula(std::string("2x*x-4x+2")), &redaction);content += std::string("<p>") + redaction + std::string("</p>");
+    redaction = std::string();pleos::polynomial_roots(scls::string_to_formula(std::string("5x*x+x+4")), &redaction);content += std::string("<p>") + redaction + std::string("</p>");
     scls::Text_Style style;style.set_max_width(600);
     pleos::string_to_image(content, style).save_png("tests/polynome.png");//*/
 

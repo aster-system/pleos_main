@@ -1,8 +1,13 @@
 <new_definition name="logic">
     <content>la logique représente l'ensemble des outils permettant de raisonner, et donc de justifier des propos</content>
+    <content name="classic">la logique classique est la première tentative de "parfaitement" formaliser la logique en mathématique au XIXème siècle</content>
+    <content name="propositions">la logique des propositions (aussi nommé "calcul des propositions") est une forme de logique étudiant les propositions et les relations entre les propositions</content>
 </new_definition>
 <new_definition name="proposition">
     <content>une proposition logique est une information quelconque, possédant une valeur de vérité (elle est soit vraie, soit fausse)</content>
+</new_definition>
+<new_definition name="syntax">
+    <content>une syntaxe représente les règles qui doivent suivre des mots (ou n'importe quel objet qu'on peut "écrire") rendant une phrase correcte</content>
 </new_definition>
 
 <new_definition name="inference">
@@ -23,9 +28,11 @@
 
 <new_definition name="axiom">
     <content>les axiomes sont des propositions théoriquement indémontrées (mais qui, en pratique, sont tout à fait """"logiques""""" / évidentes, en accord avec les autres sciences et ne nécessitent pas de démonstration) qui servent de bases à toutes les mathématiques</content>
+    <content name="schema">les schémas d'axiomes sont un moyen de définir un "plan" (ou un schéma) pour créer une quantité infinie d'axiome</content>
 </new_definition>
 <new_definition name="axiom_theory">
-    <content>une théorie axiomatique est un ensemble d'axiomes, permettant de démontrer énormément de propositions (incluses dans la théorie)</content>
+    <content>une théorie axiomatique est un ensemble d'axiomes, permettant de déduire / démontrer énormément de propositions (incluses dans la théorie)</content>
+    <content name="consistency">une théorie axiomatique est dite cohérente (ou consistante) si elle ne contient pas de contradiction logique (une contradiction serait une proposition "A est vrai et A n'est pas vrai")</content>
 </new_definition>
 <new_definition name="demonstration">
     <content>une démonstration mathématique représente le chemin permettant d'aller des axiomes au théorème recherché</content>
