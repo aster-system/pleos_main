@@ -9,6 +9,9 @@
 <new_definition name="syntax">
     <content>une syntaxe représente les règles qui doivent suivre des mots (ou n'importe quel objet qu'on peut "écrire") rendant une phrase correcte</content>
 </new_definition>
+<new_definition name="verity_table">
+    <content>une table de vérité est un moyen de représenter les valeurs de vérités une proposition composée selon chaque valeur possibles de chacune de ses propositions composantes</content>
+</new_definition>
 
 <new_definition name="inference">
     <content>une inférence est une façon de démontrer logiquement une proposition (nommée "conclusion"), en s'appuyant sur d'autres propositions appelées "prémisses"</content>
@@ -21,6 +24,10 @@
 </new_definition>
 <new_definition name="logic_induction">
     <content>une induction est une inférence représentant le passage de deux propositions probablement vraies vers une proposition, dont on déduit quelle est probablement vraie</content>
+</new_definition>
+<new_definition name="logical_connective">
+    <content>un connecteur logique est un moyen d'écrire une proposition complexe en coupant cette proposition en "sous-propositions", et d'analyser la proposition de départ en analysant ces sous-propositions</content>
+    <content name="and">le connecteur logique "et" permet de lier deux propositions en une proposition finale "P", qui n'est vrai QUE QUAND les deux propositions de bases ("proposition 1" ET "proposition 2") sont vraies (sinon, elle est fausse)</content>
 </new_definition>
 <new_definition name="syllogism">
     <content>un syllogisme est une façon de démontrer logiquement un propos (nommé "conclusion"), en s'appuyant sur d'autres propos appelés "prémisses"</content>

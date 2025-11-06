@@ -85,12 +85,58 @@ Historiquement parlant, <span class="important"><definition name="logic-classic"
 Cette logique apparaît au alentour des années 1880 grâce à <scientist name="frege" type="quote">, et son livre "Begriffsschrift" ("L'idéographie" en français), bien que très vite rendu obsolète dans les années à venir.
 Dans les années 1890, le "prussien" (il est né en Prusse-Orientale) <scientist name="hilbert" type="quote"> propose une logique améliorée, beaucoup plus proche de la logique actuelle.
 </p>
+<p>
+En logique classique, dans un contexte donné, <span class="important">une proposition est soit vrai soit fausse (jamais les deux)</span>.
+En d'autres termes, la valeur de vérité d'une proposition peut se représenter avec seulement 1 information (vrai ou faux).
+Cependant, si le contexte change, la valeur de vérité de la proposition peut changer.
+Bien que le nombre de contexte est souvent incommensurable, la proposition est, dans chacun de ces contextes, soit vraie, soit fausse.
+Même si ce concept peut paraître assez évident en logique, dans des cas où une formule dépend d'autres formules, établir sa valeur de vérité en fonction de ses propositions constituantes peut-être un peu dur.
+Heureusement, comme, dans tous les cas, une proposition est soit vrai soit fausse, <span class="important">c'est aussi le cas pour n'importe quelle proposition, aussi complexe soit elle (et aussi pour ses composantes)</span>.
+Donc, pour une proposition quelconque composée de "n" propositions différentes, <span class="important">ces "n" propositions peuvent toutes être soit vrai, soit fausse, et selon leurs valeur de vérité, la proposition composée est, elle aussi, soit vrai, soit fausse</span>.
+Or, il est possible de représenter intuitivement cela, grâce à ce que l'on appelle une table de vérité.
+<span class="important"><definition name="verity_table"></span>.
+Ce concept peut être très pratique pour illustrer (voir démontrer) comment une proposition complexe se comporte avec ses propositions composantes.
+Voici deux exemples : une où la proposition "C" est vraie si "A" et "B" le sont toutes les deux (et fausses sinon), et "F" est vrai si "A" est vraie seule ou si "B" est vraie seule (et pas les deux en même temps).
+Théoriquement, on peut définir des proposition avec encore plus de composantes, mais la table devient longue à écrire (nous le démontrerons plus tard, mais la table doit contenir "2 exposant n" lignes).
+</p>
+<table>
+<case content="A" x=0 y=0><case content="B" x=1 y=0><case content="C" x=2 y=0>
+<case content="F" x=0 y=1><case content="F" x=1 y=1><case content="F" x=2 y=1>
+<case content="V" x=0 y=2><case content="F" x=1 y=2><case content="F" x=2 y=2>
+<case content="F" x=0 y=3><case content="V" x=1 y=3><case content="F" x=2 y=3>
+<case content="V" x=0 y=4><case content="V" x=1 y=4><case content="V" x=2 y=4>
+</table>
+<table>
+<case content="D" x=0 y=0><case content="E" x=1 y=0><case content="F" x=2 y=0>
+<case content="F" x=0 y=1><case content="F" x=1 y=1><case content="F" x=2 y=1>
+<case content="V" x=0 y=2><case content="F" x=1 y=2><case content="V" x=2 y=2>
+<case content="F" x=0 y=3><case content="V" x=1 y=3><case content="V" x=2 y=3>
+<case content="V" x=0 y=4><case content="V" x=1 y=4><case content="F" x=2 y=4>
+</table>
 
 <h3>Travailler avec des propositions</h3>
 <p>
 Dans un certain sens, la "logique des propositions" est la version moderne de la "logique classique".
 En effet, <span class="important"><definition name="logic-propositions"></span>.
 Cette forme de logique va nous permettre d'introduire une syntaxe très importante pour mieux comprendre la logique mathématique.
-Effectivement, <span class="important">la logique propositionnelle nous permet de lier des propositions entre elles, pour faire des propositions plus complexes</span>.
+Effectivement, <span class="important">la logique propositionnelle nous permet de lier / mettre en relation des propositions entre elles, pour faire des propositions plus complexes</span>.
 Bien évidemment, elle introduit aussi la syntaxe nécessaire pour le faire.
 </p>
+<p>
+Pour complexifier nos formules, nous allons les écrire avec des connecteurs logiques.
+<span class="important"><definition name="logical_connective"></span>.
+Je vais maintenant vous introduire aux deux connecteurs logiques les plus importants : "et" et "ou".
+</p>
+<p>
+<span class="important"><definition name="logical_connective-and"></span>.
+Donnons un exemple : "je suis de nationalité française ET je suis majeur".
+Pour l'analyser, on peut découper cette proposition comme cela : "je suis de nationalité française" ET "je suis majeur".
+Dans ce cas, <span class="important">on peut analyser indépendamment ces deux propositions</span>.
+Si les deux sont vraies, alors "je suis de nationalité française ET je suis majeur" l'est aussi.
+D'ailleurs, cette proposition représente la définition même d'être "citoyen français".
+Donc, <span class="important">"je suis citoyen français" est vrai si "je suis de nationalité française" ET "je suis majeur" le sont aussi</span>.
+Cette exemple est assez simple, puisque la phrase de départ comporte le mot "et", cependant, il y a des cas où il faut une certaine analyse pour comprendre les propositions a tirer.
+D'ailleurs, une proposition qui s'écrit avec un "ET" est nommée une conjonction.
+Si une proposition "P" s'écrit "A et B" (avec A et B deux autres propositions quelconques), alors on peut écrire "P" sous cette forme, avec un symbôle "chapeau" (représentant le "et") :
+</p>
+<math><mi>A</mi><mand><mi>B</mi></math>

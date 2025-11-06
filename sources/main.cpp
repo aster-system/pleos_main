@@ -40,28 +40,7 @@ SCLS_INIT
 int main(int argc, char* argv[]) {
     //pleos::bac(std::string("tests/"));
 
-    pleos::Table t;scls::Text_Style s;s.set_font_size(40);scls::Text_Image_Generator tig;
-    for(int i = 0;i<30;i++) {
-        if((i + 1) % 2 == 0){s.set_background_color(scls::Color(170, 255, 170));}
-        else{s.set_background_color(scls::Color(255, 170, 170));}
-        t.set_cases_value(0, i, 1, 1, std::string("P(") + std::to_string(i + 1) + std::string(")"), s, &tig);
-        t.set_cases_value(1, i, 1, 1, std::to_string(i + 1) + std::string(" est pair"), s, &tig);
-        if((i + 1) % 2 == 0){
-            t.set_cases_value(2, i, 1, 1, std::string("Vrai"), s, &tig);
-            t.case_at(0, i)->set_background_color(scls::Color(170, 255, 170));
-            t.case_at(1, i)->set_background_color(scls::Color(170, 255, 170));
-            t.case_at(2, i)->set_background_color(scls::Color(170, 255, 170));
-        }
-        else{
-            t.set_cases_value(2, i, 1, 1, std::string("Faux"), s, &tig);
-            t.case_at(0, i)->set_background_color(scls::Color(255, 170, 170));
-            t.case_at(1, i)->set_background_color(scls::Color(255, 170, 170));
-            t.case_at(2, i)->set_background_color(scls::Color(255, 170, 170));
-        }
-    }
-    t.to_image().save_png("tests/test.png");
-
-    /*pleos::Pleos_Window window(900, 600, argv[0]);
+    pleos::Pleos_Window window(900, 600, argv[0]);
     window.load_from_xml("assets/window.txt");
 
     while(window.run()) {
