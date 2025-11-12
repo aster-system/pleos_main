@@ -148,7 +148,7 @@ namespace pleos {
         std::string redaction = std::string();
 
         // Get all the part of the input
-        std::vector<scls::Formula> formulas = std::vector<scls::Formula>();
+        std::vector<scls::__Formula> formulas = std::vector<scls::__Formula>();
         std::vector<std::string> input_cutted = scls::cut_string(input, std::string(";"));
 
         // Load all the formula
@@ -159,9 +159,9 @@ namespace pleos {
                 if(formulas.size() > 0) {
                     // An unknown is precised
                     std::string current_redaction = input_cutted.at(i);
-                    scls::Formula needed_value = scls::string_to_formula(cutted.at(1));
-                    scls::__Formula_Base::Formula needed_formula = formulas[formulas.size() - 1].replace_unknown(cutted.at(0), needed_value);
-                    formulas[formulas.size() - 1] = *needed_formula.formula_base();
+                    scls::__Formula needed_value = *scls::string_to_formula(cutted.at(1)).get();
+                    scls::__Formula needed_formula = *(formulas[formulas.size() - 1].replace_unknown(cutted.at(0), &needed_value).get());
+                    formulas[formulas.size() - 1] = needed_formula;
                     current_redaction += std::string(" = ") + needed_formula.to_std_string(&settings);
                     if(i < static_cast<int>(input_cutted.size())){current_redaction += std::string("</br></br>");}
                     redaction += current_redaction;
@@ -169,7 +169,7 @@ namespace pleos {
             }
             else {
                 std::string current_redaction = input_cutted.at(i);
-                scls::Formula needed_formula = scls::string_to_formula(input_cutted.at(i));
+                scls::__Formula needed_formula = *scls::string_to_formula(input_cutted.at(i)).get();
                 current_redaction += std::string(" = ") + needed_formula.to_std_string(&settings);
                 if(i < static_cast<int>(input_cutted.size())){current_redaction += std::string("</br></br>");}
                 redaction += current_redaction;formulas.push_back(needed_formula);
@@ -500,7 +500,7 @@ namespace pleos {
         for(int i = 0;i<static_cast<int>(functions_created().size());i++) {
             std::shared_ptr<pleos::Function_Studied> needed_function = functions_created()[i];
             std::string function_name = needed_function.get()->name();
-            scls::Formula* needed_formula = needed_function.get()->formula();
+            scls::__Formula* needed_formula = needed_function.get()->formula();
             std::cout << i << " " << needed_formula->to_std_string(&settings) << std::endl;
 
             // Do the redaction
@@ -514,7 +514,7 @@ namespace pleos {
                 std::string current_function_name = reinterpret_cast<scls::GUI_Text_Input*>(objects[j].object()->child_by_name(objects[j].object()->name() + "_input_name"))->text();
                 std::string type = cutted[0];
 
-                if(current_function_name == function_name) {
+                /*if(current_function_name == function_name) {
                     // Analyse the argument
                     if(type == "area_under_curve") {
                         int rect_number = 20;
@@ -536,11 +536,11 @@ namespace pleos {
                     }
                     else if(type == "roots") {function_roots(needed_function.get(), &redaction, &settings);}
                     redaction += std::string("</br></br>");
-                }
+                }//*/
             }
 
             // Check the graphic part
-            if(needed_function.get()->definition_set() == 0){function_definition_set(needed_function.get(), 0, 0);}
+            //if(needed_function.get()->definition_set() == 0){function_definition_set(needed_function.get(), 0, 0);}
             functions_redaction_graphic()->add_function(needed_function);
             redaction += std::string("</br></br>");
         }
@@ -988,17 +988,17 @@ namespace pleos {
                 }
                 // Values
                 if(arithmetic_currently_selected_object()->input_1.get() != 0) {
-                    arithmetic_currently_selected_object()->value_1 = scls::string_to_formula(arithmetic_currently_selected_object()->input_1.get()->text());
+                    arithmetic_currently_selected_object()->value_1 = *scls::string_to_formula(arithmetic_currently_selected_object()->input_1.get()->text()).get();
                 }
                 if(arithmetic_currently_selected_object()->input_2.get() != 0) {
-                    arithmetic_currently_selected_object()->value_2 = scls::string_to_formula(arithmetic_currently_selected_object()->input_2.get()->text());
+                    arithmetic_currently_selected_object()->value_2 = *scls::string_to_formula(arithmetic_currently_selected_object()->input_2.get()->text()).get();
                 }
             }
             else if(arithmetic_currently_selected_object()->choice == std::string("decomposition")) {
                 // GCD
                 // Values
                 if(arithmetic_currently_selected_object()->input_1.get() != 0) {
-                    arithmetic_currently_selected_object()->value_1 = scls::string_to_formula(arithmetic_currently_selected_object()->input_1.get()->text());
+                    arithmetic_currently_selected_object()->value_1 = *scls::string_to_formula(arithmetic_currently_selected_object()->input_1.get()->text()).get();
                 }
             }
 
@@ -1044,7 +1044,7 @@ namespace pleos {
     void Maths_Page::check_functions_hiding() {
         if(currently_selected_function() != 0) {
             // Set the needed values
-            currently_selected_function()->set_formula(scls::string_to_formula(functions_redaction_expression()->text()));
+            currently_selected_function()->set_formula(*scls::string_to_formula(functions_redaction_expression()->text()).get());
             currently_selected_function()->set_name(functions_redaction_name()->text());
         }
     }
@@ -1119,13 +1119,13 @@ namespace pleos {
         }
         if(currently_selected_vector() != 0) {
             // Get the X and Y
-            scls::Formula needed_x = scls::string_to_formula(geometry_redaction_vector_x()->text());
+            /*scls::Formula needed_x = scls::string_to_formula(geometry_redaction_vector_x()->text());
             scls::Formula needed_y = scls::string_to_formula(geometry_redaction_vector_y()->text());
 
             // Set the needed values
             currently_selected_vector()->set_name(geometry_redaction_vector_name()->text());
             currently_selected_vector()->set_x(needed_x.value_to_double());
-            currently_selected_vector()->set_y(needed_y.value_to_double());
+            currently_selected_vector()->set_y(needed_y.value_to_double());//*/
         }
     }
 

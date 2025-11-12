@@ -3,6 +3,9 @@
     <content name="classic">la logique classique est la première tentative de "parfaitement" formaliser la logique en mathématique au XIXème siècle</content>
     <content name="propositions">la logique des propositions (aussi nommé "calcul des propositions") est une forme de logique étudiant les propositions et les relations entre les propositions</content>
 </new_definition>
+<new_definition name="predicate">
+    <content>un prédicat est un schéma de proposition utilisant une variable externe, qui permet d'obtenir une proposition concrète (soit vraie soit fausse) selon la valeur précise de la variable</content>
+</new_definition>
 <new_definition name="proposition">
     <content>une proposition logique est une information quelconque, possédant une valeur de vérité (elle est soit vraie, soit fausse)</content>
 </new_definition>
@@ -13,6 +16,9 @@
     <content>une table de vérité est un moyen de représenter les valeurs de vérités une proposition composée selon chaque valeur possibles de chacune de ses propositions composantes</content>
 </new_definition>
 
+<new_definition name="excluded_middle">
+    <content>le principe du tiers-exclu est un principe logique qui stipule que une proposition NE PEUT QU'ÊTRE vraie ou fausse, mais pas les deux en même temps</content>
+</new_definition>
 <new_definition name="inference">
     <content>une inférence est une façon de démontrer logiquement une proposition (nommée "conclusion"), en s'appuyant sur d'autres propositions appelées "prémisses"</content>
 </new_definition>
@@ -27,7 +33,20 @@
 </new_definition>
 <new_definition name="logical_connective">
     <content>un connecteur logique est un moyen d'écrire une proposition complexe en coupant cette proposition en "sous-propositions", et d'analyser la proposition de départ en analysant ces sous-propositions</content>
-    <content name="and">le connecteur logique "et" permet de lier deux propositions en une proposition finale "P", qui n'est vrai QUE QUAND les deux propositions de bases ("proposition 1" ET "proposition 2") sont vraies (sinon, elle est fausse)</content>
+    <content name="and">le connecteur logique "et" permet de lier deux propositions en une proposition finale "P", qui n'est vrai QUE SI les deux propositions de bases ("proposition 1" ET "proposition 2") sont vraies (sinon, elle est fausse)</content>
+    <content name="contraposition">la contraposée est un moyen de prouver une implication P "A implique B", en prouvant que "pas A implique pas B"</content>
+    <content name="equivalence">le connecteur logique "équivaut" permet de lier deux propositions en une proposition finale "P", qui n'est vraie QUE SI les deux propositions de bases sont toutes les deux vraies ou toutes les deux fausses (elles ont l'exact même valeur de vérité)</content>
+    <content name="implication">le connecteur logique "implique" permet de lier deux propositions en une proposition finale "P", qui, si "A implique B" n'est vrai QUE SI la proposition A n'est vraie QUE QUAND la proposition B l'est aussi</content>
+    <content name="or">le connecteur logique "ou" permet de lier deux propositions en une proposition finale "P", qui n'est vrai QUE SI l'une des deux propositions de bases ("proposition 1" OU "proposition 2") est vraie, ou si les deux sont vraies (sinon, elle est fausse)</content>
+</new_definition>
+<new_definition name="logical_negation">
+    <content>la négation d'une proposition A représente une autre proposition qui est égale à "A est fausse", aussi notée "pas A" ou "non A"</content>
+</new_definition>
+<new_definition name="modus_ponens">
+    <content>le modus ponens est est une loi logique affirmant que si "A implique B" et "A" est vraie, alors "B" est vraie</content>
+</new_definition>
+<new_definition name="modus_tollens">
+    <content>le modus ponens est est une loi logique affirmant que si "A implique B" et "B" est fausse, alors "A" est fausse</content>
 </new_definition>
 <new_definition name="syllogism">
     <content>un syllogisme est une façon de démontrer logiquement un propos (nommé "conclusion"), en s'appuyant sur d'autres propos appelés "prémisses"</content>

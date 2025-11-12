@@ -1,3 +1,10 @@
+<new_definition name="set_theory">
+    <content>la théorie des ensembles est une théorie mathématique développé à la fin du XIXème siècle, pour être utilisée comme socle des mathématiques</content>
+    <content name="extensionality">l'axiome d'extensionnalité dit que si deux ensembles possèdent exactement les mêmes éléments, alors ils sont égaux</content>
+    <content name="set">un ensemble est un objet mathématique qui peut "contenir" d'autres objets (on dit que ces objets appartiennent à l'ensemble)</content>
+    <content name="zfc">la théorie des ensemble "ZFC" (pour Zemerlo - Fraenkel - choix) est une version axiomatisée et cohérente (pour l'instant) de la théorie des ensembles de Cantor</content>
+</new_definition>
+
 <new_definition name="cantor_theorem">
     <content type="theorem">le cardinal d'un ensemble est toujours strictement inférieur au cardinal de son ensemble des parties</content>
 </new_definition>

@@ -75,7 +75,7 @@ namespace pleos {
                 else{__saasf_images(replica, content.get()->sub_texts().at(i), path, current_replica_file_path);}
             }
             else if(attribute_name == std::string("a")){
-                // HMLT link
+                // HTML link
 
                 // Get the needed datas
                 std::vector<scls::XML_Attribute>& attributes = content.get()->sub_texts().at(i).get()->xml_balise_attributes();
@@ -87,31 +87,42 @@ namespace pleos {
                 // Formats the link
                 std::vector<std::string> cutted = scls::cut_string(url, std::string(":"));
                 if(cutted.size() < 1 || (cutted.at(0) != std::string("https") && cutted.at(0) != std::string("http"))) {
-                    // Parse the link
-                    cutted = scls::cut_string(scls::replace(url, std::string("#"), std::string("/")), std::string("/"));
-                    std::string needed_part = current_part;std::string needed_sub_part = current_sub_part;std::string other = std::string();
-                    while(cutted.size() > 0){
-                        if(cutted.at(0) != std::string() && cutted.at(0) != std::string("learn")) {
-                            // Format
-                            std::vector<std::string> temp = scls::cut_string(cutted.at(0), std::string("."));
-                            cutted[0] = temp.at(0);
+                    // Create the needed datas
+                	std::string final_link = std::string();
 
-                            if(__saasf_is_part(cutted.at(0))) {needed_part = cutted.at(0);}
-                            else if(__saasf_is_sub_part(needed_part, cutted.at(0))) {needed_sub_part = cutted.at(0);}
-                            else if(cutted.size() == 1){other += cutted.at(0);}
-                        }
+                	if(url.size() > 3 && url.substr(0, 4) == std::string("demo")) {
+                		// Demonstration page
+                		cutted = scls::cut_string(current_replica_file_path, std::string("/"));
+                		current_replica_file_path = cutted.at(cutted.size() - 1);
+                		final_link = current_replica_file_path.substr(0, current_replica_file_path.size() - 5) + std::string("_1.html");
+                	}
+                	else {
+                		// Parse the link
+						cutted = scls::cut_string(scls::replace(url, std::string("#"), std::string("/")), std::string("/"));
+						std::string needed_part = current_part;std::string needed_sub_part = current_sub_part;std::string other = std::string();
+						while(cutted.size() > 0){
+							if(cutted.at(0) != std::string() && cutted.at(0) != std::string("learn")) {
+								// Format
+								std::vector<std::string> temp = scls::cut_string(cutted.at(0), std::string("."));
+								cutted[0] = temp.at(0);
 
-                        cutted.erase(cutted.begin());
-                    }
+								if(__saasf_is_part(cutted.at(0))) {needed_part = cutted.at(0);}
+								else if(__saasf_is_sub_part(needed_part, cutted.at(0))) {needed_sub_part = cutted.at(0);}
+								else if(cutted.size() == 1){other += cutted.at(0);}
+							}
 
-                    // Create the final link
-                    std::string final_link = std::string();
-                    for(int i=0;i<static_cast<int>(category_to_learn);i++){final_link+=std::string("../");}
-                    if(category_to_learn>0){final_link+=std::string("learn/");}
-                    if(category_to_learn>0){final_link += needed_part + std::string("/");}
-                    else if(needed_part != current_part){final_link += std::string("../../") + needed_part + std::string("/");}
-                    if(category_to_learn>0 || needed_sub_part != current_sub_part){final_link += needed_sub_part + std::string(".html");}
-                    if(other != std::string()){final_link += std::string("#") + other;}
+							cutted.erase(cutted.begin());
+						}
+
+						// Create the final link
+						for(int i=0;i<static_cast<int>(category_to_learn);i++){final_link+=std::string("../");}
+						if(category_to_learn>0){final_link+=std::string("learn/");}
+						if(category_to_learn>0){final_link += needed_part + std::string("/");}
+						else if(needed_part != current_part){final_link += std::string("../../") + needed_part + std::string("/");}
+						if(category_to_learn>0 || needed_sub_part != current_sub_part){final_link += needed_sub_part + std::string(".html");}
+						if(other != std::string()){final_link += std::string("#") + other;}
+                	}
+
                     attributes[url_attribute].value = final_link;
                 }
             }
@@ -208,20 +219,40 @@ namespace pleos {
     }
 
     // Parts of SAASF
+    // Create the needed datas
+    scls::_Window_Advanced_Struct* __window_struct = 0;
+    struct __SAASF_Subjet_Part {std::string name;int number=0;std::string path;};
+    bool __saasf_sort_subjects(__SAASF_Subjet_Part& subject_1, __SAASF_Subjet_Part& subject_2){return subject_1.number < subject_2.number;};
+
+    // Create a page
+    void __saasf_page(std::string file_name_complete, std::string path, std::shared_ptr<scls::Replica_File> needed_file, std::shared_ptr<scls::Replica_Project> needed_replica, std::vector<__SAASF_Subjet_Part>& parts) {
+    	std::sort(parts.begin(), parts.end(), __saasf_sort_subjects);
+		for(int k = 0;k<static_cast<int>(parts.size());k++) {
+			std::shared_ptr<scls::__XML_Text_Base> file_content = scls::xml(__window_struct->balises_shared_ptr(), scls::format_string_break_line(scls::read_file(parts[k].path), std::string(" ")));
+			file_content.get()->replace_balise_by_name("h3", "h4");file_content.get()->replace_balise_by_name("h2", "h3");
+			file_content.get()->replace_balise_by_name("important", "span class=\"important\"");
+			utf_8_symbol_xml(file_content, true);
+			__saasf_images(needed_replica.get(), file_content, needed_replica.get()->export_path(path), file_name_complete);
+			scls::Replica_File_Variable_Element* current_part = needed_file.get()->variable_list(std::string("explaination_parts[]"))->new_element<scls::Replica_File_Variable_Element>();
+			std::shared_ptr<scls::__XML_Text_Base> title = file_content.get()->remove_balise_by_name("h1");
+			if(title.get() != 0){current_part->set_variable_value(std::string("explaination_title"), title.get()->text());}
+			current_part->set_variable_value(std::string("explaination_content"), scls::format_string_from_plain_text(file_content.get()->full_text()));
+		}
+    }
+
     // Index.html
     // Realisation
-    std::string __saasf_index_realisation = std::string("Ce site web est réalisé avec les très célèbres langages HTML et CSS, vu en SNT (même si le niveau néessaire pour créer un site de ce genre est bien supérieur à celui demandé en SNT). Pour la structuration, nous utilisation les outils \"Agatha\" du logiciel \"SCLS Workspace\", et \"PLEOS\" notre organisation. La version actuelle du site web, modifiée le 22/09/2025, a été soumise à un contrôle précis de toutes les informations transmises par PLEOS, mais ne peut pas garantir que tout fonctionne comme prévu. Cependant, il est déjà possible d'y découvrir des choses assez intéressantes !");
+    std::string __saasf_index_realisation = std::string("Ce site web est réalisé avec les très célèbres langages HTML et CSS, vu en SNT (même si le niveau néessaire pour créer un site de ce genre est bien supérieur à celui demandé en SNT). Pour la structuration, nous utilisation les outils \"Agatha\" du logiciel \"SCLS Workspace\", et \"PLEOS\" notre organisation. La version actuelle du site web, modifiée le 11/11/2025, a été soumise à un contrôle précis de toutes les informations transmises par PLEOS, mais ne peut pas garantir que tout fonctionne comme prévu. Cependant, il est déjà possible d'y découvrir des choses assez intéressantes !");
 
     // Convert the entire software in SAASF
     std::string __saasf_global_footer_content = std::string("&lt;footer&gt;</br>    &lt;h1&gt;Plus d'informations&lt;/h1&gt;</br> &lt;div class=\"open-sans-regular\"&gt;</br>SAASF est proposé par l'organisation &lt;a href=\"https://aster-system.github.io/aster-system/\" target=\"_blank\"&gt;Aster Système&lt;/a&gt;.&lt;br&gt;</br>  Le site web est disponible sur Github, &lt;a href=\"https://github.com/aster-system/saasf\" target=\"_blank\"&gt;dans ce repositorie&lt;/a&gt;.&lt;br&gt;</br>  &lt;span xmlns:cc=\"http://creativecommons.org/ns#\" xmlns:dct=\"http://purl.org/dc/terms/\"&gt;</br>Le texte dans &lt;a property=\"dct:title\" rel=\"cc:attributionURL\" href=\"https://aster-system.github.io/saasf/\"&gt;SAASF&lt;/a&gt; par</br>  &lt;span property=\"cc:attributionName\"&gt;Aster Système&lt;/span&gt; est proposé sous license &lt;a href=\"https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1\" target=\"_blank\" rel=\"license noopener noreferrer\" style=\"display:inline-block;\"&gt;CC BY-SA 4.0&lt;img style=\"height:22px!important;margin-left:3px;vertical-align:text-bottom;\" src=\"https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1\" alt=\"\"&gt;&lt;img style=\"height:22px!important;margin-left:3px;vertical-align:text-bottom;\" src=\"https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1\" alt=\"\"&gt;&lt;img style=\"height:22px!important;margin-left:3px;vertical-align:text-bottom;\" src=\"https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1\" alt=\"\"&gt;&lt;/a&gt;</br>  &lt;/span&gt;</br>&lt;/br&gt;Sauf indication contraire, les images sont placées dans le domaine public.&lt;/div&gt;</br>&lt;/footer&gt;");
     std::string __saasf_global_font_content = std::string("&lt;link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"&gt;</br>&lt;link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin=\"\"&gt;</br>&lt;link href=\"https://fonts.googleapis.com/css2?family=Hammersmith+One&amp;display=swap\" rel=\"stylesheet\"&gt;</br>&lt;link href=\"https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap\" rel=\"stylesheet\"&gt;</br>");
     std::string __saasf_global_header_content = std::string("&lt;header class=\"hammersmith-one-regular\"&gt;</br>&lt;a href=\"&lt;scls_var path_to_root&gt;index.html\"&gt;</br>    &lt;img alt=\"Logo de SAASF\" src=\"&lt;scls_var path_to_root&gt;images/aster_system_logo.png\" style=\"max-height:150px;\"&gt;</br>&lt;/a&gt;</br>&lt;/header&gt;");
-    struct __SAASF_Subjet_Part {std::string name;int number=0;std::string path;};
-    bool __saasf_sort_subjects(__SAASF_Subjet_Part& subject_1, __SAASF_Subjet_Part& subject_2){return subject_1.number < subject_2.number;};
     std::string __saasf_style = std::string("a {color: white;}.arrow {transform: rotate(90deg);height: 0.6em;}body {background-color: rgb(0, 33, 91);box-sizing: border-box;color: white;font-size: 18px;margin: 0;max-width: 100vw;}.code_sample {background-color: rgb(30, 30, 30);border: black solid 3px;color: white;margin: 2px;padding: 5px;}footer {background-color: white;color: black;padding: 4px;}footer a {color: black;}footer h1 {font-size: 2em;margin: 0;}header {background-color: white;color: black;display: flex;height: 150px;width: 100%;}header nav {height: 100%;position: relative;display: flex;flex: 1;justify-content: space-around;}header nav div {align-content: center;font-size: 300%;height: 100%;}header nav div a {color: black;}h4 {background-color: rgb(51, 51, 255);color: white;}.important {color: red;}.important a {color: red;}.left_arrow_right_text {display: flex;flex-direction: column;width: 100%;}.left_arrow_right_text_child {display: grid;grid-auto-columns: max-content;}.left_arrow_right_text_arrow {grid-column: 1;grid-row: 2;height: 2em;max-width: 15vw;}.left_arrow_right_text_text {grid-column: 2;grid-row: 2;max-width: 85vw;width: 100%;}.left_arrow_right_text_title {grid-column: 2;grid-row: 1;max-width: 85vw;}#main_div {margin: 8px;}#main_div h1 {font-size: 4em;}#main_div h2 {font-size: 2.5em;}table {background-color: white;color: black;}table, th, td {border: 1px solid black;border-collapse: collapse;}.voc {background-color: rgb(220, 220, 220);}.hammersmith-one-regular {font-family: \"Hammersmith One\", sans-serif;font-weight: 400;font-style: normal;}.open-sans-bold {font-family: \"Open Sans\", sans-serif;font-optical-sizing: auto;font-weight: 700;font-style: normal;font-variation-settings: \"wdth\" 100;}.open-sans-regular {font-family: \"Open Sans\", sans-serif;font-optical-sizing: auto;font-weight: 400;font-style: normal;font-variation-settings: \"wdth\" 100;}");
     void Hub_Page::to_saasf(std::string assets, std::string path){
         // Get the needed datas
         __saasf_text_environment = std::make_shared<Text_Environment>();__saasf_text_environment.get()->load_definitions_from_path(std::string("assets/definitions"));__saasf_text_environment.get()->load_scientists_from_path(std::string("assets/scientists"));
+        __window_struct = window_struct();
         std::vector<std::string> creations = scls::directory_content(assets + std::string("/creations/"));
         std::vector<std::string> subjects = scls::directory_content(assets + std::string("/plugins/"));
         for(int i = 0;i<static_cast<int>(creations.size());i++){std::vector<std::string>cutted=scls::cut_string(creations[i], "/");creations[i]=cutted[cutted.size()-1];cutted=scls::cut_string(creations[i], ".");creations[i]=cutted[0];}
@@ -258,6 +289,7 @@ namespace pleos {
         std::string explaination_content = std::string("Voici la liste de tous les savoirs accessibles sur les médias (Youtube, Tiktok, Instagram...) d'Aster Système Learn pour l'instant :&lt;ul&gt;");
         for(int i = 0;i<static_cast<int>(subjects.size());i++){explaination_content += std::string("&lt;li&gt;&lt;a href=\"./learn/") + subjects[i] + std::string(".html\"&gt;") + __saasf_translate(subjects.at(i), true, true) + std::string("&lt;/a&gt;&lt;/li&gt;");}
         explaination_content += std::string("&lt;li&gt;&lt;a href=\"./learn/definitions.html\"&gt;") + __saasf_translate(std::string("definitions"), false, true) + std::string("&lt;/a&gt;&lt;/li&gt;");
+        explaination_content += std::string("&lt;li&gt;&lt;a href=\"astersystemelearn/cpp_lessons.html\"&gt;Cours de C++&lt;/a&gt;&lt;/li&gt;");
         explaination_content += std::string("&lt;/ul&gt;");
         element->set_variable_value(std::string("explaination_content"), explaination_content);
         // Aster System Creations
@@ -311,39 +343,46 @@ namespace pleos {
                             if(static_cast<int>(program.size()) <= j){explaination_content += std::string("&lt;li&gt;&lt;a href=\"./") + file_name + std::string("\"&gt;") + title + std::string("&lt;/a&gt;&lt;/li&gt;");}
                             else{explaination_content += std::string("&lt;li&gt;&lt;a href=\"./") + file_name + std::string("\"&gt;") + title + std::string(" - ") + program.at(j) + std::string("&lt;/a&gt;&lt;/li&gt;");}
 
-                            // Add the needed file
-                            std::shared_ptr<scls::Replica_File> needed_file = needed_replica.get()->new_replica_file(file_name_complete, needed_pattern.get()->pattern_by_name("main"));
-                            needed_file.get()->set_variable_value(std::string("main_title"), title);
-                            needed_file.get()->set_variable_value(std::string("main_description"), std::string());
-                            needed_file.get()->set_variable_value(std::string("page_title"), std::string("SAASF - ") + title);
-
                             // Set the good content
                             cutted = scls::directory_content(assets + std::string("/plugins/") + subjects[i] + std::string("/course/") + sub_subject_name + std::string("/"));
-                            std::vector<__SAASF_Subjet_Part> parts;
+                            struct Page_Part{std::vector<__SAASF_Subjet_Part> parts;int number = 0;};
+                            std::vector<Page_Part> parts;
                             for(int j = 0;j<static_cast<int>(cutted.size());j++){
                                 std::vector<std::string>cutted_temp=scls::cut_string(cutted[j],std::string("/"));
                                 cutted_temp=scls::cut_string(cutted_temp[cutted_temp.size() - 1],std::string("\\"));
                                 cutted_temp=scls::cut_string(cutted_temp[cutted_temp.size() - 1],std::string("_"));
                                 if(cutted_temp.size() > 0 && scls::string_is_number(cutted_temp[0])){
-                                    __SAASF_Subjet_Part to_add;
+                                    // Get the part
+                                	__SAASF_Subjet_Part to_add;
                                     to_add.name = cutted_temp[0];
                                     to_add.number = std::stoi(cutted_temp[0]);
                                     to_add.path = cutted[j];
 
-                                    parts.push_back(to_add);
+                                    // Set the good page
+                                    int needed_number = (to_add.number / 100);
+                                    for(int k = 0;k<static_cast<int>(parts.size());k++) {
+                                    	if(parts.at(k).number == needed_number){parts[k].parts.push_back(to_add);needed_number=-1;break;}
+                                    }
+                                    if(needed_number >= 0){Page_Part p;p.number=needed_number;p.parts.push_back(to_add);parts.push_back(p);}
                                 }
                             }
-                            std::sort(parts.begin(), parts.end(), __saasf_sort_subjects);
-                            for(int k = 0;k<static_cast<int>(parts.size());k++) {
-                                std::shared_ptr<scls::__XML_Text_Base> file_content = scls::xml(window_struct()->balises_shared_ptr(), scls::format_string_break_line(scls::read_file(parts[k].path), std::string(" ")));
-                                file_content.get()->replace_balise_by_name("h3", "h4");file_content.get()->replace_balise_by_name("h2", "h3");
-                                file_content.get()->replace_balise_by_name("important", "span class=\"important\"");
-                                utf_8_symbol_xml(file_content, true);
-                                __saasf_images(needed_replica.get(), file_content, needed_replica.get()->export_path(path), file_name_complete);
-                                scls::Replica_File_Variable_Element* current_part = needed_file.get()->variable_list(std::string("explaination_parts[]"))->new_element<scls::Replica_File_Variable_Element>();
-                                std::shared_ptr<scls::__XML_Text_Base> title = file_content.get()->remove_balise_by_name("h1");
-                                if(title.get() != 0){current_part->set_variable_value(std::string("explaination_title"), title.get()->text());}
-                                current_part->set_variable_value(std::string("explaination_content"), scls::format_string_from_plain_text(file_content.get()->full_text()));
+
+                            // Create the page
+                            for(int j = 0;j<static_cast<int>(parts.size());j++){
+                            	// Create the path
+                            	std::string final_file_name = file_name_complete.substr(0, file_name_complete.size() - 5);
+								if(parts.at(j).number != 0){final_file_name += std::string("_") + std::to_string(parts.at(j).number);}
+								final_file_name += std::string(".html");
+
+                            	// Add the needed file
+								std::shared_ptr<scls::Replica_File> needed_file = needed_replica.get()->new_replica_file(final_file_name, needed_pattern.get()->pattern_by_name("main"));
+								needed_file.get()->set_variable_value(std::string("main_title"), title);
+								needed_file.get()->set_variable_value(std::string("main_description"), std::string());
+								needed_file.get()->set_variable_value(std::string("page_title"), std::string("SAASF - ") + title);
+
+
+                            	// Create the page
+								__saasf_page(final_file_name, path, needed_file, needed_replica, parts.at(j).parts);
                             }
                         }
                     }

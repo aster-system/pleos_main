@@ -39,8 +39,9 @@ SCLS_INIT
 
 int main(int argc, char* argv[]) {
     //pleos::bac(std::string("tests/"));
+	//pleos::test(std::string("tests/"));
 
-    pleos::Pleos_Window window(900, 600, argv[0]);
+	pleos::Pleos_Window window(900, 600, argv[0]);
     window.load_from_xml("assets/window.txt");
 
     while(window.run()) {

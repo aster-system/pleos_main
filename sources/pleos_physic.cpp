@@ -73,21 +73,21 @@ namespace pleos {
         int total = protons + neutrons;
         for(int i = 0;i<total;i++) {
             // Get the datas about the particule
-            scls::Formula x = scls::Fraction(rand()%3, 5) - scls::Fraction(3, 10);
-            scls::Formula y = scls::Fraction(rand()%3, 5) - scls::Fraction(3, 10);
+            double x = (scls::Fraction(rand()%3, 5) - scls::Fraction(3, 10)).to_double();
+            double y = (scls::Fraction(rand()%3, 5) - scls::Fraction(3, 10)).to_double();
 
             // Draw a proton or neutron
             int random = rand()%2;
             if((random == 0 && protons > 0) || neutrons <= 0) {
                 std::string needed_name = std::string("proton_") + std::to_string(protons);
-                std::shared_ptr<Circle> current_particule = matter_bohr_model_simulation()->new_circle<Circle>(needed_name, x, y, scls::Fraction(1, 4));
+                std::shared_ptr<Circle> current_particule = matter_bohr_model_simulation()->new_circle<Circle>(needed_name, x, y, 0.25);
                 current_particule.get()->set_border_color(scls::Color(150, 0, 0));current_particule.get()->set_border_radius(3);
                 current_particule.get()->set_color(scls::Color(255, 0, 0));
                 protons--;
             }
             else {
                 std::string needed_name = std::string("neutron_") + std::to_string(neutrons);
-                std::shared_ptr<Circle> current_particule = matter_bohr_model_simulation()->new_circle<Circle>(needed_name, x, y, scls::Fraction(1, 4));
+                std::shared_ptr<Circle> current_particule = matter_bohr_model_simulation()->new_circle<Circle>(needed_name, x, y, 0.25);
                 current_particule.get()->set_border_color(scls::Color(0, 150, 0));current_particule.get()->set_border_radius(3);
                 current_particule.get()->set_color(scls::Color(0, 255, 0));
                 neutrons--;
@@ -99,10 +99,10 @@ namespace pleos {
         for(int i = 0;i<static_cast<int>(electrons);i++) {
             std::string needed_name = std::string("electron_") + std::to_string(protons);
             std::shared_ptr<Bohr_Model::Electron> current_electron = matter_bohr_model().electron_datas(i);
-            scls::Formula x = current_electron.get()->distance * -1 - scls::Fraction(3, 4);
+            double x = current_electron.get()->distance.to_double() * -1 - 0.75;
             // Create the particule
             std::shared_ptr<Circle>& current_particule = current_electron.get()->circle;
-            current_particule = matter_bohr_model_simulation()->new_circle<Circle>(needed_name, x, 0, scls::Fraction(1, 7));
+            current_particule = matter_bohr_model_simulation()->new_circle<Circle>(needed_name, x, 0, 0.15);
             current_particule.get()->set_border_color(scls::Color(0, 0, 150));current_particule.get()->set_border_radius(2);
             current_particule.get()->set_color(scls::Color(0, 0, 255));
             // Add the electron
@@ -196,7 +196,7 @@ namespace pleos {
                         matter_bohr_model_simulation_photons().push_back(new_photon); delete rotated;
                         // Create the particule
                         std::shared_ptr<Circle>& current_particule = new_photon.get()->circle;
-                        current_particule = matter_bohr_model_simulation()->new_circle<pleos::Circle>(current_photon.get()->circle.get()->name() + std::string("_emitted"), new_photon.get()->start_position, scls::Fraction(1, 7));
+                        current_particule = matter_bohr_model_simulation()->new_circle<pleos::Circle>(current_photon.get()->circle.get()->name() + std::string("_emitted"), new_photon.get()->start_position, 0.15);
                         current_particule.get()->set_border_color(scls::Color(150, 150, 0));current_particule.get()->set_border_radius(2);
                         current_particule.get()->set_color(scls::Color(255, 255, 0));
                     }
@@ -222,7 +222,7 @@ namespace pleos {
                 matter_bohr_model_simulation_photons_number()++;
                 std::shared_ptr<Bohr_Model::Photon> current_photon = matter_bohr_model().photon_datas(0);
                 current_photon.get()->creation_time = scls::time_ns();
-                scls::Formula x = -2; scls::Formula y = 0;
+                double x = -2; double y = 0;
 
                 // Get the final electron
                 int movement_duration = 1;
@@ -245,7 +245,7 @@ namespace pleos {
 
                 // Create the particule
                 std::shared_ptr<Circle>& current_particule = current_photon.get()->circle;
-                current_particule = matter_bohr_model_simulation()->new_circle<pleos::Circle>(needed_name, start_vector, scls::Fraction(1, 7));
+                current_particule = matter_bohr_model_simulation()->new_circle<pleos::Circle>(needed_name, start_vector, 0.15);
                 current_particule.get()->set_border_color(scls::Color(150, 150, 0));current_particule.get()->set_border_radius(2);
                 current_particule.get()->set_color(scls::Color(255, 255, 0));
                 // Add the photon

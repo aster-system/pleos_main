@@ -128,6 +128,9 @@ Pour complexifier nos formules, nous allons les écrire avec des connecteurs log
 Je vais maintenant vous introduire aux deux connecteurs logiques les plus importants : "et" et "ou".
 </p>
 <p>
+Je vais maintenant vous introduire aux deux connecteurs logiques les plus importants : "et" et "ou".
+</p>
+<p>
 <span class="important"><definition name="logical_connective-and"></span>.
 Donnons un exemple : "je suis de nationalité française ET je suis majeur".
 Pour l'analyser, on peut découper cette proposition comme cela : "je suis de nationalité française" ET "je suis majeur".
@@ -139,4 +142,157 @@ Cette exemple est assez simple, puisque la phrase de départ comporte le mot "et
 D'ailleurs, une proposition qui s'écrit avec un "ET" est nommée une conjonction.
 Si une proposition "P" s'écrit "A et B" (avec A et B deux autres propositions quelconques), alors on peut écrire "P" sous cette forme, avec un symbôle "chapeau" (représentant le "et") :
 </p>
-<math><mi>A</mi><mand><mi>B</mi></math>
+<math><mi>P</mi><mequal><mi>A</mi><mand><mi>B</mi></math>
+<p>En pratique, personne ne va vous insulter si vous écrivez "ET" à la place de ce chapeau. Sa table de vérité est :</p>
+<table>
+<case content="A" x=0 y=0><case content="B" x=1 y=0><case content="A et B" x=2 y=0>
+<case content="F" x=0 y=1><case content="F" x=1 y=1><case content="F" x=2 y=1>
+<case content="V" x=0 y=2><case content="F" x=1 y=2><case content="F" x=2 y=2>
+<case content="F" x=0 y=3><case content="V" x=1 y=3><case content="F" x=2 y=3>
+<case content="V" x=0 y=4><case content="V" x=1 y=4><case content="V" x=2 y=4>
+</table>
+<p>
+<span class="important"><definition name="logical_connective-or"></span>.
+Donnons un exemple : "je suis employé OU je suis patron".
+Pour l'analyser, on peut découper cette proposition comme cela : "je suis employé" OU "je suis patron".
+Comme dans notre exemple pour le "et", <span class="important">on peut analyser indépendamment ces deux propositions</span>.
+Si l'une des deux est vraie (ou les deux sont vraies, ce qui est possible si vous êtes un auto-entrepreneur), alors "je suis employé OU je suis patron" l'est aussi.
+D'ailleurs, cette proposition représente la définition même d'être un "travailleur".
+Donc, <span class="important">"je suis travailleur" est vrai si "je suis employé", OU si "je suis patron", ou si je suis les deux</span>.
+Encore une fois, cette exemple est assez simple, puisque la phrase de départ comporte le mot "et", cependant, il y a des cas où il faut une certaine analyse pour comprendre les propositions a tirer.
+D'ailleurs, une proposition qui s'écrit avec un "OU" est nommée une disjonction.
+Si une proposition "P" s'écrit "A ou B" (avec A et B deux autres propositions quelconques), alors on peut écrire "P" sous cette forme, avec un symbôle "chapeau" inversé (représentant le "ou") :
+</p>
+<math><mi>P</mi><mequal><mi>A</mi><mor><mi>B</mi></math>
+<p>
+En pratique, comme avec le "et", personne ne va vous insulter si vous écrivez "OU" à la place de ce chapeau.
+D'ailleurs, demanière assez évidente, si "A et B" est vraie, alors "A ou B" est vraie (cependant, l'inverse n'est pas vraie : si "A ou B" est vraie, "A et B" ne l'est pas forcément).
+Sa table de vérité est :</p>
+<table>
+<case content="A" x=0 y=0><case content="B" x=1 y=0><case content="A ou B" x=2 y=0>
+<case content="F" x=0 y=1><case content="F" x=1 y=1><case content="F" x=2 y=1>
+<case content="V" x=0 y=2><case content="F" x=1 y=2><case content="V" x=2 y=2>
+<case content="F" x=0 y=3><case content="V" x=1 y=3><case content="V" x=2 y=3>
+<case content="V" x=0 y=4><case content="V" x=1 y=4><case content="V" x=2 y=4>
+</table>
+
+<h3>Le principe du tiers-exclus et la négation logique</h3>
+<p>
+En logique classique, le "principe du tiers-exclus" est une forme d'axiome.
+En effet, <span class="important"><definition name="excluded_middle"></span>.
+Il s'agit d'une loi logique extrêment (particulièrement) évidente : si A est vraie, alors A n'est pas fausse (wow).
+</p>
+<p>
+Pour bien utiliser ce concept, il faut introduire un nouvel outil de langage : la négation logique d'une proposition.
+<span class="important"><definition name="logical_negation"></span>.
+Selon la logique que nous avons déjà vu : "A ou pas A".
+La négation de la proposition "A" s'écrit avec un petit symbôle :
+</p>
+<math><mno><mi>A</mi></math>
+<p>Bien qu'elle ne soit pas très intéressante, on peut construire sa table de vérité :</p>
+<table>
+<case content="A" x=0 y=0><case content="pas A" x=1 y=0>
+<case content="F" x=0 y=1><case content="V" x=1 y=1>
+<case content="V" x=0 y=2><case content="F" x=1 y=2>
+</table>
+<p>
+Cependant, en observant cette table, on peut remarquer quelque chose d'intéressant : <span class="important">la table de vérité de "pas A" est la table de vérité de "A" où les V et les F ont été inversés</span>.
+En fait, <span class="important">la négation d'une proposition quelconque a pour table de vérité la table de vérité de la proposition de départ où on inverse les V et les F (les parties vraies deviennent fausses, et les parties fausses deviennent vraies)</span>.
+Si on essaye de construire la table de vérité de "pas (pas P)", on remarque qu'elle est parfaitement similaire à celle de P : <span class="important">donc "pas (pas P)" est égal à "P"</span>.
+On peut donc chercher la négation du "ET" et du "OU" (démontrée <a href="demo">juste ici</a>) :
+</p>
+<table>
+<case content="A" x=0 y=0><case content="B" x=1 y=0><case content="A et B" x=2 y=0><case content="pas (A et B)" x=3 y=0>
+<case content="F" x=0 y=1><case content="F" x=1 y=1><case content="F" x=2 y=1><case content="V" x=3 y=1>
+<case content="V" x=0 y=2><case content="F" x=1 y=2><case content="F" x=2 y=2><case content="V" x=3 y=2>
+<case content="F" x=0 y=3><case content="V" x=1 y=3><case content="F" x=2 y=3><case content="V" x=3 y=3>
+<case content="V" x=0 y=4><case content="V" x=1 y=4><case content="V" x=2 y=4><case content="F" x=3 y=4>
+</table>
+<table>
+<case content="A" x=0 y=0><case content="B" x=1 y=0><case content="A ou B" x=2 y=0><case content="pas (A ou B)" x=3 y=0>
+<case content="F" x=0 y=1><case content="F" x=1 y=1><case content="F" x=2 y=1><case content="V" x=3 y=1>
+<case content="V" x=0 y=2><case content="F" x=1 y=2><case content="V" x=2 y=2><case content="F" x=3 y=2>
+<case content="F" x=0 y=3><case content="V" x=1 y=3><case content="V" x=2 y=3><case content="F" x=3 y=3>
+<case content="V" x=0 y=4><case content="V" x=1 y=4><case content="V" x=2 y=4><case content="F" x=3 y=4>
+</table>
+<p>
+Avec quelques observations, on se rend compte que la négation de "A et B" est "(pas A et pas B) ou (A et pas B) ou (B et pas A)".
+La négation de "A ou B" est "pas (A et B)".
+Donc, <span class="important">si nous avons une proposition quelconque, on peut en déduire sa négation, et si nous démontrons la validité / fausseté de la négation, alors on obtient la fausseté / validité de la proposition de départ</span>.
+Si la négation est plus simple à démontrer que la proposition de départ, alors cela peut être un bon moyen de gagner du temps.
+</p>
+
+<h3>L'implication et l'équivalence</h3>
+<p>Maintenant, je vais vous présenter deux autres connecteurs, qui, quand on les découvrent, peuvent paraître plus abstrait : l'implication et l'équivalence.</p>
+<p>
+<span class="important"><definition name="logical_connective-implication"></span>.
+À l'inverse des deux autres connecteurs, nous ne pouvons pas intervertir A et B.
+En général, <span class="important">en français, le connecteur logique "A implique B" se traduit par "si A alors B"</span>.
+Pour l'analyser, prenons un exemple très proche de l'exemple du "ET" : "si je suis citoyen français, je suis de nationalité française".
+Dans ce cas, on peut analyser indépendamment les propositions "je suis citoyen français" et "je suis de nationalité française".
+Bien évidemment, si vous êtes citoyen français, vous êtes de nationalité française : <span class="important">"je suis citoyen français" implique "je suis de nationalité française", et ceux dans tous les cas</span>.
+Cependant, l'inverse ("je suis de nationalité française" implique "je suis citoyen français") est fausse : un mineur de nationalité française n'est pas un citoyen français.
+Dans le cas de propositions quelconques "A" et "B", <span class="important">si vous avez une proposition P "A implique B", alors la proposition "B implique A" (où l'on inverse le A et le B) est nommée la réciproque de P (comme nous l'avons expérimenté, elle n'a pas toujours la même valeur de vérité que P)</span>.
+</p>
+<p>
+La table de vérité de l'implication est assez difficile à déduire.
+Essayons de la construire pour la proposition P stipulant "A implique B".
+Pour rappel, <definition name="logical_connective-implication">.
+Donc, <span class="important">si "A et B", alors P est vraie</span>.
+Or, <span class="important">si "pas A et pas B", alors rien n'empêche P d'être vraie</span>.
+Finalement, si "B et pas A" est vraie, c'est la même chose : rien n'empêche P d'être vraie.
+Cependant, si "A et pas B" est vraie, alors "A" est vraie quand "B" ne l'est pas : l'implication est fausse.
+D'ailleurs, <span class="important">la proposition "A et pas B" est la négation de l'implication</span>.
+</p>
+<table>
+<case content="A" x=0 y=0><case content="B" x=1 y=0><case content="A implique B" x=2 y=0><case content="pas (A implique B)" x=3 y=0>
+<case content="F" x=0 y=1><case content="F" x=1 y=1><case content="V" x=2 y=1><case content="F" x=3 y=1>
+<case content="V" x=0 y=2><case content="F" x=1 y=2><case content="F" x=2 y=2><case content="V" x=3 y=2>
+<case content="F" x=0 y=3><case content="V" x=1 y=3><case content="V" x=2 y=3><case content="F" x=3 y=3>
+<case content="V" x=0 y=4><case content="V" x=1 y=4><case content="V" x=2 y=4><case content="F" x=3 y=4>
+</table>
+<p>L'implication se note avec une sorte de double flèche (ici, "A implique B") :</p>
+<math><mi>A</mi><mimp><mi>B</mi></math>
+<p>
+L'implication est au coeur d'une loi logique assez évidente, mais qui est une règle d'inférence primaire de la logique : le modus ponens.
+<span class="important"><definition name="modus_ponens"></span>.
+Cependant, ce n'est pas la seule loi d'inférence commenceant par "modus" : on dénombre aussi le modus tollens.
+<definition name="modus_ponens">.
+Historiquement parlant, ces lois font parties d'un ensemble de lois similaires, développés par les grecques dans leur étude de la logique.
+</p>
+<p>
+Il existe un moyen de démontrer plus facilement une implication : la contraposée.
+<span class="important"><definition name="logical_connective-contraposition"></span>.
+En d'autres termes : <span class="important">si A est fausse, alors B est aussi fausse</span>.
+Ce raisonnement peut être plus simple dans certains cas.
+</p>
+<p>
+Nous avons vu l'implication dans le cas où nous ne connaissons pas le comportement de sa réciproque.
+Cependant, si une implication et sa réciproque sont vraies, nous avons un nouveau type de connecteur : l'équivalence.
+<span class="important"><definition name="logical_connective-equivalence"></span>.
+Dans ce cas, sa table de vérité est exactement la même que celle de "(A implique B) ET (B implique A)".
+Réciproquement, d'une équivalence, on peut en déduire ces deux implications comme vraies.
+On peut en déduire que, dans une équivalence, l'ordre ne change pas ("A équivaut à B" est parfaitement... équivalent à "B équivaut à A").
+D'ailleurs, <span class="important">démontrer "A équivaut à B" revient souvent à démontrer que "(A implique B) et (B implique A)"</span>.
+Un exemple assez simple est encore l'exemple du "ET" : comme nous l'avons prouvé, la proposition "être de nationalité française ET être majeur" est équivalente à la proposition "être citoyen français" (sauf si les institutions ne font pas leur travail, mais cela reste rare).
+Une propriété très intéressante : <span class="important">si deux propriétés sont équivalentes, alors remplacer l'une d'elle par l'autre ne change absolument pas les valeurs de vérités, et donc ne pose aucun problème logique</span>.
+</p>
+<table>
+<case content="A" x=0 y=0><case content="B" x=1 y=0><case content="A équivaut à B" x=2 y=0>
+<case content="F" x=0 y=1><case content="F" x=1 y=1><case content="V" x=2 y=1>
+<case content="V" x=0 y=2><case content="F" x=1 y=2><case content="F" x=2 y=2>
+<case content="F" x=0 y=3><case content="V" x=1 y=3><case content="F" x=2 y=3>
+<case content="V" x=0 y=4><case content="V" x=1 y=4><case content="V" x=2 y=4>
+</table>
+<p>L'équivalence se note comme l'implication, avec une flèches sur les deux bords :</p>
+<math><mi>A</mi><mequi><mi>B</mi></math>
+
+<h3>Travailler avec les prédicats</h3>
+<p>
+Pour l'instant, nous nous sommes mis d'accord sur le fait que toute proposition est soit vraie, soit fausse, et pas les deux.
+Cependant, imaginez une proposition "le nombre n est pair".
+Sa véracité dpend entièrement du nombre "n", qui est une variable : elle peut donc être vraie ou fausse selon n, ce qui, au mieux, rentre en contradiction avec la définition de proposition, et au pire pose de gros problèmes de logique.
+Heureusement, pour travailler avec des variables dans des propositions, on peut utiliser un autre objet : un prédicat.
+<span class="important"><definition name="predicate"></span>.
+Dans ce cas, "le nombre n est pair" est un prédicat, qui est vrai si... n est pair (2, 4, 6...).
+</p>

@@ -1,1 +1,65 @@
 <h1>La théorie des ensembles</h1>
+
+
+
+<h2>La théorie centrale des mathématiques</h2>
+
+<h3>La théorie des ensembles "ZFC"</h3>
+<p>
+Maintenant que nous avons les bases de la logique, nous pouvons aborder notre première théorie mathématique importante : la théorie des ensembles "ZFC".
+<span class="important"><definition name="set_theory"></span>.
+Son principal fondateur est le mathématicien allemand <scientist name="cantor" type="quote">, qui l'a proposé dans une suite d'articles mathématiques entre 1874 et 1900.
+L'idée semblait être complexe : unir toutes les mathématiques (nombres, géométries, fonctions...) sous une seule théorie.
+Même si, historiquement, cette théorie a mis beaucoup de temps à se faire accepter, elle a finalement réussi sa mission : presque toutes les mathématiques modernes en dépend.
+</p>
+<p>
+Ici, <span class="important"><definition name="set_theory-set"></span>.
+Une façon intéressante d'en représenter un peut être la suivante (ici, l'ensemble des nombres impairs entre 0 et 10) :
+</p>
+<graphic>
+<background_color white>
+<circle x=0 y=0 radius=4>
+<text name=type_number() content="1" x=2 y=2></text>
+<text name=type_number() content="3" x=-2 y=2></text>
+<text name=type_number() content="5" x=0 y=0></text>
+<text name=type_number() content="7" x=-2 y=-2></text>
+<text name=type_number() content="9" x=2 y=-2></text>
+</graphic>
+<p>
+Cependant, la première version de la théorie proposée par Cantor n'était pas très bien axiomatisée.
+Une version plus solide apparaîtra entre les années 1908 et 1920 : la théorie des ensembles "ZFC".
+<span class="important"><definition name="set_theory-zfc"></span>.
+Comme son nom l'indique, elle a été développée par 2 mathématiciens majoritairement : <scientist name="zemerlo" type="quote"> et <scientist name="fraenkel" type="quote">.
+Le suffixe "choix" représente un axiome précis, que l'on peut ignorer (dans ce cas, on parle de théorie des ensembles "ZF").
+Présentons les axiomes de cette théorie.
+</p>
+<p>
+Le premier axiome est l'axiome d'extensionnalité.
+<span class="important"><definition name="set_theory-extensionality"></span>.
+Dans le cas d'ensembles normaux, l'ordre des éléments n'importe pas.
+De manière illustré, l'axiome confirme cette égalité :
+</p>
+<graphic ratio_base>
+<base draw=0 width=25 height=10>
+<background_color white>
+<circle x=-7 y=0 radius=4>
+<text name=type_number() content="1" x=-5 y=2></text>
+<text name=type_number() content="3" x=-9 y=2></text>
+<text name=type_number() content="5" x=-7 y=0></text>
+<text name=type_number() content="7" x=-9 y=-2></text>
+<text name=type_number() content="9" x=-5 y=-2></text>
+<text name=type_number() font_size_in_scale=5 content="=" x=0 y=0></text>
+<circle x=7 y=0 radius=4>
+<text name=type_number() content="7" x=9 y=2></text>
+<text name=type_number() content="3" x=5 y=2></text>
+<text name=type_number() content="9" x=7 y=0></text>
+<text name=type_number() content="5" x=5 y=-2></text>
+<text name=type_number() content="1" x=9 y=-2></text>
+</graphic>
+<p>
+De manière purement mathématique, l'axiome peut s'énoncer de plusieurs manières équivalentes.
+La première n'utilise que des équivalences, et la deuxième découpe la première équivalence en deux implications (généralement plus utilisé dans les démonstrations).
+Pour une traduction mathématique - français, lisez "pour tout ensemble A et B, A et B sont égaux si (et seulement si) tous les éléments de B sont des éléments de A, et tous les éléments de A sont des éléments de B".
+</p>
+<math><mforall><mi>A</mi><mforall><mi>B</mi><mo>[</mo><mforall><mi>x</mi><mo>(</mo><mi>x</mi><min><mi>A</mi><mequi><mi>x</mi><min><mi>B</mi><mo>)</mo><mequi><mi>A</mi><mequal><mi>B</mi><mo>]</mo></math></br>
+<math><mforall><mi>A</mi><mforall><mi>B</mi><mo>[</mo><mo>(</mo><mforall><mi>x</mi><mo>{</mo><mi>x</mi><min><mi>A</mi><mimp><mi>x</mi><min><mi>B</mi><mo>}</mo><mo>ET</mo><mforall><mi>x</mi><mo>{</mo><mi>x</mi><min><mi>B</mi><mimp><mi>x</mi><min><mi>A</mi><mo>}</mo><mo>)</mo><mequi><mi>A</mi><mequal><mi>B</mi><mo>]</mo></math>

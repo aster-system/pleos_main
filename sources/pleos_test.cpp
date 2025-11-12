@@ -63,7 +63,58 @@ namespace pleos {
 
     // Do the test
     void test(std::string path) {
-        // Asserts
+    	// Create the datas
+    	std::string to_return = std::string();
+    	to_return += std::string("<h1>PLEOS</h1>");
+    	to_return += std::string("<h2>Catalogue</h2>");
+
+    	to_return += std::string("<h3>Algorithmes implémentés</h3>");
+    	to_return += std::string("<h3>Algorithmes à implémenter</h3>");
+
+    	struct Alg{Alg(std::string c, std::string d, bool i):category(c),description(d),implemented(i){};std::string category = std::string();std::string description = std::string();bool implemented = false;};
+    	std::vector<Alg> algs = std::vector<Alg>();
+
+    	algs.push_back(Alg(std::string("Géométrie"), std::string("Animation de pavage"), false));
+
+    	algs.push_back(Alg(std::string("Analyse"), std::string("Méthode de Newton-Raphson"), false));
+    	algs.push_back(Alg(std::string("Analyse"), std::string("Racines de polynômes"), false));
+    	algs.push_back(Alg(std::string("Analyse"), std::string("Étude du signe / variation de fonctions polynomiales"), false));
+    	algs.push_back(Alg(std::string("Analyse"), std::string("Calcul de dérivés"), false));
+    	algs.push_back(Alg(std::string("Analyse"), std::string("Calcul intégral / primitives"), false));
+    	algs.push_back(Alg(std::string("Analyse"), std::string("Fonction R2 -> R 3D"), false));
+    	algs.push_back(Alg(std::string("Analyse"), std::string("Représentation de champ 2D"), false));
+    	algs.push_back(Alg(std::string("Analyse"), std::string("Analyse complexe"), false));
+    	algs.push_back(Alg(std::string("Analyse"), std::string("Analyse vectorielle"), false));
+    	algs.push_back(Alg(std::string("Analyse"), std::string("Développement en série entière"), false));
+    	algs.push_back(Alg(std::string("Analyse"), std::string("Équation différentielle"), false));
+
+    	algs.push_back(Alg(std::string("Algorithmes"), std::string("Systèmes de fonctions itérées"), false));
+    	algs.push_back(Alg(std::string("Algorithmes"), std::string("Trac"), false));
+
+    	algs.push_back(Alg(std::string("Algébrique"), std::string("Division de polynôme"), false));
+    	algs.push_back(Alg(std::string("Algébrique"), std::string("Polynôme par racine / factorisation"), false));
+
+    	for(int i = 0;i<static_cast<int>(algs.size());i++) {
+			to_return += std::string("<p>") + algs.at(i).description + std::string("</p>");
+		}
+
+    	to_return += std::string("<h3>Animations implémentés</h3>");
+    	to_return += std::string("<h3>Animations à implémenter</h3>");
+
+    	std::vector<Alg> anims = std::vector<Alg>();
+    	anims.push_back(Alg(std::string("Logique"), std::string("Argument diagonal de Cantor"), false));
+    	anims.push_back(Alg(std::string("Logique"), std::string("Équipotence de N, Z, Q"), false));
+
+    	for(int i = 0;i<static_cast<int>(anims.size());i++) {
+			to_return += std::string("<p>") + anims.at(i).description + std::string("</p>");
+		}
+
+    	// Create the page
+    	scls::Text_Image_Generator tig;scls::Text_Style style;style.set_max_width(1000);
+    	std::shared_ptr<scls::__Image_Base> page_1_image = tig.image_shared_ptr<pleos::Text>(to_return, style);
+    	page_1_image.get()->save_png(path + std::string("/page_1.png"));
+
+        /*// Asserts
         while(path.size() > 0 && (path.at(path.size() - 1) == '/' || path.at(path.size() - 1) == '\\')){path = path.substr(0, path.size() - 1);}
 
         // Base text if the test
@@ -79,7 +130,7 @@ namespace pleos {
         scls::Textual_Math_Settings settings;
         for(int i = 0;i<static_cast<int>(treated_function_expression.size());i++) {
             // Create the function to study
-            std::shared_ptr<pleos::Function_Studied> fs = pleos::Function_Studied::new_function_studied_shared_ptr(scls::string_to_formula(treated_function_expression.at(i)));
+            std::shared_ptr<pleos::Function_Studied> fs = pleos::Function_Studied::new_function_studied_shared_ptr(*scls::string_to_formula(treated_function_expression.at(i)).get());
             fs.get()->set_function_unknown(std::string("x"));
             fs.get()->set_name(treated_function_name.at(i));
 
@@ -106,6 +157,6 @@ namespace pleos {
         // Create the page
         scls::Text_Image_Generator tig;scls::Text_Style style;style.set_max_width(1000);
         std::shared_ptr<scls::__Image_Base> page_1_image = tig.image_shared_ptr<pleos::Text>(page, style);
-        page_1_image.get()->save_png(path + std::string("/page_1.png"));
+        page_1_image.get()->save_png(path + std::string("/page_1.png"));//*/
     }
 }
