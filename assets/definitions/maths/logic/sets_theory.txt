@@ -1,12 +1,23 @@
 <new_definition name="set_theory">
     <content>la théorie des ensembles est une théorie mathématique développé à la fin du XIXème siècle, pour être utilisée comme socle des mathématiques</content>
+    <content name="empty_set">l'ensemble vide est un ensemble ne contenant aucun élément</content>
+    <content name="empty_set_axiom">l'axiome de l'ensemble vide est un axiome garantissant l'existence d'un ensemble vide dans la théorie</content>
+    <content name="extension">un ensemble est dit "défini par extension" quand il est défini par une égalité avec un ensemble dont les éléments sont explicitement indiqués</content>
     <content name="extensionality">l'axiome d'extensionnalité dit que si deux ensembles possèdent exactement les mêmes éléments, alors ils sont égaux</content>
+    <content name="pair_axiom">l'axiome de la paire est un axiome confirmant que, pour deux ensembles quelconques A et B, il existe un ensemble contenant deux éléments : A et B (nommée paire de A et B)</content>
+    <content name="power_set_axiom">l'axiome de l'ensemble des parties est un axiome qui assure l'existence, pour tout ensemble A, d'un ensemble des parties de A</content>
+    <content name="reunion_axiom">l'axiome de la réunion affirme que, pour tout ensemble A dont les éléments sont des ensembles, il existe un ensemble B tel que tous ces éléments appartiennent à un sous-ensemble C de A, et tous les éléments des sous-ensembles de A appartiennt à B</content>
     <content name="set">un ensemble est un objet mathématique qui peut "contenir" d'autres objets (on dit que ces objets appartiennent à l'ensemble)</content>
+    <content name="sub_set">un sous-ensemble (ou partie) d'un ensemble A est un ensemble contenant uniquement des éléments de A (et pas plus)</content>
     <content name="zfc">la théorie des ensemble "ZFC" (pour Zemerlo - Fraenkel - choix) est une version axiomatisée et cohérente (pour l'instant) de la théorie des ensembles de Cantor</content>
 </new_definition>
 
 <new_definition name="cantor_theorem">
     <content type="theorem">le cardinal d'un ensemble est toujours strictement inférieur au cardinal de son ensemble des parties</content>
+</new_definition>
+<new_definition name="inclusion">
+    <content name="double">deux ensembles A et B sont égaux si (et seulement si) A est "inclu ou égal" à B et B est "inclu ou égal" à A</content>
+    <content name="set">un ensemble est dit inclu dans un autre ensemble B lorsque que TOUS ses éléments appartiennent aussi à B</content>
 </new_definition>
 <new_definition name="power_set">
     <content>l'ensemble des parties (ou ensemble puissance) d'un ensemble E est un ensemble contenant la totalité des sous-ensembles (pas forcément ordonnés) possibles dans l'ensemble E (en incluant l'ensemble vide et E)</content>

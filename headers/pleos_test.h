@@ -39,6 +39,9 @@ namespace pleos {
     // Do a bac subject
     void bac(std::string path);
 
+    // Studies precisely a function
+    void study_function(scls::__Formula* formula, std::string* redaction);
+
     // Do the test
     void test(std::string path);
 }

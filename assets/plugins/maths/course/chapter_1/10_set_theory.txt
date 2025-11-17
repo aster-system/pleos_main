@@ -4,9 +4,9 @@
 
 <h2>La théorie centrale des mathématiques</h2>
 
-<h3>La théorie des ensembles "ZFC"</h3>
+<h3>La théorie des ensembles</h3>
 <p>
-Maintenant que nous avons les bases de la logique, nous pouvons aborder notre première théorie mathématique importante : la théorie des ensembles "ZFC".
+Maintenant que nous avons les bases de la logique, nous pouvons aborder notre première théorie mathématique importante : la théorie des ensembles.
 <span class="important"><definition name="set_theory"></span>.
 Son principal fondateur est le mathématicien allemand <scientist name="cantor" type="quote">, qui l'a proposé dans une suite d'articles mathématiques entre 1874 et 1900.
 L'idée semblait être complexe : unir toutes les mathématiques (nombres, géométries, fonctions...) sous une seule théorie.
@@ -26,7 +26,37 @@ Une façon intéressante d'en représenter un peut être la suivante (ici, l'ens
 <text name=type_number() content="9" x=2 y=-2></text>
 </graphic>
 <p>
-Cependant, la première version de la théorie proposée par Cantor n'était pas très bien axiomatisée.
+Il existe un symbôle précis pour indiquer qu'on objet "a" appartient à un ensemble "S" :
+</p>
+<math><mi>a</mi><min><mi>S</mi></math>
+<p>
+D'ailleurs, <span class="important">"l'objet "a" appartient à l'ensemble "S"" est une proposition</span>, dont la véricaté dépend de... beaucoup de choses (généralement dépendant du contexte précis de "a" ou "S").
+Ce symbôle permet de faire quelque chose de très intéressant : <span class="important">on peut utiliser ce symbôle dans un quantificateur logique, pour spécifier qu'on objet que l'on quantifie appartient à un certain ensemble</span>.
+Nous pouvons donc répondre à la question de tout à l'heure "comment spécifier que notre proposition "pour tout n, P(n)" ne fonctionne qu'avec des nombres" : on a juste à rajouter ce symbôle (on admet pour l'instant que "N" est l'ensemble des nombres entiers naturels) :
+</p>
+<math><mexists></mi>n</mi><min><mnatural><mo>,</mo><mi>P(n)</mi></math>
+<p>
+Puisque l'on parle d'ensembles, parlons d'un terme extrêment similaire : un sous-ensemble.
+<span class="important"><definition name="set_theory-sub_set"></span>.
+Il n'est pas exclu qu'un sous-ensemble contienne la totalité des éléments de A... comme ne contient aucun élément (il est défini comme étant quand même un sous-ensemble de A).
+Ce concept nous permet d'en introduire un autre : l'inclusion.
+<span class="important"><definition name="inclusion-set"></span>.
+Donc, si un ensemble A est inclu dans un autre ensemble B, alors A est un sous-ensemble de B (et vice-versa, si A est un sous-ensemble de B, alors il est inclu dans B).
+La notation mathématique est assez similaire à celle de l'appartenance, à la différence prêt que le "U" retourné n'est pas barré.
+Vous trouverez aussi la définition mathématique rigoureuse du concept.
+Pour une traduction mathématique - français, lisez "pour tout ensemble A et B, A est inclu ou égal à B si (et seulement si) pour tous les éléments possibles, si un élément appartient à A, alors il appartient à B".
+</p>
+<math><mforall><mi>A</mi><mforall><mi>B</mi><mo>,</mo><mi>A</mi><mincluded><mi>B</mi><mequi><mforall><mi>x</mi><mo>(</mo><mi>x</mi><min><mi>A</mi><mimp><mi>x</mi><min><mi>B</mi><mo>)</mo></math>
+<p>
+Cette notation autorise A à être égal à B : on pourrait parler de "inclu ou égal".
+Cependant, il existe une notation où A n'est pas égal à B, nommée "inclusion stricte", se notant avec une petite barre en dessous du "U", toujours avec la définition mathématique rigoureuse.
+Pour une traduction mathématique - français, lisez "pour tout ensemble A et B, A est strictement inclu dans B si (et seulement si) pour tous les éléments possibles, si un élément appartient à A, alors il appartient à B, et si il existe un élément dans B qui n'est pas dans A".
+</p>
+<math><mforall><mi>A</mi><mforall><mi>B</mi><mo>,</mo><mi>A</mi><mincluded_strict><mi>B</mi><mequi><mo>[</mo><mforall><mi>x</mi><mo>(</mo><mi>x</mi><min><mi>A</mi><mimp><mi>x</mi><min><mi>B</mi><mo>)</mo><mand><mexists><mi>y</mi><min><mi>B</mi><mo>(</mo><mi>y</mi><mnotin><mi>A</mi><mo>)</mo><mo>]</mo></math>
+
+<h3>La théorie des ensembles "ZFC"</h3>
+<p>
+La première version de la théorie proposée par Cantor n'était pas très bien axiomatisée.
 Une version plus solide apparaîtra entre les années 1908 et 1920 : la théorie des ensembles "ZFC".
 <span class="important"><definition name="set_theory-zfc"></span>.
 Comme son nom l'indique, elle a été développée par 2 mathématiciens majoritairement : <scientist name="zemerlo" type="quote"> et <scientist name="fraenkel" type="quote">.
@@ -57,9 +87,155 @@ De manière illustré, l'axiome confirme cette égalité :
 <text name=type_number() content="1" x=9 y=-2></text>
 </graphic>
 <p>
+Cet axiome permet d'introduire une première manière de définir un ensemble : la définition par extension.
+<span class="important"><definition name="set_theory-extension"></span>.
+Ce nom vient du fait que c'est l'axiome d'extension qui permet d'attribuer les éléments voulus à l'ensemble.
+Voici quelques exemples de définitions par extension :
+</p>
+<math><mi>A</mi><mequal><mo>{</mo><mi>1</mi><mo>,</mo><mi>10</mi><mo>,</mo><mi>100</mi><mo>,</mo><mi>1000</mi><mo>}</mo></math></br>
+<math><mi>A</mi><mequal><mo>{</mo><mi>72</mi><mo>}</mo></math></br>
+<math><mi>A</mi><mequal><mo>{</mo><mi>0</mi><mo>,</mo><mi>1</mi><mo>,</mo><mi>2</mi><mo>,</mo><mi>3</mi><mo>,</mo><mi>4</mi><mo>,</mo><mi>5</mi><mo>,</mo><mi>6</mi><mo>,</mo><mi>7</mi><mo>,</mo><mi>8</mi><mo>}</mo></math>
+<p>
+Il est à noter que, en général, ces ensembles sont notés entre crochets "{}", avec des éléments séparés par des virgules, ou des points virgules.
 De manière purement mathématique, l'axiome peut s'énoncer de plusieurs manières équivalentes.
 La première n'utilise que des équivalences, et la deuxième découpe la première équivalence en deux implications (généralement plus utilisé dans les démonstrations).
 Pour une traduction mathématique - français, lisez "pour tout ensemble A et B, A et B sont égaux si (et seulement si) tous les éléments de B sont des éléments de A, et tous les éléments de A sont des éléments de B".
 </p>
 <math><mforall><mi>A</mi><mforall><mi>B</mi><mo>[</mo><mforall><mi>x</mi><mo>(</mo><mi>x</mi><min><mi>A</mi><mequi><mi>x</mi><min><mi>B</mi><mo>)</mo><mequi><mi>A</mi><mequal><mi>B</mi><mo>]</mo></math></br>
 <math><mforall><mi>A</mi><mforall><mi>B</mi><mo>[</mo><mo>(</mo><mforall><mi>x</mi><mo>{</mo><mi>x</mi><min><mi>A</mi><mimp><mi>x</mi><min><mi>B</mi><mo>}</mo><mo>ET</mo><mforall><mi>x</mi><mo>{</mo><mi>x</mi><min><mi>B</mi><mimp><mi>x</mi><min><mi>A</mi><mo>}</mo><mo>)</mo><mequi><mi>A</mi><mequal><mi>B</mi><mo>]</mo></math>
+<p>
+Pour prouver simplement que deux ensembles sont les mêmes, il existe une technique assez puissante : la double inclusion.
+<span class="important"><definition name="inclusion-double"></span>.
+Cette proposition <a href="demo">se démontre assez facilement grâce à cette axiome</a>.
+</p>
+<math><mforall><mi>A</mi><mforall><mi>B</mi><mo>(</mo><mi>A</mi><mincluded><mi>B</mi><mand><mi>B</mi><mincluded><mi>A</mi><mequi><mi>A</mi><mequal><mi>B</mi><mo>)</mo></math>
+<p>
+Le deuxième axiome est l'axiome de l'ensemble vide.
+<span class="important"><definition name="set_theory-empty_set_axiom"></span>.
+Comme son nom l'indique : <span class="important"><definition name="set_theory-empty_set"></span>.
+Par définition, la proposition "l'élément "e" appartient à l'ensemble vide" est toujours fausse.
+Selon l'axiome d'extensionnalité, on en déduit qu'il n'y en a qu'un seul (démontré <a href="demo">ici</a>).
+En réalité, certains auteurs négligent cet axiome, car il peut être déduit grâce à des théorèmes beaucoup (mais alors, vraiment beaucoup) plus complexes.
+Cet ensemble se note ainsi :
+</p>
+<math><mempty_set></math>
+<p>
+De manière purement mathématique, cet axiome est assez simple à énoncer.
+Pour une traduction mathématique - français, lisez "il existe un ensemble noté [symbôle de l'ensemble vide] tel que, pour tout "x", "x" n'appartient pas à [symbôle de l'ensemble vide]".
+</p>
+<math><mexists><mempty_set><mforall><mi>x</mi><mo>,</mo><mno><mo>[</mo><mi>x</mi><min><mempty_set><mo>]</mo></math>
+<p>
+Le troisième axiome est l'axiome de la paire.
+<span class="important"><definition name="set_theory-pair_axiom"></span>.
+Cet axiome peut paraître assez évident, mais il reste important à énumérer.
+Selon l'axiome d'extensionnalité, on en déduit qu'il n'y en a qu'un seul (démontré <a href="demo">ici</a>).
+</p>
+<graphic ratio_base>
+<base draw=0 width=25 height=10>
+<background_color white>
+<text name=type_number() font_size_in_scale=3/2 content="A =" x=-11 y=7/3></text>
+<circle name=type_number() x=-5 y=2 radius_x=4 radius_y=3/2>
+<text name=type_number() content="1" x=-7 y=2></text>
+<text name=type_number() content="5" x=-5 y=2></text>
+<text name=type_number() content="9" x=-3 y=2></text>
+<text name=type_number() font_size_in_scale=3/2 content="B =" x=1 y=7/3></text>
+<circle name=type_number() x=7 y=2 radius_x=4 radius_y=3/2>
+<text name=type_number() content="3" x=9 y=2></text>
+<text name=type_number() content="7" x=5 y=2></text>
+
+<text name=type_number() font_size_in_scale=3/2 content="C =" x=-11 y=-13/6></text>
+<circle name=type_number() x=0 y=-5/2 radius_x=9 radius_y=5/2>
+<circle name=type_number() x=-4 y=-5/2 radius_x=4 radius_y=3/2>
+<text name=type_number() content="1" x=-6 y=-5/2></text>
+<text name=type_number() content="5" x=-4 y=-5/2></text>
+<text name=type_number() content="9" x=-2 y=-5/2></text>
+<circle name=type_number() x=4 y=-5/2 radius_x=4 radius_y=3/2>
+<text name=type_number() content="3" x=6 y=-5/2></text>
+<text name=type_number() content="7" x=2 y=-5/2></text>
+</graphic>
+<p>
+De manière purement mathématique, cet axiome est aussi assez simple à énoncer, mais un peu plus dur à traduire.
+Pour une traduction mathématique - français, lisez "pour tout ensemble A et B, il existe un ensemble C dont les éléments sont TOUS les éléments possibles qui sont soit A, soit B".
+</p>
+<math><mforall><mi>A</mi><mforall><mi>B</mi><mexists><mi>C</mi><mforall><mi>x</mi><mo>[</mo><mi>x</mi><min><mi>C</mi><mequi><mo>(</mo><mi>x</mi><mequal><mi>A</mi><mor><mi>x</mi><mequal><mi>B</mi><mo>)</mo><mo>]</mo></math>
+<p>
+Le quatrième axiome est l'axiome de la réunion.
+<span class="important"><definition name="set_theory-reunion_axiom"></span>.
+Cet axiome peut paraître un peu bizarre, mais il est cependant très important dans plein de démonstrations.
+Par exemple, en le couplant avec l'axiome de la paire, <span class="important">on peut prouver qu'il existe un ensemble C tel que, pour tout ensemble A et B, C est composé de tous les éléments de A et B (et pas plus)</span>.
+</p>
+<graphic ratio_base>
+<base draw=0 width=25 height=10>
+<background_color white>
+
+<text name=type_number() font_size_in_scale=3/2 content="A =" x=-10 y=7/3></text>
+<circle name=type_number() x=1 y=2 radius_x=9 radius_y=5/2>
+<circle name=type_number() x=-3 y=2 radius_x=4 radius_y=3/2>
+<text name=type_number() content="1" x=-5 y=2></text>
+<text name=type_number() content="5" x=-3 y=2></text>
+<text name=type_number() content="9" x=-1 y=2></text>
+<circle name=type_number() x=5 y=2 radius_x=4 radius_y=3/2>
+<text name=type_number() content="3" x=7 y=2></text>
+<text name=type_number() content="7" x=3 y=2></text>
+
+<text name=type_number() font_size_in_scale=3/2 content="B =" x=-10 y=-13/6></text>
+<circle name=type_number() x=1 y=-5/2 radius_x=9 radius_y=3/2>
+<text name=type_number() content="1" x=-5 y=-5/2></text>
+<text name=type_number() content="3" x=-2 y=-5/2></text>
+<text name=type_number() content="5" x=1 y=-5/2></text>
+<text name=type_number() content="7" x=4 y=-5/2></text>
+<text name=type_number() content="9" x=7 y=-5/2></text>
+</graphic>
+<p>
+De manière purement mathématique, cet axiome est assez difficile à énoncer... et aussi à traduire.
+Pour une traduction mathématique - français, lisez "pour tout ensemble A, il existe un ensemble B dont les éléments sont TOUS les éléments possibles tel qu'il existe un ensemble C dans A tel que B appartiennent à C".
+</p>
+<math><mforall><mi>A</mi><mexists><mi>B</mi><mforall><mi>x</mi><mo>[</mo><mi>x</mi><min><mi>B</mi><mequi><mexists><mi>C</mi><mo>(</mo><mi>C</mi><min><mi>A</mi><mand><mi>x</mi><min><mi>C</mi><mo>)</mo><mo>]</mo></math>
+
+<p>
+Le cinquième axiome est l'axiome de l'ensemble des parties.
+<span class="important"><definition name="set_theory-power_set_axiom"></span>.
+En théorie des ensembles, <span class="important"><definition name="power_set"></span>.
+Comme pour les autres axiomes, il peut paraître relativement évident, mais reste assez important dans la théorie.
+Il ne faut cependant pas oublier de lui ajouter certains sous-ensembles de A souvent oubliés : A lui même et l'ensemble vide.
+</p>
+
+<graphic ratio_base>
+<base draw=0 width=25 height=10>
+<background_color white>
+
+<text name=type_number() font_size_in_scale=3/2 content="A =" x=-10 y=10/3></text>
+<circle name=type_number() x=1 y=3 radius_x=9 radius_y=3/2>
+<text name=type_number() content="1" x=-5 y=3></text>
+<text name=type_number() content="5" x=1 y=3></text>
+<text name=type_number() content="9" x=7 y=3></text>
+
+<text name=type_number() font_size_in_scale=3/2 content="P(A) =" x=-10 y=-13/6></text>
+<circle name=type_number() x=2 y=-2 radius_x=9 radius_y=3>
+<circle name=type_number() x=0 y=-7/2 radius_x=4 radius_y=1>
+<text name=type_number() content="1" x=-2 y=-7/2></text>
+<text name=type_number() content="5" x=0 y=-7/2></text>
+<text name=type_number() content="9" x=2 y=-7/2></text>
+<circle name=type_number() x=23/4 y=-7/2 radius_x=1/2 radius_y=7/8>
+<circle name=type_number() x=-4 y=-2 radius_x=2 radius_y=1>
+<text name=type_number() content="1" x=-5 y=-2></text>
+<text name=type_number() content="5" x=-3 y=-2></text>
+<circle name=type_number() x=7/2 y=-2 radius_x=2 radius_y=1>
+<text name=type_number() content="1" x=5/2 y=-2></text>
+<text name=type_number() content="9" x=9/2 y=-2></text>
+<circle name=type_number() x=8 y=-2 radius_x=2 radius_y=1>
+<text name=type_number() content="5" x=7 y=-2></text>
+<text name=type_number() content="9" x=9 y=-2></text>
+<circle name=type_number() x=-1 y=-1 radius_x=1 radius_y=1>
+<text name=type_number() content="1" x=-1 y=-1></text>
+<circle name=type_number() x=1 y=-1/2 radius_x=1 radius_y=1>
+<text name=type_number() content="5" x=1 y=-1/2></text>
+<circle name=type_number() x=23/4 y=-1/2 radius_x=1 radius_y=1>
+<text name=type_number() content="9" x=23/4 y=-1/2></text>
+</graphic>
+
+<p>
+De manière purement mathématique, cet axiome est assez facile à énoncer et à traduire.
+Pour une traduction mathématique - français, lisez "pour tout ensemble A, il existe un ensemble P dont les éléments sont TOUS les éléments possibles inclus dans A".
+</p>
+<math><mforall><mi>A</mi><mexists><mi>P</mi><mforall><mi>B</mi><mo>(</mo><mi>B</mi><min><mi>P</mi><mequi><mi>B</mi><mincluded><mi>A</mi><mo>)</mo></math>

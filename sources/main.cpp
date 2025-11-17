@@ -41,7 +41,7 @@ int main(int argc, char* argv[]) {
     //pleos::bac(std::string("tests/"));
 	//pleos::test(std::string("tests/"));
 
-	pleos::Pleos_Window window(900, 600, argv[0]);
+	/*pleos::Pleos_Window window(900, 600, argv[0]);
     window.load_from_xml("assets/window.txt");
 
     while(window.run()) {
@@ -51,14 +51,16 @@ int main(int argc, char* argv[]) {
         window.render();
     }//*/
 
-    /*std::string content = std::string("<h1>Les polynômes</h1>");
-    std::string redaction = std::string();pleos::polynomial_roots(scls::string_to_formula(std::string("3")), &redaction);content += std::string("<p>") + redaction + std::string("</p>");
-    redaction = std::string();pleos::polynomial_roots(scls::string_to_formula(std::string("0")), &redaction);content += std::string("<p>") + redaction + std::string("</p>");
-    redaction = std::string();pleos::polynomial_roots(scls::string_to_formula(std::string("8x")), &redaction);content += std::string("<p>") + redaction + std::string("</p>");
-    redaction = std::string();pleos::polynomial_roots(scls::string_to_formula(std::string("-3x+7")), &redaction);content += std::string("<p>") + redaction + std::string("</p>");
-    redaction = std::string();pleos::polynomial_roots(scls::string_to_formula(std::string("2x*x-8x+1")), &redaction);content += std::string("<p>") + redaction + std::string("</p>");
-    redaction = std::string();pleos::polynomial_roots(scls::string_to_formula(std::string("2x*x-4x+2")), &redaction);content += std::string("<p>") + redaction + std::string("</p>");
-    redaction = std::string();pleos::polynomial_roots(scls::string_to_formula(std::string("5x*x+x+4")), &redaction);content += std::string("<p>") + redaction + std::string("</p>");
+    std::string content = std::string("<h1>Les polynômes</h1>");
+    std::string redaction = std::string();
+    pleos::study_function(scls::string_to_formula(std::string("3")).get(), &redaction);content += std::string("<p>") + redaction + std::string("</p>");
+    redaction = std::string();pleos::study_function(scls::string_to_formula(std::string("0")).get(), &redaction);content += std::string("<p>") + redaction + std::string("</p>");
+    redaction = std::string();pleos::study_function(scls::string_to_formula(std::string("8x")).get(), &redaction);content += std::string("<p>") + redaction + std::string("</p>");
+    redaction = std::string();pleos::study_function(scls::string_to_formula(std::string("-3x+7")).get(), &redaction);content += std::string("<p>") + redaction + std::string("</p>");
+    redaction = std::string();pleos::study_function(scls::string_to_formula(std::string("2x*x-8x+1")).get(), &redaction);content += std::string("<p>") + redaction + std::string("</p>");
+    redaction = std::string();pleos::study_function(scls::string_to_formula(std::string("2x*x-4x+2")).get(), &redaction);content += std::string("<p>") + redaction + std::string("</p>");
+    redaction = std::string();pleos::study_function(scls::string_to_formula(std::string("5x*x+x+4")).get(), &redaction);content += std::string("<p>") + redaction + std::string("</p>");
+    redaction = std::string();pleos::study_function(scls::string_to_formula(std::string("(7x*x+2x-4)/(8x - 9)")).get(), &redaction);content += std::string("<p>") + redaction + std::string("</p>");
     scls::Text_Style style;style.set_max_width(600);
     pleos::string_to_image(content, style).save_png("tests/polynome.png");//*/
 

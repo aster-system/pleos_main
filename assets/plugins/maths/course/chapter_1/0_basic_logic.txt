@@ -23,16 +23,27 @@ Théoriquement, il est possible de considérer tout ce qui a une valeur de véri
 </table>
 <p>
 En pratique, les propositions suivent une syntaxe assez précise, et assez claire.
-Pour rappel, <span class="important"><definition class="syntax"></span>.
+Pour rappel, <span class="important"><definition name="syntax"></span>.
 L'exemple le plus simple de syntaxe est la langue française.
 C'est la même chose pour les propositions (et pour tout ce qui englobe la logique), ou même les nombres.
 En fait, <span class="important">il faut comprendre que la syntaxe des propositions est très proche de la syntaxe des nombres</span>.
-Par exemple, imaginez que vous travaillez sur la proposition "je suis un homme".
+Par exemple, imaginez que vous travaillez sur la proposition "je suis un majeur".
 Vous pouvez la réecrire en entier partout, mais vous allez perdre du temps.
-Or, <span class="important">il est possible "d'enfermer" le sens derrière cette proposition sous la forme d'une "variable", comme avec les nombres</span>.
+Or, <span class="important">il est possible "d'enfermer" cette proposition sous la forme d'une "variable", comme avec les nombres</span>.
 En d'autres termes, vous pouvez sans soucis écrire cette proposition sous la forme d'une variable "P", que vous pouvez utiliser comme si elle représenter la phrase entière :
 </p>
-<math><mi>P</mi><mo>=</mo><mi>"je suis un homme"</mi></math>
+<math><mi>P</mi><mo>=</mo><mi>"je suis un majeur"</mi></math>
+<p>
+Cependant, utiliser l'égalité en logique est peut recommander.
+En effet, <span class="important">dans notre exemple, on dit que "P" est forcément égal à la proposition "je suis majeur"</span>.
+Or, imaginez la proposition "Q" égal à la phrase "je remplis toutes les conditions nécessaires pour être majeur".
+Dans les deux cas, vous êtes majeur, mais "P" ne s'écrit pas comme "Q".
+<span class="important">Si "P" ne s'écrit pas exactement comme "Q", alors "P" n'est pas égale à "Q"</span>.
+Or, elles ont le même sens, on peut donc se demander si il existe un symbole remplaçant l'égalité, mais n'agissant que sur le sens de la proposition.
+Ce symbôle existe : <span class="important">il s'agit du symbôle "équivaut"</span> (que nous ré-étudierons plus tard), et qui s'écrit comme ceci :
+</p>
+<math><mi>"Je suis un majeur"</mi><mequi><mi>"je remplis toutes les conditions nécessaires pour être majeur"</mi></math></br>
+<math><mi>P</mi><mequi><mi>Q</mi></math>
 <p>
 Pour trouver correctement la valeur de vérité d'une proposition, il faut s'y prendre... correctement.
 La façon la plus utilisée est un procédé nommé l'inférence.
@@ -142,7 +153,7 @@ Cette exemple est assez simple, puisque la phrase de départ comporte le mot "et
 D'ailleurs, une proposition qui s'écrit avec un "ET" est nommée une conjonction.
 Si une proposition "P" s'écrit "A et B" (avec A et B deux autres propositions quelconques), alors on peut écrire "P" sous cette forme, avec un symbôle "chapeau" (représentant le "et") :
 </p>
-<math><mi>P</mi><mequal><mi>A</mi><mand><mi>B</mi></math>
+<math><mi>P</mi><mequi><mi>A</mi><mand><mi>B</mi></math>
 <p>En pratique, personne ne va vous insulter si vous écrivez "ET" à la place de ce chapeau. Sa table de vérité est :</p>
 <table>
 <case content="A" x=0 y=0><case content="B" x=1 y=0><case content="A et B" x=2 y=0>
@@ -163,7 +174,7 @@ Encore une fois, cette exemple est assez simple, puisque la phrase de départ co
 D'ailleurs, une proposition qui s'écrit avec un "OU" est nommée une disjonction.
 Si une proposition "P" s'écrit "A ou B" (avec A et B deux autres propositions quelconques), alors on peut écrire "P" sous cette forme, avec un symbôle "chapeau" inversé (représentant le "ou") :
 </p>
-<math><mi>P</mi><mequal><mi>A</mi><mor><mi>B</mi></math>
+<math><mi>P</mi><mequi><mi>A</mi><mor><mi>B</mi></math>
 <p>
 En pratique, comme avec le "et", personne ne va vous insulter si vous écrivez "OU" à la place de ce chapeau.
 D'ailleurs, demanière assez évidente, si "A et B" est vraie, alors "A ou B" est vraie (cependant, l'inverse n'est pas vraie : si "A ou B" est vraie, "A et B" ne l'est pas forcément).
@@ -199,6 +210,10 @@ La négation de la proposition "A" s'écrit avec un petit symbôle :
 Cependant, en observant cette table, on peut remarquer quelque chose d'intéressant : <span class="important">la table de vérité de "pas A" est la table de vérité de "A" où les V et les F ont été inversés</span>.
 En fait, <span class="important">la négation d'une proposition quelconque a pour table de vérité la table de vérité de la proposition de départ où on inverse les V et les F (les parties vraies deviennent fausses, et les parties fausses deviennent vraies)</span>.
 Si on essaye de construire la table de vérité de "pas (pas P)", on remarque qu'elle est parfaitement similaire à celle de P : <span class="important">donc "pas (pas P)" est égal à "P"</span>.
+<span class="important">Démontrer une proposition en démontrant que sa négation est fausse (ou mène à une contradiction logique absurde) est une méthode de raisonnement nommée le raisonnement par l'absurde</span>.
+</p>
+<math><mno><mo>(</mo><mno><mi>A</mi><mo>)</mo><mequi><mi>A</mi></math>
+<p>
 On peut donc chercher la négation du "ET" et du "OU" (démontrée <a href="demo">juste ici</a>) :
 </p>
 <table>
@@ -296,3 +311,54 @@ Heureusement, pour travailler avec des variables dans des propositions, on peut 
 <span class="important"><definition name="predicate"></span>.
 Dans ce cas, "le nombre n est pair" est un prédicat, qui est vrai si... n est pair (2, 4, 6...).
 </p>
+<p>
+Cependant, <span class="important">il est possible de transformer un prédicat en une proposition, de manière assez simple</span>.
+En effet, reprenons notre prédicat d'exemple : "le nombre n est pair".
+Vu comme ça, nous ne pouvons pas en tirer grand chose.
+Cependant, il existe un objet mathématique qui va nous permettre d'en obtenir une proposition : les quantificateurs.
+En logique mathématique, <span class="important"><definition name="quantifier"></span>.
+En fait, avec un quantificateur, on transforme le prédicat en une proposition, en changeant la façon dont le prédicat doit interpréter la variable (de telle manière que le prédicat devient une proposition).
+D'un point de vu purement vocabulaire, la quantification (en logique mathématique) est l'action de quantifier un prédicat quelconque.
+Pour bien comprendre, il nous faut voir les deux quantificateurs principaux : le quantificateur universel et le quantificateur existentiel.
+</p>
+<p>
+Le premier quantificateur utilisé est le quantificateur universel.
+<span class="important"><definition name="quantifier-universal"></span>.
+En d'autres termes, si la proposition constitué d'un quantificateur universel d'une variable et un prédicat est vraie, alors toutes les propositions de ce prédicat seront vraie, quelle qu'elle soit.
+Généralement, pour une variable "x", <span class="important">ce quantificateur se traduit à l'écrit sous la forme "pour tout x", "tous les x"</span>...
+Dans notre exemple, on peut formuler la proposition sous cette forme : "tous les nombres n sont pairs", une proposition qui est fausse.
+En effet, il existe des nombres entiers "n" qui ne sont pas pair (comme 3).
+Cependant, la proposition "tous les nombres n admettent un élément supérieur, noté n + 1" est vraie (testez avec tous les nombres "n" que vous voulez, il y aura toujours un nombre "n + 1").
+Pour un prédicat "P(n)", la proposition "pour tout n, P(n)" s'écrit comme ça (avec un "A" verticalement inversé, représentant le quantificateur universel, venant du mot allemand "alle", voulant dire "tous") :
+</p>
+<math><mforall></mi>n</mi><mo>,</mo><mi>P(n)</mi></math>
+<p>
+Ici, il manque juste la mention de "nombres", que nous introduirons plus tard.
+Sans cette mention, il est admis que la nature du "n" dépend du contexte de la formule.
+</p>
+<p>
+Le deuxième quantificateur utilisé est le quantificateur existentiel.
+<span class="important"><definition name="quantifier-existential"></span>.
+En d'autres termes, si la proposition constitué d'un quantificateur existentiel d'une variable et un prédicat est vraie, alors il existe une (ou plusieurs) proposition de ce prédicat vraie.
+Généralement, pour une variable "x", <span class="important">ce quantificateur se traduit à l'écrit sous la forme "il existe un x tel que"</span>.
+Dans notre exemple, on peut formuler la proposition sous cette forme : "il existe un nombre n pair", une proposition qui est vraie.
+En effet, il existe au moins un (et même, une infinité) nombre entier "n" qui est pair : 2.
+Cependant, la proposition "il existe un nombre n admettant une partie décimale non nulle" est fausse (de manière assez évident, aucun nombre entier ne s'écrit avec des nombres après la virgule).
+Pour un prédicat "P(n)", la proposition "il existe un n tel que P(n)" s'écrit comme ça (avec un "E" horizontalement inversé, représentant le quantificateur existentiel) :
+</p>
+<math><mexists></mi>n</mi><mo>,</mo><mi>P(n)</mi></math>
+<p>
+Même problème que pour le quantificateur universal : il manque la mention de "nombres", que nous introduirons aussi plus tard.
+Comme pour avant, sans cette mention, il est admis que la nature du "n" dépend du contexte de la formule.
+</p>
+<p>
+Comme nous l'avons évoqué, <span class="important">il est possible de formuler la négation de propositions construites avec un quantificateur</span>.
+Dans le cas du quantificateur universel, <span class="important">une proposition utilisant le quantificateur universel pour une variable "n" est fausse si il existe un (ou plusieurs) "n" quelconque donnant une proposition fausse</span>.
+Donc :
+</p>
+<math><mno><mo>(</mo><mforall></mi>n</mi><mo>,</mo><mi>P(n)</mi><mo>)</mo><mequi><mo>(</mo><mexists></mi>n</mi><mo>,</mo><mno><mi>P(n)</mi><mo>)</mo></math>
+<p>
+Dans le cas du quantificateur existentiel, <span class="important">une proposition utilisant le quantificateur existentiel pour une variable "n" est fausse si TOUS les "n" donnent une proposition fausse</span>.
+Donc :
+</p>
+<math><mno><mo>(</mo><mexists></mi>n</mi><mo>,</mo><mi>P(n)</mi><mo>)</mo><mequi><mo>(</mo><mforall></mi>n</mi><mo>,</mo><mno><mi>P(n)</mi><mo>)</mo></math>

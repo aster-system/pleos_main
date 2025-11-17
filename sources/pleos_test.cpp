@@ -33,6 +33,23 @@
 // The namespace "pleos" is used to simplify the all.
 namespace pleos {
 
+	// Studies precisely a function
+	void study_function(scls::__Formula* formula, std::string* redaction) {
+		(*redaction) += std::string("Étudions la forme ") + formula->to_std_string(0) + std::string(". ");
+		std::shared_ptr<Function_Studied> function = Function_Studied::new_function_studied_shared_ptr(*formula);
+
+		(*redaction) += std::string("Commençons par étudier l'ensemble de définition. ");
+		pleos::function_definition_set(function.get(), redaction);
+
+		(*redaction) += std::string("</br>");
+		(*redaction) += std::string("Ensuite, étudions les racines. ");
+		pleos::solve_equation(function.get(), redaction);
+
+		(*redaction) += std::string("</br>");
+		(*redaction) += std::string("Ensuite, étudions la dérivée de cette fonction. ");
+		pleos::function_derivation(function.get(), redaction);
+	}
+
     // Do a bac subject
     void bac(std::string path) {
         // Asserts

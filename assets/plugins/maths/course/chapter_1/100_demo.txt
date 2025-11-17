@@ -6,7 +6,6 @@
 
 <p>
 La première démonstration mené sera comment la proposition "non (A et B)" peut s'écrire sous la forme "(pas A et pas B) ou (A et pas B) ou (B et pas A)".
-
 </p>
 <table>
 <case content="A" x=0 y=0><case content="B" x=1 y=0><case content="A et B" x=2 y=0><case content="pas (A et B)" x=3 y=0>
@@ -22,3 +21,52 @@ La première démonstration mené sera comment la proposition "non (A et B)" peu
 <case content="F" x=0 y=3><case content="V" x=1 y=3><case content="F" x=2 y=3><case content="F" x=3 y=3><case content="V" x=4 y=3><case content="V" x=5 y=3>
 <case content="V" x=0 y=4><case content="V" x=1 y=4><case content="F" x=2 y=4><case content="F" x=3 y=4><case content="F" x=4 y=4><case content="F" x=5 y=4>
 </table>
+
+<h2>La théorie des ensembles</h2>
+
+<h3>Fonctionnement de la double inclusion</h3>
+<p>
+Démontrons que un ensemble A et un ensemble B sont égaux si (et seulement si) A est "inclu ou égal" à B et B est "inclu ou égal" à A.
+</p>
+<math><mforall><mi>A</mi><mforall><mi>B</mi><mo>(</mo><mi>A</mi><mincluded><mi>B</mi><mand><mi>B</mi><mincluded><mi>A</mi><mequi><mi>A</mi><mequal><mi>B</mi><mo>)</mo></math>
+<p>
+Si A est "inclu ou égal" à B, alors (par définition) :
+</p>
+<math><mforall><mi>A</mi><mforall><mi>B</mi><mo>[</mo><mi>A</mi><mincluded><mi>B</mi><mequi><mforall><mi>x</mi><mo>(</mo><mi>x</mi><min><mi>A</mi><mimp><mi>x</mi><min><mi>B</mi><mo>)</mo><mo>]</mo></math>
+<p>
+Si B est "inclu ou égal" à A, alors (par définition) :
+</p>
+<math><mforall><mi>A</mi><mforall><mi>B</mi><mo>[</mo><mi>B</mi><mincluded><mi>A</mi><mequi><mforall><mi>x</mi><mo>(</mo><mi>x</mi><min><mi>B</mi><mimp><mi>x</mi><min><mi>A</mi><mo>)</mo><mo>]</mo></math>
+<p>
+Donc, si A est "inclu ou égal" à B ET B est "inclu ou égal" à A, alors :
+</p>
+<math><mforall><mi>A</mi><mforall><mi>B</mi><mo>{</mo><mi>A</mi><mincluded><mi>B</mi><mand><mi>B</mi><mincluded><mi>A</mi><mequi><mo>[</mo><mforall><mi>x</mi><mo>(</mo><mi>x</mi><min><mi>A</mi><mimp><mi>x</mi><min><mi>B</mi><mo>)</mo><mo>]</mo><mand><mo>[</mo><mforall><mi>y</mi><mo>(</mo><mi>y</mi><min><mi>B</mi><mimp><mi>y</mi><min><mi>A</mi><mo>)</mo><mo>]</mo><mo>}</mo></math>
+<p>
+Par imbrication des deux propositions, on peut obtenir la proposition suivante :
+</p>
+<math><mforall><mi>A</mi><mforall><mi>B</mi><mo>[</mo><mi>A</mi><mincluded><mi>B</mi><mand><mi>B</mi><mincluded><mi>A</mi><mequi><mforall><mi>x</mi><mo>(</mo><mi>x</mi><min><mi>A</mi><mimp><mi>x</mi><min><mi>B</mi><mand><mi>x</mi><min><mi>B</mi><mimp><mi>x</mi><min><mi>A</mi><mo>)</mo><mo>]</mo></math>
+<p>
+Or, on a une double implication, doit on en déduit une équivalence :
+</p>
+<math><mforall><mi>A</mi><mforall><mi>B</mi><mo>[</mo><mi>A</mi><mincluded><mi>B</mi><mand><mi>B</mi><mincluded><mi>A</mi><mequi><mforall><mi>x</mi><mo>(</mo><mi>x</mi><min><mi>A</mi><mequi><mi>x</mi><min><mi>B</mi><mo>)</mo><mo>]</mo></math>
+<p>
+On reconnait l'axiome d'extensionnalité : un ensemble A et un ensemble B sont égaux si (et seulement si) A est "inclu ou égal" à B et B est "inclu ou égal" à A.
+</p>
+
+<h3>Unicité des ensembles admis par les axiomes</h3>
+<p>
+Démontrons qu'il n'existe qu'un seul ensemble ne contenant aucun élément : l'ensemble vide.
+Procédons avec une démonstration par l'absurde.</br>
+Supposons l'existence un ensemble E, étant un ensemble ne contenant aucun élément, inégal à l'ensemble vide.
+Si cet ensemble ne contient aucun élément, selon l'axiome d'extensionnalité, il est égal à l'ensemble vide (que nous avons défini comme impossible).
+Si cet ensemble contient au moins un élément, selon l'axiome d'extensionnalité, il est inégal à l'ensemble vide... mais il contient au moins un élément (que nous avons défini comme impossible).</br>
+Donc, toutes les possibilités mènent à une contradiction, E ne peut pas exister, il n'y a donc qu'un seul ensemble ne contenant aucun élément : l'ensemble vide.
+</p>
+<p>
+Démontrons qu'il n'existe qu'un seul ensemble qui, pour tout ensemble A et B, représente la paire de A et B.
+Procédons avec une démonstration par l'absurde, extrêmement similaire à celle utilisée pour démontrer l'unicité de l'ensemble vide.</br>
+Supposons l'existence un ensemble E, étant un ensemble contenant la paire de A et B, inégal à l'ensemble vide.
+Si cet ensemble ne contient que A et B, selon l'axiome d'extensionnalité, il est égal à C (que nous avons défini comme impossible).
+Si cet ensemble ne contient pas que A et B, selon l'axiome d'extensionnalité, il est inégal à C... mais il ne contient pas A et B.</br>
+Donc, toutes les possibilités mènent à une contradiction, E ne peut pas exister, il n'y a donc qu'un seul ensemble ne contenant que A et B : C.
+</p>
