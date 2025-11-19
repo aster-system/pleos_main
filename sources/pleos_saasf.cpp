@@ -315,7 +315,7 @@ namespace pleos {
             // Preparation of the page
             std::vector<std::string> cutted;
             std::vector<std::string> sub_subjects = scls::directory_content(assets + std::string("/plugins/") + subjects[i]);
-            int course = -1;for(int i = 0;i<static_cast<int>(sub_subjects.size());i++){std::vector<std::string>cutted=scls::cut_string(sub_subjects.at(i), std::string("\\"));if(cutted.at(cutted.size() - 1) == std::string("course")){course=i;break;}}
+            int course = -1;for(int i = 0;i<static_cast<int>(sub_subjects.size());i++){std::vector<std::string>cutted=scls::cut_string(scls::replace(sub_subjects.at(i), std::string("\\"), std::string("/")), std::string("/"));if(cutted.at(cutted.size() - 1) == std::string("course")){course=i;break;}}
 
             if(course > -1) {
                 // Course

@@ -4,6 +4,7 @@
     <content name="empty_set_axiom">l'axiome de l'ensemble vide est un axiome garantissant l'existence d'un ensemble vide dans la théorie</content>
     <content name="extension">un ensemble est dit "défini par extension" quand il est défini par une égalité avec un ensemble dont les éléments sont explicitement indiqués</content>
     <content name="extensionality">l'axiome d'extensionnalité dit que si deux ensembles possèdent exactement les mêmes éléments, alors ils sont égaux</content>
+    <content name="infinity_axiom">l'axiome de l'infini stipule qu'il existe un ensemble contenant un élément de départ nommé "0", et tel que tous les éléments "n" de cet ensemble admettent un élément précis (défini via une fonction), nommé "successeur de n" ou "successeur(n)"</content>
     <content name="pair_axiom">l'axiome de la paire est un axiome confirmant que, pour deux ensembles quelconques A et B, il existe un ensemble contenant deux éléments : A et B (nommée paire de A et B)</content>
     <content name="power_set_axiom">l'axiome de l'ensemble des parties est un axiome qui assure l'existence, pour tout ensemble A, d'un ensemble des parties de A</content>
     <content name="reunion_axiom">l'axiome de la réunion affirme que, pour tout ensemble A dont les éléments sont des ensembles, il existe un ensemble B tel que tous ces éléments appartiennent à un sous-ensemble C de A, et tous les éléments des sous-ensembles de A appartiennt à B</content>

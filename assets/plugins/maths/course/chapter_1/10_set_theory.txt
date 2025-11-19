@@ -239,3 +239,15 @@ De manière purement mathématique, cet axiome est assez facile à énoncer et �
 Pour une traduction mathématique - français, lisez "pour tout ensemble A, il existe un ensemble P dont les éléments sont TOUS les éléments possibles inclus dans A".
 </p>
 <math><mforall><mi>A</mi><mexists><mi>P</mi><mforall><mi>B</mi><mo>(</mo><mi>B</mi><min><mi>P</mi><mequi><mi>B</mi><mincluded><mi>A</mi><mo>)</mo></math>
+
+<p>
+Le sixième axiome est l'axiome de l'infini.
+Cet axiome est un peu bizarre, mais infiniment important.
+<span class="important"><definition name="set_theory-infinity_axiom"></span>.
+Les premiers éléments de cet ensemble sont "0", "successeur(0)", "successeur(successeur(0))"...
+En fait, <span class="important">cet ensemble représente exactement l'ensemble des nombres entiers naturels</span> (qui respectent eux aussi cette exacte propriété).
+Dans ce cas, <span class="important">on peut écrire "successeur(n)" comme "n + 1" (on défini donc l'opération "a + b" comme l'utilisation de la fonction successeur "b" fois sur un nombre entier naturel "a")</span>.
+Nous définirons toutes les propriétés nécessaires dans la dernière partie du chapitre.
+Comme pour tout nombre naturel, on peut trouver un nombre supérieur (sous la forme "n + 1"), <span class="important">cette axiome admet une infinité d'éléments (d'où son nom)</span>.
+Dans l'illustration qui suit, on définit "S" comme la fonction successeur.
+</p>
