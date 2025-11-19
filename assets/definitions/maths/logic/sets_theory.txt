@@ -1,5 +1,6 @@
 <new_definition name="set_theory">
     <content>la théorie des ensembles est une théorie mathématique développé à la fin du XIXème siècle, pour être utilisée comme socle des mathématiques</content>
+    <content name="comprehension_axiom">le schéma d'axiome de compréhension est un schéma d'axiome construisant un axiome par propriété, stipulant que, pour tout ensemble "A", il existe un sous-ensemble de A dont tous les éléments obéissent à une propriété "P" (propriété déduite grâce aux autres axiomes)</content>
     <content name="empty_set">l'ensemble vide est un ensemble ne contenant aucun élément</content>
     <content name="empty_set_axiom">l'axiome de l'ensemble vide est un axiome garantissant l'existence d'un ensemble vide dans la théorie</content>
     <content name="extension">un ensemble est dit "défini par extension" quand il est défini par une égalité avec un ensemble dont les éléments sont explicitement indiqués</content>

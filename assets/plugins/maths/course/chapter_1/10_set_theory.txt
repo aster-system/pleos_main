@@ -248,6 +248,33 @@ Les premiers éléments de cet ensemble sont "0", "successeur(0)", "successeur(s
 En fait, <span class="important">cet ensemble représente exactement l'ensemble des nombres entiers naturels</span> (qui respectent eux aussi cette exacte propriété).
 Dans ce cas, <span class="important">on peut écrire "successeur(n)" comme "n + 1" (on défini donc l'opération "a + b" comme l'utilisation de la fonction successeur "b" fois sur un nombre entier naturel "a")</span>.
 Nous définirons toutes les propriétés nécessaires dans la dernière partie du chapitre.
-Comme pour tout nombre naturel, on peut trouver un nombre supérieur (sous la forme "n + 1"), <span class="important">cette axiome admet une infinité d'éléments (d'où son nom)</span>.
-Dans l'illustration qui suit, on définit "S" comme la fonction successeur.
+Comme pour tout nombre naturel, on peut trouver un nombre supérieur (sous la forme "n + 1"), <span class="important">cette ensemble admet une infinité d'éléments (d'où le nom de l'axiome)</span>.
+</p>
+
+<graphic ratio_base>
+<base draw=0 width=25 height=10>
+<background_color white>
+
+<text name=type_number() font_size_in_scale=3/2 content="N =" x=-10 y=-1/6></text>
+<circle name=type_number() x=2 y=0 radius_x=9 radius_y=4>
+<text name=type_number() content="0" x=-3 y=5/2></text>
+<text name=type_number() content="successeur(0)" x=5/2 y=5/2></text>
+<text name=type_number() content="successeur(successeur(0))" x=2 y=1/2></text>
+<text name=type_number() font_size_in_scale=2/3 content="successeur(successeur(successeur(0)))" x=2 y=-1></text>
+<text name=type_number() content="..." x=2 y=-5/2></text>
+</graphic>
+
+<p>
+De manière purement mathématique, cet axiome est... difficile à énoncer.
+En réalité, il est théoriquement possible de l'énoncer de plusieurs façons différentes.
+Dans notre cas, <span class="important">nous allons utiliser la version proposée par le mathématicien hongrois <scientist name="von_neumann" type="quote"></span>.
+Ce mathématicien a proposé une façon assez pratique de solidement construire cette ensemble : <span class="important">le "0" représente l'ensemble vide, et le "successeur" comme une fonction transformant un élément "b" en un ensemble représentant l'union de l'ensemble ne contenant que "b" et de "b" lui même</span>.
+Pour une traduction mathématique - français, lisez "il existe un ensemble A qui contient l'ensemble vide et dont tout élément "b" admet un "successeur" (appartenant à A) si il appartient à A".
+</p>
+<math><mexists><mi>A</mi><mo>[</mo><mempty_set><min><mi>A</mi><mand><mforall><mi>b</mi><mo>(</mo><mi>b</mi><min><mi>A</mi><mimp><mi>b</mi><munion><mi>{b}</mi><min><mi>A</mi><mo>)</mo><mo>]</mo></math>
+
+<p>
+Le septième axiome n'est... pas un axiome à proprement parlé, mais un schéma d'axiome : le schéma d'axiome de compréhension.
+<span class="important"><definition name="set_theory-comprehension_axiom"></span>.
+Si aucun élément de l'ensemble ne vérifie la propriété, alors l'ensemble obtenu est l'ensemble vide.
 </p>
