@@ -9,6 +9,9 @@
 <new_definition name="proposition">
     <content>une proposition logique est une information quelconque, possédant une valeur de vérité (elle est soit vraie, soit fausse)</content>
 </new_definition>
+<new_definition name="semantic">
+    <content>la sémantique représente un moyen de donner un sens à une proposition énoncé grâce à une syntaxe</content>
+</new_definition>
 <new_definition name="syntax">
     <content>une syntaxe représente les règles qui doivent suivre des mots (ou n'importe quel objet qu'on peut "écrire") rendant une phrase correcte</content>
 </new_definition>

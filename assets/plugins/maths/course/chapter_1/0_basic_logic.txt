@@ -45,6 +45,14 @@ Ce symbôle existe : <span class="important">il s'agit du symbôle "équivaut"</
 <math><mi>"Je suis un majeur"</mi><mequi><mi>"je remplis toutes les conditions nécessaires pour être majeur"</mi></math></br>
 <math><mi>P</mi><mequi><mi>Q</mi></math>
 <p>
+En parlant de syntaxe, parlons d'un sujet assez important pour comprendre les énoncés : les parenthèses.
+En fait, <span class="important">les parenthèses sont utilisées en mathématiques pour indiquer qu'une certaine partie d'une énoncé (la partie entre parenthèse) doit être traitées en priorité et en un bloc</span>.
+Par exemple, dans le calcul "(3 + 2) * 3", les parenthèses nous permettent de savoir qu'il faut faire le calcul "3 + 2" avant la multiplication par 3.
+Or, on peut se retrouver dans des cas un peu plus complexes, comme "((3 + 2) * 4 + 8) / ((7 + 8) * (2 - 4))".
+Dans ce cas, <span class="important">pour ne pas se perdre dans les parenthèses, on peut utiliser des crochets / accolades à la place de certaines paires de parenthèses dans l'énoncé</span>.
+Dans ce cas, "[(3 + 2) * 4 + 8] / [(7 + 8) * (2 - 4)]" est tout à fait valide (et plus simple à écrire).
+</p>
+<p>
 Pour trouver correctement la valeur de vérité d'une proposition, il faut s'y prendre... correctement.
 La façon la plus utilisée est un procédé nommé l'inférence.
 <span class="important"><definition name="inference"></span>.
@@ -57,6 +65,14 @@ L'écriture mathématique actuelle (simplifiée) consiste en quelque chose comme
 <math><mi>A</mi><mimp><mi>B</mi><mo>ET</mo><mi>A</mi><mo>DONC</mo><mi>B</mi></math>
 
 <h3>Les théories mathématiques</h3>
+<p>
+Plus haut dans ce cours, nous avons vu le concept de "syntaxe", cependant ce concept ne sert pas à grand chose sans son plus fidèle allié : la sémantique.
+<span class="important"><definition name="semantic"></span>.
+En linguistique, ce terme est particulièrement complexe, mais il est bien plus simple en mathématiques.
+En effet, <span class="important">le "sens" donner aux propositions représente tout simplement leurs valeur de vérité (vraie ou fausse)</span>.
+Dans ce cas, ces propositions deviennent des théorèmes.
+Cette définition regroupe un grand nombre de concepts : axiomes, inférences, modèle...
+</p>
 <p>
 Pour déduire des théorèmes, il faut (comme nous l'avons vu) des propositions "de départs" nommées des axiomes.
 Pour rappel, <span class="important"><definition name="axiom"></span>.
