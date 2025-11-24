@@ -113,6 +113,26 @@ Cette logique apparaît au alentour des années 1880 grâce à <scientist name="
 Dans les années 1890, le "prussien" (il est né en Prusse-Orientale) <scientist name="hilbert" type="quote"> propose une logique améliorée, beaucoup plus proche de la logique actuelle.
 </p>
 <p>
+Historiquement, ce concept a frolé la catastrophe, à cause d'un évènement mathématique majeur : la crise des fondements.
+En effet, <span class="important">la crise des fondements est une période de l'histoire des mathématiques modernes, où la façon dont les mathématiques doivent fonctionner ont fortement été remises en question</span>.
+Cette crise s'ammorce sur une question précise : et si les fondements utilisées en mathématiques étaient fausses, et que tout ce qui a été déduite via ces dernières l'étaient tout autant ?
+Cependant cela pose problème : dans les années 1830 (quand ces questions commencent), l'humanité était déjà relativement avancée en science, donc il ne devrait pas y avoir de problèmes.
+Or, <span class="important">de multiples résultats démontrèrent que des problèmes pouvaient toujours arriver (surtout en analyse)</span>.
+Plus tard, dans les années 1870, différents mathématiciens comme <scientist name="dedekind" type="quote"> découvrent des paradoxes étranges (Dedeking découvre qu'il y a "la même quantité" de nombres rationnels et de nombres naturels, mais pas de bijections entre les deux).
+Une grande partie des ces problèmes avait lieu à cause d'une définition... douteuse du concept d'infini.
+Or, les mathématiciens n'ont pas d'autres choix que de travailler avec, et continuent donc d'essayer de formaliser le plus précisément possible ces ensembles.
+<span class="important">Un des outils utilisés est la théorie des ensembles (que nous étudierons plus tard), résolvant pas mal de problèmes définitionnels, si utilisée sous forme de fondement des mathématiques</span>.
+Or, au début des années 1900, cette théorie des ensembles se révèlent problèmatique, et de nombreux paradoxes y sont trouvé.
+De multiples corrections seront proposés pour résoudre ces problèmes.
+Au même moment, <span class="important">le concept de théorie mathématique s'affine, permettant de les étudier avec plus de précisions</span>.
+Beaucoup de concepts apparaissent à ce moment là : cohérence, complétude, contradiction...
+Ces concepts mettrons un coup de grâce aux mathématiques, surtout à cause du mathématicien <scientist name="godel" type="quote">.
+En effet, <span class="important">il publie un 1931 un théorème admettant que, dans le cas de la théorie des ensembles, nous ne pourrons jamais être sur que cette théorie ne soit pas incohérente</span>.
+En d'autres termes, <span class="important">la théorie des ensembles (et donc presque toutes les mathématiques modernes) sont peut être complétement fausse, et nous ne savons pas encore pourquoi / comment</span>.
+C'est ça, la crise des fondements.
+En réaction apparaissent les courants "philosophiques" des mathématiques, certains permettant d'éviter à coup sur les problèmes (mais à perte de beaucoup de théorèmes), tandis que d'autres continuent de s'appuyer sur la théorie des ensembles (mais à risque de tout perdre si elle se révèle fausse).
+</p>
+<p>
 En logique classique, dans un contexte donné, <span class="important">une proposition est soit vrai soit fausse (jamais les deux)</span>.
 En d'autres termes, la valeur de vérité d'une proposition peut se représenter avec seulement 1 information (vrai ou faux).
 Cependant, si le contexte change, la valeur de vérité de la proposition peut changer.

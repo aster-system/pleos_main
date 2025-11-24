@@ -14,7 +14,12 @@ Même si, historiquement, cette théorie a mis beaucoup de temps à se faire acc
 </p>
 <p>
 Ici, <span class="important"><definition name="set_theory-set"></span>.
-Une façon intéressante d'en représenter un peut être la suivante (ici, l'ensemble des nombres impairs entre 0 et 10) :
+Cette définition se rapproche beaucoup d'une autre : celle des classes.
+<span class="important"><definition name="set_theory-class"></span>.
+Ceci peut paraître assez bizarre, mais une classe peut ne pas fonctionner dans la théorie que nous allons énoncer (là où un ensemble doit obligatoire fonctionner), comme elle peut fonctionner (dans ce cas, elle est aussi un ensemble).
+D'ailleurs, <span class="important">un ensemble est une classe, mais une classe n'est pas forcément un ensemble</span>.
+Nous verrons plus tard en quoi cette distinction est utile.
+Une façon intéressante de représenter un ensemble peut être la suivante (ici, l'ensemble des nombres impairs entre 0 et 10) :
 </p>
 <graphic>
 <background_color white>
@@ -61,7 +66,7 @@ Une version plus solide apparaîtra entre les années 1908 et 1920 : la théorie
 <span class="important"><definition name="set_theory-zfc"></span>.
 Comme son nom l'indique, elle a été développée par 2 mathématiciens majoritairement : <scientist name="zemerlo" type="quote"> et <scientist name="fraenkel" type="quote">.
 Le suffixe "choix" représente un axiome précis, que l'on peut ignorer (dans ce cas, on parle de théorie des ensembles "ZF").
-Présentons les axiomes de cette théorie.
+Présentons les premiers axiomes de cette théorie, proposés par Zemerlo entre 1889 et 1908.
 </p>
 <p>
 Le premier axiome est l'axiome d'extensionnalité.
@@ -242,7 +247,7 @@ Pour une traduction mathématique - français, lisez "pour tout ensemble A, il e
 
 <p>
 Le sixième axiome est l'axiome de l'infini.
-Cet axiome est un peu bizarre, mais infiniment important.
+Cet axiome est un peu bizarre, mais infiniment important (sans mauvais jeu de mots).
 <span class="important"><definition name="set_theory-infinity_axiom"></span>.
 Les premiers éléments de cet ensemble sont "0", "successeur(0)", "successeur(successeur(0))"...
 En fait, <span class="important">cet ensemble représente exactement l'ensemble des nombres entiers naturels</span> (qui respectent eux aussi cette exacte propriété).
@@ -274,7 +279,95 @@ Pour une traduction mathématique - français, lisez "il existe un ensemble A qu
 <math><mexists><mi>A</mi><mo>[</mo><mempty_set><min><mi>A</mi><mand><mforall><mi>b</mi><mo>(</mo><mi>b</mi><min><mi>A</mi><mimp><mi>b</mi><munion><mi>{b}</mi><min><mi>A</mi><mo>)</mo><mo>]</mo></math>
 
 <p>
+Cette axiome nous permet de faire quelque chose de très intéressant : introduire une nouvelle forme de raisonnement.
+En effet, il nous permet d'introduire le raisonnement dit "par récurrence".
+<span class="important"><definition name="mathematical_induction"></span>.
+En utilisant le formalisme des nombres, on peut dire que, si "P(0)" est vraie et "P(n) implique P(n + 1)", alors "P(1)" est vraie, "P(2)" aussi, et tout "P(n)" l'est également.
+Ce type de raisonnement nous sera très utile dans pleins de contextes impliquant cette axiome (et donc, impliquant les nombres entiers naturels).
+</p>
+
+<graphic ratio_base>
+<base draw=0 width=25 height=10>
+<background_color white>
+
+<text content="P(0) et" x=-3 y=2+1/5 font_size_in_scale=1></text>
+<text x=0 y=0 font_size_in_scale=1>Donc</text>
+
+<table name="t_30" x=5 y=2 width=10 height=8/3 font_size=30 texture_displaying=from_width>
+    <case x=0 y=0 content="P(n)">
+    <case x=1 y=0 content="implique">
+    <case x=2 y=0 content="P(n + 1)">
+</table>
+
+<table name="t_30" x=0 y=-2 width=18 height=15/3 font_size=100 texture_displaying=from_width>
+    <case x=0 y=0 content="P(0)">
+    <case x=1 y=0 content="P(1)">
+    <case x=2 y=0 content="P(2)">
+    <case x=3 y=0 content="P(3)">
+    <case x=4 y=0 content="...">
+    <case x=5 y=0 content="P(n)">
+</table>
+</graphic>
+
+<p>
 Le septième axiome n'est... pas un axiome à proprement parlé, mais un schéma d'axiome : le schéma d'axiome de compréhension.
 <span class="important"><definition name="set_theory-comprehension_axiom"></span>.
+Ici, on défini bien "B" comme une classe, car il peut poser certains problèmes dans ZFC (que nous verrons juste après ce schéma d'axiome).
+Cependant, <span class="important">un axiome que nous définirons tout à l'heure nous permet d'affirmer que "B" est presque toujours un ensemble</span> (ce qui est possible car un ensemble est une classe).
 Si aucun élément de l'ensemble ne vérifie la propriété, alors l'ensemble obtenu est l'ensemble vide.
+Cet axiome permet de faire quelque chose de très pratique : introduire la définition d'ensemble par compréhension.
+<span class="important"><definition name="set_theory-comprehension"></span>.
+Ce nom vient du fait que c'est le schéma d'axiome de compréhension qui atteste de l'existence de cette ensemble.
+De manière abstraite, un ensemble B défini par compréhension s'énonce comme ceci (lisez "B est l'ensemble de tous les éléments x possibles respectant la propriété P(x) (et donc, où P(x) est vraie)") :
+</p>
+<math><mi>B</mi><mequal><mo>{</mo><mi>x</mi><mo>,</mo><mi>P(x)</mi><mo>}</mo></math>
+<p>
+Prenons un exemple plus concret : un ensemble A défini par extension et un ensemble B défini par compréhension.
+Pour définir l'axiome B comme tous les éléments de A vérifiant la propriété P "l'élément est pair", on doit utiliser une relation d'appartenance entre "x" et "A" :
+</p>
+<math><mi>A</mi><mequal><mo>{</mo><mi>1, 2, 3, 4, 5, 6, 7, 8</mi><mo>}</mo></math></br>
+<math><mi>B</mi><mequal><mo>{</mo><mi>x</mi><min><mi>A</mi><mo>,</mo><mi>P(x)</mi><mo>}</mo><mequal><mo>{</mo><mi>2, 4, 6, 8</mi><mo>}</mo></math>
+
+<p>
+De manière purement mathématique, cet axiome est moyennement complexe à énoncer et à traduire.
+Nous allons commencer par citer une version simplifiée, puis la version finale.
+Pour une traduction mathématique - français de la version simplifiée (la première), lisez "pour tout ensemble A, il existe un ensemble B tel que, pour tout élément "x" de B, "x" est un élément de A et "x" respecte la propriété "P"".
+Pour une traduction mathématique - français de la version complète (la seconde, où l'on introduit le fait que la propriété puisse avoir besoin de variables indépendantes), lisez "pour toute variable "v0", "v1" ... jusq'à "vn", pour tout ensemble A, il existe un ensemble B tel que, pour tout élément "x" de B, "x" est un élément de A et "x" respecte la propriété "P" à laquelle on applique les variables du début de l'axiome".
+</p>
+<math><mforall><mi>A</mi><mexists><mi>B</mi><mforall><mi>x</mi><mo>[</mo><mi>x</mi><min><mi>B</mi><mequi><mo>(</mo><mi>x</mi><min><mi>A</mi><mand><mi>P(x)</mi><mo>)</mo><mo>]</mo></math></br>
+<math><mforall><mi>v</mi><msub>0</msub><mo>...</mo><mforall><mi>v</mi><msub>n</msub><mforall><mi>A</mi><mexists><mi>B</mi><mforall><mi>x</mi><mo>[</mo><mi>x</mi><min><mi>B</mi><mequi><mo>(</mo><mi>x</mi><min><mi>A</mi><mand><mi>P(x, v0, ..., vn)</mi><mo>)</mo><mo>]</mo></math>
+
+<p>
+Sur cet axiome s'achève notre présentation des axiomes proposés par Zemerlo en première instance.
+Cependant, <span class="important">cette théorie est insuffisante, et admet une quantité monstrueuse de paradoxes (paradoxes de Russel, paradoxe de Richard, paradoxe de Berry...)</span>.
+Historiquement, le plus connue est celui de Russel.
+Déjà, il faut savoir que, lors de la publication originale de la théorie des ensembles, des axiomes similaires à "l'axiome de compréhension" existés déjà, et presque tous admettaient que "B" est un ensemble.
+<span class="important">Ce paradoxe démontre que, si l'axiome de compréhension permet de toujours admettre que "B" est un ensemble, alors des paradoxes logiques apparaissent</span>.
+</p>
+<p>
+Une version corrigée était nécessaire : c'est ce que va fraire Fraenkel.
+En 1922, <span class="important">Fraenkel publie en 1922 une version complétée de la théorie, nommée "théorie des ensembles ZF", où beaucoup de ces paradoxes sont résolues</span>.
+Cette théorie modifie légèrement les axiomes que nous avons déjà vu, et rajoute un nouvel axiome et un nouveau schéma d'axiome.
+C'est dans ce contexte là que "B" a dû être assumé comme étant une classe, qui est très souvent (dans les mathématiques courantes) un ensemble.
+</p>
+
+<p>
+L'axiome proposé par Fraenkel est l'axiome de fondation.
+<span class="important"><definition name="set_theory-foundation_axiom"></span>.
+Ici, quand on dit qu'un élément est sous une forme "ensemble", cela signifie que nous devons l'utiliser comme un ensemble (ce qui est, dans ZFC, toujours possible, quelque soit l'élément : nombre, espaces... mais nous verrons comment plus tard).
+Cet axiome peut aussi sembler un peu bizarre, mais il permet de contrer quelques-uns des paradoxes de la théorie.
+En effet, <span class="important">en l'utilisant avec l'axiome de l'ensemble des parties, on peut démontrer un résultat très important : un ensemble ne peut pas se contenir lui même, et aucun élément (sous forme d'ensemble) d'un ensemble contient ce même ensemble (ni les éléments des éléments...), <a href="demo">démontré juste ici</a></span>.
+</p>
+<p>
+Cette axiome n'est pas très dur à énoncer, mais un peu plus à traduire.
+Pour une traduction mathématique - français, lisez "pour tout ensemble x, si x n'est pas vide, alors il existe un élément de y qui, dans sa forme (ensemble), ne contient aucun élément de x".
+</p>
+<math><mforall><mi>x</mi><mo>[</mo><mi>x</mi><mnotequal><mempty_set><mimp><mexists><mi>y</mi><mo>(</mo><mi>y</mi><min><mi>x</mi><mand><mi>y</mi><minter><mi>x</mi><mequal><mempty_set><mo>)</mo><mo>]</mo></math>
+
+<p>
+Finalement, le dernier schéma d'axiome obligatoire proposé par Fraenkel est le schéma d'axiome de remplacement.
+<span class="important"><definition name="set_theory-replacement_axiom"></span>.
+À l'inverse des autres axiomes, celui si n'est ni simple, ni intuitif, et nous y reviendrons quand nous parlerons de la logique mathématique avancée.
+Cependant, <span class="important">il permet de résoudre beaucoup de paradoxes que nous avons vu auparavant</span>.
+En effet, <span class="important">c'est ce schéma d'axiome qui stipule si une classe obtenue via l'axiome de compréhension est une classe ou un ensemble</span>.
 </p>

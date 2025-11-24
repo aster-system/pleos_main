@@ -1,15 +1,19 @@
 <new_definition name="set_theory">
     <content>la théorie des ensembles est une théorie mathématique développé à la fin du XIXème siècle, pour être utilisée comme socle des mathématiques</content>
-    <content name="comprehension_axiom">le schéma d'axiome de compréhension est un schéma d'axiome construisant un axiome par propriété, stipulant que, pour tout ensemble "A", il existe un sous-ensemble de A dont tous les éléments obéissent à une propriété "P" (propriété déduite grâce aux autres axiomes)</content>
+    <content name="class">une classe est un objet mathématique qui peut "contenir" d'autres objets (on dit que ces objets appartiennent à l'ensemble), mais qui n'est pas forcément cohérent dans la théorie des ensembles</content>
+    <content name="comprehension">un ensemble est dit "défini en compréhension" quand il est défini comme tous les éléments d'un autre ensemble vérifiant une propriété spécifique</content>
+    <content name="comprehension_axiom">le schéma d'axiome de compréhension est un schéma d'axiome construisant un axiome par propriété, stipulant que, pour tout ensemble "A", il existe une classe "B" dont tous les éléments sont les éléments de A rendant une propriété "P" vraie (déduite grâce aux autres axiomes)</content>
     <content name="empty_set">l'ensemble vide est un ensemble ne contenant aucun élément</content>
     <content name="empty_set_axiom">l'axiome de l'ensemble vide est un axiome garantissant l'existence d'un ensemble vide dans la théorie</content>
     <content name="extension">un ensemble est dit "défini par extension" quand il est défini par une égalité avec un ensemble dont les éléments sont explicitement indiqués</content>
     <content name="extensionality">l'axiome d'extensionnalité dit que si deux ensembles possèdent exactement les mêmes éléments, alors ils sont égaux</content>
+    <content name="foundation_axiom">l'axiome de fondation est un axiome obligeant tout ensemble "A" à posséder un élément qui, dans sa forme "ensemble", ne contient aucun élément de "A"</content>
     <content name="infinity_axiom">l'axiome de l'infini stipule qu'il existe un ensemble contenant un élément de départ nommé "0", et tel que tous les éléments "n" de cet ensemble admettent un élément précis (défini via une fonction), nommé "successeur de n" ou "successeur(n)"</content>
     <content name="pair_axiom">l'axiome de la paire est un axiome confirmant que, pour deux ensembles quelconques A et B, il existe un ensemble contenant deux éléments : A et B (nommée paire de A et B)</content>
     <content name="power_set_axiom">l'axiome de l'ensemble des parties est un axiome qui assure l'existence, pour tout ensemble A, d'un ensemble des parties de A</content>
+    <content name="replacement_axiom">le schéma d'axiome de remplacement est un schéma d'axiome garantissant que toute classe se comportant comme une fonction peut être restreinte à un ensemble se comportant comme une fonction (en utilisant comme antécédent un ensemble)</content>
     <content name="reunion_axiom">l'axiome de la réunion affirme que, pour tout ensemble A dont les éléments sont des ensembles, il existe un ensemble B tel que tous ces éléments appartiennent à un sous-ensemble C de A, et tous les éléments des sous-ensembles de A appartiennt à B</content>
-    <content name="set">un ensemble est un objet mathématique qui peut "contenir" d'autres objets (on dit que ces objets appartiennent à l'ensemble)</content>
+    <content name="set">un ensemble est un objet mathématique qui peut "contenir" d'autres objets (on dit que ces objets appartiennent à l'ensemble), et qui est parfaitement cohérent dans la théorie des ensembles</content>
     <content name="sub_set">un sous-ensemble (ou partie) d'un ensemble A est un ensemble contenant uniquement des éléments de A (et pas plus)</content>
     <content name="zfc">la théorie des ensemble "ZFC" (pour Zemerlo - Fraenkel - choix) est une version axiomatisée et cohérente (pour l'instant) de la théorie des ensembles de Cantor</content>
 </new_definition>

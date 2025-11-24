@@ -48,6 +48,14 @@ namespace pleos {
 		(*redaction) += std::string("</br>");
 		(*redaction) += std::string("Ensuite, étudions la dérivée de cette fonction. ");
 		pleos::function_derivation(function.get(), redaction);
+
+		(*redaction) += std::string("</br>");
+		(*redaction) += std::string("Ensuite, étudions la primitive de cette fonction. ");
+		pleos::function_antiderivation(function.get(), redaction);
+
+		(*redaction) += std::string("</br>");
+		(*redaction) += std::string("Ensuite, étudions la représentation graphique de cette fonction. ");
+		(*redaction) += std::string("<graphic><function expression=\"") + formula->to_std_string(0) + std::string("\"></graphic>");
 	}
 
     // Do a bac subject

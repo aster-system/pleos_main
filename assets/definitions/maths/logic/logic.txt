@@ -55,6 +55,10 @@
     <content>un syllogisme est une façon de démontrer logiquement un propos (nommé "conclusion"), en s'appuyant sur d'autres propos appelés "prémisses"</content>
 </new_definition>
 
+<new_definition name="mathematical_induction">
+    <content>le raisonnement par récurrence est un principe de raisonnement permettant de prouver que si un prédicat "P(n)" est vraie pour "P(a)" et que, pour tout élément "k" d'un ensemble "N", "P(k) implique p(successeur(k))", alors "P(n)" est vraie pour tout "n" supérieur à "a"</content>
+</new_definition>
+
 <new_definition name="axiom">
     <content>les axiomes sont des propositions théoriquement indémontrées (mais qui, en pratique, sont tout à fait """"logiques""""" / évidentes, en accord avec les autres sciences et ne nécessitent pas de démonstration) qui servent de bases à toutes les mathématiques</content>
     <content name="schema">les schémas d'axiomes sont un moyen de définir un "plan" (ou un schéma) pour créer une quantité infinie d'axiome</content>
