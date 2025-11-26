@@ -1,0 +1,59 @@
+<h1>Les relations et applications mathématiques</h1>
+
+
+
+<h2>Les objets centraux des mathématiques</h2>
+
+<h3>Qu'est ce qu'est une relation mathématique ?</h3>
+<p>
+Avant d'introduire quoi que ce soit d'autre en mathématiques, un objet extrêmement important est l'application mathématique.
+En mathématique, <span class="important"><definition name="relation"></span>.
+Par exemple, dans un ensemble de nombres entiers naturels, la relation "inférieur" est définie, et est juste pour tout "m" et "n" où... m est inférieur à n (comme "3 est inférieur à 5").
+<span class="important">Deux éléments liés par une relation "." sont dit "en relation entre eux par la relation ".""</span>.
+</p>
+
+<table>
+
+<case_plus x=0 y=0>Relation</case_plus>
+<case_plus x=0 y=1>2 inférieur à 10</case_plus>
+<case_plus x=0 y=2>3 égal à 3</case_plus>
+
+<case_plus x=1 y=0>Pas une relation</case_plus>
+<case_plus x=1 y=1>7 inférieur à 3 (relation fausse)</case_plus>
+<case_plus x=1 y=2>4 égal à 5 (relation fausse)</case_plus>
+
+</table>
+
+<h3>Qu'est ce qu'est une application mathématique ?</h3>
+<p>
+En mathématique, <span class="important"><definition name="application"></span>.
+Ce premier ensemble se nomme généralement "ensemble de départ", et le deuxième ensemble se nomme "ensemble d'arrivée".
+D'un point de vue rigoureux, <span class="important"><definition name="application-rigorous"></span>.
+Une façon très utilisé pour représenter ce concept est celui de diagramme sagittal, où l'on peut lier graphiquement les éléments un à un entre les deux ensembles.
+Voici un exemple en bas :
+</p>
+
+<graphic>
+<background_color white>
+<base draw=0>
+
+<circle x=-2 y=0 radius_x=3/2 radius_y=4>
+<text x=-2 y=2 content="0"></text>
+<text x=-2 y=1 content="1"></text>
+<text x=-2 y=0 content="2"></text>
+<text x=-2 y=-1 content="3"></text>
+<text x=-2 y=-2 content="4"></text>
+
+<circle x=2 y=0 radius_x=3/2 radius_y=4>
+<text x=2 y=2 content="0"></text>
+<text x=2 y=1 content="2"></text>
+<text x=2 y=0 content="4"></text>
+<text x=2 y=-1 content="6"></text>
+<text x=2 y=-2 content="8"></text>
+
+<line x_1=-3/2 y_1=2 x_2=3/2 y_2=2 color=black>
+<line x_1=-3/2 y_1=1 x_2=3/2 y_2=1 color=black>
+<line x_1=-3/2 y_1=0 x_2=3/2 y_2=0 color=black>
+<line x_1=-3/2 y_1=-1 x_2=3/2 y_2=-1 color=black>
+<line x_1=-3/2 y_1=-2 x_2=3/2 y_2=-2 color=black>
+</graphic>

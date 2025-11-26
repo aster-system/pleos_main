@@ -1,9 +1,15 @@
 <new_definition name="arithmetic">
     <content>l'arithmétique est la branche des mathématiques étudiant les nombres communs (entiers, rationnels et réels)</content>
 </new_definition>
-
 <new_definition name="arithmetic_congruence">
     <content>deux nombres entiers sont dit congrus modulo "n" (avec n un autre entier) si ils ont le même reste par la division par "n"</content>
+</new_definition>
+<new_definition name="operation">
+    <content>une opération est une action où, gràce à une (ou plusieurs) valeur de départ (nommée opérande), on y définit une égalité représentant une (ou plusieurs) valeurs traitées via les valeurs de départs</content>
+</new_definition>
+
+<new_definition name="natural_number">
+    <content name="addition">une addition entre deux nombres entiers naturels représente une opération entre deux nombres entiers naturels "a" et "b", donnant comme valeur la valeur partant de "a" obtenue après la répétition de "b" fois l'objet "successeur"</content>
 </new_definition>
 
 <new_definition name="real_number">

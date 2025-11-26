@@ -1,0 +1,79 @@
+<h1>Introduction à l'arithmétique</h1>
+
+
+
+<h2>L'arithmétique élémentaire</h2>
+
+<h3>Qu'est ce qu'est l'arithmétique ?</h3>
+<p>
+Souvent, quand vous demandez à quelqu'un sa définition des mathématiques, il est fort probable que sa définition ne soit pas celle des mathématiques générales... mais celle de l'arithmétique.
+En effet, <span class="important"><definition name="arithmetic"></span>.
+Bien que cette partie n'est peut être pas la plus importante en mathématiques abstraites, il me semblait important de l'ajouter au premier cours, pour directement faire le lien "logique - nombres".
+</p>
+<p>
+Comme pour la théorie des ensembles, l'arithmétique a subit de nombreux remaniement pendant son histoire.
+Historiquement, <span class="important">on retrouve déjà des traces d'études précises des nombres 1000 ans avant J.C.,via les phéniciens</span>.
+Plus récemment (dernier millénaire avec J.C.), les grecs se sont aussi emparés de l'affaire, avec de très grands noms : <scientist name="pythagoras" type="quote">, <scientist name="archimedian" type="quote">, <scientist name="euclid" type="quote">...
+</p>
+
+<h3>Axiomatiquement définir les nombres entiers naturels</h3>
+<p>
+Historiquement, définir précisément les nombres entiers naturels n'a pas été une mince affaire.
+Au début (de l'histoire humaine), <span class="important">un nombre entier naturel représentait une quantité précise d'un certain objet, que l'on peut donc compter</span>.
+Cette définition est très concrète (avec la notion d'objet à compter), bien que l'abstraction apparaitra petit à petit avec l'invention d'une notation précise pour les nombres.
+D'un point de vue notationnelle, <span class="important">les nombres ont longtemps étaient notés de manière très concrète, comme le nombre de points que représentait le nombre en question</span> (c'est le cas des nombres hiéroglyphes égyptiens ou des os d'Ishango).
+Cependant, des systèmes plus abstraits utilisant des symbôles à la place de dénombrage apparaissent des l'arrivée des sumériens, avec leur système base 60, et chez les civilisations suivantes : grecques, romains...
+Le grecs <scientist name="euclid" type=quote> les défini comme une collection d'objets unitaire (valant 1).
+Dans ce cas, l'addition (et, globalement, toutes propriétés des nombres entiers naturels) est très facilement définie, en rapprochant physiquement deux collections d'objets représentant les nombres à additionner.
+Pendant longtemps, le nombre "zéro" n'était pas normalisé comme étant un nombre entier naturel, et son utilisation de la sorte dépend des auteurs.
+Cependant, <span class="important">l'arrivée de la logique avancée à la fin du XIXème siècle va forcer les mathématiciens à vouloir axiomatiser tout ça</span>.
+Pour cela, de nombreux mathématiciens tentent des choses : <scientist name="dedekind" type=quote>, <scientist name="peano" type=quote> avec son système d'axiome précis, <scientist name="frege" type=quote>...
+La célèbre théorie des ensembles ZFC (que l'on a déjà présenté plus tôt dans ce cours) offre un axiome permettant de les définir : l'axiome de l'infini.
+L'arrivée de la crise des fondements va bouleverser toutes ces définitions, mais cela ne va pas arrêter les mathématiciens ayant travaillé dessus.
+</p>
+<p>
+Grâce à la théorie des ensembles ZFC, <span class="important">on peut axiomatiquement définir l'ensemble des nombres entiers naturels</span>, comme étudié au collège.
+Pour cela, nous allons utiliser l'axiome de l'infini.
+Pou rappel, <definition name="set_theory-infinity_axiom">.
+Donc, cet ensemble contient "successeur(0)", "successeur(successeur(0))"...
+En fait, <span class="important">cet ensemble se comporte exactement comme l'ensemble des nombres entiers naturels</span>.
+En effet, on peut définir "successeur(0) = 1", "successeur(successeur(0)) = 2"...
+D'un point de vue vocabulaire, il est parfaitement évident que le successeur de 0 est 1, que celui de 1 est 2, que celui de 56 est 57...
+</p>
+
+<graphic ratio_base>
+<base draw=0 width=25 height=10>
+<background_color white>
+
+<circle name=type_number() x=-10 y=0 radius_x=3/2 radius_y=4>
+<text name=type_number() content="0" x=-10 y=5/2></text>
+<text name=type_number() content="1" x=-10 y=1></text>
+<text name=type_number() content="2" x=-10 y=-1/2></text>
+<text name=type_number() content="..." x=-10 y=-2></text>
+
+<text name=type_number() font_size_in_scale=3/2 content="=" x=-7 y=-1/6></text>
+
+<circle name=type_number() x=3 y=0 radius_x=9 radius_y=4>
+<text name=type_number() content="0" x=-2 y=5/2></text>
+<text name=type_number() content="successeur(0)" x=7/2 y=5/2></text>
+<text name=type_number() content="successeur(successeur(0))" x=3 y=1/2></text>
+<text name=type_number() font_size_in_scale=2/3 content="successeur(successeur(successeur(0)))" x=3 y=-1></text>
+<text name=type_number() content="..." x=3 y=-5/2></text>
+</graphic>
+
+<p>
+Pour manipuler les nombres entiers naturels, il existe un élément de syntaxe très pratique : l'opération.
+<span class="important"><definition name="operation"></span>.
+Cette définition est très générale, car souvent, la définition précise du mot "opération" est ambigüe.
+Généralement, une opération prend 1 ou 2 éléments en entrée.
+Les cas les plus célèbres sont l'addition, la multiplication, la soustraction, la division...
+</p>
+
+<p>
+L'opération la plus élémentaire entre deux nombres entiers naturels est l'addition.
+<span class="important"><definition name="natural_number-addition"></span>.
+Cette définition est une définition un peu complexe pour parler de l'addition comme nous la connaissons tous.
+Comme tout le monde le sait, elle se note avec une croix "+".
+</p>
+<math><mi>successeur(successeur(0))</mi><mo>+</mo><mi>successeur(successeur(successeur(0)))</mi><mo>=</mo><mi>successeur(successeur(successeur(successeur(successeur(0)))))</mi></math></br>
+<math><mi>2</mi><mo>+</mo><mi>3</mi><mo>=</mo><mi>5</mi></math>

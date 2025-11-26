@@ -371,3 +371,12 @@ Finalement, le dernier schéma d'axiome obligatoire proposé par Fraenkel est le
 Cependant, <span class="important">il permet de résoudre beaucoup de paradoxes que nous avons vu auparavant</span>.
 En effet, <span class="important">c'est ce schéma d'axiome qui stipule si une classe obtenue via l'axiome de compréhension est une classe ou un ensemble</span>.
 </p>
+
+
+
+<h2>Les opérations sur les ensembles</h2>
+
+<h3>L'inclusion et l'intersection</h3>
+<p>
+
+</p>

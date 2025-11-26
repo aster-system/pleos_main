@@ -1,0 +1,7 @@
+<new_definition name="application">
+    <content>une application est un objet permettant de lier les éléments de deux ensembles quelconques entre eux</content>
+    <content name="rigorous">une application peut se représenter sous la forme d'un ensemble de couples entre un élément de l'ensemble de départ et un élément de l'ensemble d'arrivée, pour tous les éléments de l'ensemble d'arrivée</content>
+</new_definition>
+<new_definition name="relation">
+    <content>une relation est un objet permettant d'énoncer des propositions vraies entre plusieurs éléments d'un même ensemble quelconque</content>
+</new_definition>

@@ -71,6 +71,45 @@ Or, on a une double implication, doit on en déduit une équivalence :
 On reconnait l'axiome d'extensionnalité : un ensemble A et un ensemble B sont égaux si (et seulement si) A est "inclu ou égal" à B et B est "inclu ou égal" à A.
 </p>
 
+<h3>Résultats obtenus grâce à l'axiome de fondation</h3>
+<p>
+Démontrons qu'un ensemble ne peut pas se contenir lui même.
+</p>
+<p>
+Supposons qu'un ensemble E se contienne lui même.
+Dans ce cas, selon l'axiome de l'ensemble des parties, il existe un ensemble des parties de E.
+Selon les propriétés de l'ensemble des parties, l'ensemble des parties de E doit obligatoirement contenir le singleton "{E}", inclu dans "E".
+Or, il n'existe pas d'élément de ce singleton tel que l'intersection de ce singleton et d'un de ces éléments donne l'ensemble vide (la seule intersection possible est "E inter {E}", qui est égal à "E", puisque "E" appartient à "E").
+Or, ceci est obligé par l'axiome de fondation :
+</p>
+<math><mforall><mi>x</mi><mo>[</mo><mi>x</mi><mnotequal><mempty_set><mimp><mexists><mi>y</mi><mo>(</mo><mi>y</mi><min><mi>x</mi><mand><mi>y</mi><minter><mi>x</mi><mequal><mempty_set><mo>)</mo><mo>]</mo></math>
+<p>
+Donc, ce singleton ne peux pas exister dans ce contexte.
+Donc, l'ensemble des parties de "E" ne peut pas le contenir.
+Or, si il ne le contient pas, il n'est plus l'ensemble des parties de "E", donc un ensemble des parties de "E" ne posant aucun problème ne peut pas exister.
+Donc, si E ne peut pas avoir d'ensemble des parties, il ne peut pas exister.
+</p>
+<p>
+Démontrons maintenant qu'un ensemble E ne peut pas contenir un ensemble contenant E, où dont un de ces éléments contient E (ou dont un des ces éléments contient E...).
+Cette démonstration est bien plus compliquée que la précédente.
+</p>
+<p>
+Supposons qu'un ensemble E contienne lui même un ensemble contenant E, où dont un de ces éléments contienne E (ou dont un des ces éléments contienne E...).
+Dans ce cas, selon l'axiome de la réunion, il est possible de découper E pour en obtenir un nouvel ensemble "B(0)" ne contenant que les éléments des éléments de E.
+De manière itérative, si les éléments de E contiennent des ensembles, alors on réitère l'opération pour créer l'ensemble "B(n)" jusqu'à tomber sur l'ensemble "E".
+Maintenant, construisons un ensemble assez complexe : l'ensemble contenant les éléments de tous les "B(n)" unis pour "n" entier naturel, que nous nommons "F".
+Ce nouvel ensemble "F" est lui aussi découpable en un ensemble des parties, contenant l'ensemble de tous les sous-ensembles possibles de F.
+Ce même ensemble contient le sous-ensemble de F composé de tous les ensembles permettant de passer de E à... E.
+</p>
+<math>><mo>{</mo><mi>E</mi><msub>0</msub><mo>,</mo><mi>E</mi><msub>1</msub><mo>,</mo><mi>E</mi><msub>2</msub><mo>,</mo><mi>...</mi><mo>,</mo><mi>E</mi><msub>n</msub><mo>}</mo></math>
+<p>
+Or, il n'existe pas d'élément de cet ensemble tel que l'intersection de cet ensemble et d'un de ces éléments donne l'ensemble vide (les seules intersection possible sont "E(k) inter {E}" avec k inférieur à n, qui sont égal à "E(k + 1)" si k est strictement inférieur à "n", et à... "E(0)" sinon). 
+Donc, cet ensemble ne peux pas exister dans ce contexte.
+Donc, l'ensemble des parties de "F" ne peut pas le contenir.
+Or, si il ne le contient pas, il n'est plus l'ensemble des parties de "F", donc un ensemble des parties de "F" ne posant aucun problème ne peut pas exister.
+Donc, si "F" ne peut pas avoir d'ensemble des parties, il ne peut pas exister, et quelque chose qui a mené à sa construction ne fonctionne pas : E contenant lui même un ensemble contenant E, où dont un de ces éléments contienne E (ou dont un des ces éléments contient E...).
+</p>
+
 <h3>Unicité des ensembles admis par les axiomes</h3>
 <p>
 Démontrons qu'il n'existe qu'un seul ensemble ne contenant aucun élément : l'ensemble vide.
