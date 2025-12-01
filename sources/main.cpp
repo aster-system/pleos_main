@@ -41,7 +41,7 @@ int main(int argc, char* argv[]) {
     //pleos::bac(std::string("tests/"));
 	//pleos::test(std::string("tests/"));
 
-	pleos::Pleos_Window window(900, 600, argv[0]);
+	/*pleos::Pleos_Window window(900, 600, argv[0]);
     window.load_from_xml("assets/window.txt");
     pleos::Hub_Page* hub = window.hub();
     hub->handle_saasf();
@@ -55,7 +55,7 @@ int main(int argc, char* argv[]) {
 
     /*std::string content = std::string("<h1>Les polynômes</h1>");
     std::string redaction = std::string();
-    pleos::study_function(scls::string_to_formula(std::string("2x*x-x-1")).get(), &redaction);content += std::string("<p>") + redaction + std::string("</p>");
+    //pleos::study_function(scls::string_to_formula(std::string("2x*x-x-1")).get(), &redaction);content += std::string("<p>") + redaction + std::string("</p>");
     //redaction = std::string();pleos::study_function(scls::string_to_formula(std::string("0")).get(), &redaction);content += std::string("<p>") + redaction + std::string("</p>");
     //redaction = std::string();pleos::study_function(scls::string_to_formula(std::string("8x")).get(), &redaction);content += std::string("<p>") + redaction + std::string("</p>");
     //redaction = std::string();pleos::study_function(scls::string_to_formula(std::string("-3x+7")).get(), &redaction);content += std::string("<p>") + redaction + std::string("</p>");
@@ -66,7 +66,19 @@ int main(int argc, char* argv[]) {
     scls::Text_Style style;style.set_max_width(600);
     pleos::string_to_image(content, style).save_png("tests/polynome.png");//*/
 
-    /*scls::Text_Style style;style.set_font_size(24);style.set_max_width(800);
+	/*std::string content = std::string("<h1>Les polynômes</h1>");
+    std::string redaction = std::string();
+	std::vector<std::shared_ptr<pleos::Function_Studied>> functions_shared_ptr;
+	std::vector<pleos::Function_Studied*> functions;
+	functions_shared_ptr.push_back(std::make_shared<pleos::Function_Studied>(scls::string_to_formula(std::string("x-2"))));
+	functions_shared_ptr.push_back(std::make_shared<pleos::Function_Studied>(scls::string_to_formula(std::string("y+2"))));
+	functions_shared_ptr.push_back(std::make_shared<pleos::Function_Studied>(scls::string_to_formula(std::string("-4x+2y+2z-1"))));
+	for(int i=0;i<static_cast<int>(functions_shared_ptr.size());i++){functions.push_back(functions_shared_ptr.at(i).get());}
+    pleos::solve_system(functions, &redaction);content += std::string("<p>") + redaction + std::string("</p>");
+    scls::Text_Style style;style.set_max_width(600);
+    pleos::string_to_image(content, style).save_png("tests/polynome.png");//*/
+
+    scls::Text_Style style;style.set_font_size(24);style.set_max_width(800);
     pleos::string_to_image(scls::read_file("tests/test.txt"), style).save_png("tests/cours.png");//*/
 
     return 0;

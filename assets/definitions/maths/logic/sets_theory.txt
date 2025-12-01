@@ -1,3 +1,7 @@
+<new_definition name="set">
+    <content name="countable">un ensemble infini est dénombrable si il est équipotent (et donc, si il existe une bijection) à l'ensemble des nombres entier naturels</content>
+    <content name="finite">un ensemble est "fini" si il n'est pas possible de trouver de nouveaux éléments dans l'ensemble (que nous n'avons pas déjà trouvé) après en avoir consulter une certaine quantité</content>
+</new_definition>
 <new_definition name="set_theory">
     <content>la théorie des ensembles est une théorie mathématique développé à la fin du XIXème siècle, pour être utilisée comme socle des mathématiques</content>
     <content name="class">une classe est un objet mathématique qui peut "contenir" d'autres objets (on dit que ces objets appartiennent à l'ensemble), mais qui n'est pas forcément cohérent dans la théorie des ensembles</content>
@@ -18,6 +22,18 @@
     <content name="zfc">la théorie des ensemble "ZFC" (pour Zemerlo - Fraenkel - choix) est une version axiomatisée et cohérente (pour l'instant) de la théorie des ensembles de Cantor</content>
 </new_definition>
 
+<new_definition name="cardinal">
+    <content>le cardinal d'un ensemble est une façon de représenter le nombre d'éléments que contient l'ensemble</content>
+    <content name="set_finite">le cardinal d'un ensemble fini est un nombre entier naturel représentant le nombre d'éléments distincts appartenant à l'ensemble</content>
+</new_definition>
+<new_definition name="pair">
+    <content>une paire est ensemble fini de cardinal 2 (il ne contient que deux éléments)</content>
+    <content name="ordered">un couple est une paire où un des deux objets doit être écrit avant l'autre (et donc, il s'agit d'une paire où il y a un ordre d'écriture des éléments)</content>
+</new_definition>
+<new_definition name="singleton">
+    <content>un singleton est ensemble fini de cardinal 1 (il ne contient qu'un seul élément)</content>
+</new_definition>
+
 <new_definition name="cantor_theorem">
     <content type="theorem">le cardinal d'un ensemble est toujours strictement inférieur au cardinal de son ensemble des parties</content>
 </new_definition>
@@ -33,7 +49,7 @@
 
 
 <new_definition name="cartesian_product">
-    <content>le produit cartésien (aussi nommé produit cartésien binaire) de deux ensembles est une opération sur deux ensembles, permettant d'obtenir un ensemble des couples de chaque élément du premier ensemble vers chaque élément du second ensemble (et vice-versa)</content>
+    <content>le produit cartésien (aussi nommé produit cartésien binaire) de deux ensembles est une opération sur deux ensembles, permettant d'obtenir un ensemble contenant tous les couples possibles entre chaque élément du premier ensemble et chaque élément du second ensemble (dans cet ordre précis)</content>
 </new_definition>
 <new_definition name="cartesian_product_infinite">
     <content>le produit cartésien d'un nombre infini d'ensembles est une opération sur un nombre aussi grand que l'on veut d'ensembles, permettant d'obtenir un ensemble des n-uplets (ensembles de n éléments, avec n aussi grand que l'on veut) de chaque élément des ensembles avec chaque élément des autres ensembles (et vice-versa)</content>

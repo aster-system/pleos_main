@@ -126,6 +126,11 @@ namespace pleos {
                     attributes[url_attribute].value = final_link;
                 }
             }
+            else if((attribute_name == std::string("math"))){
+                // HMLT math
+                scls::format_math(content.get()->sub_texts().at(i));
+                __saasf_images(replica, content.get()->sub_texts().at(i), path, current_replica_file_path);
+            }
             else if((attribute_name == std::string("msqrt"))){
                 // HMLT square root
                 if(content.get()->sub_texts().at(i).get()->sub_texts().size() == 0){

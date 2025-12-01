@@ -35,7 +35,7 @@ namespace pleos {
 
 	// Studies precisely a function
 	void study_function(scls::__Formula* formula, std::string* redaction) {
-		(*redaction) += std::string("Étudions la forme ") + formula->to_std_string(0) + std::string(". ");
+		(*redaction) += std::string("<p>Étudions la forme ") + formula->to_std_string(0) + std::string(". ");
 		std::shared_ptr<Function_Studied> function = Function_Studied::new_function_studied_shared_ptr(*formula);
 
 		(*redaction) += std::string("Commençons par étudier l'ensemble de définition. ");
@@ -54,7 +54,7 @@ namespace pleos {
 		pleos::function_antiderivation(function.get(), redaction);
 
 		(*redaction) += std::string("</br>");
-		(*redaction) += std::string("Ensuite, étudions la représentation graphique de cette fonction. ");
+		(*redaction) += std::string("Ensuite, étudions la représentation graphique de cette fonction.</p>");
 		(*redaction) += std::string("<graphic><function expression=\"") + formula->to_std_string(0) + std::string("\"></graphic>");
 	}
 

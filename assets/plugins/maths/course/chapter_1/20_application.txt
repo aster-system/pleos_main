@@ -8,19 +8,48 @@
 <p>
 Avant d'introduire quoi que ce soit d'autre en mathématiques, un objet extrêmement important est l'application mathématique.
 En mathématique, <span class="important"><definition name="relation"></span>.
-Par exemple, dans un ensemble de nombres entiers naturels, la relation "inférieur" est définie, et est juste pour tout "m" et "n" où... m est inférieur à n (comme "3 est inférieur à 5").
-<span class="important">Deux éléments liés par une relation "." sont dit "en relation entre eux par la relation ".""</span>.
+Par exemple, dans un ensemble de nombres entiers naturels, la relation "inférieur" est définie, et donne une proposition juste juste pour tout "m" et "n" où... m est inférieur à n (comme "3 est inférieur à 5").
+Cette définition pose un problème : il existe des objets infiniment proche de cette définition, mais qui n'en font pas partie, car pas "dans un même ensemble quelconque".
+C'est le cas de la relation d'appartenance "un élément a appartient à un ensemble E", où il n'existe pas vraiment "d'ensemble" généralisant en même temps le concept d'élément et d'ensemble.
+Pour éviter ce problème, nous allons dire que, dans ce cas précis, on ne parle pas d'ensemble, mais de classe (il existe une classe contenant tous les ensembles et éléments possibles).
+Pour tout le reste, la définition avec les ensembles fonctionne.
+Il est très fréquent (voir même, presque tout le temps appliqué) d'appeler une relation avec un simple symbôle comme "=", "&lt;" ou "~", et de disposer les objets à lier entre eux aux côtés de la relation, comme "3 + 4 = 7".
+<span class="important">Deux éléments "a" et "b" liés par une relation "~" sont dit "en relation entre eux par la relation "~""</span>.
 </p>
 
 <table>
 
-<case_plus x=0 y=0>Relation</case_plus>
+<case_plus x=0 y=0>Objets en relation</case_plus>
 <case_plus x=0 y=1>2 inférieur à 10</case_plus>
 <case_plus x=0 y=2>3 égal à 3</case_plus>
 
-<case_plus x=1 y=0>Pas une relation</case_plus>
-<case_plus x=1 y=1>7 inférieur à 3 (relation fausse)</case_plus>
-<case_plus x=1 y=2>4 égal à 5 (relation fausse)</case_plus>
+<case_plus x=1 y=0>Objets pas en relation</case_plus>
+<case_plus x=1 y=1>7 inférieur à 3 (proposition fausse)</case_plus>
+<case_plus x=1 y=2>4 égal à 5 (proposition fausse)</case_plus>
+
+</table>
+
+<p>
+<span class="important">Le concept de relation est donc un moyen "syntaxique" d'énoncer des proprositions facilement</span>.
+Comme tout objet "syntaxique", <span class="important">la chose la plus importante avec ces relations est la façon dont on l'écrit, mais aussi les propriétés possibles via cette simple écriture</span>.
+Commenceons par une propriété simple : l'arité.
+<span class="important"><definition name="arity-relation"></span>.
+Dans de très nombreux cas, la relation est dite binaire.
+<span class="important"><definition name="relation_binary"></span>.
+Cependant, avec un peu de réflexion, on peut facilement énumérer des relations d'arité aussi grande que l'on veut.
+</p>
+
+<table>
+
+<case_plus x=0 y=0>Arité :</case_plus>
+<case_plus x=0 y=1>1</case_plus>
+<case_plus x=0 y=2>2</case_plus>
+<case_plus x=0 y=3>3</case_plus>
+
+<case_plus x=1 y=0>Relation</case_plus>
+<case_plus x=1 y=1>"Le nombre n est pair"</case_plus>
+<case_plus x=1 y=2>"Le nombre n est inférieur au nombre m"</case_plus>
+<case_plus x=1 y=3>"L'ensemble A contient un ensemble B contenant l'ensemble C"</case_plus>
 
 </table>
 

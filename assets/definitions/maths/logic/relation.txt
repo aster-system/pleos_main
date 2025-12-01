@@ -3,5 +3,12 @@
     <content name="rigorous">une application peut se représenter sous la forme d'un ensemble de couples entre un élément de l'ensemble de départ et un élément de l'ensemble d'arrivée, pour tous les éléments de l'ensemble d'arrivée</content>
 </new_definition>
 <new_definition name="relation">
-    <content>une relation est un objet permettant d'énoncer des propositions vraies entre plusieurs éléments d'un même ensemble quelconque</content>
+    <content>une relation est un objet permettant d'énoncer des propositions entre plusieurs éléments d'un même ensemble quelconque</content>
+</new_definition>
+
+<new_definition name="arity">
+    <content name="relation">l'arité d'une relation est le nombre d'élément que la relation lie entre eux</content>
+</new_definition>
+<new_definition name="relation_binary">
+    <content>une relation est dite binaire quand elle est d'arité 2 (et donc, qu'elle lie 2 objets entre eux, comme "3 est inférieur à 7")</content>
 </new_definition>

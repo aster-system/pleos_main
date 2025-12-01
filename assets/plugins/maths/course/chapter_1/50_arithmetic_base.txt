@@ -9,6 +9,7 @@
 Souvent, quand vous demandez à quelqu'un sa définition des mathématiques, il est fort probable que sa définition ne soit pas celle des mathématiques générales... mais celle de l'arithmétique.
 En effet, <span class="important"><definition name="arithmetic"></span>.
 Bien que cette partie n'est peut être pas la plus importante en mathématiques abstraites, il me semblait important de l'ajouter au premier cours, pour directement faire le lien "logique - nombres".
+De plus, elle permet de nous donner un premier objet définie "dans le marbre" pour présenter des concepts plus complexes, qui auront besoin d'une très grande rigueur.
 </p>
 <p>
 Comme pour la théorie des ensembles, l'arithmétique a subit de nombreux remaniement pendant son histoire.
@@ -77,3 +78,45 @@ Comme tout le monde le sait, elle se note avec une croix "+".
 </p>
 <math><mi>successeur(successeur(0))</mi><mo>+</mo><mi>successeur(successeur(successeur(0)))</mi><mo>=</mo><mi>successeur(successeur(successeur(successeur(successeur(0)))))</mi></math></br>
 <math><mi>2</mi><mo>+</mo><mi>3</mi><mo>=</mo><mi>5</mi></math>
+
+<h3>Les ensembles dénombrables</h3>
+<p>
+Les ensembles dénombrables sont une catégorie d'ensembles infinis très précis.
+<span class="important"><definition name="set-countable"></span>.
+En d'autres termes (plus simple) : <span class="important">un ensemble infini est dénombrable si il est possible de lister tous ses éléments, comme on listerait les nombres entiers naturels</span>.
+Voici un exemple, où l'on montre que l'ensemble des nombres entiers naturel pair a le même cardinal que celui... des nombres entiers naturels.
+</p>
+<table>
+    <case x=0 y=0 content="N"><case x=1 y=0 content="0"><case x=2 y=0 content="1"><case x=3 y=0 content="2"><case x=4 y=0 content="3"><case x=5 y=0 content="..."><case x=6 y=0 content="n">
+    <case x=0 y=1 content="N pair"><case x=1 y=1 content="0"><case x=2 y=1 content="2"><case x=3 y=1 content="4"><case x=4 y=1 content="6"><case x=5 y=1 content="..."><case x=6 y=1 content="2 * n">
+</table>
+<p>
+Cette notion est utile, car la notion de "taille" d'un ensemble devient inutilisable pour des ensembles infini.
+Dans ce cas précis, <span class="important">la notion de cardinal d'un ensemble infini est utile : si un ensemble est dénombrable, on dit qu'il a le même cardinal que N</span>.
+Le "cardinal de N" se note avec un symbôle assez précis : la lettre de l'alphabet hébreu "aleph", avec comme indice le nombre "0".
+</p>
+<math><maleph><msub>0</msub></math>
+<p>
+Ce concept donne des résultats... assez bizarre.
+En effet, <span class="important">bien que N soit inclu dans Z, il existe une bijection de N vers Z, exprimable de manière particulièrement simple</span>.
+</p>
+<math><mi>F</mi><mo>:</mo><mi>N</mi><mto><mi>Z</mi></math></br>
+<math><mi>n</mi><mto><mi>(-1)</mi><msup>n</msup><mo>*</mo><mceil><mfrac><mi>n</mi><mi>2</mi></mfrac></mceil></math>
+<p>
+Cette bijection est assez simple : si "n" est pair, "-1 exposant n" est positif, sinon il est négatif.
+Grâce à ça, <span class="important">on peut aller dans les positifs, comme dans les négatifs</span>.
+En suite, on multiplie cette valeur par la partie entière (vers le haut) de n divisé par 2.
+Donc, pour un nombre impair puis pair consécutif, n divisé par 2 a la même valeur.
+Donc, <span class="important">on peut aller dans les positifs et leur attribuer une valeur, puis dans les négatifs et leur attribuer l'exact même valeur (opposé, bien évidemment)</span>.
+Successivement, on y attribue toutes les valeurs possibles dans Z.
+</p>
+<table>
+    <case x=0 y=0 content="N"><case x=1 y=0 content="0"><case x=2 y=0 content="1"><case x=3 y=0 content="2"><case x=4 y=0 content="3"><case x=5 y=0 content="4"><case x=6 y=0 content="..."><case x=7 y=0 content="n">
+    <case x=0 y=1 content="Z"><case x=1 y=1 content="0"><case x=2 y=1 content="-1"><case x=3 y=1 content="1"><case x=4 y=1 content="-2"><case x=5 y=1 content="2"><case x=6 y=1 content="...">
+    
+    <case_plus x=7 y=1><math><mi>(-1)</mi><msup>n</msup><mo>*</mo><mceil><mfrac><mi>n</mi><mi>2</mi></mfrac></mceil></math></case_plus>
+</table>
+<p>
+De plus, <span class="important">N et N X N sont équipotents, et donc ont le même cardinal</span>.
+Il existe une bijection assez simple à comprendre entre N et N X N : la fonction de couplage de Cantor.
+</p>

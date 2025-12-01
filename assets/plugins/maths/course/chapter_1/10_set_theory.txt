@@ -372,6 +372,55 @@ Cependant, <span class="important">il permet de résoudre beaucoup de paradoxes 
 En effet, <span class="important">c'est ce schéma d'axiome qui stipule si une classe obtenue via l'axiome de compréhension est une classe ou un ensemble</span>.
 </p>
 
+<h3>Les propriétés basiques des ensembles</h3>
+<p>
+Les ensembles peuvent posséder un grand nombre de propriétés, souvent assez basiques.
+</p>
+<p>
+La propriété la plus "évidente" d'un ensemble est son cardinal.
+<span class="important"><definition name="cardinal"></span>.
+Cette définition est infiniment plus simple dans le cas où l'ensemble est fini.
+Ici, <definition name="set-finite">.
+<span class="important"><definition name="cardinal-set_finite"></span>.
+Par exemple, le cardinal de l'ensemble {1, 3, 4, 7, 9} est 5 (il y a 5 éléments dedans).
+</p>
+
+<h3>Singletons, pairs et couples</h3>
+<p>
+Nous allons présenté quelques mots de vocabulaire assez simple, mais très utilisé.
+<span class="important"><definition name="singleton"></span>.
+En général, ces ensembles sont presque toujours exprimé en extension (comme le singletion {5}).
+Un concept assez similaire est la paire.
+<span class="important"><definition name="pair"></span>.
+Dans la théorie ZFC, son existence est garantie par l'axiome de la paire, présenté plus haut.
+</p>
+<p>
+Comme nous l'avons vu, dans un ensemble, l'ordre n'importe pas, voir n'existe pas : c'est donc le cas pour la paire.
+Cependant, il est possible de donner un ordre aux éléments d'une paire, grâce à un autre objet similaire : le couple.
+<span class="important"><definition name="pair-ordered"></span>.
+Il s'agit toujours d'un ensemble, mais défini de manière un peu différente, pour donner un ordre aux éléments.
+Jetons un petit coup d'oeil à ce qui différencie une paire d'un couple dans leur définition.
+Une paire peut simplement être écrit comme ça :
+</p>
+<math>A = {1, 2} = {2, 1}</math>
+<p>
+Ici, l'ordre n'a pas d'importance.
+Donc, nous allons devoir trouver un moyen permettant d'écrire des couples, pour rendre l'ordre important.
+Déjà, <span class="important">notons que l'écriture d'un couple se fait en remplaçant les accolades par des parenthèses</span>.
+<span class="important">Nous allons utiliser la représentation proposé par le mathématicien polonais <scientist name="kuratowski" type="quote"></span>.
+Dans cette proposition, un couple "C" formé d'un élément "x" puis d'un élément "y" se note :
+</p>
+<math>C = (x, y) = {{x}, {x, y}} = {{x, y}, {x}}</math>
+<p>
+Dans ce cas, <span class="important">le couple devient un ensemble contenant deux éléments : un singleton contenant le premier élément, et une paire contenant les deux éléments</span>.
+On peut donc distinguer le premier élément de l'autre.
+On peut écrire le couple opposé, est constater (grâce à l'axiome d'extension) qu'il n'est pas égal au couple de départ (le singleton du "premier élément" n'est pas le même) :
+</p>
+<math>C = (y, x) = {{y}, {x, y}} = {{x, y}, {y}} <mnotequal> (x, y) = {{x, y}, {x}}</math>
+<p>
+L'obtension du premier élément se fait donc par le singleton, et l'obtension du second se fait en prenant l'élément de la paire qui n'est pas dans le singleton.
+</p>
+
 
 
 <h2>Les opérations sur les ensembles</h2>
@@ -380,3 +429,16 @@ En effet, <span class="important">c'est ce schéma d'axiome qui stipule si une c
 <p>
 
 </p>
+
+<h3>Le produit cartésien</h3>
+<p>
+Le produit cartésien est une opération très importante pour pas mal d'autres objets mathématiques.
+<span class="important"><definition name="cartesian_product"></span>.
+Voici un exemple assez simple : le tableau qui suit représente le produit cartésien (cases blanches) de l'ensemble {1, 2, 3, 4, 5} (cases rouges) et de l'ensemble {1, 2, 3, 4, 5} (cases bleues).
+</p>
+
+<table load="cartesian_product"></table>
+<p>
+Voici un autre exemple : le tableau qui suit représente le produit cartésien (cases blanches) de l'ensemble {A, B, C, D} (cases rouges) et de l'ensemble {1, 2, 3, 4, 5} (cases bleues).
+</p>
+<table load="cartesian_product;set_1:A-B-C-D"></table>
