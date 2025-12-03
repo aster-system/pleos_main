@@ -127,3 +127,49 @@ Si cet ensemble ne contient que A et B, selon l'axiome d'extensionnalité, il es
 Si cet ensemble ne contient pas que A et B, selon l'axiome d'extensionnalité, il est inégal à C... mais il ne contient pas A et B.</br>
 Donc, toutes les possibilités mènent à une contradiction, E ne peut pas exister, il n'y a donc qu'un seul ensemble ne contenant que A et B : C.
 </p>
+<p>
+En procédant comme ceci, on peut prouver l'unicité d'énormément d'ensembles définis grâces aux axiomes :</br>
+- Singleton d'un objet "A"</br>
+- Réunion dans un ensemble "A"</br>
+- Ensemble des parties d'un ensemble "A"</br>
+- Union et intersection entre deux ensembles "A" et "B"</br>
+- Élément provenant de la fonction successeur
+</p>
+
+<h3>Démonstration avec les nombres entiers naturels</h3>
+<p>
+
+</p>
+<math><mforall>n, k<min>N,n = k<mequi>successeur(n) = successeur(k)<mequi>n + 1 = k + 1</math>
+<p>
+Prouvons que l'addition entre tous nombres entiers naturels donne un nombre entier naturel.
+Procédons par récurrence.
+</p>
+<p>
+Posons l'hypothèse de récurrence pour tout entier naturel m, P(m) = "pour tout nombre entier naturel n, n + m est un nombre entier naturel".</br>
+Déjà, par définition de l'addition, pour tout nombre entier naturel n, n + 0 = n.
+Comme nous l'avons dit, n est un nombre entier naturel.
+Donc, P(0) est vraie.
+</p>
+<p>
+En suite, prouvons que si P(k) avec k un nombre entier naturel quelconque, alors P(k + 1).
+Commençons par supposer que P(k) soit vrai. 
+</p>
+<math><mforall>n, k<min>N,<mexists>q<min>N, n + k = q</math>
+<p>
+Déjà, comme P(k), alors q est un nombre entier naturel.
+Par définition de N, successeur(k) = k + 1 est un nombre entier naturel.
+Comme on rajoute un "+ 1" à gauche de l'égalité, on doit en rajouter un à droite de l'égalité pour qu'elle reste juste (comme nous l'avons vu plus haut).
+Donc :
+</p>
+<math>n + k + 1 = q + 1 = successeur(q)</math>
+<p>
+Ici, par définition de N, successeur(q) un nombre entier naturel.
+Donc, si P(k) est vraie, P(k + 1) l'est aussi.
+</p>
+<p>
+Donc, P(0) est vraie et P(k) implique P(k + 1).
+Selon le principe de récurrence, P est vraie pour tout nombre entier naturel.
+Finalement :
+</p>
+<math><mforall>n, k<min>N,<mexists>a<min>N, n + k = a</math>

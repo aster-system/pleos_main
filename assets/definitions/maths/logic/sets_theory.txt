@@ -1,6 +1,7 @@
 <new_definition name="set">
-    <content name="countable">un ensemble infini est dénombrable si il est équipotent (et donc, si il existe une bijection) à l'ensemble des nombres entier naturels</content>
+    <content name="countable">un ensemble infini est dénombrable si il est équipotent (et donc, si il existe une bijection) à l'ensemble des nombres entiers naturels</content>
     <content name="finite">un ensemble est "fini" si il n'est pas possible de trouver de nouveaux éléments dans l'ensemble (que nous n'avons pas déjà trouvé) après en avoir consulter une certaine quantité</content>
+    <content name="uncountable">un ensemble infini est indénombrable si il n'existe pas de surjections sur l'ensemble des nombres entiers naturels (il existe des éléments qui ne sont pas reliables à un nombre entier naturel)</content>
 </new_definition>
 <new_definition name="set_theory">
     <content>la théorie des ensembles est une théorie mathématique développé à la fin du XIXème siècle, pour être utilisée comme socle des mathématiques</content>
@@ -41,9 +42,15 @@
     <content name="double">deux ensembles A et B sont égaux si (et seulement si) A est "inclu ou égal" à B et B est "inclu ou égal" à A</content>
     <content name="set">un ensemble est dit inclu dans un autre ensemble B lorsque que TOUS ses éléments appartiennent aussi à B</content>
 </new_definition>
+<new_definition name="intersection">
+    <content>l'intersection de deux ensembles A et B représente un nouvel ensemble C qui contient tous les éléments étant en même temps dans A et dans B</content>
+</new_definition>
 <new_definition name="power_set">
     <content>l'ensemble des parties (ou ensemble puissance) d'un ensemble E est un ensemble contenant la totalité des sous-ensembles (pas forcément ordonnés) possibles dans l'ensemble E (en incluant l'ensemble vide et E)</content>
     <content name="cardinal">le cardinal de l'ensemble des parties d'un ensemble E est 2 exposant 2</content>
+</new_definition>
+<new_definition name="union">
+    <content>l'union de deux ensembles A et B représente un nouvel ensemble C qui contient tous les éléments de A et de B (tous les éléments qui sont dans A ou dans B)</content>
 </new_definition>
 
 

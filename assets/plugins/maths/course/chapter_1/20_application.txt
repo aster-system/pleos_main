@@ -25,7 +25,7 @@ Il est très fréquent (voir même, presque tout le temps appliqué) d'appeler u
 
 <case_plus x=1 y=0>Objets pas en relation</case_plus>
 <case_plus x=1 y=1>7 inférieur à 3 (proposition fausse)</case_plus>
-<case_plus x=1 y=2>4 égal à 5 (proposition fausse)</case_plus>
+<case_plus x=1 y=2>3 plus 3 (pas une proposition)</case_plus>
 
 </table>
 

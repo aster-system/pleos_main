@@ -63,10 +63,11 @@ int main(int argc, char* argv[]) {
     //redaction = std::string();pleos::study_function(scls::string_to_formula(std::string("2x*x-4x+2")).get(), &redaction);content += std::string("<p>") + redaction + std::string("</p>");
     //redaction = std::string();pleos::study_function(scls::string_to_formula(std::string("5x*x+x+4")).get(), &redaction);content += std::string("<p>") + redaction + std::string("</p>");
     //redaction = std::string();pleos::study_function(scls::string_to_formula(std::string("(7x*x+2x-4)/(8x - 9)")).get(), &redaction);content += std::string("<p>") + redaction + std::string("</p>");
+    pleos::study_function(scls::string_to_formula(std::string("(1 + n)^4-(1 - n)^4")).get(), &redaction);content += std::string("<p>") + redaction + std::string("</p>");
     scls::Text_Style style;style.set_max_width(600);
-    pleos::string_to_image(content, style).save_png("tests/polynome.png");//*/
+    pleos::string_to_image(content, style).save_png("tests/cours.png");//*/
 
-	/*std::string content = std::string("<h1>Les polynômes</h1>");
+	std::string content = std::string("<h1>Les polynômes</h1>");
     std::string redaction = std::string();
 	std::vector<std::shared_ptr<pleos::Function_Studied>> functions_shared_ptr;
 	std::vector<pleos::Function_Studied*> functions;
@@ -78,7 +79,7 @@ int main(int argc, char* argv[]) {
     scls::Text_Style style;style.set_max_width(600);
     pleos::string_to_image(content, style).save_png("tests/polynome.png");//*/
 
-    scls::Text_Style style;style.set_font_size(24);style.set_max_width(800);
+    /*scls::Text_Style style;style.set_font_size(24);style.set_max_width(800);
     pleos::string_to_image(scls::read_file("tests/test.txt"), style).save_png("tests/cours.png");//*/
 
     return 0;

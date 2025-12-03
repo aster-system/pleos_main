@@ -67,17 +67,28 @@ Pour manipuler les nombres entiers naturels, il existe un élément de syntaxe t
 <span class="important"><definition name="operation"></span>.
 Cette définition est très générale, car souvent, la définition précise du mot "opération" est ambigüe.
 Généralement, une opération prend 1 ou 2 éléments en entrée.
-Les cas les plus célèbres sont l'addition, la multiplication, la soustraction, la division...
+Les cas les plus célèbres sont l'addition et la multiplication.
 </p>
 
 <p>
 L'opération la plus élémentaire entre deux nombres entiers naturels est l'addition.
-<span class="important"><definition name="natural_number-addition"></span>.
+D'un point de vue rigoureux, <span class="important"><definition name="natural_number-addition"></span>.
 Cette définition est une définition un peu complexe pour parler de l'addition comme nous la connaissons tous.
+<span class="important">Elle est parfaitement équivalente au fait d'imaginer "x" et "y" objets dans sa tête, de les mettre à côté, et de compter la totalité des nombres, comme appris en petite section</span>.
 Comme tout le monde le sait, elle se note avec une croix "+".
 </p>
 <math><mi>successeur(successeur(0))</mi><mo>+</mo><mi>successeur(successeur(successeur(0)))</mi><mo>=</mo><mi>successeur(successeur(successeur(successeur(successeur(0)))))</mi></math></br>
 <math><mi>2</mi><mo>+</mo><mi>3</mi><mo>=</mo><mi>5</mi></math>
+<p>
+Elle fonctionne pour tous les nombres entiers naturels existant.
+Dans le cas où l'un des deux nombres est 0, <span class="important">le résultat de l'opération donne le nombre qui n'est pas 0</span>.
+Pour tout nombre entier naturel, <span class="important">additionner deux nombres entiers naturels donnera toujours comme résultat un nombre entier naturel</span> (<a href="demo">démontré ici par récurrence</a>).
+De plus, l'ordre de réalisation d'une addition n'a pas d'importance sur le résultat final : (2 + 3) + 4 = 2 + (3 + 4) = 9.
+</p>
+
+
+
+
 
 <h3>Les ensembles dénombrables</h3>
 <p>
@@ -119,4 +130,34 @@ Successivement, on y attribue toutes les valeurs possibles dans Z.
 <p>
 De plus, <span class="important">N et N X N sont équipotents, et donc ont le même cardinal</span>.
 Il existe une bijection assez simple à comprendre entre N et N X N : la fonction de couplage de Cantor.
+</p>
+<p>
+Si ce concept existe, on peut en déduire le concept opposé : les ensembles infinis indénombrables.
+<span class="important"><definition name="set-uncountable"></span>.
+C'est le cas des nombres réels.
+Imaginez cette disposition de nombres réels, où nous les considérons dénombrables.
+</p>
+
+<table minimum_case_width=100>
+<case x=0 y=0 content="1" color="red"><case x=1 y=0 content="2"><case x=2 y=0 content="3"><case x=3 y=0 content="4"><case x=4 y=0 content="5"><case x=5 y=0 content="...">
+<case x=0 y=1 content="5"><case x=1 y=1 content="5" color="red"><case x=2 y=1 content="5"><case x=3 y=1 content="5"><case x=4 y=1 content="5"><case x=5 y=1 content="...">
+<case x=0 y=2 content="7"><case x=1 y=2 content="5"><case x=2 y=2 content="2" color="red"><case x=3 y=2 content="3"><case x=4 y=2 content="4"><case x=5 y=2 content="...">
+<case x=0 y=3 content="3"><case x=1 y=3 content="1"><case x=2 y=3 content="4"><case x=3 y=3 content="1" color="red"><case x=4 y=3 content="5"><case x=5 y=3 content="...">
+<case x=0 y=4 content="2"><case x=1 y=4 content="7"><case x=2 y=4 content="1"><case x=3 y=4 content="5"><case x=4 y=4 content="6" color="red"><case x=5 y=4 content="...">
+<case x=0 y=5 content="..."><case x=1 y=5 content="..."><case x=2 y=5 content="..."><case x=3 y=5 content="..."><case x=4 y=5 content="..."><case x=5 y=5 content="..." color="red">
+</table>
+
+<p>
+Nous pouvons trouver un nombre (en rouge), qui est un nombre réel.
+Maintenons, prenons le nombre où l'on rajoute 1 au chiffre de tous les chiffres après la virgule du nombre rouge (sans exceptions, où l'on met un "0" si l'on croise un "9").
+Ce nombre est un nombre réel, il devrait donc être quelque part dans ce tableau.
+Or, il ne peut pas être le premier nombre : sa première décimale après la virgule est différente.
+Il ne peut pas être le deuxième nombre : sa deuxième décimale après la virgule est différente.
+Il ne peut pas être le n-ième nombre : sa n-ième décimale après la virgule est différente.
+Donc, <span class="important">il existe un nombre réel qui ne peut pas être ici : l'ensemble des réels n'est pas dénombrable</span>.
+Le cardinal de l'ensemble des nombres réels est souvent noté "2 exposant aleph 0" :
+</p>
+<math><mi>2</mi><msup><mi><maleph>0</mi></msup></math>
+<p>
+En utilisant le théorème de Cantor, <span class="important">on peut prendre comme exemple l'ensemble des parties de N, qui est indénombrable</span>.
 </p>

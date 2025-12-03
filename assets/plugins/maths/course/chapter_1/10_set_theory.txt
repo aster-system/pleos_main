@@ -425,10 +425,81 @@ L'obtension du premier élément se fait donc par le singleton, et l'obtension d
 
 <h2>Les opérations sur les ensembles</h2>
 
-<h3>L'inclusion et l'intersection</h3>
+<h3>L'union et l'intersection</h3>
 <p>
-
+L'union et l'intersection sont des opérateurs permettant de réaliser une opération logique entre deux ensembles.
+En effet, <span class="important"><definition name="union"></span>.
+En terme mathématique (lisez "pour tout ensemble A et B, il existe un ensemble C tel que, pour tous les éléments x possibles, x est dans C équivaut à dire que x est dans A ou B (ou les deux)") :
 </p>
+<math><mforall>A<mforall>B,<mexists>C<mforall>x {x<min>C<mequi>x<min>A<mor>x<min>B}</math>
+<p>
+Son existence est assez facilement déductible, grâce à la combinaison de l'axiome de la paire et de l'axiome de la réunion.
+En fait, "l'union" est un opérateur, ce marquant avec une sorte de grand "U" :
+</p>
+<math>A <munion> B = C</math>
+<p>
+C'est assez simple à illustrer.
+</p>
+
+<graphic ratio_base>
+<base draw=0 width=25 height=10>
+<background_color white>
+
+<text name=type_number() font_size_in_scale=3/2 content="A =" x=-10 y=7/3></text>
+<circle name=type_number() x=-4 y=2 radius_x=4 radius_y=3/2>
+<text name=type_number() content="1" x=-6 y=2></text>
+<text name=type_number() content="5" x=-4 y=2></text>
+<text name=type_number() content="9" x=-2 y=2></text>
+<text name=type_number() font_size_in_scale=3/2 content="B =" x=2 y=7/3></text>
+<circle name=type_number() x=7 y=2 radius_x=3 radius_y=3/2>
+<text name=type_number() content="3" x=8 y=2></text>
+<text name=type_number() content="7" x=6 y=2></text>
+
+<text name=type_number() font_size_in_scale=3/2 content="C =" x=-10 y=-13/6></text>
+<circle name=type_number() x=1 y=-5/2 radius_x=9 radius_y=3/2>
+<text name=type_number() content="1" x=-5 y=-5/2></text>
+<text name=type_number() content="3" x=-2 y=-5/2></text>
+<text name=type_number() content="5" x=1 y=-5/2></text>
+<text name=type_number() content="7" x=4 y=-5/2></text>
+<text name=type_number() content="9" x=7 y=-5/2></text>
+</graphic>
+
+<p>
+L'intersection est un opérateur aussi simple à comprendre.
+<span class="important"><definition name="intersection"></span>.
+Il s'agit de l'union où vous remplacez le "ou" de la définition mathématique par un "et".
+En terme mathématique (lisez "pour tout ensemble A et B, il existe un ensemble C tel que, pour tous les éléments x possibles, x est dans C équivaut à dire que x est dans A et B") :
+</p>
+<math><mforall>A<mforall>B,<mexists>C<mforall>x {x<min>C<mequi>x<min>A<mand>x<min>B}</math>
+<p>
+Si les deux ensembles ne partagent aucun élément en commun, C vaudra l'ensemble vide.
+Son existence demande un peu plus de réflexion, mais se déduit grâce à l'axiome de l'ensemble vide.
+Cet opérateur se marque avec le même symbôle que l'union à l'envers :
+</p>
+<math>A <minter> B = C</math>
+<p>
+Il est aussi assez simple à illustrer.
+</p>
+
+<graphic ratio_base>
+<base draw=0 width=25 height=10>
+<background_color white>
+
+<text name=type_number() font_size_in_scale=3/2 content="A =" x=-10 y=7/3></text>
+<circle name=type_number() x=-4 y=2 radius_x=4 radius_y=3/2>
+<text name=type_number() content="1" x=-6 y=2></text>
+<text name=type_number() content="5" x=-4 y=2></text>
+<text name=type_number() content="9" x=-2 y=2></text>
+<text name=type_number() font_size_in_scale=3/2 content="B =" x=2 y=7/3></text>
+<circle name=type_number() x=7 y=2 radius_x=3 radius_y=3/2>
+<text name=type_number() content="9" x=8 y=2></text>
+<text name=type_number() content="1" x=6 y=2></text>
+
+<text name=type_number() font_size_in_scale=3/2 content="C =" x=-7 y=-13/6></text>
+<circle name=type_number() x=0 y=-5/2 radius_x=5 radius_y=3/2>
+<text name=type_number() content="1" x=-2 y=-5/2></text>
+<text name=type_number() content="9" x=2 y=-5/2></text>
+</graphic>
 
 <h3>Le produit cartésien</h3>
 <p>
