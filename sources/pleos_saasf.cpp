@@ -282,7 +282,7 @@ namespace pleos {
         // Index.html
         std::shared_ptr<scls::Replica_File> index = needed_replica.get()->new_replica_file("index.html", needed_pattern.get()->pattern_by_name("main"));
         index.get()->set_variable_value(std::string("main_title"), std::string("SAASF"));
-        index.get()->set_variable_value(std::string("main_description"), std::string("SAASF, pour Service d'Apprentissage d'Aster Système en Français, est une branche de l'organisation &lt;a href=\"https://aster-system.github.io/aster-system/\"&gt;Aster Système&lt;/a&gt;. Il s'agit d'un site web, regroupant pleins d'informations structurées sous forme Wiki sur divers sujets pris par, entre autre, le créateur de l'organisation."));
+        index.get()->set_variable_value(std::string("main_description"), std::string("SAASF, pour Service d'Apprentissage d'Aster Système en Français, est une branche de l'organisation &lt;a href=\"https://aster-system.github.io/aster-system/\"&gt;Aster Système&lt;/a&gt;. Il s'agit d'un site web, regroupant pleins d'informations structurées sous format cours et wiki, sur divers sujets pris par, entre autre, le créateur de l'organisation."));
         index.get()->set_variable_value(std::string("page_title"), std::string("SAASF - Hub"));
         // Explaination
         scls::Replica_File_Variable_Element* element = index.get()->variable_list(std::string("explaination_parts[]"))->new_element<scls::Replica_File_Variable_Element>();

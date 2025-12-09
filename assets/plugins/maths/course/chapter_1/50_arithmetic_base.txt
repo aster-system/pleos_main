@@ -65,7 +65,8 @@ D'un point de vue vocabulaire, il est parfaitement évident que le successeur de
 <p>
 Pour manipuler les nombres entiers naturels, il existe un élément de syntaxe très pratique : l'opération.
 <span class="important"><definition name="operation"></span>.
-Cette définition est très générale, car souvent, la définition précise du mot "opération" est ambigüe.
+Cette définition est très générale, car souvent, la définition précise du mot "opération" est ambiguë.
+Cependant, <span class="important">une opération (comme "2 + 3") n'est pas une proposition, et donc pas une relation, bien qu'il soit courant de mettre en relation une opération avec un résultat juste, ou non (comme "2 + 3 = 5", qui est une relation juste)</span>.
 Généralement, une opération prend 1 ou 2 éléments en entrée.
 Les cas les plus célèbres sont l'addition et la multiplication.
 </p>
@@ -83,7 +84,43 @@ Comme tout le monde le sait, elle se note avec une croix "+".
 Elle fonctionne pour tous les nombres entiers naturels existant.
 Dans le cas où l'un des deux nombres est 0, <span class="important">le résultat de l'opération donne le nombre qui n'est pas 0</span>.
 Pour tout nombre entier naturel, <span class="important">additionner deux nombres entiers naturels donnera toujours comme résultat un nombre entier naturel</span> (<a href="demo">démontré ici par récurrence</a>).
-De plus, l'ordre de réalisation d'une addition n'a pas d'importance sur le résultat final : (2 + 3) + 4 = 2 + (3 + 4) = 9.
+De plus, l'ordre de réalisation de plusieurs additions entre elles n'a pas d'importance sur le résultat final (<a href="demo">démontré ici par récurrence</a>) : (2 + 3) + 4 = 2 + (3 + 4) = 9 .
+</p>
+<p>
+La deuxième opération la plus élémentaire entre deux nombres entiers naturels est la multiplication.
+D'un point de vue rigoureux, <span class="important"><definition name="natural_number-multiplication"></span>.
+Comme tout le monde le sait, elle se note avec une croix légèrement tourner, comme un x : "*".
+</p>
+<math><mi>successeur(successeur(0))</mi><mo>*</mo><mi>successeur(successeur(successeur(0)))</mi><mo>=</mo><mi>successeur(successeur(successeur(successeur(successeur(successeur(0))))))</mi></math></br>
+<math><mi>2</mi><mo>*</mo><mi>3</mi><mo>=</mo><mi>6</mi></math>
+
+<p>
+De plus, nous pouvons définir deux relations d'ordres précises dans l'ensemble des nombres entiers naturels : supérieur et inférieur.
+<span class="important"><definition name="natural_number-bigger"></span>.
+Dans ce cas, "b" est dit strictement inférieur à "a".
+<span class="important">Cette définition est parfaitement équivalente au fait d'imaginer "a" et "b" objets dans sa tête, de les mettre à côté, et de dire que "a" objets représente plus d'objets que "b" objets</span>.
+La relation "strictement supérieur" se note avec un chapeau tourné vers la droite, et la relation "strictement inférieur" avec un chapeau tourné vers la gauche :
+</p>
+<math><mi>successeur(successeur(0))</mi><mgt><mi>successeur(0)</mi></math></br>
+<math><mi>successeur(0)</mi><mlt><mi>successeur(successeur(0))</mi></math></br>
+<math><mi>2</mi><mgt><mi>1</mi></math></br>
+<math><mi>1</mi><mlt><mi>2</mi></math>
+<p>
+Une autre relation similaire existe : supérieur ou égal et inférieur ou égal.
+<span class="important"><definition name="natural_number-bigger_equal"></span>.
+C'est pour cela que nous éviterons d'utiliser les termes supérieur ou inférieur seules : on risque de se tromper d'opérateur.
+La relation "supérieur ou égal" se note avec un chapeau tourné vers la droite sous ligné, et la relation "inférieur ou égal" avec un chapeau tourné vers la gauche sous ligné :
+</p>
+<math><mi>successeur(successeur(0))</mi><mgtequal><mi>successeur(0)</mi></math></br>
+<math><mi>successeur(successeur(0))</mi><mgtequal><mi>successeur(successeur(0))</mi></math></br>
+<math><mi>successeur(0)</mi><mltequal><mi>successeur(successeur(0))</mi></math></br>
+<math><mi>successeur(successeur(0))</mi><mltequal><mi>successeur(successeur(0))</mi></math></br>
+<math><mi>2</mi><mgtequal><mi>1</mi></math></br>
+<math><mi>2</mi><mgtequal><mi>2</mi></math></br>
+<math><mi>1</mi><mltequal><mi>2</mi></math></br>
+<math><mi>2</mi><mltequal><mi>2</mi></math>
+<p>
+D'ailleurs, <span class="important">l'ensemble des nombres entiers naturels est bien ordonné par ces 4 relations</span>.
 </p>
 
 

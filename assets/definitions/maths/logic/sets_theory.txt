@@ -5,6 +5,7 @@
 </new_definition>
 <new_definition name="set_theory">
     <content>la théorie des ensembles est une théorie mathématique développé à la fin du XIXème siècle, pour être utilisée comme socle des mathématiques</content>
+    <content name="choice_axiom">l'axiome du choix est un axiome permettant l'existence d'un moyen d'extraire un élément quelconque d'un ensemble, une infinité de fois (et donc, dans une infinité d'ensemble), pour construire un nouvel ensemble</content>
     <content name="class">une classe est un objet mathématique qui peut "contenir" d'autres objets (on dit que ces objets appartiennent à l'ensemble), mais qui n'est pas forcément cohérent dans la théorie des ensembles</content>
     <content name="comprehension">un ensemble est dit "défini en compréhension" quand il est défini comme tous les éléments d'un autre ensemble vérifiant une propriété spécifique</content>
     <content name="comprehension_axiom">le schéma d'axiome de compréhension est un schéma d'axiome construisant un axiome par propriété, stipulant que, pour tout ensemble "A", il existe une classe "B" dont tous les éléments sont les éléments de A rendant une propriété "P" vraie (déduite grâce aux autres axiomes)</content>
@@ -25,7 +26,7 @@
 
 <new_definition name="cardinal">
     <content>le cardinal d'un ensemble est une façon de représenter le nombre d'éléments que contient l'ensemble</content>
-    <content name="set_finite">le cardinal d'un ensemble fini est un nombre entier naturel représentant le nombre d'éléments distincts appartenant à l'ensemble</content>
+    <content name="set_finite">le cardinal d'un ensemble fini est un nombre (entier naturel) représentant le nombre d'éléments distincts appartenant à l'ensemble</content>
 </new_definition>
 <new_definition name="pair">
     <content>une paire est ensemble fini de cardinal 2 (il ne contient que deux éléments)</content>
@@ -49,8 +50,11 @@
     <content>l'ensemble des parties (ou ensemble puissance) d'un ensemble E est un ensemble contenant la totalité des sous-ensembles (pas forcément ordonnés) possibles dans l'ensemble E (en incluant l'ensemble vide et E)</content>
     <content name="cardinal">le cardinal de l'ensemble des parties d'un ensemble E est 2 exposant 2</content>
 </new_definition>
+<new_definition name="russell_paradox">
+    <content>le paradoxe de Russell est un paradoxe de la théorie des ensembles proposé par Zemerlo, où Russell crée un ensemble représentant l'ensemble des ensembles n'appartenant pas à eux-mêmes (autorisé par le schéma axiome de compréhension), mais qui ne peut ni appartenir ni ne pas appartenir à lui même (ce qui pose une contradiction)</content>
+</new_definition>
 <new_definition name="union">
-    <content>l'union de deux ensembles A et B représente un nouvel ensemble C qui contient tous les éléments de A et de B (tous les éléments qui sont dans A ou dans B)</content>
+    <content>l'union (ou réunion) de deux ensembles A et B représente un nouvel ensemble C qui contient tous les éléments de A et de B (tous les éléments qui sont dans A ou dans B)</content>
 </new_definition>
 
 

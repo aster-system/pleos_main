@@ -10,6 +10,9 @@
 
 <new_definition name="natural_number">
     <content name="addition">une addition entre deux nombres entiers naturels représente une opération entre deux nombres entiers naturels "a" et "b", donnant comme valeur la valeur partant de "a" obtenue après la répétition de "b" fois l'objet "successeur"</content>
+    <content name="bigger">un nombre entier naturel "a" est dit strictement supérieur à un nombre entier naturel "b" si nous pouvons obtenir "a" en appliquant une ou plusieurs fois la fonction successeur (en additionnant 1) à "b"</content>
+    <content name="bigger_equal">un nombre entier naturel "a" est dit supérieur ou égal à un nombre entier naturel "b" si "a" est supérieur à "b" ou si "a" est égal à "b"</content>
+    <content name="multiplication">une multiplication entre deux nombres entiers naturels représente une opération entre deux nombres entiers naturels "a" et "b", donnant comme valeur la valeur partant de "a" obtenue après la répétition de "b" fois l'opération d'addition de "a" avec lui même</content>
 </new_definition>
 
 <new_definition name="real_number">

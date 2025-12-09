@@ -13,6 +13,9 @@ Pour cela, <span class="important">nous avons besoin de la définition des math�
 En mathématiques, les informations que l'on cherche a démontrer sont formulées dans ce qui est nommé une "proposition".
 En effet, <span class="important"><definition name="proposition"></span>.
 En réalité, cette définition peut s'appliquer à d'autres mots, qui représentent le même objet (tournée de manière plus ou moins similaire) : assertion, énoncé, question...
+D'un point de vue vocabulaire, il existe pas mal de noms pour des propositions spéciales.
+Par exemple, <span class="important"><definition name="proposition-tautology"></span> (comme la proposition "si je peux m'acheter à manger, alors j'ai de l'argent", qui est vraie dans tous les contextes).
+À l'inverse, <span class="important"><definition name="proposition-contradiction"></span> (comme la proposition "si je n'ai pas accès à de l'argent, alors je peux acheter à manger", qui est fausse dans tous les contextes).
 Théoriquement, il est possible de considérer tout ce qui a une valeur de vérité comme une proposition.
 </p>
 <table>
@@ -28,7 +31,7 @@ L'exemple le plus simple de syntaxe est la langue française.
 C'est la même chose pour les propositions (et pour tout ce qui englobe la logique), ou même les nombres.
 En fait, <span class="important">il faut comprendre que la syntaxe des propositions est très proche de la syntaxe des nombres</span>.
 Par exemple, imaginez que vous travaillez sur la proposition "je suis un majeur".
-Vous pouvez la réecrire en entier partout, mais vous allez perdre du temps.
+Vous pouvez la réécrire en entier partout, mais vous allez perdre du temps.
 Or, <span class="important">il est possible "d'enfermer" cette proposition sous la forme d'une "variable", comme avec les nombres</span>.
 En d'autres termes, vous pouvez sans soucis écrire cette proposition sous la forme d'une variable "P", que vous pouvez utiliser comme si elle représenter la phrase entière :
 </p>
@@ -44,6 +47,12 @@ Ce symbôle existe : <span class="important">il s'agit du symbôle "équivaut"</
 </p>
 <math><mi>"Je suis un majeur"</mi><mequi><mi>"je remplis toutes les conditions nécessaires pour être majeur"</mi></math></br>
 <math><mi>P</mi><mequi><mi>Q</mi></math>
+<p>
+Des fois, ce concept de "variable" est utilisé sans expliciter précisément la valeur de la proposition P : c'est normal.
+En effet, <span class="important">il est possible d'utiliser des propositions quelconques (et non explicitement définies) grâce à ces variables</span>.
+Dans ce cas, <span class="important">des informations sont données sur ces propositions pour travailler avec</span>.
+Ne soyez donc pas surpris si des propositions nommées "A", "B" ou même "P" se baladent toutes seules, sans être explicitées.
+</p>
 <p>
 En parlant de syntaxe, parlons d'un sujet assez important pour comprendre les énoncés : les parenthèses.
 En fait, <span class="important">les parenthèses sont utilisées en mathématiques pour indiquer qu'une certaine partie d'une énoncé (la partie entre parenthèse) doit être traitées en priorité et en un bloc</span>.
@@ -81,7 +90,7 @@ Cependant, il existe un moyen de créer une quantité "infinie" d'axiomes, en d�
 Cependant, une question peut se poser : pourquoi n'est-il pas possible de formuler ces fameux "schéma" sous la forme d'un seul et unique axiome ?
 En fait, <span class="important">un axiome ne peut pas utiliser directement dans sa formulation l'ensemble des propositions déduites de cette théorie</span>.
 Cependant, <span class="important">certaines théories nécessitent que des axiomes puissent utiliser toutes ces autres propositions, démontrées avec les autres axiomes</span> : ce concept est là pour ça.
-Il est à noter que ce concept est extrêmemnt abstrait : nous en présenterons des exemples clairs dans quelques lignes.
+Il est à noter que ce concept est extrêmement abstrait : nous en présenterons des exemples clairs dans quelques lignes.
 </p>
 <p>
 Maintenant, faisons un rappel sur les théories en mathématiques.
@@ -90,7 +99,22 @@ Avant de parler de la théorie axiomatique la plus importante (que nous présent
 Déjà, <span class="important"><definition name="axiom_theory-consistency"></span>.
 En logique classique, si "A" est vrai, alors il ne peut pas être faux (parfaitement évident, principe nommé "tiers exclu").
 Cependant, si la théorie dit que "A" est vrai et fausse en même temps, elle est incohérente.
-En général, <span class="important">on ne croise jamais de théorie non-cohérente, car elles sont abandonnées à la premère incohérence trouvée</span>.
+C'est comme dire que quelqu'un est un majeur et un mineur en même temps : ça n'a pas de sens, et est impossible (et si une théorie / quelqu'un affirme le contraire, alors il est probablement fou).
+En général, <span class="important">on ne croise jamais de théorie non-cohérente, car elles sont abandonnées à la première incohérence trouvée</span>.
+</p>
+<p>
+En général, trouver une incohérence dans une théorie se fait en trouvant ce que l'on appelle un paradoxe.
+Selon l'Académie Française, <span class="important"><definition name="paradox"></span>.
+Cette définition s'applique à la littérature comme aux mathématiques.
+Un exemple assez connu est le paradoxe du fromage à trou : "plus on a de fromage avec des trous, plus il y a de trous".
+Or, "plus il y a de trous, moins il y a de fromages" : "plus il y a de fromage, moins il y a de fromage".
+La résolution de ce paradoxe peut se faire de pas mal de façons différentes, dont voici un exemple.
+Ici, on peut relever une contradiction : au début, on considère le vide des trous comme appartenant au fromage, alors que l'on considère le contraire au milieu du paradoxe (comme si nous ne parlions pas du même objet).
+Donc, la phrase "plus il y a de trous, moins il y a de fromages" est fausse, puis ce que les trous sont inclus dans ce que l'on appelle le fromage, la conclusion est donc aussi fausse.
+On peut tenter de ne parler que de la "partie consommable du fromage", mais la proposition devient beaucoup plus complexe, et (après étude) ne pose plus de paradoxe.
+De manière similaire, <span class="important">bien qu'une théorie puisse sembler fonctionnelle, il est parfois possible d'y trouver des incohérences</span>.
+Cependant, il faut faire attention : certains objets mathématiques sont appelés paradoxe car ils donnent des résultats contre-intuitifs, en restant parfaitement justes.
+Ces cas précis seront listés au cas par cas.
 </p>
 
 <h3>Les différentes logiques possible</h3>
@@ -384,7 +408,7 @@ Pour un prédicat "P(n)", la proposition "il existe un n tel que P(n)" s'écrit 
 </p>
 <math><mexists></mi>n</mi><mo>,</mo><mi>P(n)</mi></math>
 <p>
-Même problème que pour le quantificateur universal : il manque la mention de "nombres", que nous introduirons aussi plus tard.
+Même problème que pour le quantificateur universel : il manque la mention de "nombres", que nous introduirons aussi plus tard.
 Comme pour avant, sans cette mention, il est admis que la nature du "n" dépend du contexte de la formule.
 </p>
 <p>

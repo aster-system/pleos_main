@@ -339,8 +339,10 @@ Pour une traduction mathématique - français de la version complète (la second
 
 <p>
 Sur cet axiome s'achève notre présentation des axiomes proposés par Zemerlo en première instance.
-Cependant, <span class="important">cette théorie est insuffisante, et admet une quantité monstrueuse de paradoxes (paradoxes de Russel, paradoxe de Richard, paradoxe de Berry...)</span>.
-Historiquement, le plus connue est celui de Russel.
+Cependant, <span class="important">cette théorie est insuffisante, et admet une quantité monstrueuse de paradoxes (paradoxes de Russell, paradoxe de Richard, paradoxe de Berry...)</span>.
+Historiquement, le plus connue est celui de Russell.
+En effet, <span class="important"><definition name="russell_paradox"></span>.
+Donc, cet ensemble ne peut pas exister : le schéma d'axiome de compréhension est donc incohérent.
 Déjà, il faut savoir que, lors de la publication originale de la théorie des ensembles, des axiomes similaires à "l'axiome de compréhension" existés déjà, et presque tous admettaient que "B" est un ensemble.
 <span class="important">Ce paradoxe démontre que, si l'axiome de compréhension permet de toujours admettre que "B" est un ensemble, alors des paradoxes logiques apparaissent</span>.
 </p>
@@ -372,6 +374,67 @@ Cependant, <span class="important">il permet de résoudre beaucoup de paradoxes 
 En effet, <span class="important">c'est ce schéma d'axiome qui stipule si une classe obtenue via l'axiome de compréhension est une classe ou un ensemble</span>.
 </p>
 
+<h3>L'axiome du choix</h3>
+<p>
+L'axiome du choix est un axiome assez bizarre, car il n'est pas aussi utilisé que les autresn et parfois exclu de la théorie.
+<span class="important"><definition name="set_theory-choice_axiom"></span>.
+Pour des raisons de formalisme, l'axiome dit que tous ces ensembles doivent être défini dans un ensemble plus grand (bien que ça ne change rien au coeur du concept).
+Nuance importante : <span class="important">l'axiome permet l'existence de ce moyen, mais il n'oblige pas à l'expliciter</span>.
+En général, ce moyen est une fonction (si vous ne savez pas ce que c'est, ou que vous ne savez pas bien le définir, voyez cela comme le nom que l'on donne à ce moyen).
+Donc, ce moyen peut être parfaitement naturel, comme totalement aléatoire (et non-explicité).
+</p>
+
+<graphic ratio_base>
+<base draw=0 width=25 height=10>
+<background_color white>
+
+<circle x=-10 y=3 radius_x=2 radius_y=3/2>
+<text x=-11 y=3 font_size_in_scale=1>1</text>
+<text x=-10 y=3 font_size_in_scale=1>5</text>
+<text x=-9 y=3 font_size_in_scale=1>9</text>
+<arrow color=black x_1=-10 y_1=3/2 x_2=-10 y_2=-3/2>
+<text x=-10 y=-3 font_size_in_scale=1>5</text>
+
+<circle x=-6 y=3 radius_x=2 radius_y=3/2>
+<text x=-7 y=3 font_size_in_scale=1>2</text>
+<text x=-6 y=3 font_size_in_scale=1>3</text>
+<text x=-5 y=3 font_size_in_scale=1>4</text>
+<arrow color=black x_1=-6 y_1=3/2 x_2=-6 y_2=-3/2>
+<text x=-6 y=-3 font_size_in_scale=1>3</text>
+
+<circle x=-2 y=3 radius_x=2 radius_y=3/2>
+<text x=-3 y=3 font_size_in_scale=1>7</text>
+<text x=-2 y=3 font_size_in_scale=1>8</text>
+<text x=-1 y=3 font_size_in_scale=1>9</text>
+<arrow color=black x_1=-2 y_1=3/2 x_2=-2 y_2=-3/2>
+<text x=-2 y=-3 font_size_in_scale=1>8</text>
+
+<circle x=2 y=3 radius_x=2 radius_y=3/2>
+<text x=1 y=3 font_size_in_scale=1>5</text>
+<text x=2 y=3 font_size_in_scale=1>7</text>
+<text x=3 y=3 font_size_in_scale=1>9</text>
+<arrow color=black x_1=2 y_1=3/2 x_2=2 y_2=-3/2>
+<text x=2 y=-3 font_size_in_scale=1>7</text>
+
+<circle x=6 y=3 radius_x=2 radius_y=3/2>
+<text x=5 y=3 font_size_in_scale=1>4</text>
+<text x=6 y=3 font_size_in_scale=1>6</text>
+<text x=7 y=3 font_size_in_scale=1>8</text>
+<arrow color=black x_1=6 y_1=3/2 x_2=6 y_2=-3/2>
+<text x=6 y=-3 font_size_in_scale=1>6</text>
+
+<text x=10 y=0 font_size_in_scale=1>...</text>
+
+</graphic>
+
+<p>
+L'idée de cet axiome est de pouvoir utiliser cette fameuse "fonction", dans des cas divers et variés, et dans des ensembles infinis.
+Son énoncé mathématique est... assez complexe.
+Pour une traduction mathématique - français, lisez "pour tout ensemble X non vide, il existe une fonction f allant de X vers la réunion de tous les ensembles A appartenant à X (comme permis par l'axiome de la réunion), transformant les éléments A de X (des ensembles) en un élément quelconque de A".
+</p>
+
+<math><mforall>X[X<mnotequal><mempty_set><mimp><mexists>f:X<mto><munion>X<mforall>A<min>X(f(A)<min>A)]</math>
+
 <h3>Les propriétés basiques des ensembles</h3>
 <p>
 Les ensembles peuvent posséder un grand nombre de propriétés, souvent assez basiques.
@@ -383,6 +446,7 @@ Cette définition est infiniment plus simple dans le cas où l'ensemble est fini
 Ici, <definition name="set-finite">.
 <span class="important"><definition name="cardinal-set_finite"></span>.
 Par exemple, le cardinal de l'ensemble {1, 3, 4, 7, 9} est 5 (il y a 5 éléments dedans).
+La définition rigoureuse (avec des symbôles mathématiques complexes et tout le bazard) est particulièrement complexe, et nous ne pouvons pas l'étudier pour l'instant (dans le cas des ensembles finis, nous nous contenterons de compter les éléments dans l'ensemble).
 </p>
 
 <h3>Singletons, pairs et couples</h3>
@@ -433,6 +497,7 @@ En terme mathématique (lisez "pour tout ensemble A et B, il existe un ensemble 
 </p>
 <math><mforall>A<mforall>B,<mexists>C<mforall>x {x<min>C<mequi>x<min>A<mor>x<min>B}</math>
 <p>
+Les deux appellations (union et réunion) sont possibles, et désignent l'exact même chose.
 Son existence est assez facilement déductible, grâce à la combinaison de l'axiome de la paire et de l'axiome de la réunion.
 En fait, "l'union" est un opérateur, ce marquant avec une sorte de grand "U" :
 </p>
@@ -513,3 +578,10 @@ Voici un exemple assez simple : le tableau qui suit représente le produit cart�
 Voici un autre exemple : le tableau qui suit représente le produit cartésien (cases blanches) de l'ensemble {A, B, C, D} (cases rouges) et de l'ensemble {1, 2, 3, 4, 5} (cases bleues).
 </p>
 <table load="cartesian_product;set_1:A-B-C-D"></table>
+<p>
+La définition mathématique pure de cet opérateur est assez simple :
+</p>
+<math><mforall>E<mforall>F, <mexists>C, C = E X F <mequi> <mforall>x, y, {(x, y) <min> C <mequi> x <min> E <mand> y <min> F}</math>
+<p>
+Quelque soit les ensembles de départ, les utiliser via cet opérateur donne un nouvel ensemble fonctionnel (<a href="demo">démontré ici</a>), et heuresement, car il serait difficile de s'imaginer qu'il existe des ensembles pour lesquelles cela ne marche pas.
+</p>

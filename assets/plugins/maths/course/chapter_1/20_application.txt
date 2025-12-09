@@ -57,7 +57,9 @@ Cependant, avec un peu de réflexion, on peut facilement énumérer des relation
 <p>
 En mathématique, <span class="important"><definition name="application"></span>.
 Ce premier ensemble se nomme généralement "ensemble de départ", et le deuxième ensemble se nomme "ensemble d'arrivée".
+Une chose très importante : tous les ensembles de l'ensemble de départ doivent être liés à exactement un élément de l'ensemble d'arrivée.
 D'un point de vue rigoureux, <span class="important"><definition name="application-rigorous"></span>.
+Comme tous ces couples sont des couple contenant un élément de l'ensemble de départ et un élément de l'ensemble d'arrivée, il s'agit d'un sous-ensemble du produit cartésien de l'ensemble de départ et d'arrivée (contenant, lui, tous les couples, même ceux qui ne sont pas concernés par l'application).
 Une façon très utilisé pour représenter ce concept est celui de diagramme sagittal, où l'on peut lier graphiquement les éléments un à un entre les deux ensembles.
 Voici un exemple en bas :
 </p>

@@ -78,7 +78,13 @@ Démontrons qu'un ensemble ne peut pas se contenir lui même.
 <p>
 Supposons qu'un ensemble E se contienne lui même.
 Dans ce cas, selon l'axiome de l'ensemble des parties, il existe un ensemble des parties de E.
+</p>
+<math><mforall><mi>E</mi><mexists><mi>P</mi><mforall><mi>B</mi><mo>(</mo><mi>B</mi><min><mi>P</mi><mequi><mi>B</mi><mincluded><mi>E</mi><mo>)</mo></math>
+<p>
 Selon les propriétés de l'ensemble des parties, l'ensemble des parties de E doit obligatoirement contenir le singleton "{E}", inclu dans "E".
+</p>
+<math>{E} <mincluded> E <mimp> {E} <min> P(E)</math>
+<p>
 Or, il n'existe pas d'élément de ce singleton tel que l'intersection de ce singleton et d'un de ces éléments donne l'ensemble vide (la seule intersection possible est "E inter {E}", qui est égal à "E", puisque "E" appartient à "E").
 Or, ceci est obligé par l'axiome de fondation :
 </p>
@@ -101,7 +107,7 @@ Maintenant, construisons un ensemble assez complexe : l'ensemble contenant les �
 Ce nouvel ensemble "F" est lui aussi découpable en un ensemble des parties, contenant l'ensemble de tous les sous-ensembles possibles de F.
 Ce même ensemble contient le sous-ensemble de F composé de tous les ensembles permettant de passer de E à... E.
 </p>
-<math>><mo>{</mo><mi>E</mi><msub>0</msub><mo>,</mo><mi>E</mi><msub>1</msub><mo>,</mo><mi>E</mi><msub>2</msub><mo>,</mo><mi>...</mi><mo>,</mo><mi>E</mi><msub>n</msub><mo>}</mo></math>
+<math><mo>{</mo><mi>E</mi><msub>0</msub><mo>,</mo><mi>E</mi><msub>1</msub><mo>,</mo><mi>E</mi><msub>2</msub><mo>,</mo><mi>...</mi><mo>,</mo><mi>E</mi><msub>n</msub><mo>}</mo></math>
 <p>
 Or, il n'existe pas d'élément de cet ensemble tel que l'intersection de cet ensemble et d'un de ces éléments donne l'ensemble vide (les seules intersection possible sont "E(k) inter {E}" avec k inférieur à n, qui sont égal à "E(k + 1)" si k est strictement inférieur à "n", et à... "E(0)" sinon). 
 Donc, cet ensemble ne peux pas exister dans ce contexte.
@@ -136,11 +142,45 @@ En procédant comme ceci, on peut prouver l'unicité d'énormément d'ensembles 
 - Élément provenant de la fonction successeur
 </p>
 
-<h3>Démonstration avec les nombres entiers naturels</h3>
+<h3>Résultats liés au produit cartésien</h3>
 <p>
-
+Prouvons que tout ensemble E et F donne un produit cartésien valide, grâce aux axiomes.
 </p>
+<p>
+Créons un nouvel ensemble A, étant l'union de E et F :
+</p>
+<math>A = E <munion> F</math>
+<p>
+On peut obtenir l'ensemble des parties de A (dont l'existence est garanti par l'axiome de l'ensemble des parties), contenant ainsi toutes les paires possibles entre un élément de E et un élément de F.
+Il contient aussi tous les singletons des éléments de E et F.
+</p>
+<math><mforall>x,y, [{x <min> E <mand> y <min> F} <mimp> {x, y} <min> P(A)]</math></br>
+<math><mforall>x [x <min> A <mimp> {x} <min> P(A)]</math>
+<p>
+De manière à ne pas se casser la tête, on peut définir l'ensemble des parties de... l'ensemble des parties de A, contenant toutes les paires définis comme les couples de Kuratowski entre tous x dans E et y dans F.
+</p>
+<math><mforall>x,y, [{x, y} <min> P(A) <mand> {x} <min> P(A) <mimp> {{x}, {x, y}} <min> P(P(A))]</math></br>
+<math><mforall>x,y, {{x}, {x, y}} = {{x, y}, {x}} = (x, y)</math>
+<p>
+Au final, tous les couples de Kuratowski possibles des éléments de E et F sont définis dans P(P(A)).
+Finalement, en utilisant le schéma d'axiome de séparation, on peut trouver un moyen d'extraire dans P(P(A)) tous les couples qui nous intéressent, formant le produit cartésien de E et F (ici noter C).
+</p>
+<math>C = {(x, y) <min> P(P(A)), x <min> E <mand> y <min> F} <mequi> C = E X F</math>
+<p>
+Cet ensemble existe donc pour tout ensemble E et F.
+</p>
+
+
+
+<h2>Les nombres entiers naturels</h2>
+
+<h3>L'opération addition</h3>
+<p>
+Trucs à démontrer :
+</p>
+<math>a + successeur(b) = successeur(a + b)</math></br>
 <math><mforall>n, k<min>N,n = k<mequi>successeur(n) = successeur(k)<mequi>n + 1 = k + 1</math>
+
 <p>
 Prouvons que l'addition entre tous nombres entiers naturels donne un nombre entier naturel.
 Procédons par récurrence.
@@ -159,12 +199,13 @@ Commençons par supposer que P(k) soit vrai.
 <p>
 Déjà, comme P(k), alors q est un nombre entier naturel.
 Par définition de N, successeur(k) = k + 1 est un nombre entier naturel.
-Comme on rajoute un "+ 1" à gauche de l'égalité, on doit en rajouter un à droite de l'égalité pour qu'elle reste juste (comme nous l'avons vu plus haut).
+Comme on rajoute un "+ 1" à gauche de l'égalité, on doit en rajouter un à droite de l'égalité pour qu'elle reste juste (comme nous l'avons vu plus haut), et en faire une équivalence.
 Donc :
 </p>
-<math>n + k + 1 = q + 1 = successeur(q)</math>
+<math>n + k = q <mequi> n + k + 1 = q + 1 = successeur(q)</math>
 <p>
 Ici, par définition de N, successeur(q) un nombre entier naturel.
+Nous reconnaissons donc la forme de P(k + 1).
 Donc, si P(k) est vraie, P(k + 1) l'est aussi.
 </p>
 <p>
@@ -173,3 +214,50 @@ Selon le principe de récurrence, P est vraie pour tout nombre entier naturel.
 Finalement :
 </p>
 <math><mforall>n, k<min>N,<mexists>a<min>N, n + k = a</math>
+
+<p>
+Démontrons que, pour tout nombre entier naturel a, b et c : (a + b) + c = a + (b + c) (et donc, que les parenthèses n'ont pas d'importance).
+Procédons par récurrence.
+</p>
+<p>
+Posons l'hypothèse de récurrence pour tout entier naturel c, P(c) = "pour tout nombre entier naturel a et b, (a + b) + c = a + (b + c)".</br>
+Déjà, par définition de l'addition, si c = 0, alors :
+</p>
+<math>(a + b) + c = a + b</math></br>
+<math>a + (b + c) = a + (b) = a + b</math>
+<p>
+Donc, P(0) est vraie.
+Maintenant, cherchons P(1).
+</p>
+<math>(a + b) + c = (a + b) + 1 = successeur(a + b)</math></br>
+<math>a + (b + c) = a + (b + 1) = a + successeur(b) = successeur(a + b)</math>
+<p>
+Donc, P(1) est vraie.
+</p>
+<p>
+En suite, prouvons que si P(k) avec k un nombre entier naturel quelconque supérieur ou égal à 1, alors P(k + 1).
+Commençons par supposer que P(k) soit vrai. 
+</p>
+<math><mforall>a, b<min>N, (a + b) + k = a + (b + k)</math>
+<p>
+Appliquons notre équivalence vue plus haut (en rajoutant des parenthèses) :
+</p>
+<math><mforall>a, b<min>N, (a + b) + k = a + (b + k) <mequi> ((a + b) + k) + 1 = (a + (b + k)) + 1</math>
+<p>
+Dans le cas de nos deux formes appliquons l'hypothèse de récurrence :
+</p>
+<math><mforall>a, b<min>N, ((a + b) + k) + 1 = (a + (b + k)) + 1 = (a + b) + (k + 1) = a + ((b + k) + 1)</math>
+<p>
+Réappliquons-là à droite :
+</p>
+<math><mforall>a, b<min>N, (a + b) + (k + 1) = a + ((b + k) + 1) = a + (b + (k + 1))</math>
+<p>
+Nous reconnaissons donc la forme de P(k + 1).
+Donc, si P(k) est vraie, P(k + 1) l'est aussi.
+</p>
+<p>
+Donc, P(0) et P(1) est vraie et P(k) pour tout cas supérieur ou égal à 1 implique P(k + 1).
+Selon le principe de récurrence, P est vraie pour tout nombre entier naturel.
+Finalement :
+</p>
+<math><mforall>a, b, c<min>N, (a + b) + c = a + (b + c)</math>
