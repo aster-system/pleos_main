@@ -19,6 +19,7 @@
 </new_definition>
 <new_definition name="syntax">
     <content>une syntaxe représente les règles qui doivent suivre des mots (ou n'importe quel objet qu'on peut "écrire") rendant une phrase correcte</content>
+    <content name="formula">une formule syntaxique représente un objet "écrit" quelconque obéissant à une syntaxe</content>
 </new_definition>
 <new_definition name="verity_table">
     <content>une table de vérité est un moyen de représenter les valeurs de vérités une proposition composée selon chaque valeur possibles de chacune de ses propositions composantes</content>

@@ -1,0 +1,33 @@
+<h1>Chapitre 1 - démonstrations</h1>
+
+
+
+<h2>Introduction à l'algèbre</h2>
+
+<h3>Propriétés basiques des lois de compositions</h3>
+
+<h4>2.0.0.0</h4>
+<p>
+Démontrons que, si une loi commutative "." permet l'existence un élément neutre dans un ensemble E, alors il est unique.
+</p>
+<p>
+Rappelons la définition d'un élément neutre "e" :
+</p>
+<math><mforall>a <min> E, a . e = a</math>
+<p>Définissons un élément "f" obéissant aussi à cette propriété :</p>
+<math><mforall>a <min> E, a . f = a</math>
+<p>Donc :</p>
+<math>e . f = e</math></br><math> f . e = f</math>
+<p>Par commutativité :</p>
+<math>e . f = f . e = e = f</math>
+<p>Tout élément obéissant à cette propriété est "e" : il est donc unique.</p>
+
+<h3>Les structures algébriques de base</h3>
+
+<h4>2.0.1.0</h4>
+<p>
+Démontrons que la structure (N, +) est un magma (et donc, une structure algébrique).
+Pour cela, nous avons besoin que d'une seule preuve : "+" est stable sur "N".
+Or, nous l'avons démontré, <a href="demo-1#1_2_1_0">dans le chapitre 1, proposition 1.2.1.0</a>.
+Donc, (N, +) est bien une structure algébrique.
+</p>

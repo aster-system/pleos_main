@@ -37,7 +37,7 @@ Grâce à la théorie des ensembles ZFC, <span class="important">on peut axiomat
 Pour cela, nous allons utiliser l'axiome de l'infini.
 Pou rappel, <definition name="set_theory-infinity_axiom">.
 Donc, cet ensemble contient "successeur(0)", "successeur(successeur(0))"...
-En fait, <span class="important">cet ensemble se comporte exactement comme l'ensemble des nombres entiers naturels</span>.
+En fait, <span class="important">cet ensemble se comporte exactement comme l'ensemble des nombres entiers naturels, noté "N"</span>.
 En effet, on peut définir "successeur(0) = 1", "successeur(successeur(0)) = 2"...
 D'un point de vue vocabulaire, il est parfaitement évident que le successeur de 0 est 1, que celui de 1 est 2, que celui de 56 est 57...
 </p>
@@ -63,6 +63,11 @@ D'un point de vue vocabulaire, il est parfaitement évident que le successeur de
 </graphic>
 
 <p>
+De plus, on peut trouver que ce fameux "successeur" est une application bijective de "N" vers "N sans 0" (<a href="demo">démontré ici par récurrence</a>).
+Dans ce cas, <span class="important">il existe une application réciproque à "successeur" allant de "N sans 0" vers "N", que nous nommerons "prédécesseur"</span>.
+</p>
+
+<p>
 Pour manipuler les nombres entiers naturels, il existe un élément de syntaxe très pratique : l'opération.
 <span class="important"><definition name="operation"></span>.
 Cette définition est très générale, car souvent, la définition précise du mot "opération" est ambiguë.
@@ -74,25 +79,99 @@ Les cas les plus célèbres sont l'addition et la multiplication.
 <p>
 L'opération la plus élémentaire entre deux nombres entiers naturels est l'addition.
 D'un point de vue rigoureux, <span class="important"><definition name="natural_number-addition"></span>.
+Comme tout le monde le sait, elle se note avec une croix "+".
+On peut la définir (itérativement) comme ceci :
+</p>
+<math><mforall> n <min> N, n + 0 = n</math></br>
+<math><mforall> n, a <min> N, n + successeur(a) = successeur(n + a)</math></br>
+<p>
 Cette définition est une définition un peu complexe pour parler de l'addition comme nous la connaissons tous.
 <span class="important">Elle est parfaitement équivalente au fait d'imaginer "x" et "y" objets dans sa tête, de les mettre à côté, et de compter la totalité des nombres, comme appris en petite section</span>.
-Comme tout le monde le sait, elle se note avec une croix "+".
 </p>
-<math><mi>successeur(successeur(0))</mi><mo>+</mo><mi>successeur(successeur(successeur(0)))</mi><mo>=</mo><mi>successeur(successeur(successeur(successeur(successeur(0)))))</mi></math></br>
+<math>s = <mi>successeur(successeur(0))</mi><mo>+</mo><mi>successeur(successeur(successeur(0)))</mi></math></br>
+<math>s = <mi>successeur(successeur(successeur(successeur(successeur(0)))))</mi></math></br>
 <math><mi>2</mi><mo>+</mo><mi>3</mi><mo>=</mo><mi>5</mi></math>
 <p>
-Elle fonctionne pour tous les nombres entiers naturels existant.
-Dans le cas où l'un des deux nombres est 0, <span class="important">le résultat de l'opération donne le nombre qui n'est pas 0</span>.
 Pour tout nombre entier naturel, <span class="important">additionner deux nombres entiers naturels donnera toujours comme résultat un nombre entier naturel</span> (<a href="demo">démontré ici par récurrence</a>).
-De plus, l'ordre de réalisation de plusieurs additions entre elles n'a pas d'importance sur le résultat final (<a href="demo">démontré ici par récurrence</a>) : (2 + 3) + 4 = 2 + (3 + 4) = 9 .
+Dans le cas où l'un des deux nombres est 0, <span class="important">le résultat de l'opération donne le nombre qui n'est pas 0 (ou 0 si les deux nombres sont 0)</span>.
+De plus, l'ordre de réalisation de plusieurs additions entre elles n'a pas d'importance sur le résultat final (<a href="demo">démontré ici par récurrence</a>) : (2 + 3) + 4 = 2 + (3 + 4) = 9.
 </p>
+
+<p>
+Dans les mathématiques communes, il est souvent admis que l'addition admet une opération "opposée" : la soustraction.
+D'un point de vue rigoureux, <span class="important"><definition name="natural_number-soustraction"></span>.
+Comme tout le monde le sait, elle se note avec une croix "-".
+Sa définition la plus générale utilise justement l'addition.
+</p>
+<math><mforall>a, b <min> N, <mexists> c, a - b = c <mequi> a = b + c</math>
+<p>
+Attention : comme nous le verrons après, "c" n'est pas forcément un nombre entier naturel ici.
+La logique derrière cette définition permet de prouver quelques propriétés assez pratique.
+Par exemple, "a - a = c" équivaut à dire que "a + c = a", et donc que "c" = 0 : <span class="important">soustraire un nombre à lui même donne 0</span>.
+De plus, elle a la propriété d'annuler l'opération d'addition : <span class="important">si vous additionner "b" à un nombre "a", puis que vous lui soustrayez "b", vous ré-obtenez "a"</span>.
+</p>
+<math><mforall>a, b <min> N, <mexists> c, a + b - b = c <mequi> a = c</math>
+<p>
+Comme pour l'addition, cette définition est une définition un peu complexe pour parler de la soustraction comme nous la connaissons tous.
+<span class="important">Elle est parfaitement équivalente au fait d'imaginer "x" objets dans sa tête, et de retirer "y" objets aux "x" objets, comme appris en petite section</span>.
+Nous pouvons aussi utiliser cette comparaison pour comprendre la définition générale : imaginez vos "x" objets, si "y" objets représentent moins d'objets que "x" objets, alors vous pouvez imaginer un nombre "c" d'objets qui, quand on les ajoute à "y" objets, donnent "x" objets.
+</p>
+<math>s = <mi>successeur(successeur(successeur(0)))</mi><mo>-</mo><mi>successeur(successeur(0))</mi></math></br>
+<math>s = <mi>successeur(0)</mi></math></br>
+<math><mi>3</mi><mo>-</mo><mi>2</mi><mo>=</mo><mi>1</mi><mequi><mi>3</mi><mo>=</mo><mi>2</mi><mo>+</mo><mi>1</mi></math>
+<p>
+Elle pose cependant un problème : que se passe t-il si l'on tente de réaliser l'opération "2 - 3" ?
+Nous devons appliquer trois fois l'application "prédécesseur" sur 2, soit "successeur(successeur(0))".
+Si nous l'appliquons une fois, nous obtenons "successeur(0)", et si nous l'appliquons une autre fois, nous obtenons "0".
+Or, il nous faut encore l'utiliser une fois, ce qui donne "prédécesseur(0)".
+Or, <span class="important">l'application prédécesseur ne permet d'obtenir des nombres entiers naturels que si l'antécédent est un nombre entier naturel qui n'est pas 0</span>.
+En d'autres termes, <span class="important">"prédécesseur(0)" n'est pas un nombre entier naturel, et donc "2 - 3" non plus</span>.
+<span class="important">Certaines soustractions donnent des résultats qui ne sont pas des nombres entiers naturels</span>.
+</p>
+
 <p>
 La deuxième opération la plus élémentaire entre deux nombres entiers naturels est la multiplication.
 D'un point de vue rigoureux, <span class="important"><definition name="natural_number-multiplication"></span>.
 Comme tout le monde le sait, elle se note avec une croix légèrement tourner, comme un x : "*".
 </p>
-<math><mi>successeur(successeur(0))</mi><mo>*</mo><mi>successeur(successeur(successeur(0)))</mi><mo>=</mo><mi>successeur(successeur(successeur(successeur(successeur(successeur(0))))))</mi></math></br>
+<math><mforall> n <min> N, n * 0 = 0</math></br>
+<math><mforall> n <min> N, n * 1 = n</math></br>
+<math><mforall> n, a <min> N, n * successeur(a) = (n * a) + n</math></br>
+<p>
+Comme l'addition, cette définition est une définition un peu complexe pour parler de la multiplication comme nous la connaissons tous.
+</p>
+<math>s = <mi>successeur(successeur(0))</mi><mo>*</mo><mi>successeur(successeur(successeur(0)))</mi></math></br>
+<math>s = <mi>successeur(successeur(successeur(successeur(successeur(successeur(0))))))</mi></math></br>
 <math><mi>2</mi><mo>*</mo><mi>3</mi><mo>=</mo><mi>6</mi></math>
+<p>
+Pour tout nombre entier naturel, <span class="important">multiplier deux nombres entiers naturels donnera toujours comme résultat un nombre entier naturel</span> (<a href="demo">démontré ici par récurrence</a>).
+Par définition, pour tout nombre entier naturel, le multiplier avec 0 donne 0.
+Toujours par définition, dans le cas où l'un des deux nombres est 1 (et ou aucun des nombres n'est 0), <span class="important">le résultat de l'opération donne le nombre qui n'est pas 1 (ou 1 si les deux nombres sont 1)</span>.
+Finalement, l'ordre de réalisation de plusieurs multiplications entre elles n'a pas d'importance sur le résultat final (<a href="demo">démontré ici par récurrence</a>) : (2 * 3) * 4 = 2 * (3 * 4) = 24.
+</p>
+<p>
+Une propriété assez intéressante de l'opération multiplication (qui permet en plus de prouver que l'ordre de réalisation de plusieurs multiplications entre elles n'a pas d'importance) est la distributivité.
+<span class="important"><definition name="algebra_distributivity"></span>.
+En effet, <span class="important">la multiplication est distributive par rapport à l'addition dans les nombres entiers naturels</span> (<a href="demo">démontré ici par récurrence</a>).
+</p>
+<math>2 * (3 + 4) = 2 * 3 + 2 * 4 = 14</math>
+<p>
+Si il existe une opération qui "annule" l'effet de l'addition (la soustraction), il existe aussi une opération qui annule l'effet de la multiplication : la division.
+D'un point de vue rigoureux, <span class="important"><definition name="natural_number-division"></span>.
+Généralement, elle se note avec une barre un peu tournée "/".
+Sa définition la plus générale utilise justement la multiplication.
+</p>
+<math><mforall>a<min> N, <mforall> b <min> N*, <mexists> c, a / b = c <mequi> a = c * b</math>
+<p>
+Il est à noter que le diviseur ne peut pas être nul, pour une raison assez simple : si "b = 0", il n'existe pas de nombre "b" tel que "c * b" ne soit pas égal à 0, et la division est impossible.
+D'un point de vue notationnel, il est aussi possible de la noter en notant le dividende et le diviseur sur la même colonne, en mettant le dividende au dessus du diviseur, et de de séparer les deux par une barre.
+</p>
+<math><mforall>a<min> N, <mforall> b <min> N*, <mexists> c, a / b = c <mequi> <mfrac><mi>a</mi><mi>b</mi></mfrac> = c</math>
+<p>
+Comme pour la soustraction, "c" n'est pas forcément un nombre entier naturel.
+Cependant, <span class="important">si "b" est un nombre entier naturel (et que la multiplication existe et fonctionne), "b" est appelé un diviseur de "a" ("a" est dit divisible par "b" et "a" est un multiple de "b")</span>.
+Dans tous les cas, il est assez simple de voir que 1 est un diviseur de tous les nombres entiers naturel existant, et que chaque nombre entier naturel est divisible par lui même.
+</p>
 
 <p>
 De plus, nous pouvons définir deux relations d'ordres précises dans l'ensemble des nombres entiers naturels : supérieur et inférieur.
@@ -121,6 +200,134 @@ La relation "supérieur ou égal" se note avec un chapeau tourné vers la droite
 <math><mi>2</mi><mltequal><mi>2</mi></math>
 <p>
 D'ailleurs, <span class="important">l'ensemble des nombres entiers naturels est bien ordonné par ces 4 relations</span>.
+On peut aussi facilement prouvé (et déduire) que, si deux nombres entiers naturels "a" et "b" vérifient la relation "a est supérieur ou égal à b", alors "a - b" est un nombre entier naturel (<a href="demo">démontré ici</a>).
+</p>
+
+<h3>Axiomatiquement définir les nombres entiers relatifs</h3>
+<p>
+Comme nous l'avons vue, si l'opération "2 - 3" est possible chez les nombres entiers naturels, alors l'objet "prédécesseur(0)" doit être un nombre entier naturel, ce qui n'est pas le cas.
+Cependant, il existe un ensemble de nombres similaire à N qui permet cette propriété : les nombres entiers relatifs.
+<span class="important"><definition name="relative_number"></span>.
+Ces nombres négatifs sont notés exactement comme des nombres entiers naturels, avec le symbole "-" juste avant.
+À l'inverse, les nombres supérieurs à 0 sont nommés nombres positifs, et peuvent se noter avec le symbole "+", ou plus communément sans symbole.
+<span class="important">Ces symboles "+" et "-" utilisées avec un nombre entier relatif sont nommés le signe du nombre entier relatif</span>.
+</p>
+<math>-2, -1, 0, 1, 2</math>
+<p>
+La seule ambiguïté ici est le signe de "0" : il peut théoriquement représenter les deux signes, mais pour des raisons de facilité, on va dire que "+0 = -00", et nous allons privilégier le signe "+".
+D'ailleurs, il est possible de définir ce signe sous la forme d'une application allant de l'ensemble des nombres entiers naturels à {"+", "-"}, généralement notée "sign".
+Pour bien comprendre cette définition, <span class="important">il ne faut plus voir les nombres comme des quantités, mais comme des "distances" à 0</span>.
+Ici, <span class="important">la distance entre deux nombres entiers relatifs "a" et "b" représente le nombre de déplacement nécessaire de "a" pour atteindre "b"</span>.
+Avec cette façon de voir les choses, nous pouvons construire l'ensemble des nombres entiers relatifs comme une ligne.
+Sur cette ligne, on place un point "0" au milieu, les nombres positifs à droite, et les nombres entiers négatifs à gauche.
+Bien évidemment, ils sont placés à une distance de zéro correspondant à leur nombre.
+</p>
+<graphic width=300 ratio_base><background_color white><base draw=0 width=12 height=5><number_line></graphic>
+<p>
+D'ailleurs, <span class="important">cette "distance" à 0 d'un nombre entier relatif est nommée la valeur absolue de ce nombre entier relatif</span>.
+Il est possible d'écrire cette valeur absolue sous la forme d'une application de l'ensemble des nombres entiers relatifs vers l'ensemble des nombres entiers naturel, généralement noté "abs".
+En effet, chaque nombre entier relatif ne possède qu'une unique distance à 0 : chaque antécédent à bien une image.
+Dans ce contexte là, l'opération soustraction de nombres entiers relatifs prend tout son sens.
+En effet, <span class="important">soustraire deux nombres entiers relatifs "a" et "b" revient à trouver la distance entre eux, positive si nous devons aller vers la gauche, et négative si on doit aller vers la droite</span>.
+Cette définition est équivalente à dire que la soustraction nous permet de bouger d'un certain nombre, pour aller à "b" en partant de "a" (positif si nous allons vers la gauche, et négatif si nous allons vers la droite).
+À l'inverse, additionner deux nombres entiers relatifs "c" et "d" revient à aller à "c", et de bouger de "d" unités vers la droite si le nombre est positif, et de "d" unités à gauche si le nombre est négatif.
+</p>
+<p>
+La définition "logique" standard des nombres entiers relatifs (que nous utiliserons pour les démonstrations) est un peu complexe.
+L'idée est <span class="important">de définir les nombres entiers relatifs comme un couple de nombres entiers naturels, dont la soustraction du plus grand au plus petit donne la valeur absolue du nombre, et où l'ordre (plus grand en premier ou en deuxième) donne le signe du nombre</span>.
+Pour être précis, si le plus grand est en premier, alors le nombre est positif, sinon il est négatif.
+En fait, <span class="important">il s'agit de manière intuitive du nombre résultant de la soustraction du second terme au premier terme</span>.
+</p>
+<math>a = (4, 2) <mequi> a = 4 - 2 <mequi> a + 2 = 4 <mequi> a = 2</math></br>
+<math>b = (1, 4) <mequi> b = 1 - 4 <mequi> a + 4 = 1 <mequi> b = -3</math></br>
+<math>c = (e, f) <mequi> c = e - f <mequi> c + f = e</math>
+<p>
+Dans ce cas, nous pouvons définir l'ensemble des nombres entiers relatifs (noté "Z", en référence au mot "zahlen" représentant le mot "nombres" en allemand) comme le produit cartésien de N et N.
+Le problème : <span class="important">les nombres peuvent être représenté par plusieurs couples</span>.
+Par exemple, 2 peut être (4, 2), mais aussi (2, 0).
+Pour éviter ce problème, <span class="important">nous devons indiquer que les couples donnant le même nombres sont parfaitement égaux, grâce à une relation d'équivalence</span>.
+Pour faire notre relation d'équivalence, nous allons utiliser une propriété déduite la définition de la soustraction dans les nombres entiers naturels (qui sont les constituants de notre couple) :
+</p>
+<math><mforall>a, b <min> N, <mexists> e, a - b = e <mequi> a = b + e</math>
+<p>
+L'idée est donc de comparer deux soustractions, et d'ajuster la formule pour en obtenir une propriété parfaitement définie (avec de simples additions de nombres entiers relatifs).
+Ici, nous allons noter cette relation d'équivalence "~", et nous pouvons proprement définir l'ensemble des nombres entiers relatifs comme le produit cartésien de N et N quotienté par "~".
+</p>
+<math>(a, b) ~ (c, d) <mequi> a - b = c - d <mequi> a + d = b + c</math></br>
+<math>Z = (N * N)/~</math>
+<p>
+Grâce à cette relation d'équivalence, <span class="important">il est très facile de voir que tous les nombres de la forme "(a, 0)" (et donc, de la classe d'équivalence "[(a, 0)]") représentent en fait le nombre entier naturel "a"</span>.
+En réalité, nous n'allons utiliser cette définition que pour quelques propriétés ultra basiques de "Z", mais jamais ailleurs.
+D'ailleurs, cette définition nous permet de démontrer que l'application "abs" est bien une application (pour rappel, le résultat d'une addition / soustraction est unique).
+Donc, on peut aussi y définir les exactes mêmes opérations que dans "N".
+Par exemple, <span class="important">on peut y définir l'opération successeur : comme le successeur de "a" est "successeur(a)" (ou a + 1), le successeur de "(a, 0)" est donc "(successeur(a), 0)" (ou "(a + 1, 0)")</span>.
+Prolongeons cette application dans tous "Z" : <span class="important">pour tous nombres "a" de "Z" écrit sous la forme "(b, c)" avec "b" et "c" des nombres entiers naturels, le successeur de "a" est "(successeur(b), c)"</span>.
+</p>
+<p>
+Comme pour l'ensemble "N", nous pouvons facilement définir l'addition et la multiplication dans "Z".
+L'addition entre deux nombres entiers relatifs "a" et "b" est extrêmement simple à définir.
+</p>
+<math><mforall>a, b <min> Z, <mexists>c, d, e, f <min> N, a = (c, d), b = (e, f), a + b = (c + e, d + f)</math>
+<p>
+Ici, les crochets nous permettent d'utiliser les classes d'équivalences, pour généraliser le calcul.
+En fait, <span class="important">il ne nous suffit qu'à additionner dans "N" les composants de "a" et "b"</span>.
+On peut vérifier ce calcul sans problème, avec un exemple concret.
+</p>
+<math>a = -5 = (5, 10), b = 2 = (6, 4)</math></br>
+<math>a + b = (11, 14) = -3</math>
+<p>
+Tous ceux qui connaissent les nombres entiers naturels peuvent le constater : ce calcul est parfaitement juste.
+L'avantage, c'est que <span class="important">les propriétés de l'addition dans "Z" sont très faciles à déduire grâce aux propriétés de l'addition dans "N"</span>.
+On peut donc le vérifier sans problèmes : toute addition dans "Z" donne un élément de "Z", l'ordre de réalisations de plusieurs additions n'importe pas, et l'ordre des opérandes non plus (<a href="demo">démontré ici</a>).
+</p>
+<p>
+De plus, comme pour l'application "successeur", <span class="important">on peut aussi définir "prédécesseur" dans "Z"</span>.
+Selon la définition vue plus haut, comme le prédécesseur d'un nombre entier naturel "a" est "prédécesseur(a)", le prédécesseur de "[(a, 0)]" devrait être "[(prédécesseur(a), 0)]".
+Cette définition est inutile (elle ne change pas le problème), mais permet d'ouvrir la voie à une autre définition bien plus intéressante.
+En effet, si un nombre entier relatif est défini sous la forme "(b, c)" avec "b" et "c" des nombres entiers naturels, et que seul la différence entre "b" et "c" changent le nombre, on peut changer cette différence sans sortir de la zone de définition d'aucune des applications.
+Effectivement, <span class="important">la valeur "(prédécesseur(b), c)" est parfaitement équivalente à la valeur "(b, successeur(c))"</span>.
+On peut le démontrer en maniant correctement les identités conséquences de la définition d'un nombre entier relatif.
+</p>
+<math><mforall> d <min> Z, d = (prédécesseur(b), c) <mequi> d + c = prédécesseur(b) <mequi> successeur(d + c) = b <mequi> c + successeur(d) = b <mequi> c = (b, successeur(c)) </math>
+<p>
+Tout cela permet quelque chose de très utile : <span class="important">on peut définir la soustraction dans "Z" directement via l'addition</span>.
+Pour rappel, la soustraction est définie grâce à l'application "prédécesseur", qui ne prend des valeurs que dans les nombres entiers naturels strictement supérieurs à 0.
+Or, nous pouvons nous débrouiller pour redéfinir la soustraction de manière plus utilisable.
+Imagineons 2 nombres entiers relatifs "a" et "b" (toujours de la forme "a = (c, d)" et "b = (e, f)") que nous souhaitons soustraire.
+Selon la définition de la soustraction, <span class="important">nous devons utiliser l'opération prédécesseur "e - f" fois sur "c" pour obtenir la valeur adéquat</span>.
+Cependant, comme nous l'avons démontré, <span class="important">cela est parfaitement équivalent à utiliser l'opération successeur "e - f" fois sur "d"</span>.
+Par définition d'un nombre entier relatif, <span class="important">cela consiste à additionner "e" à "d" et "f" à "c"</span>.
+Hors, un problème subsite : comment ne pas avoir de problèmes avec "e - f" ?
+L'explication est assez simple : l'idée de la soustraction est de définir une distance entre deux nombres, ici "e" et "f", que l'on peut obtenir dans tous les cas.
+Dans ce cas, si "e" est plus grand que "f", alors il n'y a aucun problème à appliquer la dernière définition de la soustraction vue, mais dans le cas inverse, il faut innover.
+En fait, <span class="important">si "e" est inférieur à "f", nous devons utiliser l'opération successeur "f - e" fois sur "c"</span>.
+Par définition d'un nombre entier relatif, <span class="important">cela consiste à additionner "e" à "d" et "f" à "c"</span>.
+Ici, une définition semble se tracer : <span class="important">soustraire "a" à "b" revient à obtenir le nombre entier relatif quand on inverse "e" et "f" dans "b", et d'additionner ce nombre à "a"</span>.
+</p>
+<math>(4, 9) - (5, 2) = (4, 9) + (2, 5) = (6, 14) = -8</math>
+<p>
+D'un point de vue vocabulaire, <span class="important">le nombre entier relatif obtenu quand on inverse "e" et "f" dans "b" est nommé "opposé de b", généralement noté "-b"</span>.
+Selon notre définition des nombres entiers relatifs, on peut assez facilement constater que l'opposé de "b" à l'exact même valeur absolue que "b", avec juste le signe qui change.
+On peut aussi vérifier une autre identité : <span class="important">additionner "b" est "opposé de b" donne "(0, 0)</span>.
+</p>
+<math>(e, f) + (f, e) = (e + f, f + e) <min> [(0, 0)] = 0</math>
+
+<p>
+Maintenant, définissons la multiplication dans "Z".
+Intuitivement, elle est plus simple à définir, mais un peu plus longue.
+En fait, <span class="important">la multiplication entre deux nombres entiers relatifs donne comme résultat un nombre entier relatif de valeur absolue représentant la multiplication de celles des deux opérandes</span>.
+Pour le signe, nous utilisons une règle assez connue, nommé la règle des signes.
+<span class="important">Le signe de la multiplication entre deux nombres entiers relatifs est positif si les deux opérandes ont le même signe, et négatif sinon</span>.
+</p>
+<math><mforall>a, b <min> Z, abs(a * b = abs(a) * abs(b)), sign(a * b) = {"+" si sign(a) = sign(b), "-" sinon}</math></br>
+<math>(-3) * (5) = (-15)</math></br>
+<math>(3) * (-2) = (-6)</math></br>
+<math>(3) * (8) = (24)</math></br>
+<math>(-3) * (-4) = (12)</math></br>
+<p>
+À part la règle des signes, rien ne change vraiment de la multiplication dans "N".
+Comme pour dans "N", <span class="important">l'ordre de réalisation de la multiplication n'importe pas, et l'ordre des opérandes autour de la multiplication non plus</span> (<a href="demo">démontré ici</a>).
+De plus, on peut facilement déduire que multiplier un nombre entier relatif par "-1" revient à obtenir son opposé.
 </p>
 
 

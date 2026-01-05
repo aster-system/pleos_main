@@ -1,3 +1,25 @@
+<new_definition name="algebra">
+    <content name="classic">l'algèbre classique est la discipline mathématique qui étudie le concept brut de calcul algébrique</content>
+    <content name="general">l'algèbre générale est la discipline mathématique qui étudie les différentes formes d'algèbres classiques possibles, sous forme de structures algébriques</content>
+</new_definition>
+<new_definition name="algebric_structure">
+    <content>une structure algébrique est la mise en commun d'un ensemble et d'une (ou plusieurs) opération de calcul (nommées "lois de composition internes"), pour les étudier de manière conjointe</content>
+</new_definition>
+<new_definition name="calculus">
+    <content>un calcul est une suite d'actions qui permettent de passer d'une forme quelconque à une autre</content>
+    <content name="algebric">un calcul est dit algébrique si il permet de travailler avec des indéterminés</content>
+    <content name="numeric">un calcul est dit numérique quand il ne permet de travailler que sur des nombres connus</content>
+</new_definition>
+<new_definition name="composition_law">
+    <content>une loi de composition est une application entre tous les éléments de deux ensembles "A" et "B", et vers des éléments de "A"</content>
+    <content name="internal">une loi de composition est dite interne lorsque les deux éléments de départs sont les mêmes (et donc, les mêmes que l'ensemble d'arrivée aussi)</content>
+    <content name="rigorous">une loi de composition est une application entre tous les éléments du produit cartésien de deux ensembles "A" et "B" (ou du produit cartésien de "B" et "A"), et vers des éléments de "A"</content>
+</new_definition>
+<new_definition name="operation">
+    <content>une opération est une action où, grâce à une (ou plusieurs) valeur de départ (nommée opérande), on y définit une égalité représentant une (ou plusieurs) valeurs traitées via les valeurs de départs</content>
+    <content name="stability">une opération entre plusieurs objets est dite stable (ou close) en un ensemble E si, pour tous les éléments possibles au départ, l'arrivée est toujours dans E</content>
+</new_definition>
+
 <new_definition name="algebra_root">
     <content>la racine n-ième d'un nombre "m" représente le nombre qui vaut m si il est mit à l'exposant n</content>
 </new_definition>
@@ -5,14 +27,26 @@
     <content>une racine de l'unité est un nombre complexe tel que son carré vaut 1 (en effet, dans l'algèbre des complexes, d'autres nombres que 1 ont un carré valant 1)</content>
 </new_definition>
 
-<new_definition name="algebra_center">
-    <content>le centre d'une structure algébrique représentent l'ensemble des éléments de cette structure commutants avec tous les autres éléments<content>
-</new_definition>
-<new_definition name="algebra_composition_law">
-    <content>une loi de composition est une relation entre tous les éléments d'ensembles "A" et "B" (les opérandes), vers des éléments de "A" (les résultats)</content>
+<new_definition name="algebra_associativity">
+    <content>une loi de composition interne est dite associative si l'ordre de réalisation de plusieurs opérations ne modifie pas le résultat<content>
 </new_definition>
 <new_definition name="algebra_distributivity">
-    <content>la distributivé d'une opération "*" sur "+" représente le fait que l'opération "*" peut être distribuée sur plusieurs éléments soumis à l'opération "+" : a * (b + c) = a * b + a * c</content>
+    <content>une opération "." est dite distributive par rapport à une opération "~" lorsqu'il est possible de transformer l'opération "a . (b ~ c)" en l'opération "a . b ~ a . c"</content>
+</new_definition>
+<new_definition name="algebra_neutral_element">
+    <content>un élément est dit neutre par une loi de composition si l'utilisation de la loi sur un autre élément "a" et cet élément donne "a"</content>
+</new_definition>
+
+<new_definition name="algebra_group">
+    <content>un groupe est un magma dont la loi de composition interne et associative, admet un neutre, et est inversible</content>
+    <content name="abelian">un groupe est dit abélien si sa loi de composition est commutative</content>
+</new_definition>
+<new_definition name="algebra_magma">
+    <content>un magma est une structure algébrique représentant un ensemble quelconque et une seule loi de composition interne sur cette ensemble, sans plus de détail</content>
+</new_definition>
+
+<new_definition name="algebra_center">
+    <content>le centre d'une structure algébrique représentent l'ensemble des éléments de cette structure commutant avec tous les autres éléments</content>
 </new_definition>
 <new_definition name="algebra_field">
     <content>un corps est un anneau (unitaire) où chaque élement (non-num) possède un inverse par la multiplication (tel que la multiplication de cet élément et de l'élément de base donne l'élement neutre)</content>

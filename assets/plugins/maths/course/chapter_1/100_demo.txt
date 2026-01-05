@@ -68,52 +68,74 @@ Or, on a une double implication, doit on en déduit une équivalence :
 </p>
 <math><mforall><mi>A</mi><mforall><mi>B</mi><mo>[</mo><mi>A</mi><mincluded><mi>B</mi><mand><mi>B</mi><mincluded><mi>A</mi><mequi><mforall><mi>x</mi><mo>(</mo><mi>x</mi><min><mi>A</mi><mequi><mi>x</mi><min><mi>B</mi><mo>)</mo><mo>]</mo></math>
 <p>
-On reconnait l'axiome d'extensionnalité : un ensemble A et un ensemble B sont égaux si (et seulement si) A est "inclu ou égal" à B et B est "inclu ou égal" à A.
+On reconnaît l'axiome d'extensionnalité : un ensemble A et un ensemble B sont égaux si (et seulement si) A est "inclu ou égal" à B et B est "inclu ou égal" à A.
 </p>
 
 <h3>Résultats obtenus grâce à l'axiome de fondation</h3>
 <p>
-Démontrons qu'un ensemble ne peut pas se contenir lui même.
+Démontrons qu'un ensemble ne peut pas appartenir lui même.
 </p>
 <p>
-Supposons qu'un ensemble E se contienne lui même.
-Dans ce cas, selon l'axiome de l'ensemble des parties, il existe un ensemble des parties de E.
+Prenons un ensemble quelconque bien fondé (qui respecte donc les axiomes).
+Il existe donc obligatoire le singleton (bien fondé) ne contenant que cet ensemble.
 </p>
-<math><mforall><mi>E</mi><mexists><mi>P</mi><mforall><mi>B</mi><mo>(</mo><mi>B</mi><min><mi>P</mi><mequi><mi>B</mi><mincluded><mi>E</mi><mo>)</mo></math>
+<math><mforall><mi>E</mi>, <mexists><mi>F</mi><mforall><mi>y</mi> [y <min> F <mequi> y = E]</math></br>
+<math>F = {E}</math>
 <p>
-Selon les propriétés de l'ensemble des parties, l'ensemble des parties de E doit obligatoirement contenir le singleton "{E}", inclu dans "E".
+Selon l'axiome de fondation, il existe un élément de ce singleton tel que l'intersection entre cet élément et le singleton donne l'ensemble vide.
+Or, il n'a qu'un seul élément : l'ensemble de départ, qui doit donc obligatoirement respecter cet axiome.
 </p>
-<math>{E} <mincluded> E <mimp> {E} <min> P(E)</math>
+<math><mforall><mi>x</mi><mo>[</mo><mi>x</mi><mnotequal><mempty_set><mimp><mexists><mi>y</mi><mo>(</mo><mi>y</mi><min><mi>x</mi><mand><mi>y</mi><minter><mi>x</mi><mequal><mempty_set><mo>)</mo><mo>]</mo></math></br>
+<math><mimp> <mexists> y <min> {E}, y <minter> {E} = <mempty_set></math></br>
+<math><mimp> E <minter> {E} = <mempty_set></math>
 <p>
-Or, il n'existe pas d'élément de ce singleton tel que l'intersection de ce singleton et d'un de ces éléments donne l'ensemble vide (la seule intersection possible est "E inter {E}", qui est égal à "E", puisque "E" appartient à "E").
-Or, ceci est obligé par l'axiome de fondation :
+Par définition de l'intersection, cela implique qu'il n'y a aucun élément dans "E" qui ne soit aussi dans "{E}".
+Cela implique qu'il n'y a pas l'élément "E" dans "E".
 </p>
-<math><mforall><mi>x</mi><mo>[</mo><mi>x</mi><mnotequal><mempty_set><mimp><mexists><mi>y</mi><mo>(</mo><mi>y</mi><min><mi>x</mi><mand><mi>y</mi><minter><mi>x</mi><mequal><mempty_set><mo>)</mo><mo>]</mo></math>
+<math><mimp> <mno> [<mexists> z <min> E, z <min> {E}]</math></br>
+<math><mimp> <mno> [<mexists> z <min> E, z = E]</math></br>
+<math><mimp> <mno> [E <min> E]</math>
 <p>
-Donc, ce singleton ne peux pas exister dans ce contexte.
-Donc, l'ensemble des parties de "E" ne peut pas le contenir.
-Or, si il ne le contient pas, il n'est plus l'ensemble des parties de "E", donc un ensemble des parties de "E" ne posant aucun problème ne peut pas exister.
-Donc, si E ne peut pas avoir d'ensemble des parties, il ne peut pas exister.
+Au final, un ensemble bien fondé ne peut pas appartenir à lui même.
 </p>
+
 <p>
 Démontrons maintenant qu'un ensemble E ne peut pas contenir un ensemble contenant E, où dont un de ces éléments contient E (ou dont un des ces éléments contient E...).
-Cette démonstration est bien plus compliquée que la précédente.
+Cette démonstration est très similaire à la précédente.
+En gros, cherchons que la proposition suivante est impossible :
 </p>
+<math>E <min> E<msub>1</msub><mo>,</mo> E<msub>1</msub> <min> E<msub>2</msub><mo>,</mo> E<msub>2</msub> <min> E<msub>3</msub><mo>,</mo> ...<mo>,</mo> E<msub>n - 1</msub> <min> E<msub>n</msub><mo>,</mo> E<msub>n</msub> <min> E</math>
 <p>
-Supposons qu'un ensemble E contienne lui même un ensemble contenant E, où dont un de ces éléments contienne E (ou dont un des ces éléments contienne E...).
-Dans ce cas, selon l'axiome de la réunion, il est possible de découper E pour en obtenir un nouvel ensemble "B(0)" ne contenant que les éléments des éléments de E.
-De manière itérative, si les éléments de E contiennent des ensembles, alors on réitère l'opération pour créer l'ensemble "B(n)" jusqu'à tomber sur l'ensemble "E".
-Maintenant, construisons un ensemble assez complexe : l'ensemble contenant les éléments de tous les "B(n)" unis pour "n" entier naturel, que nous nommons "F".
-Ce nouvel ensemble "F" est lui aussi découpable en un ensemble des parties, contenant l'ensemble de tous les sous-ensembles possibles de F.
-Ce même ensemble contient le sous-ensemble de F composé de tous les ensembles permettant de passer de E à... E.
+Prenons plusieurs ensembles quelconque bien fondés (qui respecte donc les axiomes), que nous nommerons :
+</p>
+<math>E<mo>,</mo>E<msub>1</msub><mo>,</mo>E<msub>2</msub><mo>,</mo>...<mo>,</mo>E<msub>n</msub></math>
+<p>
+Disons que tous les ensembles "k - 1" (pour k strictement plus grand que 0) appartiennent aux ensemble "k" (on efface donc la dernière appartenance de la proposition "problématique", ou "E" appartient à "E de n").
+</p>
+<math>E <min> E<msub>1</msub><mo>,</mo> E<msub>1</msub> <min> E<msub>2</msub><mo>,</mo> E<msub>2</msub> <min> E<msub>3</msub><mo>,</mo> ...<mo>,</mo> E<msub>n - 1</msub> <min> E<msub>n</msub><mo></math>
+<p>
+Il existe donc obligatoire l'ensemble contenant tous ces ensembles.
 </p>
 <math><mo>{</mo><mi>E</mi><msub>0</msub><mo>,</mo><mi>E</mi><msub>1</msub><mo>,</mo><mi>E</mi><msub>2</msub><mo>,</mo><mi>...</mi><mo>,</mo><mi>E</mi><msub>n</msub><mo>}</mo></math>
 <p>
-Or, il n'existe pas d'élément de cet ensemble tel que l'intersection de cet ensemble et d'un de ces éléments donne l'ensemble vide (les seules intersection possible sont "E(k) inter {E}" avec k inférieur à n, qui sont égal à "E(k + 1)" si k est strictement inférieur à "n", et à... "E(0)" sinon). 
-Donc, cet ensemble ne peux pas exister dans ce contexte.
-Donc, l'ensemble des parties de "F" ne peut pas le contenir.
-Or, si il ne le contient pas, il n'est plus l'ensemble des parties de "F", donc un ensemble des parties de "F" ne posant aucun problème ne peut pas exister.
-Donc, si "F" ne peut pas avoir d'ensemble des parties, il ne peut pas exister, et quelque chose qui a mené à sa construction ne fonctionne pas : E contenant lui même un ensemble contenant E, où dont un de ces éléments contienne E (ou dont un des ces éléments contient E...).
+Selon l'axiome de fondation, il existe un élément de cet ensemble tel que l'intersection entre cet élément et de l'ensemble donne l'ensemble vide.
+Or, l'intersection de "E de 1" par cet ensemble donne le singleton "E", l'intersection de "E de 2" par cet ensemble donne le singleton "E de 1"...
+L'intersection de "E de n" par cet ensemble donne le singleton "E de n - 1".
+Donc, la seule intersection qui peut donner l'élément vide est celle avec E.
+</p>
+<math><mforall><mi>x</mi><mo>[</mo><mi>x</mi><mnotequal><mempty_set><mimp><mexists><mi>y</mi><mo>(</mo><mi>y</mi><min><mi>x</mi><mand><mi>y</mi><minter><mi>x</mi><mequal><mempty_set><mo>)</mo><mo>]</mo></math></br>
+<math><mimp> <mforall> k <min> {1, 2, ..., n}, <mi>E</mi> <msub>k</msub> <minter> F = {<mi>E</mi><msub>k - 1</msub>}</math></br>
+<math><mimp> E <minter> F = <mempty_set></math>
+<p>
+<p>
+Par définition de l'intersection, cela implique qu'il n'y a aucun élément dans "E" qui ne soit aussi dans "F".
+Cela implique qu'il n'y a pas l'élément "E de n" (ou "E de 1", "E de 2"... jusqu'à "E de n - 1") dans "E".
+</p>
+<math><mimp> <mno> [<mexists> z <min> <mi>E</mi>, z <min> F]</math></br>
+<math><mimp> <mno> [<mexists> z <min> <mi>E</mi>, z = <mi>E</mi><msub>n</msub> <mor> z = <mi>E</mi><msub>1</msub> <mor>...]</math></br>
+<math><mimp> <mno> [<mi>E</mi><msub>n</msub> <min> E]</math>
+<p>
+Au final, des ensembles bien fondés ne peut pas s'appartenir à eux-même de manière cyclique.
 </p>
 
 <h3>Unicité des ensembles admis par les axiomes</h3>
@@ -172,23 +194,133 @@ Cet ensemble existe donc pour tout ensemble E et F.
 
 
 
+<h2>Relations et applications</h2>
+
+<h3>Les relations d'équivalences</h3>
+<h4>1.1.0.0</h4>
+<p>
+Démontrons que dire que "deux objets ont une propriété f similaire" revient à dire que ces deux objets sont reliés par une relation d'équivalence.
+Nous travaillerons dans un ensemble "E", avec une relation quelconque "~", représentant deux objets liés par cette propriété.
+Commenceons par énoncer une propriété "f" quelconque (que nous n'expliciterons pas), représentant un élément d'un autre ensemble quelconque "F".
+</p>
+<math><mforall> x <min> E, <mexists>a <min> F, f(x) = a</math>
+<p>
+Ici, nous pouvons expliciter la relation "~".
+</p>
+<math><mforall>x, y <min> E, x ~ y <mequi> f(x) = f(y)</math>
+<p>
+Par transitivité de l'égalité, nous pouvons prouver que "~" est aussi transitive.
+</p>
+<math><mforall>x, y, z <min> E, [x ~ y <mand> y ~ z <mequi> f(x) = f(y) <mand> f(y) = f(z)] <mimp> [f(x) = f(z) <mequi> x ~ z]</math>
+<p>
+Par symétrie de l'égalité, nous pouvons prouver que "~" est aussi symétrique.
+</p>
+<math><mforall>x, y <min> E, [x ~ y <mequi> f(x) = f(y)] <mimp> [f(y) = f(x) <mequi> y ~ x]</math>
+<p>
+Par réflexitivé de l'égalité, nous pouvons prouver que "~" est aussi réflexive.
+</p>
+<math><mforall>x, y <min> E, x ~ x <mequi> f(x) = f(x)</math>
+<p>
+Donc, "~" est réflexive, symétrique et transitive : c'est une relation d'équivalence.
+</p>
+
+
+
 <h2>Les nombres entiers naturels</h2>
 
-<h3>L'opération addition</h3>
-<p>
-Trucs à démontrer :
-</p>
-<math>a + successeur(b) = successeur(a + b)</math></br>
-<math><mforall>n, k<min>N,n = k<mequi>successeur(n) = successeur(k)<mequi>n + 1 = k + 1</math>
+<h3 id="successor">Étude de l'objet "successeur"</h3>
 
+<h4>1.2.0.0</h4>
 <p>
-Prouvons que l'addition entre tous nombres entiers naturels donne un nombre entier naturel.
+Prouvons que l'objet "successeur" défini par l'axiome de l'infini est une application bijective de "N" vers "N sans 0".
+</p>
+<math><mforall>n<min>N*, <mexists>! k <min> N, n = successeur(k)</math>
+<p>
+Par définition pure, chaque élément de l'ensemble des nombres entiers naturels possède un seul élément étant son successeur.
+Donc, cet objet est bien une application.
+</p>
+<math><mforall>m<min>N,<mexists>! n <min>N, n = successeur(m)</math></br>
+<math><mforall>m [m <min> N <mimp> <mexists>! n <min>N, n = successeur(m)</math>]</math>
+<p>
+En suite, par définition, pour tout nombre entier naturel qui n'est pas 0, le nombre s'écrit sous la forme d'un successeur d'un autre nombre.
+</p>
+<math><mforall>n<min>N*,<mexists> k <min>N, n = successeur(k)</math>
+<p>
+Par définition de la surjectivité, cette application est donc surjective.
+</p>
+<p>
+De plus, par définition de l'objet "successeur", on sait que :
+</p>
+<math><mforall>m, n<min>N*, successeur(m) = successeur(n) <mequi> n = m</math>
+<p>
+Par définition de l'injectivité, cette application est donc injective.
+</p>
+<p>
+Cette application est injective et surjective : selon la définition de la bijectivité, elle est bijective.
+</p>
+<p>
+Donc, tout nombre venant de "N sans 0" admet un unique antécédent par la fonction successeur.
+L'application "successeur" est une application bijective de "N" vers "N sans 0".
+</p>
+<math><mforall>n<min>N*, <mexists>! k <min> N, n = successeur(k)</math>
+
+<h4>1.2.0.1</h4>
+<p>
+Prouvons que, pour tout nombre entier naturel "n", "n + successeur(0) = successeur(0) + n".
+Procédons par récurrence.
+</p>
+<p>
+Posons l'hypothèse de récurrence pour tout entier naturel "n", P(n) = "n + successeur(0) = successeur(0) + n".</br>
+Déjà, par définition de l'addition :
+</p>
+<math>0 + successeur(0) = successeur(0) = 1</math></br>
+<math>successeur(0) + 0 = successeur(0) = 1</math>
+<p>
+Donc, P(0) est vraie.
+</p>
+<p>
+En suite, prouvons que si P(k) avec k un nombre entier naturel quelconque, alors P(k + 1).
+Commençons par supposer que P(k) soit vrai. 
+</p>
+<math><mforall>k<min>N,k + successeur(0) = successeur(0) + k</math>
+<p>
+Appliquons notre équivalence vue plus haut (avec le théorème 1.2.0.0) :
+</p>
+<math>k + successeur(0) = successeur(0) + k <mequi> successeur(k + successeur(0)) = successeur(successeur(0) + k)</math>
+<p>
+Selon la définition de l'addition :
+</p>
+<math>successeur(k + successeur(0)) = k + successeur(successeur(0)) = k + successeur(successeur(0) + 0) = k + successeur(0) + successeur(0) = successeur(k) + successeur(0)</math>
+<p>
+De plus, toujours selon la définition de l'addition :
+</p>
+<math>successeur(successeur(0) + k) = successeur(0) + successeur(k)</math>
+<p>
+Donc :
+</p>
+<math>successeur(k) + successeur(0) = successeur(0) + successeur(k)</math>
+<p>
+Nous reconnaissons donc la forme de P(k + 1).
+Donc, si P(k) est vraie, P(k + 1) l'est aussi.
+</p>
+<p>
+Donc, P(0) est vraie et P(k) implique P(k + 1).
+Selon le principe de récurrence, P est vraie pour tout nombre entier naturel.
+Finalement :
+</p>
+<math><mforall>n<min>N,n + successeur(0) = successeur(0) + n</math>
+
+<h3 id="addition">L'opération addition</h3>
+
+<h4>1.2.1.0</h4>
+<p>
+Prouvons que l'addition entre tous nombres entiers naturels donne un nombre entier naturel (et donc que l'addition est stable sur l'ensemble des nombres entiers naturels, selon le chapitre 2).
 Procédons par récurrence.
 </p>
 <p>
 Posons l'hypothèse de récurrence pour tout entier naturel m, P(m) = "pour tout nombre entier naturel n, n + m est un nombre entier naturel".</br>
-Déjà, par définition de l'addition, pour tout nombre entier naturel n, n + 0 = n.
-Comme nous l'avons dit, n est un nombre entier naturel.
+Déjà, par définition de l'addition, pour tout nombre entier naturel "n", "n + 0 = n".
+Comme nous l'avons dit, "n" est un nombre entier naturel.
 Donc, P(0) est vraie.
 </p>
 <p>
@@ -199,10 +331,10 @@ Commençons par supposer que P(k) soit vrai.
 <p>
 Déjà, comme P(k), alors q est un nombre entier naturel.
 Par définition de N, successeur(k) = k + 1 est un nombre entier naturel.
-Comme on rajoute un "+ 1" à gauche de l'égalité, on doit en rajouter un à droite de l'égalité pour qu'elle reste juste (comme nous l'avons vu plus haut), et en faire une équivalence.
+Comme on rajoute un "+ 1" (et donc, que l'on applique la fonction successeur) à gauche de l'égalité, on doit en rajouter un à droite de l'égalité pour en obtenir une équivalence (comme nous l'avons vu plus haut, dans le théorème 1.2.0.0).
 Donc :
 </p>
-<math>n + k = q <mequi> n + k + 1 = q + 1 = successeur(q)</math>
+<math>n + k = q <mequi> successeur(n + k) = n + successeur(k) = successeur(q) = n + k + 1 = q + 1</math>
 <p>
 Ici, par définition de N, successeur(q) un nombre entier naturel.
 Nous reconnaissons donc la forme de P(k + 1).
@@ -215,8 +347,9 @@ Finalement :
 </p>
 <math><mforall>n, k<min>N,<mexists>a<min>N, n + k = a</math>
 
+<h4>1.2.1.1</h4>
 <p>
-Démontrons que, pour tout nombre entier naturel a, b et c : (a + b) + c = a + (b + c) (et donc, que les parenthèses n'ont pas d'importance).
+Démontrons que, pour tout nombre entier naturel a, b et c : (a + b) + c = a + (b + c) (et donc, que les parenthèses / ordre des additions n'ont pas d'importance, ou que l'addition est associative dans l'ensemble des nombres entiers naturels selon le chapitre 2).
 Procédons par récurrence.
 </p>
 <p>
@@ -240,7 +373,7 @@ Commençons par supposer que P(k) soit vrai.
 </p>
 <math><mforall>a, b<min>N, (a + b) + k = a + (b + k)</math>
 <p>
-Appliquons notre équivalence vue plus haut (en rajoutant des parenthèses) :
+Appliquons notre équivalence vue plus haut (avec le théorème 1.2.0.0, en rajoutant des parenthèses) :
 </p>
 <math><mforall>a, b<min>N, (a + b) + k = a + (b + k) <mequi> ((a + b) + k) + 1 = (a + (b + k)) + 1</math>
 <p>
@@ -261,3 +394,492 @@ Selon le principe de récurrence, P est vraie pour tout nombre entier naturel.
 Finalement :
 </p>
 <math><mforall>a, b, c<min>N, (a + b) + c = a + (b + c)</math>
+
+<h4>1.2.1.2</h4>
+<p>
+Démontrons que, pour tout nombre entier naturel "a" et "b" : "a + b = b + a" (et donc, que l'addition est commutative dans l'ensemble des nombres entiers naturels selon le chapitre 2).
+Procédons par récurrence.
+</p>
+<p>
+Posons l'hypothèse de récurrence pour tout entier naturel b, P(b) = "pour tout nombre entier naturel a, a + b = b + a".</br>
+Déjà, par définition de l'addition, si b = 0, alors :
+</p>
+<math>a + b = a + 0 = 0 + a = a</math>
+<p>
+Donc, P(0) est vraie.
+</p>
+<p>
+En suite, prouvons que si P(k) avec k un nombre entier naturel quelconque supérieur ou égal à 0, alors P(k + 1).
+Commençons par supposer que P(k) soit vrai. 
+</p>
+<math>a + k = k + a</math>
+<p>
+Appliquons notre équivalence vue plus haut (avec le théorème 1.2.0.0, en rajoutant des parenthèses) :
+</p>
+<math>a + k = k + a <mequi> successeur(a + k) = successeur(k + a)</math>
+<p>
+Par définition de l'addition, selon la partie gauche de notre relation :
+</p>
+<math>successeur(a + k) = a + successeur(k)</math>
+<p>
+Selon la partie droite :
+</p>
+<math>successeur(k + a) = k + successeur(a) = k + (a + successeur(0))</math>
+<p>
+Or, selon la règle d'associativité (théorème 1.2.1.1) et selon le fait que nous pouvons interchanger la place de successeur(0) (théorème 1.2.0.1) :
+</p>
+<math>k + (a + successeur(0)) = k + (successeur(0) + a) = (k + successeur(0)) + a = successeur(k) + a</math>
+<p>
+Donc :
+</p>
+<math>a + successeur(k) = successeur(k) + a = a + (k + 1) = (k + 1) + a</math>
+<p>
+Nous reconnaissons donc la forme de P(k + 1).
+Donc, si P(k) est vraie, P(k + 1) l'est aussi.
+</p>
+<p>
+Donc, P(0) est vraie et P(k) pour tout "k" supérieur à 0 implique P(k + 1).
+Selon le principe de récurrence, P est vraie pour tout nombre entier naturel.
+Finalement :
+</p>
+<math><mforall>a, b<min>N, a + b = b + a</math>
+
+<h4>1.2.1.3</h4>
+<p>
+Démontrons que, pour tout nombre entier naturel "a", "b" et "n" : "a = b équivaut à dire que a + n = b + n".
+Cette proposition est équivalente à dire que l'application allant de "N" vers "N" et transformant les éléments de départ "a" en éléments d'arrivée "a + n" est injective.
+Procédons par récurrence.
+</p>
+<p>
+Posons l'hypothèse de récurrence pour tout entier naturel n, P(n) = "pour tout nombre entier naturel a et b, a = b équivaut à dire que a + n = b + n".</br>
+Déjà, par définition de l'addition, pour tout nombre entier naturel "a" et "b", "a + 0 = a" et "b + 0 = b".
+Par transitivité de l'égalité : "a = b = a + 0 = b + 0".
+Donc, "a = b équivaut à dire que a + 0 = b + 0".
+Finalement, P(0) est vraie.
+</p>
+<p>
+En suite, prouvons que si P(k) avec k un nombre entier naturel quelconque, alors P(k + 1).
+Commençons par supposer que P(k) soit vrai. 
+</p>
+<math><mforall>a, b, k<min>N, a = b <mequi> a + k = b + k</math>
+<p>
+Appliquons notre équivalence vue plus haut (avec le théorème 1.2.0.0, en rajoutant des parenthèses) :
+</p>
+<math><mforall>a, b<min>N, a + k = b + k <mequi> successeur(a + k) = successeur(b + k)</math>
+<p>
+<p>
+Par définition de l'addition :
+</p>
+<math><mforall>a, b<min>N, a = b <mequi> a + k = b + k <mequi> a + successeur(k) = b + successeur(k)</math>
+<p>
+Nous reconnaissons donc la forme de P(k + 1).
+Donc, si P(k) est vraie, P(k + 1) l'est aussi.
+</p>
+<p>
+Donc, P(0) est vraie et P(k) implique P(k + 1).
+Selon le principe de récurrence, P est vraie pour tout nombre entier naturel.
+Finalement :
+</p>
+<math><mforall>n, k<min>N,<mexists>a, b, n<min>N, a = b <mequi> a + n = b + n</math>
+
+</p>
+
+<h3 id="multiplication">L'opération multiplication</h3>
+
+<h4>1.2.2.0</h4>
+<p>
+Prouvons que la multiplication entre tous nombres entiers naturels donne un nombre entier naturel (et donc que la multiplication est stable sur l'ensemble des nombres entiers naturels, selon le chapitre 2).
+Procédons par récurrence.
+</p>
+<p>
+Posons l'hypothèse de récurrence pour tout entier naturel m, P(m) = "pour tout nombre entier naturel n, n * m est un nombre entier naturel".</br>
+Déjà, par définition de la multiplication, pour tout nombre entier naturel "n", "n * 0 = 0".
+Bien évidemment, "0" est un nombre entier naturel.
+Donc, P(0) est vraie.
+</p>
+<p>
+En suite, prouvons que si P(k) avec k un nombre entier naturel quelconque, alors P(k + 1).
+Commençons par supposer que P(k) soit vrai. 
+</p>
+<math><mforall>n, k<min>N,<mexists>q<min>N, n * k = q</math>
+<p>
+Déjà, comme P(k), alors q est un nombre entier naturel.
+Selon la proposition 1.2.1.0, additionner "q" est n'importe quel nombre entier naturel donne un nombre entier naturel.
+Selon le théorème 1.2.1.3, nous pouvons donc additionner "n" aux deux membres de la relation pour obtenir une équivalence.
+Donc :
+</p>
+<math>n + k = q <mequi> n + k + n = q + n</math>
+<p>
+Selon la définition de la multiplication :
+</p>
+<math>n + k + n = n * successeur(k) = n * (k + 1) = q + n</math>
+<p>
+Pour rappel, "q + n" est un nombre entier naturel.
+De plus, nous reconnaissons donc la forme de P(k + 1).
+Donc, si P(k) est vraie, P(k + 1) l'est aussi.
+</p>
+<p>
+Donc, P(0) est vraie et P(k) implique P(k + 1).
+Selon le principe de récurrence, P est vraie pour tout nombre entier naturel.
+Finalement :
+</p>
+<math><mforall>n, k<min>N,<mexists>a<min>N, n * k = a</math>
+
+<h4>1.2.2.1</h4>
+<p>
+Démontrons que, pour tous nombres entiers naturels a, b et c : "a * (b + c) = a * b + a * c" (et donc, que l'opération multiplication est distributive par rapport à l'addition dans les nombres entiers naturels).
+Procédons par récurrence.
+</p>
+<p>
+Posons l'hypothèse de récurrence pour tout entier naturel a, P(a) = "pour tout nombre entier naturel b et c, a * (b + c) = a * b + a * c".</br>
+Déjà, par définition de l'addition, si a = 0, alors :
+</p>
+<math>a * b + c = 0</math></br>
+<math>a * b + a * c = 0 + 0 = 0</math>
+<p>
+Donc, P(0) est vraie.
+</p>
+<p>
+En suite, prouvons que si P(k) avec k un nombre entier naturel quelconque, alors P(k + 1).
+Commençons par supposer que P(k) soit vrai. 
+</p>
+<math><mforall>b, c<min>N, k * (b + c) = k * b + k * c</math>
+<p>
+Selon le théorème 1.2.1.3, nous pouvons donc additionner "(b + c)" aux deux membres de la relation pour obtenir une équivalence.
+</p>
+<math><mforall>b, c<min>N, k * (b + c) = k * b + k * c <mequi> k * (b + c) + (b + c) = k * b + k * c + (b + c)</math>
+<p>
+Pour la forme à gauche, nous pouvons utiliser la définition de la multiplication :
+</p>
+<math>k * (b + c) + (b + c) = successeur(k) * (b + c) = (k + 1) * (b + c) = k * b + k * c + (b + c)</math>
+<p>
+Pour la forme à gauche, selon la règle d'associativité de l'addition (théorème 1.2.1.1) :
+</p>
+<math>(k + 1) * (b + c) = (k * b + b) + (k * c + c)</math>
+<p>
+Ré-utilisons la définition de la multiplication :
+</p>
+<math>(k + 1) * (b + c) = (k * b + b) + (k * c + c) = successeur(k) * b + successeur(k) * c = (k + 1) * b + (k + 1) * c</math>
+<p>
+Nous reconnaissons donc la forme de P(k + 1).
+Donc, si P(k) est vraie, P(k + 1) l'est aussi.
+</p>
+<p>
+Donc, P(0) est vraie et P(k) implique P(k + 1).
+Selon le principe de récurrence, P est vraie pour tout nombre entier naturel.
+Finalement :
+</p>
+<math><mforall>a, b, c<min>N, a * (b + c) = a * b + a * c</math>
+
+<h4>1.2.2.2</h4>
+<p>
+Démontrons que, pour tout nombre entier naturel a, b et c : (a * b) * c = a * (b * c) (et donc, que les parenthèses n'ont pas d'importance, ou que la multiplication est associative dans l'ensemble des nombres entiers naturels selon le chapitre 2).
+Procédons par récurrence.
+</p>
+<p>
+Posons l'hypothèse de récurrence pour tout entier naturel c, P(c) = "pour tout nombre entier naturel a et b, (a * b) * c = a * (b * c)".</br>
+Déjà, par définition de l'addition, si c = 0, alors :
+</p>
+<math>(a * b) * c = 0</math></br>
+<math>a * (b * c) = a * 0 = 0</math>
+<p>
+Donc, P(0) est vraie.
+</p>
+<p>
+En suite, prouvons que si P(k) avec k un nombre entier naturel quelconque, alors P(k + 1).
+Commençons par supposer que P(k) soit vrai. 
+</p>
+<math><mforall>a, b<min>N, (a * b) * k = a * (b * k)</math>
+<p>
+Selon le théorème 1.2.1.3, nous pouvons donc additionner "k" aux deux membres de la relation pour obtenir une équivalence.
+</p>
+<math><mforall>a, b<min>N, (a * b) * k = a * (b * k) <mequi> (a * b) * k + (a * b) = a * (b * k) + (a * b)</math>
+<p>
+Pour la forme à gauche, nous pouvons utiliser la définition de la multiplication :
+</p>
+<math>(a * b) * k + (a * b) = (a * b) * successeur(k) = (a * b) * (k + 1) = a * (b * k) + (a * b)</math>
+<p>
+Pour la forme à droite, nous pouvons utiliser la définition de la multiplication pour rajouter un "* 1", et utiliser P(k) pour moduler tout ça :
+</p>
+<math>(a * b) * (k + 1) = a * (b * k) + (a * b) * 1 = a * (b * k) + a * (b * 1)</math>
+<p>
+Comme la multiplication est distributive par rapport à l'addition (théorème 1.2.2.1) :
+</p>
+<math>(a * b) * (k + 1) = a * (b * k) + a * (b * 1) = a * (b * k + b * 1) = a * (b * k + b)</math>
+<p>
+Finalement, ré-utilisons la définition de la multiplication :
+</p>
+<math>(a * b) * (k + 1) = a * (b * k + b) = a * (b * (successeur(k))) = a * (b * (k + 1))</math>
+<p>
+Nous reconnaissons donc la forme de P(k + 1).
+Donc, si P(k) est vraie, P(k + 1) l'est aussi.
+</p>
+<p>
+Donc, P(0) et P(1) est vraie et P(k) pour tout cas supérieur ou égal à 1 implique P(k + 1).
+Selon le principe de récurrence, P est vraie pour tout nombre entier naturel.
+Finalement :
+</p>
+<math><mforall>a, b, c<min>N, (a * b) * c = a * (b * c)</math>
+
+<h3 id="secondary">Les opérations secondaires</h3>
+
+<h4>1.2.3.0</h4>
+<p>
+Prouvons que si deux nombres entiers naturels "a" et "b" vérifient la relation "a est supérieur ou égal à b", alors "a - b" est un nombre entier naturel.
+</p>
+<math><mforall>a, b <min> N, a <mgtequal> b <mequi> a - b <min> N</math>
+<p>
+Déjà, écrivons "a" et "b" sous la forme d'une addition obtensible grâce à la définition de la relation "supérieur ou égal" :
+</p>
+<math><mforall>a, b <min> N, a <mgtequal> b <mequi> <mexists>! c <min> N, b + c = a</math>
+<p>
+Par définition de la soustraction :
+</p>
+<math><mforall>a, b <min> N, <mexists> c, a - b = c <mequi> a = b + c</math>
+<p>
+Selon le théorème 1.2.1.2, nous pouvons échanger "a" et "b + c".
+</p>
+<math>a = b + c <mequi> b + c = a</math>
+<p>
+Nous reconnaissons la forme obtenue via la relation "supérieur ou égal".
+Or, toujours selon cette définition, ce "c" est un nombre entier naturel.
+Donc, "a - b" l'est aussi.
+Donc, par transitivité de l'équivalence :
+</p>
+<math><mforall>a, b <min> N, a <mgtequal> b <mequi> a - b <min> N</math>
+
+
+
+<h2>Les nombres entiers relatifs</h2>
+
+<h3 id="addition_relatif">L'opération addition</h3>
+
+<h4>1.3.0.0</h4>
+<p>
+Prouvant que l'addition de deux nombres entiers relatifs donne un nombre entier relatif (et que l'addition est stable dans "Z", selon le chapitre 2).
+</p>
+<math><mforall>a, b <min> Z, a + b <min> Z</math>
+<p>
+Soit deux nombres entiers relatifs "a" et "b" :
+</p>
+<math><mforall>a, b <min> Z, <mexists>c, d, e, f <min> N, a = (c, d), b = (e, f)</math>
+<p>
+Selon la définition de l'addition dans "Z" :
+</p>
+<math>a + b = (c + e, d + f)</math>
+<p>
+Or, selon la définition de l'addition dans "N", "c + e" et "d + f" appartiennent à "N".
+Donc, le résultat obtenu appartient à "Z".
+Donc, pour tout "a" et "b", "a + b" appartient aussi à "Z".
+</p>
+<math><mforall>a, b <min> Z, a + b <min> Z</math>
+
+<h4>1.3.0.1</h4>
+<p>
+Prouvant que l'ordre de réalisation plusieurs additions de nombres entiers relatifs n'importe pas (et que l'addition est associative dans "Z", selon le chapitre 2).
+</p>
+<math><mforall>a, b, g <min> Z, (a + b) + g = a + (b + g)</math>
+<p>
+Soit trois nombres entiers relatifs "a", "b" et "g" :
+</p>
+<math><mforall>a, b, g <min> Z, <mexists>c, d, e, f, h, i <min> N, a = (c, d), b = (e, f), g = (h, i)</math>
+<p>
+Selon la définition de l'addition dans "Z" :
+</p>
+<math>(a + b) + g = ((c + e) + h, (d + f) + i)</math></br>
+<math>a + (b + g) = (c + (e + h), d + (f + i))</math>
+<p>
+Selon le théorème 1.2.1.1, l'addition est associative dans "N", donc :
+</p>
+<math>(a + b) + g = ((c + e) + h, (d + f) + i) = (c + (e + h), d + (f + i)) = a + (b + g)</math>
+<p>
+Donc, "(a + b) + g = a + (b + g)"
+Donc, l'ordre de réalisation de plusieurs additions n'importe pas dans "Z" (et l'addition est associative dans "Z", selon le chapitre 2).
+</p>
+<math><mforall>a, b, g <min> Z, (a + b) + g = a + (b + g)</math>
+
+<h4>1.3.0.2</h4>
+<p>
+Prouvant que l'ordre de réalisation plusieurs additions de nombres entiers relatifs n'importe pas (et que l'addition est associative dans "Z", selon le chapitre 2).
+</p>
+<math><mforall>a, b, g <min> Z, (a + b) + g = a + (b + g)</math>
+<p>
+Soit trois nombres entiers relatifs "a", "b" et "g" :
+</p>
+<math><mforall>a, b, g <min> Z, <mexists>c, d, e, f, h, i <min> N, a = (c, d), b = (e, f), g = (h, i)</math>
+<p>
+Selon la définition de l'addition dans "Z" :
+</p>
+<math>(a + b) + g = ((c + e) + h, (d + f) + i)</math></br>
+<math>a + (b + g) = (c + (e + h), d + (f + i))</math>
+<p>
+Selon le théorème 1.2.1.1, l'ordre de réalisation des additions n'importe pas dans "N", donc :
+</p>
+<math>(a + b) + g = ((c + e) + h, (d + f) + i) = (c + (e + h), d + (f + i)) = a + (b + g)</math>
+<p>
+Donc, "(a + b) + g = a + (b + g)"
+Donc, l'ordre de réalisation de plusieurs additions n'importe pas dans "Z" (et l'addition est associative dans "Z", selon le chapitre 2).
+</p>
+<math><mforall>a, b, g <min> Z, (a + b) + g = a + (b + g)</math>
+
+<h4>1.3.0.3</h4>
+<p>
+Prouvant que l'ordre des opérandes autour d'une addition de nombres entiers relatifs n'importe pas (et que l'addition est commutative dans "Z", selon le chapitre 2).
+</p>
+<p>
+Soit deux nombres entiers relatifs "a" et "b" :
+</p>
+<math><mforall>a, b<min> Z, <mexists>c, d, e, f<min> N, a = (c, d), b = (e, f)</math>
+<p>
+Selon la définition de l'addition dans "Z" :
+</p>
+<math>a + b = (c + e, d + f)</math></br>
+<math>b + a = (e + c, f + d)</math>
+<p>
+Selon le théorème 1.2.1.2, l'ordre des opérandes autour d'une addition n'importe pas dans "N", donc :
+</p>
+<math>a + b = (c + e, d + f) = (e + c, f + d) = b + a</math>
+<p>
+Donc, "a + b = b + a"
+Donc, l'ordre des opérandes autour d'une addition n'importe pas dans "Z" (et l'addition est commutative" dans "Z", selon le chapitre 2).
+</p>
+<math><mforall>a, b, g <min> Z, a + b = b + a</math>
+
+<h4>1.3.0.4</h4>
+<p>
+Démontrons que, pour tout nombres entiers relatifs "a", "b" et "n" : "a = b équivaut à dire que a + n = b + n".
+Cette proposition est équivalente à dire que l'application allant de "Z" vers "Z" et transformant les éléments de départ "a" en éléments d'arrivée "a + n" est injective.
+</p>
+<math><mforall>a, b, n <min> Z, a = b <mequi> a + n = b + n</math>
+<p>
+Soit trois nombres entiers relatifs "a", "b" et "n" :
+</p>
+<math><mforall>a, b, n<min> Z, <mexists>c, d, e, f, o, p <min> N, a = (c, d), b = (e, f), n = (o, p)</math>
+<p>
+Selon la définition de l'addition dans "Z" :
+</p>
+<math>a + b = (c + e, d + f)</math>
+<p>
+Selon le théorème 1.2.1.3, pour tout nombres naturels "k", "l" et "m", "k = l équivaut à dire que k + m = l + m" : utilisons cette propriété sur "c", "d", "e", "f" et "o" et "p".
+</p>
+<math>a = b <mequi> c = e <mand> d = f <mequi> c + o = e + o <mand> d + p = f + p <mequi> a + n = b + n</math>
+<p>
+Donc, "a = b équivait à dire que a + b"
+Donc, pour tout nombres entiers relatifs "a", "b" et "n" : "a = b équivaut à dire que a + n = b + n".
+</p>
+<math><mforall>a, b, n <min> Z, a = b <mequi> a + n = b + n</math>
+
+<h3 id="multiplication_relatif">L'opération multiplication</h3>
+<h4>1.3.1.0</h4>
+<p>
+Prouvant que la multiplication de deux nombres entiers relatifs donne un nombre entier relatif (et que la multiplication est stable dans "Z", selon le chapitre 2).
+</p>
+<math><mforall>a, b <min> Z, a * b <min> Z</math>
+<p>
+Soit deux nombres entiers relatifs "a" et "b" :
+</p>
+<math><mforall>a, b <min> Z, abs(a * b) = abs(a) * abs(b), sign(a * n) = {"+" si sign(a) = sign(b), "-" sinon}</math>
+<p>
+Ici, que la signe soit positif ou négatif ne change rien.
+De plus, "a * b" est un nombre entier naturel, donc "abs(a * b) = a * b".
+</p>
+<math><mforall>a, b <min> Z, a * b = +(a * b) <mor> a * b = -(a * b)</math>
+<p>
+Dans les deux cas, le résultat est un nombre entier relatif.
+Donc, pour tout "a" et "b", "a * b" appartient aussi à "Z".
+</p>
+<math><mforall>a, b <min> Z, a * b <min> Z</math>
+
+<h4>1.3.1.1</h4>
+<p>
+Démontrons que, pour tous nombres entiers relatifs "a", "b" et "c" : "a * (b + c) = a * b + a * c" (et donc, que l'opération multiplication est distributive par rapport à l'addition dans les nombres entiers relatifs).
+</p>
+<math><mforall>a, b, c <min> Z, a * (b + c) = a * b + a * c</math>
+<p>
+Soit trois nombres entiers relatifs "a", "b" et "c".
+Selon la définition de la multiplication :
+</p>
+<math><mexists> d <min> N, d = abs(a * (b + c)) = abs(a) * abs(b + c)</math></br>
+<math><mequi> {d = abs(a) * (abs(b) + abs(c)) si sign(b) = sign(c), [d = abs(a) * (abs(b) - abs(c)) si abs(b) <mgt> abs(c), d = abs(a) * (abs(c) - abs(b)) sinon] sinon}</math></br>
+<math><mexists> e <min> N, e = abs(a * b + a * c)</math></br>
+<math><mequi> {e = abs(a * b) + abs(a * c) = abs(a) * abs(b) + abs(a) * abs(c) si sign(a * b) = sign(a * c) <mor> [e = abs(a * b) - abs(a * c) = abs(a) * abs(b) - abs(a) * abs(c) si abs(a) * abs(b) <mgt> abs(a) * abs(c), e = abs(a * c) - abs(a * b) = abs(a) * abs(b) - abs(a) * abs(c) sinon] sinon}</math>
+<p>
+Selon le théorème 1.2.2.1 (la multiplication est distributive par rapport à l'addition dans "N") :
+</p>
+<math>{e = abs(a) * abs(b) + abs(a) * abs(c) = abs(a) * (abs(b) + abs(c)) si sign(a * b) = sign(a * c) <mor> [e = abs(a) * abs(b) - abs(a) * abs(c) = abs(a) * (abs(b) - abs(c)) si abs(a) * abs(b) <mgt> abs(a) * abs(c), e = abs(a) * abs(c) - abs(a) * abs(b) = abs(a) * (abs(c) - abs(b)) sinon] sinon}</math>
+<p>
+Ici, "sign(a * b) = sign(a * c)" équivait à dire "sign(b) = sign(c)".
+En plus, "abs(a) * abs(b) supérieur à abs(a) * abs(c)" équivaut à dire "abs(b) supérieur à abs(c)".
+Donc :
+</p>
+<math>{e = abs(a) * (abs(b) + abs(c)) si sign(b) = sign(c), [e = abs(a) * (abs(b) - abs(c)) si abs(b) <mgt> abs(c), e = abs(a) * (abs(c) - abs(b)) sinon] sinon}</math></br>
+<math><mequi> e = d</math>
+<p>
+Ces deux formes ont la même valeur absolue.
+Prouvons qu'elles ont le même signe.
+</p>
+<math>f = sign(a * (b + c)) = {"+" si sign(a) = sign(b + c), "-" sinon} = {"sign(b + c)" si sign(a) = "+", "-sign(b + c)" sinon}</math></br>
+<math>g = sign(a * b + a * c) = {"sign(b + c)" si sign(a) = "+", "-sign(b + c)" sinon}</math></br>
+<math>g = f</math>
+<p>
+Ces deux formes ont le même signe, et la même valeur absolue.
+Donc, pour tous nombres entiers relatifs "a", "b" et "c" : "a * (b + c) = a * b + a * c".
+</p>
+<math><mforall>a, b, c <min> Z, a * (b + c) = a * b + a * c</math>
+
+<h4>1.3.1.2</h4>
+<p>
+Prouvant que l'ordre de réalisation de plusieurs multiplication n'importe pas dans "Z" (et que la multiplication est associative dans "Z", selon le chapitre 2).
+</p>
+<math><mforall>a, b, c <min> Z, (a * b) * c = a * (b * c)</math>
+<p>
+Soit trois nombres entiers relatifs "a", "b" et "c" :
+</p>
+<math><mforall>a, b, c <min> Z, <mexists> d, e <min> Z, d = (a * b) * c, e = a * (b * c)</math>
+<p>
+Selon le théorème 1.2.2.2 (l'ordre de réalisation de plusieurs multiplication n'importe pas dans "N") : 
+</p>
+<math>abs(d) = abs(a * b) * abs(c) = (abs(a) * abs(b)) * abs(c) = abs(a) * (abs(b) * abs(c)) = abs(a) * abs(b * c) = abs(e)</math>
+<p>
+Donc, les deux formes ont la même valeur absolue.
+Prouvons maintenant qu'elles ont le même signe, avec un raisonnement logique.
+</p>
+<math>sign(d) = {"+" si sign(a * b) = sign(c), "-" sinon} = {"+" si {"+" si sign(a) = sign(b), "-" sinon} = sign(c), "-" sinon}</math></br>
+<math>= {"sign(a)" si sign(b) = sign(c), "-sign(a)" sinon}</math></br>
+<math>sign(e) = {"+" si sign(a) = sign(b * c), "-" sinon} = {"+" si sign(a) = {"+" si sign(b) = sign(c), "-" sinon}, "-" sinon}</math></br>
+<math>= {"sign(a)" si sign(b) = sign(c), "-sign(a)" sinon}</math>
+<p>
+Donc, "d" et "e" ont le même signe et la même valeur absolue.
+Ils sont donc égaux.
+Donc, l'ordre de réalisation de plusieurs multiplications n'importe pas dans "Z".
+</p>
+<math><mforall>a, b, c <min> Z, (a * b) * c = a * (b * c)</math>
+
+<h4>1.3.1.3</h4>
+<p>
+Prouvant que l'ordre des opérandes autour d'une multiplication n'importe pas dans "Z" (et que la multiplication est commutative dans "Z", selon le chapitre 2).
+</p>
+<math><mforall>a, b <min> Z, a * b = b * a</math>
+<p>
+Soit trois nombres entiers relatifs "a", "b" :
+</p>
+<math><mforall>a, b <min> Z, <mexists> c, d <min> Z, c = abs(a * b) = abs(a) * abs(b), d = abs(b * a) = abs(b) * abs(a)</math>
+<p>
+Selon le théorème 1.2.1.2 (l'ordre des opérandes autour d'une addition n'importe pas dans "N") : 
+</p>
+<math>c = abs(a) * abs(b) = abs(b) * abs(a) = abs(b * a) = d</math>
+<p>
+Donc, ces deux formes ont la même valeur absolue.
+Prouvons qu'elles ont le même signe.
+</p>
+<math><mexists> e = sign(a * b) = {"+" si sign(a) = sign(b), "-" sinon}</math></br>
+<math><mexists> f = sign(b * a) = {"+" si sign(b) = sign(a), "-" sinon}</math>
+<p>
+Selon les propriétés de l'égalité :
+</p>
+<math><mexists> e = sign(a * b) = {"+" si sign(a) = sign(b), "-" sinon} = {"+" si sign(b) = sign(a), "-" sinon} = f</math>
+<p>
+Donc, ces deux formes ont le même signe et la même valeur absolue.
+Donc, l'ordre des opérandes autour d'une multiplication n'importe pas dans "Z".
+</p>
+<math><mforall>a, b, c <min> Z, a * b = b * a</math>

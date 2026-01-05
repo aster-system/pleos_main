@@ -32,6 +32,9 @@
     <content>une paire est ensemble fini de cardinal 2 (il ne contient que deux éléments)</content>
     <content name="ordered">un couple est une paire où un des deux objets doit être écrit avant l'autre (et donc, il s'agit d'une paire où il y a un ordre d'écriture des éléments)</content>
 </new_definition>
+<new_definition name="partition">
+    <content>une partition d'un ensemble "E" représente un ensemble ne contenant que des parties non-vides de "E", toutes disjointes, et dont l'union de toutes ces parties donnent "E"</content>
+</new_definition>
 <new_definition name="singleton">
     <content>un singleton est ensemble fini de cardinal 1 (il ne contient qu'un seul élément)</content>
 </new_definition>

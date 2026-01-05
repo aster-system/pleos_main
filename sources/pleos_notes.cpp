@@ -53,7 +53,7 @@ namespace pleos {
         // Input page
         GUI_OBJECT_CREATION(scls::GUI_Object, a_input_page, "notes_input_page")
         GUI_OBJECT_CREATION(scls::GUI_Text_Base<Text>, a_input_representation, "notes_input_representation")
-        GUI_OBJECT_CREATION(scls::GUI_Text_Input, a_input_user, "notes_input_user")
+        GUI_OBJECT_CREATION(scls::GUI_Text_Input_Base<Text>, a_input_user, "notes_input_user")
 
         // Project page
         GUI_OBJECT_CREATION(scls::GUI_Text, a_project_new_note, "notes_project_new_note")
@@ -267,8 +267,8 @@ namespace pleos {
 
         // Finish the thread
         if(a_image_presentation_generated){
-            std::cout << "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL" << std::endl;
             if(a_image_presentation_thread.joinable()){a_image_presentation_thread.join();a_image_presentation_thread=std::thread();}
+            input_representation()->set_texture_alignment(scls::Alignment_Texture::T_Direct);
             input_representation()->set_texture(a_image_presentation);
             a_image_presentation_generated = false;
         }

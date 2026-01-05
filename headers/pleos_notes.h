@@ -160,7 +160,7 @@ namespace pleos {
 
         // Input handling
         GUI_OBJECT(scls::GUI_Text_Base<Text>, a_input_representation, input_representation);
-        GUI_OBJECT(scls::GUI_Text_Input, a_input_user, input_user);
+        GUI_OBJECT(scls::GUI_Text_Input_Base<Text>, a_input_user, input_user);
 
         // Project handling
         GUI_OBJECT(scls::GUI_Text, a_project_new_note, project_new_note);

@@ -4,15 +4,20 @@
 <new_definition name="arithmetic_congruence">
     <content>deux nombres entiers sont dit congrus modulo "n" (avec n un autre entier) si ils ont le même reste par la division par "n"</content>
 </new_definition>
-<new_definition name="operation">
-    <content>une opération est une action où, gràce à une (ou plusieurs) valeur de départ (nommée opérande), on y définit une égalité représentant une (ou plusieurs) valeurs traitées via les valeurs de départs</content>
-</new_definition>
 
 <new_definition name="natural_number">
-    <content name="addition">une addition entre deux nombres entiers naturels représente une opération entre deux nombres entiers naturels "a" et "b", donnant comme valeur la valeur partant de "a" obtenue après la répétition de "b" fois l'objet "successeur"</content>
+    <content name="addition">une addition entre deux nombres entiers naturels représente une opération entre deux nombres entiers naturels "a" et "b", donnant comme valeur la valeur partant de "a" obtenue après la répétition de "b" fois l'application "successeur"</content>
     <content name="bigger">un nombre entier naturel "a" est dit strictement supérieur à un nombre entier naturel "b" si nous pouvons obtenir "a" en appliquant une ou plusieurs fois la fonction successeur (en additionnant 1) à "b"</content>
     <content name="bigger_equal">un nombre entier naturel "a" est dit supérieur ou égal à un nombre entier naturel "b" si "a" est supérieur à "b" ou si "a" est égal à "b"</content>
+    <content name="division">une division entre deux nombres entiers naturels représente une opération entre deux nombres entiers naturels "a" (nommée le "diviseur") et "b" (nommé le dividende), donnant comme valeur la valeur dont il faut multiplier "b" pour obtenir "a"</content>
     <content name="multiplication">une multiplication entre deux nombres entiers naturels représente une opération entre deux nombres entiers naturels "a" et "b", donnant comme valeur la valeur partant de "a" obtenue après la répétition de "b" fois l'opération d'addition de "a" avec lui même</content>
+    <content name="soustraction">une soustraction entre deux nombres entiers naturels représente une opération entre deux nombres entiers naturels "a" et "b", donnant comme valeur la valeur partant de "a" obtenue après la répétition de "b" l'application "prédécesseur"</content>
+</new_definition>
+<new_definition name="rational_number">
+    <content>un nombres rationnel représente un nombre entier relatif (nommé "numérateur"), que l'on a découpé (au sens de "diviser") en une quantité finie et non nulle (nommée "dénominateur")</content>
+</new_definition>
+<new_definition name="relative_number">
+    <content>les nombres entiers relatifs représentent une extension de l'ensemble des nombres entiers naturels, rajoutant des nombres inférieur à 0, nommés nombres négatifs</content>
 </new_definition>
 
 <new_definition name="real_number">

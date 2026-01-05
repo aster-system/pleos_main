@@ -1,6 +1,10 @@
 <new_definition name="application">
-    <content>une application est un objet permettant de lier les éléments de deux ensembles quelconques entre eux</content>
-    <content name="rigorous">une application peut se représenter sous la forme d'un ensemble de couples entre un élément de l'ensemble de départ et un élément de l'ensemble d'arrivée, pour tous les éléments de l'ensemble d'arrivée</content>
+    <content>une application est un objet permettant de lier tous les éléments d'un premier ensemble quelconque (nommé ensemble de départ) vers des éléments d'un autre (ou le même) ensemble (nomme ensemble d'arrivée)</content>
+    <content name="rigorous">une application peut se représenter sous la forme d'un ensemble de couples entre un élément de l'ensemble de départ et un élément de l'ensemble d'arrivée, avec un unique couple pour chaque élément de l'ensemble de départ</content>
+</new_definition>
+<new_definition name="function">
+    <content>une fonction est un objet permettant de lier les éléments de deux ensembles quelconques entre eux, sans obligatoirement que tous les éléments de l'ensemble de départ soit utilisés</content>
+    <content name="composition">la composition de fonctions (ou d'applications, ce qui est moins commun mais parfaitement possible) est une opération agissant sur des fonctions / applications, prenant deux fonctions / applications de bases et permettant d'obtenir une nouvelle fonction / / application, admettant comme ensemble de départ l'ensemble de départ de la première fonction, comme ensemble d'arrivée celui de la deuxième fonction, et liant les éléments de l'ensemble de départ aux éléments transformés par la première fonction, puis par la deuxième fonction</content>
 </new_definition>
 <new_definition name="relation">
     <content>une relation est un objet permettant d'énoncer des propositions entre plusieurs éléments d'un même ensemble quelconque</content>
@@ -11,4 +15,17 @@
 </new_definition>
 <new_definition name="relation_binary">
     <content>une relation est dite binaire quand elle est d'arité 2 (et donc, qu'elle lie 2 objets entre eux, comme "3 est inférieur à 7")</content>
+</new_definition>
+<new_definition name="relation_reflexive">
+    <content>une relation est dite réflexive si, pour tout objet "a", "a" est en relation avec lui même</content>
+</new_definition>
+<new_definition name="relation_symmetric">
+    <content>une relation est dite symétrique si, pour tout objet "a" et "b", si "a" est en relation avec "b", alors "b" est en relation avec "a"</content>
+</new_definition>
+
+<new_definition name="equivalence_class">
+    <content>une classe d'équivalence d'un élément "x" d'un ensemble "E" représente la classe de tous les éléments de "E" qui peuvent être reliés à "x" par relation d'équivalence "~"</content>
+</new_definition>
+<new_definition name="relation_equivalence">
+    <content>une relation binaire est dite "relation d'équivalence" quand elle est symétrique, réflexive et transitive</content>
 </new_definition>

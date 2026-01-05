@@ -250,7 +250,7 @@ Le sixième axiome est l'axiome de l'infini.
 Cet axiome est un peu bizarre, mais infiniment important (sans mauvais jeu de mots).
 <span class="important"><definition name="set_theory-infinity_axiom"></span>.
 Les premiers éléments de cet ensemble sont "0", "successeur(0)", "successeur(successeur(0))"...
-En fait, <span class="important">cet ensemble représente exactement l'ensemble des nombres entiers naturels</span> (qui respectent eux aussi cette exacte propriété).
+En fait, <span class="important">cet ensemble représente exactement l'ensemble des nombres entiers naturels, noté "N"</span> (qui respectent eux aussi cette exacte propriété).
 Dans ce cas, <span class="important">on peut écrire "successeur(n)" comme "n + 1" (on défini donc l'opération "a + b" comme l'utilisation de la fonction successeur "b" fois sur un nombre entier naturel "a")</span>.
 Nous définirons toutes les propriétés nécessaires dans la dernière partie du chapitre.
 Comme pour tout nombre naturel, on peut trouver un nombre supérieur (sous la forme "n + 1"), <span class="important">cette ensemble admet une infinité d'éléments (d'où le nom de l'axiome)</span>.
@@ -454,6 +454,7 @@ La définition rigoureuse (avec des symbôles mathématiques complexes et tout l
 Nous allons présenté quelques mots de vocabulaire assez simple, mais très utilisé.
 <span class="important"><definition name="singleton"></span>.
 En général, ces ensembles sont presque toujours exprimé en extension (comme le singletion {5}).
+On peut assez facilement prouver que, pour tout élément possible, il existe (obligatoirement) un singleton contenant cet élément : utilisez l'axiome de la paire sur cet élément et l'ensemble vide, puis l'axiome de la réunion sur l'ensemble obtenu, et vous obtenez le singleton voulu.
 Un concept assez similaire est la paire.
 <span class="important"><definition name="pair"></span>.
 Dans la théorie ZFC, son existence est garantie par l'axiome de la paire, présenté plus haut.
@@ -538,6 +539,7 @@ En terme mathématique (lisez "pour tout ensemble A et B, il existe un ensemble 
 <math><mforall>A<mforall>B,<mexists>C<mforall>x {x<min>C<mequi>x<min>A<mand>x<min>B}</math>
 <p>
 Si les deux ensembles ne partagent aucun élément en commun, C vaudra l'ensemble vide.
+Dans ce cas, <span class="important">ces deux ensembles sont dits "disjoints"</span>.
 Son existence demande un peu plus de réflexion, mais se déduit grâce à l'axiome de l'ensemble vide.
 Cet opérateur se marque avec le même symbôle que l'union à l'envers :
 </p>
@@ -565,6 +567,11 @@ Il est aussi assez simple à illustrer.
 <text name=type_number() content="1" x=-2 y=-5/2></text>
 <text name=type_number() content="9" x=2 y=-5/2></text>
 </graphic>
+
+<p>
+Grâce à ces deux concepts, vous pouvez en définir un autre assez pratique : les partitions d'un ensembles.
+<span class="important"><definition name="partition"></span>.
+</p>
 
 <h3>Le produit cartésien</h3>
 <p>

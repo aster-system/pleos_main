@@ -1,0 +1,181 @@
+<h1>L'algèbre en mathématiques</h1>
+
+
+
+<h2>La discipline du calcul mathématique</h2>
+
+<h3>Qu'est ce qu'est le calcul</h3>
+<p>
+Commençons par le commencement, avec des définitions pures.
+En mathématiques, <span class="important"><definition name="calculus"></span>.
+La branche la plus simple du calcul est le calcul numérique.
+<span class="important"><definition name="calculus-numeric"></span>.
+Par exemple, un calcul permet de faire ceci :
+</p>
+<math>(3 + (4 * 2)) - 5 = 6</math>
+<p>
+Avec ce calcul, <span class="important">les règles permettant de définir les actions possibles sont en général les règles très basiques vues au début de l'enseignement scolaire</span>.
+</p>
+
+<h3>Qu'est ce qu'est l'algèbre classique ?</h3>
+<p>
+En mathématiques, <span class="important"><definition name="algebra-classic"></span>.
+En fait, <span class="important"><definition name="calculus"></span>.
+<definition name="calculus-algebric">.
+Le calcul algébrique est donc une extension du calcul numérique.
+Les actions possibles sur ces formes sont définis de manière "axiomatique" par l'algèbre classique.
+En réalité, ces axiomes ne le sont que par le point de vue de la théorie, mais sont déductibles d'autres théories plus complexes (que nous verrons après).
+Par exemple, avec des nombres entiers, une des actions possibles est de faire ça :
+</p>
+<math>a * (b + c) = a * b + a * c</math>
+<p>
+D'un point de vue logique, on peut quantifier cette action pour en faire une proposition toujours vraie.
+</p>
+<math><mforall>a, b, c <min> N, a * (b + c) = a * b + a * c</math>
+
+<h3>Qu'est ce qu'est l'algèbre générale ?</h3>
+<p>
+Si il y a une algèbre "classique", il y a une algèbre "générale".
+En mathématiques, <span class="important"><definition name="algebra-general"></span>.
+<span class="important"><definition name="algebric_structure"></span>.
+En fait, chaque structure algébrique possède ses propres propriétés de calcul, avec les opérations décrites dans la structure.
+C'est grâce à cela que nous savons comment obtenir les "axiomes" de l'algèbre classique, ou même du calcul numérique.
+</p>
+
+<h3>Les structures algébriques et lois de compositions</h3>
+<p>
+Pour rappel, <span class="important"><definition name="algebric_structure"></span>.
+Hors, utiliser le terme "opération" est, comme nous l'avons déjà dit au dernier chapitre, ambiguë : nous allons le remplacer par le terme "loi de composition".
+<span class="important"><definition name="composition_law"></span>.
+Il s'agit d'un type précis d'opération binaire, avec au moins un opérande étant du même ensemble que le résultat.
+De manière plus rigoureuse (et mathématique) : <span class="important"><definition name="composition_law-rigorous"></span>.
+Parmi tout ce que l'on a vue, nous avons vu une loi de composition : l'addition (de "N X N" vers "N").
+Voici un tableau représentant à l'horizontal le premier opérande, à la vertical le deuxième opérande et leur résultat lors de leur croisement.
+</p>
+
+<table>
+<case x=0 y=0 background_color=light_grey content="+">
+
+<case x=1 y=0 background_color=light_grey content="0"><case x=2 y=0 background_color=light_grey content="1"><case x=3 y=0 background_color=light_grey content="2"><case x=4 y=0 background_color=light_grey content="3">
+<case x=0 y=1 background_color=light_grey content="0"><case x=0 y=2 background_color=light_grey content="1"><case x=0 y=3 background_color=light_grey content="2"><case x=0 y=4 background_color=light_grey content="3">
+
+<case x=1 y=1 content="0"><case x=2 y=1 content="1"><case x=3 y=1 content="2"><case x=4 y=1 content="3">
+<case x=1 y=2 content="1"><case x=1 y=3 content="2"><case x=1 y=4 content="3">
+
+<case x=2 y=2 content="2"><case x=2 y=3 content="3"><case x=2 y=4 content="4">
+<case x=3 y=2 content="3"><case x=4 y=2 content="4">
+
+<case x=3 y=3 content="4"><case x=4 y=3 content="5">
+<case x=3 y=4 content="5">
+
+<case x=4 y=4 content="6">
+</table>
+
+<p>
+Il y a une grosse différence entre la notion de loi de composition et la notion d'opération : la stabilité.
+<span class="important"><definition name="operation-stability"></span>.
+Si une opération binaire est stable et que au moins un de ces opérandes est du même ensemble que le résultat, alors elle est une loi de composition.
+Par exemple, <span class="important">l'opération addition entre deux nombres entiers naturels est stable dans les nombres entiers naturels (démontré au premier chapitre)</span>.
+Prenez n'importe quels nombres naturels et additionnez les : vous aurez toujours un nombre entier naturel.
+À l'inverse, <span class="important">l'opération soustraction entre deux nombres entiers naturels n'est pas stable dans les nombres entiers naturels, car il existe des contres-exemples (4 - 9 fait -5, qui n'est pas un nombre entier naturel)</span>.
+Voici un exemple légèrement plus complexe : l'opération d'addition de "{0, 1, 2, 3}" et "{0, 1, 2, 3}" (lui même) n'est pas stable dans "{0, 1, 2, 3}".
+</p>
+
+<table>
+<case x=0 y=0 background_color=light_grey content="+">
+
+<case x=1 y=0 background_color=light_grey content="0"><case x=2 y=0 background_color=light_grey content="1"><case x=3 y=0 background_color=light_grey content="2"><case x=4 y=0 background_color=light_grey content="3">
+<case x=0 y=1 background_color=light_grey content="0"><case x=0 y=2 background_color=light_grey content="1"><case x=0 y=3 background_color=light_grey content="2"><case x=0 y=4 background_color=light_grey content="3">
+
+<case x=1 y=1 background_color=light_green content="0"><case x=2 y=1 background_color=light_green content="1"><case x=3 y=1 background_color=light_green content="2"><case x=4 y=1 background_color=light_green content="3">
+<case x=1 y=2 background_color=light_green content="1"><case x=1 y=3 background_color=light_green content="2"><case x=1 y=4 background_color=light_green content="3">
+
+<case x=2 y=2 background_color=light_green content="2"><case x=2 y=3 background_color=light_green content="3"><case x=2 y=4 background_color=light_red content="4">
+<case x=3 y=2 background_color=light_green content="3"><case x=4 y=2 background_color=light_red content="4">
+
+<case x=3 y=3 background_color=light_red content="4"><case x=4 y=3 background_color=light_red content="5">
+<case x=3 y=4 background_color=light_red content="5">
+
+<case x=4 y=4 background_color=light_red content="6">
+</table>
+
+<p>
+Le cas le plus utile est quand la loi de composition est dite interne.
+<span class="important"><definition name="composition_law-internal"></span>.
+Par exemple, c'est (encore) le cas de l'addition dans les nombres entiers naturels.
+Pour un ensemble E, une loi de composition interne "l" notée "." se définie comme ça :
+</p>
+
+<math>l : E X E <mto> E</math></br>
+<math><mforall>a, b <min> E, <mexists>! c <min> E, a . b = c</math>
+
+<p>
+Les lois de compositions internes peuvent avoir une très grande quantité de propriété, très souvent syntaxiques (liée à la façon dont vous pouvez écrire avec la loi).
+La plus simple est l'associativité.
+<span class="important"><definition name="algebra_associativity"></span>.
+En fait, si notre loi "." est associative, alors :
+</p>
+
+<math><mforall>a, b, c <min> E, (a + b) + c = a + (b + c)</math>
+
+<p>
+Comme nous l'avons démontré au chapitre précédent, l'addition et la multiplication sont associative.
+Cependant, la puissance n'est pas associative, et voici un contre exemple :
+</p>
+
+<math>2 ^ (2 ^ 3) = 2 ^ 8 = 256</math></br>
+<math>(2 ^ 2) ^ 3 = 4 ^ 3 = 64</math>
+
+<p>
+Les lois de compositions internes peuvent aussi permettre l'existence d'éléments remarquables dans E (quand utilisés avec la loi).
+Le plus simple est l'élément neutre.
+<span class="important"><definition name="algebra_neutral_element"></span>.
+Il ne modifie pas ce fameux élément "a", comme montré dans cette définition (ou "e" est l'élément neutre).
+</p>
+
+<math><mforall>a <min> E, a + e = a</math>
+
+<p>C'est, par exemple, le cas du "0" dans l'addition dans les nombres entiers naturels, ou de "1" dans la multiplication ou la puissance dans ce même ensemble.</p>
+
+<math><mforall>a <min> E, a + 0 = a</math></br>
+<math><mforall>a <min> E, a * 1 = a</math>
+
+<p>
+Il est à noter que, si une loi de composition commutative permet l'existence d'un élément neutre dans un ensemble, alors il n'y en a qu'un seul dans l'ensemble (<a href="demo">démontré ici</a>).
+</p>
+
+<p>
+Maintenant, parlons des structures algébriques.
+Pour rappel, <span class="important"><definition name="algebric_structure"></span>.
+Nous avons donc besoin de deux objets : un ensemble "E", et une (ou des) opération ".".
+La notation pour une structure algébrique se note ainsi.
+</p>
+<math>(E, .)</math>
+<p>
+Dans un cas très simple, voici la structure algébrique correspondant à l'ensemble des nombres entiers naturels et de l'addition (dont on peut prouver facilement l'existence, <a href="demo#2_0_1_0">comme ici</a>) :
+</p>
+<math>(N, +)</math>
+
+<h2>Les différents types de structures algébriques</h2>
+
+<h3>Magmas et groupes</h3>
+<p>
+<span class="important">Les structures algébriques sont catégorisées par les propriétés des lois de compositions internes avec l'ensemble utilisé</span>.
+Le type de structure algébrique le plus simple est le magma.
+En algèbre, <span class="important"><definition name="algebra_magma"></span>.
+Bien que très générale, cette définition est très faible.
+Il existe une quantité aberrante de magma : (N, +), (N, *), (N, ^)...
+La seule chose à prouver pour que l'union d'un ensemble et d'une opération soit un magma et de prouver que l'opération est stable.
+</p>
+<p>
+À l'inverse, une structure très utilisée est le groupe.
+En algèbre, <span class="important"><definition name="algebra_group"></span>.
+Bien que cette définition semble très générale, elle exclut directement tous les exemples vues plus tôt : (N, +) et (N, *) ne sont pas inversibles, et (N, ^) n'est même pas associative.
+Cependant, l'addition sur Z permet de former un groupe.
+</p>
+<math>(Z, +)</math>
+<p>
+Une catégorie de groupe plus forte est le groupe abélien.
+<span class="important"><definition name="algebra_group-abelian"></span>.
+(Z, +) en est un exemple.
+</p>

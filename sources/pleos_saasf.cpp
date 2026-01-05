@@ -143,15 +143,17 @@ namespace pleos {
                 else{__saasf_images(replica, content.get()->sub_texts().at(i), path, current_replica_file_path);}
             }
             else if((attribute_name == std::string("msub") || attribute_name == std::string("msup")) && i > 0){
-                // HMLT a sup
-                std::shared_ptr<scls::__XML_Text_Base> content_copy = std::make_shared<scls::__XML_Text_Base>(*content.get()->sub_texts().at(i - 1).get());
-                std::shared_ptr<scls::__XML_Text_Base> content_copy_sup = std::make_shared<scls::__XML_Text_Base>(*content.get()->sub_texts().at(i).get());
-                content_copy_sup.get()->set_xml_balise_name(std::string("mi"));
-                content.get()->sub_texts().at(i - 1).get()->clear();
-                content.get()->sub_texts().at(i - 1).get()->set_xml_balise_name(attribute_name);
-                content.get()->sub_texts().at(i - 1).get()->add_sub_balise(content_copy);
-                content.get()->sub_texts().at(i - 1).get()->add_sub_balise(content_copy_sup);
-                content.get()->sub_texts().erase(content.get()->sub_texts().begin() + i);i--;
+                if(static_cast<int>(content.get()->sub_texts().at(i).get()->sub_texts().size()) < 2) {
+                    // HMLT a sup
+                    std::shared_ptr<scls::__XML_Text_Base> content_copy = std::make_shared<scls::__XML_Text_Base>(*content.get()->sub_texts().at(i - 1).get());
+                    std::shared_ptr<scls::__XML_Text_Base> content_copy_sup = std::make_shared<scls::__XML_Text_Base>(*content.get()->sub_texts().at(i).get());
+                    content_copy_sup.get()->set_xml_balise_name(std::string("mi"));
+                    content.get()->sub_texts().at(i - 1).get()->clear();
+                    content.get()->sub_texts().at(i - 1).get()->set_xml_balise_name(attribute_name);
+                    content.get()->sub_texts().at(i - 1).get()->add_sub_balise(content_copy);
+                    content.get()->sub_texts().at(i - 1).get()->add_sub_balise(content_copy_sup);
+                    content.get()->sub_texts().erase(content.get()->sub_texts().begin() + i);i--;
+                }
             }
             else if(attribute_name == std::string("mvec") || attribute_name == std::string("vec")){
                 // HMLT a vector
@@ -185,6 +187,7 @@ namespace pleos {
         // Creations
         if(word == "circle_algorithm"){if(add_determinant){to_return = std::string("l'algorithme de traçage du cercle");}else{to_return = std::string("algorithme de traçage du cercle");};}
         else if(word == std::string("calendar")){if(add_determinant){to_return = std::string("le calendrier");}else{to_return = std::string("calendrier");};}
+        else if(word == std::string("raycast")){if(add_determinant){to_return = std::string("le raycast");}else{to_return = std::string("raycast");};}
         // Subjects
         else if(word == std::string("chemistry")){if(add_determinant){to_return = std::string("la chimie");}else{to_return = std::string("chimie");};}
         else if(word == std::string("it")){if(add_determinant){to_return = std::string("l'informatique");}else{to_return = std::string("informatique");}}

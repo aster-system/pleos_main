@@ -100,6 +100,7 @@ namespace pleos {
         std::shared_ptr<scls::GUI_Text> a_navigation_maths_button;
         std::shared_ptr<scls::GUI_Text> a_navigation_physic_button;
         std::shared_ptr<scls::GUI_Text> a_navigation_settings_button;
+        GUI_OBJECT(scls::GUI_Text, a_navigation_notes_button, navigation_notes_button);
     };
 
     class Pleos_Window : public scls::Window {

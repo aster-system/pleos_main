@@ -38,7 +38,7 @@
 SCLS_INIT
 
 int main(int argc, char* argv[]) {
-    //pleos::bac(std::string("tests/"));
+	//pleos::bac(std::string("tests/"));
 	//pleos::test(std::string("tests/"));
 
 	pleos::Pleos_Window window(900, 600, argv[0]);
@@ -55,7 +55,9 @@ int main(int argc, char* argv[]) {
 
     /*std::string content = std::string("<h1>Les polynômes</h1>");
     std::string redaction = std::string();
-    //pleos::study_function(scls::string_to_formula(std::string("2x*x-x-1")).get(), &redaction);content += std::string("<p>") + redaction + std::string("</p>");
+    std::shared_ptr<scls::__Formula> f_1 = scls::string_to_formula(std::string("8x*x*x*x*x*x-5x*x*x*x*x+6x*x*x*x-4x*x*x+2"));
+    std::shared_ptr<scls::__Formula> f_2 = scls::string_to_formula(std::string("2x+2"));
+    pleos::polynomial_division(f_1.get()->polynomial(), f_2.get()->polynomial(), &redaction);content += std::string("<p>") + redaction + std::string("</p>");
     //redaction = std::string();pleos::study_function(scls::string_to_formula(std::string("0")).get(), &redaction);content += std::string("<p>") + redaction + std::string("</p>");
     //redaction = std::string();pleos::study_function(scls::string_to_formula(std::string("8x")).get(), &redaction);content += std::string("<p>") + redaction + std::string("</p>");
     //redaction = std::string();pleos::study_function(scls::string_to_formula(std::string("-3x+7")).get(), &redaction);content += std::string("<p>") + redaction + std::string("</p>");
@@ -63,8 +65,8 @@ int main(int argc, char* argv[]) {
     //redaction = std::string();pleos::study_function(scls::string_to_formula(std::string("2x*x-4x+2")).get(), &redaction);content += std::string("<p>") + redaction + std::string("</p>");
     //redaction = std::string();pleos::study_function(scls::string_to_formula(std::string("5x*x+x+4")).get(), &redaction);content += std::string("<p>") + redaction + std::string("</p>");
     //redaction = std::string();pleos::study_function(scls::string_to_formula(std::string("(7x*x+2x-4)/(8x - 9)")).get(), &redaction);content += std::string("<p>") + redaction + std::string("</p>");
-    pleos::study_function(scls::string_to_formula(std::string("(1 + n)^4-(1 - n)^4")).get(), &redaction);content += std::string("<p>") + redaction + std::string("</p>");
-    scls::Text_Style style;style.set_max_width(600);
+    //pleos::study_function(scls::string_to_formula(std::string("(1 + n)^4-(1 - n)^4")).get(), &redaction);content += std::string("<p>") + redaction + std::string("</p>");
+    scls::Text_Style style;style.set_max_width(900);
     pleos::string_to_image(content, style).save_png("tests/cours.png");//*/
 
 	/*std::string content = std::string("<h1>Système linéaire</h1>");

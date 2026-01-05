@@ -27,7 +27,9 @@ Théoriquement, il est possible de considérer tout ce qui a une valeur de véri
 <p>
 En pratique, les propositions suivent une syntaxe assez précise, et assez claire.
 Pour rappel, <span class="important"><definition name="syntax"></span>.
-L'exemple le plus simple de syntaxe est la langue française.
+L'objet principal utilisé en syntaxe est la formule.
+En effet, <span class="important"><definition name="syntax-formula"></span>.
+L'exemple le plus simple de syntaxe est la langue française, où toutes les phrases possibles représentent des formules différentes.
 C'est la même chose pour les propositions (et pour tout ce qui englobe la logique), ou même les nombres.
 En fait, <span class="important">il faut comprendre que la syntaxe des propositions est très proche de la syntaxe des nombres</span>.
 Par exemple, imaginez que vous travaillez sur la proposition "je suis un majeur".
@@ -37,7 +39,7 @@ En d'autres termes, vous pouvez sans soucis écrire cette proposition sous la fo
 </p>
 <math><mi>P</mi><mo>=</mo><mi>"je suis un majeur"</mi></math>
 <p>
-Cependant, utiliser l'égalité en logique est peut recommander.
+Cependant, utiliser l'égalité en logique est peu recommander.
 En effet, <span class="important">dans notre exemple, on dit que "P" est forcément égal à la proposition "je suis majeur"</span>.
 Or, imaginez la proposition "Q" égal à la phrase "je remplis toutes les conditions nécessaires pour être majeur".
 Dans les deux cas, vous êtes majeur, mais "P" ne s'écrit pas comme "Q".

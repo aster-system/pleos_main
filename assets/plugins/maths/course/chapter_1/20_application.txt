@@ -53,15 +53,97 @@ Cependant, avec un peu de réflexion, on peut facilement énumérer des relation
 
 </table>
 
+<h3>Les relations d'équivalences</h3>
+<p>
+Les relations d'équivalences sont un type précis de relations mathématiques.
+En fait, <span class="important"><definition name="relation_equivalence"></span>.
+Ici, <span class="important"><definition name="relation_symmetric"></span>.
+<p>
+<math><mforall>a <min> E, a ~ a</math>
+</p>
+En d'autres termes, l'ordre de "a" et "b" n'importe pas.
+De plus, <span class="important"><definition name="relation_reflexive"></span>.
+Ce n'est pas le cas de toutes les relations : pour la relation "plus petit que", 2 n'est pas "plus petit que" 2, mais égal.
+</p>
+<math><mforall>a, b <min> E, a ~ b <mimp> b ~ a</math>
+<p>
+L'avantage de ce concept est la façon dont on peut l'utiliser.
+En effet, <span class="important">cette définition complexe est parfaitement équivalente au fait de dire que si deux objets sont en relation, alors ils obéissent à une même propriété quelconque</span> (<a href="demo#1_1_0_0">démontré ici</a>).
+Cette propriété peut être n'importe quoi, et être de n'importe quelle nature (tant que la relation d'égalité est définie sur les résultats possibles de cette dernière) : "parité", "signe", "chiffre des dizaines"...
+Ici, nous la notons "f" :
+</p>
+<math><mforall> x, y <min> E, f(x) = f(y) <mequi> x ~ y<math>
+<p>
+Voici un exemple de propriété, se lisant comme "pour tout x appartenant à un ensemble E, f(x) est vraie si l'ensemble vide appartient à x, et fausse sinon".
+Nous noterons "~" la relation d'équivalence correspondant à cette propriété.
+</p>
+<math><mforall> x <min> E, f(x) <mequi> <mempty> <min> x<math></br>
+<math><mforall> x, y <min> E, x ~ y <mequi> f(x) = f(y)<math>
+<p>
+Définissons maintenant un "E" précis :
+</p>
+<math>E = {{1, A}, {8, D, <mempty>}, {G}, {<mempty>}, <mempty>, {<mempty>, 7}}</math>
+<p>
+Ici, les éléments de "E" obéissant à la propriété "f(x) est vraie" représentent un sous-ensemble de "E", que nous appellerons "F".
+Tous les éléments de "F" peuvent être reliés par une relation d'équivalence, correspondant ici à la propriété "f".
+</p>
+<math>F = {{8, D, <mempty>}, {<mempty>}, {<mempty>, 7}}</math>
+<p>
+Plein d'autres propriétés peuvent marcher : "cardinal de l'ensemble", "nombres de lettres / nombres dans l'ensemble"...
+Dans un ensemble quelconque découpé par une relation d'équivalence, <span class="important">la propriété de transitivité permet de dire que, si un élément est reliable à un autre, alors il être reliés à tous les éléments reliables à cet autre objet (et vice-versa)</span>.
+Grâce à ça, nous pouvons définir un objet assez utile : les classes d'équivalences.
+<span class="important"><definition name="equivalence_class"></span>.
+Grâce à ce concept, on peut parler de l’entièreté des éléments possédant une propriété avec un seul objet, sans avoir à tous les citer, facilitant les démonstrations et les calculs.
+D'ailleurs, tous les éléments reliables à "x" peuvent le remplacer, mais n'en garder qu'un est bien plus simple (on choisit généralement le plus simple à utiliser).
+Ce genre de classe se note en entourant l'élément "x" avec des chevrons.
+</p>
+<math>a <min> [x] <mequi> a ~ x</math>
+<p>
+Dans notre "E" de tout à l'heure, nous pouvons noter la classe d'équivalence à un des éléments de "F" (dont nous choisissons le plus simple) comme ceci :
+</p>
+<math>a <min> [{<mempty>}] <mequi> a ~ {<mempty>} <mequi> a <min> F</math>
+
 <h3>Qu'est ce qu'est une application mathématique ?</h3>
 <p>
-En mathématique, <span class="important"><definition name="application"></span>.
-Ce premier ensemble se nomme généralement "ensemble de départ", et le deuxième ensemble se nomme "ensemble d'arrivée".
+En mathématiques, <span class="important"><definition name="application"></span>.
 Une chose très importante : tous les ensembles de l'ensemble de départ doivent être liés à exactement un élément de l'ensemble d'arrivée.
+À l'inverse, il n'est pas obligatoire que tous les éléments de l'ensemble d'arrivée soit lié à un élément de l'ensemble de départ, ni qu'il ne soit lié qu'à un seul objet (il peut être lié à 2 objets, 3 objets, une infinité...).
 D'un point de vue rigoureux, <span class="important"><definition name="application-rigorous"></span>.
-Comme tous ces couples sont des couple contenant un élément de l'ensemble de départ et un élément de l'ensemble d'arrivée, il s'agit d'un sous-ensemble du produit cartésien de l'ensemble de départ et d'arrivée (contenant, lui, tous les couples, même ceux qui ne sont pas concernés par l'application).
+Comme tous ces couples sont des couples contenant un élément de l'ensemble de départ et un élément de l'ensemble d'arrivée, il s'agit d'un sous-ensemble du produit cartésien de l'ensemble de départ et d'arrivée (contenant, lui, tous les couples, même ceux qui ne sont pas concernés par l'application).
+<span class="important">L'ensemble de ces couples formés par l'application est nommé le "graphe" de la fonction</span>.
+Pour une application quelconque "f" ayant comme ensemble de départ "A" vers l'ensemble d'arrivée "B", on dit que "f" est une application allant de "A" vers "B", et l'on note :
+</p>
+<math>f : A <mto> B</math>
+<p>
+D'un point de vue logique, la notation est assez basique.
+Pour une traduction mathématique - français, lisez "pour tout élément x de l'ensemble de départ A, il existe un unique élément y de l'ensemble d'arrivé B, tel que le couple x et y appartiennent au graphe Gf de la fonction".
+</p>
+<math><mforall> x <min> A, <mexists>! y <min> B, (x, y) <min> G<msub>f</msub></math>
+<p>
+Pour tout objet "x" appartenant à A, l'objet lié à "x" selon l'application "f" est nommé image de "x" par "f", et se note ainsi :
+</p>
+<math>x <mto> f(x)</math>
+<p>
+Pour faire le lien avec notre notation logique d'au dessus, "y" représente en fait "f(x)".
+</p>
+<math><mforall> x <min> A, <mexists>! y <min> B [ y = f(x) <mand> (x, f(x)) <min> G<msub>f</msub>]</math>
+<p>
+En général, <span class="important">l'ensemble de tous les éléments de l'ensemble d'arrivée appartenant à (au moins) un couple avec un élément de l'ensemble de départ par l'application "f" est nommé "ensemble image de f"</span>.
+Cependant, il est aussi possible de simplement l'appeler "image de f", qu'il ne faut absolument pas confondre avec "l'image de x par f".
+Pour des raisons de simplicité, nous continuerons à parler d'ensemble image.
+</p>
+<p>
+Si besoin, il est possible d'expliciter "f(x)" sous la forme d'une expression précise.
+Généralement, <span class="important">quand une application est explicitée, elle donne une façon de modifier la valeur "x" pour obtenir la valeur de l'ensemble d'arrivée liée à "x" selon cette application</span>.
+Il n'est pas obligatoire qu'une fonction soit explicité, mais très conseillé pour pouvoir plus facilement savoir quel élément de l'ensemble de départ est lié à quel élément de l'ensemble d'arrivée.
+Dans ce cas, on peut noter la façon dont "x" est modifié par "f".
+Voici un exemple dans le cas où "x" est un nombre entier naturel (que nous nous permettons d'utiliser ici pour l'exemple, bien que nous ne les avons pas encore correctement définis), et "f(x)" aussi :
+</p>
+<math>f(x) = 2 * x</math>
+<p>
+Il faut faire attention à une chose : "f(x)" est un objet appartenant à l'ensemble d'arrivée, et "f" est un objet représentant l'application que l'on étudie (et donc, il faut faire attention à utiliser la bonne notation à chaque fois).
 Une façon très utilisé pour représenter ce concept est celui de diagramme sagittal, où l'on peut lier graphiquement les éléments un à un entre les deux ensembles.
-Voici un exemple en bas :
+Voici un exemple en bas pour l'application allant de "{0, 1, 2, 3, 4}" vers "{0, 2, 4, 6, 8}", transformant "x" en "2 * x":
 </p>
 
 <graphic>
@@ -88,3 +170,193 @@ Voici un exemple en bas :
 <line x_1=-3/2 y_1=-1 x_2=3/2 y_2=-1 color=black>
 <line x_1=-3/2 y_1=-2 x_2=3/2 y_2=-2 color=black>
 </graphic>
+
+<p>
+Un concept assez similaire est le concept de fonction.
+En mathématiques, <span class="important"><definition name="function"></span>.
+Il s'agit d'une définition légèrement moins forte que celle de l'application.
+En plus, <span class="important">une application est une fonction où tous les objets de l'ensemble de départ sont liés à un unique élément de l'ensemble d'arrivée</span>.
+Il est néanmoins possible d'obtenir l'ensemble de toutes les valeurs de l'ensemble de départ de la fonction qui sont bel et bien utilisées par cette dernière : cet ensemble se nomme ensemble de définition.
+Cependant, le point commun est qu'une fonction ne permet de lier un objet de l'ensemble de départ que avec un maximum de un objet de l'ensemble d'arrivée.
+Voici un exemple de diagramme sagittal de fonction :
+</p>
+
+<graphic>
+<background_color white>
+<base draw=0>
+
+<circle x=-2 y=0 radius_x=3/2 radius_y=4>
+<text x=-2 y=2 content="0"></text>
+<text x=-2 y=1 content="1"></text>
+<text x=-2 y=0 content="2"></text>
+<text x=-2 y=-1 content="3"></text>
+<text x=-2 y=-2 content="4"></text>
+
+<circle x=2 y=0 radius_x=3/2 radius_y=4>
+<text x=2 y=2 content="0"></text>
+<text x=2 y=1 content="2"></text>
+<text x=2 y=0 content="4"></text>
+<text x=2 y=-1 content="6"></text>
+<text x=2 y=-2 content="8"></text>
+
+<line x_1=-3/2 y_1=2 x_2=3/2 y_2=2 color=black>
+<line x_1=-3/2 y_1=1 x_2=3/2 y_2=1 color=black>
+<line x_1=-3/2 y_1=0 x_2=3/2 y_2=0 color=black>
+<line x_1=-3/2 y_1=-2 x_2=3/2 y_2=-1 color=black>
+</graphic>
+
+<h3>La composition de fonction et d'applications</h3>
+<p>
+L'opération la plus simple avec les fonctions (et les applications) est la composition.
+<span class="important"><definition name="function-composition"></span>.
+L'idée est donc d'utiliser une fonction (ou une application), puis une autre après celle-ci.
+Voici un exemple de deux fonctions "f" et "g" quelconques, et d'une fonction "h" représentant la composée de "f" et "g".
+</p>
+<math>f : A <mto> B</math></br>
+<math>f : x <mto> f(x)</math></br>
+<math>g : B <mto> C</math></br>
+<math>f : y <mto> g(y)</math></br>
+<math>h : A <mto> C</math></br>
+<math>h : z <mto> f(g(z))</math>
+<p>
+Ici, on peut écrire "h" comme le résultat de l'opération "composition" appliqué sur ces fonctions, opération s'écrivant avec un petit rond :
+</p>
+<math>h = f <mcomp> g</math></br>
+<p>
+On peut faire de même avec "h(x)".
+</p>
+<math>h(x) = (f <mcomp> g)(x) = f(g(x))</math>
+<p>
+Le diagramme sagittal de "h" peut se représenter comme cela :
+</p>
+
+<graphic ratio_base>
+<background_color white>
+<base draw=0 width=30 height=10>
+
+<circle x=-10 y=0 radius_x=3/2 radius_y=4>
+<text x=-10 y=2 content="0"></text>
+<text x=-10 y=1 content="1"></text>
+<text x=-10 y=0 content="2"></text>
+<text x=-10 y=-1 content="3"></text>
+<text x=-10 y=-2 content="4"></text>
+
+<circle x=-5 y=0 radius_x=3/2 radius_y=4>
+<text x=-5 y=2 content="0"></text>
+<text x=-5 y=1 content="2"></text>
+<text x=-5 y=0 content="4"></text>
+<text x=-5 y=-1 content="6"></text>
+<text x=-5 y=-2 content="8"></text>
+
+<text x=-15/2 y=4 content="g" font_size_in_scale=1></text>
+<line x_1=-19/2 y_1=2 x_2=-11/2 y_2=1 color=black>
+<line x_1=-19/2 y_1=1 x_2=-11/2 y_2=2 color=black>
+<line x_1=-19/2 y_1=0 x_2=-11/2 y_2=0 color=black>
+<line x_1=-19/2 y_1=-1 x_2=-11/2 y_2=-2 color=black>
+<line x_1=-19/2 y_1=-2 x_2=-11/2 y_2=-1 color=black>
+
+<circle x=0 y=0 radius_x=3/2 radius_y=4>
+<text x=0 y=2 content="0"></text>
+<text x=0 y=1 content="5"></text>
+<text x=0 y=0 content="10"></text>
+<text x=0 y=-1 content="15"></text>
+<text x=0 y=-2 content="20"></text>
+
+<text x=-5/2 y=4 content="f" font_size_in_scale=1></text>
+<line x_1=-9/2 y_1=2 x_2=-1/2 y_2=2 color=black>
+<line x_1=-9/2 y_1=1 x_2=-1/2 y_2=2 color=black>
+<line x_1=-9/2 y_1=0 x_2=-1/2 y_2=2 color=black>
+<line x_1=-9/2 y_1=-1 x_2=-1/2 y_2=1 color=black>
+<line x_1=-9/2 y_1=-2 x_2=-1/2 y_2=1 color=black>
+
+<circle x=5 y=0 radius_x=3/2 radius_y=4>
+<text x=5 y=2 content="0"></text>
+<text x=5 y=1 content="1"></text>
+<text x=5 y=0 content="2"></text>
+<text x=5 y=-1 content="3"></text>
+<text x=5 y=-2 content="4"></text>
+
+<circle x=10 y=0 radius_x=3/2 radius_y=4>
+<text x=10 y=2 content="0"></text>
+<text x=10 y=1 content="5"></text>
+<text x=10 y=0 content="10"></text>
+<text x=10 y=-1 content="15"></text>
+<text x=10 y=-2 content="25"></text>
+
+<text x=15/2 y=4 content="h" font_size_in_scale=1></text>
+<line x_1=11/2 y_1=2 x_2=19/2 y_2=2 color=black>
+<line x_1=11/2 y_1=1 x_2=19/2 y_2=2 color=black>
+<line x_1=11/2 y_1=0 x_2=19/2 y_2=2 color=black>
+<line x_1=11/2 y_1=-1 x_2=19/2 y_2=1 color=black>
+<line x_1=11/2 y_1=-2 x_2=19/2 y_2=1 color=black>
+
+<text x=-26/2 y=0 content="h =" font_size_in_scale=3/2></text>
+<text x=5/2 y=0 content="=" font_size_in_scale=3/2></text>
+</graphic>
+
+<p>
+D'un point de vue définitionnel, il y a un détail à prendre en compte : <span class="important">la comptabilité de l'ensemble de départ de "g" et de l'ensemble d'arrivée de "f"</span>.
+En effet, <span class="important">l'ensemble image (bel et bien image, pas d'arrivée) de "g" doit obligatoirement posséder un élément en commun avec l'ensemble de définition de "f"</span>.
+Sinon, tous les éléments de l'ensembles de départ n'ont aucune image, et la fonction... n'existe pas.
+</p>
+
+<graphic ratio_base>
+<background_color white>
+<base draw=0 width=30 height=10>
+
+<circle x=-10 y=0 radius_x=3/2 radius_y=4>
+<text x=-10 y=2 content="0"></text>
+<text x=-10 y=1 content="1"></text>
+<text x=-10 y=0 content="2"></text>
+<text x=-10 y=-1 content="3"></text>
+<text x=-10 y=-2 content="4"></text>
+
+<circle x=-5 y=0 radius_x=3/2 radius_y=4>
+<text x=-5 y=2 content="0"></text>
+<text x=-5 y=1 content="2"></text>
+<text x=-5 y=0 content="4"></text>
+<text x=-5 y=-1 content="6"></text>
+<text x=-5 y=-2 content="8"></text>
+
+<text x=-15/2 y=4 content="g" font_size_in_scale=1></text>
+<line x_1=-19/2 y_1=2 x_2=-11/2 y_2=1 color=black>
+<line x_1=-19/2 y_1=1 x_2=-11/2 y_2=2 color=black>
+<line x_1=-19/2 y_1=0 x_2=-11/2 y_2=0 color=black>
+<line x_1=-19/2 y_1=-1 x_2=-11/2 y_2=1 color=black>
+<line x_1=-19/2 y_1=-2 x_2=-11/2 y_2=2 color=black>
+
+<circle x=0 y=0 radius_x=3/2 radius_y=4>
+<text x=0 y=2 content="0"></text>
+<text x=0 y=1 content="5"></text>
+<text x=0 y=0 content="10"></text>
+<text x=0 y=-1 content="15"></text>
+<text x=0 y=-2 content="20"></text>
+
+<text x=-5/2 y=4 content="f" font_size_in_scale=1></text>
+<line x_1=-9/2 y_1=-1 x_2=-1/2 y_2=1 color=black>
+<line x_1=-9/2 y_1=-2 x_2=-1/2 y_2=1 color=black>
+
+<circle x=5 y=0 radius_x=3/2 radius_y=4>
+<text x=5 y=2 content="0"></text>
+<text x=5 y=1 content="1"></text>
+<text x=5 y=0 content="2"></text>
+<text x=5 y=-1 content="3"></text>
+<text x=5 y=-2 content="4"></text>
+
+<circle x=10 y=0 radius_x=3/2 radius_y=4>
+<text x=10 y=2 content="0"></text>
+<text x=10 y=1 content="5"></text>
+<text x=10 y=0 content="10"></text>
+<text x=10 y=-1 content="15"></text>
+<text x=10 y=-2 content="25"></text>
+
+<text x=15/2 y=4 content="h" font_size_in_scale=1></text>
+
+<text x=-26/2 y=0 content="h =" font_size_in_scale=3/2></text>
+<text x=5/2 y=0 content="=" font_size_in_scale=3/2></text>
+</graphic>
+
+<p>
+Dans le cas où l'on compose pour obtenir une application, c'est encore plus strict : <span class="important">l'ensemble image de "g" doit obligatoirement être inclu dans l'ensemble de définition de "f"</span> (sinon, des éléments de l'ensemble de départ peuvent n'avoir aucune image, ce qui est contraire à la définition).
+C'est d'ailleurs pour éviter cette rigidité que l'on compose en général des fonctions plutôt que des applications.
+</p>

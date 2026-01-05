@@ -1,0 +1,357 @@
+<h1>De la 3D avec le Raycast</h1>
+
+
+
+<h2>Commencer par... de la 2D</h2>
+
+<h3>Projeter de la 2D</h3>
+<p>
+Nous voulons faire un jeu 3D.
+Alors, pourquoi donc commencer par de la 2D ?
+Dans le cas du Raycast, c'est l'un des meilleurs moyens pour comprendre l'idée générale de la technique.
+En effet, le Raycast est, en réalité, une projection en 3D d'un environnement 2D.
+La première chose à faire est de définir cet environnement.
+</p>
+<p>
+Pour commencer, nous allons créer une simple map en 2D.
+Pour des raisons de clarté, nous allons aussi définir un moyen d'afficher cette map de dessus (donc, en 2D pur).
+Commençons simplement, en disant que les cases blanches sont du vide et les cases rouges des murs. Travaillons sur cette map :
+</p>
+<img alt="Map 2D" src="../images/raycast/map_2d.png" style="max-height:300px">
+<p>
+Notre problème ici, pour le rendu 3D, est de savoir comment afficher les éléments de cette map en 3D, avec des performances tolérables.
+Avec les APIs modernes, la puissance de calcul est suffisante pour afficher tous les éléments 1 par 1, et calculer en temps réel lesquels afficher et ne pas afficher.
+Dans notre cas, il faudrait générer 22 cases contenant des murs.
+Sans accélération matérielle, cette étape devient vite très demandante en ressources, et les performances peuvent devenir catastrophique (surtout sur une map plus grande).
+Il faut donc agir sur l'algorithme pour éviter ce problème.
+</p>
+<p>
+La transformation que nous allons faire va nous permettre d'économiser des ressources, sans pour autant donner un résultat affreux.
+L'idée ici est de n'afficher que le strict nécessaire au rendu 3D, et d'éviter d'en afficher trop.
+Cependant, le problème est de savoir quels objets afficher et lesquels ne pas afficher.
+C'est la que le Raycast rentre en jeu, puisqu'il s'agit d'une technique permettant de faire cela.
+Nous allons voir quels objets doivent être affichés via la technique de lancer de rayons, ou, traduit en anglais, "Raycast".
+</p>
+
+<h3>Le lancer de rayons</h3>
+L'idée ici va être de détecter tous les objets à afficher (donc, devant la caméra) grâce à la technique des rayons.
+Pour cela, nous avons besoin de la map, de la position caméra et de la rotation de la caméra.
+Avec ces données, nous allons tracer un rayon, qui va nous permettre de savoir quels objets afficher.
+En marquant la caméra par un point bleu clair et le rayon par une ligne bleu foncé, le lancer ressemble à ça :
+</p>
+<img alt="Lancer de rayons" src="../images/raycast/ray_2d.png" style="max-height: 300px;">
+<p>
+Avec ce simple rayon, nous pouvons déjà savoir que le mur touché devra être afficher.
+Bien évidemment, un seul mur ne suffit pas.
+En agrandissant le nombre de rayons, et en les rapprochant, nous pouvons définir tout un point de vue, qui représente toute la partie bleu foncé sur cette image :
+</p>
+<img alt="Plus de rayons" src="../images/raycast/rays_2d.png" style="max-height: 300px;">
+<p>
+Le nombre de rayon et leur espacement dépend des besoins du jeu / du joueurs, des capacités de l'ordinateur du joueur, de la taille de la map...
+Dés que vous avez tous les objets nécessaires, vous pouvez les afficher sur l'écran.
+Cette étape peut dépendre de beaucoup de choses, et nous en verrons quelques exemples juste après.
+Mais avant, mettons précisément au point notre algorithme de lancer de rayon.
+</p>
+
+
+
+<h2>Créer l'algorithme Raycast</h2>
+
+<h3>Les bases de l'algorithme</h3>
+<p>Pour que notre algorithme marche, nous allons devoir poser quelques bases.
+Premièrement, la map du jeu sera contenu dans une liste à deux dimensions.
+La première dimension représente la coordonnée Y de la case, et la deuxième dimension la coordonnée X de la case.
+Définissons ces données comme statiques dans le temps.</p>
+<p>L'algorithme aura besoin de deux entrées principales : les coordonnées de la caméra, et l'angle de la caméra.
+Par définition, l'angle de la caméra représente le "devant" de la caméra, vers où projeter le rayon.
+Pour des soucis de simplicité mathématique, le départ de l'angle représente la droite partant vers la droite de la caméra.
+L'algorithme sortira le point de collision entre le premier mur trouvé (ou le fond de la map si aucun mur n'est trouvé) et le rayon.
+Si on résume, l'algorithme aura comme donnée de départ :
+</p>
+<img alt="Données de départ" src="../images/raycast/input.png" style="max-width:300px;">
+
+<h3>Simuler l'avancée du rayon</h3>
+<p>
+Pour simuler l'avancée du rayon, nous allons utiliser les propriétés de notre map cadriller.
+En effet, à chaque fois que notre rayon va avancer d'une case horizontale, il va avancer d'un certain nombre de cases verticals, que nous appellerons horizontal_ratio.
+Et, vice versa, à chaque fois que la rayon va avancer d'une case verticale,
+il va avancer d'un certain nombre de cases horizontales (l'inverse de horizontal_ratio), que nous appellerons vertical_ratio.
+Grâce à cette propriété, on peut connaître les zones de collisions avec chaque cases devant le rayon, en avançant cases par cases.
+Pour n'en louper aucune, il faut avancer horizontalement et verticalement aux cases, en prenant en compte que l'avancer peut se faire à sens arrière, selon les orientations du rayon.
+Les orientations en question seront nommées horizontal_advance et vertical_advance.
+Nous devrons aussi prendre en compte que la position de départ du rayon n'est pas un nombre entier, mais rationnel, et qu'il faudra passer à la case précédente / suivante pour ne pas décaler le rayon.
+Si une case contient un mur, on arrête la progression du rayon : il a heurté un mur.
+</p>
+<p>
+Parler, c'est bien.
+Cependant, pour avoir tous ses résultats, il va falloir faire un peu de mathématiques.
+Pour calculer les ratios, il nous faut la valeur de la pente du rayon tracé par l'angle avant pour une case horizontal / vertical parcourue.
+Pour effectuer ce calcul, nous allons utiliser un peu de <a href="https://fr.wikipedia.org/wiki/Trigonom%C3%A9trie" target="_blank">trigonométrie</a>, et, plus précisément, nous allons utiliser le <a href="https://fr.wikipedia.org/wiki/Cercle_trigonom%C3%A9trique" target="_blank">cercle trigonométrique</a>.
+En effet, les propriétés de ce cercle nous disent que nous pouvons obtenir les valeurs précises de la pente du rayon, horizontalement avec le cosinus et verticalement avec le sinus.
+Pour des raisons de simplicité, nous allons prendre les valeurs absolues dans les calculs.
+Grâce à cette propriété, une simple division suffit à calculer les ratios, et nous obtenons les valeurs nécessaires :</p>
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mstyle displaystyle="true">
+    <mrow class="MJX-TeXAtom-ORD">
+      <mi>horizontal_ratio</mi>
+      <mo>=</mo>
+      <mfrac>
+        <mrow>
+          <mi>|sin(angle)|</mi>
+        </mrow>
+        <mrow>
+          <mi>|cos(angle)|</mi>
+        </mrow>
+      </mfrac>
+      </mrow>
+    </mstyle>
+</math><br><br>
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mstyle displaystyle="true">
+    <mrow class="MJX-TeXAtom-ORD">
+      <mi>vertical_ratio</mi>
+      <mo>=</mo>
+      <mfrac>
+        <mrow>
+          <mi>1</mi>
+        </mrow>
+        <mrow>
+          <mi>horizontal_ratio</mi>
+        </mrow>
+      </mfrac>
+    </mrow>
+  </mstyle>
+</math>
+<p>
+Après cela, quelques modifications sont nécessaires, pour ne pas avoir cetaines erreurs.
+Premièrement, si le sinus de l'angle est égal à 0, alors la division pour le ratio vertical peut être faussé.
+De même, si le cosinus de l'angle est égal à 0, c'est le ratio horizontal qui est faussé.
+Pour ne pas avoir ce genre de problème, nous devons remplacer le sinus / cosinus par un tout petit nombre (comme 0.000001) dans le calcul.
+Pour finir, le dernier comportement à prendre en compte est le signe des ratios.
+Une chose à comprendre est que le signe de l'axe référence (horizontal pour le ratio horizontal et vertical pour le ratio vertical) est présent grâce aux variables advances, donc il n'importe pas ici.
+Le seul axe qui importe ici est l'autre axe du ratio, puisqu'il doit progresser vers lui.
+Donc, le signe du ratio vertical représente le signe de l'axe horizontal, et le signe du ratio horizontal représente le signe de l'axe vertical.
+En termes plus mathématiques, le signe de horizontal_ratio est celui du sinus et celui de vertical_ratio est celui du cosinus.
+</p>
+<p>
+Maintenant que cela est fait, calculons horizontal_advance et vertical_advance.
+Pour ces deux variables, deux valeurs sont possibles : 1 ou -1.
+Si l'angle pointe vers l'avant (donc, que la valeur du cosinus de l'angle est positive), l'avancement horizontal est positif.
+Sinon, elle est négative.
+C'est la même chose pour l'avancement vertical, avec la valeur du sinus cette fois ci.
+Et... c'est tout pour cette valeur.
+Cependant, elle va nous être utile directement pour la prochaine
+étape du lancé : avancer la position actuelle du rayon vers une valeur entière.
+Pour être plus précis, le rayon horizontal doit avancer à la prochaine valeur entièere de X, et le rayon vertical doit avancer à la prochaine valeur entière de Y.
+Bien que cette étape semble simple, elle nécessite de n'oublier aucune valeur à modifier.
+La première étape est de calculer ce que l'on appelle "prochaine valeur" (cela compte pour les deux rayons).
+En effet, si l'avancement est négatif, alors il ne s'agit pas de la prochaine valeur, mais de la dernière valeur.
+Donc, la valeur précise ici est défini par l'advance du rayon (arrondi vers le bas pour un advance négatif, et arrondi vers le haut pour un advance positif).
+Maintenant, appliquons le ratio nécessaire.
+Le calcul est assez simple : on ajoute à la position pas encore modifiée le produit du ratio et de la valeur absolue entre l'ancienne position et la "prochaine" position.
+Comme ça, votre rayon est bien calibré.
+</p>
+<p>
+Maintenant, nous pouvons commencer à simuler le parcours du rayon.
+Nous commençons par voir si la case actuelle du rayon est pleine ou pas.
+Cependant, attention à ne pas se tromper pour choisir les coordonnées de la case.
+En effet, si l'advance est négatif, alors la case du rayon est celle sur lequel il est passé, et pas celle qui vise.
+Donc, la coordonnées sur l'axe du rayon doit être diminué de 1.
+Cette étape dépend de comment vous découper votre map, mais, généralement, ce problème arrive souvent.
+Mais, à l'inverse, la coordonnée de l'autre axe représente en général l'arrondi vers le bas de la coordonnée.
+Si la case est vide, alors on continue, jusqu'à ce que le rayon sort de la map ou touche une autre case avec un mur.
+Ici, "continuer" veut dire avancer de "advance" sur l'axe du rayon et du "ratio" sur l'autre axe.
+Dés que les deux rayons ont finis leur parcours, nous devons prendre en résultat final le rayon le plus proche de la caméra.
+</p>
+
+
+
+<h2>Passer à la 3D</h2>
+
+<h3>Différents moyens de faire de la 3D</h3>
+<p>
+En théorie, le problème principal des éléments à afficher pour votre rendu est réglé.
+Cependant, il ne vous reste plus qu'à afficher les objets.
+Pour être parfaitement honnête, il n'y a pas un moyen de faire ça, mais une immense quantité.
+Vous pouvez faire du OpenGL like, en les affichant un par un, avec les calculs mathématiques nécessaires.
+Cependant, ces calculs sont assez complexes, et peuvent changer selon les besoins du jeu.
+Vous pouvez aussi faire entièrement avec de la perspective / sans perspective.
+L'avantage de ses systèmes est qu'ils sont très modulables, même si ils sont très complexes.
+Si vous ne savez pas comment faire exactement, ne vous inquiétez pas, il existe un moyen de faire, n'utilisant que le Raycast.
+</p>
+
+<h3>La perspective 3D via le Raycast</h3>
+<p>
+La technique que je vais vous présenter permet de faire un rendu 3D, entièrement avec des rayons (et le théorème de Thalès).
+Premièrement, il faut adapter l'algorithme à permettre d'avoir la distance du mur touché (en général, ce n'est pas l'adaptation la plus complexe de l'algorithme).
+Maintenant que cela est fait, créeons une image qui représentera le rendu 3D.
+L'idée va être de remplir cette image avec le résultat des rayons, en mettant un rayon par pixels pour un affichage fluide.
+Comment va t-on faire cela ?
+Comme nous l'avons vu plus haut, nous allons envoyer pleins de rayons proches, qui donnerons chacun un résultat propre.
+La différence d'angle entre le premier et le dernier angle représente le champ de vision du joueur, aussi appelé FOV du joueur.
+En suite, attribuons une colonne de pixel par rayon.
+L'ordre d'attribution est assez important ici : si vous faites comme les rayons présents plus haut, alors l'angle le plus grand (selon le cercle trigonométrique) représente le pixel le plus à gauche de l'écran.
+Donc, l'angle le plus petit représente le pixel le plus à droite, et les autres pixels sont eux dispersés dans le même ordre.
+Il est à noter que, si votre ordinateur n'est pas assez pussant, vous pouvez réduire le nombre de rayon, et augmenter la largeur des colonnes proportionnellement.
+Dans chacune de ces colonnes, traçons la vision qu'à le joueur du bloc touché selon le rayon.
+C'est là que le théorème de Thalès entre en jeu : la hauteur perçu du rayon est proportionnel à sa distance du joueur.
+Disons qu'une case à 1 case de distance occupe parfaitement toute la colonne, le calcul en devient très simple :
+</p>
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mstyle displaystyle="true">
+    <mrow class="MJX-TeXAtom-ORD">
+      <msub>
+        <mi>d</mi>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mi>a</mi>
+        </mrow>
+      </msub>
+      <mo>=</mo>
+      <mfrac>
+        <mn>1</mn>
+        <msub>
+          <mi>d</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>r</mi>
+          </mrow>
+        </msub>
+      </mfrac>
+    </mrow>
+  </mstyle>
+</math>
+<p>
+Cette formule nous donne la proportion de la colonne occupée par la case, il faut donc la multiplié par la hauteur de la colonne pour obtenir la valeur totale nécessaire.
+Pour finir, il faut prendre en compte que la case doit être placé correctement dans la colonne.
+Pour rester simple et suivre correctement les règles de perspective, disons que la case se trouve pile sur la ligne d'horizon de la caméra, et donc pile au milieu de son champ de vision.
+En effet, dans notre cas, l'horizon représente le milieu de l'image.
+Donc, la position y de la colonne se note :
+</p>
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mstyle displaystyle="true">
+    <mrow class="MJX-TeXAtom-ORD">
+      <msub>
+        <mi>y</mi>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mi>a</mi>
+        </mrow>
+      </msub>
+      <mo>=</mo>
+      <mn>0.5</mn>
+      <mfrac>
+        <mrow>
+          <mi>d</mi>
+          <msub>
+            <mrow class="MJX-TeXAtom-ORD">
+              <mi>a</mi>
+            </mrow>
+          </msub>
+        </mrow>
+        <mn>2</mn>
+      </mfrac>
+    </mrow>
+  </mstyle>
+</math>
+<p>
+Ce résultat est encore en pourcentage, et doit donc être multiplié par la hauteur de la colonne pour être utilisable.
+Définissons la couleur rouge pour les cases pleines, et la couleur verte si le rayon sort de la map.
+De plus, pour faire plus joli, rajoutant un rectangle bleu dans la moitié supérieure de l'image, pour simuler le ciel.
+Nous obtenons ce résultat :
+</p>
+<img alt="Résultat 3D" src="../images/raycast/3d.png" style="max-width:300px;">
+<p>
+Bon, pour l'instant le résultat n'est pas extraordinaire.
+Cependant, ce n'est pas vraiment la question ici.
+En effet, cet algorithme (assez simple, disons le) est très facilement modulable et customizable à souhait.
+D'ailleurs, il l'est tellement qu'il soit fortement probable que, dans votre esprit, les formules décrites plus haut sont formulées autrement (ce qui est une très bonne chose, tant qu'elles marchent) !
+Rien que avec ce petit départ, vous pouvez faire des très grande choses, comme tous les jeux vidéos des années 90 l'ont prouvés.
+De plus, c'est un très bon exercice pour s'améliorer en manipulation d'algorithmes, car ils vous demandent une réflexion particulièrement intense.
+Maintenant, c'est à vous de jouer, de moduler cet algorithme comme bon vous semble.
+Pleins d'améliorations sont possibles : textures (en dessinant mieux sur la colonne allouée aux cases), meilleure gestion de la hauteur (en jouant sur les formules vues plus haut)...
+Essayez de faire ce qui vous semble le plus intéressant, et de pondre le prochain AAA qui inondera Internet !
+</p>
+
+
+
+<h2>Textures, objets flottants et GUI</h2>
+
+<h3>Texturer votre Raycast</h3>
+<p>
+Bien que le rendu actuel soit en 3D, il est difficile de dire qu'il soit joli.
+Pour le rendre plus "regardable", nous allons y ajouter des textures.
+</p>
+<p>
+Pour rappel, chaque rayon va permettre de savoir comment dessiner une colonne de pixel sur l'image.
+Ici, l'idée va être de faire varier cette colonne de pixel, en fonction de la zone touchée, pour lui appliquer la texture adéquat.
+Pour cela, il va être nécessaire de mettre légèrement à jour notre algorithme de Raycast.
+En effet, nous allons devoir savoir où atterrit le rayon sur la case touchée.
+En fait, nous allons essayer de calcul à quelle distance du début de la case le rayon a touché.
+Pour cela, le calcul est simple : nous avons la position précise de où le rayon a touché, avec une valeur entière et une valeur décimale (selon si le rayon utilisé est le rayon vertical ou horizontal).
+Le calcul est simple : la valeur absolue de cette distance "d indice d" représente la valeur décimale "v indice d" à laquelle on soustrait la valeur décimale arrondi vers le bas.
+</p>
+<math>d <msub>d</msub> = v <sub>d</sub> - floor(v <sub>d</sub>)</math>
+<p>
+À partir de là, vous pouvez déjà tester si tout fonctionne bien, avec une étape simple : faire varier la couleur affiché par le rayon selon cette valeur.
+Par exemple, vous pouvez faire varier la nuance de rouge selon la proportion.
+</p>
+<img alt="Gradient de rouge 3D" src="../images/raycast/3d_gradient.png" style="max-width:300px;">
+<p>
+Selon la façon dont vous implémenter ce calcul, il se peut que, selon les orientations des faces touchées, le gradient aille de droite à gauche... ou de gauche à droite.
+Comme notre système de case nous limite à 4 faces, il est assez rapide de tester les 4 faces d'une case, et de modifier la proportion en l'inversant (en la soustrayant à 1) pour les faces qui en ont besoin, pour obtenir quelque chose d'uniforme et de cohérent.
+Dés que ceci est fait, il ne nous reste plus qu'à appliquer la texture adéquat.
+Déjà, il va nous falloir choisir une texture pour notre case.
+Pour le test, voici une texture provisoire, représentant une pierre.
+</p>
+<img alt="Texture provisoire" src="../images/raycast/stone.png" style="max-width:300px;">
+<p>
+En fait, pour chaque rayon, nous allons afficher la colonne de pixel (de précisément 1 pixel de large) correspondant à l'endroit sur la texture où la distance entre le début (tout à gauche) est égale à la distance entre le rayon et le début de notre case (calculé plus haut).
+Nous pouvons obtenir la valeur "x" de cette colonne de pixel en multipliant la distance entre le rayon et le début de notre case (qui représente une proportion entre 0 et 1) et la largeur de l'image.
+En suite, il ne vous suffit qu'à mettre cette colonne à la bonne taille, et qu'à la coller à la place du rectangle rouge (formé par une case normale).
+À partir de là, vous obtenez un premier semblant de texture.
+</p>
+<img alt="Texture simple" src="../images/raycast/3d_simple_texturing.png" style="max-width:300px;">
+<p>
+Ici, nous n'utilisons qu'une texture, et pas de textures pour la partie extérieure.
+Pour utiliser plusieurs textures, il vous faut un système permettant de différencier les cases, et d'afficher la texture adéquat selon la case.
+C'est la même chose pour la partie extérieure.
+Avec ça, vous avez déjà de quoi faire une map assez variée, comme sur l'illustration (je suis très nul en dessin, ne jugez pas ma texture par pitié).
+</p>
+<img alt="Textures avancées" src="../images/raycast/3d_texturing.png" style="max-width:300px;">
+
+<h3>Rajouter des objets flottants</h3>
+<p>
+Pour commencer, nous devons définir ce qu'est un "objet flottant".
+Ici, un objet flottant représente une catégorie précise d'objet, présents dans le jeu, mais dont le rendu n'est pas affiché en 3D, mais en 2D (avec leur texture toujours orientée vers le joueur).
+Cela peut paraître assez bizarre : pourquoi se limiter à ce genre de rendu ?
+En fait, ce genre d'objets représentent des éléments de la carte qui ont pour vocation d'être généralement des objets prenables / jetables.
+Un exemple assez clair : les munitions et les ennemis dans Doom.
+</p>
+<img alt="Un monstre de Doom" attributionsrc="https://commons.wikimedia.org/w/index.php?curid=1675007" src="../images/raycast/doom_enemy.png" style="max-width:300px;">
+<p>
+Cette image est proposée par <a href="//commons.wikimedia.org/w/index.php?title=User:Andersersej&amp;action=edit&amp;redlink=1" class="new" title="User:Andersersej (page does not exist)">andersersej</a>, sous la forme d'un travail personnel (une capture d'écran), sous la licence <a href="http://www.gnu.org/licenses/gpl.html" title="GNU General Public License">GPL</a>, et à <a href="https://commons.wikimedia.org/w/index.php?curid=1675007">cette adresse</a>.
+</p>
+<p>
+Il s'agit d'une autre façon possible d'afficher des objets dans notre moteur Raycast.
+Nous allons donc aussi l'implémenter dans le code.
+Déjà, nous allons devoir ajouter nos objets dans la carte.
+Pour cela, il n'y a pas de façon ultra générale : on peut les implémenter avec le système de case, comme hors du système de case (ce qui est plus simple, mais généralement plus gourmant en ressource).
+D'un point de vue "affichage 2D", pas grand chose ne change.
+Pour les tests, nous pouvons afficher des objets de ce genre dans notre système de rendu 2D, vue plus haut.
+Bien qu'ici nous optons pour la couleur vert foncé, vous pouvez prendre n'importe qu'elle couleur, voir directement une texture (toujours, en faisant attention de pouvoir reconnaître précisément chaque objet).
+</p>
+<img alt="La carte en 2D" src="../images/raycast/floating_objects_in_2d.png" style="max-width:300px;">
+<p>
+Maintenant, affichons le dans notre rendu 3D.
+C'est ici que la façon dont nous avons implémenté nos objets importe.
+Si vos objets sont dans le système de case, alors vous pouvez obtenir (pour chaque rayon) les objets présents dans une certaine case.
+Dans le où ces objets sont disjoints des cases, alors vous devez tester tous les objets pour savoir si ils doivent être affiché pour chaque rayon.
+À partir de là, plusieurs façons différentes peuvent fonctionner pour faire le rendu, et j'ai opté pour une technique très proche de celle des cases.
+En fait, pour chaque rayon, nous allons obtenir le point le plus proche du centre de notre objet flottant sur la ligne tracée par le rayon, grâce à une projection orthogonale.
+En effet, dans le cas actuel où notre objet est un plan, cette manière de faire nous permet d'obtenir la "colonne" du plan touchée par le rayon.
+Cependant, pour que l'objet soit tracé, il faut que cette colonne soit assez proche du centre de l'objet (ici représentant la largeur de l'objet divisé par 2).
+</p>
+<math>d <msub>centre</msub> <mltequal> <mfrac><mrow>l <msub>objet</msub></mrow><mrow>2</mrow></mfrac></math>
+<p>
+Dés que nous avons la validation du traçage de l'objet, nous n'avons qu'à obtenir la distance entre ce point et la caméra, et appliquer la même méthode que pour le traçage de cases.
+En étudiant la distance de la "colonne" actuelle au centre, nous pouvons obtenir la distance entre la partie la plus à droite de l'objet et la colonne actuelle, ce qui nous permet ensuite de tracer l'objet, avec la texture adéquat.
+</p>
+<img alt="Coeurs flottants" src="../images/raycast/3d_hearts.png" style="max-width:300px;">
