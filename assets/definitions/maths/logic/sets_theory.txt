@@ -71,6 +71,14 @@
 <new_definition name="cartesian_product_n_fold">
     <content>le produit cartésien fini de n ensembles est une opération sur n ensembles, permettant d'obtenir un ensemble des n-uplets (ensembles de n éléments) de chaque élément des n ensembles avec chaque élément des autres ensembles (et vice-versa)</content>
 </new_definition>
+<new_definition name="quotient_set">
+    <content>un ensemble quotient d'un ensemble "E" sur une relation d'équivalence "~" est une découpe de "E" entre chaque classe d'équivalence formée par "~" dans "E"</content>
+</new_definition>
+
+
+
+
+
 
 
 
@@ -115,10 +123,4 @@
 </new_definition>
 <new_definition name="upper_bounds">
     <content>le majorant (ou les majorants, vue qu'il n'est pas unique) d'un sous-ensemble F de l'ensemble E est un élément quelconque de E, tel que ce majorant soit supérieur ou égal à tous éléments de F</content>
-</new_definition>
-
-
-
-<new_definition name="quotient_set">
-    <content>un ensemble quotient d'un ensemble "E" sur une relation d'équivalence "~" est une découpe de "E", entre chaque classe d'équivalence de "~" dans "E"</content>
 </new_definition>

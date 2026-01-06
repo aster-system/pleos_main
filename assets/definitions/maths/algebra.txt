@@ -73,6 +73,10 @@
 <new_definition name="algebra_subgroup_trivial">
     <content>le sous-groupe trivial d'un groupe G est un sous-groupe de G sur l'ensemble ne contenant que l'élément neutre de G</content>
 </new_definition>
+<new_definition name="morphism">
+    <content>un morphisme de structures est une application entre deux ensembles de deux structures, où les lois sont compatibles entre elles après utilisation de l'application</content>
+    <content name="algebra">un morphisme de structures algébriques est une application entre deux ensembles de deux structures algébriques, où l'on doit s'assurer que les lois de composition de la première structure ont les mêmes propriétés que les lois de composition de la deuxième structure après utilisation de l'application, et que les lois de composition sont compatibles entre elles après utilisation de l'application</content>
+</new_definition>
 
 <new_definition name="algebra_lagrange_theorem">
     <content>le théorème de Lagrange formule que l'ordre d'un groupe G (le cardinal de son ensemble) est divisible par ceux de ses sous-groupes H</content>

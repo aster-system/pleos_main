@@ -102,6 +102,15 @@ Ce genre de classe se note en entourant l'élément "x" avec des chevrons.
 Dans notre "E" de tout à l'heure, nous pouvons noter la classe d'équivalence à un des éléments de "F" (dont nous choisissons le plus simple) comme ceci :
 </p>
 <math>a <min> [{<mempty>}] <mequi> a ~ {<mempty>} <mequi> a <min> F</math>
+<p>
+Cet outil nous permet de définir une nouvelle opération pour les ensembles : le quotient d'ensemble.
+<span class="important"><definition name="quotient_set"></span>.
+En d'autres termes, il s'agit d'une découpe d'un ensemble selon toutes les valeurs possibles d'une de ces propriétés.
+Nous l'utiliserons énormément pour définir des objets mathématiques (même très simples et intuitifs).
+Cette notation utilise le symbôle "/".
+Par exemple, pour un ensemble "E" quotienté par une relation d'équivalence "~", l'ensemble quotient "F" est noté :
+</p>
+<math>F = E / ~</math>
 
 <h3>Qu'est ce qu'est une application mathématique ?</h3>
 <p>
