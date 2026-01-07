@@ -22,6 +22,6 @@ En fait, <span class="important">il est possible de représenter des distances c
 <graphic width=300 ratio_base><background_color white><base draw=0 width=12 height=5><number_line><circle x=1 y=0 radius=1/3></graphic>
 <p>
 D'un point de vue rigoureux, <span class="important"><definition name="rational_number"></span>.
-Généralement, la notion d'un nombre rationnel est assez bizarre : on note le numérateur au dessus du dénominateur, en les séparant par une barre (comme pour la division).
+La notion d'un nombre rationnel est inspirée de celle de la division (présentée dans le chapitre 1) : on note le numérateur au dessus du dénominateur, en les séparant par une barre (comme pour la division).
 </p>
 <math><mfrac><mrow><mi>Numerateur</mi></mrow><mrow><mi>Dénominateur</mi></mrow></mfrac></math>

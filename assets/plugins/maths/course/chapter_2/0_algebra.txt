@@ -172,6 +172,7 @@ La seule chose à prouver pour que l'union d'un ensemble et d'une opération soi
 En algèbre, <span class="important"><definition name="algebra_group"></span>.
 Bien que cette définition semble très générale, elle exclut directement tous les exemples vues plus tôt : (N, +) et (N, *) ne sont pas inversibles, et (N, ^) n'est même pas associative.
 Cependant, l'addition sur Z permet de former un groupe.
+D'ailleurs, <span class="important">les groupes utilisant comme loi de composition interne une forme "d'addition" sont dit additifs</span>.
 </p>
 <math>(Z, +)</math>
 <p>
@@ -179,6 +180,49 @@ Une catégorie de groupe plus forte est le groupe abélien.
 <span class="important"><definition name="algebra_group-abelian"></span>.
 (Z, +) en est un exemple.
 </p>
+
+<h3>Les sous-groupes</h3>
+<p>
+Comme il exemple des sous-ensembles d'ensembles, il existe des sous-groupes de groupes.
+Ici, <span class="important"><definition name="algebra_subgroup"></span>.
+Ce groupe doit donc contenir les mêmes propriétés que tous les groupes : stabilité de la loi, associativité, neutre et inversibilité.
+Déjà (et si la loi est stable), comme un sous-groupe est défini sur un sous-ensemble de son groupe de départ, alors les éléments du sous-groupe sont aussi dans ceux du groupe, et <span class="important">la condition d'associativité est toujours assurée (inutile de la démontrer à chaque fois)</span>.
+</p>
+<math><mforall>a, b, c <min> E, (a . b) . c = a . (b . c)</math></br>
+<math><mimp><mforall>F <mincluded> E, <mforall>a, b, c <min> F, [a, b, c <min> E] <mequi> [(a . b) . c = a . (b . c)]</math>
+<p>
+De plus (toujours si la loi est stable), <span class="important">prouver que ce sous-groupe possède un neutre revient à démontrer que le neutre du groupe de départ se situe dans le sous-ensemble</span>.
+La démonstration de cette proposition est presque identique à celle pour l'associativité.
+</p>
+<math><mforall>a <min> E, <mexists>e <min> E, a . e = a</math></br>
+<math><mimp><mforall>F <mincluded> E, <mforall>a <min> F, [a <min> E] <mequi> [<mexists>e <min> E, a . e = a]</math>
+<p>
+Finalement, <span class="important">la seule difficulté est de prouver que la loi est stable sur l'ensemble du sous-groupe (et donc, sur le sous-ensemble de l'ensemble du groupe), et que chaque élément de l'ensemble du sous-groupe possède un inverse, toujours dans le sous-groupe</span>.
+Pour avoir un exemple, prenons... un exemple.
+Imagineons le groupe "G" représentant le groupe additif des entiers relatifs.
+</p>
+<math>G = (Z, +)</math>
+<p>
+Prenons un sous ensemble de "Z" : l'ensemble des nombres pairs "2Z".
+Comme nous l'avons vue, les éléments de "2Z" représentent tous les multiples de 2.
+La question est donc simple : <span class="important">est-ce que le groupe additif sur "2Z" est un sous-groupe de "G"</span> ?
+Déjà, vérifions si "2Z" est stable sur l'addition.
+</p>
+<math><mforall>a, b <min> 2Z, <mexists> c, d, e <min> Z, [a = 2 * c, b = 2 * d, a + b = e]</math></br>
+<math><mimp>e = a + b = 2 * c + 2 * d = 2 * (c + d)</math></br>
+<math><mimp><mexists> f <min> Z, [f = c + d, e = 2 * f] <mimp> e <min> 2Z</math>
+<p>
+Comme nous le constatons, toute somme d'éléments de "2Z" forme un élément de "2Z".
+Maintenant, vérifions la présence de chaque opposé de chaque élément de "2Z".
+</p>
+<math><mforall>a <min> 2Z, <mexists> b, c <min> Z, [a = 2 * b, a + c = 0]</math></br>
+<math><mimp>2 * b + c = 0 <mimp> 2 * b = -c <mimp> 2 * -b = c <mimp> c <min> 2Z</math>
+<p>
+Chaque élément possède bien un opposé, dans "2Z".
+Finalement, nous pouvons très facilement démontrer que le neutre de "(Z, +)", 0, appartient à "2Z", car "2 * 0 = 0".
+Donc, <span class="important">"2Z" est un sous-groupe de "G"</span>.
+</p>
+
 
 
 
@@ -191,14 +235,14 @@ Cet objet est assez complexe, car il représente un objet d'une autre théorie l
 Dans cette "théorie des catégories", <span class="important"><definition name="morphism"></span>.
 Ici, "structure" représente n'importe quoi qui admet des lois quelconques.
 Dire que les lois doivent être "compatibles entre elles" représente la différence entre une application et un morphisme.
-Déjà, <span class="important">toutes les lois de notre deuxième structures doivent avoir les exacts mêmes propriétés que celles de notre première structure</span> (les deux structures doivent appartenir à la même catégorie de structure).
+Déjà, <span class="important">par définition, toutes les lois de notre deuxième structures doivent avoir les exacts mêmes propriétés que celles de notre première structure</span> (les deux structures doivent appartenir à la même catégorie de structure).
 De plus, cela veut dire que l'utilisation de la loi du groupe d'arrivée sur des images du morphisme et égal à utiliser la loi de l'ensemble de départ sur les deux antécédents, puis d'en obtenir leur image (et qu'elle est similaire au résultat obtenu grâce à la loi de la structure d'arrivée, au début).
 Bien évidemment, il faut que toutes les lois des deux structures respectent cette compatibilité.
 </p>
 <p>
 Dans notre cas, ces "structures" représentent des structures algébriques.
 Donc, en algèbre, <span class="important"><definition name="morphism-algebra"></span>.
-Déjà, <span class="important">les deux structures algébriques doivent être les mêmes (groupe vers groupe, monoïde vers monoïde...)</span>.
+Déjà, <span class="important">par définition, les deux structures algébriques doivent être les mêmes (groupe vers groupe, monoïde vers monoïde...)</span>.
 En plus, comme pour le cas général, l'utilisation des lois de composition du groupe d'arrivée sur des images du morphisme est égal à utiliser cette loi à des éléments de l'ensemble de départ sur les antécédent, puis d'en obtenir leur image (et qu'elle est similaire au résultat obtenu grâce à la loi de composition de la structure d'arrivée, audébut).
 </p>
 <p>

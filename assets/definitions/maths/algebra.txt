@@ -44,6 +44,9 @@
 <new_definition name="algebra_magma">
     <content>un magma est une structure algébrique représentant un ensemble quelconque et une seule loi de composition interne sur cette ensemble, sans plus de détail</content>
 </new_definition>
+<new_definition name="algebra_subgroup">
+    <content>un sous-groupe H d'un groupe G est un groupe sur un sous-ensemble de l'ensemble de G, muni de la même loi de composition que G</content>
+</new_definition>
 
 <new_definition name="algebra_center">
     <content>le centre d'une structure algébrique représentent l'ensemble des éléments de cette structure commutant avec tous les autres éléments</content>
@@ -63,9 +66,6 @@
 </new_definition>
 <new_definition name="algebra_subfield">
     <content>un sous-corps K d'un corps L est un corps sur un sous-ensemble de l'ensemble de L, dans lequel la structure de corps est conservée (présence d'un neutre, le même que L, et toutes les opérations dans K, les mêmes que dans L, donnent un élément de K)</content>
-</new_definition>
-<new_definition name="algebra_subgroup">
-    <content>un sous-groupe H d'un groupe G est un groupe sur un sous-ensemble de l'ensemble de G, dans lequel la structure de groupe est conservée (présence d'un neutre, le même que G, et toutes les opérations dans H, les mêmes que dans G, donnent un élément de H)</content>
 </new_definition>
 <new_definition name="algebra_subgroup_proper">
     <content>un sous-groupe H d'un groupe G est dit propre si H n'est pas un groupe trivial de G</content>
