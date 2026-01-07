@@ -1,3 +1,16 @@
+<new_definition name="infinitesimal_calculus">
+    <content>le calcul infinitésimal est une branche du calcul mathématique s'intéressant à des calculs s'approchant de plus en plus de certaines valeurs</content>
+</new_definition>
+
+<new_definition name="analysis_sequence">
+    <content>une suite mathématique est une fonction mathématique allant de "N" à n'importe quel ensemble possible</content>
+</new_definition>
+<new_definition name="analysis_limit">
+    <content>une limite mathématique représente en quelque sorte une valeur d'une fonction dont on se rapproche indéfiniment (sans jamais réellement l'atteindre)</content>
+    <content name="sequence">une limite mathématique de suite représente en quelque sorte la valeur d'une suite dont on se rapproche indéfiniment quand on tend "n" vers "+l'infini" (sans jamais réellement l'atteindre)</content>
+    <content name="sequence_rigorous">une limite mathématique de suite est une valeur telle que, pour tous nombre réel possible, il existe toujours un nombre entier naturel "a" tel que la valeur de la suite à ce nombre est supérieure à celle du nombre réel</content>
+</new_definition>
+
 <new_definition name="function_graph">
     <content>un graphe de fonction est une représentation des valeurs de la fonction (généralement facilement représentable sous forme graphique), en liant chaque endroit où la fonction est définie avec sa valeur via cette fonction</content>
 </new_definition>
@@ -9,7 +22,7 @@
     <content>la continuité mathématique représente un concept suggérant la possibilité de se rapprocher indéfiniment d'une valeur dans un espace, quelque soit la façon dont vous faites</content>
     <content name="function">une fonction mathématique est continue en une valeur "a" si il existe une limite vers "a"</content>
 </new_definition>
-<new_definition name="analysis_limit">
+<new_definition name="analysis_limit_">
     <content>une limite mathématique est un outil / un opérateur permettant d'approximer une "infinité de fois" une valeur</content>
     <content name="sequence">une limite de suite est la valeur vers laquelle on se rapproche si on prend des valeurs "toujours plus proches de l'infini"</content>
     <content name="function">une limite de fonction en une valeur "v" est la valeur vers laquelle on se rapproche si on prend des valeurs "toujours plus proches de v"</content>

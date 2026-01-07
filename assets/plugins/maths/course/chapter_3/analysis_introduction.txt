@@ -1,0 +1,57 @@
+<h1>Introduction à l'analyse mathématique</h1>
+
+
+
+<h2>Le calcul infinitésimal</h2>
+
+<h3>Qu'est ce qu'est le calcul infinitésimal ?</h3>
+<p>
+Le calcul infinitésimal est une branche assez importante des mathématiques.
+En fait, <span class="important"><definition name="infinitesimal_calculus"></span>.
+Ici, s'approcher signifie "diminuer le plus possible la différence entre la valeur obtenu par le calcul et la valeur que l'on cherche obtenir".
+En général, <span class="important">quand une valeur quelconque s'approche d'un terme "a", on dit que cette valeur tend vers "a"</span>.
+Pour cela, nous avons besoin de beaucoup d'outils précis.
+</p>
+
+
+
+<h2>Les outils d'analyse mathématique</h2>
+
+<h3>Les suites mathématiques</h3>
+<p>
+Un des outils principaux en analyse représente la suite mathématique.
+<span class="important"><definition name="analysis_sequence"></span>.
+Il s'agit théoriquement d'une suite d'éléments quelconques.
+Ici, on parle de "fonction" car il se peut que certains éléments de "N" (souvent les premiers) n'aient pas d'images.
+En analyse, l'ensemble d'arrivée est très souvent un ensemble de nombres.
+Il est très commun de les expliciter, comme dans cet exemple :
+</p>
+<math>u : N <mto> Q, n <mto> u(n) = <mfrac><mi>1</mi><mi>n</mi></mfrac></math>
+
+<h3>Les limites de suites</h3>
+<p>
+Les suites peuvent être étudiées grâce à l'une de leur propriété : les limites de suites.
+<span class="important"><definition name="analysis_limit"></span>.
+Dans le cas précis d'une suite, <span class="important"><definition name="analysis_limit-sequence"></span>.
+En effet, "+ l'infini" est la seule "valeur" que l'antécédent d'une suite puisse "approcher" (d'un point de vue intuitif).
+Cette définition est une définition intuitive, mais trop peu rigoureuse et insuffisante.
+</p>
+<graphic><function expression="2x+2"></graphic>
+<p>
+D'un point de vue rigoureux, <span class="important"><definition name="analysis_limit-sequence_rigorous"></span>.
+Dire ça est plus fort que de dire que la suite se contente juste de se "rapprocher", mais l'idée est similaire.
+En effet, <span class="important">si, pour toute valeur "e" aussi proche que l'on veut d'une valeur "l", il existe un élément de la suite qui est encore plus proche que "e" (et donc, il existe un nombre naturel "a" permettant de savoir de quel élément de la suite il s'agit), alors une suite se rapproche de plus en plus d'une certaine valeur "l"</span>.
+L'avantage est que pour des "e" très petit, vous pouvez vous rapprocher très proche de cette valeur.
+Cependant, elle apporte un avantage : <span class="important">seulement une valeur peut être une limite de suite, là où la définition "intuitive" ne l'interdit pas</span>.
+Prenons par exemple une suite ayant comme limite "2", et étant strictement décroissante.
+Dans ce cas, la suite se rapproche de "2", mais aussi de "1" (puisqu'elle est décroissante).
+Or, la distance entre "1" et la suite ne peut qu'être supérieur à 1 : la deuxième définition interdit ce genre de comportement (des nombres réels comme 0.5 ne respectent pas la définition).
+</p>
+<math></math>
+<p>
+Dans le cas où la limite se rapproche de "+ l'infini" et de "- l'infini", la définition change un peu, mais le concept reste le même.
+</p>
+<p>
+Prenons un exemple très simple et intuitif : la suite qui, à "u(n)", associe le nombre "n".
+
+</p>
