@@ -36,7 +36,7 @@ Dans le cas précis d'une suite, <span class="important"><definition name="analy
 En effet, "+ l'infini" est la seule "valeur" que l'antécédent d'une suite puisse "approcher" (d'un point de vue intuitif).
 Cette définition est une définition intuitive, mais trop peu rigoureuse et insuffisante.
 </p>
-<graphic><function expression="2x+2"></graphic>
+<graphic><background_color white><function expression="2x+2"></graphic>
 <p>
 D'un point de vue rigoureux, <span class="important"><definition name="analysis_limit-sequence_rigorous"></span>.
 Dire ça est plus fort que de dire que la suite se contente juste de se "rapprocher", mais l'idée est similaire.

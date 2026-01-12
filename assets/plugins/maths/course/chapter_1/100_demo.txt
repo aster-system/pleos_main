@@ -648,6 +648,103 @@ Donc, par transitivité de l'équivalence :
 </p>
 <math><mforall>a, b <min> N, a <mgtequal> b <mequi> a - b <min> N</math>
 
+<h3>Les relations d'ordre</h3>
+
+<h4>1.2.4.0</h4>
+<p>
+Prouvons que, pour deux nombres entiers naturels "a" et "b", dire que "a est supérieur ou égal à b" équivaut à dire que "successeur(a) est supérieur ou égal à successeur(b)".
+</p>
+<math><mforall>a, b <min> N, a <mgtequal> b <mequi> successeur(a) <mgt> successeur(b)</math>
+<p>
+Par définition de "supérieur ou égal" :
+</p>
+<math>a <mgtequal> b <mequi> <mexists> c <min> N, a = b + c</math>
+<p>
+Appliquons notre équivalence vue plus haut (avec le théorème 1.2.0.0) :
+</p>
+<math>a = b + c <mequi> successeur(a) = succeseur(b + c) <mequi> successeur(a) = successeur(b) + c <mequi> successeur(a) <mgtequal> successeur(b)</math>
+<p>
+Or, cela équivaut parfaitement à dire que "successeur(a) est supérieur ou égal à successeur(b)".
+Donc, dire que "a est supérieur ou égal à b" équivaut à dire que "successeur(a) est supérieur ou égal à successeur(b)".
+</p>
+<p>
+De plus, par définition de "inférieur ou égal", dire que "a est supérieur ou égal à b" équivaut à dire que "b est inférieur ou égal à a".
+Donc, dire que "b est inférieur ou égal à a" équivaut à dire que "successeur(a) est supérieur ou égal à successeur(b)".
+Or, dire que "successeur(a) est supérieur ou égal à successeur(b)" équivaut à dire que "successeur(b) est inférieur ou égal à successeur(a)".
+Donc, dire que "b est inférieur ou égal à a" équivaut à dire que"successeur(b) est inférieur ou égal à successeur(a)".
+</p>
+<p>
+Dans la même idée, dire que "a est strictement supérieur à b" équivaut par définition à dire que "a est supérieur ou égal à b" et que "a n'est pas égal à b".
+Donc, dire que "a est strictement supérieur à b" équivaut à dire que que "successeur(a) est supérieur ou égal à successeur(b)" et que "a n'est pas égal à b".
+Or, dire que que "successeur(a) est supérieur ou égal à successeur(b)" et que "a n'est pas égal à b" équivaut à dire que "successeur(a) est strictement supérieur à successeur(b)".
+Donc, "a est strictement supérieur à b" équivaut à dire que "successeur(a) est strictement supérieur à successeur(b)".
+</p>
+<p>
+Finalement, par définition de "strictement inférieur", dire que "a est strictement supérieur à b" équivaut à dire que "b est strictement inférieur à a".
+Donc, dire que "b est strictement inférieur à a" équivaut à dire que "successeur(a) est strictement supérieur à successeur(b)".
+Or, dire que "successeur(a) est strictement supérieur à successeur(b)" équivaut à dire que "successeur(b) est strictement inférieur à successeur(a)".
+Donc, dire que "b est strictement inférieur à a" équivaut à dire que"successeur(b) est strictement inférieur à successeur(a)".
+</p>
+
+<h4>1.2.4.1</h4>
+<p>
+Prouvons que, pour trois nombres entiers naturels "a", "b" et "c", dire que "a est supérieur ou égal à b" équivaut à dire que "a + c est supérieur ou égal à b + c".
+Procédons par récurrence.
+</p>
+<p>
+Posons l'hypothèse de récurrence pour tout entier naturel "c", P(c) = "pour tout nombres entiers naturels a et b, "a est supérieur ou égal à b" équivaut à dire que "a + c est supérieur ou égal à b + c"".
+</p>
+<math>P(c) = <mforall>a, b <min> N, a <mgtequal> b <mequi> a + c <mgtequal> b + c</math>
+<p>
+Déjà, par définition de l'addition :
+</p>
+<math><mforall>a, b <min> N, [a + 0 = a, b + 0 = b]</math>
+<p>
+Donc :
+</p>
+<math>c = 0 <mimp> a + c <mgtequal> b + c <mequi> a <mgtequal> b</math>
+<p>
+Dans le cas où "c = 0", "a est supérieur ou égal à b" équivaut à dire que "a + c est supérieur ou égal à b + c".
+Donc, P(0) est vraie.
+</p>
+<p>
+En suite, prouvons que si P(k) avec k un nombre entier naturel quelconque, alors P(k + 1).
+Commençons par supposer que P(k) soit vrai. 
+</p>
+<math><mforall>a, b <min> N, a <mgtequal> b <mequi> a + k <mgtequal> b + k</math>
+<p>
+Appliquons notre équivalence vue plus haut (avec le théorème 1.2.3.1) :
+</p>
+<math>a + k <mgtequal> b + k <mequi> successeur(a + k) <mgtequal> successeur(b + k) <mequi> a + successeur(k) <mgtequal> b + successeur(k)</math>
+<p>
+Nous reconnaissons donc la forme de P(k + 1).
+Donc, si P(k) est vraie, P(k + 1) l'est aussi.
+</p>
+<p>
+Donc, P(0) est vraie et P(k) implique P(k + 1).
+Selon le principe de récurrence, P est vraie pour tout nombre entier naturel.
+Finalement :
+</p>
+<math><mforall>a, b, c <min> N, a <mgtequal> b <mequi> a + c <mgtequal> b + c</math>
+<p>
+De plus, par définition de "inférieur ou égal", dire que "a est supérieur ou égal à b" équivaut à dire que "b est inférieur ou égal à a".
+Donc, dire que "b est inférieur ou égal à a" équivaut à dire que "a + c est supérieur ou égal à b + c".
+Or, dire que "a + c est supérieur ou égal à b + c" équivaut à dire que "b + c est inférieur ou égal à a + c".
+Donc, dire que "b est inférieur ou égal à a" équivaut à dire que "b + c est inférieur ou égal à a + c".
+</p>
+<p>
+Dans la même idée, dire que "a est strictement supérieur à b" équivaut par définition à dire que "a est supérieur ou égal à b" et que "a n'est pas égal à b".
+Donc, dire que "a est strictement supérieur à b" équivaut à dire que que "a + c est supérieur ou égal à b + c" et que "a n'est pas égal à b".
+Or, dire que que "a + c est supérieur ou égal à b + c" et que "a n'est pas égal à b" équivaut à dire que "a + c est strictement supérieur à b + c".
+Donc, "a est strictement supérieur à b" équivaut à dire que "a + c est strictement supérieur à b + c".
+</p>
+<p>
+Finalement, par définition de "strictement inférieur", dire que "a est strictement supérieur à b" équivaut à dire que "b est strictement inférieur à a".
+Donc, dire que "b est strictement inférieur à a" équivaut à dire que "a + c est strictement supérieur à b + c".
+Or, dire que "a + c est strictement supérieur à b + c" équivaut à dire que "b + c est strictement inférieur à a + c".
+Donc, dire que "b est strictement inférieur à a" équivaut à dire que "b + c est strictement inférieur à a + c".
+</p>
+
 
 
 <h2>Les nombres entiers relatifs</h2>

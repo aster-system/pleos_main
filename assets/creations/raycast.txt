@@ -316,6 +316,10 @@ C'est la même chose pour la partie extérieure.
 Avec ça, vous avez déjà de quoi faire une map assez variée, comme sur l'illustration (je suis très nul en dessin, ne jugez pas ma texture par pitié).
 </p>
 <img alt="Textures avancées" src="../images/raycast/3d_texturing.png" style="max-width:300px;">
+<p>
+Avec une technique similaire, il est globalement possible d'ajouter une énorme quantité de choses graphiques.
+Il faut juste la créativité nécessaire pour faire tout ce que vous voulez.
+</p>
 
 <h3>Rajouter des objets flottants</h3>
 <p>
@@ -351,7 +355,47 @@ Cependant, pour que l'objet soit tracé, il faut que cette colonne soit assez pr
 </p>
 <math>d <msub>centre</msub> <mltequal> <mfrac><mrow>l <msub>objet</msub></mrow><mrow>2</mrow></mfrac></math>
 <p>
+Le problème : si nous passons devant l'objet, de tel manière qu'il devrait être derrière nous, il sera affiché quand même.
+Il est donc intéressant de réussir à différencier si l'objet se situe devant ou derrière le personnage, par exemple en calculant l'angle entre l'avant de la caméra, la caméra, et l'objet (si l'angle est proche de 0, alors l'objet se situe devant la caméra, sinon il est derrière).
+Sur ce schéma, la caméra est en bleue et l'objet en vert, le cas à gauche représente un angle proche de 0, et le cas à droite représente un angle très éloigné de 0.
+</p>
+<graphic>
+<background_color white><base draw=0>
+
+<arrow color=black x_1=-3 y_1=-3 x_2=-2 y_2=3/2>
+<circle color=light_blue x=-3 y=-3>
+<circle color=green x=-6/4 y=6/2>
+
+<line color=black x_1=0 y_1=-10 x_2=0 y_2=10>
+
+<arrow color=black x_1=3 y_1=-1 x_2=2 y_2=3>
+<circle color=light_blue x=3 y=-1>
+<circle color=green x=2 y=-3>
+
+</graphic>
+<p>
 Dés que nous avons la validation du traçage de l'objet, nous n'avons qu'à obtenir la distance entre ce point et la caméra, et appliquer la même méthode que pour le traçage de cases.
 En étudiant la distance de la "colonne" actuelle au centre, nous pouvons obtenir la distance entre la partie la plus à droite de l'objet et la colonne actuelle, ce qui nous permet ensuite de tracer l'objet, avec la texture adéquat.
 </p>
 <img alt="Coeurs flottants" src="../images/raycast/3d_hearts.png" style="max-width:300px;">
+<p>
+De même, plein de manipulations sont possibles.
+Par exemple, en jouant sur le "y", vous pouvez faire floter des objets plus ou moins haut, voir même les faire varier comme des items dans Minecraft.
+Pareil, les possibilités sont très étendues.
+</p>
+
+<h3>Créer un HUD</h3>
+<p>
+Avant d'aller plus loin, définissons ce qu'est un "HUD".
+Un "HUD" est un acronyme anglais, désignant "heads-up display", et se traduisant en français par ATH, soit "affichage tête-haute".
+En fait, un "HUD" représente l'ensemble des informations affichés sur l'écran, n'étant pas dans la carte, mais plutôt comme des informations sur l'aspet interne du personnage.
+Généralement il s'agit de la santé du personnage, ses points de vie, son inventaire, ses armes...
+Il s'agit d'une couche au dessus du rendu 3D.
+</p>
+<p>
+En réalité, la réalisation du HUD dépend énormément de la librairie utilisée pour l'affichage graphique.
+Il s'agira habituellement d'éléments de GUI (interface graphique), tracés après (et donc au dessus) le rendu 3D.
+Il y a cependant une chose d'intéressante à faire avec tout ce que nous avons fait jusque là : afficher la carte 2D sous la forme de carte de repérage.
+Pour des raisons de performances, il vaut mieux réduire la taille de la carte et ne pas tracer les rayons, mais le reste est tout à fait utilisable.
+</p>
+<img alt="Mini carte" src="../images/raycast/mini_map.png" style="max-width:300px;">

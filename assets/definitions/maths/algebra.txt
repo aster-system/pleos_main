@@ -33,6 +33,12 @@
 <new_definition name="algebra_distributivity">
     <content>une opération "." est dite distributive par rapport à une opération "~" lorsqu'il est possible de transformer l'opération "a . (b ~ c)" en l'opération "a . b ~ a . c"</content>
 </new_definition>
+<new_definition name="algebra_generated_set">
+    <content name="group">un sous-groupe engendré d'une partie "F" d'un groupe "G" sur un ensemble "E" représente l'ensemble des éléments de "G" que nous pouvons obtenir avec seulement une répétition de la loi du groupe sur des éléments de cette partie "F" (et / ou de leurs inverses)</content>
+</new_definition>
+<new_definition name="algebra_generating_set">
+    <content name="group">une partie génératrice d'un groupe est une partie "F" d'une groupe "G" sur un ensemble "E" où le sous-groupe engendré par "F" représente l’entièreté de "G"</content>
+</new_definition>
 <new_definition name="algebra_neutral_element">
     <content>un élément est dit neutre par une loi de composition si l'utilisation de la loi sur un autre élément "a" et cet élément donne "a"</content>
 </new_definition>

@@ -214,6 +214,53 @@ Voici un exemple de diagramme sagittal de fonction :
 <line x_1=-3/2 y_1=-2 x_2=3/2 y_2=-1 color=black>
 </graphic>
 
+<h3>Injections, surjections et bijections</h3>
+<p>
+Il existe trois types d'applications majeures : les injections, les surjections et les applications.
+</p>
+<p>
+Le dernier type est donc la bijection.
+<span class="important"><definition name="bijection"></span>.
+D'un point de vue rigoureux, la définition d'une bijection mélange donc celle de l'injection et celle de la surjection.
+Dans une bijection, chaque élément de départ a un antécédent, et chaque élément d'arrivée a une image.
+</p>
+<graphic>
+<background_color white>
+<base draw=0>
+
+<circle x=-2 y=0 radius_x=3/2 radius_y=4>
+<text x=-2 y=2 content="0"></text>
+<text x=-2 y=1 content="1"></text>
+<text x=-2 y=0 content="2"></text>
+<text x=-2 y=-1 content="3"></text>
+<text x=-2 y=-2 content="4"></text>
+
+<circle x=2 y=0 radius_x=3/2 radius_y=4>
+<text x=2 y=2 content="0"></text>
+<text x=2 y=1 content="1"></text>
+<text x=2 y=0 content="2"></text>
+<text x=2 y=-1 content="3"></text>
+<text x=2 y=-2 content="4"></text>
+
+<line x_1=-3/2 y_1=2 x_2=3/2 y_2=1 color=black>
+<line x_1=-3/2 y_1=1 x_2=3/2 y_2=0 color=black>
+<line x_1=-3/2 y_1=0 x_2=3/2 y_2=-1 color=black>
+<line x_1=-3/2 y_1=-1 x_2=3/2 y_2=-2 color=black>
+<line x_1=-3/2 y_1=-2 x_2=3/2 y_2=2 color=black>
+</graphic>
+<p>
+En tout, <span class="important">il existe "n!" bijections différentes ("n!" est un nombre précis, que nous définirons plus tard pour tous ceux qui ne le connaissent pas)</span>.
+D'ailleurs, il existe des ensembles pour lesquelles il ne peut pas exister de bijections entre eux, par exemple si ils ont une taille différente.
+Cependant, <span class="important">si il existe une bijection entre deux ensembles "E" et "F", ces ensembles sont dit équipotents</span>.
+</p>
+<p>
+<span class="important">Si l'ensemble de départ et l'ensemble d'arrivée sont les mêmes, alors la bijection est nommée "permutation" (ou, dans certains vieux ouvrages, "substitution")</span>.
+En effet, dans ce cas, on peut la représenter comme un réarrangement des éléments de l'ensemble, ce qui est généralement le cas des objets "permutations".
+D'ailleurs, <span class="important">il existe une permutation qui, pour tout élément "x" de "E", passé "x" à cette application donne... "x" : cette permutation, étant une application, est nommée application identité sur "E"</span>.
+Il s'agit en fait de la permutation... qui ne modifie aucun élément de "E" (dans le langage courant, il ne s'agirait plus d'une permutation, mais en mathématique, cela en reste une, car la définition est toujorus respéctée).
+</p>
+<math>id : E <mto> E, x <mto> x</math>
+
 <h3>La composition de fonction et d'applications</h3>
 <p>
 L'opération la plus simple avec les fonctions (et les applications) est la composition.

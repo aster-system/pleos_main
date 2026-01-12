@@ -171,6 +171,8 @@ D'un point de vue notationnel, il est aussi possible de la noter en notant le di
 Comme pour la soustraction, "c" n'est pas forcément un nombre entier naturel.
 Cependant, <span class="important">si "b" est un nombre entier naturel (et que la multiplication existe et fonctionne), "b" est appelé un diviseur de "a" ("a" est dit divisible par "b" et "a" est un multiple de "b")</span>.
 Dans tous les cas, il est assez simple de voir que 1 est un diviseur de tous les nombres entiers naturel existant, et que chaque nombre entier naturel est divisible par lui même.
+De manière réciproque, tous les nombres dans "N" sont des multiples de 1.
+De plus, tous les multiples d'un certain nombre entier naturel "n" forment un ensemble, représentant un sous-ensemble de "N", et généralement noté "aN" (comme "2N", "3N", "18N"...).
 </p>
 
 <p>
@@ -180,6 +182,8 @@ Dans ce cas, "b" est dit strictement inférieur à "a".
 <span class="important">Cette définition est parfaitement équivalente au fait d'imaginer "a" et "b" objets dans sa tête, de les mettre à côté, et de dire que "a" objets représente plus d'objets que "b" objets</span>.
 La relation "strictement supérieur" se note avec un chapeau tourné vers la droite, et la relation "strictement inférieur" avec un chapeau tourné vers la gauche :
 </p>
+<math><mforall> a, b <min> N, a <mgt> b <mequi> <mexists> c <min> N*, a = b + c</math></br>
+<math><mforall> a, b <min> N, a <mgt> b <mequi> b <mlt> a</math></br>
 <math><mi>successeur(successeur(0))</mi><mgt><mi>successeur(0)</mi></math></br>
 <math><mi>successeur(0)</mi><mlt><mi>successeur(successeur(0))</mi></math></br>
 <math><mi>2</mi><mgt><mi>1</mi></math></br>
@@ -190,6 +194,7 @@ Une autre relation similaire existe : supérieur ou égal et inférieur ou égal
 C'est pour cela que nous éviterons d'utiliser les termes supérieur ou inférieur seules : on risque de se tromper d'opérateur.
 La relation "supérieur ou égal" se note avec un chapeau tourné vers la droite sous ligné, et la relation "inférieur ou égal" avec un chapeau tourné vers la gauche sous ligné :
 </p>
+<math><mforall> a, b <min> N, a <mgtequal> b <mequi> <mexists> c <min> N, a = b + c</math></br>
 <math><mi>successeur(successeur(0))</mi><mgtequal><mi>successeur(0)</mi></math></br>
 <math><mi>successeur(successeur(0))</mi><mgtequal><mi>successeur(successeur(0))</mi></math></br>
 <math><mi>successeur(0)</mi><mltequal><mi>successeur(successeur(0))</mi></math></br>
@@ -201,7 +206,12 @@ La relation "supérieur ou égal" se note avec un chapeau tourné vers la droite
 <p>
 D'ailleurs, <span class="important">l'ensemble des nombres entiers naturels est bien ordonné par ces 4 relations</span>.
 On peut aussi facilement prouvé (et déduire) que, si deux nombres entiers naturels "a" et "b" vérifient la relation "a est supérieur ou égal à b", alors "a - b" est un nombre entier naturel (<a href="demo">démontré ici</a>).
+De plus, avec ces nombres entiers naturels, <span class="important">ces 4 relations permettent de former des équivalences via l'addition et la multiplication</span> (sauf dans le cas où l'on multiplie par 0 pour les relations "strictement inférieur" et "strictement supérieur") :
 </p>
+<math><mforall> a, b, c, d <min> N, a <mlt> b <mequi> a + c <mlt> b + c <mequi> a * d = b * d</math></br>
+<math><mforall> a, b, c, d <min> N, a <mgt> b <mequi> a + c <mgt> b + c <mequi> a * d = b * d</math></br>
+<math><mforall> a, b, c, d <min> N, a <mltequal> b <mequi> a + c <mltequal> b + c <mequi> a * d = b * d</math></br>
+<math><mforall> a, b, c, d <min> N, a <mgtequal> b <mequi> a + c <mgtequal> b + c <mequi> a * d = b * d</math>
 
 <h3>Axiomatiquement définir les nombres entiers relatifs</h3>
 <p>
@@ -243,9 +253,9 @@ En fait, <span class="important">il s'agit de manière intuitive du nombre résu
 <math>c = (e, f) <mequi> c = e - f <mequi> c + f = e</math>
 <p>
 Dans ce cas, nous pouvons définir l'ensemble des nombres entiers relatifs (noté "Z", en référence au mot "zahlen" représentant le mot "nombres" en allemand) comme le produit cartésien de N et N.
-Le problème : <span class="important">les nombres peuvent être représenté par plusieurs couples</span>.
+Le problème : <span class="important">les nombres peuvent être représenté par plusieurs couples, et ne sont pas uniques</span>.
 Par exemple, 2 peut être (4, 2), mais aussi (2, 0).
-Pour éviter ce problème, <span class="important">nous devons indiquer que les couples donnant le même nombres sont parfaitement égaux, grâce à une relation d'équivalence</span>.
+Pour éviter ce problème et rendre chaque nombre entier relatif unique, <span class="important">nous devons indiquer que les couples donnant le même nombres sont parfaitement égaux, grâce à une relation d'équivalence</span>.
 Pour faire notre relation d'équivalence, nous allons utiliser une propriété déduite la définition de la soustraction dans les nombres entiers naturels (qui sont les constituants de notre couple) :
 </p>
 <math><mforall>a, b <min> N, <mexists> e, a - b = e <mequi> a = b + e</math>

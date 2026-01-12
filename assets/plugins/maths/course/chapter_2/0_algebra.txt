@@ -176,6 +176,11 @@ D'ailleurs, <span class="important">les groupes utilisant comme loi de compositi
 </p>
 <math>(Z, +)</math>
 <p>
+Dans un groupe, <span class="important">l'inverse d'un élément "a" est généralement noté "a exposant -1"</span>.
+Cette notation peut être risquée si vous ne savez pas si vous travaillez avec un groupe, ou avec un nombre "normal" : faites donc toujours attention au contexte.
+</p>
+<math>G = (E, ¤), <mforall> a <min> E, <mi>a</mi> ¤ <mi>a</mi><msup>-1</msup> = <mi>0</mi><msub>G</msub></math>
+<p>
 Une catégorie de groupe plus forte est le groupe abélien.
 <span class="important"><definition name="algebra_group-abelian"></span>.
 (Z, +) en est un exemple.
@@ -227,6 +232,29 @@ Donc, <span class="important">"2Z" est un sous-groupe de "G"</span>.
 
 
 <h2>Les opérations sur les structures algébriques</h2>
+
+<h3>Les parties génératrices et sous-groupes engendrés</h3>
+<p>
+Les sous-groupes engendrés sont des objets algébriques, très utilisés dans l'étude des groupes.
+En effet, <span class="important"><definition name="algebra_generated_set-group"></span>.
+Pour un groupe "G" utilisant l'ensemble "E" et la loi "¤", un sous-groupe "H" engendré par la partie "F" de "E" est un sous-groupe de "G" sur une partie "D" de "E", et le plus important est de définir "D".
+Cependant, la définition rigoureuse de "D" est un peu complexe.
+Pour une traduction mathématique - français, lisez "Soit un groupe G formé d'un ensemble E, et d'une loi ¤, et F une partie de F. H est un groupe formé d'un ensemble D et d'une loi ¤, et D représente l'ensemble des éléments x de E tel qu'il existe un nombre entier naturel n dont tous les nombres entiers naturels inférieurs peuvent [indexer un ensemble f d'éléments de F] et [indexer un ensemble a représentant soit 1, soit -1], et que x représente n utilisations de ¤ entre chaque [élément de f exposant a (représentant soit l'élément direct, soit l'inverse), selon l'indice actuel]".
+</p>
+<math>G = (E, ¤), F <mincluded> E, H = (D, ¤)</math></br>
+<math>D = {x <min> E | <mexists> n <min> N, <mexists>(<mi>f</mi><msub>1</msub>, <mi>f</mi><msub>2</msub>, ..., <mi>f</mi><msub>n</msub>) <min> <mi>F</mi><msup>n</msup>, <mexists>(<mi>a</mi><msub>1</msub>, <mi>a</mi><msub>2</msub>, ..., <mi>a</mi><msub>n</msub>) <min> <mi>{1, -1}</mi><msup>n</msup>, x <mo>=</mo><mrow><mi>f</mi><msub>1</msub></mrow><msup><mrow><mi>a</mi><msub>1</msub></mrow></msup> ¤ <mrow><mi>f</mi><msub>2</msub></mrow><msup><mrow><mi>a</mi><msub>2</msub></mrow></msup> ¤ ... ¤ <mrow><mi>f</mi><msub>n</msub></mrow><msup><mrow><mi>a</mi><msub>n</msub></mrow></msup>)}</math>
+<p>
+Dans cette définition, il n'est pas exclu que tous les éléments "f" soient... un même élément, comme que les appartitions de "a" représentent toutes 1 ou -1 (ici, exposant 1 ne change rien, et exposant -1 représente l'inverse).
+On peut facilement voir que <span class="important">"D" est une partie de "E" (confirmant que "H" est un sous-groupe de "G")</span>, puisque (par définition) tous les éléments de "D" appartiennent aussi à "E".
+Il existe une notation pour ces fameux sous-groupes engendrés : <span class="important">un sous-groupe engendré par une partie "F" se note ainsi, avec des sortes de chevrons</span> :
+</p>
+<math>H = <mlang>F<mrang></math>
+
+<p>
+Les parties génératrices représentent des sous-groupes engendrés un peu spéciaux.
+En effet, <span class="important"><definition name="algebra_generating_set-group"></span>.
+</p>
+<math>H = <mlang>F<mrang> = G</math>
 
 <h3>Les morphismes</h3>
 <p>
