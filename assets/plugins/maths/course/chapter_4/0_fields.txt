@@ -1,0 +1,75 @@
+<h1>Les anneaux et les corps</h1>
+
+
+
+<h2>Des structures algébriques avancées</h2>
+
+<h3>Qu'est ce qu'est un anneau ?</h3>
+<p>
+L'anneau est une structure algébrique très importante, et la première que nous introduirons avec deux lois de compositions internes.
+En algèbre, <span class="important"><definition name="algebra_ring"></span>.
+Il est aussi possibble de voir le terme "anneau" abrégé en tant que "anneau unifère" (ou "anneau unitaire").
+Cette notation vient du fait que certains auteurs les différencient (selon eux, un "anneau" n'a pas forcément de neutre pour la multiplication) : nous ne feront pas la différence ici.
+Rappelons toutes les propriété nécéssaire, pour un anneau "A" muni d'une opération "+" et ".".
+</p>
+<math>A = (E, ¤, .)</math>
+
+<p>La structure (A, ¤) est un groupe abélien.</p>
+<p>"¤" est associative :</p>
+<math><mforall> a, b, c<min> E, (a ¤ b) ¤ c = a ¤ (b ¤ c)</math>
+<p>"¤" permet à E d'admettre un neutre :</p>
+<math><mforall> a <min> E, <mexists> m <min> E, a ¤ m = e</math>
+<p>"¤" permet à chaque élément de E d'admettre un opposé :</p>
+<math><mforall> a <min> E, <mexists> o <min> E, a ¤ o = a</math>
+<p>"¤" est commutative :</p>
+<math><mforall> a, b <min> E, a ¤ b = b ¤ a</math>
+
+<p>La structure (A, .) est un monoïde.</p>
+<p>"." est associative :</p>
+<math><mforall> a, b, c<min> E, (a . b) . c = a . (b . c)</math>
+<p>"." permet à E d'admettre un neutre :</p>
+<math><mforall> a <min> E, <mexists> n <min> E, a . n = e</math>
+
+<p>La loi "¤" est algébriquement lié à ".".</p>
+<p>"." est distributive à gauche par rapport à "+" :</p>
+<math><mforall> a, b, c<min> E, a . b ¤ a . c = a . (b ¤ c)</math>
+<p>"." est distributive à droite par rapport à "+" :</p>
+<math><mforall> a, b, c<min> E, b . a ¤ c . a = (b ¤ c) * a</math>
+
+<p>
+Si la deuxième loi est "." commutative, alors l'anneau est dit "commutatif".
+<span class="important">La branche de l'algèbre qui étudie les anneaux commutatifs se nomment "l'algèbre commutative"</span>.
+</p>
+
+<math><mforall>a, b <min> E, a . b = b . a</math>
+
+<p>
+Si l'anneau ne comporte pas de diviseur de 0 (autre que 0), il est dit "intègre".
+</p>
+<math><mno>(<mexists>a, b <min> E*, a * b = 0)</math>
+
+<p>
+L'exemple le plus simple est l'anneau formé par "Z", et par l'addition et la multiplication sur "Z".
+</p>
+<math>(Z, +, .)</math>
+
+<h3>Qu'est ce qu'est un corps ?</h3>
+<p>
+Un corps représente une version des anneaux possédant plus de propriétés.
+En effet, <span class="important"><definition name="algebra_field"></span>.
+La deuxième opération permet donc de former un groupe avec l'ensemble associé au corps.
+</p>
+<math>K = (E, +, .)</math>
+<p>La structure (E*, .) est un groupe.</p>
+<math><mforall>a <min> E*, <mexists> b <min> E, a . b = n</math>
+
+<p>
+Comme pour les anneaux, <span class="important">un corps dont la deuxième loi est commutative est nommée un corps commutatif</span>.
+Selon les auteurs, tous les corps sont commutatifs, mais nous allons dire ici que seul les "corps commutatifs" le sont.
+</p>
+<math><mforall>a, b <min> E, a . b = b . a</math>
+
+<p>
+L'exemple le plus simple est le corps formé par "Q", et par l'addition et la multiplication sur "Q".
+</p>
+<math>(Q, +, .)</math>

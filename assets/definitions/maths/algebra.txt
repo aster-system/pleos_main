@@ -43,6 +43,9 @@
     <content>un élément est dit neutre par une loi de composition si l'utilisation de la loi sur un autre élément "a" et cet élément donne "a"</content>
 </new_definition>
 
+<new_definition name="algebra_field">
+    <content>un corps est un anneau où chaque élement (non-nul) possède un inverse par la deuxième opération</content>
+</new_definition>
 <new_definition name="algebra_group">
     <content>un groupe est un magma dont la loi de composition interne et associative, admet un neutre, et est inversible</content>
     <content name="abelian">un groupe est dit abélien si sa loi de composition est commutative</content>
@@ -50,15 +53,18 @@
 <new_definition name="algebra_magma">
     <content>un magma est une structure algébrique représentant un ensemble quelconque et une seule loi de composition interne sur cette ensemble, sans plus de détail</content>
 </new_definition>
+<new_definition name="algebra_ring">
+    <content>un anneau (aussi nommé anneau unitaire) est une structure algébrique définie sur un ensemble, avec deux lois de compositions internes : une formant un groupe abélien, et une formant un monoïde, distributive par rapport à la première</content>
+</new_definition>
 <new_definition name="algebra_subgroup">
     <content>un sous-groupe H d'un groupe G est un groupe sur un sous-ensemble de l'ensemble de G, muni de la même loi de composition que G</content>
+</new_definition>
+<new_definition name="vector_space">
+    <content>un espace vectoriel est une structure algébrique</content>
 </new_definition>
 
 <new_definition name="algebra_center">
     <content>le centre d'une structure algébrique représentent l'ensemble des éléments de cette structure commutant avec tous les autres éléments</content>
-</new_definition>
-<new_definition name="algebra_field">
-    <content>un corps est un anneau (unitaire) où chaque élement (non-num) possède un inverse par la multiplication (tel que la multiplication de cet élément et de l'élément de base donne l'élement neutre)</content>
 </new_definition>
 <new_definition name="algebra_ideal">
     <content>un idéal I d'un anneau représente un sous-groupe de son groupe additif, où la multiplication de chacun de ces éléments par un élément du corps de base donne un élément de I (l'idéal est dit stable par la multiplication)</content>
@@ -66,9 +72,6 @@
 <new_definition name="algebra_rank">
     <content>le rang d'une famille de vecteurs d'un espace vectoriel représente la dimension du sous-espace engendré par ce vecteur</content>
     <content name="linear_application">le rang d'une application linéaire sur un espace vectoriel est la dimension de l'image de cette application</content>
-</new_definition>
-<new_definition name="algebra_ring">
-    <content>un anneau (aussi nommé anneau unitaire) est une structure algébrique définie sur un élément, avec deux lois de compositions internes : une addition (sous forme de groupe abélien), et une multiplication (sous forme de monoïde) distributive avec l'addition</content>
 </new_definition>
 <new_definition name="algebra_subfield">
     <content>un sous-corps K d'un corps L est un corps sur un sous-ensemble de l'ensemble de L, dans lequel la structure de corps est conservée (présence d'un neutre, le même que L, et toutes les opérations dans K, les mêmes que dans L, donnent un élément de K)</content>
