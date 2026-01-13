@@ -53,20 +53,34 @@ Cependant, avec un peu de réflexion, on peut facilement énumérer des relation
 
 </table>
 
+<h3>Les relations d'ordre</h3>
+<p>
+Le type de relation qui est probablement le plus utilisé est la relation d'ordre.
+En effet, <span class="important"><definition name="relation_order"></span>.
+Ici, <span class="important"><definition name="relation_reflexive"></span>.
+</p>
+<math><mforall>a <min> E, a ~ a</math>
+<p>
+De plus, <span class="important"><definition name="relation_antisymmetric"></span>.
+En d'autres termes, si la relation peut s'écrire des deux côtés avec deux objets distincts, alors ils sont égaux.
+</p>
+<math><mforall>a, b <min> E, a ~ b <mand> b ~ a <mimp> a = b</math>
+<p>
+Si une relation d'ordre est définie sur l'entièreté des éléments d'un ensemble, la relation est dite "totale", et l'ensemble est dit "bien ordonné".
+Généralement, <span class="important">il est possible de formaliser un ensemble bien ordonné "E" par une relation "~" par un couple constitué de l'ensemble et de la relation</span>.
+</p>
+<math>(E, ~)</math>
+
 <h3>Les relations d'équivalences</h3>
 <p>
 Les relations d'équivalences sont un type précis de relations mathématiques.
 En fait, <span class="important"><definition name="relation_equivalence"></span>.
 Ici, <span class="important"><definition name="relation_symmetric"></span>.
-<p>
-<math><mforall>a <min> E, a ~ a</math>
-</p>
-En d'autres termes, l'ordre de "a" et "b" n'importe pas.
-De plus, <span class="important"><definition name="relation_reflexive"></span>.
 Ce n'est pas le cas de toutes les relations : pour la relation "plus petit que", 2 n'est pas "plus petit que" 2, mais égal.
 </p>
 <math><mforall>a, b <min> E, a ~ b <mimp> b ~ a</math>
 <p>
+En d'autres termes, l'ordre de "a" et "b" n'importe pas.
 L'avantage de ce concept est la façon dont on peut l'utiliser.
 En effet, <span class="important">cette définition complexe est parfaitement équivalente au fait de dire que si deux objets sont en relation, alors ils obéissent à une même propriété quelconque</span> (<a href="demo#1_1_0_0">démontré ici</a>).
 Cette propriété peut être n'importe quoi, et être de n'importe quelle nature (tant que la relation d'égalité est définie sur les résultats possibles de cette dernière) : "parité", "signe", "chiffre des dizaines"...
@@ -257,11 +271,11 @@ Cependant, <span class="important">si il existe une bijection entre deux ensembl
 <span class="important">Si l'ensemble de départ et l'ensemble d'arrivée sont les mêmes, alors la bijection est nommée "permutation" (ou, dans certains vieux ouvrages, "substitution")</span>.
 En effet, dans ce cas, on peut la représenter comme un réarrangement des éléments de l'ensemble, ce qui est généralement le cas des objets "permutations".
 D'ailleurs, <span class="important">il existe une permutation qui, pour tout élément "x" de "E", passé "x" à cette application donne... "x" : cette permutation, étant une application, est nommée application identité sur "E"</span>.
-Il s'agit en fait de la permutation... qui ne modifie aucun élément de "E" (dans le langage courant, il ne s'agirait plus d'une permutation, mais en mathématique, cela en reste une, car la définition est toujorus respéctée).
+Il s'agit en fait de la permutation... qui ne modifie aucun élément de "E" (dans le langage courant, il ne s'agirait plus d'une permutation, mais en mathématique, cela en reste une, car la définition est toujours respectée).
 </p>
 <math>id : E <mto> E, x <mto> x</math>
 
-<h3>La composition de fonction et d'applications</h3>
+<h3>La composition de fonction et d'application</h3>
 <p>
 L'opération la plus simple avec les fonctions (et les applications) est la composition.
 <span class="important"><definition name="function-composition"></span>.

@@ -204,6 +204,7 @@ La relation "supérieur ou égal" se note avec un chapeau tourné vers la droite
 <math><mi>1</mi><mltequal><mi>2</mi></math></br>
 <math><mi>2</mi><mltequal><mi>2</mi></math>
 <p>
+Bien évidemment, il existe une démonstration précise de pourquoi ces relations sont des relations d'ordres (<a href="demo">énumérées ici</a>).
 D'ailleurs, <span class="important">l'ensemble des nombres entiers naturels est bien ordonné par ces 4 relations</span>.
 On peut aussi facilement prouvé (et déduire) que, si deux nombres entiers naturels "a" et "b" vérifient la relation "a est supérieur ou égal à b", alors "a - b" est un nombre entier naturel (<a href="demo">démontré ici</a>).
 De plus, avec ces nombres entiers naturels, <span class="important">ces 4 relations permettent de former des équivalences via l'addition et la multiplication</span> (sauf dans le cas où l'on multiplie par 0 pour les relations "strictement inférieur" et "strictement supérieur") :
@@ -339,6 +340,17 @@ Pour le signe, nous utilisons une règle assez connue, nommé la règle des sign
 Comme pour dans "N", <span class="important">l'ordre de réalisation de la multiplication n'importe pas, et l'ordre des opérandes autour de la multiplication non plus</span> (<a href="demo">démontré ici</a>).
 De plus, on peut facilement déduire que multiplier un nombre entier relatif par "-1" revient à obtenir son opposé.
 </p>
+
+<p>
+Finalement, nous pouvons définir les deux mêmes relations d'ordres précises dans l'ensemble des nombres entiers relatifs que dans l'ensemble des nombres entiers naturels : supérieur et inférieur.
+Dans "Z", <span class="important">un nombre entier positif "a" est supérieur à un autre nombre entier positif "b" si sa valeur absolue est supérieure à celle de "b", et tout nombre entier positif est supérieur à tous nombres entiers négatifs</span>.
+De plus, <span class="important">un nombre entier négatif "a" est supérieur à un autre nombre entier négatif "b" si sa valeur absolue est inférieur à celle de "b"</span>.
+Donc, le rapport s'inverse quand le nombre est négatif.
+Comme dans "N", on peut définir de l'exact même façon la relation "inférieur ou égal", "strictement supérieur" et "strictement inférieur".
+Toute ces définitions permettent bien de garder nos propriétés de relation d'ordre (<a href="demo">démontré ici</a>).
+</p>
+<math> 3 <mgtequal> 2</math></br>
+<math> -2 <mgtequal> -3</math>
 
 
 

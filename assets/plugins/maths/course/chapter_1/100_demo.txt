@@ -652,6 +652,37 @@ Donc, par transitivité de l'équivalence :
 
 <h4>1.2.4.0</h4>
 <p>
+Prouvons que, dans l'ensemble des nombres entiers naturels, la relation "supérieur ou égale" est une relation d'ordre.
+Rappelons la définition de cette relation :
+</p>
+<math><mforall> a, b <min> N, a <mgtequal> b <mequi> <mexists> c <min> N, a = b + c</math>
+<p>
+Vérifions si cette relation est réflexive.
+</p>
+<math><mforall> a <min> N, a <mgtequal> a <mequi> <mexists> c <min> N, a = a + c <mequi> a = a</math>
+<p>
+Ici, dire que "a" est supérieur ou égal à "a" est équivalent à dire que "a = a", ce qui est toujours vrai.
+Donc, la relation est réflexive.
+Vérifions si cette relation est antisymétrique.
+</p>
+<math><mforall> a <min> N, a <mgtequal> b <mand> b <mgtequal> a <mequi> <mexists> c, d <min> N, [a = b + c <mand> b = a + c] <mimp> [a = a + (a + c) = a + 2 * c <mequi> 2 * c = 0 <mequi> c = 0] <mimp> a = b</math>
+<p>
+Ici, supposer que "a est supérieur ou égal à b et b est supérieur ou égal à b" implique que "a = b".
+Donc, la relation est antisymétrique.
+Finalement, vérifions si cette relation est transitive.
+</p>
+<math><mforall> a, b, c <min> N, a <mgtequal> b <mand> b <mgtequal> c <mequi> <mexists> d, e <min> N, [a = b + d <mand> b = c + e] <mimp> [a = c + e + d <mequi> <mexists> f <min> N, f = e + d, a = c + f] <mimp> a <mgtequal> c</math>
+<p>
+Si "a est supérieur ou égal à b et b est supérieur ou égal à c", alors "a est supérieur ou égal à c".
+Donc, la relation est transitive.
+Cette relation est donc réflexive, antisymétrique et transitive : elle est une relation d'ordre.
+</p>
+<p>
+En modifiant stratégiquement les "supérieur ou égal" en "inférieur ou égal" et les "a" en "b", alors vous pouvez faire l'exact même démonstration avec la relation "inférieur ou égal".
+</p>
+
+<h4>1.2.4.1</h4>
+<p>
 Prouvons que, pour deux nombres entiers naturels "a" et "b", dire que "a est supérieur ou égal à b" équivaut à dire que "successeur(a) est supérieur ou égal à successeur(b)".
 </p>
 <math><mforall>a, b <min> N, a <mgtequal> b <mequi> successeur(a) <mgt> successeur(b)</math>
@@ -686,7 +717,7 @@ Or, dire que "successeur(a) est strictement supérieur à successeur(b)" équiva
 Donc, dire que "b est strictement inférieur à a" équivaut à dire que"successeur(b) est strictement inférieur à successeur(a)".
 </p>
 
-<h4>1.2.4.1</h4>
+<h4>1.2.4.2</h4>
 <p>
 Prouvons que, pour trois nombres entiers naturels "a", "b" et "c", dire que "a est supérieur ou égal à b" équivaut à dire que "a + c est supérieur ou égal à b + c".
 Procédons par récurrence.
@@ -713,7 +744,7 @@ Commençons par supposer que P(k) soit vrai.
 </p>
 <math><mforall>a, b <min> N, a <mgtequal> b <mequi> a + k <mgtequal> b + k</math>
 <p>
-Appliquons notre équivalence vue plus haut (avec le théorème 1.2.3.1) :
+Appliquons notre équivalence vue plus haut (avec le théorème 1.2.4.1) :
 </p>
 <math>a + k <mgtequal> b + k <mequi> successeur(a + k) <mgtequal> successeur(b + k) <mequi> a + successeur(k) <mgtequal> b + successeur(k)</math>
 <p>
@@ -980,3 +1011,32 @@ Donc, ces deux formes ont le même signe et la même valeur absolue.
 Donc, l'ordre des opérandes autour d'une multiplication n'importe pas dans "Z".
 </p>
 <math><mforall>a, b, c <min> Z, a * b = b * a</math>
+
+<h3>Les relations d'ordre</h3>
+
+<h4>1.3.2.0</h4>
+<p>
+Prouvons que, dans l'ensemble des nombres entiers relatifs, la relation "supérieur ou égal" est une relation d'ordre.
+Si les deux nombres sont positifs, on applique une simple relation d'ordre "supérieur ou égal" dans "N" selon le théorème 1.2.4.0, et elle l'est donc aussi dans "Z".
+</p>
+<math><mforall> a, b <min> Z, positif(a) <mand> positif(b) <mimp> [a <mgtequal> b <mequi> abs(a) <mgtequal> abs(b)]</math>
+<p>
+Si les deux nombres sont négatifs, on applique une simple relation d'ordre "inférieur ou égal" dans "N" selon le théorème 1.2.4.0, et elle l'est donc aussi dans "Z".
+</p>
+<math><mforall> a, b <min> Z, negatif(a) <mand> negatif(b) <mimp> [a <mgtequal> b <mequi> abs(a) <mltequal> abs(b)]</math>
+<p>
+Si le premier nombre est positif est le second est négatif, la relation donne toujours une proposition vraie.
+</p>
+<math><mforall> a, b <min> Z, positif(a) <mand> negatif(b) <mimp> [a <mgtequal> b]</math>
+<p>
+À l'inverse, si le premier nombre est négatif est le second est positif, la relation donne toujours une proposition fausse.
+</p>
+<math><mforall> a, b <min> Z, negatif(a) <mand> positif(b) <mimp> <mno> [a <mgtequal> b]</math>
+<p>
+Dans ces deux cas, la réflexitivé et l'antisymétrie n'importent pas, car les valeurs ne pourront jamais être similaires.
+Or, la refléxivité est vérifié, en remplaçant "c" par l'élément de même signe que lui.
+Donc, cette partition de la relation permet d'obtenir une relation d'ordre sur "Z".
+</p>
+<p>
+En modifiant stratégiquement les "supérieur ou égal" en "inférieur ou égal" et les "a" en "b", alors vous pouvez faire l'exact même démonstration avec la relation "inférieur ou égal".
+</p>

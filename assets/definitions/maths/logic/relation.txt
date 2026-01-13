@@ -16,6 +16,9 @@
 <new_definition name="arity">
     <content name="relation">l'arité d'une relation est le nombre d'élément que la relation lie entre eux</content>
 </new_definition>
+<new_definition name="relation_antisymmetric">
+    <content>une relation est dite antisymétrique si, pour tout objet "a" et "b", si "a" est en relation avec "b" (dans cet ordre précis) et que "b" est en relation avec "a" (dans cet ordre précis), alors "a" est égal à "b"</content>
+</new_definition>
 <new_definition name="relation_binary">
     <content>une relation est dite binaire quand elle est d'arité 2 (et donc, qu'elle lie 2 objets entre eux, comme "3 est inférieur à 7")</content>
 </new_definition>
@@ -31,4 +34,7 @@
 </new_definition>
 <new_definition name="relation_equivalence">
     <content>une relation binaire est dite "relation d'équivalence" quand elle est symétrique, réflexive et transitive</content>
+</new_definition>
+<new_definition name="relation_order">
+    <content>une relation binaire est dite "relation d'ordre" quand elle est antisymétrique, réflexive et transitive</content>
 </new_definition>
