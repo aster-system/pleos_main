@@ -233,10 +233,46 @@ Voici un exemple de diagramme sagittal de fonction :
 Il existe trois types d'applications majeures : les injections, les surjections et les applications.
 </p>
 <p>
+Commençons par le commencement : l'injection.
+<span class="important"><definition name="injection"></span>.
+</p>
+<graphic>
+<background_color white>
+<base draw=0>
+
+<circle x=-2 y=0 radius_x=3/2 radius_y=4>
+<text x=-2 y=2 content="0"></text>
+<text x=-2 y=1 content="1"></text>
+<text x=-2 y=0 content="2"></text>
+<text x=-2 y=-1 content="3"></text>
+
+<circle x=2 y=0 radius_x=3/2 radius_y=4>
+<text x=2 y=2 content="0"></text>
+<text x=2 y=1 content="1"></text>
+<text x=2 y=0 content="2"></text>
+<text x=2 y=-1 content="3"></text>
+<text x=2 y=-2 content="4"></text>
+
+<line x_1=-3/2 y_1=2 x_2=3/2 y_2=2 color=black>
+<line x_1=-3/2 y_1=1 x_2=3/2 y_2=1 color=black>
+<line x_1=-3/2 y_1=0 x_2=3/2 y_2=-1 color=black>
+<line x_1=-3/2 y_1=-1 x_2=3/2 y_2=-2 color=black>
+</graphic>
+<p>
+D'un point de vue mathématique, on peut en déduire quelque chose d'intéressant : chaque élément de départ est lié à un objet, et chaque élément d'arrivée est relié à, au maximum, un élément de départ.
+Donc, <span class="important">si deux objets "a" et "b" ont la même image par une injection, alors ils sont égaux (et la réciproque est vraie dans le cas des antécédents)</span>.
+Cette définition est généralement la définition utilisée pour parler des injections.
+Dans les formules juste en bas, la première ligne représente la définition de l'application, la deuxième ligne représente la première définition que nous avons vue, et la troisième représente la deuxième que nous avons vue.
+Le passage de l'une à l'autre (sous forme d'équivalence) est <a href="demo">démontré juste ici</a>.
+</p>
+<math>f : E <mto> F, x <mto> f(x)</math></br>
+<math><mforall>z <min> F, [<mexists>! x <min> E, f(x) = z <mor> <mnot>(<mexists> x <min> E, f(x) = z)]</math></br>
+<math><mforall>x, y <min> E, f(x) = f(y) <mequi> x = y</math>
+<p>
 Le dernier type est donc la bijection.
 <span class="important"><definition name="bijection"></span>.
 D'un point de vue rigoureux, la définition d'une bijection mélange donc celle de l'injection et celle de la surjection.
-Dans une bijection, chaque élément de départ a un antécédent, et chaque élément d'arrivée a une image.
+Dans une bijection, chaque élément de départ a un antécédent, et chaque élément d'arrivée a une image (<a href="demo">démontré juste ici</a>).
 </p>
 <graphic>
 <background_color white>

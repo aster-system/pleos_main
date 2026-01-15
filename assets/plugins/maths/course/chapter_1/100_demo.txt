@@ -224,6 +224,68 @@ Par réflexitivé de l'égalité, nous pouvons prouver que "~" est aussi réflex
 Donc, "~" est réflexive, symétrique et transitive : c'est une relation d'équivalence.
 </p>
 
+<h3>Les injections, surjections et bijections</h3>
+<h4>1.1.1.0</h4>
+<p>
+Démontrons que une application mathématique où tous les éléments de l'ensemble de départ sont reliés à au plus 1 objet permet de dire que "a = b" équivaut à dire que "f(a) = f(b)" (et sa réciproque).
+Définissons notre application.
+</p>
+<math>f : E <mto> F, x <mto> f(x)</math>
+<p>
+Supposons que tous les éléments de l'ensemble d'arrivée sont reliés à au plus 1 objet.
+</p>
+<math><mforall>z <min> F, [<mexists>! x <min> E, f(x) = z <mor> <mnot>(<mexists> x <min> E, f(x) = z)]</math>
+<p>
+Posons deux éléments de "E" quelconques, nommés "x" et "y", et que leur image par "f" est égale.
+</p>
+<math><mforall>x, y <min> E, f(x) = f(y)</math>
+<p>
+Selon notre première supposition (tous les éléments de l'ensemble de départ sont reliés à au plus 1 objet) : 
+</p>
+<math><mforall> w <min> F, [<mexists>! x <min> E, f(x) = w <mor> <mnot>(<mexists> x <min> E, f(x) = w)]</math></br>
+<math><mforall> z <min> F, [<mexists>! y <min> E, f(y) = z <mor> <mnot>(<mexists> y <min> E, f(y) = z)]</math>
+<p>
+Comme nous avons supposé que "x" et "y" existent, on peu oublier la deuxième partie de la proposition "OU".
+Ici, comme "f(x)" et "f(y)" appartiennt à "f", nous pouvons changer "w" et "f(y)", ou "z" et "f(x)", pour obtenir les égalité "f(x) = f(y)".
+</p>
+<math><mexists>! x <min> E, f(x) = f(y)</math></br>
+<math><mexists>! y <min> E, f(y) = f(x)</math>
+<p>
+Dans les deux cas, il existe un unique élément étant leur image : "x" et "y".
+Donc, dans les deux cas, la seule possibilité est que "x = y".
+</p>
+<math><mforall>x, y <min> E, f(x) = f(y) <mequi> x = y</math>
+
+<h4>1.1.1.1</h4>
+<p>
+Démontrons que une application mathématique où tous les éléments de l'ensemble de d'arrivée sont reliés à exactement 1 objet équivaut à dire que l'application est injective et surjective.
+Définissons notre application.
+</p>
+<math>f : E <mto> F, x <mto> f(x)</math>
+<p>
+Supposons que tous les éléments de l'ensemble d'arrivée sont reliés à exactement 1 objet.
+</p>
+<math><mforall>z <min> F, <mexists>! x <min> E, f(x) = z</math>
+<p>
+Par définition pure, cette propriété permet de dire que "f" est injective, car tous les éléments d'arrivée sont reliés à 1 ou 0 objet.
+</p>
+<math><mforall>z <min> F, [<mexists>! x <min> E, f(x) = z <mor> <mnot>(<mexists> x <min> E, f(x) = z)]</math>
+<p>
+Toujours par définition pure, cette propriété permet de dire que "f" est surjective, car tous les éléments d'arrivée sont reliés à au moins un objet.
+</p>
+<math><mforall>z <min> F, <mexists> x <min> E, f(x) = z</math>
+<p>
+Donc, une application mathématique où tous les éléments de l'ensemble de d'arrivée sont reliés à exactement 1 objet est injective et surjective.
+</p>
+<p>
+De plus, si une application est injective et surjective, alors tous les éléments de l'ensemble d'arrivée sont reliés à au minimum un élément.
+Or, selon l'injectivité, une application injective permet de dire que chaque élément d'arrivée sont reliés à 1 ou 0 élément.
+Donc, chaque élément de l'ensemble d'arrivée est relié à exactement un élément : si une application est injective et surjective, alors tous les éléments de l'ensemble d'arrivée sont reliés à au minimum un élément.
+</p>
+<p>
+Par double implication, on conclut donc que application mathématique où tous les éléments de l'ensemble de d'arrivée sont reliés à exactement 1 objet équivaut à dire que l'application est injective et surjective.
+</p>
+
 
 
 <h2>Les nombres entiers naturels</h2>
