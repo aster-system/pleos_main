@@ -228,6 +228,14 @@ Finalement, nous pouvons très facilement démontrer que le neutre de "(Z, +)", 
 Donc, <span class="important">"2Z" est un sous-groupe de "G"</span>.
 </p>
 
+<h3>Les groupes symétriques</h3>
+<p>
+Un type de groupe un petit peu bizarre mais assez atypique est le groupe symétrique.
+<span class="important"><definition name="symmetric_group"></span>.
+Cela est parfaitement possible.
+En effet, comme nous l'avons vue au chapitre 1, la composition de deux bijections donne une bijection, la composition de bijection est associative, la bijection identité représente le neutre, et chaque bijection possède une inverse (sa réciproque).
+
+</p>
 
 
 

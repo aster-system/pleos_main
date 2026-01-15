@@ -87,6 +87,10 @@
     <content name="algebra">un morphisme de structures algébriques est une application entre deux ensembles de deux structures algébriques, où l'on doit s'assurer que les lois de composition de la première structure ont les mêmes propriétés que les lois de composition de la deuxième structure après utilisation de l'application, et que les lois de composition sont compatibles entre elles après utilisation de l'application</content>
 </new_definition>
 
+<new_definition name="symmetric_group">
+    <content>le groupe symétrique (ou groupe des permutations) d'un ensemble "E" est un groupe sur l'ensemble des permutations de "E", et utilisant comme loi de composition la composition de fonction</content>
+</new_definition>
+
 <new_definition name="algebra_lagrange_theorem">
     <content>le théorème de Lagrange formule que l'ordre d'un groupe G (le cardinal de son ensemble) est divisible par ceux de ses sous-groupes H</content>
 </new_definition>
