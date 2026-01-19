@@ -351,6 +351,10 @@ Toute ces définitions permettent bien de garder nos propriétés de relation d'
 </p>
 <math> 3 <mgtequal> 2</math></br>
 <math> -2 <mgtequal> -3</math>
+<p>
+Nous avons cependant une extension de ces relations d'ordres : <span class="important">multiplié un nombre entier relatif par un nombre négatif change son signe, donc multipler par un nombre négatif des deux côtés d'une relation d'ordre nous oblige à passer de "supérieur" à "inférieur" et de "inférieur" à "supérieur"</span>.
+</p>
+<math>4 <mlt> 6 <mequi> 4 * -1 <mgt> 6 * -1 <mlt> -4 <mgt> -6</math>
 
 
 

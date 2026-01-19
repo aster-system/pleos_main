@@ -1352,3 +1352,69 @@ Donc, dire que "b est strictement inférieur à a" équivaut à dire que "a + c 
 Or, dire que "a + c est strictement supérieur à b + c" équivaut à dire que "b + c est strictement inférieur à a + c".
 Donc, dire que "b est strictement inférieur à a" équivaut à dire que "b + c est strictement inférieur à a + c".
 </p>
+
+<h4>1.3.2.2</h4>
+<p>
+Prouvons que, pour trois nombres entiers relatifs "a", "b" et "c" avec "c" supérieur à 0, dire que "a est supérieur ou égal à b" équivaut à dire que "a * c est supérieur ou égal à b * c".
+</p>
+<p>
+Si "a" et "b" sont positifs, alors on obtient la proposition prouvé au théorème 1.2.4.2.
+</p>
+<math>a <mgtequal> b <mequi> a * c <mgtequal> b * c</math>
+<p>
+Dans le cas où "a" et "b" sont négatifs, alors par définition de la relation "supérieur ou égal" dans "Z" :
+</p>
+<math>a <mgtequal> b <mequi> -a <ltequal> -b <mequi> -a * c <ltequal> -b * c <mequi> a * c <mgtequal> b * c</math>
+<p>
+Finalement, si "a" est positif et "b" est négatif, la multiplication par "c" ne change pas le signe de "a" ou "b".
+Par définition de la relation d'ordre dans "Z", alors "a" reste supérieur à "b", selon son signe.
+</p>
+<math>a <mgtequal> b <mimp> a * c <mimp> b * c</math>
+<p>
+Il en va de même pour la division (bien évidement, dans le cas où "a" et "b" sont multiples de "c").
+</p>
+<math>a <mgtequal> b <mimp> a / c <mimp> b / c</math>
+<p>
+Par double implication, on obtient l'équivalence souhaitée.
+</p>
+<math>a <mgtequal> b <mequi> a * c <mimp> b * c</math>
+<p>
+Tous les cas sont démontrées : pour trois nombres entiers relatifs "a", "b" et "c" avec "c" supérieur à 0, dire que "a est supérieur ou égal à b" équivaut à dire que "a * c est supérieur ou égal à b * c".
+</p>
+<p>
+De plus, par définition de "inférieur ou égal", dire que "a est supérieur ou égal à b" équivaut à dire que "b est inférieur ou égal à a".
+Donc, dire que "b est inférieur ou égal à a" équivaut à dire que "a * c est supérieur ou égal à b * c".
+Or, dire que "a + c est supérieur ou égal à b * c" équivaut à dire que "b * c est inférieur ou égal à a * c".
+Donc, dire que "b est inférieur ou égal à a" équivaut à dire que "b * c est inférieur ou égal à a * c".
+</p>
+<p>
+Dans la même idée, dire que "a est strictement supérieur à b" équivaut par définition à dire que "a est supérieur ou égal à b" et que "a n'est pas égal à b".
+Donc, dire que "a est strictement supérieur à b" équivaut à dire que que "a * c est supérieur ou égal à b * c" et que "a n'est pas égal à b".
+Or, dire que que "a + c est supérieur ou égal à b * c" et que "a n'est pas égal à b" équivaut à dire que "a * c est strictement supérieur à b + c".
+Donc, "a est strictement supérieur à b" équivaut à dire que "a * c est strictement supérieur à b * c".
+</p>
+<p>
+Finalement, par définition de "strictement inférieur", dire que "a est strictement supérieur à b" équivaut à dire que "b est strictement inférieur à a".
+Donc, dire que "b est strictement inférieur à a" équivaut à dire que "a * c est strictement supérieur à b * c".
+Or, dire que "a * c est strictement supérieur à b * c" équivaut à dire que "b * c est strictement inférieur à a + c".
+Donc, dire que "b est strictement inférieur à a" équivaut à dire que "b * c est strictement inférieur à a * c".
+</p>
+
+<h4>1.3.2.3</h4>
+<p>
+Prouvons que, pour trois nombres entiers relatifs "a", "b" et "c" avec "c" inférieur à 0, dire que "a est supérieur ou égal à b" équivaut à dire que "a * c est inférieur ou égal à b * c".
+</p>
+<p>
+Selon la définition de la multiplication, multiplier "a" par "c" et "b" par "c" revient à multiplier "-a" par "-c" et "-b" par "-c".
+Dans ce cas, par définition des relations d'ordres dans "Z", nous obtenons une équivalence particulière.
+<p>
+<math>a <mgtequal> b <mequi> -a <ltequal> -b</math>
+</p>
+Or, "-c" est positif.
+Donc, dans tous les cas, on en revient au théorème 1.3.2.2.
+Donc : pour trois nombres entiers relatifs "a", "b" et "c" avec "c" inférieur à 0, dire que "a est supérieur ou égal à b" équivaut à dire que "a * c est inférieur ou égal à b * c".
+</p>
+<math><mforall>a, b, c <min> Z, c <mlt> 0 <mequi> a <mgtequal> b <mequi> a * c <ltequal> b * c</math>
+<p>
+En utilisant l'exact même syntaxe que dans le théorème 1.3.2.2 ou 1.2.4.2, on peut démontrer que cela est exatectement pareil via les relations "inférieur ou égal" vers "supérieur ou égal", "strictement supérieur" vers "strictement inférieur" et "strictement inférieur" vers "strictement supérieur" (toujours dans le cas où "a" n'est pas égal à "c").
+</p>
