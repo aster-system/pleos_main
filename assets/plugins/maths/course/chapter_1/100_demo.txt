@@ -931,6 +931,80 @@ En appliquant l'exact même raisonnement, nous pouvons obtenir le même résulta
 Toujours par des équivalences, vous obtenez les mêmes résultats avec "inférieur ou égal", "strictement supérieur" et "strictement inférieur".
 </p>
 
+<h4>1.2.4.3</h4>
+<p>
+Prouvons que, pour trois nombres entiers naturels "a", "b" et "c" avec "c" supérieur à 0, dire que "a est supérieur ou égal à b" équivaut à dire que "a * c est supérieur ou égal à b * c".
+Procédons par récurrence.
+</p>
+<p>
+Posons l'hypothèse de récurrence pour tout entier naturel "c" supérieur à 0, P(c) = "pour tout nombres entiers naturels a et b, "a est supérieur ou égal à b" équivaut à dire que "a * c est supérieur ou égal à b * c"".
+</p>
+<math>P(c) = <mforall>a, b <min> N, a <mgtequal> b <mequi> a * c <mgtequal> b * c</math>
+<p>
+Déjà, par définition de la la multiplication :
+</p>
+<math><mforall>a, b <min> N, [a * 1 = a, b * 1 = b]</math>
+<p>
+Donc :
+</p>
+<math>c = 1 <mimp> a * c <mgtequal> b * c <mequi> a <mgtequal> b</math>
+<p>
+Dans le cas où "c = 1", "a est supérieur ou égal à b" équivaut à dire que "a * c est supérieur ou égal à b * c".
+Donc, P(0) est vraie.
+</p>
+<p>
+En suite, prouvons que si P(k) avec k un nombre entier naturel quelconque, alors P(k + 1).
+Commençons par supposer que P(k) soit vrai. 
+</p>
+<math><mforall>a, b <min> N, a <mgtequal> b <mequi> a * k <mgtequal> b * k</math>
+<p>
+Selon le théorème 1.2.4.2, on peut rajouter "a" à gauche et à droite, en gardant une équivalence.
+Selon la définition de la multiplication, cela revient à multiplier "a" par "k + 1".
+</p>
+<math>a * k <mgtequal> b * k <mequi> a * k + a <mgtequal> b * k + a <mequi> a * (k + 1) <mgtequal> b * k + a</math>
+<p>
+Toujours selon le théorème 1.2.4.2, on peut rajouter "b * k" à gauche et à droite de la proposition "a supérieur ou égal à b".
+Selon la définition de la multiplication, cela revient à multiplier "b" par "k + 1".
+</p>
+<math>a <mgtequal> b <mequi> b * k + a <mgtequal> b * k + b <mequi> b * k + a <mgtequal> b * (k + 1)</math>
+<p>
+Par transitivité de la relation "supérieur ou égal" :
+</p>
+<math>a * (k + 1) <mgtequal> b * k + a <mand> b * k + a <mgtequal> b * (k + 1) <mimp> a * (k + 1) <mgtequal> b * k + a <mgtequal> b * (k + 1) <mimp> a * (k + 1) <mgtequal> b * (k + 1)</math>
+<p>
+Nous reconnaissons donc la forme de P(k + 1).
+Donc, si P(k) est vraie, P(k + 1) l'est aussi.
+</p>
+<p>
+Donc, P(0) est vraie et P(k) implique P(k + 1).
+Selon le principe de récurrence, P est vraie pour tout nombre entier naturel.
+Finalement :
+</p>
+<math><mforall>a, b, c <min> N, a <mgtequal> b <mequi> a * c <mgtequal> b * c</math>
+<p>
+De plus, par définition de "inférieur ou égal", dire que "a est supérieur ou égal à b" équivaut à dire que "b est inférieur ou égal à a".
+Donc, dire que "b est inférieur ou égal à a" équivaut à dire que "a * c est supérieur ou égal à b * c".
+Or, dire que "a * c est supérieur ou égal à b * c" équivaut à dire que "b * c est inférieur ou égal à a * c".
+Donc, dire que "b est inférieur ou égal à a" équivaut à dire que "b * c est inférieur ou égal à a * c".
+</p>
+<p>
+Dans la même idée, dire que "a est strictement supérieur à b" équivaut par définition à dire que "a est supérieur ou égal à b" et que "a n'est pas égal à b".
+Donc, dire que "a est strictement supérieur à b" équivaut à dire que que "a * c est supérieur ou égal à b * c" et que "a n'est pas égal à b".
+Or, dire que que "a * c est supérieur ou égal à b * c" et que "a n'est pas égal à b" équivaut à dire que "a * c est strictement supérieur à b * c".
+Donc, "a est strictement supérieur à b" équivaut à dire que "a * c est strictement supérieur à b * c".
+</p>
+<p>
+Finalement, par définition de "strictement inférieur", dire que "a est strictement supérieur à b" équivaut à dire que "b est strictement inférieur à a".
+Donc, dire que "b est strictement inférieur à a" équivaut à dire que "a * c est strictement supérieur à b * c".
+Or, dire que "a + c est strictement supérieur à b * c" équivaut à dire que "b * c est strictement inférieur à a * c".
+Donc, dire que "b est strictement inférieur à a" équivaut à dire que "b * c est strictement inférieur à a * c".
+</p>
+<p>
+En appliquant l'exact même raisonnement, nous pouvons obtenir le même résultat avec la division (en supposant que "a" et "b" soit divisible par "c").
+Toujours par des équivalences, vous obtenez les mêmes résultats avec "inférieur ou égal", "strictement supérieur" et "strictement inférieur".
+</p>
+
+
 
 
 <h2>Les nombres entiers relatifs</h2>
