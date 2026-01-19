@@ -299,10 +299,45 @@ Dans une bijection, chaque élément de départ a un antécédent, et chaque él
 <line x_1=-3/2 y_1=-2 x_2=3/2 y_2=2 color=black>
 </graphic>
 <p>
-Mathématique, une bijection "f" allant de "B" vers "A" se présente ainsi :
+Mathématiquement, une bijection "f" allant de "B" vers "A" se présente ainsi :
 </p>
 <math>f : A <mto> B, a <mto> b</math></br>
 <math><mforall>b <min> B, <mexists>! a <min> A, f(a) = b</math>
+<p>
+Il est d'ailleurs à noter qu'une composition de deux bijections (de "E" vers "F" et de "F" vers "G") donne une nouvelle bijection, de "E" vers "G" (<a href="demo">démontré ici</a>).
+Dans un ensemble "E", il existe une bijection (allant de "E" vers "E") qui, à chaque élément "x" de "E", lui associe... "x" (et donc, qui ne représente pas une modification de l'ensemble à proprement parlé) : <span class="important">cette bijection est nommée application identité de "E"</span>.
+On l'a note généralement avec les deux lettres "Id", et avec l'ensemble "E" en indice.
+Toute seule, elle ne sert pas à grand chose, mais elle peut être utile pour exprimer formes précises, où l'on veut faire transparaître qu'une forme n'apporte pas de modifications à un ensemble.
+Par exemple, <span class="important">si la composition d'une application "f et d'une autre application "g" donne l'identité, alors "g" est nommée l'application réciproque de "f"</span>.
+Là est une propriété intéressante : si une application est la réciproque d'une autre, alors elle "annule" l'application de départ (par la composition).
+Cela permet une autre définition équivalente des bijections : <span class="important">toute bijection admet une application réciproque (elle aussi une bijection), et tout application qui admet une application réciproque est une bijection</span> (<a href="demo">démontré juste ici</a>)..
+Voici la définition (et une illustration) de l'application identité :
+</p>
+<math><mi>Id</mi><msub>E</msub> : E <mto> E, x <mto> x</math></br>
+<graphic>
+<background_color white>
+<base draw=0>
+
+<circle x=-2 y=0 radius_x=3/2 radius_y=4>
+<text x=-2 y=2 content="0"></text>
+<text x=-2 y=1 content="1"></text>
+<text x=-2 y=0 content="2"></text>
+<text x=-2 y=-1 content="3"></text>
+<text x=-2 y=-2 content="4"></text>
+
+<circle x=2 y=0 radius_x=3/2 radius_y=4>
+<text x=2 y=2 content="0"></text>
+<text x=2 y=1 content="1"></text>
+<text x=2 y=0 content="2"></text>
+<text x=2 y=-1 content="3"></text>
+<text x=2 y=-2 content="4"></text>
+
+<line x_1=-3/2 y_1=2 x_2=3/2 y_2=2 color=black>
+<line x_1=-3/2 y_1=1 x_2=3/2 y_2=1 color=black>
+<line x_1=-3/2 y_1=0 x_2=3/2 y_2=0 color=black>
+<line x_1=-3/2 y_1=-1 x_2=3/2 y_2=-1 color=black>
+<line x_1=-3/2 y_1=-2 x_2=3/2 y_2=-2 color=black>
+</graphic>
 <p>
 En tout, <span class="important">il existe "n!" bijections différentes ("n!" est un nombre précis, que nous définirons plus tard pour tous ceux qui ne le connaissent pas)</span>.
 D'ailleurs, il existe des ensembles pour lesquelles il ne peut pas exister de bijections entre eux, par exemple si ils ont une taille différente.
@@ -312,10 +347,10 @@ Cependant, <span class="important">si il existe une bijection entre deux ensembl
 Un type assez utile de bijection est la permutation.
 <span class="important"><definition name="permutation"></span>.
 En effet, dans ce cas, on peut la représenter comme un réarrangement des éléments de l'ensemble, ce qui est généralement le cas des objets "permutations" dans le langage courant.
-D'ailleurs, <span class="important">il existe une permutation qui, pour tout élément "x" de "E", passé "x" à cette application donne... "x" : cette permutation, étant une application, est nommée application identité sur "E"</span>.
+D'ailleurs, <span class="important">l'application identité sur "E" est une permutation sur "E"</span>.
 Il s'agit en fait de la permutation... qui ne modifie aucun élément de "E" (dans le langage courant, il ne s'agirait plus d'une permutation, mais en mathématique, cela en reste une, car la définition est toujours respectée).
 </p>
-<math>Id<msub>E</msub> : E <mto> E, x <mto> x</math>
+<math><mi>Id</mi><msub>E</msub> : E <mto> E, x <mto> x</math>
 <p>
 Généralement, la notation d'une transposition dans un ensemble fini de taille "n" représente la façon dont les éléments sont échangés.
 En fait, <span class="important">on les note sous la forme de deux objets l'un sur l'autre, où l'objet dans haut représente un numéro pour chaque élément de l'ensemble, et l'objet dans bas représente le nouvel arrangement de l'objet après le passage de la permutation</span>.

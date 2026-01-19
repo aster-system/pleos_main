@@ -32,7 +32,7 @@
 #include "../headers/pleos_hub.h"
 
 // Include PLEOS Test header
-#include "../headers/pleos_test.h"
+#include "../../../scls-image-michelangelo/scls_image_directory/scls_image_table.h"
 
 // Init SCLS
 SCLS_INIT

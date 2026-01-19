@@ -286,6 +286,91 @@ Donc, chaque élément de l'ensemble d'arrivée est relié à exactement un él�
 Par double implication, on conclut donc que application mathématique où tous les éléments de l'ensemble de d'arrivée sont reliés à exactement 1 objet équivaut à dire que l'application est injective et surjective.
 </p>
 
+<h4>1.1.1.2</h4>
+<p>
+Démontrons que une application mathématique où tous les éléments de l'ensemble de d'arrivée sont reliés à exactement 1 objet équivaut à dire que l'application admet une application réciproque.
+Définissons notre application.
+</p>
+<math>f : E <mto> F, x <mto> f(x)</math>
+<p>
+Supposons que tous les éléments de l'ensemble d'arrivée sont reliés à exactement 1 objet.
+</p>
+<math><mforall>z <min> F, <mexists>! x <min> E, f(x) = z</math>
+<p>
+Cette définition est pratiquement la même que la définition brute du concept d'application.
+Formulons une application "g" allant de "F" vers "E" représentant la définition d'une application adaptée.
+</p>
+<math><mforall>z <min> F, <mexists>! x <min> E, g(z) = x</math>
+<p>
+Composons ces applications "f" et "g" :
+</p>
+<math><mforall> x <min> E, <mexists>! a <min> E, <mexists>! b <min> F, a = g(x), b = f(g(x))</math></br>
+<math><mimp> [<mexists>! e <min> E, b = f(e)] <mand> [<mexists>! h <min> F, h = f(a)] <mand> [<mexists>! d <min> E, g(x) = d] <mand> [<mexists>! c <min> F, g(c) = a]</math></br>
+<math><mimp> [d = e <mand> c = h] <mimp> [b = x]</math>
+<p>
+Nous retrouvons ici la formule de la bijection.
+Donc, "g" est l'application réciproque de "f".
+Faisons dans le sens inverse (ce qui est presque pareil) :
+</p>
+<math><mforall> x <min> E, <mexists>! a <min> F, <mexists>! b <min> E, a = f(x), b = g(f(x))</math></br>
+<math><mimp> [<mexists>! e <min> F, b = g(e)] <mand> [<mexists>! h <min> E, h = g(a)] <mand> [<mexists>! d <min> F, f(x) = d] <mand> [<mexists>! c <min> E, f(c) = a]</math></br>
+<math><mimp> [d = e <mand> c = h] <mimp> [b = x]</math>
+<p>
+Nous retrouvons ici la formule de la bijection.
+Donc, "f" est l'application réciproque de "g".
+</p>
+<p>
+De manière similaire, prouvant que le fait que deux applications "i" et "j" soient réciproques entre elles signifie qu'elles sont bijectives.
+Définissons nos applications.
+</p>
+<math>i : E <mto> F, x <mto> i(x)</math></br>
+<math>j : F <mto> E, x <mto> j(x)</math></br>
+<p>
+Supposons que ces applications soient réciproques entre elles.
+</p>
+<math>i(j(x)) = <mi>Id</mi><msub>E</msub></math>
+<p>
+Par définition d'une application :
+</p>
+<math><mforall> p <min> E, <mexists>! y <min> F, i(p) = y</math></br>
+<math><mforall> q <min> F, <mexists>! z <min> E, j(q) = z</math>
+<p>
+Par définition même de leur composition :
+</p>
+<math><mforall> q <min> F, <mexists>! p <min> E, i(p) = q</math>
+<p>
+Donc, "i" est surjective, car tous les éléments de "F" possèdent au moins un antécédent par "i".
+De plus, elle est injective, car tous les éléments de "F" possèdent au plus un antécédent par "i".
+Donc, selon le théorème 1.1.1.1, "i" est bijective, et donc tous les éléments de l'ensemble de d'arrivée sont reliés à exactement 1 objet.
+Da mnière parfaitement similaire, on en déduit la même chose de "j".
+</p>
+<p>
+Donc, par double implication, on en conclut que une application mathématique où tous les éléments de l'ensemble de d'arrivée sont reliés à exactement 1 objet équivaut à dire que l'application admet une application réciproque.
+</p>
+
+<h4>1.1.1.3</h4>
+<p>
+Prouvons qu'une bijection de bijection donne... une bijection.
+Définissons trois applications différentes.
+</p>
+<math>f : E <mto> F, x <mto> f(x)</math></br>
+<math>g : F <mto> G, x <mto> g(x)</math>
+<math>h : E <mto> G, x <mto> g(f(x))</math>
+<p>
+Supposons "f" et "g" bijectives.
+</p>
+<math><mforall> a <min> F, <mexists>! y <min> E, f(a) = y</math></br>
+<math><mforall> b <min> G, <mexists>! z <min> F, g(b) = z</math>
+<p>
+Donc, pour chaque "z" appartenant à "F", il existe un "y" appartenant à "E" tel que "f(y) = z".
+Donc :
+</p>
+<math><mforall> b <min> G, <mexists>! y <min> E, f(g(y)) = z <mequi> h(x) = z</math>
+<p>
+Or, cela représente exactement la définition d'une bijection.
+Donc, "h" est aussi une bijection, de "E" vers "G".
+</p>
+
 
 
 <h2>Les nombres entiers naturels</h2>
@@ -778,6 +863,10 @@ Donc, dire que "b est strictement inférieur à a" équivaut à dire que "succes
 Or, dire que "successeur(a) est strictement supérieur à successeur(b)" équivaut à dire que "successeur(b) est strictement inférieur à successeur(a)".
 Donc, dire que "b est strictement inférieur à a" équivaut à dire que"successeur(b) est strictement inférieur à successeur(a)".
 </p>
+<p>
+En appliquant l'exact même raisonnement, nous pouvons obtenir le même résultat avevc la fonction "prédécesseur" (en supposant que "a" et "b" ne soit pas "0").
+Toujours par des équivalences, vous obtenez les mêmes résultats avec "inférieur ou égal", "strictement supérieur" et "strictement inférieur".
+</p>
 
 <h4>1.2.4.2</h4>
 <p>
@@ -836,6 +925,10 @@ Finalement, par définition de "strictement inférieur", dire que "a est stricte
 Donc, dire que "b est strictement inférieur à a" équivaut à dire que "a + c est strictement supérieur à b + c".
 Or, dire que "a + c est strictement supérieur à b + c" équivaut à dire que "b + c est strictement inférieur à a + c".
 Donc, dire que "b est strictement inférieur à a" équivaut à dire que "b + c est strictement inférieur à a + c".
+</p>
+<p>
+En appliquant l'exact même raisonnement, nous pouvons obtenir le même résultat avec la soustraction (en supposant que "a" et "b" soit supérieur ou égal à "c").
+Toujours par des équivalences, vous obtenez les mêmes résultats avec "inférieur ou égal", "strictement supérieur" et "strictement inférieur".
 </p>
 
 
@@ -1101,4 +1194,87 @@ Donc, cette partition de la relation permet d'obtenir une relation d'ordre sur "
 </p>
 <p>
 En modifiant stratégiquement les "supérieur ou égal" en "inférieur ou égal" et les "a" en "b", alors vous pouvez faire l'exact même démonstration avec la relation "inférieur ou égal".
+</p>
+
+<h4>1.3.2.1</h4>
+<p>
+Prouvons que, pour trois nombres entiers relatifs "a", "b" et "c", dire que "a est supérieur ou égal à b" équivaut à dire que "a + c est supérieur ou égal à b + c".
+Si "a", "b" et "c" sont positifs, on applique une simple équivalence du "supérieur ou égal" dans "N" selon le théorème 1.2.4.2.
+</p>
+<math><mforall> a, b, c <min> Z, positif(a) <mand> positif(b) <mand> positif(c) <mimp> [a <mgtequal> b <mequi> a + c <mgtequal> b + c]</math>
+<p>
+Si "a", "b" et "c" sont négatifs, on applique une simple équivalence du "inférieur ou égal" dans "N" selon le théorème 1.2.4.2.
+</p>
+<math><mforall> a, b, c <min> Z, negatif(a) <mand> negatif(b) <mand> negatif(c) <mimp> [a <mgtequal> b <mequi> -(abs(a)) <mltequal> -(abs(b)) <mequi> -(abs(a) + abs(c)) <mltequal> -(abs(b) + abs(c)) <mequi> a + c <mgtequal> b + c]</math>
+<p>
+Si "a" et "b" sont positifs et "c" est négatifs, tout dépend de comment "c" se comporte par rapport à "a" et "b".
+Si la valeur absolue de "c" est inférieure ou égale à celle de "a" et celle de "b", alors on applique une simple équivalence du "inférieur ou égal" dans "N" selon le théorème 1.2.4.2, ici avec la soustraction.
+</p>
+<math><mforall> a, b, c <min> Z, positif(a) <mand> positif(b) <mand> negatif(c) <mimp> [a <mgtequal> b <mequi> a - abs(c) <mgtequal> b - abs(c) <mequi> a + c <mgtequal> b + c]</math>
+<p>
+Dans le cas où "c" est supérieur à "b" mais inférieur ou égal à "a", alors "b - c" devient négatif, et "a - c" reste positif.
+Selon la définition de la relation "supérieur ou égal", "a - c" reste supérieur ou égal à "b - c".
+Finalement, si "c" est supérieur à "a" et à "b", alors nous devons innover.
+Dans ce cas, "c" peut s'écrire comme la somme de "a" et d'un autre nombre entier naturel "d".
+</p>
+<math><mexists>d <min> N, c = a + d</math>
+<p>
+Donc, selon les résultats vues plus haut dans cette démonstration, nous pouvons soustraire "a" des deux côtés de la relation, car "a - a" vaut 0, qui est positif, et "b - a" devient négatif.
+</p>
+<math>a <mgt> b <mequi> 0 <mgt> b - a</math>
+<p>
+Dans ce cas, nous pouvons additionner les deux nombres par "-d", ce qui est équivalent, car dans ce cas, "0", "b - a" et "-d" serait négaitf (résultat aussi vue plus haut dans cette démonstration).
+</p>
+<math>a <mgt> b <mequi> 0 <mgt> b - a <mequi> -d <mgt> (b - a) - d <mequi> -d <mgt> (b + (-a)) + (-d) <mequi> -d <mgt> b + (-a + -d) <mequi> -d <mgt> b + (-(a + d)) <mequi> a - c <mequi> b - c</math>
+<p>
+Si "a" et "b" sont négatifs et "c" est positif, tout dépend de comment "c" se comporte par rapport à "a" et "b".
+Si la valeur absolue de "c" est inférieure ou égale à celle de "a" et celle de "b", alors on applique une simple équivalence du "inférieur ou égal" dans "N" selon le théorème 1.2.4.2, ici avec la soustraction.
+</p>
+<math><mforall> a, b, c <min> Z, negatif(a) <mand> negatif(b) <mand> positif(c) <mimp> [a <mgtequal> b <mequi> -(abs(a)) <mltequal> -(abs(b)) <mequi> -(abs(a) - abs(c)) <mltequal> -(abs(b) - abs(c)) <mequi> a + c <mgtequal> b + c]</math>
+<p>
+Dans le cas où la valeur absolue de "c" est supérieur à celle "b" mais inférieur ou égal à celle "a", alors "a + c" devient positif, et "b + c" reste négatif.
+Selon la définition de la relation "supérieur ou égal", "a + c" reste supérieur ou égal à "b + c".
+Finalement, si la valeur absolue "c" est supérieur à celle de "a" et celle de "b", alors nous devons innover.
+Dans ce cas, "c" peut s'écrire comme la somme de "a" et d'un autre nombre entier naturel "d".
+</p>
+<math><mexists>d <min> N, c = abs(b) + d = (-b) + d</math>
+<p>
+Donc, selon les résultats vues plus haut dans cette démonstration, nous pouvons soustraire "b" des deux côtés de la relation, car "b - b" vaut 0, qui est positif, et "a - b" devient positif.
+</p>
+<math>a <mgt> b <mequi> a - b <mgt> 0</math>
+<p>
+Dans ce cas, nous pouvons additionner les deux nombres par "d", ce qui est équivalent, car dans ce cas, "0", "a - b" et "d" serait positif (résultat aussi vue plus haut dans cette démonstration).
+</p>
+<math>a <mgt> b <mequi> a - b <mgt> 0 <mequi> a + (-b) + d <mgt> d <mequi> a + c <mgt> b + (-b) + d <mequi> a + c <mequi> b + c</math>
+<p>
+Si "a" est positif et "b" est négatif, nous pouvons utiliser une technique permettant d'éviter d'utiliser directement "c".
+Dans ce cas, nous pouvons soustraire "b" des deux côtés, ce qui ne change pas le signe de "a - b", qui reste positif, et "b - b" reste négatif (égal à 0) : la relation reste juste.
+</p>
+<math>a <mgt> b <mequi> a - b<mgt> 0</math>
+<p>
+Dans ce cas, nous pouvons nous ramener aux cas vue plus haut, avec deux nombres positif.
+Nous devons juste modifier un petit peu "c" (dans une nouvelle variable nommée "d"), en lui soustrayant la modification apportée, ici "a - b".
+Maintenant, plus qu'à utiliser "a", "b" et "d" dans la démonstration vue plus haut.
+</p>
+<math><mexists> d <min> Z, d = c - (a - b)</math>
+<p>
+Tous les cas sont démontrées : pour trois nombres entiers relatifs "a", "b" et "c", dire que "a est supérieur ou égal à b" équivaut à dire que "a + c est supérieur ou égal à b + c".
+</p>
+<p>
+De plus, par définition de "inférieur ou égal", dire que "a est supérieur ou égal à b" équivaut à dire que "b est inférieur ou égal à a".
+Donc, dire que "b est inférieur ou égal à a" équivaut à dire que "a + c est supérieur ou égal à b + c".
+Or, dire que "a + c est supérieur ou égal à b + c" équivaut à dire que "b + c est inférieur ou égal à a + c".
+Donc, dire que "b est inférieur ou égal à a" équivaut à dire que "b + c est inférieur ou égal à a + c".
+</p>
+<p>
+Dans la même idée, dire que "a est strictement supérieur à b" équivaut par définition à dire que "a est supérieur ou égal à b" et que "a n'est pas égal à b".
+Donc, dire que "a est strictement supérieur à b" équivaut à dire que que "a + c est supérieur ou égal à b + c" et que "a n'est pas égal à b".
+Or, dire que que "a + c est supérieur ou égal à b + c" et que "a n'est pas égal à b" équivaut à dire que "a + c est strictement supérieur à b + c".
+Donc, "a est strictement supérieur à b" équivaut à dire que "a + c est strictement supérieur à b + c".
+</p>
+<p>
+Finalement, par définition de "strictement inférieur", dire que "a est strictement supérieur à b" équivaut à dire que "b est strictement inférieur à a".
+Donc, dire que "b est strictement inférieur à a" équivaut à dire que "a + c est strictement supérieur à b + c".
+Or, dire que "a + c est strictement supérieur à b + c" équivaut à dire que "b + c est strictement inférieur à a + c".
+Donc, dire que "b est strictement inférieur à a" équivaut à dire que "b + c est strictement inférieur à a + c".
 </p>

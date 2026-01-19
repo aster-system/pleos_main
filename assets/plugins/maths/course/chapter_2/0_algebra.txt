@@ -110,6 +110,32 @@ Pour un ensemble E, une loi de composition interne "l" notée "." se définie co
 <math><mforall>a, b <min> E, <mexists>! c <min> E, a . b = c</math>
 
 <p>
+Une manière intéressante d'étudier une loi de composition interne est la table de Cayley.
+<span class="important"><definition name="cayley_table"></span>.
+Nos exemples plus haut ne sont pas exactement des tables de Cayley, car l'ensemble "N" est infini (dans le premier cas), et la loi de composition n'est pas interne (dans le deuxième cas).
+En regardant précisément comment se comportent les éléments de la table, nous pouvons en déduire des propriétés plutôt intéressantes, sur dans des cas de structures très originales.
+Voici un exemple : la table de Cayley représentant l'ensemble des restes par la division euclidienne de nombres par 5 (après l'application de la loi de composition interne), avec comme loi de composition interne l'addition.
+</p>
+
+<table>
+<case x=0 y=0 background_color=light_grey content="+">
+
+<case x=1 y=0 background_color=light_grey content="0"><case x=2 y=0 background_color=light_grey content="1"><case x=3 y=0 background_color=light_grey content="2"><case x=4 y=0 background_color=light_grey content="3">
+<case x=0 y=1 background_color=light_grey content="0"><case x=0 y=2 background_color=light_grey content="1"><case x=0 y=3 background_color=light_grey content="2"><case x=0 y=4 background_color=light_grey content="3">
+
+<case x=1 y=1 content="0"><case x=2 y=1 content="1"><case x=3 y=1 content="2"><case x=4 y=1 content="3">
+<case x=1 y=2 content="1"><case x=1 y=3 content="2"><case x=1 y=4 content="3">
+
+<case x=2 y=2 content="2"><case x=2 y=3 content="3"><case x=2 y=4 content="4">
+<case x=3 y=2 content="3"><case x=4 y=2 content="4">
+
+<case x=3 y=3 content="4"><case x=4 y=3 content="0">
+<case x=3 y=4 content="0">
+
+<case x=4 y=4 content="1">
+</table>
+
+<p>
 Les lois de compositions internes peuvent avoir une très grande quantité de propriété, très souvent syntaxiques (liée à la façon dont vous pouvez écrire avec la loi).
 La plus simple est l'associativité.
 <span class="important"><definition name="algebra_associativity"></span>.
@@ -234,6 +260,14 @@ Un type de groupe un petit peu bizarre mais assez atypique est le groupe symétr
 <span class="important"><definition name="symmetric_group"></span>.
 Cela est parfaitement possible.
 En effet, comme nous l'avons vue au chapitre 1, la composition de deux bijections donne une bijection, la composition de bijection est associative, la bijection identité représente le neutre, et chaque bijection possède une inverse (sa réciproque).
+Bien qu'il puisse être un peu bizarre, il s'agit bien d'un groupe.
+Généralement, on le note avec la lettre "S" et le nom de l'ensemble "E".
+</p>
+<math>S(E)</math>
+<p>
+Il existe un autre concept très proche (et très lié) à ces groupes symétriques : les groupes de permutations.
+<span class="important"><definition name="symmetric_group-permutation_group"></span>.
+Ce concept permet d'énoncer un théorème très pratique : le théorème de Cayley.
 
 </p>
 

@@ -10,6 +10,9 @@
     <content name="algebric">un calcul est dit algébrique si il permet de travailler avec des indéterminés</content>
     <content name="numeric">un calcul est dit numérique quand il ne permet de travailler que sur des nombres connus</content>
 </new_definition>
+<new_definition name="cayley_table">
+    <content>une table de Cayley est une représentation sous forme de tableau à deux entrées des valeurs obtenues grâce à une loi de composition entre chaque élément d'une structure algébrique finie</content>
+</new_definition>
 <new_definition name="composition_law">
     <content>une loi de composition est une application entre tous les éléments de deux ensembles "A" et "B", et vers des éléments de "A"</content>
     <content name="internal">une loi de composition est dite interne lorsque les deux éléments de départs sont les mêmes (et donc, les mêmes que l'ensemble d'arrivée aussi)</content>
@@ -87,8 +90,12 @@
     <content name="algebra">un morphisme de structures algébriques est une application entre deux ensembles de deux structures algébriques, où l'on doit s'assurer que les lois de composition de la première structure ont les mêmes propriétés que les lois de composition de la deuxième structure après utilisation de l'application, et que les lois de composition sont compatibles entre elles après utilisation de l'application</content>
 </new_definition>
 
+<new_definition name="cayley_theorem">
+    <content>le théorème de Cayley est un théorème qui affirme que tout groupe "G" est isomorphe à un groupe de permutation de l'ensemble de "G"</content>
+</new_definition>
 <new_definition name="symmetric_group">
     <content>le groupe symétrique (ou groupe des permutations) d'un ensemble "E" est un groupe sur l'ensemble des permutations de "E", et utilisant comme loi de composition la composition de fonction</content>
+    <content name="permutation_group">un groupe de permutation d'un ensemble "E" est un sous-groupe du groupe symétrique (aussi nommé groupe des permutations) de "E"</content>
 </new_definition>
 
 <new_definition name="algebra_lagrange_theorem">

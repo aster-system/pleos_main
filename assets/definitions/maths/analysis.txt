@@ -4,11 +4,13 @@
 
 <new_definition name="analysis_sequence">
     <content>une suite mathématique est une fonction mathématique allant de "N" à n'importe quel ensemble possible</content>
+    <content name="convergent">une suite mathématique est dite convergente si sa limite est une valeur finie "v" (on dit que la suite converge vers "v")</content>
 </new_definition>
 <new_definition name="analysis_limit">
     <content>une limite mathématique représente en quelque sorte une valeur d'une fonction dont on se rapproche indéfiniment (sans jamais réellement l'atteindre)</content>
     <content name="sequence">une limite mathématique de suite représente en quelque sorte la valeur d'une suite dont on se rapproche indéfiniment quand on tend "n" vers "+l'infini" (sans jamais réellement l'atteindre)</content>
-    <content name="sequence_rigorous">une limite mathématique de suite est une valeur telle que, pour tous nombre réel possible, il existe toujours un nombre entier naturel "a" tel que la valeur de la suite à ce nombre est supérieure à celle du nombre réel</content>
+    <content name="sequence_rigorous">une limite mathématique de suite vers une valeur "v" est une valeur "v" telle que, pour tous nombre réel possible "x", il existe toujours un nombre entier naturel "a" tel que les différences entre n'importe quelle valeurs de la suite à partir de ce nombre "a" et "v" sont inférieurs à "x"</content>
+    <content name="sequence_rigorous_infinite">une limite mathématique de suite vers une valeur infinie est un des deux infinis ("+ l'infini" ou "- l'infini") tel que, pour tous nombre réel possible "x", il existe toujours un nombre entier naturel "a" tel que toutes valeurs de la suite à partir de ce nombre "a" est supérieure (si la limite est "+ l'infini") ou inférieur (si la limite est "- l'infini") à "x"</content>
 </new_definition>
 
 <new_definition name="function_graph">

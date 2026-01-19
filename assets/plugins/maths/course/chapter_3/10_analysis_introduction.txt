@@ -26,7 +26,7 @@ Ici, on parle de "fonction" car il se peut que certains éléments de "N" (souve
 En analyse, l'ensemble d'arrivée est très souvent un ensemble de nombres.
 Il est très commun de les expliciter, comme dans cet exemple :
 </p>
-<math>u : N <mto> Q, n <mto> u(n) = <mfrac><mi>1</mi><mi>n</mi></mfrac></math>
+<math>u : N <mto> Q, n <mto> u(n) = <mfrac><mi>1</mi><mi>n + 1</mi></mfrac></math>
 
 <h3>Les limites de suites</h3>
 <p>
@@ -40,18 +40,44 @@ Cette définition est une définition intuitive, mais trop peu rigoureuse et ins
 <p>
 D'un point de vue rigoureux, <span class="important"><definition name="analysis_limit-sequence_rigorous"></span>.
 Dire ça est plus fort que de dire que la suite se contente juste de se "rapprocher", mais l'idée est similaire.
-En effet, <span class="important">si, pour toute valeur "e" aussi proche que l'on veut d'une valeur "l", il existe un élément de la suite qui est encore plus proche que "e" (et donc, il existe un nombre naturel "a" permettant de savoir de quel élément de la suite il s'agit), alors une suite se rapproche de plus en plus d'une certaine valeur "l"</span>.
-L'avantage est que pour des "e" très petit, vous pouvez vous rapprocher très proche de cette valeur.
+En effet, <span class="important">si, pour toute valeur "x" aussi petite que l'on veut, il existe un élément de la suite qui est encore plus proche de "v" que "x" est petit (et donc, il existe un nombre naturel "a" permettant de savoir de quel élément de la suite il s'agit), alors une suite se rapproche de plus en plus d'une certaine valeur "v"</span>.
+L'avantage est que pour des "x" très petit, vous pouvez vous rapprocher très (voir infiniment) proche de cette valeur.
 Cependant, elle apporte un avantage : <span class="important">seulement une valeur peut être une limite de suite, là où la définition "intuitive" ne l'interdit pas</span>.
 Prenons par exemple une suite ayant comme limite "2", et étant strictement décroissante.
 Dans ce cas, la suite se rapproche de "2", mais aussi de "1" (puisqu'elle est décroissante).
 Or, la distance entre "1" et la suite ne peut qu'être supérieur à 1 : la deuxième définition interdit ce genre de comportement (des nombres réels comme 0.5 ne respectent pas la définition).
+D'ailleurs, <span class="important"><definition name="analysis_sequence-convergent"></span>.
+La définition mathématique ultra rigoureuse est proposé par le mathématicien <scientist name="weierstrass" type="quote">, et se note ainsi :
 </p>
-<math></math>
+<math><mforall> x <mgt> 0, <mexists> a <min> N, <mforall> b <min> N, [b <mgt> a <mimp> |u(b) - v| <mlt> x]</math>
 <p>
 Dans le cas où la limite se rapproche de "+ l'infini" et de "- l'infini", la définition change un peu, mais le concept reste le même.
+Dans ce cas, <span class="important"><definition name="analysis_limit-sequence_rigorous"></span>.
+Comme pour les suites finies, <span class="important">cette définition n'est intéressante que pour des suites très grandes ou très petites</span>.
 </p>
+<math><mforall> x <mgt> 0, <mexists> a <min> N, <mforall> b <min> N, [b <mgt> a <mimp> u(b) <mgt> x]</math></br>
+<math><mforall> x <mgt> 0, <mexists> a <min> N, <mforall> b <min> N, [b <mgt> a <mimp> u(b) <mlt> -x]</math>
 <p>
+En fait, <span class="important">prouver qu'une suite admet une limite quelconque revient à trouver le "a" pour tous nombres réel supérieur à 0 à partir du quel la condition de la limite est vérifiée</span>.
 Prenons un exemple très simple et intuitif : la suite qui, à "u(n)", associe le nombre "n".
-
+</p>
+<math>u : N <mto> Q, n <mto> u(n) = n</math>
+<p>
+Déjà, par intuition pure, on peut penser que la suite converge vers "+ l'infini".
+En effet, les valeurs semblent aller en grandissant "u(1) = 1", "u(2) = 2", "u(156) = 156"...
+<span class="important">Nous devons donc trouver si il existe un nombre entier naturel "a" tel que, pour tout nombre réel "x" supérieur à 0, toutes valeurs de la suite après l'indice "a" soit supérieur à "x"</span>.
+Cherchons les valeurs "b" de "N" tel que toutes valeurs de la suite "u(b)" soit supérieures à "x".
+</p>
+<math><mforall> x <mgt> 0, <mforall> b <min> N, [u(b) <mgt> x <mequi> b <mgt> x]</math>
+<p>
+Donc, pour que cela marche, il nous faut un "b" supérieur à "x".
+Selon les propriétés des relations d'ordres sur "N", tous les nombres entiers naturels supérieurs à "b" marcheront eux aussi.
+À partir de là, trouver notre "a" ne sera pas très difficile.
+En effet, on pourrait dire que "a = x", et tout serait bon, mais un problème se pose : "x" n'est pas obligatoirement un nombre entier naturel.
+Donc, pour obtenir un nombre entier naturel, <span class="important">nous allons dire que "a" est égal à la partie entière de "x", à laquelle on ajoute 1 (ce qui représenta la fonction "ceil")</span>.
+</p>
+<math><mforall> x <mgt> 0, <mexists> a <min> N, <mforall> b <min> N, {a = ceil(x) <mimp> [b <mgt> a <mequi> b <mgt> ceil(x) <mgtequal> x] <mimp> u(b) <mgt> x}</math></br>
+<math><mforall> x <mgt> 0, <mexists> a <min> N, <mforall> b <min> N, [b <mgt> a <mimp> u(b) <mgt> x]</math>
+<p>
+Donc, <span class="important">nous avons trouvé un "a" respectant la définition de la limite, cette suite tend vers "+ l'infini"</span>.
 </p>
