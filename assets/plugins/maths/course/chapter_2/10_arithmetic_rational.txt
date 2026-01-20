@@ -81,7 +81,42 @@ Dans "Q", l'opération est définie comme cela :
 <p>
 L'addition de tout nombre rationnel donne un autre nombre rationnel.
 En fait, <span class="important">l'addition dans "Q" permet de former un groupe abélien</span>.
-Donc, elle est associative, admet un neutre, chaque élément a un inverse et elle est commutative.
+Donc, elle est associative, admet un neutre, chaque élément a un inverse et elle est commutative (<a href="demo">démontré ici</a>).
 Comme pour dans "Z", soustraire "b" à "a" revient à additionner "-b" à "a".
 </p>
 <math><mforall>a, b, c <min> Q, c = a - b <mequi> a + (-b)</math>
+<p>
+De plus, <span class="important">"Q" possède aussi une opération de multiplication, avec les mêmes propriétés que dans "Z" (et des propriétés supplémentaires)</span>.
+Comme pour "N" et "Z", opérer deux nombres entier relatif écrit dans "Q" revient à opérer deux nombres entiers relatifs tout cours.
+Dans "Q", l'opération est définie comme cela :
+</p>
+<math><mforall>a, b <min> Q <mequi> [<mexists>c, e <min> Z, <mexists>d, f <min> N*, a = <mfrac><mi>b</mi><mi>c</mi></mfrac> <mand> b = <mfrac><mi>d</mi><mi>e</mi></mfrac>], <mexists>h <min> Q, h = a + b <mequi> [<mexists i <min> Z, <mexists> j <min> N, q = <mfrac><mi>i</mi><mi>j</mi></mfrac> <mequi> i = c * e<mand> j = d * f]</math></br>
+<math>a = <mfrac><mi>3</mi><mi>1</mi></mfrac>, b = <mfrac><mi>4</mi><mi>1</mi></mfrac>, a + b = <mfrac><mi>3 * 4</mi><mi>1 * 1</mi></mfrac> = <mfrac><mi>12</mi><mi>1</mi></mfrac> = 12</math></br>
+<math>a = <mfrac><mi>5</mi><mi>2</mi></mfrac>, b = <mfrac><mi>3</mi><mi>2</mi></mfrac>, a + b = <mfrac><mi>5 * 3</mi><mi>2 * 2</mi></mfrac> = <mfrac><mi>15</mi><mi>4</mi></mfrac></math></br>
+<math>a = <mfrac><mi>5</mi><mi>2</mi></mfrac>, b = <mfrac><mi>7</mi><mi>3</mi></mfrac>, a + b = <mfrac><mi>5 * 7</mi><mi>2 * 3</mi></mfrac> = <mfrac><mi>35</mi><mi>6</mi></mfrac></math>
+<p>
+La multiplication de tout nombre rationnel donne un autre nombre rationnel.
+En fait, <span class="important">la multiplication dans "Q" permet de former un monoïde</span>.
+Donc, elle est associative et admet un neutre (<a href="demo">démontré ici</a>).
+Comme nous l'avons démontré tout à l'heure, le neutre représente toutes les fractions où le numérateur et le dénominateur sont égaux, et donc ce qui représente le nombre "1".
+Cependant, pas tous les éléments de "Q" possèdent un inverse par la multiplication.
+Néanmoins, beaucoup en possède : <span class="important">l'inverse d'un nombre rationnel par la multiplication représente le nombre rationnel où le numérateur est le dénominateur de départ, et où le dénominateur est le numérateur de départ</span>.
+La démonstration est assez simple :
+</p>
+<math><mforall> a, b <min> Q, <mexists>c <min> Z, <mexists> d <min> Z, a = <mfrac><mi>c</mi><mi>d</mi></mfrac> <mand> b = <mfrac><mi>d</mi><mi>c</mi></mfrac>, <mnot> [a = 0 <mor> b = 0] <mequi> a * b = <mfrac><mi>c * d</mi><mi>d * c</mi></mfrac> = <mfrac><mi>c * d</mi><mi>c * d</mi></mfrac> = 1</math>
+<p>
+Si "c" ou "d" est égal à 0, alors un des deux dénominateur est égal à 0, ce qui n'est pas possible.
+En fait, <span class="important">tous les nombres ont un inverse par la multiplication dans "Q", sauf 0</span>.
+Donc, <span class="important">la multiplication permet de former un groupe dans "Q*"</span>.
+D'ailleurs, cette propriété va nous permettre de définir la division dans "Q".
+En effet, pour rappel, diviser "a" par "b" consiste à trouver par quelle valeur multiplier "b" pour obtenir "a".
+C'est vrai dans "N", "Z" et aussii "Q".
+</p>
+<math>a / b = c <mequi> a = b * c</math></br>
+<math><mforall>a, b, c <min> Q, a / b = c <mequi> a = b * c</math>
+<p>
+Or, on peut isoler "c" de manière assez simple <span class="important">on va multiplier par l'inverse de "b" dés deux côtés de l'égalité</span>.
+Dans ce cas, à droite, on a "b * c * inverse(b)", et comme la multiplication est commutative, on a "b * inserve(b) * c", soit "c", car "b * inverse(b)" est égal à 1.
+Donc, "c" est égal à "a" multiplier par l'inverse de "b".
+En fait, <span class="important">diviser un nombre rationnel "a" par "b" revient à multiplier "a" et l'inverse de "b"</span>.
+</p>

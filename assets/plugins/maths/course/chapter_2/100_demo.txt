@@ -31,3 +31,193 @@ Pour cela, nous avons besoin que d'une seule preuve : "+" est stable sur "N".
 Or, nous l'avons démontré, <a href="demo-1#1_2_1_0">dans le chapitre 1, proposition 1.2.1.0</a>.
 Donc, (N, +) est bien une structure algébrique.
 </p>
+
+
+
+<h2>L'arithmétique des nombres rationnels</h2>
+
+<h3 id="rational_addition">L'opération d'addition</h3>
+<h4>2.1.0.0</h4>
+<p>
+Démontrons que l'addition de deux nombres rationnels "a" et "b" donne un nombre rationnel (et donc, que l'addition est stable dans "Q").
+Soit deux nombres rationnels "a" et "b" :
+</p>
+<math><mforall>a, b <min> Q, <mexists>c, e <min> Z, <mexists>d, f <min> N, a = <mfrac><mi>c</mi><mi>d</mi></mfrac>, b = <mfrac><mi>e</mi><mi>f</mi></mfrac></math>
+<p>
+Admettons un objet "g", représentant "a + b".
+Nous pouvons l'écrire avec la formule de l'addition de nombres rationnels.
+</p>
+<math>g = a + b = <mfrac><mi>(c * e) + (d * f)</mi><mi>e * f</mi></mfrac></math>
+<p>
+Or, comme "Z" est stable par l'addition et la multiplication, alors "(c * e) + (d * f)" appartient à "Z".
+De plus, "N*" est stable par l'addition, donc "e * f" appartient à "N*".
+Donc, "g" est un élément de "Z" sur un élément de "N*".
+Donc, "g" est un nombre rationnel.
+</p>
+
+<h4>2.1.0.1</h4>
+<p>
+Démontrons que l'ordre d'addition de deux trois nombres rationnels "a", "b" et "c" n'importe pas (et donc, que l'addition est associative dans "Q").
+Soit trois nombres rationnels "a", "b" et "c" :
+</p>
+<math><mforall>a, b, c <min> Q, <mexists>d, f, h <min> Z, <mexists>e, g, i <min> N, a = <mfrac><mi>d</mi><mi>e</mi></mfrac>, b = <mfrac><mi>f</mi><mi>g</mi></mfrac>, c = <mfrac><mi>h</mi><mi>i</mi></mfrac></math>
+<p>
+Admettons un objet "j", représentant "(a + b) + c".
+Nous pouvons l'écrire avec la formule de l'addition de nombres rationnels.
+</p>
+<math>j = (a + b) + c = <mfrac><mi>((d * g) + (e * f)) * i + (e * g) * h</mi><mi>(e * g) * i</mi></mfrac></math>
+<p>
+En utilisant les propriétés calculatoire de "Z" et "N", réarrangeons "j".
+</p>
+<math>j = <mfrac><mi>((d * g) + (e * f)) * i + (e * g) * h</mi><mi>(e * g) * i</mi></mfrac></math></br>
+<math>j = <mfrac><mi>(d * g) * i + (e * f) * i + (e * g) * h</mi><mi>(e * g) * i</mi></mfrac></math></br>
+<math>j = <mfrac><mi>(d * g) * i + (e * f) * i + (e * g) * h</mi><mi>(e * g) * i</mi></mfrac></math></br>
+<math>j = <mfrac><mi>d * (g * i) + e * ((f * i) + (g * h))</mi><mi>e * (g * i)</mi></mfrac></math></br>
+<math>j = <mfrac><mi>d</mi><mi>e</mi></mfrac> + <mfrac><mi>(f * i) + (g * h)</mi><mi>g * i</mi></mfrac> = a + (b + c) </math>
+<p>
+Donc, "(a + b) + c" est égal à "a + (b + c)".
+L'opération d'addition est associative dans "Q".
+</p>
+<math><mforall>a, b, c <min> Q, (a + b) + c = a + (b + c)</math>
+
+<h4>2.1.0.2</h4>
+<p>
+Démontrons que l'ordre des opérandes pour l'addition entre deux nombres rationnels "a" et "b" n'importe pas (et donc, que l'addition est commutative dans "Q").
+Soit deux nombres rationnels "a" et "b" :
+</p>
+<math><mforall>a, b <min> Q, <mexists>c, e <min> Z, <mexists>d, f <min> N, a = <mfrac><mi>c</mi><mi>d</mi></mfrac>, b = <mfrac><mi>e</mi><mi>f</mi></mfrac></math>
+<p>
+Admettons un objet "g", représentant "a + b".
+Nous pouvons l'écrire avec la formule de l'addition de nombres rationnels.
+</p>
+<math>g = a + b = <mfrac><mi>(c * e) + (d * f)</mi><mi>e * f</mi></mfrac></math>
+<p>
+En utilisant les propriétés calculatoire de "Z" et "N", réarrangeons "j".
+</p>
+<math>g = <mfrac><mi>(c * e) + (d * f)</mi><mi>e * f</mi></mfrac> = <mfrac><mi>(d * f) + (c * e)</mi><mi>f * e</mi></mfrac> = b + a</math>
+<p>
+Donc, "a + b" est égal à "b + a".
+Donc, l'addition est commutative dans "Q".
+</p>
+<math><mforall>a, b <min> Q, a + b = b + a</math>
+
+<h4>2.1.0.3</h4>
+<p>
+Démontrons que la structure algébrique formée par l'addition et "Q" est un groupe abélien.
+Déjà, selon le théorème 2.1.0.0, "+" est stable dans "Q", alors l'addition dans "Q" forme bien une structure algébrique.
+Selon le théorème 2.1.0.1, "+" est associative dans "Q".
+Selon le théorème 2.1.0.2, "+" est commutative dans "Q".
+De plus, les fractions ayant "0" comme numérateur se comportent comme des éléments neutres.
+Donc, cette classe d'équivalence dans "Q" représente l'élément neutre de "Q".
+</p>
+<math><mforall>a, b <min> Q, <mexists>c <min> Z, <mexists>d, e <min> N, a = <mfrac><mi>c</mi><mi>d</mi></mfrac>, b = <mfrac><mi>0</mi><mi>e</mi></mfrac></math></br>
+<math>a + b = <mfrac><mi>c * e + 0 * d</mi><mi>d * e</mi></mfrac> = <mfrac><mi>c</mi><mi>e</mi></mfrac> = a</math>
+<p>
+Finalement, chaque élément possède un inverse, donnant le neutre quand on les additionne.
+</p>
+<math><mforall>a <min> Q, <mexists> b <min> Q, <mexists>c <min> Z, <mexists>d <min> N, a = <mfrac><mi>c</mi><mi>d</mi></mfrac>, b = <mfrac><mi>-c</mi><mi>d</mi></mfrac></math></br>
+<math>a + b = <mfrac><mi>c * d + -c * d</mi><mi>d * d</mi></mfrac> = <mfrac><mi>0</mi><mi>d * d</mi></mfrac> = 0</math>
+<p>
+Donc, la structure algébrique "(Q, +)" est un groupe abélien.
+</p>
+
+<h3 id="rational_multiplication">L'opération de multiplication</h3>
+<h4>2.1.1.0</h4>
+<p>
+Démontrons que la multiplication de deux nombres rationnels "a" et "b" donne un nombre rationnel (et donc, que la multiplication est stable dans "Q").
+Soit deux nombres rationnels "a" et "b" :
+</p>
+<math><mforall>a, b <min> Q, <mexists>c, e <min> Z, <mexists>d, f <min> N, a = <mfrac><mi>c</mi><mi>d</mi></mfrac>, b = <mfrac><mi>e</mi><mi>f</mi></mfrac></math>
+<p>
+Admettons un objet "g", représentant "a * b".
+Nous pouvons l'écrire avec la formule de l'addition de nombres rationnels.
+</p>
+<math>g = a + b = <mfrac><mi>c * e</mi><mi>d * f</mi></mfrac></math>
+<p>
+Or, comme "Z" est stable par la multiplication, alors "c * e" appartient à "Z".
+De plus, "N*" est stable par la multiplication, donc "d * f" appartient à "N*".
+Donc, "g" est un élément de "Z" sur un élément de "N*".
+Donc, "g" est un nombre rationnel.
+</p>
+
+<h4>2.1.1.1</h4>
+<p>
+Démontrons que l'ordre de la multiplication de deux trois nombres rationnels "a", "b" et "c" n'importe pas (et donc, que la multiplication est associative dans "Q").
+Soit trois nombres rationnels "a", "b" et "c" :
+</p>
+<math><mforall>a, b, c <min> Q, <mexists>d, f, h <min> Z, <mexists>e, g, i <min> N, a = <mfrac><mi>d</mi><mi>e</mi></mfrac>, b = <mfrac><mi>f</mi><mi>g</mi></mfrac>, c = <mfrac><mi>h</mi><mi>i</mi></mfrac></math>
+<p>
+Admettons un objet "j", représentant "(a * b) * c".
+Nous pouvons l'écrire avec la formule de l'addition de nombres rationnels.
+</p>
+<math>j = (a * b) * c = <mfrac><mi>(d * f) * h</mi><mi>(e * g) * i</mi></mfrac></math>
+<p>
+En utilisant les propriétés calculatoire de "Z" et "N", réarrangeons "j".
+</p>
+<math>j = <mfrac><mi>(d * f) * h</mi><mi>(e * g) * i</mi></mfrac></math></br>
+<math>j = <mfrac><mi>d * (f * h)</mi><mi>e * (g * i)</mi></mfrac> = a * (b * c)</math></br>
+<p>
+Donc, "(a * b) * c" est égal à "a * (b * c)".
+L'opération de multiplication est associative dans "Q".
+</p>
+<math><mforall>a, b, c <min> Q, (a * b) * c = a * (b * c)</math>
+
+<h4>2.1.1.2</h4>
+<p>
+Démontrons que l'ordre des opérandes pour la multiplication entre deux nombres rationnels "a" et "b" n'importe pas (et donc, que la multiplication est commutative dans "Q").
+Soit deux nombres rationnels "a" et "b" :
+</p>
+<math><mforall>a, b <min> Q, <mexists>c, e <min> Z, <mexists>d, f <min> N, a = <mfrac><mi>c</mi><mi>d</mi></mfrac>, b = <mfrac><mi>e</mi><mi>f</mi></mfrac></math>
+<p>
+Admettons un objet "g", représentant "a * b".
+Nous pouvons l'écrire avec la formule de l'addition de nombres rationnels.
+</p>
+<math>g = a * b = <mfrac><mi>c * e</mi><mi>d * f</mi></mfrac></math>
+<p>
+En utilisant les propriétés calculatoire de "Z" et "N", réarrangeons "j".
+</p>
+<math>g = <mfrac><mi>c * e</mi><mi>d * f</mi></mfrac> = <mfrac><mi>e * c</mi><mi>f * d</mi></mfrac> = b * a</math>
+<p>
+Donc, "a * b" est égal à "b * a".
+Donc, la multiplication est commutative dans "Q".
+</p>
+<math><mforall>a, b <min> Q, a * b = b * a</math>
+
+<h4>2.1.1.3</h4>
+<p>
+Démontrons que la structure algébrique formée par la multiplication et "Q*" est un groupe abélien.
+Déjà, selon le théorème 2.1.1.0, "*" est stable dans "Q*", alors l'addition dans "Q*" forme bien une structure algébrique.
+Selon le théorème 2.1.1.1, "*" est associative dans "Q".
+Selon le théorème 2.1.1.2, "*" est commutative dans "Q".
+De plus, les fractions valant 1 se comportent comme des éléments neutres.
+Donc, cette classe d'équivalence dans "Q" représente l'élément neutre de "Q".
+</p>
+<math><mforall>a, b <min> Q, <mexists>c <min> Z, <mexists> e <min> Z, <mexists>d, <min> N, a = <mfrac><mi>c</mi><mi>d</mi></mfrac>, b = <mfrac><mi>e</mi><mi>e</mi></mfrac></math></br>
+<math>a * b = <mfrac><mi>c * e</mi><mi>d * e</mi></mfrac> = <mfrac><mi>c</mi><mi>d</mi></mfrac> = a</math>
+<p>
+Finalement, chaque élément possède un inverse, donnant le neutre quand on les multiplient.
+</p>
+<math><mforall>a <min> Q, <mexists> b <min> Q, <mexists>c <min> Z, <mexists>d <min> N, a = <mfrac><mi>c</mi><mi>d</mi></mfrac>, b = <mfrac><mi>d</mi><mi>c</mi></mfrac></math></br>
+<math>a * b = <mfrac><mi>c * d</mi><mi>d * c</mi></mfrac> = <mfrac><mi>c * d</mi><mi>c * d</mi></mfrac> = 1</math>
+<p>
+Donc, la structure algébrique "(Q*, *)" est un groupe abélien.
+</p>
+
+<h4>2.1.1.4</h4>
+<p>
+Démontrons que dire que, pour tout nombre rationnel a, b et c "a = b" équivaut à dire que "a * c = b * c".
+Soit trois nombres rationnels "a", "b" et "c" :
+</p>
+<math><mforall>a, b, c <min> Q, <mexists>c, e, g <min> Z, <mexists>d, f, h <min> N, a = <mfrac><mi>c</mi><mi>d</mi></mfrac>, b = <mfrac><mi>e</mi><mi>f</mi></mfrac>, c = <mfrac><mi>g</mi><mi>h</mi></mfrac></math>
+<p>
+Admettons que "a = b".
+</p>
+<math>a = b <mequi> c * f = d * e</math>
+<p>
+En utilisant les propriétés calculatoire de "Z" et "N", calculons des deux côtés par "g" et "h".
+</p>
+<math>a = b <mequi> c * f = d * e <mequi> c * f * g * h = d * e * g * h <mequi> (c * g) * (f * h) = (e * g) * (d * h) <mequi> a * c = b * c</math>
+<p>
+Donc, "a = b" est équivalent à dire que "a * c = b * c".
+</p>
+<math><mforall>a, b, c <min> Q, a = b <mequi> a * c = b * c</math>
