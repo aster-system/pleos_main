@@ -1,0 +1,45 @@
+<h1>L'arithmétique des nombres réel</h1>
+
+
+
+<h2>Tous les nombres possibles</h2>
+
+<h3>Des nombres irrationels</h3>
+<p>
+Bien ques les nombres rationnels représentent une immense quantité de nombres, il existe des nombres qui existent dans la vraie vie, mais qui ne sont pas des nombres rationnels.
+Prenons un exemple assez simple : la racine carrée de 2.
+Cet exemple est le plus connu, car il est le responsable d'un cataclysme historique : la découverte de nombres qui ne sont pas rationnels.
+Au Vième siècle avant J-C, les grecs le démontrèrent de manière solide (bien qu'il est difficile de dire qui et quand précisément ce résultat a été obtenu).
+En réalité, beaucoup de civilisations, commes les babyloniens ou les indiens, ont tenté de l'exprimer sous forme de fraction, sans succès.
+Cependant, la démonstration n'est pas si dure, et est une démonstration par l'absurde.
+En effet, "définissons" un nombre "a" représentant la représentation en nombre rationnel de racine carrée de 2.
+</p>
+<math><mexists>b <min> Z, <mexists> c <min> N*, a = <mfrac><mi>b</mi><mi>c</mi></mfrac></math>
+<p>
+Dans ce cas, il existe une représentation de ce nombre tel que "b" et "c" sont premiers entre eux.
+Par définition pure, "a" au carré est égal à 2, et donc "b" est égal à "c * 2".
+</p>
+<math><mi>a</mi><msup>2</msup> = <mfrac><mrow><mi>b</mi><msup>2</msup></mrow><mrow><mi>c</mi><msup>2</msup></mrow></mfrac> <mequi> <mi>b</mi><msup>2</msup> = 2 * <mi>c</mi><msup>2</msup></math>
+<p>
+Dans ce cas, "b" au carré est pair (car il représente 2 multiplié par quelque chose).
+Donc, "b" est aussi pair, et est donc un multiple de "2" par un nombre "r".
+Donc :
+</p>
+<math><mi>b</mi><msup>2</msup> = 4 * <mi>r</mi><msup>2</msup> <mequi> 4 * <mi>r</mi><msup>2</msup> = 2 * <mi>c</mi><msup>2</msup> <mequi> 2 * <mi>r</mi><msup>2</msup> = <mi>c</mi><msup>2</msup></math>
+<p>
+Donc, "c" au carré est pair.
+Donc, "c" est aussi pair, tout comme "b".
+Or, si "b" et "c" sont tous les 2 pairs, alors la fraction peut se simplifier, en divisant par 2 en haut en bas.
+Or, on a supposer que notre fraction "a" est simplifiée au maximum : c'est faux.
+Dans ce cas, quelque soit "b" et "c", la fraction sera simplifiable par "2" : ce n'est pas possible, car nous ne pouvons pas diviser par "2" une infinité de fois dans "N".
+Donc, <span class="important">cette fraction ne peut pas être représenté par un élément de "Z" et un élément de "N" : "a" n'est pas une fraction, et racine carrée de 2 est irrationel</span>.
+</p>
+<p>
+Ce résultat peut nous faire poser une question : qu'est ce qu'est racine carré de 2 ?
+Il nous faut un ensemble plus grand, permettant de le définir.
+</p>
+
+<h3>Qu'est ce qu'est un nombre réel ?</h3>
+<p>
+
+</p>
