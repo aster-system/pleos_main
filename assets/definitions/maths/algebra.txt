@@ -56,11 +56,18 @@
 <new_definition name="algebra_magma">
     <content>un magma est une structure algébrique représentant un ensemble quelconque et une seule loi de composition interne sur cette ensemble, sans plus de détail</content>
 </new_definition>
+<new_definition name="algebra_order">
+    <content name="element">l'ordre d'un élément d'un groupe représente le cardinal du sous-groupe engendré par cet élément</content>
+    <content name="group">l'ordre d'un groupe représente le cardinal de l'ensemble qui constitue le groupe</content>
+</new_definition>
 <new_definition name="algebra_ring">
     <content>un anneau (aussi nommé anneau unitaire) est une structure algébrique définie sur un ensemble, avec deux lois de compositions internes : une formant un groupe abélien, et une formant un monoïde, distributive par rapport à la première</content>
 </new_definition>
 <new_definition name="algebra_subgroup">
     <content>un sous-groupe H d'un groupe G est un groupe sur un sous-ensemble de l'ensemble de G, muni de la même loi de composition que G</content>
+</new_definition>
+<new_definition name="algebra_subring">
+    <content>un sous-anneau A d'un anneau B est un anneau sur un sous-ensemble de l'ensemble de A, où l'addition forme un sous-groupe du groupe additif de "A", où "B" est stable par la multiplication et où le neutre de la multiplication de "A" se situe dans "B"</content>
 </new_definition>
 <new_definition name="vector_space">
     <content>un espace vectoriel est une structure algébrique</content>
