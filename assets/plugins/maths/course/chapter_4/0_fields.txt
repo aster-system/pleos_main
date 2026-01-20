@@ -53,6 +53,13 @@ L'exemple le plus simple est l'anneau formé par "Z", et par l'addition et la mu
 </p>
 <math>(Z, +, .)</math>
 
+<h3>Les sous-anneaux</h3>
+<p>
+Comme il existe des sous-groupes de groupes, il existe des sous-anneaux d'anneaux.
+<span class="important"><definition name="algebra_subring"></span>.
+Leurs propriétés sont très proches de celles des sous-groupes.
+</p>
+
 <h3>Qu'est ce qu'est un corps ?</h3>
 <p>
 Un corps représente une version des anneaux possédant plus de propriétés.

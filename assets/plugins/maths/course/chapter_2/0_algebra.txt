@@ -268,7 +268,6 @@ Généralement, on le note avec la lettre "S" et le nom de l'ensemble "E".
 Il existe un autre concept très proche (et très lié) à ces groupes symétriques : les groupes de permutations.
 <span class="important"><definition name="symmetric_group-permutation_group"></span>.
 Ce concept permet d'énoncer un théorème très pratique : le théorème de Cayley.
-
 </p>
 
 
@@ -297,6 +296,24 @@ Les parties génératrices représentent des sous-groupes engendrés un peu spé
 En effet, <span class="important"><definition name="algebra_generating_set-group"></span>.
 </p>
 <math>H = <mlang>F<mrang> = G</math>
+<p>
+
+</p>
+
+<h3>L'ordre d'un groupe / d'un élément de groupe</h3>
+<p>
+Un concept assez trompeur en théorie des groupes est l'ordre.
+En effet, un ordre peut qualifier un groupe, comme il peut qualifier un élément de groupes, mais leur définition diffère.
+Déjà, <span class="important"><definition name="algebra_order-group"></span>.
+C'est une définition assez simple, qu'on peut déjà partiellement utiliser.
+En effet, <span class="important">on peut en déduire que l'ordre de "(Z, +)" est l'infini (dénombrable), et l'ordre du groupe symétrique d'un ensemble "E" de cardinal "n" est "n!" (le nombre de bijections de "E" vers "E")</span>.
+Il se note généralement avec des "|" autour du groupe nécessaire.
+</p>
+<math>|G|</math>
+<p>
+Dans le cas d'un élément de groupe, la définition se complexifie un peu.
+En effet, <span class="important"><definition name="algebra_order-element"></span>.
+</p>
 
 <h3>Les morphismes</h3>
 <p>

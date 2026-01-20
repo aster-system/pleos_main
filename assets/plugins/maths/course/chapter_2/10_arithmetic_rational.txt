@@ -39,7 +39,7 @@ Dans ce cas, <span class="important">"Q" est inclu dans le produit cartésien de
 Grâce à cette définition, <span class="important">on se rend compte que différentes fractions peuvent utiliser des "b" et des "c" différents, mais designer un même nombre rationnel "a"</span>.
 </p>
 <math></mforall>a, b <min> Q <mequi> [<mexists>c, e <min> Z, <mexists>d, f <min> N*, a = <mfrac><mi>b</mi><mi>c</mi></mfrac> <mand> b = <mfrac><mi>d</mi><mi>e</mi></mfrac>] <mimp> [a = b <mequi> d * e = c * f]</math></br>
-<math>3 * 4 = 6 * 2 <mequi> <mfrac><mi>3</mi><mi>2</mi><mfrac> = <mfrac><mi>6</mi><mi>4</mi><mfrac></math>
+<math>3 * 4 = 6 * 2 <mequi> <mfrac><mi>3</mi><mi>2</mi></mfrac> = <mfrac><mi>6</mi><mi>4</mi></mfrac></math>
 <p>
 Pour rendre les nombres rationnels unique, <span class="important">on peut quotienter cet ensemble (le produit cartésien de Z et N*) par la relation d'équivalence reliant les fractions respectant cette propriété</span>.
 Nous allons donc définir une relation "~", respectant cette propriété.
@@ -59,11 +59,11 @@ Cependant, cela ne marche pas avec l'addition, car l'addition est distributive p
 <p>
 On se rend compte d'autre chose aussi : </span>tout nombre rationnel qui peut s'écrire comme ayant un "1" en dénominateuur est un nombre entier relatif</span>.
 </p>
-<math>a = <mfrac><mi>c</mi><mi>1</mi><mfrac> <mequi> c = a * 1 <mequi> c = a</math>
+<math>a = <mfrac><mi>c</mi><mi>1</mi></mfrac> <mequi> c = a * 1 <mequi> c = a</math>
 <p>
 Au contraire, si le numérateur et le dénominateur sont égaux, le nombre est égal à 1.
 </p>
-<math>a = <mfrac><mi>c</mi><mi>c</mi><mfrac> <mequi> c = a * c <mequi> a = 1</math>
+<math>a = <mfrac><mi>c</mi><mi>c</mi></mfrac> <mequi> c = a * c <mequi> a = 1</math>
 
 <h3>L'arithmétique des nombres rationnels</h3>
 <p>
@@ -74,14 +74,14 @@ Déjà, <span class="important">"Q" possède bel et bien une opération d'additi
 Comme pour "N" et "Z", opérer deux nombres entier relatif écrit dans "Q" revient à opérer deux nombres entiers relatifs tout cours.
 Dans "Q", l'opération est définie comme cela :
 </p>
-<math><mforall>a, b <min> Q <mequi> [<mexists>c, e <min> Z, <mexists>d, f <min> N*, a = <mfrac><mi>b</mi><mi>c</mi></mfrac> <mand> b = <mfrac><mi>d</mi><mi>e</mi></mfrac>], <mexists>h <min> Q, h = a + b <mequi> [<mexists i <min> Z, <mexists> j <min> N, q = <mfrac><mi>i</mi><mi>j</mi></mfrac> <mequi> i = (c * f) + (d * e)<mand> j = d * f]</math></br>
+<math><mforall>a, b <min> Q <mequi> [<mexists>c, e <min> Z, <mexists>d, f <min> N*, a = <mfrac><mi>b</mi><mi>c</mi></mfrac> <mand> b = <mfrac><mi>d</mi><mi>e</mi></mfrac>], <mexists>h <min> Q, h = a + b <mequi> [<mexists> i <min> Z, <mexists> j <min> N, q = <mfrac><mi>i</mi><mi>j</mi></mfrac> <mequi> i = (c * f) + (d * e)<mand> j = d * f]</math></br>
 <math>a = <mfrac><mi>3</mi><mi>1</mi></mfrac>, b = <mfrac><mi>4</mi><mi>1</mi></mfrac>, a + b = <mfrac><mi>3 * 1 + 2 * 1</mi><mi>1 * 1</mi></mfrac> = <mfrac><mi>5</mi><mi>1</mi></mfrac></math></br>
 <math>a = <mfrac><mi>5</mi><mi>2</mi></mfrac>, b = <mfrac><mi>3</mi><mi>2</mi></mfrac>, a + b = <mfrac><mi>5 * 2 + 3 * 2</mi><mi>2 * 2</mi></mfrac> = <mfrac><mi>16</mi><mi>4</mi></mfrac> = 4</math></br>
 <math>a = <mfrac><mi>5</mi><mi>2</mi></mfrac>, b = <mfrac><mi>7</mi><mi>3</mi></mfrac>, a + b = <mfrac><mi>5 * 3 + 7 * 2</mi><mi>3 * 2</mi></mfrac> = <mfrac><mi>29</mi><mi>6</mi></mfrac></math>
 <p>
 L'addition de tout nombre rationnel donne un autre nombre rationnel.
 En fait, <span class="important">l'addition dans "Q" permet de former un groupe abélien</span>.
-Donc, elle est associative, admet un neutre, chaque élément a un inverse et elle est commutative (<a href="demo">démontré ici</a>).
+Donc, elle est associative, admet un neutre, chaque élément a un inverse et elle est commutative.
 Comme pour dans "Z", soustraire "b" à "a" revient à additionner "-b" à "a".
 </p>
 <math><mforall>a, b, c <min> Q, c = a - b <mequi> a + (-b)</math>
