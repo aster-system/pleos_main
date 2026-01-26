@@ -1,0 +1,77 @@
+<h1>Chapitre 3 - démonstrations</h1>
+
+
+
+<h2>Introduction à l'analyse</h2>
+
+<h3>Les limites de suites usuelles</h3>
+<h4>3.0.0.0</h4>
+<p>
+Montrons que la suite où l'on divise "1" par l'indice de l'élément actuel de la suite tend vers "0".
+Appelons cette suite "u(n)".
+</p>
+<math>u(n) = <mfrac><mi>1</mi><mi>n</mi></mfrac></math>
+<p>
+Posons "x", représentant un nombre réel positif quelconque (différent de 0), supérieur à 0.
+</p>
+<math><mforall> x <min> R*+</math>
+<p>
+Supposons l'existence d'un "m" tel que la valeur absolue de "u(m)" soit inférieur à "x".
+Cela équivaut à dire que "1" divisé par "m" est inférieur à "x".
+</p>
+<math><mforall> m <min> N, abs(u(m)) <mlt> a <mequi> <mfrac><mi>1</mi><mi>n</mi></mfrac> <mlt> x</math>
+<p>
+Comme "m" et "x" sont supérieur à "0", alors "1" divisé par "m" est aussi supérieur à "0", et l'on peut obtenir une équivalence en appliquant la fonction inverse des deux côtés.
+</p>
+<math><mfrac><mi>1</mi><mi>n</mi></mfrac> <mlt> x <mequi> m <mlt> <mfrac><mi>1</mi><mi>x</mi></mfrac></math>
+<p>
+Donc, "m" doit être supérieur à "1" divisé par "x".
+Donc, pour tout nombre réel "x" supérieur à 0, il existe une valeur "b" tel que, pour toute valeur "m" de la suite supérieure à "b", "u(m)" est plus proche de 0 que "x".
+Donc, par définition de la limite, la suite où l'on divise "1" par l'indice de l'élément actuel de la suite tend vers "0".
+</p>
+<math>u(n) = <mfrac><mrow><mi>1</mi></mrow><mrow><mi>n</mi></mrow></mfrac>, lim u(n) = 0</math>
+
+<h4>3.0.0.1</h4>
+<p>
+Montrons que la suite représentant le produit de "n" par un nombre "a" avec une puissance positive tend vers "+ l'infini" si "a" est positif, et "- l'infini" si "a" est négatif.
+Appelons cette suite "u(n)".
+</p>
+<math><mforall> a <min> R, <mforall> e <min> N*, u(n) = a * <mi>n</mi><msup>e</msup></math>
+<p>
+Commençons par le cas où "a" est supérieur à "0".
+Posons "x", représentant un nombre réel positif quelconque (différent de 0), supérieur à 0.
+</p>
+<math><mforall> x <min> R*+</math>
+<p>
+Supposons l'existence d'un "m" tel que la valeur absolue de "u(m)" soit supérieur à "x".
+Cela équivaut à dire que le produit de "n" par un nombre "a" avec une puissance positive est inférieur à "x".
+</p>
+<math><mforall> m <min> N, abs(u(m)) <mgt> x <mequi> a * <mi>m</mi><msup>e</msup> <mgt> x</math>
+<p>
+Comme "a" est supérieur à "0", on peut diviser par "a" des deux côtés.
+</p>
+<math>a * <mi>m</mi><msup>e</msup> <mgt> x <mequi> <mi>m</mi><msup>e</msup> <mgt> <mfrac><mi>x</mi><mi>a</mi></mfrac></math>
+<p>
+Donc, "m" doit être supérieur à la racine de "x" divisé par "a" base "e".
+Donc, pour tout nombre réel "x" supérieur à 0, il existe une valeur "b" tel que, pour toute valeur "m" de la suite supérieure à "b", "u(m)" est supérieur à "x".
+Donc, par définition de la limite, la suite représentant le produit de "n" par un nombre "a" positif avec une puissance positive tend vers "+ l'infini".
+</p>
+<p>
+Finissons par le cas où "a" est inférieur à "0".
+Posons "x", représentant un nombre réel négatif quelconque (différent de 0), supérieur à 0.
+</p>
+<math><mforall> x <min> R*-</math>
+<p>
+Supposons l'existence d'un "m" tel que la valeur absolue de "u(m)" soit inférieur à "x".
+Cela équivaut à dire que le produit de "n" par un nombre "a" négatif avec une puissance positive est inférieur à "x".
+</p>
+<math><mforall> m <min> N, abs(u(m)) <mgt> x <mequi> a * <mi>m</mi><msup>e</msup> <mlt> x</math>
+<p>
+Comme "a" est inférieur à "0", on peut diviser par "a" des deux côtés, mais on doit changer le signe de la relation d'ordre.
+</p>
+<math>a * <mi>m</mi><msup>e</msup> <mlt> x <mequi> <mi>m</mi><msup>e</msup> <mgt> <mfrac><mi>x</mi><mi>a</mi></mfrac></math>
+<p>
+Donc, "m" doit être supérieur à la racine de "x" divisé par "a" (qui est un nombre positif) base "e".
+Donc, pour tout nombre réel "x" inférieur à 0, il existe une valeur "b" tel que, pour toute valeur "m" de la suite supérieure à "b", "u(m)" est inférieur à "x".
+Donc, par définition de la limite, la suite représentant le produit de "n" par un nombre "a" négatif avec une puissance positive tend vers "- l'infini".
+</p>

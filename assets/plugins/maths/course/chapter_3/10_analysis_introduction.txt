@@ -28,6 +28,8 @@ Il est très commun de les expliciter, comme dans cet exemple :
 </p>
 <math>u : N <mto> Q, n <mto> u(n) = <mfrac><mi>1</mi><mi>n + 1</mi></mfrac></math>
 
+<h2>Les limites</h2>
+
 <h3>Les limites de suites</h3>
 <p>
 Les suites peuvent être étudiées grâce à l'une de leur propriété : les limites de suites.
@@ -58,6 +60,12 @@ Comme pour les suites finies, <span class="important">cette définition n'est in
 <math><mforall> x <mgt> 0, <mexists> a <min> N, <mforall> b <min> N, [b <mgt> a <mimp> u(b) <mgt> x]</math></br>
 <math><mforall> x <mgt> 0, <mexists> a <min> N, <mforall> b <min> N, [b <mgt> a <mimp> u(b) <mlt> -x]</math>
 <p>
+La notation usuelle pour noter la limite d'une suite utilise le mot "lim", au quel on note en petit au dessous "n", une flèche, et la valeur vers laquelle "n" tend.
+Si il n'y a pas d’ambiguïté, on peut se passer de la notation au dessous de la suite.
+Les parenthèses autour de la suite ne sont pas obligatoires.
+</p>
+<math><munder><mi>lim</mi><mrow><mi>n</mi><mto><mo>+</mo><minf></mrow></munder>(u(n)) = l <mequi> lim u(n) = l</math>
+<p>
 En fait, <span class="important">prouver qu'une suite admet une limite quelconque revient à trouver le "a" pour tous nombres réel supérieur à 0 à partir du quel la condition de la limite est vérifiée</span>.
 Prenons un exemple très simple et intuitif : la suite qui, à "u(n)", associe le nombre "n".
 </p>
@@ -77,7 +85,42 @@ En effet, on pourrait dire que "a = x", et tout serait bon, mais un problème se
 Donc, pour obtenir un nombre entier naturel, <span class="important">nous allons dire que "a" est égal à la partie entière de "x", à laquelle on ajoute 1 (ce qui représenta la fonction "ceil")</span>.
 </p>
 <math><mforall> x <mgt> 0, <mexists> a <min> N, <mforall> b <min> N, {a = ceil(x) <mimp> [b <mgt> a <mequi> b <mgt> ceil(x) <mgtequal> x] <mimp> u(b) <mgt> x}</math></br>
-<math><mforall> x <mgt> 0, <mexists> a <min> N, <mforall> b <min> N, [b <mgt> a <mimp> u(b) <mgt> x]</math>
+<math><mforall> x <mgt> 0, <mexists> a <min> N, <mforall> b <min> N, [b <mgt> a <mimp> u(b) <mgt> x]</math></br>
+<math>lim u(n) = +<minf></math>
 <p>
 Donc, <span class="important">nous avons trouvé un "a" respectant la définition de la limite, cette suite tend vers "+ l'infini"</span>.
+Avec cette démonstration, <span class="important">on peut obtenir beaucoup de limites de suites "usuelles" en + l'infini</span>.
+Déjà, la suite où l'on divise "1" par l'indice de l'élément actuel de la suite tend vers "0" (<a href="demo">démontré ici</a>).
+En effet, on découpe "1" en de plus en plus de valeurs, ce qui rend ces valeurs de plus en plus petites (et donc de plus en plus proches de 0).
+Comme on n'en prend qu'une de ces valeurs, alors elle se rapproche de 0.
 </p>
+<math>u(n) = <mfrac><mrow><mi>1</mi></mrow><mrow><mi>n</mi></mrow></mfrac>, lim u(n) = 0</math>
+<p>
+Dans le cas de multiples de "n" avec une puissance positive, cela change un peu.
+En effet, <span class="important">la limite d'une suite qui représente le produit d'un nombre "a" avec "n" exposant un nombre supérieur à 0 représente "+ l'infini" si "a" est positif et "- l'infini" si "a" est négatif</span>.
+Dans ces cas, il s'agit juste de "grossissement" de "n" comme nous l'avons vue plus tôt, légèrement altéré par "a", et accéléré par l'exposant.
+</p>
+<math><mforall> a <min> R, <mforall> e <min> N*, u(n) = a * <mi>n</mi><msup>e</msup>, lim u(n) = + <minf> si a <mgt> 0, lim u(n) = - <minf> sinon</math>
+
+<h3>Les comparaisons asymptotiques</h3>
+<p>
+Grâce aux limites de suites, <span class="important">on peut comparer des suites selon la façon dont se comporte la limite de la suite</span>.
+</p>
+<p>
+Le premier type de comparaison est la négligeabilité / prépondérance de suite.
+<span class="important"><definition name="analysis_sequence-negligible"></span>.
+Comme toutes les "premières" définitions ici, cette définition est intuitive.
+Pour la rendre plus précise, nous allons préciser le fait de se "rapprocher plus vite" de la limite.
+En fait, <span class="important">si "u" est négligeable devant "v", alors la limite de "u" divisé par "v" est 0</span>.
+En effet, si "v" se rapproche plus vite, alors on divise "u" par quelque chose de beaucoup plus grand : on se rapproche de 0.
+Cependant, pour que cette façon de faire marche, il faut que "v" ne soit pas égale à 0.
+D'ailleurs, <span class="important">comme il peut exister une grande quantité de suites négligeables devant une autre, alors les suites négligeables devant une autre forment un ensemble</span>.
+La notation de Landau associé revient à dire que "u" appartient aux suites négligeable de "b", notées "o(v)".
+</p>
+<math>u : N <mto> R, v : N <mto> R</math></br>
+<math>v(n) != 0 <mequi> [u <min> o(v) <mequi> lim <mfrac><mi>u(n)</mi><mi>v(n)</mi></mfrac> = 0]</math>
+<p>
+Comme nous avons une fraction, <span class="important">on peut trouver une équivalence en multipliant des deux côtés par un facteur précis, ici une autre suite "w"</span>.
+Dans ce cas, <span class="important">deux suites sont équivalentes si cette nouvelle suite "w" tend vers 0</span>.
+</p>
+<math>u <min> o(v) <mequi> [<mexists> w, lim w(n) = 0 <mand> u(n) = w(n) * v(n)]</math>

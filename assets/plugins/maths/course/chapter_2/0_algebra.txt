@@ -211,6 +211,11 @@ Une catégorie de groupe plus forte est le groupe abélien.
 <span class="important"><definition name="algebra_group-abelian"></span>.
 (Z, +) en est un exemple.
 </p>
+<p>
+Les groupes sont tellement intéressants mathématiquement qu'ils ont une discipline totale leur étant dédiée : la théorie des groupes.
+<span class="important"><definition name="algebra_group_theory"></span>.
+Historiquement cette théorie est apparue aux environs de l'année 1800.
+</p>
 
 <h3>Les sous-groupes</h3>
 <p>
@@ -296,9 +301,6 @@ Les parties génératrices représentent des sous-groupes engendrés un peu spé
 En effet, <span class="important"><definition name="algebra_generating_set-group"></span>.
 </p>
 <math>H = <mlang>F<mrang> = G</math>
-<p>
-
-</p>
 
 <h3>L'ordre d'un groupe / d'un élément de groupe</h3>
 <p>
@@ -348,3 +350,23 @@ Pour en faire un morphisme, il faut qu'elle vérifie cette propriété :
 <p>
 C'est la mise en forme littérale de la "compatibilité" des deux groupes.
 </p>
+
+<h3>Les actions de groupes</h3>
+<p>
+Avant d'être un type précis de procédure judiciaire, une action de groupe est une opération possible en théorie des groupes.
+<span class="important"><definition name="algebra_group_action"></span>.
+Plus précisément, l'idée est de définir une opération entre un groupe et un ensemble comme l'opération d'un élément du groupe avec un élément de l'ensemble, en utilisant la loi de composition du groupe (et ça, pour tous les éléments de l'ensemble et du groupe).
+Une action de groupe entre un groupe "G" et un ensemble "E" se note généralement comme ceci :
+</p>
+<math>G X E <mto> E, (g, e) <mto> g . e</math>
+<p>
+Cependant, <span class="important">une action de groupe doit respecter certaines propriétés de compatibilité similaires aux propriétés de compatibilité des morphisme</span> (bien que légèrement plus simples).
+En effet, <span class="important">si vous opérer deux éléments "g" et "h" du groupe entre eux puis que vous l'opérer avec un élément de l'ensemble, vous devez obtenir l'exact même résultat que si vous opérez "h" et l'élément de l'ensemble, puis "g" et le résultat obtenu entre "h" et l'élément de l'ensemble</span>.
+Mathématiquement, cela se note comme ça :
+</p>
+<math><mforall>g, h <min> G, <mforall> e <min> E, (g . h) . e = g . (h . e)</math>
+<p>
+De plus, <span class="important">l'élément neutre de "G" doit se comporter comme un élément neutre de "G"</span>.
+Dans le cas où l'élément neutre se note "n", on note ainsi :
+</p>
+<math><mforall> e <min> E, n . e = e</math>

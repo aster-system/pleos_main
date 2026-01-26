@@ -5,6 +5,7 @@
 <new_definition name="analysis_sequence">
     <content>une suite mathématique est une fonction mathématique allant de "N" à n'importe quel ensemble possible</content>
     <content name="convergent">une suite mathématique est dite convergente si sa limite est une valeur finie "v" (on dit que la suite converge vers "v")</content>
+    <content name="negligible">une suite mathématique "u" est dite négligeable devant une suite "v" lorsque "v" se rapproche plus vite de sa limite que "u"</content>
 </new_definition>
 <new_definition name="analysis_limit">
     <content>une limite mathématique représente en quelque sorte une valeur d'une fonction dont on se rapproche indéfiniment (sans jamais réellement l'atteindre)</content>
