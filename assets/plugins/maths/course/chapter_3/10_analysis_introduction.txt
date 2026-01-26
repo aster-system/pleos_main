@@ -28,6 +28,34 @@ Il est très commun de les expliciter, comme dans cet exemple :
 </p>
 <math>u : N <mto> Q, n <mto> u(n) = <mfrac><mi>1</mi><mi>n + 1</mi></mfrac></math>
 
+<h3>Les espaces métriques</h3>
+<p>
+Un outil permettant d'étendre l'analyse en mathématiques est l'espace métrique.
+<span class="important"><definition name="metric_space"></span>.
+L'ensemble peut être quoi que ce soit, tant que cette fameuse "distance" existe.
+</p>
+<p>
+La difficulté ici consite à définir cette fameuse "distance".
+Déjà, <span class="important">une distance représente une opération entre deux éléments "a" et "b", et qui s'interprète comme une valeur, nommée "distance" entre "a" et "b", et qui est un nombre réel positif</span>.
+En général, la définition intuitive d'une distance représente un moyen de calculer quelle valeur est nécessaire pour passer d'une valeur à une autre.
+Cependant, au sens mathématique, cette application doit respecter quelques autres propriétés précises.
+En effet, en mathématiques, <span class="important"><definition name="metric_space-distance"></span>.
+Pour rappel, puisque la distance est une application "symétrique", alors pour une distance "d" entre deux éléments "a" et "b", l'ordre de "a" et "b" n'importe pas via l'utilisation à "d" :
+</p>
+<math><mforall>a, b <min> E, d(a, b) = d(b, a)</math>
+<p>
+D'un point de vue logique, c'est assez logique : la distance entre Paris et Lyon est la même que la distance... entre Lyon et Paris (bien évidemment, si vous utilisez la même application).
+De plus, <span class="important">puisque l'application est séparée, dire que deux éléments "a" et "b" sont a une distance de "0" équivaut à dire que "a = b"</span>.
+Bien que cela soit assez évident, c'est une condition nécessaire pour avoir une distance.
+</p>
+<math><mforall>a, b <min> E, d(a, b) = 0 <mequi> a = b</math>
+<p>
+Finalement, il y a l'inégalité triangulaire.
+En effet, <span class="important">l'inégalité triangulaire consiste à dire que pour trois éléments quelconques "a", "b" et "c", la distance entre "a" et "c" est forcément inférieure ou égale à celle de "a" et "b" plus celle de "b" et "c"</span>.
+D'un point de vue intuitif, <span class="important">cela consiste à dire que passer de "a" à "c" directement est plus rapide que de passer par un autre point "b" au milieu</span>.
+</p>
+<math><mforall>a, b, c <min> E, d(a, c) <mlt> d(a, b) + d(b, c)</math>
+
 <h2>Les limites</h2>
 
 <h3>Les limites de suites</h3>

@@ -30,3 +30,8 @@
     <content name="sequence">une limite de suite est la valeur vers laquelle on se rapproche si on prend des valeurs "toujours plus proches de l'infini"</content>
     <content name="function">une limite de fonction en une valeur "v" est la valeur vers laquelle on se rapproche si on prend des valeurs "toujours plus proches de v"</content>
 </new_definition>
+
+<new_definition name="metric_space">
+    <content>un espace métrique est un couple représentant un ensemble quelconque, et une opération binaire sur cet ensemble pouvant s'interpréter comme la distance entre deux éléments quelconques de l'ensemble</content>
+    <content name="distance">une distance est une loi définie sur un ensemble "E", allant de E X E vers R+, où la loi est symétrique, séparée et respecte l'inégalité triangulaire</content>
+</new_definition>
