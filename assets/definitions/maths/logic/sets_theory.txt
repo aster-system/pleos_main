@@ -42,6 +42,9 @@
 <new_definition name="cantor_theorem">
     <content type="theorem">le cardinal d'un ensemble est toujours strictement inférieur au cardinal de son ensemble des parties</content>
 </new_definition>
+<new_definition name="dedeking_cut">
+    <content>une coupure de Dedekind est un couple de parties complémentaires d'un ensemble totalement ordonné, tel que tous les éléments de la première partie sont strictement supérieur à tous les éléments de la première partie</content>
+</new_definition>
 <new_definition name="inclusion">
     <content name="double">deux ensembles A et B sont égaux si (et seulement si) A est "inclu ou égal" à B et B est "inclu ou égal" à A</content>
     <content name="set">un ensemble est dit inclu dans un autre ensemble B lorsque que TOUS ses éléments appartiennent aussi à B</content>

@@ -41,5 +41,61 @@ Il nous faut un ensemble plus grand, permettant de le définir.
 
 <h3>Qu'est ce qu'est un nombre réel ?</h3>
 <p>
-
+Intuitivement, l'ensemble des nombres réels est assez simple à définir.
+<span class="important"><definition name="real_numbers_set"></span>.
+Comme racine carré de 2 appartient bel et bien à cette droite (quelque part en 1 et 2), il est un nombre réel.
+Par définition de la droite des nombres, <span class="important">on peut s'approcher de la valeur de n'importe quel nombre réel aussi proche que l'on veut</span> (et ça, même si on ne l'atteindra jamais précisément, et même si on peut l'atteindre du premier coup, comme avec un nombre entier naturel).
+Cette façon de voir les nombres réels permettent de comprendre une propriété possible d'un ensemble (et, plus précisément, d'un espace métrique) : la complétude.
+<span class="important"><definition name="metric_space_completude"></span>.
+Ici, l'ensemble des nombres réels est un espace métrique, où nous pourrons y définir une distance.
 </p>
+<graphic width=300 ratio_base><background_color white><base draw=0 width=12 height=5><number_line><circle x=1 y=0 radius=1/3></graphic>
+<p>
+D'un point de vue logique, ces nombres là sont peut être les plus durs à définir.
+Historiquement, énormément de tentatives ont été faites, pour définir les nombres réels, mais aussi l'ensemble des nombres réels.
+Déjà, il a été choisis d'appeler l'ensemble des nombres réels "R".
+Au début du XXème siècle, le mathématicien <scientist name="hilbert" type="quote"> en propose des définitions intéressantes.
+Selon lui, <span class="important">l'ensemble des nombres réels est le plus grand espace métrique totalement ordonné formant une structure algébrique de "corps", et où les éléments sont archimédien et où l'ensemble est complet</span>.
+Nous avons déjà présenté le concept d'espace métrique et d'ensemble totalement ordonné plus tôt.
+Nous avons déjà présenté la complétude plus haut.
+La propriété "archimédien" est une propriété très simple.
+En effet, <span class="important"><definition name="algebra_archimedean"></span>.
+Dans le cas des magmas / monoïdes / groupes, <span class="important"><definition name="algebra_archimedean-magma"></span>.
+En fait, cette propriété est vérifiée dans plein de structures que nous avons déjà vue : "(N, +)", "(Q, +)"...
+Il ne manque que le corps à définir, ce que nous ferons plus tard.
+Pour l'instant, dite vous juste qu'il s'agit d'une structure algébrique à deux lois de composition : l'addition et la multiplication.
+Cette première définition des nombres réels est assez intéressante pour pas mal de résultats.
+</p>
+<p>
+Bien que cette définition est assez intuitive, elle manque de rigueur axiomatique.
+En effet, on n'a pas défini ce qu'est vraiment un "nombre réel", autre que "un nombre quelconque qui existe".
+Maintenant, définissons les de manière concrète, avec une technique assez simple : les coupures de Dedekind.
+<span class="important"><definition name="dedekind_cut"></span>.
+En fait, <span class="important">l'idée ici vient du fait que, pour tout nombre réel, il est possible de former une coupure de Dedekind de "Q" tel que tous les éléments de la première partie sont inférieur à ce nombre réel et tous les éléments de la deuxième partie sont supérieur à ce nombre réel</span>.
+C'est par exemple le cas de racine carré de 2 : des nombres comme 0, 1 ou 1,4 sont inférieurs à ce nombre, et d'autres comme 3, 2 ou 1,5 sont inférieurs (racine carré de 2 vaut à peu prés 1,41421).
+Cependant, si notre nombre réel est en fait un nombre rationnel, alors il fait partie d'une de ces deux parties : il est dans la deuxième.
+Donc, <span class="important">un nombre réel quelconque est une coupure de Dedekind de "Q"</span>.
+Pour finir, <span class="important">l'ensemble des nombres réels représente l'ensemble des coupures de Dedekind sur "Q"</span>.
+</p>
+
+<h3>L'arithmétique des nombres réels</h3>
+<p>
+L'arithmétique basique de "R" est la même que celle dans "Q", bien que les démonstrations soient plus compliquées.
+Pour correctemennt les définir, nous allons utiliser les coupures de Dedekind.
+</p>
+<p>
+Déjà, <span class="important">"R" possède bel et bien une opération d'addition, avec les mêmes propriétés que dans "Q" et "Z"</span>.
+Comme pour "N", "Z" et "Q", opérer deux nombres rationnel / entier naturel / relatif écrit dans "R" revient à opérer deux nombres rationnel / entier naturel / relatif relatifs tout cours.
+Dans "R", l'opération est définie comme cela :
+</p>
+<math><mforall>a, b <min> R <mequi> [<mexists> A, B, C, D <min> P(Q) <mand> a = (A, B) <mand> b = (C, D)]</math></br>
+<math> <mexists>h, h = a + b <mequi> [<mexists> E, F <min> P(Q), h = (E, F), <mforall> f <min> F, <mforall>c <min> A, <mforall> d <min> B, f <mgt> c + d <mand> <mforall> e <min> E, <mforall> f <min> F, e <mlt> f]</math></br>
+<p>
+Cette démonstration est vraiment peu élégante : nous ne l'utiliserons que pour les démonstrations obligatoires.
+Cependant, comme elle utilise directement la démonstration de l'addition dans "Q", ces démonstrations seront assez simples à déduire.
+L'addition de tout nombre réel donne un autre nombre réel (ce qui est assez trivial, puisque "E" et "F" sont des parties de "Q", et qu'ils sont complémentaires par définition).
+En fait, <span class="important">l'addition dans "R" permet de former un groupe abélien</span>.
+Donc, elle est associative, admet un neutre, chaque élément a un inverse et elle est commutative (<a href="demo">démontré ici</a>).
+Comme pour dans "Q", soustraire "b" à "a" revient à additionner "-b" à "a".
+</p>
+<math><mforall>a, b, c <min> R, c = a - b <mequi> c = a + (-b)</math>

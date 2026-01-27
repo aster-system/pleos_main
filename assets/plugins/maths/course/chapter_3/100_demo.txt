@@ -2,10 +2,150 @@
 
 
 
+<h2>Les nombres réels</h2>
+
+<h3 id="real_addition">L'opération d'addition</h3>
+<h4>3.0.0.0</h4>
+<p>
+Démontrons que l'addition de deux nombres réel "a" et "b" donne un nombre réel (et donc, que l'addition est stable dans "R").
+Soit deux nombres réel "a" et "b" :
+</p>
+<math><mforall>a, b <min> R, <mexists>A, B, C, D <min> P(Q), a = (A, B), b = (C, D)</math>
+<p>
+Admettons un objet "g", représentant "a + b".
+Nous pouvons l'écrire avec la formule de l'addition de nombres réels.
+</p>
+<math>g = a + b <mequi> <mexists> E, F <min> P(Q), g = (E, F), <mforall> f <min> F, <mforall>c <min> A, <mforall>d <min> C, f <mgt> c + d <mand> <mforall> e <min> E, <mforall> f <min> F, e <mlt> f</math>
+<p>
+Par définition, "E" et "F" sont des sous-parties de "Q", et la relation d'ordre entre leurs éléments prouve que "E" et "F" sont complémentaires.
+Donc, "g" est un nombre réel.
+</p>
+
+<h4>3.0.0.1</h4>
+<p>
+Démontrons que l'ordre d'addition de deux trois nombres réels "a", "b" et "c" n'importe pas (et donc, que l'addition est associative dans "R").
+Soit trois nombres réels "a", "b" et "c" :
+</p>
+<math><mforall>a, b, c <min> R, <mexists>A, B, C, D, E, F <min> P(Q), a = (A, B), b = (C, D), c = (E, F)</math>
+<p>
+Admettons un objet "j", représentant "(a + b) + c".
+Nous pouvons l'écrire avec la formule de l'addition de nombres réels.
+</p>
+<math>j = (a + b) + c <mequi> <mexists>G, H <min> P(Q), j = (G, H) <mequi> <mforall> h <min> H, <mforall>c <min> A, <mforall>d <min> C, <mforall> e <min> E, h <mgt> (c + d) + e <mand> <mforall> g <min> G, <mforall> h <min> H, g <mlt> h</math>
+<p>
+Comme l'addition est associative dans "Q", on peut modifier l'ordre des additions pour définir "j".
+</p>
+<math>j = (a + b) + c <mequi> <mexists>G, H <min> P(Q), j = (G, H) <mequi> <mforall> h <min> H, <mforall>c <min> A, <mforall>d <min> C, <mforall> e <min> E, h <mgt> (c + d) + e = c + (d + e) <mand> <mforall> g <min> G, <mforall> h <min> H, g <mlt> h <mequi> j = a + (b + c)</math>
+<p>
+Or, cela consiste à dire que l'on peut aussi modifier l'ordre des additions dans "R".
+Donc, "(a + b) + c" est égal à "a + (b + c)".
+L'opération d'addition est associative dans "R".
+</p>
+<math><mforall>a, b, c <min> R, (a + b) + c = a + (b + c)</math>
+
+<h4>3.0.0.2</h4>
+<p>
+Démontrons que l'ordre de deux opérandes "a" et "b" autour d'une addition de nombres réels n'importe pas.
+Soit deux nombres réels "a" et "b" :
+</p>
+<math><mforall>a, b <min> R, <mexists>A, B <min> P(Q), a = (A, B), b = (C, D)</math>
+<p>
+Admettons un objet "j", représentant "a + b".
+Nous pouvons l'écrire avec la formule de l'addition de nombres réels.
+</p>
+<math>j = a + b <mequi> <mexists>G, H <min> P(Q), j = (G, H) <mequi> <mforall> h <min> H, <mforall>c <min> A, <mforall>d <min> C, <mforall> e <min> E, h <mgt> a + b <mand> <mforall> g <min> G, <mforall> h <min> H, g <mlt> h</math>
+<p>
+Comme l'addition est commutative dans "Q", on peut modifier l'ordre des opérandes pour définir "j".
+</p>
+<math>j = a + b <mequi> <mexists>G, H <min> P(Q), j = (G, H) <mequi> <mforall> h <min> H, <mforall>c <min> A, <mforall>d <min> C, <mforall> e <min> E, h <mgt> a + b = b + a <mand> <mforall> g <min> G, <mforall> h <min> H, g <mlt> h <mequi> j = b + a</math>
+<p>
+Or, cela consiste à dire que l'on peut aussi modifier l'ordre des opérandes dans une addition dans "R".
+Donc, "a + b" est égal à "b + a".
+L'opération d'addition est associative dans "R".
+</p>
+<math><mforall>a, b <min> R, a + b = b + a</math>
+
+<h4>3.0.0.3</h4>
+<p>
+Démontrons que la structure algébrique formée par l'ensemble des réels et de l'opération d'addition est un groupe abélien.
+</p>
+<math>(R, +)</math>
+<p>
+Déjà, cette opération est associative sur "R" selon le théorème 3.0.0.1, et elle est commutative selon le théorème 3.0.0.2.
+De plus, elle admet un neutre, qui est "0".
+</p>
+<math><mforall>a, b, c, n <min> R, <mexists>A, B, C, D, E, F, M, N <min> P(Q), a = (A, B), b = (C, D), c = (E, F), n = (M, N)</math>
+<math>a + 0 = n = (M, N) <mequi> [<mforall>o <min> A, <mforall>q <min> M, <mforall>r <min> N, q <mgt> o + 0 = q <mand> r <mlt>q] <mequi> a = n</math>
+<p>
+Finalement, chaque élément possède un inverse donnant le neutre par l'addition.
+</p>
+<math>a - a = c = (E, F) <mequi> [<mforall>o <min> A, <mforall>e <min> E, <mforall>f <min> F, e <mgt> o - o = 0, f <mlt> e] <mequi> a - a = c = 0</math>
+<p>
+Donc, la structure algébrique formée par l'ensemble des réels et de l'opération d'addition est bel et bien un groupe abélien.
+</p>
+<math>(R, +)</math>
+
+
+
 <h2>Introduction à l'analyse</h2>
 
-<h3>Les limites de suites usuelles</h3>
+<h3>Les espaces métriques</h3>
 <h4>3.0.0.0</h4>
+<p>
+Démontrons que la valeur absolue de la différence entre deux nombres réel dans l'ensemble des réels forme un espace métrique.
+Pour cela, démontrons que cet opérateur sur cet ensemble respecte les propriétés d'une "distance".
+</p>
+<p>
+Démontrons que cet opérateur est symétrique.
+Déjà,  :
+</p>
+<math><mforall>a, b <min> R, a - b = -(-(a - b)) = -(b - a)</math>
+<p>
+Comme on applique la valeur absolue :
+</p>
+<math>|a - b| = |-(b - a)| = |b - a|</math>
+<p>
+Donc, cet opérateur est symétrique.
+</p>
+<p>
+Démontrons que cet opérateur est séparé.
+Supposons que "a - b = 0" : nous pouvons additionner "b" des deux côtés.
+</p>
+<math>|a - b| = 0 <mequi> a = b</math>
+<p>
+Donc, "a - b = 0" équivaut à dire que "a = b" : cet opérateur est séparé.
+</p>
+<p>
+Finalement, démontrons que cet opérateur respecte l'inégalité triangulaire.
+Posons la somme de la distance entre "a" et "b" et de la distance de "b" et "c", que nous nommerons "s".
+</p>
+<math><mforall> c <min> R, s = |a - b| + |b - c|</math>
+<p>
+Si "a" est supérieur ou égal à "b", "|a - b| = a - b", alors on a deux cas.
+Si "b" est supérieur ou égal à "c", "|b - c| = b - c", et donc :
+</p>
+<math>a - b + b - c = a - c = |a - c|</math>
+<p>
+Si "b" est inférieur à "c", "|b - c| = c - b" (qui est positif, et que nous noterons "e"), et donc :
+</p>
+<math>a - b + c - b = a + c - b - b = a + e - b = a + e - (c - e) = a - c + 2 * e <mgtequal> a - c = [|a - c| si a <mgtequal> c, -|a - c| sinon] <mgtequal> |a - c|</math>
+<p>
+Tous les cas vérifient cette inégalité.
+Maintenant, si "a" est inférieur à "b", "|a - b| = b - a" (qui est positif, et que nous noterons "f"), alors on a deux cas.
+Si "b" est supérieur ou égal à "c", "|b - c| = b - c", et donc :
+</p>
+<math>b - a + b - c = b + b - a - c = b + f - c = f + a + f - c = a - c + 2 * f <mgtequal> a - c = [|a - c| si a <mgtequal> c, -|a - c| sinon] <mgtequal> |a - c|</math>
+<p>
+Si "b" est inférieur à "c", "|b - c| = c - b", et donc :
+</p>
+<math>b - a + c - b = -a + c = c - a = |a - c|</math>
+<p>
+L'inégalité triangulaire est démontrée dans tous les cas : elle est vérifiée dans "R" avec cet opérateur.
+Donc, cet opérateur et "R" forme un espace métrique.
+</p>
+
+<h3>Les limites de suites usuelles</h3>
+<h4>3.1.1.0</h4>
 <p>
 Montrons que la suite où l'on divise "1" par l'indice de l'élément actuel de la suite tend vers "0".
 Appelons cette suite "u(n)".
@@ -31,7 +171,7 @@ Donc, par définition de la limite, la suite où l'on divise "1" par l'indice de
 </p>
 <math>u(n) = <mfrac><mrow><mi>1</mi></mrow><mrow><mi>n</mi></mrow></mfrac>, lim u(n) = 0</math>
 
-<h4>3.0.0.1</h4>
+<h4>3.1.1.1</h4>
 <p>
 Montrons que la suite représentant le produit de "n" par un nombre "a" avec une puissance positive tend vers "+ l'infini" si "a" est positif, et "- l'infini" si "a" est négatif.
 Appelons cette suite "u(n)".

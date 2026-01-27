@@ -30,6 +30,10 @@
     <content>une racine de l'unité est un nombre complexe tel que son carré vaut 1 (en effet, dans l'algèbre des complexes, d'autres nombres que 1 ont un carré valant 1)</content>
 </new_definition>
 
+<new_definition name="algebra_archimedean">
+    <content>une structure algébrique est dite "archimédienne" si, pour tout nombre "a" et "b", il existe un multiple de "c" tel que "a * c" est plus grand que "b"</content>
+    <content name="magma">un magma (et donc, un monoïde ou un groupe) est dit "archimédien" si, pour toute valeur "a" et "b", il existe un nombre entier naturel de "c" tel que "c" répétition de la loi sur "a" est plus grand que "b"</content>
+</new_definition>
 <new_definition name="algebra_associativity">
     <content>une loi de composition interne est dite associative si l'ordre de réalisation de plusieurs opérations ne modifie pas le résultat<content>
 </new_definition>

@@ -55,6 +55,12 @@ En effet, <span class="important">l'inégalité triangulaire consiste à dire qu
 D'un point de vue intuitif, <span class="important">cela consiste à dire que passer de "a" à "c" directement est plus rapide que de passer par un autre point "b" au milieu</span>.
 </p>
 <math><mforall>a, b, c <min> E, d(a, c) <mlt> d(a, b) + d(b, c)</math>
+<p>
+Un exemple très simple est l'ensemble des réels munit de la valeur absolue de la soustraction.
+En effet, d'un point de vue intuitif, <span class="important">la soustraction dans "R" représente le nombre de valeurs entre deux nombres, dont on prend la valeur absolue pour le rendre positif : il s'agit intuitivement d'un espace métrique fonctionnel</span>.
+Mathématiquement, il faut le démontrer avec les propriétés vues plus haut, ce qui n'est pas si compliqué (<a href="demo">démontré ici</a>).
+Par extension, cette distance permet aussi de faire un espace métrique sur "Q", "Z" et "N".
+</p>
 
 <h2>Les limites</h2>
 
