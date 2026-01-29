@@ -2,6 +2,9 @@
     <content>le calcul infinitésimal est une branche du calcul mathématique s'intéressant à des calculs s'approchant de plus en plus de certaines valeurs</content>
 </new_definition>
 
+<new_definition name="analysis_real_function">
+    <content>une fonction réelle est une fonction allant de l'ensemble "R" vers l'ensemble "R"</content>
+</new_definition>
 <new_definition name="analysis_sequence">
     <content>une suite mathématique est une fonction mathématique allant de "N" à n'importe quel ensemble possible</content>
     <content name="convergent">une suite mathématique est dite convergente si sa limite est une valeur finie "v" (on dit que la suite converge vers "v")</content>
@@ -13,10 +16,10 @@
     <content name="sequence_rigorous">une limite mathématique de suite vers une valeur "v" est une valeur "v" telle que, pour tous nombre réel possible "x", il existe toujours un nombre entier naturel "a" tel que les différences entre n'importe quelle valeurs de la suite à partir de ce nombre "a" et "v" sont inférieurs à "x"</content>
     <content name="sequence_rigorous_infinite">une limite mathématique de suite vers une valeur infinie est un des deux infinis ("+ l'infini" ou "- l'infini") tel que, pour tous nombre réel possible "x", il existe toujours un nombre entier naturel "a" tel que toutes valeurs de la suite à partir de ce nombre "a" est supérieure (si la limite est "+ l'infini") ou inférieur (si la limite est "- l'infini") à "x"</content>
 </new_definition>
-
 <new_definition name="function_graph">
-    <content>un graphe de fonction est une représentation des valeurs de la fonction (généralement facilement représentable sous forme graphique), en liant chaque endroit où la fonction est définie avec sa valeur via cette fonction</content>
+    <content>un graphe de fonction représente l'ensemble des couples formés par (dans l'ordre) chaque élément de l'ensemble du domaine de définition de la fonction et de son image par cette fonction</content>
 </new_definition>
+
 <new_definition name="function_space">
     <content>un espace fonctionnel est un ensemble d'applications (et donc, de fonctions) entre deux ensembles X et Y</content>
 </new_definition>

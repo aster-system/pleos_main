@@ -28,6 +28,27 @@ Il est très commun de les expliciter, comme dans cet exemple :
 </p>
 <math>u : N <mto> Q, n <mto> u(n) = <mfrac><mi>1</mi><mi>n + 1</mi></mfrac></math>
 
+<h3>Les fonctions réelles</h3>
+<p>
+Bien que les suites sont importantes, l'intérêt de l'analyse n'est généralement pas l'étude de suite, mais celle de fonctions, souvent réelles.
+<span class="important"><definition name="analysis_real_function"></span>.
+Comme pour le suites, est très commun de les expliciter, comme dans cet exemple :
+</p>
+<math>f : R <mto> R, x <mto> f(x) = 3 * x + 2</math>
+
+<h3>Les graphes de fonctions</h3>
+<p>
+Nous avons déjà parlé des graphes de fonctions dans le chapitre 1, dans la partie application.
+Cependant, en analyse, cet outil est bien plus poussé que pour de simples applications / fonctions, en les utilisant avec nos outils d'analyse (suites et fonctions réelles).
+Pour rappel, <span class="important"><definition name="function_graph"></span>.
+Or, comme nous connaissons les ensembles de départ ("N" ou "R"), nous pouvons représenter notre graphe de manière plus intuitive.
+En effet, <span class="important">"N" et "R" sont représentables sur des droites, ce qui permet de mettre chaque valeur des fonctions en chaque valeur sur la droite au dessus de la valeur associée sur la droite</span>.
+Pour être plus précis, <span class="important">on va considérer une échelle de valeur verticale, et placer les valeurs des images de la fonction au bon endroit sur cette échelle, sous la forme de points</span>.
+Au final, vous obtenez un graphique en 2D, représentant comment votre fonction se comporte en chaque valeur via la droite de départ.
+Voici un exemple simple, de la fonction réelle transformant un réel "x" en la valeur "2 * x + 0,5".
+</p>
+<graphic><function expression="2x+1/2"></function></graphic>
+
 <h3>Les espaces métriques</h3>
 <p>
 Un outil permettant d'étendre l'analyse en mathématiques est l'espace métrique.
@@ -155,6 +176,6 @@ La notation de Landau associé revient à dire que "u" appartient aux suites né
 <math>v(n) != 0 <mequi> [u <min> o(v) <mequi> lim <mfrac><mi>u(n)</mi><mi>v(n)</mi></mfrac> = 0]</math>
 <p>
 Comme nous avons une fraction, <span class="important">on peut trouver une équivalence en multipliant des deux côtés par un facteur précis, ici une autre suite "w"</span>.
-Dans ce cas, <span class="important">deux suites sont équivalentes si cette nouvelle suite "w" tend vers 0</span>.
+Dans ce cas, <span class="important">deux suites sont équivalentes si cette nouvelle suite "w" tend vers 0 (pas plus fort que "v" tend vers "+ l'infini", mais fort quand même)</span>.
 </p>
 <math>u <min> o(v) <mequi> [<mexists> w, lim w(n) = 0 <mand> u(n) = w(n) * v(n)]</math>
