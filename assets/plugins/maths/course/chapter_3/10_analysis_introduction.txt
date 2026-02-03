@@ -8,9 +8,32 @@
 <p>
 Le calcul infinitésimal est une branche assez importante des mathématiques.
 En fait, <span class="important"><definition name="infinitesimal_calculus"></span>.
-Ici, s'approcher signifie "diminuer le plus possible la différence entre la valeur obtenu par le calcul et la valeur que l'on cherche obtenir".
+Ici, s'approcher signifie "diminuer le plus possible la distance entre la valeur obtenu par le calcul et la valeur que l'on cherche obtenir".
 En général, <span class="important">quand une valeur quelconque s'approche d'un terme "a", on dit que cette valeur tend vers "a"</span>.
 Pour cela, nous avons besoin de beaucoup d'outils précis.
+</p>
+<p>
+Historiquement, il est difficile de savoir de quand, et surtout, par qui, provient le calcul infinitésimal.
+Déjà, <span class="important">le concept "d'approcher des valeurs" est utilisé depuis très longtemps en mathématiques</span>.
+Archimède l'utilisé déjà dans la Grèce antique, avec la méthode d'exhaustion.
+<span class="important"><definition name="exhaustion_method"></span>.
+C'est une des méthodes possibles pour obtenir l'aire d'un triangle.
+Ces techniques furent améliorées dans les époques à venir, comme par le mathématicien arabe <scientist name="qurra" type="quote">.
+En Europe, <span class="important">elles permirent le développement de concept plus complexes, comme la méthode des indivisibles, méthode d'adégalisation de Fermat parue en 1636 (permettant d'obtenir des tangentes de courbes)</span>.
+À cette période, le défi principal des mathématiciens était de calculer des aires formés par des courbes.
+En 1669, un de ces problèmes est résolu par le grand <scientist name="newton" type="quote"> : les variations d'une courbe représente les variations des variations de l'aire formé par cette courbe.
+Nous y reviendrons plus tard, <span class="important">mais Newton découvre en fait le lien entre les courbes et une branche de calcul utilisant des valeurs souvent très petites et rapprochés : le calcul infinitésimal</span>.
+En notation moderne, il découvre que l'aire sous la courbe représente l'opération "inverse" de la dérivée : l'intégrale.
+Grâce à ce concept, il va généraliser ce calcul aux fonctions réelles, et calculer des dérivés et intégrales de fonctions de plus en plus complexes.
+Malheureusement pour lui, ses démonstrations manquent de rigueurs.
+En 1674, <span class="important">le mathématicien <scientist name="leibniz" type="quote"> complète ses travaux, via une notation plus précise, et de nouveaux résultats très pratiques</span>.
+Tout ça représente l'origine du calcul infinitésimal moderne (qui a énormément gagné en rigueur).
+À cause du manque de rigueur de Newton et de la proximité des deux résultats, le débat fait rage pour savoir qui a vraiment inventé ce premier prototype de calcul infinitésimal.
+En plus, <span class="important">ce manque de rigueur fait à ce que beaucoup de mathématiciens se méfirent de ce calcul</span>.
+Cependant, l'acceptation générale viendra au 19ème siècle.
+À cette période, <span class="important">de nombreux mathématiciens, dont <scientist name="cauchy" type="quote"> ou <scientist name="weierstrass" type="quote"> parvinrent à formaliser de manière particulièrement rigoureuse ce calcul, grâce au concept de limite</span>.
+Maintenant que la rigueur était là, ce calcul a pu finalement s'émanciper, pour permettre des résultats beaucoup plus acceptables, et des notions permettant de les généraliser : continuité, dérivation, intégration...
+<span class="important">C'est l'introduction de ces nouveaux concepts qui représentent la sémantique actuelle du calcul infinitésimal</span>.
 </p>
 
 
@@ -32,7 +55,7 @@ Il est très commun de les expliciter, comme dans cet exemple :
 <p>
 Bien que les suites sont importantes, l'intérêt de l'analyse n'est généralement pas l'étude de suite, mais celle de fonctions, souvent réelles.
 <span class="important"><definition name="analysis_real_function"></span>.
-Comme pour le suites, est très commun de les expliciter, comme dans cet exemple :
+Comme pour les suites, est très commun de les expliciter, comme dans cet exemple :
 </p>
 <math>f : R <mto> R, x <mto> f(x) = 3 * x + 2</math>
 
@@ -81,6 +104,9 @@ Un exemple très simple est l'ensemble des réels munit de la valeur absolue de 
 En effet, d'un point de vue intuitif, <span class="important">la soustraction dans "R" représente le nombre de valeurs entre deux nombres, dont on prend la valeur absolue pour le rendre positif : il s'agit intuitivement d'un espace métrique fonctionnel</span>.
 Mathématiquement, il faut le démontrer avec les propriétés vues plus haut, ce qui n'est pas si compliqué (<a href="demo">démontré ici</a>).
 Par extension, cette distance permet aussi de faire un espace métrique sur "Q", "Z" et "N".
+Or, quelque soit un nombre "a" dans "R" et "Q", comme ces ensembles sont denses, pour tout élément "b" (tous, sans exceptions), alors il existera toujours un élément plus proche de "a" que "b".
+En d'autres termes, <span class="important">il n'existe pas "d'objet le plus proche" d'un élément quelconque de "R" et "Q" qui n'est pas lui même</span>.
+Cependant, "N" et "Z" ne sont pas denses, et la valeur minimale au dessus de 0 est 1 : <span class="important">tout objet dans "N" et "Z" (appart 0 dans "N", qui n'en possède qu'une) possède deux objets les plus proches (qui ne sont pas eux mêmes), à une distance de "1" unité</span>.
 </p>
 
 <h2>Les limites</h2>
@@ -121,7 +147,7 @@ Les parenthèses autour de la suite ne sont pas obligatoires.
 </p>
 <math><munder><mi>lim</mi><mrow><mi>n</mi><mto><mo>+</mo><minf></mrow></munder>(u(n)) = l <mequi> lim u(n) = l</math>
 <p>
-En fait, <span class="important">prouver qu'une suite admet une limite quelconque revient à trouver le "a" pour tous nombres réel supérieur à 0 à partir du quel la condition de la limite est vérifiée</span>.
+En fait, <span class="important">prouver qu'une suite admet une limite quelconque revient à trouver le "a" pour tous nombres réel supérieur 0 à partir du quel la condition de la limite est vérifiée</span>.
 Prenons un exemple très simple et intuitif : la suite qui, à "u(n)", associe le nombre "n".
 </p>
 <math>u : N <mto> Q, n <mto> u(n) = n</math>
@@ -157,6 +183,107 @@ Dans ces cas, il s'agit juste de "grossissement" de "n" comme nous l'avons vue p
 </p>
 <math><mforall> a <min> R, <mforall> e <min> N*, u(n) = a * <mi>n</mi><msup>e</msup>, lim u(n) = + <minf> si a <mgt> 0, lim u(n) = - <minf> sinon</math>
 
+<h3>Les limites de fonctions réelles</h3>
+<p>
+Avec des fonctions réelles, le concept de suite est plus complexe, mais bien plus complet.
+Déjà, <span class="important">comme on peut s'approcher indéfiniment de n'importe quelle valeur d'un nombre réel, une fonction réelle peut admettre une limite en une valeur finie</span>.
+De plus, on peut approcher ce nombre avec des valeurs inférieures à ce nombre, ou supérieur à ce nombre (par exemple, on peut approcher 4 avec 3.9, 3.99, 3.999 ou avec 4.1, 4.01, 4.001).
+<span class="important">La valeur dont on se rapproche quand on fait tendre l'antécédent vers une valeur précise avec seulement des nombres supérieures à cette valeur est nommée limite à droite de la fonction en cette valeur</span>.
+À l'inverse, <span class="important">La valeur dont on se rapproche quand on fait tendre l'antécédent vers une valeur précise avec seulement des nombres inférieures à cette valeur est nommée limite à gauche de la fonction en cette valeur</span>.
+Ce concept ne sert à rien pour des limites en "+ l'infini" et "- l'infini", car il n'y a qu'un seul moyen de les approcher : valeur inférieure (+ l'infini-) ou supérieure (- l'infini).
+<span class="important">Si la limite à droite d'une fonction en une valeur est la même que la limite à droite en cette valeur, on parle simplement de "limite" en cette valeur</span>.
+Un exemple très parlant de limite à droite différente de limite à gauche est celui de la fonction qui associe à chaque valeur "x" l'inverse de "x" : la limite en 0 à gauche est "- l'infini", là où la limite en 0 à droite est "+ l'infini".
+</p>
+<graphic><background_color white><function expression="1/x"></function></graphic>
+<p>
+Dans tous les cas, il existe des définitions très rigoureuses de ces concepts.
+En effet, dans le cas des limites finies en une valeur finie, <span class="important"><definition name="analysis_limit-rigorous"></span>.
+Pour la limite à droite, on a :
+</p>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <min> ]a, a + b[ <mimp> |f(c) - v| <mlt> x}</math>
+<p>
+Dans le cas où l'on calcule la limite à gauche :
+</p>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <min> ]a, a - b[ <mimp> |f(c) - v| <mlt> x}</math>
+<p>
+Cependant, il existe aussi des limites infinies, en une valeur finie.
+Dans ce cas, <span class="important"><definition name="analysis_limit-rigorous_infinite"></span>.
+Cette définition est assez similaire à celle vue pour les suites, à la différence prêt que l'antécédent se rapproche d'une valeur précise, et pas d'un infini.
+Donc, on peut aussi se rapprocher à droite ou à gauche.
+Pour la limite à droite, on a (dans le cas où l'on se rapproche de "+ l'infini", puis "- l'infini") :
+</p>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <min> ]a, a + b[ <mimp> f(c) <mgt> x}</math></br>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <min> ]a, a + b[ <mimp> f(c) <mlt> -x}</math>
+<p>
+Pour la limite à gauche, on a (dans le cas où l'on se rapproche de "+ l'infini", puis "- l'infini") :
+</p>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <min> ]a - b, a[ <mimp> f(c) <mgt> x}</math></br>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <min> ]a - b, a[ <mimp> f(c) <mlt> -x}</math>
+<p>
+Nous devons ces définitions à Karl Weierstrass, qui les aurait énoncé dans le courant des années 1860.
+Comme vue plus haut, <span class="important">prouver qu'une fonction admet une limite finie quelconque en un point "a" revient à trouver le "b" pour chaque nombre réel "x" supérieur 0 à partir du quel la condition de la limite est vérifiée (chaque valeur entre "b" et "a" est à une distance de la limite inférieure à la valeur "x")</span>.
+Dans ce cas, seule des valeurs très petites de "x" nous intéressent.
+À l'inverse, <span class="important">prouver qu'une fonction admet une limite infinie en un point "a" revient à trouver le "b" pour chaque nombre réel "x" supérieur 0 à partir du quel la condition de la limite est vérifiée (chaque valeur entre "b" et "a" est supérieure (ou inférieure, en "- l'infini") à la valeur "x" (ou "-x", en "- l'infini"))</span>.
+Dans ce cas, seule des valeurs très grandes de "x" nous intéressent.
+Prenons un exemple que nous avons déjà vue : la fonction qui, à chaque "y" réel, lui associe son inverse par la multiplication "1/y".
+</p>
+<math>f : R <mto> R, y <mto> <mfrac><mi>1</mi><mi>y</mi></mfrac></math>
+<p>
+Cette fonction est définie sur tout "R", sauf à un endroit : "0".
+Or, <span class="important">toute valeur aussi proche que l'on veut de "0" est définie : on peut trouver une limite en "0"</span>.
+Par observation, on s'attend à trouver une limite de "- l'infini" vers la gauche, et de "+ l'infini" vers la droite.
+</p>
+<graphic><background_color white><function expression="1/x"></function></graphic>
+<p>
+Commençons par calculer la limite à droite.
+Prenons un nombre réel "x" quelconque supérieur à 0.
+Supposons une valeur "b" supérieur à 0 tel que "f(b)" sont supérieur à "x".
+</p>
+<math><mforall> x <min> R*+, <mforall> b <min> R*+, f(b) <mgt> x <mequi> <mfrac><mi>1</mi><mi>b</mi></mfrac> <mgt> x</math>
+<p>
+On peut donc déduire que "b" doit être inférieure à l'inverse "x", car la fonction "inverse" change l'ordre.
+</p>
+<math><mfrac><mi>1</mi><mi>b</mi></mfrac> <mgt> x <mequi> b <mlt> <mfrac><mi>1</mi><mi>x</mi></mfrac></math>
+<p>
+Ici, "b" existe si l'inverse de "x" existe : cela est vrai car "x" est différent de "0".
+Par équivalence, toute valeur positive inférieure à "b" est inférieure à l'inverse de "x", et donc toute inverse de valeur positive supérieure à l'inverse "b" est supérieure à "x".
+Appelons cette nouvelle valeur "c".
+</p>
+<math>c <mlt> b <mlt> <mfrac><mi>1</mi><mi>x</mi></mfrac> <mequi> <mfrac><mi>1</mi><mi>c</mi></mfrac> <mgt> <mfrac><mi>1</mi><mi>b</mi></mfrac> <mgt> x</math>
+<p>
+Par définition, "c" appartient à l'intervalle ]0, b[ (qui s'écrit aussi ]0, 0 + b[).
+Pour rappel, on est sur qu'il existe un "b" respectant ces propriétés.
+Donc, on peut reformuler notre expression :
+</p>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <min> ]0, 0 + b[ <mimp> f(c) <mgt> x}</math>
+<p>
+C'est exactement la définition d'une limite à droite de "+ l'infini" en 0 : <span class="important">notre fonction admet une limite à droite de "+ l'infini" en 0</span>.
+Maintenant, procédons dans le cas de la limite à gauche.
+Prenons un nombre réel "x" quelconque supérieur à 0.
+Supposons une valeur "d" inférieure à 0 tel que "f(d)" soit inférieur à "-x".
+</p>
+<math><mforall> x <min> R*+, <mforall> d <min> R*-, f(d) <mgt> -x <mequi> <mfrac><mi>1</mi><mi>d</mi></mfrac> <mlt> -x</math>
+<p>
+On peut donc déduire que "d" doit être inférieure à l'inverse "x", car la fonction "inverse" change l'ordre.
+</p>
+<math><mfrac><mi>1</mi><mi>d</mi></mfrac> <mlt> -x <mequi> d <mgt> <mfrac><mi>-1</mi><mi>x</mi></mfrac></math>
+<p>
+Ici, "d" existe si l'inverse de "-x" existe : cela est vrai car "-x" est différent de "0".
+Par équivalence, toute valeur négative supérieur à "d" est supérieure à l'inverse de "-x", et donc toute inverse de valeur négative inférieure à l'inverse "d" est inférieure à "-x".
+Appelons cette nouvelle valeur "c".
+</p>
+<math>c <mgt> d <mgt> <mfrac><mi>1</mi><mi>-x</mi></mfrac> <mequi> <mfrac><mi>1</mi><mi>c</mi></mfrac> <mlt> <mfrac><mi>1</mi><mi>d</mi></mfrac> <mlt> -x</math>
+<p>
+Disons que l'opposé par l'addition de "d" est nommé "b" (qui est donc supérieur à 0).
+Par définition, "c" appartient à l'intervalle ]d, 0[ (qui s'écrit aussi ]0 + d, 0[, ou ]0 - b, 0[).
+Pour rappel, on est sur qu'il existe un "d" respectant ces propriétés, et donc un "b" qui respecte aussi ces propriétés.
+Donc, on peut reformuler notre expression :
+</p>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <min> ]0 - b, 0[ <mimp> f(c) <mlt> -x}</math>
+<p>
+C'est exactement la définition d'une limite à gauche de "- l'infini" en 0 : <span class="important">notre fonction admet une limite à gauche de "- l'infini" en 0</span>.
+</p>
+
 <h3>Les comparaisons asymptotiques</h3>
 <p>
 Grâce aux limites de suites, <span class="important">on peut comparer des suites selon la façon dont se comporte la limite de la suite</span>.
@@ -179,3 +306,44 @@ Comme nous avons une fraction, <span class="important">on peut trouver une équi
 Dans ce cas, <span class="important">deux suites sont équivalentes si cette nouvelle suite "w" tend vers 0 (pas plus fort que "v" tend vers "+ l'infini", mais fort quand même)</span>.
 </p>
 <math>u <min> o(v) <mequi> [<mexists> w, lim w(n) = 0 <mand> u(n) = w(n) * v(n)]</math>
+<p>
+Comme pour les limites, <span class="important">ce concept fonctionne de manière similaire avec les fonctions, à la différence prêt que l'on peut l'utiliser en des valeurs finies de la fonction</span>.
+Toujours comme les limites, <span class="important">nous devons préciser en quelle valeur de la fonction la relation de négligeabilité est respectée</span>.
+Pour cela, nous devons indiquer sous le symbôle "appartient" cette valeur.
+</p>
+<p>
+Avec ce concept, <span class="important">l'idée est de savoir quelle partie d'une formule se rapproche moins vite de la limite que les autres</span>.
+D'un point de vue intuitif, <span class="important">étudier cette partie revient à étudier une version "moins rapide" des autres parties, et donc de la formule générale</span>.
+Prenons un exemple : démontrons que, en "+ l'infini", la fonction "f" associant "x" à "x" est négligeable devant la fonction "g" qui associe "x" à "x²".
+D'un point de vue intuitif (que l'on peut forger avec une comparaison de graphe), ce résultat est évident.
+</p>
+<graphic><background_color white><function expression="x"></function><function expression="x*x"></function></graphic>
+<p>
+La démonstration est en réalité assez simple.
+En effet, pour démontrer ce résultat, <span class="important">nous devons démontrer l'existence d'une fonction "w" tendant vers "0" en "+ l'infini", permettant de passer de "g" à "f" grâce à un produit</span>.
+Donc, nous devons trouver un moyen de passer de "x²" à "x" grâce à un produit.
+Or, multiplier "x²" par "1/x" donne "x" : la fonction que l'on cherche à donc cette forme.
+Elle existe si "x" est différent de 0 : c'est le cas, car nous cherchons une limite en "+ l'infini", et que "x" doit être très grand, et donc qu'on peut le fixer comme "supérieur à 0".
+</p>
+<math>x != 0 <mequi> <mi>x</mi><msup>2</msup> * <mfrac><mi>1</mi><mi>x</mi></mfrac> = x <mequi> w(x) = <mfrac><mi>1</mi><mi>x</mi></mfrac></math>
+<p>
+Or, la fonction qui associe "x" à son inverse tend vers "0" en "+ l'infini".
+Donc, <span class="important">"w" tend vers "0" en "+ l'infini" : la fonction "f" est négligeable devant "g" en "+ l'infini", et "x" est négligeable devant "x²" en "+ l'infini"</span>.
+</p>
+<math>[g(x) = w(x) * f(x) <mand> <munder><mi>lim</mi><mrow><mi>x</mi><mto><mo>+</mo><minf></mrow></munder>(w(x)) = 0] <mequi> w(x) <munder><mrow><min></mrow><mrow><mi>+ <minf></mi></mrow></munder> o(g(x))</math>
+<p>
+À l'inverse, on peut prouver que quand "x" tend vers "0", alors c'est "x²" qui est négligeable devant "x".
+Donc, démontrer l'existence d'une (nouvelle) fonction "w" tendant vers "0" en "0", permettant de passer de "f" à "g" grâce à un produit.
+Ici, nous allons trouver un moyen de passer de "x" à "x²" grâce à un produit.
+Or, multiplier "x" par "x" donne "x²" : la fonction que l'on cherche à donc cette forme.
+</p>
+<math>x * x = x² <mequi> w(x) = x</math>
+<p>
+Or, la fonction qui associe "x" à "x" tend vers "0" en "0".
+Donc, <span class="important">"w" tend vers "0" en "0" : la fonction "g" est négligeable devant "f" en 0, et "x²" est négligeable devant "x" en 0</span>.
+</p>
+<math>[f(x) = w(x) * g(x) <mand> <munder><mi>lim</mi><mrow><mi>x</mi><mto><mi>0</mi></mrow></munder>(w(x))= 0] <mequi> w(x) <munder><mrow><min></mrow><mrow><mi>0</mi></mrow></munder> o(g(x))</math>
+<p>
+Si on avait utilisé notre première fonction "w" (la fonction inverse), notre "w" aurait tendu vers "+ l'infini", ce qui est parfaitement cohérent, mais pas parfaitement égale à cette définition kà, qui est plus forte.
+En plus, on aurait eu un problème si "x = 0" : cette fonction n'a pas ce problème.
+</p>

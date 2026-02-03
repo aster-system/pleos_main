@@ -72,6 +72,8 @@
 </new_definition>
 <new_definition name="algebra_subgroup">
     <content>un sous-groupe H d'un groupe G est un groupe sur un sous-ensemble de l'ensemble de G, muni de la même loi de composition que G</content>
+    <content name="class">une classe à gauche (ou à droite) d'un élément "a" suivant un sous-groupe représente l'ensemble des modifications possibles dans un sous-groupe, en ne faisant qu'utiliser la loi de composition à gauche (ou à droite) des éléments du sous-groupe avec l'élément "a" du groupe</content>
+    <content name="index">l'indice d'un sous-groupe représente le cardinal des classes à gauche (ou à droite) d'un sous-ensemble</content>
 </new_definition>
 <new_definition name="algebra_subring">
     <content>un sous-anneau A d'un anneau B est un anneau sur un sous-ensemble de l'ensemble de A, où l'addition forme un sous-groupe du groupe additif de "A", où "B" est stable par la multiplication et où le neutre de la multiplication de "A" se situe dans "B"</content>

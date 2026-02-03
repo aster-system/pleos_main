@@ -31,8 +31,8 @@
 #define PLEOS_MATHS
 
 // Include PLEOS Libs
+#include "../../pleos_libs/pleos_command.h"
 #include "../../pleos_libs/pleos_mathematics.h"
-#include "../../pleos_libs/pleos_table.h"
 #include "../../pleos_libs/pleos_text.h"
 
 // Possible pages

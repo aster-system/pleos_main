@@ -47,7 +47,7 @@ namespace pleos {
 
     // Apply the images for SAASF
     int __saasf_image_number = 0;std::shared_ptr<Text_Environment> __saasf_text_environment;
-    void __saasf_images(scls::Replica_Project* replica, std::shared_ptr<scls::__XML_Text_Base> content, std::string path, std::string current_replica_file_path) {
+    void __saasf_images(scls::Replica_Project* replica, std::shared_ptr<scls::XML_Text_Base> content, std::string path, std::string current_replica_file_path) {
         // Datas about the path
         std::vector<std::string> cutted = scls::cut_string(current_replica_file_path, std::string("/"));
         int category_to_learn = 0;if(cutted.at(0) != std::string("learn")){category_to_learn=1;}
@@ -134,7 +134,7 @@ namespace pleos {
             else if((attribute_name == std::string("msqrt"))){
                 // HMLT square root
                 if(content.get()->sub_texts().at(i).get()->sub_texts().size() == 0){
-                    std::shared_ptr<scls::__XML_Text_Base> content_copy = std::make_shared<scls::__XML_Text_Base>(*content.get()->sub_texts().at(i).get());
+                    std::shared_ptr<scls::XML_Text_Base> content_copy = std::make_shared<scls::XML_Text_Base>(*content.get()->sub_texts().at(i).get());
                     content_copy.get()->set_xml_balise_name(std::string("mi"));
                     content.get()->sub_texts().at(i).get()->clear();
                     content.get()->sub_texts().at(i).get()->set_xml_balise_name(attribute_name);
@@ -145,8 +145,8 @@ namespace pleos {
             else if((attribute_name == std::string("msub") || attribute_name == std::string("msup")) && i > 0){
                 if(static_cast<int>(content.get()->sub_texts().at(i).get()->sub_texts().size()) < 2) {
                     // HMLT a sup
-                    std::shared_ptr<scls::__XML_Text_Base> content_copy = std::make_shared<scls::__XML_Text_Base>(*content.get()->sub_texts().at(i - 1).get());
-                    std::shared_ptr<scls::__XML_Text_Base> content_copy_sup = std::make_shared<scls::__XML_Text_Base>(*content.get()->sub_texts().at(i).get());
+                    std::shared_ptr<scls::XML_Text_Base> content_copy = std::make_shared<scls::XML_Text_Base>(*content.get()->sub_texts().at(i - 1).get());
+                    std::shared_ptr<scls::XML_Text_Base> content_copy_sup = std::make_shared<scls::XML_Text_Base>(*content.get()->sub_texts().at(i).get());
                     content_copy_sup.get()->set_xml_balise_name(std::string("mi"));
                     content.get()->sub_texts().at(i - 1).get()->clear();
                     content.get()->sub_texts().at(i - 1).get()->set_xml_balise_name(attribute_name);
@@ -157,7 +157,7 @@ namespace pleos {
             }
             else if(attribute_name == std::string("mvec") || attribute_name == std::string("vec")){
                 // HMLT a vector
-                std::shared_ptr<scls::__XML_Text_Base> content_copy = std::make_shared<scls::__XML_Text_Base>(*content.get()->sub_texts().at(i).get());
+                std::shared_ptr<scls::XML_Text_Base> content_copy = std::make_shared<scls::XML_Text_Base>(*content.get()->sub_texts().at(i).get());
                 content_copy.get()->set_xml_balise_name(std::string("mi"));
                 content.get()->sub_texts().at(i).get()->clear();
                 content.get()->sub_texts().at(i).get()->set_xml_balise_name(std::string("mover"));
@@ -236,13 +236,13 @@ namespace pleos {
     void __saasf_page(std::string file_name_complete, std::string path, std::shared_ptr<scls::Replica_File> needed_file, std::shared_ptr<scls::Replica_Project> needed_replica, std::vector<__SAASF_Subjet_Part>& parts) {
     	std::sort(parts.begin(), parts.end(), __saasf_sort_subjects);
 		for(int k = 0;k<static_cast<int>(parts.size());k++) {
-			std::shared_ptr<scls::__XML_Text_Base> file_content = scls::xml(__window_struct->balises_shared_ptr(), scls::format_string_break_line(scls::read_file(parts[k].path), std::string(" ")));
+			std::shared_ptr<scls::XML_Text_Base> file_content = scls::xml(__window_struct->balises_shared_ptr(), scls::format_string_break_line(scls::read_file(parts[k].path), std::string(" ")));
 			file_content.get()->replace_balise_by_name("h3", "h4");file_content.get()->replace_balise_by_name("h2", "h3");
 			file_content.get()->replace_balise_by_name("important", "span class=\"important\"");
 			utf_8_symbol_xml(file_content, true);
 			__saasf_images(needed_replica.get(), file_content, needed_replica.get()->export_path(path), file_name_complete);
 			scls::Replica_File_Variable_Element* current_part = needed_file.get()->variable_list(std::string("explaination_parts[]"))->new_element<scls::Replica_File_Variable_Element>();
-			std::shared_ptr<scls::__XML_Text_Base> title = file_content.get()->remove_balise_by_name("h1");
+			std::shared_ptr<scls::XML_Text_Base> title = file_content.get()->remove_balise_by_name("h1");
 			if(title.get() != 0){current_part->set_variable_value(std::string("explaination_title"), title.get()->text());}
 			current_part->set_variable_value(std::string("explaination_content"), scls::format_string_from_plain_text(file_content.get()->full_text()));
 		}
@@ -441,13 +441,13 @@ namespace pleos {
                         }
                         std::sort(parts.begin(), parts.end(), __saasf_sort_subjects);
                         for(int k = 0;k<static_cast<int>(parts.size());k++) {
-                            std::shared_ptr<scls::__XML_Text_Base> file_content = scls::xml(window_struct()->balises_shared_ptr(), scls::format_string_break_line(scls::read_file(parts[k].path), std::string(" ")));
+                            std::shared_ptr<scls::XML_Text_Base> file_content = scls::xml(window_struct()->balises_shared_ptr(), scls::format_string_break_line(scls::read_file(parts[k].path), std::string(" ")));
                             file_content.get()->replace_balise_by_name("h3", "h4");file_content.get()->replace_balise_by_name("h2", "h3");
                             file_content.get()->replace_balise_by_name("important", "span class=\"important\"");
                             utf_8_symbol_xml(file_content, true);
                             __saasf_images(needed_replica.get(), file_content, needed_replica.get()->export_path(path), file_name_complete);
                             scls::Replica_File_Variable_Element* current_part = needed_file.get()->variable_list(std::string("explaination_parts[]"))->new_element<scls::Replica_File_Variable_Element>();
-                            std::shared_ptr<scls::__XML_Text_Base> title = file_content.get()->remove_balise_by_name("h1");
+                            std::shared_ptr<scls::XML_Text_Base> title = file_content.get()->remove_balise_by_name("h1");
                             if(title.get() != 0){current_part->set_variable_value(std::string("explaination_title"), title.get()->text());}
                             current_part->set_variable_value(std::string("explaination_content"), scls::format_string_from_plain_text(file_content.get()->full_text()));
                         }
@@ -484,13 +484,13 @@ namespace pleos {
                         std::sort(parts.begin(), parts.end(), __saasf_sort_subjects);
                         // Add each parts
                         for(int k = 0;k<static_cast<int>(parts.size());k++) {
-                            std::shared_ptr<scls::__XML_Text_Base> file_content = scls::xml(window_struct()->balises_shared_ptr(), scls::format_string_break_line(scls::read_file(parts[k].path), std::string(" ")));
+                            std::shared_ptr<scls::XML_Text_Base> file_content = scls::xml(window_struct()->balises_shared_ptr(), scls::format_string_break_line(scls::read_file(parts[k].path), std::string(" ")));
                             file_content.get()->replace_balise_by_name("h3", "h4");file_content.get()->replace_balise_by_name("h2", "h3");
                             file_content.get()->replace_balise_by_name("important", "span class=\"important\"");
                             utf_8_symbol_xml(file_content, true);
                             __saasf_images(needed_replica.get(), file_content, needed_replica.get()->export_path(path), file_name_complete);
                             scls::Replica_File_Variable_Element* current_part = needed_file.get()->variable_list(std::string("explaination_parts[]"))->new_element<scls::Replica_File_Variable_Element>();
-                            std::shared_ptr<scls::__XML_Text_Base> title = file_content.get()->remove_balise_by_name("h1");
+                            std::shared_ptr<scls::XML_Text_Base> title = file_content.get()->remove_balise_by_name("h1");
                             if(title.get() != 0){current_part->set_variable_value(std::string("explaination_title"), title.get()->text());}
                             current_part->set_variable_value(std::string("explaination_content"), scls::format_string_from_plain_text(file_content.get()->full_text()));
                         }
@@ -559,13 +559,13 @@ namespace pleos {
             needed_file.get()->set_variable_value(std::string("page_title"), std::string("SAASF - ") + __saasf_translate(creation_name, false, true));
 
             // Add the text
-            std::shared_ptr<scls::__XML_Text_Base> file_content = scls::xml(window_struct()->balises_shared_ptr(), scls::format_string_break_line(scls::read_file(assets + std::string("/creations/") + creation_name + std::string(".txt")), std::string(" ")));;
+            std::shared_ptr<scls::XML_Text_Base> file_content = scls::xml(window_struct()->balises_shared_ptr(), scls::format_string_break_line(scls::read_file(assets + std::string("/creations/") + creation_name + std::string(".txt")), std::string(" ")));;
             file_content.get()->replace_balise_by_name("h3", "h4");file_content.get()->replace_balise_by_name("h2", "h3");
             file_content.get()->replace_balise_by_name("important", "span class=\"important\"");
             utf_8_symbol_xml(file_content, true);
             __saasf_images(needed_replica.get(), file_content, needed_replica.get()->export_path(path), file_name_complete);
             scls::Replica_File_Variable_Element* current_part = needed_file.get()->variable_list(std::string("explaination_parts[]"))->new_element<scls::Replica_File_Variable_Element>();
-            std::shared_ptr<scls::__XML_Text_Base> title = file_content.get()->remove_balise_by_name("h1");
+            std::shared_ptr<scls::XML_Text_Base> title = file_content.get()->remove_balise_by_name("h1");
             if(title.get() != 0){current_part->set_variable_value(std::string("explaination_title"), title.get()->text());}
             current_part->set_variable_value(std::string("explaination_content"), scls::format_string_from_plain_text(file_content.get()->full_text()));
         }

@@ -1163,7 +1163,7 @@ namespace pleos {
 
         int x = window_struct()->mouse_x() - redaction_part->x_in_absolute_pixel();
         int y = (window_struct()->window_height() - window_struct()->mouse_y()) - redaction_part->y_in_absolute_pixel();
-        std::shared_ptr<scls::__XML_Text_Base> current_xml = redaction_part->text_clicked_at_position(x, y);
+        std::shared_ptr<scls::XML_Text_Base> current_xml = redaction_part->text_clicked_at_position(x, y);
         if(current_xml.get() != 0) {
             // Link balise
             if(current_xml.get()->xml_balise_name() == std::string("a")) {

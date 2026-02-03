@@ -33,32 +33,7 @@
 // The namespace "pleos" is used to simplify the all.
 namespace pleos {
 
-	// Studies precisely a function
-	void study_function(scls::__Formula* formula, std::string* redaction) {
-		(*redaction) += std::string("<p>Étudions la forme ") + formula->to_std_string(0) + std::string(". ");
-		std::shared_ptr<Function_Studied> function = Function_Studied::new_function_studied_shared_ptr(*formula);
-
-		(*redaction) += std::string("Commençons par étudier l'ensemble de définition. ");
-		pleos::function_definition_set(function.get(), redaction);
-
-		(*redaction) += std::string("</br>");
-		(*redaction) += std::string("Ensuite, étudions les racines. ");
-		pleos::solve_equation(function.get(), redaction);
-
-		(*redaction) += std::string("</br>");
-		(*redaction) += std::string("Ensuite, étudions la dérivée de cette fonction. ");
-		pleos::function_derivation(function.get(), redaction);
-
-		(*redaction) += std::string("</br>");
-		(*redaction) += std::string("Ensuite, étudions la primitive de cette fonction. ");
-		pleos::function_antiderivation(function.get(), redaction);
-
-		(*redaction) += std::string("</br>");
-		(*redaction) += std::string("Ensuite, étudions la représentation graphique de cette fonction.</p>");
-		(*redaction) += std::string("<graphic><function expression=\"") + formula->to_std_string(0) + std::string("\"></graphic>");
-	}
-
-    // Do a bac subject
+	// Do a bac subject
     void bac(std::string path) {
         // Asserts
         while(path.size() > 0 && (path.at(path.size() - 1) == '/' || path.at(path.size() - 1) == '\\')){path = path.substr(0, path.size() - 1);}

@@ -257,6 +257,36 @@ Maintenant, vérifions la présence de chaque opposé de chaque élément de "2Z
 Chaque élément possède bien un opposé, dans "2Z".
 Finalement, nous pouvons très facilement démontrer que le neutre de "(Z, +)", 0, appartient à "2Z", car "2 * 0 = 0".
 Donc, <span class="important">"2Z" est un sous-groupe de "G"</span>.
+D'ailleurs, <span class="important">cette démonstration marche pour tout "n" supérieur à 1, et "nZ" est un sous-groupe de "G"</span> (<a href="demo">démontré ici</a>).
+</p>
+<p>
+Dans un groupe, il est possible d'utiliser un sous-groupe de plusieurs manières possibles.
+Prenons un exemple : le sous-groupe "4Z" sur "(Z, +)" est constitué de 0, 4, 8, 12...
+Or, il est théoriquement possible de définir quelque chose d'assez proche à un groupe, sous la forme 1, 5, 9, 13..., ce qui demande donc de modifier la loi, en ajoutant une sorte de "+ 1" quelque part : on garde la stabilité et l'opposé, il manque juste l'élément neutre.
+Cependant, il existe un moyen de représenter ce genre d'opérations dans le cas d'un élément précis : les classes à gauches (et à droites) d'un élément suivant un sous-groupe.
+<span class="important"><definition name="algebra_subgroup-class"></span>.
+Ici, la différence entre "gauche" et "droite" représente le fait que, dans certains groupes, l'opération n'est pas commutative (si elle l'est, alors les classes à gauche et à droite sont les mêmes).
+En fait, dans notre ensemble de tout à l'heure sous la forme 1, 5, 9, 13, on prend juste tous les éléments du groupe de départ "4Z", et on leur additionne "1" : c'est la classe à gauche (et à droite) de 1 suivant "4Z".
+Une classse à gauche, puis à droite, d'un élément "a" d'un sous-groupe "H" de "G" (avec un loi de composition notée ".") se note "aH" pour la classe à gauche (et "Ha" pour la classe à droite), et se définit ainsi :
+</p>
+<math>aH = {g <min> G, <mexists> h <min> H, g = a . h}</math></br>
+<math>Ha = {g <min> G, <mexists> h <min> H, g = h . a}</math>
+<p>
+En plus de ça, <span class="important">on peut aussi étudier l'ensemble de toutes les classes possibles (et donc, formées de tous les "a" possibles) que l'on peut formé dans un groupe</span>.
+Pour un sous-groupe "H" de "G", l'ensemble de ces classes à gauche, puis à droite, est notée avec un trait de fraction, orienté selon le "gauche" ou "droite" :
+</p>
+<math>G / H = {p <min> P(G), <mexists> a <min> G, p = aH}</math></br>
+<math>H \ G = {p <min> P(G), <mexists> a <min> G, p = Ha}</math>
+<p>
+Essayons d'obtenir l'ensemble des classes à gauche de "4Z" (qui est confondu avec celui des classes à droite, car "(Z, +)" est commutatif), en plus de 1, 5, 9, 13,...
+Dans "4Z", on peut aussi obtenir 2, 6, 10, 14... en ajoutant 2, et même 3, 7, 11, 15... en ajoutant 3.
+Or, pour le prochain, 4, 8, 12, 16..., on retrouve juste une partie de "4Z".
+Pour celui qui est le prochain... du prochain, on retrouve une partie de "4Z" auquelle on ajoute 1.
+Ce sera la même pour les autres, seuls les premiers seront comptabilisés : l'ensemble des classes à gauches et à droites possibles a un cardinal de 4.
+En fait, <span class="important">l'ensemble des classes à gauches et à droites possibles de "nZ" a un cardinal de n</span>.
+Quelque chose d'important : <span class="important">l'ensemble des classes à gauches d'un sous-groupe a le même cardinal que l'ensemble des classes à droite de ce sous-groupe</span>.
+Avec ce concept, on peut en définir un autre assez similaire : l'indice du sous-groupe.
+<span class="important"><definition name="algebra_subgroup-index"></span>.
 </p>
 
 <h3>Les groupes symétriques</h3>

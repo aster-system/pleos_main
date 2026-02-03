@@ -32,6 +32,25 @@ Or, nous l'avons démontré, <a href="demo-1#1_2_1_0">dans le chapitre 1, propos
 Donc, (N, +) est bien une structure algébrique.
 </p>
 
+<h4>2.0.1.1</h4>
+<p>
+Démontrons que, pour tout "n" appartenant à "N" supérieur à 1, "nZ" est un sous-groupe (additif) du groupe additif "(Z, +)".
+Déjà, vérifions si "nZ" est stable sur l'addition.
+</p>
+<math><mforall>a, b <min> nZ, <mexists> c, d, e <min> Z, [a = n * c, b = n * d, a + b = e]</math></br>
+<math><mimp>e = a + b = n * c + n * d = n * (c + d)</math></br>
+<math><mimp><mexists> f <min> Z, [f = c + d, e = n * f] <mimp> e <min> nZ</math>
+<p>
+Comme nous le constatons, toute somme d'éléments de "nZ" forme un élément de "nZ".
+Maintenant, vérifions la présence de chaque opposé de chaque élément de "nZ".
+</p>
+<math><mforall>a <min> nZ, <mexists> b, c <min> Z, [a = n * b, a + c = 0]</math></br>
+<math><mimp>n * b + c = 0 <mimp> n * b = -c <mimp> n * -b = c <mimp> c <min> nZ</math>
+<p>
+Chaque élément possède bien un opposé dans "nZ".
+Toutes les conditions sont remplies, les groupes "nZ" sont des sous-groupes du groupe additif "(Z, +)".
+</p>
+
 
 
 <h2>L'arithmétique des nombres rationnels</h2>
