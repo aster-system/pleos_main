@@ -11,6 +11,7 @@
     <content name="bigger_equal">un nombre entier naturel "a" est dit supérieur ou égal à un nombre entier naturel "b" si "a" est supérieur à "b" ou si "a" est égal à "b"</content>
     <content name="division">une division entre deux nombres entiers naturels représente une opération entre deux nombres entiers naturels "a" (nommée le "diviseur") et "b" (nommé le dividende), donnant comme valeur la valeur dont il faut multiplier "b" pour obtenir "a"</content>
     <content name="multiplication">une multiplication entre deux nombres entiers naturels représente une opération entre deux nombres entiers naturels "a" et "b", donnant comme valeur la valeur partant de "a" obtenue après la répétition de "b" fois l'opération d'addition de "a" avec lui même</content>
+    <content name="power">une puissance entre deux nombres entiers naturels représente une opération entre deux nombres entiers naturels "a" et "b", donnant comme valeur la valeur partant de "a" obtenue après la répétition de "b" fois l'opération de multiplication de "a" avec lui même</content>
     <content name="soustraction">une soustraction entre deux nombres entiers naturels représente une opération entre deux nombres entiers naturels "a" et "b", donnant comme valeur la valeur partant de "a" obtenue après la répétition de "b" l'application "prédécesseur"</content>
 </new_definition>
 <new_definition name="rational_number">

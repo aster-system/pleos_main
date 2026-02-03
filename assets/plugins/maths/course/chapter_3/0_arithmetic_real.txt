@@ -99,3 +99,21 @@ Donc, elle est associative, admet un neutre, chaque élément a un inverse et el
 Comme pour dans "Q", soustraire "b" à "a" revient à additionner "-b" à "a".
 </p>
 <math><mforall>a, b, c <min> R, c = a - b <mequi> c = a + (-b)</math>
+<p>
+De plus, <span class="important">"R" possède bel et bien une opération de multiplication, avec les mêmes propriétés que dans "Q"</span>.
+Comme pour "N", "Z" et "Q", opérer deux nombres rationnel / entier naturel / relatif écrit dans "R" revient à opérer deux nombres rationnel / entier naturel / relatif relatifs tout cours.
+Dans "R", l'opération est définie comme cela :
+</p>
+<math><mforall>a, b <min> R <mequi> [<mexists> A, B, C, D <min> P(Q) <mand> a = (A, B) <mand> b = (C, D)]</math></br>
+<math> <mexists>h, h = a * b <mequi> [<mexists> E, F <min> P(Q), h = (E, F), <mforall> f <min> F, <mforall>c <min> A, <mforall> d <min> B, f <mgt> c * d <mand> <mforall> e <min> E, <mforall> f <min> F, e <mlt> f]</math></br>
+<p>
+Comme pour l'addition, cette démonstration est vraiment peu élégante : nous ne l'utiliserons que pour les démonstrations obligatoires.
+Cependant, comme elle utilise directement la démonstration de la multiplication dans "Q", ces démonstrations seront assez simples à déduire.
+La multiplication de tout nombre réel donne un autre nombre réel (ce qui est assez trivial, puisque "E" et "F" sont des parties de "Q", et qu'ils sont complémentaires par définition).
+En fait, <span class="important">la multiplication dans "R" permet de former un monoïde</span>.
+En effet, on a toujours un problème : 0 n'a pas d'inverse par cette opération.
+Or, comme dans "Q", <span class="important">la multiplication dans "R*" permet de former un groupe abélien</span>.
+Donc, elle est associative, admet un neutre, chaque élément a un inverse et elle est commutative (<a href="demo">démontré ici</a>).
+Comme pour dans "Q", diviser "b" (non nul) à "a" revient à multiplier l'inverse de "b" à "a".
+</p>
+<math><mforall>a, b, c <min> R, c = a / b <mequi> c = a * <mfrac><mi>1</mi><mi>b</mi></mfrac></math>

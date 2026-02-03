@@ -283,7 +283,7 @@ Dans "4Z", on peut aussi obtenir 2, 6, 10, 14... en ajoutant 2, et même 3, 7, 1
 Or, pour le prochain, 4, 8, 12, 16..., on retrouve juste une partie de "4Z".
 Pour celui qui est le prochain... du prochain, on retrouve une partie de "4Z" auquelle on ajoute 1.
 Ce sera la même pour les autres, seuls les premiers seront comptabilisés : l'ensemble des classes à gauches et à droites possibles a un cardinal de 4.
-En fait, <span class="important">l'ensemble des classes à gauches et à droites possibles de "nZ" a un cardinal de n</span>.
+En fait, <span class="important">l'ensemble des classes à gauches et à droites possibles de "nZ" a un cardinal de n</span> (<a href="demo">démontré ici</a>).
 Quelque chose d'important : <span class="important">l'ensemble des classes à gauches d'un sous-groupe a le même cardinal que l'ensemble des classes à droite de ce sous-groupe</span>.
 Avec ce concept, on peut en définir un autre assez similaire : l'indice du sous-groupe.
 <span class="important"><definition name="algebra_subgroup-index"></span>.
@@ -303,6 +303,31 @@ Généralement, on le note avec la lettre "S" et le nom de l'ensemble "E".
 Il existe un autre concept très proche (et très lié) à ces groupes symétriques : les groupes de permutations.
 <span class="important"><definition name="symmetric_group-permutation_group"></span>.
 Ce concept permet d'énoncer un théorème très pratique : le théorème de Cayley.
+</p>
+
+<h3>Le groupe additif Z/nZ</h3>
+<p>
+En arithmétique des nombres entiers naturels, la théorie des groupes est très utilisée pour beaucoup de résultats.
+Le meilleur exemple est le groupe "(Z/nZ, +)".
+<span class="important"><definition name="algebra_group_znz"></span>.
+En d'autres termes, <span class="important">il s'agit d'un groupe définit sur des restes de divisions euclidiennes par "n"</span>.
+Ici, la notation utilisée "Z/nZ" permet de savoir que nous quotientons "Z" par son sous-groupe additif "nZ" (et donc, où l'on découpe "Z" comme les classes à gauches de "nZ", et donc comme tous les "a" différents dans la formule "a + b * n").
+Pour noter les classes d'équivalences, nous allons les noter comme la classe d'équivalence de l'élement entre "0" et "n", pour faciliter les calculs.
+</p>
+<math>Z/nZ = {[0], [1], ..., [n - 1]}</math></br>
+<math>Z/5Z = {[0], [1], [2], [3], [4]}</math>
+<p>
+Il existe une notation précise pour signifier que deux nombres "a" et "b" sont dans une même classe d'équivalence dans "Z/nZ" : <span class="important">on dit que "a" est congru à "b" modulo "n"</span>.
+Bien qu'on essaye d'obtenir le "b" le plus simple possible, on peut aussi en obtenir un plus complexe si besoin.
+La notation hérite directement du concept de relation d'équivalence.
+</p>
+<math>a <mequiv> b [n]</math></br>
+<math>81 <mequiv> 1 [5]</math>
+<p>
+Cet ensemble est bien un groupe abélien (<a href="demo">démontré ici</a>).
+En fait, <span class="important">l'intêrêt de ce groupe est de pouvoir trouver des restes facilement après une addition</span>.
+En effet, <span class="important">additionner deux nombres donne un résultat dans la même classe d'équivalence que celle de la somme de l'élément le plus simple de leur classe d'équivalence</span>.
+Cette propriété se déduit directement de la stabilité de cet ensemble avec l'addition.
 </p>
 
 

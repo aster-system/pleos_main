@@ -176,6 +176,27 @@ De plus, tous les multiples d'un certain nombre entier naturel "n" forment un en
 </p>
 
 <p>
+La troisième opération la plus élémentaire entre deux nombres entiers naturels est la puissance.
+D'un point de vue rigoureux, <span class="important"><definition name="natural_number-power"></span>.
+La notation la plus simple utilise le symbôle "^" petit chapeau.
+Cependant, la notation habituelle consiste à marquer le deuxième opérande en exposant du premier (c'est pour cela qu'on parle généralement d'exposant).
+</p>
+<math><mforall> n <min> N, n ^ 0 = <mi>n</mi><msup>0</msup> = 1</math></br>
+<math><mforall> n <min> N, n ^ 1 = <mi>n</mi><msup>1</msup> n</math></br>
+<math><mforall> n, a <min> N, n ^ successeur(a) = <mi>n</mi><msup>successeur(a)</msup> = (n ^ a) * n</math></br>
+<p>
+Comme pour l'addition et la multiplication, cette définition est une définition un peu complexe pour parler de la puissance comme nous la connaissons tous.
+</p>
+<math>s = <mi>successeur(successeur(0))</mi><mo>^</mo><mi>successeur(successeur(0))</mi></math></br>
+<math>s = <mi>successeur(successeur(successeur(successeur(0))))</mi></math></br>
+<math><mi>2</mi><mo>^</mo><mi>2</mi><mo>=</mo><mi>2</mi><msup>2</msup><mo>=</mo><mi>4</mi></math>
+<p>
+Pour tout nombre entier naturel, <span class="important">obtenir la puissance d'un nombre entier naturel par un autre donnera toujours comme résultat un nombre entier naturel</span> (<a href="demo">démontré ici par récurrence</a>).
+Par définition, pour tout nombre entier naturel, élever un nombre à la puissance "0" donne "1".
+Toujours par définition, dans le cas où l'un des deux nombres est 1 (et ou aucun des nombres n'est 0), <span class="important">le résultat de l'opération donne le nombre qui n'est pas 1 (ou 1 si les deux nombres sont 1)</span>.
+</p>
+
+<p>
 De plus, nous pouvons définir deux relations d'ordres précises dans l'ensemble des nombres entiers naturels : supérieur et inférieur.
 <span class="important"><definition name="natural_number-bigger"></span>.
 Dans ce cas, "b" est dit strictement inférieur à "a".

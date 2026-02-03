@@ -51,6 +51,89 @@ Chaque élément possède bien un opposé dans "nZ".
 Toutes les conditions sont remplies, les groupes "nZ" sont des sous-groupes du groupe additif "(Z, +)".
 </p>
 
+<h4>2.0.1.2</h4>
+<p>
+Démontrons que, pour tout "n" appartenant à "N" supérieur à 1, l'indice du sous-groupe "nZ" (que nous noterons "H") dans le groupe additif "(Z, +)".
+Exprimons "nZ".
+</p>
+<math><mforall> b <min> Z, b <min> H <mequi> [<mexists> c <min> Z, b = c * n]</math>
+<p>
+Exprimons la classe à gauche de "a" suivant "H", pour tout "a" positif dans "Z".
+</p>
+<math><mforall>a <min> N, <mforall>d <min> Z, d <min> aH <mimp> [<mexists> e <min> nZ, d = a + e = a + c * n]</math>
+<p>
+Si "a" est inférieur à "n", alors on ne peut pas simplifier l'expression de "d".
+Dans ce cas, pour tout "a" (inférieur à "n") différent, il existe un unique "d".
+Donc, il existe au moins "n" classes dans l'ensemble des classes à gauche.
+</p>
+<math>a <mlt> n <mimp> [<mforall> f <min> N, aH = fH <mequi> a = f]</math>
+<p>
+Si "a" est supérieur ou égal à "n", on peut décomposer "c", pour revenir à une classe d'élément inférieure à "n".
+Donc, on ne rajoute pas de nouvelles classes dans ce cas là.
+Si cette décomposition permet de se ramener à un "a" (ou, dans l'exemple qui suit, "g") plus petit que "n", alors on se ramène au cas d'avaant.
+Sinon, on recommence le procédé.
+</p>
+<math>a <mgt> n <mimp> [<mexists>g <min> N, <mexists> h <min> Z, a + c * n = (a - n) + (c + 1) * n = g + h * n] <mequi> [<mi>On recommence</mi> si g <mlt> n]</math>
+<p>
+Dans tous les cas où "a" appartient à "N", alors on obtient "n" classes différentes.
+Si "a" est inférieur à "0", alors on applique le même principe, mais on ne soustrait pas "n" à "a", mais on l'ajoute.
+Dans ce cas, on enlève "1" à "c".
+Comme pour en haut, on ne crée pas de nouvelle classe.
+Si ce nombre reste négatif, on réitère l'opération.
+Sinon, on se retrouve dans le cas où "a" est plus grand que "n".
+</p>
+<math>a <mlt> 0 <mimp> [<mexists>g, h <min> Z, a + c * n = (a + n) + (c - 1) * n = g + h * n] <mequi> [<mi>On recommence</mi> si g <mlt> 0]</math>
+<p>
+Dans tous les cas, on se retrouve aveec "n" classes d'éléments suivant H.
+Donc, l'ensemble des classes à gauche suivant "nZ" dans "(Z, +)" a pour cardinal "n".
+</p>
+
+<h4>2.0.1.3</h4>
+<p>
+Démontrons que le magma "(Z/nZ, +)" est un groupe abélien.
+Déjà, vérifions que "Z/nZ" est stable par l'addition.
+</p>
+<math><mforall>a, b <min> Z/nZ, <mexists> c, d <min> N <mand> c <mlt> n <mand> d <mlt> n, <mexists> e, f <min> Z, a = c + e * n <mand> b = d + f * n</math></br>
+<math>a + b = c + e * n + d + f * n = (c + d) + (e + f) * n</math>
+<p>
+Or, rien n'empêche "c + d" à être supérieur à "n".
+Pour être sur d'éviter ce problème, comme on sait que "c + d" est inféérieur à "2 * n", alors on peut soustraite "n" à "c + d" si il est trop grand, et enlever "1" à "e + f" pour rééquilibrer le tout.
+</p>
+<math>c + d <mgtequal> n <mequi>((c + d) - n) + ((e + f) - 1) * n</math>
+<p>
+Dans tous les cas "c + d" (où "(c + d) - n" si nécessaire) est un nombre entier naturel inférieur à "n", et "e + f" ou "(e + f) - 1" est un nombre entier relatif.
+Donc, le résultat de l'addition est un élément de "Z/nZ".
+Donc, "Z/nZ" est stable par l'addition.
+</p>
+<math><mforall>a, b <min> Z/nZ, a + b <min> Z/nZ</math>
+<p>
+Maintenant, démontrons l'associativité de la loi.
+Pour rappel, on peut exprimer la formule de l'addition, et utiliser des propriétés de "Z" et "N" pour facilement trouver le nécessaire.
+</p>
+<math><mforall>g <min> Z/nZ, <mexists>h <min> N <mand> h <mlt> n, <mexists>i <min> Z, g = h + i * n</math></br>
+<math>(a + b) + g = (c + e * n + d + f * n) + h + i * n = c + e * n + (d + f * n + h + i * n) = a + (b + g)</math>
+<p>
+Donc, l'addition est bien associative sur "Z/nZ".
+Maintenant, prouvons l'existence d'un neutre, qui est "[0]".
+</p>
+<math><mexists> j <min> Z, [0] = j * n</math>
+<math><mforall>k <min> [0], a + k = c + e * n + j * n = c + (e + j) * n = a</math>
+<p>
+Donc, il y a bel et bien un neutre dans "Z/nZ".
+Finalement, trouvons la présence d'un élément opposé pour toute valeur de "Z/nZ".
+</p>
+<math><mforall>l <min> Z/nZ, <mexists>m <min> N <mand> m <ml> n, <mexists>o <min> Z, l = m + o * n</math></br>
+<math>a + l = [0] <mimp> c + e * n + m + o * n = c + m + (e + o) * n = [0] <mimp> c + m = 0 <mimp>c = -m = n - m</mimp></math>
+<p>
+Donc, chaque élément possède bel et bien un inverse.
+Finalement, prouvons la commutativité.
+Encore une fois, utilisons des propriétés de "Z" et "N" pour facilement trouver le nécessaire.
+</p>
+<math>a + b = c + e * n + d + f * n = d + f * n + c + e * n = b + a</math>
+<p>
+Donc l'addition est bel et bien commutative dans "Z/nZ".
+Au final, "(Z/nZ, +)" est bel et bien un groupe abélien.
+</p>
 
 
 <h2>L'arithmétique des nombres rationnels</h2>

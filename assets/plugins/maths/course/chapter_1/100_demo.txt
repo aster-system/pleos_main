@@ -768,9 +768,11 @@ Finalement :
 </p>
 <math><mforall>a, b, c<min>N, (a * b) * c = a * (b * c)</math>
 
+<h3 id="power">L'opération puissance</h3>
+
 <h3 id="secondary">Les opérations secondaires</h3>
 
-<h4>1.2.3.0</h4>
+<h4>1.2.4.0</h4>
 <p>
 Prouvons que si deux nombres entiers naturels "a" et "b" vérifient la relation "a est supérieur ou égal à b", alors "a - b" est un nombre entier naturel.
 </p>
@@ -797,7 +799,7 @@ Donc, par transitivité de l'équivalence :
 
 <h3>Les relations d'ordre</h3>
 
-<h4>1.2.4.0</h4>
+<h4>1.2.5.0</h4>
 <p>
 Prouvons que, dans l'ensemble des nombres entiers naturels, la relation "supérieur ou égale" est une relation d'ordre.
 Rappelons la définition de cette relation :
@@ -828,7 +830,7 @@ Cette relation est donc réflexive, antisymétrique et transitive : elle est une
 En modifiant stratégiquement les "supérieur ou égal" en "inférieur ou égal" et les "a" en "b", alors vous pouvez faire l'exact même démonstration avec la relation "inférieur ou égal".
 </p>
 
-<h4>1.2.4.1</h4>
+<h4>1.2.5.1</h4>
 <p>
 Prouvons que, pour deux nombres entiers naturels "a" et "b", dire que "a est supérieur ou égal à b" équivaut à dire que "successeur(a) est supérieur ou égal à successeur(b)".
 </p>
@@ -868,7 +870,7 @@ En appliquant l'exact même raisonnement, nous pouvons obtenir le même résulta
 Toujours par des équivalences, vous obtenez les mêmes résultats avec "inférieur ou égal", "strictement supérieur" et "strictement inférieur".
 </p>
 
-<h4>1.2.4.2</h4>
+<h4>1.2.5.2</h4>
 <p>
 Prouvons que, pour trois nombres entiers naturels "a", "b" et "c", dire que "a est supérieur ou égal à b" équivaut à dire que "a + c est supérieur ou égal à b + c".
 Procédons par récurrence.
@@ -931,7 +933,7 @@ En appliquant l'exact même raisonnement, nous pouvons obtenir le même résulta
 Toujours par des équivalences, vous obtenez les mêmes résultats avec "inférieur ou égal", "strictement supérieur" et "strictement inférieur".
 </p>
 
-<h4>1.2.4.3</h4>
+<h4>1.2.5.3</h4>
 <p>
 Prouvons que, pour trois nombres entiers naturels "a", "b" et "c" avec "c" supérieur à 0, dire que "a est supérieur ou égal à b" équivaut à dire que "a * c est supérieur ou égal à b * c".
 Procédons par récurrence.

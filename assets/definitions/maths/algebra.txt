@@ -57,6 +57,9 @@
     <content>un groupe est un magma dont la loi de composition interne et associative, admet un neutre, et est inversible</content>
     <content name="abelian">un groupe est dit abélien si sa loi de composition est commutative</content>
 </new_definition>
+<new_definition name="algebra_group_znz">
+    <content>le groupe additif "Z/nZ" est un sous-groupe de "(Z, +)", où l'ensemble du groupe représente "Z" quotienté par la relation d'équivalence qui lie les éléments ayant le même reste par la division euclidienne par "n"</content>
+</new_definition>
 <new_definition name="algebra_group_theory">
     <content>la théorie des groupes représente la discipline qui étudie les groupes algébriques de manière très poussée</content>
 </new_definition>

@@ -41,7 +41,7 @@ int main(int argc, char* argv[]) {
 	//pleos::bac(std::string("tests/"));
 	//pleos::test(std::string("tests/"));
 
-	return pleos::execute("graph", "tests/solve.png", std::vector<std::string>(1, "<node>Top 4</node><node link=0 x=-1 y=1>PSG</node><node link=0 x=1 y=1>RC Lens</node><node link=0 x=-1 y=-1>OM</node><node link=0 x=1 y=-1>OL</node>"));
+	return pleos::execute("stats", "tests/solve.png", std::vector<std::string>(1, "<data name=0 number=398>"));
 
 	/*pleos::Pleos_Window window(900, 600, argv[0]);
     window.load_from_xml("assets/window.txt");
