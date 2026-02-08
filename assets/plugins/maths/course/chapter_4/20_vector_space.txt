@@ -7,5 +7,40 @@
 <h3>Qu'est ce qu'est un espace vectoriel ?</h3>
 <p>
 Grâce aux corps, nous pouvons définir une nouvelle structure algébrique particulèrement utile : l'espace vectoriel.
-
+<span class="important"><definition name="vector_space"></span>.
+Bien que ce concept puisse sembler complexe, il est la base de choses très importantes et basiques en mathématiques.
+Prenons un corps "K" sur un ensemble "A", et un espace vectoriel "E" sur un ensemble "B".
+</p>
+<math>K = (A, +, .)</math>
+<p>
+Dans ce cas, l'espace vectoriel "E" admet une addition, tel que cette addition forme un groupe abélien sur "B".
+</p>
+<math>(B, +)</math>
+<p>
+En suite, il existe une loi externe à gauche entre un élément de "A" et un élément de "B" vers un élément de "B".
+Généralement, cette loi est notée comme une multiplication, avec généralement un "*".
+</p>
+<math><mforall>a <min> A, <mforall>b <min> B, <mexists> c <min> B, a * b = c</math>
+<p>
+Attention : <span class="important">il est impossible d'utiliser cette loi entre deux éléments de "B", seulement entre un élément de "A" et un élément de "B"</span>.
+Cependant, il est possible d'utiliser cette loi sur une opération entre des élements de "A" qui donnent un nouvel élément de "A", avec une opérations entre des éléments de "B", qui donnent un nouvel élément de "B".
+Cette propriété va nous être très utile pour les propriétés qui suivront.
+Déjà, <span class="important">cette loi est associative, ce qui veut dire qu'opérer deux éléments "a" et "c" de "A" avec la deuxième opération du corps puis utiliser cette opération avec un élément "b" de "B" est égal à opérer "c" et "b", puis "a" au résultat</span>.
+Si l'on considère la deuxième opération du corps comme une multiplication et la loi externe de l'espace vectoriel comme une multiplication aussi, alors cela revient à dire que l'ordre de réalisation des multiplications n'importent pas.
+</p>
+<math><mforall>a, c <min> A, <mforall>b <min> B, (a * c) * b = a * (c * b)</math>
+<p>
+La distributivité à gauche s'écrit comme dans un anneau, à la différence prés qu'il faut faire attention à l'ordre des opérandes pour respecter l'opération :
+</p>
+<math><mforall>a <min> A, <mforall>b, d <min> B, a * (b + d) = a * b + a * d</math>
+<p>
+C'est la même chose pour la distributivité à droite.
+</p>
+<math><mforall>a, c <min> A, <mforall>b <min> B, (a + c) * b = a * b + c * b</math>
+<p>
+Finalement, l'élément neutre du corps pour sa deuxième opération est aussi un élément neutre pour cette opération..*
+</p>
+<math><mforall>b <min> B, <mexists>e <min> A, b * e = b</math>
+<p>
+Si vous avez toutes ces conditions grâce à un corps "K", vous avec un espace vectoriel sur "K".
 </p>

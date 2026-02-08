@@ -80,3 +80,7 @@ Selon les auteurs, tous les corps sont commutatifs, mais nous allons dire ici qu
 L'exemple le plus simple est le corps formé par "Q", et par l'addition et la multiplication sur "Q".
 </p>
 <math>(Q, +, .)</math>
+<p>
+Le corps le plus utile est probablement le corps formé par "R", et par l'addition et la multiplication sur "Q".
+</p>
+<math>(R, +, .)</math>
