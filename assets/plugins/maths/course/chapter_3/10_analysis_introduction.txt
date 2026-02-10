@@ -283,6 +283,14 @@ Donc, on peut reformuler notre expression :
 <p>
 C'est exactement la définition d'une limite à gauche de "- l'infini" en 0 : <span class="important">notre fonction admet une limite à gauche de "- l'infini" en 0</span>.
 </p>
+<p>
+Il est possible de faire un lien très pratique entre les limites de suites et les limites de fonction.
+Déjà, <span class="important">pour toute fonction réelle, si la fonction est définie pour tous les nombres naturels, alors il existe une restriction de cette fonction sur "N", en faisant donc une suite</span>.
+Donc, <span class="important">dans ce cas, toute fonction réelle permet de définir une suite ayant le même comportement que la fonction</span>.
+Cela est dû au fait que N soit inclu dans "R".
+Avec ça, on peut prouver quelque chose de très pratique : <span class="important">la limite en "+ l'infini" de la fonction réelle est la même que la limite de la suite qui lui est associée</span>.
+Donc, démontrer des résultats avec des limites en "+ l'infini" de fonctions réelles revient à les démontrer pour les suites associées.
+</p>
 
 <h3>Les comparaisons asymptotiques</h3>
 <p>
@@ -346,4 +354,13 @@ Donc, <span class="important">"w" tend vers "0" en "0" : la fonction "g" est né
 <p>
 Si on avait utilisé notre première fonction "w" (la fonction inverse), notre "w" aurait tendu vers "+ l'infini", ce qui est parfaitement cohérent, mais pas parfaitement égale à cette définition kà, qui est plus forte.
 En plus, on aurait eu un problème si "x = 0" : cette fonction n'a pas ce problème.
+</p>
+
+
+
+<h2>La continuité</h2>
+
+<h3>Qu'est ce qu'est la continuité mathématique ?</h3>
+<p>
+Les fonctions réelles peuvent posséder une propriété assez connue : la continuité.
 </p>

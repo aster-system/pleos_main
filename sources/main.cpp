@@ -41,9 +41,9 @@ int main(int argc, char* argv[]) {
 	//pleos::bac(std::string("tests/"));
 	//pleos::test(std::string("tests/"));
 
-	return pleos::execute("stats", "tests/solve.png", std::vector<std::string>(1, "<data name=0 number=398>"));
+	//return pleos::execute("stats", "tests/solve.png", std::vector<std::string>(1, "<data name=0 number=398>"));
 
-	/*pleos::Pleos_Window window(900, 600, argv[0]);
+	pleos::Pleos_Window window(900, 600, argv[0]);
     window.load_from_xml("assets/window.txt");
     pleos::Hub_Page* hub = window.hub();
     hub->handle_saasf();

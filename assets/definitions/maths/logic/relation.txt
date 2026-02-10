@@ -1,5 +1,7 @@
 <new_definition name="application">
     <content>une application est un objet permettant de lier tous les éléments d'un premier ensemble quelconque (nommé ensemble de départ) vers des éléments d'un autre (ou le même) ensemble (nomme ensemble d'arrivée)</content>
+    <content name="extension">un prolongement d'une application / fonction est une nouvelle application / fonction qui prend comme ensemble de départune extension de l'ensemble de départ de la première application / fonction, comme ensemble d'arrivée une extension de l'ensemble d'arrivée de la première application / fonction, et tous les éléments de l'ensemble de départ de la première application / fonction sont associés au même élément de l'ensemble d'arrivée que dans l'application / fonction de départ</content>
+    <content name="restriction">une restriction d'une application / fonction sur une partie "F" est une nouvelle application / fonction qui prend comme ensemble de départ la partie "F" de l'ensemble de départ de la première application / fonction, le même ensemble d'arrivée que la première application / fonction, et tous les éléments de "F" sont associés au même élément de l'ensemble d'arrivée que dans l'application / fonction de départ</content>
     <content name="rigorous">une application peut se représenter sous la forme d'un ensemble de couples entre un élément de l'ensemble de départ et un élément de l'ensemble d'arrivée, avec un unique couple pour chaque élément de l'ensemble de départ</content>
 </new_definition>
 <new_definition name="bijection">

@@ -410,7 +410,8 @@ C'est la mise en forme littérale de la "compatibilité" des deux groupes.
 <p>
 Avant d'être un type précis de procédure judiciaire, une action de groupe est une opération possible en théorie des groupes.
 <span class="important"><definition name="algebra_group_action"></span>.
-Plus précisément, l'idée est de définir une opération entre un groupe et un ensemble comme l'opération d'un élément du groupe avec un élément de l'ensemble, en utilisant la loi de composition du groupe (et ça, pour tous les éléments de l'ensemble et du groupe).
+Plus précisément, l'idée est de définir une opération entre un groupe et un ensemble comme l'opération d'un élément du groupe avec un élément de l'ensemble (et ça, pour tous les éléments de l'ensemble et du groupe) vers un élément quelconque de l'ensemble.
+D'un point de vue "vocabulaire", on peut dire que "G" opère sur "E", où que "G" agit sur "E".
 Une action de groupe entre un groupe "G" et un ensemble "E" se note généralement comme ceci :
 </p>
 <math>G X E <mto> E, (g, e) <mto> g . e</math>
@@ -421,7 +422,34 @@ Mathématiquement, cela se note comme ça :
 </p>
 <math><mforall>g, h <min> G, <mforall> e <min> E, (g . h) . e = g . (h . e)</math>
 <p>
-De plus, <span class="important">l'élément neutre de "G" doit se comporter comme un élément neutre de "G"</span>.
+De plus, <span class="important">l'élément neutre de "G" doit se comporter comme un élément neutre de l'ensemble "E"</span>.
 Dans le cas où l'élément neutre se note "n", on note ainsi :
 </p>
 <math><mforall> e <min> E, n . e = e</math>
+<p>
+Il existe beaucoup de vocabulaire pour désigner différents objets se comportant différement via une action de groupe.
+Commençons par le concept d'orbite.
+<span class="important"><definition name="algebra_group_action-orbit"></span>.
+Il s'agit d'une version plus "grande" des antécédents par l'action de groupe.
+Généralement, cet ensemble est noté "grand O de x", et se définit comme ça 
+</p>
+<math>O<msub>x</msub> = {y <min> E, <mexists> g <min> G, g . y = x}</math>
+<p>
+De façon similaire, on peut aussi parler de stabilisateur d'un élément du groupe.
+<span class="important"><definition name="algebra_group_action-stabilisator"></span>.
+Il s'agit donc des éléments du groupe qui ne changent pas "x".
+Généralement, cet ensemble est noté "St de x", et se définit comme ça 
+</p>
+<math>St<msub>x</msub> = {g <min> G, g . x = x}</math>
+<p>
+D'ailleurs, <span class="important">tous les stabilisateurs possibles forment un sous-groupe de "G"</span> (<a href="demo">démontré ici</a>).
+On peut aussi modifier cette définition pour obtenir un ensemble d'élément de "g" qui ne modifient pas tout un ensemble de "E".
+C'est la même chose que la définition à un élément à la différence prêt que l'on définit ici avec une partie de "E".
+</p>
+<p>
+Finalement, on peut obtenir la "réciproque" de ce concept, grâce aux points fixes.
+<span class="important"><definition name="algebra_group_action-fixed_point"></span>.
+</p>
+Généralement, cet ensemble est noté "fixe de g", et se définit comme ça 
+</p>
+<math>Fix<msub>g</msub> = {x <min> A, g . x = x}</math>

@@ -89,7 +89,10 @@
     <content>le centre d'une structure algébrique représentent l'ensemble des éléments de cette structure commutant avec tous les autres éléments</content>
 </new_definition>
 <new_definition name="algebra_group_action">
-    <content>une action de groupe est un moyen d'opérer un groupe avec un ensemble "E", de tel manière que tous les résultats de ces opérations appartiennent à "E"</content>
+    <content>une action de groupe est un moyen d'opérer un groupe avec un ensemble "E", de tel manière que tous les résultats de ces opérations (entre un élément du groupe et un élément de "E") appartiennent à "E"</content>
+    <content name="fixed_point">le point fixe d'un élément "g" d'un groupe "G" opérant sur un ensemble "E" représente l'ensemble des éléments de "E" tel que opérer "g" par ces éléments ne modifie pas ces éléments (et donc que "g" est dans le stabilisateur de l'élément)</content>
+    <content name="orbit">le stabilisateur d'un élément "x" d'un ensemble "E" sous l'action d'un groupe représente l'ensemble des éléments de "G" tel qu'opérer ces éléments de "G" et "x" donne "x" sous l'action du groupe associée</content>
+    <content name="stabilisator">le stabilisateur d'un élément "x" d'un ensemble "E" sous l'action d'un groupe représente l'ensemble des éléments de "G" tel qu'opérer ces éléments de "G" et "x" donne "x" sous l'action du groupe associée</content>
 </new_definition>
 <new_definition name="algebra_ideal">
     <content>un idéal I d'un anneau représente un sous-groupe de son groupe additif, où la multiplication de chacun de ces éléments par un élément du corps de base donne un élément de I (l'idéal est dit stable par la multiplication)</content>

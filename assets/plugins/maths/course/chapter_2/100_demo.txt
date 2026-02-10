@@ -135,6 +135,43 @@ Donc l'addition est bel et bien commutative dans "Z/nZ".
 Au final, "(Z/nZ, +)" est bel et bien un groupe abélien.
 </p>
 
+<h3>Les propriétés basiques des groupes</h3>
+
+<h4>2.0.2.0</h4>
+<p>
+Démontrons que, si un groupe "G" opère sur un ensemble "E", alors tous les stabilisateurs possibles dans "E" forment chacun un sous-groupe de "G".
+Déjà, posons un groupe "G" sur un ensemble "A" de loi de composition interne ".", un ensemble "E", et une action de "G" sur "E".
+</p>
+<math>G = (A, .)</math></br>
+<math>G X E <mto> E</math>
+<p>
+Exprimons les stabilisateurs de tous les éléments "x" de "E".
+</p>
+<math><mforall> x <min> E, St<msub>x</msub> = {g <min> G, g . x = x}</math>
+<math><mforall>h, i <min> St, <mforall> x <min> E, h . x = x <mand> i . x = x</math>
+<p>
+On peut utiliser ces deux valeurs dans une même identité.
+</p>
+<math>h . (i . x) = h . x = (h . i) . x = x</math>
+<p>
+On voit que "(h . i)" ne modifie pas "x" : il est un élément du stabilisateur nécessaire.
+Comme "h" et "i" appartiennent à "G", alors l'associativité et le neutre sont vérifié (le neutre de "G" se comporte comme un neutre de "E", et fait donc partie du stabilisateur).
+Notons "n" le neutre de "G"
+</p>
+<math>n . x = x</math>
+<p>
+Par définition, "n" est égal à l'opération de "h" (qui, pour rappel, fait partie du stabilisateur) et de son inverse.
+Grâce aux propriétés des actions de groupes, on peut en obtenir la décomposition suivante :
+</p>
+<math>n . x = (<mi>h</mi><msup>-1</msup> . h) . x = <mi>h</mi><msup>-1</msup> . (h . x) = <mi>h</mi><msup>-1</msup> . x = x</math>
+<p>
+Donc, pour tout "h" dans le stabilisateur de "x", l'inverse de "h" est aussi dans ce stabilisateur.
+Bien évidemment, cela ne marche pas si "h" n'est pas dans le stabilisateur (dans ce cas, on ne pourrait pas simplifier "h . x" en "x").
+Donc, cet ensemble est stable par la loi de composition, cette loi est associative, admet un neutre et chaque élément admet un inverse.
+Donc, chaque stabilisateur dans "E" est un sous-groupe de "G".
+</p>
+
+
 
 <h2>L'arithmétique des nombres rationnels</h2>
 

@@ -296,3 +296,115 @@ Donc, "m" doit être supérieur à la racine de "x" divisé par "a" (qui est un 
 Donc, pour tout nombre réel "x" inférieur à 0, il existe une valeur "b" tel que, pour toute valeur "m" de la suite supérieure à "b", "u(m)" est inférieur à "x".
 Donc, par définition de la limite, la suite représentant le produit de "n" par un nombre "a" négatif avec une puissance positive tend vers "- l'infini".
 </p>
+
+<h3>Les limites de fonctions usuelles</h3>
+<h4>3.1.2.0</h4>
+<p>
+Montrons que la limite en "+ l'infini" d'une fonction réelle est la même que la limite de la suite qui lui est associée.
+Commençons par le cas où la limite est une limite finie.
+Posons une fonction "f" admettant une limite "v" en "+ l'infini".
+</p>
+<math>f : A <mto> B, a <mto> f(b)</math></br>
+<math>lim f(a) = v</math>
+<p>
+Exprimons la définition de la limite.
+</p>
+<math><mforall> x <mgt> 0, <mexists> a <min> R, <mforall> b <min> R, [b <mgt> a <mimp> |f(b) - v| <mlt> x]</math>
+<p>
+Or, on sait que la partie entière de "a" auquelle on ajoute "1" est strictement supérieure à "a".
+</p>
+<math><mforall> a <min> R, ent(a) + 1 <mgt> a</math>
+<p>
+Appelons "c" la valeur partie entière de "a" auquelle on ajoute "1".
+Notre définition de la limite implique donc une définition plus précise :
+</p>
+<math><mforall> x <mgt> 0, <mexists> c <min> N, <mforall> b <min> R, [b <mgt> c <mimp> |f(b) - v| <mlt> x]</math>
+<p>
+Nous savons aussi que tout nombre réel "b" supérieur à "a" permet de faire fonctionner la limite.
+Donc, c'est la même chose pour tout nombre entier naturel "d" supérieur à "a", car "N" est une partie de "R".
+</p>
+<math><mforall> x <mgt> 0, <mexists> c <min> N, <mforall> d <min> N, [d <mgt> c <mimp> |f(d) - v| <mlt> x]</math>
+<p>
+Appelons "u" la suite associé à la fonction "f".
+Cette suite représente toutes les valeurs de "f" quand l'antécédent est un nombre entier naturel.
+Or, c'est le cas dans "f(d)" : il est parfaitement égal à "u(d)".
+</p>
+<math><mforall> x <mgt> 0, <mexists> c <min> N, <mforall> d <min> N, [d <mgt> c <mimp> |u(d) - v| <mlt> x]</math>
+<p>
+Or, cela est exactement la définition d'une limite de suite vers "v" en "+ l'infini".
+Donc, "u" tend bel et bien vers "v".
+Donc, la suite associée à fonction réelle tendant vers "v" en "+ l'infini" tend aussi vers "v" en "+ l'infini".
+</p>
+<p>
+Maintenant, traitons le cas où la limite est "+ l'infini".
+Posons une fonction "f" admettant une limite "+ l'infini" en "+ l'infini".
+</p>
+<math>f : A <mto> B, a <mto> f(b)</math></br>
+<math>lim f(a) = + <minf></math>
+<p>
+Exprimons la définition de la limite.
+</p>
+<math><mforall> x <mgt> 0, <mexists> a <min> R, <mforall> b <min> R, [b <mgt> a <mimp> f(b) <mgt> x]</math>
+<p>
+Or, on sait que la partie entière de "a" auquelle on ajoute "1" est strictement supérieure à "a".
+</p>
+<math><mforall> a <min> R, ent(a) + 1 <mgt> a</math>
+<p>
+Appelons "c" la valeur partie entière de "a" auquelle on ajoute "1".
+Notre définition de la limite implique donc une définition plus précise :
+</p>
+<math><mforall> x <mgt> 0, <mexists> c <min> N, <mforall> b <min> R, [b <mgt> c <mimp> f(b) <mgt> x]</math>
+<p>
+Nous savons aussi que tout nombre réel "b" supérieur à "a" permet de faire fonctionner la limite.
+Donc, c'est la même chose pour tout nombre entier naturel "d" supérieur à "a", car "N" est une partie de "R".
+</p>
+<math><mforall> x <mgt> 0, <mexists> c <min> N, <mforall> d <min> R, [d <mgt> c <mimp> f(d) <mgt> x]</math>
+<p>
+Appelons "u" la suite associé à la fonction "f".
+Cette suite représente toutes les valeurs de "f" quand l'antécédent est un nombre entier naturel.
+Or, c'est le cas dans "f(d)" : il est parfaitement égal à "u(d)".
+</p>
+<math><mforall> x <mgt> 0, <mexists> c <min> N, <mforall> d <min> R, [d <mgt> c <mimp> u(d) <mgt> x]</math>
+<p>
+Or, cela est exactement la définition d'une limite de suite vers "+ l'infini" en "+ l'infini".
+Donc, "u" tend bel et bien vers "+ l'infini".
+Donc, la suite associée à fonction réelle tendant vers "+ l'infini" en "+ l'infini" tend aussi vers "+ l'infini" en "+ l'infini".
+</p>
+<p>
+Finalement, traitons le cas où la limite est "- l'infini".
+Posons une fonction "f" admettant une limite "- l'infini" en "+ l'infini".
+</p>
+<math>f : A <mto> B, a <mto> f(b)</math></br>
+<math>lim f(a) = - <minf></math>
+<p>
+Exprimons la définition de la limite.
+</p>
+<math><mforall> x <mgt> 0, <mexists> a <min> R, <mforall> b <min> R, [b <mgt> a <mimp> f(b) <mlt> -x]</math>
+<p>
+Or, on sait que la partie entière de "a" auquelle on ajoute "1" est strictement supérieure à "a".
+</p>
+<math><mforall> a <min> R, ent(a) + 1 <mgt> a</math>
+<p>
+Appelons "c" la valeur partie entière de "a" auquelle on ajoute "1".
+Notre définition de la limite implique donc une définition plus précise :
+</p>
+<math><mforall> x <mgt> 0, <mexists> c <min> N, <mforall> b <min> R, [b <mgt> c <mimp> f(b) <mlt> -x]</math>
+<p>
+Nous savons aussi que tout nombre réel "b" supérieur à "a" permet de faire fonctionner la limite.
+Donc, c'est la même chose pour tout nombre entier naturel "d" supérieur à "a", car "N" est une partie de "R".
+</p>
+<math><mforall> x <mgt> 0, <mexists> c <min> N, <mforall> d <min> R, [d <mgt> c <mimp> f(d) <mlt> -x]</math>
+<p>
+Appelons "u" la suite associé à la fonction "f".
+Cette suite représente toutes les valeurs de "f" quand l'antécédent est un nombre entier naturel.
+Or, c'est le cas dans "f(d)" : il est parfaitement égal à "u(d)".
+</p>
+<math><mforall> x <mgt> 0, <mexists> c <min> N, <mforall> d <min> R, [d <mgt> c <mimp> u(d) <mlt> -x]</math>
+<p>
+Or, cela est exactement la définition d'une limite de suite vers "- l'infini" en "+ l'infini".
+Donc, "u" tend bel et bien vers "- l'infini".
+Donc, la suite associée à fonction réelle tendant vers "- l'infini" en "+ l'infini" tend aussi vers "- l'infini" en "+ l'infini".
+</p>
+<p>
+Tous les cas sont vérifiés : la limite en "+ l'infini" d'une fonction réelle est la même que la limite de la suite qui lui est associée.
+</p>

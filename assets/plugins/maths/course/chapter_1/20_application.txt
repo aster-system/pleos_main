@@ -32,7 +32,7 @@ Il est très fréquent (voir même, presque tout le temps appliqué) d'appeler u
 <p>
 <span class="important">Le concept de relation est donc un moyen "syntaxique" d'énoncer des proprositions facilement</span>.
 Comme tout objet "syntaxique", <span class="important">la chose la plus importante avec ces relations est la façon dont on l'écrit, mais aussi les propriétés possibles via cette simple écriture</span>.
-Commenceons par une propriété simple : l'arité.
+Commençons par une propriété simple : l'arité.
 <span class="important"><definition name="arity-relation"></span>.
 Dans de très nombreux cas, la relation est dite binaire.
 <span class="important"><definition name="relation_binary"></span>.
@@ -227,6 +227,28 @@ Voici un exemple de diagramme sagittal de fonction :
 <line x_1=-3/2 y_1=0 x_2=3/2 y_2=0 color=black>
 <line x_1=-3/2 y_1=-2 x_2=3/2 y_2=-1 color=black>
 </graphic>
+
+<p>
+Dans les deux cas, nous voyons bien que l'ensemble de départ est très important pour définir une application / fonction.
+Cependant, il est possible de transformer une application / fonction en une autre, en modifiant légèrement sont ensemble de départ grâce à deux concepts : les restrictions et prolongement d'applications / fonctions.
+Pour commencer, <span class="important"><definition name="application-restriction"></span>.
+Comme sont nom le suggère, il s'agit d'une "partie" de l'application / fonction considérée.
+D'un point de vue mathématique, pour une fonction "f" allant de "A" vers "B" et une partie "C" de "A", la restriction de "f" sur "C" que nous noterons "g" se note ainsi :
+</p>
+<math>f : A <mto> B, a <mto> f(a)</math></br>
+<math>g : C <mto> B, c <mto> f(c) = g(c)</math>
+<p>
+En fait, <span class="important">il existe beaucoup de fonctions / applications avec des propriétés précises, que l'on peut utiliser aussi sur leurs restrictions</span>.
+C'est le gros avantage de ce concept.
+Le concept de prolongement est assez similaire, mais à l'opposé.
+<span class="important"><definition name="application-extension"></span>.
+D'un point de vue mathématique, pour une fonction "f" allant de "A" vers "B", une partie "D" de "A" et une extension "E" de "B", le prolongement de "f" que nous noterons "g" se note ainsi :
+</p>
+<math>f : A <mto> B, a <mto> f(a)</math></br>
+<math>g : D <mto> E, c <mto> g(c), <mforall> d <min> D, [d <min> A <mimp> g(c) = f(d)]</math>
+<p>
+Comme pour la restriction, <span class="important">il existe beaucoup de fonctions / applications avec des propriétés précises, que l'on peut utiliser aussi sur leurs prolongement</span>.
+</p>
 
 <h3>Injections, surjections et bijections</h3>
 <p>

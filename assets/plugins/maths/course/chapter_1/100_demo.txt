@@ -201,7 +201,7 @@ Cet ensemble existe donc pour tout ensemble E et F.
 <p>
 Démontrons que dire que "deux objets ont une propriété f similaire" revient à dire que ces deux objets sont reliés par une relation d'équivalence.
 Nous travaillerons dans un ensemble "E", avec une relation quelconque "~", représentant deux objets liés par cette propriété.
-Commenceons par énoncer une propriété "f" quelconque (que nous n'expliciterons pas), représentant un élément d'un autre ensemble quelconque "F".
+Commençons par énoncer une propriété "f" quelconque (que nous n'expliciterons pas), représentant un élément d'un autre ensemble quelconque "F".
 </p>
 <math><mforall> x <min> E, <mexists>a <min> F, f(x) = a</math>
 <p>

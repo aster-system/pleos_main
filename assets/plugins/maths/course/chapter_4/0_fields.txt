@@ -53,7 +53,7 @@ L'exemple le plus simple est l'anneau formé par "Z", et par l'addition et la mu
 </p>
 <math>(Z, +, .)</math>
 
-<h3>Les sous-anneaux</h3>
+<h3>Les sous-anneaux, idéaux et anneaux quotients</h3>
 <p>
 Comme il existe des sous-groupes de groupes, il existe des sous-anneaux d'anneaux.
 <span class="important"><definition name="algebra_subring"></span>.
