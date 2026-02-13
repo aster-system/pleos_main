@@ -28,6 +28,8 @@
 // You should have received a copy of the GNU General Public License along with PLEOS. If not, see <https://www.gnu.org/licenses/>.
 //
 
+#include <chrono>
+
 // Include PLEOS Hub header
 #include "../headers/pleos_hub.h"
 
@@ -37,13 +39,44 @@
 // Init SCLS
 SCLS_INIT
 
+// exec.exe study "3*x*x+5*x-2"
+
+int command(int argc, char* argv[]) {
+	if(argc <= 1){return PLEOS_COMMAND_NOT_ENOUGH_PARAMETERS;};
+
+	// Parameters
+	std::string command_name = argv[1];
+	std::string command_full = command_name;
+	std::vector<std::string> command_parameters = std::vector<std::string>(argc - 2);
+	for(int i = 0;i<argc - 2;i++){
+		command_parameters[i] = argv[2 + i];
+		command_full += std::string(" ") + argv[2 + i];
+	}
+
+	// Execute
+	try {
+	    int error = pleos::execute(command_name, "tests/solve.png", command_parameters);
+        if(error < 0) {
+            std::string timestamp = scls::current_date().to_std_string();
+            scls::append_in_file("tests/log.txt", timestamp + " - Erreur : la commande \"" + command_full + "\" a généré l'erreur " + std::to_string(error) + "\n");
+        }
+        return error;
+	}
+	catch (std::exception* e) {
+	    std::cout << "B " << std::endl;
+	    return PLEOS_COMMAND_INTERNAL_ERROR;
+	}
+	return 0;
+}
+
 int main(int argc, char* argv[]) {
 	//pleos::bac(std::string("tests/"));
 	//pleos::test(std::string("tests/"));
 
-	//return pleos::execute("stats", "tests/solve.png", std::vector<std::string>(1, "<data name=0 number=398>"));
+	//return pleos::execute("study", "tests/solve.png", std::vector<std::string>(1, "^+^+^+^+"));
+	return command(argc, argv);
 
-	pleos::Pleos_Window window(900, 600, argv[0]);
+	/*pleos::Pleos_Window window(900, 600, argv[0]);
     window.load_from_xml("assets/window.txt");
     pleos::Hub_Page* hub = window.hub();
     hub->handle_saasf();
