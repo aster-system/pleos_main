@@ -350,12 +350,33 @@ On peut facilement voir que <span class="important">"D" est une partie de "E" (c
 Il existe une notation pour ces fameux sous-groupes engendrés : <span class="important">un sous-groupe engendré par une partie "F" se note ainsi, avec des sortes de chevrons</span> :
 </p>
 <math>H = <mlang>F<mrang></math>
-
 <p>
 Les parties génératrices représentent des sous-groupes engendrés un peu spéciaux.
 En effet, <span class="important"><definition name="algebra_generating_set-group"></span>.
 </p>
 <math>H = <mlang>F<mrang> = G</math>
+<p>
+En étudiant une partie génératrice d'un groupe, on peut donner des informations utiles sur ce groupe.
+Une des propriétés les plus utiles à étudier est la taille de cette partie génératrice, permettant de définir de nouveaux types de groupes : les groupes monogènes et les groupes cycliques.
+<span class="important"><definition name="algebra_group_monogenous"></span>.
+Donc, avec seulement un élément d'un groupe monogène (ou, encore une fois, son inverse si nécessaire, qui n'appartient pas à la partie génératrice conformément à la définition de cette dernière), on peut générer tous les éléments du groupe en répétant l'opération de ce dernier.
+En fait, <span class="important">le groupe monogène le plus simple est le groupe additif "(Z, +)", qui est généré par "1" et son inverse (-1)</span>.
+</p>
+<math>4 = 1 + 1 + 1 + 1</math></br>
+<math>0 = 1 - 1</math></br>
+<math>-3 = -1 + -1 + -1</math></br>
+<p>
+Ce groupe est infini, cependant il est généralement plus commun de travailler avec des groupes monogènes finis : les groupes cycliques.
+<span class="important"><definition name="algebra_group_cyclic"></span>.
+Ici, <span class="important">le groupe cyclique le plus simple est le groupe additif "(Z/nZ, +)", qui est généré par "1" et son inverse (-1)</span>.
+Par exemple, dans "Z/5Z" :
+</p>
+<math>2 = 1 + 1</math></br>
+<math>7 <mequi> 2 = 1 + 1</math></br>
+<math>0 = 1 - 1</math></br>
+<math>-2 <mequi> 3 = 1 + 1 + 1</math></br>
+
+
 
 <h3>L'ordre d'un groupe / d'un élément de groupe</h3>
 <p>

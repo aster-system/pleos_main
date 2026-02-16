@@ -1,3 +1,7 @@
+<new_definition name="differential_calculus">
+    <content>le calcul différentiel est une branche du calcul infinitésimal où les valeurs infinitésimales servent à étudier les variations de fonctions</content>
+    <content name="fluxions">les fluxions représentent la vitesse à laquelle une fonction monte / descend en un point quelconque</content>
+</new_definition>
 <new_definition name="infinitesimal_calculus">
     <content>le calcul infinitésimal est une branche du calcul mathématique s'intéressant à des calculs s'approchant de plus en plus de certaines valeurs</content>
 </new_definition>

@@ -50,6 +50,9 @@
     <content>un élément est dit neutre par une loi de composition si l'utilisation de la loi sur un autre élément "a" et cet élément donne "a"</content>
 </new_definition>
 
+<new_definition name="algebra_group_cyclic">
+    <content>un groupe est dit cyclique si il est homogène et fini</content>
+</new_definition>
 <new_definition name="algebra_field">
     <content>un corps est un anneau où chaque élement (non-nul) possède un inverse par la deuxième opération</content>
 </new_definition>
@@ -59,6 +62,9 @@
 </new_definition>
 <new_definition name="algebra_group_znz">
     <content>le groupe additif "Z/nZ" est un sous-groupe de "(Z, +)", où l'ensemble du groupe représente "Z" quotienté par la relation d'équivalence qui lie les éléments ayant le même reste par la division euclidienne par "n"</content>
+</new_definition>
+<new_definition name="algebra_group_monogenous">
+    <content>un groupe est dit monogène si il admet une partie génératrice de taille 1 (un singleton)</content>
 </new_definition>
 <new_definition name="algebra_group_theory">
     <content>la théorie des groupes représente la discipline qui étudie les groupes algébriques de manière très poussée</content>
