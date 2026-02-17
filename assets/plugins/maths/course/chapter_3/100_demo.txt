@@ -171,7 +171,7 @@ Donc, la structure algébrique formée par l'ensemble des réels non-nuls et de 
 <h2>Introduction à l'analyse</h2>
 
 <h3>Les espaces métriques</h3>
-<h4>3.0.0.0</h4>
+<h4>3.1.0.0</h4>
 <p>
 Démontrons que la valeur absolue de la différence entre deux nombres réel dans l'ensemble des réels forme un espace métrique.
 Pour cela, démontrons que cet opérateur sur cet ensemble respecte les propriétés d'une "distance".
@@ -408,3 +408,248 @@ Donc, la suite associée à fonction réelle tendant vers "- l'infini" en "+ l'i
 <p>
 Tous les cas sont vérifiés : la limite en "+ l'infini" d'une fonction réelle est la même que la limite de la suite qui lui est associée.
 </p>
+
+<h3>L'arithmétique des limites</h3>
+<h4>3.1.3.0</h4>
+<p>
+Démontrons qu'u dans une fonction "f" représentant la somme d'autres fonctions, la limite de "f" en une valeur représente le produit des limites en cette valeur des fonctions qui constituent "f".
+La démonstration de ce résultat n'est pas si complexe que ça, mais demande une disjonction de cas précise.
+Posons deux fonctions "g" et "h" définies de "R" vers "R", admettant une limite à droite en une valeur finie "a" vers respectivement "v" et "w" finis.
+</p>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <min> ]a, a + b[ <mimp> |g(c) - v| <mlt> x}</math></br>
+<math><mforall> x <min> R*+, <mexists> d <min> R*+, {<mforall> e <min> R, e <min> ]a, a + d[ <mimp> |h(c) - w| <mlt> x}</math>
+<p>
+Procédons à un petit tour de passe-passe : prenons la valeur minimale entre "b" et "d".
+Si "b" est inférieur à "d", alors "b" est un "e", et si "d" est inférieur à "b", alors "d" est un "c" : travailler avec la valeur minimale suffit pour définir "c" et "e".
+Nous nommerons "r" la valeur minimale entre "b" et "d", et nous pouvons simplifier nos limites de "g" et "h".
+</p>
+<math><mforall> x <min> R*+, <mexists> r <min> R*+, {<mforall> s <min> R, s <min> ]a, a + r[ <mimp> |g(s) - v| <mlt> x <mand> |h(s) - w| <mlt> x}</math></br>
+<p>
+Posons maintenant la fonction "f" égale à "g * h".
+On peut bidouiller notre formule précédente pour obtenir une limite de "f".
+</p>
+<math><mforall> x <min> R*+, <mexists> r <min> R*+, {<mforall> s <min> R, s <min> ]a, a + r[ <mimp> 0 <mlt> |g(s) - v| <mlt> x <mand> 0 <mlt> |h(s) - w| <mlt> x <mimp> 0 <mlt> |g(s) - v| * |h(s) - w| <mlt> x * x} <mand> {<munder><mi>lim</mi><mrow><mi>x</mi><mto><mi>a</mi></mrow></munder>((g(s) * -w) + (h(s) * -v)) = 0}</math></br>
+<math>g(s) - v <mgt> 0 <mand> h(s) - w <mgt> 0 <mimp> 0 <mlt> (g(s) - v) * (h(s) - w) <mlt> x * x <mequi> 0 <mlt> g(s) * h(s) - (v * w) + (g(s) * -w) + (h(s) * -v) <mlt> x * x <mequi> f(s) - (v * w) <mlt> x * x <mimp> 0 <mlt> |f(s) - (v * w)| <mlt> x * x</math></br>
+<math>g(s) - v <mgt> 0 <mand> h(s) - w <mlt> 0 <mimp> 0 <mlt> (g(s) - v) * (-h(s) + w) <mlt> x * x <mequi> 0 <mlt> (g(s) - v) * (h(s) - w) * -1 <mlt> x * x <mequi> 0 <mlt> (f(s) - (v * w)) * -1 <mlt> x * x <mimp> |f(s) - (v * w)| <mlt> x * x</math></br>
+<math>g(s) - v <mlt> 0 <mand> h(s) - w <mgt> 0 <mimp> 0 <mlt> (-g(s) + v) * (h(s) - w) <mlt> x * x <mequi> 0 <mlt> (g(s) - v) * (h(s) - w) * -1 <mlt> x * x <mequi> 0 <mlt> (f(s) - (v * w)) * -1 <mlt> x * x <mimp> |f(s) - (v * w)| <mlt> x * x</math></br>
+<math>g(s) - v <mlt> 0 <mand> h(s) - w <mlt> 0 <mimp> 0 <mlt> (-g(s) + v) * (-h(s) + w) <mlt> x * x <mequi> 0 <mlt> (g(s) - v) * (h(s) - w) <mlt> x * x <mimp> 0 <mlt> |f(s) - (v * w)| <mlt> x * x</math></br>
+<p>
+Dans tous les cas, on retrouve la limite de "f" : la limite de "f" en "a" est le produit des limites de "g" et "h" en "a".
+C'est l'exact même chose pour les limites à gauches.
+</p>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <min> ]a - b, a[ <mimp> |g(c) - v| <mlt> x}</math></br>
+<math><mforall> x <min> R*+, <mexists> d <min> R*+, {<mforall> e <min> R, e <min> ]a - d, a[ <mimp> |h(c) - w| <mlt> x}</math>
+<math><mforall> x <min> R*+, <mexists> r <min> R*+, {<mforall> s <min> R, s <min> ]a - r, a[ <mimp> 0 <mlt> |g(s) - v| <mlt> x <mand> 0 <mlt> |h(s) - w| <mlt> x <mimp> 0 <mlt> |g(s) - v| * |h(s) - w| <mlt> x * x} <mand> {<munder><mi>lim</mi><mrow><mi>x</mi><mto><mi>a</mi></mrow></munder>((g(s) * -w) + (h(s) * -v)) = 0}</math></br>
+<math>g(s) - v <mgt> 0 <mand> h(s) - w <mgt> 0 <mimp> 0 <mlt> (g(s) - v) * (h(s) - w) <mlt> x * x <mequi> 0 <mlt> g(s) * h(s) - (v * w) + (g(s) * -w) + (h(s) * -v) <mlt> x * x <mequi> f(s) - (v * w) <mlt> x * x <mimp> 0 <mlt> |f(s) - (v * w)| <mlt> x * x</math></br>
+<math>g(s) - v <mgt> 0 <mand> h(s) - w <mlt> 0 <mimp> 0 <mlt> (g(s) - v) * (-h(s) + w) <mlt> x * x <mequi> 0 <mlt> (g(s) - v) * (h(s) - w) * -1 <mlt> x * x <mequi> 0 <mlt> (f(s) - (v * w)) * -1 <mlt> x * x <mimp> |f(s) - (v * w)| <mlt> x * x</math></br>
+<math>g(s) - v <mlt> 0 <mand> h(s) - w <mgt> 0 <mimp> 0 <mlt> (-g(s) + v) * (h(s) - w) <mlt> x * x <mequi> 0 <mlt> (g(s) - v) * (h(s) - w) * -1 <mlt> x * x <mequi> 0 <mlt> (f(s) - (v * w)) * -1 <mlt> x * x <mimp> |f(s) - (v * w)| <mlt> x * x</math></br>
+<math>g(s) - v <mlt> 0 <mand> h(s) - w <mlt> 0 <mimp> 0 <mlt> (-g(s) + v) * (-h(s) + w) <mlt> x * x <mequi> 0 <mlt> (g(s) - v) * (h(s) - w) <mlt> x * x <mimp> 0 <mlt> |f(s) - (v * w)| <mlt> x * x</math></br>
+<p>
+On peut étendre ces résultats pour des limites en "+ l'infini" et "- l'infini".
+Dans ce cas, notre "r" devient la plus grande valeur entre "b" et "d".
+On reste dans le cas où "v" et "w" sont des valeurs finies.
+Commençons par la limite en "+ l'infini".
+</p>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <mgt> b <mimp> |g(c) - v| <mlt> x}</math></br>
+<math><mforall> x <min> R*+, <mexists> d <min> R*+, {<mforall> e <min> R, e <mgt> d <mimp> |h(e) - w| <mlt> x}</math></br>
+<math><mforall> x <min> R*+, <mexists> r <min> R*+, {<mforall> s <min> R, s <mgt> r <mimp> 0 <mlt> |g(s) - v| <mlt> x <mand> 0 <mlt> |h(s) - w| <mlt> x <mimp> 0 <mlt> |g(s) - v| + |h(s) - w| <mlt> 2 * x}</math></br>
+<math>g(s) - v <mgt> 0 <mand> h(s) - w <mgt> 0 <mimp> 0 <mlt> (g(s) - v) * (h(s) - w) <mlt> x * x <mequi> 0 <mlt> g(s) * h(s) - (v * w) + (g(s) * -w) + (h(s) * -v) <mlt> x * x <mequi> f(s) - (v * w) <mlt> x * x <mimp> 0 <mlt> |f(s) - (v * w)| <mlt> x * x</math></br>
+<math>g(s) - v <mgt> 0 <mand> h(s) - w <mlt> 0 <mimp> 0 <mlt> (g(s) - v) * (-h(s) + w) <mlt> x * x <mequi> 0 <mlt> (g(s) - v) * (h(s) - w) * -1 <mlt> x * x <mequi> 0 <mlt> (f(s) - (v * w)) * -1 <mlt> x * x <mimp> |f(s) - (v * w)| <mlt> x * x</math></br>
+<math>g(s) - v <mlt> 0 <mand> h(s) - w <mgt> 0 <mimp> 0 <mlt> (-g(s) + v) * (h(s) - w) <mlt> x * x <mequi> 0 <mlt> (g(s) - v) * (h(s) - w) * -1 <mlt> x * x <mequi> 0 <mlt> (f(s) - (v * w)) * -1 <mlt> x * x <mimp> |f(s) - (v * w)| <mlt> x * x</math></br>
+<math>g(s) - v <mlt> 0 <mand> h(s) - w <mlt> 0 <mimp> 0 <mlt> (-g(s) + v) * (-h(s) + w) <mlt> x * x <mequi> 0 <mlt> (g(s) - v) * (h(s) - w) <mlt> x * x <mimp> 0 <mlt> |f(s) - (v * w)| <mlt> x * x</math></br>
+<p>
+C'est la même chose pour les limites en "- l'infini".
+</p>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <mlt> -b <mimp> |g(c) - v| <mlt> x}</math></br>
+<math><mforall> x <min> R*+, <mexists> d <min> R*+, {<mforall> e <min> R, e <mlt> -d <mimp> |h(e) - w| <mlt> x}</math></br>
+<math><mforall> x <min> R*+, <mexists> r <min> R*+, {<mforall> s <min> R, s <mlt> -r <mimp> 0 <mlt> |g(s) - v| <mlt> x <mand> 0 <mlt> |h(s) - w| <mlt> x <mimp> 0 <mlt> |g(s) - v| + |h(s) - w| <mlt> 2 * x}</math></br>
+<math>g(s) - v <mgt> 0 <mand> h(s) - w <mgt> 0 <mimp> 0 <mlt> (g(s) - v) * (h(s) - w) <mlt> x * x <mequi> 0 <mlt> g(s) * h(s) - (v * w) + (g(s) * -w) + (h(s) * -v) <mlt> x * x <mequi> f(s) - (v * w) <mlt> x * x <mimp> 0 <mlt> |f(s) - (v * w)| <mlt> x * x</math></br>
+<math>g(s) - v <mgt> 0 <mand> h(s) - w <mlt> 0 <mimp> 0 <mlt> (g(s) - v) * (-h(s) + w) <mlt> x * x <mequi> 0 <mlt> (g(s) - v) * (h(s) - w) * -1 <mlt> x * x <mequi> 0 <mlt> (f(s) - (v * w)) * -1 <mlt> x * x <mimp> |f(s) - (v * w)| <mlt> x * x</math></br>
+<math>g(s) - v <mlt> 0 <mand> h(s) - w <mgt> 0 <mimp> 0 <mlt> (-g(s) + v) * (h(s) - w) <mlt> x * x <mequi> 0 <mlt> (g(s) - v) * (h(s) - w) * -1 <mlt> x * x <mequi> 0 <mlt> (f(s) - (v * w)) * -1 <mlt> x * x <mimp> |f(s) - (v * w)| <mlt> x * x</math></br>
+<math>g(s) - v <mlt> 0 <mand> h(s) - w <mlt> 0 <mimp> 0 <mlt> (-g(s) + v) * (-h(s) + w) <mlt> x * x <mequi> 0 <mlt> (g(s) - v) * (h(s) - w) <mlt> x * x <mimp> 0 <mlt> |f(s) - (v * w)| <mlt> x * x</math></br>
+<p>
+Dans le cas de limites en "+ l'infini" et en "- l'infini", il faut faire plus attention à bien respecter la règle des signes.
+Commençons dans le cas de limites en une valeur finie.
+Si nous avons deux limites à droites en "+ l'infini".
+</p>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <min> ]a, a + b[ <mimp> g(c) <mgt> x}</math></br>
+<math><mforall> x <min> R*+, <mexists> d <min> R*+, {<mforall> e <min> R, e <min> ]a, a + d[ <mimp> h(e) <mgt> x}</math>
+<math><mforall> x <min> R*+, <mexists> r <min> R*+, {<mforall> s <min> R, s <min> ]a, a + r[ <mimp> 0 <mlt> g(s) <mgt> x <mand> 0 <mlt> h(s) <mgt> x <mimp> g(s) * h(s) <mgt> x * x <mimp> f(x) <mgt> x * x}</math></br>
+<p>
+Et à gauche.
+</p>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <min> ]a - b, a[ <mimp> g(c) <mgt> x}</math></br>
+<math><mforall> x <min> R*+, <mexists> d <min> R*+, {<mforall> e <min> R, e <min> ]a - d, a[ <mimp> h(e) <mgt> x}</math>
+<math><mforall> x <min> R*+, <mexists> r <min> R*+, {<mforall> s <min> R, s <min> ]a - r, a[ <mimp> 0 <mlt> g(s) <mgt> x <mand> 0 <mlt> h(s) <mgt> x <mimp> g(s) * h(s) <mgt> x * x <mimp> f(x) <mgt> x * x}</math></br>
+<p>
+Maintenant, si nous avons deux limites à droites en "- l'infini".
+</p>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <min> ]a, a + b[ <mimp> g(c) <mlt> -x}</math></br>
+<math><mforall> x <min> R*+, <mexists> d <min> R*+, {<mforall> e <min> R, e <min> ]a, a + d[ <mimp> h(e) <mlt> -x}</math>
+<math><mforall> x <min> R*+, <mexists> r <min> R*+, {<mforall> s <min> R, s <min> ]a, a + r[ <mimp> g(s) <mlt> -x <mand> h(s) <mlt> -x <mimp> g(s) * h(s) <mlt> -x * x <mimp> f(x) <mlt> -x * x}</math></br>
+<p>
+Et à gauche.
+</p>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <min> ]a - b, a[ <mimp> g(c) <mlt> -x}</math></br>
+<math><mforall> x <min> R*+, <mexists> d <min> R*+, {<mforall> e <min> R, e <min> ]a - d, a[ <mimp> h(e) <mlt> -x}</math>
+<math><mforall> x <min> R*+, <mexists> r <min> R*+, {<mforall> s <min> R, s <min> ]a - r, a[ <mimp> g(s) <mlt> -x <mand> h(s) <mlt> -x <mimp> g(s) * h(s) <mlt> -x * x <mimp> f(x) <mlt> -x * x}</math></br>
+<p>
+Maintenant, si nous avons une limite à droite en "+ l'infini" et une en "- l'infini".
+</p>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <min> ]a, a + b[ <mimp> g(c) <mgt> x}</math></br>
+<math><mforall> x <min> R*+, <mexists> d <min> R*+, {<mforall> e <min> R, e <min> ]a, a + d[ <mimp> h(e) <mlt> -x}</math>
+<math><mforall> x <min> R*+, <mexists> r <min> R*+, {<mforall> s <min> R, s <min> ]a, a + r[ <mimp> g(s) <mgt> x <mand> h(s) <mlt> -x <mimp> g(s) * h(s) <mlt> -x * x <mimp> f(x) <mlt> -x * x}</math></br>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <min> ]a, a + b[ <mimp> g(c) <mlt> -x}</math></br>
+<math><mforall> x <min> R*+, <mexists> d <min> R*+, {<mforall> e <min> R, e <min> ]a, a + d[ <mimp> h(e) <mgt> x}</math>
+<math><mforall> x <min> R*+, <mexists> r <min> R*+, {<mforall> s <min> R, s <min> ]a, a + r[ <mimp> g(s) <mgt> x <mand> h(s) <mlt> -x <mimp> g(s) * h(s) <mlt> -x * x <mimp> f(x) <mlt> -x * x}</math></br>
+<p>
+Et à gauche.
+</p>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <min> ]a - b, a[ <mimp> g(c) <mgt> x}</math></br>
+<math><mforall> x <min> R*+, <mexists> d <min> R*+, {<mforall> e <min> R, e <min> ]a - d, a[ <mimp> h(e) <mlt> -x}</math>
+<math><mforall> x <min> R*+, <mexists> r <min> R*+, {<mforall> s <min> R, s <min> ]a - r, a[ <mimp> g(s) <mgt> x <mand> h(s) <mlt> -x <mimp> g(s) * h(s) <mlt> -x * x <mimp> f(x) <mlt> -x * x}</math></br>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <min> ]a - b, a[ <mimp> g(c) <mlt> -x}</math></br>
+<math><mforall> x <min> R*+, <mexists> d <min> R*+, {<mforall> e <min> R, e <min> ]a - d, a[ <mimp> h(e) <mgt> x}</math>
+<math><mforall> x <min> R*+, <mexists> r <min> R*+, {<mforall> s <min> R, s <min> ]a - r, a[ <mimp> g(s) <mgt> x <mand> h(s) <mlt> -x <mimp> g(s) * h(s) <mlt> -x * x <mimp> f(x) <mlt> -x * x}</math></br>
+<p>
+C'est la même chose en "+ l'infini" (dans tous les cas).
+</p>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <mgt> b <mimp> g(c) <mgt> x}</math></br>
+<math><mforall> x <min> R*+, <mexists> d <min> R*+, {<mforall> e <min> R, e <mgt> d <mimp> h(e) <mgt> x}</math>
+<math><mforall> x <min> R*+, <mexists> r <min> R*+, {<mforall> s <min> R, s <mgt> r <mimp> 0 <mlt> g(s) <mgt> x <mand> 0 <mlt> h(s) <mgt> x <mimp> g(s) * h(s) <mgt> x * x <mimp> f(x) <mgt> x * x}</math></br>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <mgt> b <mimp> g(c) <mlt> -x}</math></br>
+<math><mforall> x <min> R*+, <mexists> d <min> R*+, {<mforall> e <min> R, e <mgt> d <mimp> h(e) <mlt> -x}</math>
+<math><mforall> x <min> R*+, <mexists> r <min> R*+, {<mforall> s <min> R, s <mgt> r <mimp> g(s) <mlt> -x <mand> h(s) <mlt> -x <mimp> g(s) * h(s) <mlt> -x * x <mimp> f(x) <mlt> -x * x}</math></br>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <mgt> b <mimp> g(c) <mgt> x}</math></br>
+<math><mforall> x <min> R*+, <mexists> d <min> R*+, {<mforall> e <min> R, e <mgt> d <mimp> h(e) <mlt> -x}</math>
+<math><mforall> x <min> R*+, <mexists> r <min> R*+, {<mforall> s <min> R, s <mgt> r <mimp> g(s) <mgt> x <mand> h(s) <mlt> -x <mimp> g(s) * h(s) <mlt> -x * x <mimp> f(x) <mlt> -x * x}</math></br>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <mgt> b <mimp> g(c) <mlt> -x}</math></br>
+<math><mforall> x <min> R*+, <mexists> d <min> R*+, {<mforall> e <min> R, e <mgt> d <mimp> h(e) <mgt> x}</math>
+<math><mforall> x <min> R*+, <mexists> r <min> R*+, {<mforall> s <min> R, s <mgt> r <mimp> g(s) <mgt> x <mand> h(s) <mlt> -x <mimp> g(s) * h(s) <mlt> -x * x <mimp> f(x) <mlt> -x * x}</math></br>
+<p>
+C'est la même chose en "- l'infini".
+</p>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <mlt> -b <mimp> g(c) <mgt> x}</math></br>
+<math><mforall> x <min> R*+, <mexists> d <min> R*+, {<mforall> e <min> R, e <mlt> -d <mimp> h(e) <mgt> x}</math>
+<math><mforall> x <min> R*+, <mexists> r <min> R*+, {<mforall> s <min> R, s <mlt> -r <mimp> 0 <mlt> g(s) <mgt> x <mand> 0 <mlt> h(s) <mgt> x <mimp> g(s) * h(s) <mgt> x * x <mimp> f(x) <mgt> x * x}</math></br>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <mlt> -b <mimp> g(c) <mlt> -x}</math></br>
+<math><mforall> x <min> R*+, <mexists> d <min> R*+, {<mforall> e <min> R, e <mlt> -d <mimp> h(e) <mlt> -x}</math>
+<math><mforall> x <min> R*+, <mexists> r <min> R*+, {<mforall> s <min> R, s <mlt> -r <mimp> g(s) <mlt> -x <mand> h(s) <mlt> -x <mimp> g(s) * h(s) <mlt> -x * x <mimp> f(x) <mlt> -x * x}</math></br>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <mlt> -b <mimp> g(c) <mgt> x}</math></br>
+<math><mforall> x <min> R*+, <mexists> d <min> R*+, {<mforall> e <min> R, e <mlt> -d <mimp> h(e) <mlt> -x}</math>
+<math><mforall> x <min> R*+, <mexists> r <min> R*+, {<mforall> s <min> R, s <mlt> -r <mimp> g(s) <mgt> x <mand> h(s) <mlt> -x <mimp> g(s) * h(s) <mlt> -x * x <mimp> f(x) <mlt> -x * x}</math></br>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <mlt> -b <mimp> g(c) <mlt> -x}</math></br>
+<math><mforall> x <min> R*+, <mexists> d <min> R*+, {<mforall> e <min> R, e <mlt> -d <mimp> h(e) <mgt> x}</math>
+<math><mforall> x <min> R*+, <mexists> r <min> R*+, {<mforall> s <min> R, s <mlt> -r <mimp> g(s) <mgt> x <mand> h(s) <mlt> -x <mimp> g(s) * h(s) <mlt> -x * x <mimp> f(x) <mlt> -x * x}</math></br>
+
+<p>
+Parlons maintenant du cas où l'on compare une limite vers une valeur finie et une limite vers une valeur infinie.
+On se rendra compte que multiplier un positif par un infini quelconque donne le même infini, et multiplier un négatif par un infini quelconque donne l'infini opposé.
+Commençons par le cas de la limite en une valeur finie à droite, avec une limite finie positive.
+Pour économiser de la place, on fait en premier lieu "+ l'infini", puis "- l'infini".
+</p>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <min> ]a, a + b[ <mimp> |g(c) - v| <mlt> x}</math></br>
+<math><mforall> x <min> R*+, <mexists> d <min> R*+, {<mforall> e <min> R, e <min> ]a, a + d[ <mimp> h(e) <mgt> x}</math>
+<math><mforall> x <min> R*+, <mexists> r <min> R*+, {<mforall> s <min> R, s <min> ]a, a + r[ <mimp> 0 <mlt> |g(s) - v| <mlt> x <mand> h(sachant) <mgt> x <mimp> h(s) * |g(s) - v| <mgt> x * |g(s) - v|}</math></br>
+<math>g(s) - v <mgt> 0 <mimp> h(s) * (g(s) - v) <mgt> x * (g(s) - v) <mequi> h(s) * g(s) + h(s) * -v <mgt> x * g(s) + x * -v <mequi> h(s) * g(s) <mgt> x * g(s) + v * -x + (h(s) * v) <mequi> h(s) * g(s) <mgt> x * g(s) + v * (h(s) - x) <mgt> x * v <mequi> h(s) * g(s) <mgt> x * v</math></br>
+<math>g(s) - v <mlt> 0 <mimp> h(s) * (-g(s) + v) <mgt> x * (-g(s) + v) <mequi> h(s) * (g(s) - v) <mgt> x * (g(s) - v) <mequi> h(s) * g(s) <mgt> x * v</math></br>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <min> ]a, a + b[ <mimp> |g(c) - v| <mlt> x}</math></br>
+<math><mforall> x <min> R*+, <mexists> d <min> R*+, {<mforall> e <min> R, e <min> ]a, a + d[ <mimp> h(s) <mlt> -x}</math>
+<math><mforall> x <min> R*+, <mexists> r <min> R*+, {<mforall> s <min> R, s <min> ]a, a + r[ <mimp> 0 <mlt> |g(s) - v| <mlt> x <mand> h(s) <mlt> -x <mimp> h(s) * |g(s) - v| <mlt> -x * |g(s) - v|}</math></br>
+<math>g(s) - v <mgt> 0 <mimp> h(s) * (g(s) - v) <mlt> -x * (g(s) - v) <mequi> h(s) * g(s) + h(s) * -v <mlt> -x * g(s) + -x * -v <mequi> h(s) * g(s) <mlt> -x * g(s) + v * x + (h(s) * v) <mequi> h(s) * g(s) <mlt> -x * g(s) + v * (h(s) - x) <mlt> -x * v <mequi> h(s) * g(s) <mlt> -x * v</math></br>
+<math>g(s) - v <mlt> 0 <mimp> h(s) * (-g(s) + v) <mlt> -x * (-g(s) + v) <mequi> h(s) * (g(s) - v) <mlt> -x * (g(s) - v) <mequi> h(s) * g(s) <mlt> -x * v</math></br>
+<p>
+On peut aussi la faire dans le cas de la limite à gauche.
+</p>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <min> ]a - b, a[ <mimp> |g(c) - v| <mlt> x}</math></br>
+<math><mforall> x <min> R*+, <mexists> d <min> R*+, {<mforall> e <min> R, e <min> ]a - d, a[ <mimp> h(e) <mgt> x}</math>
+<math><mforall> x <min> R*+, <mexists> r <min> R*+, {<mforall> s <min> R, s <min> ]a - r, a[ <mimp> 0 <mlt> |g(s) - v| <mlt> x <mand> h(sachant) <mgt> x <mimp> h(s) * |g(s) - v| <mgt> x * |g(s) - v|}</math></br>
+<math>g(s) - v <mgt> 0 <mimp> h(s) * (g(s) - v) <mgt> x * (g(s) - v) <mequi> h(s) * g(s) + h(s) * -v <mgt> x * g(s) + x * -v <mequi> h(s) * g(s) <mgt> x * g(s) + v * -x + (h(s) * v) <mequi> h(s) * g(s) <mgt> x * g(s) + v * (h(s) - x) <mgt> x * v <mequi> h(s) * g(s) <mgt> x * v</math></br>
+<math>g(s) - v <mlt> 0 <mimp> h(s) * (-g(s) + v) <mgt> x * (-g(s) + v) <mequi> h(s) * (g(s) - v) <mgt> x * (g(s) - v) <mequi> h(s) * g(s) <mgt> x * v</math></br>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <min> ]a - b, a[ <mimp> |g(c) - v| <mlt> x}</math></br>
+<math><mforall> x <min> R*+, <mexists> d <min> R*+, {<mforall> e <min> R, e <min> ]a - d, a[ <mimp> h(s) <mlt> -x}</math>
+<math><mforall> x <min> R*+, <mexists> r <min> R*+, {<mforall> s <min> R, s <min> ]a - r, a[ <mimp> 0 <mlt> |g(s) - v| <mlt> x <mand> h(s) <mlt> -x <mimp> h(s) * |g(s) - v| <mlt> -x * |g(s) - v|}</math></br>
+<math>g(s) - v <mgt> 0 <mimp> h(s) * (g(s) - v) <mlt> -x * (g(s) - v) <mequi> h(s) * g(s) + h(s) * -v <mlt> -x * g(s) + -x * -v <mequi> h(s) * g(s) <mlt> -x * g(s) + v * x + (h(s) * v) <mequi> h(s) * g(s) <mlt> -x * g(s) + v * (h(s) - x) <mlt> -x * v <mequi> h(s) * g(s) <mlt> -x * v</math></br>
+<math>g(s) - v <mlt> 0 <mimp> h(s) * (-g(s) + v) <mlt> -x * (-g(s) + v) <mequi> h(s) * (g(s) - v) <mlt> -x * (g(s) - v) <mequi> h(s) * g(s) <mlt> -x * v</math></br>
+<p>
+Maintenant, faisons le cas où "v" est négatif.
+Commençons par la limite à droite.
+Encore une fois, on fait en premier lieu "+ l'infini", puis "- l'infini".
+</p>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <min> ]a, a + b[ <mimp> |g(c) - v| <mlt> x}</math></br>
+<math><mforall> x <min> R*+, <mexists> d <min> R*+, {<mforall> e <min> R, e <min> ]a, a + d[ <mimp> h(e) <mgt> x}</math>
+<math><mforall> x <min> R*+, <mexists> r <min> R*+, {<mforall> s <min> R, s <min> ]a, a + r[ <mimp> 0 <mlt> |g(s) - v| <mlt> x <mand> h(e) <mgt> x <mimp> h(s) * |g(s) - v| <mgt> x * |g(s) - v|}</math></br>
+<math>g(s) - v <mgt> 0 <mimp> h(s) * (g(s) - v) = h(s) * g(s) + h(s) * -v <mequi> h(s) * -v <mgt> h(s) * -v + v * x <mgt> h(s) * g(s) + h(s) * -v <mequi> 0 <mgt> v * x <mgt> h(s) * g(s) <mequi> h(s) * g(s) <mlt> x * v </math></br>
+<math>g(s) - v <mlt> 0 <mimp> h(s) * (-g(s) + v) = h(s) * g(s) * -1 + h(s) * v <mequi> h(s) * g(s) * -1 + h(s) * v <mgt> 0 <mequi> h(s) * g(s) * -1 <mgt> -v - h(s) <mgt> -v - x <mequi> h(s) * g(s) <mlt> x + v </math></br>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <min> ]a, a + b[ <mimp> |g(c) - v| <mlt> x}</math></br>
+<math><mforall> x <min> R*+, <mexists> d <min> R*+, {<mforall> e <min> R, e <min> ]a, a + d[ <mimp> h(s) <mlt> -x}</math></br>
+<math><mforall> x <min> R*+, <mexists> r <min> R*+, {<mforall> s <min> R, s <min> ]a, a + r[ <mimp> 0 <mlt> |g(s) - v| <mlt> x <mand> h(s) <mlt> -x <mimp> h(s) * |g(s) - v| <mlt> x * |g(s) - v|}</math></br>
+<math>g(s) - v <mgt> 0 <mimp> h(s) * (g(s) - v) = h(s) * g(s) + h(s) * -v <mequi> h(s) * -v <mlt> h(s) * -v + v * x <mlt> h(s) * g(s) + h(s) * -v <mequi> 0 <mlt> v * x <mlt> h(s) * g(s) <mequi> h(s) * g(s) <mgt> x * v </math></br>
+<math>g(s) - v <mlt> 0 <mimp> h(s) * (-g(s) + v) = h(s) * g(s) * -1 + h(s) * v <mequi> h(s) * g(s) * -1 + h(s) * v <mlt> 0 <mequi> h(s) * g(s) * -1 <mlt> -v - h(s) <mlt> -v - x <mequi> h(s) * g(s) <mgt> x + v </math></br>
+<p>
+Et pour la limite à gauche.
+</p>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <min> ]a - b, a[ <mimp> |g(c) - v| <mlt> x}</math></br>
+<math><mforall> x <min> R*+, <mexists> d <min> R*+, {<mforall> e <min> R, e <min> ]a - d, a[ <mimp> h(e) <mgt> x}</math>
+<math><mforall> x <min> R*+, <mexists> r <min> R*+, {<mforall> s <min> R, s <min> ]a - r, a[ <mimp> 0 <mlt> |g(s) - v| <mlt> x <mand> h(e) <mgt> x <mimp> h(s) * |g(s) - v| <mgt> x * |g(s) - v|}</math></br>
+<math>g(s) - v <mgt> 0 <mimp> h(s) * (g(s) - v) = h(s) * g(s) + h(s) * -v <mequi> h(s) * -v <mgt> h(s) * -v + v * x <mgt> h(s) * g(s) + h(s) * -v <mequi> 0 <mgt> v * x <mgt> h(s) * g(s) <mequi> h(s) * g(s) <mlt> x * v </math></br>
+<math>g(s) - v <mlt> 0 <mimp> h(s) * (-g(s) + v) = h(s) * g(s) * -1 + h(s) * v <mequi> h(s) * g(s) * -1 + h(s) * v <mgt> 0 <mequi> h(s) * g(s) * -1 <mgt> -v - h(s) <mgt> -v - x <mequi> h(s) * g(s) <mlt> x + v </math></br>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <min> ]a - b, a[ <mimp> |g(c) - v| <mlt> x}</math></br>
+<math><mforall> x <min> R*+, <mexists> d <min> R*+, {<mforall> e <min> R, e <min> ]a - d, a[ <mimp> h(s) <mlt> -x}</math></br>
+<math><mforall> x <min> R*+, <mexists> r <min> R*+, {<mforall> s <min> R, s <min> ]a - r, a[ <mimp> 0 <mlt> |g(s) - v| <mlt> x <mand> h(s) <mlt> -x <mimp> h(s) * |g(s) - v| <mlt> x * |g(s) - v|}</math></br>
+<math>g(s) - v <mgt> 0 <mimp> h(s) * (g(s) - v) = h(s) * g(s) + h(s) * -v <mequi> h(s) * -v <mlt> h(s) * -v + v * x <mlt> h(s) * g(s) + h(s) * -v <mequi> 0 <mlt> v * x <mlt> h(s) * g(s) <mequi> h(s) * g(s) <mgt> x * v </math></br>
+<math>g(s) - v <mlt> 0 <mimp> h(s) * (-g(s) + v) = h(s) * g(s) * -1 + h(s) * v <mequi> h(s) * g(s) * -1 + h(s) * v <mlt> 0 <mequi> h(s) * g(s) * -1 <mlt> -v - h(s) <mlt> -v - x <mequi> h(s) * g(s) <mgt> x + v </math></br>
+<p>
+C'est la même chose en "+ l'infini" (dans tous les cas).
+Si "v" est positif :
+</p>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <mgt> b <mimp> |g(c) - v| <mlt> x}</math></br>
+<math><mforall> x <min> R*+, <mexists> d <min> R*+, {<mforall> e <min> R, e <mgt> d <mimp> h(e) <mgt> x}</math>
+<math><mforall> x <min> R*+, <mexists> r <min> R*+, {<mforall> s <min> R, s <mgt> r <mimp> 0 <mlt> |g(s) - v| <mlt> x <mand> h(sachant) <mgt> x <mimp> h(s) * |g(s) - v| <mgt> x * |g(s) - v|}</math></br>
+<math>g(s) - v <mgt> 0 <mimp> h(s) * (g(s) - v) <mgt> x * (g(s) - v) <mequi> h(s) * g(s) + h(s) * -v <mgt> x * g(s) + x * -v <mequi> h(s) * g(s) <mgt> x * g(s) + v * -x + (h(s) * v) <mequi> h(s) * g(s) <mgt> x * g(s) + v * (h(s) - x) <mgt> x * v <mequi> h(s) * g(s) <mgt> x * v</math></br>
+<math>g(s) - v <mlt> 0 <mimp> h(s) * (-g(s) + v) <mgt> x * (-g(s) + v) <mequi> h(s) * (g(s) - v) <mgt> x * (g(s) - v) <mequi> h(s) * g(s) <mgt> x * v</math></br>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <mgt> b <mimp> |g(c) - v| <mlt> x}</math></br>
+<math><mforall> x <min> R*+, <mexists> d <min> R*+, {<mforall> e <min> R, e <mgt> d <mimp> h(s) <mlt> -x}</math>
+<math><mforall> x <min> R*+, <mexists> r <min> R*+, {<mforall> s <min> R, s <mgt> r <mimp> 0 <mlt> |g(s) - v| <mlt> x <mand> h(s) <mlt> -x <mimp> h(s) * |g(s) - v| <mlt> -x * |g(s) - v|}</math></br>
+<math>g(s) - v <mgt> 0 <mimp> h(s) * (g(s) - v) <mlt> -x * (g(s) - v) <mequi> h(s) * g(s) + h(s) * -v <mlt> -x * g(s) + -x * -v <mequi> h(s) * g(s) <mlt> -x * g(s) + v * x + (h(s) * v) <mequi> h(s) * g(s) <mlt> -x * g(s) + v * (h(s) - x) <mlt> -x * v <mequi> h(s) * g(s) <mlt> -x * v</math></br>
+<math>g(s) - v <mlt> 0 <mimp> h(s) * (-g(s) + v) <mlt> -x * (-g(s) + v) <mequi> h(s) * (g(s) - v) <mlt> -x * (g(s) - v) <mequi> h(s) * g(s) <mlt> -x * v</math></br>
+<p>
+Et si "v" est négatif :
+</p>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <mgt> b <mimp> |g(c) - v| <mlt> x}</math></br>
+<math><mforall> x <min> R*+, <mexists> d <min> R*+, {<mforall> e <min> R, e <mgt> d <mimp> h(e) <mgt> x}</math>
+<math><mforall> x <min> R*+, <mexists> r <min> R*+, {<mforall> s <min> R, s <mgt> r <mimp> 0 <mlt> |g(s) - v| <mlt> x <mand> h(e) <mgt> x <mimp> h(s) * |g(s) - v| <mgt> x * |g(s) - v|}</math></br>
+<math>g(s) - v <mgt> 0 <mimp> h(s) * (g(s) - v) = h(s) * g(s) + h(s) * -v <mequi> h(s) * -v <mgt> h(s) * -v + v * x <mgt> h(s) * g(s) + h(s) * -v <mequi> 0 <mgt> v * x <mgt> h(s) * g(s) <mequi> h(s) * g(s) <mlt> x * v </math></br>
+<math>g(s) - v <mlt> 0 <mimp> h(s) * (-g(s) + v) = h(s) * g(s) * -1 + h(s) * v <mequi> h(s) * g(s) * -1 + h(s) * v <mgt> 0 <mequi> h(s) * g(s) * -1 <mgt> -v - h(s) <mgt> -v - x <mequi> h(s) * g(s) <mlt> x + v </math></br>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <mgt> b <mimp> |g(c) - v| <mlt> x}</math></br>
+<math><mforall> x <min> R*+, <mexists> d <min> R*+, {<mforall> e <min> R, e <mgt> d <mimp> h(s) <mlt> -x}</math></br>
+<math><mforall> x <min> R*+, <mexists> r <min> R*+, {<mforall> s <min> R, s <mgt> r <mimp> 0 <mlt> |g(s) - v| <mlt> x <mand> h(s) <mlt> -x <mimp> h(s) * |g(s) - v| <mlt> x * |g(s) - v|}</math></br>
+<math>g(s) - v <mgt> 0 <mimp> h(s) * (g(s) - v) = h(s) * g(s) + h(s) * -v <mequi> h(s) * -v <mlt> h(s) * -v + v * x <mlt> h(s) * g(s) + h(s) * -v <mequi> 0 <mlt> v * x <mlt> h(s) * g(s) <mequi> h(s) * g(s) <mgt> x * v </math></br>
+<math>g(s) - v <mlt> 0 <mimp> h(s) * (-g(s) + v) = h(s) * g(s) * -1 + h(s) * v <mequi> h(s) * g(s) * -1 + h(s) * v <mlt> 0 <mequi> h(s) * g(s) * -1 <mlt> -v - h(s) <mlt> -v - x <mequi> h(s) * g(s) <mgt> x + v </math></br>
+<p>
+C'est la même chose en "- l'infini" (dans tous les cas).
+Si "v" est positif :
+</p>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <mlt> -b <mimp> |g(c) - v| <mlt> x}</math></br>
+<math><mforall> x <min> R*+, <mexists> d <min> R*+, {<mforall> e <min> R, e <mlt> -d <mimp> h(e) <mgt> x}</math>
+<math><mforall> x <min> R*+, <mexists> r <min> R*+, {<mforall> s <min> R, s <mlt> -r <mimp> 0 <mlt> |g(s) - v| <mlt> x <mand> h(sachant) <mgt> x <mimp> h(s) * |g(s) - v| <mgt> x * |g(s) - v|}</math></br>
+<math>g(s) - v <mgt> 0 <mimp> h(s) * (g(s) - v) <mgt> x * (g(s) - v) <mequi> h(s) * g(s) + h(s) * -v <mgt> x * g(s) + x * -v <mequi> h(s) * g(s) <mgt> x * g(s) + v * -x + (h(s) * v) <mequi> h(s) * g(s) <mgt> x * g(s) + v * (h(s) - x) <mgt> x * v <mequi> h(s) * g(s) <mgt> x * v</math></br>
+<math>g(s) - v <mlt> 0 <mimp> h(s) * (-g(s) + v) <mgt> x * (-g(s) + v) <mequi> h(s) * (g(s) - v) <mgt> x * (g(s) - v) <mequi> h(s) * g(s) <mgt> x * v</math></br>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <mlt> -b <mimp> |g(c) - v| <mlt> x}</math></br>
+<math><mforall> x <min> R*+, <mexists> d <min> R*+, {<mforall> e <min> R, e <mlt> -d <mimp> h(s) <mlt> -x}</math>
+<math><mforall> x <min> R*+, <mexists> r <min> R*+, {<mforall> s <min> R, s <mlt> -r <mimp> 0 <mlt> |g(s) - v| <mlt> x <mand> h(s) <mlt> -x <mimp> h(s) * |g(s) - v| <mlt> -x * |g(s) - v|}</math></br>
+<math>g(s) - v <mgt> 0 <mimp> h(s) * (g(s) - v) <mlt> -x * (g(s) - v) <mequi> h(s) * g(s) + h(s) * -v <mlt> -x * g(s) + -x * -v <mequi> h(s) * g(s) <mlt> -x * g(s) + v * x + (h(s) * v) <mequi> h(s) * g(s) <mlt> -x * g(s) + v * (h(s) - x) <mlt> -x * v <mequi> h(s) * g(s) <mlt> -x * v</math></br>
+<math>g(s) - v <mlt> 0 <mimp> h(s) * (-g(s) + v) <mlt> -x * (-g(s) + v) <mequi> h(s) * (g(s) - v) <mlt> -x * (g(s) - v) <mequi> h(s) * g(s) <mlt> -x * v</math></br>
+<p>
+Et si "v" est négatif :
+</p>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <mlt> -b <mimp> |g(c) - v| <mlt> x}</math></br>
+<math><mforall> x <min> R*+, <mexists> d <min> R*+, {<mforall> e <min> R, e <mlt> -d <mimp> h(e) <mgt> x}</math>
+<math><mforall> x <min> R*+, <mexists> r <min> R*+, {<mforall> s <min> R, s <mlt> -r <mimp> 0 <mlt> |g(s) - v| <mlt> x <mand> h(e) <mgt> x <mimp> h(s) * |g(s) - v| <mgt> x * |g(s) - v|}</math></br>
+<math>g(s) - v <mgt> 0 <mimp> h(s) * (g(s) - v) = h(s) * g(s) + h(s) * -v <mequi> h(s) * -v <mgt> h(s) * -v + v * x <mgt> h(s) * g(s) + h(s) * -v <mequi> 0 <mgt> v * x <mgt> h(s) * g(s) <mequi> h(s) * g(s) <mlt> x * v </math></br>
+<math>g(s) - v <mlt> 0 <mimp> h(s) * (-g(s) + v) = h(s) * g(s) * -1 + h(s) * v <mequi> h(s) * g(s) * -1 + h(s) * v <mgt> 0 <mequi> h(s) * g(s) * -1 <mgt> -v - h(s) <mgt> -v - x <mequi> h(s) * g(s) <mlt> x + v </math></br>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <mlt> -b <mimp> |g(c) - v| <mlt> x}</math></br>
+<math><mforall> x <min> R*+, <mexists> d <min> R*+, {<mforall> e <min> R, e <mlt> -d <mimp> h(s) <mlt> -x}</math></br>
+<math><mforall> x <min> R*+, <mexists> r <min> R*+, {<mforall> s <min> R, s <mlt> -r <mimp> 0 <mlt> |g(s) - v| <mlt> x <mand> h(s) <mlt> -x <mimp> h(s) * |g(s) - v| <mlt> x * |g(s) - v|}</math></br>
+<math>g(s) - v <mgt> 0 <mimp> h(s) * (g(s) - v) = h(s) * g(s) + h(s) * -v <mequi> h(s) * -v <mlt> h(s) * -v + v * x <mlt> h(s) * g(s) + h(s) * -v <mequi> 0 <mlt> v * x <mlt> h(s) * g(s) <mequi> h(s) * g(s) <mgt> x * v </math></br>
+<math>g(s) - v <mlt> 0 <mimp> h(s) * (-g(s) + v) = h(s) * g(s) * -1 + h(s) * v <mequi> h(s) * g(s) * -1 + h(s) * v <mlt> 0 <mequi> h(s) * g(s) * -1 <mlt> -v - h(s) <mlt> -v - x <mequi> h(s) * g(s) <mgt> x + v </math></br>

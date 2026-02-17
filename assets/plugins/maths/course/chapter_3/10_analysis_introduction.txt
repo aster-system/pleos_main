@@ -316,7 +316,7 @@ Le cas le plus simple correspond à la somme de fonctions.
 En effet, <span class="important">dans une fonction "f" représentant la somme d'autres fonctions, la limite de "f" en une valeur représente la somme des limites en cette valeur des fonctions qui constituent "f"</span>.
 La démonstration de ce résultat n'est pas si complexe que ça, mais demande une disjonction de cas précise.
 Nous allons la faire pour que vous puissiez avoir un exemple d'une démonstration de ce type.
-Posons deux fonctions "g" et "h" définies de "R" vers "R", admettant une limite à droite en une valeur finie "a" vers respectivement "v" et "w".
+Posons deux fonctions "g" et "h" définies de "R" vers "R", admettant une limite à droite en une valeur finie "a" vers respectivement "v" et "w" finis.
 </p>
 <math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <min> ]a, a + b[ <mimp> |g(c) - v| <mlt> x}</math></br>
 <math><mforall> x <min> R*+, <mexists> d <min> R*+, {<mforall> e <min> R, e <min> ]a, a + d[ <mimp> |h(c) - w| <mlt> x}</math>
@@ -511,7 +511,42 @@ Et vers "- l'infini".
 <math>h(s) <mlt> v <mimp> x <mlt> x - h(s) + v <mlt> -g(s) - h(s) + v <mimp> x - v <mlt> x - h(s) <mlt> -g(s) - h(s) <mimp> -x + v <mgt> -x + h(s) <mgt> g(s) + h(s)</math></br>
 <p>
 Donc, la limite en 0 à gauche de "5 + inverse de x" est "- l'infini", et la limite en 0 à droite de "5 + inverse de x" est "+ l'infini".
+Grâce à des propriétés basiques, <span class="important">on se rend facilement compte que c'est la même chose pour des soustractions, en utilisant les opposés par l'addition (en sachant que, par logique pure, l'opposé de "+ l'infini" est "- l'infini", et l'opposé de "- l'infini" est "+ l'infini")</span>.
 </p>
+<p>
+De plus, <span class="important">il est possible d'obtenir des propriétés similaires avec la multiplication</span> (nous ne vous ferons pas subir la démonstration dans cette partie du cours).
+Les démonstrations totales sont très similaires à celles de l'addition de limites.
+Déjà, <span class="important">si deux fonctions tendent en une valeur "a" (ou en un infini) vers respectivement "v" et "w" finis, alors le produit de ces deux fonctions tend en "a" (ou en l'infini nécessaire) vers "v * w"</span>.
+Quelque chose d'assez intéressant : <span class="important">cela marche aussi si "v" ou "w" est égal à 0</span>.
+Prenons un exemple très simple : la fonction "f(x) = 5", "g(x) = inverse de x" et "h(x) = f(x) * g(x)".
+</p>
+<math>f : R <mto> R, x <mto> 5</math></br>
+<math>g : R <mto> R, x <mto> <mfrac><mi>1</mi><mi>x</mi></mfrac></math></br>
+<math>h : R <mto> R, x <mto> f(x) * g(x) = <mfrac><mi>5</mi><mi>x</mi></mfrac></math></br>
+<math><munder><mi>lim</mi><mrow><mi>x</mi><mto><mo>+</mo><minf></mrow></munder>(f(x)) = 5, <munder><mi>lim</mi><mrow><mi>x</mi><mto><mo>+</mo><minf></mrow></munder>(g(x)) = 0</math></br>
+<math><munder><mi>lim</mi><mrow><mi>x</mi><mto><mo>+</mo><minf></mrow></munder>(h(x)) = 0</math>
+<p>
+Cette règle est un peu plus compliqué dans le cas des infinis.
+Cependant, <span class=important>pour utiliser le produit avec des limites en des infinis, il faut utiliser la règle des signes avec les infinis, ce qui est parfaitement possible</span>.
+En effet, <span class="important">si deux fonctions tendent en une valeur "a" (ou en un infini) vers respectivement "v" et "w" infinis, alors le produit de ces deux fonctions tend en "a" (ou en l'infini nécessaire) vers un des deux infinis, en appliquant la règle des signes : si les deux infinis sont positifs, l'infini final l'est aussi, si les deux infinis sont négatifs, l'infini final l'est aussi, mais si l'un des deux est positif et l'autre négatif, alors l'infini final est négatif</span>.
+Prenons un exemple très simple : la fonction "f(x) = -x²", "g(x) = -x" et "h(x) = f(x) * g(x)".
+</p>
+<math>f : R <mto> R, x <mto> <mi>-x</mi><msup>2</msup></math></br>
+<math>g : R <mto> R, x <mto> -x</math></br>
+<math>h : R <mto> R, x <mto> f(x) * g(x) = <mi>x</mi><msup>3</msup></math></br>
+<math><munder><mi>lim</mi><mrow><mi>x</mi><mto><mo>+</mo><minf></mrow></munder>(f(x)) = - <minf>, <munder><mi>lim</mi><mrow><mi>x</mi><mto><mo>+</mo><minf></mrow></munder>(g(x)) = - <minf></math></br>
+<math><munder><mi>lim</mi><mrow><mi>x</mi><mto><mo>+</mo><minf></mrow></munder>(h(x)) = + <minf></math>
+<p>
+On peut cependant mélanger les infinis avec les valeurs finies, pour obtenir des résultats particulièrement intéressant.
+En effet, <span class="important">si deux fonctions tendent en une valeur "a" (ou en un infini) vers respectivement "v" fini (différent de 0) et vers un des deux infinis, alors le produit de ces deux fonctions tend vers un des deux infinis, auquel on applique la règle des signes (si "v" est négatif et l'infini aussi, alors "+ l'infini", si "v" est négatif et l'infini positif, alors "- l'infini", si "v" est positif et l'infini négatif, alors "- l'infini", et si "v" est positif et l'infini aussi, alors "+ l'infini")</span>.
+Cela ne marche que si "v" est différent de 0 (sinon, on n'a pas assez d'informations pour calculer la limite).
+Prenons un exemple très simple : la fonction "f(x) = 5", "g(x) = -x" et "h(x) = f(x) * g(x)".
+</p>
+<math>f : R <mto> R, x <mto> 5</math></br>
+<math>g : R <mto> R, x <mto> x</math></br>
+<math>h : R <mto> R, x <mto> f(x) * g(x) = 5 * -x</math></br>
+<math><munder><mi>lim</mi><mrow><mi>x</mi><mto><mo>+</mo><minf></mrow></munder>(f(x)) = 5, <munder><mi>lim</mi><mrow><mi>x</mi><mto><mo>+</mo><minf></mrow></munder>(g(x)) = - <minf></math></br>
+<math><munder><mi>lim</mi><mrow><mi>x</mi><mto><mo>+</mo><minf></mrow></munder>(h(x)) = - <minf></math>
 
 <h3>Les comparaisons asymptotiques</h3>
 <p>
