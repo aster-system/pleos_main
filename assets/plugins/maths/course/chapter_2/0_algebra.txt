@@ -359,7 +359,14 @@ En effet, <span class="important"><definition name="algebra_generating_set-group
 En étudiant une partie génératrice d'un groupe, on peut donner des informations utiles sur ce groupe.
 Une des propriétés les plus utiles à étudier est la taille de cette partie génératrice, permettant de définir de nouveaux types de groupes : les groupes monogènes et les groupes cycliques.
 <span class="important"><definition name="algebra_group_monogenous"></span>.
-Donc, avec seulement un élément d'un groupe monogène (ou, encore une fois, son inverse si nécessaire, qui n'appartient pas à la partie génératrice conformément à la définition de cette dernière), on peut générer tous les éléments du groupe en répétant l'opération de ce dernier.
+Donc, avec seulement un élément d'un groupe monogène (ou, encore une fois, son inverse si nécessaire, qui n'appartient pas à la partie génératrice conformément à la définition de cette dernière), on peut générer tous les éléments du groupe en répétant "n" fois (avec "n" un nombre entier naturel) l'opération de ce dernier.
+Dans le cas d'un groupe sur un ensemble "E", un groupe monogène peut se définir comme ça :
+</p>
+<math>G = (E, .)</math></br>
+<math><mexists> a <min> E, <mforall> e <min> E, <mexists> d <min> Z, e = <mi>a</mi><msup>d</msup></math>
+<p>
+Ce genre de groupe possèdent quelques propriétés intéressantes.
+Par exemple, <span class="important">tout groupe monogène est abélien</span> (<a href="demo">démontré ici</a>).
 En fait, <span class="important">le groupe monogène le plus simple est le groupe additif "(Z, +)", qui est généré par "1" et son inverse (-1)</span>.
 </p>
 <math>4 = 1 + 1 + 1 + 1</math></br>

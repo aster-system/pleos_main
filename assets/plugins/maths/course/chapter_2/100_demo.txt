@@ -139,6 +139,78 @@ Au final, "(Z/nZ, +)" est bel et bien un groupe abélien.
 
 <h4>2.0.2.0</h4>
 <p>
+Démontrons que tout groupe monogène est abélien.
+Posons "G" un groupe sur un ensemble "E" d'opérateur ".".
+Si il est abélien, alors on peut utiliser cette définition :
+</p>
+<math>G = (E, ~)</math></br>
+<math><mexists> a <min> E, <mforall> e <min> E, <mexists> d <min> Z, e = <mi>a</mi><msup>d</msup></math>
+<p>
+En d'autres termes, tout élément "e" ou "f" de "E" peut s'écrire comme la répétition de "a" ou de son inverse "a exposant -1".
+Donc, il existe un "d" pour "e" (que nous nommerons "r") et il existe un "d" pour "f" (que nous nommerons "s").
+Si "r" et "s" sont positifs, alors "e ~ s" s'écrit ainsi :
+</p>
+<math>e ~ f = (a ~ a ~ "r fois" ~ a) ~ (a ~ a ~ "s fois" ~ a)</math>
+<p>
+Or, comme le groupe est associatif, l'opération l'est aussi.
+Donc, on peut modifier le sens des opérations pour faire les "s" opérations au début, puis les "r" opérations à la fin.
+Or, cela est égal à "f ~ e"
+</p>
+<math>e ~ f = (a ~ a ~ "r fois" ~ a) ~ (a ~ a ~ "s fois" ~ a) = (a ~ a ~ "s fois" ~ a) ~ (a ~ a ~ "r fois" ~ a) = f ~ e</math>
+<p>
+Donc, "e ~ f = f ~ e" si "r" et "s" est positif.
+On peut faire l'exact même raisonnement si "r" et "s" sont négatifs.
+</p>
+<math>e ~ f = (-a ~ -a ~ "-r fois" ~ -a) ~ (-a ~ -a ~ "-s fois" ~ -a) = (-a ~ -a ~ "-s fois" ~ -a) ~ (-a ~ -a ~ "-r fois" ~ -a) = f ~ e</math>
+<p>
+Donc, "e ~ f = f ~ e" si "r" et "s" est négatif.
+Maintenant, faisons le cas plus embêtant ou "r" est positif et "s" négatif.
+</p>
+<math>e ~ f = (a ~ a ~ "r fois" ~ a) ~ (-a ~ -a ~ "-s fois" ~ -a)</math>
+<p>
+Ici, la technique est assez simple : "a ~ -a" s'annule, on peut donc simplifier l'expression.
+En plus, multiplier n'importe quoi par "a ~ -a" ne modifie pas la valeur finale.
+Donc, si "r" est plus grand que "-s", tous les "-a" de "f" se neutralisent.
+</p>
+<math>e ~ f = (a ~ a ~ "r fois" ~ a) ~ (-a ~ -a ~ "-s fois" ~ -a) = (a ~ a ~ "r + s fois" ~ a)</math>
+<p>
+On peut rajouter juste avant l'opération par "a ~ -a".
+Or, rajouter une nouvelle itération de cette opération entre "a" et "-a" ne modifie pas le résultat final.
+On peut donc le rajouter "-s" fois.
+Par associativité, on obtient "f ~ e"
+</p>
+<math>e ~ f = (a ~ a ~ "r + s fois" ~ a) = (-a ~ a) ~ (a ~ a ~ "r + s fois" ~ a)</math></br>
+<math>e ~ f = (-a ~ a) ~ (a ~ a ~ "r + s fois" ~ a) = (-a ~ -a ~ ... "-s fois" ... a ~ a) ~ (a ~ a ~ "r + s fois" ~ a)</math></br>
+<math>e ~ f = (-a ~ -a ~ "-s fois" ~ -a) ~ (a ~ a ~ ... "r fois" ... -a ~ -a) = f ~ e</math></br>
+<p>
+C'est la même chose si "r" est inférieur à "-s", c'est la même chose, en ajoutant des "-" partout.
+</p>
+<math>e ~ f = (a ~ a ~ "r fois" ~ a) ~ (-a ~ -a ~ "-s fois" ~ -a) = (-a ~ -a ~ "-(r + s) fois" ~ -a)</math>
+<math>e ~ f = (-a ~ -a ~ "-(r + s) fois" ~ -a) = (-a ~ -a ~ "-(r + s) fois" ~ -a) ~ (-a ~ a)</math></br>
+<math>e ~ f = (-a ~ -a ~ "-(r + s) fois" ~ -a) ~ (-a ~ a) = (-a ~ -a ~ "-(r + s) fois" ~ -a) ~ (-a ~ -a ~ "r fois" ~ a ~ a)</math></br>
+<math>e ~ f = (-a ~ -a ~ "-s fois" ~ -a) ~ (a ~ a ~ ... "r fois" ... ~ a) = f ~ e</math></br>
+<p>
+C'est la même chose si "r" est négatif, et "s" positif, mais à l'envers.
+Déjà, si "-r" est supérieur à "s" :
+</p>
+<math>e ~ f = (-a ~ -a ~ "-r fois" ~ -a) ~ (a ~ a ~ "s fois" ~ a) = (-a ~ -a ~ "-(r + s) fois" ~ -a)</math>
+<math>e ~ f = (-a ~ -a ~ "-(r + s) fois" ~ -a) = (a ~ -a) ~ (-a ~ -a ~ "-(r + s) fois" ~ -a)</math></br>
+<math>e ~ f = (a ~ -a) ~ (-a ~ -a ~ "-(r + s) fois" ~ -a) = (a ~ a ~ ... "s fois" ... -a ~ -a) ~ (-a ~ -a ~ "-(r + s) fois" ~ -a)</math></br>
+<math>e ~ f = (a ~ a ~ "s fois" ~ a) ~ (-a ~ -a ~ ... "-r fois" ... ~ -a) = f ~ e</math></br>
+<p>
+Finalement, si "-r" est inférieur à "s" :
+</p>
+<math>e ~ f = (-a ~ -a ~ "-r fois" ~ -a) ~ (a ~ a ~ "s fois" ~ a) = (a ~ a ~ "(r + s) fois" ~ a)</math>
+<math>e ~ f = (a ~ a ~ "(r + s) fois" ~ a) = (a ~ a ~ "(r + s) fois" ~ a) ~ (a ~ -a)</math></br>
+<math>e ~ f = (a ~ a ~ "(r + s) fois" ~ a) ~ (a ~ -a) = (a ~ a ~ ... "r + s fois" ... a ~ a) ~ (-a ~ -a ~ "-r fois" ~ -a)</math></br>
+<math>e ~ f = (a ~ a ~ "s fois" ~ a) ~ (-a ~ -a ~ ... "-r fois" ... ~ -a) = f ~ e</math></br>
+<p>
+Tous les cas sont vérifiés.
+Un groupe monogène est bel et bien abélien.
+</p>
+
+<h4>2.0.2.1</h4>
+<p>
 Démontrons que, si un groupe "G" opère sur un ensemble "E", alors tous les stabilisateurs possibles dans "E" forment chacun un sous-groupe de "G".
 Déjà, posons un groupe "G" sur un ensemble "A" de loi de composition interne ".", un ensemble "E", et une action de "G" sur "E".
 </p>
