@@ -412,7 +412,7 @@ Tous les cas sont vérifiés : la limite en "+ l'infini" d'une fonction réelle 
 <h3>L'arithmétique des limites</h3>
 <h4>3.1.3.0</h4>
 <p>
-Démontrons qu'u dans une fonction "f" représentant la somme d'autres fonctions, la limite de "f" en une valeur représente le produit des limites en cette valeur des fonctions qui constituent "f".
+Démontrons que dans une fonction "f" représentant la somme d'autres fonctions, la limite de "f" en une valeur représente le produit des limites en cette valeur des fonctions qui constituent "f".
 La démonstration de ce résultat n'est pas si complexe que ça, mais demande une disjonction de cas précise.
 Posons deux fonctions "g" et "h" définies de "R" vers "R", admettant une limite à droite en une valeur finie "a" vers respectivement "v" et "w" finis.
 </p>
@@ -541,6 +541,37 @@ C'est la même chose en "- l'infini".
 <math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <mlt> -b <mimp> g(c) <mlt> -x}</math></br>
 <math><mforall> x <min> R*+, <mexists> d <min> R*+, {<mforall> e <min> R, e <mlt> -d <mimp> h(e) <mgt> x}</math>
 <math><mforall> x <min> R*+, <mexists> r <min> R*+, {<mforall> s <min> R, s <mlt> -r <mimp> g(s) <mgt> x <mand> h(s) <mlt> -x <mimp> g(s) * h(s) <mlt> -x * x <mimp> f(x) <mlt> -x * x}</math></br>
+
+<p>
+Parlons du cas de l'inverse d'une limite vers une valeur finie qui n'est pas 0.
+Posons une fonction "g" définie de "R" vers "R", admettant une limite à droite en une valeur finie "a" vers "v" fini.
+</p>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <min> ]a, a + b[ <mimp> |g(c) - v| <mlt> x}</math>
+<p>
+Posons maintenant la fonction "f" égale à "1 / g".
+On peut bidouiller notre formule précédente pour obtenir une limite de "f".
+</p>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <min> ]a, a + b[ <mimp> |g(c) - v| <mlt> x}</math></br>
+<math>g(c) <mgt> v <mimp> g(c) - v <mlt> x <mimp> g(c) <mlt> x + v <mimp> <mfrac><mi>1</mi><mi>g(c)</mi></mfrac> <mgt> <mfrac><mi>1</mi><mi>x + v</mi></mfrac> <mimp> <mfrac><mi>1</mi><mi>g(c)</mi></mfrac> - <mfrac><mi>1</mi><mi>v</mi></mfrac> <mgt> <mfrac><mi>1</mi><mi>x + v</mi></mfrac> - <mfrac><mi>1</mi><mi>v</mi></mfrac> <mimp> -<mfrac><mi>1</mi><mi>g(c)</mi></mfrac> + <mfrac><mi>1</mi><mi>v</mi></mfrac> <mlt> <mfrac><mi>1</mi><mi>v</mi></mfrac> - <mfrac><mi>1</mi><mi>x + v</mi></mfrac> <mimp> |f(c) - <mfrac><mi>1</mi><mi>v</mi></mfrac>| <mlt> <mfrac><mi>x</mi><mi>x * v + v²</mi></mfrac> <mlt> x</math>
+<math>g(c) <mlt> v <mimp> -g(c) + v <mlt> x <mimp> g(c) <mgt> v - x <mimp> <mfrac><mi>1</mi><mi>g(c)</mi></mfrac> <mlt> <mfrac><mi>1</mi><mi>v - x</mi></mfrac> <mimp> <mfrac><mi>1</mi><mi>g(c)</mi></mfrac> - <mfrac><mi>1</mi><mi>v</mi></mfrac> <mlt> <mfrac><mi>1</mi><mi>v - x</mi></mfrac> - <mfrac><mi>1</mi><mi>v</mi></mfrac> <mimp> |f(c) - <mfrac><mi>1</mi><mi>v</mi></mfrac>| <mlt> <mfrac><mi>x</mi><mi>x * v + v²</mi></mfrac> <mlt> x</math>
+<p>
+Dans le cas de la limite à gauche :
+</p>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <min> ]a - b, a[ <mimp> |g(c) - v| <mlt> x}</math></br>
+<math>g(c) <mgt> v <mimp> g(c) - v <mlt> x <mimp> g(c) <mlt> x + v <mimp> <mfrac><mi>1</mi><mi>g(c)</mi></mfrac> <mgt> <mfrac><mi>1</mi><mi>x + v</mi></mfrac> <mimp> <mfrac><mi>1</mi><mi>g(c)</mi></mfrac> - <mfrac><mi>1</mi><mi>v</mi></mfrac> <mgt> <mfrac><mi>1</mi><mi>x + v</mi></mfrac> - <mfrac><mi>1</mi><mi>v</mi></mfrac> <mimp> -<mfrac><mi>1</mi><mi>g(c)</mi></mfrac> + <mfrac><mi>1</mi><mi>v</mi></mfrac> <mlt> <mfrac><mi>1</mi><mi>v</mi></mfrac> - <mfrac><mi>1</mi><mi>x + v</mi></mfrac> <mimp> |f(c) - <mfrac><mi>1</mi><mi>v</mi></mfrac>| <mlt> <mfrac><mi>x</mi><mi>x * v + v²</mi></mfrac> <mlt> x</math>
+<math>g(c) <mlt> v <mimp> -g(c) + v <mlt> x <mimp> g(c) <mgt> v - x <mimp> <mfrac><mi>1</mi><mi>g(c)</mi></mfrac> <mlt> <mfrac><mi>1</mi><mi>v - x</mi></mfrac> <mimp> <mfrac><mi>1</mi><mi>g(c)</mi></mfrac> - <mfrac><mi>1</mi><mi>v</mi></mfrac> <mlt> <mfrac><mi>1</mi><mi>v - x</mi></mfrac> - <mfrac><mi>1</mi><mi>v</mi></mfrac> <mimp> |f(c) - <mfrac><mi>1</mi><mi>v</mi></mfrac>| <mlt> <mfrac><mi>x</mi><mi>x * v + v²</mi></mfrac> <mlt> x</math>
+<p>
+Dans le cas de la limite en "+ l'infini" :
+</p>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <mgt> b <mimp> |g(c) - v| <mlt> x}</math></br>
+<math>g(c) <mgt> v <mimp> g(c) - v <mlt> x <mimp> g(c) <mlt> x + v <mimp> <mfrac><mi>1</mi><mi>g(c)</mi></mfrac> <mgt> <mfrac><mi>1</mi><mi>x + v</mi></mfrac> <mimp> <mfrac><mi>1</mi><mi>g(c)</mi></mfrac> - <mfrac><mi>1</mi><mi>v</mi></mfrac> <mgt> <mfrac><mi>1</mi><mi>x + v</mi></mfrac> - <mfrac><mi>1</mi><mi>v</mi></mfrac> <mimp> -<mfrac><mi>1</mi><mi>g(c)</mi></mfrac> + <mfrac><mi>1</mi><mi>v</mi></mfrac> <mlt> <mfrac><mi>1</mi><mi>v</mi></mfrac> - <mfrac><mi>1</mi><mi>x + v</mi></mfrac> <mimp> |f(c) - <mfrac><mi>1</mi><mi>v</mi></mfrac>| <mlt> <mfrac><mi>x</mi><mi>x * v + v²</mi></mfrac> <mlt> x</math>
+<math>g(c) <mlt> v <mimp> -g(c) + v <mlt> x <mimp> g(c) <mgt> v - x <mimp> <mfrac><mi>1</mi><mi>g(c)</mi></mfrac> <mlt> <mfrac><mi>1</mi><mi>v - x</mi></mfrac> <mimp> <mfrac><mi>1</mi><mi>g(c)</mi></mfrac> - <mfrac><mi>1</mi><mi>v</mi></mfrac> <mlt> <mfrac><mi>1</mi><mi>v - x</mi></mfrac> - <mfrac><mi>1</mi><mi>v</mi></mfrac> <mimp> |f(c) - <mfrac><mi>1</mi><mi>v</mi></mfrac>| <mlt> <mfrac><mi>x</mi><mi>x * v + v²</mi></mfrac> <mlt> x</math>
+<p>
+Dans le cas de la limite en "- l'infini" :
+</p>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <mlt> -b <mimp> |g(c) - v| <mlt> x}</math></br>
+<math>g(c) <mgt> v <mimp> g(c) - v <mlt> x <mimp> g(c) <mlt> x + v <mimp> <mfrac><mi>1</mi><mi>g(c)</mi></mfrac> <mgt> <mfrac><mi>1</mi><mi>x + v</mi></mfrac> <mimp> <mfrac><mi>1</mi><mi>g(c)</mi></mfrac> - <mfrac><mi>1</mi><mi>v</mi></mfrac> <mgt> <mfrac><mi>1</mi><mi>x + v</mi></mfrac> - <mfrac><mi>1</mi><mi>v</mi></mfrac> <mimp> -<mfrac><mi>1</mi><mi>g(c)</mi></mfrac> + <mfrac><mi>1</mi><mi>v</mi></mfrac> <mlt> <mfrac><mi>1</mi><mi>v</mi></mfrac> - <mfrac><mi>1</mi><mi>x + v</mi></mfrac> <mimp> |f(c) - <mfrac><mi>1</mi><mi>v</mi></mfrac>| <mlt> <mfrac><mi>x</mi><mi>x * v + v²</mi></mfrac> <mlt> x</math>
+<math>g(c) <mlt> v <mimp> -g(c) + v <mlt> x <mimp> g(c) <mgt> v - x <mimp> <mfrac><mi>1</mi><mi>g(c)</mi></mfrac> <mlt> <mfrac><mi>1</mi><mi>v - x</mi></mfrac> <mimp> <mfrac><mi>1</mi><mi>g(c)</mi></mfrac> - <mfrac><mi>1</mi><mi>v</mi></mfrac> <mlt> <mfrac><mi>1</mi><mi>v - x</mi></mfrac> - <mfrac><mi>1</mi><mi>v</mi></mfrac> <mimp> |f(c) - <mfrac><mi>1</mi><mi>v</mi></mfrac>| <mlt> <mfrac><mi>x</mi><mi>x * v + v²</mi></mfrac> <mlt> x</math>
 
 <p>
 Parlons maintenant du cas où l'on compare une limite vers une valeur finie et une limite vers une valeur infinie.

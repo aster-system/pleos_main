@@ -94,6 +94,9 @@
 <new_definition name="algebra_center">
     <content>le centre d'une structure algébrique représentent l'ensemble des éléments de cette structure commutant avec tous les autres éléments</content>
 </new_definition>
+<new_definition name="algebra_conjugacy_action">
+    <content>une action par conjugaison d'un ensemble "G" </content>
+</new_definition>
 <new_definition name="algebra_group_action">
     <content>une action de groupe est un moyen d'opérer un groupe avec un ensemble "E", de tel manière que tous les résultats de ces opérations (entre un élément du groupe et un élément de "E") appartiennent à "E"</content>
     <content name="fixed_point">le point fixe d'un élément "g" d'un groupe "G" opérant sur un ensemble "E" représente l'ensemble des éléments de "E" tel que opérer "g" par ces éléments ne modifie pas ces éléments (et donc que "g" est dans le stabilisateur de l'élément)</content>
@@ -102,6 +105,9 @@
 </new_definition>
 <new_definition name="algebra_ideal">
     <content>un idéal I d'un anneau représente un sous-groupe de son groupe additif, où la multiplication de chacun de ces éléments par un élément du corps de base donne un élément de I (l'idéal est dit stable par la multiplication)</content>
+</new_definition>
+<new_definition name="algebra_inner_automorphism">
+    <content>un automorphisme intérieur associé à un élément "g" d'un groupe "G" d'opération "~" est un automorphisme (et donc une bijection de l'ensemble de "G" dans lui même) associant à chaque élément "x" du groupe l'élément "inverse de g ~ x ~ g"</content>
 </new_definition>
 <new_definition name="algebra_rank">
     <content>le rang d'une famille de vecteurs d'un espace vectoriel représente la dimension du sous-espace engendré par ce vecteur</content>

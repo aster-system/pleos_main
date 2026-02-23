@@ -48,6 +48,18 @@ Avec ces fluxions, Newton formalise la première tentative de "variation infinit
 Malheureusement, cette méthode manquaient de rigueur (encore) et de généralisation.
 En fait, <span class="important">c'est Leibniz qui proposera une méthode un peu changée, bien plus rigoureuse et mieux notée, encore utilisée aujourd'hui</span>.
 </p>
+<p>
+La dernière branche du calcul infinitésimal est le calcul intégral.
+<span class="important"><definition name="integration_calculus"></span>.
+L'idée ici est de considérer une fonction quelconque comme la "dérivée" d'une autre, et donc de la considérer comme la représentation des variations infinitésimales d'une autre fonction.
+Encore une fois, <span class="important">les mathématiciens arrivent à lier les problèmes de calcul d'aire à ce concept de calcul intégral</span>.
+De plus, dés le début, <span class="important">les mathématiciens ont compris que l'opération d'intégration et l'opération réciproque de l'opération de dérivation</span>.
+Encore et toujours, c'est Newton et Leibniz qui introduirent le concept en Europe, et comme d'habitude ça manquait fortement de rigueur.
+Hors, les mathématiciens se rendirent vite compte que ce concept est plus difficile que le calcul différentiel, et que la rigueur devait être très importante.
+<span class="important">La formulation de l'intégral la plus utilisée est l'intégrale de <scientist name="riemann" type="quote"> publiée en 1867</span>, que nous définirons plus tard.
+Cependant, bien que bien définie, elle excluait certaines fonctions, qui dans la logique pure, pourrait être intégrée.
+C'est pour ça que, en 1902, une nouvelle définition est proposée, par <scientist name="lebesgue" type="quote">.
+</p>
 
 
 
@@ -514,10 +526,11 @@ Donc, la limite en 0 à gauche de "5 + inverse de x" est "- l'infini", et la lim
 Grâce à des propriétés basiques, <span class="important">on se rend facilement compte que c'est la même chose pour des soustractions, en utilisant les opposés par l'addition (en sachant que, par logique pure, l'opposé de "+ l'infini" est "- l'infini", et l'opposé de "- l'infini" est "+ l'infini")</span>.
 </p>
 <p>
-De plus, <span class="important">il est possible d'obtenir des propriétés similaires avec la multiplication</span> (nous ne vous ferons pas subir la démonstration dans cette partie du cours).
+De plus, <span class="important">il est possible d'obtenir des propriétés similaires avec la multiplication</span> (nous ne vous ferons pas subir la démonstration dans cette partie du cours : elles sont sur la page dédiée, <a href="demo">juste ici</a>).
 Les démonstrations totales sont très similaires à celles de l'addition de limites.
 Déjà, <span class="important">si deux fonctions tendent en une valeur "a" (ou en un infini) vers respectivement "v" et "w" finis, alors le produit de ces deux fonctions tend en "a" (ou en l'infini nécessaire) vers "v * w"</span>.
-Quelque chose d'assez intéressant : <span class="important">cela marche aussi si "v" ou "w" est égal à 0</span>.
+Comme pour la soustraction, comme la division est la réciproque de la multiplication, alors tout cela marche aussi avec des divisions (en utilisant les inverses des valeurs nécessaires), bien entendu si il n'y a pas de 0 posant problème quelque part.
+Quelque chose d'assez intéressant : <span class="important">cela marche aussi si "v" ou "w" est égal à 0</span> (bien que cela pose problème dans le cas de la disivion, et nous verrons plus tard comment y remédier).
 Prenons un exemple très simple : la fonction "f(x) = 5", "g(x) = inverse de x" et "h(x) = f(x) * g(x)".
 </p>
 <math>f : R <mto> R, x <mto> 5</math></br>

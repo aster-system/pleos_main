@@ -74,7 +74,7 @@ namespace pleos {
                 }
                 else{__saasf_images(replica, content.get()->sub_texts().at(i), path, current_replica_file_path);}
             }
-            else if(attribute_name == std::string("a")){
+            else if(attribute_name == std::string_view("a")){
                 // HTML link
 
                 // Get the needed datas
@@ -126,12 +126,12 @@ namespace pleos {
                     attributes[url_attribute].value = final_link;
                 }
             }
-            else if((attribute_name == std::string("math"))){
+            else if((attribute_name == std::string_view("math"))){
                 // HMLT math
                 scls::format_math(content.get()->sub_texts().at(i));
                 __saasf_images(replica, content.get()->sub_texts().at(i), path, current_replica_file_path);
             }
-            else if((attribute_name == std::string("msqrt"))){
+            else if((attribute_name == std::string_view("msqrt"))){
                 // HMLT square root
                 if(content.get()->sub_texts().at(i).get()->sub_texts().size() == 0){
                     std::shared_ptr<scls::XML_Text_Base> content_copy = std::make_shared<scls::XML_Text_Base>(*content.get()->sub_texts().at(i).get());
@@ -142,7 +142,7 @@ namespace pleos {
                 }
                 else{__saasf_images(replica, content.get()->sub_texts().at(i), path, current_replica_file_path);}
             }
-            else if((attribute_name == std::string("msub") || attribute_name == std::string("msup")) && i > 0){
+            else if((attribute_name == std::string_view("msub") || attribute_name == std::string_view("msup")) && i > 0){
                 if(static_cast<int>(content.get()->sub_texts().at(i).get()->sub_texts().size()) < 2) {
                     // HMLT a sup
                     std::shared_ptr<scls::XML_Text_Base> content_copy = std::make_shared<scls::XML_Text_Base>(*content.get()->sub_texts().at(i - 1).get());
@@ -155,7 +155,7 @@ namespace pleos {
                     content.get()->sub_texts().erase(content.get()->sub_texts().begin() + i);i--;
                 }
             }
-            else if(attribute_name == std::string("mvec") || attribute_name == std::string("vec")){
+            else if(attribute_name == std::string_view("mvec") || attribute_name == std::string_view("vec")){
                 // HMLT a vector
                 std::shared_ptr<scls::XML_Text_Base> content_copy = std::make_shared<scls::XML_Text_Base>(*content.get()->sub_texts().at(i).get());
                 content_copy.get()->set_xml_balise_name(std::string("mi"));

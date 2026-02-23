@@ -1,5 +1,1 @@
-
-
-
-
 <metadata firstname="Jean" lastname="neper" birth="1550" death="1617">

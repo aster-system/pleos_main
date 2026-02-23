@@ -474,3 +474,15 @@ Finalement, on peut obtenir la "réciproque" de ce concept, grâce aux points fi
 Généralement, cet ensemble est noté "fixe de g", et se définit comme ça 
 </p>
 <math>Fix<msub>g</msub> = {x <min> A, g . x = x}</math>
+<p>
+Le type d'action par conjugaison le plus utilisé est l'action par conjugaison.
+Pour cela, nous avons besoin d'un autre concept : les automorphismes intérieurs.
+<span class="important"><definition name="algebra_inner_automorphism"></span>.
+Pour un groupe "G" sur un ensemble "E" avec une opération "~", un automorphisme intérieur d'un élément "g" de "G" se note comme ça :
+</p>
+<math><mforall> x <min> E, <mi>aut</mi><msub>g</msub>(x) = <mi>g</mi><msup>-1</msup> ~ x ~ g</math>
+<p>
+Hors, selon les propriétés du groupe, <span class="important">si on peut permuter "x" et "g" ou "inverse de g" et "x", alors "g" et son inverse s'annule, et "aut(x) = x"</span>.
+Donc, dans un groupe abélien, se concept ne sert à rien.
+Cependant, par définition pure, si "x" appartient au centre de "G", alors l'automorphisme le laisse invariant, mais ça peut ne pas être le cas de tous les "x" de "G".
+</p>

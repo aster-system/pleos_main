@@ -1,0 +1,1 @@
+<metadata firstname="gottlob" lastname="frege" birth="1848" death="1925">

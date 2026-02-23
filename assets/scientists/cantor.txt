@@ -1,0 +1,1 @@
+<metadata firstname="georg" lastname="cantor" birth="1845" death="1918">

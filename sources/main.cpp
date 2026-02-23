@@ -32,6 +32,7 @@
 
 // Include PLEOS Hub header
 #include "../headers/pleos_hub.h"
+#include "../../../one_thousand_ludo/ludo.h"
 
 // Include PLEOS Test header
 #include "../../../scls-image-michelangelo/scls_image_directory/scls_image_table.h"
@@ -41,6 +42,7 @@ SCLS_INIT
 
 // exec.exe study "3*x*x+5*x-2"
 
+// Execute a command
 int command(int argc, char* argv[]) {
 	if(argc <= 1){return PLEOS_COMMAND_NOT_ENOUGH_PARAMETERS;};
 
@@ -55,12 +57,27 @@ int command(int argc, char* argv[]) {
 
 	// Execute
 	try {
-	    int error = pleos::execute(command_name, "tests/solve.png", command_parameters);
-        if(error < 0) {
-            std::string timestamp = scls::current_date().to_std_string();
-            scls::append_in_file("tests/log.txt", timestamp + " - Erreur : la commande \"" + command_full + "\" a généré l'erreur " + std::to_string(error) + "\n");
-        }
-        return error;
+	    if(command_name == std::string_view("generate_ludo")) {return generate_ludo_game();}
+	    else if(command_name == std::string_view("trombi") || command_name == std::string_view("trombinoscope")) {
+            int error = 0;
+            if(command_parameters.size() <= 0){error = PLEOS_COMMAND_NOT_ENOUGH_PARAMETERS;}
+            else{error = photo_directory(command_parameters.at(0));}
+
+            // Error handling
+            if(error < 0) {
+                std::string timestamp = scls::current_date().to_std_string();
+                scls::append_in_file("tests/log.txt", timestamp + " - Erreur : la commande \"" + command_full + "\" a généré l'erreur " + std::to_string(error) + "\n");
+            }
+            return error;
+	    }
+	    else {
+            int error = pleos::execute(command_name, "tests/solve.png", command_parameters);
+            if(error < 0) {
+                std::string timestamp = scls::current_date().to_std_string();
+                scls::append_in_file("tests/log.txt", timestamp + " - Erreur : la commande \"" + command_full + "\" a généré l'erreur " + std::to_string(error) + "\n");
+            }
+            return error;
+	    }
 	}
 	catch (std::exception* e) {
 	    std::cout << "B " << std::endl;
@@ -73,7 +90,7 @@ int main(int argc, char* argv[]) {
 	//pleos::bac(std::string("tests/"));
 	//pleos::test(std::string("tests/"));
 
-	//return pleos::execute("study", "tests/solve.png", std::vector<std::string>(1, "^+^+^+^+"));
+	//return pleos::execute("graphic", "tests/solve.png", std::vector<std::string>(1, std::string("<graphic><background_color white><base width=5 height=5><function expression=\"x/3\"><curve_area number=5 area_end=2></function></graphic>")));
 	//return command(argc, argv);
 
 	pleos::Pleos_Window window(900, 600, argv[0]);

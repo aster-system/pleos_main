@@ -43,4 +43,24 @@ Finalement, l'élément neutre du corps pour sa deuxième opération est aussi u
 <math><mforall>b <min> B, <mexists>e <min> A, b * e = b</math>
 <p>
 Si vous avez toutes ces conditions grâce à un corps "K", vous avec un espace vectoriel sur "K".
+L'exemple le plus simple d'espace vectoriel sur "K" est... "K".
+En effet, <span class="important">"K" est un espace vectoriel sur lui même</span>.
+Comme "K" est un corps, sa première loi est bel et bien un groupe abélien, et sa deuxième loi se comporte comme une opération d'un élément de l'ensemble de "K" et... de l'ensemble de "K" (avec associativité, neutre et distributivité).
+</p>
+<p>
+Plaçons nous dans le corps le plus simple pour définir des espaces vectoriels : "R".
+Déjà, comme nous l'avons vue, "R" est un espace vectoriel sur lui même.
+Or, <span class="important">il est possible de construire des ensembles de tous les "n-uplets" de "R", qui sont eux aussi des espaces vectoriels</span> (généralement, nous noterons ces ensembles "R exposant n", comme avec un produit cartésien).
+Il faut cependant bien définir leurs propriétés.
+Déjà, <span class="important">nous allons définir une opération d'addition entre les "n-uplets", où la somme de deux "n-uplets" donne un nouveau "n-uplet" ou le k-ième élément du résultat représente la somme du k-ième élément du premier "n-uplet" et du k-ième élément du second "n-uplet"</span>.
+Comme cette opération se comporte comme plusieurs additions dans "R" disjointes, alors la structure de ces "n-uplets" et de cette opération ont les mêmes propriétés que dans "R" : un groupe abélien par cette addition.
+</p>
+<math><mforall> (a, b, ..., n), (a', b', ..., n') <min> <mi>R</mi><msup>n</msup>, (a, b, ..., n) + (a', b', ..., n') = (a + a', b + b', ..., n + n')</math>
+<p>
+En suite, <span class="important">nous allons définir une opération entre ces "n-uplets" et "R", où l'on multiplie chaque élément du "n-uplet" par un élément de "R"</span>.
+Comme cette opération se comporte comme plusieurs multiplications dans "R" disjointes, alors la structure de ces "n-uplets" et de cette opération ont les mêmes propriétés que dans "R" : associativité, neutre (1) et distributivité.
+</p>
+<mforall> (a, b, ..., n) <min> <mi>R</mi><msup>n</msup>, <mforall> x <min> R, x * (a, b, ..., n) = (a * x, b * x, ..., n * x)</math>
+<p>
+Donc, <span class="important">"R exposant n" est un espace vectoriel sur "R"</span>.
 </p>
