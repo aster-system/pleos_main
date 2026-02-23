@@ -482,7 +482,7 @@ Généralement, cet ensemble est noté "fixe de g", et se définit comme ça
 </p>
 <math>Fix<msub>g</msub> = {x <min> A, g . x = x}</math>
 <p>
-Le type d'action par conjugaison le plus utilisé est l'action par conjugaison.
+Le type d'action de groupe le plus utilisé est l'action par conjugaison.
 Pour cela, nous avons besoin d'un autre concept : les automorphismes intérieurs.
 <span class="important"><definition name="algebra_inner_automorphism"></span>.
 Pour un groupe "G" sur un ensemble "E" avec une opération "~", un automorphisme intérieur d'un élément "g" de "G" se note comme ça :
