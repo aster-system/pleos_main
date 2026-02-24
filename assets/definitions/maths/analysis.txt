@@ -9,6 +9,13 @@
     <content>le calcul intégral est une branche du calcul infinitésimal où les valeurs infinitésimales servent à étudier une fonction comme les variations infinitésimales d'autres fonctions</content>
 </new_definition>
 
+<new_definition name="algebra_interval">
+    <content>une intervalle est un ensemble de nombre réel représentant tous les nombres réels situés entre deux autres nombres réels</content>
+    <content name="infimum">la borne inférieure d'une partie "F" d'un ensemble "E" est le plus grand minorant de "F" (et donc le plus grand élément inférieur à tous les éléments de "F")</content>
+    <content name="majorant">un majorant d'une partie "F" d'un ensemble "E" est un élément de "E" supérieur à tous les éléments de "F"</content>
+    <content name="minorant">un minorant d'une partie "F" d'un ensemble "E" est un élément de "E" inférieur à tous les éléments de "F"</content>
+    <content name="supremum">la borne supérieure d'une partie "F" d'un ensemble "E" est le plus petit majorant de "F" (et donc le plus petit élément supérieur à tous les éléments de "F")</content>
+</new_definition>
 <new_definition name="analysis_real_function">
     <content>une fonction réelle est une fonction allant de l'ensemble "R" vers l'ensemble "R"</content>
 </new_definition>

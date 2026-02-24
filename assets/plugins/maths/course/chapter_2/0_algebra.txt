@@ -304,6 +304,12 @@ Il existe un autre concept très proche (et très lié) à ces groupes symétriq
 <span class="important"><definition name="symmetric_group-permutation_group"></span>.
 Ce concept permet d'énoncer un théorème très pratique : le théorème de Cayley.
 </p>
+<p>
+Un des sous-groupes les plus (si ce n'est le plus) remarquables de "S(E)" est ce que l'on appelle le groupe alterné.
+<span class="important"><definition name="symmetric_group-alternating"></span>.
+Comme tout sous-groupe, on peut démontrer que les permutations paires sont stables par la composition (démontré au dernier chapitre), et que la permutation identité est paire (car 0 l'est aussi).
+Ce sous-groupe a une quantité aberrante de propriétés intéressantes, que nous serons amenés à étudier plus tard.
+</p>
 
 <h3>Le groupe additif Z/nZ</h3>
 <p>

@@ -18,6 +18,8 @@
     <content>une permutation (aussi appelé substition dans certains vieux ouvrages) est une bijection où l'ensemble de départ est le même que l'ensemble d'arrivée</content>
     <content name="cyclic">une permutation est dite circulaire si elle permute une partie de l'ensemble de départ en avançant (ou reculant) chaque élément de cette partie (de telle manière que le dernier élément prenne la place du premier élément si besoin), et ne modifie pas les éléments or de cette partie</content>
     <content name="transposition">une transposition est une permutation qui n'échange que deux éléments de l'ensemble entre eux (et ne touche pas aux autres)</content>
+    <content name="transposition_parity">une transposition est dite paire si elle est la composition d'une quantité paire de transposition (sinon, elle est dite impaire)</content>
+    <content name="transposition_signature">une signature d'une transposition est une valeur qui est -1 si la transposition est impaire, et 1 si elle est paire</content>
 </new_definition>
 <new_definition name="relation">
     <content>une relation est un objet permettant d'énoncer des propositions entre plusieurs éléments d'un même ensemble quelconque</content>

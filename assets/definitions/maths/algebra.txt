@@ -92,7 +92,7 @@
 </new_definition>
 
 <new_definition name="algebra_center">
-    <content>le centre d'une structure algébrique représentent l'ensemble des éléments de cette structure commutant avec tous les autres éléments</content>
+    <content>le centre d'une structure algébrique représentent l'ensemble des éléments de cette structure commutant avec tous les autres éléments de la structure</content>
 </new_definition>
 <new_definition name="algebra_conjugacy_action">
     <content>une action par conjugaison d'un ensemble "G" </content>
@@ -132,6 +132,7 @@
 </new_definition>
 <new_definition name="symmetric_group">
     <content>le groupe symétrique (ou groupe des permutations) d'un ensemble "E" est un groupe sur l'ensemble des permutations de "E", et utilisant comme loi de composition la composition de fonction</content>
+    <content name="alternating">le groupe alterné d'un groupe symétrique est le sous-groupe du groupe symétrique composé de toutes les permutations paires possibles</content>
     <content name="permutation_group">un groupe de permutation d'un ensemble "E" est un sous-groupe du groupe symétrique (aussi nommé groupe des permutations) de "E"</content>
 </new_definition>
 

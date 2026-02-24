@@ -371,6 +371,65 @@ Or, cela représente exactement la définition d'une bijection.
 Donc, "h" est aussi une bijection, de "E" vers "G".
 </p>
 
+<h4>1.1.1.4</h4>
+<p>
+Prouvons que toute permutation de "E" (de cardinal supérieur ou égal à 2) est composition de transpositions de "E".
+Procédons par récurrence.
+<p>
+Posons l'hypothèse de récurrence pour tout ensemble "E" de cardinal "n" supérieur ou égal à 2, P(n) = "toute permutation de E est composition de transpositions de E".</br>
+Déjà, par définition des ensembles de taille 2, il n'existe que deux permutations, qui transforment de manière parfaitement égal l'ensemble.
+Notons l'ensemble des permutations de "E" comme "S(E)", et l'ensemble des transpositions "T(E)" :
+</p>
+<math>S(E) = {(a, b), (b, a)} = T(E)</math>
+<p>
+Ces deux permutations échangent seulement deux éléments entre eux : ce sont des transpositions.
+Donc, P(0) est vraie.
+</p>
+<p>
+En suite, prouvons que si P(k) avec k un nombre entier naturel quelconque, alors P(k + 1).
+Commençons par supposer que P(k) soit vrai. 
+</p>
+<math><mforall> f <min> S(E), <mexists> n <min> N, <mexists> (a, b, ..., c) <min> <mi>N</mi><mi>n</mi>, {<mexists> (<mi>t</mi><msub>a</msub>, <mi>t</mi><msub>b</msub>, ..., <mi>t</mi><msub>c</msub>) <min> <mi>T(E)</mi><msup>n</msup>, f = <mi>t</mi><msub>a</msub> <mcomp> <mi>t</mi><msub>b</msub> <mcomp> ... <mcomp> <mi>t</mi><msub>c</msub>}</math>
+<p>
+Posons un ensemble "F" représentant l'ensemble "E" auquel on ajoute un élément "z", et qui est donc de cardinal "n + 1".
+Donc, "S(F)" contient toutes les permutations possibles dans "S(E)", qui sont selon l'hypothèse de récurrence toutes des compositions de transpositions de "E" (qui sont donc des transpositions de "F").
+Or, les autres éléments de "S(F)" sont les compositions de tous les éléments de "S(E)" et de toutes les transpositions entre des éléments de "E" dans "F" et de l'élément dans "F" qui n'est pas dans "E".
+</p>
+<math>f <min> S(F) <mimp> f <min> S(E) <mor> {<mexists> g <min> S(E), <mexists> e <min> E, f = g <mcomp> (e z)}</math>
+<p>
+Bien évidemment, cette transposition à ajouter représente tous les éléments de "S(E)" auquelles on compose une transposition de "F".
+Donc, si "P(k)", alors "P(k) + 1".
+</p>
+<math><mforall> f <min> S(F), <mexists> n <min> N, <mexists> (a, b, ..., c) <min> <mi>N</mi><mi>n</mi>, {<mexists> (<mi>t</mi><msub>a</msub>, <mi>t</mi><msub>b</msub>, ..., <mi>t</mi><msub>c</msub>) <min> <mi>T(F)</mi><msup>n</msup>, f = <mi>t</mi><msub>a</msub> <mcomp> <mi>t</mi><msub>b</msub> <mcomp> ... <mcomp> <mi>t</mi><msub>c</msub>}</math>
+<p>
+Comme tout ensemble de cardinal "n + 1" représente un ensemble de cardinal "n" union un élément, alors cela marche pour tous les ensembles finis.
+Donc, P(0) est vraie et P(k) implique P(k + 1).
+Selon le principe de récurrence, P est vraie pour tout nombre entier naturel.
+Finalement : toute permutation de "E" (de cardinal supérieur ou égal à 2) est composition de transpositions de "E".
+</p>
+
+<h4>1.1.1.5</h4>
+<p>
+Prouvons que la composition de deux permutations paires donne une permutation paire.
+Commençons par définir "f" et "g" comme deux transpositions paires de "E".
+</p>
+<math><mforall> f <min> S(E), <mexists> n <min> 2N, <mexists> (a, b, ..., c) <min> <mi>N</mi><mi>n</mi>, {<mexists> (<mi>t</mi><msub>a</msub>, <mi>t</mi><msub>b</msub>, ..., <mi>t</mi><msub>c</msub>) <min> <mi>T(E)</mi><msup>n</msup>, f = <mi>t</mi><msub>a</msub> <mcomp> <mi>t</mi><msub>b</msub> <mcomp> ... <mcomp> <mi>t</mi><msub>c</msub>}</math></br>
+<math><mforall> g <min> S(E), <mexists> o <min> 2N, <mexists> (a', b', ..., c') <min> <mi>N</mi><mi>o</mi>, {<mexists> (<mi>t</mi><msub>a'</msub>, <mi>t</mi><msub>b'</msub>, ..., <mi>t</mi><msub>c'</msub>) <min> <mi>T(E)</mi><msup>n</msup>, g = <mi>t</mi><msub>a'</msub> <mcomp> <mi>t</mi><msub>b'</msub> <mcomp> ... <mcomp> <mi>t</mi><msub>c'</msub>}</math>
+<p>
+L'idée est assez simple.
+En effet, la composée de "f" et "g" peut s'écrire comme la composée des transpositions composant "f" et "g".
+Donc, on obtient la composée d'une somme de nombres pairs de transpositions, et donc une permutation étant elle aussi paire.
+</p>
+<math>f <mcomp> g = <mi>t</mi><msub>a</msub> <mcomp> <mi>t</mi><msub>b</msub> <mcomp> ... <mcomp> <mi>t</mi><msub>c</msub> <mcomp> <mi>t</mi><msub>a'</msub> <mcomp> <mi>t</mi><msub>b'</msub> <mcomp> ... <mcomp> <mi>t</mi><msub>c'</msub></math>
+<p>
+Il y a cependant un point à clarifier.
+En effet, que se passe t-il si "t de c" et "t de a'" s'annulent ?
+En fait, dans ce cas, on peut enlever les deux, et donc enlever "2" au nombre de transpositions.
+Or, soustraire un nombre pair à un nombre pair donne un nombre pair : ce n'est donc pas un problème.
+C'est la même chose si "t de b" et "t de b'" s'annulent...
+Donc, la composée de deux permutations paires est elle aussi paire.
+</p>
+
 
 
 <h2>Les nombres entiers naturels</h2>

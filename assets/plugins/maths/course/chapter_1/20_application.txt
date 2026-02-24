@@ -374,7 +374,7 @@ Il s'agit en fait de la permutation... qui ne modifie aucun élément de "E" (da
 </p>
 <math><mi>Id</mi><msub>E</msub> : E <mto> E, x <mto> x</math>
 <p>
-Généralement, la notation d'une transposition dans un ensemble fini de taille "n" représente la façon dont les éléments sont échangés.
+Généralement, la notation d'une permutation dans un ensemble fini de taille "n" représente la façon dont les éléments sont échangés.
 En fait, <span class="important">on les note sous la forme de deux objets l'un sur l'autre, où l'objet dans haut représente un numéro pour chaque élément de l'ensemble, et l'objet dans bas représente le nouvel arrangement de l'objet après le passage de la permutation</span>.
 Il est fortement conseillé de noter les premiers éléments de "1" à "n" si possible, pour des raisons de simplicité.
 </p>
@@ -384,9 +384,27 @@ Il existe cependant une autre notation, plus courte mais un peu plus complexe, d
 En fait, <span class="important">cette notation consiste à noter un élément, puis à noter à sa droite l'élément auquel la permutation le permute, et faire de même avec cet élément (en prenant l'élément de même nombre dans l'ensemble de départ) jusqu'à retomber sur l'élément de départ</span>.
 Cependant, il est possible que des éléments soit ignorés, si ils ne permutent pas avec un élément de départ, ou avec un des éléments suivants.
 Dans ce cas, <span class="important">on refait cela avec les éléments manquant jusqu'à qu'il n'en manque plus, en séparant chaque itération par des parenthèses</span>.
-Dans le cas de notre permutation test, nous devons lire, <span class="important"><definition name="permutation-transposition"></span>.
+Voici un exemple avec une permutation simple :
+</p>
+<math><mtable><mtd><mi>(1, 2, 3, 4, 5)</mi></mtd><mtd><mi>(1, 2, 5, 3, 4)</mi></mtd></mtable> = (3 5 4)</math>
+<p>
+La forme la plus simple de permutation est la transposition.
+<span class="important"><definition name="permutation-transposition"></span>.
+Ces permutations peuvent s'écrire avec notre nouvelle notation avec seulement deux indices : ceux que l'on échange.
+Dans le cas où l'on transpose "3" et "5", on note ceci :
 </p>
 <math><mtable><mtd><mi>(1, 2, 3, 4, 5)</mi></mtd><mtd><mi>(1, 2, 5, 4, 3)</mi></mtd></mtable> = (3 5)</math>
+<p>
+Ces transpositions permettent quelque chose d'extraordinaire : <span class="important">toute permutation est une composition de transpositions quelconques</span> (<a href="demo">démontré ici par récurrence</a>).
+Donc, on peut décomposer n'importe quelle permutation par une suite de transpositions quelconques.
+Généralement, <span class="important">on peut étudier les propriétés d'une permutation en étudiant sa décomposition en transposition</span>.
+Grâce à ça, on peut introduire le concept de parité et de signature d'une permutation.
+En fait, <span class="important"><definition name="permutation-transposition_parity"></span>.
+Une propriété intéressante : une composition de permutations paires donne une permutation paire (<a href="demo">démontré ici</a>).
+De plus, <definition name="permutation-transposition_signature">.
+Voici un exemple de permutation paire :
+</p>
+<math>(3 5 4) = (3 5) <mcomp> (5 4)</math>
 <p>
 De plus, <span class="important"><definition name="permutation-cyclic"></span>..
 Il s'agit juste de bouger dans un sens et d'une unité une partie de l'ensemble, et de déplacer tous ces éléments de la même manière.

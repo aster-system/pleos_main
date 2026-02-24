@@ -117,3 +117,69 @@ Donc, elle est associative, admet un neutre, chaque élément a un inverse et el
 Comme pour dans "Q", diviser "b" (non nul) à "a" revient à multiplier l'inverse de "b" à "a".
 </p>
 <math><mforall>a, b, c <min> R, c = a / b <mequi> c = a * <mfrac><mi>1</mi><mi>b</mi></mfrac></math>
+
+<h3>Les intervalles de nombres</h3>
+<p>
+Un objet très pratique utilisable avec les nombres réels est l'intervalle.
+<span class="important"><definition name="analysis_interval"></span>.
+Pour ça, nous allons utiliser les relations d'ordres dans R.
+En effet, <span class="important">un nombre "c" est entre deux nombres "a" et "b" (avec "a inférieur à b") si "c" est supérieur à "a" et inférieur à "c"</span>.
+Cependant, il existe plusieurs types d'intervalles, selon si la relation d'odre utilisée est "strictement inférieure", "inférieure ou égale", "strictement supérieure" ou "supérieure ou égale".
+Si l'intervalle est constitué de deux "supérieure / inférieure ou égale", on dit que l'intervalle est fermé, et on l'a marque / défini comme ça (avec des crochets, généralement nommées des bornes) :
+</p>
+<math><mforall> x <min> R, {x <min> I <mequi> x <mgtequal> a <mand> x <mltequal> b}</math></br>
+<math>I = [a, b]</math>
+<p>
+Cependant, si l'on utiliser des "strictement supérieure / inférieure", on dit que l'intervalle est ouverte, et on le note de manière similaire (on inverse juste les crochets) : 
+</p>
+<math><mforall> x <min> R, {x <min> I <mequi> x <mgt> a <mand> x <mlt> b}</math></br>
+<math>I = ]a, b[</math>
+<p>
+On peut aussi mélanger les deux, comme dans l'exemple ci-dessous.
+Dans le premier cas, on dit que la première borne est ouverte et la deuxième est fermée.
+Dans le deuxième cas, on dit que la première borne est fermée et la deuxième est ouverte.
+</p>
+<math><mforall> x <min> R, {x <min> I <mequi> x <mgt> a <mand> x <mltequal> b}</math></br>
+<math>I = ]a, b]</math></br>
+<math><mforall> x <min> R, {x <min> I <mequi> x <mgtequal> c <mand> x <mlt> d}</math></br>
+<math>J = [c, d[</math>
+<p>
+Comme il s'agit d'ensembles, <span class="important">on peut les utiliser avec tout le vocabulaire ensembliste basique</span>.
+Par exemple, on peut utiliser le concept de minimum et maximum, comme défini au chapitre 1.
+<span class="important">Si la première borne est fermée, le minimum de l'intervalle est "a", sinon l'intervalle n'a pas de minimum</span>.
+De plus, <span class="important">si la deuxième borne est fermée, le maximum de l'intervalle est "b", sinon l'intervalle n'a pas de maximum</span>.
+Aussi, tous les éléments de "[a, b]" sont dans "]a, b[", sauf "a" et "b".
+Donc, <span class="important">"]a, b[" est inclu dans "[a, b]" (mais l'inverse est faux)</span>.
+</p>
+<graphic width=200 height=200>
+<background_color white>
+<real_line x=0 y=0 width=8 height=2>
+</graphic>
+<p>
+Ce concept crée quelque propriétés bizarres.
+Par exemple, <span class="important">l'union de "]a, b]" et "[b, c[" donne "]a, c[" (et c'est la même chose pour des crochets fermés pour "a" et "c")</span>.
+Cependant, <span class="important">l'union de "]a, b[" et "]b, c[" donne "]a, c[ sans b", car "b" n'est dans aucun des deux ensembles (ce qui fait que l'union n'est pas un intervalle, car un éléments entre "a" et "c" est hors de l'ensemble)</span>
+Par contre, "]a, b[ U [b, c[ = ]a, c[" et "]a, b] U ]b, c[ = ]a, c[".
+Ces propriétés sont très facilement obtensibles pour quiconque ayant compris le formalisme des intervalles.
+</p>
+<p>
+Avec ce concept, on peut introduire quelques nouveaux concepts centraux en analyse réelle : majorants, minorants ou les bornes.
+<span class="important"><definition name="analysis_interval-majorant"></span>.
+Au contraire, <definition name="analysis_interval-minorant">.
+Ces deux concepts ne sont pas uniques : une partie peut avoir une infinité de majorants et une infinité de minorants.
+Cependant, il peut exister un majorant / minorant appartenant à "F", grâce à la relation "supérieur ou égal" et "inférieur ou égal".
+Néanmoins, certaines parties (comme des parties invoquant un infini) peuvent ne pas en posséder.
+Par exemple, pour l'intervalle "[3, 5]", "6", "875", "6782345678235" ou même "5" sont des majorants, et "2.9", "-1" ou "-782364789" sont des minorants.
+Un majorant "p" et un minorant "q" se définissent comme ça :
+</p>
+<math>I <mincluded> E, <mforall> x <min> I, p <mgtequal> x, q <mltequal> x</math>
+<p>
+Avec ces concepts, on peut en définir deux nouveaux : les bornes supérieures et inférieures.
+<span class="important"><definition name="analysis_interval-supremum"></span>.
+Au contraire, <definition name="analysis_interval-infimum">.
+À l'inverse des majorants et minorants, ces bornes sont uniques.
+Par exemple, pour l'intervalle "[3, 4[", "4" est un majorant de l'intervalle, et aussi la borne supérieure de l'intervalle (et "3" est un minorant, et la borne inférieure de l'intervalle).
+Une borne supérieure "d" et une borne inférieure "e" se définissent comme ça :
+</p>
+<math>I <mincluded> E, {<mforall> x <min> I, p <mgtequal> x, <mforall> p <min> E, p <mgtequal> x <mimp> d <mltequal> p}</math></br>
+<math>I <mincluded> E, {<mforall> x <min> I, q <mltequal> x, <mforall> q <min> E, q <mltequal> x <mimp> e <mgtequal> p}</math>
