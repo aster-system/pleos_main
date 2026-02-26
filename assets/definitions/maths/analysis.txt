@@ -9,7 +9,11 @@
     <content>le calcul intégral est une branche du calcul infinitésimal où les valeurs infinitésimales servent à étudier une fonction comme les variations infinitésimales d'autres fonctions</content>
 </new_definition>
 
-<new_definition name="algebra_interval">
+<new_definition name="analysis_continuity">
+    <content>la continuité mathématique représente un concept suggérant la possibilité de se rapprocher indéfiniment d'une valeur dans un espace, quelque soit la façon dont vous faites</content>
+    <content name="function_real">une fonction réelle est continue en une valeur "a" si la valeur de sa limite à droite en "a" est égale à la valeur de sa limite à gauche en "a", et que cette limite est finie</content>
+</new_definition>
+<new_definition name="analysis_interval">
     <content>une intervalle est un ensemble de nombre réel représentant tous les nombres réels situés entre deux autres nombres réels</content>
     <content name="infimum">la borne inférieure d'une partie "F" d'un ensemble "E" est le plus grand minorant de "F" (et donc le plus grand élément inférieur à tous les éléments de "F")</content>
     <content name="majorant">un majorant d'une partie "F" d'un ensemble "E" est un élément de "E" supérieur à tous les éléments de "F"</content>
@@ -26,7 +30,7 @@
 </new_definition>
 <new_definition name="analysis_limit">
     <content>une limite mathématique représente en quelque sorte une valeur d'on se rapproche indéfiniment quand, dans une fonction (admettant comme ensemble d'arrivée un espace métrique), on se rapproche indéfiniment d'un point précis (sans jamais réellement l'atteindre)</content>
-    <content name="rigorous">une limite mathématique de fonction en une valeur "a" est une valeur "v" telle que, pour tout nombre réel possible "x", il existe toujours un nombre réel "b" (supérieur à "a" si on calcul la limite à droite, et inférieur sinon) tel que toute valeur entre "a" que "b" admet comme image une distance à "v" inférieure au nombre "x"</content>
+    <content name="rigorous">une limite mathématique de fonction en une valeur "a" est une valeur "v" telle que, pour tout nombre réel possible "x", il existe toujours un nombre réel "b" (supérieur à "a" si on calcul la limite à droite, et inférieur sinon) tel que toute valeur entre "a" et "b" admet comme image une distance à "v" inférieure au nombre "x"</content>
     <content name="rigorous_infinite">une limite mathématique infinie de fonction en une valeur "a" est l'un des deux infinies ("+ l'infini" ou "- l'infini") tel que, pour tout nombre réel possible "x", il existe toujours un nombre réel "b" (supérieur à "a" si on calcul la limite à droite, et inférieur sinon) tel que toute valeur entre "a" que "b" admet comme image une valeur supérieure au nombre "x"</content>
     <content name="sequence">une limite mathématique de suite représente en quelque sorte la valeur dont on se rapproche indéfiniment quand, dans une suite (admettant comme ensemble d'arrivée un espace métrique), on tend "n" vers "+ l'infini" (sans jamais réellement l'atteindre)</content>
     <content name="sequence_rigorous">une limite mathématique de suite vers une valeur "v" est une valeur "v" telle que, pour tous nombre réel possible "x", il existe toujours un nombre entier naturel "a" tel que la distance entre n'importe quelle valeur de la suite à partir de ce nombre "a" et le nombre "v" sont inférieurs à "x"</content>
@@ -40,10 +44,6 @@
     <content>un espace fonctionnel est un ensemble d'applications (et donc, de fonctions) entre deux ensembles X et Y</content>
 </new_definition>
 
-<new_definition name="analysis_continuity">
-    <content>la continuité mathématique représente un concept suggérant la possibilité de se rapprocher indéfiniment d'une valeur dans un espace, quelque soit la façon dont vous faites</content>
-    <content name="function">une fonction mathématique est continue en une valeur "a" si il existe une limite vers "a"</content>
-</new_definition>
 <new_definition name="analysis_limit_">
     <content>une limite mathématique est un outil / un opérateur permettant d'approximer une "infinité de fois" une valeur</content>
     <content name="sequence">une limite de suite est la valeur vers laquelle on se rapproche si on prend des valeurs "toujours plus proches de l'infini"</content>

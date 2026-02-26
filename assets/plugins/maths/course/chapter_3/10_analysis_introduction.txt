@@ -223,6 +223,8 @@ Un exemple très parlant de limite à droite différente de limite à gauche est
 <p>
 Dans tous les cas, il existe des définitions très rigoureuses de ces concepts.
 En effet, dans le cas des limites finies en une valeur finie, <span class="important"><definition name="analysis_limit-rigorous"></span>.
+Pour formaliser le concept de valeurs plus proche de "a" que "b", on va utiliser le formalisme des intervalles.
+En effet, toute valeur entre "]a - b, a + b[" (pour "b" positif) est plus proche de "a" que "b".
 Pour la limite à droite, on a :
 </p>
 <math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <min> ]a, a + b[ <mimp> |f(c) - v| <mlt> x}</math>
@@ -632,4 +634,7 @@ En plus, on aurait eu un problème si "x = 0" : cette fonction n'a pas ce probl�
 <h3>Qu'est ce qu'est la continuité mathématique ?</h3>
 <p>
 Les fonctions réelles peuvent posséder une propriété assez connue : la continuité.
+<span class="important"><definition name="analysis_continuity-function_real"></span>.
+En d'autres termes, pour rappel, on dit qu'il existe une limite en "a" (sans autres précisions) si la limite à gauche et à droite est égale.
+Donc, une fonction est continue si il existe une limite finie en "a".
 </p>
