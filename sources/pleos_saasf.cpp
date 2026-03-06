@@ -142,7 +142,7 @@ namespace pleos {
                 }
                 else{__saasf_images(replica, content.get()->sub_texts().at(i), path, current_replica_file_path);}
             }
-            else if((attribute_name == std::string_view("msub") || attribute_name == std::string_view("msup")) && i > 0){
+            else if((attribute_name == std::string_view("msub") || attribute_name == std::string_view("msup") || attribute_name == std::string_view("msubsup")) && i > 0){
                 if(static_cast<int>(content.get()->sub_texts().at(i).get()->sub_texts().size()) < 2) {
                     // HMLT a sup
                     std::shared_ptr<scls::XML_Text_Base> content_copy = std::make_shared<scls::XML_Text_Base>(*content.get()->sub_texts().at(i - 1).get());
@@ -151,6 +151,21 @@ namespace pleos {
                     content.get()->sub_texts().at(i - 1).get()->clear();
                     content.get()->sub_texts().at(i - 1).get()->set_xml_balise_name(attribute_name);
                     content.get()->sub_texts().at(i - 1).get()->add_sub_balise(content_copy);
+                    content.get()->sub_texts().at(i - 1).get()->add_sub_balise(content_copy_sup);
+                    content.get()->sub_texts().erase(content.get()->sub_texts().begin() + i);i--;
+                }
+                else if(static_cast<int>(content.get()->sub_texts().at(i).get()->sub_texts().size()) < 3) {
+                    // HMLT a sup
+                    std::shared_ptr<scls::XML_Text_Base> content_copy = std::make_shared<scls::XML_Text_Base>(*content.get()->sub_texts().at(i - 1).get());
+                    std::shared_ptr<scls::XML_Text_Base> content_copy_sub = std::make_shared<scls::XML_Text_Base>(*content.get()->sub_texts().at(i).get()->sub_texts().at(0));
+                    std::shared_ptr<scls::XML_Text_Base> content_copy_sup = std::make_shared<scls::XML_Text_Base>(*content.get()->sub_texts().at(i).get()->sub_texts().at(1));
+                    content_copy_sub.get()->set_xml_balise_name(std::string("mi"));content_copy_sup.get()->set_xml_balise_name(std::string("mi"));
+                    __saasf_images(replica, content_copy_sub, path, current_replica_file_path);
+                    __saasf_images(replica, content_copy_sup, path, current_replica_file_path);
+                    content.get()->sub_texts().at(i - 1).get()->clear();
+                    content.get()->sub_texts().at(i - 1).get()->set_xml_balise_name(attribute_name);
+                    content.get()->sub_texts().at(i - 1).get()->add_sub_balise(content_copy);
+                    content.get()->sub_texts().at(i - 1).get()->add_sub_balise(content_copy_sub);
                     content.get()->sub_texts().at(i - 1).get()->add_sub_balise(content_copy_sup);
                     content.get()->sub_texts().erase(content.get()->sub_texts().begin() + i);i--;
                 }

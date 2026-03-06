@@ -1,0 +1,63 @@
+<h1>Introduction à la topologie</h1>
+
+
+
+<h2>Qu'est ce qu'est la topologie ?</h2>
+
+<h3>Les espaces topologiques et les ouverts</h3>
+<p>
+Après avoir introduit le concept de limite et de continuité en analyse, parlons de la branche des mathématiques qui les formalise le mieux : la topologie.
+Avant de définir la topologie, nous avons quelques autres concepts à définir.
+</p>
+<p>
+Commençons par nous placer dans un ensemble quelconque, que nous nommerons "E".
+En topologie, nous étudions généralement "E" par certaines de ses parties précises : les ouverts.
+De manière intuitive, <span class="important"><definition name="topological_open_set"></span>.
+Ici (toujours de manière intuitive), <span class="important"><definition name="topological_boundary"></span>.
+Le meilleur moyen d'introduire ce concept est avec un exemple.
+En effet, <span class="important">un intervalle réel ouvert est un ouvert de l'ensemble des réels</span>.
+Prenons l'intervalle "]3; 5[".
+Ici, les éléments limitant l'intérieur et l'extérieur de cet intervalle sont "3" et "5" : ils représentent la frontière de l'intervalle.
+De plus, l'intervalle ne contient pas ces éléments : il ne contient aucun élément de sa frontière.
+Donc, il s'agit d'un ouvert de "R".
+Ici, <span class="important">les notions de "limite entre l'intérieur et l'extérieur" dépend de l'ensemble dans lequel on travaille</span>.
+Généralement, la frontière d'un ouvert est noté avec le symbole "d rond" :
+</p>
+<math><mpartial>]3; 5[ = {3, 5}</math>
+<p>
+Ici, les notions d'extérieurs et intérieurs de l'intervalle sont basés sur les notions de "supérieur ou égal" et "inférieur ou égal".
+En effet, "R" privé de cet intégrale représente "]- infini;3] U [5; + infini[".
+Pour parler plus en précision de tout cela, on peut introduire du vocabulaire plus spécifique.
+Par exemple, <span class="important"><definition name="topological_closed_set"></span>.
+Donc, "]- infini;3] U [5; + infini[".
+En fait,  <span class="important">un intervalle fermé ouvert est un fermé de l'ensemble des réels</span>.
+Prenons l'intervalle "[3; 5]", de frontière toujours "3" et "5" (comme ils font partie de l'intervalle, celui-ci n'est pas un ouvert).
+Ici, "R" privé de cet intervalle représente "]- infini;3[ U ]5; + infini[".
+Dans cet ensemble, <span class="important">il n'y a pas de frontière vers "+ l'infini" ou "- l'infini", puisque aucun élément de "R" n'est en dehors de "]- infini;+ infini["</span> : le priver de "[3, 5]" ne supprime que des éléments entre 3 et 5.
+Or, la frontière de ce nouvel ensemble est donc {3, 5}, qui ne font pas partie de l'ensemble : il s'agit donc d'un ouvert.
+</p>
+<p>
+De plus, <span class="important"><definition name="topological_closure"></span>.
+On peut en déduire plein de propriétés très simples, mais assez intéressantes.
+Si "F" est un fermé, alors "F" contient déjà sa frontière : "F" est égal à son adhérence.
+Cependant, si "F" est ouvert, alors l'intersection de "F" et de son adhérence donne "F", et priver "F" à l'adhérence de "F" donne la frontière de "F". 
+</p>
+<p>
+Généralement, <span class="important">on définit première l'ensemble des parties de "E" représentant les ouverts de "E", généralement noté "T", est nommée une topologie de "E"</span>.
+Premièrement, l'ensemble vide et "E" entier sont des ouverts de "E".
+Deuxièmement, l'union de n'importe quel élément de "T" est un autre élément de "T".
+Donc, l'union de deux ouverts est toujours un ouvert.
+</p>
+
+<graphic>
+<background_color white>
+<circle x=-3 y=0 radius=1 border_color=transparent color=red>
+<circle x=-1/2 y=0 radius=1 border_color=transparent color=green>
+
+<circle x=2 y=0 radius=1 border_color=transparent color=blue>
+<circle x=3 y=0 radius=1 border_color=transparent color=blue>
+</graphic>
+
+<p>
+Finalement, l'intersection de n'importe quel élément de "T" est un autre élément de "T".
+</p>

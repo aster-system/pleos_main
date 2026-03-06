@@ -5,6 +5,9 @@
     <content>deux nombres entiers sont dit congrus modulo "n" (avec n un autre entier) si ils ont le même reste par la division par "n"</content>
 </new_definition>
 
+<new_definition name="decimal_representation">
+    <content>le développement décimal d'un nombre quelconque est une façon d'écrire ce nombre représentant sa partie entière, suivie d'un séparateur (généralement une virgule ou un point), puis de chiffres, permettant un comportement arithmétique équivalent à celui de ses autres écritures possibles</content>
+</new_definition>
 <new_definition name="natural_number">
     <content name="addition">une addition entre deux nombres entiers naturels représente une opération entre deux nombres entiers naturels "a" et "b", donnant comme valeur la valeur partant de "a" obtenue après la répétition de "b" fois l'application "successeur"</content>
     <content name="bigger">un nombre entier naturel "a" est dit strictement supérieur à un nombre entier naturel "b" si nous pouvons obtenir "a" en appliquant une ou plusieurs fois la fonction successeur (en additionnant 1) à "b"</content>

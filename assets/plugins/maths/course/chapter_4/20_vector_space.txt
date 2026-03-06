@@ -2,11 +2,11 @@
 
 
 
-<h2>Un type précis d'espace</h2>
+<h2>Un type précis de structure</h2>
 
 <h3>Qu'est ce qu'est un espace vectoriel ?</h3>
 <p>
-Grâce aux corps, nous pouvons définir une nouvelle structure algébrique particulèrement utile : l'espace vectoriel.
+Grâce aux corps, nous pouvons définir une nouvelle structure algébrique particulièrement utile : l'espace vectoriel.
 <span class="important"><definition name="vector_space"></span>.
 Bien que ce concept puisse sembler complexe, il est la base de choses très importantes et basiques en mathématiques.
 Prenons un corps "K" sur un ensemble "A", et un espace vectoriel "E" sur un ensemble "B".
@@ -63,4 +63,14 @@ Comme cette opération se comporte comme plusieurs multiplications dans "R" disj
 <mforall> (a, b, ..., n) <min> <mi>R</mi><msup>n</msup>, <mforall> x <min> R, x * (a, b, ..., n) = (a * x, b * x, ..., n * x)</math>
 <p>
 Donc, <span class="important">"R exposant n" est un espace vectoriel sur "R"</span>.
+</p>
+
+<h3>Les applications linéaires</h3>
+
+
+
+<h2>Les espaces de Hilbert et la géométrie euclidienne</h2>
+<h3>Qu'est ce qu'est un espace de Hilbert ?</h3>
+<p>
+
 </p>

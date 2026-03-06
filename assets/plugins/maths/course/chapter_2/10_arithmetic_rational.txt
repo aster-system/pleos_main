@@ -90,7 +90,7 @@ De plus, <span class="important">"Q" possède aussi une opération de multiplica
 Comme pour "N" et "Z", opérer deux nombres entier relatif écrit dans "Q" revient à opérer deux nombres entiers relatifs tout cours.
 Dans "Q", l'opération est définie comme cela :
 </p>
-<math><mforall>a, b <min> Q <mequi> [<mexists>c, e <min> Z, <mexists>d, f <min> N*, a = <mfrac><mi>b</mi><mi>c</mi></mfrac> <mand> b = <mfrac><mi>d</mi><mi>e</mi></mfrac>], <mexists>h <min> Q, h = a + b <mequi> [<mexists i <min> Z, <mexists> j <min> N, q = <mfrac><mi>i</mi><mi>j</mi></mfrac> <mequi> i = c * e<mand> j = d * f]</math></br>
+<math><mforall>a, b <min> Q <mequi> [<mexists>c, e <min> Z, <mexists>d, f <min> N*, a = <mfrac><mi>b</mi><mi>c</mi></mfrac> <mand> b = <mfrac><mi>d</mi><mi>e</mi></mfrac>], <mexists>h <min> Q, h = a + b <mequi> [<mexists> i <min> Z, <mexists> j <min> N, q = <mfrac><mi>i</mi><mi>j</mi></mfrac> <mequi> i = c * e<mand> j = d * f]</math></br>
 <math>a = <mfrac><mi>3</mi><mi>1</mi></mfrac>, b = <mfrac><mi>4</mi><mi>1</mi></mfrac>, a + b = <mfrac><mi>3 * 4</mi><mi>1 * 1</mi></mfrac> = <mfrac><mi>12</mi><mi>1</mi></mfrac> = 12</math></br>
 <math>a = <mfrac><mi>5</mi><mi>2</mi></mfrac>, b = <mfrac><mi>3</mi><mi>2</mi></mfrac>, a + b = <mfrac><mi>5 * 3</mi><mi>2 * 2</mi></mfrac> = <mfrac><mi>15</mi><mi>4</mi></mfrac></math></br>
 <math>a = <mfrac><mi>5</mi><mi>2</mi></mfrac>, b = <mfrac><mi>7</mi><mi>3</mi></mfrac>, a + b = <mfrac><mi>5 * 7</mi><mi>2 * 3</mi></mfrac> = <mfrac><mi>35</mi><mi>6</mi></mfrac></math>
@@ -110,7 +110,7 @@ En fait, <span class="important">tous les nombres ont un inverse par la multipli
 Donc, <span class="important">la multiplication permet de former un groupe dans "Q*"</span>.
 D'ailleurs, cette propriété va nous permettre de définir la division dans "Q".
 En effet, pour rappel, diviser "a" par "b" consiste à trouver par quelle valeur multiplier "b" pour obtenir "a".
-C'est vrai dans "N", "Z" et aussii "Q".
+C'est vrai dans "N", "Z" et aussi "Q".
 </p>
 <math>a / b = c <mequi> a = b * c</math></br>
 <math><mforall>a, b, c <min> Q, a / b = c <mequi> a = b * c</math>
@@ -120,3 +120,85 @@ Dans ce cas, à droite, on a "b * c * inverse(b)", et comme la multiplication es
 Donc, "c" est égal à "a" multiplier par l'inverse de "b".
 En fait, <span class="important">diviser un nombre rationnel "a" par "b" revient à multiplier "a" et l'inverse de "b"</span>.
 </p>
+
+<h3>Le développement décimal</h3>
+<p>
+Quand on pense à nombre rationnel, on peut penser à plusieurs façons de les écrire.
+Pour l'instant, nous avons vue celle impliquant des fractions, comme "1 / 2".
+Or, il existe un autre moyen d'écrire ce fameux "1 / 2" : "0,5".
+C'est ce que l'on appelle le développement décimal du nombre "1 / 2".
+<span class="important"><definition name="decimal_representation"></span>.
+Cette définition mérite un peu plus de précisions.
+En fait, <span class="important">l'idée est de rallonger la taille de la partie entière du nombre tel que, quand on y applique les opérations classiques des nombres entiers naturels sur ce prolongement, alors on obtient les exacts mêmes résultats que si on effectuer cette opération avec les autres formes du nombre de départ</span>.
+Reprenons notre exemple de "1 / 2" pour illustrer cela.
+On sait que multiplier "1 / 2" par "2" donne "1" : c'est la même chose si on multiplie "0,5" par "2".
+En effet, pratiquer des additions avec ces développements décimaux revient à appliquer l'exact même algorithme qu'avec des nombres naturels (avec donc des retenues, qui dans ce cas, va dans le "1").
+</p>
+<math><mfrac><mi>1</mi><mi>2</mi></mfrac> * 2 = 1</math></br>
+<math>0,5 * 2 = 0,5 + 0,5 = 1,0 = 1</math></br>
+<math><mfrac><mi>6</mi><mi>5</mi></mfrac> * 5 = 6</math></br>
+<math>1,2 * 5 = 1,2 + 1,2 + 1,2 + 1,2 + 1,2 = 5,0 = 5</math></br>
+<p>
+Avec cette propriété, on peut en déduire une autre très basique : <span class="important">les "0" suivants un développement décimal complet (comme "1,0000") n'affecte absolument pas le calcul, et sont donc inutiles</span>.
+Cependant, ceux qui se situent entre deux chiffres présents dans le développement décimal sont obligatoires dans le calcul.
+L'algorithme d'obtension du développement décimal d'un nombre rationnel est assez simple.
+Avant de commencer, <span class="important">nous allons calculer la partie entière du nombre, et la soustraire au nombre de départ</span>.
+Cette première opération va nous permettre de trouver la partie "à gauche" du séparateur : le reste va nous permettre de trouver la partie après la virgule.
+Nous obtenons donc un nouveau nombre rationnel entre "0" et "1", au quel nous allons extraire le développement décimal.
+Nous allons nommer cette partie de l'algorithme "étape 2" : <span class="important">nous allons multiplier le numérateur par 10, puis nous allons obtenir la partie entière du nombre obtenu, et la soustraire au nombre obtenu</span>.
+Ici, <span class="important">la partie entière obtenue est le prochain chiffre à rajouter à droite dans le développement décimal</span>.
+Dans ce cas, le dénominateur sera supérieur au numérateur : la fraction représente un résultat entre 0 et 1.
+En suite, <span class="important">si le numérateur est nul, on peut s'arrêter : il n'y aura que des 0 à partir de là</span>.
+Sinon, <span class="important">on recommence l'algorithme à partir de l'étape 2</span>.
+Prenons un exemple : "145/8" :
+</p>
+<math><mfrac><mi>145</mi><mi>8</mi></mfrac> = 18 + <mfrac><mi>1</mi><mi>8</mi></mfrac></math></br></br>
+<math><mfrac><mi>10</mi><mi>8</mi></mfrac> = 1 + <mfrac><mi>2</mi><mi>8</mi></mfrac></math></br></br>
+<math><mfrac><mi>20</mi><mi>8</mi></mfrac> = 2 + <mfrac><mi>4</mi><mi>8</mi></mfrac></math></br></br>
+<math><mfrac><mi>40</mi><mi>8</mi></mfrac> = 5 + <mfrac><mi>0</mi><mi>8</mi></mfrac></math></br></br>
+<math><mfrac><mi>145</mi><mi>8</mi></mfrac> = 18,125</math>
+<p>
+<span class="important">Nous pouvons généraliser cet algorithme à n'importe quelle base numérique en remplçant la multiplication par "10" par la multiplication du nombre de chiffre dans la base</span>.
+Prenons un exemple : "145/4" :
+</p>
+<math><mfrac><mi>145</mi><mi>4</mi></mfrac> = 44 + <mfrac><mi>1</mi><mi>4</mi></mfrac></math></br></br>
+<math><mfrac><mi>8</mi><mi>4</mi></mfrac> = 2 + <mfrac><mi>0</mi><mi>8</mi></mfrac></math></br></br>
+<math><mfrac><mi>145</mi><mi>4</mi></mfrac> = 44,2</math>
+<p>
+Expliquons cet algorithme.
+Déjà, <span class="important">la première étape nous permet d'obtenir la partie entière du nombre</span>.
+Cela est conséquence d'une propriété triviale : "145/8 = 18,125 = 18 + 0,125 = 144/8 + 1/8".
+Comme nous l'avons vue plus haut, nous pouvons enlever cette partie entière à l'aide d'une simple division euclidienne entre le numérateur et le dénominateur, et donc obtenir un nombre entre 0 et 1 : la partie après la virgule.
+Dés que cela est, nous devons trouver un moyen d'extraire les nombres après la virgule.
+Ici, <span class="important">l'idée est d'utiliser une propriété de la façon dont on note les nombres : noter un nombre "a" à "b" place après la virgule reviens à additionner "a * 1/10^b" à ce nombre en base 10 (remplacer le "10"  dans la formule par le nombre de chiffre pour passer à une autre base)</span>.
+Donc, ce nombre peut être obtenu sous forme "partie entière" en divisant le quotient de notre dernière division par "10" (et donc en multipliant le dénominateur par 10) : c'est l'étape 2.
+Dés que ceci est fait, on place la valeur obtenu à droite de notre développement décimal, et on revient au début de l'étape 2 pour continuer l'algorithme.
+Cependant, <span class="important">si le numérateur vaut 0, toutes les multiplications qui suivront vaudront aussi 0 : on peut s'arrêter là</span>.
+D'ailleurs, <span class="important">les nombres dont la partie décimale est finie (et donc qu'un "0" est obtenu après un certain point) sont nommés des nombres décimaux</span>.
+Généralement, il est commun de noté l'ensemble des nombres décimaux "D".
+</p>
+<math>148,1579 <min> D</math>
+<p>
+Pour tout nombre décimal écrit dans toute base "n", <span class="important">il est possible de noter le nombre décimal comme un nombre entier relatif divisé par une puissance de la base "n" utilisée (généralement 10)</span>.
+Cela est conséquence directe du fait que tout développement décimal a les mêmes propriétés que sa partie fractionnaire (multiplier le développement décimal fini par une puissance de la base "n" revient à obtenir un nombre avec une partie après la virgule de "0", et donc un nombre entier relatif).
+Donc, <span class="important">tout nombre rationnel est un nombre décimal si il est possible de multiplier son dénominateur par une valeur pour donner une puissance de la base "n"</span> (<a href="demo">démontré ici, avec beaucoup d'arithmétique</a>).
+Par exemple :
+</p>
+<math>148,1579 = <mfrac><mi>1481579</mi><mi></mi>10000</mfrac> = <mfrac><mi>2963</mi><mi></mi>2000</mfrac></math>
+<p>
+Bien que cet algorithme marche bien, il pose un problème, que nous allons illustrer pour le cas de "1/3" en base 10.
+La partie entière de ce nombre est "0", la première étape est rapide.
+Maintenant, passons à la deuxième étape : nous obtenons "3".
+Refaisons cette étape : nous obtenons "3".
+Refaisons cette étape... autant de fois que vous le voulez : nous obtenons "3".
+Effectivement, <span class="important">certains nombres rationnels ont un développement décimal infini</span>.
+Bien que cela puisse paraître embêtant, on peut quand même remarquer quelque chose : le 3 apparaîtra toujours dans ce cas, quelque soit l'étape.
+Prenons un autre exemple : "15/7".
+Faites l'algorithme 12 fois, et vous obtiendrez "2,142857142857" : la séquence de nombre "142857" se répètera indéfiniment dans le développement décimal.
+En fait, <span class="important">pour tout nombre rationnel, le développement décimal est soit fini, soit il se répète indéfiniment à partir d'un certain rang (qui n'est pas toujours juste après la virgule)</span>.
+Comme il se répète indéfiniment, on dit que le développement décimal est périodique.
+Dans le cas où le développement décimal est fini, c'est la même chose à la différence prêt que la partie qui se répète représente un "0".
+La démonstration (<a href="demo">présente ici</a>) utilise beaucoup d'arithmétique basique.
+Généralement, la partie périodique d'un développement décimal est entourée grâce à des crochets, juste après la partie non-périodique.
+</p>
+<math>5/6 = 0.8333333... = 0.8[3]</math>

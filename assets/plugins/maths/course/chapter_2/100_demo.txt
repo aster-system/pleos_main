@@ -432,3 +432,55 @@ En utilisant les propriétés calculatoire de "Z" et "N", calculons des deux cô
 Donc, "a = b" est équivalent à dire que "a * c = b * c".
 </p>
 <math><mforall>a, b, c <min> Q, a = b <mequi> a * c = b * c</math>
+
+<h3 id="decimal_representation_addition">Le développement décimal des rationnels</h3>
+<h4>2.1.2.0</h4>
+<p>
+Démontrons que tout nombre rationnel est un nombre décimal en une base "n" si son dénominateur peut être multiplié par une valeur donnant une puissance de la base "n".
+</p>
+<math><mforall> a <min> Q, <mexists> b <min> Z, <mexists> c <min> N, a = <mfrac><mi>b</mi><mi>c</mi></mfrac></math>
+<p>
+Utilisons l'algorithme d'obtension du développement décimal en base "n".
+Déjà, décomposons "b" comme la somme du produit d'un nombre entier quelconque "z" et "c" au quel on ajoute un nombre entier naturel "d".
+</p>
+<math><mexists> z <min> Z, <mexists> d <min> N, b = z * c + d</math></br>
+<math><mfrac><mi>b</mi><mi>c</mi></mfrac> = z + <mfrac><mi>d</mi><mi>c</mi></mfrac></math>
+<p>
+Le développement décimal de "a" après la virgule est donc le même que celui de "d / c".
+En suite, rappelons une propriété des nombres décimaux : ils peuvent s'écrire comme un nombre rationnel divisé par une puissance de "n" (le nombre de chiffre dans la base demandé).
+</p>
+<math><mexists> g <min> Z, a = <mfrac><mi>d</mi><mi>c</mi></mfrac> = <mfrac><mi>g</mi><mrow><mi>n</mi><msup>q</msup></mrow></mfrac></math>
+<p>
+Pour passer d'une fraction quelconque à une fraction admettant comme dénominateur une puissance de "n", nous avons besoin de multiplier le numérateur et le dénominateur par un nombre donnant une puissance "n" au dénominateur.
+Pour trouver ce nombre, utilisons le théorème fondamental de l'arithmétique.
+Une puissance de "n" se décompose comme suit :
+</p>
+<math><mi>n</mi><msup>q</msup> = <mprod> <mrow><mo>(</mo><mi>p</mi><msub><mi>l</mi></msub><mo>)</mo></mrow><msup>q</msup></math>
+<p>
+Comme le résultat d'une multiplication garde la décomposition en produit de facteur premier des 2 opérandes, alors ces deux valeurs doivent pouvoir s'écrire de cette façon.
+Donc, le fait qu'une fraction admette un développement décimal fini équivaut à dire que son dénominateur s'écrive sous la forme d'une multiplication de seulement des valeurs (nombre premiers) présentent dans la décomposition de "n", à un exposant quelconque dans "N".
+D'ailleurs, nous pouvons aussi calculer le nombre nécessaire à obtenir cette forme de fraction (que nous nommerons "k" dans cet exemple).
+</p>
+<math><mfrac><mi>d</mi><mi>c</mi></mfrac>, <mexists>h <min> N, c = <mprod> <mrow><mo>(</mo><mi>p</mi><msub><mi>l</mi></msub><mo>)</mo></mrow><msup><mrow><mi>h</mi><msub>l</msub></mrow></msup>, k = <mprod> <mrow><mo>(</mo><mi>p</mi><msub><mi>l</mi></msub><mo>)</mo></mrow><msup><mrow>q - <mrow><mi>h</mi><msub>l</msub></mrow></mrow></msup>, c * k = <mprod> <mrow><mo>(</mo><mi>p</mi><msub><mi>l</mi></msub><mo>)</mo></mrow><msup>q</msup></math>
+<p>
+Donc, tout nombre rationnel est un nombre décimal en une base "n" si son dénominateur peut être multiplié par une valeur donnant une puissance de la base "n".
+</p>
+
+<h4>2.1.2.1</h4>
+<p>
+Démontrons que tout nombre rationnel admet un développement décimal périodique à partir d'un certain point.
+Posons un nombre rationnel "a" s'écrivant sous la forme finale "b/c".
+</p>
+<math><mforall> a <min> Q, <mexists> b <min> Z, <mexists> c <min> N, a = <mfrac><mi>b</mi><mi>c</mi></mfrac></math>
+<p>
+Si "a" est décimal, alors à partir d'un certain rang, le "0" se répète indéfiniment.
+Donc, il existe bien un développement décimal périodique (bien qu'inutile).
+</p>
+<math>165,1487 = 164,14870000... = 164,1487[0]</math>
+<p>
+Maintenant, démontrons qu'un nombre rationnel qui n'est pas un nombre décimal admet cependant un développement décimal périodique.
+Pour rappel, l'algorithme revient à trouver des restes par une division euclidienne du numérateur par la valeur du dénominateur.
+Or, au bout de au maximum "c + 1" étape, on tombe obligatoirement sur un reste qui est déjà tombé (selon le principe des tiroirs, qui est ici une implication) : on reprend donc l'algorithme à partir de ce reste.
+Comme une division euclidienne est unique, cela équivaut à dire que l'on retombe sur la même division euclidienne à l'infini.
+Donc, à partir d'un moment, le développement est périodique.
+</p>

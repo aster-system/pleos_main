@@ -75,6 +75,19 @@ En analyse, l'ensemble d'arrivée est très souvent un ensemble de nombres.
 Il est très commun de les expliciter, comme dans cet exemple :
 </p>
 <math>u : N <mto> Q, n <mto> u(n) = <mfrac><mi>1</mi><mi>n + 1</mi></mfrac></math>
+<p>
+Une des opérations possibles d'une suite est la somme partielle.
+<span class="important"><definition name="analysis_sequence-partial_sum"></span>.
+Par exemple, la somme partielle de rang "0" de notre suite "1 / (n + 1)" est 1, celle de rang "1" est 1.5, celle de rang "2" est 1.8[3]...
+On la note généralement "S(n)", avec le symbole sigma majuscule.
+</p>
+<math>S(n) = <msum>u(k)</math>
+<p>
+Avec ce concept, on peut obtenir un nouveau concept : une série.
+<span class="important"><definition name="analysis_sequence-partial_sum"></span>.
+C'est une façon d'écrire le concept de somme partielle sous forme de suite.
+Ce concept est très important en mathématiques, à un point qu'il est difficile d'imaginer.
+</p>
 
 <h3>Les fonctions réelles</h3>
 <p>
@@ -154,7 +167,6 @@ Cependant, elle apporte un avantage : <span class="important">seulement une vale
 Prenons par exemple une suite ayant comme limite "2", et étant strictement décroissante.
 Dans ce cas, la suite se rapproche de "2", mais aussi de "1" (puisqu'elle est décroissante).
 Or, la distance entre "1" et la suite ne peut qu'être supérieur à 1 : la deuxième définition interdit ce genre de comportement (des nombres réels comme 0.5 ne respectent pas la définition).
-D'ailleurs, <span class="important"><definition name="analysis_sequence-convergent"></span>.
 La définition mathématique ultra rigoureuse est proposé par le mathématicien <scientist name="weierstrass" type="quote">, et se note ainsi :
 </p>
 <math><mforall> x <mgt> 0, <mexists> a <min> N, <mforall> b <min> N, [b <mgt> a <mimp> |u(b) - v| <mlt> x]</math>
@@ -327,126 +339,11 @@ Grâce à ça, on limite l'utilisant de la lourde définition d'une limite.
 </p>
 <p>
 Le cas le plus simple correspond à la somme de fonctions.
-En effet, <span class="important">dans une fonction "f" représentant la somme d'autres fonctions, la limite de "f" en une valeur représente la somme des limites en cette valeur des fonctions qui constituent "f"</span>.
-La démonstration de ce résultat n'est pas si complexe que ça, mais demande une disjonction de cas précise.
-Nous allons la faire pour que vous puissiez avoir un exemple d'une démonstration de ce type.
-Posons deux fonctions "g" et "h" définies de "R" vers "R", admettant une limite à droite en une valeur finie "a" vers respectivement "v" et "w" finis.
+En effet, <span class="important">dans une fonction "f" représentant la somme d'autres fonctions, la limite de "f" en une valeur représente la somme des limites en cette valeur des fonctions qui constituent "f", si ses dernières sont finies</span>.
+La démonstration de ce résultat n'est pas si complexe que ça, mais demande une disjonction de cas précise et très longue (<a href="demo#3_1_3_0">traitée ici</a>).
+C'est avec ces résultats que nous pouvons trouver facilement la limite de "3x² + 2x" en "+ l'infini" : "3x²" tend vers "+ l'infini", "2x" aussi, donc "3x² + 2x" tend vers + "l'infini".
 </p>
-<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <min> ]a, a + b[ <mimp> |g(c) - v| <mlt> x}</math></br>
-<math><mforall> x <min> R*+, <mexists> d <min> R*+, {<mforall> e <min> R, e <min> ]a, a + d[ <mimp> |h(c) - w| <mlt> x}</math>
-<p>
-Procédons à un petit tour de passe-passe : prenons la valeur minimale entre "b" et "d".
-Si "b" est inférieur à "d", alors "b" est un "e", et si "d" est inférieur à "b", alors "d" est un "c" : travailler avec la valeur minimale suffit pour définir "c" et "e".
-Nous nommerons "r" la valeur minimale entre "b" et "d", et nous pouvons simplifier nos limites de "g" et "h".
-</p>
-<math><mforall> x <min> R*+, <mexists> r <min> R*+, {<mforall> s <min> R, s <min> ]a, a + r[ <mimp> |g(s) - v| <mlt> x <mand> |h(s) - w| <mlt> x}</math></br>
-<p>
-Posons maintenant la fonction "f" égale à "g + h".
-On peut bidouiller notre formule précédente pour obtenir une limite de "f".
-</p>
-<math><mforall> x <min> R*+, <mexists> r <min> R*+, {<mforall> s <min> R, s <min> ]a, a + r[ <mimp> 0 <mlt> |g(s) - v| <mlt> x <mand> 0 <mlt> |h(s) - w| <mlt> x <mimp> 0 <mlt> |g(s) - v| + |h(s) - w| <mlt> 2 * x}</math></br>
-<math>g(s) - v <mgt> 0 <mand> h(s) - w <mgt> 0 <mimp> g(s) - v + h(s) - w <mlt> 2 * x <mequi> g(s) + h(s) - (v + w) <mlt> 2 * x <mequi> f(s) - (v + w) <mlt> 2 * x <mimp> |f(s) - (v + w)| <mlt> 2 * x</math></br>
-<math>g(s) - v <mgt> 0 <mand> h(s) - w <mlt> 0 <mimp> -x <mlt> g(s) - v + h(s) - w <mlt> 0 <mequi> -x <mlt> g(s) - h(s) - (v - w) <mlt> 0 <mequi> -x <mlt> f(s) - (v + w) <mlt> 0 <mand> 0 <mlt> -(f(s) - (v + w)) <mlt> x <mimp> |f(s) - (v + w)| <mlt> x</math></br>
-<math>g(s) - v <mlt> 0 <mand> h(s) - w <mgt> 0 <mimp> -x <mlt> g(s) - v + h(s) - w <mlt> 0 <mequi> -x <mlt> g(s) - h(s) - (v - w) <mlt> 0 <mequi> -x <mlt> f(s) - (v + w) <mlt> 0 <mand> 0 <mlt> -(f(s) - (v + w)) <mlt> x <mimp> |f(s) - (v + w)| <mlt> x</math></br>
-<math>g(s) - v <mlt> 0 <mand> h(s) - w <mlt> 0 <mimp> -2 * x <mlt> g(s) - v + h(s) - w <mlt> 0 <mequi> -2 * x <mlt> g(s) + h(s) - (v + w) <mlt> 0 <mequi> -2 * x <mlt> f(s) - (v + w) <mlt> 0 <mequi> 0 <mlt> -(f(s) - (v + w)) <mlt> 2 * x <mimp> |f(s) - (v + w)| <mlt> 2 * x</math>
-<p>
-Dans tous les cas, on retrouve la limite de "f" : la limite de "f" en "a" est la somme des limites de "g" et "h" en "a".
-C'est l'exact même chose pour les limites à gauches.
-</p>
-<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <min> ]a - b, a[ <mimp> |g(c) - v| <mlt> x}</math></br>
-<math><mforall> x <min> R*+, <mexists> d <min> R*+, {<mforall> e <min> R, e <min> ]a - d, a[ <mimp> |h(c) - w| <mlt> x}</math>
-<math><mforall> x <min> R*+, <mexists> r <min> R*+, {<mforall> s <min> R, s <min> ]a - r, a[ <mimp> 0 <mlt> |g(s) - v| <mlt> x <mand> 0 <mlt> |h(s) - w| <mlt> x <mimp> 0 <mlt> |g(s) - v| + |h(s) - w| <mlt> 2 * x}</math></br>
-<math>g(s) - v <mgt> 0 <mand> h(s) - w <mgt> 0 <mimp> g(s) - v + h(s) - w <mlt> 2 * x <mequi> g(s) + h(s) - (v + w) <mlt> 2 * x <mequi> f(s) - (v + w) <mlt> 2 * x <mimp> |f(s) - (v + w)| <mlt> 2 * x</math></br>
-<math>g(s) - v <mgt> 0 <mand> h(s) - w <mlt> 0 <mimp> -x <mlt> g(s) - v + h(s) - w <mlt> 0 <mequi> -x <mlt> g(s) - h(s) - (v - w) <mlt> 0 <mequi> -x <mlt> f(s) - (v + w) <mlt> 0 <mand> 0 <mlt> -(f(s) - (v + w)) <mlt> x <mimp> |f(s) - (v + w)| <mlt> x</math></br>
-<math>g(s) - v <mlt> 0 <mand> h(s) - w <mgt> 0 <mimp> -x <mlt> g(s) - v + h(s) - w <mlt> 0 <mequi> -x <mlt> g(s) - h(s) - (v - w) <mlt> 0 <mequi> -x <mlt> f(s) - (v + w) <mlt> 0 <mand> 0 <mlt> -(f(s) - (v + w)) <mlt> x <mimp> |f(s) - (v + w)| <mlt> x</math></br>
-<math>g(s) - v <mlt> 0 <mand> h(s) - w <mlt> 0 <mimp> -2 * x <mlt> g(s) - v + h(s) - w <mlt> 0 <mequi> -2 * x <mlt> g(s) + h(s) - (v + w) <mlt> 0 <mequi> -2 * x <mlt> f(s) - (v + w) <mlt> 0 <mequi> 0 <mlt> -(f(s) - (v + w)) <mlt> 2 * x <mimp> |f(s) - (v + w)| <mlt> 2 * x</math>
-<p>
-C'est la même chose avec une limite à droite tendant vers "+ l'infini".
-Cependant, la démonstration est un peu plus simple.
-</p>
-<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <min> ]a, a + b[ <mimp> g(c) <mgt> x}</math></br>
-<math><mforall> x <min> R*+, <mexists> d <min> R*+, {<mforall> e <min> R, e <min> ]a, a + d[ <mimp> h(e) <mgt> x}</math>
-<math><mforall> x <min> R*+, <mexists> r <min> R*+, {<mforall> s <min> R, s <min> ]a, a + r[ <mimp> 0 <mlt> g(s) <mgt> x <mand> 0 <mlt> h(s) <mgt> x <mimp> g(s) + h(s) <mgt> 2 * x}</math></br>
-<math>g(s) + h(s) <mgt> 2 * x <mequi> <mequi> f(s) <mgt> 2 * x</math></br>
-<p>
-C'est la même chose avec une limite à droite tendant vers "- l'infini".
-</p>
-<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <min> ]a, a + b[ <mimp> g(c) <mlt> -x}</math></br>
-<math><mforall> x <min> R*+, <mexists> d <min> R*+, {<mforall> e <min> R, e <min> ]a, a + d[ <mimp> h(e) <mlt> -x}</math>
-<math><mforall> x <min> R*+, <mexists> r <min> R*+, {<mforall> s <min> R, s <min> ]a, a + r[ <mimp> g(s) <mlt> -x <mand> h(s) <mlt> -x <mimp> g(s)+ h(s) <mlt> -2 * x}</math></br>
-<math>g(s) + h(s) <mgt> -2 * x <mequi> <mequi> f(s) <mgt> -2 * x</math></br>
-<p>
-C'est la même chose avec une limite à gauche tendant vers "+ l'infini".
-</p>
-<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <min> ]a - b, a[ <mimp> g(c) <mgt> x}</math></br>
-<math><mforall> x <min> R*+, <mexists> d <min> R*+, {<mforall> e <min> R, e <min> ]a - d, a[ <mimp> h(e) <mgt> x}</math>
-<math><mforall> x <min> R*+, <mexists> r <min> R*+, {<mforall> s <min> R, s <min> ]a - r, a[ <mimp> 0 <mlt> g(s) <mgt> x <mand> 0 <mlt> h(s) <mgt> x <mimp> g(s) + h(s) <mgt> 2 * x}</math></br>
-<math>g(s) + h(s) <mgt> 2 * x <mequi> <mequi> f(s) <mgt> 2 * x</math></br>
-<p>
-C'est la même chose avec une limite à gauche tendant vers "- l'infini".
-</p>
-<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <min> ]a - b, a[ <mimp> g(c) <mlt> -x}</math></br>
-<math><mforall> x <min> R*+, <mexists> d <min> R*+, {<mforall> e <min> R, e <min> ]a - d, a[ <mimp> h(e) <mlt> -x}</math>
-<math><mforall> x <min> R*+, <mexists> r <min> R*+, {<mforall> s <min> R, s <min> ]a - r, a[ <mimp> g(s) <mlt> -x <mand> h(s) <mlt> -x <mimp> g(s)+ h(s) <mlt> -2 * x}</math></br>
-<math>g(s) + h(s) <mgt> -2 * x <mequi> <mequi> f(s) <mgt> -2 * x</math></br>
-<p>
-On peut étendre ces résultats pour des limites en "+ l'infini" et "- l'infini".
-Dans le cas où l'on est en "+ l'infini", on peut s'occuper du cas où la limite est une valeur finie.
-Dans ce cas, notre "r" devient la plus grande valeur entre "b" et "d".
-</p>
-<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <mgt> b <mimp> |g(c) - v| <mlt> x}</math></br>
-<math><mforall> x <min> R*+, <mexists> d <min> R*+, {<mforall> e <min> R, e <mgt> d <mimp> |h(e) - w| <mlt> x}</math></br>
-<math><mforall> x <min> R*+, <mexists> r <min> R*+, {<mforall> s <min> R, s <mgt> r <mimp> 0 <mlt> |g(s) - v| <mlt> x <mand> 0 <mlt> |h(s) - w| <mlt> x <mimp> 0 <mlt> |g(s) - v| + |h(s) - w| <mlt> 2 * x}</math></br>
-<math>g(s) - v <mgt> 0 <mand> h(s) - w <mgt> 0 <mimp> g(s) - v + h(s) - w <mlt> 2 * x <mequi> g(s) + h(s) - (v + w) <mlt> 2 * x <mequi> f(s) - (v + w) <mlt> 2 * x <mimp> |f(s) - (v + w)| <mlt> 2 * x</math></br>
-<math>g(s) - v <mgt> 0 <mand> h(s) - w <mlt> 0 <mimp> -x <mlt> g(s) - v + h(s) - w <mlt> 0 <mequi> -x <mlt> g(s) - h(s) - (v - w) <mlt> 0 <mequi> -x <mlt> f(s) - (v + w) <mlt> 0 <mand> 0 <mlt> -(f(s) - (v + w)) <mlt> x <mimp> |f(s) - (v + w)| <mlt> x</math></br>
-<math>g(s) - v <mlt> 0 <mand> h(s) - w <mgt> 0 <mimp> -x <mlt> g(s) - v + h(s) - w <mlt> 0 <mequi> -x <mlt> g(s) - h(s) - (v - w) <mlt> 0 <mequi> -x <mlt> f(s) - (v + w) <mlt> 0 <mand> 0 <mlt> -(f(s) - (v + w)) <mlt> x <mimp> |f(s) - (v + w)| <mlt> x</math></br>
-<math>g(s) - v <mlt> 0 <mand> h(s) - w <mlt> 0 <mimp> -2 * x <mlt> g(s) - v + h(s) - w <mlt> 0 <mequi> -2 * x <mlt> g(s) + h(s) - (v + w) <mlt> 0 <mequi> -2 * x <mlt> f(s) - (v + w) <mlt> 0 <mequi> 0 <mlt> -(f(s) - (v + w)) <mlt> 2 * x <mimp> |f(s) - (v + w)| <mlt> 2 * x</math>
-<p>
-C'est la même chose avec une limite en "+ l'infini" tendant vers "+ l'infini".
-</p>
-<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <mgt> b <mimp> g(c) <mgt> x}</math></br>
-<math><mforall> x <min> R*+, <mexists> d <min> R*+, {<mforall> e <min> R, e <mgt> d <mimp> h(e) <mgt> x}</math>
-<math><mforall> x <min> R*+, <mexists> r <min> R*+, {<mforall> s <min> R, s <mgt> r <mimp> 0 <mlt> g(s) <mgt> x <mand> 0 <mlt> h(s) <mgt> x <mimp> g(s) + h(s) <mgt> 2 * x}</math></br>
-<math>g(s) + h(s) <mgt> 2 * x <mequi> f(s) <mgt> 2 * x</math></br>
-<p>
-C'est la même chose avec une limite en "+ l'infini" tendant vers "- l'infini".
-</p>
-<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <mgt> b <mimp> g(c) <mlt> -x}</math></br>
-<math><mforall> x <min> R*+, <mexists> d <min> R*+, {<mforall> e <min> R, e <mgt> d <mimp> h(e) <mlt> -x}</math>
-<math><mforall> x <min> R*+, <mexists> r <min> R*+, {<mforall> s <min> R, s <mgt> r <mimp> g(s) <mlt> -x <mand> h(s) <mlt> -x <mimp> g(s) + h(s) <mlt> -2 * x}</math></br>
-<math>g(s) + h(s) <mlt> -2 * x <mequi> f(s) <mlt> -2 * x</math></br>
-<p>
-Finalement, dans le cas où l'on est en "- l'infini", on peut s'occuper du cas où la limite est une valeur finie.
-Dans ce cas, notre "r" devient la plus grande valeur entre "b" et "d".
-</p>
-<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <mlt> -b <mimp> |g(c) - v| <mlt> x}</math></br>
-<math><mforall> x <min> R*+, <mexists> d <min> R*+, {<mforall> e <min> R, e <mlt> -d <mimp> |h(e) - w| <mlt> x}</math></br>
-<math><mforall> x <min> R*+, <mexists> r <min> R*+, {<mforall> s <min> R, s <mlt> -r <mimp> 0 <mlt> |g(s) - v| <mlt> x <mand> 0 <mlt> |h(s) - w| <mlt> x <mimp> 0 <mlt> |g(s) - v| + |h(s) - w| <mlt> 2 * x}</math></br>
-<math>g(s) - v <mgt> 0 <mand> h(s) - w <mgt> 0 <mimp> g(s) - v + h(s) - w <mlt> 2 * x <mequi> g(s) + h(s) - (v + w) <mlt> 2 * x <mequi> f(s) - (v + w) <mlt> 2 * x <mimp> |f(s) - (v + w)| <mlt> 2 * x</math></br>
-<math>g(s) - v <mgt> 0 <mand> h(s) - w <mlt> 0 <mimp> -x <mlt> g(s) - v + h(s) - w <mlt> 0 <mequi> -x <mlt> g(s) - h(s) - (v - w) <mlt> 0 <mequi> -x <mlt> f(s) - (v + w) <mlt> 0 <mand> 0 <mlt> -(f(s) - (v + w)) <mlt> x <mimp> |f(s) - (v + w)| <mlt> x</math></br>
-<math>g(s) - v <mlt> 0 <mand> h(s) - w <mgt> 0 <mimp> -x <mlt> g(s) - v + h(s) - w <mlt> 0 <mequi> -x <mlt> g(s) - h(s) - (v - w) <mlt> 0 <mequi> -x <mlt> f(s) - (v + w) <mlt> 0 <mand> 0 <mlt> -(f(s) - (v + w)) <mlt> x <mimp> |f(s) - (v + w)| <mlt> x</math></br>
-<math>g(s) - v <mlt> 0 <mand> h(s) - w <mlt> 0 <mimp> -2 * x <mlt> g(s) - v + h(s) - w <mlt> 0 <mequi> -2 * x <mlt> g(s) + h(s) - (v + w) <mlt> 0 <mequi> -2 * x <mlt> f(s) - (v + w) <mlt> 0 <mequi> 0 <mlt> -(f(s) - (v + w)) <mlt> 2 * x <mimp> |f(s) - (v + w)| <mlt> 2 * x</math>
-<p>
-C'est la même chose avec une limite en "- l'infini" tendant vers "+ l'infini".
-</p>
-<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <mlt> -b <mimp> g(c) <mgt> x}</math></br>
-<math><mforall> x <min> R*+, <mexists> d <min> R*+, {<mforall> e <min> R, e <mlt> -d <mimp> h(e) <mgt> x}</math>
-<math><mforall> x <min> R*+, <mexists> r <min> R*+, {<mforall> s <min> R, s <mlt> -r <mimp> 0 <mlt> g(s) <mgt> x <mand> 0 <mlt> h(s) <mgt> x <mimp> g(s) + h(s) <mgt> 2 * x}</math></br>
-<math>g(s) + h(s) <mgt> 2 * x <mequi> f(s) <mgt> 2 * x</math></br>
-<p>
-C'est la même chose avec une limite en "- l'infini" tendant vers "- l'infini".
-</p>
-<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <mlt> -b <mimp> g(c) <mlt> -x}</math></br>
-<math><mforall> x <min> R*+, <mexists> d <min> R*+, {<mforall> e <min> R, e <mlt> -d <mimp> h(e) <mlt> -x}</math>
-<math><mforall> x <min> R*+, <mexists> r <min> R*+, {<mforall> s <min> R, s <mlt> -r <mimp> g(s) <mlt> -x <mand> h(s) <mlt> -x <mimp> g(s) + h(s) <mlt> -2 * x}</math></br>
-<math>g(s) + h(s) <mlt> -2 * x <mequi> f(s) <mlt> -2 * x</math></br>
-<p>
-Nous avons tester tous les cas les plus "basiques".
-Il manque cependant quelques cas, par exemple que se passe t-il si on additionne une fonction de limite "+ l'infini" avec une autre de limite "- l'infini" ?
-Il nous manque quelques outils pour pleinement répondre à cette question.
-En attendant, c'est avec ces résultats que nous pouvons trouver facilement la limite de "3x² + 2x" en "+ l'infini" : "3x²" tend vers "+ l'infini", "2x" aussi, donc "3x² + 2x" tend vers + "l'infini".
-</p>
-<graphic><function expression=3x*x+2*x></function></graphic>
+<graphic><background_color white><function expression=3x*x+2*x></function></graphic>
 <p>
 Par contre, la limite en "- l'infini" de "5 + inverse de x" en "+ l'infini" est 5 : "5" tend vers "5", inverse de "x" tend vers 0, alors "5 + inverse de x" tend vers 5.
 C'est la même chose en "+ l'infini".
@@ -456,82 +353,15 @@ C'est la même chose en "+ l'infini".
 Cependant, quel est la limite de cette fonction en "0" ?
 Il est assez évident que la limite à gauche est "- l'infini" et la limite à droite et "+ l'infini".
 En effet, <span class="important">si une limite en une valeur représente la somme d'une valeur finie et d'un infini, alors l'infini l'emporte sur la valeur finie</span>.
-La démonstration implique aussi une grosse disjonction de cas.
-Commençons par la limite à droite vers "+ l'infini".
-</p>
-<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <min> ]a, a + b[ <mimp> g(c) <mgt> x}</math></br>
-<math><mforall> x <min> R*+, <mexists> d <min> R*+, {<mforall> e <min> R, e <min> ]a, a + d[ <mimp> |h(e) - v| <mlt> x}</math>
-<math><mforall> x <min> R*+, <mexists> r <min> R*+, {<mforall> s <min> R, s <min> ]a, a + r[ <mimp> |h(s) - v| <mlt> x <mlt> g(s) <mimp> x <mlt> x + |h(s) - v| <mlt> g(s) + |h(s) - v|</math></br>
-<math>h(s) <mgt> v <mimp> x <mlt> x + h(s) - v <mlt> g(s) + h(s) - v <mimp> x + v <mlt> x + h(s) <mlt> g(s) + h(s)</math></br>
-<math>h(s) <mlt> v <mimp> x <mlt> x - h(s) + v <mlt> g(s) - h(s) + v <mimp> x - v <mlt> x - h(s) <mlt> g(s) - h(s) <mimp> x - 3 * v <mlt> x - v + 2 * h(s) <mlt> x + h(s) <mlt> g(s) + h(s)</math></br>
-<p>
-Et vers "- l'infini".
-</p>
-<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <min> ]a, a + b[ <mimp> g(c) <mlt> -x}</math></br>
-<math><mforall> x <min> R*+, <mexists> d <min> R*+, {<mforall> e <min> R, e <min> ]a, a + d[ <mimp> |h(e) - v| <mlt> x}</math>
-<math><mforall> x <min> R*+, <mexists> r <min> R*+, {<mforall> s <min> R, s <min> ]a, a + r[ <mimp> |h(s) - v| <mlt> x <mlt> -g(s) <mimp> x <mlt> x + |h(s) - v| <mlt> -g(s) + |h(s) - v|</math></br>
-<math>h(s) <mgt> v <mimp> x <mlt> x + h(s) - v <mlt> g(s) + h(s) - v <mimp> x + v <mlt> x + h(s) <mlt> g(s) + h(s)</math></br>
-<math>h(s) <mlt> v <mimp> x <mlt> x - h(s) + v <mlt> -g(s) - h(s) + v <mimp> x - v <mlt> x - h(s) <mlt> -g(s) - h(s) <mimp> -x + v <mgt> -x + h(s) <mgt> g(s) + h(s)</math></br>
-<p>
-En suite, pour la limite à gauche.
-Commençons vers "+ l'infini".
-</p>
-<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <min> ]a - b, a[ <mimp> g(c) <mgt> x}</math></br>
-<math><mforall> x <min> R*+, <mexists> d <min> R*+, {<mforall> e <min> R, e <min> ]a - d, a[ <mimp> |h(e) - v| <mlt> x}</math>
-<math><mforall> x <min> R*+, <mexists> r <min> R*+, {<mforall> s <min> R, s <min> ]a - r, a[ <mimp> |h(s) - v| <mlt> x <mlt> g(s) <mimp> x <mlt> x + |h(s) - v| <mlt> g(s) + |h(s) - v|</math></br>
-<math>h(s) <mgt> v <mimp> x <mlt> x + h(s) - v <mlt> g(s) + h(s) - v <mimp> x + v <mlt> x + h(s) <mlt> g(s) + h(s)</math></br>
-<math>h(s) <mlt> v <mimp> x <mlt> x - h(s) + v <mlt> g(s) - h(s) + v <mimp> x - v <mlt> x - h(s) <mlt> g(s) - h(s) <mimp> x - 3 * v <mlt> x - v + 2 * h(s) <mlt> x + h(s) <mlt> g(s) + h(s)</math></br>
-<p>
-Et vers "- l'infini".
-</p>
-<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <min> ]a - b, a[ <mimp> g(c) <mlt> -x}</math></br>
-<math><mforall> x <min> R*+, <mexists> d <min> R*+, {<mforall> e <min> R, e <min> ]a - d, a[ <mimp> |h(e) - v| <mlt> x}</math>
-<math><mforall> x <min> R*+, <mexists> r <min> R*+, {<mforall> s <min> R, s <min> ]a - r, a[ <mimp> |h(s) - v| <mlt> x <mlt> -g(s) <mimp> x <mlt> x + |h(s) - v| <mlt> -g(s) + |h(s) - v|</math></br>
-<math>h(s) <mgt> v <mimp> x <mlt> x + h(s) - v <mlt> g(s) + h(s) - v <mimp> x + v <mlt> x + h(s) <mlt> g(s) + h(s)</math></br>
-<math>h(s) <mlt> v <mimp> x <mlt> x - h(s) + v <mlt> -g(s) - h(s) + v <mimp> x - v <mlt> x - h(s) <mlt> -g(s) - h(s) <mimp> -x + v <mgt> -x + h(s) <mgt> g(s) + h(s)</math></br>
-<p>
-En suite, traitons la limite en "+ l'infini".
-Commençons vers "+ l'infini".
-</p>
-<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <mgt> b <mimp> g(c) <mgt> x}</math></br>
-<math><mforall> x <min> R*+, <mexists> d <min> R*+, {<mforall> e <min> R, e <mgt> d <mimp> |h(e) - v| <mlt> x}</math>
-<math><mforall> x <min> R*+, <mexists> r <min> R*+, {<mforall> s <min> R, s <mgt> r <mimp> |h(s) - v| <mlt> x <mlt> g(s) <mimp> x <mlt> x + |h(s) - v| <mlt> g(s) + |h(s) - v|</math></br>
-<math>h(s) <mgt> v <mimp> x <mlt> x + h(s) - v <mlt> g(s) + h(s) - v <mimp> x + v <mlt> x + h(s) <mlt> g(s) + h(s)</math></br>
-<math>h(s) <mlt> v <mimp> x <mlt> x - h(s) + v <mlt> g(s) - h(s) + v <mimp> x - v <mlt> x - h(s) <mlt> g(s) - h(s) <mimp> x - 3 * v <mlt> x - v + 2 * h(s) <mlt> x + h(s) <mlt> g(s) + h(s)</math></br>
-<p>
-Et vers "- l'infini".
-</p>
-<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <mgt> b <mimp> g(c) <mlt> -x}</math></br>
-<math><mforall> x <min> R*+, <mexists> d <min> R*+, {<mforall> e <min> R, e <mgt> d <mimp> |h(e) - v| <mlt> x}</math>
-<math><mforall> x <min> R*+, <mexists> r <min> R*+, {<mforall> s <min> R, s <mgt> r <mimp> |h(s) - v| <mlt> x <mlt> -g(s) <mimp> x <mlt> x + |h(s) - v| <mlt> -g(s) + |h(s) - v|</math></br>
-<math>h(s) <mgt> v <mimp> x <mlt> x + h(s) - v <mlt> g(s) + h(s) - v <mimp> x + v <mlt> x + h(s) <mlt> g(s) + h(s)</math></br>
-<math>h(s) <mlt> v <mimp> x <mlt> x - h(s) + v <mlt> -g(s) - h(s) + v <mimp> x - v <mlt> x - h(s) <mlt> -g(s) - h(s) <mimp> -x + v <mgt> -x + h(s) <mgt> g(s) + h(s)</math></br>
-<p>
-En suite, traitons la limite en "- l'infini".
-Commençons vers "+ l'infini".
-</p>
-<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <mlt> -b <mimp> g(c) <mgt> x}</math></br>
-<math><mforall> x <min> R*+, <mexists> d <min> R*+, {<mforall> e <min> R, e <mlt> -d <mimp> |h(e) - v| <mlt> x}</math>
-<math><mforall> x <min> R*+, <mexists> r <min> R*+, {<mforall> s <min> R, s <mlt> -r <mimp> |h(s) - v| <mlt> x <mlt> g(s) <mimp> x <mlt> x + |h(s) - v| <mlt> g(s) + |h(s) - v|</math></br>
-<math>h(s) <mgt> v <mimp> x <mlt> x + h(s) - v <mlt> g(s) + h(s) - v <mimp> x + v <mlt> x + h(s) <mlt> g(s) + h(s)</math></br>
-<math>h(s) <mlt> v <mimp> x <mlt> x - h(s) + v <mlt> g(s) - h(s) + v <mimp> x - v <mlt> x - h(s) <mlt> g(s) - h(s) <mimp> x - 3 * v <mlt> x - v + 2 * h(s) <mlt> x + h(s) <mlt> g(s) + h(s)</math></br>
-<p>
-Et vers "- l'infini".
-</p>
-<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <mlt> -b <mimp> g(c) <mlt> -x}</math></br>
-<math><mforall> x <min> R*+, <mexists> d <min> R*+, {<mforall> e <min> R, e <mlt> -d <mimp> |h(e) - v| <mlt> x}</math>
-<math><mforall> x <min> R*+, <mexists> r <min> R*+, {<mforall> s <min> R, s <mlt> -r <mimp> |h(s) - v| <mlt> x <mlt> -g(s) <mimp> x <mlt> x + |h(s) - v| <mlt> -g(s) + |h(s) - v|</math></br>
-<math>h(s) <mgt> v <mimp> x <mlt> x + h(s) - v <mlt> g(s) + h(s) - v <mimp> x + v <mlt> x + h(s) <mlt> g(s) + h(s)</math></br>
-<math>h(s) <mlt> v <mimp> x <mlt> x - h(s) + v <mlt> -g(s) - h(s) + v <mimp> x - v <mlt> x - h(s) <mlt> -g(s) - h(s) <mimp> -x + v <mgt> -x + h(s) <mgt> g(s) + h(s)</math></br>
-<p>
+La démonstration implique aussi une grosse disjonction de cas, présente juste en bas de celle des limites finies.
 Donc, la limite en 0 à gauche de "5 + inverse de x" est "- l'infini", et la limite en 0 à droite de "5 + inverse de x" est "+ l'infini".
 Grâce à des propriétés basiques, <span class="important">on se rend facilement compte que c'est la même chose pour des soustractions, en utilisant les opposés par l'addition (en sachant que, par logique pure, l'opposé de "+ l'infini" est "- l'infini", et l'opposé de "- l'infini" est "+ l'infini")</span>.
 </p>
+
 <p>
-De plus, <span class="important">il est possible d'obtenir des propriétés similaires avec la multiplication</span> (nous ne vous ferons pas subir la démonstration dans cette partie du cours : elles sont sur la page dédiée, <a href="demo">juste ici</a>).
-Les démonstrations totales sont très similaires à celles de l'addition de limites.
+De plus, <span class="important">il est possible d'obtenir des propriétés similaires avec la multiplication</span>.
+Les démonstrations totales sont très similaires à celles de l'addition de limites, est présentes <a href="demo#3_1_3_1">juste ici</a>.
 Déjà, <span class="important">si deux fonctions tendent en une valeur "a" (ou en un infini) vers respectivement "v" et "w" finis, alors le produit de ces deux fonctions tend en "a" (ou en l'infini nécessaire) vers "v * w"</span>.
-Comme pour la soustraction, comme la division est la réciproque de la multiplication, alors tout cela marche aussi avec des divisions (en utilisant les inverses des valeurs nécessaires), bien entendu si il n'y a pas de 0 posant problème quelque part.
 Quelque chose d'assez intéressant : <span class="important">cela marche aussi si "v" ou "w" est égal à 0</span> (bien que cela pose problème dans le cas de la disivion, et nous verrons plus tard comment y remédier).
 Prenons un exemple très simple : la fonction "f(x) = 5", "g(x) = inverse de x" et "h(x) = f(x) * g(x)".
 </p>
@@ -544,7 +374,7 @@ Prenons un exemple très simple : la fonction "f(x) = 5", "g(x) = inverse de x" 
 Cette règle est un peu plus compliqué dans le cas des infinis.
 Cependant, <span class=important>pour utiliser le produit avec des limites en des infinis, il faut utiliser la règle des signes avec les infinis, ce qui est parfaitement possible</span>.
 En effet, <span class="important">si deux fonctions tendent en une valeur "a" (ou en un infini) vers respectivement "v" et "w" infinis, alors le produit de ces deux fonctions tend en "a" (ou en l'infini nécessaire) vers un des deux infinis, en appliquant la règle des signes : si les deux infinis sont positifs, l'infini final l'est aussi, si les deux infinis sont négatifs, l'infini final l'est aussi, mais si l'un des deux est positif et l'autre négatif, alors l'infini final est négatif</span>.
-Prenons un exemple très simple : la fonction "f(x) = -x²", "g(x) = -x" et "h(x) = f(x) * g(x)".
+Prenons un exemple très simple : la fonction "f(x) = -x²", "g(x) = -x" et "h(x) = f(x) * g(x)" (qui vaut donc "x au cube").
 </p>
 <math>f : R <mto> R, x <mto> <mi>-x</mi><msup>2</msup></math></br>
 <math>g : R <mto> R, x <mto> -x</math></br>
@@ -562,6 +392,30 @@ Prenons un exemple très simple : la fonction "f(x) = 5", "g(x) = -x" et "h(x) =
 <math>h : R <mto> R, x <mto> f(x) * g(x) = 5 * -x</math></br>
 <math><munder><mi>lim</mi><mrow><mi>x</mi><mto><mo>+</mo><minf></mrow></munder>(f(x)) = 5, <munder><mi>lim</mi><mrow><mi>x</mi><mto><mo>+</mo><minf></mrow></munder>(g(x)) = - <minf></math></br>
 <math><munder><mi>lim</mi><mrow><mi>x</mi><mto><mo>+</mo><minf></mrow></munder>(h(x)) = - <minf></math>
+<p>
+Abordons un dernier sujet : les divisions.
+Pour simplifier les démonstrations, nous allons utiliser la propriété algébrique qui énonce que une division est une multiplication par un inverse : nous allons donc nous limiter aux inverses.
+De manière assez évidente, <span class="important">l'inverse d'une fonction tendant vers une valeur finie "a" qui n'est pas "0" en n'importe quoi (valeur finie ou "+ l'infini") tend vers "inverse de a" en cette valeur</span>.
+Donc, notre fonction "5 + 1/x" qui tend vers "5" en "+ l'infini" tend vers "1 / 5" en "+ l'infini" (l'inverse de cette fonction est "1 / (5 + 1 / x)", qui après vérification, tend bien vers "1 / 5").
+</p>
+<p>
+Tout cela se corse quand "0" ou un infini est impliqué.
+En fait, <span class="important">l'inverse d'une fonction tendant vers "0" en n'importe quoi (valeur finie ou "+ l'infini") tend vers un infini (+ ou -, selon la fonction) en cette valeur</span>.
+Par exemple, notre fonction "inverse de x", qui tend vers "0" en "+ l'infini", admet comme inverse "x", qui tend bel est bien vers "+ l'infini" en "+ l'infini".
+De manière réciproque, <span class="important">l'inverse d'une fonction tendant vers un infini en n'importe quoi (valeur finie ou "+ l'infini") tend vers "0" en cette valeur</span>.
+Encore une fois, notre fonction "x", qui tend vers "+ l'infini" en "+ l'infini", admet comme inverse "inverse de x", qui tend bel est bien vers "0" en "+ l'infini".
+La question ici : si notre fonction tend vers "0", vers quel infini se diriger (+ ou -) ?
+La réponse dépend entièrement de la fonction de départ.
+En fait, <span class="important">il nous faut savoir si la fonction qui s'approche de "0" reste dans le côté des positifs ou le côté des négatifs</span> (si elle le fait du côté des négatifs, on n'a "- l'infini", sinon on a "+ l'infini").
+Par exemple, comme "l / x" n'est jamais négatif pour "x" supérieur à 0, alors on reste dans le côté positif, et son inverse admet comme limite "+ l'infini" en "+ l'infini".
+C'est l'inverse pour "-1 / x".
+</p>
+<p>
+Généralisons ce résultat avec un résultat très important : le cas de la composition.
+Effectivement, <span class="important">la composition d'une fonction "f" et d'une fonction "g" tend en "a" vers la limite de "f" en la limite de "g" en "a"</span>.
+Bien que la démonstration soit, encore une fois, ignoble, ce résultat est assez évident.
+En effet, si nous faisons tendre "x" vers "a", alors "g(x)" se rapproche de sa limite en "a", et nous passons cette valeur (se rapprochant de la limite de "g" en "a") à "f".
+</p>
 
 <h3>Les comparaisons asymptotiques</h3>
 <p>
@@ -636,5 +490,71 @@ En plus, on aurait eu un problème si "x = 0" : cette fonction n'a pas ce probl�
 Les fonctions réelles peuvent posséder une propriété assez connue : la continuité.
 <span class="important"><definition name="analysis_continuity-function_real"></span>.
 En d'autres termes, pour rappel, on dit qu'il existe une limite en "a" (sans autres précisions) si la limite à gauche et à droite est égale.
-Donc, une fonction est continue si il existe une limite finie en "a".
+Donc, une fonction est continue en "a" si il existe une limite finie en "a" (qui vaut donc "f(a)").
+À l'inverse des limites, la continuité oblige "a" à appartenir à son domaine de définition.
+D'un point de vue rigoureux, on peut le définir comme cela (en modifiant un peu la définition de la limite) :
+</p>
+<math><mforall> x <mgt> 0, <mexists> b <min> R, {<mforall> c <min> R, c <min> ]a - b; a + b[ <mimp> |f(c) - f(a)| <mlt> x}</math>
+<p>
+Sinon, on peut simplifier la définition, en utilisant le formalisme des limites.
+En effet, si une fonction "f" est continue en un point "a", alors :
+</p>
+<math><mlim in=a side=left>f(x) = <mlim in=a side=right>f(x) = f(a)</math>
+<p>
+On peut cependant renforcer cette définition de manière assez simple.
+En effet, <span class="important"><definition name="analysis_continuity-function_real_set"></span>.
+Cela implique que des fonctions peuvent être continues sur tout leur ensemble de définition, voir sur tout "R".
+La définition rigoureuse est assez similaire.
+</p>
+<math><mforall> a <min> I, (<mforall> x <mgt> 0, <mexists> b <min> R, {<mforall> c <min> R, c <min> ]a - b; a + b[ <mimp> |f(c) - f(a)| <mlt> x})</math>
+<p>
+<span class="important">Cette notion est généralisable dans une fonction allant d'un espace métrique "(E, d)" à un autre espace métrique "(F, d')"</span>.
+Dans le cas où l'on teste la continuité en une valeur "a", la seule chose qui change est la façon dont on note la distance "a - c" et "f(c) - f(a)" : on utilise la distance de l'espace métrique.
+</p>
+<math><mforall> x <mgt> 0, <mexists> b <min> E, {<mforall> c <min> R, d(c, a) <mlt> b <mimp> d'(f(c), f(a)) <mlt> x}</math>
+<p>
+Un exemple très basique des fonctions continues sont les fonctions de la forme "a * x^b" avec "a" un réel quelconque et "b" un nombre entier naturel.
+<span class="important">Cette fonction est continue sur tout son domaine de définition, et donc sur tout "R"</span>.
+Définissons la fonction "f" définies comme "f(x) = a * x ^ b".
+</p>
+<math>f(x) = a * <mi>x</mi><msup>b</msup></math>
+<p>
+En appliquant les démonstrations vues plus haut, il est assez facile de trouver que, pour tout "x", la limite à gauche de cette fonction est "a * x ^ b".
+</p>
+<math><mforall> y <mgt> 0, <mforall> c <min> R, {|f(c) - a * x ^ b| <mlt> y}</math></br>
+<math>f(c) - a * x ^ b <mgt> 0 <mimp> f(c) - a * x ^ b <mlt> y <mimp> (c - a) * x ^ b <mlt> y <mimp> c <mlt> <mfrac><mi>y</mi><mrow><mi>x</mi></mrow><msup>b</msup></mfrac> + a</math></br>
+<math>f(c) - a * x ^ b <mlt> 0 <mimp> a * x ^ b - f(c) <mlt> y <mimp> 0 <mlt> (a - c) * x ^ b <mlt> y <mimp> -a <mlt> -c <mlt> <mfrac><mi>y</mi><mrow><mi>x</mi></mrow><msup>b</msup></mfrac> - a <mimp> a <mgt> c <mgt> <mfrac><mi>-y</mi><mrow><mi>x</mi></mrow><msup>b</msup></mfrac> + a <mimp> a + <mfrac><mi>y</mi><mrow><mi>x</mi></mrow><msup>b</msup></mfrac> <mgt> c + <mfrac><mi>y</mi><mrow><mi>x</mi></mrow><msup>b</msup></mfrac> <mgt> c</math></br>
+<math><mforall> y <mgt> 0, <mexists> c <min> R, {<mforall> d <min> R, d <min> ]x - c, x[ <mimp> |f(d) - a * x ^ b| <mlt> y}</math>
+<p>
+Or, <span class="important">cette limite est exactement la même qu'à droite</span>.
+</p>
+<math><mforall> y <mgt> 0, <mforall> c <min> R, {|f(c) - a * x ^ b| <mlt> y}</math></br>
+<math>f(c) - a * x ^ b <mgt> 0 <mimp> f(c) - a * x ^ b <mlt> y <mimp> (c - a) * x ^ b <mlt> y <mimp> c <mlt> <mfrac><mi>y</mi><mrow><mi>x</mi></mrow><msup>b</msup></mfrac> + a</math></br>
+<math>f(c) - a * x ^ b <mlt> 0 <mimp> a * x ^ b - f(c) <mlt> y <mimp> 0 <mlt> (a - c) * x ^ b <mlt> y <mimp> -a <mlt> -c <mlt> <mfrac><mi>y</mi><mrow><mi>x</mi></mrow><msup>b</msup></mfrac> - a <mimp> a <mgt> c <mgt> <mfrac><mi>-y</mi><mrow><mi>x</mi></mrow><msup>b</msup></mfrac> + a <mimp> a + <mfrac><mi>y</mi><mrow><mi>x</mi></mrow><msup>b</msup></mfrac> <mgt> c + <mfrac><mi>y</mi><mrow><mi>x</mi></mrow><msup>b</msup></mfrac> <mgt> c</math></br>
+<math><mforall> y <mgt> 0, <mexists> c <min> R, {<mforall> d <min> R, d <min> ]x, x + c[ <mimp> |f(d) - a * x ^ b| <mlt> y}</math>
+<p>
+Ces deux limites sont parfaitement égales.
+Donc, <span class="important">cette fonction est continue sur son ensemble de définition, et donc sur "R"</span>.
+</p>
+
+<h3>L'arithmétique de la continuité</h3>
+<p>
+Comme avec les limites, <span class="important">il existe une sorte d'arithmétique entre des fonctions continues, pour en déduire d'autres fonctions continues</span>.
+</p>
+<p>
+On peut commencer avec l'addition.
+En effet, <span class="important">la somme / différence de deux fonctions continues représente une fonction continue</span>.
+La démonstration est beaucoup plus simple que celle avec les limites, est présente <a href="#3_1_4_0">juste ici</a>.
+On peut très facilement le généraliser dans le cas d'un ensemble plus grand, voir de tout leur ensemble de définition si possible.
+Par exemple, la fonction "3x² + 4x - 2" est donc continue, car "3x²", "4x" et "-2" le sont aussi.
+</p>
+<graphic><background_color white><function expression="3x*x+4*x-2"></function></graphic>
+<p>
+Dans la même idée, <span class="important">le produit de deux fonctions continues représente une fonction continue</span>.
+La démonstration est aussi très simple, est présente <a href="#3_1_4_1">juste ici</a>.
+</p>
+<p>
+Généralisons ce résultat, avec un autre plus important, et aussi bien plus pratique.
+En effet, <span class="important">la composition de deux fonctions continues représente une fonction continue</span>.
+Encore une fois, la démonstration est aussi très simple, est présente <a href="#3_1_4_2">juste ici</a>.
 </p>

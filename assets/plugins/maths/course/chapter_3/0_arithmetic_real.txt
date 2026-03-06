@@ -160,7 +160,10 @@ Ce concept crée quelque propriétés bizarres.
 Par exemple, <span class="important">l'union de "]a, b]" et "[b, c[" donne "]a, c[" (et c'est la même chose pour des crochets fermés pour "a" et "c")</span>.
 Cependant, <span class="important">l'union de "]a, b[" et "]b, c[" donne "]a, c[ sans b", car "b" n'est dans aucun des deux ensembles (ce qui fait que l'union n'est pas un intervalle, car un éléments entre "a" et "c" est hors de l'ensemble)</span>
 Par contre, "]a, b[ U [b, c[ = ]a, c[" et "]a, b] U ]b, c[ = ]a, c[".
-Ces propriétés sont très facilement obtensibles pour quiconque ayant compris le formalisme des intervalles.
+Ces propriétés sont très facilement démontrables pour quiconque ayant compris le formalisme des intervalles.
+D'ailleurs, <span class="important">l'ensemble vide et les singletons de nombres sont considérés comme un intervalle de "R"</span>.
+Dans la même idée, <span class="important">l'intersection d'intervalles est toujours un nouvel intervalle</span>.
+Cependant, un intervalle qui n'est pas l'ensemble vide ou un seul nombre est dit "non-triviale"/
 </p>
 <p>
 Avec ce concept, on peut introduire quelques nouveaux concepts centraux en analyse réelle : majorants, minorants ou les bornes.

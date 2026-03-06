@@ -63,6 +63,7 @@ D'un point de vue vocabulaire, il est parfaitement évident que le successeur de
 </graphic>
 
 <p>
+Par définition, <span class="important">cette application "successeur" est une injection de "N" vers "N"</span>.
 De plus, on peut trouver que ce fameux "successeur" est une application bijective de "N" vers "N sans 0" (<a href="demo">démontré ici par récurrence</a>).
 Dans ce cas, <span class="important">il existe une application réciproque à "successeur" allant de "N sans 0" vers "N", que nous nommerons "prédécesseur"</span>.
 </p>

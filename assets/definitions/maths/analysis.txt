@@ -11,7 +11,8 @@
 
 <new_definition name="analysis_continuity">
     <content>la continuité mathématique représente un concept suggérant la possibilité de se rapprocher indéfiniment d'une valeur dans un espace, quelque soit la façon dont vous faites</content>
-    <content name="function_real">une fonction réelle est continue en une valeur "a" si la valeur de sa limite à droite en "a" est égale à la valeur de sa limite à gauche en "a", et que cette limite est finie</content>
+    <content name="function_real">une fonction réelle est continue en une valeur "a" si "a" appartient à son domaine de définition et si la valeur de sa limite à droite en "a" est égale à la valeur de sa limite à gauche en "a", et que cette limite est finie</content>
+    <content name="function_real_set">une fonction réelle est continue sur un ensemble "I" si "f" est continu pour toutes les valeurs de cet ensemble</content>
 </new_definition>
 <new_definition name="analysis_interval">
     <content>une intervalle est un ensemble de nombre réel représentant tous les nombres réels situés entre deux autres nombres réels</content>
@@ -27,6 +28,10 @@
     <content>une suite mathématique est une fonction mathématique allant de "N" à n'importe quel ensemble possible</content>
     <content name="convergent">une suite mathématique est dite convergente si sa limite est une valeur finie "v" (on dit que la suite converge vers "v")</content>
     <content name="negligible">une suite mathématique "u" est dite négligeable devant une suite "v" lorsque "v" se rapproche plus vite de sa limite que "u"</content>
+    <content name="partial_sum">la somme partielle au rang "n" d'une suite mathématique "u" est la somme des "n" premiers éléments de la suite</content>
+</new_definition>
+<new_definition name="analysis_serie">
+    <content>une série mathématique de terme général "u(n)" est une suite mathématique transformant chaque "n" en chaque "S(n)", représentant la somme partielle de rang "n" d'une suite "u"</content>
 </new_definition>
 <new_definition name="analysis_limit">
     <content>une limite mathématique représente en quelque sorte une valeur d'on se rapproche indéfiniment quand, dans une fonction (admettant comme ensemble d'arrivée un espace métrique), on se rapproche indéfiniment d'un point précis (sans jamais réellement l'atteindre)</content>

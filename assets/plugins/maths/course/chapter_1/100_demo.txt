@@ -733,14 +733,14 @@ Finalement :
 
 <h4>1.2.2.1</h4>
 <p>
-Démontrons que, pour tous nombres entiers naturels a, b et c : "a * (b + c) = a * b + a * c" (et donc, que l'opération multiplication est distributive par rapport à l'addition dans les nombres entiers naturels).
+Démontrons que, pour tous nombres entiers naturels a, b et c : "a * (b + c) = a * b + a * c" (et donc, que l'opération multiplication est distributive à gauche par rapport à l'addition dans les nombres entiers naturels).
 Procédons par récurrence.
 </p>
 <p>
 Posons l'hypothèse de récurrence pour tout entier naturel a, P(a) = "pour tout nombre entier naturel b et c, a * (b + c) = a * b + a * c".</br>
 Déjà, par définition de l'addition, si a = 0, alors :
 </p>
-<math>a * b + c = 0</math></br>
+<math>a * (b + c) = 0</math></br>
 <math>a * b + a * c = 0 + 0 = 0</math>
 <p>
 Donc, P(0) est vraie.
@@ -776,6 +776,50 @@ Selon le principe de récurrence, P est vraie pour tout nombre entier naturel.
 Finalement :
 </p>
 <math><mforall>a, b, c<min>N, a * (b + c) = a * b + a * c</math>
+<p>
+Démontrons maintenant que, pour tous nombres entiers naturels a, b et c : "(b + c) * a = b * a + c * a" (et donc, que l'opération multiplication est distributive à droite par rapport à l'addition dans les nombres entiers naturels).
+Procédons par récurrence.
+</p>
+<p>
+Posons l'hypothèse de récurrence pour tout entier naturel a, P(a) = "pour tout nombre entier naturel b et c, (b + c) * a = b * a + c * a".</br>
+Déjà, par définition de l'addition, si a = 0, alors :
+</p>
+<math>(b + c) * a = 0</math></br>
+<math>b * a + c * a = 0 + 0 = 0</math>
+<p>
+Donc, P(0) est vraie.
+</p>
+<p>
+En suite, prouvons que si P(k) avec k un nombre entier naturel quelconque, alors P(k + 1).
+Commençons par supposer que P(k) soit vrai. 
+</p>
+<math><mforall>b, c<min>N, (b + c) * k = b * k + c * k</math>
+<p>
+Selon le théorème 1.2.1.3, nous pouvons donc additionner "(b + c)" aux deux membres de la relation pour obtenir une équivalence.
+</p>
+<math><mforall>b, c<min>N, (b + c) * k = b * k + c * k <mequi> (b + c) * k + (b + c) = b * k + c * k + (b + c)</math>
+<p>
+Pour la forme à gauche, nous pouvons utiliser la distributivité à gauche, puis définition de la multiplication :
+</p>
+<math>(b + c) * k + (b + c) = (b + c) * (k + 1) = (b + c) * successeur(k) = (b + c) * (k + 1)</math>
+<p>
+Pour la forme à droite, selon la règle d'associativité de l'addition (théorème 1.2.1.1) :
+</p>
+<math>b * k + c * k + (b + c) = (b * k + b) + (c * k + c)</math>
+<p>
+Ré-utilisons la définition de la multiplication :
+</p>
+<math>(b * k + b) + (c * k + c) = b * successeur(k) + c * successeur(k) = b * (k + 1) + c * (k + 1)</math>
+<p>
+Nous reconnaissons donc la forme de P(k + 1).
+Donc, si P(k) est vraie, P(k + 1) l'est aussi.
+</p>
+<p>
+Donc, P(0) est vraie et P(k) implique P(k + 1).
+Selon le principe de récurrence, P est vraie pour tout nombre entier naturel.
+Finalement :
+</p>
+<math><mforall>a, b, c<min>N, (b + c) * a = b * a + c * a</math>
 
 <h4>1.2.2.2</h4>
 <p>
@@ -826,6 +870,77 @@ Selon le principe de récurrence, P est vraie pour tout nombre entier naturel.
 Finalement :
 </p>
 <math><mforall>a, b, c<min>N, (a * b) * c = a * (b * c)</math>
+
+<h4>1.2.2.3</h4>
+<p>
+Démontrons que, pour tout nombre entier naturel a et b : a * b = b * a (et donc, que la multiplication est commutative dans l'ensemble des nombres entiers naturels selon le chapitre 2).
+Procédons par récurrence.
+</p>
+<p>
+Posons l'hypothèse de récurrence pour tout entier naturel b, P(b) = "pour tout nombre entier naturel a, a * b = b * a".</br>
+Déjà, par définition de l'addition, si b = 0, alors :
+</p>
+<math>a * b = a * 0 = 0 * a = 0</math>
+<p>
+Donc, P(0) est vraie.
+</p>
+<p>
+En suite, prouvons que si P(k) avec k un nombre entier naturel quelconque supérieur ou égal à 0, alors P(k + 1).
+Commençons par supposer que P(k) soit vrai. 
+</p>
+<math>a * k = k * a</math>
+<p>
+Appliquons notre équivalence vue plus haut (avec le théorème 1.2.1.3) :
+</p>
+<math>a * k = k * a <mequi> a * k + a = k * a + a</math>
+<p>
+Par définition de la multiplication, selon la partie gauche de notre relation :
+</p>
+<math>a * k + a = a * successeur(k)</math>
+<p>
+Selon la partie droite (et selon le théorème 1.2.1.2 et la distributivité à droite) :
+</p>
+<math>k * a + a = k * a + 1 * a = (k + 1) * a = successeur(k) * a</math>
+<p>
+Donc :
+</p>
+<math>a * successeur(k) = successeur(k) * a = a * (k + 1) = (k + 1) * a</math>
+<p>
+Nous reconnaissons donc la forme de P(k + 1).
+Donc, si P(k) est vraie, P(k + 1) l'est aussi.
+</p>
+<p>
+Donc, P(0) est vraie et P(k) pour tout "k" supérieur à 0 implique P(k + 1).
+Selon le principe de récurrence, P est vraie pour tout nombre entier naturel.
+Finalement :
+</p>
+<math><mforall>a, b<min>N, a * b = b * a</math>
+
+<h4 id="fondamental_arithmetic_theorem">1.2.2.4</h4>
+<p>
+Démontrons que tout nombre entier naturel est soit un nombre premier, soit peut s'écrire comme le produit de nombres premiers.
+Procédons par récurrence forte.
+</p>
+<p>
+Posons la proposition P tel que, pour tout "n" dans "N", "n + 2 est soit un nombre premier, soit un produit de nombre premier".
+Déjà "2" est premier.
+Donc, P(0) est vérifié.
+</p>
+<p>
+Démontrons que, pour tout "m" inférieur ou égal à un nombre entier naturel "k", la conjonction (le ET logique) de tous les "P(m)" possibles prouvent "P(k + 1)".
+Pour "P(k + 1), il y a deux possibilités.
+Si "P(k + 1)" est premier, alors c'est réglé.
+Sinon, "P(k + 1)" est produit de deux valeurs.
+Selon les propriétés de la multiplication, ces deux valeurs, que nous nommerons "a" et "b" sont strictement inférieures à "k + 1".
+Cela implique que "P(a)" et "P(b)" sont vérifiés par hypothèse de récurrence.
+Donc, "a × b = k + 1" respecte aussi cette propriété.
+Pour finir, la conjonction de tous les "P(m)" possibles implique "P(k + 1)".
+</p>
+<p>
+Finalement, "P(0)" est vérifié est la conjonction de tous les "P(m)" possibles avec "m" inférieur ou égal à un "k" entier naturel implique "P(k + 1)".
+Donc, pour tout "n" appartenant à "N", "P(n)" est vérifié.
+En conclusion, tout nombre entier naturel est soit premier, soit le produit de nombres premiers.
+</p>
 
 <h3 id="power">L'opération puissance</h3>
 
@@ -901,7 +1016,7 @@ Par définition de "supérieur ou égal" :
 <p>
 Appliquons notre équivalence vue plus haut (avec le théorème 1.2.0.0) :
 </p>
-<math>a = b + c <mequi> successeur(a) = succeseur(b + c) <mequi> successeur(a) = successeur(b) + c <mequi> successeur(a) <mgtequal> successeur(b)</math>
+<math>a = b + c <mequi> successeur(a) = successeur(b + c) <mequi> successeur(a) = successeur(b) + c <mequi> successeur(a) <mgtequal> successeur(b)</math>
 <p>
 Or, cela équivaut parfaitement à dire que "successeur(a) est supérieur ou égal à successeur(b)".
 Donc, dire que "a est supérieur ou égal à b" équivaut à dire que "successeur(a) est supérieur ou égal à successeur(b)".
