@@ -20,14 +20,14 @@ Pour commencer, <span class="important">un espace de probabilité comprend un en
 
     <text_style background_color=(0,0,0,0) font_size=20>
 
-    <text content="Univers d'un dé" x=0 y=4>
+    <text content="Univers d'un dé" x=0 y=4></text>
 
-    <text content="1" x=-3/2 y=-0>
-    <text content="2" x=0 y=-0>
-    <text content="3" x=3/2 y=-0>
-    <text content="4" x=-3/2 y=-2>
-    <text content="5" x=0 y=-2>
-    <text content="6" x=3/2 y=-2>
+    <text content="1" x=-3/2 y=-0></text>
+    <text content="2" x=0 y=-0></text>
+    <text content="3" x=3/2 y=-0></text>
+    <text content="4" x=-3/2 y=-2></text>
+    <text content="5" x=0 y=-2></text>
+    <text content="6" x=3/2 y=-2></text>
 </graphic></br>
 </p>
 Un univers peut être détaché d'un espace de probabilité, mais utiliser un espace de probabilité avec est plus simple pour l'étudier, surtout si l'univers contient une quantité vraiment trop grande (voir infini) d'évènements.
@@ -49,14 +49,14 @@ Si vous ne prenez que ça, vous avez ce que l'on appelle un espace mesurable, ap
 
     <text_style background_color=(0,0,0,0) font_size=20>
 
-    <text content="Tribu de l'univers dé" x=0 y=4>
+    <text content="Tribu de l'univers dé" x=0 y=4></text>
 
-    <text content="1" x=-3/2 y=-0>
-    <text content="2" x=0 y=-0>
-    <text content="3" x=3/2 y=-0>
-    <text content="4" x=-3/2 y=-2>
-    <text content="5" x=0 y=-2>
-    <text content="6" x=3/2 y=-2>
+    <text content="1" x=-3/2 y=-0></text>
+    <text content="2" x=0 y=-0></text>
+    <text content="3" x=3/2 y=-0></text>
+    <text content="4" x=-3/2 y=-2></text>
+    <text content="5" x=0 y=-2></text>
+    <text content="6" x=3/2 y=-2></text>
 
     <point name="p1" x=-3 y=-1><point name="p2" x=3 y=-1>
     <form border_color=(0,0,0) border_radius=5 name="f1" points="p1;p2">

@@ -95,7 +95,8 @@
     <content>le centre d'une structure algébrique représentent l'ensemble des éléments de cette structure commutant avec tous les autres éléments de la structure</content>
 </new_definition>
 <new_definition name="algebra_conjugacy_action">
-    <content>une action par conjugaison d'un ensemble "G" </content>
+    <content>une action par conjugaison d'un ensemble "G" sur lui même est une action de groupe de "G" sur lui même, où chaque élément "g" de "G" opère avec chaque élément de "G" de tel manière que le résultat de chaque opération est celle de l'automorphisme intérieur associé à "g"</content>
+    <content>une classe de conjugaison d'un élément "x" est l'orbite de "x" par l'action par conjugaison du groupe</content>
 </new_definition>
 <new_definition name="algebra_group_action">
     <content>une action de groupe est un moyen d'opérer un groupe avec un ensemble "E", de tel manière que tous les résultats de ces opérations (entre un élément du groupe et un élément de "E") appartiennent à "E"</content>
@@ -107,7 +108,7 @@
     <content>un idéal I d'un anneau représente un sous-groupe de son groupe additif, où la multiplication de chacun de ces éléments par un élément du corps de base donne un élément de I (l'idéal est dit stable par la multiplication)</content>
 </new_definition>
 <new_definition name="algebra_inner_automorphism">
-    <content>un automorphisme intérieur associé à un élément "g" d'un groupe "G" d'opération "~" est un automorphisme (et donc une bijection de l'ensemble de "G" dans lui même) associant à chaque élément "x" du groupe l'élément "inverse de g ~ x ~ g"</content>
+    <content>un automorphisme intérieur associé à un élément "g" d'un groupe "G" d'opération "~" est un automorphisme (et donc une bijection de l'ensemble de "G" dans lui même) associant à chaque élément "x" du groupe l'élément "g ~ x ~ inverse de g"</content>
 </new_definition>
 <new_definition name="algebra_rank">
     <content>le rang d'une famille de vecteurs d'un espace vectoriel représente la dimension du sous-espace engendré par ce vecteur</content>

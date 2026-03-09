@@ -20,24 +20,24 @@ Via une variable aléatoire, vous pouvez directement utiliser cette espace, pour
 
     <text_style background_color=(0,0,0,0) font_size=20>
 
-    <text content="Univers dé" x=-5 y=4>
+    <text content="Univers dé" x=-5 y=4></text>
 
-    <text content="1" x=-13/2 y=-0>
-    <text content="2" x=-5 y=-0>
-    <text content="3" x=-7/2 y=-0>
-    <text content="4" x=-13/2 y=-2>
-    <text content="5" x=-5 y=-2>
-    <text content="6" x=-7/2 y=-2>
+    <text content="1" x=-13/2 y=-0></text>
+    <text content="2" x=-5 y=-0></text>
+    <text content="3" x=-7/2 y=-0></text>
+    <text content="4" x=-13/2 y=-2></text>
+    <text content="5" x=-5 y=-2></text>
+    <text content="6" x=-7/2 y=-2></text>
 
-    <text content="Tribu de l'univers dé" x=5 y=4>
+    <text content="Tribu de l'univers dé" x=5 y=4></text>
 
     <circle border_radius=5 color=(255,100,100) radius=3 x=5 y=-1>
-    <text content="1" x=7/2 y=-0>
-    <text content="2" x=5 y=-0>
-    <text content="3" x=13/2 y=-0>
-    <text content="4" x=7/2 y=-2>
-    <text content="5" x=5 y=-2>
-    <text content="6" x=13/2 y=-2>
+    <text content="1" x=7/2 y=-0></text>
+    <text content="2" x=5 y=-0></text>
+    <text content="3" x=13/2 y=-0></text>
+    <text content="4" x=7/2 y=-2></text>
+    <text content="5" x=5 y=-2></text>
+    <text content="6" x=13/2 y=-2></text>
 
     <point name="p1" x=2 y=-1><point name="p2" x=8 y=-1>
     <form border_color=(0,0,0) border_radius=5 name="f1" points="p1;p2">

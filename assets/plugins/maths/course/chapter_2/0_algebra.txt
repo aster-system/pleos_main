@@ -493,9 +493,69 @@ Pour cela, nous avons besoin d'un autre concept : les automorphismes intérieurs
 <span class="important"><definition name="algebra_inner_automorphism"></span>.
 Pour un groupe "G" sur un ensemble "E" avec une opération "~", un automorphisme intérieur d'un élément "g" de "G" se note comme ça :
 </p>
-<math><mforall> x <min> E, <mi>aut</mi><msub>g</msub>(x) = <mi>g</mi><msup>-1</msup> ~ x ~ g</math>
+<math><mforall> x <min> E, <mi>aut</mi><msub>g</msub>(x) = g ~ x ~ <mi>g</mi><msup>-1</msup></math>
 <p>
+En fait, <span class="important">l'idée du concept est de prendre un élément "g" quelconque, de l'opérer avec "x", puis d'y opérer l'inverse de "g", pour savoir comment "x" se comporte avec "g" et son inverse</span>.
 Hors, selon les propriétés du groupe, <span class="important">si on peut permuter "x" et "g" ou "inverse de g" et "x", alors "g" et son inverse s'annule, et "aut(x) = x"</span>.
 Donc, dans un groupe abélien, se concept ne sert à rien.
 Cependant, par définition pure, si "x" appartient au centre de "G", alors l'automorphisme le laisse invariant, mais ça peut ne pas être le cas de tous les "x" de "G".
+Prenons un exemple où "x" n'est pas laissé invariant : un automorphisme intérieur du groupe symétrique d'ordre "5", associé à la permutation qui transforme "1" en "2", "2" en "3" et "3" en "4", "4" en "5" et "5" en "1", avec la transposition de "1" et "2".
+</p>
+
+<graphic ratio_base>
+<background_color white><base width=18 height=12 draw=0>
+
+<set name="s_1" x=-15/2 y=-1></set>
+<set name="s_2" x=-9/2 y=-1></set>
+<application from=s_1 to=s_2 expression=x+1>
+<set name="s_3" x=-3/2 y=-1></set>
+<application from=s_2 to=s_3 images_direct=0-1;1-0>
+<set name="s_4" x=3/2 y=-1></set>
+<application from=s_3 to=s_4 expression=x+4>
+
+<text name="t_1" x=-6 y=9/2><math><mi>g</mi></math></text>
+<text name="t_2" x=-3 y=9/2><math><mi>x</mi></math></text>
+<text name="t_3" x=0 y=9/2><math><mi>g</mi><msup>-1</msup></math></text>
+<text name="t_4" x=6 y=9/2><math><mi>gxg</mi><msup>-1</msup></math></text>
+
+<set name="s_5" x=9/2 y=-1></set>
+<set name="s_6" x=15/2 y=-1></set>
+<application from=s_5 to=s_6 images_direct=0-4;4-0>
+
+</graphic>
+
+<p>
+Prenons maintenant un exemple qui laisse "x" invariant : le même automorphisme appliqué à la permutation de "1" à "3", de "2" à "4", de "3" à "5", de "4" à "1" et de "5" à "2".
+</p>
+
+<graphic ratio_base>
+<background_color white><base width=18 height=12 draw=0>
+
+<set name="s_1" x=-15/2 y=-1></set>
+<set name="s_2" x=-9/2 y=-1></set>
+<application from=s_1 to=s_2 expression=x+1>
+<set name="s_3" x=-3/2 y=-1></set>
+<application from=s_2 to=s_3 expression=x+2>
+<set name="s_4" x=3/2 y=-1></set>
+<application from=s_3 to=s_4 expression=x+4>
+
+<text name="t_1" x=-6 y=9/2><math><mi>g</mi></math></text>
+<text name="t_2" x=-3 y=9/2><math><mi>x</mi></math></text>
+<text name="t_3" x=0 y=9/2><math><mi>g</mi><msup>-1</msup></math></text>
+<text name="t_4" x=6 y=9/2><math><mi>gxg</mi><msup>-1</msup></math></text>
+
+<set name="s_5" x=9/2 y=-1></set>
+<set name="s_6" x=15/2 y=-1></set>
+<application from=s_5 to=s_6 expression=x+2>
+
+</graphic>
+
+<p>
+C'est avec ce concept qu'on va définir celui d'action par conjugaison.
+En fait, <span class="important"><definition name="algebra_inner_automorphism"></span>.
+C'est donc une généralisation des automorphismes intérieurs associés à tous les éléments du groupe.
+Avec ce concept, on peut aussi parler de celui des classes de conjugaisons.
+En fait, <span class="important"><definition name="algebra_conjugacy_action"></span>.
+Donc, c'est l'ensemble des éléments qui sont "images" de "x" par l'action par conjugaison.
+Généralement, on appelle ces éléments "conjugués de x".
 </p>

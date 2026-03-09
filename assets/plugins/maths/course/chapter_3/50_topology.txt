@@ -43,10 +43,11 @@ Si "F" est un fermé, alors "F" contient déjà sa frontière : "F" est égal à
 Cependant, si "F" est ouvert, alors l'intersection de "F" et de son adhérence donne "F", et priver "F" à l'adhérence de "F" donne la frontière de "F". 
 </p>
 <p>
-Généralement, <span class="important">on définit première l'ensemble des parties de "E" représentant les ouverts de "E", généralement noté "T", est nommée une topologie de "E"</span>.
-Premièrement, l'ensemble vide et "E" entier sont des ouverts de "E".
+Généralement, <span class="important">on peut définir un ensemble d'ouverts de "E" comme un ensemble de parties de "E", généralement noté "T", nommé une topologie de "E"</span>.
+Pour obéir à toutes les propriétés des ouverts, cette topologie "T" doit obéir à quelques règles précises.
+Premièrement, l'ensemble vide et "E" entier sont des ouverts de "E", et donc sont présents dans "T".
 Deuxièmement, l'union de n'importe quel élément de "T" est un autre élément de "T".
-Donc, l'union de deux ouverts est toujours un ouvert.
+Donc, <span class="important">l'union de deux ouverts est toujours un ouvert</span>.
 </p>
 
 <graphic>
@@ -60,4 +61,35 @@ Donc, l'union de deux ouverts est toujours un ouvert.
 
 <p>
 Finalement, l'intersection de n'importe quel élément de "T" est un autre élément de "T".
+Donc, <span class="important">l'intersection de deux ouverts est toujours un ouvert</span>.
+En fait, <span class="important">dire que un ensemble de parties de "E" obéit à ces 3 règles équivaut à dire que cet ensemble de partie est une topologie de "E"</span>.
+Cette équivalence nous sera très utile pour de futures démonstrations.
+</p>
+<p>
+Grâce à ça, on peut définir le concept d'espace topologique.
+En fait, <span class="important"><definition name="topological_space"></span>.
+Et donc, on peut définir le concept général de topologie.
+<span class="important"><definition name="topology"></span>.
+L'espace topologique le plus utilisé est celui qui est facilement ostensible avec les nombres réels : la topologie usuelle des nombres réels (c'est son nom).
+</p>
+<p>
+Avec les ouverts topologiques et les espaces topologiques, on peut définir un concept assez similaire, mais pas exactement pareil : le voisinage d'un point topologique.
+<span class="important"><definition name="topological_neighbourhood"></span>.
+Il n'est pas exclu qu'un voisinage de "a" déborde d'un des ouverts contenant "a".
+Généralement, <span class="important">l'ensemble des voisinages possibles de "a" sont notés "V(a)", où le "V" est généralement gothique</span>.
+Ce "V(a)" est donc un ensemble de parties de l'ensemble de départ.
+</p>
+
+<h3>Les propriétés basiques des espaces topologiques</h3>
+<p>
+
+</p>
+
+
+
+<h2>Le lien analyse - topologie</h2>
+
+<h3>La limite et continuité topologique</h3>
+<p>
+
 </p>
