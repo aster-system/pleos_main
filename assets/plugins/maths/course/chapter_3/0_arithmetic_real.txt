@@ -6,11 +6,11 @@
 
 <h3>Des nombres irrationels</h3>
 <p>
-Bien ques les nombres rationnels représentent une immense quantité de nombres, il existe des nombres qui existent dans la vraie vie, mais qui ne sont pas des nombres rationnels.
+Bien que les nombres rationnels représentent une immense quantité de nombres, il existe des nombres qui existent dans la vraie vie, mais qui ne sont pas des nombres rationnels.
 Prenons un exemple assez simple : la racine carrée de 2.
 Cet exemple est le plus connu, car il est le responsable d'un cataclysme historique : la découverte de nombres qui ne sont pas rationnels.
 Au Vième siècle avant J-C, les grecs le démontrèrent de manière solide (bien qu'il est difficile de dire qui et quand précisément ce résultat a été obtenu).
-En réalité, beaucoup de civilisations, commes les babyloniens ou les indiens, ont tenté de l'exprimer sous forme de fraction, sans succès.
+En réalité, beaucoup de civilisations, comme les babyloniens ou les indiens, ont tenté de l'exprimer sous forme de fraction, sans succès.
 Cependant, la démonstration n'est pas si dure, et est une démonstration par l'absurde.
 En effet, "définissons" un nombre "a" représentant la représentation en nombre rationnel de racine carrée de 2.
 </p>
@@ -186,3 +186,25 @@ Une borne supérieure "d" et une borne inférieure "e" se définissent comme ça
 </p>
 <math>I <mincluded> E, {<mforall> x <min> I, p <mgtequal> x, <mforall> p <min> E, p <mgtequal> x <mimp> d <mltequal> p}</math></br>
 <math>I <mincluded> E, {<mforall> x <min> I, q <mltequal> x, <mforall> q <min> E, q <mltequal> x <mimp> e <mgtequal> p}</math>
+
+<h3>Le lien nombres réels - géométrie</h3>
+<p>
+Déjà, <span class="important">nous pouvons définir le produit cartésien de "R" et lui même, noté "R²", qui représente tous les couples de réels possibles</span>.
+Ici, une question se pose : comment ce concept pourra nous être utile en géométrie ?
+En fait, <span class="important">comme il est possible de créer une droite des nombres réels, il est possible de créer un plan avec des couples de réels</span>.
+Pour ça, l'intuition est assez simple : on commencer par tracer une droite horizontale, puis une droite verticale (qui se coupent donc en 1 point).
+En suite, on va chercher à placer une "croix" sur une partie de ces droites, si possible pas trop loin de la coupure des deux droites (et aussi de telle manière que la croix de la droite horizontale soit à la même distance de la coupure des deux droites que la croix de la droite verticale).
+Finalement, on va considérer que, pour chaque point que l'on peut tracer dans notre plan, on peut obtenir le point le plus proche de la droite horizontale et de la droite verticale, qui se situe à une distance de la coupure des deux droites représentant un certain nombre de fois la taille entre la croix que nous venons de poser et la coupure des deux droites.
+En fait, <span class="important">le calcul de ces deux distances représente le calcul de deux nombres réels, et donc un couple de nombres réels, et donc un élément de "R²"</span>.
+À l'inverse, <span class="important">tout couple "(x, y)" de nombre réel peut être placé sur notre plan, en se situant sur la droite horizontale à "x" fois la distance entre notre croix horizontale et la coupure des droites de cette coupure des droites, puis en montant (ou descendant, si "y" est négatif) de "y" fois la distance entre notre croix verticale et la coupure des droites de cette coupure des droites</span>.
+C'est comme ça que fonctionne la géométrie basique.
+</p>
+
+<graphic><background_color white><circle radius=1/3 x=1 y=3><circle radius=1/3 x=-3 y=-2></graphic>
+
+<p>
+Posons un peu de vocabulaire pour rendre tout ça plus précis.
+Déjà, <span class="important">la droite horizontale est généralement notée la droite des abscisses, et la droite horizontale est généralement notée la droite des ordonnées</span>.
+En fait, dans un couple de réel de la sorte "(x, y)", "x" est appelé l'abscisse et "y" est appelé l'ordonné.
+Il y a encore beaucoup d'autre vocabulaire, mais nous le découvriront un peu plus tard, quand ça sera le bon moment.
+</p>

@@ -62,3 +62,7 @@
 <new_definition name="metric_space_completude">
     <content>un espace métrique est dit complet si, pour toutes les valeurs possibles dans l'ensemble de l'espace, il est possible de s'approcher aussi près que l'on veut de cet ensemble (en réduisant petiit à petit la distance entre une valeur plus simple et la valeur que l'on veut approcher)</content>
 </new_definition>
+
+<new_definition name="derivation">
+    <content>la dérivation est un moyen d'étudier de manière extrêmement précise les variations d'une fonction réelle (et donc, de savoir comment elle croît / décroît à un certain point / une certaine partie de la fonction)</content>
+</new_definition>

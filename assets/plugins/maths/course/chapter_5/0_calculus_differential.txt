@@ -1,0 +1,13 @@
+<h1>Le calcul différentiel</h1>
+
+
+
+<h2>La dérivation simple</h2>
+
+<h3>Qu'est ce qu'est la dérivation ?</h3>
+<p>
+Bien que nous introduisons ce concept assez tard, la dérivation mathématique est un outil important, et donc "l'intuition" est assez simple à obtenir.
+Pour l'utiliser, nous allons commencer par le cas le plus simple : les fonctions réelles.
+En fait, <span class="important"><definition name="derivation"></span>.
+Comme la continuité, la dérivation permet d'étudier un simple point d'une fonction, comme tout un intervalle.
+</p>
