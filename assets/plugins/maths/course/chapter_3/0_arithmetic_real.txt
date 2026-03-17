@@ -208,3 +208,15 @@ Déjà, <span class="important">la droite horizontale est généralement notée 
 En fait, dans un couple de réel de la sorte "(x, y)", "x" est appelé l'abscisse et "y" est appelé l'ordonné.
 Il y a encore beaucoup d'autre vocabulaire, mais nous le découvriront un peu plus tard, quand ça sera le bon moment.
 </p>
+<p>
+Comme nous pouvons noter chaque point sous la forme "(x, y)", on peut utiliser "x" et "y" dans des relations précises.
+En fait, <span class="important">on peut définir des ensembles de points par l'ensemble des couples solutions d'une équation précise quelconque, impliquant "x", "y" ou les deux</span>.
+Par exemple, on peut facilement définir l'ensemble des points constituant ce que l'on appelle généralement un cercle, avec une simple équation :
+</p>
+<math><mi>(x - a)</mi><msup>2</msup> + <mi>(y - b)</mi><msup>2</msup> = <mi>r</mi><msup>2</msup></math>
+<p>
+Ici, </span class="important">"a" défini l'abscisse du centre du cercle, "b" représente l'ordonnée du centre du cercle, et "r" représente le rayon du cercle</span>.
+Nous étudierons plus précisément cette équation plus tard.
+Dans le cas d'un cercle de centre "(1, 1)" et de rayon "1", on peut graphiquement afficher :
+</p>
+<graphic><background_color white><circle x=1 y=1 radius=1 color=white><graphic>

@@ -378,6 +378,67 @@ Nous avons cependant une extension de ces relations d'ordres : <span class="impo
 </p>
 <math>4 <mlt> 6 <mequi> 4 * -1 <mgt> 6 * -1 <mlt> -4 <mgt> -6</math>
 
+<h3>Les équations mathématiques</h3>
+<p>
+Avec cette arithmétique, nous pouvons définir un concept très important en mathématiques : les équations.
+<span class="important"><definition name="equation"></span>.
+Comme il s'agit d'une relation, si cette équation possède une indéterminée, alors il s'agit d'un prédicat.
+Par exemple, une équation constituée d'éléments de "Z" pourrait se formuler ainsi :
+</p>
+<math>4 + x = 6</math>
+<p>
+Ici, <span class="important">l'utilité d'une équation est de trouver des équations / relations / prédicats équivalents permettant d'avoir le plus d'informations possibles sur les indéterminés</span>.
+Pour cela, nous devons savoir précisément quelles types d'équivalences sont possibles avec une certaine équation.
+C'est pour cela qu'établir des équivalences par rapport au passage à des opérations sur des valeurs dans des ensembles sont intéressantes.
+En effet, <span class="important">si appliquer une opération sur les deux membres d'une équation de départ équivaut à ne pas modifier l'équation, alors on peut justement formaliser cette équivalence pour obtenir des informations sur l'indéterminée</span>.
+Bien évidemment, la meilleure issue possible est d'obtenir une caractérisation de toutes les valeurs possibles pour l'indéterminée, rendant l'équation vraie.
+Pour bien comprendre, voici un exemple avec notre équation d'exemple, dans "Z" avec l'opération "+" (dont on a démontré l'équivalence sur une équation).
+</p>
+<math>4 + x = 6 <mequi> 4 + x + -4 = 6 + -4 <mequi> x = 2</math>
+<p>
+Il faut cependant faire très attention à ce que chaque partie de l'équation reste dans un ensemble étudiable, pour ne pas créer de problèmes logiques.
+</p>
+<p>
+Pour comprendre l'utilité de ce concept, prenons un exemple très simple, et purement calculatoire.
+Imaginons une situation fictive : j'ai une boite quelconque avec 2 objets à l'intérieur, dont l'une a une masse de 500 grammes et l'autre a une masse inconnu.
+La masse totale de la boite pleine est de 750 grammes, et celle de la boîte vide est de 100 grammes : on cherche la masse de l'objet avec une masse indéterminée.
+Pour cela, nous savons que la masse de la bôite vide, de l'objet dont on connaît la masse et dont celui dont on ne connait pas la masse est 750 grammes : formalisons ça mathématiquement.
+</p>
+<math>500 + 100 + x = 750</math>
+<p>
+Toutes ces valeurs sont assez logiquement dans "Z".
+Par les propriétés de l'opération "+" dans "Z" :
+</p>
+<math>500 + 100 + x = 750 <mequi> 600 + x + -600 = 750 + -600 = x = 150</math>
+<p>
+Donc, notre objet de masse inconnue a une masse de 150 grammes.
+</p>
+<p>
+Si nécessaire, <span class="important">on peut créer des prédicats plus complexes, représentant des "ETs" ou des "OUs" d'équations quelconques</span>.
+Si l'on reste avec une indéterminée, ce concept est rarement très utile quand on utile le "ET", mais peut étendre le concept quand on utilise des "OU".
+</p>
+<math>2 + x = 3 <mand> 3 + x = 5 <mequi> x = 1 <mand> x = 2 <mequi> x = <memptyset></math>
+<p>
+<span class="important">Il est aussi possible de travailler avec des équations utilisant plusieurs indéterminées différentes</span>.
+Cependant, les techniques de résolutions sont généralement plus complexes qu'avec des variables simples.
+Il est très fréquent que des équations utilisant plusieurs indéterminées soit formalisés sous la forme de prédicat utilisant des "ET".
+La technique la plus pratique pour résoudre ce genre d'équation est la substitution d'indéterminées.
+Ici, <span class="important">substituer une variable "x" revient à remplacer "x" par une valeur égale à "x" dans une formule</span>.
+Par exemple, si on trouve que "x = 2 + y", alors on peut remplacer tous les "x" dans les formules côté à côté par "2 + y".
+Cependant, <span class="important">il ne faut pas oublier de laisser la relation "x = 2 + y", pour garder une informations sur le "x"</span>.
+Voici un exemple assez simple :
+</p>
+<math>x + y = 4 <mand> x - y = 2 <mequi> x + y = 4 <mand> x = y + 2 <mequi> (y + 2) + y = 4 <mand> x = y + 2 <mequi> 2 * y = 2 <mand> x = y + 2 <mequi> y = 1 <mand> x = 3</math>
+<p>
+En dérivant ce concept, on peut aussi en définir un autre assez similaire : les inéquations.
+<span class="important"><definition name="inequation"></span>.
+Ce concept est généralement bien plus complexe que celui d'équation, car les relations étudiées sont généralement plus complexes.
+Cependant, on peut aussi passer par des suites d'équivalences à des équations / propositions équivalentes, permettant de mieux caractériser tout cela.
+Voici un exemple d'inéquation :
+</p>
+<math>x + 8 <mgt> 35 <mequi> x + 8 + -8 <mgt> 35 + -8 <mequi> x <mgt> 27 <mequi> x <mgtequal> 26</math>
+
+
 
 
 

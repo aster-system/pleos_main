@@ -243,6 +243,23 @@ Donc, cet ensemble est stable par la loi de composition, cette loi est associati
 Donc, chaque stabilisateur dans "E" est un sous-groupe de "G".
 </p>
 
+<h4>2.0.2.2</h4>
+<p>
+Démontrons que, dans un sous-groupe normal, les classes à gauches sont égales aux classes à droites.
+</p>
+<math><mforall> x <min> G, xH = Hx</math>
+<p>
+Déjà, si le sous-groupe est normal, on peut établir la propriété qui lui permet d'être stable par conjugaison.
+</p>
+<math><mforall> x <min> G, <mforall> h <min> H, x ~ h ~ <mi>x</mi><msup>-1</msup> = r <min> H</math>
+<math><mequi> H = xH<mi></mi><msup>-1</msup></math>
+<p>
+Appliquons simple l'opération par "x" à droite des deux valeurs :
+</p>
+<math><mequi> Hx = xH</math>
+<p>
+Au final, les classes à gauches de "H" sont bel et bien égales au classes à droites de "H".
+</p>
 
 
 <h2>L'arithmétique des nombres rationnels</h2>

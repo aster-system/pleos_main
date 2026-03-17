@@ -18,6 +18,12 @@
     <content name="internal">une loi de composition est dite interne lorsque les deux éléments de départs sont les mêmes (et donc, les mêmes que l'ensemble d'arrivée aussi)</content>
     <content name="rigorous">une loi de composition est une application entre tous les éléments du produit cartésien de deux ensembles "A" et "B" (ou du produit cartésien de "B" et "A"), et vers des éléments de "A"</content>
 </new_definition>
+<new_definition name="equation">
+    <content>une équation est une relation quelconque entre plusieurs valeurs, qui peuvent contenir des indéterminées (que l'on peut aussi appeler des inconnues)</content>
+</new_definition>
+<new_definition name="inequation">
+    <content>une inéquation est une relation d'inégalité quelconque entre plusieurs valeurs, qui peuvent contenir des indéterminées (que l'on peut aussi appeler des inconnues)</content>
+</new_definition>
 <new_definition name="operation">
     <content>une opération est une action où, grâce à une (ou plusieurs) valeur de départ (nommée opérande), on y définit une égalité représentant une (ou plusieurs) valeurs traitées via les valeurs de départs</content>
     <content name="stability">une opération entre plusieurs objets est dite stable (ou close) en un ensemble E si, pour tous les éléments possibles au départ, l'arrivée est toujours dans E</content>
@@ -84,6 +90,7 @@
     <content>un sous-groupe H d'un groupe G est un groupe sur un sous-ensemble de l'ensemble de G, muni de la même loi de composition que G</content>
     <content name="class">une classe à gauche (ou à droite) d'un élément "a" suivant un sous-groupe représente l'ensemble des modifications possibles dans un sous-groupe, en ne faisant qu'utiliser la loi de composition à gauche (ou à droite) des éléments du sous-groupe avec l'élément "a" du groupe</content>
     <content name="index">l'indice d'un sous-groupe représente le cardinal des classes à gauche (ou à droite) d'un sous-ensemble</content>
+    <content name="normal">un sous-groupe normal (ou sous-groupe distingué) "H" d'un groupe "G" est un sous-groupe de "G" tel que l'image de l'automorphisme intérieur associé à chaque élément de "G" sur "H" est toujours "H"</content>
 </new_definition>
 <new_definition name="algebra_subring">
     <content>un sous-anneau A d'un anneau B est un anneau sur un sous-ensemble de l'ensemble de A, où l'addition forme un sous-groupe du groupe additif de "A", où "B" est stable par la multiplication et où le neutre de la multiplication de "A" se situe dans "B"</content>

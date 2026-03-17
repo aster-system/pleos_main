@@ -559,3 +559,18 @@ En fait, <span class="important"><definition name="algebra_conjugacy_action"></s
 Donc, c'est l'ensemble des éléments qui sont "images" de "x" par l'action par conjugaison.
 Généralement, on appelle ces éléments "conjugués de x".
 </p>
+
+<h3>Les sous-groupes normaux</h3>
+<p>
+Les sous-groupes normaux sont probablement la catégorie de sous-groupe la plus utile de tous.
+<span class="important"><definition name="algebra_subgroup-normal"></span>.
+En d'autres termes, après l'action par conjugaison de "G" sur lui même, tous les éléments de "H" avant l'action reste dans "H" après cette action.
+Dans ce cas, on dit que "H" est stable par conjugaison de "G" sur lui même.
+On peut donc le formaliser comme ça :
+</p>
+<math><mforall> x <min> G, <mforall> h <min> H, x ~ h ~ <mi>h</mi><msup>-1</msup> <min> H</math>
+<p>
+En plus, <span class="important">on peut démontrer que si un sous-groupe est normal, alors l'ensemble de ses classes à gauches est égal à l'ensemble de ses classes à droites</span>.
+La démonstration (<a href="demo">présente juste ici</a>) est assez simple, grâce à la propriété de stabilité via l'action par conjugaison.
+</p>
+<math><mforall> x <min> G, xH = Hx</math>
