@@ -66,10 +66,14 @@ En d'autres termes, si la relation peut s'écrire des deux côtés avec deux obj
 </p>
 <math><mforall>a, b <min> E, a ~ b <mand> b ~ a <mimp> a = b</math>
 <p>
-Si une relation d'ordre est définie sur l'entièreté des éléments d'un ensemble, la relation est dite "totale", et l'ensemble est dit "bien ordonné".
-Généralement, <span class="important">il est possible de formaliser un ensemble bien ordonné "E" par une relation "~" par un couple constitué de l'ensemble et de la relation</span>.
+Si une relation d'ordre est définie entre l'entièreté des éléments d'un ensemble, la relation est dite "totale", et l'ensemble est dit "bien ordonné".
+Généralement, <span class="important">un ensemble bien ordonné "E" par une relation "~" est formalisé avec un couple constitué de l'ensemble et de la relation</span>.
 </p>
 <math>(E, ~)</math>
+<p>
+Cependant, <span class="important">il est aussi possible de ne pas définir la relation d'ordre sur l'entièreté des éléments d'un ensemble, mais sur seulement une partie d'entre eux : on parle d'ensemble partiellement ordonné</span>.
+Or, un ensemble bien ordonné est aussi un ensemble partiellement ordonné (puisque certains de ces éléments peuvent se comparer entre eux), bien que cela le prive de certaines de ces propriétés.
+</p>
 
 <h3>Les relations d'équivalences</h3>
 <p>

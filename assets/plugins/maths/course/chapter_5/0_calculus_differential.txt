@@ -11,3 +11,58 @@ Pour l'utiliser, nous allons commencer par le cas le plus simple : les fonctions
 En fait, <span class="important"><definition name="derivation"></span>.
 Comme la continuité, la dérivation permet d'étudier un simple point d'une fonction, comme tout un intervalle.
 </p>
+<p>
+Pour parler de ce concept, nous avons besoin d'un autre concept : les approximations affines.
+<span class="important"><definition name="linear_approximation"></span>.
+Ici, l'idée est d'obtenir la façon dont la fonction croît / décroît en un certain point précis.
+Pour cela, <span class="important">on va calculer une sorte de moyenne correspondant à cette donnée de la fonction en ce point</span>.
+L'idée est que, en considérant un point "a" d'une fonction, on peut calculer la moyenne du grossissement de cette fonction entre "a" et un autre point "b", en calculant le grossissement total entre "f(b)" et "f(a)", et en le divisant par "b - a" pour en obtenir une sorte de moyenne.
+En fait, <span class="important">si l'on maintenait le grossissement de la fonction en "f(a)" sur l'intervalle entre "a" et "b", on attendrait "f(b)"</span>.
+</p>
+<math>t = <mfrac><mi>f(b) - f(a)</mi><mi>b - a</mi></mfrac></math>
+<p>
+On peut modifier un peu cette formule, en ajoutant une variable nommée "h" représente "b - a", et en déduire une nouvelle formule un peu différente.
+Ici, <span class="important">cette formule est nommée taux d'accroissement de "f" en "a"</span>.
+</p>
+<math>t = <mfrac><mi>f(b) - f(a)</mi><mi>b - a</mi></mfrac> <mand> h = b - a <mequi> t = <mfrac><mi>f(h + a) - f(a)</mi><mi>h</mi></mfrac></math>
+<p>
+Graphiquement, <span class="important">on peut tracer une droite entre "f(a)" et "f(b)", dont le coefficient directeur est la valeur que nous venons juste de calculer</span>.
+Puisqu'il s'agit d'une droite, on peut la représente comme une fonction affine, d'où le nom.
+Effectivement, <span class="important">cette droite s'écrit comme une fonction affine "c * x + d" où "c" est la valeur que nous venons de calculer et "d" est "f(a) - a * c"</span>.
+</p>
+<graphic><background_color white><function expression="(1/2)*(x+1)*(x+1)"></function><function expression="x*(3/2)+3/2"></function></graphic>
+<p>
+Ce concept nous permet donc d'approximer le grossissement d'une fonction entre "a" et "b", cependant on aimerait savoir le grossissement de la fonction en "a".
+Pour cela, <span class="important">l'idée est de se rapprocher très proche de "a", en utilisant le concept de limite</span>.
+On doit donc modifier un petit peu notre formule, en stipulant que "b" tend vers "a", pour représenter ce concept.
+</p>
+<math><mlim unknown=b value=0><mfrac><mi>f(b) - f(a)</mi><mi>b - a</mi></mfrac></math>
+<p>
+On peut aussi utiliser cette formule pour en déduire une limite avec le taux d'accroissement seulement.
+</p>
+<math><mlim unknown=b value=a><mfrac><mi>f(b) - f(a)</mi><mi>b - a</mi></mfrac> = s <mand> h = b - a <mequi> <mlim unknown=h value=0><mfrac><mi>f(h + a) - f(a)</mi><mi>h</mi></mfrac> = s</math>
+<p>
+Ici, notre valeur "s" est donc une approximation de comment "f" croît en "a".
+De plus, <span class="important">"s" est nommé le nombre dérivé de "f" en "a", et représente la forme "locale" de la dérivation</span>.
+Si ce nombre existe, il est unique, et l'on dit que la fonction "f" est dérivable en "a".
+Pour être utilisable, <span class="important">il faut obligatoirement que "f" soit définie et continue (pour utiliser la limite) dans le voisinage de "a"</span>.
+</p>
+<p>
+On peut étendre ce concept avec le concept d'ensemble.
+En effet, <span class="important">si pour toute valeur d'un ensemble précis, une fonction admet un nombre dérivé, alors la fonction est dite dérivable</span>.
+Finalement, <span class="important">l'ensemble de toutes les valeurs où "f" est dérivable est nommée le domaine de dérivabilité de la fonction</span>.
+Bien évidemment, si une fonction est dérivable en un point / sur un ensemble, cette fonction est définie et continue sur cet ensemble (bien que l'inverse ne soit pas vrai, et représente même une erreur courante).
+</p>
+<p>
+Il est possible de rendre ce concept plus pratique, en utilisant le formalisme des fonctions, avec les fonctions dérivées.
+En effet, <span class="important"><definition name="derivative_function"></span>.
+C'est un moyen d'exprimer le concept de dérivation avec une fonction entière.
+Prenons un exemple assez simple : la fonction qui transforme "x" en "3 * x²".
+Comme nous l'avons vue, cette fonction est dérivable et continue sur tout "R" : essayons de généraliser le calcul de ses nombres dérivés.
+</p>
+<math><mforall> x, f'(x) = <mlim unknown=h value=0><mfrac><mi>f(h + x) - f(x)</mi><mi>h</mi></mfrac> = <mlim unknown=h value=0><mfrac><mi>3 * (h + x) * (h + x) - 3 * x * x</mi><mi>h</mi></mfrac> = <mlim unknown=h value=0><mfrac><mi>3 * h * h + 6 * x * h + 3 * x * x - 3 * x * x</mi><mi>h</mi></mfrac> = <mlim unknown=h value=0><mfrac><mi>3 * h * h + 6 * x * h</mi><mi>h</mi></mfrac> = <mlim unknown=h value=0> 3 * h + 6 * x = 6 * x</math>
+<p>
+Or, toutes les valeurs "6 * x" sont définies et bien utilisable : <span class="important">tout nombre dérivé de "3 * x²" s'écrit "6 * x"</span>.
+Donc, <span class="important">l'expression de la fonction dérivée de "3 * x²" est "6 * x"</span>.
+</p>
+<graphic><background_color white><function expression=3*x*x></function><function expression=6*x></function></graphic>

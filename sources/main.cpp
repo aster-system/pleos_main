@@ -40,6 +40,7 @@
 
 // Include PLEOS Test header
 #include "../../../scls-image-michelangelo/scls_image_directory/scls_image_table.h"
+#include "../../../scls-image-michelangelo/scls_image_directory/scls_image_turtle.h"
 
 // Init SCLS
 SCLS_INIT
@@ -95,11 +96,83 @@ int command(int argc, char* argv[]) {
 	return 0;
 }
 
+void branch(scls::Turtle& t, double branch_width, int step, int n) {
+	if(n <= 0){return;}
+
+	constexpr double angle = 10;
+	t.rotate_degrees(angle);
+	t.go_forward(branch_width / static_cast<double>((step - n) + 2));
+	branch(t, branch_width, step, n - 1);
+	t.go_forward(-branch_width / static_cast<double>((step - n) + 2));
+	t.rotate_degrees(-angle * 2);
+	t.go_forward(branch_width / static_cast<double>((step - n) + 2));
+	branch(t, branch_width, step, n - 1);
+	t.go_forward(-branch_width / static_cast<double>((step - n) + 2));
+	t.rotate_degrees(angle);
+}
+void branch(scls::Turtle& t, double branch_width, int step){branch(t, branch_width, step, step);}
+
+void add_actions_von_koch_curve(scls::Turtle& t, double branch_width, int step, int n) {
+	constexpr double angle = -60;
+	if(n <= 0){t.add_action_move_forward(branch_width / 3);}
+	else{add_actions_von_koch_curve(t, branch_width / 3, step, n - 1);}
+	t.add_action_rotate(angle);
+
+	if(n <= 0){t.add_action_move_forward(branch_width / 3);}
+	else{add_actions_von_koch_curve(t, branch_width / 3, step, n - 1);}
+	t.add_action_rotate(-angle * 2);
+
+	if(n <= 0){t.add_action_move_forward(branch_width / 3);}
+	else{add_actions_von_koch_curve(t, branch_width / 3, step, n - 1);}
+	t.add_action_rotate(angle);
+
+	if(n <= 0){t.add_action_move_forward(branch_width / 3);}
+	else{add_actions_von_koch_curve(t, branch_width / 3, step, n - 1);}
+}
+void add_actions_von_koch_curve(scls::Turtle& t, double branch_width, int step){add_actions_von_koch_curve(t, branch_width, step, step);}
+void von_koch_curve(scls::Turtle& t, double branch_width, int step, int n) {
+	constexpr double angle = -60;
+	if(n <= 0){t.go_forward(branch_width / 3);}
+	else{von_koch_curve(t, branch_width / 3, step, n - 1);}
+	t.rotate_degrees(angle);
+
+	if(n <= 0){t.go_forward(branch_width / 3);}
+	else{von_koch_curve(t, branch_width / 3, step, n - 1);}
+	t.rotate_degrees(-angle * 2);
+
+	if(n <= 0){t.go_forward(branch_width / 3);}
+	else{von_koch_curve(t, branch_width / 3, step, n - 1);}
+	t.rotate_degrees(angle);
+
+	if(n <= 0){t.go_forward(branch_width / 3);}
+	else{von_koch_curve(t, branch_width / 3, step, n - 1);}
+}
+void von_koch_curve(scls::Turtle& t, double branch_width, int step){von_koch_curve(t, branch_width, step, step);}
+
+void add_actions_von_koch_snowflake(scls::Turtle& t, double branch_width, int step) {
+	constexpr double angle = 120;
+	add_actions_von_koch_curve(t, branch_width, step);
+	t.add_action_rotate(angle);
+	add_actions_von_koch_curve(t, branch_width, step);
+	t.add_action_rotate(angle);
+	add_actions_von_koch_curve(t, branch_width, step);
+	t.add_action_rotate(angle);
+}
+void von_koch_snowflake(scls::Turtle& t, double branch_width, int step) {
+	constexpr double angle = 120;
+	von_koch_curve(t, branch_width, step);
+	t.rotate_degrees(angle);
+	von_koch_curve(t, branch_width, step);
+	t.rotate_degrees(angle);
+	von_koch_curve(t, branch_width, step);
+	t.rotate_degrees(angle);
+}
+
 int main(int argc, char* argv[]) {
 	//return pleos::execute("graphic", "tests/solve.png", std::vector<std::string>(1, std::string("<graphic><background_color white><base width=5 height=5><function expression=\"x/3\"><curve_area number=5 area_end=2></function></graphic>")));
 	//return command(argc, argv);
 
-	pleos::Pleos_Window window(900, 600, argv[0]);
+	/*pleos::Pleos_Window window(900, 600, argv[0]);
     window.load_from_xml("assets/window.txt");
     pleos::Hub_Page* hub = window.hub();
     hub->handle_saasf();
@@ -111,62 +184,39 @@ int main(int argc, char* argv[]) {
         window.render();
     }//*/
 
-	/*std::string content = std::string("<graphic><background_color white><base draw=0><repeat times=160><repeat times=10><circle tags=c x=-4+(repetition(1)*-1+random()/2)/2 y=(-80+repetition(0)+random()/2)/16 radius=1/32 physic=2 collision=circle velocity=(1+random(),-1/2+random())></repeat></repeat><form name=\"f\" points=new(-1,-1);new(1,-1);new(1,1) border_color=black color=red physic=1 collision=mesh></graphic>");
-	std::shared_ptr<pleos::Graphic> g = pleos::Graphic::new_graphic();
-	g.get()->graphic_from_xml(content, 500, 500);
-	g.get()->to_image(500, 500).get()->save_png("tests/g.png");
-	g.get()->set_scale(20, 20);
+    std::shared_ptr<scls::Formula_Base> f = scls::string_to_algebra_element<scls::Formula_Base>(std::string("1/(x+1)"));
+    while(f.get()->simplify_step() != scls::Formula_Base::NO_SIMPLIFICATION){}
+    scls::mclaurin(f.get(), std::string("x"), 14);
 
-	std::vector<pleos::__Graphic_Object_Base*> c = std::vector<pleos::__Graphic_Object_Base*>(160);
-	for(int i = 0;i<160;i++) {
-		c[i] = g.get()->objects_by_tag("c").at(i * 10 + 1).get();
-	}
-	pleos::__Graphic_Object_Base* f = g.get()->object_by_name(std::string("f"));
-	std::vector<scls::Point_2D> last = std::vector<scls::Point_2D>(160, scls::Point_2D(-100, 0));
-	//*/
+	// Video
+    int image_width = 1000;
+    scls::Plane_Base b = scls::Plane_Base(image_width / 20, image_width / 20, image_width / 2, image_width / 2);
+    scls::Video_Encoder enc = scls::Video_Encoder("tests/t.mp4", 10, image_width, image_width);
+     std::shared_ptr<scls::Formula_Base> f_current;
+    for(int i = 0;i<20;i++) {
+        if(i + 1 < 11) f_current = scls::mclaurin(f.get(), std::string("x"), i + 1);
+        while(f_current.get()->simplify_step() != scls::Formula_Base::NO_SIMPLIFICATION){}
 
-	/*
-	scls::Window window(500, 500, argv[0]);
-	scls::GUI_Page* a = window.new_page_2d<scls::GUI_Page>("gui").get();
-	window.display_page_2d("gui");
+        // Draw the base
+        scls::Image img = scls::Image(image_width, image_width, scls::Color(255, 255, 255));
+        scls::draw_grid(img, &b);
+        scls::Point_2D last_point = scls::Point_2D(-1, 0);
+        for(int j = 0;j<img.width();j++){
+            scls::Point_2D current_point = scls::Point_2D(j, img.height() - b.base_y_to_canonical_y(f.get()->replace_unknowns("x", b.canonical_x_to_base_x(j)).get()->value<scls::Fraction>()->to_double()));
+            img.draw_line(last_point.x(), last_point.y(), current_point.x(), current_point.y(), scls::Color(255, 0, 0), 5);
+            last_point = current_point;
+        }
+        last_point = scls::Point_2D(-1, 0);
+        for(int j = 0;j<img.width();j++){
+            scls::Point_2D current_point = scls::Point_2D(j, img.height() - b.base_y_to_canonical_y(f_current.get()->replace_unknowns("x", b.canonical_x_to_base_x(j)).get()->value<scls::Fraction>()->to_double()));
+            img.draw_line(last_point.x(), last_point.y(), current_point.x(), current_point.y(), scls::Color(0, 0, 255), 5);
+            last_point = current_point;
+        }
 
-	while(window.run()) {
-		window.update_event();
-		window.update();
-
-		if(window.key_pressed("a")){
-			g.get()->update(0.02);
-			g.get()->physic_engine()->update_physic(0.02);
-		}
-
-		g.get()->set_foreground_object(f);
-		a->parent_object()->set_texture(g.get()->to_image(500, 500));
-
-		for(int i = 0;i<20;i++) {
-			if(last[i].x() != -100){g.get()->new_line(std::string("l"), last[i].x(), last[i].y(), c[i]->x(), c[i]->y());}
-			last[i] = c[i]->position();
-		}
-
-		window.render();
-	}
-	//*/
-
-    /*// Video
-    scls::Video_Encoder enc = scls::Video_Encoder("tests/t.mp4", 10, 1000, 1000);
-    for(int i = 0;i<10;i++) {
-        for(int j = 0;j<60;j++) {
-            g.get()->update(0.02);
-			g.get()->physic_engine()->update_physic(0.02);
-            g.get()->set_foreground_object(f);
-
-            enc.write_video_frame(g.get()->to_image(1000, 1000));
+        for(int j = 0;j<30;j++) {
+            enc.write_video_frame(img);
             enc.go_to_next_frame();
-
-            for(int i = 0;i<160;i++) {
-                if(last[i].x() != -100){g.get()->new_line(std::string("l"), last[i].x(), last[i].y(), c[i]->x(), c[i]->y()).get()->set_border_width(3);}
-                last[i] = c[i]->position();
-            }
         }
     }
-    enc.close_encoding();/*/
+    enc.close_encoding();//*/
 }

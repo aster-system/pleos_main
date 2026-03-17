@@ -19,3 +19,6 @@
 <new_definition name="topology">
     <content>la topologie est l'étude des espaces topologiques et de leurs propriétés possibles</content>
 </new_definition>
+<new_definition name="topology_trivial">
+    <content>la topologie grossière (ou topologie triviale) associée à un ensemble E est une topologie sur "E" où les deux seuls ouverts sont l'ensemble vide et "E" entier</content>
+</new_definition>

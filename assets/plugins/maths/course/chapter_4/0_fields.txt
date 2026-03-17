@@ -81,6 +81,86 @@ L'exemple le plus simple est le corps formé par "Q", et par l'addition et la mu
 </p>
 <math>(Q, +, .)</math>
 <p>
-Le corps le plus utile est probablement le corps formé par "R", et par l'addition et la multiplication sur "Q".
+Le corps le plus utile est probablement le corps formé par "R", et par l'addition et la multiplication sur "R".
 </p>
 <math>(R, +, .)</math>
+
+<p>
+Il est possible de trouver des corps qui contiennent d'autres corps, grâce au concept d'extension de corps.
+<span class="important"><definition name="algebra_field-extension"></span>.
+Généralement, quand on parle d'extension, on parle juste du corps, et pas du morphisme.
+L'exemple le plus simple est le corps "(R, +, .)", qui est une extension du corps "(Q, +, .)".
+</p>
+
+
+
+<h2>Les polynômes</h2>
+
+<h3>Qu'est ce qu'est un polynôme</h3>
+<p>
+Plus tôt, nous avons à de multiples reprises envisagé des fonctions de la forme "a * x ² + b * x + c".
+Cependant, ce concept se généralise assez facilement, grâce aux polynômes.
+<span class="important"><definition name="polynomial"></span>.
+Par exemple, "4 * x² + 8" est un polynôme.
+De plus, <span class="important"><definition name="monomial"></span>.
+C'est la version "simplifiée" du polynôme.
+Ici, l'indéterminée s'écrit généralement "x", ou "X".
+Pour construire rigoureusement un polynôme, on peut procéder de la sorte :
+</p>
+<math><msum from=0 to=n> <mi>a</mi><msub>k</msub><mi>X</mi><msup>k</msup></math></br>
+<math>3 * <mi>X</mi><msup>3</msup> - 4 * <mi>X</mi> + 2</math>
+<p>
+Ils possèdent une arithmétique assez simple et intuitive.
+Déjà, <span class="important">il est possible d'additionner deux polynômes, en utilisant la première loi de composition du corps des coefficients des polynômes</span>.
+Les lois restent exactement les mêmes que pour des indéterminées classiques, et les propriétés du corps sont conservés avec les polynômes (groupe additif abélien).
+La définition de cette multiplication est assez simple : on additionne entre eux les coefficients partageant des inconnus élevés au même exposant (d'où on en déduit les propriétés additives des polynômes).
+</p>
+<math><msum from=0 to=m> <mi>a</mi><msub>k</msub><mi>X</mi><msup>k</msup> + <msum from=0 to=n> <mi>b</mi><msub>k</msub><mi>X</mi><msup>k</msup> = <msum from=0 to=max(m,n)> (<mi>a</mi><msub>k</msub> + <mi>b</mi><msub>k</msub>)<mi>X</mi><msup>k</msup></math></br>
+<math>(3 * <mi>X</mi><msup>3</msup> + 2 <mi>X</mi><msup>2</msup> - 4 * <mi>X</mi> + 2) + (2 * <mi>X</mi><msup>4</msup> - 2 <mi>X</mi><msup>2</msup> + 3 * <mi>X</mi> + 5) = (2 * <mi>X</mi><msup>4</msup> + 3 * <mi>X</mi><msup>3</msup> - <mi>X</mi> + 7)</math>
+<p>
+En plus, <span class="important">il est possible de multiplier deux polynômes, en utilisant la seconde loi de composition du corps des coefficients des polynômes</span>.
+Cela inclut certaines propriétés de la multiplication, comme l'associativité ou la distributivité.
+Pour la définir correctement, commençons par définir la multiplication entre un polynôme et un monôme.
+L'idée est de multiplier tous les coefficients du polynôme par celui de monôme et d'ajouter à chaque indéterminée du polynôme l'exposant du monôme (selon les lois de distributions du corps).
+</p>
+<math>(a * <mi>X</mi><msup>m</msup>) * (<msum from=0 to=n> <mi>b</mi><msub>k</msub><mi>X</mi><msup>k</msup>) = <msum from=0 to=n+m> (a * <mi>b</mi><msub>k</msub>) * <mi>X</mi><msup>k + m</msup></math></br>
+<math>(2 * <mi>X</mi><msup>2</msup>) * (2 * <mi>X</mi><msup>2</msup> - 3 <mi>X</mi> + 4) = (4 * <mi>X</mi><msup>2</msup> - 6 * <mi>X</mi><msup>3</msup> + 4 * <mi>X</mi><msup>2</msup>)</math>
+<p>
+Donc, multiplier deux polynômes revient à en décomposer un en monôme, effectuer tous les multiplications comme vue, et d'additionner tous les résultats obtenus.
+</p>
+<math>(<msum from=0 to=m> <mi>a</mi><msub>k</msub><mi>X</mi><msup>k</msup>) * (<msum from=0 to=n> <mi>b</mi><msub>k</msub><mi>X</mi><msup>k</msup>) = <msum from=0 to=m> <mi>a</mi><msub>k</msub> * <msum from=0 to=n+m> (a * <mi>b</mi><msub>k</msub>) * <mi>X</mi><msup>k + m</msup></math></br>
+<math><math>(3 * <mi>X</mi><msup>2</msup> + 2) * (2 * <mi>X</mi> - 4) = (6 * <mi>X</mi><msup>3</msup> - 12 * <mi>X</mi><msup>2</msup>) + (4 * <mi>X</mi> - 8) = 6 * <mi>X</mi><msup>3</msup> - 12 * <mi>X</mi><msup>2</msup> + 4 * <mi>X</mi> - 8</math>
+<p>
+
+</p>
+
+<h3>Les racines de polynômes</h3>
+<p>
+Une des caractéristiques des polynômes est l'ensemble de leurs racines.
+En fait, <span class="important"><definition name="polynomial_root"></span>.
+C'est un nombre qui "annule" le polynôme.
+Un exemple assez simple : prenons le polynôme à coefficients dans "Q" s'écrivant "X² + X - 2".
+Ce polynôme est très simple, suffisamment pour pouvoir en déduire de tête des racines "évidents" : "1" et "-2".
+Nous pouvons confirmer graphiquement ces résultats.
+</p>
+<graphic><background_color white><function expression="x*x+x-2"></function></graphic>
+<p>
+Nous pouvons ici effectuer une modification assez intéressante du polynôme.
+En effet, restons sur notre polynôme "X² + X - 2", et essayons de l'écrire sous la forme d'un produit de polynômes de degré inférieur.
+Déjà, <span class="important">quelque soit la forme avec laquelle nous écrirons ce polynôme, celui si s'annulera en "1" et en "-2"</span>.
+Donc, si on l'écrit sous la forme de produit de deux polynôme "Q" et "R", un des deux vaudra "0" en "1" et en "-2".
+Or, nous pouvons trouver deux polynômes s'annulant en "1" et en "-2" (qui sont par ailleurs les polynômes "les plus simples" s'annulant en ces valeurs) : le polynôme "X - 1" s'annule en "1", et "X + 2" s'annule en "-2".
+Si nous multiplions ces deux polynômes, nous obtenons quelque chose de formidable : <span class="important">"X - 1" multiplié par "X + 2" donne "X² + X - 2", notre polynôme de départ</span>.
+</p>
+<math>(X - 1) * (X + 2) = (X² + 2 * X) + (-1 * X - 2) = X² + X - 2</math>
+<p>
+Ce résultat peut être généralisé.
+En effet, <span class="important">un polynôme quelconque admettant une racine quelconque "r" peut s'écrire comme le produit de "X - r" et d'un autre polynôme</span>.
+De manière équivalente, un polynôme quelconque admettant une racine quelconque "r" est divisible par "X - r".
+En plus, la réciproque est aussi vraie : <span class="important">un polynôme quelconque divisible par "X - r" admet une racine "r"</span>.
+La démonstration (<a href="demo">présente ici</a>) est assez simple est n'utilise que des propriétés basiques de la division de polynômes.
+</p>
+<p>
+Selon l'appartenance ou la non-appartenance de racines de polynômes à coefficients dans un corps K dans ce même corps K, on peut en déduire certaines propriétés sur le corps.
+
+</p>

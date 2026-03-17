@@ -55,6 +55,7 @@
 </new_definition>
 <new_definition name="algebra_field">
     <content>un corps est un anneau où chaque élement (non-nul) possède un inverse par la deuxième opération</content>
+    <content name="extension">une extension de corps "K" est un couple composé d'un corps "L" tel que "K" soit un sous-corps de "L", et d'un morphisme de "K" dans "L"</content>
 </new_definition>
 <new_definition name="algebra_group">
     <content>un groupe est un magma dont la loi de composition interne et associative, admet un neutre, et est inversible</content>
@@ -87,8 +88,20 @@
 <new_definition name="algebra_subring">
     <content>un sous-anneau A d'un anneau B est un anneau sur un sous-ensemble de l'ensemble de A, où l'addition forme un sous-groupe du groupe additif de "A", où "B" est stable par la multiplication et où le neutre de la multiplication de "A" se situe dans "B"</content>
 </new_definition>
+<new_definition name="hilbert_space">
+    <content>un espace de Hilbert est un espace pré-hilbertien qui est topologiquement complet</content>
+</new_definition>
+<new_definition name="inner_product_space">
+    <content>un espace pré-hilbertien est un espace vectoriel muni d'une opération entre plusieurs vecteurs vers un scalaire, permettant de formaliser le concept "d'angle" dans cet espace</content>
+</new_definition>
+<new_definition name="linear_application">
+    <content>une application linéaire est une application mathématique allant d'un espace vectoriel vers un autre (tous deux sur un corps "K"), tout en gardant une certaine "similarité" dans la façon dont l'application transforme des objets avant / après opération</content>
+    <content name="morphism">une application linéaire est un morphisme d'espace vectoriel sur un même corps "K"</content>
+</new_definition>
 <new_definition name="vector_space">
     <content>un espace vectoriel est une structure algébrique construire à partir d'un corps, sur un ensemble quelconque (qui n'est pas forcément celui du corps), tel qu'il contient une opération (généralement une forme d'addition) formant un groupe abélien sur l'espace vectoriel et qu'il existe une loi externe à gauche sur l'espace vectoriel avec les éléments du corps (qui doit être associative, admettre un neutre et distributive à gauche par rapport à la première loi de l'espace vectoriel)</content>
+    <content name="norm">une norme sur un espace vectoriel est une application allant de l'ensemble des vecteurs de l'espace vectoriel vers l'ensemble des nombres réels positifs, permettant de représenter la notion de "distance à 0" du vecteur</content>
+    <content name="normed">un espace vectoriel normé est un espace vectoriel muni d'une norme</content>
 </new_definition>
 
 <new_definition name="algebra_center">
@@ -142,6 +155,16 @@
 </new_definition>
 <new_definition name="wedderburn_theorem">
     <content>le théorème de Wedderburn est un théorème d'algèbre, affirmant que un corps fini (d'ensemble fini) est obligatoirement commutatif</content>
+</new_definition>
+
+<new_definition name="monomial">
+    <content>un monôme est une forme précise d'objet mathématique, représentant le produit d'éléments (nommés coefficients) dans un corps quelconque par des indéterminés d'un corps quelconque (qui peut être le même, mais pas obligatoirement) élevés à des exposants naturels (et donc, un polynôme ne contenant pas de somme)</content>
+</new_definition>
+<new_definition name="polynomial">
+    <content>un polynôme est une forme précise d'objet mathématique, représentant la somme du produit d'éléments (nommés coefficients) dans un corps quelconque par des indéterminés d'un corps quelconque (qui peut être le même, mais pas obligatoirement) élevés à des exposants naturels</content>
+</new_definition>
+<new_definition name="polynomial_root">
+    <content>une racine d'un polynôme est une valeur tel que, si on la substitue à l'indéterminée du polynôme, la valeur obtenue est "0"</content>
 </new_definition>
 
 <new_definition name="complex_number">

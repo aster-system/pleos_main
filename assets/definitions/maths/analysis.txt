@@ -66,3 +66,9 @@
 <new_definition name="derivation">
     <content>la dérivation est un moyen d'étudier de manière extrêmement précise les variations d'une fonction réelle (et donc, de savoir comment elle croît / décroît à un certain point / une certaine partie de la fonction)</content>
 </new_definition>
+<new_definition name="derivative_function">
+    <content>la fonction dérivée d'une fonction "f" est une nouvelle fonction définie sur l'ensemble de dérivabilité de "f", qui transforme "x" en le nombre dérivé de "f" en "x"</content>
+</new_definition>
+<new_definition name="linear_approximation">
+    <content>une approximation affine est une approximation du comportement d'une fonction réelle en un point précis</content>
+</new_definition>

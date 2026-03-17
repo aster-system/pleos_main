@@ -66,11 +66,96 @@ Donc, <span class="important">"R exposant n" est un espace vectoriel sur "R"</sp
 </p>
 
 <h3>Les applications linéaires</h3>
+<p>
+Les applications linéaires sont un objet élémentaire dans l'étude des espaces vectoriels.
+De manière un peu complexe, <span class="important"><definition name="linear_application-morphism"></span>.
+Il s'agit d'ici de la façon complexe de définir ce concept.
+En effet, <span class="important"><definition name="linear_application"></span>.
+Nous allons expliciter cette "similarité" dés maintenant.
+Déjà, <span class="important">utiliser une application linéaire sur un vecteur "a + b" (avec "a" et "b" des vecteurs du premier espace vectoriel et "+" est la première loi du premier espace vectoriel) revient à appliquer la première loi du deuxième espace vectoriel entre l'image de "a" puis de "b" par cette même application linéaire</span>.
+Donc, on peut "prédire" le résultat d'une opération dans le deuxième espace vectoriel grâce au premier espace vectoriel et une application linéaire.
+Dans le cas d'une application linéaire "f" allant d'un espace vectoriel "E" vers un espace vectoriel "F" sur un corps "K", on note :
+</p>
+<math><mforall>a, b <min> E, f(a + b) = f(a) ~ f(b)</math>
+<p>
+Deuxièmement, <span class="important">utiliser une application linéaire sur un vecteur "c * a" (avec "a" un vecteur du premier espace vectoriel, "c" un scalaire provenant de "K" et "*" est la deuxième loi du premier espace vectoriel) revient à appliquer la deuxième loi du deuxième espace vectoriel entre "c" et l'image de "a" par cette même application linéaire</span>.
+Encore une fois, on peut "prédire" le résultat d'une opération dans le deuxième espace vectoriel grâce au premier espace vectoriel et une application linéaire.
+</p>
+<math><mforall> c <min> K, <mforall>a <min> E, f(c * a) = c * f(a)</math>
+<p>
+Finalement, <span class="important">l'élément neutre du premier espace doit toujours avoir comme image l'élément neutre du deuxième espace par une application linéaire</span>.
+Dire qu'une application entre deux espaces vectoriels respecte ces trois propriétés équivaut à dire que l'application est linéaire.
+</p>
+<p>
+Prenons un exemple très graphique : l'application allant de "R²" vers "R²", en transformant "(x, y)" en "(2 * x, 2 * y)".
+Cette application est parfaitement linéaire, et on peut facilement le démontrer.
+Déjà, la première propriété est respectée, et l'on peut le vérifier de manière algébrique.
+</p>
+<math><math><mforall>a, b <min> <mi>R</mi><msup>2</msup>, <mexists>x, x', y, y' <min> R, a = (x, y), b = (x', y'), f(a + b) = f(x + x', y + y') = 2 * (x + x', y + y') = 2 * (x, y) + 2 * (x', y') = f(a) + f(b)</math>
+<p>
+La deuxième propriété est aussi vraie, et ce n'est pas si difficile que àa à démontrer non plus.
+</p>
+<math><math><mforall>a, b <min> <mi>R</mi><msup>2</msup>, <mexists>x, y, c <min> R, a = (x, y), f(c * a) = f(c * x, c * y) = 2 * (c * x, c * y) = c * 2 * (x, y) = c * f(a)</math>
+<p>
+Finalement, "f(0, 0) = (0, 0)", <span class="important">donc cette application est belle est bien linéaire</span>.
+On peut même généraliser ce résultat.
+Effectivement, <span class="important">on peut facilement montrer que toutes applications transformant "(x, y)" en "(w * x, z * y)" avec "w" et "z" des scalaires quelconques est linéaire</span>.
+</p>
+<p>
+Pour avoir une compréhension supplémentaire du concept, ramenons nous à un exemple graphique.
+Imaginons un plan (dans "R²") avec une forme quelconque (par exemple, un carré).
+</p>
+<graphic><background_color white><rect x=-1 y=-1 width=2 height=2 color=light_blue></graphic>
+<p>
+Comme cette application va de "R²" dans "R²", ce carré a une image dans "R²", que l'on peut facilement calculer.
+En effet notre carré est défini par ces sommets de coordonnées "(-1, -1)", "(-1, 1)", "(1, 1)" et "(1, -1)" : leur image est "(-2, -2)", "(-2, 2)", "(2, 2)" et "(2, -2)".
+Affichons graphiquement le résultat (ici en rouge, en arrière plan du carré de départ).
+</p>
+<graphic><background_color white><rect x=-2 y=-2 width=4 height=4 color=light_red><rect x=-1 y=-1 width=2 height=2 color=light_blue></graphic>
+<p>
+Certains l'ont peut être vue venir : <span class="important">cette application a doublé la taille de notre carré</span>.
+Si on prend l'application transformant "(x, y)" en "(2 * x, y / 2)" (qui est linéaire), notre carré devient ceci :
+</p>
+<graphic><background_color white><rect x=-2 y=-1/2 width=4 height=1 color=light_red></graphic>
+<p>
+Ici, la largeur du carré est multipliée par "2", et sa hauteur est divisée par "2".
+Dans ce genre d'application transformant "(x, y)" en "(w * x, y * z)", la largeur du carré est multipliée par "w", et sa hauteur est divisée par "z".
+</p>
+
+<h3>Les espaces vectoriels normés</h3>
+<p>
+Grâce aux concepts que nous allons introduire maintenant, nous allons pouvoir nous rapprocher vers une formalisation précise de la géométrie.
+Déjà, commençons à nous intéresser au concept de norme.
+En fait, <span class="important"><definition name="vectoriel_space-norm"></span>.
+Il faut faire attention : cette application n'est pas un opérateur entre deux vecteurs quelconques : elle n'est donc pas une distance.
+Pour représenter une "distance à 0", il existe quelques propriétés très précises permettant de formaliser cette notion.
+Pour les expliciter, nous allons appeler cette norme "N", et l'espace vectoriel "E".
+Déjà, <span class="important">cette application est séparée : si un vecteur a pour image "0", il est obligatoirement le vecteur nul de l'espace</span>.
+</p>
+<math>N(x) = 0 <mimp> <mi>0</mi><msub>E</msub></math>
+<p>
+En suite, <span class="important">cette application est homogène : si un vecteur a pour image "a", la multiplication de ce vecteur par un scalaire "b" a pour image "|b| * a"</span>.
+Ici, il est important de prendre la valeur absolue de "b", pour ne pas qu'un signe "-" vienne rendre le résultat négatif, ce qui est impossible par définition de cette application.
+</p>
+<math>N(x) = a <mimp> N(b * x) = |b| * a</math>
+<p>
+Finalement, <span class="important">cette application respecte une inégalité triangulaire : la norme de la somme de deux vecteurs "x" et "y" est inférieur ou égale à la somme de la norme du vecteur "x" et de la norme du vecteur "y"</span>.
+Comme pour les espaces métriques, cette inégalité triangulaire traduit que le chemin entre "0" et "x + y" et plus court que celui entre "x", 0 puis "y" : le chemin direct est plus court que de passer par un autre point.
+</p>
+<math><mforall>x, y <min> E, N(x + y) <mltequal> N(x) + N(y)</math>
+<p>
+Donc, <span class="important"><definition name="vectoriel_space-normed"></span>.
+Ici, un exemple s'impose pour mieux illustrer tout ça : prenons l'espace vectoriel "R²" du corps formé par "R".
+La question ici : comment définir une "norme" d'un élément de "R²" ?
+En fait, nous allons essayer de représenter cette norme comme la distance entre le vecteur que nous cherchons et le vecteur nul (que nous pourrions théoriquement obtenir avec une mesure à la règle), de manière algébrique.
+</p>
 
 
 
 <h2>Les espaces de Hilbert et la géométrie euclidienne</h2>
 <h3>Qu'est ce qu'est un espace de Hilbert ?</h3>
 <p>
-
+Axiomatiquement parlant, introduire la géométrie n'est pas chose aisée.
+Cependant, nous allons pouvoir commencer sérieusement à s'y pencher, grâce aux espaces pré-hilbertiens et aux espaces de Hilbert.
+Déjà, <span class="important"><definition name="inner_product_space"></span>.
 </p>
