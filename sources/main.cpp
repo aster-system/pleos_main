@@ -172,7 +172,7 @@ int main(int argc, char* argv[]) {
 	//return pleos::execute("graphic", "tests/solve.png", std::vector<std::string>(1, std::string("<graphic><background_color white><base width=5 height=5><function expression=\"x/3\"><curve_area number=5 area_end=2></function></graphic>")));
 	//return command(argc, argv);
 
-	/*pleos::Pleos_Window window(900, 600, argv[0]);
+	pleos::Pleos_Window window(900, 600, argv[0]);
     window.load_from_xml("assets/window.txt");
     pleos::Hub_Page* hub = window.hub();
     hub->handle_saasf();
@@ -184,7 +184,7 @@ int main(int argc, char* argv[]) {
         window.render();
     }//*/
 
-    std::shared_ptr<scls::Formula_Base> f = scls::string_to_algebra_element<scls::Formula_Base>(std::string("1/(x+1)"));
+    /*std::shared_ptr<scls::Formula_Base> f = scls::string_to_algebra_element<scls::Formula_Base>(std::string("1/(x+1)"));
     while(f.get()->simplify_step() != scls::Formula_Base::NO_SIMPLIFICATION){}
     scls::mclaurin(f.get(), std::string("x"), 14);
 

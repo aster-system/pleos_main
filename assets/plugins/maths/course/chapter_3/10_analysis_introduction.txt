@@ -114,8 +114,8 @@ Nous avons déjà parlé des graphes de fonctions dans le chapitre 1, dans la pa
 Cependant, en analyse, cet outil est bien plus poussé que pour de simples applications / fonctions, en les utilisant avec nos outils d'analyse (suites et fonctions réelles).
 Pour rappel, <span class="important"><definition name="function_graph"></span>.
 Or, comme nous connaissons les ensembles de départ ("N" ou "R"), nous pouvons représenter notre graphe de manière plus intuitive.
-En effet, <span class="important">"N" et "R" sont représentables sur des droites, ce qui permet de mettre chaque valeur des fonctions en chaque valeur sur la droite au dessus de la valeur associée sur la droite</span>.
-Pour être plus précis, <span class="important">on va considérer une échelle de valeur verticale, et placer les valeurs des images de la fonction au bon endroit sur cette échelle, sous la forme de points</span>.
+En effet, <span class="important">"R²" (et, par extension, "N²") est définissable comme un plan, et nous pouvons considérer un ensemble représentant l'ensemble des couples possibles des antécédents de la fonction associés à leur image par la fonction, représentant un ensemble de points du plan</span>.
+Pour être précis, <span class="important">nous allons représenter un ensemble de points du plan comme des couples de réels "(x, f(x))", où "x" est un antécédent de la fonction, et "f(x)" est l'image de "x" par la fonction</span>.
 Au final, vous obtenez un graphique en 2D, représentant comment votre fonction se comporte en chaque valeur via la droite de départ.
 Voici un exemple simple, de la fonction réelle transformant un réel "x" en la valeur "2 * x + 0,5".
 </p>
@@ -129,6 +129,20 @@ Déjà, <span class="important">une fonction linéaire représente une droite no
 De plus, <span class="important">une fonction affine représente une droite non-verticale quelconque.</span>.
 </p>
 <graphic><background_color white><function expression="x/3 + 2"></function></graphic>
+<p>
+Quelque soit la fonction, il est très facile d'obtenir l'équation de l'ensemble de point formé par une fonction.
+En effet, <span class="important">puisque qu'un point d'un graphe de fonction se note "(x, f(x))", on peut changer le nom de "f(x)" en "y", et écrire "y = f(x)", en remplaçant "f(x)" par le développement de la fonction si nécessaire</span>.
+Cela nous permet donc d'obtenir les équations des formes générées par une fonction linéaire / affine.
+</p>
+<math>y = <mfrac><mi>1</mi><mi>3</mi></mfrac> * x</math></br>
+<math>y = <mfrac><mi>1</mi><mi>3</mi></mfrac> * x + 2</math>
+<p>
+Par observation (que nous aurons l'occasion de démontrer plus tard), <span class="important">on peut remarquer que toutes droites non-verticales dans le plan peuvent s'obtenir par des fonctions linéaires et affines</span>.
+En plus, nous pouvons même trouver un moyen de trouver des équations permettant d'obtenir l'ensemble des droites verticales du plan.
+En effet, <span class="important">une droite verticale du plan (ne passant donc que par une unique abscisse "a") s'écrit avec l'équation "x = a"</span>.
+Effectivement, le "y" n'a aucune importance sur le déroulé de la droite : les points ne peuvent donc pas être "exclu" à cause d'un "y" spécifique, ce qui fait que tous les "y" possibles d'abscisse "x" forment la droite (ce qui donne intuitivement une droite verticale).
+</p>
+<math><mforall> a <min> R, <mforall> (x, y) <min> <mi>R</mi><msup>2</msup>, x = a</math>
 
 <h3>Les espaces métriques</h3>
 <p>
@@ -137,7 +151,7 @@ Un outil permettant d'étendre l'analyse en mathématiques est l'espace métriqu
 L'ensemble peut être quoi que ce soit, tant que cette fameuse "distance" existe.
 </p>
 <p>
-La difficulté ici consite à définir cette fameuse "distance".
+La difficulté ici consiste à définir cette fameuse "distance".
 Déjà, <span class="important">une distance représente une opération entre deux éléments "a" et "b", et qui s'interprète comme une valeur, nommée "distance" entre "a" et "b", et qui est un nombre réel positif</span>.
 En général, la définition intuitive d'une distance représente un moyen de calculer quelle valeur est nécessaire pour passer d'une valeur à une autre.
 Cependant, au sens mathématique, cette application doit respecter quelques autres propriétés précises.

@@ -8,6 +8,9 @@
 <new_definition name="ellipse">
     <content>une ellipse est une figure géométrique 2D résultant de la projection d'un cône 3D sur un plan 2D passant par son axe de rotation, sans passer par le sommet, ni être coplanaire à la base du cône</content>
 </new_definition>
+<new_definition name="polygon">
+    <content>un polygone est une figure géométrique formé par un nombre fini de segments reliés entre eux</content>
+</new_definition>
 <new_definition name="tangent">
     <content>la fonction tangente représente le coefficient directeur de la droite tangente au cercle en un certain point, à un certain angle "a"</content>
 </new_definition>

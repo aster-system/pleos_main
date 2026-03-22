@@ -98,6 +98,9 @@
 <new_definition name="hilbert_space">
     <content>un espace de Hilbert est un espace pré-hilbertien qui est topologiquement complet</content>
 </new_definition>
+<new_definition name="inner_product">
+    <content>un produit scalaire est une opération sur un espace vectoriel, prenant deux vecteurs de l'espace et donnant comme résultat un scalaire du corps de l'espace vectoriel</content>
+</new_definition>
 <new_definition name="inner_product_space">
     <content>un espace pré-hilbertien est un espace vectoriel muni d'une opération entre plusieurs vecteurs vers un scalaire, permettant de formaliser le concept "d'angle" dans cet espace</content>
 </new_definition>

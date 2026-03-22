@@ -41,3 +41,24 @@ Donc, un polynôme "P(X)" admet une racine "r" implique que "P(X)" est divisible
 <p>
 Les deux implications sont vérifiées : dire qu'un polynôme "P(X)" admet une racine "r" équivaut à dire que ce polynôme est divisible par "X - r".
 </p>
+
+
+
+<h2>Les espaces vectoriels</h2>
+
+<h3>Les applications linéaires</h3>
+
+<h4>4.1.0.0</h4>
+<p>
+Démontrons que, pour tout "w" et "z" appartenant à "R", l'application allant de "R²" vers "R²" transformant "(x, y)" en "(w * x, z * y)" est linéaire.
+Déjà, la première propriété est respectée, et l'on peut le vérifier de manière algébrique.
+</p>
+<math><math><mforall>a, b <min> <mi>R</mi><msup>2</msup>, <mexists>x, x', y, y' <min> R, a = (x, y), b = (x', y'), f(a + b) = f(x + x', y + y') = (w * (x + x'), z * (y + y')) = (w * x + w * x', z * y + z * y') = (w * x, z * y) + (w * x', z * y') = f(a) + f(b)</math>
+<p>
+La deuxième propriété est aussi vraie, et ce n'est pas si difficile que ça à démontrer non plus.
+</p>
+<math><math><mforall>a, b <min> <mi>R</mi><msup>2</msup>, <mexists>x, y, c <min> R, a = (x, y), f(c * a) = f(c * x, c * y) = (w * c * x, z * c * y) = c * (w * x, z * y) = c * f(a)</math>
+<p>
+Finalement, "f(0, 0) = (0, 0)", donc cette application est belle est bien linéaire.
+Donc, pour tout "w" et "z" appartenant à "R", l'application allant de "R²" vers "R²" transformant "(x, y)" en "(w * x, z * y)" est linéaire.
+</p>

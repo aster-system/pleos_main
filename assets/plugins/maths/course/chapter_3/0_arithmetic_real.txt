@@ -219,4 +219,35 @@ Ici, </span class="important">"a" défini l'abscisse du centre du cercle, "b" re
 Nous étudierons plus précisément cette équation plus tard.
 Dans le cas d'un cercle de centre "(1, 1)" et de rayon "1", on peut graphiquement afficher :
 </p>
-<graphic><background_color white><circle x=1 y=1 radius=1 color=white><graphic>
+<graphic><background_color white><circle x=1 y=1 radius=1 color=white></graphic>
+<p>
+De la même manière, <span class="important">nous pouvons définir des traits parfaitement droits, nommés des droites, avec des équations de cette forme</span>.
+En effet, <span class="important">une droite quelconque se définie avec une équation de la forme "a * x = b * y + c", avec "a", "b" et "c" définis comme des nombres réels quelconques</span>.
+Nous aurons l'occasion d'étudier pourquoi et comment se comporte cette équation.
+Voici un exemple : l'équation "x = 3 * y - 6" en rouge, l'équation "y = 2" en bleu, et l'équation "x = -1" en vert.
+</p>
+<graphic><background_color white><function expression="x/3+2" color=red></function><line x_1=-10 y_1=2 x_2=10 y_2=2 border_color=blue><line x_1=-1 y_1=-10 x_2=-1 y_2=10 border_color=green></graphic>
+<p>
+Généralement, une autre définition des droites est donnée.
+En effet, à l'école primaire, <span class="important">une droite représente un ensemble de point parfaitement alignés avec deux autres points distints du plan</span>.
+Le problème de cette définition est que sa compréhension approfondie demande un peu d'algèbre précis, que nous n'avons pas encore traité.
+Cependant, d'un point de vue purement géométrique, ce concept est utilisé depuis plusieurs millénaires, introduit par <scientist name="euclid" type=quote> dans son fameux livre "Les Éléments", et considéré comme un concept tellement trivial qu'il n'était pas plus défini que ça.
+En rélité, <span class="important">une droite est très souvent définie de cette manière en géométrie, mais moins en algèbre, où l'on préferera l'équation</span>.
+</p>
+<p>
+<span class="important">En resteignant l'ensemble à un certain sous-ensemble de cette droite, on peut donc la découper</span>.
+Par exemple, on peut restreindre notre droite "y = 2" pour tous les "x" présents entre "-3" et "3", ce qui donne ce segment.
+</p>
+<graphic><background_color white><line x_1=-3 y_1=2 x_2=3 y_2=2 border_color=blue></graphic>
+<p>
+Le plus utile est de découper la droite en un ensemble de points de la droite où il n'y a aucune séparation possible entre les points.
+Généralement, <span class="important">une partie représentant l'ensemble des points entre deux points distints sur une droite est nommée un segment de droite</span>.
+En plus, nous pouvons utiliser plusieurs segments du genre pour faire des choses plus ou moins complexes.
+</p>
+<graphic><background_color white><line x_1=-2 y_1=-2 x_2=3 y_2=-2 border_color=blue><line x_1=-2 y_1=-2 x_2=2 y_2=2 border_color=blue><line x_1=2 y_1=2 x_2=3 y_2=-2 border_color=blue></graphic>
+<p>
+Avec ça, nous pouvons définir un autre concept primordial en géométrie : les polygônes.
+<span class="important"><definition name="polygon"></span>.
+Généralement, les segments formant le polygone sont nommés les côtés du polygône.
+C'est ce concept qui permet de définir des termes biens connus : triangles (3 côtés), rectangle (4 côtés)...
+</p>

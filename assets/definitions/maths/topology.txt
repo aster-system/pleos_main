@@ -22,3 +22,12 @@
 <new_definition name="topology_trivial">
     <content>la topologie grossière (ou topologie triviale) associée à un ensemble E est une topologie sur "E" où les deux seuls ouverts sont l'ensemble vide et "E" entier</content>
 </new_definition>
+
+<new_definition name="topology_indistinguishability">
+    <content>deux éléments topologiques distincts sont dit indiscernables si tous les voisinages de l'un contient l'autre, et vice-versa</content>
+</new_definition>
+<new_definition name="topology_separation_axiom">
+    <content>un axiome de séparation est, en topologie, une propriété possible de certains ensembles topologiques, concernant la façon dont les voisinages de ces ensembles se comportent entre eux</content>
+    <content name="t_0">un espace topologique est dit "T-0" (ou de Kolmogorov) lorsque, pour tout couple de points distincts de l'espace, il existe soit un voisinage du premier point ne contenant pas le deuxième, soit un voisinage du deuxième ne contenant pas le premier point</content>
+    <content name="t_1">un espace topologique est dit "T-1" (ou accessible) lorsque, pour tout couple de points distincts de l'espace, il existe un voisinage du premier point ne contenant pas le deuxième ET un voisinage du deuxième ne contenant pas le premier point</content>
+</new_definition>

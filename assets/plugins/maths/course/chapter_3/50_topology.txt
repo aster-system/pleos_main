@@ -88,8 +88,43 @@ En plus l'ensemble contenant l'ensemble vide et "E" respecte parfaitement les co
 
 <h3>Les propriétés basiques des espaces topologiques</h3>
 <p>
-
+Il est possible de découper les espaces topologiques en familles, respectant certaines propriétés précises.
+Parmi ces découpes, la plus utilisés est la découpe en les propriétés définies par des axiomes précis : les axiomes de séparations.
+<span class="important"><definition name="topology_separation_axiom"></span>.
+Généralement, ses axiomes se notes avec un "T-", suivit d'un nombre allant de "0" à "5,5".
+Si un espace respecte un certain axiome "T-n" (ou "n" représente un numéro quelconque associé aux axiomes), on dit général qu'il est un espace "T-n".
+De plus, <span class="important">si un espace est "T-n", alors il sera "T-m", avec "m" toutes les valeurs supérieures ou égales à "n"</span>.
+Par exemple, tout espace "T-1" est "T-0", tout espace "T-4" est "T-0", tout espace "T-5" est "T-3"...
 </p>
+<p>
+Le premier axiome de séparation est l'axiome "T-0".
+<span class="important"><definition name="topology_separation_axiom-t_0"></span>.
+En réalité, il est assez difficile de trouver des espaces topologiques réellement utiles qui ne sont pas "T-0".
+Cependant, un ensemble "E" quelconque munit de sa topologie grossière n'est pas "T-0".
+La démonstration est assez simple : le seul voisinage d'un point quelconque dans cette topologie grossière est "E" tout entier, et le seul voisinage d'un autre point quelconque de "E" dans cette topologie grossière est... "E".
+Or, "E" contient ces deux points quelconques (et même tous les points de l'espace).
+Donc, quelque soit le point choisi, il n'existe pas de voisinage d'un de ces deux points qui ne contienne pas l'autre : cet espace n'est pas "T-0".
+En fait, <span class="important">dans un espace "T-0", il est possible de différencier deux éléments de la topologie par leur voisinage, puisque l'un des voisinages des deux élément ne contient pas l'autre</span>.
+Voici la formulation mathématique de ce concept :
+</p>
+<math><mforall> x, y <min> E, <mforall> v <min> V(x), <mforall> w <min> V(y), (x <mnotint> w) <mor> (y <mnotint> v)</math>
+<p>
+Ce concept nous permet d'en définir un autre très similaire : l'indiscernabilité / la discernabilité topologique.
+Avant de définir ce concept, définissons celui de "indiscernabilité" dans la langue française.
+En effet, <span class="important">deux choses distinctes sont dites indiscernables quand il est impossible de les différencier dans un contexte donné</span>.
+En topologie, ce concept est assez similaire, à une différence prêt : le concept est fixé, et représente les voisinages.
+<span class="important"><definition name="topology_indistinguishability"></span>.
+Donc, deux éléments topologiques sont topologiquement indiscernables si il n'est pas possible de différencier leur voisinage en ne ce limitant qu'à l'étude des éléments un-à-un de leur voisinage.
+En fait, <span class="important">un espace est "T-0" si tous ces éléments sont topologiquement discernables entre eux</span>.
+La propriété la plus intéressante de ces espaces est donc assez simple à déduire : <span class="important">dans un espace "T-0", si, pour deux éléments donnés sur lesquelles nous n'avons aucune information, tous les voisinages de l'un contient l'autre (et vice-versa), c'est éléments sont en fait les mêmes</span>.
+En effet, <span class="important">cette propriété ne s'applique que sur des éléments distincts, et donc si des éléments ne la respectent pas (et appartiennent quand même à un espace "T-0"), il ne sont pas distincts, et donc sont les exacts mêmes</span>.
+</p>
+<p>
+Le deuxième axiome de séparation est l'axiome "T-1", qui est assez similaire à l'axiome "T-0".
+<span class="important"><definition name="topology_separation_axiom-t_1"></span>.
+En fait, dans un espace "T-0", le "ET" est un simple "OU".
+</p>
+
 <p>
 Sur un ensemble "E", il est possible de définir plusieurs topologies différentes (tout ensemble de parties de "E" vérifiant les règles plus haut sont des topologies, ce qui fait que certains ensemble peuvent en posséder une infinité).
 L'intérêt, c'est que <span class="important">l'ensemble des topologies possibles sur un ensemble peut posséder une structure d'ensemble partiellement ordonné</span>.
