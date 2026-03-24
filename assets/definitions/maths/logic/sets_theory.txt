@@ -35,6 +35,9 @@
 <new_definition name="partition">
     <content>une partition d'un ensemble "E" représente un ensemble ne contenant que des parties non-vides de "E", toutes disjointes, et dont l'union de toutes ces parties donnent "E"</content>
 </new_definition>
+<new_definition name="set_family">
+    <content>une famille est une généralisation du concept de suite</content>
+</new_definition>
 <new_definition name="singleton">
     <content>un singleton est ensemble fini de cardinal 1 (il ne contient qu'un seul élément)</content>
 </new_definition>

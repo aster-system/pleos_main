@@ -38,7 +38,7 @@ C'est la même chose pour la distributivité à droite.
 </p>
 <math><mforall>a, c <min> A, <mforall>b <min> B, (a + c) * b = a * b + c * b</math>
 <p>
-Finalement, l'élément neutre du corps pour sa deuxième opération est aussi un élément neutre pour cette opération..*
+Finalement, l'élément neutre du corps pour sa deuxième opération est aussi un élément neutre pour cette opération...
 </p>
 <math><mforall>b <min> B, <mexists>e <min> A, b * e = b</math>
 <p>
@@ -60,9 +60,109 @@ Comme cette opération se comporte comme plusieurs additions dans "R" disjointes
 En suite, <span class="important">nous allons définir une opération entre ces "n-uplets" et "R", où l'on multiplie chaque élément du "n-uplet" par un élément de "R"</span>.
 Comme cette opération se comporte comme plusieurs multiplications dans "R" disjointes, alors la structure de ces "n-uplets" et de cette opération ont les mêmes propriétés que dans "R" : associativité, neutre (1) et distributivité.
 </p>
-<mforall> (a, b, ..., n) <min> <mi>R</mi><msup>n</msup>, <mforall> x <min> R, x * (a, b, ..., n) = (a * x, b * x, ..., n * x)</math>
+<math><mforall> (a, b, ..., n) <min> <mi>R</mi><msup>n</msup>, <mforall> x <min> R, x * (a, b, ..., n) = (a * x, b * x, ..., n * x)</math>
 <p>
 Donc, <span class="important">"R exposant n" est un espace vectoriel sur "R"</span>.
+C'est d'ailleurs grâce à ce résultat que l'on peut démontrer que "R exposant 2" et "R exposant 3" sont des espaces vectoriels sur "R".
+Grâce à ce résultat, <span class="important">on peut lier géométrie et algèbre, puisque le plan 2D et l'espace 3D sont tout deux des espaces vectoriels</span>.
+Ce résultat nous donne une façon précise de définir certains types précis de transformation géométrique, grâce à de l'algèbre.
+</p>
+<p>
+Comme pour beaucoup de structures algébriques de ce genre, si il existe un "espace vectoriel", il existe la notion de "sous-espace vectoriel".
+<span class="important"><definition name="sub_vector_space"></span>.
+Un exemple très simple : l'ensemble des vecteurs de la forme "(a, 0)" avec "a" un nombre réel quelconque de "R²" forme un sous-espace vectoriel de "R²".
+En effet, additionner deux éléments de ce genre "(b, 0)" et "(c, 0)" revient à calculer "(b + c, 0)" (qui appartient toujours à cet espace), et multiplier "(d, 0)" par un réel "e" revient à calculer "(e * d, 0)" (qui appartient toujours à cet espace).
+Graphiquement parlant, ce sous-espace vectoriel de "R²" représente... la droite des abscisses.
+</p>
+<graphic><background_color white><line name=type_number() x_1=-10 y_1=0 x_2=10 y_2=0></graphic>
+<p>
+Avec ce concept, on peut en introduire un autre qu'il lui est directement lié : les vecteurs.
+<span class="important"><definition name="vector_space-vector"></span>.
+Par exemple, dans l'espace vectoriel formé par "R²" (comme défini plus haut), "(4, 8)" est un vecteur.
+</p>
+<p>
+Les espaces vectoriels possèdent aussi des propriétés permettant de définir un type de formule précis : les combinaisons linéaires.
+<span class="important"><definition name="linear_combination"></span>.
+En fait, une combinaison linéaire dans un espace vectoriel représente une valeur qui est toujours dans l'espace vectoriel, puisque le produit d'éléments de "K" et de vecteurs donne un vecteur, et la somme de vecteurs donne un vecteur.
+Grâce à ça, <span class="important">on peut utiliser des indéterminées facilement dans un espace vectoriel, en représentant des éléments de "K" indéterminées, ou même des vecteurs indéterminées, permettant de résoudre des équations</span>.
+Voici quelques exemples de combinaisons linéaires possibles, dans "R²".
+</p>
+<math>4 * (7, 8) + 2 * (-4, 1) = u <mequi> u = (4 * 7 + 2 * -4, 4 * 8 + 2 * 1) = (20, 34)</math></br>
+<math>-2 * (1, 8) + -a * (1, 4) = 4 * (1, 2) <mequi> -2 * (1, 8) + -4 * (1, 2) = a * (1, 4) <mequi> (-2, -16) + (-4, -8) = a * (1, 4) <mequi> (-6, -24) = a * (1, 4) <mequi> a = -6</math></br>
+<math><mi>a</mi><msub>0</msub>, <mi>a</mi><msub>1</msub>, ..., <mi>a</mi><msub>n</msub> <min> R, <mi>w</mi><msub>0</msub>, <mi>w</mi><msub>1</msub>, ..., <mi>w</mi><msub>n</msub> <min> <mi>R</mi><msup>m</msup>, v = <msum from=0 to=n> <mi>a</mi><msub>k</msub><mi>w</mi><msub>k</msub></math>
+<p>
+Ici, toutes ces combinaisons donnent des résultats nets et précis.
+Or, <span class="important">il existe des équations formulables avec des équations linéaires ne possédant aucune solution dans "R²"</span>.
+</p>
+<math>-2 * (1, 6) + -a * (1, 4) = 4 * (1, 2) <mequi> -2 * (1, 6) + -4 * (1, 2) = a * (1, 4) <mequi> (-2, -12) + (-4, -8) = a * (1, 4) <mequi> (-6, -20) = a * (1, 4) <mequi> a * 1 = -6 <mand> -4 * a = 20 <mequi> a = -6 <mand> a = -5 <mequi> <mequi> <mnotexists> a <min> <mi>R</mi><msup>2</msup></math></br>
+<p>
+Les combinaisons linéaires vont aussi nous permettre d'énumérer un fait très important.
+En effet, <span class="important">pour un vecteur donné, il est possible d'obtenir tout un ensemble de nouveau vecteur avec une combinaison linéaire de ce vecteur</span>.
+Ici, si l'on nomme ce vecteur "u", alors toutes les combinaisons linéaires possibles avec ce vecteur sont de la forme "a * u", où "a" est un nombre réel quelconque.
+Par exemple, avec le vecteur "(1, 1)", vous pouvez formuler tous les vecteurs de la forme "a * (1, 1)", comme "(2, 2)", "(72, 72)", "(-0.1475, -0.1475)"...
+</p>
+<graphic><background_color white><base width=5 height=5><function expression="x" color=blue></function><line x_1=0 y_1=0 x_2=1 y_2=1 color=red></graphic>
+<p>
+Nous pouvons faire la même chose avec tous les vecteurs possibles.
+Par exemple, prenons le vecteur "(1, 0)" : nous pouvons engendre "(3, 0)", "(pi, 0)" ou "(-0.000000000001, 0)".
+Ici, <span class="important">nous pouvons obtenir une combinaison linéaire de nos deux vecteurs d'exemple : "(1, 1)" et "(1, 0)"</span>.
+Nous obtenons donc une combinaison linéaire de la forme "a * (1, 1) + b * (1, 0)" avec "a" et "b" des nombres réels quelconques.
+Ici, on peut se poser une question : <span class="important">quel est l'ensemble précis des vecteurs calculables via cette combinaison linéaire</span> ?
+Quelques exemples peuvent s'obtenir en remplaçant "a" et "b" par des valeurs connues.
+</p>
+<math> 2 * (1, 1) + 1 * (1, 0) = (3, 2)</math></br>
+<math> 0.5 * (1, 1) + 10 * (1, 0) = (10.5, 0.5)</math>
+<p>
+Prenons un exemple bien plus aléatoire : "(55, -44)".
+Ici, nous pouvons poser une équation qui devrait nous permettre de trouver une solution, si elle existe.
+</p>
+<math>a * (1, 1) + b * (1, 0) = (55, -44) <mequi> (a * 1 + b * 1, a * 1 + b * 0) = (55, -44)</math></br>
+<math><mequi> a + b = 55 <mand> a = -44 <mequi> b = 99 <mand> a = -44 <mequi> -44 * (1, 1) + 99 * (1, 0) = (55, -44)</math>
+<p>
+Vous pouvez prendre autant de valeurs que vous le voulez : vous trouverez toujours des valeurs fonctionnelles pour "a" et "b".
+Et donc, une question se pose : <span class="important">est ce que tout "R²" est obtensible avec une simple combinaison linéaire de "(1, 1)" et "(1, 0)"</span> ?
+Pour cela, considérons un vecteur "(x, y)" quelconque (faisant partie de "R²"), et voyons si, pour tout "x" et "y", nous pouvons trouver un "a" et un "b" fonctionnelle.
+Posons cela sous la forme d'une équation.
+</p>
+<math>a * (1, 1) + b * (1, 0) = (x, y) <mequi> (a * 1 + b * 1, a * 1 + b * 0) = (x, y)</math></br>
+<math><mequi> a + b = x <mand> a = y <mequi> b = x - y <mand> a = x <mequi> y * (1, 1) + (x - y) * (1, 0) = (x, y)</math>
+<p>
+Or, ici, "y" est bel et bien un réel, et "x - y" aussi : </span class="important">tout "(x, y)" possède des "a" et "b" fonctionnelles, tout "(x, y)" de "R²" peut s'écrire comme une combinaison linéaire de "(1, 1)" et "(1, 0)"</span>.
+En procédant de manière similaire, <span class="important">on peut trouver plein de couples de vecteurs permettant aussi d'écrire tout "R²" : "(1, 1)" et "(1, 2)", "(1, 0)" et "(1, 1)", "(5, 100)" et "(5, 101)"...</span>.
+À l'inverse, nous pouvons trouver des couples de vecteurs, comme "(1, 0)" et "(-3, 0)", pour lesquelles l'ensemble des vecteurs obtensible par combinaison linéaire n'est pas "R²".
+Dans l'exemple pris ici, on démontre que l'ensemble des vecteurs obtenus ne représente pas "R²", car un élément de "R²" pris arbitrairement (bien qu'il y en ai une infinité possible) est absent de ces valeurs.
+</p>
+<math>a * (1, 0) + b * (-3, 0) = (x, y) <mequi> (a * 1 + b * -3, a * 0 + b * 0) = (x, y)</math></br>
+<math><mequi> a + -3 * b = x <mand> y = 0 <mequi> (x, y) /= (1, 1)</math>
+<p>
+Dans tous les cas, nous formons un ensemble constitué d'une certaine quantité de vecteurs (ici 2), qui permettent d'obtenir des vecteurs possibles dans l'espace.
+Généralement, pour parler d'ensemble de vecteurs, on utilie le terme de famille.
+En mathématiques, <span class="important"><definition name="set_family"></span>.
+Donc, nous définissons des ensembles de vecteurs, que nous nommons des familles de vecteurs, tel que leur combinaison linéaire puisse représenter des espaces quelconques.
+</p>
+<p>
+Avec ces combinaisons linéaires, nous pouvons en déduire un théorème extrêmement important : <span class="important">l'ensemble des vecteurs calculables avec une combinaison linéaire d'un espace vectoriel quelconque avec une famille de vecteurs fixés et des coefficients "libres" dans le corps est un sous-espace vectoriel de cet espace vectoriel de départ</span>.
+La démonstration de ce théorème est très simple, et est parfaitement algébrique.
+Déjà, rappelons la définition d'une combinaison linéaire (et rappelons que, algébriquement parlant, tout élément d'une combinaison linéaire appartient à l'espace vectoriel, validant la première condition disant que l'ensemble du sous-espace vectoriel doit être inclut dans l'ensemble de l'espace).
+</p>
+<math><mi>w</mi><msub>0</msub>, <mi>w</mi><msub>1</msub>, ..., <mi>w</mi><msub>n</msub> <min> <mi>R</mi><msup>m</msup>, {<mi>a</mi><msub>0</msub>, <mi>a</mi><msub>1</msub>, ..., <mi>a</mi><msub>n</msub> <min> R, v = <msum from=0 to=n> <mi>a</mi><msub>k</msub><mi>w</mi><msub>k</msub>}</math>
+<p>
+Déjà, nous pouvons facilement prouver la stabilité par l'addition, en additionnant deux combinaisons de même famille de vecteurs entre elles.
+</p>
+<math><msum from=0 to=n> <mi>a</mi><msub>k</msub><mi>w</mi><msub>k</msub> + <msum from=0 to=n> <mi>b</mi><msub>k</msub><mi>w</mi><msub>k</msub> = <msum from=0 to=n> (<mi>a</mi><msub>k</msub>+<mi>b</mi><msub>k</msub>)<mi>w</mi><msub>k</msub> = <msum from=0 to=n> <mi>c</mi><msub>k</msub><mi>w</mi><msub>k</msub> <mand> <mi>c</mi><msub>0</msub>, <mi>c</mi><msub>1</msub>, ..., <mi>c</mi><msub>n</msub> <min> R</math>
+<p>
+Petit point important : ici, quand nous disons que les vecteurs sont fixés, nous voulons dire que, dans une opération de combinaisons linéaires, les vecteurs doivent rester les mêmes.
+Cependant, cela n'empêche pas que cela fonctionne pour toute famille de vecteur possible (comme nous l'avons quantifier au début de la démonstration), choisi au préalable.
+Finalement, on peut facilement prouver la stabilité par la multiplication par un scalaire.
+</p>
+<math>b * <msum from=0 to=n> <mi>a</mi><msub>k</msub><mi>w</mi><msub>k</msub>  = <msum from=0 to=n> (b * <mi>a</mi><msub>k</msub>)<mi>w</mi><msub>k</msub> = <msum from=0 to=n> <mi>d</mi><msub>k</msub><mi>w</mi><msub>k</msub> <mand> <mi>d</mi><msub>0</msub>, <mi>d</mi><msub>1</msub>, ..., <mi>d</mi><msub>n</msub> <min> R</math>
+<p>
+Les deux stabilités demandées sont bel et bien respectées : <span class="important">tout ensemble formé des vecteurs calculables avec une combinaison linéaire dans un espace vectoriel donne un sous-espace vectoriel de ce même ensemble</span>.
+</p>
+<p>
+Avec ceci, nous pouvons introduire un concept primordial en algèbre linéaire : les sous-espaces vectoriels engendrés.
+<span class="important"><definition name="sub_vector_space-span"></span>.
+Une grande partie des théorèmes d'algèbre linéaire s'appuient entièrement sur ce concept.
 </p>
 
 <h3>Les applications linéaires</h3>
@@ -87,7 +187,7 @@ Finalement, <span class="important">l'élément neutre du premier espace doit to
 Dire qu'une application entre deux espaces vectoriels respecte ces trois propriétés équivaut à dire que l'application est linéaire.
 </p>
 <p>
-Prenons un exemple très graphique : l'application allant de "R²" vers "R²", en transformant "(x, y)" en "(2 * x, 2 * y)".
+Prenons un exemple très simple : l'application allant de "R²" vers "R²", en transformant "(x, y)" en "(2 * x, 2 * y)".
 Cette application est parfaitement linéaire, et on peut facilement le démontrer.
 Déjà, la première propriété est respectée, et l'on peut le vérifier de manière algébrique.
 </p>
@@ -102,6 +202,7 @@ On peut même généraliser ce résultat.
 Effectivement, <span class="important">on peut facilement montrer que toutes applications transformant "(x, y)" en "(w * x, z * y)" avec "w" et "z" des scalaires quelconques est linéaire</span>.
 Ce résultat <a href="demo#4_1_0_0">est démontré ici</a>, et est très similaire à la démonstration que nous venons juste de voir.
 </p>
+
 <p>
 Pour avoir une compréhension supplémentaire du concept, ramenons nous à un exemple graphique.
 Imaginons un plan (dans "R²") avec une forme quelconque (par exemple, un carré).
@@ -149,12 +250,13 @@ Donc, <span class="important"><definition name="vector_space-normed"></span>.
 Ici, un exemple s'impose pour mieux illustrer tout ça : prenons l'espace vectoriel "R²" du corps formé par "R".
 La question ici : comment définir une "norme" d'un élément de "R²" ?
 En fait, nous allons essayer de représenter cette norme comme la distance entre le vecteur que nous cherchons et le vecteur nul (que nous pourrions théoriquement obtenir avec une mesure à la règle), de manière algébrique.
-La façon généralement utilisée est la méthode utilisant le théorème de Pythagore : nous n'allons poas encore l'utliser pour l'instant.
+La façon généralement utilisée est la méthode utilisant le théorème de Pythagore : nous n'allons pas encore l'utliser pour l'instant.
 </p>
 
 
 
 <h2>Les espaces de Hilbert et la géométrie euclidienne</h2>
+
 <h3>Les espaces de Hilbert et le produit scalaire</h3>
 <p>
 Axiomatiquement parlant, introduire la géométrie n'est pas chose aisée.
