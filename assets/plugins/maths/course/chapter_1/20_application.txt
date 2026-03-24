@@ -253,6 +253,18 @@ D'un point de vue mathématique, pour une fonction "f" allant de "A" vers "B", u
 <p>
 Comme pour la restriction, <span class="important">il existe beaucoup de fonctions / applications avec des propriétés précises, que l'on peut utiliser aussi sur leurs prolongement</span>.
 </p>
+<p>
+Grâce à ce concept, nous pouvons utiliser une nouvelle stratégie pour définir des ensembles : le paramétrage.
+En effet, <span class="important"><definition name="set-parameter"></span>.
+Ce type de définition est utilisé quand nous voulous définir un ensemble via une fonction quelconque (et donc, où l'on connait l'ensemble de départ et l'ensemble d'arrivé, mais pas forcément l'ensemble image).
+Prenons un exemple simple : définissons un ensemble "A" comme étant l'alphabet latin, et une application allant de "A" dans "A".
+Disons que cette application transforme chaque élément de "A" en la voyelle la plus éloignée de dans l'alphabet de cette lettre.
+Bien évidemment, l'ensemble image sera inclut dans "A", et on peut conjecturer qu'il représente l'ensemble des voyelles de l'alphabet.
+Or, tant que nous ne l'avons pas démontré rigoureusement, nous ne pouvons pas l'écrire tel qu'elle.
+Ici, <span class="important">la façon juste de l'écrire est comme un ensemble paramétré</span>.
+Dans cet exemple, si "B" est l'ensemble que l'on cherche :
+</p>
+<math><mforall> b, {b <min> B <mequi> <mexists> c <min> A, f(c) = b}</math>
 
 <h3>Injections, surjections et bijections</h3>
 <p>

@@ -58,6 +58,24 @@ L'exemple le plus simple est l'anneau formé par "Z", et par l'addition et la mu
 Comme il existe des sous-groupes de groupes, il existe des sous-anneaux d'anneaux.
 <span class="important"><definition name="algebra_subring"></span>.
 Leurs propriétés sont très proches de celles des sous-groupes.
+En fait, <span class="important">un sous-anneau est un anneau sur un ensemble représentant un sous-ensemble de l'ensemble de départ</span>.
+Donc, il est stable par l'addition et par la multiplication.
+Un exemple assez simple est l'anneau "(2Z, +, .)", qui est un sous-anneau de "(Z, +, .)".
+Déjà, nous avons démontré à plusieurs reprises que "2Z" est inclut dans "Z".
+</p>
+<math><mforall> a, a <min> 2Z <mimp> a <min> Z</math>
+<p>
+De plus, nous avons déjà démontré que le groupe "(2Z, +)" est un sous-groupe de "(Z, +)" : il est stable par la multiplication.
+Finalement, la stabilité par la multiplication est aussi assez simple à prouver.
+</p>
+<math><mforall> a, b <min> 2Z, <mexists> c, d <min> Z, a = 2 * c, b = 2 * d</math></br>
+<math>a * b = (2 * c) * (2 * d) = 2 * (c * 2 * d) = 2 * e, e = (c * 2 * d)</math>
+<p>
+Donc, l'anneau "(2Z, +, .)" est un sous-anneau de "(Z, +, .)"
+De plus, de manière similaire, <span class="important">on peut démontrer que, pour tout "n" dans "N", l'anneau "(nZ, +, .)" est un sous-anneau de "(Z, +, .)"</span>.
+</p>
+<p>
+
 </p>
 
 <h3>Qu'est ce qu'est un corps ?</h3>
@@ -77,6 +95,7 @@ Selon les auteurs, tous les corps sont commutatifs, mais nous allons dire ici qu
 <math><mforall>a, b <min> E, a . b = b . a</math>
 
 <p>
+Grossièrement, <span class="important">un corps est une structure algébrique où l'on peut utiliser les opération "+", "-", "*" et "/"</span>.
 L'exemple le plus simple est le corps formé par "Q", et par l'addition et la multiplication sur "Q".
 </p>
 <math>(Q, +, .)</math>

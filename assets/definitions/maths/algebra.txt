@@ -123,7 +123,8 @@
 </new_definition>
 
 <new_definition name="algebra_center">
-    <content>le centre d'une structure algébrique représentent l'ensemble des éléments de cette structure commutant avec tous les autres éléments de la structure</content>
+    <content>le centre d'une structure algébrique représentent l'ensemble des éléments de cette structure qui commutent avec tous les autres éléments de la structure, sans exception</content>
+    <content name="group">le centre d'une structure algébrique représentent l'ensemble des éléments de cette structure qui commutent avec tous les autres éléments de la structure, sans exception</content>
 </new_definition>
 <new_definition name="algebra_conjugacy_action">
     <content>une action par conjugaison d'un ensemble "G" sur lui même est une action de groupe de "G" sur lui même, où chaque élément "g" de "G" opère avec chaque élément de "G" de tel manière que le résultat de chaque opération est celle de l'automorphisme intérieur associé à "g"</content>

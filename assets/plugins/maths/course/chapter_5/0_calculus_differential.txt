@@ -21,16 +21,16 @@ En fait, <span class="important">si l'on maintenait le grossissement de la fonct
 </p>
 <math>t = <mfrac><mi>f(b) - f(a)</mi><mi>b - a</mi></mfrac></math>
 <p>
-On peut modifier un peu cette formule, en ajoutant une variable nommée "h" représente "b - a", et en déduire une nouvelle formule un peu différente.
+Graphiquement, <span class="important">on peut tracer une droite entre "f(a)" et "f(b)", dont le coefficient directeur est la valeur que nous venons juste de calculer</span>.
+Puisqu'il s'agit d'une droite, on peut la représente comme une fonction affine, d'où le nom.
+Effectivement, <span class="important">cette droite s'écrit comme une fonction affine "c * x + d" où "c" est la valeur que nous venons de calculer ("t") et "d" est "f(a) - a * c"</span>.
+</p>
+<graphic><background_color white><function expression="(1/2)*(x+1)*(x+1)"></function><function expression="x*(3/2)+3/2"></function></graphic>
+<p>
+On peut modifier un peu cette formule, en ajoutant une variable nommée "h" représentant "b - a", et en déduire une nouvelle formule un peu différente.
 Ici, <span class="important">cette formule est nommée taux d'accroissement de "f" en "a"</span>.
 </p>
 <math>t = <mfrac><mi>f(b) - f(a)</mi><mi>b - a</mi></mfrac> <mand> h = b - a <mequi> t = <mfrac><mi>f(h + a) - f(a)</mi><mi>h</mi></mfrac></math>
-<p>
-Graphiquement, <span class="important">on peut tracer une droite entre "f(a)" et "f(b)", dont le coefficient directeur est la valeur que nous venons juste de calculer</span>.
-Puisqu'il s'agit d'une droite, on peut la représente comme une fonction affine, d'où le nom.
-Effectivement, <span class="important">cette droite s'écrit comme une fonction affine "c * x + d" où "c" est la valeur que nous venons de calculer et "d" est "f(a) - a * c"</span>.
-</p>
-<graphic><background_color white><function expression="(1/2)*(x+1)*(x+1)"></function><function expression="x*(3/2)+3/2"></function></graphic>
 <p>
 Ce concept nous permet donc d'approximer le grossissement d'une fonction entre "a" et "b", cependant on aimerait savoir le grossissement de la fonction en "a".
 Pour cela, <span class="important">l'idée est de se rapprocher très proche de "a", en utilisant le concept de limite</span>.

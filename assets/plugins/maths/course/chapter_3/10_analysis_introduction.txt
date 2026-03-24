@@ -65,85 +65,6 @@ C'est pour ça que, en 1902, une nouvelle définition est proposée, par <scient
 
 <h2>Les outils d'analyse mathématique</h2>
 
-<h3>Les suites mathématiques</h3>
-<p>
-Un des outils principaux en analyse représente la suite mathématique.
-<span class="important"><definition name="analysis_sequence"></span>.
-Il s'agit théoriquement d'une suite d'éléments quelconques.
-Ici, on parle de "fonction" car il se peut que certains éléments de "N" (souvent les premiers) n'aient pas d'images.
-En analyse, l'ensemble d'arrivée est très souvent un ensemble de nombres.
-Il est très commun de les expliciter, comme dans cet exemple :
-</p>
-<math>u : N <mto> Q, n <mto> u(n) = <mfrac><mi>1</mi><mi>n + 1</mi></mfrac></math>
-<p>
-Une des opérations possibles d'une suite est la somme partielle.
-<span class="important"><definition name="analysis_sequence-partial_sum"></span>.
-Par exemple, la somme partielle de rang "0" de notre suite "1 / (n + 1)" est 1, celle de rang "1" est 1.5, celle de rang "2" est 1.8[3]...
-On la note généralement "S(n)", avec le symbole sigma majuscule.
-</p>
-<math>S(n) = <msum>u(k)</math>
-<p>
-Avec ce concept, on peut obtenir un nouveau concept : une série.
-<span class="important"><definition name="analysis_sequence-partial_sum"></span>.
-C'est une façon d'écrire le concept de somme partielle sous forme de suite.
-Ce concept est très important en mathématiques, à un point qu'il est difficile d'imaginer.
-</p>
-
-<h3>Les fonctions réelles</h3>
-<p>
-Bien que les suites sont importantes, l'intérêt de l'analyse n'est généralement pas l'étude de suite, mais celle de fonctions, souvent réelles.
-<span class="important"><definition name="analysis_real_function"></span>.
-Comme pour les suites, est très commun de les expliciter, comme dans cet exemple :
-</p>
-<math>f : R <mto> R, x <mto> f(x) = 3 * x + 2</math>
-<p>
-Selon la façon dont on formule les fonctions, elles ont des noms différents.
-Déjà, <span class="important">une fonction réelle de la forme "a * x" avec "a" un nombre réel est nommée une fonction linéaire</span>.
-D'un point de vue graphique, il s'agit d'une droite non-verticale qui passe par le point "(0, 0)".
-</p>
-<math>f : R <mto> R, x <mto> f(x) = <mfrac><mi>1</mi><mi>3</mi></mfrac> * x</math>
-<p>
-De plus, <span class="important">une fonction réelle de la forme "a * x + b" avec "a" et "b" des nombres réels est nommée une fonction affine</span>.
-D'un point de vue graphique, il s'agit d'une droite non-verticale quelconque.
-</p>
-<math>f : R <mto> R, x <mto> f(x) = <mfrac><mi>1</mi><mi>3</mi></mfrac> * x + 2</math>
-
-<h3>Les graphes de fonctions</h3>
-<p>
-Nous avons déjà parlé des graphes de fonctions dans le chapitre 1, dans la partie application.
-Cependant, en analyse, cet outil est bien plus poussé que pour de simples applications / fonctions, en les utilisant avec nos outils d'analyse (suites et fonctions réelles).
-Pour rappel, <span class="important"><definition name="function_graph"></span>.
-Or, comme nous connaissons les ensembles de départ ("N" ou "R"), nous pouvons représenter notre graphe de manière plus intuitive.
-En effet, <span class="important">"R²" (et, par extension, "N²") est définissable comme un plan, et nous pouvons considérer un ensemble représentant l'ensemble des couples possibles des antécédents de la fonction associés à leur image par la fonction, représentant un ensemble de points du plan</span>.
-Pour être précis, <span class="important">nous allons représenter un ensemble de points du plan comme des couples de réels "(x, f(x))", où "x" est un antécédent de la fonction, et "f(x)" est l'image de "x" par la fonction</span>.
-Au final, vous obtenez un graphique en 2D, représentant comment votre fonction se comporte en chaque valeur via la droite de départ.
-Voici un exemple simple, de la fonction réelle transformant un réel "x" en la valeur "2 * x + 0,5".
-</p>
-<graphic><background_color white><function expression="2x+1/2"></function></graphic>
-<p>
-Selon les types précis de fonction, leur graphe possède des propriétés précises.
-Déjà, <span class="important">une fonction linéaire représente une droite non-vertical qui passe par le point "(0, 0)"</span>.
-</p>
-<graphic><background_color white><function expression="x/3"></function></graphic>
-<p>
-De plus, <span class="important">une fonction affine représente une droite non-verticale quelconque.</span>.
-</p>
-<graphic><background_color white><function expression="x/3 + 2"></function></graphic>
-<p>
-Quelque soit la fonction, il est très facile d'obtenir l'équation de l'ensemble de point formé par une fonction.
-En effet, <span class="important">puisque qu'un point d'un graphe de fonction se note "(x, f(x))", on peut changer le nom de "f(x)" en "y", et écrire "y = f(x)", en remplaçant "f(x)" par le développement de la fonction si nécessaire</span>.
-Cela nous permet donc d'obtenir les équations des formes générées par une fonction linéaire / affine.
-</p>
-<math>y = <mfrac><mi>1</mi><mi>3</mi></mfrac> * x</math></br>
-<math>y = <mfrac><mi>1</mi><mi>3</mi></mfrac> * x + 2</math>
-<p>
-Par observation (que nous aurons l'occasion de démontrer plus tard), <span class="important">on peut remarquer que toutes droites non-verticales dans le plan peuvent s'obtenir par des fonctions linéaires et affines</span>.
-En plus, nous pouvons même trouver un moyen de trouver des équations permettant d'obtenir l'ensemble des droites verticales du plan.
-En effet, <span class="important">une droite verticale du plan (ne passant donc que par une unique abscisse "a") s'écrit avec l'équation "x = a"</span>.
-Effectivement, le "y" n'a aucune importance sur le déroulé de la droite : les points ne peuvent donc pas être "exclu" à cause d'un "y" spécifique, ce qui fait que tous les "y" possibles d'abscisse "x" forment la droite (ce qui donne intuitivement une droite verticale).
-</p>
-<math><mforall> a <min> R, <mforall> (x, y) <min> <mi>R</mi><msup>2</msup>, x = a</math>
-
 <h3>Les espaces métriques</h3>
 <p>
 Un outil permettant d'étendre l'analyse en mathématiques est l'espace métrique.
@@ -180,6 +101,8 @@ Or, quelque soit un nombre "a" dans "R" et "Q", comme ces ensembles sont denses,
 En d'autres termes, <span class="important">il n'existe pas "d'objet le plus proche" d'un élément quelconque de "R" et "Q" qui n'est pas lui même</span>.
 Cependant, "N" et "Z" ne sont pas denses, et la valeur minimale au dessus de 0 est 1 : <span class="important">tout objet dans "N" et "Z" (appart 0 dans "N", qui n'en possède qu'une) possède deux objets les plus proches (qui ne sont pas eux mêmes), à une distance de "1" unité</span>.
 </p>
+
+
 
 <h2>Les limites</h2>
 

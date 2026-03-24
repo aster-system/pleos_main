@@ -574,3 +574,27 @@ En plus, <span class="important">on peut démontrer que si un sous-groupe est no
 La démonstration (<a href="demo">présente juste ici</a>) est assez simple, grâce à la propriété de stabilité via l'action par conjugaison.
 </p>
 <math><mforall> x <min> G, xH = Hx</math>
+<p>
+Un des sous-groupes normaux les plus remarquables est le centre d'un groupe.
+Déjà, en algèbre pure, <span class="important"><definition name="algebra_center"></span>.
+Dans le cas d'un groupe, <span class="important"><definition name="algebra_center-group"></span>.
+Si le groupe est abélien, alors le centre du groupe représente l'entièreté de l'ensemble du groupe.
+Généralement, cet ensemble (pour un ensemble "G") est noté "Z de G".
+</p>
+<math><mforall> g <min> G, {g <min> <mi>Z</mi><msub>G</msub> <mequi> <mforall> h <min> G, g ~ h = h ~ g}</math>
+<p>
+D'ailleurs, <span class="important">il existe un sous-groupe du groupe de départ sur le centre d'un groupe, qui est d'ailleurs un sous-groupe normal</span>.
+Le plus dur est de trouver qu'opérer deux éléments du centre donne un nouvel élément du centre.
+Posons deux éléments "g" et "g'" du centre, et considérons le résultat "r" de leur opération.
+</p>
+<math><mforall> g <min> G, {g <min> <mi>Z</mi><msub>G</msub> <mequi> <mforall> h <min> G, g ~ h = h ~ g}</math></br>
+<math><mforall> g' <min> G, {g' <min> <mi>Z</mi><msub>G</msub> <mequi> <mforall> h' <min> G, g' ~ h' = h' ~ g'}</math></br>
+<math>r = g ~ g'</math>
+<p>
+Comme "g" et "g'" commutent avec tout ceux qui existe dans "G", alors si l'on opère un élément à gauche, on peut enchaîner les commutations, et prouver que ces deux éléments commutent.
+</p>
+<math><mforall> i <min> G, i ~ r = i ~ g ~ g' =  g ~ g' ~ i = i ~ r</math>
+<p>
+Donc, <span class="important">l'ensemble formé par le centre d'un groupe permet d'obtenir un sous-groupe du groupe</span>.
+D'ailleurs, comme les éléments du groupes commutent avec tous les autres, ce sous-groupe est normal.
+</p>
