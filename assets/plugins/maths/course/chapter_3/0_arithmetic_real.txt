@@ -236,6 +236,10 @@ D'un point de vue graphique, il s'agit d'une droite non-verticale quelconque.
 
 <h3>Le lien nombres réels - géométrie</h3>
 <p>
+Peut être que certains attendaient cette branche des mathématiques, et nous allons enfin en parler : la géométrie.
+<span class="important"><definition name="geometry"></span>.
+</p>
+<p>
 Déjà, <span class="important">nous pouvons définir le produit cartésien de "R" et lui même, noté "R²", qui représente tous les couples de réels possibles</span>.
 Ici, une question se pose : comment ce concept pourra nous être utile en géométrie ?
 En fait, <span class="important">comme il est possible de créer une droite des nombres réels, il est possible de créer un plan avec des couples de réels</span>.
@@ -262,6 +266,7 @@ Par exemple, on peut facilement définir l'ensemble des points constituant ce qu
 </p>
 <math><mi>(x - a)</mi><msup>2</msup> + <mi>(y - b)</mi><msup>2</msup> = <mi>r</mi><msup>2</msup></math>
 <p>
+Intuitivement parlant, <span class="important"><definition name="circle"></span>.
 Ici, </span class="important">"a" défini l'abscisse du centre du cercle, "b" représente l'ordonnée du centre du cercle, et "r" représente le rayon du cercle</span>.
 Nous étudierons plus précisément cette équation plus tard.
 Dans le cas d'un cercle de centre "(1, 1)" et de rayon "1", on peut graphiquement afficher :
@@ -343,10 +348,36 @@ En fait, <span class="important">l'idée est de définir des fonctions admettant
 Un exemple très simple s'obtient avec toutes les fonctions de "R" vers "R" admettant un graphe (comme nous l'avons vu plus haut).
 En effet, on peut en obtenir une application allant de "R" vers "R²", transformant "x" en "(x, f(x))".
 Dans ce cas, l'ensemble image de cette application représente exactement la forme obtenue sur le graphe.
+</p>
+<graphic><background_color white><function expression="(x-4)*(x-4)"></function></graphic>
+<p>
 <span class="important">Il s'agit donc d'une façon différente de définir un ensemble de points, qui peut s'avérer très utile dans plein de cas</span>.
 </p>
 <p>
 Dans notre exemple, nous transformons "x" en "(x, f(x))", mais nous pouvons aussi théoriquement définir une nouvelle fonction "g", et définir une application allant de "x" vers "(g(x), f(x))".
 En effet, rien ne vous empêche nous plus de mettre des valeurs constantes, comme une application qui transforme "x" en "(3, f(x))".
 En fait, <span class="important">le plus difficile est de transformer un ensemble de points défini autrement en ensemble défini par paramètre, et vice-versa</span>.
+</p>
+<p>
+Une des figures les plus utiles (mais pas des plus simples) à paramétrer est le cercle.
+En effet, <span class="important">il existe un moyen précis et facile d'obtenir un demi cercle</span>.
+Pour cela, nous allons avoir besoin d'un graphe de fonction.
+En effet, la fonction réelle transformant "x" en "racine carré de (-x * x + 1)" permet de faire un demi cercle de rayon "1" et de centre "(0, 0)".
+</p>
+<graphic><background_color white><function expression="sqrt(-x*x+1)"></function></graphic>
+<p>
+Grâce aux propriétés de la racine carré, on peut facilement calculer l'ensemble de définition de la fonction : "la fonction est définie équivaut" à dire que "x inférieur ou égal à 1".
+Cependant, on peut remarquer quelque chose : un cercle demande que certains "x" admettent plusieurs images.
+Donc, il sera impossible de n'utiliser qu'un simple graphe de fonction réel.
+Cependant, <span class="important">on peut définir une fonction "g" pour le "x", valant "x" pour "x" se situant entre "-1 et 1 inclu", et "x - 2" pour "x" se situant entre "1 exclu et 3 inclu", et une fonction "f" valant "racine carré de (-x * x + 1)" pour x se situant entre "-1 inclu" et "1 inclu", et "-racine carré de (-x * x + 1)" pour x se situant entre "1 exclu" et "3 inclu"</span>.
+Ici, on revient donc à l'endroit où l'on trace le cercle pour la deuxième partie de la fonction, et tracer le cercle dans la partie négative.
+</p>
+<graphic><background_color white><function expression="sqrt(-x*x+1)"></function><function expression="sqrt(-x*x+1)*-1"></function></graphic>
+<p>
+Nous pouvons donc obtenir l'équation paramétrée par un réel "x" d'un cercle de rayon "1" et de centre "(0, 0)" : "(g(x), f(x))".
+</p>
+<p>
+Bien que cette formule utilise simplement de l'arithmétique basique, elle n'est pas la seule équation possible.
+Nous allons donc obtenir une autre façon de faire, grâce aux triangles, et aussi à une branche très spécifique de la géométrie : la trigonométrie.
+<span class="important"><definition name="trigonometry"></span>.
 </p>

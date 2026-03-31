@@ -1,9 +1,13 @@
+<new_definition name="geometry">
+    <content>la géométrie est historiquement la discipline mathématique qui étudie les possibilités sur des plans 2D (sur papier) et 3D (dans l'espace / la vraie vie)</content>
+</new_definition>
+
 <new_definition name="al_kashi_theorem">
     <content>le théorème d'Al-Kashi (ou loi des cosinus) est un théorème établissant une relation entre deux longueurs de côtés et la mesure d'un angle (ou la mesure de deux angles et la longueur d'un côté) dans un triangle quelconque</content>
     <content type="theorem"><math><mforall><mi>A, B, C</mi><min><mi>R</mi><msup>3</msup><mo>,</mo><mi>[AB]²</mi><mo>=</mo><mi>[BC]²</mi><mo>+</mo><mi>[AC]²</mi><mo>-</mo><mi>2</mi><mo>*</mo><mi>[BC]</mi><mo>*</mo><mi>[AC]</mi><mo>*</mo><mi>cos(ACB)</mi></math></content>
 </new_definition>
 <new_definition name="circle">
-    <content>un cercle est une figure géométrique 2D, tel que tous ses points se trouvent à une distance similaire (appelée "rayon" du cercle) d'un même point, dit "centre" du cercle</content>
+    <content>un cercle est un ensemble de point, tel que tous les points de l'ensemble se trouvent à une distance similaire (appelée "rayon" du cercle) d'un même point, dit "centre" du cercle</content>
 </new_definition>
 <new_definition name="ellipse">
     <content>une ellipse est une figure géométrique 2D résultant de la projection d'un cône 3D sur un plan 2D passant par son axe de rotation, sans passer par le sommet, ni être coplanaire à la base du cône</content>
@@ -21,7 +25,7 @@
     <content>une fonction trigonométrique est une fonction permettant de mettre en relation des longueurs de côtés et des angles dans un triangle</content>
 </new_definition>
 <new_definition name="trigonometry">
-    <content>la trigonométrie est la mesure des longueurs de côtés et des angles dans un triangle ("trigono" vient de "triangle", et "métrie" vient de "mesure")</content>
+    <content>la trigonométrie est la discipline mathématique qui traite des mesures dans un triangle ("trigono" vient de "triangle", et "métrie" vient de "mesure")</content>
 </new_definition>
 
 <new_definition name="vectorial_space_dimension">
