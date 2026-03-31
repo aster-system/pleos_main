@@ -493,6 +493,31 @@ Or, <span class="important">cette limite est exactement la même qu'à droite</s
 Ces deux limites sont parfaitement égales.
 Donc, <span class="important">cette fonction est continue sur son ensemble de définition, et donc sur "R"</span>.
 </p>
+<p>
+Cependant, il existe des fonctions qui devraient théoriquement être continue, mais où l'une des conditions de la continuité en un point n'est pas remplie : un des points est hors de l'ensemble de définition.
+En effet, si un point "a" est hors de l'ensemble de définition, mais que la limite à droite et à gauche de la fonction sont égales, il est dommage de ne pas pouvoir la considérer continue sur son ensemble de définition, et ce point inclut.
+Cependant, il exsite un moyen d'éviter ce problème : le prolongement par continuité.
+En fait, <span class="important"><definition name="continuity-extension"></span>.
+Pour bien comprendre ce concept, rapellons la définition par les limites de la continuité.
+Pour rappel, <span class="important"><definition name="continuity-function_real"></span>.
+Maintenant, imagineons une fonction "f", définie sur un ensemble "D", avec "a" hors de cet ensemble.
+Cependant, imagineons que la limite à droite de la fonction en "a" existe, et que la limite à gauche de la fonction en "a" existe aussi.
+Dans ce cas, <span class="important">si les limites sont égales, alors il suffit juste de définir une fonction sur "D" auquel on ajoute "a", représentant "f" sur "D", et valant la valeur de la limite de "f" en "a"... en "a", pour que cette fonction soit continue sur "D" auquel on ajoute "a"</span>.
+Généralement, <span class="important">cette nouvelle fonction est nommée le prolongement par contuinité de "f" en "a"</span>.
+Prenons un exemple extrêmement simple : la fonction "f" définie transformant "x" en "(x - 1)²/(x+1)", définie sur "R" privé de "-1" (car l'on divise par "x² + 1", et que la division n'est pas définie si le quotient vaut "0").
+Si nous traçons cette fonction, on obtient quelque chose d'assez étrange.
+</p>
+<graphic><background_color white><function expression="((x-1)*(x-1))/(x+1)"></function></graphic>
+<p>
+<span class="important">Bien que cette fonction semble valoir "0" en "-1", elle n'est pas continue en "-1", car elle n'est pas définie en "-1"</span>.
+Vérifions que sa limite à droite et à gauche en "0" sont les mêmes.
+Pour cela, nous savons que si cette fonction tend vers "0" en "1", alors son inverse tend vers "+ l'infini" en "1".
+Or, l'inverse de cette fonction est "(x + 1)/(x - 1)²", que l'on peut écrire "(x + 1)/(x² - 2 * x + 1)".
+Or, en "1", "(x + 1)" vaut "2", et "(x² - 2 * x + 1)" vaut "0" (et n'est jamais strictement négative sur son ensemble de définition) : "(x + 1)/(x² - 2 * x + 1)" tend donc vers "+ l'infini" des deux côtés, et notre fonction de départ tend vers "0" des deux côtés.
+Finalement, <span class="important">on a donc démontré que la limite à droite et à gauche de notre fonction est "0", il ne manque plus que de définir la valeur de l'extension en "1" comme égale à "0" pour pouvoir la considérer continue en "0"</span>.
+Donc, <span class="important">la fonction "g" tel que "g(x) = f(x)" pour "x" appartenant à "D" et tel que "g(x) = 0" pour "x = 1" est un prolongement de la fonction "f", continue sur "D" auquel on ajoute "a"</span>.
+</p>
+<math><mforall> x <min> D <munion> {1}, g(x) = {f(x) si x <min> D, 0 sinon}</math>
 
 <h3>L'arithmétique de la continuité</h3>
 <p>

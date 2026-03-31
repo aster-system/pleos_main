@@ -28,6 +28,7 @@
 <new_definition name="cardinal">
     <content>le cardinal d'un ensemble est une façon de représenter le nombre d'éléments que contient l'ensemble</content>
     <content name="set_finite">le cardinal d'un ensemble fini est un nombre (entier naturel) représentant le nombre d'éléments distincts appartenant à l'ensemble</content>
+    <content name="set_finite_rigorous">le cardinal d'un ensemble fini "E" représente le nombre entier naturel tel qu'il existe une bijection entre son ensemble associé et "E"</content>
 </new_definition>
 <new_definition name="pair">
     <content>une paire est ensemble fini de cardinal 2 (il ne contient que deux éléments)</content>

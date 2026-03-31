@@ -23,13 +23,11 @@ Rappelons toutes les propriété nécéssaire, pour un anneau "A" muni d'une op�
 <math><mforall> a <min> E, <mexists> o <min> E, a ¤ o = a</math>
 <p>"¤" est commutative :</p>
 <math><mforall> a, b <min> E, a ¤ b = b ¤ a</math>
-
 <p>La structure (A, .) est un monoïde.</p>
 <p>"." est associative :</p>
 <math><mforall> a, b, c<min> E, (a . b) . c = a . (b . c)</math>
 <p>"." permet à E d'admettre un neutre :</p>
 <math><mforall> a <min> E, <mexists> n <min> E, a . n = e</math>
-
 <p>La loi "¤" est algébriquement lié à ".".</p>
 <p>"." est distributive à gauche par rapport à "+" :</p>
 <math><mforall> a, b, c<min> E, a . b ¤ a . c = a . (b ¤ c)</math>
@@ -40,16 +38,14 @@ Rappelons toutes les propriété nécéssaire, pour un anneau "A" muni d'une op�
 Si la deuxième loi est "." commutative, alors l'anneau est dit "commutatif".
 <span class="important">La branche de l'algèbre qui étudie les anneaux commutatifs se nomment "l'algèbre commutative"</span>.
 </p>
-
 <math><mforall>a, b <min> E, a . b = b . a</math>
-
 <p>
 Si l'anneau ne comporte pas de diviseur de 0 (autre que 0), il est dit "intègre".
 </p>
 <math><mno>(<mexists>a, b <min> E*, a * b = 0)</math>
-
 <p>
 L'exemple le plus simple est l'anneau formé par "Z", et par l'addition et la multiplication sur "Z".
+Cet anneau est commutatif et intègre.
 </p>
 <math>(Z, +, .)</math>
 
@@ -65,17 +61,19 @@ Déjà, nous avons démontré à plusieurs reprises que "2Z" est inclut dans "Z"
 </p>
 <math><mforall> a, a <min> 2Z <mimp> a <min> Z</math>
 <p>
-De plus, nous avons déjà démontré que le groupe "(2Z, +)" est un sous-groupe de "(Z, +)" : il est stable par la multiplication.
+De plus, nous avons déjà démontré que le groupe "(2Z, +)" est un sous-groupe de "(Z, +)" : il est stable par l'addition.
 Finalement, la stabilité par la multiplication est aussi assez simple à prouver.
 </p>
 <math><mforall> a, b <min> 2Z, <mexists> c, d <min> Z, a = 2 * c, b = 2 * d</math></br>
 <math>a * b = (2 * c) * (2 * d) = 2 * (c * 2 * d) = 2 * e, e = (c * 2 * d)</math>
 <p>
 Donc, l'anneau "(2Z, +, .)" est un sous-anneau de "(Z, +, .)"
-De plus, de manière similaire, <span class="important">on peut démontrer que, pour tout "n" dans "N", l'anneau "(nZ, +, .)" est un sous-anneau de "(Z, +, .)"</span>.
+De plus, de manière similaire, <span class="important">on peut démontrer que, pour tout "n" dans "N", l'anneau "(nZ, +, .)" est un sous-anneau de "(Z, +, .)"</span> (<a href="demo#4_0_0_0">démontré ici</a>).
 </p>
-<p>
 
+<h3>Les anneaux principaux et euclidiens</h3>
+<p>
+Les anneaux principaux et euclidiens sont des anneaux extrêmement importants pour étudier le concept de division en mathématiques, de manière plus avancée qu'avec des nombres entiers.
 </p>
 
 <h3>Qu'est ce qu'est un corps ?</h3>
@@ -129,7 +127,15 @@ Pour construire rigoureusement un polynôme, on peut procéder de la sorte :
 <math><msum from=0 to=n> <mi>a</mi><msub>k</msub><mi>X</mi><msup>k</msup></math></br>
 <math>3 * <mi>X</mi><msup>3</msup> - 4 * <mi>X</mi> + 2</math>
 <p>
-Ils possèdent une arithmétique assez simple et intuitive.
+Une confusion assez courante est de mélanger le concept de polynôme et de fonction.
+En effet, <span class="important">un polynôme n'est qu'une formule, et pas une application, il ne s'agit donc pas directement d'une fonction</span>.
+Cependant, il est assez courant de définir une fonction via un polynôme, en définissant l'expression de la fonction comme le polynôme étudié.
+Dans ce cas, <span class="important">on parle de fonction polynomiale, et on l'a note généralement avec le même nom que le polynôme associé, avec une petite vaguelette sur le haut (pour un polynôme "P", cette vaguelette se dit avec le mot "tilde", ce qui donne "P tilde")</span>.
+</p>
+<math>P = 3 * <mi></mi><msup>2</msup> + 2 * x - 1</math></br>
+<math><mtilde content="P"> : R <mto> R, x <mto> 3 * <mi></mi><msup>2</msup> + 2 * x - 1</math></math>
+<p>
+Les polynômes possèdent une arithmétique assez simple et intuitive.
 Déjà, <span class="important">il est possible d'additionner deux polynômes, en utilisant la première loi de composition du corps des coefficients des polynômes</span>.
 Les lois restent exactement les mêmes que pour des indéterminées classiques, et les propriétés du corps sont conservés avec les polynômes (groupe additif abélien).
 La définition de cette multiplication est assez simple : on additionne entre eux les coefficients partageant des inconnus élevés au même exposant (d'où on en déduit les propriétés additives des polynômes).
@@ -150,7 +156,8 @@ Donc, multiplier deux polynômes revient à en décomposer un en monôme, effect
 <math>(<msum from=0 to=m> <mi>a</mi><msub>k</msub><mi>X</mi><msup>k</msup>) * (<msum from=0 to=n> <mi>b</mi><msub>k</msub><mi>X</mi><msup>k</msup>) = <msum from=0 to=m> <mi>a</mi><msub>k</msub> * <msum from=0 to=n+m> (a * <mi>b</mi><msub>k</msub>) * <mi>X</mi><msup>k + m</msup></math></br>
 <math><math>(3 * <mi>X</mi><msup>2</msup> + 2) * (2 * <mi>X</mi> - 4) = (6 * <mi>X</mi><msup>3</msup> - 12 * <mi>X</mi><msup>2</msup>) + (4 * <mi>X</mi> - 8) = 6 * <mi>X</mi><msup>3</msup> - 12 * <mi>X</mi><msup>2</msup> + 4 * <mi>X</mi> - 8</math>
 <p>
-
+Généralement, <span class="important">l'ensemble de tous les polynômes sur un anneau "A" est noté "A[X]"</span>.
+De plus, les polynômes peuvent être munis d'une addition et d'une multiplication : <span class="important">l'ensemble des polynômes sur un anneau (unitaire) forme un nouvel anneau unitaire</span>.
 </p>
 
 <h3>Les racines de polynômes</h3>
@@ -177,7 +184,7 @@ Ce résultat peut être généralisé.
 En effet, <span class="important">un polynôme quelconque admettant une racine quelconque "r" peut s'écrire comme le produit de "X - r" et d'un autre polynôme</span>.
 De manière équivalente, un polynôme quelconque admettant une racine quelconque "r" est divisible par "X - r".
 En plus, la réciproque est aussi vraie : <span class="important">un polynôme quelconque divisible par "X - r" admet une racine "r"</span>.
-La démonstration (<a href="demo">présente ici</a>) est assez simple est n'utilise que des propriétés basiques de la division de polynômes.
+La démonstration (<a href="demo">présente ici</a>) est assez simple et n'utilise que des propriétés basiques de la division de polynômes.
 </p>
 <p>
 Selon l'appartenance ou la non-appartenance de racines de polynômes à coefficients dans un corps K dans ce même corps K, on peut en déduire certaines propriétés sur le corps.

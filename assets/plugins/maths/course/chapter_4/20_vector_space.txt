@@ -163,6 +163,43 @@ Les deux stabilités demandées sont bel et bien respectées : <span class="impo
 Avec ceci, nous pouvons introduire un concept primordial en algèbre linéaire : les sous-espaces vectoriels engendrés.
 <span class="important"><definition name="sub_vector_space-span"></span>.
 Une grande partie des théorèmes d'algèbre linéaire s'appuient entièrement sur ce concept.
+Généralement, pour une famille de vecteurs "f", le sous-espace vectoriel engendré par "f" est nommé "Vect(f)".
+</p>
+<math>f = (<mi>u</mi><msub>1</msub>, <mi>u</mi><msub>2</msub>, ..., <mi>u</mi><msub>n</msub>) <min> <mi>E</mi><msup>n</msup></math></br>
+<math><mforall> v <min> E, {v <min> Vect(f) <mequi> <mexists>(<mi>a</mi><msub>1</msub>, <mi>a</mi><msub>2</msub>, ..., <mi>a</mi><msub>n</msub>) <min> <mi>K</mi><msup>n</msup>, v = <mi>a</mi><msub>1</msub> * <mi>u</mi><msub>1</msub> + <mi>a</mi><msub>2</msub> * <mi>u</mi><msub>2</msub> + ... + <mi>a</mi><msub>n</msub> * <mi>u</mi><msub>n</msub>} </math>
+<p>
+Intéressons nous à ce concept de famille de vecteur.
+Déjà, <span class="important>"il est possible qu'une famille de vecteur contienne des vecteurs qui s'engendre les uns par rapport aux autres, grâce à une combinaison linéaire</span>.
+Par exemple, la famille de vecteur de "R²" "{(1, 1), (3, 3)}" contient un vecteur que l'on peut obtenir par combinaison linéaires d'autres (ici, "3 * (1, 1) = (3, 3)").
+Ce genre de famille a un nom : les familles liées.
+<span class="important"><definition name="vector_family-linked"></span>.
+Par définition, si une famille est liée à cause d'un vecteur "u", alors "u" appartient à l'espace vectoriel engendré par la famille de départ à laquelle on enlève "u".
+De même, tout multiple / combinaison linéaire de "u" appartient aussi à ce sous-espace vectoriel, et donc tout l'espace vectoriel engendré par "u" est aussi dans cet espace vectoriel.
+Pour une famille liée "f", voici la formalisation mathématique du concept (où "g" est la famille où "u" est exclu).
+</p>
+<math>f = (<mi>u</mi><msub>1</msub>, <mi>u</mi><msub>2</msub>, ..., <mi>u</mi><msub>n</msub>) <min> <mi>E</mi><msup>n</msup></math></br>
+<math><mexists> m <min> {1, 2, ..., n}, g = f \ {<mi>u</mi><msub>m</msub>}, g = {<mi>w</mi><msub>1</msub>, <mi>w</mi><msub>2</msub>, ..., <mi>w</mi><msub>n - 1</msub>} <min> <mi>E</mi><msup>n - 1</msup></math></br>
+<math><mexists>(<mi>a</mi><msub>1</msub>, <mi>a</mi><msub>2</msub>, ..., <mi>a</mi><msub>n - 1</msub>) <min> <mi>K</mi><msup>n - 1</msup>, <mi>u</mi><msub>m</msub> = <mi>a</mi><msub>1</msub> * <mi>w</mi><msub>1</msub> + <mi>a</mi><msub>2</msub> * <mi>u</mi><msub>2</msub> + ... + <mi>a</mi><msub>n - 1</msub> * <mi>w</mi><msub>n - 1</msub></math>
+<p>
+À l'inverse, <span class="important"><definition name="vector_family-free"></span>.
+Donc, on peut en déduire que <span class="important">le sous-espace vectoriel engendré par une famille de vecteur liée à cause d'un vecteur quelconque est égal à celui engendré par la famille de vecteur sans ce vecteur "u"</span>.
+</p>
+<math>Vect(f) = Vect(g)</math></br>
+<graphic><base width=5 height=5><background_color white><line name=type_number() x_1=0 y_1=0 x_2=1 y_2=0 color=blue><line name=type_number() x_1=0 y_1=0 x_2=0 y_2=1 color=green><line name=type_number() x_1=0 y_1=0 x_2=1 y_2=1 color=red></graphic>
+<p>
+Le type de famille de vecteur le plus utile est probablement la famille génératrice.
+<span class="important"><definition name="vector_family-generator"></span>.
+Comme nous l'avons vue plus haut, c'est le cas de notre famille "{(1, 1), (1, 0)}" dans "R²".
+Il est possible de compléter ce concept, pour en obtenir un nouveau très pratique : une base d'un espace vectoriel.
+<span class="important"><definition name="vector_space_base"></span>.
+Il s'agit de la donnée minimum nécessaire dans un espace vectoriel pour obtenir la valeur de chaque vecteur possible.
+Il existe d'ailleurs autant de base qu'il existe de famille de vecteur libre et génératrice.
+</p>
+<p>
+Avec les bases, on peut définir un des concepts les plus importants des espaces vectoriels : la dimension.
+<span class="important"><definition name="vector_space_dimension"></span>.
+En effet, <span class="important">toutes les bases d'un espace vectoriel quelconque ont le même cardinal (la même taille)</span>.
+En réalité, ce résultat n'est pas si facile à démontrer.
 </p>
 
 <h3>Les applications linéaires</h3>

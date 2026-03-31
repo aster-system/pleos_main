@@ -66,3 +66,8 @@ Or, toutes les valeurs "6 * x" sont définies et bien utilisable : <span class="
 Donc, <span class="important">l'expression de la fonction dérivée de "3 * x²" est "6 * x"</span>.
 </p>
 <graphic><background_color white><function expression=3*x*x></function><function expression=6*x></function></graphic>
+<p>
+De manière similaire, on peut démontrer un résultat assez intéressant : <span class="important">toute fonction définie via un monôme de la forme "a * x ^ b" avec "a" un réel différent de "0" et "b" un entier naturel admettent pour dérivée "a * b * x ^ (b - 1)"</span>.
+La démonstration est assez simple : considérons cette fonction "a * x ^ b" et trouvons sa dérivée.
+</p>
+<math><mforall> x, f'(x) = <mlim unknown=h value=0><mfrac><mi>f(h + x) - f(x)</mi><mi>h</mi></mfrac> = <mlim unknown=h value=0><mfrac><mi>a * (h + x) ^ b - a * x ^ b</mi><mi>h</mi></mfrac></math>

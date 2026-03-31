@@ -148,7 +148,7 @@ namespace pleos {
         std::string redaction = std::string();
 
         // Get all the part of the input
-        std::vector<scls::__Formula> formulas = std::vector<scls::__Formula>();
+        std::vector<std::shared_ptr<scls::Formula_Base>> formulas = std::vector<std::shared_ptr<scls::Formula_Base>>();
         std::vector<std::string> input_cutted = scls::cut_string(input, std::string(";"));
 
         // Load all the formula
@@ -159,18 +159,18 @@ namespace pleos {
                 if(formulas.size() > 0) {
                     // An unknown is precised
                     std::string current_redaction = input_cutted.at(i);
-                    scls::__Formula needed_value = *scls::string_to_formula(cutted.at(1)).get();
-                    scls::__Formula needed_formula = *(formulas[formulas.size() - 1].replace_unknown(cutted.at(0), &needed_value).get());
+                    std::shared_ptr<scls::Formula_Base> needed_value = scls::string_to_algebra_element<scls::Formula_Base>(cutted.at(1));
+                    /*std::shared_ptr<scls::Formula_Base> = *(formulas[formulas.size() - 1].replace_unknown(cutted.at(0), &needed_value).get());
                     formulas[formulas.size() - 1] = needed_formula;
                     current_redaction += std::string(" = ") + needed_formula.to_std_string(&settings);
                     if(i < static_cast<int>(input_cutted.size())){current_redaction += std::string("</br></br>");}
-                    redaction += current_redaction;
+                    redaction += current_redaction;//*/ // TEMPORARY DISABLED
                 }
             }
             else {
                 std::string current_redaction = input_cutted.at(i);
-                scls::__Formula needed_formula = *scls::string_to_formula(input_cutted.at(i)).get();
-                current_redaction += std::string(" = ") + needed_formula.to_std_string(&settings);
+                std::shared_ptr<scls::Formula_Base> needed_formula = scls::string_to_algebra_element<scls::Formula_Base>(input_cutted.at(i));
+                current_redaction += std::string(" = ") + needed_formula.get()->to_std_string(&settings);
                 if(i < static_cast<int>(input_cutted.size())){current_redaction += std::string("</br></br>");}
                 redaction += current_redaction;formulas.push_back(needed_formula);
             }
@@ -500,7 +500,7 @@ namespace pleos {
         for(int i = 0;i<static_cast<int>(functions_created().size());i++) {
             std::shared_ptr<pleos::Function_Studied> needed_function = functions_created()[i];
             std::string function_name = needed_function.get()->name();
-            scls::__Formula* needed_formula = needed_function.get()->formula();
+            scls::Formula_Base* needed_formula = needed_function.get()->formula();
             std::cout << i << " " << needed_formula->to_std_string(&settings) << std::endl;
 
             // Do the redaction
@@ -978,7 +978,8 @@ namespace pleos {
 
     // Checks the events of hiding arithmetic page
     void Maths_Page::check_arithmetic_hiding() {
-        if(arithmetic_currently_selected_object() != 0) {
+        // TEMPORARY DISABLED
+        /*if(arithmetic_currently_selected_object() != 0) {
             // Set the needed values
             if(arithmetic_currently_selected_object()->choice == std::string("gcd")) {
                 // GCD
@@ -988,10 +989,10 @@ namespace pleos {
                 }
                 // Values
                 if(arithmetic_currently_selected_object()->input_1.get() != 0) {
-                    arithmetic_currently_selected_object()->value_1 = *scls::string_to_formula(arithmetic_currently_selected_object()->input_1.get()->text()).get();
+                    //arithmetic_currently_selected_object()->value_1 = *scls::string_to_formula(arithmetic_currently_selected_object()->input_1.get()->text()).get();
                 }
                 if(arithmetic_currently_selected_object()->input_2.get() != 0) {
-                    arithmetic_currently_selected_object()->value_2 = *scls::string_to_formula(arithmetic_currently_selected_object()->input_2.get()->text()).get();
+                    //arithmetic_currently_selected_object()->value_2 = *scls::string_to_formula(arithmetic_currently_selected_object()->input_2.get()->text()).get();
                 }
             }
             else if(arithmetic_currently_selected_object()->choice == std::string("decomposition")) {
@@ -1011,6 +1012,7 @@ namespace pleos {
             }
             arithmetic_calculator_elements_datas_title()->set_text(std::string("Aucun élément sélectionné"));
         }
+        //*/
     }
 
     // Check the events of functions
@@ -1043,8 +1045,8 @@ namespace pleos {
     // Checks the events of hiding functions page
     void Maths_Page::check_functions_hiding() {
         if(currently_selected_function() != 0) {
-            // Set the needed values
-            currently_selected_function()->set_formula(*scls::string_to_formula(functions_redaction_expression()->text()).get());
+            // Set the needed values TEMPORARY DISABLED
+            //currently_selected_function()->set_formula(*scls::string_to_formula(functions_redaction_expression()->text()).get());
             currently_selected_function()->set_name(functions_redaction_name()->text());
         }
     }

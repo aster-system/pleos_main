@@ -415,9 +415,9 @@ namespace pleos {
             }
 
             // Explaination
-            scls::Replica_File_Variable_Element* element = current_file.get()->variable_list(std::string("explaination_parts[]"))->new_element<scls::Replica_File_Variable_Element>();
-            element->set_variable_value(std::string("explaination_title"), std::string("Les différents brouillons"));
-            explaination_content = std::string("Voici la liste de tous les savoirs en préparation sur ") + __saasf_translate(subjects.at(i), true, false) + std::string(" sur les médias (Youtube, Tiktok, Instagram...) d'Aster Système Learn pour l'instant :&lt;ul&gt;");
+            //scls::Replica_File_Variable_Element* element = current_file.get()->variable_list(std::string("explaination_parts[]"))->new_element<scls::Replica_File_Variable_Element>();
+            //element->set_variable_value(std::string("explaination_title"), std::string("Les différents brouillons"));
+            //explaination_content = std::string("Voici la liste de tous les savoirs en préparation sur ") + __saasf_translate(subjects.at(i), true, false) + std::string(" sur les médias (Youtube, Tiktok, Instagram...) d'Aster Système Learn pour l'instant :&lt;ul&gt;");
             std::string explaination_content_school = std::string("Certains cours proposé ici parlent aussi des programmes proposés par l'éducation nationale au lycée. En général, ils sont accompagnés de commentaires, visant leur contenu. Voici les programmes décrits :&lt;ul&gt;");
             bool use_school = false;
 
@@ -428,7 +428,7 @@ namespace pleos {
                     cutted = scls::cut_string(cutted[cutted.size() - 1], "\\");
                     std::string sub_subject_name = cutted[cutted.size() - 1];
                     if(sub_subject_name != std::string("home") && sub_subject_name != std::string("school")) {
-                        std::string file_name = subjects[i] + std::string("/") + sub_subject_name + std::string(".html");
+                        /*std::string file_name = subjects[i] + std::string("/") + sub_subject_name + std::string(".html");
                         std::string file_name_complete = std::string("learn/") + file_name;
                         explaination_content += std::string("&lt;li&gt;&lt;a href=\"./") + file_name + std::string("\"&gt;") + __saasf_translate(sub_subject_name, true, true) + std::string("&lt;/a&gt;&lt;/li&gt;");
 
@@ -465,7 +465,7 @@ namespace pleos {
                             std::shared_ptr<scls::XML_Text_Base> title = file_content.get()->remove_balise_by_name("h1");
                             if(title.get() != 0){current_part->set_variable_value(std::string("explaination_title"), title.get()->text());}
                             current_part->set_variable_value(std::string("explaination_content"), scls::format_string_from_plain_text(file_content.get()->full_text()));
-                        }
+                        }//*/
                     }
                     else if(sub_subject_name == std::string("school")) {
                         use_school = true;
@@ -512,7 +512,7 @@ namespace pleos {
                     }
                 }
             }
-            element->set_variable_value(std::string("explaination_content"), explaination_content);
+            //element->set_variable_value(std::string("explaination_content"), explaination_content);
 
             if(use_school) {
                 // School part
@@ -520,7 +520,7 @@ namespace pleos {
                 element = current_file.get()->variable_list(std::string("explaination_parts[]"))->new_element<scls::Replica_File_Variable_Element>();
                 element->set_variable_value(std::string("explaination_title"), std::string("Les programmes de lycée"));
                 element->set_variable_value(std::string("explaination_content"), explaination_content_school);
-            }
+            }//*/
         }
 
         // Definitions page

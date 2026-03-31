@@ -2,8 +2,11 @@
     <content>la combinatoire est l'analyse du rangement / classement / gestion d'éléments dans un ensemble</content>
 </new_definition>
 <new_definition name="combinatorics_counting">
-    <content>le dénombrement est l'opération mathématique correspondant à la recherche du cardinal (la taille) d'un ensemble</content>
+    <content>le dénombrement est l'opération mathématique correspondant à la recherche du cardinal (la taille) d'ensembles</content>
 </new_definition>
+
+
+
 <new_definition name="combinatorics_enumerative">
     <content>la combinatoire énumérative est l'application de la combinatoire à un ensemble fini quelconque d'éléments parfaitement discernables</content>
 </new_definition>

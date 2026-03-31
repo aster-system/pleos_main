@@ -33,7 +33,6 @@
 // Include PLEOS Hub header
 #include "../headers/pleos_hub.h"
 
-#define OTL
 #ifdef OTL
 #include "../../../one_thousand_ludo/ludo.h"
 #endif // OTL
@@ -96,80 +95,10 @@ int command(int argc, char* argv[]) {
 	return 0;
 }
 
-void branch(scls::Turtle& t, double branch_width, int step, int n) {
-	if(n <= 0){return;}
-
-	constexpr double angle = 10;
-	t.rotate_degrees(angle);
-	t.go_forward(branch_width / static_cast<double>((step - n) + 2));
-	branch(t, branch_width, step, n - 1);
-	t.go_forward(-branch_width / static_cast<double>((step - n) + 2));
-	t.rotate_degrees(-angle * 2);
-	t.go_forward(branch_width / static_cast<double>((step - n) + 2));
-	branch(t, branch_width, step, n - 1);
-	t.go_forward(-branch_width / static_cast<double>((step - n) + 2));
-	t.rotate_degrees(angle);
-}
-void branch(scls::Turtle& t, double branch_width, int step){branch(t, branch_width, step, step);}
-
-void add_actions_von_koch_curve(scls::Turtle& t, double branch_width, int step, int n) {
-	constexpr double angle = -60;
-	if(n <= 0){t.add_action_move_forward(branch_width / 3);}
-	else{add_actions_von_koch_curve(t, branch_width / 3, step, n - 1);}
-	t.add_action_rotate(angle);
-
-	if(n <= 0){t.add_action_move_forward(branch_width / 3);}
-	else{add_actions_von_koch_curve(t, branch_width / 3, step, n - 1);}
-	t.add_action_rotate(-angle * 2);
-
-	if(n <= 0){t.add_action_move_forward(branch_width / 3);}
-	else{add_actions_von_koch_curve(t, branch_width / 3, step, n - 1);}
-	t.add_action_rotate(angle);
-
-	if(n <= 0){t.add_action_move_forward(branch_width / 3);}
-	else{add_actions_von_koch_curve(t, branch_width / 3, step, n - 1);}
-}
-void add_actions_von_koch_curve(scls::Turtle& t, double branch_width, int step){add_actions_von_koch_curve(t, branch_width, step, step);}
-void von_koch_curve(scls::Turtle& t, double branch_width, int step, int n) {
-	constexpr double angle = -60;
-	if(n <= 0){t.go_forward(branch_width / 3);}
-	else{von_koch_curve(t, branch_width / 3, step, n - 1);}
-	t.rotate_degrees(angle);
-
-	if(n <= 0){t.go_forward(branch_width / 3);}
-	else{von_koch_curve(t, branch_width / 3, step, n - 1);}
-	t.rotate_degrees(-angle * 2);
-
-	if(n <= 0){t.go_forward(branch_width / 3);}
-	else{von_koch_curve(t, branch_width / 3, step, n - 1);}
-	t.rotate_degrees(angle);
-
-	if(n <= 0){t.go_forward(branch_width / 3);}
-	else{von_koch_curve(t, branch_width / 3, step, n - 1);}
-}
-void von_koch_curve(scls::Turtle& t, double branch_width, int step){von_koch_curve(t, branch_width, step, step);}
-
-void add_actions_von_koch_snowflake(scls::Turtle& t, double branch_width, int step) {
-	constexpr double angle = 120;
-	add_actions_von_koch_curve(t, branch_width, step);
-	t.add_action_rotate(angle);
-	add_actions_von_koch_curve(t, branch_width, step);
-	t.add_action_rotate(angle);
-	add_actions_von_koch_curve(t, branch_width, step);
-	t.add_action_rotate(angle);
-}
-void von_koch_snowflake(scls::Turtle& t, double branch_width, int step) {
-	constexpr double angle = 120;
-	von_koch_curve(t, branch_width, step);
-	t.rotate_degrees(angle);
-	von_koch_curve(t, branch_width, step);
-	t.rotate_degrees(angle);
-	von_koch_curve(t, branch_width, step);
-	t.rotate_degrees(angle);
-}
-
 int main(int argc, char* argv[]) {
-	//return pleos::execute("graphic", "tests/solve.png", std::vector<std::string>(1, std::string("<graphic><background_color white><base width=5 height=5><function expression=\"x/3\"><curve_area number=5 area_end=2></function></graphic>")));
+	//retuideo
+    //int image_width = 1000;
+    //scls::Plrn pleos::execute("graphic", "tests/solve.png", std::vector<std::string>(1, std::string("<graphic><background_color white><base width=5 height=5><function expression=\"x/3\"><curve_area number=5 area_end=2></function></graphic>")));
 	//return command(argc, argv);
 
 	pleos::Pleos_Window window(900, 600, argv[0]);
@@ -184,39 +113,13 @@ int main(int argc, char* argv[]) {
         window.render();
     }//*/
 
-    /*std::shared_ptr<scls::Formula_Base> f = scls::string_to_algebra_element<scls::Formula_Base>(std::string("1/(x+1)"));
+    /*std::shared_ptr<scls::Formula_Base> f = scls::string_to_algebra_element<scls::Formula_Base>(std::string("(exp(x)-1)/x"));
     while(f.get()->simplify_step() != scls::Formula_Base::NO_SIMPLIFICATION){}
-    scls::mclaurin(f.get(), std::string("x"), 14);
+    //scls::mclaurin(f.get(), std::string("x"), 5);
 
-	// Video
-    int image_width = 1000;
-    scls::Plane_Base b = scls::Plane_Base(image_width / 20, image_width / 20, image_width / 2, image_width / 2);
-    scls::Video_Encoder enc = scls::Video_Encoder("tests/t.mp4", 10, image_width, image_width);
-     std::shared_ptr<scls::Formula_Base> f_current;
-    for(int i = 0;i<20;i++) {
-        if(i + 1 < 11) f_current = scls::mclaurin(f.get(), std::string("x"), i + 1);
-        while(f_current.get()->simplify_step() != scls::Formula_Base::NO_SIMPLIFICATION){}
-
-        // Draw the base
-        scls::Image img = scls::Image(image_width, image_width, scls::Color(255, 255, 255));
-        scls::draw_grid(img, &b);
-        scls::Point_2D last_point = scls::Point_2D(-1, 0);
-        for(int j = 0;j<img.width();j++){
-            scls::Point_2D current_point = scls::Point_2D(j, img.height() - b.base_y_to_canonical_y(f.get()->replace_unknowns("x", b.canonical_x_to_base_x(j)).get()->value<scls::Fraction>()->to_double()));
-            img.draw_line(last_point.x(), last_point.y(), current_point.x(), current_point.y(), scls::Color(255, 0, 0), 5);
-            last_point = current_point;
-        }
-        last_point = scls::Point_2D(-1, 0);
-        for(int j = 0;j<img.width();j++){
-            scls::Point_2D current_point = scls::Point_2D(j, img.height() - b.base_y_to_canonical_y(f_current.get()->replace_unknowns("x", b.canonical_x_to_base_x(j)).get()->value<scls::Fraction>()->to_double()));
-            img.draw_line(last_point.x(), last_point.y(), current_point.x(), current_point.y(), scls::Color(0, 0, 255), 5);
-            last_point = current_point;
-        }
-
-        for(int j = 0;j<30;j++) {
-            enc.write_video_frame(img);
-            enc.go_to_next_frame();
-        }
-    }
-    enc.close_encoding();//*/
+	// Vane_Base b = scls::Plane_Base(image_width / 20, image_width / 20, image_width / 2, image_width / 2);
+    scls::Image img = scls::Image(image_width, image_width, scls::Color(255, 255, 255));
+    scls::draw_grid(img, &b);
+    scls::draw_function_graph(img, f.get(), &b);
+    img.save_png("tests/g.png");//*/
 }

@@ -440,6 +440,60 @@ Voici un exemple d'inéquation :
 
 
 
+<h2>Le lien ensembles / nombres entiers</h2>
+
+<h3>Le dénombrement et la combinatoire</h3>
+<p>
+En mathématiques, le dénombrement et la combinatoire sont toutes les deux des sous-domaines de la théorie des ensembles.
+Déjà, <span class="important"><definition name="combinatorics_counting"></span>.
+Bien que cette définition semble assez simple, elle cache quelques résultats qui peuvent sembler un peu complexe.
+De manière similaire, <span class="important"><definition name="combinatorics"></span>.
+Il s'agit d'une façon avancé d'étudier des ensembles.
+Bien évidemment, <span class="important">ces deux domaines utilisent énormément l'arithmétique des entiers naturels pour obtenir leurs résultats</span>.
+</p>
+<math>Card({A, B, C, D, E}) = 5</math>
+<p>
+Déjà, revenons brièvement sur la définition du cardinal d'un ensemble fini en mathématiques.
+Pour rappel, <span class="important"><definition name="cardinal-set_finite"></span>.
+La vraie question ici : comment rigoureusement présenter cette définition ?
+Comme nous l'avons vue, nous devons nous appuyer sur les axiomes de la théorie pour faire cela, et nous n'avons pas encore proposé de méthodes assez rigoureuse pour le faire proprement.
+Pour définir axiomatiquement le cardinal d'un ensemble, nous allons utiliser la définition axiomatique des nombres entiers naturels.
+Pour rappel, <span class="important">nous avons défini un nombre entier naturel comme un ensemble contenant tous les nombres entiers naturels plus petit</span>.
+En fait, <span class="important"><definition name="cardinal-set_finite_rigorous"></span>.
+Par exemple, pour notre ensemble "{A, B, C, D, E}", on peut définir facilement une bijection entre cet ensemble et "5".
+Cette définition assez intuitive nous sera très utile dans la suite.
+</p>
+<graphic>
+<background_color white>
+<base draw=0>
+
+<circle x=-2 y=0 radius_x=3/2 radius_y=4>
+<text x=-2 y=2 content="A"></text>
+<text x=-2 y=1 content="B"></text>
+<text x=-2 y=0 content="C"></text>
+<text x=-2 y=-1 content="D"></text>
+<text x=-2 y=-2 content="E"></text>
+
+<circle x=2 y=0 radius_x=3/2 radius_y=4>
+<text x=2 y=2 content="0"></text>
+<text x=2 y=1 content="1"></text>
+<text x=2 y=0 content="2"></text>
+<text x=2 y=-1 content="3"></text>
+<text x=2 y=-2 content="4"></text>
+
+<line x_1=-3/2 y_1=2 x_2=3/2 y_2=2 color=black>
+<line x_1=-3/2 y_1=1 x_2=3/2 y_2=1 color=black>
+<line x_1=-3/2 y_1=0 x_2=3/2 y_2=0 color=black>
+<line x_1=-3/2 y_1=-1 x_2=3/2 y_2=-1 color=black>
+<line x_1=-3/2 y_1=-2 x_2=3/2 y_2=-2 color=black>
+</graphic>
+<p>
+On peut le formaliser rigoureusement comme ceci :
+</p>
+<math><mforall> E, <mforall> n <min> N, Card(E) = n <mequi> {<mexists> f : E <mto> n, <mforall> a <min> n, <mexists>! b <min> E, f(b) = a}</math>
+
+
+
 
 
 

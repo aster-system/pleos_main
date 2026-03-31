@@ -11,6 +11,7 @@
 
 <new_definition name="analysis_continuity">
     <content>la continuité mathématique représente un concept suggérant la possibilité de se rapprocher indéfiniment d'une valeur dans un espace, quelque soit la façon dont vous faites</content>
+    <content name="extension">une extension par continuité d'une fonction "f" définie sur un ensemble "D" et pas définie sur un point "a" (hors de "D") est une nouvelle fonction déduite de "f" où le point "a" est défini, et permet à la fonction d'être continue sur l'ensemble "D" auquel on ajoute "a"</content>
     <content name="function_real">une fonction réelle est continue en une valeur "a" si "a" appartient à son domaine de définition et si la valeur de sa limite à droite en "a" est égale à la valeur de sa limite à gauche en "a", et que cette limite est finie</content>
     <content name="function_real_set">une fonction réelle est continue sur un ensemble "I" si "f" est continu pour toutes les valeurs de cet ensemble</content>
 </new_definition>

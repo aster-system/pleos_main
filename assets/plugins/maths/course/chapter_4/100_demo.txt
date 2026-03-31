@@ -4,8 +4,25 @@
 
 <h2>Les anneaux et les corps</h2>
 
-<h3 id="polynomial">Les polynômes</h3>
+<h3 id="ring">Les anneaux</h3>
 <h4>4.0.0.0</h4>
+<p>
+Démontrons que, dans l'anneau "(Z, +, .)", tout sous-ensemble "nZ" (avec "n" un nombre entier naturel) de "Z" forme un sous-anneau de "(Z, +, .)".
+Déjà, nous avons démontré à plusieurs reprises que "nZ" est inclut dans "Z".
+</p>
+<math><mforall> a, <mforall> n <min> N, a <min> nZ <mimp> a <min> Z</math>
+<p>
+De plus, nous avons déjà démontré que le groupe "(nZ, +)" est un sous-groupe de "(Z, +)" : il est stable par l'addition.
+Finalement, la stabilité par la multiplication est aussi assez simple à prouver.
+</p>
+<math><mforall> a, b <min> nZ, <mexists> c, d <min> Z, a = n * c, b = n * d</math></br>
+<math>a * b = (n * c) * (n * d) = n * (c * n * d) = n * e, e = (c * n * d)</math>
+<p>
+Donc, l'anneau "(nZ, +, .)" est un sous-anneau de "(Z, +, .)"
+</p>
+
+<h3 id="polynomial">Les polynômes</h3>
+<h4>4.0.1.0</h4>
 <p>
 Démontrons que dire qu'un polynôme "P(X)" admet une racine "r" équivaut à dire que ce polynôme est divisible par "X - r".
 Procédons par double implication.
