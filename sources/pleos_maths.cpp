@@ -282,7 +282,7 @@ namespace pleos {
             first_input.get()->set_width_in_scale(scls::Fraction(1, 6));
             first_input.get()->set_x_in_object_scale(scls::Fraction(2, 5));
             first_input.get()->set_y_in_object_scale(scls::Fraction(3, 4));
-            first_input.get()->set_text(arithmetic_object.get()->value_1.to_std_string(&settings));
+            //first_input.get()->set_text(arithmetic_object.get()->value_1.to_std_string(&settings));
             arithmetic_object.get()->input_1 = first_input;
             arithmetic_created_object_for_selected_object().push_back(first_input);
 
@@ -303,7 +303,7 @@ namespace pleos {
             second_input.get()->set_width_in_scale(scls::Fraction(1, 6));
             second_input.get()->set_x_in_object_scale(scls::Fraction(4, 5));
             second_input.get()->set_y_in_object_scale(scls::Fraction(3, 4));
-            second_input.get()->set_text(arithmetic_object.get()->value_2.to_std_string(&settings));
+            //second_input.get()->set_text(arithmetic_object.get()->value_2.to_std_string(&settings));
             arithmetic_object.get()->input_2 = second_input;
             arithmetic_created_object_for_selected_object().push_back(second_input);
 
@@ -338,7 +338,7 @@ namespace pleos {
             first_input.get()->set_width_in_scale(scls::Fraction(1, 6));
             first_input.get()->set_x_in_object_scale(scls::Fraction(2, 5));
             first_input.get()->set_y_in_object_scale(scls::Fraction(3, 4));
-            first_input.get()->set_text(arithmetic_object.get()->value_1.to_std_string(&settings));
+            //first_input.get()->set_text(arithmetic_object.get()->value_1.to_std_string(&settings));
             arithmetic_object.get()->input_1 = first_input;
             arithmetic_created_object_for_selected_object().push_back(first_input);
         }
@@ -912,8 +912,8 @@ namespace pleos {
             scls::Textual_Math_Settings settings;
             geometry_redaction_form()->set_visible(false);geometry_redaction_vector()->set_visible(true);
             geometry_redaction_vector_name()->set_text(needed_vector.get()->name());
-            geometry_redaction_vector_x()->set_text(needed_vector.get()->x_formula().to_std_string(&settings));
-            geometry_redaction_vector_y()->set_text(needed_vector.get()->y_formula().to_std_string(&settings));
+            geometry_redaction_vector_x()->set_text(scls::Fraction(needed_vector.get()->x()).to_std_string(&settings));
+            geometry_redaction_vector_y()->set_text(scls::Fraction(needed_vector.get()->y()).to_std_string(&settings));
         }
         else {geometry_redaction_form()->set_visible(false);geometry_redaction_vector()->set_visible(false);}
     }

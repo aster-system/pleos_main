@@ -33,6 +33,7 @@
 // Include PLEOS Hub header
 #include "../headers/pleos_hub.h"
 
+#define OTL
 #ifdef OTL
 #include "../../../one_thousand_ludo/ludo.h"
 #endif // OTL
@@ -96,9 +97,6 @@ int command(int argc, char* argv[]) {
 }
 
 int main(int argc, char* argv[]) {
-	//retuideo
-    //int image_width = 1000;
-    //scls::Plrn pleos::execute("graphic", "tests/solve.png", std::vector<std::string>(1, std::string("<graphic><background_color white><base width=5 height=5><function expression=\"x/3\"><curve_area number=5 area_end=2></function></graphic>")));
 	//return command(argc, argv);
 
 	pleos::Pleos_Window window(900, 600, argv[0]);
@@ -113,13 +111,51 @@ int main(int argc, char* argv[]) {
         window.render();
     }//*/
 
-    /*std::shared_ptr<scls::Formula_Base> f = scls::string_to_algebra_element<scls::Formula_Base>(std::string("(exp(x)-1)/x"));
-    while(f.get()->simplify_step() != scls::Formula_Base::NO_SIMPLIFICATION){}
-    //scls::mclaurin(f.get(), std::string("x"), 5);
+    /*scls::Matrix a = scls::Matrix(2);
+	scls::Matrix b = scls::Matrix(2);
+	a.set_element_at(0, std::make_shared<scls::Formula_Base>(scls::Fraction::from_double(100)));
+    a.set_element_at(1, std::make_shared<scls::Formula_Base>(scls::Fraction::from_double(0)));
+    b.set_element_at(0, std::make_shared<scls::Formula_Base>(scls::Fraction::from_double(0)));
+    b.set_element_at(1, std::make_shared<scls::Formula_Base>(scls::Fraction::from_double(100)));
 
-	// Vane_Base b = scls::Plane_Base(image_width / 20, image_width / 20, image_width / 2, image_width / 2);
-    scls::Image img = scls::Image(image_width, image_width, scls::Color(255, 255, 255));
-    scls::draw_grid(img, &b);
-    scls::draw_function_graph(img, f.get(), &b);
-    img.save_png("tests/g.png");//*/
+    int duration = 8;
+    scls::Video_Encoder enc = scls::Video_Encoder(std::string("./tests/t.mp4"), duration, 1000, 1000);
+    for(int i = 0;i<duration*60;i++) {
+        double s = static_cast<double>(i) / 60.0;
+        if(s < 2) {
+            a.set_element_at(0, std::make_shared<scls::Formula_Base>(scls::Fraction::from_double(100 + s * 50.0)));
+            a.set_element_at(1, std::make_shared<scls::Formula_Base>(scls::Fraction::from_double(0)));
+            b.set_element_at(0, std::make_shared<scls::Formula_Base>(scls::Fraction::from_double(s * 50.0)));
+            b.set_element_at(1, std::make_shared<scls::Formula_Base>(scls::Fraction::from_double(100 + s * 17.0)));
+        }
+        else if(s < 4) {
+            s -= 2;
+            a.set_element_at(0, std::make_shared<scls::Formula_Base>(scls::Fraction::from_double(200 - s * 25.0)));
+            //a.set_element_at(1, std::make_shared<scls::Formula_Base>(scls::Fraction::from_double(s * 25.0)));
+            b.set_element_at(0, std::make_shared<scls::Formula_Base>(scls::Fraction::from_double(100.0 - s * 25.0)));
+            b.set_element_at(1, std::make_shared<scls::Formula_Base>(scls::Fraction::from_double(133 - s * 33.0)));
+        }
+        else if(s < 6) {
+            s -= 4;
+            a.set_element_at(0, std::make_shared<scls::Formula_Base>(scls::Fraction::from_double(150 - s * 25.0)));
+            //a.set_element_at(1, std::make_shared<scls::Formula_Base>(scls::Fraction::from_double(s * 25.0)));
+            b.set_element_at(0, std::make_shared<scls::Formula_Base>(scls::Fraction::from_double(50.0 - s * 25.0)));
+            b.set_element_at(1, std::make_shared<scls::Formula_Base>(scls::Fraction::from_double(66 + s * 17.0)));
+        }
+        else{
+            a.set_element_at(0, std::make_shared<scls::Formula_Base>(scls::Fraction::from_double(100)));
+            a.set_element_at(1, std::make_shared<scls::Formula_Base>(scls::Fraction::from_double(0)));
+            b.set_element_at(0, std::make_shared<scls::Formula_Base>(scls::Fraction::from_double(0)));
+            b.set_element_at(1, std::make_shared<scls::Formula_Base>(scls::Fraction::from_double(100)));
+        }
+
+        scls::Image img = scls::Image(1000, 1000, scls::Color(255, 255, 255));
+        scls::draw_grid(img, &a, &b);
+
+        enc.write_video_frame(img);
+        enc.go_to_next_frame();
+    }
+    enc.close_encoding();//*/
+
+    return 0;
 }

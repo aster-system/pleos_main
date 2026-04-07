@@ -1,0 +1,45 @@
+<h1>Chapitre 5 - démonstrations</h1>
+
+
+
+<h2>Le calcul différentiel</h2>
+
+<h3 id="differential_arithmetic">L'arithmétique des dérivées</h3>
+<h4>5.0.0.0</h4>
+<p>
+Démontrons que l'addition de deux fonctions admet comme dérivée en un point la somme / différence des dérivées en ce point des fonctions de départ.
+Soit deux fonctions réels "f" et "g", dérivables en un point "a" :
+</p>
+<math>f : R <mto> R, x <mto> f(x)</math></br>
+<math>g : R <mto> R, x <mto> g(x)</math>
+<p>
+Admettons une fonction "s" comme étant la somme de "f" et "g".
+</p>
+<math>s : R <mto> R, x <mto> s(x) = f(x) + g(x)</math></br>
+<p>
+Déjà, nous savons que "f" et "g" sont dérivables, et donc continues en "a" : "s" est donc continue en "a" selon le théorème <a href="demo#3_1_4_0">3.1.4.0</a>.
+Calculons sa dérivée en "a" :
+</p>
+<math>s'(x) = <mlim unknown=h value=0> <mfrac><mi>s(x + h) - s(x)</mi><mi>h</mi></mfrac> = <mlim unknown=h value=0> <mfrac><mi>f(x + h) + g(x + h) - f(x) - g(x)</mi><mi>h</mi></mfrac> = <mlim unknown=h value=0> <mfrac><mi>f(x + h) - f(x)</mi><mi>h</mi></mfrac> + <mfrac><mi>g(h + x) - g(x)</mi><mi>h</mi></mfrac></math>
+<p>
+Or, nous reconnaissons parfaitement la dérivée de "h" en "a" comme étant la somme de la dérivée de "f" en "a" et de "g" en "a".
+Donc, cette dérivée existe bien, et vaut la dérivée de "f" en "a" plus la dérivée de "g" en "a".
+</p>
+<h4>5.0.0.1</h4>
+<p>
+Démontrons que le produit de deux fonctions admet comme dérivée la somme du produit de "f'" et "g" et du produit de "f" et "g'".
+Soit deux fonctions réels "f" et "g", dérivables en un point "a" :
+</p>
+<math>f : R <mto> R, x <mto> f(x)</math></br>
+<math>g : R <mto> R, x <mto> g(x)</math>
+<p>
+Admettons une fonction "s" comme étant la somme de "f" et "g".
+</p>
+<math>s : R <mto> R, x <mto> s(x) = f(x) * g(x)</math></br>
+<p>
+Déjà, nous savons que "f" et "g" sont dérivables, et donc continues en "a" : "s" est donc continue en "a" selon le théorème <a href="demo#3_1_4_1">3.1.4.1</a>.
+Calculons sa dérivée en "a" :
+</p>
+<math>s'(x) = <mlim unknown=h value=0> <mfrac><mi>s(x + h) - s(x)</mi><mi>h</mi></mfrac> = <mlim unknown=h value=0> <mfrac><mi>f(x + h) * g(x + h) - f(x) * g(x)</mi><mi>h</mi></mfrac></math></br>
+<math>= <mlim unknown=h value=0> <mfrac><mi>f(x + h) * g(x + h)</mi><mi>h</mi></mfrac> - <mfrac><mi>f(x) * g(x)</mi><mi>h</mi></mfrac></math>
+A COMPLETER

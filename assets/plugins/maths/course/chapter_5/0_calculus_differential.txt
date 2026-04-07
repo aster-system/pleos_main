@@ -67,7 +67,50 @@ Donc, <span class="important">l'expression de la fonction dérivée de "3 * x²"
 </p>
 <graphic><background_color white><function expression=3*x*x></function><function expression=6*x></function></graphic>
 <p>
-De manière similaire, on peut démontrer un résultat assez intéressant : <span class="important">toute fonction définie via un monôme de la forme "a * x ^ b" avec "a" un réel différent de "0" et "b" un entier naturel admettent pour dérivée "a * b * x ^ (b - 1)"</span>.
-La démonstration est assez simple : considérons cette fonction "a * x ^ b" et trouvons sa dérivée.
+De manière similaire, on peut démontrer un résultat assez intéressant : <span class="important">toute fonction définie via un monôme de la forme "a * x ^ b" avec "a" un réel différent de "0" et "b" un entier naturel différent de 0 admettent pour dérivée "a * b * x ^ (b - 1)"</span>.
+La démonstration est un peu technique : considérons cette fonction "a * x ^ b" et trouvons sa dérivée.
+Pour cela, nous aurons besoin d'utiliser des propriétés algébriques précises, comme le binôme de Newton :
 </p>
 <math><mforall> x, f'(x) = <mlim unknown=h value=0><mfrac><mi>f(h + x) - f(x)</mi><mi>h</mi></mfrac> = <mlim unknown=h value=0><mfrac><mi>a * (h + x) ^ b - a * x ^ b</mi><mi>h</mi></mfrac></math>
+<math>= <mlim unknown=h value=0><mfrac><mi>a * (<msum from=0 to=b><mcoeff top=b bottom=k><mi>h</mi><msup>k</msup><mi>x</mi><msup>b - k</msup>) - a * x ^ b</mi><mi>h</mi></mfrac></math>
+<p>
+Ici, les seules valeurs qui ne tendront pas vers 0 sont les monômes du développement contenant un seul "h" (ou"h exposant 1") à la fin, et ceux n'en contenons pas du tout.
+Déjà, la seule partie que ne contient pas de "h" est la partie où "k = 0", et donc où la partie du développement vaut "a * x ^ b" : cette partie va se faire annuler par la soustraction à droite du développement.
+En suite, la partie du développement contenant un seul "h" n'arrivera que quand "k" sera égal à "1".
+Appelons toutes les autres parties du polynôme (avec plusieurs "h", ou "h exposant n" avec "n" strictement supérieur à 1) "p".
+</p>
+<math>= <mlim unknown=h value=0><mfrac><mi>a * (p + b * h * <mi>x</mi><msup>b - 1<msup>) - a * x ^ b</mi><mi>h</mi></mfrac> = <mlim unknown=h value=0><mfrac><mi>a * p + a * b * h * <mi>x</mi><msup>b - 1<msup> - a * x ^ b</mi><mi>h</mi></mfrac></math>
+<math>= a * b * <mi>x</mi><msup>b - 1<msup></math>
+<p>
+Donc, toute fonction définie via un monôme de la forme "a * x ^ b" avec "a" un réel différent de "0" et "b" un entier naturel différent de 0 admettent pour dérivée "a * b * x ^ (b - 1)".
+</p>
+
+<h3>L'arithmétique des dérivées</h3>
+<p>
+Comme pour les limites et la continuité, il existe une forme d'arithmétique sur les formes dérivées.
+</p>
+<p>
+Commençons par l'addition.
+En effet, <span class="important">la somme / différence de deux fonctions admet comme dérivée la somme / différence des dérivées des fonctions de départ</span>.
+La démonstration est assez simple, et est présente <a href="#5_0_0_0">juste ici</a>.
+Comme pour la continuité, ce théorème peut s'étendre à tout un intervalle, voir à tout un ensemble de définition.
+</p>
+<p>
+On peut en déduire directement la dérivée d'une fonction polynomiale (puisque l'on à calculer la dérivée d'un monôme plus haut).
+Pour des raisons de rigueurs, nous nommerons les fonctions représentant chaque monôme de degré "k" avec la lettre "g".
+</p>
+<math><mtilde content="P">(x) = <msum from=0 to=n><mi>a</mi><msub>k</msub><mi>x</mi><msub>k</msub> = <msum from=0 to=n><mi>g</mi><msub>k</msub>(x)</math></br>
+<math><mtilde content="P">'(x) = <msum from=0 to=n><mi>g'</mi><msub>k</msub>(x)</math>
+<p>
+Avec un exemple :
+</p>
+<math><mtilde content="P">(x) = 3 * x² + 2 * x - 1</math></br>
+<math><mtilde content="P">'(x) = (2 * 3 * x) + (2 * x) = 6 * x + 2</math>
+<p>
+Généralement, le polynôme associé à la fonction dérivée de la fonction polynomiale d'un polynôme "P" est nommé "polynôme dérivé de P".
+</p>
+<p>
+Continuons avec la multiplication, qui a un fonctionnement... assez bizarre.
+En effet, <span class="important">le produit de deux fonctions admet comme dérivée la somme du produit de "f'" et "g" et du produit de "f" et "g'"</span>.
+Ce résultat est bizarre, mais s'obtient assez facilement avec une démonstration précise (présente <a href="#5_0_0_1">juste ici</a>.).
+</p>

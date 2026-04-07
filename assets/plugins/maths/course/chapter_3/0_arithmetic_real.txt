@@ -238,6 +238,25 @@ D'un point de vue graphique, il s'agit d'une droite non-verticale quelconque.
 <p>
 Peut être que certains attendaient cette branche des mathématiques, et nous allons enfin en parler : la géométrie.
 <span class="important"><definition name="geometry"></span>.
+Il s'agit de l'une des plus vieilles branches mathématiques, car il s'agit de la plus simple à représenter dans la vraie vie.
+C'est pour cela qu'il est très difficile de dater les premières utilisations de la géométrie par l'homme.
+Cependant, <span class="important">pour leurs travaux, toutes les civilisations anciennes utilisaient des formes plus ou moins avancées de géométrie</span>.
+Un exemple extrêmement connu : la pyramide de Kheops, construite à Gizeh, en Égypte, en -2500 avant J.C.
+Cette pyramide fait 140 mètres de haut, et est restée la plus grande construction humaine pendant environ 3800 ans (avant d'être dépassée par la cathédrale anglicane de Lincoln en 1311).
+Pour construire une pyramide comme ça, les architectes ont utilisés beaucoup de géométrie (très primitive, mais de la géométrie quand même).
+</p>
+<p>
+<span class="important">Les premiers à avoir fait une formalisation de la géométrie assez stable pour être toujours utilisée aujourd'hui sont les grecs</span>.
+L'exemple le plus connu est <scientist name="pythagoras" type="quote">, avec son fameux théorème.
+Cependant, il n'est pas celui qui a posé les premiers "axiomes" de géométrie : celui qui a fait ça est <scientist name="euclid" type="quote">.
+En effet, <span class="important">Euclide a énuméré 5 axiomes de géométrie, formant ce que l'on appelle la géométrie euclidienne, qui sont tellement efficaces qu'ils ont perduré dans l'histoire jusqu'au XIXème siècle</span>.
+Ces axiomes (et certains résultats déduits de ces axiomes) sont présentés dans son traité "Les Éléments", un des documents les plus imprimés de l'histoire.
+</p>
+<p>
+Cette géométrie se base sur un principe simple : <span class="important">seul la réalisation (dans la vraie vie) des résultats est importante</span>.
+D'ailleurs, <span class="important">certains concepts étaient considérés comme "trop triviaux" / "trop simple / direct à obtenir" pour nécessiter une définition / démonstration précise</span>.
+C'est le cas du concept de longueur (obtensible avec une règle), ou du concept d'angle (obtensible avec un rapporteur).
+Aussi rigoureuse qu'était cette géométrie, elle ne l'était pas assez pour le XIXème siècle, et l'arrivée de la logique avancée en mathématique.
 </p>
 <p>
 Déjà, <span class="important">nous pouvons définir le produit cartésien de "R" et lui même, noté "R²", qui représente tous les couples de réels possibles</span>.
