@@ -1,5 +1,6 @@
 <new_definition name="geometry">
     <content>la géométrie est historiquement la discipline mathématique qui étudie les possibilités sur des plans 2D (sur papier) et 3D (dans l'espace / la vraie vie)</content>
+    <content name="analytic">la géométrie analytique est une façon précise d'étudier la géométrie, en utilisant le concept de coordonnées</content>
 </new_definition>
 
 <new_definition name="al_kashi_theorem">

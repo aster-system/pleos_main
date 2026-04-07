@@ -234,7 +234,11 @@ D'un point de vue graphique, il s'agit d'une droite non-verticale quelconque.
 </p>
 <math>f : R <mto> R, x <mto> f(x) = <mfrac><mi>1</mi><mi>3</mi></mfrac> * x + 2</math>
 
-<h3>Le lien nombres réels - géométrie</h3>
+
+
+<h2>La géométrie</h2>
+
+<h3>Qu'est ce qu'est la géométrie ?</h3>
 <p>
 Peut être que certains attendaient cette branche des mathématiques, et nous allons enfin en parler : la géométrie.
 <span class="important"><definition name="geometry"></span>.
@@ -253,11 +257,26 @@ En effet, <span class="important">Euclide a énuméré 5 axiomes de géométrie,
 Ces axiomes (et certains résultats déduits de ces axiomes) sont présentés dans son traité "Les Éléments", un des documents les plus imprimés de l'histoire.
 </p>
 <p>
-Cette géométrie se base sur un principe simple : <span class="important">seul la réalisation (dans la vraie vie) des résultats est importante</span>.
+Cette géométrie euclidienne se base sur un principe simple : <span class="important">seul la réalisation (dans la vraie vie) des résultats est importante</span>.
+En d'autres termes : si vous pouvez tracer quelque chose, alors cette chose existe.
 D'ailleurs, <span class="important">certains concepts étaient considérés comme "trop triviaux" / "trop simple / direct à obtenir" pour nécessiter une définition / démonstration précise</span>.
 C'est le cas du concept de longueur (obtensible avec une règle), ou du concept d'angle (obtensible avec un rapporteur).
-Aussi rigoureuse qu'était cette géométrie, elle ne l'était pas assez pour le XIXème siècle, et l'arrivée de la logique avancée en mathématique.
 </p>
+<p>
+Dés le XVIIème siècle, les découvertes en analyse / algèbre mathématiques ont donné un nouveau moyen d'approche des mathématiques aux mathématiciens.
+La géométrie n'échappe pas à cette règle, et va elle aussi évoluer pour, et faire émerger une nouvelle branche de la géométrie : la géométrie analytique.
+<span class="important"><definition name="geometry-analytic"></span>.
+Dans l'histoire, son principal contributeur est <scientist name=descartes type=quote>, au début du XVIIème siècle.
+Bien évidemment, ce concept peut parfaitement se coupler avec la géométrie classique.
+</p>
+<p>
+Aussi rigoureuse qu'était cette géométrie, elle ne l'était pas assez pour le XIXème siècle, et l'arrivée de la logique avancée en mathématique.
+En effet, dés ce siècle, les mathématiciens ont mis leurs efforts à une formalisation rigoureuse de toutes les mathématiques, géométrie incluse.
+
+</p>
+
+<h3>Le lien nombres réels - géométrie</h3>
+
 <p>
 Déjà, <span class="important">nous pouvons définir le produit cartésien de "R" et lui même, noté "R²", qui représente tous les couples de réels possibles</span>.
 Ici, une question se pose : comment ce concept pourra nous être utile en géométrie ?
@@ -267,7 +286,7 @@ En suite, on va chercher à placer une "croix" sur une partie de ces droites, si
 Finalement, on va considérer que, pour chaque point que l'on peut tracer dans notre plan, on peut obtenir le point le plus proche de la droite horizontale et de la droite verticale, qui se situe à une distance de la coupure des deux droites représentant un certain nombre de fois la taille entre la croix que nous venons de poser et la coupure des deux droites.
 En fait, <span class="important">le calcul de ces deux distances représente le calcul de deux nombres réels, et donc un couple de nombres réels, et donc un élément de "R²"</span>.
 À l'inverse, <span class="important">tout couple "(x, y)" de nombre réel peut être placé sur notre plan, en se situant sur la droite horizontale à "x" fois la distance entre notre croix horizontale et la coupure des droites de cette coupure des droites, puis en montant (ou descendant, si "y" est négatif) de "y" fois la distance entre notre croix verticale et la coupure des droites de cette coupure des droites</span>.
-C'est comme ça que fonctionne la géométrie basique.
+C'est comme ça que fonctionne la géométrie analytique basique.
 </p>
 
 <graphic><background_color white><circle radius=1/3 x=1 y=3><circle radius=1/3 x=-3 y=-2></graphic>
@@ -321,6 +340,19 @@ Avec ça, nous pouvons définir un autre concept primordial en géométrie : les
 <span class="important"><definition name="polygon"></span>.
 Généralement, les segments formant le polygone sont nommés les côtés du polygône.
 C'est ce concept qui permet de définir des termes biens connus : triangles (3 côtés), rectangle (4 côtés)...
+</p>
+
+<h3>La trigonométrie</h3>
+
+<p>
+Comme nous le verrons plus tard, le polygône le plus simple à définir (et utiliser) est le triangle.
+De plus, il permet de donner naissance à une branche très spécifique de la géométrie : la trigonométrie.
+<span class="important"><definition name="trigonometry"></span>.
+Pour étudier précisément le triangle, nous allons devoir faire fi de la rigueur, et faire comme les grecs anciens : avec le traçage pure.
+</p>
+<p>
+Déjà, il faut savoir que l'on peut très facilement catégoriser les différents types de triangles.
+
 </p>
 
 <h3>Les graphes de fonctions</h3>
