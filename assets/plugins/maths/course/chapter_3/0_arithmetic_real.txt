@@ -257,10 +257,16 @@ En effet, <span class="important">Euclide a énuméré 5 axiomes de géométrie,
 Ces axiomes (et certains résultats déduits de ces axiomes) sont présentés dans son traité "Les Éléments", un des documents les plus imprimés de l'histoire.
 </p>
 <p>
-Cette géométrie euclidienne se base sur un principe simple : <span class="important">seul la réalisation (dans la vraie vie) des résultats est importante</span>.
+Cette géométrie euclidienne se base sur un principe simple : <span class="important">seul la réalisation (dans la vraie vie) et la construction des résultats est importante</span>.
 En d'autres termes : si vous pouvez tracer quelque chose, alors cette chose existe.
 D'ailleurs, <span class="important">certains concepts étaient considérés comme "trop triviaux" / "trop simple / direct à obtenir" pour nécessiter une définition / démonstration précise</span>.
-C'est le cas du concept de longueur (obtensible avec une règle), ou du concept d'angle (obtensible avec un rapporteur).
+C'est le cas du concept de longueur, ou du concept d'angle.
+Pour faire cela, les géomètres disposés d'outils très précis, qui représentés explicitement la façon dont ils s'autorisaient d'utiliser de la géométrie.
+Déjà, <span class="important">l'outil permettant de mesurer (et de tracer) des longueurs est la règle graduée</span>.
+De plus, <span class="important">l'outil permettant de mesurer des angle est le rapporteur</span>.
+En suite, <span class="important">l'outil permettant de tracer un cercle est le compas</span>.
+En mélangeant ce que nous pouvons faire avec ces outils, nous obtenons des concepts de plus en plus complexes.
+Ces outils représentent le coeur des mathématiques de l'époque.
 </p>
 <p>
 Dés le XVIIème siècle, les découvertes en analyse / algèbre mathématiques ont donné un nouveau moyen d'approche des mathématiques aux mathématiciens.
@@ -272,10 +278,9 @@ Bien évidemment, ce concept peut parfaitement se coupler avec la géométrie cl
 <p>
 Aussi rigoureuse qu'était cette géométrie, elle ne l'était pas assez pour le XIXème siècle, et l'arrivée de la logique avancée en mathématique.
 En effet, dés ce siècle, les mathématiciens ont mis leurs efforts à une formalisation rigoureuse de toutes les mathématiques, géométrie incluse.
-
 </p>
 
-<h3>Le lien nombres réels - géométrie</h3>
+<h3>Le lien nombres réels - géométrie analytique</h3>
 
 <p>
 Déjà, <span class="important">nous pouvons définir le produit cartésien de "R" et lui même, noté "R²", qui représente tous les couples de réels possibles</span>.
@@ -300,11 +305,12 @@ Il y a encore beaucoup d'autre vocabulaire, mais nous le découvriront un peu pl
 <p>
 Comme nous pouvons noter chaque point sous la forme "(x, y)", on peut utiliser "x" et "y" dans des relations précises.
 En fait, <span class="important">on peut définir des ensembles de points par l'ensemble des couples solutions d'une équation précise quelconque, impliquant "x", "y" ou les deux</span>.
-Par exemple, on peut facilement définir l'ensemble des points constituant ce que l'on appelle généralement un cercle, avec une simple équation :
+Par exemple, on peut facilement définir l'ensemble des points constituant un cercle, avec une simple équation :
 </p>
 <math><mi>(x - a)</mi><msup>2</msup> + <mi>(y - b)</mi><msup>2</msup> = <mi>r</mi><msup>2</msup></math>
 <p>
 Intuitivement parlant, <span class="important"><definition name="circle"></span>.
+Cette équation nous permet donc de lier les cercles obtenus via des traçages possibles en géométrie classique avec de la géométrie analytique.
 Ici, </span class="important">"a" défini l'abscisse du centre du cercle, "b" représente l'ordonnée du centre du cercle, et "r" représente le rayon du cercle</span>.
 Nous étudierons plus précisément cette équation plus tard.
 Dans le cas d'un cercle de centre "(1, 1)" et de rayon "1", on peut graphiquement afficher :
@@ -336,6 +342,7 @@ En plus, nous pouvons utiliser plusieurs segments du genre pour faire des choses
 </p>
 <graphic><background_color white><line x_1=-2 y_1=-2 x_2=3 y_2=-2 border_color=blue><line x_1=-2 y_1=-2 x_2=2 y_2=2 border_color=blue><line x_1=2 y_1=2 x_2=3 y_2=-2 border_color=blue></graphic>
 <p>
+Ici, nous relions le concept de tracer des segments en géométrie classique avec ce genre d'équation en géométrie analytique.
 Avec ça, nous pouvons définir un autre concept primordial en géométrie : les polygônes.
 <span class="important"><definition name="polygon"></span>.
 Généralement, les segments formant le polygone sont nommés les côtés du polygône.
@@ -351,9 +358,39 @@ De plus, il permet de donner naissance à une branche très spécifique de la g�
 Pour étudier précisément le triangle, nous allons devoir faire fi de la rigueur, et faire comme les grecs anciens : avec le traçage pure.
 </p>
 <p>
-Déjà, il faut savoir que l'on peut très facilement catégoriser les différents types de triangles.
-
+Commençons par introduire le type de triangle le plus pratique (et de très loin) : le triangle rectangle.
+<span class="important"><definition name="triangle-rectangle"></span>.
+Intuitivement, <definition name="triangle-rectangle">.
+De manière très concrète, un angle droit est l'angle formé entre un sol parfaitement droit et un piquet orienté parfaitement vers le haut.
 </p>
+<graphic><background_color white><base draw=0><form points=new(-2,-2);new(-2,3);new(2,-2) border_color=blue color=transparent></graphic>
+<p>
+Voyons comment les anciens géomètres tracés ce genre de triangle, à partir de deux points du triangle (qui doivent être l'un des segments de l'angle), à la règle et au compas.
+La seule difficulté ici est de tracer proprement l'angle droit : traçons en un à partir de deux points de départs "A" et "B".
+Pour cela, nous aurons besoin d'un troisième point "D" aligné par rapport à "A" et "B", et placé deux fois plus loin de "A" que "B".
+Traçons le segment entre "A" et "D".
+</p>
+<graphic><background_color white><base draw=0><form points=new(-2,-2);new(2,-2) border_color=blue><text x=-2 y=-3 font_size_in_scale=1 content="A"></text><text x=0 y=-3 font_size_in_scale=1 content="B"></text><text x=2 y=-3 font_size_in_scale=1 content="D"></text></graphic>
+<p>
+En suite, nous aurons besoin du compas.
+En fait, <span class="important">nous allons tracer deux cercles de tailles quelconques (mais la même pour les deux), de centre "A", puis "D" (il faut obligatoirement que ces cercles se touchent en deux points)</span>.
+</p>
+<graphic><background_color white><base draw=0><form points=new(-2,-2);new(2,-2) border_color=blue><circle x=-2 y=-2 radius=11/4 border_color=black color=transparent><circle x=2 y=-2 radius=11/4 border_color=black color=transparent></graphic>
+<p>
+En suite, traçons la droite formée par les deux points où les cercles se touchent.
+En fait, <span class="important">cette droite est perpendiculaire à la droite de départ, et tout point sur cette droite forme un angle droit avec "A" et le point de rencontre entre cette droite et la droit de départ (qui est le point exactement entre "A" et "D" : "B")</span>. 
+</p>
+<graphic><background_color white><base draw=0><form points=new(-2,-2);new(2,-2) border_color=blue><form points=new(0,-10);new(0,10) border_color=blue><circle x=-2 y=-2 radius=11/4 border_color=black color=transparent><circle x=2 y=-2 radius=11/4 border_color=black color=transparent></graphic>
+<p>
+Vous avez juste à connecter un quelconque point "C" de la nouvelle droite avec "A" : vous avez un triangle rectangle en "B".
+Ce nouveau segment porte d'ailleurs un nom très spécifique : l'hypothénuse.
+Intuitivement, <span class="important"><definition name="hypotenuse"></span>.
+Ce concept est d'ailleurs à la base d'un des théorèmes les plus connues des mathématiques : le théorème de Pythagore.
+<span class="important"><definition name="pythagorean_theorem"></span>.
+Il admet aussi une réciproque très connue : <definition name="pythagorean_theorem-converse">.
+Dans un triangle "ABC" rectangle en "B", il stipule l'identité suivante :
+</p>
+<math>AB² + BC² = AC²</math>
 
 <h3>Les graphes de fonctions</h3>
 <p>

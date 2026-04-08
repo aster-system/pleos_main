@@ -7,17 +7,31 @@
     <content>le théorème d'Al-Kashi (ou loi des cosinus) est un théorème établissant une relation entre deux longueurs de côtés et la mesure d'un angle (ou la mesure de deux angles et la longueur d'un côté) dans un triangle quelconque</content>
     <content type="theorem"><math><mforall><mi>A, B, C</mi><min><mi>R</mi><msup>3</msup><mo>,</mo><mi>[AB]²</mi><mo>=</mo><mi>[BC]²</mi><mo>+</mo><mi>[AC]²</mi><mo>-</mo><mi>2</mi><mo>*</mo><mi>[BC]</mi><mo>*</mo><mi>[AC]</mi><mo>*</mo><mi>cos(ACB)</mi></math></content>
 </new_definition>
+<new_definition name="angle">
+    <content name="right">un angle "ABC" est dit droit en "B" quand les droites formés par "AB" et "BC" sont parfaitement perpendiculaire</content>
+</new_definition>
 <new_definition name="circle">
     <content>un cercle est un ensemble de point, tel que tous les points de l'ensemble se trouvent à une distance similaire (appelée "rayon" du cercle) d'un même point, dit "centre" du cercle</content>
 </new_definition>
 <new_definition name="ellipse">
     <content>une ellipse est une figure géométrique 2D résultant de la projection d'un cône 3D sur un plan 2D passant par son axe de rotation, sans passer par le sommet, ni être coplanaire à la base du cône</content>
 </new_definition>
+<new_definition name="hypotenuse">
+    <content>l’hypoténuse d'un triangle rectangle est le côté opposé à l'angle droit du rectangle</content>
+</new_definition>
 <new_definition name="polygon">
     <content>un polygone est une figure géométrique formé par un nombre fini de segments reliés entre eux</content>
 </new_definition>
+<new_definition name="pythagorean_theorem">
+    <theorem>le théorème de Pythagore stipule que le carré de la longueur de l’hypoténuse (dans un triangle rectangle) est égal à la somme des carrés des deux autres côtés du triangle</theorem>
+    <theorem name="converse">la réciproque du théorème de Pythagore stipule que si le carré de la longueur d'un des côtés du triangle est égal à la somme des carrés des deux autres côtés du triangle, alors ce triangle est rectangle, et le côté le plus grand est l'hypoténuse du triangle</theorem>
+</new_definition>
 <new_definition name="tangent">
     <content>la fonction tangente représente le coefficient directeur de la droite tangente au cercle en un certain point, à un certain angle "a"</content>
+</new_definition>
+<new_definition name="triangle">
+    <content>un triangle est un polygône à 3 côtés</content>
+    <content name="rectangle">un triangle est dit rectangle si il contient un angle droit quelconque</content>
 </new_definition>
 <new_definition name="trigonometric_circle">
     <content>le cercle trigonométrique est un cercle de rayon 1 et de centre le repère du plan, permettant de facilement définir les fonctions trigonométriques</content>
