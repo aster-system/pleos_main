@@ -63,9 +63,73 @@ Les deux implications sont vérifiées : dire qu'un polynôme "P(X)" admet une r
 
 <h2>Les espaces vectoriels</h2>
 
-<h3>Les applications linéaires</h3>
+<h3>Les propriétés de base</h3>
 
 <h4>4.1.0.0</h4>
+<p>
+Considérons une famille libre "w" de "n" vecteur d'un espace vectoriel "E" sur un corps "K".
+Posons une autre famille libre "v" de "m" vecteur générant "E".
+</p>
+<math>v = {<mi>v</mi><msub>1</msub>, <mi>v</mi><msub>2</msub>, ..., <mi>v</mi><msub>m</msub>}, v <min> <mi>E</mi><msup>m</msup></math></br>
+<math>w = {<mi>w</mi><msub>1</msub>, <mi>w</mi><msub>2</msub>, ..., <mi>w</mi><msub>n</msub>}, w <min> <mi>E</mi><msup>n</msup></math></br>
+<math><mforall> u <min> E, <mexists> {<mi>a</mi><msub>1</msub>, <mi>a</mi><msub>2</msub>, ..., <mi>a</mi><msub>n</msub>} <min> K, u = <msum unknown=k from=1 to=n><mi>a</mi><msub>k</msub> * <mi>w</mi><msub>k</msub></math>
+<p>
+Le lemme de Steinitz dit deux choses : "m" est inférieur ou égal à "n", et il est possible de trouver un sous-ensemble de "w" tel que l'union de "v" et de ce sous-ensemble engendre "K".
+Démontrons ce lemme.
+</p>
+<p>
+Déjà, nous savons que tous les vecteurs de "v" appartiennent à "E" : ils sont donc combinaisons linéaires de vecteur de "w".
+De plus, comme ils sont non-nuls, il existe au moins un des scalaires de la combinaison linéaire qui ne s'annule pas.
+</p>
+<math><mforall> o <min> [0, m], <mexists> {<mi>a</mi><msub>1</msub>, <mi>a</mi><msub>2</msub>, ..., <mi>a</mi><msub>n</msub>} <min> E, <mi>v</mi><msub>o</msub> = <msum unknown=k from=1 to=n><mi>a</mi><msub>k</msub> * <mi>w</mi><msub>k</msub></math></br>
+<math><mexists> q <min> [0, n], <mi>a</mi><msub>q</msub> != 0</math>
+<p>
+Prenons le cas du premier élément de "v".
+</p>
+<math><mexists> {<mi>a</mi><msub>1</msub>, <mi>a</mi><msub>2</msub>, ..., <mi>a</mi><msub>n</msub>} <min> K, <mi>v</mi><msub>1</msub> = <msum unknown=k from=1 to=n><mi>a</mi><msub>k</msub> * <mi>w</mi><msub>k</msub></math></br>
+<p>
+Nous pouvons facilement exprimer un élément de "w" (tel que son scalaire associé pour obtenir "v" n'est pas nul) grâce à cet élément de "v".
+Permettons nous de sélectionner un élément de "w" quelconque respectant cette contrainte, et permutons les valeurs dans "w" pour que cet élément devienne le premier élément de "w".
+Appelons "s" le scalaire associé à cet élément de "w".
+Pour cela, passons ce premier élément de "w" de l'autre côté, enlevons l'élément de "v" des deux côtés, et multiplions par l'inverse de "s".
+</p>
+<math><mi>v</mi><msub>1</msub> = <msum unknown=k from=1 to=n><mi>a</mi><msub>k</msub> * <mi>w</mi><msub>k</msub></math></br>
+<math><mequi><mi>v</mi><msub>1</msub> = <mi>v</mi><msub>1</msub> + <msum unknown=k from=2 to=n><mi>a</mi><msub>k</msub> * <mi>w</mi><msub>k</msub></math></br>
+<math><mequi><mi>w</mi><msub>1</msub> = <mi>s</mi><msup>-1</msup> * <mi>v</mi><msub>1</msub> - <mi>s</mi><msup>-1</msup> * <msum unknown=k from=2 to=n><mi>a</mi><msub>k</msub> * <mi>w</mi><msub>k</msub></math></br>
+<p>
+Dans ce cas, nous voyons que ce premier vecteur de "w" est une combinaison linéaire (un peu complexe et différente, mais une combinaison linéaire quand même) d'élément de "w" et du premier élément de "v".
+Ici, comme tout élément de "k" est une combinaison linéaire d'élément de "w", alors si l'un des "w" est combinaison linéaire d'autres éléments de "w" (sauf lui, bien évidemment) et d'un autre vecteur quelconque, alors cet autre vecteur quelconque et tous les autres éléments de "w" génèrent aussi l'espace vectoriel.
+Donc, le premier élément de "v" et les autres éléments de "w" génère aussi l'espace vectoriel.
+Après avoir pris en compte le fait que nous avons permuté nos éléments dans "w", on pourrait écrire :
+</p>
+<math>Vect({<mi>v</mi><msub>1</msub>, <mi>w</mi><msub>2</msub>, ..., <mi>w</mi><msub>n</msub>}) = Vect(w) = E</math>
+<p>
+Bien que nous avons fait pour le premier vecteur, cette technique marche parfaitement pour tous les vecteurs possibles.
+Donc, nous pouvons réitérer cette étape, jusqu'à ce que nous avons enlever tous les éléments de "v" (on pourrait poursuivre avec le deuxième, le troisième...).
+</p>
+<math>Vect({<mi>v</mi><msub>1</msub>, <mi>v</mi><msub>2</msub>, <mi>w</mi><msub>3</msub>, ..., <mi>w</mi><msub>n</msub>}) = Vect(w) = E</math></br>
+<math>Vect({<mi>v</mi><msub>1</msub>, <mi>v</mi><msub>2</msub>, <mi>v</mi><msub>3</msub>, <mi>w</mi><msub>4</msub>, ..., <mi>w</mi><msub>n</msub>}) = Vect(w) = E</math>
+<p>
+Ici, nous pouvons avoir fini de considérer tous les éléments de "v" : il serait donc de taille inférieur à celui de "w".
+De plus, nous aurions une nouvelle famille génératrice de "E" :
+</p>
+<math>Vect({<mi>v</mi><msub>1</msub>, <mi>v</mi><msub>2</msub>, ..., <mi>v</mi><msub>m</msub>, <mi>w</mi><msub>m + 1</msub>, ..., <mi>w</mi><msub>n</msub>}) = Vect(w) = E</math>
+<p>
+De plus, nous pouvons être sur que nous nous arrêterons avant "n" ou précisément à "n" opérations.
+En effet, si il y en avait plus, alors des éléments de "v" serait constitués de "0" éléments de "w", ce qui n'est pas possible puisqu'ils sont tous décomposables en éléments de "w".
+Donc, il y a au plus autant d'éléments dans "v" que dans "w", et donc :
+</p>
+<math>m <mltequal> n</math>
+<p>
+Nos deux propositions sont démontrés.
+Le lemme de Steinitz est donc démontré.
+</p>
+
+<h4>4.1.0.1</h4>
+
+<h3>Les applications linéaires</h3>
+
+<h4>4.1.1.0</h4>
 <p>
 Démontrons que, pour tout "w" et "z" appartenant à "R", l'application allant de "R²" vers "R²" transformant "(x, y)" en "(w * x, z * y)" est linéaire.
 Déjà, la première propriété est respectée, et l'on peut le vérifier de manière algébrique.

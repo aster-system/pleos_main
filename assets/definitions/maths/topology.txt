@@ -23,8 +23,16 @@
     <content>la topologie grossière (ou topologie triviale) associée à un ensemble E est une topologie sur "E" où les deux seuls ouverts sont l'ensemble vide et "E" entier</content>
 </new_definition>
 
+<new_definition name="topological_continuity">
+    <content name="full">une application entre deux espaces topologiques "E" et "F" est dite continue sur "E" si elle est continue en tous les points de "E"</content>
+    <content name="part">une application entre deux espaces topologiques "E" et "F" est dite continue sur une partie de "E" si elle est continue en tous les points de cette partie</content>
+    <content name="point">une application entre deux espaces topologiques "E" et "F" est dite continue en un point "a" de "E" si tout voisinage de "f(a)" dans "F" admet comme image réciproque un voisinage de "a" dans "E"</content>
+</new_definition>
 <new_definition name="topology_indistinguishability">
     <content>deux éléments topologiques distincts sont dit indiscernables si tous les voisinages de l'un contient l'autre, et vice-versa</content>
+</new_definition>
+<new_definition name="topological_limit">
+    <content>une application entre deux parties d'espaces topologiques "E" et "F" admet une limite "l" en un point adhérent "a" de "E" si, pour tout voisinage "V" de "l", il existe un voisinage "W" de "a" tel que "f(W)" soit inclu dans "V"</content>
 </new_definition>
 <new_definition name="topology_separation_axiom">
     <content>un axiome de séparation est, en topologie, une propriété possible de certains ensembles topologiques, concernant la façon dont les voisinages de ces ensembles se comportent entre eux</content>

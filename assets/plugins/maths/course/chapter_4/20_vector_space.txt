@@ -199,7 +199,7 @@ Il existe d'ailleurs autant de base qu'il existe de famille de vecteur libre et 
 Avec les bases, on peut définir un des concepts les plus importants des espaces vectoriels : la dimension.
 <span class="important"><definition name="vector_space_dimension"></span>.
 En effet, <span class="important">toutes les bases d'un espace vectoriel quelconque ont le même cardinal (la même taille)</span>.
-En réalité, ce résultat n'est pas si facile à démontrer.
+En réalité, ce résultat n'est pas si facile à démontrer : il demande l'utilisation d'un lemme, nommé lemme de Steinitz (<a href="demo#4_1_0_0">démontré ici</a>), qui permet d'en déduire ce théorème (<a href="demo#4_1_0_1">démontré ici</a>).
 </p>
 
 <h3>Les applications linéaires</h3>

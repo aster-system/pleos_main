@@ -136,5 +136,23 @@ L'intérêt, c'est que <span class="important">l'ensemble des topologies possibl
 
 <h3>La limite et continuité topologique</h3>
 <p>
-
+En vrai, quasiment tous les concepts d'analyse peuvent êtres généralisés dans des espaces topologiques.
+C'est ce que nous allons faire des maintenant.
+</p>
+<p>
+Commençons par le concept primaire de l'analyse : la limite topologique.
+Grâce à toutes les définitions vues jusqu'ici, ce ne sera pas si difficile à définir.
+<span class="important"><definition name="topological_limit"></span>.
+L'idée ici est assez simple, et très proche de l'analyse.
+En fait, <span class="important">la fonction admet une limite "l" en "a" si l'on peut se rapprocher autant qu'on veut de "l" (se rapprocher via un voisinage) en faisant se rapprocher le paramètre de la fonction de "a" (toujours via un voisinage)</span>.
+Avec cette définition bien plus générale, on peut donc utiliser le concept de limite de manière bien plus étendue.
+</p>
+<p>
+Poursuivons par un concept très utilisé en analyse : la continuité topologique.
+Déjà, comme pour l'analyse, <span class="important">une application peut être continue sur un seul point, ou sur plusieurs points</span>.
+Commençons par la définition en un point.
+<span class="important"><definition name="topological_continuity-point"></span>.
+En quelques sorte, une application continue rend les voisinages dans l'image prévisibles grâces aux voisinages de départ.
+Comme pour l'analyse, <definition name="topological_part">.
+Donc, <span class="important"><definition name="topological_full"></span>.
 </p>

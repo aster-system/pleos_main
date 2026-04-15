@@ -97,9 +97,9 @@ int command(int argc, char* argv[]) {
 }
 
 int main(int argc, char* argv[]) {
-	//return command(argc, argv);
+	return command(argc, argv);
 
-	pleos::Pleos_Window window(900, 600, argv[0]);
+	/*pleos::Pleos_Window window(900, 600, argv[0]);
     window.load_from_xml("assets/window.txt");
     pleos::Hub_Page* hub = window.hub();
     hub->handle_saasf();

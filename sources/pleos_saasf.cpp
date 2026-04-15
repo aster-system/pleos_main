@@ -131,6 +131,22 @@ namespace pleos {
                 scls::format_math(content.get()->sub_texts().at(i));
                 __saasf_images(replica, content.get()->sub_texts().at(i), path, current_replica_file_path);
             }
+            else if((attribute_name == std::string_view("mlim"))){
+                // HMLT limit
+
+                // Datas
+                std::string needed_unknown = content.get()->sub_texts().at(i).get()->attribute_by_name(std::string("unknown")).value;
+                if(needed_unknown == std::string_view()){needed_unknown = std::string("x");}
+                std::string needed_value = content.get()->sub_texts().at(i).get()->attribute_by_name(std::string("value")).value;
+                if(needed_value == std::string_view()){needed_value = std::string("0");}
+
+                // Balise
+                content.get()->sub_texts().at(i).get()->clear();
+                content.get()->sub_texts().at(i).get()->set_xml_balise_name(std::string("munder"));
+                content.get()->sub_texts().at(i).get()->set_xml_balise_datas(content.get()->balise_container()->defined_balise_shared_ptr("munder"));
+                content.get()->sub_texts().at(i).get()->add_sub_balise(std::string("<mi>lim</mi>"));
+                content.get()->sub_texts().at(i).get()->add_sub_balise(std::string("<mi>") + needed_unknown + std::string("&#") + std::to_string(scls::utf_8_symbol_by_name("mto")) + std::string(";") + needed_value + std::string("</mi>"));
+            }
             else if((attribute_name == std::string_view("msqrt"))){
                 // HMLT square root
                 if(content.get()->sub_texts().at(i).get()->sub_texts().size() == 0){

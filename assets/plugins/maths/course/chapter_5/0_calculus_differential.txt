@@ -24,25 +24,36 @@ En fait, <span class="important">si l'on maintenait le grossissement de la fonct
 Graphiquement, <span class="important">on peut tracer une droite entre "f(a)" et "f(b)", dont le coefficient directeur est la valeur que nous venons juste de calculer</span>.
 Puisqu'il s'agit d'une droite, on peut la représente comme une fonction affine, d'où le nom.
 Effectivement, <span class="important">cette droite s'écrit comme une fonction affine "c * x + d" où "c" est la valeur que nous venons de calculer ("t") et "d" est "f(a) - a * c"</span>.
+Nous obtenons donc une formule pour notre droite actuelle :
+</p>
+<math>y = <mfrac><mi>f(b) - f(a)</mi><mi>b - a</mi></mfrac> * x + (f(a) - a * <mfrac><mi>f(b) - f(a)</mi><mi>b - a</mi></mfrac>) = f(a) + <mfrac><mi>f(b) - f(a)</mi><mi>b - a</mi></mfrac> * (x - a)</math>
+<p>
+Voici un exemple graphique pour la fonction "f(x) = 0.5*(x + 1)²" pour le point "a = -1" et "b = 2".
 </p>
 <graphic><background_color white><function expression="(1/2)*(x+1)*(x+1)"></function><function expression="x*(3/2)+3/2"></function></graphic>
 <p>
-On peut modifier un peu cette formule, en ajoutant une variable nommée "h" représentant "b - a", et en déduire une nouvelle formule un peu différente.
+On peut modifier un peu la formule permettant d'obtenir "t", en ajoutant une variable nommée "h" représentant "b - a", et en déduire une nouvelle formule un peu différente.
 Ici, <span class="important">cette formule est nommée taux d'accroissement de "f" en "a"</span>.
 </p>
-<math>t = <mfrac><mi>f(b) - f(a)</mi><mi>b - a</mi></mfrac> <mand> h = b - a <mequi> t = <mfrac><mi>f(h + a) - f(a)</mi><mi>h</mi></mfrac></math>
+<math>t = <mfrac><mi>f(b) - f(a)</mi><mi>b - a</mi></mfrac> <mand> h = b - a <mequi> t = <mfrac><mi>f(h + a) - f(a)</mi><mi>h</mi></mfrac></math></br>
+<math>y = f(a) + <mfrac><mi>f(b) - f(a)</mi><mi>b - a</mi></mfrac> * (x - a) = f(a) + <mfrac><mi>f(h + a) - f(a)</mi><mi>h</mi></mfrac> * (x - a)</math>
 <p>
 Ce concept nous permet donc d'approximer le grossissement d'une fonction entre "a" et "b", cependant on aimerait savoir le grossissement de la fonction en "a".
 Pour cela, <span class="important">l'idée est de se rapprocher très proche de "a", en utilisant le concept de limite</span>.
 On doit donc modifier un petit peu notre formule, en stipulant que "b" tend vers "a", pour représenter ce concept.
 </p>
-<math><mlim unknown=b value=0><mfrac><mi>f(b) - f(a)</mi><mi>b - a</mi></mfrac></math>
+<math><mlim unknown=b value=a><mfrac><mi>f(b) - f(a)</mi><mi>b - a</mi></mfrac></math>
 <p>
 On peut aussi utiliser cette formule pour en déduire une limite avec le taux d'accroissement seulement.
 </p>
 <math><mlim unknown=b value=a><mfrac><mi>f(b) - f(a)</mi><mi>b - a</mi></mfrac> = s <mand> h = b - a <mequi> <mlim unknown=h value=0><mfrac><mi>f(h + a) - f(a)</mi><mi>h</mi></mfrac> = s</math>
 <p>
-Ici, notre valeur "s" est donc une approximation de comment "f" croît en "a".
+Finalement, on peut aussi avoir une forme utilisant une fonction "alternative" nommée "r" tendant vers "0" quand son paramètre "x" tend vers "0" :
+</p>
+<math>r : R <mto> R, x <mto> r(x)</math></br>
+<math>r(x) = <mfrac><mi>f(a + x) - f(a)</mi><mi>x</mi></mfrac> - <mlim unknown=h value=0><mfrac><mi>f(a + h) - f(a)</mi><mi>h</mi></mfrac> <mand><mlim unknown=x value=0> r(x) = 0</math>
+<p>
+Ici, notre valeur "s" est donc une approximation de comment "f" croît en "a" (en sachant que les 3 formules sont équivalentes).
 De plus, <span class="important">"s" est nommé le nombre dérivé de "f" en "a", et représente la forme "locale" de la dérivation</span>.
 Si ce nombre existe, il est unique, et l'on dit que la fonction "f" est dérivable en "a".
 Pour être utilisable, <span class="important">il faut obligatoirement que "f" soit définie et continue (pour utiliser la limite) dans le voisinage de "a"</span>.
@@ -57,6 +68,32 @@ Bien évidemment, si une fonction est dérivable en un point / sur un ensemble, 
 Il est possible de rendre ce concept plus pratique, en utilisant le formalisme des fonctions, avec les fonctions dérivées.
 En effet, <span class="important"><definition name="derivative_function"></span>.
 C'est un moyen d'exprimer le concept de dérivation avec une fonction entière.
+Pour noter la fonction représentant la fonction dérivée d'une autre, il existe beaucoup de notations, toutes historiques, et provenant de mathématiciens différents.
+Pour les exposer, posons une fonction réelle quelconque "f".
+</p>
+<math>f : R <mto> R, x <mto> f(x)</math>
+<p>
+Historiquement, <span class="important">la première notation est dût à <scientist name="leibniz" type="quote"></span>.
+Elle utilise une idée assez simple : la variable muette "d".
+En fait, <span class="important">"d" est sensé représenté un accroissement infinitésimal de ceux à quoi il est accoler</span>.
+Donc, "df" représente une variation infinitésimal de l'image de "f", et "dx" représente une variation infinitésimal du paramètre "x".
+On peut donc noter :
+</p>
+<math>df = 3 * dx</math>
+<p>
+Dans ce cas, <span class="important">une variation infinitésimal de "f" représente 3 fois une variation infinitésimal de "x" : le nombre dérivé en ce "x" est "3"</span>.
+Généralement, on divise par "dx" des deux côtés.
+Donc, on se retrouve avec cette notation (la première est la fonction, et la deuxième est une valeur de la fonction) :
+</p>
+<math><mfrac><mi>df</mi><mi>dx</mi></mfrac></math></br>
+<math><mfrac><mi>df</mi><mi>dx</mi></mfrac>(x) = 3</math>
+<p>
+Ce n'est généralement pas la façon la plus utilisée en mathématique pure.
+En effet, <span class="important">la notation la plus utilisée en mathématique est dût à <scientist name="lagrange" type="quote"></span>.
+Ici, l'idée est de noter la fonction dérivée de "f" avec une apostrophe sur le côté : elle se noterait donc "f'".
+</p>
+<math>f'(x) = 3</math>
+<p>
 Prenons un exemple assez simple : la fonction qui transforme "x" en "3 * x²".
 Comme nous l'avons vue, cette fonction est dérivable et continue sur tout "R" : essayons de généraliser le calcul de ses nombres dérivés.
 </p>
@@ -72,7 +109,7 @@ La démonstration est un peu technique : considérons cette fonction "a * x ^ b"
 Pour cela, nous aurons besoin d'utiliser des propriétés algébriques précises, comme le binôme de Newton :
 </p>
 <math><mforall> x, f'(x) = <mlim unknown=h value=0><mfrac><mi>f(h + x) - f(x)</mi><mi>h</mi></mfrac> = <mlim unknown=h value=0><mfrac><mi>a * (h + x) ^ b - a * x ^ b</mi><mi>h</mi></mfrac></math>
-<math>= <mlim unknown=h value=0><mfrac><mi>a * (<msum from=0 to=b><mcoeff top=b bottom=k><mi>h</mi><msup>k</msup><mi>x</mi><msup>b - k</msup>) - a * x ^ b</mi><mi>h</mi></mfrac></math>
+<math>= <mlim unknown=h value=0><mfrac><mrow>a * (<msum from=0 to=b><mcoeff top=b bottom=k><mi>h</mi><msup>k</msup><mi>x</mi><msup>b - k</msup>) - a * x ^ b</mrow><mi>h</mi></mfrac></math>
 <p>
 Ici, les seules valeurs qui ne tendront pas vers 0 sont les monômes du développement contenant un seul "h" (ou"h exposant 1") à la fin, et ceux n'en contenons pas du tout.
 Déjà, la seule partie que ne contient pas de "h" est la partie où "k = 0", et donc où la partie du développement vaut "a * x ^ b" : cette partie va se faire annuler par la soustraction à droite du développement.
@@ -83,6 +120,35 @@ Appelons toutes les autres parties du polynôme (avec plusieurs "h", ou "h expos
 <math>= a * b * <mi>x</mi><msup>b - 1<msup></math>
 <p>
 Donc, toute fonction définie via un monôme de la forme "a * x ^ b" avec "a" un réel différent de "0" et "b" un entier naturel différent de 0 admettent pour dérivée "a * b * x ^ (b - 1)".
+</p>
+<p>
+Essayons d'utiliser ce nouveau formalisme avec nos approximations affines.
+Déjà, <span class="important">si vous remplacez le "c" de notre droite par le nombre dérivée de la fonction en cette valeur, nous pouvons graphiquement voir que la droite formé semble être "parallèle" à la partie de la courbe de la fonction au voisinage du point considéré</span>.
+</p>
+<math>y = f(a) + f'(a) * (x - a)</math>
+<p>
+D'ailleurs, il est assez évident que, en ce point précis, la droite touche la courbe, et donc la valeur de la droite en le point considéré est la même que la valeur de la fonction en ce même point.
+Dans le cas du point "a = 1" :
+</p>
+<graphic><background_color white><function expression="(1/2)*(x+1)*(x+1)"></function><function expression="2*x"></function></graphic>
+<p>
+Remarquons donc autre chose : <span class="important">plus on se rapproche du point sur la droite, plus la droite se rapproche de la courbe</span>.
+Grâce à ça, nous allons pouvoir faire quelque chose d'assez pratique : <span class="important">trouver une formule d'approximation général d'un point de la courbe grâce à notre point "a"</span>.
+En effet, posons un point "x", que nous écrirons sous la forme "a + h".
+Dans ce cas, "f(x) = f(a + h)".
+Or, <span class="important">notre troisième définition d'un nombre dérivée d'une fonction en "a" contient une forme de ce genre</span>.
+Rappelons cette formule (en notant "s" comme "f'(a)", pour nous aligner avec la notation que nous avons vue).
+</p>
+<math><mequi> r(h) = <mfrac><mi>f(h + a) - f(a)</mi><mi>h</mi></mfrac> - f'(a) <mand><mlim unknown=h value=0> r(h) = 0</math></br>
+<math><mequi>r(h) + f'(a) = <mfrac><mi>f(a + h) - f(a)</mi><mi>h</mi></mfrac> <mequi> (r(h) + f'(a)) * h = f(a + h) - f(a) <mequi>f(a) + r(h) * h + f'(a) * h = f(a + h)</math>
+<p>
+Rappelons que "x = a + h", et donc "h = x - a".
+Remplaçons certains "h" par la valeur adéquat en "x - a", pour obtenir une formule plus jolie.
+</p>
+<math><mequi>r(h) + f'(a) = <mfrac><mi>f(a + h) - f(a)</mi><mi>h</mi></mfrac> <mequi> (r(h) + f'(a)) * h = f(a + h) - f(a) <mequi>f(a) + f'(a) * (x - a) + r(h) * (x - a) = f(a + h)</math></br>
+<math><mequi>f(x) = f(a + h) = f(a) + f'(a) * (x - a) + r(h) * (x - a)</math>
+<p>
+Ici, <span class="important">l'idée est de voir qu'il est possible d'approximer une valeur de la fonction grâce à notre point "a"</span>.
 </p>
 
 <h3>L'arithmétique des dérivées</h3>
@@ -112,5 +178,16 @@ Généralement, le polynôme associé à la fonction dérivée de la fonction po
 <p>
 Continuons avec la multiplication, qui a un fonctionnement... assez bizarre.
 En effet, <span class="important">le produit de deux fonctions admet comme dérivée la somme du produit de "f'" et "g" et du produit de "f" et "g'"</span>.
-Ce résultat est bizarre, mais s'obtient assez facilement avec une démonstration précise (présente <a href="#5_0_0_1">juste ici</a>.).
+Ce résultat est bizarre, mais s'obtient assez facilement avec une démonstration précise (présente <a href="demo#5_0_0_1">juste ici</a>.), mais qui demande un peu d'intuition à obtenir seul.
+Nous pouvons prendre un exemple très simple : la fonction "f(x) = (2 * x + 1)(3 * x - 1)".
+La méthode la plus simple serait de développer cette forme, mais procédons plutôt à l'utilisation de cette propriéte de multiplication.
+Déjà, comme nous l'avons vue plus tôt, la dérivée de "(2 * x + 1)" est "2" et celle de "(3 * x - 1)" est "3".
+Si nous développions, nous aurions le polynôme "6 * x² + x - 1", qui admet comme dérivée "12 * x + 1".
+Avec notre formule du produit, la dérivée de cette fonction serait "2 * (3 * x - 1) + 3 * (2 * x + 1)", ce qui donne "12 * x + 1" : exactement comme prévu.
+</p>
+<p>
+Maintenant, généralisons pour de bon ce type de formule, avec une règle très importante en calcul différentiel : la règle de la chaîne.
+<span class="important"><definition name="chain_rule"></span>.
+Avec ce théorème, nous pourrons utiliser des dérivées bien plus complexes, et assez facilement.
+Sa démonstration est un peu technique, mais abordable (<a href="demo#5.0.0.2">présente juste ici</a>).
 </p>

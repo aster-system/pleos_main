@@ -85,7 +85,7 @@ Socrate est utilisé dans l'exemple car il est l'une des grandes inspirations du
 Généralement, <span class="important">les inférences se construisent grâce à des propositions liées entre elles (via des propositions plus complexes), comme nous avons vu plus haut</span> (comme par exemple ici avec l'utilisation d'un "et").
 L'écriture mathématique actuelle (simplifiée) consiste en quelque chose comme ça :
 </p>
-<math><mi>A</mi><mimp><mi>B</mi><mo>ET</mo><mi>A</mi><mo>DONC</mo><mi>B</mi></math>
+<math><mi>A</mi><mequi><mi>B</mi><mo>ET</mo><mi>A</mi><mo>DONC</mo><mi>B</mi></math>
 
 <h3>Les théories mathématiques</h3>
 <p>
@@ -192,6 +192,7 @@ Théoriquement, on peut définir des proposition avec encore plus de composantes
 <case content="F" x=0 y=3><case content="V" x=1 y=3><case content="F" x=2 y=3>
 <case content="V" x=0 y=4><case content="V" x=1 y=4><case content="V" x=2 y=4>
 </table>
+</br>
 <table>
 <case content="D" x=0 y=0><case content="E" x=1 y=0><case content="F" x=2 y=0>
 <case content="F" x=0 y=1><case content="F" x=1 y=1><case content="F" x=2 y=1>
@@ -298,6 +299,7 @@ On peut donc chercher la négation du "ET" et du "OU" (démontrée <a href="demo
 <case content="F" x=0 y=3><case content="V" x=1 y=3><case content="F" x=2 y=3><case content="V" x=3 y=3>
 <case content="V" x=0 y=4><case content="V" x=1 y=4><case content="V" x=2 y=4><case content="F" x=3 y=4>
 </table>
+</br>
 <table>
 <case content="A" x=0 y=0><case content="B" x=1 y=0><case content="A ou B" x=2 y=0><case content="pas (A ou B)" x=3 y=0>
 <case content="F" x=0 y=1><case content="F" x=1 y=1><case content="F" x=2 y=1><case content="V" x=3 y=1>
@@ -353,7 +355,7 @@ Historiquement parlant, ces lois font parties d'un ensemble de lois similaires, 
 <p>
 Il existe un moyen de démontrer plus facilement une implication : la contraposée.
 <span class="important"><definition name="logical_connective-contraposition"></span>.
-En d'autres termes : <span class="important">si A est fausse, alors B est aussi fausse</span>.
+En d'autres termes : <span class="important">si B est fausse, alors A est aussi fausse</span>.
 Ce raisonnement peut être plus simple dans certains cas.
 </p>
 <p>
