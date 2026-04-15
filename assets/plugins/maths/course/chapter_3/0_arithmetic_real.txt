@@ -280,6 +280,25 @@ Aussi rigoureuse qu'était cette géométrie, elle ne l'était pas assez pour le
 En effet, dés ce siècle, les mathématiciens ont mis leurs efforts à une formalisation rigoureuse de toutes les mathématiques, géométrie incluse.
 </p>
 
+<h3>Les bases de la géométrie classique</h3>
+<p>
+Avant de s'attaquer à la sombre partie de la géométrie, re-voyons les bases de la géométrie classique.
+</p>
+<p>
+Commençons à définir certains concepts simples de géométrie classique.
+Déjà, <span class="important"><definition name="length"></span>.
+Comme nous l'avons dit, une longueur se mesure avec une règle graduée.
+Généralement, les graduations successives sont séparées d'une exacte même distance.
+En suite, <span class="important"><definition name="angle"></span>.
+</p>
+<graphic><background_color white><form points=new(-2,-2);new(2,0)><form points=new(-2,-2);new(0,2)></graphic>
+<p>
+Pour mesurer un angle, on utilise un formalisme inspiré du cercle.
+En effet, <span class="important">il est possible de mesurer un angle en vérifiant la proportion du cercle de centre le point où les deux droites se croisent représenté dans l'angle</span>.
+D'ailleurs, cette mesure ne dépend pas du rayon du cercle : dans tous les cercles de centre le point où les deux droites se touchent auront la même proportion représentée via un même angle.
+</p>
+<graphic><background_color white><form points=new(0,0);new(4,0)><form points=new(0,0);new(2,4)><circle x=0 y=0 radius=1 border_color=black color=transparent><circle x=0 y=0 radius=3/2 border_color=black color=transparent></graphic>
+
 <h3>Le lien nombres réels - géométrie analytique</h3>
 
 <p>
@@ -391,6 +410,19 @@ Il admet aussi une réciproque très connue : <definition name="pythagorean_theo
 Dans un triangle "ABC" rectangle en "B", il stipule l'identité suivante :
 </p>
 <math>AB² + BC² = AC²</math>
+<p>
+Il est possible de connaître et de relier la valeur des angles dans un triangle rectangle avec une technique complexe, mais qui nous sera utile partout en mathématiques.
+Déjà, <span class="important"> pour des ratios donnés entre les différents côtés d'un triangle rectangle, les valeur des angles dans le triangle restent invariants de la taille du triangle</span>.
+Donc, les ratios des angles seront eux aussi invariants de la taille du triangle.
+On peut donc donner des formules générales pour chaque triangle rectangle, permettant de passer des ratios des angles aux ratios des côtés.
+En effet, <span class="important">il existe une fonction prenant en paramètre le ratio entre un côté et l'hypoténuse et retournant la valeur de l'angle entre ces deux côtés (en radians) : c'est la fonction cosinus</span>.
+De manière réciproque, <span class="important">il existe une fonction prenant en paramètre le ratio entre un côté et l'hypoténuse et retournant la valeur de l'angle opposé au côté qui n'est pas l'hypoténuse (en radians) : c'est la fonction sinus</span>.
+</p>
+<p>
+Quand on voit ce genre de fonction, on pourrait avoir envie de les expliciter pour calculer des précises de cette fonction.
+Cependant, c'est un exercice très complexe, que nous verrons plus tard.
+Or, <span class="important">il est possible de tracer des triangles rectangles, et de mesurer les valeurs précises à la main</span>.
+</p>
 
 <h3>Les graphes de fonctions</h3>
 <p>

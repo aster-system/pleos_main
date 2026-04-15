@@ -121,35 +121,6 @@ Appelons toutes les autres parties du polynôme (avec plusieurs "h", ou "h expos
 <p>
 Donc, toute fonction définie via un monôme de la forme "a * x ^ b" avec "a" un réel différent de "0" et "b" un entier naturel différent de 0 admettent pour dérivée "a * b * x ^ (b - 1)".
 </p>
-<p>
-Essayons d'utiliser ce nouveau formalisme avec nos approximations affines.
-Déjà, <span class="important">si vous remplacez le "c" de notre droite par le nombre dérivée de la fonction en cette valeur, nous pouvons graphiquement voir que la droite formé semble être "parallèle" à la partie de la courbe de la fonction au voisinage du point considéré</span>.
-</p>
-<math>y = f(a) + f'(a) * (x - a)</math>
-<p>
-D'ailleurs, il est assez évident que, en ce point précis, la droite touche la courbe, et donc la valeur de la droite en le point considéré est la même que la valeur de la fonction en ce même point.
-Dans le cas du point "a = 1" :
-</p>
-<graphic><background_color white><function expression="(1/2)*(x+1)*(x+1)"></function><function expression="2*x"></function></graphic>
-<p>
-Remarquons donc autre chose : <span class="important">plus on se rapproche du point sur la droite, plus la droite se rapproche de la courbe</span>.
-Grâce à ça, nous allons pouvoir faire quelque chose d'assez pratique : <span class="important">trouver une formule d'approximation général d'un point de la courbe grâce à notre point "a"</span>.
-En effet, posons un point "x", que nous écrirons sous la forme "a + h".
-Dans ce cas, "f(x) = f(a + h)".
-Or, <span class="important">notre troisième définition d'un nombre dérivée d'une fonction en "a" contient une forme de ce genre</span>.
-Rappelons cette formule (en notant "s" comme "f'(a)", pour nous aligner avec la notation que nous avons vue).
-</p>
-<math><mequi> r(h) = <mfrac><mi>f(h + a) - f(a)</mi><mi>h</mi></mfrac> - f'(a) <mand><mlim unknown=h value=0> r(h) = 0</math></br>
-<math><mequi>r(h) + f'(a) = <mfrac><mi>f(a + h) - f(a)</mi><mi>h</mi></mfrac> <mequi> (r(h) + f'(a)) * h = f(a + h) - f(a) <mequi>f(a) + r(h) * h + f'(a) * h = f(a + h)</math>
-<p>
-Rappelons que "x = a + h", et donc "h = x - a".
-Remplaçons certains "h" par la valeur adéquat en "x - a", pour obtenir une formule plus jolie.
-</p>
-<math><mequi>r(h) + f'(a) = <mfrac><mi>f(a + h) - f(a)</mi><mi>h</mi></mfrac> <mequi> (r(h) + f'(a)) * h = f(a + h) - f(a) <mequi>f(a) + f'(a) * (x - a) + r(h) * (x - a) = f(a + h)</math></br>
-<math><mequi>f(x) = f(a + h) = f(a) + f'(a) * (x - a) + r(h) * (x - a)</math>
-<p>
-Ici, <span class="important">l'idée est de voir qu'il est possible d'approximer une valeur de la fonction grâce à notre point "a"</span>.
-</p>
 
 <h3>L'arithmétique des dérivées</h3>
 <p>
@@ -190,4 +161,69 @@ Maintenant, généralisons pour de bon ce type de formule, avec une règle très
 <span class="important"><definition name="chain_rule"></span>.
 Avec ce théorème, nous pourrons utiliser des dérivées bien plus complexes, et assez facilement.
 Sa démonstration est un peu technique, mais abordable (<a href="demo#5.0.0.2">présente juste ici</a>).
+</p>
+
+<h3>Les développements limités</h3>
+<p>
+Parlons un peu d'une façon intéressante d'approcher la courbe d'une fonction quelconque, grâce aux dérivées.
+Avant, faisons une "introduction intuitive" pour mieux aborder ce concept.
+Si vous avez une fonction quelconque, et que vous connaissez sa valeur pour un point quelconque, vous pouvez obtenir une droite d'équation "y = f(a)".
+Prenons un exemple assez simple : la fonction sinus.
+L'image du nombre réel "0" par la fonction sinus est "0" : essayons de tracer cette fonctio, et cette droite :
+</p>
+<graphic><background_color white><function expression="sin(x)"></function><function expression="0"></function></graphic>
+<p>
+Bien évidemment, cette droite et la courbe de notre fonction se coupent quand "x" vaut "0".
+Or, au voisinage de "0", la courbe n'est pas forcément égale à la droite, <span class="important">mais on peut clairement voir que la droite et la courbe se rapproche</span>.
+Donc, <span class="important">la différence entre la valeur en "x" de la droite et de la courbe tend vers "0" quand "x" tend vers "0"</span>.
+On peut donc écrire la différence suivante :
+</p>
+<math><mlim unknown=x value=0> sin(x) - x = 0</math>
+<p>
+Donc, il existe une fonction qui s'exprime de cette façon, et qui tend vers "0" quand "x" tend vers "0".
+</p>
+<math>R : R <mto> R, x <mto> sin(x) - x</math></br>
+<math><mlim unknown=x value=0> R(x) = 0</math>
+<p>
+On peut donc dresser la relation suivante :
+</p>
+<math><mforall> h <min> R, sin(x + h) = 0 + R(x)</math>
+<p>
+Comme "R(x)" tend vers "0", elle est donc négligeable devant "0", et donc elle est un petit "o" de "1".
+Donc, nours pouvons réécrire notre fonction "sin(x + h)" :
+</p>
+<math><mforall> h <min> R, sin(x + h), sin(x + h) = 0 + o(1)</math>
+<p>
+Cette relation n'est pas très intéressante, mais nous allons très vite grandement l'améliorer.
+</p>
+<p>
+Pour nous rapprocher de la courbe, <span class="important">l'idée serait de trouver une façon d'exprimer notre fonction avec une fonction tendant vers "0" de manière "plus rapide", pous se rapprocher plus fort de la courbe</span>.
+On cherche donc à trouver une nouvelle expression de la fonction, en remplaçant "o(1)" par une autre forme.
+En fait, <span class="important">nous pouvons trouver une expression de fonction comme ceci, grâce à une de nos définitions de la limite</span>.
+</p>
+<math>R : R <mto> R, x <mto> R(x)</math></br>
+<math>R(x) = <mfrac><mi>f(a + x) - f(a)</mi><mi>x</mi></mfrac> - <mlim unknown=h value=0><mfrac><mi>f(a + h) - f(a)</mi><mi>h</mi></mfrac> <mand><mlim unknown=x value=0> r(x) = 0</math>
+<math><mimp> R(x) = <mfrac><mi>f(a + x) - f(a)</mi><mi>x</mi></mfrac> - f'(a)</math>
+<p>
+L'idée serait d'isoler le "f(a + x)", avec quelques manipulations algébriques.
+</p>
+<math>R(x) = <mfrac><mi>f(a + x) - f(a)</mi><mi>x - a</mi></mfrac> - f'(a)</math></br>
+<math>R(x) * (x - a) = f(a + x) - f(a) - f'(a) * (x - a)</math></br>
+<math>f(a + x) = f(a) + f'(a) * (x - a) + R(x) * (x - a)</math>
+<p>
+Pour rappel, "S(x) * (x - a)" tend vers 0 quand "x - a" tend vers "0", donc "S(x)" est négligeable devant "x - a", qui est négligeable devant "1".
+</p>
+<math>S(x) = o(x - a)</math></br>
+<math>h = x - a, <mlim unknown=h value=0> <mfrac><mi>h</mi><mi>1</mi></mfrac> = 0 <mimp> x - a = o(1)</math>
+<p>
+Donc, avec les informations que nous avons, nous pouvons préciser notre fonction en utilisant cette nouvelle forme, qui semble tendre plus vite vers "0" qu'une fonction "o(1)".
+Nous avons donc une forme qui devrait permettre de se rapprocher plus vite de "sin(x)" : nous avons une approximation plus précise de "sin(x)".
+</p>
+<math>sin(x) = sin(0) + sin'(0) * (x - 0) + o(x - 0) = x + o(x)</math>
+<p>
+Si nous traçons ceci, nous avons exactement ce que nous voulions.
+</p>
+<graphic><background_color white><function expression="sin(x)"></function><function expression="x"></function></graphic>
+<p>
+En voyant ça, nous aimerions tenter quelque chose : <span class="important">affiner de plus en plus notre fonction, pour s'approcher le plus possible de la fonction "sin"</span>.
 </p>
