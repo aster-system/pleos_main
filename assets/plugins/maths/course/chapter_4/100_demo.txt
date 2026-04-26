@@ -126,6 +126,42 @@ Le lemme de Steinitz est donc démontré.
 </p>
 
 <h4>4.1.0.1</h4>
+<p>
+Démontrons que toutes les bases d'un K-espace vectoriel "E" ont le même cardinal.
+Une grande partie de la preuve utilisera le lemme de Steinitz.
+Commençons par poser une famille libre de vecteur "v" et une base "w" de "E".
+</p>
+<math>v = {<mi>v</mi><msub>1</msub>, <mi>v</mi><msub>2</msub>, ..., <mi>v</mi><msub>m</msub>}, v <min> <mi>E</mi><msup>m</msup></math></br>
+<math>w = {<mi>w</mi><msub>1</msub>, <mi>w</mi><msub>2</msub>, ..., <mi>w</mi><msub>n</msub>}, w <min> <mi>E</mi><msup>n</msup></math></br>
+<math><mforall> u <min> E, <mexists> {<mi>a</mi><msub>1</msub>, <mi>a</mi><msub>2</msub>, ..., <mi>a</mi><msub>n</msub>} <min> K, u = <msum unknown=k from=1 to=n><mi>a</mi><msub>k</msub> * <mi>w</mi><msub>k</msub></math>
+<p>
+Déjà, selon le lemme de Steinitz, toute famille de vecteur "v" de "E" a une taille inférieur ou égal à chaque base "w" de "E".
+Donc, "m" est inférieur ou égal à "n".
+</p>
+<math>m <ltequal> n</math>
+<p>
+Démontrons que si "m" est strictement inférieur à "n", alors "v" ne génère pas entièrement "E".
+Selon le lemme de Steinitz, il existe une base de "E" constitué des "m" vecteurs de "v" et de "n - m" vecteurs de "w".
+Si "m" est strictement inférieur à "n", alors il existe au moins un vecteur de "w" dans cette base.
+</p>
+<math>(<mi>v</mi><msub>1</msub>, <mi>v</mi><msub>2</msub>, ..., <mi>v</mi><msub>m</msub>, <mi>w</mi><msub>m + 1</msub>, ..., <mi>w</mi><msub>m</msub>)</math>
+<p>
+Or, cette famille est une base : elle est libre.
+Donc, aucune combinaison des vecteurs de "v" ne génère les vecteurs de "w" restants dans la base.
+Donc, si "m" est strictement inférieur à "n", alors "v" ne génère pas "E".
+</p>
+<math>m <mlt> n <mimp> Vect(v) != E</math>
+<p>
+Donc, si une famille génère entièrement "E", elle est obligatoirement de taille "n".
+Donc, toutes les bases d'un espace vectoriel ont la même taille : ici "n".
+</p>
+<math>Vect(v) = E <mimp> m = n</math>
+<p>
+On peut même prouver la réciproque de ce théorème.
+En effet, si "m = n", alors l'algorithme vue plus haut nous donne une base de "E" qui est égale à... "v".
+Donc, si "m = n", "v" est une base de "E" : par double implication, il s'agit d'une équivalence.
+</p>
+<math>m = n <mequi> Vect(v) = E</math>
 
 <h3>Les applications linéaires</h3>
 

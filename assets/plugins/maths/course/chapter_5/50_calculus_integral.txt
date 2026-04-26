@@ -1,0 +1,12 @@
+<h1>Le calcul intégral</h1>
+
+
+
+<h2>L'intégration simple</h2>
+
+<h3>Qu'est ce qu'est l'intégration ?</h3>
+<p>
+Après la dérivation, nous devons vous présenter son grand allié : l'intégration.
+Comme pour la dérivation, nous allons commencer par le cas le plus simple : les fonctions réelles.
+En fait, <span class="important"><definition name="integration"></span>.
+</p>

@@ -2,7 +2,7 @@
 
 
 
-<h2>Les objets centraux des mathématiques</h2>
+<h2>Les relations mathématiques</h2>
 
 <h3>Qu'est ce qu'est une relation mathématique ?</h3>
 <p>
@@ -129,6 +129,10 @@ Cette notation utilise le symbôle "/".
 Par exemple, pour un ensemble "E" quotienté par une relation d'équivalence "~", l'ensemble quotient "F" est noté :
 </p>
 <math>F = E / ~</math>
+
+
+
+<h2>Les applications mathématiques</h2>
 
 <h3>Qu'est ce qu'est une application mathématique ?</h3>
 <p>

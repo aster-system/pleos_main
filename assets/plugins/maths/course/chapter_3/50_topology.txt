@@ -38,14 +38,16 @@ Or, la frontière de ce nouvel ensemble est donc {3, 5}, qui ne font pas partie 
 </p>
 <p>
 De plus, <span class="important"><definition name="topological_closure"></span>.
+D'un point de vue plus rigoureux, l'adhérence d'une partie "F" est l'intersection de tous les fermés contenant "F" (et donc, il s'agit du "plus petit" fermé qui contient "F").
 On peut en déduire plein de propriétés très simples, mais assez intéressantes.
 Si une partie "F" est un fermé, alors "F" contient déjà sa frontière : "F" est égal à son adhérence.
 Cependant, si cette partie "F" est ouverte, alors l'intersection de "F" et de son adhérence donne "F", et priver "F" à l'adhérence de "F" donne la frontière de "F". 
+Généralement, <span class="important">un point appartenant à l'adhérence d'une partie "F" est nommé un point adhérent à "F"</span>.
 </p>
 <p>
 Généralement, <span class="important">on peut définir un ensemble d'ouverts de "E" comme un ensemble de parties de "E", généralement noté "T", nommé une topologie de "E"</span>.
 Pour obéir à toutes les propriétés des ouverts, cette topologie "T" doit obéir à quelques règles précises.
-Premièrement, l'ensemble vide et "E" entier sont des ouverts de "E", et donc sont présents dans "T".
+Premièrement, <span class="important">l'ensemble vide et "E" entier sont des ouverts de "E", et donc sont présents dans "T"</span>.
 Deuxièmement, l'union de n'importe quel élément de "T" est un autre élément de "T".
 Donc, <span class="important">l'union de deux ouverts est toujours un ouvert</span>.
 </p>
@@ -62,7 +64,7 @@ Donc, <span class="important">l'union de deux ouverts est toujours un ouvert</sp
 <p>
 Finalement, l'intersection de n'importe quel élément de "T" est un autre élément de "T".
 Donc, <span class="important">l'intersection de deux ouverts est toujours un ouvert</span>.
-En fait, <span class="important">dire que un ensemble de parties de "E" obéit à ces 3 règles équivaut à dire que cet ensemble de partie est une topologie de "E"</span>.
+En fait, <span class="important">dire que un ensemble de parties de "E" obéit à ces 3 règles équivaut à dire que cet ensemble de parties est une topologie de "E"</span>.
 Cette équivalence nous sera très utile pour de futures démonstrations.
 </p>
 <p>
@@ -80,13 +82,122 @@ Généralement, <span class="important">l'ensemble des voisinages possibles de "
 Ce "V(a)" est donc un ensemble de parties de l'ensemble de départ.
 </p>
 <p>
+Parlons de deux types de points précis dans un espace topologique : les points limite et points d'accumulation.
+<span class="important"><definition name="topological_point_limit"></span>.
+À l'inverse, si un point n'est pas limite de "A", il est dit point isolé de "A".
+Le concept de point d'accumulation est un peu différent.
+<span class="important"><definition name="topological_point_accumulation"></span>.
+Selon certains auteurs, <span class="important">les points limites et points d'accumulations sont parfaitement égaux, et selon d'autres, ils prennent les définitions indiqués ici</span>.
+</p>
+<p>
 L'exemple le plus "bateau" de topologie sur un ensemble "E" non-vide est ce que l'on appelle la topologie grossière de "E".
 En fait, <span class="important"><definition name="topology_trivial"></span>.
 En effet, intuitivement, l'ensemble vide ne contient aucun élément de sa frontière (il ne contient aucun élément), et "E" pareil (il n'a pas de frontière, il ne peut donc pas la contenir).
 En plus l'ensemble contenant l'ensemble vide et "E" respecte parfaitement les conditions pour être une topologie.
 </p>
+<p>
+En plus, il est possible de définir des topologies sur des parties "F" d'ensembles "E" munis d'une topologie.
+Le type le plus utilisé parmi ces topologies est la topologie induite.
+<span class="important"><definition name="topology_induced"></span>.
+Dans ce cas, <span class="important">"F" est nommé un sous-espace de "E"</span>.
+</p>
+<p>
+Sur un ensemble muni d'une relation d'ordre quelconque, il est possible de définir une topologie extrêmement efficace : la topologie de l'ordre.
+<span class="important"><definition name="topology_order"></span>.
+Voici l'écriture mathématique de ces 3 types d'ouverts :
+</p>
+<math><mforall> x, x <min> A <mequi> y <mlt> x <mlt> z</math></br>
+<math><mforall> x, x <min> B <mequi> y <mlt> x</math></br>
+<math><mforall> x, x <min> C <mequi> x <mgt> z</math>
+<p>
+Cependant, il s'agit bien des ouverts de base, or ce ne sont pas les seuls ouverts.
+En effet, <span class="important">l'union d'un nombre fini d'ouverts de base (ou d'ouverts tout cours) forme un nouvel ouvert, qui peut ne pas être écrit sous cette forme</span>.
+Effectivement, c'est l'une des propriétés des ensembles d'ouverts dans un espace topologique, énoncées plus haut.
+En voici un exemple très clair, où nous définissons un ensemble "D" qui est un ouvert de notre ensemble muni de la topologie de l'ordre :
+</p>
+<math><mforall> x, x <min> A <mequi> y <mlt> x <mlt> z</math></br>
+<math><mforall> a, a <min> B <mequi> b <mlt> a <mlt> c</math></br>
+<math>(D = A <munion> B) <mequi> <mforall> d, d <min> D <mequi> {b <mlt> d <mlt> c <mor> y <mlt> d <mlt> z}</math></math>
 
-<h3>Les propriétés basiques des espaces topologiques</h3>
+<h3>Les filtres topologiques</h3>
+<p>
+Un concept assez proche de celui de "topologie" sur un ensemble est le concept de filtre.
+<span class="important"><definition name="topological_filter"></span>.
+Ce concept est très... peu intuitif, mais d'un point de vue purement mathématique, un filtre "F" sur un élément "E" respecte ces 3 propriétés :
+</p>
+<math><mforall> x, y <min> F, x <minter> y <min> F</math></br>
+<math><mforall> x <min> F, <mforall> p <mincluded> E, x <mincluded> p <mimp> p <min> F</math></br>
+<math><mempty> <mnotin> F</math>
+<p>
+L'exemple le plus simple est ce que l'on appelle le filtre principal.
+<span class="important"><definition name="topological_filter-principal"></span>.
+Généralement, ce filtre est noté avec le "F" général de la notion du filtre, avec le nom de la partie en indice.
+Il est assez facile de démontrer que ce type d'ensemble de parties est un filtre.
+Déjà, l'ensemble vide ne contient pas "A", il est donc hors de cet ensemble.
+De plus, l'intersection de tous les éléments de ce filtre forme une partie qui contient "A", et donc un élément de ce filtre.
+</p>
+<math><mforall> x, y <min> <mi>F</mi><msub>A</msub>, A <mincluded> x <minter> y <mimp> x <minter> y <min> F</math>
+<p>
+C'est la même chose pour l'union.
+</p>
+<math><mforall> x, y <min> <mi>F</mi><msub>A</msub>, A <mincluded> x <munion> y <mimp> x <munion> y <min> F</math>
+<p>
+Cependant, le filtre qui va le plus nous intéresser est un filtre utilisant les voisinages.
+En effet, pour un point d'un espace topologique "x", <span class="important">l'ensemble des voisinages de "x" forme un filtre de l'espace</span>.
+Déjà, l'ensemble vide ne contient pas d'ouvert contenant "x", il est donc hors de cet ensemble.
+De plus, l'intersection de tous les éléments de ce filtre forme un voisinage de "x", qui fait donc partie du filtre.
+Finalement, l'union de tous les éléments de ce filtre forme un voisinage de "x", qui fait donc partie du filtre.
+</p>
+
+<h3>La topologie des nombres réels</h3>
+<p>
+Comme les nombres réels représentent un ensemble, il est donc possible d'en obtenir un espace topologique très pratique.
+En effet, <span class="important">il est possible de définir une topologique sur l'ensemble des réels, qui est probablement la topologique la plus utile des mathématiques</span>.
+Comme cette topologique est très utilisée, on l'appelle "topologie usuelle des nombres réels".
+Généralement, <span class="important">l'espace topologique usuelle formé avec "R" est aussi nommé "topologie de la droite réelle"</span>.
+</p>
+<p>
+En plus de l'espace topologique des nombres réelles, il est possible de définir un espace topologique très proche : la droite réelle achevée.
+<span class="important"><definition name="topology_real-extended"></span>.
+En fait, <span class="important">cette topologie contient tous les ouverts de "R", auquel on ajoute toutes les intervalles possibles contenant "+ l'infini" et "- l'infini" (qui sont eux mêmes des ouverts)</span>.
+</p>
+<math>]-8; +<minf>], [-<minf>, 42[, [-<minf>, +<minf>]</math>
+
+<h3>Les propriétés topologiques de base</h3>
+<p>
+Dans pas mal de théorèmes topologiques, une propriété précise revient souvent : la connexité topologique.
+En topologie, <span class="important"><definition name="topological_space_connected"></span>.
+Dans ce cas, un schéma s'impose pour bien comprendre ce concept.
+Voici un espace topologique (un disque), sous-espace par la topologie induite d'un plan 2D normal, connexe :
+</p>
+<graphic><background_color white><circle border_color=transparent x=0 y=0 radius=3/2></graphic>
+<p>
+Il n'est constitué que d'un seul morceau.
+Voici maintenant un espace, toujours sous-espace par la topologie induite d'un plan 2D normal, non-connexe :
+</p>
+<graphic><background_color white><circle color=blue border_color=transparent x=-2 y=0 radius=1><circle color=blue border_color=transparent x=2 y=0 radius=1></graphic>
+<p>
+Ici, <span class="important">l'espace est constitué de deux morceaux qui ne se touchent pas : il n'est pas connexe</span>.
+Même si ils ne se touchent pas, cette ensemble reste un espace topologique, il n'est juste pas connexe.
+</p>
+<p>
+D'un point de vue rigoureux, <span class="important"><definition name="topological_space_connected-rigorous"></span>.
+</p>
+<p>
+Dans la même "vibe" que la connexité, parlons d'une propriété très importante en topologie : la propriété de Borel-Lebesgue.
+<span class="important"><definition name="topological_borel_lebesgue"></span>.
+Bon, si de base, votre recouvrement est fini, alors cette propriété ne sert à rien.
+En fait, <span class="important">l'idée est de dire qu'il n'y a jamais besoin d'une quantité infinie d'ouverts pour recouvrir une partie respectant cette propriété</span>.
+</p>
+<math><mforall> <mi>U</mi><msub>i</msub>, <munion><mi>U</mi><msub>k</msub> = O <mimp> <mexists> n <min> N, <mexists> (<mi>a</mi><msub>1</msub>, <mi>a</mi><msub>2</msub>, ..., <mi>a</mi><msub>n</msub>) <min> <mi>N</mi><msup>n</msup>, <munion unknown=k to=n><mi>U</mi><msub><mrow><mi>a</mi><msub>k</msub></mrow></msub></math>
+<p>
+Cette propriété peut se généraliser pour un espace entier plutôt qu'une partie.
+Cependant, pour un espace entier, on parle plus généralement de l'axiome de Borel-Lebesgue.
+En effet, <span class="important">un espace respecte l'axiome de Borel-Lebesgue si, pour tout recouvrement de cet espace par des ouverts de cet espace, il en existe un sous-recouvrement fini</span>.
+Encore une fois, l'idée est de dire qu'il n'y a jamais besoin d'une quantité infinie d'ouverts pour recouvrir un espace respectant cette propriété.
+</p>
+
+<h3>Les axiomes de séparation</h3>
 <p>
 Il est possible de découper les espaces topologiques en familles, respectant certaines propriétés précises.
 Parmi ces découpes, la plus utilisés est la découpe en les propriétés définies par des axiomes précis : les axiomes de séparations.
@@ -123,18 +234,42 @@ En effet, <span class="important">cette propriété ne s'applique que sur des é
 Le deuxième axiome de séparation est l'axiome "T-1", qui est assez similaire à l'axiome "T-0".
 <span class="important"><definition name="topology_separation_axiom-t_1"></span>.
 En fait, dans un espace "T-0", le "ET" est un simple "OU".
+Donc, on en déduit rapidement que tout espace "T-1" est un espace "T-0".
+Il n'y a pas beaucoup de propriétés intéressantes dans ces espaces seuls, mais l'une d'elle concerne les singletons.
+En effet, <span class="important">dire qu'un espace est "T-1" équivaut à dire que tout singleton d'éléments de cet espace est fermé</span>.
+La démonstration est assez simple : si un singleton est fermé, cela équivaut à dire que l'espace entier privé de ce singleton est ouvert.
 </p>
-
+<math>E \ {x} <min> T</math>
 <p>
-Sur un ensemble "E", il est possible de définir plusieurs topologies différentes (tout ensemble de parties de "E" vérifiant les règles plus haut sont des topologies, ce qui fait que certains ensemble peuvent en posséder une infinité).
-L'intérêt, c'est que <span class="important">l'ensemble des topologies possibles sur un ensemble peut posséder une structure d'ensemble partiellement ordonné</span>.
+Démontrons que l'espace entier privé de ce singleton est ouvert.
+Déjà, dans un espace "T-1", pour TOUS points "y" de "E", il existe un voisinage de ce point de "y" qui ne contient pas "x".
 </p>
+<math><mexists> V <min> V(y), x <mnotin> V</math>
+<p>
+Ici, le mot important est "tous".
+En effet, <span class="important">si il existe un voisinage pour TOUS les points "y" qui ne contient pas "x", alors ces voisinages contiennent un ouvert qui contient "y", et donc nous avons un ensemble d'ouverts contenant chacun le "y" concerné, pour TOUS les "y" possibles</span>.
+Or, l'union d'ouverts est aussi un ouvert.
+Donc, <span class="important">l'union de TOUS les ouverts qui ne contiennent pas "x" (qui contient donc tous les points qui ne sont pas "x", et est donc "E \ {x}") est donc un ouvert de "E", et son complémentaire (le singleton "{x}") est donc fermé</span>.
+</p>
+<p>
+La réciproque (prouvant l'équivalence) est assez simple : si tous les singletons sont fermés, alors tous les "E \ {x}" sont ouverts.
+Dans ce cas, comme un ouvert est un voisinage de tous ces points, <span class="important">il existe un voisinage de chaque point qui n'est pas "x" qui ne contient pas "x"</span>.
+Finalement, pour tous les points qui ne sont pas "y", il existe un voisinage de "x" qui ne contient pas "y" : "E \ {y}".
+Au final, <span class="important">dire qu'un espace est "T-1" équivaut à dire que tout singleton d'éléments de cet espace est fermé</span>.
+</p>
+<p>
+Le troisième axiome de séparation est l'axiome "T-2".
+<span class="important"><definition name="topology_separation_axiom-t_2"></span>.
+Donc, il existe un voisinage du premier point disjoint d'un des voisinages du second, et vice-versa.
+Généralement, les espaces de ce genre sont appelés par leur nom "espace séparé".
+</p>
+<math><mforall> x, y <min> E, <mexists> V <min> V(x), <mexists> W <min> V(y), V <minter> W = <memptyset></math>
 
 
 
 <h2>Le lien analyse - topologie</h2>
 
-<h3>La limite et continuité topologique</h3>
+<h3>La limite topologique</h3>
 <p>
 En vrai, quasiment tous les concepts d'analyse peuvent êtres généralisés dans des espaces topologiques.
 C'est ce que nous allons faire des maintenant.
@@ -146,13 +281,228 @@ Grâce à toutes les définitions vues jusqu'ici, ce ne sera pas si difficile à
 L'idée ici est assez simple, et très proche de l'analyse.
 En fait, <span class="important">la fonction admet une limite "l" en "a" si l'on peut se rapprocher autant qu'on veut de "l" (se rapprocher via un voisinage) en faisant se rapprocher le paramètre de la fonction de "a" (toujours via un voisinage)</span>.
 Avec cette définition bien plus générale, on peut donc utiliser le concept de limite de manière bien plus étendue.
+D'un point de vue purement mathématique, on écrit (et on lit "pour tous voisinage "V" de "l", il existe un voisinage "W" de "a" tel que toutes valeurs de "W" (n'étant pas forcément "a") appartienent à "V"") :
 </p>
+<math>f : E <mto> F, x <mto> f(x)</math></br>
+<math><mforall> V <min> V(l), <mexists> W <min> V(a), <mforall> x <min> W \ {a}, f(x) <min> V</math>
+<p>
+Ici, une question subsiste : <span class="important">est-ce que nos limites réelles vues plus haut sont des limites topologiques</span> ?
+Malheureusement, cette question est assez complexe, et mérite quelques clarifications.
+Pour commencer, rappelons que nos fonctions sont des fonctions réelles, allant de "R" vers "R".
+Pour rappel, <span class="important">la topologie usuelle de "R" offre beaucoup de propriétés très intéressantes</span>.
+Or, certaines limites peuvent utiliser l'infini, qui n'est pas présent dans "R", mais qui est cependant présent dans "R barre".
+Donc, <span class="important">disons donc que nos fonctions réelles vont de "R barre" muni de sa topologie usuelle vers... "R barre" muni de sa topologie usuelle</span>.
+</p>
+<math>f : R <mto> R</math>
+<p>
+En suite, rappelons les définitions quantifiées des limites (dans le cas où la limite se situe en un "a" fini).
+</p>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <min> ]a, a + b[ <mimp> |f(c) - l| <mlt> x}</math></br>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <min> ]a, a - b[ <mimp> |f(c) - l| <mlt> x}</math></br>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <min> ]a, a + b[ <mimp> f(c) <mgt> x}</math></br>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <min> ]a, a + b[ <mimp> f(c) <mlt> -x}</math></br>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <min> ]a - b, a[ <mimp> f(c) <mgt> x}</math></br>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <min> ]a - b, a[ <mimp> f(c) <mlt> -x}</math></br>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <mgt> b <mimp> |f(c) - l| <mlt> x}</math></br>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <mlt> -b <mimp> |f(c) - l| <mlt> x}</math></br>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <mgt> b <mimp> f(c) <mgt> x}</math></br>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <mlt> -b <mimp> f(c) <mgt> x}</math></br>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <mgt> b <mimp> f(c) <mlt> -x}</math></br>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <mlt> -b <mimp> f(c) <mlt> -x}</math></br>
+<p>
+Théoriquement, tous les voisinages de "a" représentent des intervalles ouverts entre "a" et "a - b" ou "a + b".
+Cependant, un problème se pose : si l'on rajoute "a" à ces intervalles, est-ce qu'ils représenteraient des voisinages de "a", et donc est-ce qu'ils contiendraient un ouvert contenant "a" ?
+Dans la topologie usuelle de "R", non : <span class="important">ils représentent des intervalles ouvert de frontière "a", et ne peuvent donc pas contenir de sous-ensemble contenant "a", mais pas en tant que frontière</span>.
+Donc, <span class="important">le concept de limite à gauche / à droite seul n'est pas possible dans notre fonction utilisant la topologie usuelle de "R"</span>.
+</p>
+<p>
+Cependant, ne nous laissons pas abattre : il existe un cas où une limite topologique existe bel et bien avec notre fonction.
+En effet, si la limite à droite et à gauche sont égales, alors vous pouvez changer les "]a - <mi>b</mi><msub>1</msub>, a[" et "]a, a + <mi>b</mi><msub>2</msub>[" par "]a - d, a + d[ \ {a}", où "d" est le minimum entre les deux "b".
+Or, "]a - d, a + d[ \ {a} U {a}" est égal à "]a - d, a + d[", qui est un voisinage de "a" (si "d" n'est pas égal à 0, ce qui est impossible par définition).
+Donc, <span class="important">une fonction admet bel et bien une limite topologique si sa limite à gauche et à droite sont égales</span>.
+Reformulons donc nos limites dans ce cas là (cependant, gardons la lettre "b" pour noter les valeurs dans l'intervalle) :
+</p>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <min> ]a - b, a + b[ <mimp> |f(c) - l| <mlt> x}</math></br>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <min> ]a - b, a + b[ <mimp> f(c) <mgt> x}</math></br>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <min> ]a - b, a + b[ <mimp> f(c) <mlt> -x}</math></br>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <mgt> b <mimp> |f(c) - l| <mlt> x}</math></br>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <mlt> -b <mimp> |f(c) - l| <mlt> x}</math></br>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <mgt> b <mimp> f(c) <mgt> x}</math></br>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <mlt> -b <mimp> f(c) <mgt> x}</math></br>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <mgt> b <mimp> f(c) <mlt> -x}</math></br>
+<math><mforall> x <min> R*+, <mexists> b <min> R*+, {<mforall> c <min> R, c <mlt> -b <mimp> f(c) <mlt> -x}</math></br>
+<p>
+Donc, formulons le concept de voisinage de "a".
+Déjà, <span class="important">les intervalles "]a - b, a + b[" sont des voisinages de "a"</span>.
+Or, pourrait-on faire de même dans les cas où notre "c" doit être de plus en plus grand ou de plus en plus petit ?
+Dans "R barre", rappelons une propriété intéressante : <span class="important">les intervalles de la forme "]b, + infini]" sont des voisinages de "+ l'infini", et les intervalles de la forme "[- infini, b]" sont des voisinages de "- l'infini"</span>.
+Donc, <span class="important">si l'on considére "a = + l'infini" ou "a = - l'infini", les intervalles de la forme "]b, + infini]" et "[- infini, b]" sont des voisinages de "a"</span>.
+On peut donc remplacer tous les "b" par "W", où "W" est un voisinage de "a" (et aussi dire que "c" n'appartient plus qu'à "R", mais à "R barre").
+Si nous faisons cette étape, beaucoup des formules si dessus se répètent : écrivons toutes les formules distinctes.
+</p>
+<math><mforall> x <min> R*+, <mexists> W <min> V(a), {<mforall> c <min> R barre, c <min> W \ {a} <mimp> |f(c) - v| <mlt> x}</math></br>
+<math><mforall> x <min> R*+, <mexists> W <min> V(a), {<mforall> c <min> R barre, c <min> W \ {a} <mimp> f(c) <mgt> x}</math></br>
+<math><mforall> x <min> R*+, <mexists> W <min> V(a), {<mforall> c <min> R barre, c <min> W \ {a} <mimp> f(c) <mlt> -x}</math>
+<p>
+Procédons en suite pour chasser le "x".
+Déjà, "|f(c) - v|" inférieur à "x" revient à dire que la distance entre "f(c)" et "v" est inférieur à "x", et donc que "f(c)" appartient à "]v - x, v + x[".
+De l'exact même manière, <span class="important">"]v - x, v + x[" représente un voisinage de "v", et "f(c)" supérieur à "x" ou inférieur à "-x" représente un voisinage de "v" si "v" est respectivement "+ l'infini" ou "- l'infini"</span>.
+On peut donc réécrire cette formule, qui ne devient qu'une formule distincte.
+</p>
+<math><mforall> V <min> V(l), <mexists> W <min> V(a), {<mforall> c <min> R barre, c <min> W \ {a} <mimp> f(c) <min> V}</math></br>
+<math><mforall> V <min> V(l), <mexists> W <min> V(a), <mforall> c <min> W \ {a}, f(c) <min> V</math>
+<p>
+Nous reconnaissons la formule de la limite topologique : <span class="important">tous ces cas donnent donc des limites topologiques</span>.
+</p>
+<p>
+Cependant, le concept de limite en topologie pose un gros problème : <span class="important">sa définition purement topologique est assez faible, et permet des résultats très bizarres</span>.
+Par exemple, <span class="important">il existe des topologies (bizarres) tel que des applications sur ces topologies peuvent donner plusieurs limites en une valeur</span>.
+Ce résultat se base sur quelque chose d'assez simple : la définition topologique de la limite est très permissive.
+Prenons l'exemple général : un ensemble "X" défini comme "{a, b, c}", muni d'une topologie très simple : "{vide, {a}, {a, b}, {a, c}, X}".
+</p>
+<math>X = {a, b, c}, T = {<memptyset>, {a}, {a, b}, {a, c}, X}</math></br>
+<p>
+Nous pouvons donc poser tous les voisinages de "a", "b" et "c" :
+</p>
+<math>V(a) = {{a}, {a, b}, {a, c}, X}</math></br>
+<math>V(b) = {{a, b}, X}</math></br>
+<math>V(c) = {{a, c}, X}</math></br>
+<p>
+Posons la fonction "f" allant de "X" vers "X", transformant chaque valeur de "X" en "a".
+</p>
+<math>f : X <mto> X, x <mto> a</math>
+<p>
+Trouvons la limite en "b" de cette fonction.
+Rappelons la définition de la limite de "f" en "b" :
+</p>
+<math><mforall> V <min> V(l), <mexists> W <min> V(b), <mforall> x <min> W \ {b}, f(x) <min> V</math>
+<p>
+Donc, pour quelles valeurs de "l" existe t'il pour tout voisinage "V" de "l" un voisinage "W" de "b" tel que, pour tous "x" de ce "W", "f(x)" appartienne à "V" ?
+Comme nous connaissons toutes les valeurs des voisinages de "a", "b" et "c", nous pouvons très facilement répondre à cette question.
+Déjà, si nous tentons "l = a", nous remarquons que chaque voisinage contient "a".
+Ici, "f(x) = a" pour tout "x", donc pour tout voisinage "V" de "a", il existe toujours une valeur de "V" égale à "f(x)", donc "f(x)" appartient à "V" : <span class="important">"a" est une limite de "f" en "b"</span>.
+Or, une brève observation nous permet de voir quelque chose d'un peu embêtant : <span class="important">tous les voisinages de "b" et de "c" contiennent aussi tous "a"</span>.
+Donc, pour tout voisinage de "b" et "c", il existe toujours une valeur de ces voisinages égale à "a", et donc à "f(x)" (où "x" représente chaque valeur d'un voisinage de "b"), donc "f(x)" appartient à ces voisinages : <span class="important">"b" et "c" sont aussi des limites de "f" en "b"</span>.
+</p>
+<p>
+Bien évidemment, il est inconcevable qu'une fonction réelle puisse possèder plusieurs limites.
+Cependant, il est possible de n'obtenir qu'une seule limite, de manière assez simple.
+En effet, <span class="important">toute fonction arrivant dans un espace séparé (espace "T-2") ne peut qu'admettre des limites uniques pour un point donné</span>.
+La démonstration est assez simple.
+Imagineons qu'une fonction "f" admette une limite "l" en "a".
+</p>
+<math><mforall> V <min> V(l), <mexists> W <min> V(a), <mforall> x <min> W \ {a}, f(x) <min> V</math>
+<p>
+Supossons qu'elle admette aussi une limite "m", toujours en "a".
+Dans ce cas :
+</p>
+<math><mforall> U <min> V(m), <mexists> T <min> V(a), <mforall> x <min> T \ {a}, f(x) <min> U</math>
+<p>
+Comme nous sommes dans un espace "T-2", il existe un voisinage de "m" qui ne contient pas un autre voisinage de "l", et vice-versa.
+Donc, il existe deux voisinages de "a", que nous nommerons "B" et "C", tel que l'image de "f(B)" est incluse dans un voisinage de "l" qui ne contient pas un voisinage de "m, tel que l'image de "f(C)" soit inclut dedans.
+Pour rappel, une propriété des voisinages en un point est que l'intersection de voisinages en ce point forme un nouveau voisinage en ce point.
+Donc, l'intersection de voisinages de "a" ("B" et "C") forme un nouveau voisinage de "a", que nous nommerons "D".
+</p>
+<math>D = B <minter> C</math>
+<p>
+Ici, quelque soit l'élément de "D", l'image ne peut être ni dans un voisinage de "l", ni dans un voisinage de "m", pusiqu'ils sont pas définition disjoints.
+Cependant, comme "B" admet pour image un ensemble inclu dans un voisinage de "l" et "C" admet pour image un ensemble inclu dans un voisinage de "m", quelque soit l'élément de "D", l'image ne peut être... que dans un voisinage de "l", ou de "m".
+Ici, nous avons donc une contradiction, et une de nos hypothèses de départ est fausse : notre fonction admet plusieurs limites en "a".
+Donc, <span class="important">toute fonction arrivant dans un espace séparé (espace "T-2") ne peut qu'admettre des limites uniques pour un point donné</span>.
+</p>
+
+<h3>La continuité topologique</h3>
 <p>
 Poursuivons par un concept très utilisé en analyse : la continuité topologique.
 Déjà, comme pour l'analyse, <span class="important">une application peut être continue sur un seul point, ou sur plusieurs points</span>.
 Commençons par la définition en un point.
 <span class="important"><definition name="topological_continuity-point"></span>.
-En quelques sorte, une application continue rend les voisinages dans l'image prévisibles grâces aux voisinages de départ.
-Comme pour l'analyse, <definition name="topological_part">.
-Donc, <span class="important"><definition name="topological_full"></span>.
+En plus, <definition name="topological_continuity-part">.
+Donc, <span class="important"><definition name="topological_continuity-full"></span>.
 </p>
+<p>
+Pour rappel, en analyse réelle, nous avons vue qu'une application est continue en un point "a" si elle était définie en "a", et si sa limite à droite et à gauche sont égales.
+Comme nous l'avons vue plus haut, <span class="important">si une fonction a une même limite à droite et à gauche en "a", alors elle admet une limite topologique : on en conclut directement que la continuité réelle est aussi une continuité topologique</span>.
+De plus, <span class="important">si l'espace d'arrivée de la fonction est séparé, alors sa valeur en "a" sera toujours égale à la valeur de sa limite</span>.
+</p>
+<p>
+Cette définition permet d'établir un théorème extrêmement intéressant avec les fonctions continues sur tout leur intervalle de définition : <span class="important">tout voisinage d'un point "f(a)" de l'ensemble d'arrivée admet comme antécédent un voisinage de "a"</span>.
+La démonstration est assez intéressante.
+Si une fonction est continue en "a", alors "f(a)" est une limite de "f" en "a".
+Par définition de la limite :
+</p>
+<math><mforall> V <min> V(f(a)), <mexists> W <min> V(a), <mforall> x <min> W \ {a}, f(x) <min> V</math>
+<p>
+Pour tout voisinage "V" de "f(a)", il existe un voisinage de "a" tel que l'image de ce voisinage sont inclut dans "V".
+Comme on sait que "f(a)" appartient à "V", alors on peut enlever le "\ {a}".
+</p>
+<math><mforall> V <min> V(f(a)), <mexists> W <min> V(a), <mforall> x <min> W, f(x) <min> V</math></br>
+<math><mforall> V <min> V(f(a)), <mexists> W <min> V(a), f(W) <mincluded> V</math>
+<p>
+Selon le concept d'image réciproque, on peut donc dire :
+</p>
+<math><mforall> V <min> V(f(a)), <mexists> W <min> V(a), W <mincluded> <mi>f</mi><msup>-1</msup>(V)</math>
+<p>
+Si "W" est un voisinage de "a" et "W" est incluse dans l'image réciproque de "V", alors l'image réciproque de "f(V)" est un voisinage de "a".
+Donc, <span class="important">tout voisinage d'un point "f(a)" de l'ensemble d'arrivée admet comme antécédent un voisinage de "a"</span>.
+Ici, nous avons dit que cela fonctionne si la fonction est continue sur tout son intervalle de définition.
+Or, <span class="important">si dans un espace topologique quelconque, on peut restreindre cette fonction sur un sous-espace, et qu'elle est continue sur cet espace, alors les résultats s'appliquant aussi dans ce sous-espace</span>.
+Comme ça, si votre fonction n'est continue que sur une partie d'un espace topologique, vous pouvez quand même utiliser ce théorème, grâce à une restriction.
+</p>
+<p>
+Cette propriété a pas mal de conséquences intéressantes.
+Par exemple, dans une fonction continue sur tout son ensemble de définition, <span class="important">tout ouvert de l'ensemble d'arrivée admet comme antécédent un ouvert de l'ensemble de départ</span>.
+Cela se déduit directement du fait qu'un ouvert d'un point est un ensemble de voisinages de tous ses points, qui induisent donc un ensemble de voisinages de tous les antécédents possibles, qui forment donc un ouvert.
+C'est la même chose pour les fermés, puisque comme son complémentaire est un ouvert (et que l'antécédent de cet ouvert est donc... un ouvert), alors son image réciproque est le complémentaire d'un ouvert, et donc un fermé.
+</p>
+<p>
+Cependant, un théorème d'une très grande importance concerne les parties connexes.
+En effet, <span class="important">toute image d'une partie connexe par une fonction continue est une partie connexe</span>.
+La démonstration générale utilise une preuve par l'absurde.
+Posons une fonction continue "f", "X" une partie connexe de "E", et supposons que "f(X)" est une partie non-connexe de "F".
+Dans ce cas, il existe deux ouverts disjoints dont l'union forme "f(X)".
+</p>
+<math>U <munion> V = f(X)</math>, U <minter> V = <mempty></br>
+<math>f(X) <minter> U = V, f(X) <minter> V = U</math></br>
+<math>(f(X) <minter> U) <minter> (f(X) <minter> V) = <mempty></math>
+<p>
+Appelons "A" et "B" les images réciproques de "U" et "V" par "f".
+Comme nous l'avons vue, "A" et "B" sont des ouverts de "E", et nous pouvons en inférer leur lien avec "X".
+</p>
+<math>A = <mi>f</mi><msup>-1</msup>(U), B = <mi>f</mi><msup>-1</msup>(V)</math></br>
+<math>X <mincluded> <mi>f</mi><msup>-1</msup>(U <munion> V) = <mi>f</mi><msup>-1</msup>(U) <munion> <mi>f</mi><msup>-1</msup>(V) = A <munion> B</math>
+<p>
+Ici, on peut donc voir que "X = A union B".
+Cherchons l'intersection de "A" et "B".
+<p>
+<math>A <minter> B = <mi>f</mi><msup>-1</msup>(U) <minter> <mi>f</mi><msup>-1</msup>(V) = <mi>f</mi><msup>-1</msup>(U <minter> V)</math></br>
+<math><mi>f</mi><msup>-1</msup>(U <minter> V) = <mempty> <mimp> A <minter> B = <mempty></math>
+<p>
+Donc, "A" et "B" sont disjoints.
+Or, "A" et "B" ne sont pas vides, donc "X" est l'union de deux ouverts disjoints : il n'est pas connexe.
+Néanmoins, nous l'avons supposer connexe : c'est donc une contradiction, et une de nos hypothèses est fausse.
+Ici, <span class="important">on se rend compte que la seule hypothèse fausse est que "f(X)" ne soit pas connexe : il est donc obligatoirement connexe</span>.
+</p>
+<p>
+Maintenant, exposons un dernier théorème très important aussi, sur les compacts.
+En effet, <span class="important">toute image d'un espace compact dans un espace séparé par une fonction continue est un espace compact</span>.
+Ici, pas besoin de preuve par l'absurde.
+Posons une fonction continue "f" et "E" un espace compact.
+Déjà, on sait que "f(E)" peut être recouvert par des ouverts de "F", avec un nombre fini ou infini d'ouverts.
+</p>
+<math><mforall> <mi>V</mi><msub>i</msub>, <munion><mi>V</mi><msub>k</msub> = f(E)</math>
+<p>
+Donc, on peut en déduire que "E" est inclut dans l'image réciproque de l'union de ces ouverts.
+</p>
+<math>E <mincluded> <mi>f</mi><msup>-1</msup>(<munion><mi>V</mi><msub>k</msub>)</math></br>
+<math>E <mincluded> <munion><mi>f</mi><msup>-1</msup>(<mi>V</mi><msub>k</msub>)</math>
+<p>
+Pour rappel, "E" est compact, et l'ensemble des "V" recouvre "E", alors il existe un sous-ensemble fini des "V" qui recouvre "E".
+</p>
+<math><mexists> n <min> N, <mexists> (<mi>a</mi><msub>1</msub>, <mi>a</mi><msub>2</msub>, ..., <mi>a</mi><msub>n</msub>) <min> <mi>N</mi><msup>n</msup>, <munion unknown=k to=n><mi>U</mi><mi>f</mi><msup>-1</msup>(<mi>V</mi><msub><mrow><mi>a</mi><msub>k</msub></mrow></msub>) = E</math>
+<p>
+En maniant correctement "E" et "f", on en déduit donc que "f(E)" appartient aussi un sous-ensemble fini des "V" qui le recouvre : <span class="important">il est donc au moins quasi-compact</span>.
+</p>
+<math>E = <munion unknown=k to=n><mi>f</mi><msup>-1</msup>(<mi>V</mi><msub><mrow><mi>a</mi><msub>k</msub></mrow></msub>)</math></br>
+<math>f(E) = f(<munion unknown=k to=n><mi>f</mi><msup>-1</msup>(<mi>V</mi><msub><mrow><mi>a</mi><msub>k</msub></mrow></msub>))</math></br>
+<math>f(E) <mincluded> <munion><mi>V</mi><msub><mrow><mi>a</mi><msub>k</msub></mrow></msub></math>

@@ -70,6 +70,23 @@ Finalement, la stabilité par la multiplication est aussi assez simple à prouve
 Donc, l'anneau "(2Z, +, .)" est un sous-anneau de "(Z, +, .)"
 De plus, de manière similaire, <span class="important">on peut démontrer que, pour tout "n" dans "N", l'anneau "(nZ, +, .)" est un sous-anneau de "(Z, +, .)"</span> (<a href="demo#4_0_0_0">démontré ici</a>).
 </p>
+<p>
+Bien qu'il existe plein de catégories de sous-anneaux différents, parlons d'un des plus intéressants : les idéaux.
+<span class="important"><definition name="algebra_subring-ideal"></span>.
+Il s'agit donc d'un sous-anneau stable par la multiplication des éléments de l'anneau entier.
+Pour un idéal "A" d'un anneau "B", on peut écrire :
+</p>
+<math><mforall> a <min> A, {<mforall> b <min> B, a * b <min> A}</math>
+<p>
+Prenons un exemple très simple : <span class="important">pour tout "n" dans "N", l'anneau "(nZ, +, .)" est un idéal de "(Z, +, .)"</span>.
+La démonstration est extrêmement simple : comme tout élément de "nZ" s'écrit sous la forme "n * c" (avec "c" un nombre entier décimal quelconque), le multiplier par un élément de l'anneau revient à multiplier "c" par un élément de l'anneau, ce qui donne "n" multiplié par quelque chose : un élément de "nZ".
+</p>
+<math><mforall> a, <min> nZ, <mexists> c <min> Z, a = n * c</math></br>
+<math><mforall> e <min> Z, a * e = n * c * e = n * (c * e)</math>
+<p>
+Comme pour les groupes, <span class="important">si l'anneau n'est pas commutatif, alors on peut parler d'idéal à gauche / à droite selon la multiplication est stable à gauche ou à droite</span>.
+Si l'anneau est commutatif, ces deux termes sont confondus.
+</p>
 
 <h3>Les anneaux principaux et euclidiens</h3>
 <p>

@@ -186,6 +186,25 @@ namespace pleos {
                     content.get()->sub_texts().erase(content.get()->sub_texts().begin() + i);i--;
                 }
             }
+            else if((attribute_name == std::string_view("msum"))){
+                // HMLT sum
+
+                // Datas
+                std::string needed_start = content.get()->sub_texts().at(i).get()->attribute_by_name(std::string("start")).value;
+                if(needed_start == std::string_view()){needed_start = std::string("0");}
+                std::string needed_unknown = content.get()->sub_texts().at(i).get()->attribute_by_name(std::string("unknown")).value;
+                if(needed_unknown == std::string_view()){needed_unknown = std::string("x");}
+                std::string needed_value = content.get()->sub_texts().at(i).get()->attribute_by_name(std::string("value")).value;
+                if(needed_value == std::string_view()){needed_value = std::string("0");}
+
+                // Balise
+                content.get()->sub_texts().at(i).get()->clear();
+                content.get()->sub_texts().at(i).get()->set_xml_balise_name(std::string("munderover"));
+                content.get()->sub_texts().at(i).get()->set_xml_balise_datas(content.get()->balise_container()->defined_balise_shared_ptr("munderover"));
+                content.get()->sub_texts().at(i).get()->add_sub_balise(std::string("<mi>") + std::string("&#") + std::to_string(scls::utf_8_symbol_by_name("msum")) + std::string(";</mi>"));
+                content.get()->sub_texts().at(i).get()->add_sub_balise(std::string("<mi>") + needed_unknown + std::string("=") + needed_start + std::string("</mi>"));
+                content.get()->sub_texts().at(i).get()->add_sub_balise(std::string("<mi>") + needed_value + std::string("</mi>"));
+            }
             else if(attribute_name == std::string_view("mvec") || attribute_name == std::string_view("vec")){
                 // HMLT a vector
                 std::shared_ptr<scls::XML_Text_Base> content_copy = std::make_shared<scls::XML_Text_Base>(*content.get()->sub_texts().at(i).get());

@@ -1,3 +1,6 @@
+<new_definition name="topological_borel_lebesgue">
+    <content>la propriété de Borel-Lebesgue est une propriété topologique des parties d'un espace topologique, tel que si cette partie respecte cette propriété, alors de tous recouvrement de cette partie par des ouverts de l'espace, on peut en extraire un sous-recouvrement fini</content>
+</new_definition>
 <new_definition name="topological_boundary">
     <content>la frontière d'un ouvert est la partie de l'ensemble contenant cette ouvert qui limite les éléments à l'intérieur de l'ouvert de ceux à l'extérieur de l'ouvert</content>
 </new_definition>
@@ -5,7 +8,11 @@
     <content>un fermé est une partie d'un ensemble tel que son complémentaire dans l'ensemble soit un ouvert</content>
 </new_definition>
 <new_definition name="topological_closure">
-    <content>un fermé d'une partie "F" d'un ensemble "E" est une partie de "E" content "F" et la frontière de "F"</content>
+    <content>l'adhérence d'une partie "F" d'un ensemble "E" est une partie de "E" contenant "F" et la frontière de "F"</content>
+</new_definition>
+<new_definition name="topological_filter">
+    <content>un filtre topologique sur un ensemble "E" est un ensemble de parties de "E" (qui ne contient d'ailleurs pas l'ensemble vide) tel que toute intersection d'éléments de ce filtre donne un nouvel élément de ce filtre et que, si un élément appartient à ce filtre, et qu'une partie de "E" inclut cet élément, alors cette nouvelle partie de "E" appartient au filtre</content>
+    <content name="principal">un filtre principal sur un ensemble "E" engendré par une partie "A" de "E" est un filtre sur "E" représentant tous les éléments qui inclus "A"</content>
 </new_definition>
 <new_definition name="topological_neighbourhood">
     <content>le voisinage d'un point "a" d'un ensemble d'un espace topologique est une partie de cette ensemble qui inclut un ouvert auquel appartient "a"</content>
@@ -13,11 +20,30 @@
 <new_definition name="topological_open_set">
     <content>un ouvert est une partie d'un ensemble qui ne contient aucun élément de sa frontière</content>
 </new_definition>
+<new_definition name="topological_point_accumulation">
+    <content>un point d'accumulation d'une partie "A" d'un espace topologique "E" est un point de "E" tel que tous ses voisinages contiennent une infinité d'éléments de "A" (autre que "x")</content>
+</new_definition>
+<new_definition name="topological_point_limit">
+    <content>un point limite d'une partie "A" d'un espace topologique "E" est un point de "E" tel que tous ses voisinages contiennent au moins un élément de "A" (autre que "x")</content>
+</new_definition>
 <new_definition name="topological_space">
     <content>un espace topologique représente l'étude d'un ensemble "E" avec une topologie "T" associée</content>
 </new_definition>
+<new_definition name="topological_space_connected">
+    <content>un espace topologique est dit connexe si il est intuitivement composé que d'un seul morceau</content>
+    <content name="rigorous">un espace topologique est dit connexe si il n'est pas l'union de deux ouverts / fermés (non vides) disjoints</content>
+</new_definition>
 <new_definition name="topology">
     <content>la topologie est l'étude des espaces topologiques et de leurs propriétés possibles</content>
+</new_definition>
+<new_definition name="topology_induced">
+    <content>la topologie induite d'une partie "F" d'un ensemble "E" (possédant lui même une topologie) est une topologie sur "F" où l'ensemble des ouverts est l'ensemble des intersections entre chaque ouvert de "E" et "F"</content>
+</new_definition>
+<new_definition name="topology_order">
+    <content>la topologie de l'ordre est une topologie sur un ensemble "E" ordonné où les ouverts de "base" sont l'ensemble des parties de "E" prenant une des 3 formes suivants : c'est l'ensemble des points strictement entre deux autres, ou l'ensemble des points strictement supérieurs à un point, où l'ensemble des points strictement inférieurs à un point</content>
+</new_definition>
+<new_definition name="topology_real">
+    <content name="extended">la droite réelle achevée est un espace topologique sur l'ensemble des réels, auquel on ajoute deux nouvelles valeurs, représentant "+ l'infini" et "- l'infini"</content>
 </new_definition>
 <new_definition name="topology_trivial">
     <content>la topologie grossière (ou topologie triviale) associée à un ensemble E est une topologie sur "E" où les deux seuls ouverts sont l'ensemble vide et "E" entier</content>
@@ -26,7 +52,7 @@
 <new_definition name="topological_continuity">
     <content name="full">une application entre deux espaces topologiques "E" et "F" est dite continue sur "E" si elle est continue en tous les points de "E"</content>
     <content name="part">une application entre deux espaces topologiques "E" et "F" est dite continue sur une partie de "E" si elle est continue en tous les points de cette partie</content>
-    <content name="point">une application entre deux espaces topologiques "E" et "F" est dite continue en un point "a" de "E" si tout voisinage de "f(a)" dans "F" admet comme image réciproque un voisinage de "a" dans "E"</content>
+    <content name="point">une application entre deux espaces topologiques "E" et "F" est dite continue en un point "a" de "E" si "f" admet une limite en "a", valant "f(a)"</content>
 </new_definition>
 <new_definition name="topology_indistinguishability">
     <content>deux éléments topologiques distincts sont dit indiscernables si tous les voisinages de l'un contient l'autre, et vice-versa</content>
@@ -38,4 +64,5 @@
     <content>un axiome de séparation est, en topologie, une propriété possible de certains ensembles topologiques, concernant la façon dont les voisinages de ces ensembles se comportent entre eux</content>
     <content name="t_0">un espace topologique est dit "T-0" (ou de Kolmogorov) lorsque, pour tout couple de points distincts de l'espace, il existe soit un voisinage du premier point ne contenant pas le deuxième, soit un voisinage du deuxième ne contenant pas le premier point</content>
     <content name="t_1">un espace topologique est dit "T-1" (ou accessible) lorsque, pour tout couple de points distincts de l'espace, il existe un voisinage du premier point ne contenant pas le deuxième ET un voisinage du deuxième ne contenant pas le premier point</content>
+    <content name="t_2">un espace topologique est dit "T-2" (ou séparé, ou de Hausdorff) lorsque, pour tout couple de points distincts de l'espace, il existe deux voisinages, de respectivement le premier et le deuxième point, disjoints entre eux</content>
 </new_definition>

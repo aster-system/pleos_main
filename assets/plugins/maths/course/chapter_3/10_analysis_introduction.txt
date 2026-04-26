@@ -518,6 +518,11 @@ Finalement, <span class="important">on a donc démontré que la limite à droite
 Donc, <span class="important">la fonction "g" tel que "g(x) = f(x)" pour "x" appartenant à "D" et tel que "g(x) = 0" pour "x = 1" est un prolongement de la fonction "f", continue sur "D" auquel on ajoute "a"</span>.
 </p>
 <math><mforall> x <min> D <munion> {1}, g(x) = {f(x) si x <min> D, 0 sinon}</math>
+<p>
+La continuité nous permet d'énumérer de nombreux théorèmes sur les fonctions réelles, que nous seront très pratique par la suite.
+Le premier que nous allons voir est le théorème des bornes atteintes.
+<span class="important"><definition name="extreme_value_theorem"></span>.
+</p>
 
 <h3>L'arithmétique de la continuité</h3>
 <p>

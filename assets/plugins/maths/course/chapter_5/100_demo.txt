@@ -4,8 +4,70 @@
 
 <h2>Le calcul différentiel</h2>
 
-<h3 id="differential_arithmetic">L'arithmétique des dérivées</h3>
+<h3 id="basic_property">Propriétés basiques</h3>
 <h4>5.0.0.0</h4>
+<p>
+Démontrons le théorème de Fermat sur les points stationnaires, stipulant que :
+</p>
+<math>a, b <min> R, <mforall> c <min> ]a, b[, <mexists> d <min> R, d = f'(c)</math></br>
+<math><mforall> v <min> [a, b], <mexists> x <min> ]a, b[, {f(x) <mgtequal> v <mor> f(x) <mltequal> v} <mimp> f'(x) = 0</math>
+<p>
+Rappelons la définition la plus simple de la dérivée :
+</p>
+<math>f'(x) = <mlim unknown=h value=0><mfrac><mi>f(x + h) - f(x)</mi><mi>h</mi></mfrac></math>
+<p>
+Si "x" est un extremum local, alors "f(x + h) - f(x)" est toujours de même signe (positif si il s'agit d'un minimum, négatif sinon), quelque soit le signe de "h".
+Or, le signe de "h" dépend... du signe de "h".
+Le signe de la dérivée de "f'(x)" dépend donc entièrement de celui de "h".
+De plus, comme la fonction est supposée continue en "x", alors la limite à gauche (avec un "h" négatif) et à droite (avec un "h" positif) sont les mêmes.
+Donc, f'(x) est en même temps positif et négatif : le seul nombre respectant cette propriété est "0".
+</p>
+<math>0 <mgtequal> f'(x) <mltequal> 0</math>
+<p>
+Donc, "f'(x)" s'annule.
+</p>
+<math>f'(x) = 0</math>
+
+<h4>5.0.0.1</h4>
+<p>
+Démontrons le théorème des accroissements finis, stipulant que :
+</p>
+<math>a, b <min> R, a <mlt> b, <mforall> d <min> ]a, b[, <mexists> f'(d) </math></br>
+<math><mexists> c <min> ]a, b[, <mfrac><mi>f(b) - f(a)</mi><mi>b - a</mi></mfrac> = f'(c)</math>
+<p>
+Remarquons que la fraction exposée dans le théorème représente un accroissement précis, représentant par définition la moyenne de l'accroissement de la fonction entre "a" et "b".
+Or, il existe énormément de fonction ayant la même moyenne d'accroissement entre "a" et "b", à commencer par la plus simple : la fonction affine de pente l'accroissement moyen de "f" entre "a" et "b" auquel on soustrait le produit de "a" et de cette même pente, puis "f(a)" (pour qu'elle passe bien par "f(a)" en "a" et "f(b)" en "b").
+</p>
+<math>g : R <mto> R, x <mto> f(a) + <mfrac><mi>f(b) - f(a)</mi><mi>b - a</mi></mfrac> * (x - a)</math>
+<p>
+Ici, on peut définir une nouvelle fonction "h", représentant la différence entre "f" et "g".
+Par l'arithmétique des fonctions continues / dérivées, cette nouvelle fonction est continue et dérivable entre "a" et "b".
+</p>
+<math>h : R <mto> R, x <mto> f(x) - g(x)</math>
+<p>
+Comme "f(a) = g(a)" et "f(b) = g(b)", alors "h(a) = h(b) = 0".
+Selon le théorème de Rolle (dont "h" rempli toutes les conditions, comme mentionné plus tôt), il existe donc un point "c" entre "a" et "b" tel que "h'(c) = 0".
+</p>
+<math><mexists> c <min> ]a, b[, h'(c) = 0</math>
+<p>
+Or, selon l'arithmétique des dérivées :
+</p>
+<math>h'(x) = f'(x) - g'(x)</math>
+<p>
+De plus, comme "g" est une fonction linéaire, la valeur de sa dérivée est égale à la valeur de sa pente.
+</p>
+<math>g'(x) = <mfrac><mi>f(b) - f(a)</mi><mi>b - a</mi></mfrac></math>
+<p>
+Donc, pour ce point "c" :
+</p>
+<math>h'(c) = 0 <mimp> f'(c) - g(c) = 0 <mimp> f'(c) - <mfrac><mi>f(b) - f(a)</mi><mi>b - a</mi></mfrac> = 0 <mimp> f'(c) = <mfrac><mi>f(b) - f(a)</mi><mi>b - a</mi></mfrac></math>
+<p>
+Donc, il existe bel et bien un point "c" tel que l'égalité demandée existe.
+</p>
+<math><mexists> c <min> ]a, b[, f'(c) = <mfrac><mi>f(b) - f(a)</mi><mi>b - a</mi></mfrac></math>
+
+<h3 id="differential_arithmetic">L'arithmétique des dérivées</h3>
+<h4>5.0.1.0</h4>
 <p>
 Démontrons que l'addition de deux fonctions admet comme dérivée en un point la somme / différence des dérivées en ce point des fonctions de départ.
 Soit deux fonctions réels "f" et "g", dérivables en un point "a" :
@@ -25,7 +87,7 @@ Calculons sa dérivée en "a" :
 Or, nous reconnaissons parfaitement la dérivée de "h" en "a" comme étant la somme de la dérivée de "f" en "a" et de "g" en "a".
 Donc, cette dérivée existe bien, et vaut la dérivée de "f" en "a" plus la dérivée de "g" en "a".
 </p>
-<h4>5.0.0.1</h4>
+<h4>5.0.1.1</h4>
 <p>
 Démontrons que le produit de deux fonctions admet comme dérivée la somme du produit de "f'" et "g" et du produit de "f" et "g'".
 Soit deux fonctions réels "f" et "g", dérivables en un point "a" :
@@ -55,7 +117,7 @@ De plus, nous reconnaissons les différentes limites de "f" et "g".
 Donc :
 </p>
 <math>s'(x) = <mlim unknown=h value=0> f(x + h) * <mfrac><mi>(g(x + h) - g(x))</mi><mi>h</mi></mfrac> + <mlim unknown=h value=0> <mfrac><mi>f(x + h) - f(x)</mi><mi>h</mi></mfrac> * g(x) = f'(x) * g(x) + f(x) * g'(x)</math></br>
-<h4>5.0.0.2</h4>
+<h4>5.0.1.2</h4>
 <p>
 Démontrons la règle de la chaîne, stipulant que la dérivée d'une fonction "f" représentant la composée de deux fonctions "g" et "h" (sous la forme de la fonction "g(h)") en un point "x" se note "g'(h(x)) * h(x)".
 Soit deux fonctions réels "f" et "g", dérivables en un point "a" :

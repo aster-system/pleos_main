@@ -97,9 +97,9 @@ int command(int argc, char* argv[]) {
 }
 
 int main(int argc, char* argv[]) {
-	return command(argc, argv);
+	//return command(argc, argv);
 
-	/*pleos::Pleos_Window window(900, 600, argv[0]);
+	pleos::Pleos_Window window(900, 600, argv[0]);
     window.load_from_xml("assets/window.txt");
     pleos::Hub_Page* hub = window.hub();
     hub->handle_saasf();
@@ -111,46 +111,53 @@ int main(int argc, char* argv[]) {
         window.render();
     }//*/
 
-    /*scls::Matrix a = scls::Matrix(2);
-	scls::Matrix b = scls::Matrix(2);
-	a.set_element_at(0, std::make_shared<scls::Formula_Base>(scls::Fraction::from_double(100)));
-    a.set_element_at(1, std::make_shared<scls::Formula_Base>(scls::Fraction::from_double(0)));
-    b.set_element_at(0, std::make_shared<scls::Formula_Base>(scls::Fraction::from_double(0)));
-    b.set_element_at(1, std::make_shared<scls::Formula_Base>(scls::Fraction::from_double(100)));
-
-    int duration = 8;
+    /*int duration = 10;
     scls::Video_Encoder enc = scls::Video_Encoder(std::string("./tests/t.mp4"), duration, 1000, 1000);
+    std::shared_ptr<scls::Formula_Base> f = scls::string_to_algebra_element<scls::Formula_Base>("(1/4) * x + 2");
     for(int i = 0;i<duration*60;i++) {
-        double s = static_cast<double>(i) / 60.0;
-        if(s < 2) {
-            a.set_element_at(0, std::make_shared<scls::Formula_Base>(scls::Fraction::from_double(100 + s * 50.0)));
-            a.set_element_at(1, std::make_shared<scls::Formula_Base>(scls::Fraction::from_double(0)));
-            b.set_element_at(0, std::make_shared<scls::Formula_Base>(scls::Fraction::from_double(s * 50.0)));
-            b.set_element_at(1, std::make_shared<scls::Formula_Base>(scls::Fraction::from_double(100 + s * 17.0)));
-        }
-        else if(s < 4) {
-            s -= 2;
-            a.set_element_at(0, std::make_shared<scls::Formula_Base>(scls::Fraction::from_double(200 - s * 25.0)));
-            //a.set_element_at(1, std::make_shared<scls::Formula_Base>(scls::Fraction::from_double(s * 25.0)));
-            b.set_element_at(0, std::make_shared<scls::Formula_Base>(scls::Fraction::from_double(100.0 - s * 25.0)));
-            b.set_element_at(1, std::make_shared<scls::Formula_Base>(scls::Fraction::from_double(133 - s * 33.0)));
-        }
-        else if(s < 6) {
-            s -= 4;
-            a.set_element_at(0, std::make_shared<scls::Formula_Base>(scls::Fraction::from_double(150 - s * 25.0)));
-            //a.set_element_at(1, std::make_shared<scls::Formula_Base>(scls::Fraction::from_double(s * 25.0)));
-            b.set_element_at(0, std::make_shared<scls::Formula_Base>(scls::Fraction::from_double(50.0 - s * 25.0)));
-            b.set_element_at(1, std::make_shared<scls::Formula_Base>(scls::Fraction::from_double(66 + s * 17.0)));
-        }
-        else{
-            a.set_element_at(0, std::make_shared<scls::Formula_Base>(scls::Fraction::from_double(100)));
-            a.set_element_at(1, std::make_shared<scls::Formula_Base>(scls::Fraction::from_double(0)));
-            b.set_element_at(0, std::make_shared<scls::Formula_Base>(scls::Fraction::from_double(0)));
-            b.set_element_at(1, std::make_shared<scls::Formula_Base>(scls::Fraction::from_double(100)));
+        /*double branches = 8;
+        double center_x = 500;
+        double center_y = 500;
+        double r_outer = 200;
+        double r_inner = 150;
+        double v = (static_cast<double>(i) / 60.0);
+        double v_2 = (static_cast<double>(i) / 60.0);
+        if(v < 0.1){v=0.1;}
+        if(v_2 < 0.1){v_2=0.1;}
+
+        if(i > 240.0){v = 0;}
+        else if(i > 180.0){v = -50 + 50 * (v - 3);}
+        else if(i > 60.0){v = 50 - 50 * (v - 1);}
+        else{v = v * 50;}
+
+        if(i > 480.0){v_2 = 0;}
+        else if(i > 420.0){v_2 = -50 + (v_2 - 7) * 50;}
+        else if(i > 300.0){v_2 = 50 - (v_2 - 5) * 50;}
+        else if(i > 240.0){v_2 = (v_2 - 4) * 50;}
+        else{v_2 = 0;}
+
+        scls::Vector_Base p = scls::Vector_Base(50, v_2, v, 50, 500, 500);
+        std::vector<scls::Point_2D> points = std::vector<scls::Point_2D>(branches * 2);
+        const double angle_step = SCLS_PI / branches;
+        for (int i = 0; i < branches * 2; ++i) {
+            // On commence à -PI/2 pour que la première pointe soit vers le haut
+            double angle  = static_cast<double>(i) * angle_step;
+            double radius = (i % 2 == 0) ? r_outer : r_inner;
+
+            double x = center_x + radius * std::cos(angle);
+            double y = center_y + radius * std::sin(angle);
+            points[i] = scls::Point_2D(500 - p.canonical_to_base_x(x, y) * 50, 500 + p.canonical_to_base_y(x, y) * 50);
         }
 
-        scls::Image img = scls::Image(1000, 1000, scls::Color(255, 255, 255));
-        scls::draw_grid(img, &a, &b);
+        scls::Image img = scls::Image(1000, 1000);
+        scls::draw_grid(img, &p);
+        img.fill_form(points, scls::Color(255, 0, 0));
+
+        scls::Image img = scls::Image(1000, 1000);
+        scls::Vector_Base p = scls::Vector_Base(50, 0, 0, 50, 500, 500);
+        scls::draw_grid(img, &p);
+        scls::draw_function_graph(img, f.get(), &p, -1000, -10.0 + (static_cast<double>(i) / 60.0) * 2.0);
+        img.save_png("tests/f.png");
 
         enc.write_video_frame(img);
         enc.go_to_next_frame();

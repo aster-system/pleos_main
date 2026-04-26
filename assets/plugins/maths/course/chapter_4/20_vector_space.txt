@@ -201,6 +201,16 @@ Avec les bases, on peut définir un des concepts les plus importants des espaces
 En effet, <span class="important">toutes les bases d'un espace vectoriel quelconque ont le même cardinal (la même taille)</span>.
 En réalité, ce résultat n'est pas si facile à démontrer : il demande l'utilisation d'un lemme, nommé lemme de Steinitz (<a href="demo#4_1_0_0">démontré ici</a>), qui permet d'en déduire ce théorème (<a href="demo#4_1_0_1">démontré ici</a>).
 </p>
+<math>f = (<mi>u</mi><msub>1</msub>, <mi>u</mi><msub>2</msub>, ..., <mi>u</mi><msub>n</msub>) <min> <mi>E</mi><msup>n</msup></math></br>
+<math>g = (<mi>v</mi><msub>1</msub>, <mi>v</mi><msub>2</msub>, ..., <mi>v</mi><msub>m</msub>) <min> <mi>E</mi><msup>n</msup></math></br>
+<math>Vect(f) = Vect(g) = E <mequi> n = m</math>
+<p>
+Ici, bien que nous considérons "E" entier, <span class="important">une conséquence de ce théorème stipule que si "f" et "g" sont deux familles libres qui ne génèrent pas "E" entier, mais un sous-espace vectoriel "F" de "E" (et qu'elles génèrent le même, bien évidément), alors "m = n"</span>.
+Pareil, ce théorème s'obtient en restreignant "E" au sous-espace vectoriel engendré : "f" et "g" en sont deux bases, et ont donc le même cardinal.
+Cependant, dans ce cas, <span class="important">la réciproque est fausse, on peut trouver des familles "f" et "g" de même dimensions qui ne génère pas le même sous-espace vectoriel de "E"</span>.
+De manière parfaitement logique, cela s'explique par le fait que passer à un sous-espace vectoriel requiert une implication dans le raisonnement ("F est un sous-espace vectoriel" implique que "toute base de "F ont le même cardinal", mais la réciproque de cette proposition ne veut rien dire), cassant l'équivalence (puisque l'on part d'un plus gros espace vectoriel, demandant de passer à un autre : le sous-espace vectoriel).
+</p>
+<math>Vect(f) = Vect(g) = F <mimp> n = m</math>
 
 <h3>Les applications linéaires</h3>
 <p>

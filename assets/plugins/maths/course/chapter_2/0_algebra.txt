@@ -211,6 +211,11 @@ Une catégorie de groupe plus forte est le groupe abélien.
 <span class="important"><definition name="algebra_group-abelian"></span>.
 (Z, +) en est un exemple.
 </p>
+
+
+
+<h2>La théorie des groupes</h2>
+
 <p>
 Les groupes sont tellement intéressants mathématiquement qu'ils ont une discipline totale leur étant dédiée : la théorie des groupes.
 <span class="important"><definition name="algebra_group_theory"></span>.
@@ -335,10 +340,6 @@ En fait, <span class="important">l'intêrêt de ce groupe est de pouvoir trouver
 En effet, <span class="important">additionner deux nombres donne un résultat dans la même classe d'équivalence que celle de la somme de l'élément le plus simple de leur classe d'équivalence</span>.
 Cette propriété se déduit directement de la stabilité de cet ensemble avec l'addition.
 </p>
-
-
-
-<h2>Les opérations sur les structures algébriques</h2>
 
 <h3>Les parties génératrices et sous-groupes engendrés</h3>
 <p>

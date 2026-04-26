@@ -257,7 +257,7 @@ En effet, <span class="important">Euclide a énuméré 5 axiomes de géométrie,
 Ces axiomes (et certains résultats déduits de ces axiomes) sont présentés dans son traité "Les Éléments", un des documents les plus imprimés de l'histoire.
 </p>
 <p>
-Cette géométrie euclidienne se base sur un principe simple : <span class="important">seul la réalisation (dans la vraie vie) et la construction des résultats est importante</span>.
+Cette géométrie euclidienne se base sur un principe simple : <span class="important">seule la réalisation (dans la vraie vie) et la construction des résultats est importante</span>.
 En d'autres termes : si vous pouvez tracer quelque chose, alors cette chose existe.
 D'ailleurs, <span class="important">certains concepts étaient considérés comme "trop triviaux" / "trop simple / direct à obtenir" pour nécessiter une définition / démonstration précise</span>.
 C'est le cas du concept de longueur, ou du concept d'angle.
@@ -272,8 +272,12 @@ Ces outils représentent le coeur des mathématiques de l'époque.
 Dés le XVIIème siècle, les découvertes en analyse / algèbre mathématiques ont donné un nouveau moyen d'approche des mathématiques aux mathématiciens.
 La géométrie n'échappe pas à cette règle, et va elle aussi évoluer pour, et faire émerger une nouvelle branche de la géométrie : la géométrie analytique.
 <span class="important"><definition name="geometry-analytic"></span>.
-Dans l'histoire, son principal contributeur est <scientist name=descartes type=quote>, au début du XVIIème siècle.
-Bien évidemment, ce concept peut parfaitement se coupler avec la géométrie classique.
+Dans l'histoire, son principal contributeur est <scientist name=descartes type=quote>, au début du XVIIème siècle, avec un traité nommé "La Géométrie".
+Bien évidemment, ce concept peut parfaitement se coupler avec la géométrie classique, mais est bien plus rigoureux et formalisé.
+Historiquement parlant, cette géométrie (telle que formulée par ces concepteurs) n'était faite que pour résoudre des équations simples (généralement n'utilisant que les 4 opérations élémentaires : "+", "-", "*" et "/").
+Or, quand des choses plus complexes ont été découvertes, les mathématiciens ont eu besoin d'outils plus complexes, que l'on retrouve sous un nouveau nom : la géométrie algébrique.
+<span class="important"><definition name="geometry-algebric"></span>.
+C'est vers le XIXème siècle que cette branche de la géométrie apparaît, avec beaucoup de grands noms, comme <scientist name=hilbert type=quote>.
 </p>
 <p>
 Aussi rigoureuse qu'était cette géométrie, elle ne l'était pas assez pour le XIXème siècle, et l'arrivée de la logique avancée en mathématique.
@@ -289,6 +293,8 @@ Commençons à définir certains concepts simples de géométrie classique.
 Déjà, <span class="important"><definition name="length"></span>.
 Comme nous l'avons dit, une longueur se mesure avec une règle graduée.
 Généralement, les graduations successives sont séparées d'une exacte même distance.
+</p>
+<p>
 En suite, <span class="important"><definition name="angle"></span>.
 </p>
 <graphic><background_color white><form points=new(-2,-2);new(2,0)><form points=new(-2,-2);new(0,2)></graphic>
@@ -297,7 +303,18 @@ Pour mesurer un angle, on utilise un formalisme inspiré du cercle.
 En effet, <span class="important">il est possible de mesurer un angle en vérifiant la proportion du cercle de centre le point où les deux droites se croisent représenté dans l'angle</span>.
 D'ailleurs, cette mesure ne dépend pas du rayon du cercle : dans tous les cercles de centre le point où les deux droites se touchent auront la même proportion représentée via un même angle.
 </p>
-<graphic><background_color white><form points=new(0,0);new(4,0)><form points=new(0,0);new(2,4)><circle x=0 y=0 radius=1 border_color=black color=transparent><circle x=0 y=0 radius=3/2 border_color=black color=transparent></graphic>
+<graphic><background_color white><form points=new(0,0);new(4,0)><form points=new(0,0);new(2,4)><circle x=0 y=0 radius=2 border_color=black color=transparent><circle x=0 y=0 radius=5/2 border_color=black color=transparent></graphic>
+<p>
+Cependant, une question se pose ici : comment numériser la mesure d'un angle ?
+Comme nous avons vue, la mesure d'un angle représente généralement la proportion couverte par l'angle du cercle de centre le point où les deux droites se croisent représenté dans l'angle
+On pourrait donc théoriquement le modéliser sous forme de pourcentage du cercle couvert.
+Cependant, pour obtenir des valeurs plus facile à étudier, nous allons complexifier un peu cette représentation.
+La façon la plus utilisée en France est le degré.
+<span class="important"><definition name="angle-degree"></span>.
+Un degré représente donc "1/360" de cercle.
+Généralement, un degré se note avec le symbôle "°" juste après le nombre : "1°", "45°", "236.1258°"...
+</p>
+<graphic><background_color white><base draw=0><form points=new(0,0);new(3,0) border_color=black><form points=new(0,0);new(3,3) border_color=black><circle x=0 y=0 radius=2 border_color=black color=transparent><text x=3 y=0>0°</text><text x=3 y=3>45°</text><text x=0 y=3>90°</text><text x=-3 y=0>180°</text><text x=0 y=-3>270°</text></graphic>
 
 <h3>Le lien nombres réels - géométrie analytique</h3>
 
@@ -381,6 +398,7 @@ Commençons par introduire le type de triangle le plus pratique (et de très loi
 <span class="important"><definition name="triangle-rectangle"></span>.
 Intuitivement, <definition name="triangle-rectangle">.
 De manière très concrète, un angle droit est l'angle formé entre un sol parfaitement droit et un piquet orienté parfaitement vers le haut.
+Avec le formalisme des degrés, <span class="important">un angle droit mesure "90°"</span>.
 </p>
 <graphic><background_color white><base draw=0><form points=new(-2,-2);new(-2,3);new(2,-2) border_color=blue color=transparent></graphic>
 <p>
@@ -418,11 +436,68 @@ On peut donc donner des formules générales pour chaque triangle rectangle, per
 En effet, <span class="important">il existe une fonction prenant en paramètre le ratio entre un côté et l'hypoténuse et retournant la valeur de l'angle entre ces deux côtés (en radians) : c'est la fonction cosinus</span>.
 De manière réciproque, <span class="important">il existe une fonction prenant en paramètre le ratio entre un côté et l'hypoténuse et retournant la valeur de l'angle opposé au côté qui n'est pas l'hypoténuse (en radians) : c'est la fonction sinus</span>.
 </p>
+<graphic><background_color white><base draw=0><form points=new(-2,-2);new(2,-2);new(2,3) border_color=black color=transparent><text name=type_number() x=0 y=-3>cos(a)</text><text name=type_number() x=7/2 y=0>sin(a)</text><text name=type_number() x=-1 y=1>1</text><text name=type_number() x=-3 y=-2>a</text></graphic>
 <p>
 Quand on voit ce genre de fonction, on pourrait avoir envie de les expliciter pour calculer des précises de cette fonction.
 Cependant, c'est un exercice très complexe, que nous verrons plus tard.
 Or, <span class="important">il est possible de tracer des triangles rectangles, et de mesurer les valeurs précises à la main</span>.
 </p>
+<p>
+Ces fonctions trigonométriques permettent de formuler des identités précises très importantes en trigonométrie.
+Par exemple, <span class="important">il existe une formule pour exprimer la valeur de "cos(x + a)" avec seulement des "cos(x)", "cos(a)", "sin(x)" et "sin(a)"</span>.
+Bien que cette formule possède une démonstration très rigoureuse, pour cette partie du cours, nous allons nous contenter d'une démonstration géométrique.
+Prenons un triangle rectangle comprenant un angle de taille "a".
+</p>
+<graphic><background_color white><base draw=0><form points=new(-2,-2);new(2,-2);new(2,1) border_color=black color=transparent><text name=type_number() x=0 y=-3>cos(a)</text><text name=type_number() x=7/2 y=-1/2>sin(a)</text><text name=type_number() x=-1 y=0>1</text><text name=type_number() x=-3 y=-2>a</text></graphic>
+<p>
+Effectuons une rotation centrale de point le point tangent à l'angle "a" du triangle d'un angle "b".
+Nous obtenons le triangle retourné, ainsi qu'un nouvel angle de mesure "a + b".
+</p>
+<graphic><background_color white><base draw=0><line x_1=-10 y_1=-2 x_2=10 y_2=-2 border_color=blue><line x_1=-4/100 y_1=259/100 x_2=-4/100 y_2=-2 border_color=blue><line x_1=-2 y_1=-2 x_2=-4/100 y_2=-2 border_color=red><line x_1=-2 y_1=-5/2 x_2=146/100 y_2=-5/2 border_color=dark_green><line x_1=-4/100 y_1=0 x_2=146/100 y_2=0 border_color=purple><form points=new(-2,-2);new(146/100,0);new(-4/100,259/100) border_color=black color=transparent></graphic>
+<p>
+Sur cette figure, pour rappel, nous cherchons la taille du segment rouge.
+Pour obtenir la taille du segment rouge, <span class="important">il faudrait donc prendre la taille du segment vert, et lui enlever celle du segment violet</span>.
+Déjà, nous pouvons très facilement obtenir la longueur du segment vert.
+En effet, <span class="important">le segment bas du triangle que nous avons tourné peut ici être vue comme l'hypothénuse d'un nouveau triangle, tel que le segment vert représente le côté tangent à l'angle "b"</span>.
+Donc, sa longueur représente la taille de l'hypothénuse de ce rectangle ("cos(a)") multiplié par "cos(b)" : "cos(a) * cos(b)".
+En suite, on peut voir que le segment violet peut permettre de tracer un nouveau triangle rectangle, où l'hypothénuse représenterait le côté à droite de notre triangle rectangle tourné, de taille "sin(a)".
+De plus, comme le segment violet et le segment bleu horizontal sont parallèle par construction, on peut en déduire que l'angle entre le segment violet et le côté bas du triangle que nous avons tourné est de "b".
+Comme l'angle entre le côté bas et le côté droit du triangle que nous avons tourné est droit, alors l'angle entre le côté violet et la partie droite du triangle que nous avons tourné (hypothénuse du triangle rectangle contenant le segment violet) et d'un angle droit moins "b" : l'autre angle (non droit) de ce triangle rectangle est donc "b".
+Donc, <span class="important">comme cet angle "b" est l'angle opposé du segment violet, sa longueur est donc celle de l'hypothénuse "sin(a)" multiplié par "sin(b)" : "sin(a) * sin(b)"</span>.
+Finalement, <span class="important">on peut en déduire la formule de "cos(a + b)" : "cos(a + b) = cos(a) * cos(b) - sin(a) * sin(b)"</span>.
+</p>
+<math>cos(a + b) = cos(a) * cos(b) - sin(a) * sin(b)</math>
+<p>
+On peut de la même manière trouver la formule pour "sin(x + a)".
+Pour mieux comprendre, refaisons notre schéma, en changeant les couleurs de certains segments.
+</p>
+<graphic><background_color white><base draw=0><line x_1=-10 y_1=-2 x_2=10 y_2=-2 border_color=blue><line x_1=-4/100 y_1=259/100 x_2=-4/100 y_2=-2 border_color=blue><line x_1=-4/100 y_1=-2 x_2=-4/100 y_2=259/100 border_color=red><line x_1=146/100 y_1=-2 x_2=146/100 y_2=-4/100 border_color=dark_green><line x_1=-4/100 y_1=0 x_2=146/100 y_2=0 border_color=blue><line x_1=2 y_1=0 x_2=2 y_2=259/100 border_color=purple><form points=new(-2,-2);new(146/100,0);new(-4/100,259/100) border_color=black color=transparent></graphic>
+<p>
+Encore une fois, nous cherchons la taille du segment rouge.
+Ici, <span class="important">la taille du segment rouge est égal à la taille du segment vert et du segment violet</span>.
+Le segment vert se calculera de manière assez similaire que pour l'autre calcul.
+En effet, <span class="important">la taille du segment vert est égal à la taille de l'hypothénuse du triangle rectangle auquel il appartient ("cos(a)") multiplié par le sinus de l'angle opposé (ici "b") : "cos(a) * sin(b)"</span>.
+Maintenant, calculons la taille du segment violet.
+Ici, <span class="important">la taille du segment violet est égal à la taille de l'hypothénuse du triangle rectangle auquel il appartient ("sin(a)") multiplié par le cosinus de l'angle adjacent (ici "b") : "sin(a) * cos(b)"</span>.
+Finalement, <span class="important">on peut en déduire la formule de "sin(a + b)" : "sin(a + b) = sin(a) * cos(b) + cos(a) * sin(b)"</span>.
+</p>
+<math>sin(a + b) = sin(a) * cos(b) + cos(a) * sin(b)</math>
+<p>
+Avec ça, <span class="important">on peut facilement en déduire les formules de différences</span>.
+En effet, ces formules fonctionnent pour tout "a" et tout "b" : posons "c = -b".
+</p>
+<math>cos(a + c) = cos(a) * cos(c) - sin(a) * sin(c) = cos(a - b)</math></br>
+<math><mimp> cos(a - b) = cos(a) * cos(c) - sin(a) * sin(c) = cos(a) * cos(-b) - sin(a) * sin(-b)</math>
+<p>
+Pour rappel, <span class="important">"cosinus" est paire et "sinus" est impaire : "cos(-b) = cos(b)" et "sin(-b)" = "-sin(b)"</span>.
+</p>
+<math><mimp> cos(a - b) = cos(a) * cos(b) + sin(a) * sin(b)</math>
+<p>
+On peut faire l'exact même calcul pour "sin(a - b)" :
+</p>
+<math>sin(a + c) = sin(a) * cos(c) + cos(a) * sin(c) = sin(a - b)</math></br>
+<math><mimp> sin(a - b) = sin(a) * cos(c) + cos(a) * sin(c) = sin(a) * cos(-b) + cos(a) * sin(-b)</math></br>
+<math><mimp> sin(a - b) = sin(a) * cos(b) - cos(a) * sin(b)</math>
 
 <h3>Les graphes de fonctions</h3>
 <p>

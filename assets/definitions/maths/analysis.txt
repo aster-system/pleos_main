@@ -57,7 +57,6 @@
 <new_definition name="metric_space_completude">
     <content>un espace métrique est dit complet si, pour toutes les valeurs possibles dans l'ensemble de l'espace, il est possible de s'approcher aussi près que l'on veut de cet ensemble (en réduisant petiit à petit la distance entre une valeur plus simple et la valeur que l'on veut approcher)</content>
 </new_definition>
-
 <new_definition name="chain_rule">
     <content>la règle de la chaîne stipule que la dérivée d'une fonction "f" représentant la composée de deux fonctions "g" et "h" (sous la forme de la fonction "g(h)") en un point "x" se note "g'(h(x)) * h(x)"</content>
 </new_definition>
@@ -67,6 +66,29 @@
 <new_definition name="derivative_function">
     <content>la fonction dérivée d'une fonction "f" est une nouvelle fonction définie sur l'ensemble de dérivabilité de "f", qui transforme "x" en le nombre dérivé de "f" en "x"</content>
 </new_definition>
+<new_definition name="extreme_value_theorem">
+    <content>le théorème des bornes atteintes (aussi nommé théorème des valeurs extrêmes, ou théorème de Weierstrass) est un théorème stipulant que, si une fonction est continue sur un intervalle bornée, alors elle admet un maximum et un minimum sur cet intervalle, et les attend tous les deux</content>
+</new_definition>
 <new_definition name="linear_approximation">
     <content>une approximation affine est une approximation du comportement d'une fonction réelle en un point précis</content>
+</new_definition>
+<new_definition name="integration">
+    <content>l'intégration est un moyen d'étudier de manière extrêmement précise l'aire sous les courbes dessinées par des fonctions réelles (entre la courbe de la fonction et l'axe des abscisses)</content>
+</new_definition>
+<new_definition name="interior_extremum_theorem">
+    <content>le théorème de Fermat sur les points stationnaires est un théorème qui stipule que si une fonction admet un extremum local en un point (et est dérivable au voisinage de ce point), alors la dérivée de la fonction en ce point est nulle</content>
+</new_definition>
+<new_definition name="mean_value_theorem">
+    <content>le théorème des accroissements finis est un théorème garantissant que, entre deux points d'une fonction, il existe une des valeurs de la fonction dérivée entre ces deux valeurs qui vaut le taux d'accroissement de la fonction de départ entre ces deux points</content>
+    <content name="rolle">le théorème de Rolle (ou lemme de Rolle) est un théorème garantissant que, entre deux points (distincts) de même image dans une fonction, il existe obligatoirement une valeur de la fonction dérivée qui est égale à 0 entre ces deux points</content>
+</new_definition>
+<new_definition name="primitive">
+    <content>une primitive d'une fonction "f" est une nouvelle fonction "F", tel que la dérivée de "F" est "f"</content>
+</new_definition>
+<new_definition name="series_expansion">
+    <content name="finite">un développement limité d'une fonction "f" est un moyen d'approcher le voisinage d'un point sur cette fonction "f" grâce à une méthode calculatoire assez simple, avec un nombre limité d'opérations</content>
+</new_definition>
+<new_definition name="taylor_young_formula">
+    <content>la formule de Taylor-Young est une formule permettant de représenter une fonction comme la somme d'un polynôme quelconque et d'un reste négligeable devant le monôme de degré maximal de ce polynôme</content>
+    <content name="theorem">le théorème de Taylor garantit l'égalité entre une fonction quelconque et son développement avec la formule de Taylor-Young</content>
 </new_definition>

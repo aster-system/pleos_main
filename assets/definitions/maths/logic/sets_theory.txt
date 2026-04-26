@@ -4,14 +4,14 @@
     <content name="uncountable">un ensemble infini est indénombrable si il n'existe pas de surjections sur l'ensemble des nombres entiers naturels (il existe des éléments qui ne sont pas reliables à un nombre entier naturel)</content>
 </new_definition>
 <new_definition name="set_theory">
-    <content>la théorie des ensembles est une théorie mathématique développé à la fin du XIXème siècle, pour être utilisée comme socle des mathématiques</content>
+    <content>la théorie des ensembles est une théorie mathématique développée à la fin du XIXème siècle, pour être utilisée comme socle des mathématiques</content>
     <content name="choice_axiom">l'axiome du choix est un axiome permettant l'existence d'un moyen d'extraire un élément quelconque d'un ensemble, une infinité de fois (et donc, dans une infinité d'ensemble), pour construire un nouvel ensemble</content>
     <content name="class">une classe est un objet mathématique qui peut "contenir" d'autres objets (on dit que ces objets appartiennent à l'ensemble), mais qui n'est pas forcément cohérent dans la théorie des ensembles</content>
     <content name="comprehension">un ensemble est dit "défini en compréhension" quand il est défini comme tous les éléments d'un autre ensemble vérifiant une propriété spécifique</content>
     <content name="comprehension_axiom">le schéma d'axiome de compréhension est un schéma d'axiome construisant un axiome par propriété, stipulant que, pour tout ensemble "A", il existe une classe "B" dont tous les éléments sont les éléments de A rendant une propriété "P" vraie (déduite grâce aux autres axiomes)</content>
     <content name="empty_set">l'ensemble vide est un ensemble ne contenant aucun élément</content>
     <content name="empty_set_axiom">l'axiome de l'ensemble vide est un axiome garantissant l'existence d'un ensemble vide dans la théorie</content>
-    <content name="extension">un ensemble est dit "défini par extension" quand il est défini par une égalité avec un ensemble dont les éléments sont explicitement indiqués</content>
+    <content name="extension">un ensemble est dit "défini par extension" quand ses éléments sont explicitement notés dans sa définition</content>
     <content name="extensionality">l'axiome d'extensionnalité dit que si deux ensembles possèdent exactement les mêmes éléments, alors ils sont égaux</content>
     <content name="foundation_axiom">l'axiome de fondation est un axiome obligeant tout ensemble "A" à posséder un élément qui, dans sa forme "ensemble", ne contient aucun élément de "A"</content>
     <content name="infinity_axiom">l'axiome de l'infini stipule qu'il existe un ensemble contenant un élément de départ nommé "0", et tel que tous les éléments "n" de cet ensemble admettent un élément précis (défini via une fonction), nommé "successeur de n" ou "successeur(n)"</content>

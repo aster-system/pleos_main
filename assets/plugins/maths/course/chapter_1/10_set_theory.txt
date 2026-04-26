@@ -10,13 +10,14 @@ Maintenant que nous avons les bases de la logique, nous pouvons aborder notre pr
 <span class="important"><definition name="set_theory"></span>.
 Son principal fondateur est le mathématicien allemand <scientist name="cantor" type="quote">, qui l'a proposé dans une suite d'articles mathématiques entre 1874 et 1900.
 L'idée semblait être complexe : unir toutes les mathématiques (nombres, géométries, fonctions...) sous une seule théorie.
-Même si, historiquement, cette théorie a mis beaucoup de temps à se faire accepter, elle a finalement réussi sa mission : presque toutes les mathématiques modernes en dépend.
+Même si, historiquement, cette théorie a mis beaucoup de temps à se faire accepter, elle a finalement réussi sa mission : presque toutes les mathématiques modernes en dépendent.
 </p>
 <p>
+Pour continuer, nous allons devoir définir (et distinguer) deux termes : les ensembles et les classes.
 Ici, <span class="important"><definition name="set_theory-set"></span>.
 Cette définition se rapproche beaucoup d'une autre : celle des classes.
 <span class="important"><definition name="set_theory-class"></span>.
-Ceci peut paraître assez bizarre, mais une classe peut ne pas fonctionner dans la théorie que nous allons énoncer (là où un ensemble doit obligatoire fonctionner), comme elle peut fonctionner (dans ce cas, elle est aussi un ensemble).
+Ceci peut paraître assez bizarre, mais une classe peut ne pas respecter tous ce que la théorie oblige à respecter (là où un ensemble doit obligatoire fonctionner).
 D'ailleurs, <span class="important">un ensemble est une classe, mais une classe n'est pas forcément un ensemble</span>.
 Nous verrons plus tard en quoi cette distinction est utile.
 Une façon intéressante de représenter un ensemble peut être la suivante (ici, l'ensemble des nombres impairs entre 0 et 10) :
@@ -31,20 +32,55 @@ Une façon intéressante de représenter un ensemble peut être la suivante (ici
 <text name=type_number() content="9" x=2 y=-2></text>
 </graphic>
 <p>
-Il existe un symbôle précis pour indiquer qu'on objet "a" appartient à un ensemble "S" :
+Comme pour les propositions, <span class="important">il est courant de nommer un ensemble avec une simple lettre, et de les utiliser comme des variables</span>.
+C'est comme ça que nous allons entièrement utiliser les ensembles par la suite.
+Cependant, la façon la plus simple pour définir un ensemble et d'utiliser ce que l'on appelle la définition par extension.
+<span class="important"><definition name="set_theory-extension"></span>.
+Pour cela, <span class="important">on note généralement le nom de l'ensemble, avec les éléments de l'ensemble entre accolades, séparés par un symbole d'égalité</span>.
+Voici quelques exemples de définitions par extension :
 </p>
-<math><mi>a</mi><min><mi>S</mi></math>
+<math><mi>A</mi><mequal><mo>{</mo><mi>1</mi><mo>,</mo><mi>10</mi><mo>,</mo><mi>100</mi><mo>,</mo><mi>1000</mi><mo>}</mo></math></br>
+<math><mi>B</mi><mequal><mo>{</mo><mi>72</mi><mo>}</mo></math></br>
+<math><mi>C</mi><mequal><mo>{</mo><mi>0</mi><mo>,</mo><mi>1</mi><mo>,</mo><mi>2</mi><mo>,</mo><mi>3</mi><mo>,</mo><mi>4</mi><mo>,</mo><mi>5</mi><mo>,</mo><mi>6</mi><mo>,</mo><mi>7</mi><mo>,</mo><mi>8</mi><mo>}</mo></math>
 <p>
-D'ailleurs, <span class="important">"l'objet "a" appartient à l'ensemble "S"" est une proposition</span>, dont la véricaté dépend de... beaucoup de choses (généralement dépendant du contexte précis de "a" ou "S").
-Ce symbôle permet de faire quelque chose de très intéressant : <span class="important">on peut utiliser ce symbôle dans un quantificateur logique, pour spécifier qu'on objet que l'on quantifie appartient à un certain ensemble</span>.
-Nous pouvons donc répondre à la question de tout à l'heure "comment spécifier que notre proposition "pour tout n, P(n)" ne fonctionne qu'avec des nombres" : on a juste à rajouter ce symbôle (on admet pour l'instant que "N" est l'ensemble des nombres entiers naturels) :
+Il existe un symbole précis pour indiquer qu'un objet "a" appartient à un ensemble quelconque "E" :
+</p>
+<math><mi>E</mi><mequal><mo>{</mo><mi>"France"</mi><mo>,</mo><mi>"Allemagne"</mi><mo>,</mo><mi>"Italie"</mi><mo>,</mo><mi>"Angleterre"</mi><mo>}</mo></math></br>
+<math>a = "Italie"</math></br>
+<math><mi>a</mi><min><mi>E</mi></math>
+<p>
+D'ailleurs, <span class="important">"l'objet "a" appartient à l'ensemble "E"" est une proposition</span>, dont la véricaté dépend de... beaucoup de choses (généralement dépendant du contexte précis de "a" ou "E").
+Dans le cas des ensembles définis par extension, la proposition est vraie si l'élément indiqué est énoncé dans la définition de l'ensemble.
+On peut donc utiliser ce symbole dans une proposition fausse, si l'élément n'appartient pas à l'ensemble.
+</p>
+<math>b = "Espagne"</math></br>
+<math><mno>(<mi>b</mi><min><mi>E</mi>)</math>
+<p>
+Ce symbole permet de faire quelque chose de très intéressant : <span class="important">on peut utiliser ce symbole dans un quantificateur logique, pour spécifier que l'objet que l'on quantifie appartient à un certain ensemble</span>.
+Nous pouvons donc répondre à la question de tout à l'heure "comment spécifier que notre proposition "pour tout n, P(n)" ne fonctionne qu'avec des nombres" : on a juste à rajouter ce symbole (on admet pour l'instant que "N" est l'ensemble des nombres entiers naturels) :
 </p>
 <math><mexists></mi>n</mi><min><mnatural><mo>,</mo><mi>P(n)</mi></math>
 <p>
+Avec cela, nous pouvons voir un autre type de définition d'ensemble (généralement le plus utilisé) : la définition par compréhension.
+<span class="important"><definition name="set_theory-comprehension"></span>.
+Par exemple, prenons un ensemble "E", et essayons d'en extraire tous les nombres supérieurs à 100 dans un ensemble nommé "G".
+</p>
+<math><mi>E</mi><mequal><mo>{</mo><mi>5</mi><mo>,</mo><mi>50</mi><mo>,</mo><mi>500</mi><mo>,</mo><mi>5000</mi><mo>}</mo></math>
+<p>
+Ici, nous pouvons procéder par extension : l'ensemble des éléments de "E" supérieurs à "100" est "{500, 5000}".
+Cependant, si vous voulez faire de même dans un autre ensemble "F", sans n'avoir aucune info sur lui (appart qu'il ne contient que des nombres), vous êtes embêtés.
+Ici, <span class="important">la définition par compréhension va permettre de définir votre ensemble comme tous les éléments de "F" respectant une propriété spécifique, ici "est supérieur à 100"</span>.
+Pour la notation, nous allons définir notre propriété sous la forme d'un prédicat, et dire que si ce prédicat est respecté pour un élément de "F", alors cela équivaut à dire qu'il fait partie de "G".
+</p>
+<math>P(n) = "n est supérieur à 100"</math></br>
+<math><mforall> x <min> F, (x <min> G <mequi> x > 100)</math></br>
+<p>
 Puisque l'on parle d'ensembles, parlons d'un terme extrêment similaire : un sous-ensemble.
 <span class="important"><definition name="set_theory-sub_set"></span>.
-Il n'est pas exclu qu'un sous-ensemble contienne la totalité des éléments de A... comme ne contient aucun élément (il est défini comme étant quand même un sous-ensemble de A).
-Ce concept nous permet d'en introduire un autre : l'inclusion.
+Il n'est pas exclu qu'un sous-ensemble contienne la totalité des éléments de A... comme ne contienne aucun élément (il est défini comme étant quand même un sous-ensemble de A).
+</p>
+<p>
+Avec le concept de sous-ensemble, nous pouvons en introduire un autre : l'inclusion.
 <span class="important"><definition name="inclusion-set"></span>.
 Donc, si un ensemble A est inclu dans un autre ensemble B, alors A est un sous-ensemble de B (et vice-versa, si A est un sous-ensemble de B, alors il est inclu dans B).
 La notation mathématique est assez similaire à celle de l'appartenance, à la différence prêt que le "U" retourné n'est pas barré.
@@ -58,6 +94,99 @@ Cependant, il existe une notation où A n'est pas égal à B, nommée "inclusion
 Pour une traduction mathématique - français, lisez "pour tout ensemble A et B, A est strictement inclu dans B si (et seulement si) pour tous les éléments possibles, si un élément appartient à A, alors il appartient à B, et si il existe un élément dans B qui n'est pas dans A".
 </p>
 <math><mforall><mi>A</mi><mforall><mi>B</mi><mo>,</mo><mi>A</mi><mincluded_strict><mi>B</mi><mequi><mo>[</mo><mforall><mi>x</mi><mo>(</mo><mi>x</mi><min><mi>A</mi><mimp><mi>x</mi><min><mi>B</mi><mo>)</mo><mand><mexists><mi>y</mi><min><mi>B</mi><mo>(</mo><mi>y</mi><mnotin><mi>A</mi><mo>)</mo><mo>]</mo></math>
+<p>
+Dans la vie de tous les jours, la propriété la plus "évidente" d'un ensemble est son cardinal.
+<span class="important"><definition name="cardinal"></span>.
+Cette définition est infiniment plus simple dans le cas où l'ensemble est fini.
+Ici, <definition name="set-finite">.
+<span class="important"><definition name="cardinal-set_finite"></span>.
+Par exemple, le cardinal de l'ensemble {1, 3, 4, 7, 9} est 5 (il y a 5 éléments dedans).
+La définition rigoureuse (avec des symbôles mathématiques complexes et tout le bazard) est particulièrement complexe, et nous ne pouvons pas l'étudier pour l'instant (dans le cas des ensembles finis, nous nous contenterons de compter les éléments dans l'ensemble).
+</p>
+
+<h3>L'union et l'intersection d'ensembles</h3>
+<p>
+Comme pour les propositions, <span class="important">il existe une syntaxe permettant de travailler précisément avec des ensembles, d'effectuer des opérations entre ensembles et d'en définir des nouveaux</span>.
+</p>
+<p>
+L'union et l'intersection sont des opérateurs permettant de réaliser une opération logique entre deux ensembles.
+Ils sont aussi probablement les opérateurs les plus simples avec des ensembles.
+</p>
+<p>
+En effet, <span class="important"><definition name="union"></span>.
+En terme mathématique (lisez "pour tout ensemble A et B, il existe un ensemble C tel que, pour tous les éléments x possibles, x est dans C équivaut à dire que x est dans A ou B (ou les deux)") :
+</p>
+<math><mforall>A<mforall>B,<mexists>C<mforall>x {x<min>C<mequi>x<min>A<mor>x<min>B}</math>
+<p>
+Les deux appellations (union et réunion) sont possibles, et désignent l'exact même chose.
+En fait, "l'union" est un opérateur, ce marquant avec une sorte de grand "U" :
+</p>
+<math>A <munion> B = C</math>
+<p>
+C'est assez simple à illustrer.
+</p>
+
+<graphic ratio_base>
+<base draw=0 width=25 height=10>
+<background_color white>
+
+<text name=type_number() font_size_in_scale=3/2 content="A =" x=-10 y=7/3></text>
+<circle name=type_number() x=-4 y=2 radius_x=4 radius_y=3/2>
+<text name=type_number() content="1" x=-6 y=2></text>
+<text name=type_number() content="5" x=-4 y=2></text>
+<text name=type_number() content="9" x=-2 y=2></text>
+<text name=type_number() font_size_in_scale=3/2 content="B =" x=2 y=7/3></text>
+<circle name=type_number() x=7 y=2 radius_x=3 radius_y=3/2>
+<text name=type_number() content="3" x=8 y=2></text>
+<text name=type_number() content="7" x=6 y=2></text>
+
+<text name=type_number() font_size_in_scale=3/2 content="C =" x=-10 y=-13/6></text>
+<circle name=type_number() x=1 y=-5/2 radius_x=9 radius_y=3/2>
+<text name=type_number() content="1" x=-5 y=-5/2></text>
+<text name=type_number() content="3" x=-2 y=-5/2></text>
+<text name=type_number() content="5" x=1 y=-5/2></text>
+<text name=type_number() content="7" x=4 y=-5/2></text>
+<text name=type_number() content="9" x=7 y=-5/2></text>
+</graphic>
+
+<p>
+L'intersection est un opérateur aussi simple à comprendre.
+<span class="important"><definition name="intersection"></span>.
+Il s'agit de l'union où vous remplacez le "ou" de la définition mathématique par un "et".
+Des fois, <span class="important">certains auteurs nomment l'ensemble obtenu par l'intersection de "A" et "B" se nomme la trace de "A" sur "B"</span>.
+En terme mathématique (lisez "pour tout ensemble A et B, il existe un ensemble C tel que, pour tous les éléments x possibles, x est dans C équivaut à dire que x est dans A et B") :
+</p>
+<math><mforall>A<mforall>B,<mexists>C<mforall>x {x<min>C<mequi>x<min>A<mand>x<min>B}</math>
+<p>
+Si les deux ensembles ne partagent aucun élément en commun, C vaudra l'ensemble vide.
+Dans ce cas, <span class="important">ces deux ensembles sont dits "disjoints"</span>.
+Son existence demande un peu plus de réflexion, mais se déduit grâce à l'axiome de l'ensemble vide.
+Cet opérateur se marque avec le même symbôle que l'union à l'envers :
+</p>
+<math>A <minter> B = C</math>
+<p>
+Il est aussi assez simple à illustrer.
+</p>
+
+<graphic ratio_base>
+<base draw=0 width=25 height=10>
+<background_color white>
+
+<text name=type_number() font_size_in_scale=3/2 content="A =" x=-10 y=7/3></text>
+<circle name=type_number() x=-4 y=2 radius_x=4 radius_y=3/2>
+<text name=type_number() content="1" x=-6 y=2></text>
+<text name=type_number() content="5" x=-4 y=2></text>
+<text name=type_number() content="9" x=-2 y=2></text>
+<text name=type_number() font_size_in_scale=3/2 content="B =" x=2 y=7/3></text>
+<circle name=type_number() x=7 y=2 radius_x=3 radius_y=3/2>
+<text name=type_number() content="9" x=8 y=2></text>
+<text name=type_number() content="1" x=6 y=2></text>
+
+<text name=type_number() font_size_in_scale=3/2 content="C =" x=-7 y=-13/6></text>
+<circle name=type_number() x=0 y=-5/2 radius_x=5 radius_y=3/2>
+<text name=type_number() content="1" x=-2 y=-5/2></text>
+<text name=type_number() content="9" x=2 y=-5/2></text>
+</graphic>
 
 <h3>La théorie des ensembles "ZFC"</h3>
 <p>
@@ -92,16 +221,6 @@ De manière illustré, l'axiome confirme cette égalité :
 <text name=type_number() content="1" x=9 y=-2></text>
 </graphic>
 <p>
-Cet axiome permet d'introduire une première manière de définir un ensemble : la définition par extension.
-<span class="important"><definition name="set_theory-extension"></span>.
-Ce nom vient du fait que c'est l'axiome d'extension qui permet d'attribuer les éléments voulus à l'ensemble.
-Voici quelques exemples de définitions par extension :
-</p>
-<math><mi>A</mi><mequal><mo>{</mo><mi>1</mi><mo>,</mo><mi>10</mi><mo>,</mo><mi>100</mi><mo>,</mo><mi>1000</mi><mo>}</mo></math></br>
-<math><mi>A</mi><mequal><mo>{</mo><mi>72</mi><mo>}</mo></math></br>
-<math><mi>A</mi><mequal><mo>{</mo><mi>0</mi><mo>,</mo><mi>1</mi><mo>,</mo><mi>2</mi><mo>,</mo><mi>3</mi><mo>,</mo><mi>4</mi><mo>,</mo><mi>5</mi><mo>,</mo><mi>6</mi><mo>,</mo><mi>7</mi><mo>,</mo><mi>8</mi><mo>}</mo></math>
-<p>
-Il est à noter que, en général, ces ensembles sont notés entre crochets "{}", avec des éléments séparés par des virgules, ou des points virgules.
 De manière purement mathématique, l'axiome peut s'énoncer de plusieurs manières équivalentes.
 La première n'utilise que des équivalences, et la deuxième découpe la première équivalence en deux implications (généralement plus utilisé dans les démonstrations).
 Pour une traduction mathématique - français, lisez "pour tout ensemble A et B, A et B sont égaux si (et seulement si) tous les éléments de B sont des éléments de A, et tous les éléments de A sont des éléments de B".
@@ -167,7 +286,7 @@ Pour une traduction mathématique - français, lisez "pour tout ensemble A et B,
 Le quatrième axiome est l'axiome de la réunion.
 <span class="important"><definition name="set_theory-reunion_axiom"></span>.
 Cet axiome peut paraître un peu bizarre, mais il est cependant très important dans plein de démonstrations.
-Par exemple, en le couplant avec l'axiome de la paire, <span class="important">on peut prouver qu'il existe un ensemble C tel que, pour tout ensemble A et B, C est composé de tous les éléments de A et B (et pas plus)</span>.
+Par exemple, en le couplant avec l'axiome de la paire, <span class="important">on peut prouver que, pour tout ensemble A et B, il existe un ensemble C étant l'union de A et B (et donc, qu'il existe un ensemble C composé de tous les éléments de A et B, et pas plus)</span>.
 </p>
 <graphic ratio_base>
 <base draw=0 width=25 height=10>
@@ -432,22 +551,7 @@ L'idée de cet axiome est de pouvoir utiliser cette fameuse "fonction", dans des
 Son énoncé mathématique est... assez complexe.
 Pour une traduction mathématique - français, lisez "pour tout ensemble X non vide, il existe une fonction f allant de X vers la réunion de tous les ensembles A appartenant à X (comme permis par l'axiome de la réunion), transformant les éléments A de X (des ensembles) en un élément quelconque de A".
 </p>
-
 <math><mforall>X[X<mnotequal><mempty_set><mimp><mexists>f:X<mto><munion>X<mforall>A<min>X(f(A)<min>A)]</math>
-
-<h3>Les propriétés basiques des ensembles</h3>
-<p>
-Les ensembles peuvent posséder un grand nombre de propriétés, souvent assez basiques.
-</p>
-<p>
-La propriété la plus "évidente" d'un ensemble est son cardinal.
-<span class="important"><definition name="cardinal"></span>.
-Cette définition est infiniment plus simple dans le cas où l'ensemble est fini.
-Ici, <definition name="set-finite">.
-<span class="important"><definition name="cardinal-set_finite"></span>.
-Par exemple, le cardinal de l'ensemble {1, 3, 4, 7, 9} est 5 (il y a 5 éléments dedans).
-La définition rigoureuse (avec des symbôles mathématiques complexes et tout le bazard) est particulièrement complexe, et nous ne pouvons pas l'étudier pour l'instant (dans le cas des ensembles finis, nous nous contenterons de compter les éléments dans l'ensemble).
-</p>
 
 <h3>Singletons, pairs et couples</h3>
 <p>
@@ -490,84 +594,9 @@ L'obtension du premier élément se fait donc par le singleton, et l'obtension d
 
 <h2>Les opérations sur les ensembles</h2>
 
-<h3>L'union et l'intersection</h3>
-<p>
-L'union et l'intersection sont des opérateurs permettant de réaliser une opération logique entre deux ensembles.
-En effet, <span class="important"><definition name="union"></span>.
-En terme mathématique (lisez "pour tout ensemble A et B, il existe un ensemble C tel que, pour tous les éléments x possibles, x est dans C équivaut à dire que x est dans A ou B (ou les deux)") :
-</p>
-<math><mforall>A<mforall>B,<mexists>C<mforall>x {x<min>C<mequi>x<min>A<mor>x<min>B}</math>
-<p>
-Les deux appellations (union et réunion) sont possibles, et désignent l'exact même chose.
-Son existence est assez facilement déductible, grâce à la combinaison de l'axiome de la paire et de l'axiome de la réunion.
-En fait, "l'union" est un opérateur, ce marquant avec une sorte de grand "U" :
-</p>
-<math>A <munion> B = C</math>
-<p>
-C'est assez simple à illustrer.
-</p>
+<h3>La différence d'ensembles</h3>
 
-<graphic ratio_base>
-<base draw=0 width=25 height=10>
-<background_color white>
-
-<text name=type_number() font_size_in_scale=3/2 content="A =" x=-10 y=7/3></text>
-<circle name=type_number() x=-4 y=2 radius_x=4 radius_y=3/2>
-<text name=type_number() content="1" x=-6 y=2></text>
-<text name=type_number() content="5" x=-4 y=2></text>
-<text name=type_number() content="9" x=-2 y=2></text>
-<text name=type_number() font_size_in_scale=3/2 content="B =" x=2 y=7/3></text>
-<circle name=type_number() x=7 y=2 radius_x=3 radius_y=3/2>
-<text name=type_number() content="3" x=8 y=2></text>
-<text name=type_number() content="7" x=6 y=2></text>
-
-<text name=type_number() font_size_in_scale=3/2 content="C =" x=-10 y=-13/6></text>
-<circle name=type_number() x=1 y=-5/2 radius_x=9 radius_y=3/2>
-<text name=type_number() content="1" x=-5 y=-5/2></text>
-<text name=type_number() content="3" x=-2 y=-5/2></text>
-<text name=type_number() content="5" x=1 y=-5/2></text>
-<text name=type_number() content="7" x=4 y=-5/2></text>
-<text name=type_number() content="9" x=7 y=-5/2></text>
-</graphic>
-
-<p>
-L'intersection est un opérateur aussi simple à comprendre.
-<span class="important"><definition name="intersection"></span>.
-Il s'agit de l'union où vous remplacez le "ou" de la définition mathématique par un "et".
-En terme mathématique (lisez "pour tout ensemble A et B, il existe un ensemble C tel que, pour tous les éléments x possibles, x est dans C équivaut à dire que x est dans A et B") :
-</p>
-<math><mforall>A<mforall>B,<mexists>C<mforall>x {x<min>C<mequi>x<min>A<mand>x<min>B}</math>
-<p>
-Si les deux ensembles ne partagent aucun élément en commun, C vaudra l'ensemble vide.
-Dans ce cas, <span class="important">ces deux ensembles sont dits "disjoints"</span>.
-Son existence demande un peu plus de réflexion, mais se déduit grâce à l'axiome de l'ensemble vide.
-Cet opérateur se marque avec le même symbôle que l'union à l'envers :
-</p>
-<math>A <minter> B = C</math>
-<p>
-Il est aussi assez simple à illustrer.
-</p>
-
-<graphic ratio_base>
-<base draw=0 width=25 height=10>
-<background_color white>
-
-<text name=type_number() font_size_in_scale=3/2 content="A =" x=-10 y=7/3></text>
-<circle name=type_number() x=-4 y=2 radius_x=4 radius_y=3/2>
-<text name=type_number() content="1" x=-6 y=2></text>
-<text name=type_number() content="5" x=-4 y=2></text>
-<text name=type_number() content="9" x=-2 y=2></text>
-<text name=type_number() font_size_in_scale=3/2 content="B =" x=2 y=7/3></text>
-<circle name=type_number() x=7 y=2 radius_x=3 radius_y=3/2>
-<text name=type_number() content="9" x=8 y=2></text>
-<text name=type_number() content="1" x=6 y=2></text>
-
-<text name=type_number() font_size_in_scale=3/2 content="C =" x=-7 y=-13/6></text>
-<circle name=type_number() x=0 y=-5/2 radius_x=5 radius_y=3/2>
-<text name=type_number() content="1" x=-2 y=-5/2></text>
-<text name=type_number() content="9" x=2 y=-5/2></text>
-</graphic>
-
+<h3>A DEFINIR</h3>
 <p>
 Grâce à ces deux concepts, vous pouvez en définir un autre assez pratique : les partitions d'un ensembles.
 <span class="important"><definition name="partition"></span>.
