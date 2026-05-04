@@ -24,6 +24,9 @@
 <new_definition name="relation">
     <content>une relation est un objet permettant d'énoncer des propositions entre plusieurs éléments d'un même ensemble quelconque</content>
 </new_definition>
+<new_definition name="sequence">
+    <content>une suite mathématique est une fonction mathématique allant de "N" à n'importe quel ensemble possible</content>
+</new_definition>
 
 <new_definition name="arity">
     <content name="relation">l'arité d'une relation est le nombre d'élément que la relation lie entre eux</content>

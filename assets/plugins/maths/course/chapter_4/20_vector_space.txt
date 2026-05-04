@@ -195,6 +195,52 @@ Il est possible de compléter ce concept, pour en obtenir un nouveau très prati
 Il s'agit de la donnée minimum nécessaire dans un espace vectoriel pour obtenir la valeur de chaque vecteur possible.
 Il existe d'ailleurs autant de base qu'il existe de famille de vecteur libre et génératrice.
 </p>
+<math>f = (<mi>u</mi><msub>1</msub>, <mi>u</mi><msub>2</msub>, ..., <mi>u</mi><msub>n</msub>) <min> <mi>E</mi><msup>n</msup></math></br>
+<math><mforall> v <min> E, <mexists>(<mi>a</mi><msub>1</msub>, <mi>a</mi><msub>2</msub>, ..., <mi>a</mi><msub>n</msub>) <min> <mi>K</mi><msup>n</msup>, v = <mi>a</mi><msub>1</msub> * <mi>u</mi><msub>1</msub> + <mi>a</mi><msub>2</msub> * <mi>u</mi><msub>2</msub> + ... + <mi>a</mi><msub>n</msub> * <mi>u</mi><msub>n</msub> </math>
+<p>
+Avec cela, nous allons "déterrer" un concept géométre que nous avons traité au chapitre3 : les coordonnées.
+En effet, en algèbre linéaire, <span class="important">les coordonnées d'un vecteur quelconque dans une base quelconque représentent les valeurs des scalaires à multiplier à chaque élément de la base pour obtenir le vecteur recherché</span>.
+En d'autres termes, il s'agit des scalaires dans la combinaisons linéaire permettant de forme le vecteur de départ via cette base.
+Ici, les coordonnées dépendent évidemment du vecteur, mais aussi de la base choisie.
+Généralement, <span class="important">les coordonnées d'un vecteur "v" dans une base "b" se note "v indice b"</span>.
+Prenons un exemple simple dans "R2" : une base "B" représentant la base canonique, et la base "C" représentant une autre base.
+</p>
+<math>B = {(1, 0), (0, 1)}, C = {(1, 1), (0, 1)}</math></br>
+<p>
+Déjà, <span class="important">exprimer un vecteur avec des coordonnées donnée dans une base est extrêmement simple, puisque cela ne demande qu'une simple combinaison linéaire</span>.
+Par exemple, trouvons les vecteurs de coordonnées "(4, 3)" dans la base "B" et "(5, 1)" dans la base "C".
+</p>
+<math><mi>v</mi><msub>1</msub> = 4 * (1, 0) + 3 * (0, 1) = (4, 3)</math></br>
+<math><mi>v</mi><msub>2</msub> = 5 * (1, 1) + 1 * (0, 1) = (5, 6)</math></br>
+<p>
+Faisons l'opération inverse : <span class="important">trouver les coordonnées associées à un vecteur donné dans une certaine base</span>.
+Il est très facile de trouver les expressions des vecteurs "(1, 0)" et "(1, 1)" dans la base canonique : il s'agit de "(1, 0)" et "(1, 1)".
+</p>
+<math><mi>(1, 0)</mi><msub>B</msub> = <mi>(1, 0)</mi>, <mi>(1, 1)</mi><msub>B</msub> = <mi>(1, 1)</mi></math></br>
+<p>
+Ici, le défi est de trouver les expressions des vecteurs "(1, 0)" et "(1, 1)" dans la base "C".
+La meilleure façon est de résoudre un petit système, permettant de trouver les valeurs des scalaires.
+C'est généralement de cette façon que nous fairons pour passer des coordonnées d'une base à une autre facilement.
+</p>
+<math>(1, 0) = <mi>a</mi><msub>1</msub> * (1, 1) + <mi>a</mi><msub>2</msub> * (0, 1) <mequi> 1 = <mi>a</mi><msub>1</msub> * 1 + <mi>a</mi><msub>2</msub> * 0 <mand> 0 = <mi>a</mi><msub>1</msub> * 1 + <mi>a</mi><msub>2</msub> * 1 <mequi> <mi>a</mi><msub>1</msub> = 1 <mand> <mi>a</mi><msub>2</msub> = -1</math></br>
+<math>(1, 1) = <mi>a</mi><msub>1</msub> * (1, 1) + <mi>a</mi><msub>2</msub> * (1, 0) <mequi> <mi>a</mi><msub>1</msub> = 1 <mand> <mi>a</mi><msub>2</msub> = 0</math></br>
+<p>
+Donc, nous avons trouver les scalaires permettant de former ce vecteur dans la base "C" : il s'agit de ses coordonnées dans cette même base.
+</p>
+<math><mi>(1, 0)</mi><msub>C</msub> = <mi>(1, -1)</mi>, <mi>(1, 1)</mi><msub>C</msub> = <mi>(0, 1)</mi></math></br>
+<p>
+Si nous voulons formuler ces systèmes de manière plus précise, pour un vecteur "v" exprimé dans une base "b" :
+</p>
+<math>v = <msum from=1 to=n unknown=k><mi>a</mi><msub>k</msub><mi>b</mi><msub>k</msub></math>
+<p>
+Ou, avec chaque élément de "v" un à un :
+</p>
+<math><mi>v</mi><msub>1</msub> = <msum from=1 to=n unknown=k><mi>a</mi><msub>k</msub>(<mi>b</mi><msub>k</msub>)<msub>1</msub></math></br>
+<math><mi>v</mi><msub>2</msub> = <msum from=1 to=n unknown=k><mi>a</mi><msub>k</msub>(<mi>b</mi><msub>k</msub>)<msub>2</msub></math></br>
+<math><mi>v</mi><msub>i</msub> = <msum from=1 to=n unknown=k><mi>a</mi><msub>k</msub>(<mi>b</mi><msub>k</msub>)<msub>i</msub></math></br>
+<p>
+Un (autre) exemple dans "R2" est présent <a href="demo#4_1_0_2">juste ici</a>.
+</p>
 <p>
 Avec les bases, on peut définir un des concepts les plus importants des espaces vectoriels : la dimension.
 <span class="important"><definition name="vector_space_dimension"></span>.
@@ -247,29 +293,388 @@ La deuxième propriété est aussi vraie, et ce n'est pas si difficile que ça �
 Finalement, "f(0, 0) = (0, 0)", <span class="important">donc cette application est belle est bien linéaire</span>.
 On peut même généraliser ce résultat.
 Effectivement, <span class="important">on peut facilement montrer que toutes applications transformant "(x, y)" en "(w * x, z * y)" avec "w" et "z" des scalaires quelconques est linéaire</span>.
-Ce résultat <a href="demo#4_1_0_0">est démontré ici</a>, et est très similaire à la démonstration que nous venons juste de voir.
+Ce résultat <a href="demo#4_1_1_0">est démontré ici</a>, et est très similaire à la démonstration que nous venons juste de voir.
+</p>
+<p>
+Un résultat intéressant avec les applications linéaires concerne les bases d'espaces vectoriels.
+En effet, <span class="important">l'image d'une base de l'espace vectoriel de départ par une application linéaire représente une famille de vecteurs qui engendre l'image de l'application dans l'espace vectoriel d'arrivé</span>.
+La démonstration de ce théorème (<a href="demo#4_1_1_1">présente ici</a>) utilise les résultats basiques de linéarité.
+D'ailleurs, <span class="important">selon le théorème de la dimension, si l'image de l'application dans l'espace d'arrivée est de dimension inférieure ou égale à celle de l'espace de départ, alors l'image de la base génère tout l'espace d'arrivée, et si ils ont les mêmes dimensions, alors l'image de la base est une base de l'espace d'arrivée</span>.
 </p>
 
+
+
+<h2>Les matrices</h2>
+
+<h3>Qu'est ce qu'est une matrice ?</h3>
 <p>
-Pour avoir une compréhension supplémentaire du concept, ramenons nous à un exemple graphique.
-Imaginons un plan (dans "R²") avec une forme quelconque (par exemple, un carré).
+Les matrices sont des objets très utilisées en algèbre linéaire.
+En fait, <span class="important"><definition name="matrix"></span>.
+Ici, il faut voir "tableau" comme un tableau à deux entrées, contenant donc des éléments de cet ensemble.
+Par convention, ces objets se notent avec des lettres majuscules.
 </p>
-<graphic><background_color white><rect x=-1 y=-1 width=2 height=2 color=light_blue></graphic>
+<math>A = <mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd><mtd><mi>2</mi></mtd></mtr><mtr><mtd><mi>3</mi></mtd><mtd><mi>4</mi></mtd></mtr></mtable><mo>]</mo></mrow></math>
 <p>
-Comme cette application va de "R²" dans "R²", ce carré a une image dans "R²", que l'on peut facilement calculer.
-En effet notre carré est défini par ces sommets de coordonnées "(-1, -1)", "(-1, 1)", "(1, 1)" et "(1, -1)" : leur image est "(-2, -2)", "(-2, 2)", "(2, 2)" et "(2, -2)".
-Affichons graphiquement le résultat (ici en rouge, en arrière plan du carré de départ).
+Bien que très intuitive, cette définition manque de rigueur.
+D'un point de vue rigoureux, <span class="important"><definition name="matrix-rigorous"></span>.
+Généralement, on n'indique même pas les ensembles de taille "b" et "c", et l'on met directement la taille de "b" et "c" pour définir une matrice, où les ensembles utilisés pour indexer la matrice sont donc "{1, 2, ..., b}" et "{1, 2, ..., c}".
+C'est dans ce genre de cas que la notation "tableau" devient extrêmement intuitive : le premier ensemble représente les lignes, et le deuxième représente les colonnes.
 </p>
-<graphic><background_color white><rect x=-2 y=-2 width=4 height=4 color=light_red><rect x=-1 y=-1 width=2 height=2 color=light_blue></graphic>
 <p>
-Certains l'ont peut être vue venir : <span class="important">cette application a doublé la taille de notre carré</span>.
-Si on prend l'application transformant "(x, y)" en "(2 * x, y / 2)" (qui est linéaire), notre carré devient ceci :
+D'un point de vue "rigueur extrême", <span class="important">une matrice est donc une application allant du produit cartésien de ces deux ensembles vers des éléments de l'ensemble de départ</span>.
+D'ailleurs, les images des valeurs des couples dans le produit cartésien des ensembles servant à l'indexage se note généralement avec la lettre utilisé pour noter la matrice en minuscule (pour notre matrice "A" il s'agirait donc de "a"), avec le couple du produit cartésien en indice.
+C'est d'ailleurs comme ça que nous allons utiliser une notation pour accéder à un élément précis de la matrice.
+En effet, <span class="important">un élément d'une matrice "A" à la ligne "y" et à la colonne "x" se note "A indice (x, y)"</span>.
+L'ordre est important : ligne, puis colonne.
+Reprenons notre matrice "A" :
 </p>
-<graphic><background_color white><rect x=-2 y=-1/2 width=4 height=1 color=light_red></graphic>
+<math>A = <mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd><mtd><mi>2</mi></mtd></mtr><mtr><mtd><mi>3</mi></mtd><mtd><mi>4</mi></mtd></mtr></mtable><mo>]</mo></mrow></math>
 <p>
-Ici, la largeur du carré est multipliée par "2", et sa hauteur est divisée par "2".
-Dans ce genre d'application transformant "(x, y)" en "(w * x, y * z)", la largeur du carré est multipliée par "w", et sa hauteur est multipliée par "z".
+On peut facilement noter toutes les valeurs de "A".
 </p>
+<math><mi>a</mi><msub>1, 1</msub> = 1</math></br>
+<math><mi>a</mi><msub>1, 2</msub> = 2</math></br>
+<math><mi>a</mi><msub>2, 1</msub> = 3</math></br>
+<math><mi>a</mi><msub>2, 2</msub> = 4</math>
+<p>
+Selon les tailles de "b" et "c", on parle de dimension de la matrice.
+En effet, <span class="important"><definition name="matrix-dimension"></span>.
+</p>
+<p>
+Comme pour beaucoup d'objets mathématiques, il est possible de faire des opérations avec ces matrices.
+Si votre matrice représente des nombres, alors nous pouvons y définir une opération très utile : l'addition matricielle.
+En effet, <span class="important">l'addition matricielle est une opération entre deux matrices d'exacte même dimension, où chaque élément d'indice "a, b" du résultat représente la somme des éléments d'indice "a, b" des deux matrices</span>.
+Cette opération est bien définie car les ensembles de nombres ont généralement une addition de définie.
+D'un point de vue définition, on peut noter la valeur de chaque élément de la matrice obtenue "C" pour l'addition de matrices "A" et "B" :
+</p>
+<math><mi>c</mi><msub>i, j</msub> = <mi>a</mi><msub>i, j</msub> + <mi>b</mi><msub>i, j</msub></math></br>
+<p>
+On peut même aller plus loin que ça.
+Selon les propriétés algébriques de l'ensemble de départ des matrices, on peut leur en déduire des propriétés précises, et bien plus complexes qu'une simple addition.
+Effectivement, <span class="important">si votre ensemble de départ peut former une structure algébrique précise possédant (au moins) une loi de composition interne, alors il est possible d'induire cette loi sur l'ensemble des matrices de même dimension, où chaque élément d'indice "a, b" du résultat représente la valeur après l'opération des éléments d'indice "a, b" des deux matrices</span>.
+Cette propriété est immédiate de la façon même dont on écrit les éléments dans l'addition.
+Grâce à ça, on peut rendre cette addition plus permissive.
+</p>
+<p>
+Nous pouvons définir une autre opération assez utile : la multiplication par un scalaire.
+Pour la définir, repassons dans un ensemble de matrices composés de nombres.
+Ici, <span class="important">la multiplication par un scalaire est une opération entre un élément de l'ensemble de départ (nommé un scalaire) et une matrice, où chaque élément d'indice "a, b" du résultat représente le produit de l'élément d'indice "a, b" et du scalaire</span>.
+Encore une fois, cette opération est bien définie car les ensembles de nombres ont généralement une addition de définie.
+D'un point de vue définition, on peut noter la valeur de chaque élément de la matrice obtenue "C" pour la somme du scalaire "s" et de la matrice "A" :
+</p>
+<math><mi>c</mi><msub>i, j</msub> = s * <mi>a</mi><msub>i, j</msub></math></br>
+<p>
+Ici, il est difficile d'aller aussi loin que pour l'addition.
+Généralement, <span class="important">pour que cela fonctionne, il est conseiller de définir vos matrices sur un ensemble représentant un anneau ou un corps, pour que les propriétés de la multiplication soient justement aussi permissive que dans des anneaux ou des corps</span>.
+</p>
+<p>
+Vous l'aurez peut être deviné : <span class="important">avec ces deux lois, si l'ensemble de vos éléments de départ est un corps, nous pouvons définir l'ensemble des matrices comme un espace vectoriel de l'ensemble de départ</span>.
+En effet, si l'ensemble de départ est un corps, l'addition matricielle est un groupe abélien, et la multiplication par un scalaire est associative, distributive et admet un neutre : il s'agit donc bien d'un espace vectoriel.
+</p>
+<p>
+Parlons d'une autre opération, plus complexe mais très utile avec les matrices : le produit matriciel.
+<span class="important"><definition name="matrix_product"></span>.
+Soyons plus précis, avec une représentation graphique de deux matrices "A" et "B" de dimension "m, n" et "n, p", dont on va obtenir le produit matriciel.
+</p>
+<table>
+
+<case_plus x=3 y=0 background_color=light_green><math><mi>a</mi><msub>1, 1</msub></math></case_plus>
+<case_plus x=3 y=1 background_color=light_green>...</case_plus>
+<case_plus x=3 y=2 background_color=light_green><math><mi>a</mi><msub>n, 1</msub></math></case_plus>
+<case_plus x=4 y=0 background_color=light_green>...</case_plus>
+<case_plus x=4 y=1 background_color=light_green>...</case_plus>
+<case_plus x=4 y=2 background_color=light_green>...</case_plus>
+<case_plus x=5 y=0 background_color=light_green><math><mi>a</mi><msub>1, p</msub></math></case_plus>
+<case_plus x=5 y=1 background_color=light_green>...</case_plus>
+<case_plus x=5 y=2 background_color=light_green><math><mi>a</mi><msub>n, p</msub></math></case_plus>
+
+<case_plus x=0 y=3 background_color=light_blue><math><mi>b</mi><msub>1, 1</msub></math></case_plus>
+<case_plus x=0 y=4 background_color=light_blue>...</case_plus>
+<case_plus x=0 y=5 background_color=light_blue><math><mi>b</mi><msub>n, 1</msub></math></case_plus>
+<case_plus x=1 y=3 background_color=light_blue>...</case_plus>
+<case_plus x=1 y=4 background_color=light_blue>...</case_plus>
+<case_plus x=1 y=5 background_color=light_blue>...</case_plus>
+<case_plus x=2 y=3 background_color=light_blue><math><mi>b</mi><msub>1, m</msub></math></case_plus>
+<case_plus x=2 y=4 background_color=light_blue>...</case_plus>
+<case_plus x=2 y=5 background_color=light_blue><math><mi>b</mi><msub>n, m</msub></math></case_plus>
+
+<case_plus x=3 y=3><math><mi>c</mi><msub>1, 1</msub></math></case_plus>
+<case_plus x=3 y=4>...</case_plus>
+<case_plus x=3 y=5><math><mi>c</mi><msub>m, 1</msub></math></case_plus>
+
+<case_plus x=4 y=3>...</case_plus>
+<case_plus x=4 y=4>...</case_plus>
+<case_plus x=4 y=5>...</case_plus>
+
+<case_plus x=5 y=3><math><mi>c</mi><msub>1, p</msub></math></case_plus>
+<case_plus x=5 y=4>...</case_plus>
+<case_plus x=5 y=5><math><mi>c</mi><msub>m, p</msub></math></case_plus>
+
+</table>
+<p>
+L'idée ici est de définir une valeur précise pour chaque "c" de la matrice obtenue.
+En fait, <span class="important">pour un "c indice i, j", l'idée va être d'obtenir la somme du produit de chaque valeur de la "i-ième ligne" de la matrice à droite, et de la "j-ième" colonne de la matrice en haut</span>.
+</p>
+<math><mi>c</mi><msub>i, j</msub> = <msum from=1 to=n unknown=k><mi>a</mi><msub>k</msub><mi>b</mi><msub>k</msub></math>
+<p>
+Généralement, pour deux matrice "A" et "B", le produit matriciel de ces deux matrices se note comme une opération standard, utilisant généralement un "*", ou un "X".
+</p>
+<math>C = A * B</math>
+<p>
+Prenons un exemple avec deux matrices simples :
+</p>
+<math>A = <mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd><mtd><mi>2</mi></mtd></mtr><mtr><mtd><mi>3</mi></mtd><mtd><mi>4</mi></mtd></mtr></mtable><mo>]</mo></mrow></math></br>
+<math>B = <mrow><mo>[</mo><mtable><mtr><mtd><mi>0</mi></mtd><mtd><mi>2</mi></mtd></mtr><mtr><mtd><mi>1</mi></mtd><mtd><mi>0</mi></mtd></mtr></mtable><mo>]</mo></mrow></math>
+<p>
+Ici, nous pouvons très facilement calculer chaque valeur de la matrice résultat, et donc obtenir la matrice résultat.
+</p>
+<math><mi>c</mi><msub>1, 1</msub> = <mi>a</mi><msub>1, 1</msub> * <mi>b</mi><msub>1, 1</msub> + <mi>a</mi><msub>1, 2</msub> * <mi>c</mi><msub>2, 1</msub> = 1 * 0 + 2 * 1 = 4</math></br>
+<math><mi>c</mi><msub>1, 2</msub> = <mi>a</mi><msub>1, 1</msub> * <mi>b</mi><msub>1, 2</msub> + <mi>a</mi><msub>1, 2</msub> * <mi>c</mi><msub>2, 2</msub> = 1 * 2 + 2 * 0 = 2</math></br>
+<math><mi>c</mi><msub>2, 1</msub> = <mi>a</mi><msub>2, 1</msub> * <mi>b</mi><msub>1, 1</msub> + <mi>a</mi><msub>2, 2</msub> * <mi>c</mi><msub>2, 1</msub> = 3 * 0 + 4 * 1 = 4</math></br>
+<math><mi>c</mi><msub>2, 1</msub> = <mi>a</mi><msub>2, 1</msub> * <mi>b</mi><msub>1, 2</msub> + <mi>a</mi><msub>2, 2</msub> * <mi>c</mi><msub>2, 2</msub> = 3 * 2 + 4 * 0 = 6</math></br>
+<math>C = <mrow><mo>[</mo><mtable><mtr><mtd><mi>4</mi></mtd><mtd><mi>2</mi></mtd></mtr><mtr><mtd><mi>4</mi></mtd><mtd><mi>6</mi></mtd></mtr></mtable><mo>]</mo></mrow></math></br>
+
+<h3>Le lien matrices - applications linéaires</h3>
+<p>
+Ici, nous allons essayer de faire une chose précise : trouver un nouveau moyen de formuler des applications linéaires.
+Pour cela, <span class="important">nous allons utiliser des matrices, à valeurs dans le corps associés aux espaces vectoriels</span>.
+Construisons cette nouvelle façon de faire, de manière intuitive, et étape par étape.
+</p>
+<p>
+Commençons par le cas le plus simple : passer de coordonnées d'un vecteur base quelconque aux coordonnées dans la base canonique.
+Ici, <span class="important">ce passage représente une application linéaire allant d'un espace vectoriel vers lui-même, en changeant juste la base</span>.
+Imagineons que nous avons des coordonnées précises dans la base "b", que nous voudrions convertir dans la base canonique.
+Nous pouvons donc facilement calculer son vecteur associé.
+</p>
+<math>v = <msum from=1 to=n unknown=k><mi>a</mi><msub>k</msub><mi>b</mi><msub>k</msub></math></br>
+<math><mequi> <mi>v</mi><msub>i</msub> = <msum from=1 to=n unknown=k><mi>a</mi><msub>k</msub>(<mi>b</mi><msub>k</msub>)<msub>i</msub></math></br>
+<p>
+Or, nous savons que les coordonnées du vecteur dans la base canonique ont les mêmes valeurs que les éléments dans le vecteur.
+Nous avons donc bel et bien dresser une façon de faire permettant de convertir facilement un vecteur.
+Cependant, <span class="important">on peut aller plus loin, en essayant de rendre cette façon de faire graphique</span>.
+Pour cela, <span class="important">nous allons utiliser des matrices</span>.
+Présentons notre résultat comme ceci :
+</p>
+<table>
+
+<case_plus x=3 y=0 background_color=light_green><math><mi>a</mi><msub>1</msub></math></case_plus>
+<case_plus x=3 y=1 background_color=light_green>...</case_plus>
+<case_plus x=3 y=2 background_color=light_green><math><mi>a</mi><msub>n</msub></math></case_plus>
+
+<case_plus x=0 y=3 background_color=light_blue><math>(<mi>b</mi><msub>1</msub>)<msub>1</msub></math></case_plus>
+<case_plus x=0 y=4 background_color=light_blue>...</case_plus>
+<case_plus x=0 y=5 background_color=light_blue><math>(<mi>b</mi><msub>1</msub>)<msub>n</msub></math></case_plus>
+<case_plus x=1 y=3 background_color=light_blue>...</case_plus>
+<case_plus x=1 y=4 background_color=light_blue>...</case_plus>
+<case_plus x=1 y=5 background_color=light_blue>...</case_plus>
+<case_plus x=2 y=3 background_color=light_blue><math>(<mi>b</mi><msub>m</msub>)<msub>1</msub></math></case_plus>
+<case_plus x=2 y=4 background_color=light_blue>...</case_plus>
+<case_plus x=2 y=5 background_color=light_blue><math>(<mi>b</mi><msub>m</msub>)<msub>n</msub></math></case_plus>
+
+<case_plus x=3 y=3><math><mi>Sum </mi>(<mi>b</mi><msub>1</msub>)<msub>k</msub><mi>a</mi><msub>k</msub></math></case_plus>
+<case_plus x=3 y=4>...</case_plus>
+<case_plus x=3 y=5><math><mi>Sum </mi>(<mi>b</mi><msub>m</msub>)<msub>k</msub><mi>a</mi><msub>k</msub></math></case_plus>
+
+</table>
+<p>
+Ici, nous avons dans nos cases en bas à droite les coordonnées du vecteur recherché.
+Graphiquement parlant, pour une case du vecteur recherché en bas à droite, obtenir sa valeur revient à prendre une à une les valeurs de sa ligne dans la partie bleue, de faire les produits avec l'élément d'indice l'élément actuellement traitée dans la ligne de la partie bleue, et de tous les sommer.
+En fait, <span class="important">il s'agit simplement du produit matriciel d'une matrice constituée des éléments de la base, et de la matrice représentant les coordonnées recherchées</span>.
+C'est exactement le calcul que nous avons fait.
+</p>
+<p>
+Tentons l'opération inverse : trouver les coordonnées dans une base donnée de vecteurs de coordonnées dans la base canonique.
+Pour rappel, si nous nommons notre base donnée "b", chaque valeur du vecteur "v" peut s'écrire :
+</p>
+<math><mi>v</mi><msub>i</msub> = <msum from=1 to=n unknown=k><mi>a</mi><msub>k</msub>(<mi>b</mi><msub>k</msub>)<msub>i</msub></math>
+<p>
+Donc, <span class="important">nous obtenons tout un système, contenant un nombre "n" correspondant à la taille de "b" d'équations, et autant d'inconnus</span>.
+Nous pouvons donc en extraire les coordonnées nécessaires, représentant toutes les valeurs de "a" nécessaires.
+<span class="important">Imagineons que nous faisons cela pour trouver les coordonnées des vecteurs de la base canonique dans la base "b"</span>.
+Appelons ces vecteurs "c de i", où "i" représente le "i-ième" vecteur de la base.
+</p>
+<math><mi>c</mi><msub>i</msub> = <msum from=1 to=n unknown=k><mi>a</mi><msub>k</msub>(<mi>b</mi><msub>k</msub>)<msub>i</msub></math>
+<p>
+Ici, chaque coordonnées "c de i" représente les coordonnées du "i-èmes" vecteur de la base canonique dans la base "b".
+Donc, <span class="important">exprimer des coordonnées de cette base dans la base canonique (avec les calculs vues plus haut) revient à exprimer des coordonnées de la base canonique en des coordonnées de la base "b"</span>.
+En effet, ici, si vous cherchez la combinaison linéaire de vecteurs (ayant des coordonnées connues dans la base "b") pour obtenir leurs coordonnées dans la nouvelle base "c", vous obtenez en résultat les coordonnées du vecteur dans la base "b".
+<span class="important">Il s'agit donc de la réciproque du calcul de coordonnées pour un vecteur donné dans une base</span>.
+Nous pouvons donc écrire "v" comme une combinaison linéaire de vecteurs de "c" et de coordonnées, que nous nommerons "d".
+</p>
+<math><mi>v</mi><msub>i</msub> = <msum from=1 to=n unknown=k><mi>d</mi><msub>k</msub>(<mi>c</mi><msub>k</msub>)<msub>i</msub></math>
+<p>
+Avec ça, la conversion "base canonique" - "b" est assurée.
+Comme pour plus haut, <span class="important">on peut écrire ce type de calcul avec une nouvelle matrice, non plus composer des éléments de "b", mais composer des éléments de "c"</span>.
+</p>
+<table>
+
+<case_plus x=3 y=0 background_color=light_green><math><mi>d</mi><msub>1</msub></math></case_plus>
+<case_plus x=3 y=1 background_color=light_green>...</case_plus>
+<case_plus x=3 y=2 background_color=light_green><math><mi>d</mi><msub>n</msub></math></case_plus>
+
+<case_plus x=0 y=3 background_color=light_blue><math>(<mi>c</mi><msub>1</msub>)<msub>1</msub></math></case_plus>
+<case_plus x=0 y=4 background_color=light_blue>...</case_plus>
+<case_plus x=0 y=5 background_color=light_blue><math>(<mi>c</mi><msub>1</msub>)<msub>n</msub></math></case_plus>
+<case_plus x=1 y=3 background_color=light_blue>...</case_plus>
+<case_plus x=1 y=4 background_color=light_blue>...</case_plus>
+<case_plus x=1 y=5 background_color=light_blue>...</case_plus>
+<case_plus x=2 y=3 background_color=light_blue><math>(<mi>c</mi><msub>m</msub>)<msub>1</msub></math></case_plus>
+<case_plus x=2 y=4 background_color=light_blue>...</case_plus>
+<case_plus x=2 y=5 background_color=light_blue><math>(<mi>c</mi><msub>m</msub>)<msub>n</msub></math></case_plus>
+
+<case_plus x=3 y=3><math><mi>Sum </mi>(<mi>c</mi><msub>1</msub>)<msub>k</msub><mi>d</mi><msub>k</msub></math></case_plus>
+<case_plus x=3 y=4>...</case_plus>
+<case_plus x=3 y=5><math><mi>Sum </mi>(<mi>c</mi><msub>m</msub>)<msub>k</msub><mi>d</mi><msub>k</msub></math></case_plus>
+
+</table>
+<p>
+Finalisons cette construction intuitive, avec un exemple plus global.
+Considérons une application linéaire "f", allant d'un espace vectoriel "E" vers un espace vectoriel "F" (sur un corps "K").
+Considérons "b" une base de "E".
+</p>
+<math>b = (<mi>b</mi><msub>1</msub>, <mi>b</mi><msub>2</msub>, ..., <mi>b</mi><msub>n</msub>) <min> <mi>E</mi><msup>n</msup></math></br>
+<math><mforall> v <min> E, <mexists>(<mi>a</mi><msub>1</msub>, <mi>a</mi><msub>2</msub>, ..., <mi>a</mi><msub>n</msub>) <min> <mi>K</mi><msup>n</msup>, v = <mi>a</mi><msub>1</msub> * <mi>b</mi><msub>1</msub> + <mi>a</mi><msub>2</msub> * <mi>b</mi><msub>2</msub> + ... + <mi>a</mi><msub>n</msub> * <mi>b</mi><msub>n</msub> </math>
+<p>
+Selon un théorème vue plus haut, <span class="important">l'image des vecteurs de "b" forme une famille génératrice de l'image de "f"</span>.
+Appelons cette image "c".
+</p>
+<math>c = (<mi>c</mi><msub>1</msub>, <mi>c</mi><msub>2</msub>, ..., <mi>c</mi><msub>n</msub>) <min> <mi>F</mi><msup>m</msup></math></br>
+<math><mforall> v <min> F, {v <min> Im(f) <mequi> <mexists>(<mi>a</mi><msub>1</msub>, <mi>a</mi><msub>2</msub>, ..., <mi>a</mi><msub>n</msub>) <min> <mi>K</mi><msup>n</msup>, v = <mi>a</mi><msub>1</msub> * <mi>c</mi><msub>1</msub> + <mi>a</mi><msub>2</msub> * <mi>c</mi><msub>2</msub> + ... + <mi>a</mi><msub>n</msub> * <mi>c</mi><msub>n</msub>}</math>
+<p>
+Donc, pour tout vecteur "v" de "E", "f(v)" peut s'écrire comme une combinaison linéaire de vecteurs de "c".
+Par linéarité de "f", les coordonnées de "v" dans "b" sont les mêmes que les "coordonnées" de "f(v)" dans "c".
+</p>
+<math>f(v) = f(<msum from=1 to=n unknown=k><mi>a</mi><msub>k</msub> * <mi>b</mi><msub>k</msub>) = <msum from=1 to=n unknown=k>f(<mi>a</mi><msub>k</msub> * <mi>b</mi><msub>k</msub>) = <msum from=1 to=n unknown=k><mi>a</mi><msub>k</msub> * f(<mi>b</mi><msub>k</msub>) = <msum from=1 to=n unknown=k><mi>a</mi><msub>k</msub> * <mi>c</mi><msub>k</msub></math>
+<p>
+Nous obtenons donc une expression de "f(v)" dans "c".
+Cependant, nous avons un problème : <span class="important">nous ne savons pas si "c" est une base de "Im(f)" ou pas, car rien ne nous dit qu'elle est libre</span>.
+Or, rappelons nous que tout vecteur d'un espace vectoriel peut s'exprimer avec une base de cet espace vectoriel, et que tout espace vectoriel possède au moins une base.
+Donc, chaque "c" peut s'exprimer comme coordonnées dans une base de l'espace vectoriel d'arrivée, que nous nommerons "d".
+Nous pouvons définir cette base comme bon nous semble, mais utilisons ici la façon la plus "globale".
+</p>
+<math><mexists>(<mi>e</mi><msub>1</msub>, <mi>e</mi><msub>2</msub>, ..., <mi>e</mi><msub>m</msub>) <min> <mi>K</mi><msup>n</msup>, <mi></mi>c<msub>i</msub> = <msum from=1 to=m unknown=k><mi>e</mi><msub>k</msub> * <mi>d</mi><msub>k</msub></math>
+<p>
+Reformulons donc "f(v)" :
+</p>
+<math>f(v) = <msum from=1 to=n unknown=k><mi>a</mi><msub>k</msub> * <mi>c</mi><msub>k</msub> = <msum from=1 to=n unknown=k><mi>a</mi><msub>k</msub> * <msum from=1 to=m unknown=l><mi>e</mi><msub>k - l</msub> * <mi>d</mi><msub>l</msub> = <msum from=1 to=n unknown=k>(<msum from=1 to=m unknown=l><mi>a</mi><msub>k</msub> * <mi>e</mi><msub>k - l</msub> * <mi>d</mi><msub>l</msub>) = <msum from=1 to=m unknown=l>(<msum from=1 to=n unknown=k><mi>a</mi><msub>k</msub> * <mi>e</mi><msub>k - l</msub> * <mi>d</mi><msub>l</msub>) = <msum from=1 to=m unknown=l>(<msum from=1 to=n unknown=k><mi>a</mi><msub>k</msub> * <mi>e</mi><msub>k - l</msub>) * <mi>d</mi><msub>l</msub></math>
+<p>
+Ici, nous pouvons reconnaitre que la somme utilisant "n" représente un produit matriciel de deux matrices : l'une correspondant à la conversion des vecteurs de "c" en vecteurs de "d" via les "e", et l'autre correspondant à "a".
+Donc, <span class="important">donc, il s'agit de la conversion des "coordonnées" dans la famille "c" vers les coordonnées dans la base "b"</span>.
+</p>
+<table>
+
+<case_plus x=3 y=0 background_color=light_green><math><mi>a</mi><msub>1</msub></math></case_plus>
+<case_plus x=3 y=1 background_color=light_green>...</case_plus>
+<case_plus x=3 y=2 background_color=light_green><math><mi>a</mi><msub>n</msub></math></case_plus>
+
+<case_plus x=0 y=3 background_color=light_blue><math>(<mi>e</mi><msub>1</msub>)<msub>1</msub></math></case_plus>
+<case_plus x=0 y=4 background_color=light_blue>...</case_plus>
+<case_plus x=0 y=5 background_color=light_blue><math>(<mi>e</mi><msub>1</msub>)<msub>n</msub></math></case_plus>
+<case_plus x=1 y=3 background_color=light_blue>...</case_plus>
+<case_plus x=1 y=4 background_color=light_blue>...</case_plus>
+<case_plus x=1 y=5 background_color=light_blue>...</case_plus>
+<case_plus x=2 y=3 background_color=light_blue><math>(<mi>e</mi><msub>m</msub>)<msub>1</msub></math></case_plus>
+<case_plus x=2 y=4 background_color=light_blue>...</case_plus>
+<case_plus x=2 y=5 background_color=light_blue><math>(<mi>e</mi><msub>m</msub>)<msub>n</msub></math></case_plus>
+
+<case_plus x=3 y=3><math><mi>Sum </mi>(<mi>e</mi><msub>k</msub>)<msub>i</msub><mi>a</mi><msub>k</msub></math></case_plus>
+<case_plus x=3 y=4>...</case_plus>
+<case_plus x=3 y=5><math><mi>Sum </mi>(<mi>e</mi><msub>k</msub>)<msub>m</msub><mi>a</mi><msub>k</msub></math></case_plus>
+
+</table>
+<p>
+Appelons les (très moches) valeurs de ce résultat par "z".
+Au final :
+</p>
+<math>f(v) = <msum from=1 to=n unknown=k><mi>z</mi><msub>k</msub> * <mi>d</mi><msub>k</msub></math>
+<p>
+Donc, <span class="important">nous avons obtenu via les coordonnées de "v" dans "b" les coordonnées de "f(v)" dans une base "d" de "Im(f)</span>.
+</p>
+<p>
+Maintenant que ça est fait, nous avons assez de compréhension pour définir le lien "matrices - applications linéaires".
+En algèbre linéaire, <span class="important"><definition name="matrix-application"></span>.
+Généralement, une matrice de ce type est notée avec un son nom, sa base de départ, sa base d'arrivée (en indice) puis (entre parenthèse) l'application linéaire qu'elle représente.
+</p>
+<math><mi>M</mi><msub>b, c</msub>(f)</math>
+<p>
+Remarquons quelque chose d'intéressant : nous pouvons aussi mettre plusieurs autres coordonnées que les coordonnées "a".
+</p>
+<table>
+
+<case_plus x=3 y=0 background_color=light_green><math><mi>a</mi><msub>1</msub></math></case_plus>
+<case_plus x=3 y=1 background_color=light_green>...</case_plus>
+<case_plus x=3 y=2 background_color=light_green><math><mi>a</mi><msub>n</msub></math></case_plus>
+<case_plus x=4 y=0 background_color=light_green><math><mi>c</mi><msub>1</msub></math></case_plus>
+<case_plus x=4 y=1 background_color=light_green>...</case_plus>
+<case_plus x=4 y=2 background_color=light_green><math><mi>c</mi><msub>n</msub></math></case_plus>
+
+<case_plus x=0 y=3 background_color=light_blue><math>(<mi>b</mi><msub>1</msub>)<msub>1</msub></math></case_plus>
+<case_plus x=0 y=4 background_color=light_blue>...</case_plus>
+<case_plus x=0 y=5 background_color=light_blue><math>(<mi>b</mi><msub>1</msub>)<msub>n</msub></math></case_plus>
+<case_plus x=1 y=3 background_color=light_blue>...</case_plus>
+<case_plus x=1 y=4 background_color=light_blue>...</case_plus>
+<case_plus x=1 y=5 background_color=light_blue>...</case_plus>
+<case_plus x=2 y=3 background_color=light_blue><math>(<mi>b</mi><msub>m</msub>)<msub>1</msub></math></case_plus>
+<case_plus x=2 y=4 background_color=light_blue>...</case_plus>
+<case_plus x=2 y=5 background_color=light_blue><math>(<mi>b</mi><msub>m</msub>)<msub>n</msub></math></case_plus>
+
+<case_plus x=3 y=3><math><mi>Sum </mi>(<mi>b</mi><msub>1</msub>)<msub>k</msub><mi>a</mi><msub>k</msub></math></case_plus>
+<case_plus x=3 y=4>...</case_plus>
+<case_plus x=3 y=5><math><mi>Sum </mi>(<mi>b</mi><msub>m</msub>)<msub>k</msub><mi>a</mi><msub>k</msub></math></case_plus>
+
+<case_plus x=4 y=3><math><mi>Sum </mi>(<mi>b</mi><msub>1</msub>)<msub>k</msub><mi>c</mi><msub>k</msub></math></case_plus>
+<case_plus x=4 y=4>...</case_plus>
+<case_plus x=4 y=5><math><mi>Sum </mi>(<mi>b</mi><msub>m</msub>)<msub>k</msub><mi>c</mi><msub>k</msub></math></case_plus>
+
+</table>
+<p>
+En voyons ça, nous pourrions avoir envie de faire quelque chose : <span class="important">mettre une matrice d'une application linéaire en haut, et une autre matrice d'une application linéaire à gauche</span>.
+Pour que cela marche sans problèmes, il faut que que l'ensemble de départ de la deuxième application soit l'ensemble d'arrivée de la première.
+</p>
+<table>
+
+<case_plus x=3 y=0 background_color=light_green><math><mi>a</mi><msub>1</msub></math></case_plus>
+<case_plus x=3 y=1 background_color=light_green>...</case_plus>
+<case_plus x=3 y=2 background_color=light_green><math><mi>a</mi><msub>n</msub></math></case_plus>
+<case_plus x=4 y=0 background_color=light_green>...</case_plus>
+<case_plus x=4 y=1 background_color=light_green>...</case_plus>
+<case_plus x=4 y=2 background_color=light_green>...</case_plus>
+<case_plus x=5 y=0 background_color=light_green><math><mi>c</mi><msub>m</msub></math></case_plus>
+<case_plus x=5 y=1 background_color=light_green>...</case_plus>
+<case_plus x=5 y=2 background_color=light_green><math><mi>c</mi><msub>n</msub></math></case_plus>
+
+<case_plus x=0 y=3 background_color=light_blue><math>(<mi>b</mi><msub>1</msub>)<msub>1</msub></math></case_plus>
+<case_plus x=0 y=4 background_color=light_blue>...</case_plus>
+<case_plus x=0 y=5 background_color=light_blue><math>(<mi>b</mi><msub>1</msub>)<msub>n</msub></math></case_plus>
+<case_plus x=1 y=3 background_color=light_blue>...</case_plus>
+<case_plus x=1 y=4 background_color=light_blue>...</case_plus>
+<case_plus x=1 y=5 background_color=light_blue>...</case_plus>
+<case_plus x=2 y=3 background_color=light_blue><math>(<mi>b</mi><msub>m</msub>)<msub>1</msub></math></case_plus>
+<case_plus x=2 y=4 background_color=light_blue>...</case_plus>
+<case_plus x=2 y=5 background_color=light_blue><math>(<mi>b</mi><msub>m</msub>)<msub>n</msub></math></case_plus>
+
+<case_plus x=3 y=3><math><mi>Sum </mi>(<mi>b</mi><msub>1</msub>)<msub>k</msub><mi>a</mi><msub>k</msub></math></case_plus>
+<case_plus x=3 y=4>...</case_plus>
+<case_plus x=3 y=5><math><mi>Sum </mi>(<mi>b</mi><msub>m</msub>)<msub>k</msub><mi>a</mi><msub>k</msub></math></case_plus>
+
+<case_plus x=4 y=3>...</case_plus>
+<case_plus x=4 y=4>...</case_plus>
+<case_plus x=4 y=5>...</case_plus>
+
+<case_plus x=5 y=3><math><mi>Sum </mi>(<mi>b</mi><msub>1</msub>)<msub>k</msub><mi>c</mi><msub>k</msub></math></case_plus>
+<case_plus x=5 y=4>...</case_plus>
+<case_plus x=5 y=5><math><mi>Sum </mi>(<mi>b</mi><msub>m</msub>)<msub>k</msub><mi>c</mi><msub>k</msub></math></case_plus>
+
+</table>
+<p>
+Ici, on peut voir que notre nouvelle matrice semble être une matrice d'une autre application linéaire.
+En fait, <span class="important">on peut prouver que cette nouvelle matrice représente la matrice associée à l'application linéaire de la composée des deux applications linéaires de départ</span> (<a href="demo#4_1_0_3">démontré ici</a>).
+</p>
+<math><mi>Mat</mi><msub>b, d</msub>(f <mcomp> g) = <mi>Mat</mi><msub>b, c</msub>(f) * <mi>Mat</mi><msub>c, d</msub>(g)</math>
+
+
+
+<h2>Les espaces de Hilbert et la géométrie euclidienne</h2>
 
 <h3>Les espaces vectoriels normés</h3>
 <p>
@@ -299,10 +704,6 @@ La question ici : comment définir une "norme" d'un élément de "R²" ?
 En fait, nous allons essayer de représenter cette norme comme la distance entre le vecteur que nous cherchons et le vecteur nul (que nous pourrions théoriquement obtenir avec une mesure à la règle), de manière algébrique.
 La façon généralement utilisée est la méthode utilisant le théorème de Pythagore : nous n'allons pas encore l'utliser pour l'instant.
 </p>
-
-
-
-<h2>Les espaces de Hilbert et la géométrie euclidienne</h2>
 
 <h3>Les espaces de Hilbert et le produit scalaire</h3>
 <p>

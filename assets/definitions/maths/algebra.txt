@@ -134,6 +134,16 @@
     <content>la dimension d'un espace vectoriel (aussi nommée dimension de Hamel) est le cardinal commun de toutes ses bases</content>
 </new_definition>
 
+<new_definition name="matrix">
+    <content>une matrice à valeur dans un ensemble représente intuitivement un tableau de valeurs de cet ensemble</content>
+    <content name="application">une matrice est une représentation d'une application linéaire d'un espace vectoriel vers un autre, en permettant de passer d'une base de départ vers une base d'arrivée</content>
+    <content name="dimension">la dimension d'une matrice est un couple de nombre entier naturel contenant la taille de sa base de départ, puis de sa base d'arrivée</content>
+    <content name="rigorous">une matrice à valeur dans un ensemble représente un ensemble d'éléments de cet ensemble, indexé par le produit cartésien de deux ensembles de taille "b" et "c"</content>
+</new_definition>
+<new_definition name="matrix_product">
+    <content>le produit matriciel est une opération entre deux matrices de dimension "a, b" et "b, c", donnant une nouvelle matrice de dimension "a, c" où chaque élément représente une somme de produits d'éléments de lignes et de colonnes</content>
+</new_definition>
+
 <new_definition name="algebra_center">
     <content>le centre d'une structure algébrique représentent l'ensemble des éléments de cette structure qui commutent avec tous les autres éléments de la structure, sans exception</content>
     <content name="group">le centre d'une structure algébrique représentent l'ensemble des éléments de cette structure qui commutent avec tous les autres éléments de la structure, sans exception</content>

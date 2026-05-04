@@ -191,13 +191,10 @@ Une borne supérieure "d" et une borne inférieure "e" se définissent comme ça
 
 <h2>Les applications utilisant des réels</h2>
 
-<h3>Les suites mathématiques</h3>
+<h3>Les suites réelles</h3>
 <p>
-Une des façons de représenter des applications réelles représente la suite mathématique.
-<span class="important"><definition name="analysis_sequence"></span>.
-Il s'agit théoriquement d'une suite d'éléments quelconques.
-Ici, on parle de "fonction" car il se peut que certains éléments de "N" (souvent les premiers) n'aient pas d'images.
-En analyse, l'ensemble d'arrivée est très souvent un ensemble de nombres.
+Nous avons déjà rencontré les suites mathématiques lors du premier chapitre.
+En analyse réelle, <span class="important">l'ensemble d'arrivée d'une suite est très souvent l'ensemble des réels</span>.
 Il est très commun de les expliciter, comme dans cet exemple :
 </p>
 <math>u : N <mto> Q, n <mto> u(n) = <mfrac><mi>1</mi><mi>n + 1</mi></mfrac></math>

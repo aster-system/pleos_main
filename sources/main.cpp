@@ -99,7 +99,7 @@ int command(int argc, char* argv[]) {
 int main(int argc, char* argv[]) {
 	//return command(argc, argv);
 
-	pleos::Pleos_Window window(900, 600, argv[0]);
+	/*pleos::Pleos_Window window(900, 600, argv[0]);
     window.load_from_xml("assets/window.txt");
     pleos::Hub_Page* hub = window.hub();
     hub->handle_saasf();
@@ -111,11 +111,54 @@ int main(int argc, char* argv[]) {
         window.render();
     }//*/
 
+    /*double branches = 8;
+    double center_x = 0;
+    double center_y = 0;
+    double r_outer = 4;
+    double r_inner = 3;
+    scls::Vector_Base_2D p = scls::Vector_Base_2D(50 * cos(0.5), 50 * sin(0.5), -50 * sin(0.5), 50 * cos(0.5), 500, 500);
+    std::vector<scls::Point_2D> points = std::vector<scls::Point_2D>(branches * 2);
+    const double angle_step = SCLS_PI / branches;
+    int i = 0;
+    while (i < branches * 2) {
+        // On commence à -PI/2 pour que la première pointe soit vers le haut
+        double angle  = static_cast<double>(i) * angle_step;
+        double radius = (i % 2 == 0) ? r_outer : r_inner;
+
+        double x = center_x + radius * std::cos(angle);
+        double y = center_y + radius * std::sin(angle);
+        points[i] = scls::Point_2D(1000 - p.base_to_canonical_x(x, y), p.base_to_canonical_y(x, y));
+        ++i;
+    }
+
+    scls::Image img = scls::Image(1000, 1000);
+    img.fill_form(points, scls::Color(255, 0, 0));
+    scls::draw_grid(img, &p);
+    img.save_png("tests/f.png");//*/
+
+    std::shared_ptr<scls::Formula_Base> function = scls::string_to_algebra_element<scls::Formula_Base>("(x*x)/4+x/2-1");
+
+	int duration = 12;
+	scls::Video_Encoder enc = scls::Video_Encoder(std::string("./tests/t.mp4"), duration, 1080, 1920);
+    std::shared_ptr<scls::Formula_Base> f = scls::string_to_algebra_element<scls::Formula_Base>("(1/4) * x + 2");
+    for(int i = 0;i<duration*60;i++) {
+        scls::Image image = scls::Image(1080, 1920, scls::Color(255, 255, 255));
+        scls::Plane_Base p = scls::Plane_Base(100, 100, image.width() / 2, image.height() / 2);
+        scls::draw_grid(image, &p);
+        scls::draw_function_graph(image, function.get(), &p, 0, 1000);
+        if(i <= 600){scls::draw_function_secant(image, function.get(), &p, -3.0, 5.0 - (i / 60.0) * (8.0/10.0));}
+        else{scls::draw_function_tangent(image, function.get(), &p, -3);}
+
+        enc.write_video_frame(image);
+        enc.go_to_next_frame();
+    }
+    enc.close_encoding();//*/
+
     /*int duration = 10;
     scls::Video_Encoder enc = scls::Video_Encoder(std::string("./tests/t.mp4"), duration, 1000, 1000);
     std::shared_ptr<scls::Formula_Base> f = scls::string_to_algebra_element<scls::Formula_Base>("(1/4) * x + 2");
     for(int i = 0;i<duration*60;i++) {
-        /*double branches = 8;
+        double branches = 8;
         double center_x = 500;
         double center_y = 500;
         double r_outer = 200;

@@ -163,6 +163,54 @@ Donc, si "m = n", "v" est une base de "E" : par double implication, il s'agit d'
 </p>
 <math>m = n <mequi> Vect(v) = E</math>
 
+<h4>4.1.0.2</h4>
+<p>
+Démontrons que, dans la base "b" écrite : "(4, 1), (8, 4)", le vecteur "(4, 5)" a pour coordonnées "(-3, 2)".
+Pour cela utilisons un système linéaire.
+Ici, posons le système, et résolvons le :
+</p>
+<math>4 = a * 4 + b * 8</math></br>
+<math>5 = a * 1 + b * 4</math></br>
+<math><mequi></math></br>
+<math>a = 5 - 4 * b</math></br>
+<math>4 = a * 4 + b * 8</math></br>
+<math><mequi></math></br>
+<math>a = 5 - 4 * b</math></br>
+<math>4 = (5 - 4 * b) * 4 + b * 8</math></br>
+<math><mequi></math></br>
+<math>a = 5 - 4 * b</math></br>
+<math>4 = 20 - 8 * b</math></br>
+<math><mequi></math></br>
+<math>a = 5 - 4 * b</math></br>
+<math>4 = 20 - 8 * b</math></br>
+<math><mequi></math></br>
+<math>a = -3</math></br>
+<math>b = 2</math></br>
+<p>
+Donc, dans la base "b", les coordonnées de "(4, 5)" sont bien "(-3, 2)".
+</p>
+
+<h4>4.1.0.3</h4>
+<p>
+Démontrons que le produit matriciel de deux matrices associées à des applications linéaires revient à obtenir la matrice de la composée de ces deux applications linéaires.
+Posons deux matrices "A" et "B", associées à deux applications linéaires "f" et "g", et à 3 bases : "b" (départ de "f"), "c" (arrivée de "f" et départ de "g") et "d" (arrivée de "g").
+Déjà, pour tout vecteur "v" de coordonnées "E" dans la base de départ de "b", on sait que le produit matriciel de "A" et "E" donne les coordonnées "F" de "v" dans la base "c".
+</p>
+<math>AE = F</math>
+<p>
+De même, le produit matriciel de "B" et "F" donne les coordonnées "G" de "f(v)" dans "d".
+</p>
+<math>BF = G</math>
+<p>
+Donc, "G" représente les coordonnées de "g de f" de "v" dans la base "d".
+Comme le produit matriciel est associatif, on peut donc écrire :
+</p>
+<math>B(AE) = (BA)E = G</math>
+<p>
+Or, on se rend compte que "g de f" peut aussi s'exprimer sous la forme du produit matrice de "B" et "A".
+Donc, le produit matriciel de "B" et "A" représente la composée de "g" et "f", dans cette ordre précis.
+</p>
+
 <h3>Les applications linéaires</h3>
 
 <h4>4.1.1.0</h4>
@@ -178,4 +226,31 @@ La deuxième propriété est aussi vraie, et ce n'est pas si difficile que ça �
 <p>
 Finalement, "f(0, 0) = (0, 0)", donc cette application est belle est bien linéaire.
 Donc, pour tout "w" et "z" appartenant à "R", l'application allant de "R²" vers "R²" transformant "(x, y)" en "(w * x, z * y)" est linéaire.
+</p>
+
+<h4>4.1.1.1</h4>
+<p>
+Démontrons que, pour une application linéaire allant de 2 K-espace vectoriel "E" vers "F", l'image d'une base de "E" représente une base de l'image de l'application dans "F".
+Considérons une base "b" de "E".
+</p>
+<math>b = (<mi>b</mi><msub>1</msub>, <mi>b</mi><msub>2</msub>, ..., <mi>b</mi><msub>n</msub>) <min> <mi>E*</mi><msub>n</msub></math></br>
+<math><mforall> u <min> E, <mexists> (<mi>a</mi><msub>1</msub>, <mi>a</mi><msub>2</msub>, ..., <mi>a</mi><msub>n</msub>) <min> <mi>N*</mi><msub>n</msub>, u = <msum from=1 to=n unknown=k><mi>a</mi><msub>k</msub><mi>b</mi><msub>k</msub></math>
+<p>
+Appelons "I" l'image de "f".
+Nous savons que, pour tout vecteur de "F", il existe un vecteur de "E" tel que son image appartient à "F".
+</p>
+<math><mforall> v <min> I, <mexists> u <min> E, f(u) = v</math>
+<p>
+Ici, comme "u" appartient à "E", nous pouvons décomposer "u", en utilisant la définition de la base "b".
+</p>
+<math>u = <msum from=1 to=n unknown=k><mi>a</mi><msub>k</msub><mi>b</mi><msub>k</msub></math></br>
+<math>f(<msum from=1 to=n unknown=k><mi>a</mi><msub>k</msub><mi>b</mi><msub>k</msub>) = v</math>
+<p>
+Par linéarité de "f", on peut sortir la somme et la multiplication de "f".
+</p>
+<math>f(<msum from=1 to=n unknown=k><mi>a</mi><msub>k</msub><mi>b</mi><msub>k</msub>) = v</math></br>
+<math><msum from=1 to=n unknown=k><mi>a</mi><msub>k</msub> * f(<mi>b</mi><msub>k</msub>) = v</math>
+<p>
+Donc, tout vecteur "V" de "I" s'écrit comme la combinaison linéaire d'éléments de l'image de la base "b" : c'est exactement la définition d'une famille qui génère "F".
+Donc, l'image d'une base de "E" représente une base de l'image de l'application dans "F".
 </p>

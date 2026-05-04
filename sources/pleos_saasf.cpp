@@ -190,11 +190,13 @@ namespace pleos {
                 // HMLT sum
 
                 // Datas
-                std::string needed_start = content.get()->sub_texts().at(i).get()->attribute_by_name(std::string("start")).value;
+                std::string needed_start = content.get()->sub_texts().at(i).get()->attribute_by_name(std::string("from")).value;
+                if(needed_start == std::string_view("")){needed_start = content.get()->sub_texts().at(i).get()->attribute_by_name(std::string("start")).value;}
                 if(needed_start == std::string_view()){needed_start = std::string("0");}
                 std::string needed_unknown = content.get()->sub_texts().at(i).get()->attribute_by_name(std::string("unknown")).value;
                 if(needed_unknown == std::string_view()){needed_unknown = std::string("x");}
-                std::string needed_value = content.get()->sub_texts().at(i).get()->attribute_by_name(std::string("value")).value;
+                std::string needed_value = content.get()->sub_texts().at(i).get()->attribute_by_name(std::string("to")).value;
+                if(needed_value == std::string_view()){content.get()->sub_texts().at(i).get()->attribute_by_name(std::string("value")).value;}
                 if(needed_value == std::string_view()){needed_value = std::string("0");}
 
                 // Balise

@@ -149,20 +149,6 @@ De plus, l'intersection de tous les éléments de ce filtre forme un voisinage d
 Finalement, l'union de tous les éléments de ce filtre forme un voisinage de "x", qui fait donc partie du filtre.
 </p>
 
-<h3>La topologie des nombres réels</h3>
-<p>
-Comme les nombres réels représentent un ensemble, il est donc possible d'en obtenir un espace topologique très pratique.
-En effet, <span class="important">il est possible de définir une topologique sur l'ensemble des réels, qui est probablement la topologique la plus utile des mathématiques</span>.
-Comme cette topologique est très utilisée, on l'appelle "topologie usuelle des nombres réels".
-Généralement, <span class="important">l'espace topologique usuelle formé avec "R" est aussi nommé "topologie de la droite réelle"</span>.
-</p>
-<p>
-En plus de l'espace topologique des nombres réelles, il est possible de définir un espace topologique très proche : la droite réelle achevée.
-<span class="important"><definition name="topology_real-extended"></span>.
-En fait, <span class="important">cette topologie contient tous les ouverts de "R", auquel on ajoute toutes les intervalles possibles contenant "+ l'infini" et "- l'infini" (qui sont eux mêmes des ouverts)</span>.
-</p>
-<math>]-8; +<minf>], [-<minf>, 42[, [-<minf>, +<minf>]</math>
-
 <h3>Les propriétés topologiques de base</h3>
 <p>
 Dans pas mal de théorèmes topologiques, une propriété précise revient souvent : la connexité topologique.
@@ -264,6 +250,49 @@ Donc, il existe un voisinage du premier point disjoint d'un des voisinages du se
 Généralement, les espaces de ce genre sont appelés par leur nom "espace séparé".
 </p>
 <math><mforall> x, y <min> E, <mexists> V <min> V(x), <mexists> W <min> V(y), V <minter> W = <memptyset></math>
+<p>
+Dans ce genre d'espace, on trouve une propriété très intéressante : <span class="important">tout compact d'un espace séparé est fermé</span>.
+La démonstration est un bon moyen de se rappeler de comment fonctionne le concept de compacité.
+L'idée de la démonstration est de prouver que, si une partie "F" d'un espace topologique "E" est compacte, alors son complémentaire est ouvert (et donc qu'il est fermé).
+Commençons par prendre un point quelconque de "E \ F".
+</p>
+<math>x <min> E \ F</math>
+<p>
+Comme on est dans un espace séparé, pour tout point "y" de "F", il existe un ouvert de "x" et un ouvert de "y" disjoints entre eux.
+Nommons les respectivement "U de y" et "V de y".
+</p>
+<math><mforall> y <min> F, <mexists> <mi>U</mi><msub>y</msub>, <mi>V</mi><msub>y</msub> <min> E, x <min> <mi>U</mi><msub>y</msub> <mand> y <min> <mi>V</mi><msub>y</msub></math>
+<p>
+Comme "F" est compact, pour tout recouvrement de "F", il existe un sous-recouvrement fini de "F".
+Donc, nous pouvons prendre un nombre fini de "y" pour recouvrir tout "F" avec les ouverts "V de y".
+</p>
+<math><mexists> n <min> N, <mexists> (<mi>a</mi><msub>1</msub>, <mi>a</mi><msub>2</msub>, ..., <mi>a</mi><msub>n</msub>) <min> <mi>N</mi><msup>n</msup>, F = <munion unknown=k to=n><mi>V</mi><msub><mrow><mi>a</mi><msub>k</msub></mrow></msub></math>
+<p>
+Nous avons aussi un nombre fini d'ouverts "U de y", qui contiennent tous "x".
+Si nous les intersectons tous, nous obtenons un nouvel ouvert "W" (qui est bel et bien un ouvert, puisque le nombre d'intersections est fini), qui contient "x" aussi.
+Or, l'intersection de cet ouvert et de "F" est vide.
+</p>
+<math>F <minter> W = <mempty></math>
+<p>
+Nous pouvons re-faire ce schéma avec tous les "x" qui existent.
+Si nous faisons l'union de tous ces "W" qui contiennent "x", nous obtenons un ouvert qui inclut tous les éléments de "E \ F".
+Or, comme tous les "W" sont disjoints de "F", cet ensemble l'est aussi : il s'agit donc de "E \ F".
+Donc, <span class="important">pour tout espace séparé "E" avec une partie "F" compacte, "E \ F" est ouvert, donc "F" est fermé</span>.
+</p>
+
+<h3>La topologie des nombres réels</h3>
+<p>
+Comme les nombres réels représentent un ensemble, il est donc possible d'en obtenir un espace topologique très pratique.
+En effet, <span class="important">il est possible de définir une topologique sur l'ensemble des réels, qui est probablement la topologique la plus utile des mathématiques</span>.
+Comme cette topologique est très utilisée, on l'appelle "topologie usuelle des nombres réels".
+Généralement, <span class="important">l'espace topologique usuelle formé avec "R" est aussi nommé "topologie de la droite réelle"</span>.
+</p>
+<p>
+En plus de l'espace topologique des nombres réelles, il est possible de définir un espace topologique très proche : la droite réelle achevée.
+<span class="important"><definition name="topology_real-extended"></span>.
+En fait, <span class="important">cette topologie contient tous les ouverts de "R", auquel on ajoute toutes les intervalles possibles contenant "+ l'infini" et "- l'infini" (qui sont eux mêmes des ouverts)</span>.
+</p>
+<math>]-8; +<minf>], [-<minf>, 42[, [-<minf>, +<minf>]</math>
 
 
 

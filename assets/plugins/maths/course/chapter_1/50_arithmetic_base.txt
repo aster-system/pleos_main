@@ -442,6 +442,18 @@ Voici un exemple d'inéquation :
 
 <h2>Le lien ensembles / nombres entiers</h2>
 
+<h3>Les suites mathématiques</h3>
+<p>
+Une des façons de représenter des applications représente la suite mathématique.
+<span class="important"><definition name="sequence"></span>.
+Il s'agit donc d'une suite d'éléments quelconques.
+</p>
+<p>
+Généralement, au lycée, le terme "suite" désigne des suites de nombres réels.
+Cependant, <span class="important">il faut bien comprendre qu'une suite peut comporter des éléments de n'importe quel ensemble possible</span>.
+Il peut donc théoriquement exister des suites d'ensembles, d'applications, d'opérations...
+</p>
+
 <h3>Le dénombrement et la combinatoire</h3>
 <p>
 En mathématiques, le dénombrement et la combinatoire sont toutes les deux des sous-domaines de la théorie des ensembles.
