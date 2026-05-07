@@ -88,6 +88,7 @@ Parlons de deux types de points précis dans un espace topologique : les points 
 Le concept de point d'accumulation est un peu différent.
 <span class="important"><definition name="topological_point_accumulation"></span>.
 Selon certains auteurs, <span class="important">les points limites et points d'accumulations sont parfaitement égaux, et selon d'autres, ils prennent les définitions indiqués ici</span>.
+Si nous choisissons de différencier ces deux définitions, il est assez évident qu'un point d'accumulation est un point limite, bien que rien ne prouve que l'inverse soit vrai.
 </p>
 <p>
 L'exemple le plus "bateau" de topologie sur un ensemble "E" non-vide est ce que l'on appelle la topologie grossière de "E".
@@ -220,28 +221,18 @@ En effet, <span class="important">cette propriété ne s'applique que sur des é
 Le deuxième axiome de séparation est l'axiome "T-1", qui est assez similaire à l'axiome "T-0".
 <span class="important"><definition name="topology_separation_axiom-t_1"></span>.
 En fait, dans un espace "T-0", le "ET" est un simple "OU".
+</p>
+<math><mforall> x, y <min> E, <mexists> v <min> V(x), y <mnotin> v <mand> <mexists> w <min> V(y), x <mnotin> w</math>
+<p>
 Donc, on en déduit rapidement que tout espace "T-1" est un espace "T-0".
-Il n'y a pas beaucoup de propriétés intéressantes dans ces espaces seuls, mais l'une d'elle concerne les singletons.
-En effet, <span class="important">dire qu'un espace est "T-1" équivaut à dire que tout singleton d'éléments de cet espace est fermé</span>.
-La démonstration est assez simple : si un singleton est fermé, cela équivaut à dire que l'espace entier privé de ce singleton est ouvert.
-</p>
-<math>E \ {x} <min> T</math>
-<p>
-Démontrons que l'espace entier privé de ce singleton est ouvert.
-Déjà, dans un espace "T-1", pour TOUS points "y" de "E", il existe un voisinage de ce point de "y" qui ne contient pas "x".
-</p>
-<math><mexists> V <min> V(y), x <mnotin> V</math>
-<p>
-Ici, le mot important est "tous".
-En effet, <span class="important">si il existe un voisinage pour TOUS les points "y" qui ne contient pas "x", alors ces voisinages contiennent un ouvert qui contient "y", et donc nous avons un ensemble d'ouverts contenant chacun le "y" concerné, pour TOUS les "y" possibles</span>.
-Or, l'union d'ouverts est aussi un ouvert.
-Donc, <span class="important">l'union de TOUS les ouverts qui ne contiennent pas "x" (qui contient donc tous les points qui ne sont pas "x", et est donc "E \ {x}") est donc un ouvert de "E", et son complémentaire (le singleton "{x}") est donc fermé</span>.
-</p>
-<p>
-La réciproque (prouvant l'équivalence) est assez simple : si tous les singletons sont fermés, alors tous les "E \ {x}" sont ouverts.
-Dans ce cas, comme un ouvert est un voisinage de tous ces points, <span class="important">il existe un voisinage de chaque point qui n'est pas "x" qui ne contient pas "x"</span>.
-Finalement, pour tous les points qui ne sont pas "y", il existe un voisinage de "x" qui ne contient pas "y" : "E \ {y}".
-Au final, <span class="important">dire qu'un espace est "T-1" équivaut à dire que tout singleton d'éléments de cet espace est fermé</span>.
+Il n'y a pas beaucoup de propriétés intéressantes dans ces espaces seuls, mais nous allons en citer deux d'entre elles assez intéressantes.
+La première concerne les singletons.
+En effet, <span class="important">dire qu'un espace est "T-1" équivaut à dire que tout singleton d'élément de cet espace est fermé (ou ouvert-fermé)</span>.
+La démonstration est assez simple en considérant les propriétés basiques des fermés topologiques (<a href="demo#3_2_1_0">présente juste ici</a>).
+La deuxième concerne les points limites et points d'accumulations, dans le cas où nous les définissons de manière à ce qu'elles ne soient pas tout le temps équivalentes.
+Pour rappel, dans ce cas, un point d'accumulation est toujours un point limite, mais pas forcément l'inverse.
+Or, <span class="important">dans un espace "T-1", les points limites sont obligatoirement des points d'accumulations</span>.
+La démonstration repose sur l'axiome de séparation "T-1" (<a href="demo#3_2_1_1">présenté juste ici</a>).
 </p>
 <p>
 Le troisième axiome de séparation est l'axiome "T-2".

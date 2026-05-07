@@ -99,7 +99,7 @@ int command(int argc, char* argv[]) {
 int main(int argc, char* argv[]) {
 	//return command(argc, argv);
 
-	/*pleos::Pleos_Window window(900, 600, argv[0]);
+	pleos::Pleos_Window window(900, 600, argv[0]);
     window.load_from_xml("assets/window.txt");
     pleos::Hub_Page* hub = window.hub();
     hub->handle_saasf();
@@ -136,7 +136,7 @@ int main(int argc, char* argv[]) {
     scls::draw_grid(img, &p);
     img.save_png("tests/f.png");//*/
 
-    std::shared_ptr<scls::Formula_Base> function = scls::string_to_algebra_element<scls::Formula_Base>("(x*x)/4+x/2-1");
+    /*std::shared_ptr<scls::Formula_Base> function = scls::string_to_algebra_element<scls::Formula_Base>("(x*x)/4+x/2-1");
 
 	int duration = 12;
 	scls::Video_Encoder enc = scls::Video_Encoder(std::string("./tests/t.mp4"), duration, 1080, 1920);
@@ -145,9 +145,9 @@ int main(int argc, char* argv[]) {
         scls::Image image = scls::Image(1080, 1920, scls::Color(255, 255, 255));
         scls::Plane_Base p = scls::Plane_Base(100, 100, image.width() / 2, image.height() / 2);
         scls::draw_grid(image, &p);
+        if(i <= 600){scls::draw_function_integral_darboux_sub(image, function.get(), &p, -4, 4, 1 + (i/6.0));}
+        else{scls::draw_function_integral_darboux_sub(image, function.get(), &p, -4, 4, 101);}
         scls::draw_function_graph(image, function.get(), &p, 0, 1000);
-        if(i <= 600){scls::draw_function_secant(image, function.get(), &p, -3.0, 5.0 - (i / 60.0) * (8.0/10.0));}
-        else{scls::draw_function_tangent(image, function.get(), &p, -3);}
 
         enc.write_video_frame(image);
         enc.go_to_next_frame();

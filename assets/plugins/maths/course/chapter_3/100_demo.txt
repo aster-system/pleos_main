@@ -168,7 +168,7 @@ Donc, la structure algébrique formée par l'ensemble des réels non-nuls et de 
 
 
 
-<h2>Introduction à l'analyse</h2>
+<h2>Introduction à l'analyse réelle</h2>
 
 <h3>Les espaces métriques</h3>
 <h4>3.1.0.0</h4>
@@ -948,4 +948,54 @@ Calculons la limite de "h" à gauche et à droite en "a" en utilisant l'arithmé
 Or, ces deux valeurs sont égales.
 Donc, la propriété de continuité est vérifiée.
 Donc, "h" est continue en "a".
+</p>
+
+
+
+
+
+
+
+<h2>La topologie</h2>
+
+<h3>Les propriétés basiques de topologie</h3>
+
+<h3>Les axiomes de séparation</h3>
+<h4>3.2.1.0</h4>
+<p>
+Démontrons que dire qu'un espace est "T-1" équivaut à dire que ses singletons sont fermés.
+La démonstration est assez simple : si un singleton est fermé, cela équivaut à dire que l'espace entier privé de ce singleton est ouvert.
+</p>
+<math>E \ {x} <min> T</math>
+<p>
+Démontrons que l'espace entier privé de ce singleton est ouvert.
+Déjà, dans un espace "T-1", pour TOUS points "y" de "E", il existe un voisinage de ce point de "y" qui ne contient pas "x".
+</p>
+<math><mexists> V <min> V(y), x <mnotin> V</math>
+<p>
+Ici, le mot important est "tous".
+En effet, <span class="important">si il existe un voisinage pour TOUS les points "y" qui ne contient pas "x", alors ces voisinages contiennent un ouvert qui contient "y", et donc nous avons un ensemble d'ouverts contenant chacun le "y" concerné, pour TOUS les "y" possibles</span>.
+Or, l'union d'ouverts est aussi un ouvert.
+Donc, <span class="important">l'union de TOUS les ouverts qui ne contiennent pas "x" (qui contient donc tous les points qui ne sont pas "x", et est donc "E \ {x}") est donc un ouvert de "E", et son complémentaire (le singleton "{x}") est donc fermé</span>.
+</p>
+<p>
+La réciproque (prouvant l'équivalence) est assez simple : si tous les singletons sont fermés, alors tous les "E \ {x}" sont ouverts.
+Dans ce cas, comme un ouvert est un voisinage de tous ces points, <span class="important">il existe un voisinage de chaque point qui n'est pas "x" qui ne contient pas "x"</span>.
+Finalement, pour tous les points qui ne sont pas "y", il existe un voisinage de "x" qui ne contient pas "y" : "E \ {y}".
+Au final, <span class="important">dire qu'un espace est "T-1" équivaut à dire que tout singleton d'éléments de cet espace est fermé</span>.
+</p>
+
+<h4>3.2.1.1</h4>
+<p>
+Démontrons que dans tout espace "T-1", un point limite d'une partie est un point d'accumulation de cette partie.
+Définissons un point "x" limite dans une partie "A" d'un espace topologique "E".
+</p>
+<math>A <mincluded> E, x <min> A</math></br>
+<math><mforall> v <min> V(x) <minter> P(A), <mexists> y <min> v, x <mnotequal> y</math>
+<p>
+Comme nous sommes dans un espace "T-1", il existe un ouvert contenant "x" qui ne contient pas "y".
+Cet ouvert est donc un voisinage de "x", qui ne contient pas "y".
+Or, comme cet ouvert est un voisinage de "x", qui est un point limite de "A", il existe au moins un point de ce voisinage qui n'est pas "x", et pas "y" non plus.
+Nous pouvons répéter la même chose avec cet autre élément, puis celui qui en résultera, à l'infini.
+Donc, dans tout espace "T-1", un point limite est un point d'accumulation.
 </p>
