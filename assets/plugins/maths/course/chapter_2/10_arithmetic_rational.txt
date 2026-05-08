@@ -86,6 +86,12 @@ Comme pour dans "Z", soustraire "b" à "a" revient à additionner "-b" à "a".
 </p>
 <math><mforall>a, b, c <min> Q, c = a - b <mequi> a + (-b)</math>
 <p>
+Si il y'a une addition, <span class="important">nous pouvons écrire des sommes avec le sigma, comme avec des nombres entiers naturels et décimaux</span>.
+Appart cela, rien ne change que pour les nombres entiers naturels.
+Cependant, il est à noter que les "n" et "k" restent des nombres entiers naturels.
+</p>
+<math><msum from=1 to=5 unknown=3><mfrac><mi>1</mi><mi>k</mi></mfrac> = <mfrac><mi>1</mi><mi>1</mi></mfrac> + <mfrac><mi>1</mi><mi>2</mi></mfrac> + <mfrac><mi>1</mi><mi>3</mi></mfrac> = <mfrac><mi>11</mi><mi>6</mi></mfrac></math>
+<p>
 De plus, <span class="important">"Q" possède aussi une opération de multiplication, avec les mêmes propriétés que dans "Z" (et des propriétés supplémentaires)</span>.
 Comme pour "N" et "Z", opérer deux nombres entier relatif écrit dans "Q" revient à opérer deux nombres entiers relatifs tout cours.
 Dans "Q", l'opération est définie comme cela :
@@ -99,6 +105,7 @@ La multiplication de tout nombre rationnel donne un autre nombre rationnel.
 En fait, <span class="important">la multiplication dans "Q" permet de former un monoïde</span>.
 Donc, elle est associative et admet un neutre (<a href="demo">démontré ici</a>).
 Comme nous l'avons démontré tout à l'heure, le neutre représente toutes les fractions où le numérateur et le dénominateur sont égaux, et donc ce qui représente le nombre "1".
+Enfin, comme pour les nombres décimaux, la multiplication est distributive par rapport à l'addition avec les nombres rationnels  (ce qui permet d'en déduire toutes les propriétés sur les sommes).
 Cependant, pas tous les éléments de "Q" possèdent un inverse par la multiplication.
 Néanmoins, beaucoup en possède : <span class="important">l'inverse d'un nombre rationnel par la multiplication représente le nombre rationnel où le numérateur est le dénominateur de départ, et où le dénominateur est le numérateur de départ</span>.
 La démonstration est assez simple :

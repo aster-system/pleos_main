@@ -202,15 +202,9 @@ Il est très commun de les expliciter, comme dans cet exemple :
 Une des opérations possibles d'une suite est la somme partielle.
 <span class="important"><definition name="analysis_sequence-partial_sum"></span>.
 Par exemple, la somme partielle de rang "0" de notre suite "1 / (n + 1)" est 1, celle de rang "1" est 1.5, celle de rang "2" est 1.8[3]...
-On la note généralement "S(n)", avec le symbole sigma majuscule.
+On la note généralement "S(n)", ou l'on peut aussi les noter avec notre symbôle de somme sigma.
 </p>
-<math>S(n) = <msum>u(k)</math>
-<p>
-Avec ce concept, on peut obtenir un nouveau concept : une série.
-<span class="important"><definition name="analysis_sequence-partial_sum"></span>.
-C'est une façon d'écrire le concept de somme partielle sous forme de suite.
-Ce concept est très important en mathématiques, à un point qu'il est difficile d'imaginer.
-</p>
+<math>S(n) = <msum from=0 to=n unknown=k>u(k)</math>
 
 <h3>Les fonctions réelles</h3>
 <p>

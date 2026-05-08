@@ -81,6 +81,7 @@ Les cas les plus célèbres sont l'addition et la multiplication.
 L'opération la plus élémentaire entre deux nombres entiers naturels est l'addition.
 D'un point de vue rigoureux, <span class="important"><definition name="natural_number-addition"></span>.
 Comme tout le monde le sait, elle se note avec une croix "+".
+Le résultat d'une opération est nommée une somme.
 On peut la définir (itérativement) comme ceci :
 </p>
 <math><mforall> n <min> N, n + 0 = n</math></br>
@@ -97,6 +98,24 @@ Pour tout nombre entier naturel, <span class="important">additionner deux nombre
 Dans le cas où l'un des deux nombres est 0, <span class="important">le résultat de l'opération donne le nombre qui n'est pas 0 (ou 0 si les deux nombres sont 0)</span>.
 De plus, l'ordre de réalisation de plusieurs additions entre elles n'a pas d'importance sur le résultat final (<a href="demo">démontré ici par récurrence</a>) : (2 + 3) + 4 = 2 + (3 + 4) = 9.
 </p>
+<p>
+Il est possible de noter un type précis de somme assez long de manière simple, avec un symbôle précis : le sigma capitale.
+En fait, <span class="important">ce symbôle permet de représenter la somme d'un certain nombre (entier naturel) "n" d'expressions précises, pouvant utiliser une autre valeur "k" prenant toutes les valeurs possibles entre une valeur donnée (généralement 0 ou 1) et "n"</span>.
+Il est donc possible d'utiliser "k" dans l'expression, et de le remplacer (pour chaque valeur dans la somme) par le "k" correspondant.
+Dans la notation précise, l'expression se note à droite du sigma, "n" se note en haut du sigma, et "k" et sa valeur de départ se note sous le sigma.
+Par exemple, pour "n = 3" et l'expression représentant "k + 1", on note :
+</p>
+<math><msum from=1 to=3 unknown=k>(k + 1) = (1 + 1) + (2 + 1) + (3 + 1) = 9</math>
+<p>
+On peut aussi utiliser des valeurs de "n" quelconques, bien qu'il soit plus difficile de leur trouver une valeur précise sans autres informations.
+</p>
+<math><msum from=1 to=n unknown=k>(k + 1) = (1 + 1) + (2 + 1) + ... + (n + 1)</math>
+<p>
+Une autre utilisation un peu plus complexe : <span class="important">on peut définir un ensemble de nombres indexé par des nombres entiers naturels, et les utiliser dans une somme</span>.
+Ce genre de méthode est souvent utilisé dans des démonstrations, avec des valeurs dans cet ensemble qui ne sont souvent pas explicitées.
+Par exemple, si nous appelons notre ensemble "a", indexé de 1 à "n", on pourrait écrire :
+</p>
+<math><msum from=1 to=n unknown=k><mi>a</mi><msub>k</msub></math>
 
 <p>
 Dans les mathématiques communes, il est souvent admis que l'addition admet une opération "opposée" : la soustraction.
@@ -344,6 +363,12 @@ Selon notre définition des nombres entiers relatifs, on peut assez facilement c
 On peut aussi vérifier une autre identité : <span class="important">additionner "b" est "opposé de b" donne "(0, 0)</span>.
 </p>
 <math>(e, f) + (f, e) = (e + f, f + e) <min> [(0, 0)] = 0</math>
+<p>
+Si il y'a une addition, <span class="important">nous pouvons écrire des sommes avec le sigma, comme avec des nombres entiers naturels</span>.
+Appart cela, rien ne change que pour les nombres entiers naturels.
+Cependant, il est à noter que les "n" et "k" restent des nombres entiers naturels.
+</p>
+<math><msum from=1 to=5 unknown=k>(k + (-3)) = (1 + (-3)) + (2 + (-3)) + (3 + (-3)) + (4 + (-3)) + (5 + (-3)) = (-2) + (-1) + 0 + 1 + 2 = 0</math>
 
 <p>
 Maintenant, définissons la multiplication dans "Z".

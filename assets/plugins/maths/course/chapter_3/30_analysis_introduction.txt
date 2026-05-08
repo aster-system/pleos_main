@@ -545,3 +545,40 @@ Généralisons ce résultat, avec un autre plus important, et aussi bien plus pr
 En effet, <span class="important">la composition de deux fonctions continues représente une fonction continue</span>.
 Encore une fois, la démonstration est aussi très simple, est présente <a href="#3_1_4_2">juste ici</a>.
 </p>
+
+
+
+
+
+
+
+
+<h2>Les séries réelles</h2>
+
+<h3>Une extension des sommes</h3>
+<p>
+Les séries représentent une version "avancée" des sommes, couplées au concept de suite.
+En effet, <span class="important"><definition name="analysis_serie"></span>.
+D'un point de vue vocabulaire, on peut tisser un lien entre la série et "u" : cette série est dite série de terme général "u indice n".
+De plus, les différents "s(n)" sont nommés sommes partielles de la série d'ordre "n".
+</p>
+<math>s(n) = <msum from=1 to=n unknown=k>u(n)</math>
+<p>
+Finalement, <span class="important">la valeur de "s(n)" quand "n" tend vers l'infini est nommé "somme" de la série</span>.
+C'est généralement l'étude de cette limite qui rend le concept de série intéressant.
+</p>
+<math><mlim unknown=n value=inf>(s(n)) = <msum from=1 to_infinity=1 unknown=n>u(n)</math>
+<p>
+Pour cela, <span class="important">une des façons les plus simples de faire est d'obtenir la valeur de "s(n)" comme une valeur ne contenant pas de somme, et donc de simplifier la forme</span>.
+C'est avec cette technique que nous pouvons calculer la série de terme général "n".
+</p>
+<math>u(n) = n, s(n) = <msum from=1 to=n unknown=k>u(k) = <msum from=1 to=n unknown=k>k</math>
+<p>
+Ici, "u(n)" est une suite arithmétique de raison "1".
+Donc, <span class="important">obtenir la formule d'une somme partielle de "u(n)" est très simple</span>.
+</p>
+<math>s(n) = (n + 1) * <mfrac><mi>u(0) + n * r</mi><mi>2</mi></mfrac> = (n + 1) * <mfrac><mi>n</mi><mi>2</mi></mfrac> = <mfrac><mrow><mi>n<mi><msup>2</msup></mrow><mi>2</mi></mfrac> + <mfrac><mi>n</mi><mi>2</mi></mfrac></math>
+<p>
+Nous reconnaissons ici un polynôme de degré 2, avec un coefficient dominant positif : cette suite tend vers l'infini.
+Donc, la série diverge.
+</p>
