@@ -1,0 +1,361 @@
+<h1>La géométrie</h1>
+
+
+
+
+
+<h2>La géométrie classique</h2>
+
+<h3>Qu'est ce qu'est la géométrie ?</h3>
+<p>
+Peut être que certains attendaient cette branche des mathématiques, et nous allons enfin en parler : la géométrie.
+<span class="important"><definition name="geometry"></span>.
+Il s'agit de l'une des plus vieilles branches mathématiques, car il s'agit de la plus simple à représenter dans la vraie vie.
+C'est pour cela qu'il est très difficile de dater les premières utilisations de la géométrie par l'homme.
+Cependant, <span class="important">pour leurs travaux, toutes les civilisations anciennes utilisaient des formes plus ou moins avancées de géométrie</span>.
+Un exemple extrêmement connu : la pyramide de Kheops, construite à Gizeh, en Égypte, en -2500 avant J.C.
+Cette pyramide fait 140 mètres de haut, et est restée la plus grande construction humaine pendant environ 3800 ans (avant d'être dépassée par la cathédrale anglicane de Lincoln en 1311).
+Pour construire une pyramide comme ça, les architectes ont utilisés beaucoup de géométrie (très primitive, mais de la géométrie quand même).
+</p>
+<p>
+<span class="important">Les premiers à avoir fait une formalisation de la géométrie assez stable pour être toujours utilisée aujourd'hui sont les grecs</span>.
+L'exemple le plus connu est <scientist name="pythagoras" type="quote">, avec son fameux théorème.
+Cependant, il n'est pas celui qui a posé les premiers "axiomes" de géométrie : celui qui a fait ça est <scientist name="euclid" type="quote">.
+En effet, <span class="important">Euclide a énuméré 5 axiomes de géométrie, formant ce que l'on appelle la géométrie euclidienne, qui sont tellement efficaces qu'ils ont perduré dans l'histoire jusqu'au XIXème siècle</span>.
+Ces axiomes (et certains résultats déduits de ces axiomes) sont présentés dans son traité "Les Éléments", un des documents les plus imprimés de l'histoire.
+</p>
+<p>
+Cette géométrie euclidienne se base sur un principe simple : <span class="important">seule la réalisation (dans la vraie vie) et la construction des résultats est importante</span>.
+En d'autres termes : si vous pouvez tracer quelque chose, alors cette chose existe.
+D'ailleurs, <span class="important">certains concepts étaient considérés comme "trop triviaux" / "trop simple / direct à obtenir" pour nécessiter une définition / démonstration précise</span>.
+C'est le cas du concept de longueur, ou du concept d'angle.
+Pour faire cela, les géomètres disposés d'outils très précis, qui représentés explicitement la façon dont ils s'autorisaient d'utiliser de la géométrie.
+Déjà, <span class="important">l'outil permettant de mesurer (et de tracer) des longueurs est la règle graduée</span>.
+De plus, <span class="important">l'outil permettant de mesurer des angle est le rapporteur</span>.
+En suite, <span class="important">l'outil permettant de tracer un cercle est le compas</span>.
+En mélangeant ce que nous pouvons faire avec ces outils, nous obtenons des concepts de plus en plus complexes.
+Ces outils représentent le coeur des mathématiques de l'époque.
+</p>
+<p>
+Dés le XVIIème siècle, les découvertes en analyse / algèbre mathématiques ont donné un nouveau moyen d'approche des mathématiques aux mathématiciens.
+La géométrie n'échappe pas à cette règle, et va elle aussi évoluer pour, et faire émerger une nouvelle branche de la géométrie : la géométrie analytique.
+<span class="important"><definition name="geometry-analytic"></span>.
+Dans l'histoire, son principal contributeur est <scientist name=descartes type=quote>, au début du XVIIème siècle, avec un traité nommé "La Géométrie".
+Bien évidemment, ce concept peut parfaitement se coupler avec la géométrie classique, mais est bien plus rigoureux et formalisé.
+Historiquement parlant, cette géométrie (telle que formulée par ces concepteurs) n'était faite que pour résoudre des équations simples (généralement n'utilisant que les 4 opérations élémentaires : "+", "-", "*" et "/").
+Or, quand des choses plus complexes ont été découvertes, les mathématiciens ont eu besoin d'outils plus complexes, que l'on retrouve sous un nouveau nom : la géométrie algébrique.
+<span class="important"><definition name="geometry-algebric"></span>.
+C'est vers le XIXème siècle que cette branche de la géométrie apparaît, avec beaucoup de grands noms, comme <scientist name=hilbert type=quote>.
+</p>
+<p>
+Aussi rigoureuse qu'était cette géométrie, elle ne l'était pas assez pour le XIXème siècle, et l'arrivée de la logique avancée en mathématique.
+En effet, dés ce siècle, les mathématiciens ont mis leurs efforts à une formalisation rigoureuse de toutes les mathématiques, géométrie incluse.
+</p>
+
+<h3>Les bases de la géométrie classique</h3>
+<p>
+Avant de s'attaquer à la sombre partie de la géométrie, re-voyons les bases de la géométrie classique.
+</p>
+<p>
+Commençons à définir certains concepts simples de géométrie classique.
+Déjà, <span class="important"><definition name="length"></span>.
+Comme nous l'avons dit, une longueur se mesure avec une règle graduée.
+Généralement, les graduations successives sont séparées d'une exacte même distance.
+</p>
+<p>
+En suite, <span class="important"><definition name="angle"></span>.
+</p>
+<graphic><background_color white><form points=new(-2,-2);new(2,0)><form points=new(-2,-2);new(0,2)></graphic>
+<p>
+Pour mesurer un angle, on utilise un formalisme inspiré du cercle.
+En effet, <span class="important">il est possible de mesurer un angle en vérifiant la proportion du cercle de centre le point où les deux droites se croisent représenté dans l'angle</span>.
+D'ailleurs, cette mesure ne dépend pas du rayon du cercle : dans tous les cercles de centre le point où les deux droites se touchent auront la même proportion représentée via un même angle.
+</p>
+<graphic><background_color white><form points=new(0,0);new(4,0)><form points=new(0,0);new(2,4)><circle x=0 y=0 radius=2 border_color=black color=transparent><circle x=0 y=0 radius=5/2 border_color=black color=transparent></graphic>
+<p>
+Cependant, une question se pose ici : comment numériser la mesure d'un angle ?
+Comme nous avons vue, la mesure d'un angle représente généralement la proportion couverte par l'angle du cercle de centre le point où les deux droites se croisent représenté dans l'angle
+On pourrait donc théoriquement le modéliser sous forme de pourcentage du cercle couvert.
+Cependant, pour obtenir des valeurs plus facile à étudier, nous allons complexifier un peu cette représentation.
+La façon la plus utilisée en France est le degré.
+<span class="important"><definition name="angle-degree"></span>.
+Un degré représente donc "1/360" de cercle.
+Généralement, un degré se note avec le symbôle "°" juste après le nombre : "1°", "45°", "236.1258°"...
+</p>
+<graphic><background_color white><base draw=0><form points=new(0,0);new(3,0) border_color=black><form points=new(0,0);new(3,3) border_color=black><circle x=0 y=0 radius=2 border_color=black color=transparent><text x=3 y=0>0°</text><text x=3 y=3>45°</text><text x=0 y=3>90°</text><text x=-3 y=0>180°</text><text x=0 y=-3>270°</text></graphic>
+<p>
+Cependant, il existe une autre façon de faire, utilisant le cercle : le radians.
+<span class="important"><definition name="angle-radian"></span>.
+Pour cela, nous allons obtenir la proportion du cercle couverte par l'angle, que nous multiplions par le périmètre du cercle : pi * 2.
+Nous pouvons donc faire assez aisément des conversions "degré - radian" et "radian - degré".
+</p>
+<math>180° = <mpi> rad</math></br>
+<math>90° = <mfrac><mrow><mi><mpi></mi></mrow><mrow><mi>2</mi></mrow></mfrac> rad</math></br>
+<math>47° = <mpi> * <mfrac><mi>47</mi><mi>180</mi></mfrac> rad</math>
+
+
+
+
+
+<h2>La géométrie analytique</h2>
+
+<h3>Le lien nombres réels - géométrie analytique</h3>
+
+<p>
+Déjà, <span class="important">nous pouvons définir le produit cartésien de "R" et lui même, noté "R²", qui représente tous les couples de réels possibles</span>.
+Ici, une question se pose : comment ce concept pourra nous être utile en géométrie ?
+En fait, <span class="important">comme il est possible de créer une droite des nombres réels, il est possible de créer un plan avec des couples de réels</span>.
+Pour ça, l'intuition est assez simple : on commencer par tracer une droite horizontale, puis une droite verticale (qui se coupent donc en 1 point).
+En suite, on va chercher à placer une "croix" sur une partie de ces droites, si possible pas trop loin de la coupure des deux droites (et aussi de telle manière que la croix de la droite horizontale soit à la même distance de la coupure des deux droites que la croix de la droite verticale).
+Finalement, on va considérer que, pour chaque point que l'on peut tracer dans notre plan, on peut obtenir le point le plus proche de la droite horizontale et de la droite verticale, qui se situe à une distance de la coupure des deux droites représentant un certain nombre de fois la taille entre la croix que nous venons de poser et la coupure des deux droites.
+En fait, <span class="important">le calcul de ces deux distances représente le calcul de deux nombres réels, et donc un couple de nombres réels, et donc un élément de "R²"</span>.
+À l'inverse, <span class="important">tout couple "(x, y)" de nombre réel peut être placé sur notre plan, en se situant sur la droite horizontale à "x" fois la distance entre notre croix horizontale et la coupure des droites de cette coupure des droites, puis en montant (ou descendant, si "y" est négatif) de "y" fois la distance entre notre croix verticale et la coupure des droites de cette coupure des droites</span>.
+C'est comme ça que fonctionne la géométrie analytique basique.
+</p>
+
+<graphic><background_color white><circle radius=1/3 x=1 y=3><circle radius=1/3 x=-3 y=-2></graphic>
+
+<p>
+Posons un peu de vocabulaire pour rendre tout ça plus précis.
+Déjà, <span class="important">la droite horizontale est généralement notée la droite des abscisses, et la droite horizontale est généralement notée la droite des ordonnées</span>.
+En fait, dans un couple de réel de la sorte "(x, y)", "x" est appelé l'abscisse et "y" est appelé l'ordonné.
+Il y a encore beaucoup d'autre vocabulaire, mais nous le découvriront un peu plus tard, quand ça sera le bon moment.
+</p>
+<p>
+Comme nous pouvons noter chaque point sous la forme "(x, y)", on peut utiliser "x" et "y" dans des relations précises.
+En fait, <span class="important">on peut définir des ensembles de points par l'ensemble des couples solutions d'une équation précise quelconque, impliquant "x", "y" ou les deux</span>.
+Par exemple, on peut facilement définir l'ensemble des points constituant un cercle, avec une simple équation :
+</p>
+<math><mi>(x - a)</mi><msup>2</msup> + <mi>(y - b)</mi><msup>2</msup> = <mi>r</mi><msup>2</msup></math>
+<p>
+Intuitivement parlant, <span class="important"><definition name="circle"></span>.
+Cette équation nous permet donc de lier les cercles obtenus via des traçages possibles en géométrie classique avec de la géométrie analytique.
+Ici, </span class="important">"a" défini l'abscisse du centre du cercle, "b" représente l'ordonnée du centre du cercle, et "r" représente le rayon du cercle</span>.
+Nous étudierons plus précisément cette équation plus tard.
+Dans le cas d'un cercle de centre "(1, 1)" et de rayon "1", on peut graphiquement afficher :
+</p>
+<graphic><background_color white><circle x=1 y=1 radius=1 color=white></graphic>
+<p>
+De la même manière, <span class="important">nous pouvons définir des traits parfaitement droits, nommés des droites, avec des équations de cette forme</span>.
+En effet, <span class="important">une droite quelconque se définie avec une équation de la forme "a * x = b * y + c", avec "a", "b" et "c" définis comme des nombres réels quelconques</span>.
+Nous aurons l'occasion d'étudier pourquoi et comment se comporte cette équation.
+Voici un exemple : l'équation "x = 3 * y - 6" en rouge, l'équation "y = 2" en bleu, et l'équation "x = -1" en vert.
+</p>
+<graphic><background_color white><function expression="x/3+2" color=red></function><line x_1=-10 y_1=2 x_2=10 y_2=2 border_color=blue><line x_1=-1 y_1=-10 x_2=-1 y_2=10 border_color=green></graphic>
+<p>
+Généralement, une autre définition des droites est donnée.
+En effet, à l'école primaire, <span class="important">une droite représente un ensemble de point parfaitement alignés avec deux autres points distints du plan</span>.
+Le problème de cette définition est que sa compréhension approfondie demande un peu d'algèbre précis, que nous n'avons pas encore traité.
+Cependant, d'un point de vue purement géométrique, ce concept est utilisé depuis plusieurs millénaires, introduit par <scientist name="euclid" type=quote> dans son fameux livre "Les Éléments", et considéré comme un concept tellement trivial qu'il n'était pas plus défini que ça.
+En rélité, <span class="important">une droite est très souvent définie de cette manière en géométrie, mais moins en algèbre, où l'on préferera l'équation</span>.
+</p>
+<p>
+<span class="important">En resteignant l'ensemble à un certain sous-ensemble de cette droite, on peut donc la découper</span>.
+Par exemple, on peut restreindre notre droite "y = 2" pour tous les "x" présents entre "-3" et "3", ce qui donne ce segment.
+</p>
+<graphic><background_color white><line x_1=-3 y_1=2 x_2=3 y_2=2 border_color=blue></graphic>
+<p>
+Le plus utile est de découper la droite en un ensemble de points de la droite où il n'y a aucune séparation possible entre les points.
+Généralement, <span class="important">une partie représentant l'ensemble des points entre deux points distints sur une droite est nommée un segment de droite</span>.
+En plus, nous pouvons utiliser plusieurs segments du genre pour faire des choses plus ou moins complexes.
+</p>
+<graphic><background_color white><line x_1=-2 y_1=-2 x_2=3 y_2=-2 border_color=blue><line x_1=-2 y_1=-2 x_2=2 y_2=2 border_color=blue><line x_1=2 y_1=2 x_2=3 y_2=-2 border_color=blue></graphic>
+<p>
+Ici, nous relions le concept de tracer des segments en géométrie classique avec ce genre d'équation en géométrie analytique.
+Avec ça, nous pouvons définir un autre concept primordial en géométrie : les polygônes.
+<span class="important"><definition name="polygon"></span>.
+Généralement, les segments formant le polygone sont nommés les côtés du polygône.
+C'est ce concept qui permet de définir des termes biens connus : triangles (3 côtés), rectangle (4 côtés)...
+</p>
+
+<h3>La trigonométrie</h3>
+
+<p>
+Comme nous le verrons plus tard, le polygône le plus simple à définir (et utiliser) est le triangle.
+De plus, il permet de donner naissance à une branche très spécifique de la géométrie : la trigonométrie.
+<span class="important"><definition name="trigonometry"></span>.
+Pour étudier précisément le triangle, nous allons devoir faire fi de la rigueur, et faire comme les grecs anciens : avec le traçage pure.
+</p>
+<p>
+Commençons par introduire le type de triangle le plus pratique (et de très loin) : le triangle rectangle.
+<span class="important"><definition name="triangle-rectangle"></span>.
+Intuitivement, <definition name="triangle-rectangle">.
+De manière très concrète, un angle droit est l'angle formé entre un sol parfaitement droit et un piquet orienté parfaitement vers le haut.
+Avec le formalisme des degrés, <span class="important">un angle droit mesure "90°"</span>.
+</p>
+<graphic><background_color white><base draw=0><form points=new(-2,-2);new(-2,3);new(2,-2) border_color=blue color=transparent></graphic>
+<p>
+Voyons comment les anciens géomètres tracés ce genre de triangle, à partir de deux points du triangle (qui doivent être l'un des segments de l'angle), à la règle et au compas.
+La seule difficulté ici est de tracer proprement l'angle droit : traçons en un à partir de deux points de départs "A" et "B".
+Pour cela, nous aurons besoin d'un troisième point "D" aligné par rapport à "A" et "B", et placé deux fois plus loin de "A" que "B".
+Traçons le segment entre "A" et "D".
+</p>
+<graphic><background_color white><base draw=0><form points=new(-2,-2);new(2,-2) border_color=blue><text x=-2 y=-3 font_size_in_scale=1 content="A"></text><text x=0 y=-3 font_size_in_scale=1 content="B"></text><text x=2 y=-3 font_size_in_scale=1 content="D"></text></graphic>
+<p>
+En suite, nous aurons besoin du compas.
+En fait, <span class="important">nous allons tracer deux cercles de tailles quelconques (mais la même pour les deux), de centre "A", puis "D" (il faut obligatoirement que ces cercles se touchent en deux points)</span>.
+</p>
+<graphic><background_color white><base draw=0><form points=new(-2,-2);new(2,-2) border_color=blue><circle x=-2 y=-2 radius=11/4 border_color=black color=transparent><circle x=2 y=-2 radius=11/4 border_color=black color=transparent></graphic>
+<p>
+En suite, traçons la droite formée par les deux points où les cercles se touchent.
+En fait, <span class="important">cette droite est perpendiculaire à la droite de départ, et tout point sur cette droite forme un angle droit avec "A" et le point de rencontre entre cette droite et la droit de départ (qui est le point exactement entre "A" et "D" : "B")</span>. 
+</p>
+<graphic><background_color white><base draw=0><form points=new(-2,-2);new(2,-2) border_color=blue><form points=new(0,-10);new(0,10) border_color=blue><circle x=-2 y=-2 radius=11/4 border_color=black color=transparent><circle x=2 y=-2 radius=11/4 border_color=black color=transparent></graphic>
+<p>
+Vous avez juste à connecter un quelconque point "C" de la nouvelle droite avec "A" : vous avez un triangle rectangle en "B".
+Ce nouveau segment porte d'ailleurs un nom très spécifique : l'hypothénuse.
+Intuitivement, <span class="important"><definition name="hypotenuse"></span>.
+Ce concept est d'ailleurs à la base d'un des théorèmes les plus connues des mathématiques : le théorème de Pythagore.
+<span class="important"><definition name="pythagorean_theorem"></span>.
+Il admet aussi une réciproque très connue : <definition name="pythagorean_theorem-converse">.
+Dans un triangle "ABC" rectangle en "B", il stipule l'identité suivante :
+</p>
+<math>AB² + BC² = AC²</math>
+<p>
+Il est possible de connaître et de relier la valeur des angles dans un triangle rectangle avec une technique complexe, mais qui nous sera utile partout en mathématiques.
+Déjà, <span class="important"> pour des ratios donnés entre les différents côtés d'un triangle rectangle, les valeur des angles dans le triangle restent invariants de la taille du triangle</span>.
+Donc, les ratios des angles seront eux aussi invariants de la taille du triangle.
+On peut donc donner des formules générales pour chaque triangle rectangle, permettant de passer des ratios des angles aux ratios des côtés.
+En effet, <span class="important">il existe une fonction prenant en paramètre le ratio entre un côté et l'hypoténuse et retournant la valeur de l'angle entre ces deux côtés (en radians) : c'est la fonction cosinus</span>.
+De manière réciproque, <span class="important">il existe une fonction prenant en paramètre le ratio entre un côté et l'hypoténuse et retournant la valeur de l'angle opposé au côté qui n'est pas l'hypoténuse (en radians) : c'est la fonction sinus</span>.
+</p>
+<graphic><background_color white><base draw=0><form points=new(-2,-2);new(2,-2);new(2,3) border_color=black color=transparent><text name=type_number() x=0 y=-3>cos(a)</text><text name=type_number() x=7/2 y=0>sin(a)</text><text name=type_number() x=-1 y=1>1</text><text name=type_number() x=-3 y=-2>a</text></graphic>
+<p>
+Quand on voit ce genre de fonction, on pourrait avoir envie de les expliciter pour calculer des précises de cette fonction.
+Cependant, c'est un exercice très complexe, que nous verrons plus tard.
+Or, <span class="important">il est possible de tracer des triangles rectangles, et de mesurer les valeurs précises à la main</span>.
+</p>
+<p>
+Ces fonctions trigonométriques permettent de formuler des identités précises très importantes en trigonométrie.
+Par exemple, <span class="important">il existe une formule pour exprimer la valeur de "cos(x + a)" avec seulement des "cos(x)", "cos(a)", "sin(x)" et "sin(a)"</span>.
+Bien que cette formule possède une démonstration très rigoureuse, pour cette partie du cours, nous allons nous contenter d'une démonstration géométrique.
+Prenons un triangle rectangle comprenant un angle de taille "a".
+</p>
+<graphic><background_color white><base draw=0><form points=new(-2,-2);new(2,-2);new(2,1) border_color=black color=transparent><text name=type_number() x=0 y=-3>cos(a)</text><text name=type_number() x=7/2 y=-1/2>sin(a)</text><text name=type_number() x=-1 y=0>1</text><text name=type_number() x=-3 y=-2>a</text></graphic>
+<p>
+Effectuons une rotation centrale de point le point tangent à l'angle "a" du triangle d'un angle "b".
+Nous obtenons le triangle retourné, ainsi qu'un nouvel angle de mesure "a + b".
+</p>
+<graphic><background_color white><base draw=0><line x_1=-10 y_1=-2 x_2=10 y_2=-2 border_color=blue><line x_1=-4/100 y_1=259/100 x_2=-4/100 y_2=-2 border_color=blue><line x_1=-2 y_1=-2 x_2=-4/100 y_2=-2 border_color=red><line x_1=-2 y_1=-5/2 x_2=146/100 y_2=-5/2 border_color=dark_green><line x_1=-4/100 y_1=0 x_2=146/100 y_2=0 border_color=purple><form points=new(-2,-2);new(146/100,0);new(-4/100,259/100) border_color=black color=transparent></graphic>
+<p>
+Sur cette figure, pour rappel, nous cherchons la taille du segment rouge.
+Pour obtenir la taille du segment rouge, <span class="important">il faudrait donc prendre la taille du segment vert, et lui enlever celle du segment violet</span>.
+Déjà, nous pouvons très facilement obtenir la longueur du segment vert.
+En effet, <span class="important">le segment bas du triangle que nous avons tourné peut ici être vue comme l'hypothénuse d'un nouveau triangle, tel que le segment vert représente le côté tangent à l'angle "b"</span>.
+Donc, sa longueur représente la taille de l'hypothénuse de ce rectangle ("cos(a)") multiplié par "cos(b)" : "cos(a) * cos(b)".
+En suite, on peut voir que le segment violet peut permettre de tracer un nouveau triangle rectangle, où l'hypothénuse représenterait le côté à droite de notre triangle rectangle tourné, de taille "sin(a)".
+De plus, comme le segment violet et le segment bleu horizontal sont parallèle par construction, on peut en déduire que l'angle entre le segment violet et le côté bas du triangle que nous avons tourné est de "b".
+Comme l'angle entre le côté bas et le côté droit du triangle que nous avons tourné est droit, alors l'angle entre le côté violet et la partie droite du triangle que nous avons tourné (hypothénuse du triangle rectangle contenant le segment violet) et d'un angle droit moins "b" : l'autre angle (non droit) de ce triangle rectangle est donc "b".
+Donc, <span class="important">comme cet angle "b" est l'angle opposé du segment violet, sa longueur est donc celle de l'hypothénuse "sin(a)" multiplié par "sin(b)" : "sin(a) * sin(b)"</span>.
+Finalement, <span class="important">on peut en déduire la formule de "cos(a + b)" : "cos(a + b) = cos(a) * cos(b) - sin(a) * sin(b)"</span>.
+</p>
+<math>cos(a + b) = cos(a) * cos(b) - sin(a) * sin(b)</math>
+<p>
+On peut de la même manière trouver la formule pour "sin(x + a)".
+Pour mieux comprendre, refaisons notre schéma, en changeant les couleurs de certains segments.
+</p>
+<graphic><background_color white><base draw=0><line x_1=-10 y_1=-2 x_2=10 y_2=-2 border_color=blue><line x_1=-4/100 y_1=259/100 x_2=-4/100 y_2=-2 border_color=blue><line x_1=-4/100 y_1=-2 x_2=-4/100 y_2=259/100 border_color=red><line x_1=146/100 y_1=-2 x_2=146/100 y_2=-4/100 border_color=dark_green><line x_1=-4/100 y_1=0 x_2=146/100 y_2=0 border_color=blue><line x_1=2 y_1=0 x_2=2 y_2=259/100 border_color=purple><form points=new(-2,-2);new(146/100,0);new(-4/100,259/100) border_color=black color=transparent></graphic>
+<p>
+Encore une fois, nous cherchons la taille du segment rouge.
+Ici, <span class="important">la taille du segment rouge est égal à la taille du segment vert et du segment violet</span>.
+Le segment vert se calculera de manière assez similaire que pour l'autre calcul.
+En effet, <span class="important">la taille du segment vert est égal à la taille de l'hypothénuse du triangle rectangle auquel il appartient ("cos(a)") multiplié par le sinus de l'angle opposé (ici "b") : "cos(a) * sin(b)"</span>.
+Maintenant, calculons la taille du segment violet.
+Ici, <span class="important">la taille du segment violet est égal à la taille de l'hypothénuse du triangle rectangle auquel il appartient ("sin(a)") multiplié par le cosinus de l'angle adjacent (ici "b") : "sin(a) * cos(b)"</span>.
+Finalement, <span class="important">on peut en déduire la formule de "sin(a + b)" : "sin(a + b) = sin(a) * cos(b) + cos(a) * sin(b)"</span>.
+</p>
+<math>sin(a + b) = sin(a) * cos(b) + cos(a) * sin(b)</math>
+<p>
+Avec ça, <span class="important">on peut facilement en déduire les formules de différences</span>.
+En effet, ces formules fonctionnent pour tout "a" et tout "b" : posons "c = -b".
+</p>
+<math>cos(a + c) = cos(a) * cos(c) - sin(a) * sin(c) = cos(a - b)</math></br>
+<math><mimp> cos(a - b) = cos(a) * cos(c) - sin(a) * sin(c) = cos(a) * cos(-b) - sin(a) * sin(-b)</math>
+<p>
+Pour rappel, <span class="important">"cosinus" est paire et "sinus" est impaire : "cos(-b) = cos(b)" et "sin(-b)" = "-sin(b)"</span>.
+</p>
+<math><mimp> cos(a - b) = cos(a) * cos(b) + sin(a) * sin(b)</math>
+<p>
+On peut faire l'exact même calcul pour "sin(a - b)" :
+</p>
+<math>sin(a + c) = sin(a) * cos(c) + cos(a) * sin(c) = sin(a - b)</math></br>
+<math><mimp> sin(a - b) = sin(a) * cos(c) + cos(a) * sin(c) = sin(a) * cos(-b) + cos(a) * sin(-b)</math></br>
+<math><mimp> sin(a - b) = sin(a) * cos(b) - cos(a) * sin(b)</math>
+
+<h3>Les graphes de fonctions</h3>
+<p>
+Nous avons déjà parlé des graphes de fonctions dans le chapitre 1, dans la partie application.
+Cependant, en analyse, cet outil est bien plus poussé que pour de simples applications / fonctions, en les utilisant avec nos outils d'analyse (suites et fonctions réelles).
+Pour rappel, <span class="important"><definition name="function_graph"></span>.
+Or, comme nous connaissons les ensembles de départ ("N" ou "R"), nous pouvons représenter notre graphe de manière plus intuitive.
+En effet, <span class="important">"R²" (et, par extension, "N²") est définissable comme un plan, et nous pouvons considérer un ensemble représentant l'ensemble des couples possibles des antécédents de la fonction associés à leur image par la fonction, représentant un ensemble de points du plan</span>.
+Pour être précis, <span class="important">nous allons représenter un ensemble de points du plan comme des couples de réels "(x, f(x))", où "x" est un antécédent de la fonction, et "f(x)" est l'image de "x" par la fonction</span>.
+Au final, vous obtenez un graphique en 2D, représentant comment votre fonction se comporte en chaque valeur via la droite de départ.
+Voici un exemple simple, de la fonction réelle transformant un réel "x" en la valeur "2 * x + 0,5".
+</p>
+<graphic><background_color white><function expression="2x+1/2"></function></graphic>
+<p>
+Selon les types précis de fonction, leur graphe possède des propriétés précises.
+Déjà, <span class="important">une fonction linéaire représente une droite non-vertical qui passe par le point "(0, 0)"</span>.
+</p>
+<graphic><background_color white><function expression="x/3"></function></graphic>
+<p>
+De plus, <span class="important">une fonction affine représente une droite non-verticale quelconque.</span>.
+</p>
+<graphic><background_color white><function expression="x/3 + 2"></function></graphic>
+<p>
+Quelque soit la fonction, il est très facile d'obtenir l'équation de l'ensemble de point formé par une fonction.
+En effet, <span class="important">puisque qu'un point d'un graphe de fonction se note "(x, f(x))", on peut changer le nom de "f(x)" en "y", et écrire "y = f(x)", en remplaçant "f(x)" par le développement de la fonction si nécessaire</span>.
+Cela nous permet donc d'obtenir les équations des formes générées par une fonction linéaire / affine.
+</p>
+<math>y = <mfrac><mi>1</mi><mi>3</mi></mfrac> * x</math></br>
+<math>y = <mfrac><mi>1</mi><mi>3</mi></mfrac> * x + 2</math>
+<p>
+Par observation (que nous aurons l'occasion de démontrer plus tard), <span class="important">on peut remarquer que toutes droites non-verticales dans le plan peuvent s'obtenir par des fonctions linéaires et affines</span>.
+En plus, nous pouvons même trouver un moyen de trouver des équations permettant d'obtenir l'ensemble des droites verticales du plan.
+En effet, <span class="important">une droite verticale du plan (ne passant donc que par une unique abscisse "a") s'écrit avec l'équation "x = a"</span>.
+Effectivement, le "y" n'a aucune importance sur le déroulé de la droite : les points ne peuvent donc pas être "exclu" à cause d'un "y" spécifique, ce qui fait que tous les "y" possibles d'abscisse "x" forment la droite (ce qui donne intuitivement une droite verticale).
+</p>
+<math><mforall> a <min> R, <mforall> (x, y) <min> <mi>R</mi><msup>2</msup>, x = a</math>
+
+<h3>Les représentations paramétriques</h3>
+<p>
+Comme les ensembles de points sont des ensembles, on peut donc les définir comme des ensembles.
+L'une des façons possibles de faire est donc de paramétrer ces ensembles.
+En fait, <span class="important">l'idée est de définir des fonctions admettant comme image un ensemble de point précis</span>.
+Un exemple très simple s'obtient avec toutes les fonctions de "R" vers "R" admettant un graphe (comme nous l'avons vu plus haut).
+En effet, on peut en obtenir une application allant de "R" vers "R²", transformant "x" en "(x, f(x))".
+Dans ce cas, l'ensemble image de cette application représente exactement la forme obtenue sur le graphe.
+</p>
+<graphic><background_color white><function expression="(x-4)*(x-4)"></function></graphic>
+<p>
+<span class="important">Il s'agit donc d'une façon différente de définir un ensemble de points, qui peut s'avérer très utile dans plein de cas</span>.
+</p>
+<p>
+Dans notre exemple, nous transformons "x" en "(x, f(x))", mais nous pouvons aussi théoriquement définir une nouvelle fonction "g", et définir une application allant de "x" vers "(g(x), f(x))".
+En effet, rien ne vous empêche nous plus de mettre des valeurs constantes, comme une application qui transforme "x" en "(3, f(x))".
+En fait, <span class="important">le plus difficile est de transformer un ensemble de points défini autrement en ensemble défini par paramètre, et vice-versa</span>.
+</p>
+<p>
+Une des figures les plus utiles (mais pas des plus simples) à paramétrer est le cercle.
+En effet, <span class="important">il existe un moyen précis et facile d'obtenir un demi cercle</span>.
+Pour cela, nous allons avoir besoin d'un graphe de fonction.
+En effet, la fonction réelle transformant "x" en "racine carré de (-x * x + 1)" permet de faire un demi cercle de rayon "1" et de centre "(0, 0)".
+</p>
+<graphic><background_color white><function expression="sqrt(-x*x+1)"></function></graphic>
+<p>
+Grâce aux propriétés de la racine carré, on peut facilement calculer l'ensemble de définition de la fonction : "la fonction est définie équivaut" à dire que "x inférieur ou égal à 1".
+Cependant, on peut remarquer quelque chose : un cercle demande que certains "x" admettent plusieurs images.
+Donc, il sera impossible de n'utiliser qu'un simple graphe de fonction réel.
+Cependant, <span class="important">on peut définir une fonction "g" pour le "x", valant "x" pour "x" se situant entre "-1 et 1 inclu", et "x - 2" pour "x" se situant entre "1 exclu et 3 inclu", et une fonction "f" valant "racine carré de (-x * x + 1)" pour x se situant entre "-1 inclu" et "1 inclu", et "-racine carré de (-x * x + 1)" pour x se situant entre "1 exclu" et "3 inclu"</span>.
+Ici, on revient donc à l'endroit où l'on trace le cercle pour la deuxième partie de la fonction, et tracer le cercle dans la partie négative.
+</p>
+<graphic><background_color white><function expression="sqrt(-x*x+1)"></function><function expression="sqrt(-x*x+1)*-1"></function></graphic>
+<p>
+Nous pouvons donc obtenir l'équation paramétrée par un réel "x" d'un cercle de rayon "1" et de centre "(0, 0)" : "(g(x), f(x))".
+</p>
+<p>
+Bien que cette formule utilise simplement de l'arithmétique basique, elle n'est pas la seule équation possible.
+Nous allons donc obtenir une autre façon de faire, grâce aux triangles, et aussi à une branche très spécifique de la géométrie : la trigonométrie.
+<span class="important"><definition name="trigonometry"></span>.
+</p>

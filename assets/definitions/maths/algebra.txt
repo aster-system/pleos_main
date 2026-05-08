@@ -73,6 +73,9 @@
 <new_definition name="algebra_group_monogenous">
     <content>un groupe est dit monogène si il admet une partie génératrice de taille 1 (un singleton)</content>
 </new_definition>
+<new_definition name="algebra_group_quotient">
+    <content>un groupe quotient de deux groupes "G" et "H" (avec "H" un sous-groupe normal de "G") représente un nouveau groupe sur l'ensemble de "G" quotienté par la relation d'équivalence reliant chaque élément des classes à gauches de "G" suivant "H"</content>
+</new_definition>
 <new_definition name="algebra_group_theory">
     <content>la théorie des groupes représente la discipline qui étudie les groupes algébriques de manière très poussée</content>
 </new_definition>

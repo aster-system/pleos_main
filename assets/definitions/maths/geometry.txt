@@ -11,6 +11,7 @@
 <new_definition name="angle">
     <content>un angle entre 3 points est une mesure de la différence d'orientation entre les deux droites formées par ces deux points (en sachant que nous travaillons sur les droites passant toutes les deux par un seul des points de départ)</content>
     <content name="degree">le degré représente une unité pour la mesure d'un angle, où l'angle couvrant "0 %" du cercle représente "0" degré et celui couvrant tout le cercle représente "360" degrés</content>
+    <content name="radian">le radians représente une unité pour la mesure d'un angle, qui vaut le coefficient à multiplier au rayon pour obtenir la longueur de la frontière du cercle que l'angle permet de représenter</content>
     <content name="right">un angle "ABC" est dit droit en "B" quand les droites formés par "AB" et "BC" sont parfaitement perpendiculaire</content>
 </new_definition>
 <new_definition name="circle">

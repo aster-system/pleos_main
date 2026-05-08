@@ -294,6 +294,19 @@ Avec ce concept, on peut en définir un autre assez similaire : l'indice du sous
 <span class="important"><definition name="algebra_subgroup-index"></span>.
 </p>
 
+<h3>Les groupes quotients</h3>
+<p>
+Une opération très utilisée avec les groupes est le quotientage de groupe.
+En effet, <span class="important"><definition name="algebra_group_quotient"></span>.
+En fait, il s'agit donc d'un groupe sur les classes d'équivalences de la relation d'équivalence liant tous les éléments de même classe à gauche de "H".
+Pour rappel, comme "H" est normal, les classes à gauches et à droites sont les mêmes, donc il n'y a pas besoin de spécifier les classes à droite.
+Cependant, pour avoir un groupe, il nous faut avoir une loi de composition sur ce groupe.
+En effet, <span class="important">la loi de composition du groupe quotient est une loi induie par "G" : l'opération de deux éléments du groupe quotient donne l'élément de ce groupe quotient qui représente la classe d'équivalence du résultat de l'opération d'éléments dans la classe d'équivalence représentant les opérandes dans le groupe quotient</span>.
+Cela rend donc les calculs dans les groupes quotients très facile.
+</p>
+<math><mforall>a, b <min> G/H, <mexists>x, y <min> G, a = xH, b = yH</math></br>
+<math><mexists> z <min> G, x . y = z <mimp> xH . yH = zH <mequi> <mexists> c <min> G/H, a # b = c</math>
+
 <h3>Les groupes symétriques</h3>
 <p>
 Un type de groupe un petit peu bizarre mais assez atypique est le groupe symétrique.
