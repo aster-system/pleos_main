@@ -83,6 +83,7 @@ Par exemple, dans l'espace vectoriel formé par "R²" (comme défini plus haut),
 <p>
 Les espaces vectoriels possèdent aussi des propriétés permettant de définir un type de formule précis : les combinaisons linéaires.
 <span class="important"><definition name="linear_combination"></span>.
+Le nom "linéaire" provient du fait qu'une combinaison linéaire est une somme de termes représentant des fonctions linéaires (un scalaire multiplié par un vecteur de l'espace).
 En fait, une combinaison linéaire dans un espace vectoriel représente une valeur qui est toujours dans l'espace vectoriel, puisque le produit d'éléments de "K" et de vecteurs donne un vecteur, et la somme de vecteurs donne un vecteur.
 Grâce à ça, <span class="important">on peut utiliser des indéterminées facilement dans un espace vectoriel, en représentant des éléments de "K" indéterminées, ou même des vecteurs indéterminées, permettant de résoudre des équations</span>.
 Voici quelques exemples de combinaisons linéaires possibles, dans "R²".
@@ -104,7 +105,7 @@ Par exemple, avec le vecteur "(1, 1)", vous pouvez formuler tous les vecteurs de
 <graphic><background_color white><base width=5 height=5><function expression="x" color=blue></function><line x_1=0 y_1=0 x_2=1 y_2=1 color=red></graphic>
 <p>
 Nous pouvons faire la même chose avec tous les vecteurs possibles.
-Par exemple, prenons le vecteur "(1, 0)" : nous pouvons engendre "(3, 0)", "(pi, 0)" ou "(-0.000000000001, 0)".
+Par exemple, prenons le vecteur "(1, 0)" : nous pouvons engendré "(3, 0)", "(pi, 0)" ou "(-0.000000000001, 0)".
 Ici, <span class="important">nous pouvons obtenir une combinaison linéaire de nos deux vecteurs d'exemple : "(1, 1)" et "(1, 0)"</span>.
 Nous obtenons donc une combinaison linéaire de la forme "a * (1, 1) + b * (1, 0)" avec "a" et "b" des nombres réels quelconques.
 Ici, on peut se poser une question : <span class="important">quel est l'ensemble précis des vecteurs calculables via cette combinaison linéaire</span> ?
@@ -257,6 +258,42 @@ Cependant, dans ce cas, <span class="important">la réciproque est fausse, on pe
 De manière parfaitement logique, cela s'explique par le fait que passer à un sous-espace vectoriel requiert une implication dans le raisonnement ("F est un sous-espace vectoriel" implique que "toute base de "F ont le même cardinal", mais la réciproque de cette proposition ne veut rien dire), cassant l'équivalence (puisque l'on part d'un plus gros espace vectoriel, demandant de passer à un autre : le sous-espace vectoriel).
 </p>
 <math>Vect(f) = Vect(g) = F <mimp> n = m</math>
+
+<h3>Les systèmes linéaires</h3>
+<p>
+Avant de traiter des systèmes linéaires, parlons des équations linéaires.
+<span class="important"><definition name="linear_equation"></span>.
+Par exemple, une équation linéaire dans un l'espace vectoriel "R²" sur "R" peut être :
+</p>
+<math>8 * (a, b) = (5, -6)</math>
+<p>
+Résoudre ce genre d'équation est très facile :
+</p>
+<math>k * (a, b) = (c, d) <mequi> (a, b) = (<mfrac><mi>c</mi><mi>k</mi></mfrac>, <mfrac><mi>d</mi><mi>k</mi></mfrac>)</math>
+<p>
+Avec ça, nous allons pouvoir parler des systèmes linéaires.
+En fait, <span class="important"><definition name="linear_system"></span>.
+Par exemple, ceci peut être un système linéaire, dans un espace vectoriel sur "R" :
+</p>
+<math>3 * u + 4 * v = 2</math></br>
+<math>8 * u - 7 * v = 5</math>
+<p>
+La façon la plus simple de résoudre ce genre d'équation reste la substition.
+</p>
+<math>3 * u + 4 * v = 2</math></br>
+<math>8 * u - 7 * v = 5</math></br>
+<math><mequi></math></br>
+<math>8 * u = 7 * v + 5</math></br>
+<math>3 * <mfrac><mi>7 * v + 5</mi><mi>8</mi></mfrac> + 4 * v = 2</math></br>
+<math><mequi></math></br>
+<math><mfrac><mi>53 * v + 15</mi><mi>8</mi></mfrac> = 2</math></br>
+<math>8 * u = 7 * v + 5</math></br>
+<math><mequi></math></br>
+<math>v = <mfrac><mi>1</mi><mi>53</mi></mfrac></math></br>
+<math>8 * u = 7 * <mfrac><mi>1</mi><mi>53</mi></mfrac> + 5</math></br>
+<math><mequi></math></br>
+<math>v = <mfrac><mi>1</mi><mi>53</mi></mfrac></math></br>
+<math>u = <mfrac><mi>34</mi><mi>53</mi></mfrac></math></br>
 
 <h3>Les applications linéaires</h3>
 <p>

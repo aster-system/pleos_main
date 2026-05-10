@@ -239,6 +239,7 @@ namespace pleos {
         // Creations
         if(word == "circle_algorithm"){if(add_determinant){to_return = std::string("l'algorithme de traçage du cercle");}else{to_return = std::string("algorithme de traçage du cercle");};}
         else if(word == std::string("calendar")){if(add_determinant){to_return = std::string("le calendrier");}else{to_return = std::string("calendrier");};}
+        else if(word == std::string_view("lunar_mission")){if(add_determinant){to_return = std::string("la mission lunaire");}else{to_return = std::string("mission lunaire");};}
         else if(word == std::string("raycast")){if(add_determinant){to_return = std::string("le raycast");}else{to_return = std::string("raycast");};}
         // Subjects
         else if(word == std::string("chemistry")){if(add_determinant){to_return = std::string("la chimie");}else{to_return = std::string("chimie");};}

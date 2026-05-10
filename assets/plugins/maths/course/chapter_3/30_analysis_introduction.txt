@@ -566,19 +566,35 @@ De plus, les différents "s(n)" sont nommés sommes partielles de la série d'or
 <p>
 Finalement, <span class="important">la valeur de "s(n)" quand "n" tend vers l'infini est nommé "somme" de la série</span>.
 C'est généralement l'étude de cette limite qui rend le concept de série intéressant.
+Si cette limite représente un infini ou n'existe pas, on dit que la série diverge.
+À l'inverse, si il existe une limite finie, on dit qu'elle converge.
 </p>
 <math><mlim unknown=n value=inf>(s(n)) = <msum from=1 to_infinity=1 unknown=n>u(n)</math>
 <p>
 Pour cela, <span class="important">une des façons les plus simples de faire est d'obtenir la valeur de "s(n)" comme une valeur ne contenant pas de somme, et donc de simplifier la forme</span>.
 C'est avec cette technique que nous pouvons calculer la série de terme général "n".
 </p>
-<math>u(n) = n, s(n) = <msum from=1 to=n unknown=k>u(k) = <msum from=1 to=n unknown=k>k</math>
+<math>u(n) = n, s(n) = <msum from=0 to=n unknown=k>u(k) = <msum from=0 to=n unknown=k>k</math>
 <p>
 Ici, "u(n)" est une suite arithmétique de raison "1".
 Donc, <span class="important">obtenir la formule d'une somme partielle de "u(n)" est très simple</span>.
 </p>
-<math>s(n) = (n + 1) * <mfrac><mi>u(0) + n * r</mi><mi>2</mi></mfrac> = (n + 1) * <mfrac><mi>n</mi><mi>2</mi></mfrac> = <mfrac><mrow><mi>n<mi><msup>2</msup></mrow><mi>2</mi></mfrac> + <mfrac><mi>n</mi><mi>2</mi></mfrac></math>
+<math>s(n) = (n + 1) * <mfrac><mi>u(0) + n * r</mi><mi>2</mi></mfrac> = (n + 1) * <mfrac><mi>n</mi><mi>2</mi></mfrac> = <mfrac><mrow><mi>n</mi><msup>2</msup></mrow><mi>2</mi></mfrac> + <mfrac><mi>n</mi><mi>2</mi></mfrac></math>
 <p>
 Nous reconnaissons ici un polynôme de degré 2, avec un coefficient dominant positif : cette suite tend vers l'infini.
 Donc, la série diverge.
+</p>
+<p>
+Étudions maintenant un exemple de série convergente.
+Prenons la série de terme général "inverse de 2 exposant n".
+</p>
+<math>u(n) = <mfrac><mi>1</mi><mrow><mi>2</mi><msup>n</msup></mrow></mfrac>, s(n) = <msum from=0 to=n unknown=k>u(k) = <msum from=0 to=n unknown=k><mfrac><mi>1</mi><mrow><mi>2</mi><msup>n</msup></mrow></mfrac></math>
+<p>
+Ici, "u(n)" est une suite géométrique de raison "1/2".
+Donc, <span class="important">obtenir la formule d'une somme partielle de "u(n)" est très simple</span>.
+</p>
+<math>s(n) = u(0) * <mfrac><mrow><mi>1 - </mi><mi>q</mi><msup>n + 1</msup></mrow><mi>1 - q</mi></mfrac> = 1 * <mfrac><mrow><mi>1 - </mi><mi>(1/2)</mi><msup>n + 1</msup></mrow><mi>1 - 1/2</mi></mfrac> = 2 - <mrow>(<mfrac><mi>1</mi><mi>2</mi></mfrac>)</mrow><msup>n</msup></math>
+<p>
+Ici, nous voyons facilement que, si "n" tend vers l'infini, "s(n)" tend vers 2.
+Donc, la série converge.
 </p>

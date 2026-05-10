@@ -1,0 +1,35 @@
+<new_definition name="linear_application">
+    <content>une application linéaire est une application mathématique allant d'un espace vectoriel vers un autre (tous deux sur un corps "K"), tout en gardant une certaine "similarité" dans la façon dont l'application transforme des objets avant / après opération</content>
+    <content name="morphism">une application linéaire est un morphisme d'espace vectoriel sur un même corps "K"</content>
+</new_definition>
+<new_definition name="linear_combination">
+    <content>une combinaison linéaire est un type de formule possible dans un espace vectoriel sur un corps "K", représentant la somme de produits d'éléments de "K" et de vecteur de l'espace vectoriel</content>
+</new_definition>
+<new_definition name="linear_equation">
+    <content>une équation linéaire est une équation où l'on cherche la valeur d'une inconnue dans un espace vectoriel, où nous savons que cette inconnue multiplié par un scalaire non-nul donne une autre valeur de l'espace vectoriel</content>
+</new_definition>
+<new_definition name="linear_system">
+    <content>un système linéaire est un système d'équations composé d'équations linéaires</content>
+</new_definition>
+
+<new_definition name="sub_vector_space">
+    <content>un sous-espace vectoriel est une structure algébrique construire à partir d'un espace vectoriel, sur un ensemble inclut dans l'espace vectoriel de départ, et où les éléments de cet ensemble sont stables par addition et par multiplication par un scalaire</content>
+    <content name="span">un sous-espace vectoriel engendré par une famille de vecteurs "A" est un sous-espace vectoriel dont les éléments ne représentent que des combinaisons linéaires des vecteurs de la famille "A"</content>
+</new_definition>
+<new_definition name="vector_family">
+    <content name="free">une famille de vecteur est dite libre (ou linéairement indépendante) si aucun vecteur de la famille ne peut s'écrire comme combinaison linéaire non-nulle des autres vecteurs de la famille</content>
+    <content name="generator">une famille de vecteur est dite génératrice si son sous-espace vectoriel engendré est l'entièreté de l'espace vectoriel de départ</content>
+    <content name="linked">une famille de vecteur est dite liée (ou linéairement dépendante) si l'un des vecteurs de la famille peut s'écrire comme combinaison linéaire non-nulle des autres vecteurs de la famille</content>
+</new_definition>
+<new_definition name="vector_space">
+    <content>un espace vectoriel est une structure algébrique construire à partir d'un corps, sur un ensemble quelconque (qui n'est pas forcément celui du corps), tel qu'il contient une opération (généralement une forme d'addition) formant un groupe abélien sur l'espace vectoriel et qu'il existe une loi externe à gauche sur l'espace vectoriel avec les éléments du corps (qui doit être associative, admettre un neutre et distributive à gauche par rapport à la première loi de l'espace vectoriel)</content>
+    <content name="norm">une norme sur un espace vectoriel est une application allant de l'ensemble des vecteurs de l'espace vectoriel vers l'ensemble des nombres réels positifs, permettant de représenter la notion de "distance à 0" du vecteur</content>
+    <content name="normed">un espace vectoriel normé est un espace vectoriel muni d'une norme</content>
+    <content name="vector">un vecteur est un élément quelconque d'un espace vectoriel</content>
+</new_definition>
+<new_definition name="vector_space_base">
+    <content>une base d'un espace vectoriel est une famille libre et génératrice de cet espace vectoriel</content>
+</new_definition>
+<new_definition name="vector_space_dimension">
+    <content>la dimension d'un espace vectoriel (aussi nommée dimension de Hamel) est le cardinal commun de toutes ses bases</content>
+</new_definition>
