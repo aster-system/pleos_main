@@ -74,7 +74,7 @@
     <content>un groupe est dit monogène si il admet une partie génératrice de taille 1 (un singleton)</content>
 </new_definition>
 <new_definition name="algebra_group_quotient">
-    <content>un groupe quotient de deux groupes "G" et "H" (avec "H" un sous-groupe normal de "G") représente un nouveau groupe sur l'ensemble de "G" quotienté par la relation d'équivalence reliant chaque élément des classes à gauches de "G" suivant "H"</content>
+    <content>un groupe quotient de deux groupes "G" et "H" (avec "H" un sous-groupe normal de "G") représente un nouveau groupe sur l'ensemble de "G" quotienté par la relation d'équivalence reliant chaque élément des classes à gauches (qui sont aussi celle à droites) de "G" suivant "H"</content>
 </new_definition>
 <new_definition name="algebra_group_theory">
     <content>la théorie des groupes représente la discipline qui étudie les groupes algébriques de manière très poussée</content>
@@ -111,7 +111,8 @@
 
 <new_definition name="matrix">
     <content>une matrice à valeur dans un ensemble représente intuitivement un tableau de valeurs de cet ensemble</content>
-    <content name="application">une matrice est une représentation d'une application linéaire d'un espace vectoriel vers un autre, en permettant de passer d'une base de départ vers une base d'arrivée</content>
+    <content name="application">une matrice associée à une application linéaire est une matrice dont les propriétés internes permettent de calculer facilement l'image d'un vecteur dans une base d'arrivée exprimé dans une base de départ</content>
+    <content name="basis">une matrice de changement de base (ou matrice de passage) est une matrice permettant d'obtenir les coordonnées d'un vecteur dans une base "c", via l'expression de ce vecteur dans une autre base "b"</content>
     <content name="dimension">la dimension d'une matrice est un couple de nombre entier naturel contenant la taille de sa base de départ, puis de sa base d'arrivée</content>
     <content name="rigorous">une matrice à valeur dans un ensemble représente un ensemble d'éléments de cet ensemble, indexé par le produit cartésien de deux ensembles de taille "b" et "c"</content>
 </new_definition>

@@ -1,12 +1,13 @@
 <new_definition name="set">
     <content name="countable">un ensemble infini est dénombrable si il est équipotent (et donc, si il existe une bijection) à l'ensemble des nombres entiers naturels</content>
-    <content name="finite">un ensemble est "fini" si il n'est pas possible de trouver de nouveaux éléments dans l'ensemble (que nous n'avons pas déjà trouvé) après en avoir consulter une certaine quantité</content>
+    <content name="finite">un ensemble est "fini" si, intuitivement, il n'est pas possible de trouver de nouveaux éléments dans l'ensemble (que nous n'avons pas déjà trouvé) après en avoir consulter une certaine quantité précise</content>
+    <content name="ordered">un uplet est un ensemble ordonné de taille quelconque</content>
     <content name="uncountable">un ensemble infini est indénombrable si il n'existe pas de surjections sur l'ensemble des nombres entiers naturels (il existe des éléments qui ne sont pas reliables à un nombre entier naturel)</content>
 </new_definition>
 <new_definition name="set_theory">
     <content>la théorie des ensembles est une théorie mathématique développée à la fin du XIXème siècle, pour être utilisée comme socle des mathématiques</content>
     <content name="choice_axiom">l'axiome du choix est un axiome permettant l'existence d'un moyen d'extraire un élément quelconque d'un ensemble, une infinité de fois (et donc, dans une infinité d'ensemble), pour construire un nouvel ensemble</content>
-    <content name="class">une classe est un objet mathématique qui peut "contenir" d'autres objets (on dit que ces objets appartiennent à l'ensemble), mais qui n'est pas forcément cohérent dans la théorie des ensembles</content>
+    <content name="class">une classe est un objet mathématique qui peut "contenir" d'autres objets (nommés "éléments", que l'on dit qu'ils "appartiennent" à la classe), mais qui n'est pas forcément cohérent dans la théorie des ensembles</content>
     <content name="comprehension">un ensemble est dit "défini en compréhension" quand il est défini comme tous les éléments d'un autre ensemble vérifiant une propriété spécifique</content>
     <content name="comprehension_axiom">le schéma d'axiome de compréhension est un schéma d'axiome construisant un axiome par propriété, stipulant que, pour tout ensemble "A", il existe une classe "B" dont tous les éléments sont les éléments de A rendant une propriété "P" vraie (déduite grâce aux autres axiomes)</content>
     <content name="empty_set">l'ensemble vide est un ensemble ne contenant aucun élément</content>
@@ -20,7 +21,7 @@
     <content name="power_set_axiom">l'axiome de l'ensemble des parties est un axiome qui assure l'existence, pour tout ensemble A, d'un ensemble des parties de A</content>
     <content name="replacement_axiom">le schéma d'axiome de remplacement est un schéma d'axiome garantissant que toute classe se comportant comme une fonction peut être restreinte à un ensemble se comportant comme une fonction (en utilisant comme antécédent un ensemble)</content>
     <content name="reunion_axiom">l'axiome de la réunion affirme que, pour tout ensemble A dont les éléments sont des ensembles, il existe un ensemble B tel que tous ces éléments appartiennent à un sous-ensemble C de A, et tous les éléments des sous-ensembles de A appartiennt à B</content>
-    <content name="set">un ensemble est un objet mathématique qui peut "contenir" d'autres objets (on dit que ces objets appartiennent à l'ensemble), et qui est parfaitement cohérent dans la théorie des ensembles</content>
+    <content name="set">un ensemble est un objet mathématique qui peut "contenir" d'autres objets (nommés "éléments", que l'on dit qu'ils "appartiennent" à l'ensemble), et qui est parfaitement cohérent dans la théorie des ensembles</content>
     <content name="sub_set">un sous-ensemble (ou partie) d'un ensemble A est un ensemble contenant uniquement des éléments de A (et pas plus)</content>
     <content name="zfc">la théorie des ensemble "ZFC" (pour Zemerlo - Fraenkel - choix) est une version axiomatisée et cohérente (pour l'instant) de la théorie des ensembles de Cantor</content>
 </new_definition>
@@ -52,7 +53,7 @@
 </new_definition>
 <new_definition name="inclusion">
     <content name="double">deux ensembles A et B sont égaux si (et seulement si) A est "inclu ou égal" à B et B est "inclu ou égal" à A</content>
-    <content name="set">un ensemble est dit inclu dans un autre ensemble B lorsque que TOUS ses éléments appartiennent aussi à B</content>
+    <content name="set">un ensemble est dit inclut dans un autre ensemble A lorsque que TOUS ses éléments appartiennent aussi à A</content>
 </new_definition>
 <new_definition name="intersection">
     <content>l'intersection de deux ensembles A et B représente un nouvel ensemble C qui contient tous les éléments étant en même temps dans A et dans B</content>

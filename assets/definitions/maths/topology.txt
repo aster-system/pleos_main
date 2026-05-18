@@ -12,6 +12,7 @@
 </new_definition>
 <new_definition name="topological_filter">
     <content>un filtre topologique sur un ensemble "E" est un ensemble de parties de "E" (qui ne contient d'ailleurs pas l'ensemble vide) tel que toute intersection d'éléments de ce filtre donne un nouvel élément de ce filtre et que, si un élément appartient à ce filtre, et qu'une partie de "E" inclut cet élément, alors cette nouvelle partie de "E" appartient au filtre</content>
+    <content name="base">une base d'un filtre topologique sur un ensemble "E" est un ensemble de parties de "E" tel que toutes les parties qui incluent un élément de la base représente un filtre</content>
     <content name="principal">un filtre principal sur un ensemble "E" engendré par une partie "A" de "E" est un filtre sur "E" représentant tous les éléments qui inclus "A"</content>
 </new_definition>
 <new_definition name="topological_neighbourhood">
@@ -58,7 +59,8 @@
     <content>deux éléments topologiques distincts sont dit indiscernables si tous les voisinages de l'un contient l'autre, et vice-versa</content>
 </new_definition>
 <new_definition name="topological_limit">
-    <content>une application entre deux parties d'espaces topologiques "E" et "F" admet une limite "l" en un point adhérent "a" de "E" si, pour tout voisinage "V" de "l", il existe un voisinage "W" de "a" tel que "f(W)" soit inclu dans "V"</content>
+    <content>une application entre deux parties d'espaces topologiques "E" et "F" admet une limite "l" en un point adhérent "a" de "E" si, pour tout voisinage "V" de "l", il existe un voisinage "W" de "a" tel que "f(W)" soit inclut dans "V"</content>
+    <content name="sequence">une suite allant dans une partie d'un espace topologique "E" admet une limite "l" si, pour tout voisinage "V" de "l", il existe un rang "n" à partir du quel toutes les valeurs de la suite appartiennent à "V"</content>
 </new_definition>
 <new_definition name="topology_separation_axiom">
     <content>un axiome de séparation est, en topologie, une propriété possible de certains ensembles topologiques, concernant la façon dont les voisinages de ces ensembles se comportent entre eux</content>

@@ -143,11 +143,20 @@ C'est la même chose pour l'union.
 </p>
 <math><mforall> x, y <min> <mi>F</mi><msub>A</msub>, A <mincluded> x <munion> y <mimp> x <munion> y <min> F</math>
 <p>
+Intuitivement parlant, <span class="important">un filtre principal d'une partie "A" sur un ensemble "E" représente l'ensemble des parties de "E" qui incluent "A"</span>.
+Par exemple, prenons une partie verte, et dessinons quelques éléments de son filtre principal en rouge :
+</p>
+<graphic><background_color white><circle x=0 y=0 radius=4 color=(255,0,0,80)><circle x=0 y=1/2 radius=3 color=(255,0,0,80)><circle x=1/3 y=0 radius=2 color=(255,0,0,80)><circle x=0 y=0 radius=1/2 color=(0,255,0)></graphic>
+<p>
 Cependant, le filtre qui va le plus nous intéresser est un filtre utilisant les voisinages.
 En effet, pour un point d'un espace topologique "x", <span class="important">l'ensemble des voisinages de "x" forme un filtre de l'espace</span>.
 Déjà, l'ensemble vide ne contient pas d'ouvert contenant "x", il est donc hors de cet ensemble.
 De plus, l'intersection de tous les éléments de ce filtre forme un voisinage de "x", qui fait donc partie du filtre.
 Finalement, l'union de tous les éléments de ce filtre forme un voisinage de "x", qui fait donc partie du filtre.
+</p>
+<p>
+Un des concepts les plus importants avec les filtres est le concept de base de filtre.
+<span class="important"><definition name="topological_filter-base"></span>.
 </p>
 
 <h3>Les propriétés topologiques de base</h3>
@@ -243,35 +252,61 @@ Généralement, les espaces de ce genre sont appelés par leur nom "espace sépa
 <math><mforall> x, y <min> E, <mexists> V <min> V(x), <mexists> W <min> V(y), V <minter> W = <memptyset></math>
 <p>
 Dans ce genre d'espace, on trouve une propriété très intéressante : <span class="important">tout compact d'un espace séparé est fermé</span>.
-La démonstration est un bon moyen de se rappeler de comment fonctionne le concept de compacité.
-L'idée de la démonstration est de prouver que, si une partie "F" d'un espace topologique "E" est compacte, alors son complémentaire est ouvert (et donc qu'il est fermé).
-Commençons par prendre un point quelconque de "E \ F".
-</p>
-<math>x <min> E \ F</math>
-<p>
-Comme on est dans un espace séparé, pour tout point "y" de "F", il existe un ouvert de "x" et un ouvert de "y" disjoints entre eux.
-Nommons les respectivement "U de y" et "V de y".
-</p>
-<math><mforall> y <min> F, <mexists> <mi>U</mi><msub>y</msub>, <mi>V</mi><msub>y</msub> <min> E, x <min> <mi>U</mi><msub>y</msub> <mand> y <min> <mi>V</mi><msub>y</msub></math>
-<p>
-Comme "F" est compact, pour tout recouvrement de "F", il existe un sous-recouvrement fini de "F".
-Donc, nous pouvons prendre un nombre fini de "y" pour recouvrir tout "F" avec les ouverts "V de y".
-</p>
-<math><mexists> n <min> N, <mexists> (<mi>a</mi><msub>1</msub>, <mi>a</mi><msub>2</msub>, ..., <mi>a</mi><msub>n</msub>) <min> <mi>N</mi><msup>n</msup>, F = <munion unknown=k to=n><mi>V</mi><msub><mrow><mi>a</mi><msub>k</msub></mrow></msub></math>
-<p>
-Nous avons aussi un nombre fini d'ouverts "U de y", qui contiennent tous "x".
-Si nous les intersectons tous, nous obtenons un nouvel ouvert "W" (qui est bel et bien un ouvert, puisque le nombre d'intersections est fini), qui contient "x" aussi.
-Or, l'intersection de cet ouvert et de "F" est vide.
-</p>
-<math>F <minter> W = <mempty></math>
-<p>
-Nous pouvons re-faire ce schéma avec tous les "x" qui existent.
-Si nous faisons l'union de tous ces "W" qui contiennent "x", nous obtenons un ouvert qui inclut tous les éléments de "E \ F".
-Or, comme tous les "W" sont disjoints de "F", cet ensemble l'est aussi : il s'agit donc de "E \ F".
-Donc, <span class="important">pour tout espace séparé "E" avec une partie "F" compacte, "E \ F" est ouvert, donc "F" est fermé</span>.
+La démonstration est un bon moyen de se rappeler de comment fonctionne le concept de compacité (et présente <a href="demo#3_2_1_2">juste ici</a>).
 </p>
 
-<h3>La topologie des nombres réels</h3>
+<h3>Les espaces métriques</h3>
+<p>
+Un type d'espace très utilisé en topologie est l'espace métrique.
+<span class="important"><definition name="metric_space"></span>.
+L'ensemble peut être quoi que ce soit, tant que cette fameuse "distance" existe.
+</p>
+<p>
+La difficulté ici consiste à définir cette fameuse "distance".
+Déjà, <span class="important">une distance représente une opération entre deux éléments "a" et "b", et qui s'interprète comme une valeur, nommée "distance" entre "a" et "b", et qui est un nombre réel positif</span>.
+En général, la définition intuitive d'une distance représente un moyen de calculer quelle valeur est nécessaire pour passer d'une valeur à une autre.
+Cependant, au sens mathématique, cette application doit respecter quelques autres propriétés précises.
+En effet, en mathématiques, <span class="important"><definition name="metric_space-distance"></span>.
+Pour rappel, puisque la distance est une application "symétrique", alors pour une distance "d" entre deux éléments "a" et "b", l'ordre de "a" et "b" n'importe pas via l'utilisation à "d" :
+</p>
+<math><mforall>a, b <min> E, d(a, b) = d(b, a)</math>
+<p>
+D'un point de vue logique, c'est assez logique : la distance entre Paris et Lyon est la même que la distance... entre Lyon et Paris (bien évidemment, si vous utilisez la même application).
+De plus, <span class="important">puisque l'application est séparée, dire que deux éléments "a" et "b" sont a une distance de "0" équivaut à dire que "a = b"</span>.
+Bien que cela soit assez évident, c'est une condition nécessaire pour avoir une distance.
+</p>
+<math><mforall>a, b <min> E, d(a, b) = 0 <mequi> a = b</math>
+<p>
+Finalement, il y a l'inégalité triangulaire.
+En effet, <span class="important">l'inégalité triangulaire consiste à dire que pour trois éléments quelconques "a", "b" et "c", la distance entre "a" et "c" est forcément inférieure ou égale à celle de "a" et "b" plus celle de "b" et "c"</span>.
+D'un point de vue intuitif, <span class="important">cela consiste à dire que passer de "a" à "c" directement est plus rapide que de passer par un autre point "b" au milieu</span>.
+</p>
+<math><mforall>a, b, c <min> E, d(a, c) <mlt> d(a, b) + d(b, c)</math>
+<p>
+Un exemple très simple est l'ensemble des réels munit de la valeur absolue de la soustraction.
+En effet, d'un point de vue intuitif, <span class="important">la soustraction dans "R" représente le nombre de valeurs entre deux nombres, dont on prend la valeur absolue pour le rendre positif : il s'agit intuitivement d'un espace métrique fonctionnel</span>.
+Mathématiquement, il faut le démontrer avec les propriétés vues plus haut, ce qui n'est pas si compliqué (<a href="demo">démontré ici</a>).
+Par extension, cette distance permet aussi de faire un espace métrique sur "Q", "Z" et "N".
+Or, quelque soit un nombre "a" dans "R" et "Q", comme ces ensembles sont denses, pour tout élément "b" (tous, sans exceptions), alors il existera toujours un élément plus proche de "a" que "b".
+En d'autres termes, <span class="important">il n'existe pas "d'objet le plus proche" d'un élément quelconque de "R" et "Q" qui n'est pas lui même</span>.
+Cependant, "N" et "Z" ne sont pas denses, et la valeur minimale au dessus de 0 est 1 : <span class="important">tout objet dans "N" et "Z" (appart 0 dans "N", qui n'en possède qu'une) possède deux objets les plus proches (qui ne sont pas eux mêmes), à une distance de "1" unité</span>.
+</p>
+<p>
+Avec cela, nous pouvons définir deux termes très pratiques, et très utiles avec les espaces métriques : les boules et les sphères.
+Ici, <span class="important"><definition name="ball"></span>.
+On peut dire que la boule est ouverte (si les points sont à distance strictement inférieure) ou fermée (si les points sont à distance inférieure ou égale).
+Remarquez quelque chose : cette définition représente l'idée intuitive que nous avons tous d'une boule, dans le cas d'un espace 3D.
+En mathématiques, cette définition marche pour tous les espaces métriques.
+Par exemple, dans l'espace métrique usuel de "R", une boule représente un intervalle ouvert, et dans "R2", une boule représente un disque privé de sa frontière.
+La sphère est assez similaire : <span class="important"><definition name="sphere"></span>.
+</p>
+<graphic><background_color white><circle x=-3/2 y=0 border_radius=0 color=blue radius=2><circle x=3/2 y=0 border_radius=0 color=blue radius=2></graphic>
+<p>
+Ici, on peut se demander pourquoi avoir introduit ce concept à ce moment précis.
+En fait, <span class="important">tout espace métrique induit une topologie sur l'ensemble qu'il représente, engendré par l'ensemble des boules de l'espace</span>.
+</p>
+
+<h3>La topologie usuelle des nombres réels</h3>
 <p>
 Comme les nombres réels représentent un ensemble, il est donc possible d'en obtenir un espace topologique très pratique.
 En effet, <span class="important">il est possible de définir une topologique sur l'ensemble des réels, qui est probablement la topologique la plus utile des mathématiques</span>.
@@ -292,14 +327,27 @@ En fait, <span class="important">cette topologie contient tous les ouverts de "R
 <h3>La limite topologique</h3>
 <p>
 En vrai, quasiment tous les concepts d'analyse peuvent êtres généralisés dans des espaces topologiques.
-C'est ce que nous allons faire des maintenant.
+C'est ce que nous allons faire dés maintenant.
 </p>
 <p>
 Commençons par le concept primaire de l'analyse : la limite topologique.
 Grâce à toutes les définitions vues jusqu'ici, ce ne sera pas si difficile à définir.
-<span class="important"><definition name="topological_limit"></span>.
+Commençons par la définition avec une suite.
+<span class="important"><definition name="topological_limit-sequence"></span>.
 L'idée ici est assez simple, et très proche de l'analyse.
-En fait, <span class="important">la fonction admet une limite "l" en "a" si l'on peut se rapprocher autant qu'on veut de "l" (se rapprocher via un voisinage) en faisant se rapprocher le paramètre de la fonction de "a" (toujours via un voisinage)</span>.
+En fait, <span class="important">la suite admet une limite "l" si l'on peut se rapprocher autant que l'on veut de "l" (se rapprocher via un voisinage) en avançant dans la suite</span>.
+</p>
+<math>s : N <mto> E, n <mto> s(n)</math></br>
+<math><mforall> V <min> V(l), <mexists> n <min> N, <mforall> m <mgt> n, f(m) <min> V</math>
+<p>
+Si une suite admet une limite, elle est dite convergente.
+Sinon, elle est dite divergente.
+</p>
+<p>
+On peut aussi définir une version de la limite utilisant une fonction allant d'un espace topologique vers un autre.
+En effet, <span class="important"><definition name="topological_limit"></span>.
+En fait, <span class="important">la fonction admet une limite "l" en "a" si l'on peut se rapprocher autant que l'on veut de "l" (se rapprocher via un voisinage) en faisant se rapprocher le paramètre de la fonction de "a" (toujours via un voisinage)</span>.
+Comme pour l'analyse réelle, cette définition avec les fonctions est une extension de la définition avec les suites standards, où "a" représente l'infini (que nous devons donc adjoindre à l'espace topologique du départ de la suite).
 Avec cette définition bien plus générale, on peut donc utiliser le concept de limite de manière bien plus étendue.
 D'un point de vue purement mathématique, on écrit (et on lit "pour tous voisinage "V" de "l", il existe un voisinage "W" de "a" tel que toutes valeurs de "W" (n'étant pas forcément "a") appartienent à "V"") :
 </p>

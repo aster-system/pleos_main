@@ -63,45 +63,6 @@ C'est pour ça que, en 1902, une nouvelle définition est proposée, par <scient
 
 
 
-<h2>Les outils d'analyse mathématique</h2>
-
-<h3>Les espaces métriques</h3>
-<p>
-Un outil permettant d'étendre l'analyse en mathématiques est l'espace métrique.
-<span class="important"><definition name="metric_space"></span>.
-L'ensemble peut être quoi que ce soit, tant que cette fameuse "distance" existe.
-</p>
-<p>
-La difficulté ici consiste à définir cette fameuse "distance".
-Déjà, <span class="important">une distance représente une opération entre deux éléments "a" et "b", et qui s'interprète comme une valeur, nommée "distance" entre "a" et "b", et qui est un nombre réel positif</span>.
-En général, la définition intuitive d'une distance représente un moyen de calculer quelle valeur est nécessaire pour passer d'une valeur à une autre.
-Cependant, au sens mathématique, cette application doit respecter quelques autres propriétés précises.
-En effet, en mathématiques, <span class="important"><definition name="metric_space-distance"></span>.
-Pour rappel, puisque la distance est une application "symétrique", alors pour une distance "d" entre deux éléments "a" et "b", l'ordre de "a" et "b" n'importe pas via l'utilisation à "d" :
-</p>
-<math><mforall>a, b <min> E, d(a, b) = d(b, a)</math>
-<p>
-D'un point de vue logique, c'est assez logique : la distance entre Paris et Lyon est la même que la distance... entre Lyon et Paris (bien évidemment, si vous utilisez la même application).
-De plus, <span class="important">puisque l'application est séparée, dire que deux éléments "a" et "b" sont a une distance de "0" équivaut à dire que "a = b"</span>.
-Bien que cela soit assez évident, c'est une condition nécessaire pour avoir une distance.
-</p>
-<math><mforall>a, b <min> E, d(a, b) = 0 <mequi> a = b</math>
-<p>
-Finalement, il y a l'inégalité triangulaire.
-En effet, <span class="important">l'inégalité triangulaire consiste à dire que pour trois éléments quelconques "a", "b" et "c", la distance entre "a" et "c" est forcément inférieure ou égale à celle de "a" et "b" plus celle de "b" et "c"</span>.
-D'un point de vue intuitif, <span class="important">cela consiste à dire que passer de "a" à "c" directement est plus rapide que de passer par un autre point "b" au milieu</span>.
-</p>
-<math><mforall>a, b, c <min> E, d(a, c) <mlt> d(a, b) + d(b, c)</math>
-<p>
-Un exemple très simple est l'ensemble des réels munit de la valeur absolue de la soustraction.
-En effet, d'un point de vue intuitif, <span class="important">la soustraction dans "R" représente le nombre de valeurs entre deux nombres, dont on prend la valeur absolue pour le rendre positif : il s'agit intuitivement d'un espace métrique fonctionnel</span>.
-Mathématiquement, il faut le démontrer avec les propriétés vues plus haut, ce qui n'est pas si compliqué (<a href="demo">démontré ici</a>).
-Par extension, cette distance permet aussi de faire un espace métrique sur "Q", "Z" et "N".
-Or, quelque soit un nombre "a" dans "R" et "Q", comme ces ensembles sont denses, pour tout élément "b" (tous, sans exceptions), alors il existera toujours un élément plus proche de "a" que "b".
-En d'autres termes, <span class="important">il n'existe pas "d'objet le plus proche" d'un élément quelconque de "R" et "Q" qui n'est pas lui même</span>.
-Cependant, "N" et "Z" ne sont pas denses, et la valeur minimale au dessus de 0 est 1 : <span class="important">tout objet dans "N" et "Z" (appart 0 dans "N", qui n'en possède qu'une) possède deux objets les plus proches (qui ne sont pas eux mêmes), à une distance de "1" unité</span>.
-</p>
-
 
 
 <h2>Les limites</h2>
@@ -464,11 +425,6 @@ Cela implique que des fonctions peuvent être continues sur tout leur ensemble d
 La définition rigoureuse est assez similaire.
 </p>
 <math><mforall> a <min> I, (<mforall> x <mgt> 0, <mexists> b <min> R, {<mforall> c <min> R, c <min> ]a - b; a + b[ <mimp> |f(c) - f(a)| <mlt> x})</math>
-<p>
-<span class="important">Cette notion est généralisable dans une fonction allant d'un espace métrique "(E, d)" à un autre espace métrique "(F, d')"</span>.
-Dans le cas où l'on teste la continuité en une valeur "a", la seule chose qui change est la façon dont on note la distance "a - c" et "f(c) - f(a)" : on utilise la distance de l'espace métrique.
-</p>
-<math><mforall> x <mgt> 0, <mexists> b <min> E, {<mforall> c <min> R, d(c, a) <mlt> b <mimp> d'(f(c), f(a)) <mlt> x}</math>
 <p>
 Un exemple très basique des fonctions continues sont les fonctions de la forme "a * x^b" avec "a" un réel quelconque et "b" un nombre entier naturel.
 <span class="important">Cette fonction est continue sur tout son domaine de définition, et donc sur tout "R"</span>.

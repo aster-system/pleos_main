@@ -999,3 +999,33 @@ Or, comme cet ouvert est un voisinage de "x", qui est un point limite de "A", il
 Nous pouvons répéter la même chose avec cet autre élément, puis celui qui en résultera, à l'infini.
 Donc, dans tout espace "T-1", un point limite est un point d'accumulation.
 </p>
+
+<h4>3.2.1.2</h4>
+<p>
+Démontrons que, dans un espace séparé, tout espace compact est aussi fermé.
+L'idée de la démonstration est de prouver que, si une partie "F" d'un espace topologique "E" est compacte, alors son complémentaire est ouvert (et donc qu'il est fermé).
+Commençons par prendre un point quelconque de "E \ F".
+</p>
+<math>x <min> E \ F</math>
+<p>
+Comme on est dans un espace séparé, pour tout point "y" de "F", il existe un ouvert de "x" et un ouvert de "y" disjoints entre eux.
+Nommons les respectivement "U de y" et "V de y".
+</p>
+<math><mforall> y <min> F, <mexists> <mi>U</mi><msub>y</msub>, <mi>V</mi><msub>y</msub> <min> E, x <min> <mi>U</mi><msub>y</msub> <mand> y <min> <mi>V</mi><msub>y</msub></math>
+<p>
+Comme "F" est compact, pour tout recouvrement de "F", il existe un sous-recouvrement fini de "F".
+Donc, nous pouvons prendre un nombre fini de "y" pour recouvrir tout "F" avec les ouverts "V de y".
+</p>
+<math><mexists> n <min> N, <mexists> (<mi>a</mi><msub>1</msub>, <mi>a</mi><msub>2</msub>, ..., <mi>a</mi><msub>n</msub>) <min> <mi>N</mi><msup>n</msup>, F = <munion unknown=k to=n><mi>V</mi><msub><mrow><mi>a</mi><msub>k</msub></mrow></msub></math>
+<p>
+Nous avons aussi un nombre fini d'ouverts "U de y", qui contiennent tous "x".
+Si nous les intersectons tous, nous obtenons un nouvel ouvert "W" (qui est bel et bien un ouvert, puisque le nombre d'intersections est fini), qui contient "x" aussi.
+Or, l'intersection de cet ouvert et de "F" est vide.
+</p>
+<math>F <minter> W = <mempty></math>
+<p>
+Nous pouvons re-faire ce schéma avec tous les "x" qui existent.
+Si nous faisons l'union de tous ces "W" qui contiennent "x", nous obtenons un ouvert qui inclut tous les éléments de "E \ F".
+Or, comme tous les "W" sont disjoints de "F", cet ensemble l'est aussi : il s'agit donc de "E \ F".
+Donc, <span class="important">pour tout espace séparé "E" avec une partie "F" compacte, "E \ F" est ouvert, donc "F" est fermé</span>.
+</p>

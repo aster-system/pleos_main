@@ -52,7 +52,9 @@
 
 <new_definition name="metric_space">
     <content>un espace métrique est un couple représentant un ensemble quelconque, et une opération binaire sur cet ensemble pouvant s'interpréter comme la distance entre deux éléments quelconques de l'ensemble</content>
+    <content name="ball">une boule représente une partie d'un espace métrique, constituée de tous les points situés à une distance inférieure d'un nombre réel précis (nommé rayon de la boule) d'un point de l'espace (nommé centre de la boule)</content>
     <content name="distance">une distance est une loi définie sur un ensemble "E", allant de E X E vers R+, où la loi est symétrique, séparée et respecte l'inégalité triangulaire</content>
+    <content name="sphere">une sphère représente une partie d'un espace métrique, constituée de tous les points situés à une distance représentant un nombre réel précis (nommé rayon de la sphère) d'un point de l'espace (nommé centre de la sphère)</content>
 </new_definition>
 <new_definition name="metric_space_completude">
     <content>un espace métrique est dit complet si, pour toutes les valeurs possibles dans l'ensemble de l'espace, il est possible de s'approcher aussi près que l'on veut de cet ensemble (en réduisant petiit à petit la distance entre une valeur plus simple et la valeur que l'on veut approcher)</content>

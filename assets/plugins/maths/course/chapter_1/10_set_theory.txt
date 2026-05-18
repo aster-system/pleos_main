@@ -43,18 +43,36 @@ Voici quelques exemples de définitions par extension :
 <math><mi>B</mi><mequal><mo>{</mo><mi>72</mi><mo>}</mo></math></br>
 <math><mi>C</mi><mequal><mo>{</mo><mi>0</mi><mo>,</mo><mi>1</mi><mo>,</mo><mi>2</mi><mo>,</mo><mi>3</mi><mo>,</mo><mi>4</mi><mo>,</mo><mi>5</mi><mo>,</mo><mi>6</mi><mo>,</mo><mi>7</mi><mo>,</mo><mi>8</mi><mo>}</mo></math>
 <p>
+D'ailleurs, <span class="important">l'ordre des éléments entre accolades ne modifie pas l'ensemble donné</span>.
+De plus, <span class="important">si plusieurs éléments apparaissent dans la définition, alors c'est exactement comme si il n'y était qu'une seule fois</span>.
+En effet, la seule donnée importante pour définir un ensemble représente les éléments qu'il contient, pas l'ordre d'apparition des éléments ou le nombre de fois qu'il apparaît.
+Il existe une autre façon de définir des ensembles où l'ordre importe, mais nous les étudierons plus bas.
+</p>
+<math>D = {1, 2} = {2, 1} = {2, 2, 1, 1, 2, 1, 1}</math>
+<p>
+Cependant, il existe un type d'ensemble un peu particulier : l'ensemble vide.
+<span class="important"><definition name="set_theory-empty_set"></span>.
+Bien qu'il puisse paraître inutile, il nous servira pour certaines démonstrations que nous verrons plus tard.
+Il se note généralement avec un "0" barré, ou avec des accolades vides.
+</p>
+<math><mempty_set> = {}</math>
+<p>
 Il existe un symbole précis pour indiquer qu'un objet "a" appartient à un ensemble quelconque "E" :
 </p>
 <math><mi>E</mi><mequal><mo>{</mo><mi>"France"</mi><mo>,</mo><mi>"Allemagne"</mi><mo>,</mo><mi>"Italie"</mi><mo>,</mo><mi>"Angleterre"</mi><mo>}</mo></math></br>
 <math>a = "Italie"</math></br>
 <math><mi>a</mi><min><mi>E</mi></math>
 <p>
-D'ailleurs, <span class="important">"l'objet "a" appartient à l'ensemble "E"" est une proposition</span>, dont la véricaté dépend de... beaucoup de choses (généralement dépendant du contexte précis de "a" ou "E").
+D'ailleurs, <span class="important">"l'objet "a" appartient à l'ensemble "E"" est une proposition</span>, dont la véracité dépend de... beaucoup de choses (généralement dépendant du contexte précis de "a" ou "E").
 Dans le cas des ensembles définis par extension, la proposition est vraie si l'élément indiqué est énoncé dans la définition de l'ensemble.
 On peut donc utiliser ce symbole dans une proposition fausse, si l'élément n'appartient pas à l'ensemble.
 </p>
 <math>b = "Espagne"</math></br>
 <math><mno>(<mi>b</mi><min><mi>E</mi>)</math>
+<p>
+On peut même y mêler l'ensemble vide :
+</p>
+<math><mforall> x, <mno>(x <min> <mempty_set>)</math>
 <p>
 Ce symbole permet de faire quelque chose de très intéressant : <span class="important">on peut utiliser ce symbole dans un quantificateur logique, pour spécifier que l'objet que l'on quantifie appartient à un certain ensemble</span>.
 Nous pouvons donc répondre à la question de tout à l'heure "comment spécifier que notre proposition "pour tout n, P(n)" ne fonctionne qu'avec des nombres" : on a juste à rajouter ce symbole (on admet pour l'instant que "N" est l'ensemble des nombres entiers naturels) :
@@ -69,31 +87,59 @@ Par exemple, prenons un ensemble "E", et essayons d'en extraire tous les nombres
 <p>
 Ici, nous pouvons procéder par extension : l'ensemble des éléments de "E" supérieurs à "100" est "{500, 5000}".
 Cependant, si vous voulez faire de même dans un autre ensemble "F", sans n'avoir aucune info sur lui (appart qu'il ne contient que des nombres), vous êtes embêtés.
-Ici, <span class="important">la définition par compréhension va permettre de définir votre ensemble comme tous les éléments de "F" respectant une propriété spécifique, ici "est supérieur à 100"</span>.
-Pour la notation, nous allons définir notre propriété sous la forme d'un prédicat, et dire que si ce prédicat est respecté pour un élément de "F", alors cela équivaut à dire qu'il fait partie de "G".
+Ici, <span class="important">la définition par compréhension va permettre de définir votre ensemble comme tous les éléments de "F" respectant une propriété spécifique (sous la forme d'un prédicat), ici "est supérieur à 100"</span>.
+Pour la notation, nous allons noter l'ensemble auquel appartiennent les éléments de "G", et noter ensuite la propriété que les éléments de "F" doivent respecter pour aussi être dans "G", tout ça entre accolades.
 </p>
 <math>P(n) = "n est supérieur à 100"</math></br>
-<math><mforall> x <min> F, (x <min> G <mequi> x > 100)</math></br>
+<math>G = {x <min> F | P(x)}</math></br>
 <p>
-Puisque l'on parle d'ensembles, parlons d'un terme extrêment similaire : un sous-ensemble.
+Cependant, il est aussi possible de définir "G" comme l'ensemble de tous les objets possibles qui sont des éléments de "F" et qui respectent "P".
+</p>
+<math><mforall> x, (x <min> G <mequi> x <min> F <mand> P(x))</math></br>
+<p>
+Puisque l'on parle d'ensembles, parlons d'un terme extrêmement similaire : un sous-ensemble.
 <span class="important"><definition name="set_theory-sub_set"></span>.
 Il n'est pas exclu qu'un sous-ensemble contienne la totalité des éléments de A... comme ne contienne aucun élément (il est défini comme étant quand même un sous-ensemble de A).
+Pour un ensemble "A" et un sous-ensemble "B" de "A", on peut noter :
 </p>
+<math><mforall> x, x <min> B <mimp> x <min> A</math>
+<p>
+On peut aussi facilement l'illustrer :
+</p>
+<graphic ratio_base>
+<base draw=0 width=25 height=10>
+<background_color white>
+
+<text name=type_number() font_size_in_scale=3/2 content="A =" x=-21/2 y=1/3></text>
+<circle name=type_number() x=1 y=0 radius_x=10 radius_y=4>
+<circle name=type_number() x=2 y=0 radius_x=5 radius_y=3>
+<text name=type_number() font_size_in_scale=3/2 content="B =" x=-11/2 y=1/3></text>
+<text name=type_number() content="1" x=1/2 y=3/2></text>
+<text name=type_number() content="3" x=7/2 y=3/2></text>
+<text name=type_number() content="5" x=7 y=2></text>
+<text name=type_number() content="2" x=1/2 y=-3/2></text>
+<text name=type_number() content="4" x=7/2 y=-3/2></text>
+<text name=type_number() content="6" x=7 y=-2></text>
+
+
+</graphic>
 <p>
 Avec le concept de sous-ensemble, nous pouvons en introduire un autre : l'inclusion.
 <span class="important"><definition name="inclusion-set"></span>.
-Donc, si un ensemble A est inclu dans un autre ensemble B, alors A est un sous-ensemble de B (et vice-versa, si A est un sous-ensemble de B, alors il est inclu dans B).
+Donc, si un ensemble B est inclut dans un autre ensemble A, alors B est un sous-ensemble de A (et vice-versa, si B est un sous-ensemble de A, alors il est inclut dans A).
+Comme pour l'appartenance, <span class="important">le fait qu'un ensemble soit inclut dans un autre est une proposition, qui est soit vraie, soit fausse</span>.
+Il faut cependant faire attention à ne pas confondre les deux, ce qui peut arriver quand on a pas l'habitude.
 La notation mathématique est assez similaire à celle de l'appartenance, à la différence prêt que le "U" retourné n'est pas barré.
 Vous trouverez aussi la définition mathématique rigoureuse du concept.
-Pour une traduction mathématique - français, lisez "pour tout ensemble A et B, A est inclu ou égal à B si (et seulement si) pour tous les éléments possibles, si un élément appartient à A, alors il appartient à B".
+Pour une traduction mathématique - français, lisez "pour tout ensemble A et B, B est inclut ou égal à A si (et seulement si) pour tous les éléments possibles, si un élément appartient à B, alors il appartient à A".
 </p>
-<math><mforall><mi>A</mi><mforall><mi>B</mi><mo>,</mo><mi>A</mi><mincluded><mi>B</mi><mequi><mforall><mi>x</mi><mo>(</mo><mi>x</mi><min><mi>A</mi><mimp><mi>x</mi><min><mi>B</mi><mo>)</mo></math>
+<math><mforall><mi>A</mi><mforall><mi>B</mi><mo>,</mo><mi>B</mi><mincluded><mi>A</mi><mequi><mforall><mi>x</mi><mo>(</mo><mi>x</mi><min><mi>B</mi><mimp><mi>x</mi><min><mi>A</mi><mo>)</mo></math>
 <p>
-Cette notation autorise A à être égal à B : on pourrait parler de "inclu ou égal".
-Cependant, il existe une notation où A n'est pas égal à B, nommée "inclusion stricte", se notant avec une petite barre en dessous du "U", toujours avec la définition mathématique rigoureuse.
-Pour une traduction mathématique - français, lisez "pour tout ensemble A et B, A est strictement inclu dans B si (et seulement si) pour tous les éléments possibles, si un élément appartient à A, alors il appartient à B, et si il existe un élément dans B qui n'est pas dans A".
+Cette notation autorise B à être égal à A : on pourrait parler de "inclut ou égal".
+Cependant, il existe une notation où B n'est pas égal à A, nommée "inclusion stricte", se notant avec une petite barre en dessous du "U", toujours avec la définition mathématique rigoureuse.
+Pour une traduction mathématique - français, lisez "pour tout ensemble A et B, B est strictement inclut dans A si (et seulement si) pour tous les éléments possibles, si un élément appartient à B, alors il appartient à A, et si il existe un élément dans A qui n'est pas dans B".
 </p>
-<math><mforall><mi>A</mi><mforall><mi>B</mi><mo>,</mo><mi>A</mi><mincluded_strict><mi>B</mi><mequi><mo>[</mo><mforall><mi>x</mi><mo>(</mo><mi>x</mi><min><mi>A</mi><mimp><mi>x</mi><min><mi>B</mi><mo>)</mo><mand><mexists><mi>y</mi><min><mi>B</mi><mo>(</mo><mi>y</mi><mnotin><mi>A</mi><mo>)</mo><mo>]</mo></math>
+<math><mforall><mi>A</mi><mforall><mi>B</mi><mo>,</mo><mi>B</mi><mincluded_strict><mi>A</mi><mequi><mo>[</mo><mforall><mi>x</mi><mo>(</mo><mi>x</mi><min><mi>B</mi><mimp><mi>x</mi><min><mi>A</mi><mo>)</mo><mand><mexists><mi>y</mi><min><mi>A</mi><mo>(</mo><mi>y</mi><mnotin><mi>B</mi><mo>)</mo><mo>]</mo></math>
 <p>
 Dans la vie de tous les jours, la propriété la plus "évidente" d'un ensemble est son cardinal.
 <span class="important"><definition name="cardinal"></span>.
@@ -106,22 +152,21 @@ La définition rigoureuse (avec des symbôles mathématiques complexes et tout l
 
 <h3>L'union et l'intersection d'ensembles</h3>
 <p>
-Comme pour les propositions, <span class="important">il existe une syntaxe permettant de travailler précisément avec des ensembles, d'effectuer des opérations entre ensembles et d'en définir des nouveaux</span>.
-</p>
-<p>
-L'union et l'intersection sont des opérateurs permettant de réaliser une opération logique entre deux ensembles.
-Ils sont aussi probablement les opérateurs les plus simples avec des ensembles.
+Comme pour les propositions, <span class="important">il existe une syntaxe permettant de travailler précisément avec des ensembles, d'effectuer des opérations entre ensembles et de définir des ensembles plus complexes avec des ensembles plus simples</span>.
+Ici, l'union et l'intersection sont des opérateurs permettant de réaliser une opération logique entre deux ensembles.
+Bien entendu, ils ne sont pas les seuls, mais ils sont les plus simples et les plus importants, et c'est pour cela que nous les présentons aussi tôt.
+D'ailleurs, il faut faire attention : il existe plusieurs types d'unions et d'intersections différentes, et celle que nous présenterons dans ce qui va suivre sont les plus communes.
 </p>
 <p>
 En effet, <span class="important"><definition name="union"></span>.
-En terme mathématique (lisez "pour tout ensemble A et B, il existe un ensemble C tel que, pour tous les éléments x possibles, x est dans C équivaut à dire que x est dans A ou B (ou les deux)") :
-</p>
-<math><mforall>A<mforall>B,<mexists>C<mforall>x {x<min>C<mequi>x<min>A<mor>x<min>B}</math>
-<p>
-Les deux appellations (union et réunion) sont possibles, et désignent l'exact même chose.
+Les deux appellations (union et réunion) sont possibles, et désignent l'exacte même chose.
 En fait, "l'union" est un opérateur, ce marquant avec une sorte de grand "U" :
 </p>
 <math>A <munion> B = C</math>
+<p>
+En terme mathématique (lisez "pour tout ensemble A et B, dire que C est l'union de A et de B équivaut à dire que, pour tous les éléments x possibles, dire que x est dans C équivaut à dire que x est dans A ou B (ou les deux)") :
+</p>
+<math><mforall>A<mforall>B, C = A <munion> B <mequi> <mforall>x {x<min>C<mequi>x<min>A<mor>x<min>B}</math>
 <p>
 C'est assez simple à illustrer.
 </p>
@@ -150,20 +195,35 @@ C'est assez simple à illustrer.
 </graphic>
 
 <p>
+Il existe d'ailleurs une autre façon d'écrire des unions de manière plus générale, et souvent assez pratique.
+En effet, la façon que nous venons de voir ne permet de faire l'union de seulement deux ensembles, mais pas plus.
+On pourrait théoriquement nommé l'ensemble obtenu après cette union, et obtenir l'union de cet ensemble et d'un nouvel ensemble pour obtenir l'union de 3 ensembles (ce qui est logiquement parfaitement valie), mais cela est lourd en notation.
+Cependant, <span class="important">il existe une notation permettant d'obtenir l'union de plusieurs ensembles, contenu dans un autre ensemble</span>.
+Ici, il n'y a pas de nombre maximal d'ensembles que l'on peut unir, il peut même en avoir une infinité.
+Pour cela, nous allons noter cette union comme un très grand "U", suivi de l'ensemble contenant tous les ensembles à unir (que nous nommerons "X").
+Donc, pour qu'un élément appartienne à ce nouvel ensemble, il faut obligatoirement qu'il appartienne à un des ensembles appartenant à "X" (et la réciproque est elle aussi vraie).
+</p>
+<math>X = {A, B, C, D}</math></br>
+<math><munion>X = ((A <munion> B) <munion> C) <munion> D</math>
+<p>
+Tant que l'on y est, il faut savoir que, <span class="important">si vous voulez utiliser cette opération avec plusieurs ensembles, l'ordre de réalisation des unions et l'ordre des ensembles autour du symbole n'importent pas</span>.
+</p>
+<math>(A <munion> B) <munion> C = A <munion> (B <munion> C) = (B <munion> A) <munion> C</math>
+
+<p>
 L'intersection est un opérateur aussi simple à comprendre.
 <span class="important"><definition name="intersection"></span>.
 Il s'agit de l'union où vous remplacez le "ou" de la définition mathématique par un "et".
 Des fois, <span class="important">certains auteurs nomment l'ensemble obtenu par l'intersection de "A" et "B" se nomme la trace de "A" sur "B"</span>.
-En terme mathématique (lisez "pour tout ensemble A et B, il existe un ensemble C tel que, pour tous les éléments x possibles, x est dans C équivaut à dire que x est dans A et B") :
-</p>
-<math><mforall>A<mforall>B,<mexists>C<mforall>x {x<min>C<mequi>x<min>A<mand>x<min>B}</math>
-<p>
-Si les deux ensembles ne partagent aucun élément en commun, C vaudra l'ensemble vide.
+Si les deux ensembles ne partagent aucun élément en commun, C vaudra un ensemble qui ne contient rien : l'ensemble vide.
 Dans ce cas, <span class="important">ces deux ensembles sont dits "disjoints"</span>.
-Son existence demande un peu plus de réflexion, mais se déduit grâce à l'axiome de l'ensemble vide.
 Cet opérateur se marque avec le même symbôle que l'union à l'envers :
 </p>
 <math>A <minter> B = C</math>
+<p>
+En terme mathématique (lisez "pour tout ensemble A et B, il existe un ensemble C tel que, pour tous les éléments x possibles, x est dans C équivaut à dire que x est dans A et B") :
+</p>
+<math><mforall>A<mforall>B, C = A <minter> B <mequi> <mforall>x {x<min>C<mequi>x<min>A<mand>x<min>B}</math>
 <p>
 Il est aussi assez simple à illustrer.
 </p>
@@ -188,14 +248,93 @@ Il est aussi assez simple à illustrer.
 <text name=type_number() content="9" x=2 y=-5/2></text>
 </graphic>
 
+<p>
+Comme pour l'union, <span class="important">il existe une notation permettant d'obtenir l'intersection de plusieurs ensembles, contenu dans un autre ensemble</span>.
+Ici, il n'y a pas de nombre maximal d'ensembles que l'on peut intersecter, il peut même en avoir une infinité.
+Pour cela, nous allons noter cette intersection comme un très grand "U" inversé, suivi de l'ensemble contenant tous les ensembles à intersecter (que nous nommerons "X").
+Donc, pour qu'un élément appartienne à ce nouvel ensemble, il faut obligatoirement qu'il appartienne à tous les ensembles appartenant à "X" (et la réciproque est elle aussi vraie).
+</p>
+<math>X = {A, B, C, D}</math></br>
+<math><minter>X = ((A <minter> B) <minter> C) <minter> D</math>
+<p>
+Tant que l'on y est, il faut savoir que, <span class="important">si vous voulez utiliser cette opération avec plusieurs ensembles, l'ordre de réalisation des unions et l'ordre des ensembles autour du symbole n'importent pas</span>.
+</p>
+<math>(A <minter> B) <minter> C = A <minter> (B <minter> C) = (B <minter> A) <minter> C</math>
+
+<h3>Singletons, pairs et couples</h3>
+<p>
+Nous allons présenté quelques concepts assez simples, et très utilisés, qui nous permettrons de mieux appréhender comment "définir" des objets en théorie des ensembles.
+<span class="important"><definition name="singleton"></span>.
+En général, ces ensembles sont presque toujours exprimé en extension (comme le singletion {5}).
+Un concept assez similaire est la paire.
+<span class="important"><definition name="pair"></span>.
+</p>
+<p>
+Comme nous l'avons vu, dans un ensemble, l'ordre n'importe pas, voir n'existe pas : c'est donc le cas pour la paire.
+Cependant, il est possible de donner un ordre aux éléments d'une paire, grâce à un autre objet similaire : le couple.
+<span class="important"><definition name="pair-ordered"></span>.
+Il s'agit toujours d'un ensemble, mais défini de manière un peu différente, pour donner un ordre aux éléments.
+Jetons un petit coup d'oeil à ce qui différencie une paire d'un couple dans leur définition.
+Une paire peut simplement être écrit comme ça :
+</p>
+<math>A = {1, 2} = {2, 1}</math>
+<p>
+Ici, l'ordre n'a pas d'importance.
+Donc, nous allons devoir trouver un moyen permettant d'écrire et de définir des couples, pour rendre l'ordre important.
+Déjà, <span class="important">notons que l'écriture d'un couple se fait en remplaçant les accolades par des parenthèses</span>.
+En suite, définissons le concept de couple.
+Or, pour qu'une théorie mathématique soit la plus cohérente possible, il est fortement conseillé d'utiliser le moins d'objets exotiques possibles.
+Donc, nous allons définir un couple comme un ensemble parfaitement valide, mais légèrement plus complexe qu'une simple ensemble.
+Ici, <span class="important">nous allons utiliser la définition proposée par le mathématicien polonais <scientist name="kuratowski" type="quote"></span>.
+Dans cette proposition, un couple "C" formé d'un élément "x" puis d'un élément "y" se note :
+</p>
+<math>C = (x, y) = {{x}, {x, y}} = {{x, y}, {x}}</math>
+<p>
+Dans ce cas, <span class="important">le couple devient un ensemble contenant deux éléments : un singleton contenant le premier élément, et une paire contenant les deux éléments</span>.
+On peut donc distinguer le premier élément de l'autre, en regardant quel élément de cet l'ensemble est un singleton, et lequel ne l'est pas.
+Dans ce cas, ici, noter le singleton en premier ou en deuxième dans la définition de l'ensemble entier ne change rien à l'ordre que représente le couple.
+On peut écrire le couple opposé, est constater (grâce à l'axiome d'extension) qu'il n'est pas égal au couple de départ (le singleton du "premier élément" n'est pas le même) :
+</p>
+<math>C = (y, x) = {{y}, {x, y}} = {{x, y}, {y}} <mnotequal> (x, y) = {{x, y}, {x}} = {{x}, {x, y}}</math>
+<p>
+Finalement, généralisons cet objet, avec les uplets.
+<span class="important"><definition name="set-ordered"></span>.
+Cet objet peut avoir pas mal d'autres noms (multiplet, liste, famille finie, suite finie...), mais "uplet" est le plus utilisé.
+Généralement, pour un uplet de taille "n", on parle de n-uplet (un couple est un 2-uplet, on peut définir des 5-uplets...).
+Ici, la définition utilise des couples, qui utilisent eux mêmes des ensembles (ce qui permet de ne pas avoir à définir de nouveaux objets exotiques).
+En effet, <span class="important">pour faire un "n + 1"-uplet, on fait un couple contenant (en premier élément) un n-uplet, puis le prochain élément du "n + 1"-uplet</span>.
+Comme on a déjà des 2-uplets, on peut facilement définir les 3-uplets, 4-uplets...
+</p>
+<math>D = (x, y, z) = ((x, y), z)</math></br>
+<math>E = (w, x, y, z) = ((w, x, y), z) = (((w, x), y), z)</math>
+<p>
+Dans un n-uplet, on peut accéder à un élément précis en utilisant une notation précise.
+En effet, <span class="important">l'élément "p" d'un n-uplet se note généralement avec le nom du n-uplet, où l'on met "p" en indice (ici, mettre en indice signifie écrire en petit, en bas à gauche du nom du n-uplet)</span>.
+Ici, "p" est un nombre entier naturel, entre "1" et "n" (inclus).
+Il existe cependant d'autres types d'objets qui utilise d'autre ensemble comme "indice", mais nous ne les traiterons pas dans cette partie du cours.
+Cela nous permet donc d'accéder à un élément précis facilement.
+</p>
+<math>a = (4, 8, 12, 16), <mi>a</mi><msub>2</msub> = 8, <mi>a</mi><msub>4</msub> = 16</math>
+<p>
+Il est d'ailleurs possible d'utiliser les notations que nous avons vue (avec les gros union et intersection) avec des couples, mais cela est un peu plus compliqué, car un couple n'est pas directement un ensemble qui contient ses éléments, mais plutôt un complexe ensemble défini via d'autres couples / ensembles.
+Pour lever l'ambiguïté, <span class="important">il est possible de dire que nous voulons unir seulement les objets du n-uplet en utilisant la notation avec indice</span>.
+Pour cela, nous allons utiliser une variable représentant un nombre entier naturel (en dessous du grand union / intersection), et ne plus noter seulement "X" à droite, mais "X" indice la variable noté sous le symbole.
+D'ailleurs, vous pouvez aussi prendre un sous-ensemble de l'ensemble des indices possibles, pour n'utiliser que certaines éléments du n-uplet.
+</p>
+<math>X = (A, B, C, D), I = {1, 2, 3, 4}</math></br>
+<math><munder><mi><munion></mi><mi>i <min> I</mi></munder><mi>X</mi><msub>i</msub> = ((A <munion> B) <munion> C) <munion> D</math></br>
+<math><munder><mi><minter></mi><mi>i <min> I</mi></munder><mi>X</mi><msub>i</msub> = ((A <minter> B) <minter> C) <minter> D</math>
+
+
+
 <h3>La théorie des ensembles "ZFC"</h3>
 <p>
 La première version de la théorie proposée par Cantor n'était pas très bien axiomatisée.
 Une version plus solide apparaîtra entre les années 1908 et 1920 : la théorie des ensembles "ZFC".
 <span class="important"><definition name="set_theory-zfc"></span>.
-Comme son nom l'indique, elle a été développée par 2 mathématiciens majoritairement : <scientist name="zemerlo" type="quote"> et <scientist name="fraenkel" type="quote">.
+Comme son nom l'indique, elle a été développée par 2 mathématiciens majoritairement : <scientist name="zermelo" type="quote"> et <scientist name="fraenkel" type="quote">.
 Le suffixe "choix" représente un axiome précis, que l'on peut ignorer (dans ce cas, on parle de théorie des ensembles "ZF").
-Présentons les premiers axiomes de cette théorie, proposés par Zemerlo entre 1889 et 1908.
+Présentons les premiers axiomes de cette théorie, proposés par Zermelo entre 1889 et 1908.
 </p>
 <p>
 Le premier axiome est l'axiome d'extensionnalité.
@@ -457,7 +596,7 @@ Pour une traduction mathématique - français de la version complète (la second
 <math><mforall><mi>v</mi><msub>0</msub><mo>...</mo><mforall><mi>v</mi><msub>n</msub><mforall><mi>A</mi><mexists><mi>B</mi><mforall><mi>x</mi><mo>[</mo><mi>x</mi><min><mi>B</mi><mequi><mo>(</mo><mi>x</mi><min><mi>A</mi><mand><mi>P(x, v0, ..., vn)</mi><mo>)</mo><mo>]</mo></math>
 
 <p>
-Sur cet axiome s'achève notre présentation des axiomes proposés par Zemerlo en première instance.
+Sur cet axiome s'achève notre présentation des axiomes proposés par Zermelo en première instance.
 Cependant, <span class="important">cette théorie est insuffisante, et admet une quantité monstrueuse de paradoxes (paradoxes de Russell, paradoxe de Richard, paradoxe de Berry...)</span>.
 Historiquement, le plus connue est celui de Russell.
 En effet, <span class="important"><definition name="russell_paradox"></span>.
@@ -553,42 +692,7 @@ Pour une traduction mathématique - français, lisez "pour tout ensemble X non v
 </p>
 <math><mforall>X[X<mnotequal><mempty_set><mimp><mexists>f:X<mto><munion>X<mforall>A<min>X(f(A)<min>A)]</math>
 
-<h3>Singletons, pairs et couples</h3>
-<p>
-Nous allons présenté quelques mots de vocabulaire assez simple, mais très utilisé.
-<span class="important"><definition name="singleton"></span>.
-En général, ces ensembles sont presque toujours exprimé en extension (comme le singletion {5}).
-On peut assez facilement prouver que, pour tout élément possible, il existe (obligatoirement) un singleton contenant cet élément : utilisez l'axiome de la paire sur cet élément et l'ensemble vide, puis l'axiome de la réunion sur l'ensemble obtenu, et vous obtenez le singleton voulu.
-Un concept assez similaire est la paire.
-<span class="important"><definition name="pair"></span>.
-Dans la théorie ZFC, son existence est garantie par l'axiome de la paire, présenté plus haut.
-</p>
-<p>
-Comme nous l'avons vu, dans un ensemble, l'ordre n'importe pas, voir n'existe pas : c'est donc le cas pour la paire.
-Cependant, il est possible de donner un ordre aux éléments d'une paire, grâce à un autre objet similaire : le couple.
-<span class="important"><definition name="pair-ordered"></span>.
-Il s'agit toujours d'un ensemble, mais défini de manière un peu différente, pour donner un ordre aux éléments.
-Jetons un petit coup d'oeil à ce qui différencie une paire d'un couple dans leur définition.
-Une paire peut simplement être écrit comme ça :
-</p>
-<math>A = {1, 2} = {2, 1}</math>
-<p>
-Ici, l'ordre n'a pas d'importance.
-Donc, nous allons devoir trouver un moyen permettant d'écrire des couples, pour rendre l'ordre important.
-Déjà, <span class="important">notons que l'écriture d'un couple se fait en remplaçant les accolades par des parenthèses</span>.
-<span class="important">Nous allons utiliser la représentation proposé par le mathématicien polonais <scientist name="kuratowski" type="quote"></span>.
-Dans cette proposition, un couple "C" formé d'un élément "x" puis d'un élément "y" se note :
-</p>
-<math>C = (x, y) = {{x}, {x, y}} = {{x, y}, {x}}</math>
-<p>
-Dans ce cas, <span class="important">le couple devient un ensemble contenant deux éléments : un singleton contenant le premier élément, et une paire contenant les deux éléments</span>.
-On peut donc distinguer le premier élément de l'autre.
-On peut écrire le couple opposé, est constater (grâce à l'axiome d'extension) qu'il n'est pas égal au couple de départ (le singleton du "premier élément" n'est pas le même) :
-</p>
-<math>C = (y, x) = {{y}, {x, y}} = {{x, y}, {y}} <mnotequal> (x, y) = {{x, y}, {x}}</math>
-<p>
-L'obtension du premier élément se fait donc par le singleton, et l'obtension du second se fait en prenant l'élément de la paire qui n'est pas dans le singleton.
-</p>
+
 
 
 

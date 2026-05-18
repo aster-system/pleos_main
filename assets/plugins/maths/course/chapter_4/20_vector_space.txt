@@ -278,7 +278,7 @@ Par exemple, ceci peut être un système linéaire, dans un espace vectoriel sur
 <math>3 * u + 4 * v = 2</math></br>
 <math>8 * u - 7 * v = 5</math>
 <p>
-La façon la plus simple de résoudre ce genre d'équation reste la substition.
+La façon la plus simple de résoudre ce genre d'équation reste la substitution.
 </p>
 <math>3 * u + 4 * v = 2</math></br>
 <math>8 * u - 7 * v = 5</math></br>
@@ -473,13 +473,16 @@ Ici, nous pouvons très facilement calculer chaque valeur de la matrice résulta
 
 <h3>Le lien matrices - applications linéaires</h3>
 <p>
-Ici, nous allons essayer de faire une chose précise : trouver un nouveau moyen de formuler des applications linéaires.
-Pour cela, <span class="important">nous allons utiliser des matrices, à valeurs dans le corps associés aux espaces vectoriels</span>.
-Construisons cette nouvelle façon de faire, de manière intuitive, et étape par étape.
+En algèbre linéaire, il exist un très gros lien entre les matrices et les applications linéaires.
+En effet, <span class="important"><definition name="matrix-application"></span>.
+Ici, une matrice permet de (dans l'ordre) trouver un vecteur exprimé dans une base de départ, obtenir son image via une application linéaire, et exprimer ce vecteur dans une base d'arrivée.
+Généralement, une matrice de ce type est notée avec un nom, sa base de départ et sa base d'arrivée (en indice) puis (entre parenthèse) l'application linéaire qu'elle représente.
 </p>
+<math><mi>M</mi><msub>b, c</msub>(f)</math>
 <p>
+Ici, nous allons essayer de faire une chose précise : construire intuitivement ce genre de matrice, pour comprendre comment elles fonctionnent.
 Commençons par le cas le plus simple : passer de coordonnées d'un vecteur base quelconque aux coordonnées dans la base canonique.
-Ici, <span class="important">ce passage représente une application linéaire allant d'un espace vectoriel vers lui-même, en changeant juste la base</span>.
+Ici, <span class="important">ce passage représente l'application linéaire identité de l'espace vectoriel de départ, en changeant juste la base (base donnée vers base canonique, qui représente donc l'écriture directe du vecteur)</span>.
 Imagineons que nous avons des coordonnées précises dans la base "b", que nous voudrions convertir dans la base canonique.
 Nous pouvons donc facilement calculer son vecteur associé.
 </p>
@@ -500,13 +503,13 @@ Présentons notre résultat comme ceci :
 
 <case_plus x=0 y=3 background_color=light_blue><math>(<mi>b</mi><msub>1</msub>)<msub>1</msub></math></case_plus>
 <case_plus x=0 y=4 background_color=light_blue>...</case_plus>
-<case_plus x=0 y=5 background_color=light_blue><math>(<mi>b</mi><msub>1</msub>)<msub>n</msub></math></case_plus>
+<case_plus x=0 y=5 background_color=light_blue><math>(<mi>b</mi><msub>1</msub>)<msub>m</msub></math></case_plus>
 <case_plus x=1 y=3 background_color=light_blue>...</case_plus>
 <case_plus x=1 y=4 background_color=light_blue>...</case_plus>
 <case_plus x=1 y=5 background_color=light_blue>...</case_plus>
-<case_plus x=2 y=3 background_color=light_blue><math>(<mi>b</mi><msub>m</msub>)<msub>1</msub></math></case_plus>
+<case_plus x=2 y=3 background_color=light_blue><math>(<mi>b</mi><msub>n</msub>)<msub>1</msub></math></case_plus>
 <case_plus x=2 y=4 background_color=light_blue>...</case_plus>
-<case_plus x=2 y=5 background_color=light_blue><math>(<mi>b</mi><msub>m</msub>)<msub>n</msub></math></case_plus>
+<case_plus x=2 y=5 background_color=light_blue><math>(<mi>b</mi><msub>n</msub>)<msub>m</msub></math></case_plus>
 
 <case_plus x=3 y=3><math><mi>Sum </mi>(<mi>b</mi><msub>1</msub>)<msub>k</msub><mi>a</mi><msub>k</msub></math></case_plus>
 <case_plus x=3 y=4>...</case_plus>
@@ -521,6 +524,7 @@ C'est exactement le calcul que nous avons fait.
 </p>
 <p>
 Tentons l'opération inverse : trouver les coordonnées dans une base donnée de vecteurs de coordonnées dans la base canonique.
+Encore une fois, <span class="important">ce passage représente l'application linéaire identité de l'espace vectoriel de départ, en changeant juste la base (base canonique vers base donnée, qui représente donc l'écriture du vecteur dans la base donnée)</span>.
 Pour rappel, si nous nommons notre base donnée "b", chaque valeur du vecteur "v" peut s'écrire :
 </p>
 <math><mi>v</mi><msub>i</msub> = <msum from=1 to=n unknown=k><mi>a</mi><msub>k</msub>(<mi>b</mi><msub>k</msub>)<msub>i</msub></math>
@@ -551,13 +555,13 @@ Comme pour plus haut, <span class="important">on peut écrire ce type de calcul 
 
 <case_plus x=0 y=3 background_color=light_blue><math>(<mi>c</mi><msub>1</msub>)<msub>1</msub></math></case_plus>
 <case_plus x=0 y=4 background_color=light_blue>...</case_plus>
-<case_plus x=0 y=5 background_color=light_blue><math>(<mi>c</mi><msub>1</msub>)<msub>n</msub></math></case_plus>
+<case_plus x=0 y=5 background_color=light_blue><math>(<mi>c</mi><msub>1</msub>)<msub>m</msub></math></case_plus>
 <case_plus x=1 y=3 background_color=light_blue>...</case_plus>
 <case_plus x=1 y=4 background_color=light_blue>...</case_plus>
 <case_plus x=1 y=5 background_color=light_blue>...</case_plus>
-<case_plus x=2 y=3 background_color=light_blue><math>(<mi>c</mi><msub>m</msub>)<msub>1</msub></math></case_plus>
+<case_plus x=2 y=3 background_color=light_blue><math>(<mi>c</mi><msub>n</msub>)<msub>1</msub></math></case_plus>
 <case_plus x=2 y=4 background_color=light_blue>...</case_plus>
-<case_plus x=2 y=5 background_color=light_blue><math>(<mi>c</mi><msub>m</msub>)<msub>n</msub></math></case_plus>
+<case_plus x=2 y=5 background_color=light_blue><math>(<mi>c</mi><msub>n</msub>)<msub>m</msub></math></case_plus>
 
 <case_plus x=3 y=3><math><mi>Sum </mi>(<mi>c</mi><msub>1</msub>)<msub>k</msub><mi>d</mi><msub>k</msub></math></case_plus>
 <case_plus x=3 y=4>...</case_plus>
@@ -565,8 +569,16 @@ Comme pour plus haut, <span class="important">on peut écrire ce type de calcul 
 
 </table>
 <p>
+Ici, nous avons construit un type très précis de matrice : des matrices de changement de base.
+<span class="important"><definition name="matrix-basis"></span>.
+Ces matrices représentent donc l'application identité, dans des bases différentes.
+Par exemple, dans "R²", la matrice passant de la base "(1, 0), (1, 1)" à la base canonique serait :
+</p>
+<math>A = <mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd><mtd><mi>1</mi></mtd></mtr><mtr><mtd><mi>0</mi></mtd><mtd><mi>1</mi></mtd></mtr></mtable><mo>]</mo></mrow></math>
+<p>
 Finalisons cette construction intuitive, avec un exemple plus global.
 Considérons une application linéaire "f", allant d'un espace vectoriel "E" vers un espace vectoriel "F" (sur un corps "K").
+Ici, nous allons considérer les bases comme quelconques.
 Considérons "b" une base de "E".
 </p>
 <math>b = (<mi>b</mi><msub>1</msub>, <mi>b</mi><msub>2</msub>, ..., <mi>b</mi><msub>n</msub>) <min> <mi>E</mi><msup>n</msup></math></br>
@@ -625,15 +637,7 @@ Au final :
 </p>
 <math>f(v) = <msum from=1 to=n unknown=k><mi>z</mi><msub>k</msub> * <mi>d</mi><msub>k</msub></math>
 <p>
-Donc, <span class="important">nous avons obtenu via les coordonnées de "v" dans "b" les coordonnées de "f(v)" dans une base "d" de "Im(f)</span>.
-</p>
-<p>
-Maintenant que ça est fait, nous avons assez de compréhension pour définir le lien "matrices - applications linéaires".
-En algèbre linéaire, <span class="important"><definition name="matrix-application"></span>.
-Généralement, une matrice de ce type est notée avec un son nom, sa base de départ, sa base d'arrivée (en indice) puis (entre parenthèse) l'application linéaire qu'elle représente.
-</p>
-<math><mi>M</mi><msub>b, c</msub>(f)</math>
-<p>
+Donc, <span class="important">nous avons obtenu via les coordonnées de "v" dans "b" les coordonnées de "f(v)" dans une base "d" de "Im(f)"</span>.
 Remarquons quelque chose d'intéressant : nous pouvons aussi mettre plusieurs autres coordonnées que les coordonnées "a".
 </p>
 <table>

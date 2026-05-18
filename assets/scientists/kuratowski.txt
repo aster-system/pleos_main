@@ -1,0 +1,1 @@
+<metadata firstname="kazimierz" lastname="kuratowski" birth="1896" death="1980">
