@@ -99,6 +99,12 @@
     <content>un sous-anneau A d'un anneau B est un anneau sur un sous-ensemble de l'ensemble de A, où l'addition forme un sous-groupe du groupe additif de "A", où "B" est stable par la multiplication et où le neutre de la multiplication de "A" se situe dans "B"</content>
     <content name="ideal">un idéal A d'un anneau B est un sous-anneau de B où tous les éléments de "A" restent dans "A" si ils sont multipliés par un quelconque élément de "B"</content>
 </new_definition>
+
+<new_definition name="morphism">
+    <content>un morphisme est une application entre deux ensembles de deux structures quelconques, où les relations possibles dans la première structure permettent de déduire directement les relations similaires dans la seconde, en utilisant le morphisme</content>
+    <content name="group">un morphisme de groupe est une application entre deux ensembles de groupes, où les calculs dans le second groupe sont prévisibles avec les calculs dans le premier groupe, en utilisant le morphisme</content>
+</new_definition>
+
 <new_definition name="hilbert_space">
     <content>un espace de Hilbert est un espace pré-hilbertien qui est topologiquement complet</content>
 </new_definition>

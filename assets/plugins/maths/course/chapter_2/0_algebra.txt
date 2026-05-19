@@ -145,7 +145,7 @@ En fait, si notre loi "." est associative, alors :
 <math><mforall>a, b, c <min> E, (a + b) + c = a + (b + c)</math>
 
 <p>
-Comme nous l'avons démontré au chapitre précédent, l'addition et la multiplication sont associative.
+Comme nous l'avons démontré au chapitre précédent, l'addition et la multiplication dans Z sont associative.
 Cependant, la puissance n'est pas associative, et voici un contre exemple :
 </p>
 
@@ -210,6 +210,29 @@ Cette notation peut être risquée si vous ne savez pas si vous travaillez avec 
 Une catégorie de groupe plus forte est le groupe abélien.
 <span class="important"><definition name="algebra_group-abelian"></span>.
 (Z, +) en est un exemple.
+</p>
+
+<h3>Les morphismes</h3>
+<p>
+Parlons d'un concept très utile en algèbre : les morphismes.
+<span class="important"><definition name="morphism"></span>.
+Dans le cas des structures algébriques, un morphisme est une application où les résultats des calculs de la première structure suffisent pour obtenir les résultats des calculs dans la seconde structure, sans avoir à les faire.
+En effet, <span class="important">l'image des résultats des calculs de la première structure se substitue aux calculs dans la deuxième structure</span>.
+Ce concept permet de définir une sorte de compatibilité entre deux structure, où le passage des calculs de l'une sont prévisibles grâces aux calculs de l'autres.
+</p>
+<p>
+Prenons le type d'exemple le plus simple : les morphismes de groupe.
+En fait, <span class="important"><definition name="morphism-group"></span>.
+Ici, il nous faut voir comment on défini "prévisible".
+Considérons de groupe "(E, +)" et "(F, *)", et une application "f" allant de "E" vers "F".
+Ici, un morphisme permet d'obtenir un résultat d'un calcul dans le second groupe avec un calcul dans le premier groupe.
+En effet, pour qu'une application "f" soit un morphisme de groupe, il faut qu'elle respecte cette propriété :
+</p>
+<math><mforall>a, b <min> E, <mforall>c, d <min> F</math></br>
+<math>f(a) * f(b) = f(a + b)</math>
+<p>
+Donc, <span class="important">pour obtenir le résultat du premier calcul (qui se situe dans "F", puisque "f(a)" et "f(b)" sont des éléments de "F"), on peut juste faire un calcul dans "E", et y apppliquer "f"</span>.
+Dans ce cas, "f" est un morphisme de groupe.
 </p>
 
 
@@ -418,40 +441,6 @@ Il se note généralement avec des "|" autour du groupe nécessaire.
 <p>
 Dans le cas d'un élément de groupe, la définition se complexifie un peu.
 En effet, <span class="important"><definition name="algebra_order-element"></span>.
-</p>
-
-<h3>Les morphismes</h3>
-<p>
-Il est possible de faire des applications entre structures algébriques tout en gardant les propriétés de la structure, grâce à un concept assez pratique : les morphismes.
-Cet objet est assez complexe, car il représente un objet d'une autre théorie logique très complexe (la théorie des catégories), mais une version simplifiée existe pour l'algèbre.
-Dans cette "théorie des catégories", <span class="important"><definition name="morphism"></span>.
-Ici, "structure" représente n'importe quoi qui admet des lois quelconques.
-Dire que les lois doivent être "compatibles entre elles" représente la différence entre une application et un morphisme.
-Déjà, <span class="important">par définition, toutes les lois de notre deuxième structures doivent avoir les exacts mêmes propriétés que celles de notre première structure</span> (les deux structures doivent appartenir à la même catégorie de structure).
-De plus, cela veut dire que l'utilisation de la loi du groupe d'arrivée sur des images du morphisme et égal à utiliser la loi de l'ensemble de départ sur les deux antécédents, puis d'en obtenir leur image (et qu'elle est similaire au résultat obtenu grâce à la loi de la structure d'arrivée, au début).
-Bien évidemment, il faut que toutes les lois des deux structures respectent cette compatibilité.
-</p>
-<p>
-Dans notre cas, ces "structures" représentent des structures algébriques.
-Donc, en algèbre, <span class="important"><definition name="morphism-algebra"></span>.
-Déjà, <span class="important">par définition, les deux structures algébriques doivent être les mêmes (groupe vers groupe, monoïde vers monoïde...)</span>.
-En plus, comme pour le cas général, l'utilisation des lois de composition du groupe d'arrivée sur des images du morphisme est égal à utiliser cette loi à des éléments de l'ensemble de départ sur les antécédent, puis d'en obtenir leur image (et qu'elle est similaire au résultat obtenu grâce à la loi de composition de la structure d'arrivée, audébut).
-</p>
-<p>
-Le cas le plus simple est le morphisme de groupe.
-<span class="important">Un morphisme de groupe est un morphisme d'un groupe vers un autre groupe, où les lois de composition des deux groupes sont compatible entre elles</span>.
-Pour un groupe "G" et "H" quelconque, un morphisme "f" se présente comme cela :
-</p>
-<math>G = (E, .)</math></br>
-<math>H = (F, *)</math></br>
-<math>m : E <mto> F, x <mto> f(x)</math>
-<p>
-Pour l'instant, il s'agit d'une application normale.
-Pour en faire un morphisme, il faut qu'elle vérifie cette propriété :
-</p>
-<math><mforall>y, z <min> E, f(y . z) = f(y) * f(z)</math>
-<p>
-C'est la mise en forme littérale de la "compatibilité" des deux groupes.
 </p>
 
 <h3>Les actions de groupes</h3>
