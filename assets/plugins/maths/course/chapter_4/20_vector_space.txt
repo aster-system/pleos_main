@@ -639,6 +639,7 @@ Au final :
 <p>
 Donc, <span class="important">nous avons obtenu via les coordonnées de "v" dans "b" les coordonnées de "f(v)" dans une base "d" de "Im(f)"</span>.
 Ici, comme "f" est quelconque, on peut en déduire que tout "f" (et donc toute application linéaire allant d'un espace vectoriel de dimension finie vers un espace vectoriel de dimension finie) admet une matrice.
+Intuitivement parlant, <span class="important">les colonnes de la matrices représentent une famille génératrice de l'image de l'application</span>.
 Remarquons quelque chose d'intéressant : nous pouvons aussi mettre plusieurs autres coordonnées que les coordonnées "a".
 </p>
 <table>
@@ -720,8 +721,9 @@ Nous avons donc vue que toute application linéaire possède une matrice associ�
 Cependant, une question peut se poser : est-ce que toutes les matrices peuvent être associées à des application linéaires ou pas.
 La réponse est, en réalité, très simple à obtenir.
 En effet, le produit d'une matrice quelconque et d'une matrice de coordonnées donne une combinaison linéaire des colonnes de la matrice, qui peut donc représenter une combinaison linéaire de matrices de coordonnées.
-Or, <span class="important">la transformation d'une matrice coordonnée en une combinaison linéaire d'autres matrices de coordonnées forme une application linéaire comme vu plus haut : il s'agit donc bel et bien d'une application linéaire</span>.
+Or, <span class="important">la transformation d'une matrice coordonnée en une combinaison linéaire d'autres matrices de coordonnées forme une application linéaire (comme vu plus haut) : il s'agit donc bel et bien d'une application linéaire</span>.
 Donc, toute matrice représente une application linéaire.
+D'ailleurs, <span class="important">on peut très facilement trouver une famille génératrice de l'image d'arrivée : les colonnes de la matrice</span>.
 </p>
 <math>C = ((1, 0), (0, 1))</math></br>
 <math>M = <mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd><mtd><mi>2</mi></mtd></mtr><mtr><mtd><mi>3</mi></mtd><mtd><mi>4</mi></mtd></mtr></mtable><mo>]</mo></mrow></math></br>
@@ -729,6 +731,29 @@ Donc, toute matrice représente une application linéaire.
 <p>
 Cependant, il existe d'autres opérations sur les matrices, qui permettent de trouver d'autres propriétés utiles sur ces dernières.
 Ici, <span class="important">une des opérations les plus importantes de ce style revient à trouver le rang d'une matrice</span>.
+Pour cela, nous allons procéder par des opérations qui ne modifient pas le rang de la matrice.
+</p>
+<p>
+Commençons par voir certaines de ces opérations, en partant des plus simples.
+Une de ces opérations est la permutation de colonnes.
+En effet, <span class="important">permuter les colonnes d'une matrice revient à permuter deux vecteurs dans la famille génératrice de l'image de l'application, ce qui peut demander de changer les bases de départ / arrivé, mais ne change pas les indépendances linéaires possibles dans cette famille génératrice, et donc ce qui ne change pas le rang de la matrice</span>.
+</p>
+<math>M = <mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd><mtd><mi>2</mi></mtd></mtr><mtr><mtd><mi>3</mi></mtd><mtd><mi>4</mi></mtd></mtr></mtable><mo>]</mo></mrow></math></br>
+<math>N = <mrow><mo>[</mo><mtable><mtr><mtd><mi>2</mi></mtd><mtd><mi>1</mi></mtd></mtr><mtr><mtd><mi>4</mi></mtd><mtd><mi>3</mi></mtd></mtr></mtable><mo>]</mo></mrow></math></br>
+<math>Rg(M) = Rg(n), M . (1, 0) = N . (0, 1)</math>
+<p>
+Une autre opération de ce genre est la multiplication de tous les éléments d'une colonne par un scalaire non-nul précis.
+En effet, <span class="important">multiplier tous les éléments d'une colonne par un scalaire nol-nul revient intuitivement à agrandir / rétricir cette colonne, ce qui ne change pas la façon dont elle est linéairement indépendante (ou pas) des autres colonnes</span>.
+</p>
+<math>M = <mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd><mtd><mi>1</mi></mtd></mtr><mtr><mtd><mi>1</mi></mtd><mtd><mi>0</mi></mtd></mtr></mtable><mo>]</mo></mrow></math></br>
+<math>N = <mrow><mo>[</mo><mtable><mtr><mtd><mi>2</mi></mtd><mtd><mi>1</mi></mtd></mtr><mtr><mtd><mi>2</mi></mtd><mtd><mi>0</mi></mtd></mtr></mtable><mo>]</mo></mrow></math></br>
+<math>Rg(M) = Rg(n), M . (2, 0) = N . (1, 0)</math>
+<p>
+Bon, ici, nous travaillons sur les colonnes.
+Or, <span class="important">il est généralement conseillé de plutôt travailler sur des lignes</span>.
+Malheuresement, ce style d'opération sur des lignes est légèrement moins intuitif, mais quand même assez simple.
+Déjà, la permutation de deux lignes préserve elle aussi le rang d'une matrice.
+En effet, <span class="important">permuter deux lignes de la matrice revient à permuter deux combinaisons linéaires donnant les coordonnées finales</span>.
 </p>
 
 
