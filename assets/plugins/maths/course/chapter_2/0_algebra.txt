@@ -216,6 +216,7 @@ Une catégorie de groupe plus forte est le groupe abélien.
 <p>
 Parlons d'un concept très utile en algèbre : les morphismes.
 <span class="important"><definition name="morphism"></span>.
+Ici, quand on dit "deux structures de même nature", on veut dire que ces structures doivent contenir les mêmes lois (mais pas forcément les même ensembles), comme deux groupes ou deux corps.
 Dans le cas des structures algébriques, un morphisme est une application où les résultats des calculs de la première structure suffisent pour obtenir les résultats des calculs dans la seconde structure, sans avoir à les faire.
 En effet, <span class="important">l'image des résultats des calculs de la première structure se substitue aux calculs dans la deuxième structure</span>.
 Ce concept permet de définir une sorte de compatibilité entre deux structure, où le passage des calculs de l'une sont prévisibles grâces aux calculs de l'autres.

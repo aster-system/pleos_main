@@ -101,7 +101,7 @@
 </new_definition>
 
 <new_definition name="morphism">
-    <content>un morphisme est une application entre deux ensembles de deux structures quelconques, où les relations possibles dans la première structure permettent de déduire directement les relations similaires dans la seconde, en utilisant le morphisme</content>
+    <content>un morphisme est une application entre deux ensembles de deux structures quelconques (mais de même nature), où les relations possibles dans la première structure permettent de déduire directement les relations similaires dans la seconde, en utilisant le morphisme</content>
     <content name="group">un morphisme de groupe est une application entre deux ensembles de groupes, où les calculs dans le second groupe sont prévisibles avec les calculs dans le premier groupe, en utilisant le morphisme</content>
 </new_definition>
 
