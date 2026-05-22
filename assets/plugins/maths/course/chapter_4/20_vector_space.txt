@@ -736,18 +736,61 @@ Pour cela, nous allons procéder par des opérations qui ne modifient pas le ran
 <p>
 Commençons par voir certaines de ces opérations, en partant des plus simples.
 Une de ces opérations est la permutation de colonnes.
-En effet, <span class="important">permuter les colonnes d'une matrice revient à permuter deux vecteurs dans la famille génératrice de l'image de l'application, ce qui peut demander de changer les bases de départ / arrivé, mais ne change pas les indépendances linéaires possibles dans cette famille génératrice, et donc ce qui ne change pas le rang de la matrice</span>.
+En effet, <span class="important">permuter les colonnes d'une matrice revient à permuter deux vecteurs dans la famille génératrice de l'image de l'application, ce qui peut demander de changer les bases de départ / arrivé, mais ne change pas les indépendances linéaires possibles dans cette famille génératrice, et donc ce qui ne change pas le rang de la matrice (et ce qui ne change pas l'espace engendré non-plus)</span>.
 </p>
 <math>M = <mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd><mtd><mi>2</mi></mtd></mtr><mtr><mtd><mi>3</mi></mtd><mtd><mi>4</mi></mtd></mtr></mtable><mo>]</mo></mrow></math></br>
 <math>N = <mrow><mo>[</mo><mtable><mtr><mtd><mi>2</mi></mtd><mtd><mi>1</mi></mtd></mtr><mtr><mtd><mi>4</mi></mtd><mtd><mi>3</mi></mtd></mtr></mtable><mo>]</mo></mrow></math></br>
 <math>Rg(M) = Rg(n), M . (1, 0) = N . (0, 1)</math>
 <p>
 Une autre opération de ce genre est la multiplication de tous les éléments d'une colonne par un scalaire non-nul précis.
-En effet, <span class="important">multiplier tous les éléments d'une colonne par un scalaire nol-nul revient intuitivement à agrandir / rétricir cette colonne, ce qui ne change pas la façon dont elle est linéairement indépendante (ou pas) des autres colonnes</span>.
+En effet, <span class="important">multiplier tous les éléments d'une colonne par un scalaire nol-nul revient intuitivement à agrandir / rétricir cette colonne, ce qui ne change pas la façon dont elle est linéairement indépendante (ou pas) des autres colonnes (et ce qui ne change ni la dimension, ni l'espace engendré par la matrice)</span>.
 </p>
 <math>M = <mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd><mtd><mi>1</mi></mtd></mtr><mtr><mtd><mi>1</mi></mtd><mtd><mi>0</mi></mtd></mtr></mtable><mo>]</mo></mrow></math></br>
 <math>N = <mrow><mo>[</mo><mtable><mtr><mtd><mi>2</mi></mtd><mtd><mi>1</mi></mtd></mtr><mtr><mtd><mi>2</mi></mtd><mtd><mi>0</mi></mtd></mtr></mtable><mo>]</mo></mrow></math></br>
 <math>Rg(M) = Rg(n), M . (2, 0) = N . (1, 0)</math>
+<p>
+Finalement, nous pouvons trouver une dernière opération utile de ce genre : additionner / soustraire des colonnes de la matrice par d'autres colonnes de la matrice.
+En effet, <span class="important">soustraire / additionner des colonnes à une autre colonne ne change pas la façon dont elle est linéairement indépendante (ou pas) des autres colonnes (si elle l'est au départ, alors elle le restera même après cette opération), ce qui ne change ni la dimension, ni l'espace engendré par la matrice</span>.
+Avec ces 3 opérations, on peut déjà commencer à entrevoir la méthode générale pour travailler avec des matrices.
+</p>
+<math>M = <mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd><mtd><mi>5</mi></mtd></mtr><mtr><mtd><mi>2</mi></mtd><mtd><mi>10</mi></mtd></mtr></mtable><mo>]</mo></mrow></math></br>
+<math>N = <mrow><mo>[</mo><mtable><mtr><mtd><mi>5</mi></mtd><mtd><mi>5</mi></mtd></mtr><mtr><mtd><mi>10</mi></mtd><mtd><mi>10</mi></mtd></mtr></mtable><mo>]</mo></mrow></math></br>
+<math>P = <mrow><mo>[</mo><mtable><mtr><mtd><mi>5</mi></mtd><mtd><mi>0</mi></mtd></mtr><mtr><mtd><mi>10</mi></mtd><mtd><mi>0</mi></mtd></mtr></mtable><mo>]</mo></mrow></math></br>
+<math>Rg(M) = Rg(N) = Rg(P)</math>
+<p>
+En effet, ici, <span class="important">on peut voir que le vecteur (5, 10) seul génère un espace vectoriel de même dimension que l'espace vectoriel engendré par notre matrice de départ (comme l'autre vecteur est nul, on peut le passer) : elle est de rang 1</span>.
+Avec ça, nous pouvons introduire un algorithme très utile en algèbre linéaire : l'échelonnement vertical.
+<span class="important"><definition name="echelon_vertical"></span>.
+Cette méthode s'inspire d'une autre méthode plus connue (la méthode du pivot de Gauss), que nous verrons plus tard.
+En tout cas, l'idée de l'échelonnement vertical est assez simple.
+Premièrement, nous allons repérer la colonne qui contient comme coefficient le plus haut le premier coefficient (en partant de la gauche) non nul, et nous allons permuter cette colonne avec la première colonne.
+Si la première colonne admet un coefficient le plus haut non-nul, alors pas besoin de faire cette étape.
+Deuxièmement, <span class="important">nous allons effectuer les opérations nécessaire (multiplication, puis addiction / soustraction) sur les colonnes à droite de notre colonne actuelle pour que tous les coefficients à droite du coefficient le plus haut valent 0</span>.
+Attention : il ne faut pas modifier que ce coefficient, mais toute la colonne en même temps.
+Finalement, <span class="important">on ré-itère l'opération, en ne choisissant plus le coefficient le plus haut, mais le deuxième plus haut, et en ne commençant pas par la première colonne, mais par la deuxième</span>.
+En suite, <span class="important">faites cela jusqu'à que vous arriviez en bas de votre matrice, où tout à droite de votre matrice</span>.
+</p>
+<p>
+Ici, <span class="important">toutes ces opérations ne modifient pas le rang de la matrice, et en plus ne modifient pas l'espace engendré par la matrice</span>.
+C'est cela qui rend cet algorithme si efficace : vous pouvez déduire ces deux propriétés dans une matrice de départ grâce à lui.
+Prenons un petit exemple avec une matrice de rang 2, mais où il est difficile de le voir directement :
+</p>
+<math><mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd><mtd><mi>3</mi></mtd><mtd><mi>2</mi></mtd></mtr><mtr><mtd><mi>-2</mi></mtd><mtd><mi>-10</mi><mtd><mi>-9</mi></mtd></mtr><mtr><mtd><mi>0</mi></mtd><mtd><mi>4</mi><mtd><mi>5</mi></mtd></mtr></mtable><mo>]</mo></mrow></math></br>
+<p>
+Ici, la première étape ne sert à rien : le coefficient le plus haut de la première colonne est non-nul.
+Passons à la deuxième : nous devons soustraire à la deuxième colonne la première colonne multipliée par "-2".
+En suite, nous devons soustraire la troisième colonne par la première colonne multipliée par "0". 
+</p>
+<math><mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd><mtd><mi>3</mi></mtd><mtd><mi>2</mi></mtd></mtr><mtr><mtd><mi>0</mi></mtd><mtd><mi>-4</mi><mtd><mi>-5</mi></mtd></mtr><mtr><mtd><mi>0</mi></mtd><mtd><mi>4</mi><mtd><mi>5</mi></mtd></mtr></mtable><mo>]</mo></mrow></math></br>
+<p>
+maintenant, passons à la partie 2.
+Encore une fois, la première étape ne sert à rien : le coefficient le "deuxième" plus haut de la deuxième colonne est non-nul.
+Passons à la deuxième : nous devons soustraire à la troisième colonne la deuxième colonne multipliée par "-1".
+</p>
+<math><mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd><mtd><mi>3</mi></mtd><mtd><mi>2</mi></mtd></mtr><mtr><mtd><mi>0</mi></mtd><mtd><mi>-4</mi><mtd><mi>-5</mi></mtd></mtr><mtr><mtd><mi>0</mi></mtd><mtd><mi>0</mi><mtd><mi>0</mi></mtd></mtr></mtable><mo>]</mo></mrow></math></br>
+<p>
+Or, cette matrice génère donc un espace vectoriel généré par deux vecteurs de coordonnées, et a le même rang et génère le même espace vectoriel que notre matrice de départ : notre matrice de départ est donc de rang 2, et son image est engendrée par les deux vecteurs de coordonnée "(1, 3, 2)" et "(0, -4, -5)" dans la base d'arrivée.
+</p>
 <p>
 Bon, ici, nous travaillons sur les colonnes.
 Or, <span class="important">il est généralement conseillé de plutôt travailler sur des lignes</span>.

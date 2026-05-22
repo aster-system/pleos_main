@@ -33,3 +33,7 @@
 <new_definition name="vector_space_dimension">
     <content>la dimension d'un espace vectoriel (aussi nommée dimension de Hamel) est le cardinal commun de toutes ses bases</content>
 </new_definition>
+
+<new_definition name="echelon_vertical">
+    <content>l'échelonnement vertical (aussi nommé réduction verticale) est une méthode de transformation d'une matrice en une matrice échelonnée, qui permet de plus facilement déduire des résultats sur la matrice de départ<content>
+</new_definition>
