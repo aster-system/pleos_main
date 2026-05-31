@@ -1,3 +1,14 @@
+<new_definition name="scientific_method">
+    <content>la méthode scientifique est un ensemble de techniques permettant d'obtenir / de vérifier des connaissances quelconques</content>
+</new_definition>
+<new_definition name="modelisation">
+    <content>la modélisation est une façon d'étudier quelque chose en utilisant un modèle</content>
+    <content name="model">un modèle est une représentation d'une situation quelconque, qui a pour objectif d'imiter le mieux possible la situation qu'il étudie</content>
+</new_definition>
+<new_definition name="physic">
+    <content>la physique est la science de l'étude du monde réel, en tentant de le modéliser et de le formaliser</content>
+</new_definition>
+
 <new_definition name="physical_quantity">
     <content>une grandeur physique est une propriété d'un objet ou phénomène physique, mesurable ou calculable pour en obtenir une valeur caractérisant l'objet / le phénomène</content>
 </new_definition>

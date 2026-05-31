@@ -1,0 +1,27 @@
+<h1>L'étude du monde</h1>
+
+
+
+<h2>Entre mathématiques et réalité</h2>
+
+<h3>Qu'est ce qu'est la physique ?</h3>
+<p>
+Il est difficile de correctement définir la science que représente la physique.
+En général, <span class="important"><definition name="physic"></span>.
+De manière assez évident, "modéliser" veut dire que nous allons utiliser le concept de modélisation (et de modèles).
+</p>
+<p>
+Ici, il serait intéressant d'étudier le concept de modélisation.
+<span class="important"><definition name="modelisation"></span>.
+Ici, <span class="important"><definition name="modelisation-model"></span>.
+Tous les modèles que nous verrons dans ce cours sont des modèles qui décrivent de manière plus ou moins précises le phénomène qu'ils cherchent à étudier.
+</p>
+
+<h3>La méthode scientifique</h3>
+<p>
+Pour avancer et concevoir des modèles, la physique a besoin de données sur la façon dont le monde fonctionne.
+En plus, elle a besoin de vérifier ses différents modèles, pour savoir à quel point ses modèles sont réalistes.
+Pour faire cela, le processus utilisé est nommé la méthode scientifique.
+<span class="important"><definition name="scientific_method"></span>.
+Cette méthode est donc très utilisée en physique.
+</p>

@@ -97,10 +97,37 @@ En effet, intuitivement, l'ensemble vide ne contient aucun élément de sa front
 En plus l'ensemble contenant l'ensemble vide et "E" respecte parfaitement les conditions pour être une topologie.
 </p>
 <p>
-En plus, il est possible de définir des topologies sur des parties "F" d'ensembles "E" munis d'une topologie.
+En plus, il est possible de définir des topologies sur des parties "F" d'un ensemble "E" muni d'une topologie.
 Le type le plus utilisé parmi ces topologies est la topologie induite.
 <span class="important"><definition name="topology_induced"></span>.
 Dans ce cas, <span class="important">"F" est nommé un sous-espace de "E"</span>.
+</p>
+<p>
+De manière analogue, nous pouvons aussi définir des sous-structures, avec non pas des ensembles topologiques, mais des topologies elles mêmes.
+Pour cela, nous allons utiliser le concept de finesse topologique.
+En topologie, <span class="important"><definition name="topological_comparaison-fine"></span>.
+Intuitivement parlant, la topologie la plus fine est celle qui contient le plus d'éléments.
+</p>
+<p>
+Parlons d'un autre moyen très pratique de définir une topologie : les bases topologiques.
+<span class="important"><definition name="topological_base"></span>.
+L'idée est donc de définir des ouverts de "base" de "T", tel que tous les ouverts de "T" peuvent être décrit avec des parties de la base.
+Dans cette définition, on considère déjà connaître "T".
+Cependant, <span class="important">l'avantage est qu'il est possible de définir "T" (si on ne le connaît pas) à partir d'un ensemble de parties de "E", en vérifiant que cet ensemble de parties respecte quelques propriétés précises, qui en ferait une base de "T"</span>.
+Pour qu'un ensemble de parties soit une base qui génère un espace topologique quelconque, il faut qu'elle respecte deux propriétés : <span class="important">tous les éléments de "E" doivent appartenir à une partie de la base et l'intersection finie d'élément de la base doit donner une union d'éléments de la base</span>.
+La première propriété s'assure que les parties de la base recouvrent bien "E".
+Pour la deuxième propriété, il s'agit d'une propriété permettant de s'assurer que les ouverts obtenus avec ces ouverts de "base" obéissent aux propriétés des ouverts (vues plus haut).
+Ici, le "T" obtenu est unique.
+</p>
+<math>B <mincluded> P(E)</math></br>
+<math><mforall> x <min> E, <mexists> A <min> B, x <min> A</math></br>
+<math><mforall>C, D <min> B, <mexists> F <mincluded> B, C <minter> D = <munion> F</math>
+<p>
+Cependant, il est possible d'affaiblir ce concept avec un autre : les prébases.
+<span class="important"><definition name="topological_base-prebase"></span>.
+Pareil : <span class="important">l'utilité d'une prébase est de l'utiliser pour définir un nouvel espace topologique, et plus précisément le plus fin tel que tous les éléments de la prébase soient des ouverts</span>.
+Ici, tout ensemble de parties de "E" peut représenter une prébase, mais certaines sont bien plus intéressantes que d'autres.
+Ici, <span class="important">la topologie la plus fine qui permet de rentre tous les éléments de la prébase ouverts est nommé la topologie engendrée par cette prébase</span>.
 </p>
 <p>
 Sur un ensemble muni d'une relation d'ordre quelconque, il est possible de définir une topologie extrêmement efficace : la topologie de l'ordre.
@@ -110,15 +137,6 @@ Voici l'écriture mathématique de ces 3 types d'ouverts :
 <math><mforall> x, x <min> A <mequi> y <mlt> x <mlt> z</math></br>
 <math><mforall> x, x <min> B <mequi> y <mlt> x</math></br>
 <math><mforall> x, x <min> C <mequi> x <mgt> z</math>
-<p>
-Cependant, il s'agit bien des ouverts de base, or ce ne sont pas les seuls ouverts.
-En effet, <span class="important">l'union d'un nombre fini d'ouverts de base (ou d'ouverts tout cours) forme un nouvel ouvert, qui peut ne pas être écrit sous cette forme</span>.
-Effectivement, c'est l'une des propriétés des ensembles d'ouverts dans un espace topologique, énoncées plus haut.
-En voici un exemple très clair, où nous définissons un ensemble "D" qui est un ouvert de notre ensemble muni de la topologie de l'ordre :
-</p>
-<math><mforall> x, x <min> A <mequi> y <mlt> x <mlt> z</math></br>
-<math><mforall> a, a <min> B <mequi> b <mlt> a <mlt> c</math></br>
-<math>(D = A <munion> B) <mequi> <mforall> d, d <min> D <mequi> {b <mlt> d <mlt> c <mor> y <mlt> d <mlt> z}</math></math>
 
 <h3>Les filtres topologiques</h3>
 <p>

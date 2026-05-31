@@ -53,6 +53,13 @@ Cependant, avec un peu de réflexion, on peut facilement énumérer des relation
 
 </table>
 
+<p>
+L'une des propriétés possibles d'une relation est la totalité.
+<span class="important"><definition name="relation-totality"></span>.
+En d'autres termes, la totalité traduit cette propriété :
+</p>
+<math><mforall>a, b <min> E, a ~ b <mor> b ~ a</math>
+
 <h3>Les relations d'ordre</h3>
 <p>
 Le type de relation qui est probablement le plus utilisé est la relation d'ordre.
@@ -66,14 +73,69 @@ En d'autres termes, si la relation peut s'écrire des deux côtés avec deux obj
 </p>
 <math><mforall>a, b <min> E, a ~ b <mand> b ~ a <mimp> a = b</math>
 <p>
-Si une relation d'ordre est définie entre l'entièreté des éléments d'un ensemble, la relation est dite "totale", et l'ensemble est dit "bien ordonné".
-Généralement, <span class="important">un ensemble bien ordonné "E" par une relation "~" est formalisé avec un couple constitué de l'ensemble et de la relation</span>.
+De plus, <span class="important"><definition name="relation_transitivity"></span>.
+En d'autres termes, si les éléments "a" et "b" sont en relations et que les éléments "b" et "c" le sont aussi, alors "a" et "c" le sont aussi.
+</p>
+<math><mforall>a, b, c <min> E, a ~ b <mand> b ~ c <mimp> a ~ c</math>
+<p>
+Si un ensemble quelconque peut être muni d'une relation d'ordre, l'ensemble est dit ordonné.
+<span class="important">Si une relation d'ordre est totale, l'ensemble est dit "totalement ordonné"</span>.
+Généralement, un ensemble ordonné "E" par une relation "~" est formalisé avec un couple constitué de l'ensemble et de la relation.
 </p>
 <math>(E, ~)</math>
 <p>
-Cependant, <span class="important">il est aussi possible de ne pas définir la relation d'ordre sur l'entièreté des éléments d'un ensemble, mais sur seulement une partie d'entre eux : on parle d'ensemble partiellement ordonné</span>.
-Or, un ensemble bien ordonné est aussi un ensemble partiellement ordonné (puisque certains de ces éléments peuvent se comparer entre eux), bien que cela le prive de certaines de ces propriétés.
+Cependant, <span class="important">il est aussi possible de ne pas définir la relation d'ordre comme totale : on parle d'ensemble partiellement ordonné</span>.
+D'ailleurs, un ensemble bien ordonné est aussi un ensemble partiellement ordonné (puisque certains de ces éléments peuvent se comparer entre eux).
 </p>
+<p>
+On peut facilement obtenir un ensemble partiellement ordonné que l'on a déjà vu : l'ensemble des parties d'un ensemble "E".
+En effet, <span class="important">l'ensemble des parties d'un ensemble "E" muni de la relation d'inclusion est un ensemble partiellement ordonné</span>.
+Ici, pour une partie quelconque de "E", la relation d'inclusion est belle et bien réflexive, antisymétrique et transitive.
+Cependant, il existe des pairs de parties de "E" qui sont bel et bien des parties de "E", mais tel qu'aucune n'inclue l'autre.
+C'est par exemple le cas de deux singletons non-égaux.
+</p>
+<p>
+De plus, <span class="important">l'existence d'une relation d'ordre sur un ensemble implique l'existence d'une relation d'ordre réciproque, qui est vraie entre deux éléments "a" et "b" si ces éléments sont en relations par la première relation, avec "a" et "b" échangés de place</span>.
+Il s'agit donc d'une relation qui "inverse" l'ordre par rapport à la première.
+Dans le cas de notre ensemble des parties, notre relation définie par "a est inclut dans b" deviendrait "b inclut a comme sous-ensemble".
+Pour une relation "~", sa réciproque "#" s'écrirait :
+</p>
+<math><mforall>a, b <min> E, a ~ b <mequi> b # a</math>
+<p>
+Pour visualiser une relation d'ordre, il existe un moyen assez pratique : le diagramme de Hasse.
+<span class="important"><definition name="hasse_diagram"></span>.
+Ce type de diagramme permet donc de bien voir quels éléments sont liés entre eux.
+Cependant, il y a une particularité : seul les relations directs sont construites.
+Donc, si il existe un objet "entre" deux éléments, alors on ne les relie pas.
+Prenons un exemple : le diagramme de Hasse de l'ensemble des parties de l'ensemble "{a, b, c}" muni de la relation d'inclusion :
+</p>
+<graphic width=400 height=400>
+<background_color white><base draw=0>
+
+<arrow hat_proportion=1/2 x_1=0 y_1=-4 x_2=-3/2 y_2=-5/2 color=black border_width=3>
+<arrow hat_proportion=1/2 x_1=0 y_1=-4 x_2=0 y_2=-5/2 color=black border_width=3>
+<arrow hat_proportion=1/2 x_1=0 y_1=-4 x_2=3/2 y_2=-5/2 color=black border_width=3>
+
+<arrow hat_proportion=1/2 x_1=-2 y_1=-3/2 x_2=-3 y_2=1/3 color=black border_width=3>
+<arrow hat_proportion=1/2 x_1=-2 y_1=-4/3 x_2=-1/2 y_2=1/3 color=black border_width=3>
+<arrow hat_proportion=1/2 x_1=2 y_1=-3/2 x_2=3 y_2=1/3 color=black border_width=3>
+<arrow hat_proportion=1/2 x_1=2 y_1=-4/3 x_2=1/2 y_2=1/3 color=black border_width=3>
+<arrow hat_proportion=1/2 x_1=0 y_1=-4/3 x_2=5/2 y_2=1/3 color=black border_width=3>
+<arrow hat_proportion=1/2 x_1=0 y_1=-4/3 x_2=-5/2 y_2=1/3 color=black border_width=3>
+
+<arrow hat_proportion=1/2 x_1=-3 y_1=4/3 x_2=-1 y_2=3 color=black border_width=3>
+<arrow hat_proportion=1/2 x_1=0 y_1=4/3 x_2=0 y_2=3 color=black border_width=3>
+<arrow hat_proportion=1/2 x_1=3 y_1=4/3 x_2=1 y_2=3 color=black border_width=3>
+
+<text x=0 y=4 font_size_in_scale=1>{a, b, c}</text>
+<text x=-3 y=4/3 font_size_in_scale=1>{a, b}</text>
+<text x=0 y=4/3 font_size_in_scale=1>{a, c}</text>
+<text x=3 y=4/3 font_size_in_scale=1>{b, c}</text>
+<text x=-2 y=-4/3 font_size_in_scale=1>{a}</text>
+<text x=0 y=-4/3 font_size_in_scale=1>{b}</text>
+<text x=2 y=-4/3 font_size_in_scale=1>{c}</text>
+<text x=0 y=-4 font_size_in_scale=1>{}</text>
+</graphic>
 
 <h3>Les relations d'équivalences</h3>
 <p>
@@ -124,6 +186,7 @@ Dans notre "E" de tout à l'heure, nous pouvons noter la classe d'équivalence �
 Cet outil nous permet de définir une nouvelle opération pour les ensembles : le quotient d'ensemble.
 <span class="important"><definition name="quotient_set"></span>.
 En d'autres termes, il s'agit d'une découpe d'un ensemble selon toutes les valeurs possibles d'une de ces propriétés.
+D'un point de vue très rigoureux, <span class="important">il s'agit de l'ensemble des classes d'équivalences possibles sur "E"</span>.
 Nous l'utiliserons énormément pour définir des objets mathématiques (même très simples et intuitifs).
 Cette notation utilise le symbôle "/".
 Par exemple, pour un ensemble "E" quotienté par une relation d'équivalence "~", l'ensemble quotient "F" est noté :

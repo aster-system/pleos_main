@@ -1,3 +1,7 @@
+<new_definition name="topological_base">
+    <content>une base d'un espace topologique "T" sur un ensemble "E" est un ensemble de parties de "E" agissant comme des ouverts, dont l'union permet de générer tous les ouverts de "T"</content>
+    <content name="prebase">une prébase d'un espace topologique "T" sur un ensemble "E" est un ensemble de parties de "E" tel que toutes ces parties soient des ouverts de "T"</content>
+</new_definition>
 <new_definition name="topological_borel_lebesgue">
     <content>la propriété de Borel-Lebesgue est une propriété topologique des parties d'un espace topologique, tel que si cette partie respecte cette propriété, alors de tous recouvrement de cette partie par des ouverts de l'espace, on peut en extraire un sous-recouvrement fini</content>
 </new_definition>
@@ -9,6 +13,9 @@
 </new_definition>
 <new_definition name="topological_closure">
     <content>l'adhérence d'une partie "F" d'un ensemble "E" est une partie de "E" contenant "F" et la frontière de "F"</content>
+</new_definition>
+<new_definition name="topological_comparaison">
+    <content name="fine">une topologie sur "E" est dite plus fine qu'une autre topologie sur "E" si la deuxième topologie est incluse dans la première</content>
 </new_definition>
 <new_definition name="topological_filter">
     <content>un filtre topologique sur un ensemble "E" est un ensemble de parties de "E" (qui ne contient d'ailleurs pas l'ensemble vide) tel que toute intersection d'éléments de ce filtre donne un nouvel élément de ce filtre et que, si un élément appartient à ce filtre, et qu'une partie de "E" inclut cet élément, alors cette nouvelle partie de "E" appartient au filtre</content>
@@ -41,7 +48,7 @@
     <content>la topologie induite d'une partie "F" d'un ensemble "E" (possédant lui même une topologie) est une topologie sur "F" où l'ensemble des ouverts est l'ensemble des intersections entre chaque ouvert de "E" et "F"</content>
 </new_definition>
 <new_definition name="topology_order">
-    <content>la topologie de l'ordre est une topologie sur un ensemble "E" ordonné où les ouverts de "base" sont l'ensemble des parties de "E" prenant une des 3 formes suivants : c'est l'ensemble des points strictement entre deux autres, ou l'ensemble des points strictement supérieurs à un point, où l'ensemble des points strictement inférieurs à un point</content>
+    <content>la topologie de l'ordre est une topologie sur un ensemble "E" ordonné engendré par l'ensemble des parties de "E" prenant une des 3 formes suivants : c'est l'ensemble des points strictement entre deux autres, ou l'ensemble des points strictement supérieurs à un point, ou l'ensemble des points strictement inférieurs à un point</content>
 </new_definition>
 <new_definition name="topology_real">
     <content name="extended">la droite réelle achevée est un espace topologique sur l'ensemble des réels, auquel on ajoute deux nouvelles valeurs, représentant "+ l'infini" et "- l'infini"</content>

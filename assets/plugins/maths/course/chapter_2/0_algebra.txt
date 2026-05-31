@@ -329,7 +329,7 @@ En effet, <span class="important">la loi de composition du groupe quotient est u
 Cela rend donc les calculs dans les groupes quotients très facile.
 </p>
 <math><mforall>a, b <min> G/H, <mexists>x, y <min> G, a = xH, b = yH</math></br>
-<math><mexists> z <min> G, x . y = z <mimp> xH . yH = zH <mequi> <mexists> c <min> G/H, a # b = c</math>
+<math><mexists> z <min> G, x . y = z <mimp> xH . yH = zH <mimp> <mexists> c <min> G/H, c = zH, a # b = c</math>
 
 <h3>Les groupes symétriques</h3>
 <p>

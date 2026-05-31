@@ -6,10 +6,10 @@
 </new_definition>
 <new_definition name="set_theory">
     <content>la théorie des ensembles est une théorie mathématique développée à la fin du XIXème siècle, pour être utilisée comme socle des mathématiques</content>
-    <content name="choice_axiom">l'axiome du choix est un axiome permettant l'existence d'un moyen d'extraire un élément quelconque d'un ensemble, une infinité de fois (et donc, dans une infinité d'ensemble), pour construire un nouvel ensemble</content>
+    <content name="choice_axiom">l'axiome du choix est un axiome permettant l'existence d'un moyen d'extraire un élément quelconque dans un ensemble d'ensembles non-vides pour construire un nouvel ensemble</content>
     <content name="class">une classe est un objet mathématique qui peut "contenir" d'autres objets (nommés "éléments", que l'on dit qu'ils "appartiennent" à la classe), mais qui n'est pas forcément cohérent dans la théorie des ensembles</content>
     <content name="comprehension">un ensemble est dit "défini en compréhension" quand il est défini comme tous les éléments d'un autre ensemble vérifiant une propriété spécifique</content>
-    <content name="comprehension_axiom">le schéma d'axiome de compréhension est un schéma d'axiome construisant un axiome par propriété, stipulant que, pour tout ensemble "A", il existe une classe "B" dont tous les éléments sont les éléments de A rendant une propriété "P" vraie (déduite grâce aux autres axiomes)</content>
+    <content name="comprehension_axiom">le schéma d'axiome de compréhension est un schéma d'axiome construisant un axiome par propriété, stipulant que, pour tout ensemble "A", il existe un ensemble "B" dont tous les éléments sont les éléments de A rendant un prédicat "P" vraie (déduit grâce aux autres axiomes)</content>
     <content name="empty_set">l'ensemble vide est un ensemble ne contenant aucun élément</content>
     <content name="empty_set_axiom">l'axiome de l'ensemble vide est un axiome garantissant l'existence d'un ensemble vide dans la théorie</content>
     <content name="extension">un ensemble est dit "défini par extension" quand ses éléments sont explicitement notés dans sa définition</content>
@@ -48,8 +48,15 @@
 <new_definition name="cantor_theorem">
     <content type="theorem">le cardinal d'un ensemble est toujours strictement inférieur au cardinal de son ensemble des parties</content>
 </new_definition>
+<new_definition name="complement">
+    <content>le complémentaire d'une partie "B" d'un ensemble "A" est l'ensemble des éléments de "A" qui ne sont pas dans "B"</content>
+</new_definition>
 <new_definition name="dedeking_cut">
     <content>une coupure de Dedekind est un couple de parties complémentaires d'un ensemble totalement ordonné, tel que tous les éléments de la première partie sont strictement supérieur à tous les éléments de la première partie</content>
+</new_definition>
+<new_definition name="difference">
+    <content>la différence entre deux ensembles "A" et "B" représente une opération donnant un nouvel ensemble représentant tous les éléments de "A" qui ne sont pas dans "B"</content>
+    <content name="symmetrical">la différence symétrique entre deux ensembles "A" et "B" représente une opération donnant un nouvel ensemble représentant tous les éléments de "A" et de "B" qui ne sont pas dans "A" et dans "B" en même temps</content>
 </new_definition>
 <new_definition name="inclusion">
     <content name="double">deux ensembles A et B sont égaux si (et seulement si) A est "inclu ou égal" à B et B est "inclu ou égal" à A</content>

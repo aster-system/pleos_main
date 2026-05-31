@@ -44,9 +44,9 @@ Maintenant, démontrons que la proposition "pas (A ou B)" peut s'écrire "pas A 
 
 <h3>Fonctionnement de la double inclusion</h3>
 <p>
-Démontrons que un ensemble A et un ensemble B sont égaux si (et seulement si) A est "inclu ou égal" à B et B est "inclu ou égal" à A.
+Démontrons que un ensemble A et un ensemble B sont égaux si A est "inclu ou égal" à B et B est "inclu ou égal" à A.
 </p>
-<math><mforall><mi>A</mi><mforall><mi>B</mi><mo>(</mo><mi>A</mi><mincluded><mi>B</mi><mand><mi>B</mi><mincluded><mi>A</mi><mequi><mi>A</mi><mequal><mi>B</mi><mo>)</mo></math>
+<math><mforall><mi>A</mi><mforall><mi>B</mi><mo>(</mo><mi>A</mi><mincluded><mi>B</mi><mand><mi>B</mi><mincluded><mi>A</mi><mimp><mi>A</mi><mequal><mi>B</mi><mo>)</mo></math>
 <p>
 Si A est "inclu ou égal" à B, alors (par définition) :
 </p>
@@ -62,13 +62,13 @@ Donc, si A est "inclu ou égal" à B ET B est "inclu ou égal" à A, alors :
 <p>
 Par imbrication des deux propositions, on peut obtenir la proposition suivante :
 </p>
-<math><mforall><mi>A</mi><mforall><mi>B</mi><mo>[</mo><mi>A</mi><mincluded><mi>B</mi><mand><mi>B</mi><mincluded><mi>A</mi><mequi><mforall><mi>x</mi><mo>(</mo><mi>x</mi><min><mi>A</mi><mimp><mi>x</mi><min><mi>B</mi><mand><mi>x</mi><min><mi>B</mi><mimp><mi>x</mi><min><mi>A</mi><mo>)</mo><mo>]</mo></math>
+<math><mforall><mi>A</mi><mforall><mi>B</mi><mo>[</mo><mi>A</mi><mincluded><mi>B</mi><mand><mi>B</mi><mincluded><mi>A</mi><mequi><mforall><mi>x</mi><mo>(</mo>(<mi>x</mi><min><mi>A</mi><mimp><mi>x</mi><min><mi>B</mi>)<mand>(<mi>x</mi><min><mi>B</mi><mimp><mi>x</mi><min><mi>A</mi>)<mo>)</mo><mo>]</mo></math>
 <p>
 Or, on a une double implication, doit on en déduit une équivalence :
 </p>
 <math><mforall><mi>A</mi><mforall><mi>B</mi><mo>[</mo><mi>A</mi><mincluded><mi>B</mi><mand><mi>B</mi><mincluded><mi>A</mi><mequi><mforall><mi>x</mi><mo>(</mo><mi>x</mi><min><mi>A</mi><mequi><mi>x</mi><min><mi>B</mi><mo>)</mo><mo>]</mo></math>
 <p>
-On reconnaît l'axiome d'extensionnalité : un ensemble A et un ensemble B sont égaux si (et seulement si) A est "inclu ou égal" à B et B est "inclu ou égal" à A.
+Donc, dire que "A" est inclut dans "B" et que "B" est inclut dans "E" équivaut à la condition nécessaire pour obtenir l'égalité de deux ensembles selon l'axiome d'extensionnalité : un ensemble A et un ensemble B sont égaux si A est "inclu ou égal" à B et B est "inclu ou égal" à A.
 </p>
 
 <h3>Résultats obtenus grâce à l'axiome de fondation</h3>
@@ -141,22 +141,15 @@ Au final, des ensembles bien fondés ne peut pas s'appartenir à eux-même de ma
 <h3>Unicité des ensembles admis par les axiomes</h3>
 <p>
 Démontrons qu'il n'existe qu'un seul ensemble ne contenant aucun élément : l'ensemble vide.
-Procédons avec une démonstration par l'absurde.</br>
-Supposons l'existence un ensemble E, étant un ensemble ne contenant aucun élément, inégal à l'ensemble vide.
-Si cet ensemble ne contient aucun élément, selon l'axiome d'extensionnalité, il est égal à l'ensemble vide (que nous avons défini comme impossible).
-Si cet ensemble contient au moins un élément, selon l'axiome d'extensionnalité, il est inégal à l'ensemble vide... mais il contient au moins un élément (que nous avons défini comme impossible).</br>
-Donc, toutes les possibilités mènent à une contradiction, E ne peut pas exister, il n'y a donc qu'un seul ensemble ne contenant aucun élément : l'ensemble vide.
-</p>
-<p>
-Démontrons qu'il n'existe qu'un seul ensemble qui, pour tout ensemble A et B, représente la paire de A et B.
-Procédons avec une démonstration par l'absurde, extrêmement similaire à celle utilisée pour démontrer l'unicité de l'ensemble vide.</br>
-Supposons l'existence un ensemble E, étant un ensemble contenant la paire de A et B, inégal à l'ensemble vide.
-Si cet ensemble ne contient que A et B, selon l'axiome d'extensionnalité, il est égal à C (que nous avons défini comme impossible).
-Si cet ensemble ne contient pas que A et B, selon l'axiome d'extensionnalité, il est inégal à C... mais il ne contient pas A et B.</br>
-Donc, toutes les possibilités mènent à une contradiction, E ne peut pas exister, il n'y a donc qu'un seul ensemble ne contenant que A et B : C.
+Supposons l'existence un ensemble E, étant un ensemble ne contenant aucun élément.
+Par définition cet ensemble n'a aucun élément.
+Or, l'ensemble vide n'a aucun élément non plus.
+Donc, "E" et l'ensemble vide on les exacts même éléments.
+Selon l'axiome d'extensionnalité, "E" et l'ensemble vide sont les mêmes : il n'existe donc pas d'autre ensemble vide possible.
 </p>
 <p>
 En procédant comme ceci, on peut prouver l'unicité d'énormément d'ensembles définis grâces aux axiomes :</br>
+- Ensemble contenant seulement deux ensembles "A" et "B", garanti par l'axiome de la paire</br>
 - Singleton d'un objet "A"</br>
 - Réunion dans un ensemble "A"</br>
 - Ensemble des parties d'un ensemble "A"</br>
@@ -187,7 +180,7 @@ De manière à ne pas se casser la tête, on peut définir l'ensemble des partie
 Au final, tous les couples de Kuratowski possibles des éléments de E et F sont définis dans P(P(A)).
 Finalement, en utilisant le schéma d'axiome de séparation, on peut trouver un moyen d'extraire dans P(P(A)) tous les couples qui nous intéressent, formant le produit cartésien de E et F (ici noter C).
 </p>
-<math>C = {(x, y) <min> P(P(A)), x <min> E <mand> y <min> F} <mequi> C = E X F</math>
+<math>C = {z <min> P(P(A)) | <mexists> x <min> E, <mexists> y <min> F, z = (x, y)} <mequi> C = E X F</math>
 <p>
 Cet ensemble existe donc pour tout ensemble E et F.
 </p>

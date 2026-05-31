@@ -11,6 +11,9 @@
     <content>une fonction est un objet permettant de lier les éléments de deux ensembles quelconques entre eux, sans obligatoirement que tous les éléments de l'ensemble de départ soit utilisés</content>
     <content name="composition">la composition de fonctions (ou d'applications, ce qui est moins commun mais parfaitement possible) est une opération agissant sur des fonctions / applications, prenant deux fonctions / applications de bases et permettant d'obtenir une nouvelle fonction / / application, admettant comme ensemble de départ l'ensemble de départ de la première fonction, comme ensemble d'arrivée celui de la deuxième fonction, et liant les éléments de l'ensemble de départ aux éléments transformés par la première fonction, puis par la deuxième fonction</content>
 </new_definition>
+<new_definition name="hasse_diagram">
+    <content>un diagramme de Hasse est une représentation d'un ensemble fini muni d'un ordre quelconque, où deux éléments "a" et "b" en relations (dans cet ordre) sont représentés par une flèche allant de "a" vers "b"</content>
+</new_definition>
 <new_definition name="injection">
     <content>une injection est une application mathématique où tous les éléments de l'ensemble de départ sont reliés à au plus 1 objet (soit à 1 objet précisément, soit à aucun objet)</content>
 </new_definition>
@@ -23,6 +26,7 @@
 </new_definition>
 <new_definition name="relation">
     <content>une relation est un objet permettant d'énoncer des propositions entre plusieurs éléments d'un même ensemble quelconque</content>
+    <content name="totality">une relation est dite totale si, pour deux éléments quelconques "a" et "b", la relation est vraie dans le sens "a" puis "b" OU dans le sens "b" puis "a"</content>
 </new_definition>
 <new_definition name="sequence">
     <content>une suite mathématique est une fonction mathématique allant de "N" à n'importe quel ensemble possible</content>

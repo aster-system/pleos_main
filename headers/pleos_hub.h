@@ -118,7 +118,7 @@ namespace pleos {
         };
 
         // Create an object in the window
-        std::shared_ptr<scls::Object> __create_loaded_object_from_type(std::string object_name, std::string object_type) {
+        std::shared_ptr<scls::GL_Object> __create_loaded_object_from_type(std::string object_name, std::string object_type) {
             if(object_name == "hub") {a_hub = new_page_2d<Hub_Page>(object_name);return a_hub;}
             else if(object_name == "chemistry") {std::shared_ptr<Chemistry_Page> hub = new_page_2d<Chemistry_Page>(object_name);return hub;}
             else if(object_name == "it") {std::shared_ptr<IT_Page> hub = new_page_2d<IT_Page>(object_name);return hub;}

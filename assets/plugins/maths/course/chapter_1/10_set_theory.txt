@@ -340,7 +340,7 @@ Présentons les premiers axiomes de cette théorie, proposés par Zermelo entre 
 Le premier axiome est l'axiome d'extensionnalité.
 <span class="important"><definition name="set_theory-extensionality"></span>.
 Dans le cas d'ensembles normaux, l'ordre des éléments n'importe pas.
-De manière illustré, l'axiome confirme cette égalité :
+De manière illustrée, l'axiome confirme cette égalité :
 </p>
 <graphic ratio_base>
 <base draw=0 width=25 height=10>
@@ -360,31 +360,28 @@ De manière illustré, l'axiome confirme cette égalité :
 <text name=type_number() content="1" x=9 y=-2></text>
 </graphic>
 <p>
-De manière purement mathématique, l'axiome peut s'énoncer de plusieurs manières équivalentes.
-La première n'utilise que des équivalences, et la deuxième découpe la première équivalence en deux implications (généralement plus utilisé dans les démonstrations).
-Pour une traduction mathématique - français, lisez "pour tout ensemble A et B, A et B sont égaux si (et seulement si) tous les éléments de B sont des éléments de A, et tous les éléments de A sont des éléments de B".
+Il est assez facile d'écrire mathématiquement cet axiome.
+Pour une traduction mathématique - français, lisez "pour tout ensemble A et B, A et B sont égaux si tous les éléments de B sont des éléments de A, et tous les éléments de A sont des éléments de B".
+D'ailleurs, cet axiome n'est qu'une implication : sa réciproque est vraie selon la définition de l'égalité en logique pure, et elle est donc inutile à préciser ici.
+Donc, l'équivalence est elle aussi parfaitement juste, mais n'est pas la "façon standard" de noter cet axiome, car trop forte.
 </p>
-<math><mforall><mi>A</mi><mforall><mi>B</mi><mo>[</mo><mforall><mi>x</mi><mo>(</mo><mi>x</mi><min><mi>A</mi><mequi><mi>x</mi><min><mi>B</mi><mo>)</mo><mequi><mi>A</mi><mequal><mi>B</mi><mo>]</mo></math></br>
-<math><mforall><mi>A</mi><mforall><mi>B</mi><mo>[</mo><mo>(</mo><mforall><mi>x</mi><mo>{</mo><mi>x</mi><min><mi>A</mi><mimp><mi>x</mi><min><mi>B</mi><mo>}</mo><mo>ET</mo><mforall><mi>x</mi><mo>{</mo><mi>x</mi><min><mi>B</mi><mimp><mi>x</mi><min><mi>A</mi><mo>}</mo><mo>)</mo><mequi><mi>A</mi><mequal><mi>B</mi><mo>]</mo></math>
+<math><mforall><mi>A</mi><mforall><mi>B</mi><mo>[</mo><mforall><mi>x</mi><mo>(</mo><mi>x</mi><min><mi>A</mi><mequi><mi>x</mi><min><mi>B</mi><mo>)</mo><mimp><mi>A</mi><mequal><mi>B</mi><mo>]</mo></math></br>
 <p>
 Pour prouver simplement que deux ensembles sont les mêmes, il existe une technique assez puissante : la double inclusion.
 <span class="important"><definition name="inclusion-double"></span>.
 Cette proposition <a href="demo">se démontre assez facilement grâce à cette axiome</a>.
+Encore une fois, on va noter une implication, mais l'équivalence serait aussi juste (mais trop forte).
 </p>
-<math><mforall><mi>A</mi><mforall><mi>B</mi><mo>(</mo><mi>A</mi><mincluded><mi>B</mi><mand><mi>B</mi><mincluded><mi>A</mi><mequi><mi>A</mi><mequal><mi>B</mi><mo>)</mo></math>
+<math><mforall><mi>A</mi><mforall><mi>B</mi><mo>(</mo><mi>A</mi><mincluded><mi>B</mi><mand><mi>B</mi><mincluded><mi>A</mi><mequi><mi>A</mi><mimp><mi>B</mi><mo>)</mo></math>
 <p>
 Le deuxième axiome est l'axiome de l'ensemble vide.
 <span class="important"><definition name="set_theory-empty_set_axiom"></span>.
-Comme son nom l'indique : <span class="important"><definition name="set_theory-empty_set"></span>.
 Par définition, la proposition "l'élément "e" appartient à l'ensemble vide" est toujours fausse.
 Selon l'axiome d'extensionnalité, on en déduit qu'il n'y en a qu'un seul (démontré <a href="demo">ici</a>).
 En réalité, certains auteurs négligent cet axiome, car il peut être déduit grâce à des théorèmes beaucoup (mais alors, vraiment beaucoup) plus complexes.
-Cet ensemble se note ainsi :
-</p>
-<math><mempty_set></math>
-<p>
 De manière purement mathématique, cet axiome est assez simple à énoncer.
-Pour une traduction mathématique - français, lisez "il existe un ensemble noté [symbôle de l'ensemble vide] tel que, pour tout "x", "x" n'appartient pas à [symbôle de l'ensemble vide]".
+Pour une traduction mathématique - français, lisez "il existe un ensemble A tel que, pour tout "x", "x" n'appartient pas à A".
+Bien que ici on nomme cet ensemble "A", comprenez que "A" peut aussi se noter avec le symbole de l'ensemble vide (bien que, dans la formalisation de l'axiome, on préfère éviter ce symbole, mais on peut l'utiliser par la suite).
 </p>
 <math><mexists><mempty_set><mforall><mi>x</mi><mo>,</mo><mno><mo>[</mo><mi>x</mi><min><mempty_set><mo>]</mo></math>
 <p>
@@ -419,6 +416,7 @@ Selon l'axiome d'extensionnalité, on en déduit qu'il n'y en a qu'un seul (dém
 <p>
 De manière purement mathématique, cet axiome est aussi assez simple à énoncer, mais un peu plus dur à traduire.
 Pour une traduction mathématique - français, lisez "pour tout ensemble A et B, il existe un ensemble C dont les éléments sont TOUS les éléments possibles qui sont soit A, soit B".
+Ici, quand on dit "dont les éléments sont TOUS les éléments possibles qui sont soit A, soit B", il faut comprendre que ces éléments sont en fait exactement "A" et "B".
 </p>
 <math><mforall><mi>A</mi><mforall><mi>B</mi><mexists><mi>C</mi><mforall><mi>x</mi><mo>[</mo><mi>x</mi><min><mi>C</mi><mequi><mo>(</mo><mi>x</mi><mequal><mi>A</mi><mor><mi>x</mi><mequal><mi>B</mi><mo>)</mo><mo>]</mo></math>
 <p>
@@ -570,20 +568,11 @@ Ce type de raisonnement nous sera très utile dans pleins de contextes impliquan
 <p>
 Le septième axiome n'est... pas un axiome à proprement parlé, mais un schéma d'axiome : le schéma d'axiome de compréhension.
 <span class="important"><definition name="set_theory-comprehension_axiom"></span>.
-Ici, on défini bien "B" comme une classe, car il peut poser certains problèmes dans ZFC (que nous verrons juste après ce schéma d'axiome).
-Cependant, <span class="important">un axiome que nous définirons tout à l'heure nous permet d'affirmer que "B" est presque toujours un ensemble</span> (ce qui est possible car un ensemble est une classe).
 Si aucun élément de l'ensemble ne vérifie la propriété, alors l'ensemble obtenu est l'ensemble vide.
 Cet axiome permet de faire quelque chose de très pratique : introduire la définition d'ensemble par compréhension.
-<span class="important"><definition name="set_theory-comprehension"></span>.
-Ce nom vient du fait que c'est le schéma d'axiome de compréhension qui atteste de l'existence de cette ensemble.
-De manière abstraite, un ensemble B défini par compréhension s'énonce comme ceci (lisez "B est l'ensemble de tous les éléments x possibles respectant la propriété P(x) (et donc, où P(x) est vraie)") :
+C'est cet axiome qui permet d'écrire des ensembles par compréhension.
 </p>
-<math><mi>B</mi><mequal><mo>{</mo><mi>x</mi><mo>,</mo><mi>P(x)</mi><mo>}</mo></math>
-<p>
-Prenons un exemple plus concret : un ensemble A défini par extension et un ensemble B défini par compréhension.
-Pour définir l'axiome B comme tous les éléments de A vérifiant la propriété P "l'élément est pair", on doit utiliser une relation d'appartenance entre "x" et "A" :
-</p>
-<math><mi>A</mi><mequal><mo>{</mo><mi>1, 2, 3, 4, 5, 6, 7, 8</mi><mo>}</mo></math></br>
+<math><mi>A</mi><mequal><mo>{</mo><mi>1, 2, 3, 4, 5, 6, 7, 8</mi><mo>}</mo>, P(x) = "x est pair"</math></br>
 <math><mi>B</mi><mequal><mo>{</mo><mi>x</mi><min><mi>A</mi><mo>,</mo><mi>P(x)</mi><mo>}</mo><mequal><mo>{</mo><mi>2, 4, 6, 8</mi><mo>}</mo></math>
 
 <p>
@@ -599,16 +588,17 @@ Pour une traduction mathématique - français de la version complète (la second
 Sur cet axiome s'achève notre présentation des axiomes proposés par Zermelo en première instance.
 Cependant, <span class="important">cette théorie est insuffisante, et admet une quantité monstrueuse de paradoxes (paradoxes de Russell, paradoxe de Richard, paradoxe de Berry...)</span>.
 Historiquement, le plus connue est celui de Russell.
+Ici, le paradoxe de Russell rend impossible l'existence d'un schéma de compréhension où les éléments de "B" ne sont pas restreints à des éléments de "A", mais sont "tous" les éléments logiquement possibles.
 En effet, <span class="important"><definition name="russell_paradox"></span>.
-Donc, cet ensemble ne peut pas exister : le schéma d'axiome de compréhension est donc incohérent.
-Déjà, il faut savoir que, lors de la publication originale de la théorie des ensembles, des axiomes similaires à "l'axiome de compréhension" existés déjà, et presque tous admettaient que "B" est un ensemble.
-<span class="important">Ce paradoxe démontre que, si l'axiome de compréhension permet de toujours admettre que "B" est un ensemble, alors des paradoxes logiques apparaissent</span>.
+Donc, cet ensemble ne peut pas exister : le schéma d'axiome de compréhension non-restreint est donc incohérent.
+Déjà, il faut savoir que, lors de la publication originale de la théorie des ensembles, des axiomes similaires à "l'axiome de compréhension" existés déjà, et presque tous n'étaient pas restreints.
+<span class="important">Ce paradoxe démontre que, si l'axiome de compréhension n'est pas restreint, alors des paradoxes logiques apparaissent</span>.
 </p>
 <p>
 Une version corrigée était nécessaire : c'est ce que va fraire Fraenkel.
 En 1922, <span class="important">Fraenkel publie en 1922 une version complétée de la théorie, nommée "théorie des ensembles ZF", où beaucoup de ces paradoxes sont résolues</span>.
 Cette théorie modifie légèrement les axiomes que nous avons déjà vu, et rajoute un nouvel axiome et un nouveau schéma d'axiome.
-C'est dans ce contexte là que "B" a dû être assumé comme étant une classe, qui est très souvent (dans les mathématiques courantes) un ensemble.
+C'est dans ce contexte là que l'axiome de compréhension est aussi devenu restreint.
 </p>
 
 <p>
@@ -628,15 +618,13 @@ Pour une traduction mathématique - français, lisez "pour tout ensemble x, si x
 Finalement, le dernier schéma d'axiome obligatoire proposé par Fraenkel est le schéma d'axiome de remplacement.
 <span class="important"><definition name="set_theory-replacement_axiom"></span>.
 À l'inverse des autres axiomes, celui si n'est ni simple, ni intuitif, et nous y reviendrons quand nous parlerons de la logique mathématique avancée.
-Cependant, <span class="important">il permet de résoudre beaucoup de paradoxes que nous avons vu auparavant</span>.
-En effet, <span class="important">c'est ce schéma d'axiome qui stipule si une classe obtenue via l'axiome de compréhension est une classe ou un ensemble</span>.
+Cependant, <span class="important">il permet de résoudre beaucoup de paradoxes que nous avons vu auparavant, et d'énoncer pas mal de propriétés mathématiques intéressantes</span>.
 </p>
 
 <h3>L'axiome du choix</h3>
 <p>
 L'axiome du choix est un axiome assez bizarre, car il n'est pas aussi utilisé que les autresn et parfois exclu de la théorie.
 <span class="important"><definition name="set_theory-choice_axiom"></span>.
-Pour des raisons de formalisme, l'axiome dit que tous ces ensembles doivent être défini dans un ensemble plus grand (bien que ça ne change rien au coeur du concept).
 Nuance importante : <span class="important">l'axiome permet l'existence de ce moyen, mais il n'oblige pas à l'expliciter</span>.
 En général, ce moyen est une fonction (si vous ne savez pas ce que c'est, ou que vous ne savez pas bien le définir, voyez cela comme le nom que l'on donne à ce moyen).
 Donc, ce moyen peut être parfaitement naturel, comme totalement aléatoire (et non-explicité).
@@ -690,7 +678,7 @@ L'idée de cet axiome est de pouvoir utiliser cette fameuse "fonction", dans des
 Son énoncé mathématique est... assez complexe.
 Pour une traduction mathématique - français, lisez "pour tout ensemble X non vide, il existe une fonction f allant de X vers la réunion de tous les ensembles A appartenant à X (comme permis par l'axiome de la réunion), transformant les éléments A de X (des ensembles) en un élément quelconque de A".
 </p>
-<math><mforall>X[X<mnotequal><mempty_set><mimp><mexists>f:X<mto><munion>X<mforall>A<min>X(f(A)<min>A)]</math>
+<math><mforall>X[(X<mnotequal><mempty_set><mand><mforall>A<min>X,A<mnotequal><mempty_set>)<mimp><mexists>f:X<mto><munion>X<mforall>A<min>X(f(A)<min>A)]</math>
 
 
 
@@ -699,8 +687,46 @@ Pour une traduction mathématique - français, lisez "pour tout ensemble X non v
 <h2>Les opérations sur les ensembles</h2>
 
 <h3>La différence d'ensembles</h3>
+<p>
+Une opération assez utile en théorie des ensembles est la différence entre ensembles.
+<span class="important"><definition name="difference"></span>.
+La définition mathématique s'obtient grâce à une définition par compréhension, comme un sous-ensemble de "A" (ce qui permet de prouver l'existence et l'unicité de cet ensemble dans ZFC).
+Généralement, on note cet opérateur avec un "\", et l'on dit généralement "A privé de B" ou "A moins B".
+Certains auteurs utilisent l'opérateur "-" dans le cas où "B" est un sous-ensemble de "A".
+</p>
+<math>C = A \ B = A - B</math></br>
+<math>C = {x <min> A, <mno>(x <min> B)}</math>
+<p>
+L'illustration standard utilise des cercles (le cercle droit représente "A", le cercle gauche représente "B", et la partie rouge représente la différence de A et de B).
+</p>
+<graphic><background_color white><circle x=-1 y=0 radius=5/2 color=red border_width=10><circle x=1 y=0 radius=5/2 color=white border_width=10><circle x=-1 y=0 radius=5/2 color=transparent border_width=10></graphic>
+<p>
+D'ailleurs, <span class="important">la différence est l'un de ces opérateurs où l'ordre de réalisation des opérations et l'ordre des éléments autour du symbole comptent</span>.
+Prenons un exemple très simple pour voir que l'ordre de réalisation des opérations comptent :
+</p>
+<math>A = {1, 2}, B = {2}, C = {2}</math></br>
+<math>(A \ B) \ C = ({1, 2} \ {2}) \ {2} = {1}</math></br>
+<math>A \ (B \ C) = {1, 2} \ ({2} \ {2}) = {1, 2} \ <mempty_set> = {1, 2}</math>
+<p>
+Pour l'ordre des éléments autour du symbole, c'est au moins aussi simple :
+</p>
+<math>A = {1, 2}, B = {2}</math></br>
+<math>A \ B = {1, 2} \ {2} = {1}</math></br>
+<math>B \ A = {2} \ {1, 2} = <mempty_set></math>
+<p>
+Ce concept va nous permettre d'en introduire un autre : le complémentaire d'une partie.
+<span class="important"><definition name="complement"></span>.
+En fait, le complémentaire de "B" dans "A" représente donc "A \ B".
+</p>
+<p>
+Il existe un concept similaire : la différence symétrique.
+<span class="important"><definition name="difference-symmetrical"></span>.
+Généralement, on note cet opérateur avec un symbole "delta", et l'on dit généralement "A delta B".
+</p>
+<math>C = A <mdelta> B</math></br>
+<math>C = (A <munion> B) \ (A <minter> B)</math>
 
-<h3>A DEFINIR</h3>
+<h3>Les partitions d'ensembles</h3>
 <p>
 Grâce à ces deux concepts, vous pouvez en définir un autre assez pratique : les partitions d'un ensembles.
 <span class="important"><definition name="partition"></span>.
@@ -721,7 +747,7 @@ Voici un autre exemple : le tableau qui suit représente le produit cartésien (
 <p>
 La définition mathématique pure de cet opérateur est assez simple :
 </p>
-<math><mforall>E<mforall>F, <mexists>C, C = E X F <mequi> <mforall>x, y, {(x, y) <min> C <mequi> x <min> E <mand> y <min> F}</math>
+<math><mforall>E<mforall>F, <mexists>C [C = E X F <mequi> <mforall>x, <mforall>y, {(x, y) <min> C <mequi> x <min> E <mand> y <min> F}]</math>
 <p>
-Quelque soit les ensembles de départ, les utiliser via cet opérateur donne un nouvel ensemble fonctionnel (<a href="demo">démontré ici</a>), et heuresement, car il serait difficile de s'imaginer qu'il existe des ensembles pour lesquelles cela ne marche pas.
+Quelque soit les ensembles de départ, les utiliser via cet opérateur donne un nouvel ensemble fonctionnel (<a href="demo">démontré ici</a>), et heureusement, car il serait difficile de s'imaginer qu'il existe des ensembles pour lesquelles cela ne marche pas.
 </p>
