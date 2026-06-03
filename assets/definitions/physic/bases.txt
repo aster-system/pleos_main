@@ -1,5 +1,8 @@
-<new_definition name="scientific_method">
-    <content>la méthode scientifique est un ensemble de techniques permettant d'obtenir / de vérifier des connaissances quelconques</content>
+<new_definition name="experimentation">
+    <content>l'expérimentation est le processus de vérification d'une hypothèse scientifique, en regardant ce qu'il se passe dans la réalité</content>
+</new_definition>
+<new_definition name="hypothesis">
+    <content>une hypothèse est une première tentative d'explication sur un phénomène quelconque, que l'on souhaite étudier</content>
 </new_definition>
 <new_definition name="modelisation">
     <content>la modélisation est une façon d'étudier quelque chose en utilisant un modèle</content>
@@ -7,6 +10,12 @@
 </new_definition>
 <new_definition name="physic">
     <content>la physique est la science de l'étude du monde réel, en tentant de le modéliser et de le formaliser</content>
+</new_definition>
+<new_definition name="scientific_method">
+    <content>la méthode scientifique est un ensemble de techniques permettant d'obtenir / de vérifier des connaissances quelconques</content>
+</new_definition>
+<new_definition name="theory">
+    <content>une théorie est un ensemble de description / explication qui sont considérées juste pour décrire / expliquer un phénomène quelconque</content>
 </new_definition>
 
 <new_definition name="physical_quantity">

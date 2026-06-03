@@ -115,18 +115,6 @@
     <content>un espace pré-hilbertien est un espace vectoriel muni d'une opération entre plusieurs vecteurs vers un scalaire, permettant de formaliser le concept "d'angle" dans cet espace</content>
 </new_definition>
 
-<new_definition name="matrix">
-    <content>une matrice à valeur dans un ensemble représente intuitivement un tableau de valeurs de cet ensemble</content>
-    <content name="application">une matrice associée à une application linéaire est une matrice dont les propriétés internes permettent de calculer facilement l'image (dans un espace vectoriel de dimension finie) d'un vecteur (toujours dans un espace vectoriel de dimension finie) dans une base d'arrivée exprimé dans une base de départ</content>
-    <content name="basis">une matrice de changement de base (ou matrice de passage) est une matrice permettant d'obtenir les coordonnées d'un vecteur dans une base "c", via l'expression de ce vecteur dans une autre base "b"</content>
-    <content name="dimension">la dimension d'une matrice est un couple de nombre entier naturel contenant la taille de sa base de départ, puis de sa base d'arrivée</content>
-    <content name="rigorous">une matrice à valeur dans un ensemble représente un ensemble d'éléments de cet ensemble, indexé par le produit cartésien de deux ensembles de taille "b" et "c"</content>
-    <content name="transpose">la transposée d'une matrice représente une nouvelle matrice, où les colonnes de cette matrice sont les lignes de la matrice de départ (et donc, où l'on échange les lignes et les colonnes de la matrice)</content>
-</new_definition>
-<new_definition name="matrix_product">
-    <content>le produit matriciel est une opération entre deux matrices de dimension "a, b" et "b, c", donnant une nouvelle matrice de dimension "a, c" où chaque élément représente une somme de produits d'éléments de lignes et de colonnes</content>
-</new_definition>
-
 <new_definition name="algebra_center">
     <content>le centre d'une structure algébrique représentent l'ensemble des éléments de cette structure qui commutent avec tous les autres éléments de la structure, sans exception</content>
     <content name="group">le centre d'une structure algébrique représentent l'ensemble des éléments de cette structure qui commutent avec tous les autres éléments de la structure, sans exception</content>

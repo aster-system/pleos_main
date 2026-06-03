@@ -1,1 +1,34 @@
 <h1>Simuler une mission lunaire</h1>
+
+
+
+<h2>Un projet ambitieux</h2>
+
+<h3>D'où vient cette idée ?</h3>
+<p>
+Ce site web est couplée à nos réseaux (disponibles <a href="https://aster-system.github.io/aster-system/media.html">juste ici</a>), sur lesquels nous proposons des shorts, permettant d'apprendre des choses multiples.
+De (approximativement) juin 2025 à juin 2026, quasiment tout ce qui est proposé sur nos réseaux et sur notre site web représente des mathématiques pures.
+Cependant, au tout début de nos vidéos, nous avons proposé deux autres domaines : l'informatique et la physique.
+Or, ces vidéos ne sont pas optimales pour bien apprendre la physique.
+Donc, il est temps de recommencer cette série, et d'en profiter pour ajouter une section "cours" sur la partie physique de notre cours.
+Cependant, il faut commencer par quelque chose de rigolo : l'astronomie.
+C'est dans ce contexte que nous avons eu cette idée : simuler une mission lunaire de A à Z.
+</p>
+<p>
+Ici, nous devons précises ce que nous allons faire par "simuler".
+En fait, l'idée est de simuler sur ordinateur une mission lunaire de A à Z, et de donner la possibilité de suivre cette simulation de manière très ouverte.
+Pour être précis, nous allons développer le logiciel nécessaire de 0, et documenter les avancées sur cette page web.
+Cela implique donc de faire la physique, la 3D et les mathématiques derrière.
+Pour cela, nous utiliserons un langage de programmation très connu : le C++.
+De plus, nous utiliserons notre propre librairie C++, nommé "SCLS", pour faire les bases du logiciel (3D, UI, mathématiques...).
+</p>
+
+<h3>Où suivre ce projet ?</h3>
+<p>
+De manière assez évidente, une grande partie de ce projet sera documentée sur cette page.
+De plus, nous ouvrirons aussi la partie "cours" de la partie "physique" de notre site web, plus ou moins nécessaire pour bien comprendre les avancées qui auront lieu ici.
+</p>
+<p>
+Nous posterons aussi régulièrement sur Youtube, quand des avancées intéressantes auront été faites.
+De plus, certains codes seront fait en Live, sur Tiktok.
+</p>

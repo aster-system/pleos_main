@@ -25,3 +25,26 @@ Pour faire cela, le processus utilisé est nommé la méthode scientifique.
 <span class="important"><definition name="scientific_method"></span>.
 Cette méthode est donc très utilisée en physique.
 </p>
+<p>
+Résumons ce que dit cette méthode, de la manière la plus intuitive qui soit.
+Imaginons un chercheur, qui par un (plus ou moins) heureux hasard, découvre un phénomène étrange.
+Si ce chercheur veut comprendre ce phénomène, il doit appliquer les bonnes méthodes, pour ne pas faire / dire / en déduire n'importe quoi avec.
+</p>
+<p>
+Pour avoir un socle sur lequel partir, il va formuler ce que l'on appelle une hypothèse.
+<span class="important"><definition name="hypothesis"></span>.
+L'idée de ce concept est d'avoir une base de où partir, pour ne pas être perdu dés le départ.
+Bien évidemment, il faut que cette hypothèse soit un minimum cohérente avec le phénomène de départ.
+</p>
+<p>
+Maintenant, le travail du chercher va être de vérifier si cette hypothèse est vraie ou fausse, et dans ce cas, essayer d'en tirer la vérité.
+Pour cela, il va généralement utiliser un concept très connu : l'expérimentation.
+<span class="important"><definition name="experimentation"></span>.
+L'ensemble des méthodes rendant une expérience valable est nommé la méthode expérimentale.
+Cependant, cela implique quelque chose d'assez important : <span class="important">une hypothèse n'est considérée recevable que si elle est vérifiable par l'expérience</span>.
+</p>
+<p>
+Si notre hypothèse est validée, elle devient ce que l'on appelle une théorie.
+<span class="important"><definition name="theory"></span>.
+En science pure, une théorie est généralement admise, là où dans le langage courant, elle est considérer comme "insuffisante" pour être admise.
+</p>
