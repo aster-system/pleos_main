@@ -22,6 +22,18 @@ Cela implique donc de faire la physique, la 3D et les mathématiques derrière.
 Pour cela, nous utiliserons un langage de programmation très connu : le C++.
 De plus, nous utiliserons notre propre librairie C++, nommé "SCLS", pour faire les bases du logiciel (3D, UI, mathématiques...).
 </p>
+<p>
+Pour rendre le tout le plus "faisable" possible, nous ferons d'une manière assez précise : rendre le code le plus réaliste au fil du temps.
+Pour être précis, nous allons faire une première "partie" assez peu réaliste, mais représentant quand même intégralement le projet (mission lunaire, et tout le bazar)
+Dans une deuxième partie, nous rajouterons du réalisme, et de la diversité.
+Nous ferons ça autant de fois que nécessaire.
+</p>
+<p>
+Une petite précision s'impose.
+Sur 8 milliards d'êtres humains, il est fort probable que quelqu'un sur Terre est déjà fait un projet similaire.
+Cependant, nous ne cherchons absolument pas à plagier quiconque, et nous préférons le dire ici.
+Or, si pour des raisons X ou Y, nous nous sommes inspiré de quoique ce soit, nous le dirons explicitement.
+</p>
 
 <h3>Où suivre ce projet ?</h3>
 <p>
@@ -30,5 +42,17 @@ De plus, nous ouvrirons aussi la partie "cours" de la partie "physique" de notre
 </p>
 <p>
 Nous posterons aussi régulièrement sur Youtube, quand des avancées intéressantes auront été faites.
+Cependant, il est fort probable que nous ne postions pas en même temps les vidéos nécessaires à la compréhension de tout ce que nous faisons, et les vidéos seront donc fortement vulgarisée pour pouvoir être compréhensible par tout le monde.
+</p>
+<p>
 De plus, certains codes seront fait en Live, sur Tiktok.
+Cependant, certaines précisions doivent êtres faites à propos des Live Tiktok.
+Déjà, les rediffusions seront elles aussi disponibles sur Tiktok.
+De plus, il faut savoir que Tiktok possède un système de modération très strict, qui nous oblige à faire attention à ce que nous montrons.
+Parmi les problèmes que nous avons eu, nous nous sommes rendu compte qu'il ne valait mieux pas montrer de drapeaux de pays en Live Tiktok, sous peine de coupure du Live.
+Donc, pour éviter ce genre de problème, tous les drapeaux seront censurés en Live.
+</p>
+<p>
+Il est aussi possible de suivre ce projet de manière plus proche, via Discord.
+En effet, vous pouvez nous rejoindre sur Discord, avec le lien juste ici : <a href="https://discord.gg/4HuerWR8pG">https://discord.gg/4HuerWR8pG</a>.
 </p>

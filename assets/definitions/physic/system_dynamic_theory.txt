@@ -1,0 +1,9 @@
+<new_definition name="phase_space">
+    <content></content>
+</new_definition>
+<new_definition name="system">
+    <content>un système est un ensembles d'objets quelconques, dont le comportement est régit par des règles / lois quelconques</content>
+    <content name="dynamic">un système dynamique est un systèmes où le comportement des objets dans le temps est décrit par une loi précise</content>
+    <content name="dynamic_discrete">un système dynamique est dit discret si il existe un temps entre chaque état connu des objets du système, obtenu via la loi du système</content>
+    <content name="state">un état (aussi appelée phase) d'un système dynamique est l'ensemble des données nécessaires pour décrire intégralement un système à un instant précis</content>.
+</new_definition>

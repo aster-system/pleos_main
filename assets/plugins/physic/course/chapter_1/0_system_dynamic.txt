@@ -1,0 +1,41 @@
+<h1>La théorie des systèmes dynamiques</h1>
+
+
+
+<h2>Introduction aux systèmes dynamiques</h2>
+
+<h3>Qu'est ce qu'est un système dynamique ?</h3>
+<p>
+La théorie des systèmes dynamiques est une théorie qui trouvent ses racines en mathématiques, mais est utile dans une quantité faramineuse de domaines (physique, biologie...).
+En plus, elle est aussi une théorie mathématique particulièrement intéressante et fournie.
+</p>
+<p>
+Avant tout de chose, définissons le concept de système.
+<span class="important"><definition name="system"></span>.
+En voyant ça, on peut très vite s'apercevoir de la quantité de choses possibles avec ce concept.
+On pourrait imaginer par exemple un système composé d'élèves et de professeurs dans une école, et où les lois pourraient représenter la façon dont ils se comportent entre eux.
+Cependant, cela pose problème : <span class="important">il n'existe généralement pas de définition mathématique globale pour le concept de "système"</span>.
+Cela est dût au fait qu'il est beaucoup trop large, et qu'il est donc difficile de trouver des propriétés mathématiques communes à tous les systèmes possibles et imaginables.
+</p>
+<p>
+Rendons nos systèmes dynamiques.
+Ici, <span class="important"><definition name="system-dynamic"></span>.
+Pour reprendre notre exemple de l'école, une loi représenterait comment les élèves (et les données qui leur sont "attachées") évoluent dans le temps (notes, relations amicales...).
+Il existe deux catégories importantes de systèmes dynamiques (que nous traiterons après) : les systèmes dynamiques discrets et les systèmes dynamiques continus.
+</p>
+<p>
+Mathématiquement parlant, on peut définir une chose intéressante avec ces systèmes : un état du système.
+<span class="important"><definition name="system-state"></span>.
+</p>
+<p>
+Un des concepts les plus utilisés dans l'étude des systèmes dynamiques est l'espace des phases.
+<span class="important"><definition name="phase_space"></span>.
+</p>
+
+<h3>Les espaces dynamiques discrets</h3>
+<p>
+Commençons par définir les systèmes dynamiques discret.
+En effet, <span class="important">ce type de système dynamique a une définition mathématiques rigoureuse et facilement utilisable</span>.
+Intuitivement parlant, <span class="important"><definition name="system-dynamic_discrete"></span>.
+Donc, deux états obtenus avec la loi sont (au minimum) espacés d'un temps précis.
+</p>
