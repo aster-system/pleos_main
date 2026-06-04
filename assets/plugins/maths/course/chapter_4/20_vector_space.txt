@@ -852,7 +852,7 @@ Grâce aux concepts que nous allons introduire maintenant, nous allons pouvoir n
 Déjà, commençons à nous intéresser au concept de norme.
 En fait, <span class="important"><definition name="vectoriel_space-norm"></span>.
 Il faut faire attention : cette application n'est pas un opérateur entre deux vecteurs quelconques : elle n'est donc pas une distance.
-Pour représenter une "distance à 0", il existe quelques propriétés très précises permettant de formaliser cette notion.
+Pour qu'une application allant de l'espace vectoriel à l'ensemble des réels positifs soit une norme, elle doit respecter quelques propriétés, similaire aux propriétés que doivent respecter une distance.
 Pour les expliciter, nous allons appeler cette norme "N", et l'espace vectoriel "E".
 Déjà, <span class="important">cette application est séparée : si un vecteur a pour image "0", il est obligatoirement le vecteur nul de l'espace</span>.
 </p>
@@ -864,15 +864,38 @@ Ici, il est important de prendre la valeur absolue de "b", pour ne pas qu'un sig
 <math>N(x) = a <mimp> N(b * x) = |b| * a</math>
 <p>
 Finalement, <span class="important">cette application respecte une inégalité triangulaire : la norme de la somme de deux vecteurs "x" et "y" est inférieur ou égale à la somme de la norme du vecteur "x" et de la norme du vecteur "y"</span>.
-Comme pour les espaces métriques, cette inégalité triangulaire traduit que le chemin entre "0" et "x + y" et plus court que celui entre "x", 0 puis "y" : le chemin direct est plus court que de passer par un autre point.
+Comme pour les espaces métriques, cette inégalité triangulaire traduit que le chemin entre "0" et "x + y" est plus court que celui entre "x", 0 puis "y" : le chemin direct est plus court que de passer par un autre point.
 </p>
 <math><mforall>x, y <min> E, N(x + y) <mltequal> N(x) + N(y)</math>
 <p>
 Donc, <span class="important"><definition name="vector_space-normed"></span>.
 Ici, un exemple s'impose pour mieux illustrer tout ça : prenons l'espace vectoriel "R²" du corps formé par "R".
 La question ici : comment définir une "norme" d'un élément de "R²" ?
-En fait, nous allons essayer de représenter cette norme comme la distance entre le vecteur que nous cherchons et le vecteur nul (que nous pourrions théoriquement obtenir avec une mesure à la règle), de manière algébrique.
+En fait, nous allons essayer de représenter cette norme comme la distance entre le vecteur que nous cherchons et le vecteur nul (que nous pourrions théoriquement obtenir avec une mesure à la règle en géométrie pure), de manière algébrique.
 La façon généralement utilisée est la méthode utilisant le théorème de Pythagore : nous n'allons pas encore l'utliser pour l'instant.
+</p>
+<p>
+L'espace vectoriel normé de dimension fini le plus simple à définir est probablement celui muni d'une norme précise : la norme 1.
+<span class="important"><definition name="vector_space-normed_1"></span>.
+Pour que cela marche, il faut que le corps de départ soit muni d'une "valeur absolue", comme dans "Q" ou dans "R".
+On peut asssez facilement démontre que l'application associant à chaque vecteur de l'espace la somme des valeurs absolues de ses coefficients est une norme.
+</p>
+<math>f : <mi>K</mi><msup>n</msup> <mto> R, (a, b, ..., c) <min> <mi>K</mi><msup>n</msup> <mto> |a| + |b| + ... + |c| </math>
+<p>
+Déjà, la séparation est évidente : si une somme de valeurs positives est nulle, alors tous les éléments de la somme le sont aussi.
+</p>
+<math>|a| + |b| + ... + |c| = 0 <mimp> a = 0, b = 0... c = 0 <mequi> (a, b, ..., c) = (0, 0, ..., 0)</math>
+<p>
+L'homogénéité est, elle aussi, assez évidente, et se déduit par une simple factorisation.
+</p>
+<math>f((a, b, ..., c)) = d <mand> f(q * (a, b, ..., c)) = e <mimp> |a| + |b| + ... + |c| = d <mand> |q * a| + |q * b| + ... + |q * c| = e <mimp> |q| * |a| + |q| * |b| + |q| * |c| = |q| * (|a| + |b| + ... + |c|) = |q| * d = e <mimp> f(q * (a, b, ..., c)) = |q| * f((a, b, ..., c))</math>
+<p>
+L'inégalité triangulaire n'est pas bien plus compliqué à démontrer, mais demande un peu plus d'éléments.
+</p>
+<math>f((a, b, ..., c)) = d <mand> f((e, g, ..., h)) = i <mimp> |a| + |b| + ... + |c| = d <mand> |e| + |g| + ... |h| = i <mimp> f((a, b, ..., c) + (e, g, ..., h)) = |a + e| + |b + g| + ... + |c + h|</math></br>
+<math>|a + e| <mltequal> |a| + |e| <mand> |b + g| <mltequal> |b| + |g| <mand> ... <mand> |c + h| <mltequal> |c| + |h| <mimp> |a + e| + |b + g| + ... + |c + h| <mltequal> |a| + |e| + |b| + |g| + .. + |c| + |h| <mimp> f((a, b, ..., c) + (e, g, ..., h)) <mltequal> f((a, b, ..., c)) + f((e, g, ..., h))</math>
+<p>
+Cette norme peut s'illustrer assez facilement en 2D.
 </p>
 
 <h3>Les espaces de Hilbert et le produit scalaire</h3>
