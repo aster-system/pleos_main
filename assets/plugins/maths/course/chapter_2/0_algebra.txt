@@ -235,6 +235,18 @@ En effet, pour qu'une application "f" soit un morphisme de groupe, il faut qu'el
 Donc, <span class="important">pour obtenir le résultat du premier calcul (qui se situe dans "F", puisque "f(a)" et "f(b)" sont des éléments de "F"), on peut juste faire un calcul dans "E", et y apppliquer "f"</span>.
 Dans ce cas, "f" est un morphisme de groupe.
 </p>
+<p>
+Comme pour les applications bijectives / injectives / surjectives, il existe des morphismes qui possèdent quelques propriétés supplémentaires.
+La plus utilisée est l'isomorphisme.
+<span class="important"><definition name="isomorphism"></span>.
+Pour un isomorphisme "f", on peut donc l'exprimer ainsi :
+</p>
+<math><mexists> g, f <mcomp> g = Id</math>
+<p>
+Ici, on peut en tirer une conclusion assez intéressante : <span class="important">tout isomorphisme représente un morphisme d'une application bijective (nommé morphisme bijectif)</span>.
+Cela se déduit très vite : si il existe un morphisme "réciproque", alors l'application de ce morphisme est la réciproque de notre morphisme de départ : elle représente donc une application bijective (comme vue au chapitre 1).
+Cependant, l'inverse n'est pas toujours vrai.
+</p>
 
 
 
