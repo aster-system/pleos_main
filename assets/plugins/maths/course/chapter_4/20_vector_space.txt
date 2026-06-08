@@ -486,12 +486,21 @@ Généralement, pour une matrice "A", la transposée de "A" se note "A" avec un 
 <math>B = <mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd><mtd><mi>2</mi></mtd></mtr><mtr><mtd><mi>3</mi></mtd><mtd><mi>4</mi></mtd></mtr><mtr><mtd><mi>5</mi></mtd><mtd><mi>6</mi></mtd></mtr></mtable><mo>]</mo></mrow></math></br>
 <math><mi>B</mi><msup>T</msup> = <mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd><mtd><mi>3</mi></mtd><mtd><mi>5</mi></mtd></mtr><mtr><mtd><mi>2</mi></mtd><mtd><mi>4</mi></mtd><mtd><mi>6</mi></mtd></mtr></mtable><mo>]</mo></mrow></math>
 
+
+
+
+
+
+
+
+
 <h3>Le lien applications linéaires - matrices</h3>
 <p>
 En algèbre linéaire, il existe un très gros lien entre les matrices et les applications linéaires.
 En effet, <span class="important"><definition name="matrix-application"></span>.
 Ici, une matrice prend les coordonnées d'un vecteur exprimé dans une base de départ, et permet d'obtenir les coordonnées de son image (via une application linéaire précise) dans une base d'arrivée.
 Donc, <span class="important">la matrice représente un moyen de modifier correctement les coordonnées de départ en les coordonnées d'arrivée, en sachant la base de départ, d'arrivée et l'application linéaire auquelle elle correspond</span>.
+Chose importante : <span class="important">une matrice peut donc aussi représente une application allant d'un espace de coordonnées vers un autre</span>.
 Généralement, une matrice de ce type est notée avec un nom, sa base de départ et sa base d'arrivée (en indice) puis (entre parenthèse) l'application linéaire qu'elle représente.
 </p>
 <math><mi>M</mi><msub>b, c</msub>(f)</math>
@@ -509,7 +518,7 @@ Or, nous savons que les coordonnées du vecteur dans la base canonique ont les m
 Nous avons donc bel et bien dresser une façon de faire permettant de convertir facilement un vecteur.
 Cependant, <span class="important">on peut aller plus loin, en essayant de rendre cette façon de faire graphique</span>.
 Pour cela, <span class="important">nous allons utiliser des matrices</span>.
-Présentons notre résultat comme ceci :
+Présentons notre résultat comme ceci, en mettant les vecteurs de la base "b" en colonne :
 </p>
 <table>
 
@@ -537,6 +546,8 @@ Ici, nous avons dans nos cases en bas à droite les coordonnées du vecteur rech
 Graphiquement parlant, pour une case du vecteur recherché en bas à droite, obtenir sa valeur revient à prendre une à une les valeurs de sa ligne dans la partie bleue, de faire les produits avec l'élément d'indice l'élément actuellement traitée dans la ligne de la partie bleue, et de tous les sommer.
 En fait, <span class="important">il s'agit simplement du produit matriciel d'une matrice constituée des éléments de la base, et de la matrice représentant les coordonnées recherchées</span>.
 C'est exactement le calcul que nous avons fait.
+Chose intéressante : <span class="important">notre matrice ici à la même largeur que la taille de la base de départ "b", et la même hauteur que la taille de la base d'arrivée "c"</span>.
+On peut donc lier la dimension de la matrice à la dimension de l'espace de départ et d'arrivée.
 </p>
 <p>
 Tentons l'opération inverse : trouver les coordonnées dans une base donnée de vecteurs de coordonnées dans la base canonique.
@@ -587,7 +598,8 @@ Comme pour plus haut, <span class="important">on peut écrire ce type de calcul 
 <p>
 Ici, nous avons construit un type très précis de matrice : des matrices de changement de base.
 <span class="important"><definition name="matrix-basis"></span>.
-Ces matrices représentent donc l'application identité, dans des bases différentes.
+Ces matrices représentent donc l'application identité, dans des bases différentes d'un même espace vectoriel.
+De plus, <span class="important">comme deux bases d'un même espace vectoriel génère le même espace vectoriel, ont a donc une application allant de l'espace de départ vers l'espace de départ : il s'agit donc d'une bijection, et donc d'un automorphisme linéaire</span>.
 Par exemple, dans "R²", la matrice passant de la base "(1, 0), (1, 1)" à la base canonique serait :
 </p>
 <math>A = <mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd><mtd><mi>1</mi></mtd></mtr><mtr><mtd><mi>0</mi></mtd><mtd><mi>1</mi></mtd></mtr></mtable><mo>]</mo></mrow></math>
@@ -840,7 +852,24 @@ Donc, <span class="important">l'espace engendré par les lignes de la matrice de
 </p>
 <p>
 Nous pouvons aussi déduire un autre résultat très intéressant en algèbre linéaire : <span class="important">l'espace engendré par les lignes a l'exacte même dimension que l'espace engendré par les colonnes</span>.
+En fait, <span class="important">ce résultat est parfaitement équivalent à dire qu'une matrice a le même rang que sa matrice transposée</span>.
+La démonstration est particulièrement ennuyante à écrire, mais sa compréhension brute est assez simple.
+Commençons par le cas des matrices carrées.
+Pour une matrice carrée, <span class="important">si cette matrice ne peut pas être raccourcie par échelonnement vertical et sa transposée non plus, elle a donc le même rang que sa matrice de départ, et donc les lignes et les colonnes ont elles aussi le même rang</span>.
+Cependant, si par échelonnement vertical, on obtient (de notre matrice carrée) une matrice moins large, la situation se complique.
+Or, <span class="important">nous pouvons transposer cette matrice (pour en faire une plus large que haute), l'échelonner verticalement, pour en obtenir une nouvelle matrice carrée, et y appliquer le même constat</span>.
+Dans tous les cas, si on trouve la matrice carrée finale, on sait qu'elle a la même dimension que sa transposée.
+Cependant, la matrice non échelonnée a elle aussi le même rang que la matrice carrée, et sa transposée.
+Dans ce cas, <span class="important">sa transposée représente une modification par des opérations sur la matrice carrée transposée qui ne changent pas le rang : elle est donc de même rang que sa matrice de départ</span>.
 </p>
+
+
+
+
+
+
+
+
 
 
 
@@ -897,6 +926,7 @@ L'inégalité triangulaire n'est pas bien plus compliqué à démontrer, mais de
 <p>
 Cette norme peut s'illustrer assez facilement en 2D.
 </p>
+<graphic><base draw=1><background_color white><line x_1=0 y_1=0 x_2=3 y_2=0 border_color=blue><line x_1=3 y_1=0 x_2=3 y_2=2 border_color=green><line x_1=0 y_1=0 x_2=3 y_2=2></graphic>
 
 <h3>Les espaces de Hilbert et le produit scalaire</h3>
 <p>
