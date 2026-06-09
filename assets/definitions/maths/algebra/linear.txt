@@ -40,8 +40,12 @@
     <content name="application">une matrice associée à une application linéaire est une matrice dont les propriétés internes permettent de calculer facilement l'image (dans un espace vectoriel de dimension finie) d'un vecteur (toujours dans un espace vectoriel de dimension finie), en transformant les coordonnées du vecteur dans une base de départ en les coordonnées de l'image demandée dans une base d'arrivée</content>
     <content name="basis">une matrice de changement de base (ou matrice de passage) est une matrice carrée permettant d'obtenir les coordonnées d'un vecteur dans une base "c", via l'expression de ce vecteur dans une autre base "b"</content>
     <content name="dimension">la dimension d'une matrice est un couple de nombre entier naturel contenant son nombre de ligne, puis son nombre de colonne</content>
+    <content name="identity">une matrice identité de taille "n" est une matrice carrée de dimension "(n, n)", constitué du neutre de la multiplication de son corps de départ (donc "1" si le corps est "R") sur sa diagonale, et de l'absorbant de la multiplication de son corps de départ (donc "0" si le corps est "R") partout ailleurs</content>
     <content name="rigorous">une matrice à valeur dans un ensemble représente un ensemble d'éléments de cet ensemble, indexé par le produit cartésien de deux ensembles de taille "b" et "c"</content>
     <content name="transpose">la transposée d'une matrice représente une nouvelle matrice, où les colonnes de cette matrice sont les lignes de la matrice de départ (et donc, où l'on échange les lignes et les colonnes de la matrice)</content>
+</new_definition>
+<new_definition name="matrix_inverse">
+    <content>une matrice inversible est une matrice carrée de taille "n" telle qu'il existe une autre matrice carrée de taille "n", tel que leur produit matriciel (dans les deux sens possibles) donne la matrice identité de taille "n"</content>
 </new_definition>
 <new_definition name="matrix_product">
     <content>le produit matriciel est une opération entre deux matrices de dimension "a, b" et "b, c", donnant une nouvelle matrice de dimension "a, c" où chaque élément représente une somme de produits d'éléments de lignes et de colonnes</content>

@@ -310,7 +310,7 @@ Déjà, <span class="important">utiliser une application linéaire sur un vecteu
 Donc, on peut "prédire" le résultat d'une opération dans le deuxième espace vectoriel grâce au premier espace vectoriel et une application linéaire.
 Dans le cas d'une application linéaire "f" allant d'un espace vectoriel "E" vers un espace vectoriel "F" sur un corps "K", on note :
 </p>
-<math><mforall>a, b <min> E, f(a + b) = f(a) ~ f(b)</math>
+<math><mforall>a, b <min> E, f(a + b) = f(a) + f(b)</math>
 <p>
 Deuxièmement, <span class="important">utiliser une application linéaire sur un vecteur "c * a" (avec "a" un vecteur du premier espace vectoriel, "c" un scalaire provenant de "K" et "*" est la deuxième loi du premier espace vectoriel) revient à appliquer la deuxième loi du deuxième espace vectoriel entre "c" et l'image de "a" par cette même application linéaire</span>.
 Encore une fois, on peut "prédire" le résultat d'une opération dans le deuxième espace vectoriel grâce au premier espace vectoriel et une application linéaire.
@@ -483,6 +483,36 @@ Ici, nous pouvons très facilement calculer chaque valeur de la matrice résulta
 <math><mi>c</mi><msub>2, 1</msub> = <mi>a</mi><msub>2, 1</msub> * <mi>b</mi><msub>1, 1</msub> + <mi>a</mi><msub>2, 2</msub> * <mi>c</mi><msub>2, 1</msub> = 3 * 0 + 4 * 1 = 4</math></br>
 <math><mi>c</mi><msub>2, 1</msub> = <mi>a</mi><msub>2, 1</msub> * <mi>b</mi><msub>1, 2</msub> + <mi>a</mi><msub>2, 2</msub> * <mi>c</mi><msub>2, 2</msub> = 3 * 2 + 4 * 0 = 6</math></br>
 <math>C = <mrow><mo>[</mo><mtable><mtr><mtd><mi>4</mi></mtd><mtd><mi>2</mi></mtd></mtr><mtr><mtd><mi>4</mi></mtd><mtd><mi>6</mi></mtd></mtr></mtable><mo>]</mo></mrow></math></br>
+<p>
+Parmi toutes les matrices utilisables avec des produits matriciels, une catégorie se détache : les matrices identités.
+<span class="important"><definition name="matrix-identity"></span>.
+Une matrice identité (qui se note généralement "I indice c") serait donc :
+</p>
+<math><mi>I</mi><msub>3</msub> = <mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd><mtd><mi>0</mi></mtd><mtd><mi>0</mi></mtd></mtr><mtr><mtd><mi>0</mi></mtd><mtd><mi>1</mi></mtd><mtd><mi>0</mi></mtd></mtr><mtr><mtd><mi>0</mi></mtd><mtd><mi>0</mi></mtd><mtd><mi>1</mi></mtd></mtr></mtable><mo>]</mo></mrow></math>
+<p>
+Quelque chose d'intéressante : <span class="important">faire le produit matriciel de n'importe quel matrice "B" et de la matrice identité (de taille rendant le calcul compatible) dans tous les sens possibles donne "B"</span>.
+La matrice identité représente donc le neutre du produit matriciel.
+</p>
+<math>A * I = A, I * B = B</math>
+<p>
+Avec ça, on peut définir quelque chose de très intéressant : les matrices inversibles.
+<span class="important"><definition name="matrix_inverse"></span>.
+Donc, pour une matrice "A", la condition pour qu'elle soit inversible serait :
+</p>
+<math><mexists> B <min> <mi>M</mi><msub>n</msub>, A * B = B * A = <mi>I</mi><msub>n</msub></math>
+<p>
+Ici, on peut voir que "B" est aussi inversible, et admet "A" comme inverse.
+D'ailleurs, <span class="important">faire le produit de deux matrices inversibles donne une nouvelle matrice inversible</span>.
+La démonstration est très simple :
+</p>
+<math>A * C = E <mequi> A * C * D = A = E * D <mequi> A * B = I = E * D * B <mequi> E * D * B = I</math></br>
+<math>A * C = E <mequi> B * A * C = C = B * E <mequi> D * C = I = D * B * E <mequi> D * B * E = E * D * B = I</math></br>
+<p>
+Les matrices inversibles sont stables par le produit matriciel, associative, admettent un neutre et chaque matrice admet un inverse.
+Donc, <span class="important">nous pouvons définir un groupe sur ces matrices (avec le produit matriciel) : le groupe général linéaire</span>.
+Il se note généralement "Gl(n, K)", où "n" représente la taille des matrices et "K" le corps de coefficient des matrices.
+</p>
+<math>Gl(n, K)<math>
 
 <p>
 Une autre opération possible avec une matrice est la transposition.
@@ -494,14 +524,6 @@ Généralement, pour une matrice "A", la transposée de "A" se note "A" avec un 
 <math><mi>A</mi><msup>T</msup> = <mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd><mtd><mi>3</mi></mtd></mtr><mtr><mtd><mi>2</mi></mtd><mtd><mi>4</mi></mtd></mtr></mtable><mo>]</mo></mrow></math></br>
 <math>B = <mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd><mtd><mi>2</mi></mtd></mtr><mtr><mtd><mi>3</mi></mtd><mtd><mi>4</mi></mtd></mtr><mtr><mtd><mi>5</mi></mtd><mtd><mi>6</mi></mtd></mtr></mtable><mo>]</mo></mrow></math></br>
 <math><mi>B</mi><msup>T</msup> = <mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd><mtd><mi>3</mi></mtd><mtd><mi>5</mi></mtd></mtr><mtr><mtd><mi>2</mi></mtd><mtd><mi>4</mi></mtd><mtd><mi>6</mi></mtd></mtr></mtable><mo>]</mo></mrow></math>
-
-
-
-
-
-
-
-
 
 <h3>Le lien applications linéaires - matrices</h3>
 <p>
@@ -517,6 +539,7 @@ Généralement, une matrice de ce type est notée avec un nom, sa base de dépar
 Ici, nous allons essayer de faire une chose précise : construire intuitivement ce genre de matrice, pour comprendre comment elles fonctionnent.
 Commençons par le cas le plus simple : passer de coordonnées d'un vecteur base quelconque aux coordonnées dans la base canonique.
 Ici, <span class="important">ce passage représente l'application linéaire identité de l'espace vectoriel de départ, en changeant juste la base (base donnée vers base canonique, qui représente donc l'écriture directe du vecteur)</span>.
+Donc, <span class="important">l'idée est de modifier les coordonnées de la base de départ, en les transformant en les coordonnées dans la base canonique</span>.
 Imagineons que nous avons des coordonnées précises dans la base "b", que nous voudrions convertir dans la base canonique.
 Nous pouvons donc facilement calculer son vecteur associé.
 </p>
@@ -551,15 +574,30 @@ Présentons notre résultat comme ceci, en mettant les vecteurs de la base "b" e
 
 </table>
 <p>
-Ici, nous avons dans nos cases en bas à droite les coordonnées du vecteur recherché.
+Nous avons présenté nos coordonnées de départ comme une matrice colonne, et nous avons mis nos bases dans une matrice précise (où chaque vecteur de la base est en colonne).
+Finalement, nous avons dans nos cases en bas à droite les coordonnées du vecteur recherché, sous la forme d'une matrice ligne.
 Graphiquement parlant, pour une case du vecteur recherché en bas à droite, obtenir sa valeur revient à prendre une à une les valeurs de sa ligne dans la partie bleue, de faire les produits avec l'élément d'indice l'élément actuellement traitée dans la ligne de la partie bleue, et de tous les sommer.
-En fait, <span class="important">il s'agit simplement du produit matriciel d'une matrice constituée des éléments de la base par la matrice coordonnée de départ, donnant la matrice coordonnées d'arrivée</span>.
+En fait, <span class="important">il s'agit simplement du produit matriciel d'une matrice constituée des éléments de la base (en colonne) par la matrice représentant les coordonnée de départ, donnant la matrice coordonnées d'arrivée</span>.
 C'est exactement le calcul que nous avons fait.
+</p>
+<p>
 Chose intéressante : <span class="important">notre matrice ici à la même largeur que la taille de la base de départ "b", et la même hauteur que la taille de la base d'arrivée "c"</span>.
 Elle représente donc une application linéaire entre un espace de matrice ligne de taille "b" et un espace de matrice ligne de taille "c".
-Par isomorphisme, on obtient qu'elle représente donc une application linéaire entre un l'espace vectoriel usuel de "K exposant b" et l'espace vectoriel usuel de "K exposant c", et donc (toujorus par isomorphisme) d'un espace vectoriel de dimension "b" vers un espace vectoriel de dimension "c".
+Par isomorphisme, on obtient qu'elle représente donc aussi une application linéaire entre un l'espace vectoriel usuel de "K exposant b" et l'espace vectoriel usuel de "K exposant c", et donc (toujorus par isomorphisme) d'un espace vectoriel de dimension "b" vers un espace vectoriel de dimension "c".
 On peut donc lier la dimension de la matrice à la dimension de l'espace de départ et d'arrivée.
 </p>
+
+
+
+
+
+
+
+
+
+
+
+
 <p>
 Tentons l'opération inverse : trouver les coordonnées dans une base donnée de vecteurs de coordonnées dans la base canonique.
 Encore une fois, <span class="important">ce passage représente l'application linéaire identité de l'espace vectoriel de départ, en changeant juste la base (base canonique vers base donnée, qui représente donc l'écriture du vecteur dans la base donnée)</span>.
@@ -614,6 +652,7 @@ De plus, <span class="important">comme deux bases d'un même espace vectoriel g�
 Par exemple, dans "R²", la matrice passant de la base "(1, 0), (1, 1)" à la base canonique serait :
 </p>
 <math>A = <mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd><mtd><mi>1</mi></mtd></mtr><mtr><mtd><mi>0</mi></mtd><mtd><mi>1</mi></mtd></mtr></mtable><mo>]</mo></mrow></math>
+
 <p>
 Finalisons cette construction intuitive, avec un exemple plus global.
 Considérons une application linéaire "f", allant d'un espace vectoriel "E" vers un espace vectoriel "F" (sur un corps "K").
