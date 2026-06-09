@@ -363,6 +363,7 @@ C'est dans ce genre de cas que la notation "tableau" devient extrêmement intuit
 </p>
 <p>
 D'un point de vue "rigueur extrême", <span class="important">une matrice est donc une application allant du produit cartésien de ces deux ensembles vers des éléments de l'ensemble de départ</span>.
+Comme tout produit cartésien, nous pouvons la noter sous forme de tableau, justifiant la notation "tableau" si souvent utilisée.
 D'ailleurs, les images des valeurs des couples dans le produit cartésien des ensembles servant à l'indexage se note généralement avec la lettre utilisé pour noter la matrice en minuscule (pour notre matrice "A" il s'agirait donc de "a"), avec le couple du produit cartésien en indice.
 C'est d'ailleurs comme ça que nous allons utiliser une notation pour accéder à un élément précis de la matrice.
 En effet, <span class="important">un élément d'une matrice "A" à la ligne "y" et à la colonne "x" se note "A indice (x, y)"</span>.
@@ -378,8 +379,14 @@ On peut facilement noter toutes les valeurs de "A".
 <math><mi>a</mi><msub>2, 1</msub> = 3</math></br>
 <math><mi>a</mi><msub>2, 2</msub> = 4</math>
 <p>
-Selon les tailles de "b" et "c", on parle de dimension de la matrice.
+Pour noter les nombres "b" et "c", on parle de dimension de la matrice.
 En effet, <span class="important"><definition name="matrix-dimension"></span>.
+Si une matrice ne possède qu'une ligne, on parle de matrice ligne, et si elle ne possède qu'une colonne, on parle de matrice colonne.
+</p>
+<math>A = <mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd><mtd><mi>2</mi></mtd><mtd><mi>3</mi></mtd></mtr></mtable><mo>]</mo></mrow>, B = <mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd></mtr><mtr><mtd><mi>2</mi></mtd></mtr><mtr><mtd><mi>3</mi></mtd></mtr></mtable><mo>]</mo></mrow></math>
+<p>
+De plus, <span class="important">si "b" et "c" sont les mêmes valeurs, alors la matrice est dite carrée</span>.
+Il s'agit probablement du type de matrice le plus utilisé.
 </p>
 <p>
 Comme pour beaucoup d'objets mathématiques, il est possible de faire des opérations avec ces matrices.
@@ -411,6 +418,8 @@ Généralement, <span class="important">pour que cela fonctionne, il est conseil
 <p>
 Vous l'aurez peut être deviné : <span class="important">avec ces deux lois, si l'ensemble de vos éléments de départ est un corps, nous pouvons définir l'ensemble des matrices comme un espace vectoriel de l'ensemble de départ</span>.
 En effet, si l'ensemble de départ est un corps, l'addition matricielle est un groupe abélien, et la multiplication par un scalaire est associative, distributive et admet un neutre : il s'agit donc bien d'un espace vectoriel.
+Avec ça, on peut déduire un isomorphisme assez évident : <span class="important">si l'ensemble des matrices lignes / colonnes de dimension "(a, b)" est un espace vectoriel sur un corps "K", il est isomorphe à l'espace vectoriel usuel sur "K" formé par "K exposant a * b"</span>.
+Ce résultat est encore plus évident si vous travaillez sur des matrices lignes ou des matrices colonnes.
 </p>
 <p>
 Parlons d'une autre opération, plus complexe mais très utile avec les matrices : le produit matriciel.
@@ -496,11 +505,11 @@ Généralement, pour une matrice "A", la transposée de "A" se note "A" avec un 
 
 <h3>Le lien applications linéaires - matrices</h3>
 <p>
-En algèbre linéaire, il existe un très gros lien entre les matrices et les applications linéaires.
+En algèbre linéaire, il existe un moyen de construire une matrice en utilisant une application linéaire.
 En effet, <span class="important"><definition name="matrix-application"></span>.
+Déjà, pour comprendre cette définition, nous devons avoir en tête un résultat primordial : pour tous vecteurs, ses coordonnées dans une base "b" de taille "n" peut s'écrire comme une matrice ligne ou une matrice colonne où le nombre de sa dimension qui n'est pas égal à "1" vaut "n".
 Ici, une matrice prend les coordonnées d'un vecteur exprimé dans une base de départ, et permet d'obtenir les coordonnées de son image (via une application linéaire précise) dans une base d'arrivée.
 Donc, <span class="important">la matrice représente un moyen de modifier correctement les coordonnées de départ en les coordonnées d'arrivée, en sachant la base de départ, d'arrivée et l'application linéaire auquelle elle correspond</span>.
-Chose importante : <span class="important">une matrice peut donc aussi représente une application allant d'un espace de coordonnées vers un autre</span>.
 Généralement, une matrice de ce type est notée avec un nom, sa base de départ et sa base d'arrivée (en indice) puis (entre parenthèse) l'application linéaire qu'elle représente.
 </p>
 <math><mi>M</mi><msub>b, c</msub>(f)</math>
@@ -544,9 +553,11 @@ Présentons notre résultat comme ceci, en mettant les vecteurs de la base "b" e
 <p>
 Ici, nous avons dans nos cases en bas à droite les coordonnées du vecteur recherché.
 Graphiquement parlant, pour une case du vecteur recherché en bas à droite, obtenir sa valeur revient à prendre une à une les valeurs de sa ligne dans la partie bleue, de faire les produits avec l'élément d'indice l'élément actuellement traitée dans la ligne de la partie bleue, et de tous les sommer.
-En fait, <span class="important">il s'agit simplement du produit matriciel d'une matrice constituée des éléments de la base, et de la matrice représentant les coordonnées recherchées</span>.
+En fait, <span class="important">il s'agit simplement du produit matriciel d'une matrice constituée des éléments de la base par la matrice coordonnée de départ, donnant la matrice coordonnées d'arrivée</span>.
 C'est exactement le calcul que nous avons fait.
 Chose intéressante : <span class="important">notre matrice ici à la même largeur que la taille de la base de départ "b", et la même hauteur que la taille de la base d'arrivée "c"</span>.
+Elle représente donc une application linéaire entre un espace de matrice ligne de taille "b" et un espace de matrice ligne de taille "c".
+Par isomorphisme, on obtient qu'elle représente donc une application linéaire entre un l'espace vectoriel usuel de "K exposant b" et l'espace vectoriel usuel de "K exposant c", et donc (toujorus par isomorphisme) d'un espace vectoriel de dimension "b" vers un espace vectoriel de dimension "c".
 On peut donc lier la dimension de la matrice à la dimension de l'espace de départ et d'arrivée.
 </p>
 <p>
@@ -750,7 +761,7 @@ Cependant, une question peut se poser : est-ce que toutes les matrices peuvent �
 La réponse est, en réalité, très simple à obtenir.
 En effet, le produit d'une matrice quelconque et de coordonnées donne une combinaison linéaire des colonnes de la matrice, qui peut donc représenter une combinaison linéaire des coordonnées présentes dans la matrice.
 Or, <span class="important">la transformation de coordonnées en une combinaison linéaire d'autres coordonnées forme une application linéaire (comme vu plus haut) : il s'agit donc bel et bien d'une application linéaire</span>.
-Donc, toute matrice représente une application linéaire.
+Donc, toute matrice représente une application linéaire, d'un premier espace de coordonnée vers un second.
 D'ailleurs, <span class="important">on peut très facilement trouver une famille génératrice de l'image d'arrivée : les colonnes de la matrice</span>.
 </p>
 <math>C = ((1, 0), (0, 1))</math></br>
@@ -760,7 +771,7 @@ D'ailleurs, <span class="important">on peut très facilement trouver une famille
 Avec ça, on peut en déduire un théorème assez intéressant : <span class="important">toute matrice inversible représente un automorphisme linéaire sur les coordonnées</span>.
 En effet, si une matrice est inversible, il existe une autre matrice dont le produit matriciel de ces deux matrices donne la matrice identité.
 Or, ces deux matrices représentent donc deux applications linéaires, tel que la deuxième est la réciproque de la première.
-Comme vue au chapitre 1, <span class="important">si une application admet une application réciproque, elle est donc bijective : l'application linéaire l'est donc aussi, ce qui en fait un isomorphisme linéaire</span>.
+Comme vue au chapitre 1, <span class="important">si une application admet une application réciproque, elle est donc bijective : l'application linéaire l'est donc aussi, ce qui en fait un isomorphisme linéaire entre les espaces vectoriels</span>.
 La réciproque est donc immédiate : <span class="important">si une application linéaire est un isomorphisme linéaire, elle admet donc une application réciproque, donc la matrice associée est la matrice inverse de la matrice associé à l'application de départ</span>.
 Il s'agit donc d'une équivalence.
 Bien évidemment, dans ces deux cas, il faut que les bases de départ et d'arrivée restent invariantes.
