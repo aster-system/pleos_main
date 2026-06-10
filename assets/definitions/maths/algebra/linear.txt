@@ -8,6 +8,9 @@
 <new_definition name="linear_equation">
     <content>une équation linéaire est une équation où l'on cherche la valeur d'une inconnue dans un espace vectoriel, où nous savons que cette inconnue multiplié par un scalaire non-nul donne une autre valeur de l'espace vectoriel</content>
 </new_definition>
+<new_definition name="linear_form">
+    <content>une forme linéaire est une application allant d'un espace vectoriel sur un corps "K" vers... le corps "K" lui même</content>
+</new_definition>
 <new_definition name="linear_system">
     <content>un système linéaire est un système d'équations composé d'équations linéaires</content>
 </new_definition>

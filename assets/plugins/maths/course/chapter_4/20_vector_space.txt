@@ -319,7 +319,15 @@ Encore une fois, on peut "prédire" le résultat d'une opération dans le deuxi�
 <p>
 Finalement, <span class="important">l'élément neutre du premier espace doit toujours avoir comme image l'élément neutre du deuxième espace par une application linéaire</span>.
 Dire qu'une application entre deux espaces vectoriels respecte ces trois propriétés équivaut à dire que l'application est linéaire.
+Cette propriété permet deux réunir les deux premières propriétés en une seule équivalente :
 </p>
+<math>f(k * a + b) = k * f(a) + f(b)</math>
+<p>
+La démonstration de son équivalence est très simple :
+</p>
+<math>f(a + b) = f(a) + f(b) <mand> f(k * a) = k * f(a) <mimp> f(k * a + b) = f(k * a) + f(b) = k * f(a) + f(b)</math></br>
+<math>f(k * a + b) = k * f(a) + f(b) <mimp> f(k * a + 0) = k * f(a) + f(0) <mimp> f(k * a) = k * f(a)</math></br>
+<math>f(k * a + b) = k * f(a) + f(b) <mimp> f(1 * a + b) = 1 * f(a) + f(b) <mimp> f(a + b) = f(a) + f(b)</math></br>
 <p>
 Prenons un exemple très simple : l'application allant de "R²" vers "R²", en transformant "(x, y)" en "(2 * x, 2 * y)".
 Cette application est parfaitement linéaire, et on peut facilement le démontrer.
@@ -342,6 +350,19 @@ En effet, <span class="important">l'image d'une base de l'espace vectoriel de d�
 La démonstration de ce théorème (<a href="demo#4_1_1_1">présente ici</a>) utilise les résultats basiques de linéarité.
 D'ailleurs, <span class="important">selon le théorème de la dimension, si l'image de l'application dans l'espace d'arrivée est de dimension inférieure ou égale à celle de l'espace de départ, alors l'image de la base génère tout l'espace d'arrivée, et si ils ont les mêmes dimensions, alors l'image de la base est une base de l'espace d'arrivée</span>.
 </p>
+
+<h3>Les formes linéaires</h3>
+<p>
+Un type d'application linéaire un peu spécial est la forme linéaire.
+<span class="important"><definition name="linear_form"></span>.
+Elle doit cependant respecter une propriété précise : elle doit être linéaire sur l'espace vectoriel trivial de "K".
+</p>
+<math>f : E <mto> K, v <mto> f(v)</math></br>
+<math>f(v + u) = f(v) + f(u) <mand> f(k * v) = k * f(v)</math>
+
+
+
+
 
 
 
@@ -524,6 +545,153 @@ Généralement, pour une matrice "A", la transposée de "A" se note "A" avec un 
 <math><mi>A</mi><msup>T</msup> = <mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd><mtd><mi>3</mi></mtd></mtr><mtr><mtd><mi>2</mi></mtd><mtd><mi>4</mi></mtd></mtr></mtable><mo>]</mo></mrow></math></br>
 <math>B = <mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd><mtd><mi>2</mi></mtd></mtr><mtr><mtd><mi>3</mi></mtd><mtd><mi>4</mi></mtd></mtr><mtr><mtd><mi>5</mi></mtd><mtd><mi>6</mi></mtd></mtr></mtable><mo>]</mo></mrow></math></br>
 <math><mi>B</mi><msup>T</msup> = <mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd><mtd><mi>3</mi></mtd><mtd><mi>5</mi></mtd></mtr><mtr><mtd><mi>2</mi></mtd><mtd><mi>4</mi></mtd><mtd><mi>6</mi></mtd></mtr></mtable><mo>]</mo></mrow></math>
+
+<h3>Le lien matrice - application linéaire</h3>
+<p>
+Il est possible de lier les matrices avec les applications linéaires de manière très pratique.
+En effet, le produit matriciel permet de voir une chose : <span class="important">faire le produit matriciel d'une matrice quelconque avec une matrice colonne revient à obtenir une nouvelle matrice colonne représentant une combinaison linéaire des colonnes de la matrice de départ</span>.
+Or, pour rappel, les matrices forment un espace vectoriel (et donc les matrices colonnes aussi).
+Donc, <span class="important">une matrice peut se représenter comme une application allant d'un espace de matrices colonnes à un autre espace de matrices colonnes</span>.
+De plus, <span class="important">cette application est linéaire</span>.
+Tout cela se définit directement, en utilisant la définition du produit matriciel.
+</p>
+<math>A = <mrow><mo>[</mo><mtable><mtr><mtd><mi>c</mi></mtd><mtd><mi>...</mi></mtd><mtd><mi>d</mi></mtd></mtr><mtr><mtd><mi>...</mi></mtd><mtd><mi>...</mi></mtd><mtd><mi>...</mi></mtd></mtr><mtr><mtd><mi>e</mi></mtd><mtd><mi>...</mi></mtd><mtd><mi>f</mi></mtd></mtr></mtable><mo>]</mo></mrow></math></br>
+<math>A * <mrow><mo>[</mo><mtable><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>...</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable><mo>]</mo></mrow> = x * (c, ..., d) + ... + y * (e, ..., f)</math></br>
+<math>A * (<mrow><mo>[</mo><mtable><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>...</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable><mo>]</mo></mrow> + <mrow><mo>[</mo><mtable><mtr><mtd><mi>w</mi></mtd></mtr><mtr><mtd><mi>...</mi></mtd></mtr><mtr><mtd><mi>z</mi></mtd></mtr></mtable><mo>]</mo></mrow>) = (x + z) * (c, ..., d) + ... + (y + w) * (e, ..., f) = x * (c, ..., d) + y * (e, ..., f) + z * (c, ..., d) + w * (c, ..., d) = A * <mrow><mo>[</mo><mtable><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>...</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable><mo>]</mo></mrow> + A * <mrow><mo>[</mo><mtable><mtr><mtd><mi>z</mi></mtd></mtr><mtr><mtd><mi>...</mi></mtd></mtr><mtr><mtd><mi>w</mi></mtd></mtr></mtable><mo>]</mo></mrow></math></br>
+<math>A * (k * <mrow><mo>[</mo><mtable><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>...</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable><mo>]</mo></mrow>) = k * x * (c, ..., d) + ... + k * y * (e, ..., f) = x * (k * c, ..., k * d) + y * (k * e, ..., k * f) = (k * A) * <mrow><mo>[</mo><mtable><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>...</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable><mo>]</mo></mrow></math>
+<p>
+Généralement, l'image de cette application est nommé "espace colonne" de la matrice.
+Immédiatement, <span class="important">on peut voir que les colonnes de la matrice sont une famille génératrice de l'image de l'application que représente la matrice</span>.
+</p>
+<math>A = <mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd><mtd><mi>2</mi></mtd></mtr><mtr><mtd><mi>3</mi></mtd><mtd><mi>4</mi></mtd></mtr></mtable><mo>]</mo></mrow></math></br>
+<math>A * <mrow><mo>[</mo><mtable><mtr><mtd><mi>a</mi></mtd></mtr><mtr><mtd><mi>b</mi></mtd></mtr></mtable><mo>]</mo></mrow> = a * <mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd></mtr><mtr><mtd><mi>3</mi></mtd></mtr></mtable><mo>]</mo></mrow> + b * <mrow><mo>[</mo><mtable><mtr><mtd><mi>2</mi></mtd></mtr><mtr><mtd><mi>4</mi></mtd></mtr></mtable><mo>]</mo></mrow></math>
+<p>
+Ici, cet espace colonne est donc un espace vectoriel, qui a donc une dimension.
+Généralement, <span class="important">la dimension de l'espace colonne est nommé le rang de la matrice</span>.
+</p>
+Rg(A) = 2
+<p>
+En algèbre linéaire, il existe plein d'opérations sur les matrices, qui permettent de trouver d'autres propriétés utiles sur ces dernières.
+Ici, <span class="important">une des opérations les plus importantes de ce style revient à trouver le rang / l'espace colonne d'une matrice</span>.
+Pour cela, nous allons procéder par des opérations qui ne modifient pas le rang / l'espace colonne de la matrice.
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>
+Déjà, il existe un type précis de produit matriciel qui ne modifie pas le rang de la matrice.
+En effet, <span class="important">faire le produit matriciel à droite ou à gauche d'une matrice avec une matrice inversible ne change pas le rang de la matrice de départ</span>.
+L'explication est toute simple : faire ce produit matriciel revient à obtenir la matrice associé à l'application composé de notre matrice de départ et de notre matrice inversible.
+Or, l'application de la matrice inversible est un isomorphisme linéaire.
+En fait, <span class="important">l'espace des coordonnées de départ et d'arrivée d'un isomorphisme linéaire sont toujours les mêmes</span>.
+Donc, un isomorphisme linéaire ne modifie pas l'espace des coordonnées d'arrivée / espace des coordonnées de départ (et donc, pas sa dimension non-plus), et sa matrice associée non-plus.
+Donc, faire le produit matriciel à droite ou à gauche d'une matrice avec une matrice inversible ne change pas le rang de la matrice de départ.
+</p>
+<p>
+Une autre de ces opérations est la permutation de colonnes.
+En effet, <span class="important">permuter les colonnes d'une matrice revient à permuter deux vecteurs dans la famille génératrice de l'image de l'application, ce qui peut demander de changer les bases de départ / arrivé, mais ne change pas les indépendances linéaires possibles dans cette famille génératrice, et donc ce qui ne change pas le rang de la matrice (et ce qui ne change pas l'espace engendré non-plus)</span>.
+</p>
+<math>M = <mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd><mtd><mi>2</mi></mtd></mtr><mtr><mtd><mi>3</mi></mtd><mtd><mi>4</mi></mtd></mtr></mtable><mo>]</mo></mrow></math></br>
+<math>N = <mrow><mo>[</mo><mtable><mtr><mtd><mi>2</mi></mtd><mtd><mi>1</mi></mtd></mtr><mtr><mtd><mi>4</mi></mtd><mtd><mi>3</mi></mtd></mtr></mtable><mo>]</mo></mrow></math></br>
+<math>Rg(M) = Rg(n), M . (1, 0) = N . (0, 1)</math>
+<p>
+Une autre opération de ce genre est la multiplication de tous les éléments d'une colonne par un scalaire non-nul précis.
+En effet, <span class="important">multiplier tous les éléments d'une colonne par un scalaire nol-nul revient intuitivement à agrandir / rétricir cette colonne, ce qui ne change pas la façon dont elle est linéairement indépendante (ou pas) des autres colonnes (et ce qui ne change ni la dimension, ni l'espace engendré par la matrice)</span>.
+</p>
+<math>M = <mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd><mtd><mi>1</mi></mtd></mtr><mtr><mtd><mi>1</mi></mtd><mtd><mi>0</mi></mtd></mtr></mtable><mo>]</mo></mrow></math></br>
+<math>N = <mrow><mo>[</mo><mtable><mtr><mtd><mi>2</mi></mtd><mtd><mi>1</mi></mtd></mtr><mtr><mtd><mi>2</mi></mtd><mtd><mi>0</mi></mtd></mtr></mtable><mo>]</mo></mrow></math></br>
+<math>Rg(M) = Rg(n), M . (2, 0) = N . (1, 0)</math>
+<p>
+Finalement, nous pouvons trouver une dernière opération utile de ce genre : additionner / soustraire des colonnes de la matrice par d'autres colonnes de la matrice.
+En effet, <span class="important">soustraire / additionner des colonnes à une autre colonne ne change pas la façon dont elle est linéairement indépendante (ou pas) des autres colonnes (si elle l'est au départ, alors elle le restera même après cette opération), ce qui ne change ni la dimension, ni l'espace engendré par la matrice</span>.
+Avec ces 3 opérations, on peut déjà commencer à entrevoir la méthode générale pour travailler avec des matrices.
+</p>
+<math>M = <mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd><mtd><mi>5</mi></mtd></mtr><mtr><mtd><mi>2</mi></mtd><mtd><mi>10</mi></mtd></mtr></mtable><mo>]</mo></mrow></math></br>
+<math>N = <mrow><mo>[</mo><mtable><mtr><mtd><mi>5</mi></mtd><mtd><mi>5</mi></mtd></mtr><mtr><mtd><mi>10</mi></mtd><mtd><mi>10</mi></mtd></mtr></mtable><mo>]</mo></mrow></math></br>
+<math>P = <mrow><mo>[</mo><mtable><mtr><mtd><mi>5</mi></mtd><mtd><mi>0</mi></mtd></mtr><mtr><mtd><mi>10</mi></mtd><mtd><mi>0</mi></mtd></mtr></mtable><mo>]</mo></mrow></math></br>
+<math>Rg(M) = Rg(N) = Rg(P)</math>
+<p>
+En effet, ici, <span class="important">on peut voir que le vecteur (5, 10) seul génère un espace vectoriel de même dimension que l'espace vectoriel engendré par notre matrice de départ (comme l'autre vecteur est nul, on peut le passer) : elle est de rang 1</span>.
+Avec ça, nous pouvons introduire un algorithme très utile en algèbre linéaire : l'échelonnement vertical.
+<span class="important"><definition name="echelon_vertical"></span>.
+Cette méthode s'inspire d'une autre méthode plus connue (la méthode du pivot de Gauss), que nous verrons plus tard.
+En tout cas, l'idée de l'échelonnement vertical est assez simple.
+Premièrement, nous allons repérer la colonne qui contient comme coefficient le plus haut le premier coefficient (en partant de la gauche) non nul, et nous allons permuter cette colonne avec la première colonne.
+Si la première colonne admet un coefficient le plus haut non-nul, alors pas besoin de faire cette étape.
+Deuxièmement, <span class="important">nous allons effectuer les opérations nécessaire (multiplication, puis addiction / soustraction) sur les colonnes à droite de notre colonne actuelle pour que tous les coefficients à droite du coefficient le plus haut valent 0</span>.
+Attention : il ne faut pas modifier que ce coefficient, mais toute la colonne en même temps.
+Finalement, <span class="important">on ré-itère l'opération, en ne choisissant plus le coefficient le plus haut, mais le deuxième plus haut, et en ne commençant pas par la première colonne, mais par la deuxième</span>.
+En suite, <span class="important">faites cela jusqu'à que vous arriviez en bas de votre matrice, où tout à droite de votre matrice</span>.
+</p>
+<p>
+Ici, <span class="important">toutes ces opérations ne modifient pas le rang de la matrice, et en plus ne modifient pas l'espace engendré par la matrice</span>.
+C'est cela qui rend cet algorithme si efficace : vous pouvez déduire ces deux propriétés dans une matrice de départ grâce à lui.
+Prenons un petit exemple avec une matrice de rang 2, mais où il est difficile de le voir directement :
+</p>
+<math><mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd><mtd><mi>-2</mi></mtd><mtd><mi>0</mi></mtd></mtr><mtr><mtd><mi>3</mi></mtd><mtd><mi>-10</mi></mtd><mtd><mi>4</mi></mtd></mtr><mtr><mtd><mi>2</mi></mtd><mtd><mi>-9</mi></mtd><mtd><mi>5</mi></mtd></mtr></mtable><mo>]</mo></mrow></math></br>
+<p>
+Ici, la première étape ne sert à rien : le coefficient le plus haut de la première colonne est non-nul.
+Passons à la deuxième : nous devons soustraire à la deuxième colonne la première colonne multipliée par "-2".
+En suite, nous devons soustraire la troisième colonne par la première colonne multipliée par "0". 
+</p>
+<math><mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd><mtd><mi>0</mi></mtd><mtd><mi>0</mi></mtd></mtr><mtr><mtd><mi>3</mi></mtd><mtd><mi>-4</mi></mtd><mtd><mi>4</mi></mtd></mtr><mtr><mtd><mi>2</mi></mtd><mtd><mi>-5</mi></mtd><mtd><mi>5</mi></mtd></mtr></mtable><mo>]</mo></mrow></math></br>
+<p>
+maintenant, passons à la partie 2.
+Encore une fois, la première étape ne sert à rien : le coefficient le "deuxième" plus haut de la deuxième colonne est non-nul.
+Passons à la deuxième : nous devons soustraire à la troisième colonne la deuxième colonne multipliée par "-1".
+</p>
+<math><mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd><mtd><mi>0</mi></mtd><mtd><mi>0</mi></mtd></mtr><mtr><mtd><mi>3</mi></mtd><mtd><mi>-4</mi></mtd><mtd><mi>0</mi></mtd></mtr><mtr><mtd><mi>2</mi></mtd><mtd><mi>-5</mi></mtd><mtd><mi>0</mi></mtd></mtr></mtable><mo>]</mo></mrow></math></br>
+<p>
+Or, cette matrice génère donc un espace vectoriel généré par deux vecteurs de coordonnées, et a le même rang et génère le même espace vectoriel que notre matrice de départ : notre matrice de départ est donc de rang 2, et son image est engendrée par les deux vecteurs de coordonnée "(1, 3, 2)" et "(0, -4, -5)" dans la base d'arrivée.
+</p>
+<p>
+Bon, ici, nous travaillons sur les colonnes.
+Or, <span class="important">il est généralement conseillé de plutôt travailler sur des lignes</span>.
+Pour comprendre comment cela est possible, il existe une visualisation mentale très simple, permettant de le comprendre et de le démontrer très facile.
+Consédirons une matrice quelconque, et sa matrice transposée.
+Par définition, dans une matrice transposée, les lignes de notre matrice de départ deviennent les colonnes de la transposée.
+Donc, les lignes de la matrice de départ génèrent l'exact même espace que les colonnes de la matrice transposée.
+Or, comme on l'a vue, les opérations sur les colonnes ne modifient ni le rang, ni l'espace engendré de la matrice.
+La matrice transposée obéit aussi à cette règle : les opérations sur ces colonnes ne modifie pas son espace engendré.
+Or, les colonnes de la matrice transposée représentent les lignes de la matrice de départ : les opérations sur les colonnes de la matrice transposée reviennent à faire des opérations sur les lignes de la matrice de départ, qui laissent donc l'espace qu'elles engendrent invariant.
+Donc, <span class="important">l'espace engendré par les lignes de la matrice de départ ne change pas quand on y applique les mêmes opérations que celles sur les lignes</span>.
+</p>
+<p>
+Nous pouvons aussi déduire un autre résultat très intéressant en algèbre linéaire : <span class="important">l'espace engendré par les lignes a l'exacte même dimension que l'espace engendré par les colonnes</span>.
+En fait, <span class="important">ce résultat est parfaitement équivalent à dire qu'une matrice a le même rang que sa matrice transposée</span>.
+La démonstration est particulièrement ennuyante à écrire, mais sa compréhension brute est assez simple.
+Commençons par le cas des matrices carrées.
+Pour une matrice carrée, <span class="important">si cette matrice ne peut pas être raccourcie par échelonnement vertical et sa transposée non plus, elle a donc le même rang que sa matrice de départ, et donc les lignes et les colonnes ont elles aussi le même rang</span>.
+Cependant, si par échelonnement vertical, on obtient (de notre matrice carrée) une matrice moins large, la situation se complique.
+Or, <span class="important">nous pouvons transposer cette matrice (pour en faire une plus large que haute), l'échelonner verticalement, pour en obtenir une nouvelle matrice carrée, et y appliquer le même constat</span>.
+Dans tous les cas, si on trouve la matrice carrée finale, on sait qu'elle a la même dimension que sa transposée.
+Cependant, la matrice non échelonnée a elle aussi le même rang que la matrice carrée, et sa transposée.
+Dans ce cas, <span class="important">sa transposée représente une modification par des opérations sur la matrice carrée transposée qui ne changent pas le rang : elle est donc de même rang que sa matrice de départ</span>.
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <h3>Le lien applications linéaires - matrices</h3>
 <p>
@@ -793,125 +961,16 @@ En fait, <span class="important">on peut prouver que cette nouvelle matrice repr
 </p>
 <math><mi>Mat</mi><msub>b, d</msub>(f <mcomp> g) = <mi>Mat</mi><msub>b, c</msub>(f) * <mi>Mat</mi><msub>c, d</msub>(g)</math>
 
-<h3>Le lien matrice - application linéaire</h3>
-<p>
-Nous avons donc vue que toute application linéaire possède une matrice associée.
-Cependant, une question peut se poser : est-ce que toutes les matrices peuvent être associées à des application linéaires ou pas.
-La réponse est, en réalité, très simple à obtenir.
-En effet, le produit d'une matrice quelconque et de coordonnées donne une combinaison linéaire des colonnes de la matrice, qui peut donc représenter une combinaison linéaire des coordonnées présentes dans la matrice.
-Or, <span class="important">la transformation de coordonnées en une combinaison linéaire d'autres coordonnées forme une application linéaire (comme vu plus haut) : il s'agit donc bel et bien d'une application linéaire</span>.
-Donc, toute matrice représente une application linéaire, d'un premier espace de coordonnée vers un second.
-D'ailleurs, <span class="important">on peut très facilement trouver une famille génératrice de l'image d'arrivée : les colonnes de la matrice</span>.
-</p>
-<math>C = ((1, 0), (0, 1))</math></br>
-<math>M = <mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd><mtd><mi>2</mi></mtd></mtr><mtr><mtd><mi>3</mi></mtd><mtd><mi>4</mi></mtd></mtr></mtable><mo>]</mo></mrow></math></br>
-<math>f : R² <mto> R², f((x, y)) = x * (1, 3) + y * (2, 4) <mimp> <mi>Mat</mi><msub>C, C</msub>(f) = M</math>
-<p>
-Avec ça, on peut en déduire un théorème assez intéressant : <span class="important">toute matrice inversible représente un automorphisme linéaire sur les coordonnées</span>.
-En effet, si une matrice est inversible, il existe une autre matrice dont le produit matriciel de ces deux matrices donne la matrice identité.
-Or, ces deux matrices représentent donc deux applications linéaires, tel que la deuxième est la réciproque de la première.
-Comme vue au chapitre 1, <span class="important">si une application admet une application réciproque, elle est donc bijective : l'application linéaire l'est donc aussi, ce qui en fait un isomorphisme linéaire entre les espaces vectoriels</span>.
-La réciproque est donc immédiate : <span class="important">si une application linéaire est un isomorphisme linéaire, elle admet donc une application réciproque, donc la matrice associée est la matrice inverse de la matrice associé à l'application de départ</span>.
-Il s'agit donc d'une équivalence.
-Bien évidemment, dans ces deux cas, il faut que les bases de départ et d'arrivée restent invariantes.
-Finalement, <span class="important">comme la matrice est inversible, elle est carrée, et représente donc un endomorphisme de coordonnées : elle est donc un endomorphisme de coordonnées et un isomorphisme (qui représente aussi un isomorphisme pour les coordonnées), et donc un automorphisme de coordonnées</span>.
-</p>
-<math><mforall> A <min> M(n), {A <min> GL(n)} <mequi> {<mi>f</mi><msub>A</msub> est un automorphisme linéaire}</math>
-<p>
-Cependant, il existe d'autres opérations sur les matrices, qui permettent de trouver d'autres propriétés utiles sur ces dernières.
-Ici, <span class="important">une des opérations les plus importantes de ce style revient à trouver le rang d'une matrice</span>.
-Pour cela, nous allons procéder par des opérations qui ne modifient pas le rang de la matrice.
-</p>
-<p>
-Déjà, il existe un type précis de produit matriciel qui ne modifie pas le rang de la matrice.
-En effet, <span class="important">faire le produit matriciel à droite ou à gauche d'une matrice avec une matrice inversible ne change pas le rang de la matrice de départ</span>.
-L'explication est toute simple : faire ce produit matriciel revient à obtenir la matrice associé à l'application composé de notre matrice de départ et de notre matrice inversible.
-Or, l'application de la matrice inversible est un isomorphisme linéaire.
-En fait, <span class="important">l'espace des coordonnées de départ et d'arrivée d'un isomorphisme linéaire sont toujours les mêmes</span>.
-Donc, un isomorphisme linéaire ne modifie pas l'espace des coordonnées d'arrivée / espace des coordonnées de départ (et donc, pas sa dimension non-plus), et sa matrice associée non-plus.
-Donc, faire le produit matriciel à droite ou à gauche d'une matrice avec une matrice inversible ne change pas le rang de la matrice de départ.
-</p>
-<p>
-Une autre de ces opérations est la permutation de colonnes.
-En effet, <span class="important">permuter les colonnes d'une matrice revient à permuter deux vecteurs dans la famille génératrice de l'image de l'application, ce qui peut demander de changer les bases de départ / arrivé, mais ne change pas les indépendances linéaires possibles dans cette famille génératrice, et donc ce qui ne change pas le rang de la matrice (et ce qui ne change pas l'espace engendré non-plus)</span>.
-</p>
-<math>M = <mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd><mtd><mi>2</mi></mtd></mtr><mtr><mtd><mi>3</mi></mtd><mtd><mi>4</mi></mtd></mtr></mtable><mo>]</mo></mrow></math></br>
-<math>N = <mrow><mo>[</mo><mtable><mtr><mtd><mi>2</mi></mtd><mtd><mi>1</mi></mtd></mtr><mtr><mtd><mi>4</mi></mtd><mtd><mi>3</mi></mtd></mtr></mtable><mo>]</mo></mrow></math></br>
-<math>Rg(M) = Rg(n), M . (1, 0) = N . (0, 1)</math>
-<p>
-Une autre opération de ce genre est la multiplication de tous les éléments d'une colonne par un scalaire non-nul précis.
-En effet, <span class="important">multiplier tous les éléments d'une colonne par un scalaire nol-nul revient intuitivement à agrandir / rétricir cette colonne, ce qui ne change pas la façon dont elle est linéairement indépendante (ou pas) des autres colonnes (et ce qui ne change ni la dimension, ni l'espace engendré par la matrice)</span>.
-</p>
-<math>M = <mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd><mtd><mi>1</mi></mtd></mtr><mtr><mtd><mi>1</mi></mtd><mtd><mi>0</mi></mtd></mtr></mtable><mo>]</mo></mrow></math></br>
-<math>N = <mrow><mo>[</mo><mtable><mtr><mtd><mi>2</mi></mtd><mtd><mi>1</mi></mtd></mtr><mtr><mtd><mi>2</mi></mtd><mtd><mi>0</mi></mtd></mtr></mtable><mo>]</mo></mrow></math></br>
-<math>Rg(M) = Rg(n), M . (2, 0) = N . (1, 0)</math>
-<p>
-Finalement, nous pouvons trouver une dernière opération utile de ce genre : additionner / soustraire des colonnes de la matrice par d'autres colonnes de la matrice.
-En effet, <span class="important">soustraire / additionner des colonnes à une autre colonne ne change pas la façon dont elle est linéairement indépendante (ou pas) des autres colonnes (si elle l'est au départ, alors elle le restera même après cette opération), ce qui ne change ni la dimension, ni l'espace engendré par la matrice</span>.
-Avec ces 3 opérations, on peut déjà commencer à entrevoir la méthode générale pour travailler avec des matrices.
-</p>
-<math>M = <mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd><mtd><mi>5</mi></mtd></mtr><mtr><mtd><mi>2</mi></mtd><mtd><mi>10</mi></mtd></mtr></mtable><mo>]</mo></mrow></math></br>
-<math>N = <mrow><mo>[</mo><mtable><mtr><mtd><mi>5</mi></mtd><mtd><mi>5</mi></mtd></mtr><mtr><mtd><mi>10</mi></mtd><mtd><mi>10</mi></mtd></mtr></mtable><mo>]</mo></mrow></math></br>
-<math>P = <mrow><mo>[</mo><mtable><mtr><mtd><mi>5</mi></mtd><mtd><mi>0</mi></mtd></mtr><mtr><mtd><mi>10</mi></mtd><mtd><mi>0</mi></mtd></mtr></mtable><mo>]</mo></mrow></math></br>
-<math>Rg(M) = Rg(N) = Rg(P)</math>
-<p>
-En effet, ici, <span class="important">on peut voir que le vecteur (5, 10) seul génère un espace vectoriel de même dimension que l'espace vectoriel engendré par notre matrice de départ (comme l'autre vecteur est nul, on peut le passer) : elle est de rang 1</span>.
-Avec ça, nous pouvons introduire un algorithme très utile en algèbre linéaire : l'échelonnement vertical.
-<span class="important"><definition name="echelon_vertical"></span>.
-Cette méthode s'inspire d'une autre méthode plus connue (la méthode du pivot de Gauss), que nous verrons plus tard.
-En tout cas, l'idée de l'échelonnement vertical est assez simple.
-Premièrement, nous allons repérer la colonne qui contient comme coefficient le plus haut le premier coefficient (en partant de la gauche) non nul, et nous allons permuter cette colonne avec la première colonne.
-Si la première colonne admet un coefficient le plus haut non-nul, alors pas besoin de faire cette étape.
-Deuxièmement, <span class="important">nous allons effectuer les opérations nécessaire (multiplication, puis addiction / soustraction) sur les colonnes à droite de notre colonne actuelle pour que tous les coefficients à droite du coefficient le plus haut valent 0</span>.
-Attention : il ne faut pas modifier que ce coefficient, mais toute la colonne en même temps.
-Finalement, <span class="important">on ré-itère l'opération, en ne choisissant plus le coefficient le plus haut, mais le deuxième plus haut, et en ne commençant pas par la première colonne, mais par la deuxième</span>.
-En suite, <span class="important">faites cela jusqu'à que vous arriviez en bas de votre matrice, où tout à droite de votre matrice</span>.
-</p>
-<p>
-Ici, <span class="important">toutes ces opérations ne modifient pas le rang de la matrice, et en plus ne modifient pas l'espace engendré par la matrice</span>.
-C'est cela qui rend cet algorithme si efficace : vous pouvez déduire ces deux propriétés dans une matrice de départ grâce à lui.
-Prenons un petit exemple avec une matrice de rang 2, mais où il est difficile de le voir directement :
-</p>
-<math><mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd><mtd><mi>-2</mi></mtd><mtd><mi>0</mi></mtd></mtr><mtr><mtd><mi>3</mi></mtd><mtd><mi>-10</mi></mtd><mtd><mi>4</mi></mtd></mtr><mtr><mtd><mi>2</mi></mtd><mtd><mi>-9</mi></mtd><mtd><mi>5</mi></mtd></mtr></mtable><mo>]</mo></mrow></math></br>
-<p>
-Ici, la première étape ne sert à rien : le coefficient le plus haut de la première colonne est non-nul.
-Passons à la deuxième : nous devons soustraire à la deuxième colonne la première colonne multipliée par "-2".
-En suite, nous devons soustraire la troisième colonne par la première colonne multipliée par "0". 
-</p>
-<math><mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd><mtd><mi>0</mi></mtd><mtd><mi>0</mi></mtd></mtr><mtr><mtd><mi>3</mi></mtd><mtd><mi>-4</mi></mtd><mtd><mi>4</mi></mtd></mtr><mtr><mtd><mi>2</mi></mtd><mtd><mi>-5</mi></mtd><mtd><mi>5</mi></mtd></mtr></mtable><mo>]</mo></mrow></math></br>
-<p>
-maintenant, passons à la partie 2.
-Encore une fois, la première étape ne sert à rien : le coefficient le "deuxième" plus haut de la deuxième colonne est non-nul.
-Passons à la deuxième : nous devons soustraire à la troisième colonne la deuxième colonne multipliée par "-1".
-</p>
-<math><mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd><mtd><mi>0</mi></mtd><mtd><mi>0</mi></mtd></mtr><mtr><mtd><mi>3</mi></mtd><mtd><mi>-4</mi></mtd><mtd><mi>0</mi></mtd></mtr><mtr><mtd><mi>2</mi></mtd><mtd><mi>-5</mi></mtd><mtd><mi>0</mi></mtd></mtr></mtable><mo>]</mo></mrow></math></br>
-<p>
-Or, cette matrice génère donc un espace vectoriel généré par deux vecteurs de coordonnées, et a le même rang et génère le même espace vectoriel que notre matrice de départ : notre matrice de départ est donc de rang 2, et son image est engendrée par les deux vecteurs de coordonnée "(1, 3, 2)" et "(0, -4, -5)" dans la base d'arrivée.
-</p>
-<p>
-Bon, ici, nous travaillons sur les colonnes.
-Or, <span class="important">il est généralement conseillé de plutôt travailler sur des lignes</span>.
-Pour comprendre comment cela est possible, il existe une visualisation mentale très simple, permettant de le comprendre et de le démontrer très facile.
-Consédirons une matrice quelconque, et sa matrice transposée.
-Par définition, dans une matrice transposée, les lignes de notre matrice de départ deviennent les colonnes de la transposée.
-Donc, les lignes de la matrice de départ génèrent l'exact même espace que les colonnes de la matrice transposée.
-Or, comme on l'a vue, les opérations sur les colonnes ne modifient ni le rang, ni l'espace engendré de la matrice.
-La matrice transposée obéit aussi à cette règle : les opérations sur ces colonnes ne modifie pas son espace engendré.
-Or, les colonnes de la matrice transposée représentent les lignes de la matrice de départ : les opérations sur les colonnes de la matrice transposée reviennent à faire des opérations sur les lignes de la matrice de départ, qui laissent donc l'espace qu'elles engendrent invariant.
-Donc, <span class="important">l'espace engendré par les lignes de la matrice de départ ne change pas quand on y applique les mêmes opérations que celles sur les lignes</span>.
-</p>
-<p>
-Nous pouvons aussi déduire un autre résultat très intéressant en algèbre linéaire : <span class="important">l'espace engendré par les lignes a l'exacte même dimension que l'espace engendré par les colonnes</span>.
-En fait, <span class="important">ce résultat est parfaitement équivalent à dire qu'une matrice a le même rang que sa matrice transposée</span>.
-La démonstration est particulièrement ennuyante à écrire, mais sa compréhension brute est assez simple.
-Commençons par le cas des matrices carrées.
-Pour une matrice carrée, <span class="important">si cette matrice ne peut pas être raccourcie par échelonnement vertical et sa transposée non plus, elle a donc le même rang que sa matrice de départ, et donc les lignes et les colonnes ont elles aussi le même rang</span>.
-Cependant, si par échelonnement vertical, on obtient (de notre matrice carrée) une matrice moins large, la situation se complique.
-Or, <span class="important">nous pouvons transposer cette matrice (pour en faire une plus large que haute), l'échelonner verticalement, pour en obtenir une nouvelle matrice carrée, et y appliquer le même constat</span>.
-Dans tous les cas, si on trouve la matrice carrée finale, on sait qu'elle a la même dimension que sa transposée.
-Cependant, la matrice non échelonnée a elle aussi le même rang que la matrice carrée, et sa transposée.
-Dans ce cas, <span class="important">sa transposée représente une modification par des opérations sur la matrice carrée transposée qui ne changent pas le rang : elle est donc de même rang que sa matrice de départ</span>.
-</p>
+
+
+
+
+
+
+
+
+
+
 
 
 

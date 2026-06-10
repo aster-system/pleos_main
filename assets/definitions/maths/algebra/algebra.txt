@@ -129,7 +129,7 @@
 <new_definition name="algebra_group_action">
     <content>une action de groupe est un moyen d'opérer un groupe avec un ensemble "E", de tel manière que tous les résultats de ces opérations (entre un élément du groupe et un élément de "E") appartiennent à "E"</content>
     <content name="fixed_point">le point fixe d'un élément "g" d'un groupe "G" opérant sur un ensemble "E" représente l'ensemble des éléments de "E" tel que opérer "g" par ces éléments ne modifie pas ces éléments (et donc que "g" est dans le stabilisateur de l'élément)</content>
-    <content name="orbit">le stabilisateur d'un élément "x" d'un ensemble "E" sous l'action d'un groupe représente l'ensemble des éléments de "G" tel qu'opérer ces éléments de "G" et "x" donne "x" sous l'action du groupe associée</content>
+    <content name="orbit">l'orbite d'un élément "x" d'un ensemble "E" sous l'action d'un groupe représente l'ensemble des éléments de "G" obtensible avec "x" sous l'action du groupe associée</content>
     <content name="stabilisator">le stabilisateur d'un élément "x" d'un ensemble "E" sous l'action d'un groupe représente l'ensemble des éléments de "G" tel qu'opérer ces éléments de "G" et "x" donne "x" sous l'action du groupe associée</content>
 </new_definition>
 <new_definition name="algebra_ideal">
