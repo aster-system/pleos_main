@@ -379,7 +379,46 @@ Elle doit cependant respecter une propriété précise : elle doit être linéai
 </p>
 <math>f : E <mto> K, v <mto> f(v)</math></br>
 <math>f(v + u) = f(v) + f(u) <mand> f(k * v) = k * f(v)</math>
-
+<p>
+Ici, <span class="important">un exemple de forme linéaire est la combinaison linéaire des coordonnées dans une base des vecteurs de l'espace de départ</span>.
+Comme l'espace vectoriel et les coordonnées des vecteurs dans cet espace vectoriel sont isomorphes, on en déduit directement qu'une application de ce genre (allant de l'espace de départ au corps de départ) est aussi une forme linéaire, possiblement plus dure à expliciter.
+Il est assez facile de le démontrer.
+Pour un vecteur "u" où les coefficients de ces coordonnées s'écrivent "u indice n", et où les "a indice n" représentent les coefficients de la combinaison linéaire :
+</p>
+<math>f : E <mto> K, u <mto> <msum from=1 to=n unknown=k><mi>a</mi><msub>n</msub><mi>u</mi><msub>n</msub></math></br>
+<math>f(u + v) = <msum from=1 to=n unknown=k><mi>a</mi><msub>n</msub>(<mi>u</mi><msub>n</msub> + <mi>v</mi><msub>n</msub>) = <msum from=1 to=n unknown=k><mi>a</mi><msub>n</msub><mi>u</mi><msub>n</msub> + <msum from=1 to=n unknown=k><mi>a</mi><msub>n</msub><mi>v</mi><msub>n</msub> = f(u) + f(v)</math></br>
+<math>f(b *  u) = <msum from=1 to=n unknown=k><mi>a</mi><msub>n</msub>(b * <mi>u</mi><msub>n</msub>) = <math>f(u) = b * <msum from=1 to=n unknown=k><mi>a</mi><msub>n</msub><mi>u</mi><msub>n</msub> = b * f(u)</math></br>
+<p>
+Cependant, <span class="important">on peut aussi prouver le sens contraire, disant que toute forme linéaire est une combinaison linéaire des coordonnées dans une base des vecteurs de l'espace de départ</span>.
+Cela se prouve en utilisant les propriétés obligatoires des formes linéaires.
+On peut aussi voir directement dans la démonstration que les coefficients de la combinaison linéaire (appelés "a indice n" dans la démonstration juste au dessus) sont les images des vecteurs de la base.
+</p>
+<math>f(u) = f(<msum from=1 to=n unknown=k><mi>u</mi><msub>n</msub><mi>b</mi><msub>n</msub>) = <msum from=1 to=n unknown=k><mi>u</mi><msub>n</msub>f(<mi>b</mi><msub>n</msub>)</math>
+<p>
+Comme les deux propositions sont prouvées, on a donc une façon possible de formuler toutes les formes linéaires.
+Il existe d'ailleurs un espace spécial engendré par les formes linéaires : l'espace dual.
+<span class="important"><definition name="dual_space"></span>.
+D'ailleurs, cet espace est un espace vectoriel sur le corps de base de notre espace vectoriel de départ.
+Il est extrêmement facile de le prouver, puisque les formes linéaires représentent des combinaisons linéaires d'éléments du corps de départ, et donc un espace vectoriel.
+Généralement, <span class="important">pour un espace vectoriel "E", sont espace dual est noté "E*" (à ne pas confondre avec "E" privé de 0)</span>.
+</p>
+<math>E*</math>
+<p>
+Ce concept va nous permettre dans introduire un autre : la base duale.
+<span class="important"><definition name="dual_space"></span>.
+Pour comprendre pourquoi cette base existe, reprenons notre calcul de tout à l'heure.
+</p>
+<math>f(u) = f(<msum from=1 to=n unknown=k><mi>u</mi><msub>n</msub><mi>b</mi><msub>n</msub>) = <msum from=1 to=n unknown=k><mi>u</mi><msub>n</msub>f(<mi>b</mi><msub>n</msub>)</math>
+<p>
+En regardant, on pourrait avoir envie de considérer que "f(b indice n)" ou "u indice n" est une base.
+Or cela ne ferait pas sens : on est dans un espace où les objets que l'on veut combiner sont des applications, elle ne peut donc pas être "u indice n" qui est un scalaire.
+De plus, elle ne peut pas être "f(b indice n)" non plus, car "f(b indice n)" est ici fixé, et est donc aussi un scalaire.
+Or, on peut trouver une application qui fait l'affaire, et qui prendra la place de "u indice n". 
+Donc, <span class="important">nous allons définir une application (généralement noté "e* indice n") qui, à "u", associe sa coordonnée "n-ième" dans la base "b" (et donc, qui associe "u indice n" à "u")</span>.
+Ici, <span class="important">la base formée de tous les "e* indice n" nécessaire est la base duale de l'espace</span>.
+Dans ce cas, on peut écrire :
+</p>
+<math>f(u) = <msum from=1 to=n unknown=k><mi>e</mi><msub>n</msub>(u) * f(<mi>b</mi><msub>n</msub>)</math>
 
 
 

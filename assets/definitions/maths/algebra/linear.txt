@@ -15,6 +15,10 @@
     <content>un système linéaire est un système d'équations composé d'équations linéaires</content>
 </new_definition>
 
+<new_definition name="dual_space">
+    <content>l'espace dual d'un espace vectoriel est l'ensemble de toutes les formes linéaires sur cet espace</content>
+    <content>la base duale d'un espace dual (d'un espace vectoriel sur un corps "K") est une base de l'espace dual</content>
+</new_definition>
 <new_definition name="sub_vector_space">
     <content>un sous-espace vectoriel est une structure algébrique construire à partir d'un espace vectoriel, sur un ensemble inclut dans l'espace vectoriel de départ, et où les éléments de cet ensemble sont stables par addition et par multiplication par un scalaire</content>
     <content name="span">un sous-espace vectoriel engendré par une famille de vecteurs "A" est un sous-espace vectoriel dont les éléments ne représentent que des combinaisons linéaires des vecteurs de la famille "A"</content>
