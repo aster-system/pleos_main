@@ -15,9 +15,13 @@
     <content>un système linéaire est un système d'équations composé d'équations linéaires</content>
 </new_definition>
 
+<new_definition name="bilinear_application">
+    <content>une application bilinéaire est une application prenant deux vecteurs de deux espaces vectoriels "E" et "F" (généralement les mêmes, mais ce n'est pas obligatoire), et allant vers un autre espace vectoriel "G" (et donc, allant de "E X F" vers "G"), de telle manière qu'elle soit linéaire en ses deux variables</content>
+</new_definition>
+
 <new_definition name="dual_space">
     <content>l'espace dual d'un espace vectoriel est l'ensemble de toutes les formes linéaires sur cet espace</content>
-    <content>la base duale d'un espace dual (d'un espace vectoriel sur un corps "K") est une base de l'espace dual</content>
+    <content name="base">la base duale d'un espace dual (d'un espace vectoriel sur un corps "K") est une base de l'espace dual</content>
 </new_definition>
 <new_definition name="sub_vector_space">
     <content>un sous-espace vectoriel est une structure algébrique construire à partir d'un espace vectoriel, sur un ensemble inclut dans l'espace vectoriel de départ, et où les éléments de cet ensemble sont stables par addition et par multiplication par un scalaire</content>

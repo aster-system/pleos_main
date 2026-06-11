@@ -262,6 +262,22 @@ Cependant, dans ce cas, <span class="important">la réciproque est fausse, on pe
 De manière parfaitement logique, cela s'explique par le fait que passer à un sous-espace vectoriel requiert une implication dans le raisonnement ("F est un sous-espace vectoriel" implique que "toute base de "F ont le même cardinal", mais la réciproque de cette proposition ne veut rien dire), cassant l'équivalence (puisque l'on part d'un plus gros espace vectoriel, demandant de passer à un autre : le sous-espace vectoriel).
 </p>
 <math>Vect(f) = Vect(g) = F <mimp> n = m</math>
+<p>
+Un exemple assez bizarre d'espace vectoriel est l'espace fonctionnel.
+<span class="important"><definition name="function_space"></span>.
+Avec cette simple définition, un espace fonctionnel n'est pas obligatoirement un espace vectoriel.
+Or, <span class="important">si l'ensemble d'arrivée représente un espace vectoriel "F" sur un corps "K", l'espace fonctionnel est lui aussi un espace vectoriel sur "K"</span>.
+Pour cela, nous devons munir cet espace de lois assez similaires aux lois de "F" :
+</p>
+<math>f : X <mto> F, x <mto> f(x)</math></br>
+<math>g : X <mto> F, x <mto> g(x)</math></br>
+<math>(f + g)(x) = f(x) + g(x)</math></br>
+<math><mforall> a <min> F, (a * f)(x) = a * f(x)</math>
+<p>
+Ici, on constate donc la stabilité de cet ensemble par l'addition et la multiplication par un scalaire (qui dépend donc directement des propriétés de l'espace d'arrivée de l'application).
+De plus, on constate aussi que cet ensemble a les mêmes propriétés que celui de l'espace d'arrivée (et donc, que celles d'un espace vectoriel).
+Donc, il s'agit bel et bien d'un espace vectoriel.
+</p>
 
 <h3>Les systèmes linéaires</h3>
 <p>
@@ -367,6 +383,21 @@ Pour prouver l'isomorphisme, on a juste à trouver l'application réciproque (qu
 Avec ça, on peut prouver quelque chose de très pratique : <span class="important">tout espace vectoriel de dimension finie "n" sur un corps "K" est isomorphe à "K exposant n"</span>.
 </p>
 <p>
+Ici, <span class="important">l'ensemble des morphismes allant de "E" vers "F" est noté "L(E, F)", et est un sous-ensemble de l'ensemble des applications allant de "E" vers "F"</span>.
+Ils ont donc les exacts mêmes lois de compositions que cet espace vectoriel d'applications.
+</p>
+<math><mforall> f, g <min> L(E, F)</math></br>
+<math>(f + g)(x) = f(x) + g(x) <mand> <mforall> a <min> F, (a * f)(x) = a * f(x)</math></br>
+<p>
+En utilisant les propriétés des applications linéaires, <span class="important">on peut cependant améliorer ces opérations, et démontrer que "L(E, F)" est un sous-espace vectoriel de l'ensemble des applications allant de "E" vers "F"</span>.
+Déjà, on sait que l'identité est dans cet ensemble.
+De plus, démontrons que "(f + g)" est linéaire, et que "(a * f)" aussi, et donc que l'ensemble des applications linéaires est bel et bien un sous-espace vectoriel de l'ensemble des applications allant de "E" vers "F".
+</p>
+<math>(f + g)(x + y) = f(x + y) + g(x + y) = f(x) + f(y) + g(x) + g(y) = f(x) + g(x) + f(y) + g(y) = (f + g)(x) + (f + g)(y)</math></br>
+<math>(f + g)(b * x) = f(b * x) + g(b * x) = b * f(x) + b * g(x) = b * (f + g)(x)</math></br>
+<math>(a * f)(b * x) = a * f(b * x) = a * b * f(x) = b * a * f(x) = b * (a * f)(x)</math></br>
+<math>(a * f)(x + y) = a * f(x + y) = a * f(x) + a * f(y) = (a * f)(x) + (a * f)(y)</math></br>
+<p>
 Un résultat intéressant avec les applications linéaires concerne les bases d'espaces vectoriels.
 En effet, <span class="important">l'image d'une base de l'espace vectoriel de départ par une application linéaire représente une famille de vecteurs qui engendre l'image de l'application dans l'espace vectoriel d'arrivé</span>.
 La démonstration de ce théorème (<a href="demo#4_1_1_1">présente ici</a>) utilise les résultats basiques de linéarité.
@@ -380,36 +411,35 @@ Elle doit cependant respecter une propriété précise : elle doit être linéai
 <math>f : E <mto> K, v <mto> f(v)</math></br>
 <math>f(v + u) = f(v) + f(u) <mand> f(k * v) = k * f(v)</math>
 <p>
-Ici, <span class="important">un exemple de forme linéaire est la combinaison linéaire des coordonnées dans une base des vecteurs de l'espace de départ</span>.
+Ici, <span class="important">un exemple de forme linéaire est la somme de tous les éléments des coordonnées dans une base de vecteurs de l'espace de départ</span>.
 Comme l'espace vectoriel et les coordonnées des vecteurs dans cet espace vectoriel sont isomorphes, on en déduit directement qu'une application de ce genre (allant de l'espace de départ au corps de départ) est aussi une forme linéaire, possiblement plus dure à expliciter.
 Il est assez facile de le démontrer.
-Pour un vecteur "u" où les coefficients de ces coordonnées s'écrivent "u indice n", et où les "a indice n" représentent les coefficients de la combinaison linéaire :
+Pour un vecteur "u" où les coefficients de ces coordonnées s'écrivent "u indice n", et où les "b indice n" représentent les éléments de la base :
 </p>
-<math>f : E <mto> K, u <mto> <msum from=1 to=n unknown=k><mi>a</mi><msub>n</msub><mi>u</mi><msub>n</msub></math></br>
-<math>f(u + v) = <msum from=1 to=n unknown=k><mi>a</mi><msub>n</msub>(<mi>u</mi><msub>n</msub> + <mi>v</mi><msub>n</msub>) = <msum from=1 to=n unknown=k><mi>a</mi><msub>n</msub><mi>u</mi><msub>n</msub> + <msum from=1 to=n unknown=k><mi>a</mi><msub>n</msub><mi>v</mi><msub>n</msub> = f(u) + f(v)</math></br>
-<math>f(b *  u) = <msum from=1 to=n unknown=k><mi>a</mi><msub>n</msub>(b * <mi>u</mi><msub>n</msub>) = <math>f(u) = b * <msum from=1 to=n unknown=k><mi>a</mi><msub>n</msub><mi>u</mi><msub>n</msub> = b * f(u)</math></br>
+<math>f : E <mto> K, u <mto> <msum from=1 to=n unknown=k><mi>u</mi><msub>n</msub></math></br>
+<math>f(u + v) = <msum from=1 to=n unknown=k>(<mi>u</mi><msub>n</msub> + <mi>v</mi><msub>n</msub>) = <msum from=1 to=n unknown=k><mi>u</mi><msub>n</msub> + <msum from=1 to=n unknown=k><mi>v</mi><msub>n</msub> = f(u) + f(v)</math></br>
+<math>f(a * u) = <msum from=1 to=n unknown=k>(a * <mi>u</mi><msub>n</msub>) = <math>f(u) = a * <msum from=1 to=n unknown=k><mi>u</mi><msub>n</msub> = a * f(u)</math></br>
 <p>
-Cependant, <span class="important">on peut aussi prouver le sens contraire, disant que toute forme linéaire est une combinaison linéaire des coordonnées dans une base des vecteurs de l'espace de départ</span>.
-Cela se prouve en utilisant les propriétés obligatoires des formes linéaires.
-On peut aussi voir directement dans la démonstration que les coefficients de la combinaison linéaire (appelés "a indice n" dans la démonstration juste au dessus) sont les images des vecteurs de la base.
-</p>
-<math>f(u) = f(<msum from=1 to=n unknown=k><mi>u</mi><msub>n</msub><mi>b</mi><msub>n</msub>) = <msum from=1 to=n unknown=k><mi>u</mi><msub>n</msub>f(<mi>b</mi><msub>n</msub>)</math>
-<p>
-Comme les deux propositions sont prouvées, on a donc une façon possible de formuler toutes les formes linéaires.
 Il existe d'ailleurs un espace spécial engendré par les formes linéaires : l'espace dual.
 <span class="important"><definition name="dual_space"></span>.
-D'ailleurs, cet espace est un espace vectoriel sur le corps de base de notre espace vectoriel de départ.
-Il est extrêmement facile de le prouver, puisque les formes linéaires représentent des combinaisons linéaires d'éléments du corps de départ, et donc un espace vectoriel.
 Généralement, <span class="important">pour un espace vectoriel "E", sont espace dual est noté "E*" (à ne pas confondre avec "E" privé de 0)</span>.
 </p>
 <math>E*</math>
 <p>
+D'ailleurs, <span class="important">cet espace représente l'espace des applications linéaires allant de "E" vers "K" (noté "L(E, K)"), qui est donc un espace vectoriel</span>.
+Les formes linéaires s'opérent donc exactement comme les éléments de "L(E, K)".
+</p>
+<math><mforall> f, g <min> E*</math></br>
+<math>(f + g)(x) = f(x) + g(x)</math></br>
+<math><mforall> a <min> K, (a * f)(x) = a * f(x)</math>
+<p>
 Ce concept va nous permettre dans introduire un autre : la base duale.
-<span class="important"><definition name="dual_space"></span>.
-Pour comprendre pourquoi cette base existe, reprenons notre calcul de tout à l'heure.
+<span class="important"><definition name="dual_space-base"></span>.
+Pour comprendre pourquoi cette base existe, posons un calcul simple, avec "b" une base de l'espace vectoriel de départ.
 </p>
 <math>f(u) = f(<msum from=1 to=n unknown=k><mi>u</mi><msub>n</msub><mi>b</mi><msub>n</msub>) = <msum from=1 to=n unknown=k><mi>u</mi><msub>n</msub>f(<mi>b</mi><msub>n</msub>)</math>
 <p>
+Ici, <span class="important">nous voyons donc une combinaison linéaire, dont on voudrait trouver une base</span>.
 En regardant, on pourrait avoir envie de considérer que "f(b indice n)" ou "u indice n" est une base.
 Or cela ne ferait pas sens : on est dans un espace où les objets que l'on veut combiner sont des applications, elle ne peut donc pas être "u indice n" qui est un scalaire.
 De plus, elle ne peut pas être "f(b indice n)" non plus, car "f(b indice n)" est ici fixé, et est donc aussi un scalaire.
@@ -419,6 +449,31 @@ Ici, <span class="important">la base formée de tous les "e* indice n" nécessai
 Dans ce cas, on peut écrire :
 </p>
 <math>f(u) = <msum from=1 to=n unknown=k><mi>e</mi><msub>n</msub>(u) * f(<mi>b</mi><msub>n</msub>)</math>
+
+<h3>Les applications multilinéaires</h3>
+<p>
+Comme il existe, pour des applications à une variable, des applications "linéaires", il existe aussi une forme de linéarité pour des applications à plusieurs variables.
+Commençons par la forme la plus simple (et la plus utilie) : les applications bilinéaires.
+<span class="important"><definition name="bilinear_application"></span>.
+Ici, les propriétés que l'application doit respecter s'énoncent ainsi :
+</p>
+<math>f : E X F <mto> G, (x, y) <mto> z</math></br>
+<math>f(x + x', y) = f(x, y) + f(x', y)</math></br>
+<math>f(x, y + y') = f(x, y) + f(x, y')</math></br>
+<math>f(a * x, y) = f(x, a * y) = a * f(x, y)</math>
+<p>
+Prenons un exemple, avec une application précise :
+</p>
+<math>f : R² X R² <mto> R², (x, y) X (w, z) <mto> (x * w - y * z, x * z + w * y)</math>
+<p>
+Cette application respecte toutes les propriétés nécessaires (bien que les calculs soient particulièrement longs et ennuyants à faire).
+</p>
+<math>f((x, y) + (x', y'), (w, z)) = ((x + x') * w - (y + y') * z, (x + x') * z + w * (y + y')) = (x * w + x' * w - (y * z + y' * z), (x * z + x' * z) + (w * y + w * y'))</math></br>
+<math>f((x, y) + (x', y'), (w, z)) = (x * w - y * z + x' * w - y' * z, x * z + w * y + x' * z + w * y') = (x * w - y * z, x * z + w * y) + (x' * w - y' * z, x' * z + w * y') = f((x, y), (w, z)) + f((x', y'), (w, z))</math></br>
+<math>f((x, y), (w, z) + (w', z')) = (x * (w + w') - y * (z + z'), x * (z + z') + (w + w') * y) = (x * w + x * w' - (y * z + y * z'), (x * z + x * z') + (w * y + w' * y))</math></br>
+<math>f((x, y), (w, z) + (w', z')) = (x * w - y * z + x * w' - y * z', x * z + w * y + x * z' + w' * y) = (x * w - y * z, x * z + w * y) + (x * w' - y * z', x * z' + w' * y) = f((x, y), (w, z)) + f((x, y), (w', z'))</math></br>
+<math>f(a * (x, y), (w, z)) = (a * x * w - a * y * z, a * x * z + w * a * y) = (x * a * w - y * a * z, x * a * z + a * w * y) = f((x, y), a * (w, z))</math></br>
+<math>f(a * (x, y), (w, z)) = (a * x * w - a * y * z, a * x * z + w * a * y) = (a * (x * w - y * z), a * (x * z +  w * y)) = a * (x * w - y * z, x * z + w * y) = a * f((x, y), (w, z))</math>
 
 
 
