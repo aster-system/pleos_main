@@ -220,6 +220,7 @@ Ici, quand on dit "deux structures de même nature", on veut dire que ces struct
 Dans le cas des structures algébriques, un morphisme est une application où les résultats des calculs de la première structure suffisent pour obtenir les résultats des calculs dans la seconde structure, sans avoir à les faire.
 En effet, <span class="important">l'image des résultats des calculs de la première structure se substitue aux calculs dans la deuxième structure</span>.
 Ce concept permet de définir une sorte de compatibilité entre deux structure, où le passage des calculs de l'une sont prévisibles grâces aux calculs de l'autres.
+En plus de ça, <span class="important">une composition de morphisme doit obligatoirement donné un morphisme</span>.
 </p>
 <p>
 Prenons le type d'exemple le plus simple : les morphismes de groupe.
@@ -234,7 +235,9 @@ En effet, pour qu'une application "f" soit un morphisme de groupe, il faut qu'el
 <p>
 Donc, <span class="important">pour obtenir le résultat du premier calcul (qui se situe dans "F", puisque "f(a)" et "f(b)" sont des éléments de "F"), on peut juste faire un calcul dans "E", et y apppliquer "f"</span>.
 Dans ce cas, "f" est un morphisme de groupe.
+On peut d'ailleur vérifier que la composée de deux morphismes de groupes donne bien un nouveau morphisme de groupe.
 </p>
+<math>f(g(c + d)) = f(g(c) * g(c)) = f(g(c)) ~ f(g(d))</math>
 <p>
 Comme pour les applications bijectives / injectives / surjectives, il existe des morphismes qui possèdent quelques propriétés supplémentaires.
 La plus utilisée est l'isomorphisme.
@@ -243,10 +246,39 @@ Pour un isomorphisme "f", on peut donc l'exprimer ainsi :
 </p>
 <math><mexists> g, f <mcomp> g = Id</math>
 <p>
-Ici, on peut en tirer une conclusion assez intéressante : <span class="important">tout isomorphisme représente un morphisme d'une application bijective (nommé morphisme bijectif)</span>.
-Cela se déduit très vite : si il existe un morphisme "réciproque", alors l'application de ce morphisme est la réciproque de notre morphisme de départ : elle représente donc une application bijective (comme vue au chapitre 1).
-Cependant, l'inverse n'est pas toujours vrai.
+Par exemple, le morphisme identité représente un isomorphisme (son morphisme réciproque est... lui même).
 </p>
+<math>f : E <mto> E, x <mto> x</math></br>
+<math>f <mcomp> f = Id</math>
+<p>
+Ici, on peut en tirer une conclusion assez intéressante : <span class="important">tout isomorphisme représente un morphisme d'une application bijective (nommé morphisme bijectif)</span>.
+Cela se déduit très vite : si il existe un morphisme "réciproque", alors l'application de ce morphisme est la réciproque de l'application de notre morphisme de départ : elle représente donc une application bijective (comme vue au chapitre 1).
+Cependant, l'inverse n'est pas toujours vrai : il existe des morphismes bijectifs qui ne sont pas des isomorphismes (bien qu'ils ne soient généralement que dans des structures un peu atypique, comme les espaces topologiques).
+</p>
+<p>
+Passons par un concept utile pour en définir d'autres : l'endomorphisme.
+<span class="important"><definition name="endomorphism"></span>.
+Par exemple, le morphisme identité représente un endomorphisme.
+</p>
+<math>f : E <mto> E, x <mto> x</math>
+<p>
+Ici, <span class="important">la composée de deux endomorphisme représente un nouvel endomorphisme</span>.
+Cela est dût au fait que la composition de deux applications allant de "E" vers "E" et de "E" vers "E" donne une application qui va de "E" vers "E" (un nouvel endomorphisme).
+</p>
+<p>
+Parlons du cas final : l'automorphisme.
+<span class="important"><definition name="automorphism"></span>.
+L'exemple le plus simple est le morphisme identité, encore une fois.
+</p>
+<p>
+Comme il s'agit d'un endomorphisme, ils sont stables par la composition.
+De plus, comme toute application, ils sont associatif.
+Ils contiennent aussi un neutre : l'automorphisme identité.
+Finalement, comme ils sont aussi des isomorphismes, alors ils possèdent tous un inverse.
+Donc, <span class="important">l'ensemble des automorphismes sur une structure quelconque "E" représente un groupe (muni de l'opération de composition)</span>.
+En général, cet ensemble est noté "Aut(E)".
+</p>
+<math>(Aut(E), <mcomp>)</math>
 
 
 
@@ -363,6 +395,9 @@ Un des sous-groupes les plus (si ce n'est le plus) remarquables de "S(E)" est ce
 <span class="important"><definition name="symmetric_group-alternating"></span>.
 Comme tout sous-groupe, on peut démontrer que les permutations paires sont stables par la composition (démontré au dernier chapitre), et que la permutation identité est paire (car 0 l'est aussi).
 Ce sous-groupe a une quantité aberrante de propriétés intéressantes, que nous serons amenés à étudier plus tard.
+</p>
+<p>
+D'ailleurs, tout automorphisme de "E" est une bijection de "E" : <span class="important">le groupe des automorphismes de "E" est donc un sous-groupe du groupe des bijections de "E"</span>.
 </p>
 
 <h3>Le groupe additif Z/nZ</h3>

@@ -222,7 +222,7 @@ namespace pleos {
                 matter_bohr_model_simulation_photons_number()++;
                 std::shared_ptr<Bohr_Model::Photon> current_photon = matter_bohr_model().photon_datas(0);
                 current_photon.get()->creation_time = scls::time_ns();
-                double x = -2; double y = 0;
+                //double x = -2; double y = 0;
 
                 // Get the final electron
                 int movement_duration = 1;

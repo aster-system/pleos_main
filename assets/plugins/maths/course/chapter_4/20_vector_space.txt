@@ -329,6 +329,9 @@ La démonstration de son équivalence est très simple :
 <math>f(k * a + b) = k * f(a) + f(b) <mimp> f(k * a + 0) = k * f(a) + f(0) <mimp> f(k * a) = k * f(a)</math></br>
 <math>f(k * a + b) = k * f(a) + f(b) <mimp> f(1 * a + b) = 1 * f(a) + f(b) <mimp> f(a + b) = f(a) + f(b)</math></br>
 <p>
+Comme pour tout morphisme, <span class="important">il existe des applications linéaires qui sont des endomorphismes (dit linéaires), des isomorphismes (toujours linéaires) et des automorphismes (encore... linéaires)</span>.
+</p>
+<p>
 Prenons un exemple très simple : l'application allant de "R²" vers "R²", en transformant "(x, y)" en "(2 * x, 2 * y)".
 Cette application est parfaitement linéaire, et on peut facilement le démontrer.
 Déjà, la première propriété est respectée, et l'on peut le vérifier de manière algébrique.
@@ -345,13 +348,30 @@ Effectivement, <span class="important">on peut facilement montrer que toutes app
 Ce résultat <a href="demo#4_1_1_0">est démontré ici</a>, et est très similaire à la démonstration que nous venons juste de voir.
 </p>
 <p>
+Un autre exemple d'application linéaire concerne les coordonnées.
+En effet, <span class="important">l'application allant d'un espace vectoriel quelconque de dimension finie "n" à l'espace des coordonnées dans une base de cet espace vectoriel est un isomorphisme linéaire</span>.
+L'expression de cette application est assez simple :
+</p>
+<math><mforall> a <min> E, f(a) = f(<msum from=1 to=n unknown=k><mi>a</mi><msub>k</msub><mi>e</mi><msub>k</msub>) = (<mi>a</mi><msub>1</msub>, <mi>a</mi><msub>2</msub>, ..., <mi>a</mi><msub>n</msub>)</math></br>
+<p>
+La démonstration de sa linéarité est elle aussi assez simple :
+</p>
+<math>f(a + b) = f(<msum from=1 to=n unknown=k><mi>a</mi><msub>k</msub><mi>e</mi><msub>k</msub> + <msum from=1 to=n unknown=k><mi>b</mi><msub>k</msub><mi>e</mi><msub>k</msub>) = (<mi>a</mi><msub>1</msub> + <mi>b</mi><msub>1</msub>, <mi>a</mi><msub>2</msub> + <mi>b</mi><msub>2</msub>, ..., <mi>a</mi><msub>n</msub> + <mi>b</mi><msub>n</msub>) = (<mi>a</mi><msub>1</msub>, <mi>a</mi><msub>2</msub>, ..., <mi>a</mi><msub>n</msub>) + (<mi>b</mi><msub>1</msub>, <mi>b</mi><msub>2</msub>, ..., <mi>b</mi><msub>n</msub>) = f(a) + f(b)</math></br>
+<math>f(q * a) = f(q * <msum from=1 to=n unknown=k><mi>a</mi><msub>k</msub><mi>e</mi><msub>k</msub>) = (q * <mi>a</mi><msub>1</msub>, q * <mi>a</mi><msub>2</msub>, ..., q * <mi>a</mi><msub>n</msub>) = q * (<mi>a</mi><msub>1</msub>, <mi>a</mi><msub>2</msub>, ..., <mi>a</mi><msub>n</msub>)</math>
+<p>
+Pour prouver l'isomorphisme, on a juste à trouver l'application réciproque (qui est très simple à trouver).
+</p>
+<math>g : <mi>K</mi><msup>n</msup> <mto> E, a <mto> <msum from=1 to=n unknown=k><mi>a</mi><msub>k</msub><mi>e</mi><msub>k</msub></math></br>
+<math>a = (<mi>a</mi><msub>1</msub>, <mi>a</mi><msub>2</msub>, ..., <mi>a</mi><msub>n</msub>), f(g(a)) = f(<msum from=1 to=n unknown=k><mi>a</mi><msub>k</msub><mi>e</mi><msub>k</msub>) = a</math>
+<p>
+Avec ça, on peut prouver quelque chose de très pratique : <span class="important">tout espace vectoriel de dimension finie "n" sur un corps "K" est isomorphe à "K exposant n"</span>.
+</p>
+<p>
 Un résultat intéressant avec les applications linéaires concerne les bases d'espaces vectoriels.
 En effet, <span class="important">l'image d'une base de l'espace vectoriel de départ par une application linéaire représente une famille de vecteurs qui engendre l'image de l'application dans l'espace vectoriel d'arrivé</span>.
 La démonstration de ce théorème (<a href="demo#4_1_1_1">présente ici</a>) utilise les résultats basiques de linéarité.
 D'ailleurs, <span class="important">selon le théorème de la dimension, si l'image de l'application dans l'espace d'arrivée est de dimension inférieure ou égale à celle de l'espace de départ, alors l'image de la base génère tout l'espace d'arrivée, et si ils ont les mêmes dimensions, alors l'image de la base est une base de l'espace d'arrivée</span>.
 </p>
-
-<h3>Les formes linéaires</h3>
 <p>
 Un type d'application linéaire un peu spécial est la forme linéaire.
 <span class="important"><definition name="linear_form"></span>.

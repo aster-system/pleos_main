@@ -104,8 +104,14 @@
     <content>un morphisme est une application entre deux ensembles de deux structures quelconques (mais de même nature), où les relations possibles dans la première structure permettent de déduire directement les relations similaires dans la seconde, en utilisant le morphisme</content>
     <content name="group">un morphisme de groupe est une application entre deux ensembles de groupes, où les calculs dans le second groupe sont prévisibles avec les calculs dans le premier groupe, en utilisant le morphisme</content>
 </new_definition>
+<new_definition name="endomorphism">
+    <content>un endomorphisme est un morphisme entre une structure et elle même</content>
+</new_definition>
 <new_definition name="isomorphism">
     <content>un isomorphisme est un morphisme entre deux structures tel qu'il existe un morphisme "réciproque", tel que la composition de ces deux morphismes donne le morphisme identité</content>
+</new_definition>
+<new_definition name="automorphism">
+    <content>un automorphisme est un morphisme qui est un isomorphisme et un endomorphisme</content>
 </new_definition>
 
 <new_definition name="hilbert_space">
@@ -176,7 +182,7 @@
     <content>un monôme est une forme précise d'objet mathématique, représentant le produit d'éléments (nommés coefficients) dans un corps quelconque par des indéterminés d'un corps quelconque (qui peut être le même, mais pas obligatoirement) élevés à des exposants naturels (et donc, un polynôme ne contenant pas de somme)</content>
 </new_definition>
 <new_definition name="polynomial">
-    <content>un polynôme est une forme précise d'objet mathématique, représentant la somme du produit d'éléments (nommés coefficients) dans un corps quelconque par des indéterminés d'un corps quelconque (qui peut être le même, mais pas obligatoirement) élevés à des exposants naturels</content>
+    <content>un polynôme est une forme précise de formule mathématique, représentant la somme du produit d'éléments (nommés coefficients) dans un corps quelconque par des indéterminés d'un corps quelconque (qui peut être le même, mais pas obligatoirement) élevés à des exposants naturels</content>
 </new_definition>
 <new_definition name="polynomial_root">
     <content>une racine d'un polynôme est une valeur tel que, si on la substitue à l'indéterminée du polynôme, la valeur obtenue est "0"</content>

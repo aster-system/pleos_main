@@ -135,10 +135,10 @@ L'exemple le plus simple est le corps "(R, +, .)", qui est une extension du corp
 Plus tôt, nous avons à de multiples reprises envisagé des fonctions de la forme "a * x ² + b * x + c".
 Cependant, ce concept se généralise assez facilement, grâce aux polynômes.
 <span class="important"><definition name="polynomial"></span>.
-Par exemple, "4 * x² + 8" est un polynôme.
+Par exemple, "4 * x² + 8", "3 * x + 4 * y - 2 * z" ou "8" sont des polynômes.
 De plus, <span class="important"><definition name="monomial"></span>.
 C'est la version "simplifiée" du polynôme.
-Ici, l'indéterminée s'écrit généralement "x", ou "X".
+Ici, les indéterminées s'écrivent généralement "x" / "X", "y" / "Y" ou "z" / "Z".
 Pour construire rigoureusement un polynôme, on peut procéder de la sorte :
 </p>
 <math><msum from=0 to=n> <mi>a</mi><msub>k</msub><mi>X</mi><msup>k</msup></math></br>
@@ -173,7 +173,8 @@ Donc, multiplier deux polynômes revient à en décomposer un en monôme, effect
 <math>(<msum from=0 to=m> <mi>a</mi><msub>k</msub><mi>X</mi><msup>k</msup>) * (<msum from=0 to=n> <mi>b</mi><msub>k</msub><mi>X</mi><msup>k</msup>) = <msum from=0 to=m> <mi>a</mi><msub>k</msub> * <msum from=0 to=n+m> (a * <mi>b</mi><msub>k</msub>) * <mi>X</mi><msup>k + m</msup></math></br>
 <math><math>(3 * <mi>X</mi><msup>2</msup> + 2) * (2 * <mi>X</mi> - 4) = (6 * <mi>X</mi><msup>3</msup> - 12 * <mi>X</mi><msup>2</msup>) + (4 * <mi>X</mi> - 8) = 6 * <mi>X</mi><msup>3</msup> - 12 * <mi>X</mi><msup>2</msup> + 4 * <mi>X</mi> - 8</math>
 <p>
-Généralement, <span class="important">l'ensemble de tous les polynômes sur un anneau "A" est noté "A[X]"</span>.
+Généralement, <span class="important">l'ensemble de tous les polynômes d'indéterminé "X" sur un anneau "A" est noté "A[X]"</span>.
+Si nous avons plusieurs indéterminés (comme "X" et "Y"), on note "K[X, Y]".
 De plus, les polynômes peuvent être munis d'une addition et d'une multiplication : <span class="important">l'ensemble des polynômes sur un anneau (unitaire) forme un nouvel anneau unitaire</span>.
 </p>
 
