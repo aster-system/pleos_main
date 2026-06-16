@@ -199,7 +199,7 @@ Il existe d'ailleurs autant de base qu'il existe de famille de vecteur libre et 
 <math>f = (<mi>u</mi><msub>1</msub>, <mi>u</mi><msub>2</msub>, ..., <mi>u</mi><msub>n</msub>) <min> <mi>E</mi><msup>n</msup></math></br>
 <math><mforall> v <min> E, <mexists>(<mi>a</mi><msub>1</msub>, <mi>a</mi><msub>2</msub>, ..., <mi>a</mi><msub>n</msub>) <min> <mi>K</mi><msup>n</msup>, v = <mi>a</mi><msub>1</msub> * <mi>u</mi><msub>1</msub> + <mi>a</mi><msub>2</msub> * <mi>u</mi><msub>2</msub> + ... + <mi>a</mi><msub>n</msub> * <mi>u</mi><msub>n</msub> </math>
 <p>
-Avec cela, nous allons "déterrer" un concept géométre que nous avons traité au chapitre3 : les coordonnées.
+Avec cela, nous allons "déterrer" un concept géométre que nous avons traité au chapitre 3 : les coordonnées.
 En effet, en algèbre linéaire, <span class="important">les coordonnées d'un vecteur quelconque dans une base quelconque représentent les valeurs des scalaires à multiplier à chaque élément de la base pour obtenir le vecteur recherché</span>.
 En d'autres termes, il s'agit des scalaires dans la combinaisons linéaire permettant de forme le vecteur de départ via cette base.
 Ici, les coordonnées dépendent évidemment du vecteur, mais aussi de la base choisie.
@@ -262,6 +262,25 @@ Cependant, dans ce cas, <span class="important">la réciproque est fausse, on pe
 De manière parfaitement logique, cela s'explique par le fait que passer à un sous-espace vectoriel requiert une implication dans le raisonnement ("F est un sous-espace vectoriel" implique que "toute base de "F ont le même cardinal", mais la réciproque de cette proposition ne veut rien dire), cassant l'équivalence (puisque l'on part d'un plus gros espace vectoriel, demandant de passer à un autre : le sous-espace vectoriel).
 </p>
 <math>Vect(f) = Vect(g) = F <mimp> n = m</math>
+<p>
+Il existe d'ailleurs une opération possible avec des sous-espaces vectoriels : la somme directe.
+Cet opération est inspirée de la somme des semi-groupes (qui est d'ailleurs possible ici, puisque les espaces vectoriels sont aussi des semi-groupes).
+<span class="important"><definition name="algebra_direct_sum-vector_space"></span>.
+En d'autres termes, la somme est dite directe si (et seulement si) tout vecteur de la somme ne peut se décomposer qu'une fois dans les deux sous-espaces vectoriels.
+Un exemple où ceci n'est pas vrai est (dans "R²") la somme du sous-espace vectoriel engendré par le vecteur "(1, 0)" et de... lui même.
+En effet, un des vecteurs présent dans la somme est "(1, 0)", qui représente "(0.5, 0) + (0.5, 0)".
+Or, ce vecteur a plein de décompositions possibles : "(1, 0) + (0, 0)", "(0, 0) + (1, 0)", "(0.4, 0) + (0.6, 0)"...
+</p>
+<math>(0.5, 0) + (0.5, 0) = (1, 0) + (0, 0) = (0, 0) + (1, 0) = (0.4, 0) + (0.6, 0)</math>
+<p>
+Cependant, <span class="important">la somme des sous-espaces vectoriels engendré par "(1, 0)" et "(0, 1)" est belle et bien directe</span>.
+En fait, pour qu'une somme de sous-espaces vectoriels soit directe, il faut que la juxtaposition d'une base du premier et du deuxième soit une famille libre.
+Cela est assez simple à comprendre : si la juxtaposition d'une base du premier et du deuxième est une famille libre, alors toute expression de vecteur dans cette famille (ou dans toute famille générant le même espace vectoriel) est unique.
+Comme le couple que nous voulons être unique représente une expression du vecteur nécessaire dans notre famille (ou dans n'importe quelle famille générant cet espace vectoriel), il est aussi unique.
+<span class="important">La réciproque est aussi vraie (si la juxtaposition d'une base du premier et du deuxième est une famille libre), la somme des deux sous-espaces vectoriels est directe</span>.
+</p>
+<math>(x, y) = (a, 0) + (0, c) <mimp> x = a <mand> y = c</math></br>
+<math>(7, 4) = (7, 0) + (0, 4)</math>
 <p>
 Un exemple assez bizarre d'espace vectoriel est l'espace fonctionnel.
 <span class="important"><definition name="function_space"></span>.

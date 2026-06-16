@@ -64,8 +64,9 @@
     <content name="extension">une extension de corps "K" est un couple composé d'un corps "L" tel que "K" soit un sous-corps de "L", et d'un morphisme de "K" dans "L"</content>
 </new_definition>
 <new_definition name="algebra_group">
-    <content>un groupe est un magma dont la loi de composition interne et associative, admet un neutre, et est inversible</content>
+    <content>un groupe est un magma dont la loi de composition interne est associative, admet un neutre, et est inversible</content>
     <content name="abelian">un groupe est dit abélien si sa loi de composition est commutative</content>
+    <content name="semi">un semi-groupe est un magma dont la loi de composition interne est associative</content>
 </new_definition>
 <new_definition name="algebra_group_znz">
     <content>le groupe additif "Z/nZ" est un sous-groupe de "(Z, +)", où l'ensemble du groupe représente "Z" quotienté par la relation d'équivalence qui lie les éléments ayant le même reste par la division euclidienne par "n"</content>
@@ -132,6 +133,9 @@
     <content>une action par conjugaison d'un ensemble "G" sur lui même est une action de groupe de "G" sur lui même, où chaque élément "g" de "G" opère avec chaque élément de "G" de tel manière que le résultat de chaque opération est celle de l'automorphisme intérieur associé à "g"</content>
     <content>une classe de conjugaison d'un élément "x" est l'orbite de "x" par l'action par conjugaison du groupe</content>
 </new_definition>
+<new_definition name="algebra_direct_sum">
+    <content name=vector_space>la somme de deux sous-espace vectoriel "A" et "B" d'un espace vectoriel "E" est dite directe si, pour tout vecteur dans la somme, il n'existe qu'un seul et unique couple de vecteurs "(u, v)" de "A" et "B" tel que ce vecteur est la somme de "u" et "v"</content>
+</new_definition>
 <new_definition name="algebra_group_action">
     <content>une action de groupe est un moyen d'opérer un groupe avec un ensemble "E", de tel manière que tous les résultats de ces opérations (entre un élément du groupe et un élément de "E") appartiennent à "E"</content>
     <content name="fixed_point">le point fixe d'un élément "g" d'un groupe "G" opérant sur un ensemble "E" représente l'ensemble des éléments de "E" tel que opérer "g" par ces éléments ne modifie pas ces éléments (et donc que "g" est dans le stabilisateur de l'élément)</content>
@@ -156,6 +160,9 @@
 </new_definition>
 <new_definition name="algebra_subgroup_trivial">
     <content>le sous-groupe trivial d'un groupe G est un sous-groupe de G sur l'ensemble ne contenant que l'élément neutre de G</content>
+</new_definition>
+<new_definition name="algebra-sumset">
+    <content>la somme de deux parties "A" et "B" d'un ensemble représentant (au moins) un demi-groupe représente l'ensemble contenant tous les résultats possibles entre toutes les opérations possibles entre un élément de "A" et un élément de "B"</content>
 </new_definition>
 <new_definition name="morphism">
     <content>un morphisme de structures est une application entre deux ensembles de deux structures, où les lois sont compatibles entre elles après utilisation de l'application</content>

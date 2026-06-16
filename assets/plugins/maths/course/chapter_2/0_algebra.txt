@@ -211,6 +211,16 @@ Une catégorie de groupe plus forte est le groupe abélien.
 <span class="important"><definition name="algebra_group-abelian"></span>.
 (Z, +) en est un exemple.
 </p>
+<p>
+Mais, à l'inverse, il existe un type de structure légèrement moins fort que le groupe, mais qui possède quelques propriétés utiles : le semi-groupe.
+<span class="important"><definition name="algebra_group-semi"></span>.
+Donc, à l'inverse des groupes, un semi-groupe ne contient pas obligatoirement de neutre ou d'inverse.
+Cependant, <span class="important">tout groupe est un semi-groupe (bien que l'inverse ne soit pas toujours vrai)</span>.
+Ici, le résultat intéressant porte sur les structures constructibles via ce type de structures.
+L'un d'eux est la somme de parties.
+<span class="important"><definition name="sumset"></span>.
+</p>
+<math>A + B = {a + b | a <min> A, b <min> B}</math>
 
 <h3>Les morphismes</h3>
 <p>
