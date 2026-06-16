@@ -55,8 +55,11 @@ Comme il existe des sous-groupes de groupes, il existe des sous-anneaux d'anneau
 <span class="important"><definition name="algebra_subring"></span>.
 Leurs propriétés sont très proches de celles des sous-groupes.
 En fait, <span class="important">un sous-anneau est un anneau sur un ensemble représentant un sous-ensemble de l'ensemble de départ</span>.
-Donc, il est stable par l'addition et par la multiplication.
-Un exemple assez simple est l'anneau "(2Z, +, .)", qui est un sous-anneau de "(Z, +, .)".
+Donc, <span class="important">il est stable par l'addition et par la multiplication</span>.
+Cependant, si nous faisons la distinction entre "anneau" et "anneau unitaire", il existe aussi des sous-anneaux unitaires d'anneaux unitaires.
+Dans ce cas, <span class="important">un sous-anneau unitaire d'un anneau unitaire contient aussi un neutre par la multiplication (le même que dans l'anneau de départ)</span>.
+Bien évidemment, si une partie de l'ensemble de l'anneau de départ est un sous-anneau unitaire, il est aussi un sous-anneau simple.
+Quand on pense à sous-anneau, on peut penser à "(2Z, +, .)", qui serait un sous-anneau de "(Z, +, .)".
 Déjà, nous avons démontré à plusieurs reprises que "2Z" est inclut dans "Z".
 </p>
 <math><mforall> a, a <min> 2Z <mimp> a <min> Z</math>
@@ -67,13 +70,15 @@ Finalement, la stabilité par la multiplication est aussi assez simple à prouve
 <math><mforall> a, b <min> 2Z, <mexists> c, d <min> Z, a = 2 * c, b = 2 * d</math></br>
 <math>a * b = (2 * c) * (2 * d) = 2 * (c * 2 * d) = 2 * e, e = (c * 2 * d)</math>
 <p>
-Donc, l'anneau "(2Z, +, .)" est un sous-anneau de "(Z, +, .)"
-De plus, de manière similaire, <span class="important">on peut démontrer que, pour tout "n" dans "N", l'anneau "(nZ, +, .)" est un sous-anneau de "(Z, +, .)"</span> (<a href="demo#4_0_0_0">démontré ici</a>).
+Donc, l'anneau "(2Z, +, .)" est stable par addition et multiplication : <span class="important">il est un sous-anneau de "(Z, +, .)"</span>.
+Malheureusement, <span class="important">il n'y a pas d'élément neutre de la multiplication dans "2Z" (puisque "1" n'est pas dedans) : il ne s'agit donc pas d'un sous-anneau unitaire de (Z, +, .)</span>.
+Par contre, <span class="important">comme "(R, +, .)" est un anneau unitaire, et que "(Z, + .)" l'est aussi, et que "Z" est inclus dans "R", alors "(Z, + .)" est un sous-anneau unitaire de "(R, + .)"</span>.
 </p>
 <p>
-Bien qu'il existe plein de catégories de sous-anneaux différents, parlons d'un des plus intéressants : les idéaux.
-<span class="important"><definition name="algebra_subring-ideal"></span>.
-Il s'agit donc d'un sous-anneau stable par la multiplication des éléments de l'anneau entier.
+Il est possible de modifier un peu cette définition, pour obtenir un concept assez similaire : les idéaux.
+<span class="important"><definition name="algebra_ideal"></span>.
+SI l'on parle d'un anneau avec addition et multiplication, il s'agit donc d'un sous-ensemble de l'anneau de départ stable par l'addition, et aussi par la multiplication des éléments de l'anneau entier.
+Cependant, il n'est pas obligé qu'un idéal contienne un neutre multiplicatif : il n'est donc pas obligatoirement un sous-anneau.
 Pour un idéal "A" d'un anneau "B", on peut écrire :
 </p>
 <math><mforall> a <min> A, {<mforall> b <min> B, a * b <min> A}</math>
