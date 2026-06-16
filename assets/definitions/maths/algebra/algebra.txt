@@ -91,7 +91,8 @@
     <content name="group">l'ordre d'un groupe représente le cardinal de l'ensemble qui constitue le groupe</content>
 </new_definition>
 <new_definition name="algebra_ring">
-    <content>un anneau (aussi nommé anneau unitaire) est une structure algébrique définie sur un ensemble, avec deux lois de compositions internes : une formant un groupe abélien, et une formant un monoïde, distributive par rapport à la première</content>
+    <content>un anneau est une structure algébrique définie sur un ensemble, avec deux lois de compositions internes : une formant un groupe abélien, et une formant un monoïde, distributive par rapport à la première</content>
+    <content name="pseudo">un pseudo-anneau est un anneau où la deuxième loi de composition n'admet pas forcément un neutre</content>
 </new_definition>
 <new_definition name="algebra_subgroup">
     <content>un sous-groupe H d'un groupe G est un groupe sur un sous-ensemble de l'ensemble de G, muni de la même loi de composition que G</content>

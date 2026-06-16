@@ -8,8 +8,6 @@
 <p>
 L'anneau est une structure algébrique très importante, et la première que nous introduirons avec deux lois de compositions internes.
 En algèbre, <span class="important"><definition name="algebra_ring"></span>.
-Il est aussi possibble de voir le terme "anneau" abrégé en tant que "anneau unifère" (ou "anneau unitaire").
-Cette notation vient du fait que certains auteurs les différencient (selon eux, un "anneau" n'a pas forcément de neutre pour la multiplication) : nous ne feront pas la différence ici.
 Rappelons toutes les propriété nécéssaire, pour un anneau "A" muni d'une opération "+" et ".".
 </p>
 <math>A = (E, ¤, .)</math>
@@ -23,6 +21,7 @@ Rappelons toutes les propriété nécéssaire, pour un anneau "A" muni d'une op�
 <math><mforall> a <min> E, <mexists> o <min> E, a ¤ o = a</math>
 <p>"¤" est commutative :</p>
 <math><mforall> a, b <min> E, a ¤ b = b ¤ a</math>
+
 <p>La structure (A, .) est un monoïde.</p>
 <p>"." est associative :</p>
 <math><mforall> a, b, c<min> E, (a . b) . c = a . (b . c)</math>
@@ -33,6 +32,18 @@ Rappelons toutes les propriété nécéssaire, pour un anneau "A" muni d'une op�
 <math><mforall> a, b, c<min> E, a . b ¤ a . c = a . (b ¤ c)</math>
 <p>"." est distributive à droite par rapport à "+" :</p>
 <math><mforall> a, b, c<min> E, b . a ¤ c . a = (b ¤ c) * a</math>
+
+<p>
+Cependant, nous pouvons affaiblir ce concept avec ce que l'on appelle le "pseudo-anneau".
+<span class="important"><definition name="algebra_ring-pseudo"></span>.
+Dans ce cas, "(A, .)" n'est pplus un monoïde, mais un demi-groupe.
+</p>
+
+<p>
+Chez certains auteurs, le concept d'anneau seul représente ce que l'on a défini comme "pseudo-anneau" (qu'ils n'emploient donc pas).
+Or, <span class="important">ces mêmes auteurs ont un autre terme pour les anneaux donc la deuxième loi admet un neutre : anneau "unitaire" (ou anneau "unifaire")</span>.
+Ici, nous n'utiliserons pas ce terme, et nous considérerons qu'un anneau a forcément un neutre par la multiplication, mais sachez que ce terme existe.
+</p>
 
 <p>
 Si la deuxième loi est "." commutative, alors l'anneau est dit "commutatif".
@@ -48,6 +59,11 @@ L'exemple le plus simple est l'anneau formé par "Z", et par l'addition et la mu
 Cet anneau est commutatif et intègre.
 </p>
 <math>(Z, +, .)</math>
+<p>
+On peut aussi citer ceux formé avec "Q" et "R".
+</p>
+<math>(Q, +, .)</math></br>
+<math>(R, +, .)</math>
 
 <h3>Les sous-anneaux, idéaux et anneaux quotients</h3>
 <p>
@@ -55,10 +71,7 @@ Comme il existe des sous-groupes de groupes, il existe des sous-anneaux d'anneau
 <span class="important"><definition name="algebra_subring"></span>.
 Leurs propriétés sont très proches de celles des sous-groupes.
 En fait, <span class="important">un sous-anneau est un anneau sur un ensemble représentant un sous-ensemble de l'ensemble de départ</span>.
-Donc, <span class="important">il est stable par l'addition et par la multiplication</span>.
-Cependant, si nous faisons la distinction entre "anneau" et "anneau unitaire", il existe aussi des sous-anneaux unitaires d'anneaux unitaires.
-Dans ce cas, <span class="important">un sous-anneau unitaire d'un anneau unitaire contient aussi un neutre par la multiplication (le même que dans l'anneau de départ)</span>.
-Bien évidemment, si une partie de l'ensemble de l'anneau de départ est un sous-anneau unitaire, il est aussi un sous-anneau simple.
+Donc, <span class="important">il est stable par l'addition, par la multiplication et admet un neutre par la multiplication (le même que l'anneau qui le contient)</span>.
 Quand on pense à sous-anneau, on peut penser à "(2Z, +, .)", qui serait un sous-anneau de "(Z, +, .)".
 Déjà, nous avons démontré à plusieurs reprises que "2Z" est inclut dans "Z".
 </p>
@@ -72,7 +85,8 @@ Finalement, la stabilité par la multiplication est aussi assez simple à prouve
 <p>
 Donc, l'anneau "(2Z, +, .)" est stable par addition et multiplication : <span class="important">il est un sous-anneau de "(Z, +, .)"</span>.
 Malheureusement, <span class="important">il n'y a pas d'élément neutre de la multiplication dans "2Z" (puisque "1" n'est pas dedans) : il ne s'agit donc pas d'un sous-anneau unitaire de (Z, +, .)</span>.
-Par contre, <span class="important">comme "(R, +, .)" est un anneau unitaire, et que "(Z, + .)" l'est aussi, et que "Z" est inclus dans "R", alors "(Z, + .)" est un sous-anneau unitaire de "(R, + .)"</span>.
+Cependant, il est vrai que si l'on considère le pseudo-anneau "(Z, +, .)", alors "(2Z, +, .)" en est un sous-pseudo-anneau (pour rappel, dans les pseudos anneaux, le neutre multiplicatif n'est pas obligatoire).
+Par contre, <span class="important">comme "(R, +, .)" est un anneau, et que "(Z, + .)" l'est aussi, et que "Z" est inclus dans "R", alors "(Z, + .)" est un sous-anneau de "(R, + .)"</span>.
 </p>
 <p>
 Il est possible de modifier un peu cette définition, pour obtenir un concept assez similaire : les idéaux.
