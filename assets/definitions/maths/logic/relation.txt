@@ -25,7 +25,8 @@
     <content name="transposition_signature">une signature d'une transposition est une valeur qui est -1 si la transposition est impaire, et 1 si elle est paire</content>
 </new_definition>
 <new_definition name="relation">
-    <content>une relation est un objet permettant d'énoncer des propositions entre plusieurs éléments d'un même ensemble quelconque</content>
+    <content>une relation est un objet permettant d'énoncer des propositions entre des éléments appartenant à des ensembles quelconques</content>
+    <content name="binary">une relation est dite binaire quand les propositions qu'elle formule contiennent exactement deux éléments</content>
     <content name="totality">une relation est dite totale si, pour deux éléments quelconques "a" et "b", la relation est vraie dans le sens "a" puis "b" OU dans le sens "b" puis "a"</content>
 </new_definition>
 <new_definition name="sequence">

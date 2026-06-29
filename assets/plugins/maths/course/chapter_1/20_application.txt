@@ -6,15 +6,34 @@
 
 <h3>Qu'est ce qu'est une relation mathématique ?</h3>
 <p>
-Avant d'introduire quoi que ce soit d'autre en mathématiques, un objet extrêmement important est l'application mathématique.
-En mathématique, <span class="important"><definition name="relation"></span>.
-Par exemple, dans un ensemble de nombres entiers naturels, la relation "inférieur" est définie, et donne une proposition juste juste pour tout "m" et "n" où... m est inférieur à n (comme "3 est inférieur à 5").
-Cette définition pose un problème : il existe des objets infiniment proche de cette définition, mais qui n'en font pas partie, car pas "dans un même ensemble quelconque".
+Avant d'introduire quoi que ce soit d'autre en mathématiques, un objet extrêmement important est la relation mathématique.
+En mathématiques, <span class="important"><definition name="relation"></span>.
+Généralement, ces éléments appartiennent au même ensemble, mais ce n'est pas obligatoire.
+Par exemple, pour des nombres entiers naturels, la relation "inférieur" est définie, et donne une proposition juste juste pour tout "m" et "n" où... "m" est inférieur à "n" (comme "3 est inférieur à 5").
+</p>
+<math>3 <mlt> 5, <mno>(8 <mlt> 4)</math>
+<p>
+Ici, l'utilité principal est de savoir quels objets forment une relation donnant une proposition juste, et nous pouvons démontrer que ceci est toujours possible.
+Commençons par le cas le plus simple : la relation binaire.
+<span class="important"><definition name="relation-binary"></span>.
+C'est par exemple le cas de notre relation "inférieur" vue plus haut.
+Ici, ces deux éléments font partie de deux ensembles quelconques (possiblement le même, comme pour notre exemple "inférieur" vue).
+Déjà, disons qu'il est possible de noter tous les couples possibles entre les deux ensembles de la relation, grâce à un produit cartésien.
+De plus, le principe d'une relation est de savoir quels sont les éléments liés entre eux (que nous pouvons donc exprimer sous la forme de couple, qui sont donc dans le produit cartésien).
+Finalement, nous savons qu'il est possible que plusieurs couples donnent des propositions justes.
+Donc, <span class="important">il est possible de définir une relation binaire comme le sous-ensemble du produit cartésien entres les deux ensembles, tel que tous les couples dans ce sous-ensemble forment des propositions vraie via cette relation</span>.
+En fait, savoir si une relation binaire est vraie entre plusieurs éléments équivaut à savoir si le couple de ces éléments appartient au sous-ensemble du produit cartésien représentant la relation.
+Généralement, pour toute relation binaire que nous définissons, nous lui attribuons un symbôle précis, et nous définissons une proposition entre deux élément "x" et "y" en les notant à gauche et à droite du symbole.
+Nous disons donc que la proposition est vraie si le couple formé (dans l'ordre) de l'élément à gauche, puis à droite du symbole appartient au sous-ensemble du produit cartésien qui définit la relation.
+Pour une relation de sous-ensemble du produit cartésien "R" et de symbole "~", on note.
+</p>
+<math>R <mincluded> E X F</math></br>
+<math><mforall>x <min> E, <mforall> y <min> F, x ~ y <mequi> (x, y) <min> R</math>
+<p>
+Cette définition pose un problème : il existe des objets infiniment proche de cette définition, mais qui n'en font pas partie, car les objets liés entre eux ne font pas partie d'un ensemble quelconque.
 C'est le cas de la relation d'appartenance "un élément a appartient à un ensemble E", où il n'existe pas vraiment "d'ensemble" généralisant en même temps le concept d'élément et d'ensemble.
 Pour éviter ce problème, nous allons dire que, dans ce cas précis, on ne parle pas d'ensemble, mais de classe (il existe une classe contenant tous les ensembles et éléments possibles).
 Pour tout le reste, la définition avec les ensembles fonctionne.
-Il est très fréquent (voir même, presque tout le temps appliqué) d'appeler une relation avec un simple symbôle comme "=", "&lt;" ou "~", et de disposer les objets à lier entre eux aux côtés de la relation, comme "3 + 4 = 7".
-<span class="important">Deux éléments "a" et "b" liés par une relation "~" sont dit "en relation entre eux par la relation "~""</span>.
 </p>
 
 <table>
