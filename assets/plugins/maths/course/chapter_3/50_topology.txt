@@ -112,16 +112,9 @@ Intuitivement parlant, la topologie la plus fine est celle qui contient le plus 
 Parlons d'un autre moyen très pratique de définir une topologie : les bases topologiques.
 <span class="important"><definition name="topological_base"></span>.
 L'idée est donc de définir des ouverts de "base" de "T", tel que tous les ouverts de "T" peuvent être décrit avec des parties de la base.
-Dans cette définition, on considère déjà connaître "T".
-Cependant, <span class="important">l'avantage est qu'il est possible de définir "T" (si on ne le connaît pas) à partir d'un ensemble de parties de "E", en vérifiant que cet ensemble de parties respecte quelques propriétés précises, qui en ferait une base de "T"</span>.
-Pour qu'un ensemble de parties soit une base qui génère un espace topologique quelconque, il faut qu'elle respecte deux propriétés : <span class="important">tous les éléments de "E" doivent appartenir à une partie de la base et l'intersection finie d'élément de la base doit donner une union d'éléments de la base</span>.
-La première propriété s'assure que les parties de la base recouvrent bien "E".
-Pour la deuxième propriété, il s'agit d'une propriété permettant de s'assurer que les ouverts obtenus avec ces ouverts de "base" obéissent aux propriétés des ouverts (vues plus haut).
-Ici, le "T" obtenu est unique.
+Pour une topologie "T" et une base "B" de "T", on peut noter :
 </p>
-<math>B <mincluded> P(E)</math></br>
-<math><mforall> x <min> E, <mexists> A <min> B, x <min> A</math></br>
-<math><mforall>C, D <min> B, <mexists> F <mincluded> B, C <minter> D = <munion> F</math>
+<math><mforall> u <min> T, <mexists> C <mincluded> B, u = <munion> c</math>
 <p>
 Cependant, il est possible d'affaiblir ce concept avec un autre : les prébases.
 <span class="important"><definition name="topological_base-prebase"></span>.
@@ -129,6 +122,17 @@ Pareil : <span class="important">l'utilité d'une prébase est de l'utiliser pou
 Ici, tout ensemble de parties de "E" peut représenter une prébase, mais certaines sont bien plus intéressantes que d'autres.
 Ici, <span class="important">la topologie la plus fine qui permet de rentre tous les éléments de la prébase ouverts est nommé la topologie engendrée par cette prébase</span>.
 </p>
+<p>
+D'ailleurs, on peut (sans connaître obligatoirement la topologie engendrée) dire si une prébase est une base de sa topologie engendrée.
+Pour qu'une prébase soit une base de sa topologie engendrée, il faut qu'elle respecte deux propriétés : <span class="important">tous les éléments de "E" doivent appartenir à une partie de la base et l'intersection finie d'élément de la base doit donner une union d'éléments de la base</span>.
+La première propriété s'assure que les parties de la prébase recouvrent bien "E".
+Pour la deuxième propriété, il s'agit d'une propriété permettant de s'assurer que les ouverts obtenus avec ces ouverts de "base" obéissent aux propriétés des ouverts (vues plus haut).
+</p>
+<math>B <mincluded> P(E)</math></br>
+<math><mforall> x <min> E, <mexists> A <min> B, x <min> A</math></br>
+<math><mforall>C, D <min> B, <mexists> F <mincluded> B, C <minter> D = <munion> F</math>
+</p>
+
 <p>
 Sur un ensemble muni d'une relation d'ordre quelconque, il est possible de définir une topologie extrêmement efficace : la topologie de l'ordre.
 <span class="important"><definition name="topology_order"></span>.

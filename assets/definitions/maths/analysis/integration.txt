@@ -1,0 +1,3 @@
+<new_definition name="integration">
+    <content>l'intégration est un moyen d'étudier de manière extrêmement précise l'aire sous les courbes dessinées par des fonctions réelles (entre la courbe de la fonction et l'axe des abscisses)</content>
+</new_definition>

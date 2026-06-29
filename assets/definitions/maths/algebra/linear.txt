@@ -10,6 +10,7 @@
 </new_definition>
 <new_definition name="linear_form">
     <content>une forme linéaire (aussi nommée covecteur) est une application allant d'un espace vectoriel sur un corps "K" vers... le corps "K" lui même</content>
+    <content name="bilinear">une forme bilinéaire est une application allant de l'ensemble des couples d'un espace vectoriel sur un corps "K" vers le corps "K" lui même</content>
 </new_definition>
 <new_definition name="linear_system">
     <content>un système linéaire est un système d'équations composé d'équations linéaires</content>

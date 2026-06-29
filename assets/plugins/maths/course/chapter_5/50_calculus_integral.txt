@@ -10,3 +10,196 @@ Après la dérivation, nous devons vous présenter son grand allié : l'intégra
 Comme pour la dérivation, nous allons commencer par le cas le plus simple : les fonctions réelles.
 En fait, <span class="important"><definition name="integration"></span>.
 </p>
+<graphic><background_color white><function expression="x/3+cos(x)"><fill_area start=-5 end=5></function></graphic>
+<p>
+Considérons une fonction "f", dont on veut étudier l'aire sous la courbe entre deux valeurs réelles "a" et "b".
+Ici, <span class="important">on dit cette aire "l'intégrale" de "f" entre "a" et "b", et on la note avec un symbole nomme "s long"</span> :
+</p>
+<math><mi><mint></mi><msubsup><mi>a</mi><mi>b</mi></msubsup>f(x) dx</math>
+<p>
+Ici, il faut noter le "dx" après la formule dans l'intégrale, comme pour la notation de Leibniz pour la dérivée.
+</p>
+<p>
+Maintenant, il faut définir un moyen de calculer une intégrale.
+La façon la plus intuitive possible a été introduite par le mathématicien <scientist name="riemann" type=quote>.
+L'idée est purement géométrique, et est similaire à la méthode d'exhaustion : <span class="important">approcher l'aire sous la courbe grâce à des formes géométriques connues, que l'on met sous cette courbe</span>.
+Ici, plus on met de ces formes connues, plus on est précis, plus on s'approche de l'aire finale.
+Finalement, <span class="important">la forme utilisée est le rectangle</span>.
+</p>
+<graphic><background_color white><function expression="x/3+cos(x)"><curve_area start=-5 end=5 number=10></function></graphic>
+<p>
+Définissons le calcul derrière ce concept.
+Déjà, considérons un "a" et un "b" fixe, et une fonction fixe.
+Pour le test, disons que notre fonction "f" est la simple fonction "x² / 2", que "a" est "0", et "b" est "2".
+Si nous voulons obtenir une première approximation (très mauvaise), nous pouvons mettre un rectangle.
+</p>
+<graphic><background_color white><base width=4 height=4 x=-1><rect x=0 y=0 width=2 height=1/2 color=light_blue><function expression="(x*x)/2"></function></graphic>
+<p>
+Ici, la hauteur du rectangle représente la valeur de "f" très précisément entre "a" et "b".
+L'aire de ce rectangle est donc :
+</p>
+<math>a = (b - a) * f(<mfrac><mi>(b - a)</mi><mi>2</mi></mfrac>) = 2 * f(1) = 1</math>
+<p>
+Rajoutons 3 rectangles, pour arriver à 4.
+Nous allons considérer que chaque rectangle a la même largeur : "(b - a) / 4".
+</p>
+<graphic>
+<background_color white><base width=4 height=4 x=-1>
+<rect x=0 y=0 width=1/2 height=1/32 color=light_blue>
+<rect x=1/2 y=0 width=1/2 height=9/32 color=light_blue>
+<rect x=1 y=0 width=1/2 height=25/32 color=light_blue>
+<rect x=3/2 y=0 width=1/2 height=49/32 color=light_blue>
+<function expression="(x*x)/2"></function>
+</graphic>
+<p>
+Nous pouvons calculer la somme de ces 4 rectangles, qui est légèrement plus proche de l'aire nécessaire que "1".
+</p>
+<math>a = ((b - a) * <mfrac><mi>1</mi><mi>4</mi></mfrac>) * f((b - a) * <mfrac><mi>1</mi><mi>8</mi></mfrac>) + ((b - a) * <mfrac><mi>3</mi><mi>4</mi></mfrac>) * f((b - a) * <mfrac><mi>5</mi><mi>8</mi></mfrac>) + ((b - a) * <mfrac><mi>1</mi><mi>4</mi></mfrac>) * f((b - a) * <mfrac><mi>5</mi><mi>8</mi></mfrac>) + ((b - a) * <mfrac><mi>1</mi><mi>4</mi></mfrac>) * f((b - a) * <mfrac><mi>7</mi><mi>8</mi></mfrac>) = <mfrac><mi>75</mi><mi>32</mi></mfrac> <mapprox> 2.34</math>
+<p>
+Nous pouvons aussi faire une version où les rectangles n'ont pas la même taille.
+</p>
+<graphic>
+<background_color white><base width=4 height=4 x=-1>
+<rect x=0 y=0 width=1/3 height=1/72 color=light_blue>
+<rect x=1/3 y=0 width=1/3 height=1/8 color=light_blue>
+<rect x=2/3 y=0 width=1/3 height=25/72 color=light_blue>
+<rect x=1 y=0 width=1 height=9/8 color=light_blue>
+<function expression="(x*x)/2"></function>
+</graphic>
+<p>
+Ici, nous allons noter "a indice k" la coordonnée de départ de chaque rectangle (en partant de "0"), avec "a indice 4" la coordonnée de fin du dernier rectangle.
+En fait, <span class="important">nous allons obtenir une subdivision de notre intervalle "[a, b]"</span>.
+Ici, une information qui nous sera importante est le pas maximum de la subdivision, qui représente la valeur maximale entre un "t indice k" et un "t indice k - 1".
+Cela représente donc la largeur maximale d'un rectangle dans la subdivision.
+Notre calcul devient :
+</p>
+<math>a = (<mi>x</mi><msub>1</msub> - <mi>x</mi><msub>0</msub>) * f(<mfrac><mrow><mi>x</mi><msub>1</msub><mo>-</mo><mi>x</mi><msub>0</msub></mrow><mi>2</mi></mfrac>) + (<mi>x</mi><msub>2</msub> - <mi>x</mi><msub>1</msub>) * f(<mfrac><mrow><mi>x</mi><msub>2</msub><mo>-</mo><mi>x</mi><msub>1</msub></mrow><mi>2</mi></mfrac>) + (<mi>x</mi><msub>3</msub> - <mi>x</mi><msub>2</msub>) * f(<mfrac><mrow><mi>x</mi><msub>3</msub><mo>-</mo><mi>x</mi><msub>2</msub></mrow><mi>2</mi></mfrac>) + (<mi>x</mi><msub>4</msub> - <mi>x</mi><msub>3</msub>) * f(<mfrac><mrow><mi>x</mi><msub>4</msub><mo>-</mo><mi>x</mi><msub>3</msub></mrow><mi>2</mi></mfrac>)</math>
+<p>
+On peut formaliser ceci avec le symbole de la somme :
+</p>
+<math>a = <msum from=1 to=4 unknown=k>((<mi>x</mi><msub>k</msub> - <mi>x</mi><msub>k - 1</msub>) * f(<mfrac><mrow><mi>x</mi><msub>k</msub><mo>-</mo><mi>x</mi><msub>k - 1</msub></mrow><mi>2</mi></mfrac>))</math>
+<p>
+Ici, pour toute itération de la somme, la valeur de la fonction que l'on prend est le milieu de "x indice k" et "x indice k - 1".
+Cependant, nous pouvons théoriquement utiliser n'importe quelle valeur entre "x indice k" et "x indice k - 1", et s'attendre à des valeurs similaires.
+Maintenant, <span class="important">nous allons appeler la valeur de la fonction utilisée à la "k-ième" itération "t indice k"</span>.
+</p>
+<math>a = <msum from=1 to=4 unknown=k>((<mi>x</mi><msub>k</msub> - <mi>x</mi><msub>k - 1</msub>) * f(<mi>t</mi><msub>k</msub>))</math>
+<p>
+Finalement, nous pouvons rendre ce calcul plus précis, en ne nous limitant pas à "4" rectangles, mais à "n" rectangles.
+Ici, "n" peut être n'importe quelle valeur.
+Généralement, <span class="important">ce genre de somme est nommée somme de "Riemann"</span>.
+</p>
+<math>a = <msum from=1 to=n unknown=k>((<mi>x</mi><msub>k</msub> - <mi>x</mi><msub>k - 1</msub>) * f(<mi>t</mi><msub>k</msub>))</math>
+<p>
+Remarquons quelque chose : <span class="important">cette somme représente exactement "l'aire sous la courbe" d'une fonction en escalier définie avec la subdivision adaptée et les bonnes valeurs constantes de la fonction (selon "t indice k")</span>.
+Comme cette somme est exactement l'aire recherché, si nous avons une fonction escalier "g" dont on cherche l'aire sous la courbe entre "a" et "b", où la subdivision adaptée de "[a, b]" contient "n + 1" valeurs s'écrivant "x indice k", on peut noter :
+</p>
+<math><mi><mint></mi><msubsup><mi>a</mi><mi>b</mi></msubsup>g(x) dx = <msum from=1 to=n unknown=k>((<mi>x</mi><msub>k</msub> - <mi>x</mi><msub>k - 1</msub>) * f(<mi>t</mi><msub>k</msub>))</math>
+<p>
+Or, nous devons généraliser ce concept aux fonctions qui ne sont pas escaliers.
+Pour cela, nous devons passer par une limite très précise.
+Ici, <span class="important">la valeur de l'intégrale de "f" entre "a" et "b" vaut la valeur de cette somme quand on fait le pas maximum "p" d'une subdivision vers "0"</span>.
+Comme ça, nos rectangles deviennent de plus en plus petites, et représentent plus précisément l'aire que nous cherchons.
+Directement, cela implique que "n" tend vers des valeurs toujours plus grandes (comme nos rectangles sont plus petits, il faut en mettre plus pour s'approcher correctement de l'aire demandée).
+</p>
+<math>I = <mlim unknown=p value=0><msum from=1 to=n unknown=k>((<mi>x</mi><msub>k</msub> - <mi>x</mi><msub>k - 1</msub>) * f(<mi>t</mi><msub>k</msub>))</math>
+<p>
+Cependant, un problème persiste : qu'est ce qui nous garanti que, pour toutes les façons possibles de calculer "t indice k", la limite sera la même ?
+De plus, qu'est ce qui nous garanti que cette limite sera aussi la même pour toute subdivision entre "a" et "b" ?
+En réalité : rien (pour certaines fonctions et certains "a" et "b", on peut obtenir des valeurs bien différentes).
+Cependant, il existe des fonctions et des valeurs de "a" et "b" où cela marche : <span class="important">ces fonctions sont dites Riemann-intégrables sur l'intervalle "[a, b]", et ce sont ces fonctions qu'il est intéressant d'étudier avec cette intégrale</span>.
+</p>
+<p>
+Ici, cette propriété nous permet de faire quelque chose de très utile : <span class="important">encadrer notre intégrale grâce à des fonctions en escalier</span>.
+En effet, chaque subdivision et chaque choix possibles de "t indice k" donne une fonction en escalier précise (il y en a donc une infinité, puisque qu'il existe aussi une infinité de "t indice k").
+Comme la fonction est supposée continue, pour une taille "n" de subdivision fixée, il existe (selon le théorème des bornes atteintes) un ensemble "t indice k" dont la somme représente la somme maximum de tous les ensembles de "t indice k", et un ensemble de "t indice k" dont la somme représente la somme minimum de tous les ensembles de "t indice k".
+Ici, <span class="important"> la somme de Riemann associé à la subdivision "maximum" est elle aussi la somme maximum, et la somme associée à la subdivision minimum est elle aussi la somme minimum : toutes les autres sommes de Riemann se situent entre ces deux sommes de Riemann</span>.
+De manière similaire, <span class="important">toutes les fonctions escaliers se situent entre les fonctions escaliers dont les subdivisions adaptées sont la "minimum" et la "maximum"</span>.
+</p>
+<graphic>
+<background_color white><base width=4 height=4 x=-1>
+<rect x=0 y=0 width=1/2 height=1/8 color=light_red>
+<rect x=1/2 y=0 width=1/2 height=1/2 color=light_red>
+<rect x=1 y=0 width=1/2 height=9/8 color=light_red>
+<rect x=3/2 y=0 width=1/2 height=2 color=light_red>
+<rect x=1/2 y=0 width=1/2 height=1/8 color=light_blue>
+<rect x=1 y=0 width=1/2 height=1/2 color=light_blue>
+<rect x=3/2 y=0 width=1/2 height=9/8 color=light_blue>
+<function expression="(x*x)/2"></function>
+</graphic>
+<p>
+Si on appelle "l" la fonction "minimum" et "m" la fonction escalier "maximum", pour un pas fixé (mais qui peut être n'importe lequel), on peut donc écrire l'inégalité suivante :
+</p>
+<math><mi><mint></mi><msubsup><mi>a</mi><mi>b</mi></msubsup>l(x) dx <mltequal> <mi><mint></mi><msubsup><mi>a</mi><mi>b</mi></msubsup>f(x) dx <mltequal> <mi><mint></mi><msubsup><mi>a</mi><mi>b</mi></msubsup>m(x) dx</math>
+<p>
+Cependant, <span class="important">si on fait tendre le pas vers "0", par définition, ces deux fonctions "minimum" et "maximum" tendent vers la même valeur</span>.
+Donc, leur différence tend vers "0".
+</p>
+<math>I = <mlim unknown=p value=0>(<mi><mint></mi><msubsup><mi>a</mi><mi>b</mi></msubsup>m(x) dx) = <mlim unknown=p value=0>(<mi><mint></mi><msubsup><mi>a</mi><mi>b</mi></msubsup>l(x) dx) = <mlim unknown=p value=0>(<mi><mint></mi><msubsup><mi>a</mi><mi>b</mi></msubsup>f(x) dx)</math></br>
+<math>I = <mlim unknown=p value=0>(<mi><mint></mi><msubsup><mi>a</mi><mi>b</mi></msubsup>m(x) dx - <mi><mint></mi><msubsup><mi>a</mi><mi>b</mi></msubsup>l(x) dx) = 0</math>
+<p>
+D'ailleurs, comme pour... tout le reste, il existe une sorte d'arithmétique pour les fonctions Riemann-intégrables.
+En effet, <span class="important">la somme de deux fonctions Riemann-intégrables sur un intervalle donne une fonction Riemann-intégrable sur ce même intervalle</span>.
+La démonstration est très simple : considérons deux fonctions "f" et "g" Riemann-intégrable.
+</p>
+<math>I = <mlim unknown=p value=0><msum from=1 to=n unknown=k>((<mi>x</mi><msub>k</msub> - <mi>x</mi><msub>k - 1</msub>) * f(<mi>t</mi><msub>k</msub>)) + <mlim unknown=p value=0><msum from=1 to=n unknown=k>((<mi>x</mi><msub>k</msub> - <mi>x</mi><msub>k - 1</msub>) * g(<mi>t</mi><msub>k</msub>))</math></br>
+<p>
+Ici, les deux fonctions ont l'exact même ensemble de subdivisions possibles sur cet intervalle, et les exactes mêmes possibilités pour les "t indice k".
+On peut donc le noter ainsi :
+</p>
+<math><mimp> I = <mlim unknown=p value=0><msum from=1 to=n unknown=k>((<mi>x</mi><msub>k</msub> - <mi>x</mi><msub>k - 1</msub>) * (f(<mi>t</mi><msub>k</msub>) + g(<mi>t</mi><msub>k</msub>)))</math></br>
+<math><mimp> I = <mlim unknown=p value=0><msum from=1 to=n unknown=k>((<mi>x</mi><msub>k</msub> - <mi>x</mi><msub>k - 1</msub>) * ((f + g)(<mi>t</mi><msub>k</msub>)))</math></br>
+<p>
+Ici, on sait que "I" est égal à la somme des deux intégrales.
+De plus, on sait qu'elle est aussi égale à la limite de toutes les subdivisions / choix de "t indice k" possible.
+Donc, <span class=important>cette limite est unique et ne dépend pas du choix de subdivision / "t indice k" : la fonction "f + g" est Riemann-intégrable</span>.
+De plus, <span class="important">on voit aussi que l'intégrale de la somme de fonctions représente donc la somme des intégrales des fonctions</span>.
+</p>
+<math><mi><mint></mi><msubsup><mi>a</mi><mi>b</mi></msubsup>(f + g)(x) dx = <mi><mint></mi><msubsup><mi>a</mi><mi>b</mi></msubsup>f(x) dx + <mi><mint></mi><msubsup><mi>a</mi><mi>b</mi></msubsup>g(x) dx</math>
+<p>
+De manière similaire, <span class="important">la multiplication d'une fonction Riemann-intégrable par un nombre réel donne une fonction Riemann-intégrable sur ce même intervalle</span>.
+La démonstration est très simple : considérons une fonction "f" Riemann-intégrable.
+</p>
+<math>I = <mlim unknown=p value=0><msum from=1 to=n unknown=k>((<mi>x</mi><msub>k</msub> - <mi>x</mi><msub>k - 1</msub>) * f(<mi>t</mi><msub>k</msub>))</math></br>
+<p>
+La fonction obtenu après avoir multiplier "f" par un réel "k" est très simple à exprimer.
+</p>
+<math>J = <mlim unknown=p value=0><msum from=1 to=n unknown=k>((<mi>x</mi><msub>k</msub> - <mi>x</mi><msub>k - 1</msub>) * ((k * f)(<mi>t</mi><msub>k</msub>)))</math></br>
+<math><mimp> J = <mlim unknown=p value=0><msum from=1 to=n unknown=k>((<mi>x</mi><msub>k</msub> - <mi>x</mi><msub>k - 1</msub>) * (k * f(<mi>t</mi><msub>k</msub>)))</math></br>
+<p>
+Or, comme il s'agit d'une constante, on peut le faire sortir de la somme :
+</p>
+<math><mimp> J = k * <mlim unknown=p value=0><msum from=1 to=n unknown=k>((<mi>x</mi><msub>k</msub> - <mi>x</mi><msub>k - 1</msub>) * (f(<mi>t</mi><msub>k</msub>)))</math></br>
+<p>
+Ici, on sait que la valeur à droite de "k" ne dépend pas des subdivisions / choix de "t indice k".
+On sait que "J" représente aussi l'intégrale de la fonction "f" multipliée par "k".
+Donc, <span class="important">cette limite est unique et ne dépend pas du choix de subdivision / "t indice k" : la fonction "k * f" est Riemann-intégrable</span>.
+De plus, <span class="important">on voit aussi que l'intégrale de la multiplication d'une fonction par un réel représente donc la multiplication de l'intégrale de cette fonction par ce même réel</span>.
+</p>
+<p>
+En fait, <span class="important">les intégrales sur les segments "[a, b]" représentent une application allant de l'ensemble des fonctions réels Riemann-intégrable entre "a" et "b" vers l'ensemble des réels tout court</span>.
+Généralement, cette ensemble de fonction est noté "R([a, b])".
+De plus, on sait que cette ensemble est stable par l'addition et qu'une multiplication par un réel est défini dessus : <span class="important">cette ensemble peut donc avoir une structure d'espace vectoriel sur "R"</span>.
+</p>
+<math>i : R([a, b]) <mto> R, f <mto> <mi><mint></mi><msubsup><mi>a</mi><mi>b</mi></msubsup>f(x) dx</math>
+<p>
+Donc, <span class="important">l'intégration représente une forme linéaire de "R([a, b])" vers "R"</span>.
+En effet, on a prouvé que l'intégrale de la somme de fonctions représente donc la somme des intégrales des fonctions, et que l'intégrale de la multiplication d'une fonction par un réel représente donc la multiplication de l'intégrale de cette fonction par ce même réel : les conditions pour rendre cette opération "forme linéaire".
+Généralement, cette propriété est nommée "linéarité" de l'intégrale.
+</p>
+<math><mi><mint></mi><msubsup><mi>a</mi><mi>b</mi></msubsup>(f + g)(x) dx = <mi><mint></mi><msubsup><mi>a</mi><mi>b</mi></msubsup>f(x) dx + <mi><mint></mi><msubsup><mi>a</mi><mi>b</mi></msubsup>g(x) dx</math></br>
+<math><mi><mint></mi><msubsup><mi>a</mi><mi>b</mi></msubsup>(k * f)(x) dx = k * <mi><mint></mi><msubsup><mi>a</mi><mi>b</mi></msubsup>f(x) dx</math>
+
+<h3>Les propriétés de la Riemann-intégrale</h3>
+<p>
+L'intégrale de Riemann a une grande quantité de propriétés.
+</p>
+<p>
+L'intégrale de Riemann respecte la relation de Chasles.
+<span class="important"><definition name="chasles_relation-integral"></span>.
+On peut donc écrire :
+</p>
+<math><mforall>a, b, c <min> I, <mi><mint></mi><msubsup><mi>a</mi><mi>c</mi></msubsup>f(x) dx = <mi><mint></mi><msubsup><mi>a</mi><mi>b</mi></msubsup>f(x) dx + <mi><mint></mi><msubsup><mi>b</mi><mi>c</mi></msubsup>f(x) dx</math>
+<p>
+La démonstration (<a href="demo">présente ici</a>) repose en partie sur l'inégalité montrée plus haut et sur la linéarité de l'intégrale.
+</p>

@@ -751,3 +751,34 @@ La définition mathématique pure de cet opérateur est assez simple :
 <p>
 Quelque soit les ensembles de départ, les utiliser via cet opérateur donne un nouvel ensemble fonctionnel (<a href="demo">démontré ici</a>), et heureusement, car il serait difficile de s'imaginer qu'il existe des ensembles pour lesquelles cela ne marche pas.
 </p>
+
+<h3>Les graphes</h3>
+<p>
+Les graphes représentent un objet mathématique utilisable littéralement partout en science (pas qu'en mathématiques), qui peuvent être extrêmement simple, comme extrêmement complexe.
+Intuitivement parlant, <span class="important"><definition name="graph"></span>.
+En fait, un graphe est généralement utilisé sous sa forme "dessin", et se présente comme ceci :
+</p>
+<graph>
+<node>Europe</node>
+<node link=0 x=1 y=1>France</node>
+<node link=0 x=-1 y=1>Allemagne</node>
+<node link=0 x=1 y=-1>Italie</node>
+<node link=0 x=-1 y=-1>Espagne</node>
+</graph>
+<p>
+Cependant, il existe une façon très rigoureuse de définir un graphe.
+En effet, <span class="important"><definition name="graph-rigorous"></span>.
+Ici, les éléments du premier ensemble sont nommés les sommets du graphe, et les éléments du second ensemble sont nommés les arêtes du graphe.
+Généralement, <span class="important">ces deux ensembles sont finis</span>.
+</p>
+<math>G = (V, E)</math>
+<p>
+Ici, on peut se demander comment définir "E".
+En fait, <span class="important">la façon la plus simple est de dire que chaque lien entre deux sommets représente une paire, contenant les deux éléments en question</span>.
+Dans ce cas, le deuxième ensemble est un sous-ensemble de l'ensemble de toutes les paires possibles constitués d'éléments de "V".
+Généralement, <span class="important">on empêche aussi un élément d'être lié à lui même</span>.
+Ici, <span class="important">le graphe obtenu est nommé un graphe simple</span>.
+Dans ce genre de graphe, il n'est pas possible d'avoir deux fois le même lien (pour rappel, dans un ensemble, si vous avez plusieurs fois le même élément dedans, alors c'est comme si vous l'avez une fois).
+Il est très facile de dessiner un graphe avec la définition que l'on vient de voir : on dessine premièrement chaque élément du premier ensemble du couple, puis on parcourt le second ensemble, et on relie chaque éléments appairés que l'on trouve dans ce second ensemble.
+</p>
+<math>E <mincluded> {{x, y} | x, y <min> V <mand> x <mnotequal> y}</math>

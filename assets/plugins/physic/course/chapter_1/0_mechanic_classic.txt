@@ -1,0 +1,80 @@
+<h1>La mécanique classique</h1>
+
+
+
+<h2>La mécanique newtonienne</h2>
+
+<h3>La mécanique pré-Newton</h3>
+<p>
+La mécanique est une branche de la physique vieille comme le monde.
+Précisément, <span class="important"><definition name="mechanic"></span>.
+Par exemple, le mouvement effectué par un ballon de football peut s'étudier avec de la mécanique.
+Historiquement, le scientifique considéré comme le fondateur de la mécanique classique est <scientist name="newton" type="quote">.
+Cependant, ce n'est pas le premier, et là discipline est apparue bien avant.
+</p>
+<p>
+Dans l'histoire, ce concept apparaît très tôt, avec les grecs et les égyptiens, vers -300 avant notre ère.
+Cette discipline a été créée pour (principalement) deux raisons : étudier les astres et étudier les machines.
+Foncièrement parlant, <span class="important">cette mécanique est l'ancêtre de notre mécanique actuelle, en bien moins remplie et rigoureuse</span>.
+</p>
+<p>
+Le début de la formalisation moderne est apparue avec <scientist name="galileo" type="quote">.
+</p>
+
+<h3>Les bases de la mécanique newtonienne</h3>
+<p>
+Pour comprendre la mécanique newtonienne, nous avons besoin de quelques concepts bien précis.
+</p>
+<p>
+Un des concepts les plus importants (apporté par Galilée) est le concept de référentiel.
+<span class="important"><definition name="reference"></span>.
+En fait, le référentiel que vous choisissez dépend intuitivement de "où" et "comment" vous observez le système.
+C'est avec ce concept qu'on peut définir un autre : la position.
+<span class="important"><definition name="position"></span>.
+Pour représenter cette position sous forme de nombres, nous avons besoin d'une donnée étalon (fournie par le référentiel), représentant une unité de position.
+Ici, <span class="important">la mesure de la position d'un objet donne la quantité minimale de "donnée étalon" nécessaire (en ne changeant ni la taille, ni la direction de cette donnée) pour atteindre cet objet</span>.
+De plus, <span class="important">les nombres nécessaires pour représenter une position sous forme de nombres se nomment les coordonnées de l'objet dans le référentiel (qui changent donc selon le référentiel)</span>.
+Généralement, si l'on ne change pas la direction de cette donnée étalon, il faut plusieurs donnée différentes (avec des directions différentes) pour correctement mesurer cette position.
+Le nombre de donnée nécessaire pour faire cette mesure représente la dimension de l'espace dans lequel on évolue.
+Voici un exemple, où les deux mesures étalons sont (dans l'ordre) la ligne rouge puis la ligne bleue, et donc où la position de la particule sont (avec les nombres dans le même ordre que les mesures respectives) -4 et 2.
+En général, les coordonnées se notent entre parenthèses, comme (-4, 2).
+<p>
+<graphic><background_color white><line x_1=1 y_1=0 x_2=0 y_2=0 color=red border_color=red><line x_1=0 y_1=1 x_2=0 y_2=0 color=blue border_color=blue><circle x=-4 y=2 radius=1/2 color=green></graphic>
+<p>
+Dans un système en évolution dans le temps, il est possible de constater l'évolution de la position de l'objet.
+Si un objet était a une position, et se retrouve à une nouvelle position, <span class="important">le vecteur représentant la différence entre la nouvelle position et l'ancienne position se nomme le vecteur déplacement</span>.
+Comme ce concept représente l'évolution d'une information, on peut le noter avec le caractère delta.
+Si l'on note la première position "p indice 1" et la deuxième position "p indice 2", le déplacement se note :
+</p>
+<math><mdelta>p = <mi>p</mi><msub>2</msub> - <mi>p</mi><msub>1</msub></math>
+<p>
+De manière un peu plus avancée, on peut définir le concept de mouvement.
+<span class="important"><definition name="movement"></span>.
+Il s'agit donc d'une façon extrêmement plus précise de décrire une position qu'un simple déplacement.
+</p>
+<p>
+L'exemple le plus simple est l'exemple du train et du voyageur (un des exemples préférés d'Einstein).
+Si vous observez un train avec un voyageur dedans, à partir de l'extérieur du train (en étant directement sur le sol, sans bouger), le train bouge, et le voyageur qui est dessus aussi.
+Par contre, si vous êtes dans le train, alors vous verrez que ni le train, ni le voyageur bouge (en considérant que vous êtes assis, et le voyageur aussi, sans bouger).
+Cependant, tout ce qui est en dehors du train va bouger.
+Donc, <span class="important">les observations changent selon de comment vous regardez le système (et donc, selon le référentiel que vous choisissez)</span>.
+</p>
+<p>
+Mathématiquement parlant, <span class="important"><definition name="reference-rigorous"></span>.
+Pour prendre un exemple, nous allons considérer que les coordonnées que nous allons prendre représente le sol (avec les axes ouest - est et sud - nord), et nous n'allons pas considérer la hauteur.
+Dans l'exemple du train, si vous prenez comme référentiel un homme statique sur le sol, en considérant que vous êtes la coordonnées "(0, 0)" du système, on peut dire que les coordonnées du milieu du train pour l'observateur seront "(-100, 20)", puis "(0, 20)", puis "(100, 20)"...
+On peut mathématiquement définir que le voyageur se situe à "10" unités du milieu du train, et ces coordonnées pour l'observateur seront donc "(-90, 20)", puis "(10, 20)", puis "(110, 20)"...
+Or, pour le voyageur, si il ne bouge pas, alors le train ne bougera pas pour lui non plus, et comme il est "10" unités "plus loin" que le milieu du train, les coordonnées du milieu train pour le voyageur seront donc "(-10, 0)" pendant tout le trajet.
+Cependant, les coordonnées de l'homme statique d'en dehors du train pour le voyageur seront "(90, -20)", puis "(-10, 20)", puis "(-110, 20)"...
+Donc, <span class="important">il faut faire très attention au choix du référentiel, pour ne pas faire n'importe quoi</span>.
+</p>
+
+<h3>Les lois du mouvement de Newton</h3>
+<p>
+En fait, tout le concept de mécanique newtonienne repose sur 3 lois principales, que nous allons énumérer ici.
+Elle furent énumérer en premier dans le livre de Newton "Philosophiæ naturalis principia mathematica" en 1687.
+</p>
+<p>
+La première loi est le principe d'inertie.
+<span class="important"><definition name="inertia"></span>.
+</p>

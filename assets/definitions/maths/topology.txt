@@ -1,5 +1,5 @@
 <new_definition name="topological_base">
-    <content>une base d'un espace topologique "T" sur un ensemble "E" est un ensemble de parties de "E" agissant comme des ouverts, dont l'union permet de générer tous les ouverts de "T"</content>
+    <content>une base d'un espace topologique "T" sur un ensemble "E" est un ensemble de parties de "E" ouverts dans "T", dont l'union permet de générer tous les ouverts de "T"</content>
     <content name="prebase">une prébase d'un espace topologique "T" sur un ensemble "E" est un ensemble de parties de "E" tel que toutes ces parties soient des ouverts de "T"</content>
 </new_definition>
 <new_definition name="topological_borel_lebesgue">

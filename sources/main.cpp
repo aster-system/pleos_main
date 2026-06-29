@@ -96,10 +96,55 @@ int command(int argc, char* argv[]) {
 	return 0;
 }
 
-int main(int argc, char* argv[]) {
-	//return command(argc, argv);
+double t = 1.0;
+void scalar_field_2d_colored(scls::Image image, scls::Formula_Base* formula, scls::Plane_Base* base) {
+    // Datas
 
-	pleos::Pleos_Window window(900, 600, argv[0]);
+    // Browse the image
+    for(int y_pixel = 0;y_pixel<image.height();y_pixel++) {
+        for(int x_pixel = 0;x_pixel<image.width();x_pixel++) {
+            // Datas for this pixel
+            scls::Fraction x = base->canonical_x_to_base_x(x_pixel);
+            scls::Fraction y = base->canonical_y_to_base_y(image.height() - y_pixel);
+
+            double current_value = t * x.to_double() * std::exp(-(x.to_double() * x.to_double() + y.to_double() * y.to_double()));
+            if(current_value > 0 ){image.set_pixel(x_pixel, y_pixel, scls::Color(255.0, 255.0 - 550.0 * current_value, 255.0 - 550.0 * current_value));}
+            else{image.set_pixel(x_pixel, y_pixel, scls::Color(255.0 - 550.0 * -current_value, 255.0 - 550.0 * -current_value, 255.0));}
+
+            /*
+            scls::Fraction current_value = *formula->replace_unknowns("x", x).get()->replace_unknowns("y", y).get()->value<scls::Fraction>();
+            if(current_value > 0 ){image.set_pixel(x_pixel, y_pixel, scls::Color(100.0 * current_value.to_double(), 0, 0));}
+            else{image.set_pixel(x_pixel, y_pixel, scls::Color(0, 0, 100.0 * -current_value.to_double()));}
+            //*/
+        }
+    }
+}
+
+int main(int argc, char* argv[]) {
+    std::shared_ptr<scls::Formula_Base> function = scls::string_to_algebra_element<scls::Formula_Base>("x*exp((x*x)+(y*y)*-1)");
+
+    scls::Image image = scls::Image(1080, 1920, scls::Color(255, 255, 255));
+    scls::Plane_Base p = scls::Plane_Base(200, 200, image.width() / 2, image.height() / 2);
+    scalar_field_2d_colored(image, function.get(), &p);
+    image.save_png("tests/i.png");
+
+	int duration = 8;
+	scls::Video_Encoder enc = scls::Video_Encoder(std::string("./tests/t.mp4"), duration, 1080, 1920);
+    std::shared_ptr<scls::Formula_Base> f = scls::string_to_algebra_element<scls::Formula_Base>("(1/4) * x + 2");
+    for(int i = 0;i<duration*60;i++) {
+        t = 1 + static_cast<double>(i)/60.0;
+        scls::Image image = scls::Image(1080, 1920, scls::Color(255, 255, 255));
+        scls::Plane_Base p = scls::Plane_Base(200, 200, image.width() / 2, image.height() / 2);
+        scalar_field_2d_colored(image, function.get(), &p);
+
+        enc.write_video_frame(image);
+        enc.go_to_next_frame();
+    }
+    enc.close_encoding();//*/
+
+    //return command(argc, argv);
+
+	/*pleos::Pleos_Window window(900, 600, argv[0]);
     window.load_from_xml("assets/window.txt");
     pleos::Hub_Page* hub = window.hub();
     hub->handle_saasf();

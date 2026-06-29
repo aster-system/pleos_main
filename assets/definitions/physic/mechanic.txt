@@ -1,0 +1,19 @@
+<new_definition name="mechanic">
+    <content>la mécanique est la branche de la physique qui étudie les mouvements / transformations des objets physiques dans le temps</content>
+</new_definition>
+
+<new_definition name="movement">
+    <content>le mouvement représente l'ensemble des informations correspondant à l'évolution de la position d'un objet</content>
+</new_definition>
+<new_definition name="position">
+    <content>la position d'un objet représente l'information permettant de repérer / d'atteindre l'objet en partant d'un référentiel</content>
+    <content>la position d'un objet représente l'information permettant de repérer / d'atteindre l'objet en partant d'un référentiel</content>
+</new_definition>
+<new_definition name="reference">
+    <content>un référentiel (aussi nommé un repère) est un objet du système à partir duquel on observe le système entier</content>
+    <content name="rigorous">un référentiel représente un système de coordonnées possible dans le système, à partir du quel on peut observer le système entier</content>
+</new_definition>
+<new_definition name="speed">
+    <content>la vitesse représente l'évolution dans le temps d'une information sur un objet</content>
+    <content name="position">la vitesse représente l'évolution dans le temps d'une information sur un objet</content>
+</new_definition>

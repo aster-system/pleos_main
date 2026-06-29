@@ -195,6 +195,12 @@ Par exemple, pour un ensemble "E" quotienté par une relation d'équivalence "~"
 
 
 
+
+
+
+
+
+
 <h2>Les applications mathématiques</h2>
 
 <h3>Qu'est ce qu'est une application mathématique ?</h3>
@@ -218,18 +224,16 @@ Pour tout objet "x" appartenant à A, l'objet lié à "x" selon l'application "f
 </p>
 <math>x <mto> f(x)</math>
 <p>
-Pour faire le lien avec notre notation logique d'au dessus, "y" représente en fait "f(x)".
-</p>
-<math><mforall> x <min> A, <mexists>! y <min> B [ y = f(x) <mand> (x, f(x)) <min> G<msub>f</msub>]</math>
-<p>
 En général, <span class="important">l'ensemble de tous les éléments de l'ensemble d'arrivée appartenant à (au moins) un couple avec un élément de l'ensemble de départ par l'application "f" est nommé "ensemble image de f"</span>.
 Cependant, il est aussi possible de simplement l'appeler "image de f", qu'il ne faut absolument pas confondre avec "l'image de x par f".
 Pour des raisons de simplicité, nous continuerons à parler d'ensemble image.
+Pour une application "f", cette ensemble se note ainsi :
 </p>
+<math>Im(f)</math>
 <p>
 Si besoin, il est possible d'expliciter "f(x)" sous la forme d'une expression précise.
 Généralement, <span class="important">quand une application est explicitée, elle donne une façon de modifier la valeur "x" pour obtenir la valeur de l'ensemble d'arrivée liée à "x" selon cette application</span>.
-Il n'est pas obligatoire qu'une fonction soit explicité, mais très conseillé pour pouvoir plus facilement savoir quel élément de l'ensemble de départ est lié à quel élément de l'ensemble d'arrivée.
+Il n'est pas obligatoire qu'une application soit explicité, mais très conseillé pour pouvoir plus facilement savoir quel élément de l'ensemble de départ est lié à quel élément de l'ensemble d'arrivée.
 Dans ce cas, on peut noter la façon dont "x" est modifié par "f".
 Voici un exemple dans le cas où "x" est un nombre entier naturel (que nous nous permettons d'utiliser ici pour l'exemple, bien que nous ne les avons pas encore correctement définis), et "f(x)" aussi :
 </p>
@@ -268,9 +272,19 @@ Voici un exemple en bas pour l'application allant de "{0, 1, 2, 3, 4}" vers "{0,
 <p>
 Un concept assez similaire est le concept de fonction.
 En mathématiques, <span class="important"><definition name="function"></span>.
-Il s'agit d'une définition légèrement moins forte que celle de l'application.
-En plus, <span class="important">une application est une fonction où tous les objets de l'ensemble de départ sont liés à un unique élément de l'ensemble d'arrivée</span>.
+Il s'agit d'une définition légèrement moins forte que celle de l'application : dans une application, tous les éléments de l'ensemble de départ doivent être lié.
+D'ailleurs, <span class="important">toute application est une fonction, où tous les éléments de l'ensemble de départ sont liés à un unique élément de l'ensemble d'arrivée</span>.
+Cependant, certaines fonctions ne sont pas des applications (dans le cas où il existe des éléments de l'ensemble de départ qui n'ont pas d'images).
+La notation logique pour une fonction serait :
+</p>
+<math>f : A <mto> B</math></br>
+<math><mforall> x <min> A, (<mexists>! y <min> B, (x, y) <min> G<msub>f</msub>) <mor> <mno>(<mexists> y <min> B, (x, y) <min> G<msub>f</msub>)</math>
+<p>
 Il est néanmoins possible d'obtenir l'ensemble de toutes les valeurs de l'ensemble de départ de la fonction qui sont bel et bien utilisées par cette dernière : cet ensemble se nomme ensemble de définition.
+Ici, pour une application "f", cet ensemble se note généralement "D indice f".
+</p>
+<math><mi>D</mi><msub>f</msub> = {x <min> A | <mexists> y <min> B, (x, y) <min> G<msub>f</msub>}</math>
+<p>
 Cependant, le point commun est qu'une fonction ne permet de lier un objet de l'ensemble de départ que avec un maximum de un objet de l'ensemble d'arrivée.
 Voici un exemple de diagramme sagittal de fonction :
 </p>
@@ -298,6 +312,13 @@ Voici un exemple de diagramme sagittal de fonction :
 <line x_1=-3/2 y_1=0 x_2=3/2 y_2=0 color=black>
 <line x_1=-3/2 y_1=-2 x_2=3/2 y_2=-1 color=black>
 </graphic>
+
+<p>
+Cependant, ce n'est pas très grave, pour une raison précise : <span class="important">pour toute fonction ayant un ensemble de définition non nul, on peut obtenir une application allant de l'ensemble de définition vers l'ensemble d'arrivée de la fonction</span>.
+Avec la proximité apparente entre ces deux concepts, il est important de dire que les propriétés des applications sont souvent aussi valides pour les fonctions.
+Néanmoins, il y a un petit problème : <span class="important">certains auteurs considèrent que ces deux concepts sont parfaitement égaux, et que une fonction et une application sont strictement le même objet (et donc que tous les éléments de l'ensemble de départ de la fonction doivent avoir une image)</span>.
+Généralement, en France, la définition exposée au dessus est la définition la plus utilisée.
+</p>
 
 <p>
 Dans les deux cas, nous voyons bien que l'ensemble de départ est très important pour définir une application / fonction.
@@ -332,6 +353,13 @@ Ici, <span class="important">la façon juste de l'écrire est comme un ensemble 
 Dans cet exemple, si "B" est l'ensemble que l'on cherche :
 </p>
 <math><mforall> b, {b <min> B <mequi> <mexists> c <min> A, f(c) = b}</math>
+<p>
+Un concept assez pratique pour parler d'applications est l'espace fonctionnel.
+<span class="important"><definition name="function_space"></span>.
+Cette appellation est aussi utilisée pour parler d'un ensemble quelconque de fonctions respectant des propriétés précises.
+Généralement, cet ensemble peut se noter de deux façons différentes :
+</p>
+<math><mi>Y</mi><msup>X</msup> = F(X, Y)</math>
 
 <h3>Injections, surjections et bijections</h3>
 <p>

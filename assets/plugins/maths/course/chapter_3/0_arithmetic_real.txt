@@ -130,6 +130,7 @@ Si l'intervalle est constitué de deux "supérieure / inférieure ou égale", on
 <math><mforall> x <min> R, {x <min> I <mequi> x <mgtequal> a <mand> x <mltequal> b}</math></br>
 <math>I = [a, b]</math>
 <p>
+Ce genre d'intervalle est aussi appelé "segment".
 Cependant, si l'on utiliser des "strictement supérieure / inférieure", on dit que l'intervalle est ouverte, et on le note de manière similaire (on inverse juste les crochets) : 
 </p>
 <math><mforall> x <min> R, {x <min> I <mequi> x <mgt> a <mand> x <mlt> b}</math></br>
@@ -161,10 +162,11 @@ Par exemple, <span class="important">l'union de "]a, b]" et "[b, c[" donne "]a, 
 Cependant, <span class="important">l'union de "]a, b[" et "]b, c[" donne "]a, c[ sans b", car "b" n'est dans aucun des deux ensembles (ce qui fait que l'union n'est pas un intervalle, car un éléments entre "a" et "c" est hors de l'ensemble)</span>
 Par contre, "]a, b[ U [b, c[ = ]a, c[" et "]a, b] U ]b, c[ = ]a, c[".
 Ces propriétés sont très facilement démontrables pour quiconque ayant compris le formalisme des intervalles.
-D'ailleurs, <span class="important">l'ensemble vide et les singletons de nombres sont considérés comme un intervalle de "R"</span>.
+D'ailleurs, <span class="important">l'ensemble vide et les singletons de nombres sont considérés comme des intervalles de "R"</span>.
 Dans la même idée, <span class="important">l'intersection d'intervalles est toujours un nouvel intervalle</span>.
-Cependant, un intervalle qui n'est pas l'ensemble vide ou un seul nombre est dit "non-triviale"/
+Cependant, un intervalle qui n'est pas l'ensemble vide ou un seul nombre est dit "non-triviale".
 </p>
+
 <p>
 Avec ce concept, on peut introduire quelques nouveaux concepts centraux en analyse réelle : majorants, minorants ou les bornes.
 <span class="important"><definition name="analysis_interval-majorant"></span>.
@@ -186,6 +188,12 @@ Une borne supérieure "d" et une borne inférieure "e" se définissent comme ça
 </p>
 <math>I <mincluded> E, {<mforall> x <min> I, p <mgtequal> x, <mforall> p <min> E, p <mgtequal> x <mimp> d <mltequal> p}</math></br>
 <math>I <mincluded> E, {<mforall> x <min> I, q <mltequal> x, <mforall> q <min> E, q <mltequal> x <mimp> e <mgtequal> p}</math>
+
+<p>
+Il existe d'ailleurs un moyen de "décomposer" un intervalle, avec les subdivisions d'intervalles.
+<span class="important"><definition name="analysis_interval-subdivision"></span>.
+Par exemple, dans le segment "[0, 4]", une subdivision peut être "(0, 1, 2, 2.5, 2.3, 3, 3.5, 4)".
+</p>
 
 
 
@@ -224,3 +232,12 @@ De plus, <span class="important">une fonction réelle de la forme "a * x + b" av
 D'un point de vue graphique, il s'agit d'une droite non-verticale quelconque.
 </p>
 <math>f : R <mto> R, x <mto> f(x) = <mfrac><mi>1</mi><mi>3</mi></mfrac> * x + 2</math>
+<p>
+Il existe un type de fonction réel assez spécial : les fonctions en escalier.
+D'un point de vue rigoureux, <span class="important"><definition name="analysis_real_function-step"></span>.
+Ici, cette suite d'intervalles peut être décrite avec une subdivision de l'ensemble de définition de la fonction, où chaque valeur de la subdivision représente les extrémités des intervalles (on dit que la subdivision est adaptée à la fonction).
+Cette définition autorise à ce que certains antécédents (ceux qui sont aux extrémités des intervalles ouverts) admettent des images qui n'ont rien à voir avec les autres valeurs de la fonction.
+Voici un exemple très simple : une fonction en escalier valant 1 si la valeur de la partie entière est paire, et 0 sinon.
+Ici, sur le segment "[-3, 3]", les intervalles ouvertes où la fonction est constante sont "]-3, -2[", "]-2, -1[", "]-1, 0[", "]0, 1[", "]1, 2[" et "]2, 3[" (la subdivision adaptée serait dans ce cas "(-3, -2, -1, 0, 1, 2, 3)").
+</p>
+<math>f : R <mto> R, x <mto> {1 si x pair, 0 sinon}</math>

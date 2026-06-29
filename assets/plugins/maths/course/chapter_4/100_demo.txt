@@ -192,6 +192,32 @@ Donc, dans la base "b", les coordonnées de "(4, 5)" sont bien "(-3, 2)".
 
 <h4>4.1.0.3</h4>
 <p>
+Démontrons que toute application linéaire entre deux espaces de matrices colonnes peut se représenter avec une matrice.
+Notons "E" un espace vectoriel sur le corps "K" représentant l'ensemble "K exposant m", et "F" un espace vectoriel sur le corps "K" représentant l'ensemble "K exposant n". 
+Considérons une application linéaire :
+</p>
+<math>f : E <mto> F</math>
+<p>
+Comme "E" est un espace vectoriel, nous pouvons exprimer une base "b" de "E".
+</p>
+<math>(<mi>b</mi><msub>1</msub>, <mi>b</mi><msub>2</msub>, ..., <mi>b</mi><msub>m</msub>)</math>
+<p>
+Ici, comme notre application est linéaire, la famille représentant l'image des vecteurs de "b" forme une famille génératrice de l'image de "l'espace d'arrivée".
+Nommons cette famille "c".
+</p>
+<math>(<mi>c</mi><msub>1</msub>, <mi>c</mi><msub>2</msub>, ..., <mi>c</mi><msub>m</msub>)</math>
+<p>
+Donc, tout vecteur de l'image peut s'écrire comme une combinaison linéaire de vecteurs de "c".
+</p>
+<math><mforall> u <min> E, f(u) = <msum unknown=k value=1 to=n><mi>a</mi><msub>k</msub><mi>c</mi><msub>k</msub></math>
+<p>
+Or, cette opération représente le fait de réaliser le produit matriciel entre une matrice dont les colonnes représentent "c" et "u".
+Donc, quelque soit cette application linéaire, elle peut se représenter sous la forme d'une matrice.
+</p>
+<math>f(u) = M * u</math>
+
+<h4>4.1.0.4</h4>
+<p>
 Démontrons que le produit matriciel de deux matrices associées à des applications linéaires revient à obtenir la matrice de la composée de ces deux applications linéaires.
 Posons deux matrices "A" et "B", associées à deux applications linéaires "f" et "g", et à 3 bases : "b" (départ de "f"), "c" (arrivée de "f" et départ de "g") et "d" (arrivée de "g").
 Déjà, pour tout vecteur "v" de coordonnées "E" dans la base de départ de "b", on sait que le produit matriciel de "A" et "E" donne les coordonnées "F" de "v" dans la base "c".

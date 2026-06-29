@@ -1,5 +1,5 @@
 <new_definition name="phase_space">
-    <content></content>
+    <content>l'espace des phases d'un système dynamique représente l'ensemble des états possibles du système</content>
 </new_definition>
 <new_definition name="system">
     <content>un système est un ensembles d'objets quelconques, dont le comportement est régit par des règles / lois quelconques</content>

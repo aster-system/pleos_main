@@ -1,0 +1,94 @@
+<h1>La théorie des systèmes dynamiques</h1>
+
+
+
+<h2>Introduction aux systèmes dynamiques</h2>
+
+<h3>Qu'est ce qu'est un système dynamique ?</h3>
+<p>
+La théorie des systèmes dynamiques est une théorie qui trouvent ses racines en mathématiques, mais est utile dans une quantité faramineuse de domaines (physique, biologie...).
+En plus, elle est aussi une théorie mathématique particulièrement intéressante et fournie.
+</p>
+<p>
+Avant tout de chose, définissons le concept de système.
+<span class="important"><definition name="system"></span>.
+En voyant ça, on peut très vite s'apercevoir de la quantité de choses possibles avec ce concept.
+On pourrait imaginer par exemple un système composé d'élèves et de professeurs dans une école, et où les lois pourraient représenter la façon dont ils se comportent entre eux.
+Cependant, cela pose problème : <span class="important">il n'existe généralement pas de définition mathématique globale pour le concept de "système"</span>.
+Cela est dût au fait qu'il est beaucoup trop large, et qu'il est donc difficile de trouver des propriétés mathématiques communes à tous les systèmes possibles et imaginables.
+</p>
+<p>
+Rendons nos systèmes dynamiques.
+Ici, <span class="important"><definition name="system-dynamic"></span>.
+Pour reprendre notre exemple de l'école, une loi représenterait comment les élèves (et les données qui leur sont "attachées") évoluent dans le temps (notes, relations amicales...).
+Il existe deux catégories importantes de systèmes dynamiques (que nous traiterons après) : les systèmes dynamiques discrets et les systèmes dynamiques continus.
+</p>
+<p>
+Mathématiquement parlant, on peut définir une chose intéressante avec ces systèmes : un état du système.
+<span class="important"><definition name="system-state"></span>.
+Un état est donc décrit par une certaine quantité d'informations, qui sont généralement des nombres réels, où des objets construits à partir de nombres réels (comme des vecteurs réels).
+Généralement, <span class="important">ses informations sont notés "q indice i", où "i" représente la "i-ème" information</span>.
+Chose importante : les états sont tous décrit par les exacts mêmes types d'informations, seules les valeurs de ces informations changent.
+Ici, le nombre de types d'informations différents est nommé le degré de liberté du système.
+</p>
+<math>E = (<mi>q</mi><msub>1</msub>, <mi>q</mi><msub>2</msub>, ..., <mi>q</mi><msub>n</msub>)</math>
+<p>
+Prenons un exemple : un système 2D composé d'une particule.
+La question est : comment décrire rigoureusement ce système ?
+Ici, <span class="important">nous allons dire que les seules informations importantes du système concernent notre particule</span>.
+Si nécessaire, on peut rajouter des objets contenant informations (d'autres particules, un autre objet dynamique...).
+Le choix des objets à prendre en compte dépend fortement du contexte.
+Avec tout ça, nous pouvons prendre pleins d'informations par rapport à cette particule : position, vitesse, masse, couleur...
+Ici, <span class="important">nous allons dire que les deux informations importantes sont la position et la vitesse de la particule</span>.
+Donc, un exemple d'état du système peut être une position de "(2, -1)" unités de distance et une vitesse de "(-6, 4)" unités de distance / unités de temps :
+</p>
+<graphic><background_color white><circle x=2 y=-1 radius=1 color=blue border_color=black border_width=3><arrow x_1=2 y_1=-1 x_2=-4 y_2=3 border_width=10 border_color=black></graphic>
+<p>
+On peut creuser un peu plus ce concept, avec celui d'espace des phases.
+<span class="important"><definition name="phase_space"></span>.
+Selon le contexte, cette espace peut être très petit, ou absolument gigantesque (voir infini).
+Généralement, cet espace des phase est noté avec la lettre grecque gamma majuscule.
+</p>
+<math></mgammamaj></math>
+<p>
+Reprenons l'exemple de notre système avec notre particule.
+Nous avons deux informations importantes pour décrire un état du système : la position et la vitesse de la particule.
+Dans les deux cas, <span class="important">la position d'une particule peut se décrire grâce à des coordonnées dans un espace géométrique à deux dimensions, et c'est la même chose pour la vitesse de la particule</span>.
+Mathématiquement parlant, ces deux valeurs représentent des espaces euclidiens de dimension 2, et donc "R²".
+Donc, <span class="important">l'ensemble des états possibles du système (et donc, de la particule) est donc l'ensemble des coordonnées en deux dimensions, deux fois (et donc le produit cartésien de "R²" sur lui même, qui représente donc "R exposant 4")</span>.
+Ici, le degré de liberté de notre système est donc de 4.
+</p>
+<math>R² * R² = <mi>R</mi><msup>4</msup></math>
+<p>
+Si l'on rajoute une particule, nous devons en plus prendre en compte deux nouvelles coordonnées de "R²" : la position et la vitesse de la deuxième particule.
+Dans ce cas, nous travaillerons sur "R exposant 8".
+</p>
+<math>R² * R² * R² * R² = <mi>R</mi><msup>8</msup></math>
+
+<h3>Les espaces dynamiques discrets</h3>
+<p>
+Commençons par définir les systèmes dynamiques discret.
+En effet, <span class="important">ce type de système dynamique a une définition mathématiques rigoureuse et facilement utilisable</span>.
+Intuitivement parlant, <span class="important"><definition name="system-dynamic_discrete"></span>.
+Donc, deux états obtenus avec la loi sont (au minimum) espacés d'un temps précis.
+</p>
+<p>
+Mathématiquement parlant, un système dynamique discret s'étudier avec une application assez simple : une application allant de l'espace des phases vers lui même.
+De manière plus intuitive, <span class="important">cette application est telle que si vous avez un état à un moment "t", vous pouvez avoir le prochain état en passant votre état actuel dans la fonction</span>.
+</p>
+<math>d : <mgammamaj> <mto> <mgammamaj></math>
+<p>
+On doit, dans ce cas, choisir un premier état "x indice 0", que nous allons faire évoluer petit à petit.
+</p>
+<math><mi>x</mi><msub>0</msub>, <mi>x</mi><msub>1</msub> = d(<mi>x</mi><msub>0</msub>), <mi>x</mi><msub>2</msub> = d(<mi>x</mi><msub>1</msub>)</math>
+<p>
+Si possible, <span class="important">on essaye de faire de telle manière que cette application soit bijective</span>.
+En effet, si l'application est bijective, il existe alors une application réciproque.
+Donc, <span class="important">si nous avons l'application réciproque, nous pouvons facilement "remonter le temps" dans notre système</span>.
+Cependant, ce n'est pas obligatoire.
+</p>
+
+<h3>Les espaces dynamiques continus</h3>
+<p>
+
+</p>

@@ -1,0 +1,4 @@
+<new_definition name="graph">
+    <content>un graphe représente un ensemble d'éléments, où certains éléments sont "liés" entre eux</content>
+    <content name="rigorous">un graphe est un couple de deux ensemble : le premier représentant les éléments dans le graphe et le deuxième représentant l'ensemble des liens entre chaque élément du graphe</content>
+</new_definition>

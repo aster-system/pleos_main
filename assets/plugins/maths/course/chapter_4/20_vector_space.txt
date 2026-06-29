@@ -283,7 +283,7 @@ Comme le couple que nous voulons être unique représente une expression du vect
 <math>(7, 4) = (7, 0) + (0, 4)</math>
 <p>
 Un exemple assez bizarre d'espace vectoriel est l'espace fonctionnel.
-<span class="important"><definition name="function_space"></span>.
+Pour rappel, <span class="important"><definition name="function_space"></span>.
 Avec cette simple définition, un espace fonctionnel n'est pas obligatoirement un espace vectoriel.
 Or, <span class="important">si l'ensemble d'arrivée représente un espace vectoriel "F" sur un corps "K", l'espace fonctionnel est lui aussi un espace vectoriel sur "K"</span>.
 Pour cela, nous devons munir cet espace de lois assez similaires aux lois de "F" :
@@ -293,8 +293,9 @@ Pour cela, nous devons munir cet espace de lois assez similaires aux lois de "F"
 <math>(f + g)(x) = f(x) + g(x)</math></br>
 <math><mforall> a <min> F, (a * f)(x) = a * f(x)</math>
 <p>
-Ici, on constate donc la stabilité de cet ensemble par l'addition et la multiplication par un scalaire (qui dépend donc directement des propriétés de l'espace d'arrivée de l'application).
-De plus, on constate aussi que cet ensemble a les mêmes propriétés que celui de l'espace d'arrivée (et donc, que celles d'un espace vectoriel).
+Dans tous les cas, on remarque que l'espace d'arrivée des fonctions obtenues par somme et par multiplication par un scalaire est "F", et donc que ces applications représentent de nouvelles applications allant de "X" vers "F".
+Donc, on constate la stabilité de cet ensemble par l'addition et la multiplication par un scalaire (elle sont elles aussi des applications allant de "X" vers "F").
+De plus, on constate aussi que cet ensemble a les mêmes propriétés que l'espace d'arrivée (et donc, cet ensemble a les mêmes propriétés qu'un espace vectoriel).
 Donc, il s'agit bel et bien d'un espace vectoriel.
 </p>
 
@@ -409,7 +410,7 @@ Ils ont donc les exacts mêmes lois de compositions que cet espace vectoriel d'a
 <math>(f + g)(x) = f(x) + g(x) <mand> <mforall> a <min> F, (a * f)(x) = a * f(x)</math></br>
 <p>
 En utilisant les propriétés des applications linéaires, <span class="important">on peut cependant améliorer ces opérations, et démontrer que "L(E, F)" est un sous-espace vectoriel de l'ensemble des applications allant de "E" vers "F"</span>.
-Déjà, on sait que l'identité est dans cet ensemble.
+Déjà, on sait que l'identité est dans cette ensemble.
 De plus, démontrons que "(f + g)" est linéaire, et que "(a * f)" aussi, et donc que l'ensemble des applications linéaires est bel et bien un sous-espace vectoriel de l'ensemble des applications allant de "E" vers "F".
 </p>
 <math>(f + g)(x + y) = f(x + y) + g(x + y) = f(x) + f(y) + g(x) + g(y) = f(x) + g(x) + f(y) + g(y) = (f + g)(x) + (f + g)(y)</math></br>
@@ -493,6 +494,14 @@ Cette application respecte toutes les propriétés nécessaires (bien que les ca
 <math>f((x, y), (w, z) + (w', z')) = (x * w - y * z + x * w' - y * z', x * z + w * y + x * z' + w' * y) = (x * w - y * z, x * z + w * y) + (x * w' - y * z', x * z' + w' * y) = f((x, y), (w, z)) + f((x, y), (w', z'))</math></br>
 <math>f(a * (x, y), (w, z)) = (a * x * w - a * y * z, a * x * z + w * a * y) = (x * a * w - y * a * z, x * a * z + a * w * y) = f((x, y), a * (w, z))</math></br>
 <math>f(a * (x, y), (w, z)) = (a * x * w - a * y * z, a * x * z + w * a * y) = (a * (x * w - y * z), a * (x * z +  w * y)) = a * (x * w - y * z, x * z + w * y) = a * f((x, y), (w, z))</math>
+<p>
+Comme il existe des formes linéaires, il existe aussi des formes bilinéaires.
+<span class="important"><definition name="linear_form-bilinear"></span>.
+Elle doit cependant respecter une propriété précise : elle doit être bilinéaire sur l'espace vectoriel trivial de "K".
+</p>
+<math>f(x + x', y) = f(x, y) + f(x', y)</math></br>
+<math>f(x, y + y') = f(x, y) + f(x, y')</math></br>
+<math>f(a * x, y) = f(x, a * y) = a * f(x, y)</math>
 
 
 
@@ -685,6 +694,7 @@ Il est possible de lier les matrices avec les applications linéaires de manièr
 En effet, le produit matriciel permet de voir une chose : <span class="important">faire le produit matriciel d'une matrice quelconque avec une matrice colonne revient à obtenir une nouvelle matrice colonne représentant une combinaison linéaire des colonnes de la matrice de départ</span>.
 Or, pour rappel, les matrices forment un espace vectoriel (et donc les matrices colonnes aussi).
 Donc, <span class="important">une matrice peut se représenter comme une application allant d'un espace de matrices colonnes à un autre espace de matrices colonnes</span>.
+D'ailleurs, la réciproque est vraie : <span class="important">toute application linéaire entre deux espaces de matrices colonnes peut s'exprimer sous la forme de matrice</span> (<a href="demo#4_1_0_3">démontré ici</a>).
 De plus, <span class="important">cette application est linéaire</span>.
 Tout cela se définit directement, en utilisant la définition du produit matriciel.
 </p>
@@ -693,7 +703,7 @@ Tout cela se définit directement, en utilisant la définition du produit matric
 <math>A * (<mrow><mo>[</mo><mtable><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>...</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable><mo>]</mo></mrow> + <mrow><mo>[</mo><mtable><mtr><mtd><mi>w</mi></mtd></mtr><mtr><mtd><mi>...</mi></mtd></mtr><mtr><mtd><mi>z</mi></mtd></mtr></mtable><mo>]</mo></mrow>) = (x + z) * (c, ..., d) + ... + (y + w) * (e, ..., f) = x * (c, ..., d) + y * (e, ..., f) + z * (c, ..., d) + w * (c, ..., d) = A * <mrow><mo>[</mo><mtable><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>...</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable><mo>]</mo></mrow> + A * <mrow><mo>[</mo><mtable><mtr><mtd><mi>z</mi></mtd></mtr><mtr><mtd><mi>...</mi></mtd></mtr><mtr><mtd><mi>w</mi></mtd></mtr></mtable><mo>]</mo></mrow></math></br>
 <math>A * (k * <mrow><mo>[</mo><mtable><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>...</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable><mo>]</mo></mrow>) = k * x * (c, ..., d) + ... + k * y * (e, ..., f) = x * (k * c, ..., k * d) + y * (k * e, ..., k * f) = (k * A) * <mrow><mo>[</mo><mtable><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>...</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable><mo>]</mo></mrow></math>
 <p>
-Généralement, l'image de cette application est nommé "espace colonne" de la matrice.
+Généralement, l'image de cette application est nommée "espace colonne" de la matrice.
 Immédiatement, <span class="important">on peut voir que les colonnes de la matrice sont une famille génératrice de l'image de l'application que représente la matrice</span>.
 </p>
 <math>A = <mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd><mtd><mi>2</mi></mtd></mtr><mtr><mtd><mi>3</mi></mtd><mtd><mi>4</mi></mtd></mtr></mtable><mo>]</mo></mrow></math></br>
@@ -830,12 +840,19 @@ Dans ce cas, <span class="important">sa transposée représente une modification
 <p>
 En algèbre linéaire, il existe un moyen de construire une matrice en utilisant une application linéaire.
 En effet, <span class="important"><definition name="matrix-application"></span>.
-Déjà, pour comprendre cette définition, nous devons avoir en tête un résultat primordial : pour tous vecteurs, ses coordonnées dans une base "b" de taille "n" peut s'écrire comme une matrice ligne ou une matrice colonne où le nombre de sa dimension qui n'est pas égal à "1" vaut "n".
+Déjà, pour comprendre cette définition, nous devons avoir en tête un résultat primordial : pour tous vecteurs, ses coordonnées dans une base "b" de taille "n" peut s'écrire comme une matrice colonne de dimension "n".
 Ici, une matrice prend les coordonnées d'un vecteur exprimé dans une base de départ, et permet d'obtenir les coordonnées de son image (via une application linéaire précise) dans une base d'arrivée.
 Donc, <span class="important">la matrice représente un moyen de modifier correctement les coordonnées de départ en les coordonnées d'arrivée, en sachant la base de départ, d'arrivée et l'application linéaire auquelle elle correspond</span>.
 Généralement, une matrice de ce type est notée avec un nom, sa base de départ et sa base d'arrivée (en indice) puis (entre parenthèse) l'application linéaire qu'elle représente.
 </p>
 <math><mi>M</mi><msub>b, c</msub>(f)</math>
+<p>
+Chose intéressante : <span class="important">notre matrice ici à la même largeur que la taille de la base de départ "b", et la même hauteur que la taille de la base d'arrivée "c"</span>.
+Elle représente donc une application linéaire entre un espace de matrice colonne de taille "b" et un espace de matrice colonne de taille "c".
+Par isomorphisme, on obtient qu'elle représente donc aussi une application linéaire entre un l'espace vectoriel usuel de "K exposant b" et l'espace vectoriel usuel de "K exposant c", et donc (toujours par isomorphisme) d'un espace vectoriel de dimension "b" vers un espace vectoriel de dimension "c".
+On peut donc lier la dimension de la matrice à la dimension de l'espace de départ et d'arrivée.
+Cela n'est vrai que parce les colonnes représentent une base, et est donc libre.
+</p>
 <p>
 Ici, nous allons essayer de faire une chose précise : construire intuitivement ce genre de matrice, pour comprendre comment elles fonctionnent.
 Commençons par le cas le plus simple : passer de coordonnées d'un vecteur base quelconque aux coordonnées dans la base canonique.
@@ -879,29 +896,12 @@ Nous avons présenté nos coordonnées de départ comme une matrice colonne, et 
 Finalement, nous avons dans nos cases en bas à droite les coordonnées du vecteur recherché, sous la forme d'une matrice ligne.
 Graphiquement parlant, pour une case du vecteur recherché en bas à droite, obtenir sa valeur revient à prendre une à une les valeurs de sa ligne dans la partie bleue, de faire les produits avec l'élément d'indice l'élément actuellement traitée dans la ligne de la partie bleue, et de tous les sommer.
 En fait, <span class="important">il s'agit simplement du produit matriciel d'une matrice constituée des éléments de la base (en colonne) par la matrice représentant les coordonnée de départ, donnant la matrice coordonnées d'arrivée</span>.
-C'est exactement le calcul que nous avons fait.
+D'ailleurs, cette matrice est aussi large que haute (conséquence du fait que toutes les bases ont la même taille), et les colonnes représentent une base (et pas qu'une famille génératrice) de l'espace colonne : <span class="important">elle représente un automorphisme linéaire</span>.
 </p>
-<p>
-Chose intéressante : <span class="important">notre matrice ici à la même largeur que la taille de la base de départ "b", et la même hauteur que la taille de la base d'arrivée "c"</span>.
-Elle représente donc une application linéaire entre un espace de matrice ligne de taille "b" et un espace de matrice ligne de taille "c".
-Par isomorphisme, on obtient qu'elle représente donc aussi une application linéaire entre un l'espace vectoriel usuel de "K exposant b" et l'espace vectoriel usuel de "K exposant c", et donc (toujorus par isomorphisme) d'un espace vectoriel de dimension "b" vers un espace vectoriel de dimension "c".
-On peut donc lier la dimension de la matrice à la dimension de l'espace de départ et d'arrivée.
-</p>
-
-
-
-
-
-
-
-
-
-
-
-
 <p>
 Tentons l'opération inverse : trouver les coordonnées dans une base donnée de vecteurs de coordonnées dans la base canonique.
 Encore une fois, <span class="important">ce passage représente l'application linéaire identité de l'espace vectoriel de départ, en changeant juste la base (base canonique vers base donnée, qui représente donc l'écriture du vecteur dans la base donnée)</span>.
+Donc, il ne s'agira que d'un simple changement de base.
 Pour rappel, si nous nommons notre base donnée "b", chaque valeur du vecteur "v" peut s'écrire :
 </p>
 <math><mi>v</mi><msub>i</msub> = <msum from=1 to=n unknown=k><mi>a</mi><msub>k</msub>(<mi>b</mi><msub>k</msub>)<msub>i</msub></math>
@@ -923,6 +923,7 @@ Nous pouvons donc écrire "v" comme une combinaison linéaire de vecteurs de "c"
 <p>
 Avec ça, la conversion "base canonique" - "b" est assurée.
 Comme pour plus haut, <span class="important">on peut écrire ce type de calcul avec une nouvelle matrice, non plus composer des éléments de "b", mais composer des éléments de "c"</span>.
+D'ailleurs, cette matrice est aussi large que haute (conséquence du fait que toutes les bases ont la même taille), et les colonnes représentent une base (et pas qu'une famille génératrice) de l'espace colonne : <span class="important">elle représente un automorphisme linéaire</span>.
 </p>
 <table>
 
@@ -949,10 +950,27 @@ Comme pour plus haut, <span class="important">on peut écrire ce type de calcul 
 Ici, nous avons construit un type très précis de matrice : des matrices de changement de base.
 <span class="important"><definition name="matrix-basis"></span>.
 Ces matrices représentent donc l'application identité, dans des bases différentes d'un même espace vectoriel.
-De plus, <span class="important">comme deux bases d'un même espace vectoriel génère le même espace vectoriel, ont a donc une application allant de l'espace de départ vers l'espace de départ : il s'agit donc d'une bijection, et donc d'un automorphisme linéaire</span>.
+Comme vue plus haut, ce type de matrice sont en plus des automorphismes linéaires.
+Intuitivement parlant, <span class="important">comme deux bases d'un même espace vectoriel génère le même espace vectoriel, ont a donc une application allant de l'espace de départ vers l'espace de départ : il s'agit donc d'une bijection linéaire d'un espace vers lui même, et donc d'un automorphisme linéaire</span>.
 Par exemple, dans "R²", la matrice passant de la base "(1, 0), (1, 1)" à la base canonique serait :
 </p>
 <math>A = <mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd><mtd><mi>1</mi></mtd></mtr><mtr><mtd><mi>0</mi></mtd><mtd><mi>1</mi></mtd></mtr></mtable><mo>]</mo></mrow></math>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <p>
 Finalisons cette construction intuitive, avec un exemple plus global.
@@ -1090,7 +1108,7 @@ Pour que cela marche sans problèmes, il faut que que l'ensemble de départ de l
 </table>
 <p>
 Ici, on peut voir que notre nouvelle matrice semble être une matrice d'une autre application linéaire.
-En fait, <span class="important">on peut prouver que cette nouvelle matrice représente la matrice associée à l'application linéaire de la composée des deux applications linéaires de départ</span> (<a href="demo#4_1_0_3">démontré ici</a>).
+En fait, <span class="important">on peut prouver que cette nouvelle matrice représente la matrice associée à l'application linéaire de la composée des deux applications linéaires de départ</span> (<a href="demo#4_1_0_4">démontré ici</a>).
 </p>
 <math><mi>Mat</mi><msub>b, d</msub>(f <mcomp> g) = <mi>Mat</mi><msub>b, c</msub>(f) * <mi>Mat</mi><msub>c, d</msub>(g)</math>
 
@@ -1178,8 +1196,30 @@ Cependant, nous allons pouvoir commencer sérieusement à s'y pencher, grâce au
 <p>
 Commençons par définir le concept de produit scalaire.
 <span class="important"><definition name="inner_product"></span>.
-Cette définition peut sembler similaire à celle de la distance entre deux vecteurs, mais elle offre une information en plus.
-
+Ici, il nous faire définir chaque terme de la définition, pour bien la comprendre.
+Première, il s'agit d'une forme bilinéaire, concept qu'on a déja défini plus haut.
+En gros, si nous définissons le produit scalaire de 2 vecteurs "x" et "y" comme l'image d'une application "f", on peut écrire :
+</p>
+<math>f : E * E <mto> K</math></br>
+<math>f(x + x', y) = f(x, y) + f(x', y)</math></br>
+<math>f(x, y + y') = f(x, y) + f(x, y')</math></br>
+<math>f(a * x, y) = f(x, a * y) = a * f(x, y)</math>
+<p>
+Deuxième, elle est symétrique.
+Ici, <span class="important">comme pour tout opérateur algébrique, dire que le produit scalaire est symétrique équivaut à dire que le produit de "x" et "y" est le même que celui de "y" et "x" (le sens n'a pas d'importance)</span>.
+Cela veut dire que nous pouvons écrire :
+</p>
+<math>f(x, y) = f(y, x)</math>
+<p>
+Finalement, elle est définie positive.
+Cependant, il faut savoir que ici, les mots "définie" et "positive" sont un peu bizarre dans le cas des formes linéaires.
+Déjà, <span class="important">dire que le produit est positif équivaut à dire que si vous opérez un élément avec lui même, le résultat sera positif ou nul</span>.
+Finalement, <span class="important">si le produit est définie, alors cela veut dire que si vous opérez un élément avec lui même et que le résultat vaut le nul du corps, alors cela veut dire que cet élément vaut le nul de l'espace vectoriel</span>.
+En fait, dire que le produit est positif, puis définie revient à dire :
+</p>
+<math>f(x, x) <mgtequal> 0, f(x, x) = 0 <mimp> x = 0</math>
+<p>
+Bon, ici, on peut se demander à quoi va nous servir ce produit.
 </p>
 <p>
 Déjà, <span class="important"><definition name="inner_product_space"></span>.

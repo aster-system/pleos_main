@@ -122,7 +122,7 @@
     <content>un espace de Hilbert est un espace pré-hilbertien qui est topologiquement complet</content>
 </new_definition>
 <new_definition name="inner_product">
-    <content>un produit scalaire est une opération sur un espace vectoriel, prenant deux vecteurs de l'espace et donnant comme résultat un scalaire du corps de l'espace vectoriel</content>
+    <content>un produit scalaire est une opération bilinéaire, symétrique et définie positive sur un espace vectoriel, qui prend donc deux vecteurs de l'espace et donnant comme résultat un scalaire positif du corps de l'espace vectoriel</content>
 </new_definition>
 <new_definition name="inner_product_space">
     <content>un espace pré-hilbertien est un espace vectoriel muni d'une opération entre plusieurs vecteurs vers un scalaire, permettant de formaliser le concept "d'angle" dans cet espace</content>
@@ -203,4 +203,8 @@
 </new_definition>
 <new_definition name="imaginary_number">
     <content>un nombre imaginaire est un nombre réel quelconque multiplié à une autre unité que "1" : l'unité "i" (définie comme le nombre dont le carré vaut -1)</content>
+</new_definition>
+
+<new_definition name="chasles_relation">
+    <content name="integral">la relation de Chasles sur les intégrales stipule que pour une fonction "f" Riemann-intégrable sur un intervalle "I", pour tout "a", "b" et "c" dans "I", l'intégrale de "f" entre "a" et "c" représente la somme de l'intégrale de "f" entre "a" et "b" et entre "b" et "c"</content>
 </new_definition>

@@ -20,10 +20,12 @@
     <content name="infimum">la borne inférieure d'une partie "F" d'un ensemble "E" est le plus grand minorant de "F" (et donc le plus grand élément inférieur à tous les éléments de "F")</content>
     <content name="majorant">un majorant d'une partie "F" d'un ensemble "E" est un élément de "E" supérieur à tous les éléments de "F"</content>
     <content name="minorant">un minorant d'une partie "F" d'un ensemble "E" est un élément de "E" inférieur à tous les éléments de "F"</content>
+    <content name="subdivision">une subdivision d'un segment réel est une suite d'éléments de l'intervalle tel que le premier élément est le minimum du segment, le dernier élément est le maximum du segment, et chaque élément de la suite est strictement inférieur à l'élément suivant de la suite</content>
     <content name="supremum">la borne supérieure d'une partie "F" d'un ensemble "E" est le plus petit majorant de "F" (et donc le plus petit élément supérieur à tous les éléments de "F")</content>
 </new_definition>
 <new_definition name="analysis_real_function">
     <content>une fonction réelle est une fonction allant de l'ensemble "R" vers l'ensemble "R"</content>
+    <content name="step">une fonction réelle en escalier est une fonction réelle tel qu'il existe une suite finie d'intervalles ouverts disjoints où la fonction est constante, telle que toutes valeurs de son ensemble de définition (or des valeurs représentant les extrémités des intervalles) appartiennent à une de ces intervalles</content>
 </new_definition>
 <new_definition name="analysis_sequence">
     <content>une suite mathématique est une fonction mathématique allant de "N" à n'importe quel ensemble possible</content>
@@ -73,9 +75,6 @@
 </new_definition>
 <new_definition name="linear_approximation">
     <content>une approximation affine est une approximation du comportement d'une fonction réelle en un point précis</content>
-</new_definition>
-<new_definition name="integration">
-    <content>l'intégration est un moyen d'étudier de manière extrêmement précise l'aire sous les courbes dessinées par des fonctions réelles (entre la courbe de la fonction et l'axe des abscisses)</content>
 </new_definition>
 <new_definition name="interior_extremum_theorem">
     <content>le théorème de Fermat sur les points stationnaires est un théorème qui stipule que si une fonction admet un extremum local en un point (et est dérivable au voisinage de ce point), alors la dérivée de la fonction en ce point est nulle</content>

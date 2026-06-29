@@ -165,3 +165,76 @@ Pour rappel, "t(h)" et "r(h)" tendent vers "0" si "h" tend vers "0", et le reste
 Donc :
 </p>
 <math>s'(a) = g'(j(a)) * j'(a)</math>
+
+
+
+<h2>Le calcul intégral</h2>
+
+<h3 id="basic_property">Propriétés basiques</h3>
+<h4>5.1.0.1</h4>
+<p>
+Démontrons la relation de Chasles concernant les intégrales.
+Considérons une fonction "f" Riemann-intégrable sur un intervalle "[a, c]".
+Déjà, rappelons l'encadrement de l'intégrale entre les fonctions escaliers minimum "l" et maximum "m".
+</p>
+<math><mi><mint></mi><msubsup><mi>a</mi><mi>c</mi></msubsup>l(x) dx <mltequal> <mi><mint></mi><msubsup><mi>a</mi><mi>c</mi></msubsup>f(x) dx <mltequal> <mi><mint></mi><msubsup><mi>a</mi><mi>c</mi></msubsup>m(x) dx</math>
+<p>
+Posons "b" étant un réel appartenant à "[a, c]".
+Déjà, nous savons que "l" et "m" sont des fonctions escaliers, avec chacune une subdivision adaptée sur "[a, c]".
+</p>
+<p>
+Posons une construction précise pour une fonction escalier "d" de subdivision adaptée "[a, c]".
+Pour chacune de ces subdivisions, nous pouvons obtenir des sous-subdivisions "[a, b]" et "[b, c]" de "[a, c]", que nous allons nommer respectivement "S1" et "S2".
+Théoriquement, des fonctions escaliers construites sur "S1" et "S2" où chaque valeur des intervalles dans la subdivision représente la valeur de l'intervalle respectif sur "d" représente une restriction de "d".
+Cependant, nous pouvons à partir des ces sous-subdivisions, construire deux nouvelles subdivisions sur "[a, c]", l'une représentant "S1" puis où nous passons directement de "b" à "c", et l'autre représentant "S2" puis où nous passons directement de "a" à "b".
+Nommons ces deux nouvelles subdivisions "T1" et "T2".
+Avec cela, nous pouvons construire de nouvelles fonctions escalier "u" et "v" avec "T1" et "T2", où l'intervalle "[b, c]" est nulle dans la fonction de "T1", et où l'intervalle "[a, b]" est nulle dans la fonction de "T2".
+Pour les autres valeurs,  chaque valeur des intervalles dans la subdivision représente la valeur de l'intervalle respectif sur "d".
+Donc, la somme de ces deux fonctions donne notre fonction escalier de départ.
+</p>
+<math>d = u + v</math>
+<p>
+Comme "d" est une fonction escalier sur l'intervalle "[a, c]", elle est Riemann-intégrable sur "[a, c]".
+On a donc :
+</p>
+<math><mi><mint></mi><msubsup><mi>a</mi><mi>c</mi></msubsup>d(x) dx = <mi><mint></mi><msubsup><mi>a</mi><mi>c</mi></msubsup>u(x) dx + <mi><mint></mi><msubsup><mi>a</mi><mi>c</mi></msubsup>v(x) dx</math>
+<p>
+Or, comme "u" et "v" sont nulles sur des intervalles précis, ces parties de la fonctions sont nuls dans la somme permettant de donner leur intégrale.
+Donc, on peut écrire :
+</p>
+<math><mi><mint></mi><msubsup><mi>a</mi><mi>c</mi></msubsup>u(x) dx = <mi><mint></mi><msubsup><mi>a</mi><mi>b</mi></msubsup>u(x) dx</math></br>
+<math><mi><mint></mi><msubsup><mi>a</mi><mi>c</mi></msubsup>v(x) dx = <mi><mint></mi><msubsup><mi>b</mi><mi>c</mi></msubsup>v(x) dx</math>
+<p>
+Finalement, on sait que "d" restreinte sur l'intervalle "[a, b]" représente "u", et que "d" restreinte sur l'intervalle "[b, c]" représente "v".
+Donc :
+</p>
+<math><mi><mint></mi><msubsup><mi>a</mi><mi>b</mi></msubsup>d(x) dx = <mi><mint></mi><msubsup><mi>a</mi><mi>b</mi></msubsup>u(x) dx</math></br>
+<math><mi><mint></mi><msubsup><mi>b</mi><mi>c</mi></msubsup>d(x) dx = <mi><mint></mi><msubsup><mi>b</mi><mi>c</mi></msubsup>v(x) dx</math>
+<p>
+Finalement :
+</p>
+<math><mi><mint></mi><msubsup><mi>a</mi><mi>c</mi></msubsup>d(x) dx = <mi><mint></mi><msubsup><mi>a</mi><mi>b</mi></msubsup>d(x) dx + <mi><mint></mi><msubsup><mi>b</mi><mi>c</mi></msubsup>d(x) dx</math>
+<p>
+La relation de Chasles est donc vérifiée dans le cas des fonctions escaliers.
+Utilisons maintenant "l" et "m" pour prouver que la relation de Chasles est vérifiée dans chaque cas.
+Rappelons l'inégalité entre les fonctions minimum, maximim et la fonction de départ.
+</p>
+<math><mi><mint></mi><msubsup><mi>a</mi><mi>b</mi></msubsup>l(x) dx <mltequal> <mi><mint></mi><msubsup><mi>a</mi><mi>b</mi></msubsup>f(x) dx <mltequal> <mi><mint></mi><msubsup><mi>a</mi><mi>b</mi></msubsup>m(x) dx</math></br>
+<math><mi><mint></mi><msubsup><mi>b</mi><mi>c</mi></msubsup>l(x) dx <mltequal> <mi><mint></mi><msubsup><mi>b</mi><mi>c</mi></msubsup>f(x) dx <mltequal> <mi><mint></mi><msubsup><mi>b</mi><mi>c</mi></msubsup>m(x) dx</math></br>
+<p>
+Nous pouvons sommer ces deux inégalités.
+</p>
+<math><mi><mint></mi><msubsup><mi>a</mi><mi>b</mi></msubsup>l(x) dx + <mi><mint></mi><msubsup><mi>b</mi><mi>c</mi></msubsup>l(x) dx <mltequal> <mi><mint></mi><msubsup><mi>a</mi><mi>b</mi></msubsup>f(x) dx + <mi><mint></mi><msubsup><mi>b</mi><mi>c</mi></msubsup>f(x) dx <mltequal> <mi><mint></mi><msubsup><mi>a</mi><mi>b</mi></msubsup>m(x) dx + <mi><mint></mi><msubsup><mi>b</mi><mi>c</mi></msubsup>m(x) dx</math></br>
+<p>
+Avec ce que nous avons vue plus haut, comme "l" et "m" sont des fonctions escaliers, on peut noter (pour un pas fixé) :
+</p>
+<math><mi><mint></mi><msubsup><mi>a</mi><mi>c</mi></msubsup>l(x) dx <mltequal> <mi><mint></mi><msubsup><mi>a</mi><mi>b</mi></msubsup>f(x) dx + <mi><mint></mi><msubsup><mi>b</mi><mi>c</mi></msubsup>f(x) dx <mltequal> <mi><mint></mi><msubsup><mi>a</mi><mi>c</mi></msubsup>m(x) dx</br>
+<p>
+Comme nous avons vue, si nous faisons tendre le "pas" vers "0", les fonctions "l" et "m" changent, et la valeur de leur intégrale après passage à la limite vaut donc la somme de celle de "f" entre "a" et "b" et entre "b" et "c".
+Donc :
+</p>
+<math><mlim unknown=p value=0><mi><mint></mi><msubsup><mi>a</mi><mi>c</mi></msubsup>l(x) dx = <mlim unknown=p value=0><mi><mint></mi><msubsup><mi>a</mi><mi>c</mi></msubsup>m(x) dx = <mi><mint></mi><msubsup><mi>a</mi><mi>b</mi></msubsup>f(x) dx + <mi><mint></mi><msubsup><mi>b</mi><mi>c</mi></msubsup>f(x) dx = <mi><mint></mi><msubsup><mi>a</mi><mi>c</mi></msubsup>f(x) dx</br>
+<p>
+Donc, nous avons l'égalité prouvée.
+Donc, les intégrales sont bel et bien soumises à une relation de Chasles.
+</p>
