@@ -199,9 +199,25 @@ Il existe d'ailleurs autant de base qu'il existe de famille de vecteur libre et 
 <math>f = (<mi>u</mi><msub>1</msub>, <mi>u</mi><msub>2</msub>, ..., <mi>u</mi><msub>n</msub>) <min> <mi>E</mi><msup>n</msup></math></br>
 <math><mforall> v <min> E, <mexists>(<mi>a</mi><msub>1</msub>, <mi>a</mi><msub>2</msub>, ..., <mi>a</mi><msub>n</msub>) <min> <mi>K</mi><msup>n</msup>, v = <mi>a</mi><msub>1</msub> * <mi>u</mi><msub>1</msub> + <mi>a</mi><msub>2</msub> * <mi>u</mi><msub>2</msub> + ... + <mi>a</mi><msub>n</msub> * <mi>u</mi><msub>n</msub> </math>
 <p>
-Avec cela, nous allons "déterrer" un concept géométre que nous avons traité au chapitre 3 : les coordonnées.
+Avec les bases, on peut définir un des concepts les plus importants des espaces vectoriels : la dimension.
+<span class="important"><definition name="vector_space_dimension"></span>.
+En effet, <span class="important">toutes les bases d'un espace vectoriel quelconque ont le même cardinal (la même taille)</span>.
+En réalité, ce résultat n'est pas si facile à démontrer : il demande l'utilisation d'un lemme, nommé lemme de Steinitz (<a href="demo#4_1_0_0">démontré ici</a>), qui permet d'en déduire ce théorème (<a href="demo#4_1_0_1">démontré ici</a>).
+</p>
+<math>f = (<mi>u</mi><msub>1</msub>, <mi>u</mi><msub>2</msub>, ..., <mi>u</mi><msub>n</msub>) <min> <mi>E</mi><msup>n</msup></math></br>
+<math>g = (<mi>v</mi><msub>1</msub>, <mi>v</mi><msub>2</msub>, ..., <mi>v</mi><msub>m</msub>) <min> <mi>E</mi><msup>n</msup></math></br>
+<math>Vect(f) = Vect(g) = E <mequi> n = m</math>
+<p>
+Ici, bien que nous considérons "E" entier, <span class="important">une conséquence de ce théorème stipule que si "f" et "g" sont deux familles libres qui ne génèrent pas "E" entier, mais un sous-espace vectoriel "F" de "E" (et qu'elles génèrent le même, bien évidément), alors "m = n"</span>.
+Pareil, ce théorème s'obtient en restreignant "E" au sous-espace vectoriel engendré : "f" et "g" en sont deux bases, et ont donc le même cardinal.
+Cependant, dans ce cas, <span class="important">la réciproque est fausse, on peut trouver des familles "f" et "g" de même dimensions qui ne génère pas le même sous-espace vectoriel de "E"</span>.
+De manière parfaitement logique, cela s'explique par le fait que passer à un sous-espace vectoriel requiert une implication dans le raisonnement ("F est un sous-espace vectoriel" implique que "toute base de "F ont le même cardinal", mais la réciproque de cette proposition ne veut rien dire), cassant l'équivalence (puisque l'on part d'un plus gros espace vectoriel, demandant de passer à un autre : le sous-espace vectoriel).
+</p>
+<math>Vect(f) = Vect(g) = F <mimp> n = m</math>
+<p>
+Avec cela, nous allons "déterrer" un concept géométrique que nous avons traité au chapitre 3 : les coordonnées.
 En effet, en algèbre linéaire, <span class="important">les coordonnées d'un vecteur quelconque dans une base quelconque représentent les valeurs des scalaires à multiplier à chaque élément de la base pour obtenir le vecteur recherché</span>.
-En d'autres termes, il s'agit des scalaires dans la combinaisons linéaire permettant de forme le vecteur de départ via cette base.
+En d'autres termes, il s'agit des scalaires dans la combinaisons linéaire permettant de former le vecteur de départ via cette base.
 Ici, les coordonnées dépendent évidemment du vecteur, mais aussi de la base choisie.
 Généralement, <span class="important">les coordonnées d'un vecteur "v" dans une base "b" se note "v indice b"</span>.
 Prenons un exemple simple dans "R2" : une base "B" représentant la base canonique, et la base "C" représentant une autre base.
@@ -215,7 +231,7 @@ Par exemple, trouvons les vecteurs de coordonnées "(4, 3)" dans la base "B" et 
 <math><mi>v</mi><msub>2</msub> = 5 * (1, 1) + 1 * (0, 1) = (5, 6)</math></br>
 <p>
 Faisons l'opération inverse : <span class="important">trouver les coordonnées associées à un vecteur donné dans une certaine base</span>.
-Il est très facile de trouver les expressions des vecteurs "(1, 0)" et "(1, 1)" dans la base canonique : il s'agit de "(1, 0)" et "(1, 1)".
+Il est très facile de trouver les coordonnées des vecteurs "(1, 0)" et "(1, 1)" dans la base canonique : il s'agit de "(1, 0)" et "(1, 1)".
 </p>
 <math><mi>(1, 0)</mi><msub>B</msub> = <mi>(1, 0)</mi>, <mi>(1, 1)</mi><msub>B</msub> = <mi>(1, 1)</mi></math></br>
 <p>
@@ -241,27 +257,17 @@ Ou, avec chaque élément de "v" un à un :
 <math><mi>v</mi><msub>i</msub> = <msum from=1 to=n unknown=k><mi>a</mi><msub>k</msub>(<mi>b</mi><msub>k</msub>)<msub>i</msub></math></br>
 <p>
 Un (autre) exemple dans "R2" est présent <a href="demo#4_1_0_2">juste ici</a>.
-Ici, on sait que des coordonnées dans un espace de dimension fini "n" représentent donc "n" scalaires.
-Donc, <span class="important">l'ensemble des coordonnées possibles dans une base d'un espace vectoriel sur un corps "K" de dimension "n" représentent le produit cartésien de "K", "n" fois</span>.
+Cependant, notre exemple pose problème : dans "R²", un vecteur s'écrit "(a, b)", et des coordonnées dans une base s'écrivent "(x, y)" : de la même façon.
+C'est pour cela qu'il faut toujours préciser avec quel type d'objet on travaille : vecteur ou coordonnées.
+Dans ce cas, cela peut sembler un peu inutile, puisque les simples vecteurs de "R²" sont suffisants.
+Or, <span class="important">dans le cas d'espaces vectoriels bien plus complexes, utiliser des coordonnées peut s'avérer obligatoire dans beaucoup de cas, ce qui explique leur importance</span>.
+<p>
+</p>
+Ici, on sait que des coordonnées dans un espace de dimension quelconque (pas forcément fini) "d" représentent donc "d" scalaires (un nombre fini, voir une infinité).
+Donc, <span class="important">l'ensemble des coordonnées possibles dans une base d'un espace vectoriel sur un corps "K" de dimension "n" représentent le produit cartésien de "K", "d" fois</span>.
 De plus, <span class="important">on peut en déduire que l'ensemble des coordonnées dans une base forme un espace vectoriel sur "K" lui aussi</span>.
-La démonstration est immédiate : la somme des coordonnées de deux vecteurs donne les coordonnées du vecteur représentant la somme des vecteurs (stabilité de la somme), et multiplier les coordonnées par un scalaire donne les coordonnées du vecteur multiplié par ce même scalaire. 
+Dans le cas où "d" est fini, la démonstration est immédiate : la somme des coordonnées de deux vecteurs donne les coordonnées du vecteur représentant la somme des vecteurs (stabilité de la somme), et multiplier les coordonnées par un scalaire donne les coordonnées du vecteur multiplié par ce même scalaire.
 </p>
-<p>
-Avec les bases, on peut définir un des concepts les plus importants des espaces vectoriels : la dimension.
-<span class="important"><definition name="vector_space_dimension"></span>.
-En effet, <span class="important">toutes les bases d'un espace vectoriel quelconque ont le même cardinal (la même taille)</span>.
-En réalité, ce résultat n'est pas si facile à démontrer : il demande l'utilisation d'un lemme, nommé lemme de Steinitz (<a href="demo#4_1_0_0">démontré ici</a>), qui permet d'en déduire ce théorème (<a href="demo#4_1_0_1">démontré ici</a>).
-</p>
-<math>f = (<mi>u</mi><msub>1</msub>, <mi>u</mi><msub>2</msub>, ..., <mi>u</mi><msub>n</msub>) <min> <mi>E</mi><msup>n</msup></math></br>
-<math>g = (<mi>v</mi><msub>1</msub>, <mi>v</mi><msub>2</msub>, ..., <mi>v</mi><msub>m</msub>) <min> <mi>E</mi><msup>n</msup></math></br>
-<math>Vect(f) = Vect(g) = E <mequi> n = m</math>
-<p>
-Ici, bien que nous considérons "E" entier, <span class="important">une conséquence de ce théorème stipule que si "f" et "g" sont deux familles libres qui ne génèrent pas "E" entier, mais un sous-espace vectoriel "F" de "E" (et qu'elles génèrent le même, bien évidément), alors "m = n"</span>.
-Pareil, ce théorème s'obtient en restreignant "E" au sous-espace vectoriel engendré : "f" et "g" en sont deux bases, et ont donc le même cardinal.
-Cependant, dans ce cas, <span class="important">la réciproque est fausse, on peut trouver des familles "f" et "g" de même dimensions qui ne génère pas le même sous-espace vectoriel de "E"</span>.
-De manière parfaitement logique, cela s'explique par le fait que passer à un sous-espace vectoriel requiert une implication dans le raisonnement ("F est un sous-espace vectoriel" implique que "toute base de "F ont le même cardinal", mais la réciproque de cette proposition ne veut rien dire), cassant l'équivalence (puisque l'on part d'un plus gros espace vectoriel, demandant de passer à un autre : le sous-espace vectoriel).
-</p>
-<math>Vect(f) = Vect(g) = F <mimp> n = m</math>
 <p>
 Il existe d'ailleurs une opération possible avec des sous-espaces vectoriels : la somme directe.
 Cet opération est inspirée de la somme des semi-groupes (qui est d'ailleurs possible ici, puisque les espaces vectoriels sont aussi des semi-groupes).
@@ -368,6 +374,12 @@ La démonstration de son équivalence est très simple :
 Comme pour tout morphisme, <span class="important">il existe des applications linéaires qui sont des endomorphismes (dit linéaires), des isomorphismes (toujours linéaires) et des automorphismes (encore... linéaires)</span>.
 </p>
 <p>
+Comme pour tout morphisme, <span class="important">la composition de deux applications linéaire forme une nouvelle application linéaire</span>.
+La démonstration s'obtient très facilement avec quelques calculs.
+</p>
+<math>h(a + b) = f(g(a + b)) = f(g(a) + g(b)) = f(g(a)) + f(g(b)) = h(a) + h(b)</math></br>
+<math>h(k * a) = f(g(k * a)) = f(k * g(a)) = k * f(g(a)) = k * h(a)</math></br>
+<p>
 Prenons un exemple très simple : l'application allant de "R²" vers "R²", en transformant "(x, y)" en "(2 * x, 2 * y)".
 Cette application est parfaitement linéaire, et on peut facilement le démontrer.
 Déjà, la première propriété est respectée, et l'on peut le vérifier de manière algébrique.
@@ -401,6 +413,7 @@ Pour prouver l'isomorphisme, on a juste à trouver l'application réciproque (qu
 <math>a = (<mi>a</mi><msub>1</msub>, <mi>a</mi><msub>2</msub>, ..., <mi>a</mi><msub>n</msub>), f(g(a)) = f(<msum from=1 to=n unknown=k><mi>a</mi><msub>k</msub><mi>e</mi><msub>k</msub>) = a</math>
 <p>
 Avec ça, on peut prouver quelque chose de très pratique : <span class="important">tout espace vectoriel de dimension finie "n" sur un corps "K" est isomorphe à "K exposant n"</span>.
+Donc, <span class="important">tout espace vectoriel a les mêmes propriétés que "R exposant n"</span>.
 </p>
 <p>
 Ici, <span class="important">l'ensemble des morphismes allant de "E" vers "F" est noté "L(E, F)", et est un sous-ensemble de l'ensemble des applications allant de "E" vers "F"</span>.
@@ -418,10 +431,16 @@ De plus, démontrons que "(f + g)" est linéaire, et que "(a * f)" aussi, et don
 <math>(a * f)(b * x) = a * f(b * x) = a * b * f(x) = b * a * f(x) = b * (a * f)(x)</math></br>
 <math>(a * f)(x + y) = a * f(x + y) = a * f(x) + a * f(y) = (a * f)(x) + (a * f)(y)</math></br>
 <p>
+Il existe un résultat similaire avec les isomorphismes.
+En effet, <span class="important">la composition d'isomorphismes donne un nouvel isomorphisme</span>.
+La démonstration est immédiate : la composition de deux morphismes donne un morphisme, et la composition de deux bijections donne une bijection (et, pour rappel, dire qu'une application est un isomorphisme linéaire revient à dire qu'elle est un morphisme bijectif).
+Donc, la composition d'isomorphisme linéaire est bel et bien un isomorphisme linéaire.
+</p>
+<math><mforall>f, g <min> Isom(E, F), f <mcomp> g <min> Isom(E, F)</math>
+<p>
 Un résultat intéressant avec les applications linéaires concerne les bases d'espaces vectoriels.
 En effet, <span class="important">l'image d'une base de l'espace vectoriel de départ par une application linéaire représente une famille de vecteurs qui engendre l'image de l'application dans l'espace vectoriel d'arrivé</span>.
 La démonstration de ce théorème (<a href="demo#4_1_1_1">présente ici</a>) utilise les résultats basiques de linéarité.
-D'ailleurs, <span class="important">selon le théorème de la dimension, si l'image de l'application dans l'espace d'arrivée est de dimension inférieure ou égale à celle de l'espace de départ, alors l'image de la base génère tout l'espace d'arrivée, et si ils ont les mêmes dimensions, alors l'image de la base est une base de l'espace d'arrivée</span>.
 </p>
 <p>
 Un type d'application linéaire un peu spécial est la forme linéaire.
@@ -431,8 +450,7 @@ Elle doit cependant respecter une propriété précise : elle doit être linéai
 <math>f : E <mto> K, v <mto> f(v)</math></br>
 <math>f(v + u) = f(v) + f(u) <mand> f(k * v) = k * f(v)</math>
 <p>
-Ici, <span class="important">un exemple de forme linéaire est la somme de tous les éléments des coordonnées dans une base de vecteurs de l'espace de départ</span>.
-Comme l'espace vectoriel et les coordonnées des vecteurs dans cet espace vectoriel sont isomorphes, on en déduit directement qu'une application de ce genre (allant de l'espace de départ au corps de départ) est aussi une forme linéaire, possiblement plus dure à expliciter.
+Ici, <span class="important">un exemple de forme linéaire est la somme de tous les éléments des coordonnées dans une base fixe de vecteurs de l'espace de départ</span>.
 Il est assez facile de le démontrer.
 Pour un vecteur "u" où les coefficients de ces coordonnées s'écrivent "u indice n", et où les "b indice n" représentent les éléments de la base :
 </p>
