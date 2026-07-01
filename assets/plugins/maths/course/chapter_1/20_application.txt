@@ -23,14 +23,31 @@ De plus, le principe d'une relation est de savoir quels sont les éléments lié
 Finalement, nous savons qu'il est possible que plusieurs couples donnent des propositions justes.
 Donc, <span class="important">il est possible de définir une relation binaire comme le sous-ensemble du produit cartésien entres les deux ensembles, tel que tous les couples dans ce sous-ensemble forment des propositions vraie via cette relation</span>.
 En fait, savoir si une relation binaire est vraie entre plusieurs éléments équivaut à savoir si le couple de ces éléments appartient au sous-ensemble du produit cartésien représentant la relation.
-Généralement, pour toute relation binaire que nous définissons, nous lui attribuons un symbôle précis, et nous définissons une proposition entre deux élément "x" et "y" en les notant à gauche et à droite du symbole.
-Nous disons donc que la proposition est vraie si le couple formé (dans l'ordre) de l'élément à gauche, puis à droite du symbole appartient au sous-ensemble du produit cartésien qui définit la relation.
+Généralement, pour toute relation binaire que nous définissons, nous lui attribuons un symbôle précis, et nous notons une proposition (ou un prédicat) entre deux élément "x" et "y" en les notant à gauche et à droite du symbole.
+Ici, il s'agit d'une proposition si l'on note des objets fixés, et un prédicat si l'on note des objets indéterminés.
+Dans le cas d'une proposition, nous disons donc que la proposition est vraie si le couple formé (dans l'ordre) de l'élément à gauche, puis à droite du symbole appartient au sous-ensemble du produit cartésien qui définit la relation.
+Dans le cas d'un prédicat, tout dépend de ce que vous pouvez déduire via cette relation.
 Pour une relation de sous-ensemble du produit cartésien "R" et de symbole "~", on note.
 </p>
 <math>R <mincluded> E X F</math></br>
 <math><mforall>x <min> E, <mforall> y <min> F, x ~ y <mequi> (x, y) <min> R</math>
 <p>
-Cette définition pose un problème : il existe des objets infiniment proche de cette définition, mais qui n'en font pas partie, car les objets liés entre eux ne font pas partie d'un ensemble quelconque.
+Cependant, <span class="important">nous connectons ici 2 éléments, mais il est aussi possible d'en connecter plus de deux</span>.
+Pour cela, nous avons besoin d'une propriété précise : l'arité.
+<span class="important"><definition name="arity-relation"></span>.
+Si une relation est d'arité "n", elle lie donc "n" ensembles.
+Par exemple, une relation géométrique "les points A, B, C et D forment un carré" est une relation d'arité 4, reliant 4 fois l'ensemble de tous les points possibles dans un plan géométrique.
+Ici, nous ne pouvons cependant pas utiliser qu'un simple symbole entre deux éléments pour noter cette relation.
+Hors, <span class="important">une des façons possibles est de choisir une lettre, et de noter la proposition / le prédicat formé par la relation avec cette lettre, et les objets entre parenthèses séparés par des virgules à droite de cette lettre</span>.
+Pour une relation prenant 3 éléments (dite "ternaire"), on note :
+</p>
+<math>r(x, y, z)</math>
+<p>
+Si nous notons "X" l'ensemble contenant ces "n" ensembles, une relation de plusieurs éléments est donc défini par un sous-ensemble du produit cartésien de tous les éléments de "X".
+</p>
+<math>R <mincluded> <mproduct>X</math>
+<p>
+Cette définition pose un problème : il existe des objets infiniment proches de cette définition, mais qui n'en font pas partie, car les objets liés entre eux ne font pas partie d'un ensemble quelconque.
 C'est le cas de la relation d'appartenance "un élément a appartient à un ensemble E", où il n'existe pas vraiment "d'ensemble" généralisant en même temps le concept d'élément et d'ensemble.
 Pour éviter ce problème, nous allons dire que, dans ce cas précis, on ne parle pas d'ensemble, mais de classe (il existe une classe contenant tous les ensembles et éléments possibles).
 Pour tout le reste, la définition avec les ensembles fonctionne.
@@ -49,31 +66,24 @@ Pour tout le reste, la définition avec les ensembles fonctionne.
 </table>
 
 <p>
-<span class="important">Le concept de relation est donc un moyen "syntaxique" d'énoncer des proprositions facilement</span>.
-Comme tout objet "syntaxique", <span class="important">la chose la plus importante avec ces relations est la façon dont on l'écrit, mais aussi les propriétés possibles via cette simple écriture</span>.
-Commençons par une propriété simple : l'arité.
-<span class="important"><definition name="arity-relation"></span>.
-Dans de très nombreux cas, la relation est dite binaire.
-<span class="important"><definition name="relation_binary"></span>.
-Cependant, avec un peu de réflexion, on peut facilement énumérer des relations d'arité aussi grande que l'on veut.
+Définissons rigoureusement une première relation : la relation d'inclusion.
+<span class="important">La relation d'inclusion est une relation entre deux éléments d'un même ensemble : l'ensemble des parties d'un ensemble</span>.
+<span class="important">Ici, la relation permet de donner une proposition vraie si le premier élément est inclut dans l'autre</span>.
+Nous avons déjà vue le symbole de cette relation dans la partie de ce cours sur la théorie des ensembles, ainsi qu'une façon de la définir.
 </p>
-
-<table>
-
-<case_plus x=0 y=0>Arité :</case_plus>
-<case_plus x=0 y=1>1</case_plus>
-<case_plus x=0 y=2>2</case_plus>
-<case_plus x=0 y=3>3</case_plus>
-
-<case_plus x=1 y=0>Relation</case_plus>
-<case_plus x=1 y=1>"Le nombre n est pair"</case_plus>
-<case_plus x=1 y=2>"Le nombre n est inférieur au nombre m"</case_plus>
-<case_plus x=1 y=3>"L'ensemble A contient un ensemble B contenant l'ensemble C"</case_plus>
-
-</table>
-
+<math><math><mforall>a, b, a <mincluded> b <mequi> <mforall> x, (x <min> a <mimp> x <min> b)</math></math>
 <p>
-L'une des propriétés possibles d'une relation est la totalité.
+Chose importante : <span class="important">il est en réalité extremement rare de définir une relation via le sous-ensemble du produit cartésien qu'elle représente</span>.
+Comme pour beaucoup d'objets, la définition avec le produit cartésien est juste un moyen de définir rigoureusement cet objet.
+En fait, <span class="important">on définit généralement une relation en disant que, si des éléments sont en relation, alors cela équivaut à une propriété autre</span>.
+Pour que cette définition marche, il faut que, pour tout élément des ensembles associés, nous pouvons tout le temps savoir si la propriété est vraie ou pas.
+On en déduit immédiatement qu'il est possible d'en déduire ce fameux sous-ensemble du produit cartésien entre ces ensembles.
+De plus, <span class="important">on en déduit qu'il est aussi possible de noter ce sous-ensemble par compréhension</span>.
+Dans le cas d'une relation binaire, on peut noter :
+</p>
+<math>R = {(x, y) <min> E * F, P(x, y)}, (a, b) <min> R <mequi> a ~ b</math>
+<p>
+L'une des propriétés possibles d'une relation binaire est la totalité.
 <span class="important"><definition name="relation-totality"></span>.
 En d'autres termes, la totalité traduit cette propriété :
 </p>

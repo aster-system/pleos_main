@@ -396,7 +396,12 @@ Effectivement, <span class="important">on peut facilement montrer que toutes app
 Ce résultat <a href="demo#4_1_1_0">est démontré ici</a>, et est très similaire à la démonstration que nous venons juste de voir.
 </p>
 <p>
-Un autre exemple d'application linéaire concerne les coordonnées.
+Un résultat intéressant avec les applications linéaires concerne les bases d'espaces vectoriels.
+En effet, <span class="important">l'image d'une base de l'espace vectoriel de départ par une application linéaire représente une famille de vecteurs qui engendre l'image de l'application dans l'espace vectoriel d'arrivé</span>.
+La démonstration de ce théorème (<a href="demo#4_1_1_1">présente ici</a>) utilise les résultats basiques de linéarité.
+</p>
+<p>
+Un exemple particulièrement pratique d'application linéaire concerne les coordonnées.
 En effet, <span class="important">l'application allant d'un espace vectoriel quelconque de dimension finie "n" à l'espace des coordonnées dans une base de cet espace vectoriel est un isomorphisme linéaire</span>.
 L'expression de cette application est assez simple :
 </p>
@@ -437,11 +442,6 @@ La démonstration est immédiate : la composition de deux morphismes donne un mo
 Donc, la composition d'isomorphisme linéaire est bel et bien un isomorphisme linéaire.
 </p>
 <math><mforall>f, g <min> Isom(E, F), f <mcomp> g <min> Isom(E, F)</math>
-<p>
-Un résultat intéressant avec les applications linéaires concerne les bases d'espaces vectoriels.
-En effet, <span class="important">l'image d'une base de l'espace vectoriel de départ par une application linéaire représente une famille de vecteurs qui engendre l'image de l'application dans l'espace vectoriel d'arrivé</span>.
-La démonstration de ce théorème (<a href="demo#4_1_1_1">présente ici</a>) utilise les résultats basiques de linéarité.
-</p>
 <p>
 Un type d'application linéaire un peu spécial est la forme linéaire.
 <span class="important"><definition name="linear_form"></span>.
