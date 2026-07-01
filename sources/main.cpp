@@ -121,7 +121,7 @@ void scalar_field_2d_colored(scls::Image image, scls::Formula_Base* formula, scl
 }
 
 int main(int argc, char* argv[]) {
-    std::shared_ptr<scls::Formula_Base> function = scls::string_to_algebra_element<scls::Formula_Base>("x*exp((x*x)+(y*y)*-1)");
+    /*std::shared_ptr<scls::Formula_Base> function = scls::string_to_algebra_element<scls::Formula_Base>("x*exp((x*x)+(y*y)*-1)");
 
     scls::Image image = scls::Image(1080, 1920, scls::Color(255, 255, 255));
     scls::Plane_Base p = scls::Plane_Base(200, 200, image.width() / 2, image.height() / 2);
@@ -144,7 +144,7 @@ int main(int argc, char* argv[]) {
 
     //return command(argc, argv);
 
-	/*pleos::Pleos_Window window(900, 600, argv[0]);
+	pleos::Pleos_Window window(900, 600, argv[0]);
     window.load_from_xml("assets/window.txt");
     pleos::Hub_Page* hub = window.hub();
     hub->handle_saasf();
