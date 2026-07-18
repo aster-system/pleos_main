@@ -17,6 +17,9 @@
 <new_definition name="injection">
     <content>une injection est une application mathématique où tous les éléments de l'ensemble de départ sont reliés à au plus 1 objet (soit à 1 objet précisément, soit à aucun objet)</content>
 </new_definition>
+<new_definition name="leibniz_law">
+    <content>la loi de Leibniz est une loi qui énonce que dire que deux objets quelconques "x" et "y" sont égaux équivaut à dire que toutes les propriétés de "x" sont des propriétés de "y", et toutes les propriétés de "y" sont des propriétés de "x" (ils ont donc les exactes mêmes propriétés)</content>
+</new_definition>
 <new_definition name="permutation">
     <content>une permutation (aussi appelé substition dans certains vieux ouvrages) est une bijection où l'ensemble de départ est le même que l'ensemble d'arrivée</content>
     <content name="cyclic">une permutation est dite circulaire si elle permute une partie de l'ensemble de départ en avançant (ou reculant) chaque élément de cette partie (de telle manière que le dernier élément prenne la place du premier élément si besoin), et ne modifie pas les éléments or de cette partie</content>
@@ -27,7 +30,8 @@
 <new_definition name="relation">
     <content>une relation est un objet permettant d'énoncer des propositions entre des éléments appartenant à des ensembles quelconques</content>
     <content name="binary">une relation est dite binaire quand les propositions qu'elle formule contiennent exactement deux éléments</content>
-    <content name="totality">une relation est dite totale si, pour deux éléments quelconques "a" et "b", la relation est vraie dans le sens "a" puis "b" OU dans le sens "b" puis "a"</content>
+    <content name="sub_relation">une sous-relation d'une autre relation "R" est une relation sur les mêmes ensembles que "R", tel que tous les éléments en relations dans la sous-relation le sont aussi dans "R"</content>
+    <content name="totality">une relation sur un ensemble est dite totale si, pour deux éléments quelconques "a" et "b", la relation est vraie dans le sens "a" puis "b" OU dans le sens "b" puis "a"</content>
 </new_definition>
 <new_definition name="sequence">
     <content>une suite mathématique est une fonction mathématique allant de "N" à n'importe quel ensemble possible</content>
@@ -37,16 +41,16 @@
     <content name="relation">l'arité d'une relation est le nombre d'élément que la relation lie entre eux</content>
 </new_definition>
 <new_definition name="relation_antisymmetric">
-    <content>une relation est dite antisymétrique si, pour tout objet "a" et "b", si "a" est en relation avec "b" (dans cet ordre précis) et que "b" est en relation avec "a" (dans cet ordre précis), alors "a" est égal à "b"</content>
+    <content>une relation binaire sur un ensemble est dite antisymétrique si, pour tout objet "a" et "b", si "a" est en relation avec "b" (dans cet ordre précis) et que "b" est en relation avec "a" (dans cet ordre précis), alors "a" est égal à "b"</content>
 </new_definition>
 <new_definition name="relation_binary">
     <content>une relation est dite binaire quand elle est d'arité 2 (et donc, qu'elle lie 2 objets entre eux, comme "3 est inférieur à 7")</content>
 </new_definition>
 <new_definition name="relation_reflexive">
-    <content>une relation est dite réflexive si, pour tout objet "a", "a" est en relation avec lui même</content>
+    <content>une relation binaire sur un ensemble est dite réflexive si, pour tout objet "a", "a" est en relation avec lui même</content>
 </new_definition>
 <new_definition name="relation_symmetric">
-    <content>une relation est dite symétrique si, pour tout objet "a" et "b", si "a" est en relation avec "b", alors "b" est en relation avec "a"</content>
+    <content>une relation binaire sur un ensemble est dite symétrique si, pour tout objet "a" et "b", si "a" est en relation avec "b", alors "b" est en relation avec "a" (et vice-versa)</content>
 </new_definition>
 
 <new_definition name="equivalence_class">

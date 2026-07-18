@@ -4,6 +4,7 @@
 </new_definition>
 <new_definition name="topological_borel_lebesgue">
     <content>la propriété de Borel-Lebesgue est une propriété topologique des parties d'un espace topologique, tel que si cette partie respecte cette propriété, alors de tous recouvrement de cette partie par des ouverts de l'espace, on peut en extraire un sous-recouvrement fini</content>
+    <content name="theorem_r">le théorème de Borel-Lebesgue (aussi nommé théorème de Heine - Borel) est un théorème de topologie qui énonce que l'ensemble des parties fermés et bornés de "R exposant n" sont exactement l'ensemble des compacts de "R exposant n"</content>
 </new_definition>
 <new_definition name="topological_boundary">
     <content>la frontière d'un ouvert est la partie de l'ensemble contenant cette ouvert qui limite les éléments à l'intérieur de l'ouvert de ceux à l'extérieur de l'ouvert</content>
@@ -66,7 +67,8 @@
     <content>deux éléments topologiques distincts sont dit indiscernables si tous les voisinages de l'un contient l'autre, et vice-versa</content>
 </new_definition>
 <new_definition name="topological_limit">
-    <content>une application entre deux parties d'espaces topologiques "E" et "F" admet une limite "l" en un point adhérent "a" de "E" si, pour tout voisinage "V" de "l", il existe un voisinage "W" de "a" tel que "f(W)" soit inclut dans "V"</content>
+    <content>une fonction entre deux parties d'espaces topologiques "E" et "F" (et de domaine de définition "D") admet une limite "l" en un point adhérent "a" de "D" si, pour tout ouvert "L" contenant "l", il existe un ouvert "A" contenant "a" tel que "f(A inter D)" soit inclut dans "L"</content>
+    <content name="neighbourhood">une fonction entre deux parties d'espaces topologiques "E" et "F" (et de domaine de définition "D") admet une limite "l" en un point adhérent "a" de "D" si, pour tout voisinage "U" de "l", il existe un voisinage "W" de "a" tel que "f(W inter D)" soit inclut dans "U"</content>
     <content name="sequence">une suite allant dans une partie d'un espace topologique "E" admet une limite "l" si, pour tout voisinage "V" de "l", il existe un rang "n" à partir du quel toutes les valeurs de la suite appartiennent à "V"</content>
 </new_definition>
 <new_definition name="topology_separation_axiom">
@@ -74,4 +76,12 @@
     <content name="t_0">un espace topologique est dit "T-0" (ou de Kolmogorov) lorsque, pour tout couple de points distincts de l'espace, il existe soit un voisinage du premier point ne contenant pas le deuxième, soit un voisinage du deuxième ne contenant pas le premier point</content>
     <content name="t_1">un espace topologique est dit "T-1" (ou accessible) lorsque, pour tout couple de points distincts de l'espace, il existe un voisinage du premier point ne contenant pas le deuxième ET un voisinage du deuxième ne contenant pas le premier point</content>
     <content name="t_2">un espace topologique est dit "T-2" (ou séparé, ou de Hausdorff) lorsque, pour tout couple de points distincts de l'espace, il existe deux voisinages, de respectivement le premier et le deuxième point, disjoints entre eux</content>
+</new_definition>
+
+<new_definition name="homeomorphism">
+    <content>un homéomorphisme est une application continue et bijective entre deux espaces topologiques, de telle manière que la réciproque de cette application soit elle aussi continue</content>
+    <content name="local">un homéomorphisme local est une application entre deux espaces topologiques, tel que pour tous points de l'espace de départ, il existe (au moins) un voisinage de ce point où la restriction de l'application sur ce voisinage représente un homéomorphisme</content>
+</new_definition>
+<new_definition name="fiber_bundle">
+    <content>un espace fibré est un espace construit à partir de deux autres (nommés "base" et "fibre"), de telle manière que l'espace fibré représente l'espace de base où chaque point de la base représente une copie de la fibre</content>
 </new_definition>

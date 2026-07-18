@@ -136,11 +136,16 @@ Pour la deuxième propriété, il s'agit d'une propriété permettant de s'assur
 <p>
 Sur un ensemble muni d'une relation d'ordre quelconque, il est possible de définir une topologie extrêmement efficace : la topologie de l'ordre.
 <span class="important"><definition name="topology_order"></span>.
-Voici l'écriture mathématique de ces 3 types d'ouverts :
+Ici, l'ordre ne doit pas obligatoirement être total pour que la topologie existe (bien que si il l'est, la topologie a plus de propriétés).
+Voici l'écriture mathématique de ces 3 types d'ouverts qui engendrent cette topologie :
 </p>
 <math><mforall> x, x <min> A <mequi> y <mlt> x <mlt> z</math></br>
 <math><mforall> x, x <min> B <mequi> y <mlt> x</math></br>
 <math><mforall> x, x <min> C <mequi> x <mgt> z</math>
+<p>
+Ici, <span class="important">un ensemble ordonné muni d'une topologie est nommée un espace topologique ordonné</span>.
+C'est par exemple le cas dans "R" : <span class="important">comme l'ensemble que nous venons de citer représente exactement l'ensemble des intervalles réels ouverts, une topologie de l'ordre existe bel et bien sur l'ensemble des nombres réels</span>.
+</p>
 
 <h3>Les filtres topologiques</h3>
 <p>
@@ -336,6 +341,32 @@ Comme cette topologique est très utilisée, on l'appelle "topologie usuelle des
 Généralement, <span class="important">l'espace topologique usuelle formé avec "R" est aussi nommé "topologie de la droite réelle"</span>.
 </p>
 <p>
+Ici la question est comment définir cette topologie.
+En fait, <span class="important">la topologie usuelle des nombres réels est une topologie de l'ordre</span>.
+Cependant, <span class="important">on peut prouver que la topologie engendré par la distance fomé par la soustraction est la même que la topologie de l'ordre sur les réels</span>.
+</p>
+<p>
+Un théorème fondamental avec cette topologie est le théorème de Borel-Lebesgue.
+<span class="important"><definition name="topological_borel_lebesgue-theorem_r"></span>.
+Ici, le vrai défi est de prouver que les parties fermés - bornés de "R exposant n" sont compacts (car l'inverse est évident, puisque "R exposant n" est séparé, et tout compact d'un espace séparé est fermé).
+La première partie de la démonstration n'a lieu que dans "R exposant 1".
+</p>
+
+<p>
+Considérons un segment "[a, b]" avec "a" et "b" réels, et un recouvrement quelconque de ce segment avec des ouverts.
+Piochons un nombre réel "x" (n'étant ni "a" ni "b") appartenant à ce segment, tel que "[a, x]" est recouvert par un nombre fini d'ouverts.
+Nous savons que cet intervalle a donc une borne supérieure, que nous allons nommer "c".
+Comme notre recouvrement recouvre "[a, b]", il existe un ouvert de ce recouvrement qui contient "c".
+On peut donc imaginer un nombre "d" quelconque, tel que l'intervalle "[c - d, c + d]" soit inclu dans cette partie du recouvrement contenant "c".
+Ici, nous pouvons poser l'intersection de "[a, b]" et "[c - d, c + d]", que nous allons noter "[e, f]".
+Donc, l'union de "[a, x]" et "[e, f]" donne "[a, f]", qui est lui aussi un recouvert par un nombre fini d'ouverts du recouvrement de départ (il est recouvert par le nombre fini d'ouverts qui recouvrent "[a, x]", plus l'ouvert qui recouvre "[c - d, c + d]").
+Donc, "e" appartient à "[a, x]", et "f" est donc plus petit ou égal à "c".
+Or, "f" est aussi égal au minimum entre "c + d" et "b".
+Comme "d" est strictement supérieur à "0", il ne peut pas être égal à "c + d" : il est obligatoirement égal à "b", et comme "c" est supérieur ou égal à "f" mais inclut dans "[a, b]", il est forcément égal à "f", et donc à "b".
+Donc, la partie du segment recouverte par une quantité finie d'ouvert est en fait tout le segment.
+</p>
+
+<p>
 En plus de l'espace topologique des nombres réelles, il est possible de définir un espace topologique très proche : la droite réelle achevée.
 <span class="important"><definition name="topology_real-extended"></span>.
 En fait, <span class="important">cette topologie contient tous les ouverts de "R", auquel on ajoute toutes les intervalles possibles contenant "+ l'infini" et "- l'infini" (qui sont eux mêmes des ouverts)</span>.
@@ -362,19 +393,24 @@ En fait, <span class="important">la suite admet une limite "l" si l'on peut se r
 <math>s : N <mto> E, n <mto> s(n)</math></br>
 <math><mforall> V <min> V(l), <mexists> n <min> N, <mforall> m <mgt> n, f(m) <min> V</math>
 <p>
-Si une suite admet une limite, elle est dite convergente.
+Comme pour les suites réelles, une suite admet une limite, elle est dite convergente.
 Sinon, elle est dite divergente.
 </p>
 <p>
 On peut aussi définir une version de la limite utilisant une fonction allant d'un espace topologique vers un autre.
 En effet, <span class="important"><definition name="topological_limit"></span>.
+Nous pouvons aussi obtenir une définition équivalente avec les voisinages (conséquence du fait que si un ouvert contient un point, alors il est un voisinage de ce point).
+Effectivement, <span class="important"><definition name="topological_limit-neighbourhood"></span>.
+Cette définition peut aussi se reformuler en disant que, pour tout voisinage "U" de "l", il existe un voisinage "V" de "a" tel que "V" inter "D" est inclut dans l'image réciproque de "U".
 En fait, <span class="important">la fonction admet une limite "l" en "a" si l'on peut se rapprocher autant que l'on veut de "l" (se rapprocher via un voisinage) en faisant se rapprocher le paramètre de la fonction de "a" (toujours via un voisinage)</span>.
-Comme pour l'analyse réelle, cette définition avec les fonctions est une extension de la définition avec les suites standards, où "a" représente l'infini (que nous devons donc adjoindre à l'espace topologique du départ de la suite).
-Avec cette définition bien plus générale, on peut donc utiliser le concept de limite de manière bien plus étendue.
-D'un point de vue purement mathématique, on écrit (et on lit "pour tous voisinage "V" de "l", il existe un voisinage "W" de "a" tel que toutes valeurs de "W" (n'étant pas forcément "a") appartienent à "V"") :
+Ici, l'intersection permet d'élargir la définition à des points "a" qui ne font pas partie de "D", mais qui sont sur sa frontière (comme par exemple pour la fonction réelle qui, à "x", associe "1/x²", où "0" n'est pas dans l'ensemble de définition, mais est dans sa frontière).
 </p>
 <math>f : E <mto> F, x <mto> f(x)</math></br>
-<math><mforall> V <min> V(l), <mexists> W <min> V(a), <mforall> x <min> W \ {a}, f(x) <min> V</math>
+<math><mforall> U <min> V(l), {<mexists> V <min> V(a), <mi>f</mi>(V <minter> D) <mincluded> U} <mequi> {<mexists> W <min> V(a), (W <minter> D) <mincluded> <mi>f</mi><msup>-1</msup>(U)}</math>
+<p>
+Comme pour l'analyse réelle, cette définition avec les fonctions est une extension de la définition avec les suites standards, où "a" représente l'infini (que nous devons donc adjoindre à l'espace topologique du départ de la suite).
+Avec cette définition bien plus générale, on peut donc utiliser le concept de limite de manière bien plus étendue.
+</p>
 <p>
 Ici, une question subsiste : <span class="important">est-ce que nos limites réelles vues plus haut sont des limites topologiques</span> ?
 Malheureusement, cette question est assez complexe, et mérite quelques clarifications.
@@ -596,3 +632,38 @@ En maniant correctement "E" et "f", on en déduit donc que "f(E)" appartient aus
 <math>E = <munion unknown=k to=n><mi>f</mi><msup>-1</msup>(<mi>V</mi><msub><mrow><mi>a</mi><msub>k</msub></mrow></msub>)</math></br>
 <math>f(E) = f(<munion unknown=k to=n><mi>f</mi><msup>-1</msup>(<mi>V</mi><msub><mrow><mi>a</mi><msub>k</msub></mrow></msub>))</math></br>
 <math>f(E) <mincluded> <munion><mi>V</mi><msub><mrow><mi>a</mi><msub>k</msub></mrow></msub></math>
+<p>
+Nous pouvons mélanger l'algèbre basique et ce concept de continuité, pour obtenir des outils très puissants.
+L'outil de base de ce genre de mélange est le groupe topologique.
+<span class="important"><definition name="algebra_group-topology"></span>.
+En fait, imaginez un groupe "E" de loi de composition interne "~" : ce groupe est dit topologique si l'ensemble des applications suivantes font continues :
+</p>
+<math>f : <mi>E</mi><msup>2</msup> <mto> E, (x, y) <mto> x ~ y</math></br>
+<math>g : E <mto> E, x <mto> <mi>x</mi><msup>-1</msup></math>
+<p>
+L'exemple le plus simple est le groupe "(R, +)".
+Ici, les applications de type "(x, y)" vers "x + y" sont des additions, et sont donc continues, et l'application "x" vers "inverse de x" revient à multiplier "x" par "-1", ce qui est aussi continu.
+Nous pouvons aussi citer le groupe "(R*, *)", les applications de type "(x, y)" vers "x * y" sont des multiplications, et sont donc continues, et l'application "x" vers "inverse de x" revient à obtenir l'inverse de "x", ce qui est aussi continu.
+</p>
+
+<h3>Les homéomorphismes</h3>
+<p>
+Derrière ce terme barbare, nous allons trouver un des concepts les plus importants en topologie.
+<span class="important"><definition name="homeomorphism"></span>.
+Ici, si ce concept contient le mot "morphisme", c'est pour une raison extraordinaire : les homéomorphismes représentent les isomorphismes d'espace topologiques.
+</p>
+<math>f : E <mto> F</math></br>
+<math>f <min> Bij(E, F) <mand> f <min> C(E, F) <mand> <mi>f</mi><msup>-1</msup> <min> C(F, E)</math>
+<p>
+On peut légèrement changer la définition, avec le concept d'homéomorphisme local.
+<span class="important"><definition name="homeomorphism-local"></span>.
+</p>
+
+<p>
+Ce concept va nous permettre de définir un autre concept extrêmement important en topologie : les espaces fibrés.
+<span class="important"><definition name="fiber_bundle"></span>.
+Ce concept a une définition rigoureuse un peu complexe.
+Considérons trois espaces topologiques séparés : "E" (espace total), "B" (espace base) et "F" (espace fibre).
+Posons ensuite "f" comme une surjection continue de "E" vers "B".
+Nous pouvons ensuite définir un ensemble "U" d'ouverts de "B", et un ensemble d'homéomorphisme (un par ouvert de "B") allant du produit cartésien d'un ouvert de "U" et de "F" vers une partie de "E", et pas n'importe laquelle : l'image réciproque de "U" par "f".
+</p>

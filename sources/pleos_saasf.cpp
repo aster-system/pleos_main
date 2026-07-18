@@ -313,7 +313,7 @@ namespace pleos {
     void Hub_Page::to_saasf(std::string assets, std::string path){
         // Get the needed datas
         __saasf_text_environment = std::make_shared<Text_Environment>();__saasf_text_environment.get()->load_definitions_from_path(std::string("assets/definitions"));__saasf_text_environment.get()->load_scientists_from_path(std::string("assets/scientists"));
-        __window_struct = window_struct();
+        __saasf_image_number = 0;__window_struct = window_struct();
         std::vector<std::string> creations = scls::directory_content(assets + std::string("/creations/"));
         std::vector<std::string> subjects = scls::directory_content(assets + std::string("/plugins/"));
         for(int i = 0;i<static_cast<int>(creations.size());i++){std::vector<std::string>cutted=scls::cut_string(creations[i], "/");creations[i]=cutted[cutted.size()-1];cutted=scls::cut_string(creations[i], ".");creations[i]=cutted[0];}

@@ -13,17 +13,19 @@ Par exemple, pour des nombres entiers naturels, la relation "inférieur" est dé
 </p>
 <math>3 <mlt> 5, <mno>(8 <mlt> 4)</math>
 <p>
-Ici, l'utilité principal est de savoir quels objets forment une relation donnant une proposition juste, et nous pouvons démontrer que ceci est toujours possible.
+Ici, l'utilité principal est de savoir quels objets forment une relation donnant une proposition juste.
+Démontrons ici le fait que ce concept est possible, en le définissant avec la rigueur extrême nécessaire aux mathématiques.
 Commençons par le cas le plus simple : la relation binaire.
 <span class="important"><definition name="relation-binary"></span>.
 C'est par exemple le cas de notre relation "inférieur" vue plus haut.
 Ici, ces deux éléments font partie de deux ensembles quelconques (possiblement le même, comme pour notre exemple "inférieur" vue).
+Cependant, si ces deux ensembles sont le même, on parle de relation sur cet ensemble.
 Déjà, disons qu'il est possible de noter tous les couples possibles entre les deux ensembles de la relation, grâce à un produit cartésien.
 De plus, le principe d'une relation est de savoir quels sont les éléments liés entre eux (que nous pouvons donc exprimer sous la forme de couple, qui sont donc dans le produit cartésien).
 Finalement, nous savons qu'il est possible que plusieurs couples donnent des propositions justes.
 Donc, <span class="important">il est possible de définir une relation binaire comme le sous-ensemble du produit cartésien entres les deux ensembles, tel que tous les couples dans ce sous-ensemble forment des propositions vraie via cette relation</span>.
 En fait, savoir si une relation binaire est vraie entre plusieurs éléments équivaut à savoir si le couple de ces éléments appartient au sous-ensemble du produit cartésien représentant la relation.
-Généralement, pour toute relation binaire que nous définissons, nous lui attribuons un symbôle précis, et nous notons une proposition (ou un prédicat) entre deux élément "x" et "y" en les notant à gauche et à droite du symbole.
+Généralement, pour toute relation binaire que nous définissons, nous lui attribuons un symbole précis, et nous notons une proposition (ou un prédicat) entre deux élément "x" et "y" en les notant à gauche et à droite du symbole.
 Ici, il s'agit d'une proposition si l'on note des objets fixés, et un prédicat si l'on note des objets indéterminés.
 Dans le cas d'une proposition, nous disons donc que la proposition est vraie si le couple formé (dans l'ordre) de l'élément à gauche, puis à droite du symbole appartient au sous-ensemble du produit cartésien qui définit la relation.
 Dans le cas d'un prédicat, tout dépend de ce que vous pouvez déduire via cette relation.
@@ -47,24 +49,33 @@ Si nous notons "X" l'ensemble contenant ces "n" ensembles, une relation de plusi
 </p>
 <math>R <mincluded> <mproduct>X</math>
 <p>
+Cette définition permet d'ailleurs de créer une relation représente l'ensemble vide, qui est bel et bien inclut dans le produit cartésien de toute paire d'ensemble.
+En fait, <span class="important">cette relation représente la relation où aucun élément ne sont en relation, ce que l'on appelle la relation vide</span>.
+Par exemple, dans le cas d'une relation binaire, cela veut dire que les proposition formées par le prédicat obtenu grâce à la relation (écrit, comme on l'a vu, par son symbole) sont toujours fausses, quelque soit les éléments choisi.
+Bien évidemment, appart d'un point de vue "définitionnel", cette relation n'a littéralement aucun intérêt.
+</p>
+<math>R = <mempty_set></math></br>
+<math> <mforall> x <min> E, y <min> F, <mno>(x ~ y)</math>
+<p>
+À l'inverse, <span class="important">il existe une relation où tous les éléments de tous les ensembles liés sont en relation, nommée la relation pleine</span>.
+Ici, le sous-ensemble du produit cartésien associé à cet ensemble représente tout simplement l'entiéreté du sous-ensemble des ensembles liés.
+</p>
+<math>R = <mproduct>X</math></br>
+<math> <mforall> x <min> E, y <min> F, (x ~ y)</math>
+<p>
+Comme pour les sous-ensembles, on peut aussi crée des sous-relations.
+<span class="important"><definition name="relation-sub_relation"></span>.
+En fait, il s'agit d'une relation dont le sous-ensemble du produit cartésien associé est un sous-ensemble... du sous-ensemble du produit cartésien de "R".
+Dans le cas d'une relation binaire, une relation "S" notée "~" est une sous-relation d'une autre relation "R" notée "#" si tous les éléments en relation selon "S" le sont aussi selon "R" (mais il peut exister des éléments en relation dans "R" qui ne le sont pas dans "S").
+</p>
+<math>S <mincluded> R</math></br>
+<math><mforall>(a, b) <min> S, a ~ b <mimp> a # b</math>
+<p>
 Cette définition pose un problème : il existe des objets infiniment proches de cette définition, mais qui n'en font pas partie, car les objets liés entre eux ne font pas partie d'un ensemble quelconque.
 C'est le cas de la relation d'appartenance "un élément a appartient à un ensemble E", où il n'existe pas vraiment "d'ensemble" généralisant en même temps le concept d'élément et d'ensemble.
 Pour éviter ce problème, nous allons dire que, dans ce cas précis, on ne parle pas d'ensemble, mais de classe (il existe une classe contenant tous les ensembles et éléments possibles).
 Pour tout le reste, la définition avec les ensembles fonctionne.
 </p>
-
-<table>
-
-<case_plus x=0 y=0>Objets en relation</case_plus>
-<case_plus x=0 y=1>2 inférieur à 10</case_plus>
-<case_plus x=0 y=2>3 égal à 3</case_plus>
-
-<case_plus x=1 y=0>Objets pas en relation</case_plus>
-<case_plus x=1 y=1>7 inférieur à 3 (proposition fausse)</case_plus>
-<case_plus x=1 y=2>3 plus 3 (pas une proposition)</case_plus>
-
-</table>
-
 <p>
 Définissons rigoureusement une première relation : la relation d'inclusion.
 <span class="important">La relation d'inclusion est une relation entre deux éléments d'un même ensemble : l'ensemble des parties d'un ensemble</span>.
@@ -73,8 +84,9 @@ Nous avons déjà vue le symbole de cette relation dans la partie de ce cours su
 </p>
 <math><math><mforall>a, b, a <mincluded> b <mequi> <mforall> x, (x <min> a <mimp> x <min> b)</math></math>
 <p>
-Chose importante : <span class="important">il est en réalité extremement rare de définir une relation via le sous-ensemble du produit cartésien qu'elle représente</span>.
+Chose importante : <span class="important">il est en réalité extrêmement rare de définir une relation directement via le sous-ensemble du produit cartésien qu'elle représente</span>.
 Comme pour beaucoup d'objets, la définition avec le produit cartésien est juste un moyen de définir rigoureusement cet objet.
+De plus, nous n'allons presque plus du tout l'utiliser dans la suite de ce cours (toutes les démonstrations se font généralement avec le symbole associé à la relation).
 En fait, <span class="important">on définit généralement une relation en disant que, si des éléments sont en relation, alors cela équivaut à une propriété autre</span>.
 Pour que cette définition marche, il faut que, pour tout élément des ensembles associés, nous pouvons tout le temps savoir si la propriété est vraie ou pas.
 On en déduit immédiatement qu'il est possible d'en déduire ce fameux sous-ensemble du produit cartésien entre ces ensembles.
@@ -83,26 +95,274 @@ Dans le cas d'une relation binaire, on peut noter :
 </p>
 <math>R = {(x, y) <min> E * F, P(x, y)}, (a, b) <min> R <mequi> a ~ b</math>
 <p>
-L'une des propriétés possibles d'une relation binaire est la totalité.
+Dans le cas de la relation d'inclusion sur les parties de l'ensemble "E", on peut donc noter :
+</p>
+<math>R = {(x, y) <min> P(E) * P(E), (<mforall> z, (z <min> x <mimp> z <min> y))}</math>
+<p>
+Bien que la définition avec le produit cartésien soit plus utile pour le socle du concept qu'autre chose, il permet quand même quelque chose d'utile.
+En effet, dans une relation binaire entre deux ensembles finis, <span class="important">on peut représenter toute la relation avec un tableau à deux entrées</span>.
+Généralement, les informations à gauches représentent le premier ensemble, et celle en haut représentent le second.
+Il s'agit de l'exact même technique que pour la représentation du produit cartésien, où nous colorons les cases où la relation est vraie.
+Voici un exemple : la relation d'inclusion sur l'ensemble des parties de "{a, b}".
+</p>
+<table>
+
+<case x=1 y=0 content="{}">
+<case x=2 y=0 content="{a}">
+<case x=3 y=0 content="{b}">
+<case x=4 y=0 content="{a, b}">
+
+<case x=0 y=1 content="{}">
+<case x=0 y=2 content="{a}">
+<case x=0 y=3 content="{b}">
+<case x=0 y=4 content="{a, b}">
+
+<case x=1 y=1 background_color=green>
+<case x=2 y=2 background_color=green>
+<case x=3 y=3 background_color=green>
+<case x=4 y=4 background_color=green>
+<case x=2 y=1 background_color=green>
+<case x=3 y=1 background_color=green>
+<case x=4 y=1 background_color=green>
+<case x=4 y=2 background_color=green>
+<case x=4 y=3 background_color=green>
+
+</table>
+<p>
+Le cas le plus intéressant de tableau comme ça représente le cas où la relation relie un ensemble à lui même.
+Dans ce cas, le tableau est un carré parfait.
+</p>
+<p>
+Nous pouvons définir une autre relation, qui semble trop simple pour avoir besoin d'être définie (mais que nous allons quand même définir quand même) : l'égalité.
+Pour rappel, <span class="important">nous avons déjà défini l'égalité entre deux ensembles dans la partie sur la théorie des ensembles ZFC, avec l'axiome d'extensionnalité</span>.
+Comme nous l'avons vue, tout objet est un ensemble : tout objet respecte donc ce type d'égalité.
+Il existe cependant une loi précise permettant de voir l'égalité sous un autre angle : la loi de Leibniz.
+<span class="important"><definition name="leibniz_law"></span>.
+Avec le formalisme de la logique des prédicats, cela veut dire que, pour deux objets "x" et "y", dire qu'ils sont égaux équivaut à dire que pour tous les prédicats possibles et imaginables, la proposition du prédicat avec "x" équivaut à la proposition du prédicat avec "y".
+</p>
+<math><mforall> x, y, (x = y) <mequi> (<mforall> P, P(x) <mequi> P(y))</math>
+<p>
+Cette propriété s'applique d'ailleurs parfaitement avec sa définition en théorie des ensembles.
+Ici, nous pouvons donc définir une relation entre deux ensembles "E" et "F", de symbole "=".
+Pour que cela soit intéressant, il faut cependant qu'il existe au moins un élément de "E" et un élément de "F" qui soit égaux, ce qui équivaut à dire qu'il faut que "E" et "F" soit disjoints.
+Dans le cas contraire, aucune paire d'élément n'obéit à la relation : on obtient la relation vide.
+</p>
+<math><mforall>x <min> E, <mforall> y <min> F, (x = y) <mequi> (<mforall> P, P(x) <mequi> P(y))</math>
+<p>
+Ici, nous faisons une méthode simple, mais nous pouvons aussi procéder comme avec la relation d'appartenance, avec une relation sur la classe de tout ce qui existe.
+Nous pouvons aussi obtenir son tableau (ici, dans le cas où "E" est "{1, 2}", et "F" est "{1, 2, 3, 4}").
+</p>
+<table>
+
+<case x=1 y=0 content="1">
+<case x=2 y=0 content="2">
+<case x=3 y=0 content="3">
+<case x=4 y=0 content="4">
+
+<case x=0 y=1 content="1">
+<case x=0 y=2 content="2">
+
+<case x=1 y=1 background_color=green>
+<case x=2 y=2 background_color=green>
+
+</table>
+<p>
+Cependant, cette relation donne des résultats particulièrement intéressants quand les deux ensembles de la relation sont le même (et donc, que le tableau est un carré).
+Dans ce cas, <span class="important">il est possible de permuter les colonnes ou les lignes du tableau, pour obtenir un tableau tel que les cases colorées représentent exactement la diagonale du tableau</span>.
+Ici, <span class="important">si nous voyons cette fameuse diagonale dans notre tableau, alors si une case à la colonne "x" et à la ligne "y" représente la relation entre "a" et "b", la case à la colonne "y" et à la ligne "x" représente la relation entre "b" et "a"</span>.
+D'ailleurs, géométriquement parlant, cette case représente la symétrique de la première case par la diagonale.
+</p>
+<table>
+
+<case x=1 y=0 content="3">
+<case x=2 y=0 content="1">
+<case x=3 y=0 content="4">
+<case x=4 y=0 content="2">
+
+<case x=0 y=1 content="2">
+<case x=0 y=2 content="4">
+<case x=0 y=3 content="3">
+<case x=0 y=4 content="1">
+
+<case x=1 y=3 background_color=green>
+<case x=2 y=4 background_color=green>
+<case x=3 y=2 background_color=green>
+<case x=4 y=1 background_color=green>
+
+</table></br>
+<table>
+
+<case x=1 y=0 content="1">
+<case x=2 y=0 content="2">
+<case x=3 y=0 content="3">
+<case x=4 y=0 content="4">
+
+<case x=0 y=1 content="1">
+<case x=0 y=2 content="2">
+<case x=0 y=3 content="3">
+<case x=0 y=4 content="4">
+
+<case x=1 y=1 background_color=green>
+<case x=2 y=2 background_color=green>
+<case x=3 y=3 background_color=green>
+<case x=4 y=4 background_color=green>
+
+</table>
+<p>
+D'ailleurs, les éléments dans l'ensemble en question peuvent ne pas être forcément dans un ordre qui a un sens quelconque.
+</p>
+<table>
+
+<case x=1 y=0 content="3">
+<case x=2 y=0 content="4">
+<case x=3 y=0 content="2">
+<case x=4 y=0 content="1">
+
+<case x=0 y=1 content="3">
+<case x=0 y=2 content="4">
+<case x=0 y=3 content="2">
+<case x=0 y=4 content="1">
+
+<case x=1 y=1 background_color=green>
+<case x=2 y=2 background_color=green>
+<case x=3 y=3 background_color=green>
+<case x=4 y=4 background_color=green>
+
+</table>
+<p>
+<span class="important">Nous pourrions aussi définir des relations sur des ensembles de propositions, comme pour l'équivalence et l'implication</span>.
+Cependant ce type de relation sont assez complexes, et dépendent de chose que nous n'avons pas encore traité assez.
+</p>
+<p>
+Avec la relation "égalité", on peut introduire une propriété intéressante sur les relations : la réflexivité.
+<span class="important"><definition name="relation_reflexive"></span>.
+L'exemple le plus évident est la relation égalité, qui est réflexive par définition.
+Cependant, la relation d'inclusion sur un ensemble des parties est aussi réflexive.
+</p>
+<math><mforall>a <min> E, a ~ a</math>
+<p>
+Ici, le tableau d'une relation réflexive comporte (encore, à permutation des lignes / colonnes près) une diagonale.
+D'ailleurs, <span class="important">si une relation est réflexive, cela équivaut à dire que le prédicat caractéristique de la relation entre deux éléments "x" et "y" peut toujours être décomposé sous la forme "x est égal à y" ou "un autre précidat" (qui peut d'ailleurs être représenté comme une autre relation)</span>.
+On peut donc écrire :
+</p>
+<math><mforall> x, y <min> E, x ~ y <mequi> (x = y) <mor> (x # y)</math>
+<p>
+Une autre propriété possible d'une relation binaire sur un ensemble (et pas entre deux ensembles différents, obligatoirement un ensemble et lui même) est la totalité.
 <span class="important"><definition name="relation-totality"></span>.
 En d'autres termes, la totalité traduit cette propriété :
 </p>
 <math><mforall>a, b <min> E, a ~ b <mor> b ~ a</math>
+<p>
+Ici, <span class="important">la relation d'inclusion sur un ensemble de parties d'un ensemble quelconque contenant plus d'un élément n'est pas totale</span>.
+Par exemple, dans un ensemble contenant au moins deux éléments "a" et "b", l'ensemble des parties contient au moins "{a}" et "{b}", et aucun ne contient l'autre.
+</p>
+<math><mno>({a} <mincluded> {b}) <mand> <mno>({b} <mincluded> {a})</math>
+<p>
+C'est d'ailleurs l'exacte même chose avec la relation d'égalité sur un ensemble contenant plus d'un élément : si "a" n'est pas égal à "b", il est évident que "b" n'est pas égal à "a".
+Par contre, <span class="important">si l'ensemble contient 0 ou 1 élément, la relation est totale</span>.
+Dans le cas où il ne contient aucun élément, son ensemble des parties en contient 1 : l'ensemble vide (qui est inclut dans lui même).
+Dans le cas où il contient 1 élément, son ensemble des parties en contient 2 : l'ensemble vide et le singleton contenant cet élément (l'ensemble vide étant inclut dans le singleton).
+Encore une fois, c'est la même chose avec la relation d'égalité sur un ensemble contenant un élément : cet élément est égal à lui même, dans les deux sens.
+Bon, ceci n'est qu'un exemple, car celui ci n'a, en réalité, aucun intérêt nul part (appart comprendre le concept de relation totale).
+</p>
+<p>
+En utilisant le formalisme du tableau, <span class="important">une relation est totale si, pour chaque case du tableau (en considérant que le tableau a une diagonale représentant l'égalité), soit la case est colorée, soit la case symétrique par rapport à la diagonale l'est</span>.
+En regardant le tableau de l'inclusion dans les parties de "{a, b}", on voit que la case dans la deuxième colonne (en partant de la colonne contenant les parties) et la troisième ligne (en partant de la ligne contenant les parties) n'est pas colorée, et que sa case symétrique (troisième colonne, deuxième ligne) ne l'est pas non plus : il existe des éléments cassant la totalité de la relation (les mêmes que testés plus haut).
+Cependant, on peut créer un tableau avec la relation sur des nombres "plus grand ou égal", qui est bien totale (pour deux nombres, ils sont soit égaux, soit le premier est plus grand que le second, soit l'inverse) :
+</p>
+<table>
+
+<case x=1 y=0 content="1">
+<case x=2 y=0 content="2">
+<case x=3 y=0 content="3">
+<case x=4 y=0 content="4">
+
+<case x=0 y=1 content="1">
+<case x=0 y=2 content="2">
+<case x=0 y=3 content="3">
+<case x=0 y=4 content="4">
+
+<case x=1 y=1 background_color=green>
+<case x=2 y=2 background_color=green>
+<case x=3 y=3 background_color=green>
+<case x=4 y=4 background_color=green>
+<case x=1 y=2 background_color=green>
+<case x=1 y=3 background_color=green>
+<case x=2 y=3 background_color=green>
+<case x=1 y=4 background_color=green>
+<case x=2 y=4 background_color=green>
+<case x=3 y=4 background_color=green>
+
+</table>
+
+<p>
+Nous pouvons d'ailleurs obtenir un type de relation similaire : les relations symétriques.
+<span class="important"><definition name="relation_symmetric"></span>.
+Cette propriété symbolise le fait que l'ordre des éléments autour du symbole de la relation n'importe pas.
+Encore une fois, un exemple est la relation d'égalité.
+Cependant, ce n'est pas le cas pour la relation d'inclusion sur un ensemble des parties de plus de un élément ("{a}" est inclut dans "{a, b}", mais l'inverse n'est absolument pas vrai).
+</p>
+<math><mforall>a, b <min> E, a ~ b <mequi> b ~ a</math>
+<p>
+Sur le tableau, <span class="important">une relation est symétrique si, pour chaque case du tableau (en considérant que le tableau a une diagonale représentant l'égalité), si la case est colorée, alors sa case symétrique par rapport à la diagonale l'est aussi</span>.
+Par exemple, pour une relation "x est le nombre avant OU après de y" sur un ensemble "{1, 2, 3, 4}", si un nombre "x" est le nombre avant "y", "y" est le nombre après "x" (et vice-versa) : la relation est vraie des deux côtés, et donc symétrique.
+Le tableau est donc :
+</p>
+<table>
+
+<case x=1 y=0 content="1">
+<case x=2 y=0 content="2">
+<case x=3 y=0 content="3">
+<case x=4 y=0 content="4">
+
+<case x=0 y=1 content="1">
+<case x=0 y=2 content="2">
+<case x=0 y=3 content="3">
+<case x=0 y=4 content="4">
+
+<case x=1 y=2 background_color=green>
+<case x=2 y=1 background_color=green>
+<case x=2 y=3 background_color=green>
+<case x=3 y=2 background_color=green>
+<case x=3 y=4 background_color=green>
+<case x=4 y=3 background_color=green>
+
+</table>
+<p>
+Cependant, il existe un concept similaire et très lié : l'antisymétrie.
+<span class="important"><definition name="relation_antisymmetric"></span>.
+En d'autres termes, si deux objets sont en relation dans les deux ordres possibles (autour du symbole de la relation), alors ils sont égaux (mais où l'inverse n'est pas obligé d'être vrai).
+</p>
+<math><mforall>a, b <min> E, a ~ b <mand> b ~ a <mimp> a = b</math>
+<p>
+Ici, <span class="important">l'égalité et l'inclusion sont tous deux des relations antisymétriques</span> (pour l'égalité, c'est par définition).
+Pour l'inclusion, cela résulte de la double inclusion : si un ensemble est inclut dans un autre ensemble, et que cette autre ensemble est inclut dans notre ensemble de départ, ils sont égaux.
+D'ailleurs, si une relation est antisymétrique et symétrique, elle représente donc une sous-relation de la relation d'égalité.
+</p>
+<math><mforall>a, b <min> E, {(a ~ b <mand> b ~ a <mimp> a = b) <mand> (a ~ b <mequi> b ~ a)} <mimp> (a ~ b <mimp> a = b)</math></br>
+<table>
+
+<case x=1 y=0 content="1">
+<case x=2 y=0 content="2">
+<case x=3 y=0 content="3">
+<case x=4 y=0 content="4">
+
+<case x=0 y=1 content="1">
+<case x=0 y=2 content="2">
+<case x=0 y=3 content="3">
+<case x=0 y=4 content="4">
+
+<case x=1 y=1 background_color=green>
+<case x=3 y=3 background_color=green>
+
+</table>
 
 <h3>Les relations d'ordre</h3>
 <p>
 Le type de relation qui est probablement le plus utilisé est la relation d'ordre.
 En effet, <span class="important"><definition name="relation_order"></span>.
-Ici, <span class="important"><definition name="relation_reflexive"></span>.
-</p>
-<math><mforall>a <min> E, a ~ a</math>
-<p>
-De plus, <span class="important"><definition name="relation_antisymmetric"></span>.
-En d'autres termes, si la relation peut s'écrire des deux côtés avec deux objets distincts, alors ils sont égaux.
-</p>
-<math><mforall>a, b <min> E, a ~ b <mand> b ~ a <mimp> a = b</math>
-<p>
-De plus, <span class="important"><definition name="relation_transitivity"></span>.
+Pour rappel, la réflexivité et l'antisymétrie ont était traitées un peu plus haut.
+Finalement, <span class="important"><definition name="relation_transitivity"></span>.
 En d'autres termes, si les éléments "a" et "b" sont en relations et que les éléments "b" et "c" le sont aussi, alors "a" et "c" le sont aussi.
 </p>
 <math><mforall>a, b, c <min> E, a ~ b <mand> b ~ c <mimp> a ~ c</math>
@@ -466,6 +726,10 @@ Mathématiquement, une bijection "f" allant de "B" vers "A" se présente ainsi :
 <math>f : A <mto> B, a <mto> b</math></br>
 <math><mforall>b <min> B, <mexists>! a <min> A, f(a) = b</math>
 <p>
+Ici, il existe une notation pour noter l'ensemble des bijections : "Bij(A, B)".
+</p>
+<math>Bij(A, B)</math>
+<p>
 Il est d'ailleurs à noter qu'une composition de deux bijections (de "E" vers "F" et de "F" vers "G") donne une nouvelle bijection, de "E" vers "G" (<a href="demo">démontré ici</a>).
 Dans un ensemble "E", il existe une bijection (allant de "E" vers "E") qui, à chaque élément "x" de "E", lui associe... "x" (et donc, qui ne représente pas une modification de l'ensemble à proprement parlé) : <span class="important">cette bijection est nommée application identité de "E"</span>.
 On l'a note généralement avec les deux lettres "Id", et avec l'ensemble "E" en indice.
@@ -708,3 +972,42 @@ Sinon, tous les éléments de l'ensembles de départ n'ont aucune image, et la f
 Dans le cas où l'on compose pour obtenir une application, c'est encore plus strict : <span class="important">l'ensemble image de "g" doit obligatoirement être inclu dans l'ensemble de définition de "f"</span> (sinon, des éléments de l'ensemble de départ peuvent n'avoir aucune image, ce qui est contraire à la définition).
 C'est d'ailleurs pour éviter cette rigidité que l'on compose en général des fonctions plutôt que des applications.
 </p>
+
+<h3>Retour sur des concepts du chapitre précédent</h3>
+<p>
+Revenons sur les graphes.
+Grâce au concept d'application, nous pouvons définir un type de graphe bien plus général : les multigraphes.
+<span class="important"><definition name="multigraph-rigorous"></span>.
+En fait, <span class="important"><definition name="multigraph-rigorous"></span>.
+L'idée est de dire que les arêtes ne représentent pas simplement de simples paires (comme dans un graphe simple), mais n'importe quel objet possible.
+Ici, <span class="important">l'application (nommée fonction d'incidence) permet de savoir rigoureusement quels objets sont reliés par chaque arête</span>.
+</p>
+<math>G = (V, E, <mphi>)</math></br>
+<math><mphi> : E <mto> {{u, v} | (u, v) <min> V * V}</math>
+<p>
+Ce genre de graphe permet deux choses très importantes (qui sont impossibles avec des graphes simples) : <span class="important">un multigraphe peut comporter des boucles et des arêtes multiples entre deux mêmes éléments</span>.
+Ici, <span class="important"><definition name="multigraph-loop"></span>.
+De plus, deux mêmes éléments peuvent être reliés par autant d'arêtes que l'on veut.
+Donc, un multigraphe de ce genre est parfaitement licite :
+</p>
+<graphic>
+<base draw=0>
+<background_color white>
+
+<line x_1=-3 y_1=-7/2 x_2=0 y_2=0 border_width=5 border_color=black>
+<line x_1=1 y_1=-7/2 x_2=0 y_2=0 border_width=5 border_color=black>
+<line x_1=-3 y_1=7/2 x_2=0 y_2=0 border_width=5 border_color=black>
+<line x_1=-3+-1/2 y_1=7/2 x_2=-1/2 y_2=0 border_width=5 border_color=black>
+<line x_1=-3+-1 y_1=7/2 x_2=-1 y_2=0 border_width=5 border_color=black>
+<line x_1=3 y_1=7/2 x_2=0 y_2=0 border_width=5 border_color=black>
+
+<line x_1=2 y_1=-7/2 x_2=2 y_2=-2 border_width=5 border_color=black>
+<line x_1=2 y_1=-2 x_2=3 y_2=-2 border_width=5 border_color=black>
+<line x_1=3 y_1=-7/2 x_2=3 y_2=-2 border_width=5 border_color=black>
+
+<text x=0 y=0>Europe</text>
+<text x=3 y=7/2>France</text>
+<text x=-2 y=7/2>Allemagne</text>
+<text x=2 y=-7/2>Angleterre</text>
+<text x=-3 y=-7/2>Italie</text>
+</graphic>

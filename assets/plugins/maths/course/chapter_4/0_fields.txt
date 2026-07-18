@@ -36,7 +36,7 @@ Rappelons toutes les propriété nécéssaire, pour un anneau "A" muni d'une op�
 <p>
 Cependant, nous pouvons affaiblir ce concept avec ce que l'on appelle le "pseudo-anneau".
 <span class="important"><definition name="algebra_ring-pseudo"></span>.
-Dans ce cas, "(A, .)" n'est pplus un monoïde, mais un demi-groupe.
+Dans ce cas, "(A, .)" n'est plus un monoïde, mais un demi-groupe.
 </p>
 
 <p>
@@ -70,24 +70,39 @@ On peut aussi citer ceux formé avec "Q" et "R".
 Comme il existe des sous-groupes de groupes, il existe des sous-anneaux d'anneaux.
 <span class="important"><definition name="algebra_subring"></span>.
 Leurs propriétés sont très proches de celles des sous-groupes.
-En fait, <span class="important">un sous-anneau est un anneau sur un ensemble représentant un sous-ensemble de l'ensemble de départ</span>.
-Donc, <span class="important">il est stable par l'addition, par la multiplication et admet un neutre par la multiplication (le même que l'anneau qui le contient)</span>.
+En fait, <span class="important">il est stable par l'addition, par la multiplication et admet un neutre par l'addition et la multiplication (les mêmes que l'anneau qui le contient)</span>.
 Quand on pense à sous-anneau, on peut penser à "(2Z, +, .)", qui serait un sous-anneau de "(Z, +, .)".
 Déjà, nous avons démontré à plusieurs reprises que "2Z" est inclut dans "Z".
 </p>
 <math><mforall> a, a <min> 2Z <mimp> a <min> Z</math>
 <p>
-De plus, nous avons déjà démontré que le groupe "(2Z, +)" est un sous-groupe de "(Z, +)" : il est stable par l'addition.
+De plus, nous avons déjà démontré que le groupe "(2Z, +)" est un sous-groupe de "(Z, +)" : il est stable par l'addition et contient le neutre de l'addition.
 Finalement, la stabilité par la multiplication est aussi assez simple à prouver.
 </p>
 <math><mforall> a, b <min> 2Z, <mexists> c, d <min> Z, a = 2 * c, b = 2 * d</math></br>
 <math>a * b = (2 * c) * (2 * d) = 2 * (c * 2 * d) = 2 * e, e = (c * 2 * d)</math>
 <p>
-Donc, l'anneau "(2Z, +, .)" est stable par addition et multiplication : <span class="important">il est un sous-anneau de "(Z, +, .)"</span>.
-Malheureusement, <span class="important">il n'y a pas d'élément neutre de la multiplication dans "2Z" (puisque "1" n'est pas dedans) : il ne s'agit donc pas d'un sous-anneau unitaire de (Z, +, .)</span>.
-Cependant, il est vrai que si l'on considère le pseudo-anneau "(Z, +, .)", alors "(2Z, +, .)" en est un sous-pseudo-anneau (pour rappel, dans les pseudos anneaux, le neutre multiplicatif n'est pas obligatoire).
+Donc, l'anneau "(2Z, +, .)" respecte presque toutes les propriétés.
+Malheureusement, <span class="important">il n'y a pas d'élément neutre de la multiplication dans "2Z" (puisque "1" n'est pas dedans) : il ne s'agit donc pas d'un sous-anneau de (Z, +, .)</span>.
+Cependant, il est vrai que si l'on considère le pseudo-anneau "(Z, +, .)", alors "(2Z, +, .)" en est un sous-pseudo-anneau (pour rappel, dans les pseudos-anneaux, le neutre multiplicatif n'est pas obligatoire).
 Par contre, <span class="important">comme "(R, +, .)" est un anneau, et que "(Z, + .)" l'est aussi, et que "Z" est inclus dans "R", alors "(Z, + .)" est un sous-anneau de "(R, + .)"</span>.
 </p>
+<math>Z <mincluded> R</math></br>
+<p>
+Comme pour les sous-groupes engendrés, il existe un moyen de créer des "sous-anneaux" engendrés.
+En effet, pour un anneau "(A, +, .)", <span class="important">le sous-anneau engendré par une partie "B" de "A" représente l'anneau sur l'ensemble contenant tous les éléments obtenables avec les opérations "+" et "." et avec les éléments de "B"</span>.
+Cependant, il y a quelque chose d'important à rajouter : l'inverse de "+" (généralement "-") fait partie des opérations licites pour engendrer un anneau, mais pas l'inverse de "." (généralement "/").
+Cela est dû au fait qu'il peut exister des éléments de l'anneau n'ayant pas d'inverse pour l'opération ".".
+L'ensemble d'un sous-anneau de "A" engendré par "B" se note généralement :
+</p>
+<math><mbracket>B</mbracket></math>
+<p>
+Bon, on peut cependant avoir un problème : imaginez le sous-anneau engendré par "{2}" dans "(Z, +, .)" : il n'existe aucune moyen d'obtenir le neutre de la multiplication avec "2", "+", "-" et "*" (pour rappel, "/" est interdit).
+En fait, <span class="important">on rajoute toujours le neutre multiplicatif de l'anneau dans la partie si elle n'est pas déjà présente de base</span>.
+Donc, l'anneau engendré par "{2}" est l'exact même que l'anneau engendré par "{1, 2}".
+</p>
+<math><mbracket>{2}</mbracket> = <mbracket>{1, 2}</mbracket></math>
+
 <p>
 Il est possible de modifier un peu cette définition, pour obtenir un concept assez similaire : les idéaux.
 <span class="important"><definition name="algebra_ideal"></span>.

@@ -1,4 +1,9 @@
 <new_definition name="graph">
     <content>un graphe représente un ensemble d'éléments, où certains éléments sont "liés" entre eux</content>
-    <content name="rigorous">un graphe est un couple de deux ensemble : le premier représentant les éléments dans le graphe et le deuxième représentant l'ensemble des liens entre chaque élément du graphe</content>
+    <content name="rigorous">un graphe est un couple de deux ensembles : le premier représentant les éléments dans le graphe et le deuxième représentant l'ensemble des liens entre chaque élément du graphe</content>
+</new_definition>
+<new_definition name="multigraph">
+    <content>un multigraphe représente un graphe défini de manière bien plus globale</content>
+    <content name="loop">une boucle est une arête d'un graphe reliant un élément avec lui même</content>
+    <content name="rigorous">un graphe est un 3-uplet de deux ensembles et d'une application : le premier ensemble représentant les éléments dans le graphe, le deuxième ensemble représentant l'ensemble des arêtes du graphe, et l'application allant de l'ensemble des arêtes vers l'ensemble des paires du premier ensemble</content>
 </new_definition>

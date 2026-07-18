@@ -249,6 +249,16 @@ On peut d'ailleur vérifier que la composée de deux morphismes de groupes donne
 </p>
 <math>f(g(c + d)) = f(g(c) * g(c)) = f(g(c)) ~ f(g(d))</math>
 <p>
+Avec les morphismes, un moyen de les étudier rigoureusement est le noyau.
+<span class="important"><definition name="algebra_kernel"></span>.
+Il s'agit donc de l'ensemble des éléments qui annulent le morphisme.
+Ici, ce concept peut être très utile dans certaines structures, comme parfaitement inutile dans d'autres.
+Généralement, pour un morphisme "f", il se note "ker(f)", venant de l'allemand "kern" (qui veut dire "noyau").
+On peut facilement le noter :
+</p>
+<math>f : E <mto> F</math></br>
+<math>ker(f) = {x <min> E | f(x) = <mi>0</mi><msub>F</msub>}</math>
+<p>
 Comme pour les applications bijectives / injectives / surjectives, il existe des morphismes qui possèdent quelques propriétés supplémentaires.
 La plus utilisée est l'isomorphisme.
 <span class="important"><definition name="isomorphism"></span>.
@@ -372,18 +382,27 @@ Avec ce concept, on peut en définir un autre assez similaire : l'indice du sous
 <span class="important"><definition name="algebra_subgroup-index"></span>.
 </p>
 
-<h3>Les groupes quotients</h3>
+<h3>Les morphismes de groupe</h3>
 <p>
-Une opération très utilisée avec les groupes est le quotientage de groupe.
-En effet, <span class="important"><definition name="algebra_group_quotient"></span>.
-En fait, il s'agit donc d'un groupe sur les classes d'équivalences de la relation d'équivalence liant tous les éléments de même classe à gauche de "H".
-Pour rappel, comme "H" est normal, les classes à gauches et à droites sont les mêmes, donc il n'y a pas besoin de spécifier les classes à droite.
-Cependant, pour avoir un groupe, il nous faut avoir une loi de composition sur ce groupe.
-En effet, <span class="important">la loi de composition du groupe quotient est une loi induite par "G" : l'opération de deux éléments du groupe quotient donne l'élément de ce groupe quotient qui représente la classe d'équivalence du résultat de l'opération d'éléments dans la classe d'équivalence représentant les opérandes dans le groupe quotient</span>.
-Cela rend donc les calculs dans les groupes quotients très facile.
+Revenons sur le morphismes de groupe, que nous avons déjà traité vite fait plus haut.
+Pour rappel, <span class="important"><definition name="morphism-group"></span>.
+Comme tout morphisme, il existe aussi des endomorphismes, isomorphismes et automorphismes de groupe.
+Considérons de groupe "(E, +)" et "(F, *)", et une application "f" allant de "E" vers "F".
+Ici, "f" est un morphisme de groupe si il respecte cette propriété :
 </p>
-<math><mforall>a, b <min> G/H, <mexists>x, y <min> G, a = xH, b = yH</math></br>
-<math><mexists> z <min> G, x . y = z <mimp> xH . yH = zH <mimp> <mexists> c <min> G/H, c = zH, a # b = c</math>
+<math><mforall>a, b <min> E, <mforall>c, d <min> F</math></br>
+<math>f(a + b) = f(a) * f(b)</math>
+<p>
+Ici, le concept de noyau est particulièrement utile.
+Pour rappel, <span class="important"><definition name="algebra_kernel"></span>.
+</p>
+<math>f : E <mto> F</math></br>
+<math>ker(f) = {x <min> E | f(x) = <mi>0</mi><msub>F</msub>}</math>
+<p>
+D'ailleurs, <span class="important">on peut facilement démontrer que tout noyau d'un morphisme quelconque est un sous-groupe du groupe de départ</span>.
+En effet, cet ensemble est stable par l'opération du groupe et contient le neutre (car "f(0) = 0").
+</p>
+<math><mforall> a, b <min> ker(f), f(a) = <mi>0</mi><msub>F</msub> <mand> f(b) = <mi>0</mi><msub>F</msub> <mimp> f(a) * f(b) = <mi>0</mi><msub>F</msub> <mimp> f(a + b) = <mi>0</mi><msub>F</msub> <mimp> a + b <min> ker(f)</math>
 
 <h3>Les groupes symétriques</h3>
 <p>
@@ -408,31 +427,6 @@ Ce sous-groupe a une quantité aberrante de propriétés intéressantes, que nou
 </p>
 <p>
 D'ailleurs, tout automorphisme de "E" est une bijection de "E" : <span class="important">le groupe des automorphismes de "E" est donc un sous-groupe du groupe des bijections de "E"</span>.
-</p>
-
-<h3>Le groupe additif Z/nZ</h3>
-<p>
-En arithmétique des nombres entiers naturels, la théorie des groupes est très utilisée pour beaucoup de résultats.
-Le meilleur exemple est le groupe "(Z/nZ, +)".
-<span class="important"><definition name="algebra_group_znz"></span>.
-En d'autres termes, <span class="important">il s'agit d'un groupe définit sur des restes de divisions euclidiennes par "n"</span>.
-Ici, la notation utilisée "Z/nZ" permet de savoir que nous quotientons "Z" par son sous-groupe additif "nZ" (et donc, où l'on découpe "Z" comme les classes à gauches de "nZ", et donc comme tous les "a" différents dans la formule "a + b * n").
-Pour noter les classes d'équivalences, nous allons les noter comme la classe d'équivalence de l'élement entre "0" et "n", pour faciliter les calculs.
-</p>
-<math>Z/nZ = {[0], [1], ..., [n - 1]}</math></br>
-<math>Z/5Z = {[0], [1], [2], [3], [4]}</math>
-<p>
-Il existe une notation précise pour signifier que deux nombres "a" et "b" sont dans une même classe d'équivalence dans "Z/nZ" : <span class="important">on dit que "a" est congru à "b" modulo "n"</span>.
-Bien qu'on essaye d'obtenir le "b" le plus simple possible, on peut aussi en obtenir un plus complexe si besoin.
-La notation hérite directement du concept de relation d'équivalence.
-</p>
-<math>a <mequiv> b [n]</math></br>
-<math>81 <mequiv> 1 [5]</math>
-<p>
-Cet ensemble est bien un groupe abélien (<a href="demo">démontré ici</a>).
-En fait, <span class="important">l'intêrêt de ce groupe est de pouvoir trouver des restes facilement après une addition</span>.
-En effet, <span class="important">additionner deux nombres donne un résultat dans la même classe d'équivalence que celle de la somme de l'élément le plus simple de leur classe d'équivalence</span>.
-Cette propriété se déduit directement de la stabilité de cet ensemble avec l'addition.
 </p>
 
 <h3>Les parties génératrices et sous-groupes engendrés</h3>
@@ -483,8 +477,6 @@ Par exemple, dans "Z/5Z" :
 <math>7 <mequi> 2 = 1 + 1</math></br>
 <math>0 = 1 - 1</math></br>
 <math>-2 <mequi> 3 = 1 + 1 + 1</math></br>
-
-
 
 <h3>L'ordre d'un groupe / d'un élément de groupe</h3>
 <p>
@@ -631,10 +623,45 @@ On peut donc le formaliser comme ça :
 </p>
 <math><mforall> x <min> G, <mforall> h <min> H, x ~ h ~ <mi>h</mi><msup>-1</msup> <min> H</math>
 <p>
-En plus, <span class="important">on peut démontrer que si un sous-groupe est normal, alors l'ensemble de ses classes à gauches est égal à l'ensemble de ses classes à droites</span>.
+En plus, <span class="important">on peut démontrer que dire qu'un sous-groupe est normal équivaut à dire que l'ensemble de ses classes à gauches est égal à l'ensemble de ses classes à droites</span>.
 La démonstration (<a href="demo">présente juste ici</a>) est assez simple, grâce à la propriété de stabilité via l'action par conjugaison.
 </p>
 <math><mforall> x <min> G, xH = Hx</math>
+<p>
+Nous pouvons obtenir un résultat assez utile en théorie des groupes via ces groupes : <span class="important">tout noyau de morphisme de groupe est un sous-groupe normal de son groupe de départ</span>.
+Nous avons déjà prouvé plus haut qu'il s'agit d'un sous-groupe du groupe de départ.
+Pour prouver que ce sous-groupe est normal, utilisons la stabilité de "ker(f)" par conjugaison de "G" sur lui même.
+</p>
+<math><mforall> a <min> ker(f), f(a) = <mi>0</mi><msub>F</msub></math></br>
+<math><mforall> c <min> G, f(c) = d <mand> f(<mi>c</mi><msup>-1</msup>) = <mi>d</mi><msup>-1</msup> <mimp> f(c ~ a ~ <mi>c</mi><msup>-1</msup>) = d # <mi>0</mi><msub>F</msub> # <mi>d</mi><msup>-1</msup> = <mi>0</mi><msub>F</msub> <mimp> c ~ a ~ <mi>c</mi><msup>-1</msup> <min> ker(f)</math>
+<p>
+Les classes à gauches et à droites de "ker(f)" sont donc les mêmes.
+D'ailleurs, on peut écrire :
+</p>
+<math><mforall> a <min> E, <mforall> k <min> ker(f), f(a ~ k) = f(a) ~ f(k) = f(a)</math>
+<p>
+En voyant ce résultat, on peut voir que tous les éléments d'une même classe à gauche / à droite de "ker(f)" ont la même image.
+On peut aussi démontre que si deux images sont similaires, elles sont donc dans la même classe.
+</p>
+<math><mforall> a, b <min> E, f(a) = f(b) <mimp> f(a) * f(<mi>b</mi><msub></msub>) = 0 <mimp> f(a + <mi>b</mi><msub></msub>) = 0 <mimp> <mexists> k <min> ker(f), a + <mi>b</mi><msub></msub> = k <mimp> a = k + b <mimp> a + e = k + b</math>
+<p>
+Ici, "e" représente le neutre, qui appartient bien à "ker(f)" : si deux images sont similaires, elles sont donc dans la même classe.
+Il existe donc une bijection entre les classes à gauches / à droites de "ker(f)" et les éléments de l'image de "f".
+Comme ce groupe est normal, on peut donc quotienter le groupe de départ et le noyau de "f" pour en obtenir ces classes à gauches / à droites.
+</p>
+<math>h : G / ker(f) <mto> Im(f)</math></br>
+<math><mforall>a <min> G, <mforall> k <min> ker(f), g(a + k) = f(a)</math>
+<p>
+On peut finalement prouver que cette bijection est un morphisme, qui est donc bijectif, et qui est donc un isomorphisme.
+</p>
+<math><mforall>a, b <min> G, <mforall> k, l <min> ker(f), <mexists> c <min> G, <mexists> k' <min> ker(f), g((a + k) + (b + l)) = g(a + (c + k') + l) = g(a + c + k' + l) = f(a + c) = f(a) * f(c) = g(a + k) * g(b + l)</math></br>
+<p>
+Donc, on peut énoncer un théorème très important (généralement nommé théorème d'isomorphisme) : <span class="important">le groupe de départ quotienter par le noyau de "f" est isomorphisme à l'iamge de "f"</span>.
+</p>
+<math>G / ker(f) <misomorph> Im(f)</math>
+
+
+
 <p>
 Un des sous-groupes normaux les plus remarquables est le centre d'un groupe.
 Déjà, en algèbre pure, <span class="important"><definition name="algebra_center"></span>.
@@ -658,4 +685,49 @@ Comme "g" et "g'" commutent avec tout ceux qui existe dans "G", alors si l'on op
 <p>
 Donc, <span class="important">l'ensemble formé par le centre d'un groupe permet d'obtenir un sous-groupe du groupe</span>.
 D'ailleurs, comme les éléments du groupes commutent avec tous les autres, ce sous-groupe est normal.
+</p>
+
+<h3>Les groupes quotients</h3>
+<p>
+Une opération très utilisée avec les groupes est le quotientage de groupe.
+En effet, <span class="important"><definition name="algebra_group_quotient"></span>.
+En fait, il s'agit donc d'un groupe sur les classes d'équivalences de la relation d'équivalence liant tous les éléments de même classe à gauche de "H".
+Pour rappel, comme "H" est normal, les classes à gauches et à droites sont les mêmes, donc il n'y a pas besoin de spécifier les classes à droite.
+Cependant, pour avoir un groupe, il nous faut avoir une loi de composition sur ce groupe.
+En effet, <span class="important">la loi de composition du groupe quotient est une loi induite par "G" : l'opération de deux éléments du groupe quotient donne l'élément de ce groupe quotient qui représente la classe d'équivalence du résultat de l'opération d'éléments dans la classe d'équivalence représentant les opérandes dans le groupe quotient</span>.
+Cela rend donc les calculs dans les groupes quotients très facile.
+</p>
+<math><mforall>a, b <min> G/H, <mexists>x, y <min> G, a = xH, b = yH</math></br>
+<math><mexists> z <min> G, x . y = z <mimp> xH . yH = zH <mimp> <mexists> c <min> G/H, c = zH, a # b = c</math>
+<p>
+Il existe d'ailleurs un morphisme très simple, dit canonique, entre tout groupe et ses groupes quotients.
+Ici, ce morphisme représente tout simplement l'application allant de tous les éléments de "g" vers la classe d'équivalence à laquelle elle appartient dans le groupe quotient.
+On peut le noter comme ceci :
+</p>
+<math>f : G <mto> G/H, g <mto> gH</math></br>
+<math><mforall> a, b <min> G, f(a + b) = (a + b)H = aH + bH = f(a) + f(b)</math>
+
+<h3>Le groupe additif Z/nZ</h3>
+<p>
+En arithmétique des nombres entiers naturels, la théorie des groupes est très utilisée pour beaucoup de résultats.
+Le meilleur exemple est le groupe "(Z/nZ, +)".
+<span class="important"><definition name="algebra_group_znz"></span>.
+En d'autres termes, <span class="important">il s'agit d'un groupe définit sur des restes de divisions euclidiennes par "n"</span>.
+Ici, la notation utilisée "Z/nZ" permet de savoir que nous quotientons "Z" par son sous-groupe additif "nZ" (et donc, où l'on découpe "Z" comme les classes à gauches de "nZ", et donc comme tous les "a" différents dans la formule "a + b * n").
+Pour noter les classes d'équivalences, nous allons les noter comme la classe d'équivalence de l'élement entre "0" et "n", pour faciliter les calculs.
+</p>
+<math>Z/nZ = {[0], [1], ..., [n - 1]}</math></br>
+<math>Z/5Z = {[0], [1], [2], [3], [4]}</math>
+<p>
+Il existe une notation précise pour signifier que deux nombres "a" et "b" sont dans une même classe d'équivalence dans "Z/nZ" : <span class="important">on dit que "a" est congru à "b" modulo "n"</span>.
+Bien qu'on essaye d'obtenir le "b" le plus simple possible, on peut aussi en obtenir un plus complexe si besoin.
+La notation hérite directement du concept de relation d'équivalence.
+</p>
+<math>a <mequiv> b [n]</math></br>
+<math>81 <mequiv> 1 [5]</math>
+<p>
+Cet ensemble est bien un groupe abélien (<a href="demo">démontré ici</a>).
+En fait, <span class="important">l'intêrêt de ce groupe est de pouvoir trouver des restes facilement après une addition</span>.
+En effet, <span class="important">additionner deux nombres donne un résultat dans la même classe d'équivalence que celle de la somme de l'élément le plus simple de leur classe d'équivalence</span>.
+Cette propriété se déduit directement de la stabilité de cet ensemble avec l'addition.
 </p>

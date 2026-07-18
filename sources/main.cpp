@@ -120,29 +120,71 @@ void scalar_field_2d_colored(scls::Image image, scls::Formula_Base* formula, scl
     }
 }
 
+void van_der_pol_oscillator(scls::Physic_Object* object, scls::Formula_Base* formula_x, scls::Formula_Base* formula_y, double delta_time) {
+	double current_x = object->attached_transform()->x();
+	double current_y = object->attached_transform()->y();
+	double current_x_velocity = object->attached_transform()->velocity_x();
+	double current_y_velocity = object->attached_transform()->velocity_y();
+
+	// Get the needed vector
+	double w0 = 1;
+	double current_value_x = w0 * (1 - current_x * current_x) * current_x_velocity - w0 * w0 * current_x;
+	double current_value_y = w0 * (1 - current_y * current_y) * current_y_velocity - w0 * w0 * current_y;
+	object->apply_force(scls::Point_2D(current_value_x, current_value_y) * delta_time);
+}
+
+void draw_triangle_from_middle_and_rotation(scls::Image img, scls::Point_2D position, double rotation) {
+    double height = 50;
+    double side = std::sqrt(height * height + (height / 2.0) * (height / 2.0)) / 2.0;
+    rotation -= 90;
+
+    // Get the points
+    scls::Point_2D left = scls::Point_2D(-side / 2.0, -height / 2.0);
+    scls::Point_2D right = scls::Point_2D(side / 2.0, -height / 2.0);
+    scls::Point_2D top = scls::Point_2D(0, height / 2.0);
+    left.rotate(-rotation);right.rotate(-rotation);top.rotate(-rotation);
+    left += position;right += position;top += position;
+
+    // Draw the form
+    img.fill_form({left, right, top}, scls::Color(255, 0, 0));
+}
+
 int main(int argc, char* argv[]) {
-    /*std::shared_ptr<scls::Formula_Base> function = scls::string_to_algebra_element<scls::Formula_Base>("x*exp((x*x)+(y*y)*-1)");
+    //return command(argc, argv);
 
-    scls::Image image = scls::Image(1080, 1920, scls::Color(255, 255, 255));
-    scls::Plane_Base p = scls::Plane_Base(200, 200, image.width() / 2, image.height() / 2);
-    scalar_field_2d_colored(image, function.get(), &p);
-    image.save_png("tests/i.png");
+    /*std::shared_ptr<scls::Transform_Object_2D> transform = std::make_shared<scls::Transform_Object_2D>();
+    scls::Physic_Engine engine;
+    std::shared_ptr<scls::Physic_Object> t = engine.new_physic_object(transform);
+    t.get()->set_static(false);t.get()->set_use_gravity(false);t.get()->set_velocity(scls::Point_2D(20, 1));
+    transform.get()->set_scale_x(0.1);
+    transform.get()->set_scale_y(0.1);
+    transform.get()->set_x(0);
+    transform.get()->set_y(0);
 
-	int duration = 8;
-	scls::Video_Encoder enc = scls::Video_Encoder(std::string("./tests/t.mp4"), duration, 1080, 1920);
-    std::shared_ptr<scls::Formula_Base> f = scls::string_to_algebra_element<scls::Formula_Base>("(1/4) * x + 2");
-    for(int i = 0;i<duration*60;i++) {
-        t = 1 + static_cast<double>(i)/60.0;
-        scls::Image image = scls::Image(1080, 1920, scls::Color(255, 255, 255));
-        scls::Plane_Base p = scls::Plane_Base(200, 200, image.width() / 2, image.height() / 2);
-        scalar_field_2d_colored(image, function.get(), &p);
+    std::shared_ptr<scls::Plane_Base> b = std::make_shared<scls::Plane_Base>(scls::Plane_Base::base_for_image(1000, 1000, 100, 100));
+    scls::Image image = scls::Image(1000, 1000, scls::Color(255, 255, 255));
+    scls::Turtle turtle = scls::Turtle(image);
+    turtle.set_pen_size(10);turtle.pen_up();turtle.go_to_object(transform.get(), b.get());turtle.pen_down();
+    turtle.add_action_follow(transform, b);
 
-        enc.write_video_frame(image);
+    std::shared_ptr<scls::Formula_Base> formula_x = scls::string_to_algebra_element<scls::Formula_Base>("-y");
+    std::shared_ptr<scls::Formula_Base> formula_y = scls::string_to_algebra_element<scls::Formula_Base>("x");
+
+    scls::Video_Encoder enc = scls::Video_Encoder(std::string("./tests/t.mp4"), 15, 1000, 1000);
+    for(int i=0;i<1200;i++) {
+        engine.update_physic(0.02);
+        turtle.update_actions(0.02);
+        van_der_pol_oscillator(t.get(), formula_x.get(), formula_y.get(), 0.02);
+
+        scls::Image current_image = image.copy_image();
+        draw_triangle_from_middle_and_rotation(current_image, turtle.position(), turtle.rotation() * SCLS_RADIANS_TO_ANGLE);
+        enc.write_video_frame(current_image);
         enc.go_to_next_frame();
     }
-    enc.close_encoding();//*/
+    enc.close_encoding();
 
-    //return command(argc, argv);
+    image.save_png("tests/l.png");
+    return 0;//*/
 
 	pleos::Pleos_Window window(900, 600, argv[0]);
     window.load_from_xml("assets/window.txt");

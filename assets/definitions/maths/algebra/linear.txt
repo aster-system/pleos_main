@@ -10,7 +10,7 @@
 </new_definition>
 <new_definition name="linear_form">
     <content>une forme linéaire (aussi nommée covecteur) est une application allant d'un espace vectoriel sur un corps "K" vers... le corps "K" lui même</content>
-    <content name="bilinear">une forme bilinéaire est une application allant de l'ensemble des couples d'un espace vectoriel sur un corps "K" vers le corps "K" lui même</content>
+    <content name="bilinear">une forme bilinéaire est une application allant de l'ensemble des couples entre deux espaces vectoriels (pas forcément les mêmes) sur un corps "K" vers le corps "K" lui même</content>
 </new_definition>
 <new_definition name="linear_system">
     <content>un système linéaire est un système d'équations composé d'équations linéaires</content>
@@ -18,6 +18,7 @@
 
 <new_definition name="bilinear_application">
     <content>une application bilinéaire est une application prenant deux vecteurs de deux espaces vectoriels "E" et "F" (généralement les mêmes, mais ce n'est pas obligatoire), et allant vers un autre espace vectoriel "G" (et donc, allant de "E X F" vers "G"), de telle manière qu'elle soit linéaire en ses deux variables</content>
+    <content name="orthogonality">deux vecteurs de deux espaces vectoriels sur un même corps sont dit orthogonaux par une forme bilinéaire si la valeur de ces deux vecteurs par cette forme bilinéaire vaut le nul multiplicatif du corps de départ</content>
 </new_definition>
 
 <new_definition name="dual_space">
@@ -53,8 +54,11 @@
     <content name="basis">une matrice de changement de base (ou matrice de passage) est une matrice carrée permettant d'obtenir les coordonnées d'un vecteur dans une base "c", via l'expression de ce vecteur dans une autre base "b"</content>
     <content name="dimension">la dimension d'une matrice est un couple de nombre entier naturel contenant son nombre de ligne, puis son nombre de colonne</content>
     <content name="identity">une matrice identité de taille "n" est une matrice carrée de dimension "(n, n)", constitué du neutre de la multiplication de son corps de départ (donc "1" si le corps est "R") sur sa diagonale, et de l'absorbant de la multiplication de son corps de départ (donc "0" si le corps est "R") partout ailleurs</content>
-    <content name="rigorous">une matrice à valeur dans un ensemble représente un ensemble d'éléments de cet ensemble, indexé par le produit cartésien de deux ensembles de taille "b" et "c"</content>
+    <content name="rigorous">une matrice à valeur dans un ensemble "K" représente une application allant du produit cartésien de deux ensembles quelconques "I" et "J" vers l'ensemble "K"</content>
     <content name="transpose">la transposée d'une matrice représente une nouvelle matrice, où les colonnes de cette matrice sont les lignes de la matrice de départ (et donc, où l'on échange les lignes et les colonnes de la matrice)</content>
+</new_definition>
+<new_definition name="matrix_diagonal">
+    <content>une matrice diagonale est une matrice carrée où tous les coefficients qui ne sont pas sur la diagonale sont non-nuls</content>
 </new_definition>
 <new_definition name="matrix_inverse">
     <content>une matrice inversible est une matrice carrée de taille "n" telle qu'il existe une autre matrice carrée de taille "n", tel que leur produit matriciel (dans les deux sens possibles) donne la matrice identité de taille "n"</content>
@@ -62,7 +66,17 @@
 <new_definition name="matrix_product">
     <content>le produit matriciel est une opération entre deux matrices de dimension "a, b" et "b, c", donnant une nouvelle matrice de dimension "a, c" où chaque élément représente une somme de produits d'éléments de lignes et de colonnes</content>
 </new_definition>
+<new_definition name="matrix_trace">
+    <content>la trace d'une matrice carrée représente la somme de tous les éléments de sa diagonale principale</content>
+</new_definition>
 
 <new_definition name="echelon_vertical">
     <content>l'échelonnement vertical (aussi nommé réduction verticale) est une méthode de transformation d'une matrice en une matrice échelonnée, qui permet de plus facilement déduire des résultats sur la matrice de départ<content>
+</new_definition>
+
+<new_definition name="scalar_field">
+    <content>un champ scalaire est une application allant de l'ensemble "R exposant n" vers un ensemble de scalaire, comme "R"</content>
+</new_definition>
+<new_definition name="vector_field">
+    <content>un champ de vvecteurs est une application allant de l'ensemble "R exposant n" vers un ensemble "R exposant n"</content>
 </new_definition>

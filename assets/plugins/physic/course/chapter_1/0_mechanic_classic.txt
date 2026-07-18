@@ -41,33 +41,80 @@ En général, les coordonnées se notent entre parenthèses, comme (-4, 2).
 <p>
 <graphic><background_color white><line x_1=1 y_1=0 x_2=0 y_2=0 color=red border_color=red><line x_1=0 y_1=1 x_2=0 y_2=0 color=blue border_color=blue><circle x=-4 y=2 radius=1/2 color=green></graphic>
 <p>
-Dans un système en évolution dans le temps, il est possible de constater l'évolution de la position de l'objet.
+Un exemple simple est l'exemple du jeu d'échec.
+Plaçons nos pièces de telle manière que nous mettons un pion "A" dans le coin inférieur gauche, un pion "B" à sa droite, et un pion "C" dans le coin supérieur droit.
+Du point de vue du pion "A", le pion "B" se situe à une case à la droite.
+Cependant, du point de vue du pion "C", le pion "B" se situe à 6 cases à gauches et 7 cases en bas.
+La position du pion "B" diffère selon le point de vue qu'on choisi : elle diffère donc selon le référentiel choisi.
+</p>
+<graphic>
+<background_color white><base draw=0>
+<repeat times=8><repeat times=8><rect color=white border_color=black border_radius=5 x=-4+repetition(0) y=-4+repetition(1) width=1 height=1></repeat></repeat>
+<circle x=-7/2 y=-7/2 radius=1/2 color=green><circle x=-5/2 y=-7/2 radius=1/2 color=red><circle x=7/2 y=7/2 radius=1/2 color=blue>
+</graphic>
+
+
+
+<p>
+Mathématiquement parlant, <span class="important"><definition name="reference-rigorous"></span>.
+</p>
+
+
+
+<p>
+De manière un peu plus avancée, on peut étudier l'évolution de la position d'un objet, grâce au concept de mouvement.
+<span class="important"><definition name="movement"></span>.
+</p>
+<p>
+L'objet le plus simple dans l'étude d'un mouvement est le concept de déplacement.
 Si un objet était a une position, et se retrouve à une nouvelle position, <span class="important">le vecteur représentant la différence entre la nouvelle position et l'ancienne position se nomme le vecteur déplacement</span>.
 Comme ce concept représente l'évolution d'une information, on peut le noter avec le caractère delta.
 Si l'on note la première position "p indice 1" et la deuxième position "p indice 2", le déplacement se note :
 </p>
 <math><mdelta>p = <mi>p</mi><msub>2</msub> - <mi>p</mi><msub>1</msub></math>
 <p>
-De manière un peu plus avancée, on peut définir le concept de mouvement.
-<span class="important"><definition name="movement"></span>.
-Il s'agit donc d'une façon extrêmement plus précise de décrire une position qu'un simple déplacement.
+Ces deux "p indice n" sont donc séparés par une durée précise.
+Hors, nous pouvons imaginer une expérience qui fait se rendre compte du problème avec ce concept.
+Imaginez une voiture voyageant en France, où nous allons mesurer sa position (disons que nous prenons un référentiel fixe : 2000 kilomètres au dessus du centre géographique de la France métropolitaine).
+Avant le voyage, mesurons la position de notre voiture : la voiture se situe à une position qui correspond à Marseille.
+Après 10 heures, re-mesurons la position de notre voiture :  la voiture se situe à une position qui correspond à Lyon.
+Donc, le déplacement de la voiture sur ces 10 heures et donc le vecteur allant de Marseille vers Lyon.
+On pourrait donc tracer un vecteur déplacement comme ceci (traçons le sur un schéma ultra simplifié) :
+</p>
+<graphic><background_color white><circle x=3 y=-3 radius=1/3 color=red border_width=5 border_color=black><circle x=5/2 y=-1/2 radius=1/3 color=red border_width=5 border_color=black><arrow color=blue x_1=3 y_1=-3 x_2=5/2 y_2=-1/2></graphic>
+<p>
+Selon <a href="https://www.google.fr/maps">Google Maps</a>, le trajet entre Marseille et Lyon peut se faire en 3h30 : notre mesure est donc parfaitement réaliste.
+Or, nous avons attendu 10h, <span class="important">rien nous prouve que notre voiture n'a pas été autre part pendant tout ce temps</span>.
+Selon Google Maps, le trajet Marseille - Montpellier - Clermont-Ferrand - Lyon dure 8 heures : il peut aussi avoir eu lieu pendant ces 10 heures.
+Or, nous pouvons ici obtenir 3 vecteurs déplacements, qui représente des durées de moins de 10h (et qui arrivent les uns après les autres d'un point de vue temporel) : Marseille - Montpellier, Montpellier - Clermont-Ferrand puis Clermont-Ferrand - Lyon.
+</p>
+<graphic>
+<background_color white>
+<circle x=3 y=-3 radius=1/3 color=red border_width=5 border_color=black><circle x=5/2 y=-1/2 radius=1/3 color=red border_width=5 border_color=black>
+<circle x=1 y=-3 radius=1/3 color=red border_width=5 border_color=black><circle x=1 y=-1/2 radius=1/3 color=red border_width=5 border_color=black>
+<arrow color=blue x_1=3 y_1=-3 x_2=1 y_2=-3><arrow color=blue x_1=1 y_1=-3 x_2=1 y_2=-1/2><arrow color=blue x_1=1 y_1=-1/2 x_2=5/2 y_2=-1/2>
+</graphic>
+<p>
+D'ailleurs, il est évident que nous pouvons encore rendre chacun de ces vecteurs de plus en plus précis.
+Par exemple, entre Marseille et Montpellier, il y a beaucoup de villes : Salon-de-Provence, Saint-Gilles, Gallargues-le-Montueux...
+Et mêmes, entre ces villes, on peut noter chaque village, chaque quartier, chaque rue...
+Dans tous les cas, la durée associée à chaque vecteur et de plus en plus petit.
+Ici, l'idée est assez simple : <span class="important">plus les durées sont petites, plus on est précis et proche de la réalité</span>.
 </p>
 <p>
-L'exemple le plus simple est l'exemple du train et du voyageur (un des exemples préférés d'Einstein).
-Si vous observez un train avec un voyageur dedans, à partir de l'extérieur du train (en étant directement sur le sol, sans bouger), le train bouge, et le voyageur qui est dessus aussi.
-Par contre, si vous êtes dans le train, alors vous verrez que ni le train, ni le voyageur bouge (en considérant que vous êtes assis, et le voyageur aussi, sans bouger).
-Cependant, tout ce qui est en dehors du train va bouger.
-Donc, <span class="important">les observations changent selon de comment vous regardez le système (et donc, selon le référentiel que vous choisissez)</span>.
+Reprenons les mathématiques.
+Comme tout ce qui existe, on peut représenter la position de la voiture (ou de n'importe quel objet) comme une fonction, allant de l'ensemble des nombres réels positifs vers un ensemble de coordonnées.
+Ici, l'ensemble d'arrivée représente l'ensemble des unités de temps (comme des secondes) possibles après le départ de la voiture.
+De plus, pour notre exemple, nous pouvons représenter les positions des villes avec seulement deux axes : ouest - est et nord - sud.
+Donc, nous avons une fonction (que nous allons noter "p") allant de "R" vers "R²".
 </p>
+<math>p : R <mto> <mi>R</mi><msup>2</msup></math>
 <p>
-Mathématiquement parlant, <span class="important"><definition name="reference-rigorous"></span>.
-Pour prendre un exemple, nous allons considérer que les coordonnées que nous allons prendre représente le sol (avec les axes ouest - est et sud - nord), et nous n'allons pas considérer la hauteur.
-Dans l'exemple du train, si vous prenez comme référentiel un homme statique sur le sol, en considérant que vous êtes la coordonnées "(0, 0)" du système, on peut dire que les coordonnées du milieu du train pour l'observateur seront "(-100, 20)", puis "(0, 20)", puis "(100, 20)"...
-On peut mathématiquement définir que le voyageur se situe à "10" unités du milieu du train, et ces coordonnées pour l'observateur seront donc "(-90, 20)", puis "(10, 20)", puis "(110, 20)"...
-Or, pour le voyageur, si il ne bouge pas, alors le train ne bougera pas pour lui non plus, et comme il est "10" unités "plus loin" que le milieu du train, les coordonnées du milieu train pour le voyageur seront donc "(-10, 0)" pendant tout le trajet.
-Cependant, les coordonnées de l'homme statique d'en dehors du train pour le voyageur seront "(90, -20)", puis "(-10, 20)", puis "(-110, 20)"...
-Donc, <span class="important">il faut faire très attention au choix du référentiel, pour ne pas faire n'importe quoi</span>.
+Un déplacement entre deux moments "t indice 1" et "t indice 2" se notre donc très simple "p(t indice 2) - p(t indice 1)".
 </p>
+<math><mdelt>p = p(<mi>t</mi><msub>2</msub>) - p(<mi>t</mi><msub>1</msub>)</math>
+
+
 
 <h3>Les lois du mouvement de Newton</h3>
 <p>

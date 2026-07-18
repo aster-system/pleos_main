@@ -46,5 +46,5 @@ Cependant, cela implique quelque chose d'assez important : <span class="importan
 <p>
 Si notre hypothèse est validée, elle devient ce que l'on appelle une théorie.
 <span class="important"><definition name="theory"></span>.
-En science pure, une théorie est généralement admise, là où dans le langage courant, elle est considérer comme "insuffisante" pour être admise.
+En science pure, une théorie est généralement admise, là où dans le langage courant, elle est considérée comme "insuffisante" pour être admise.
 </p>

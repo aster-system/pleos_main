@@ -280,3 +280,65 @@ Par linéarité de "f", on peut sortir la somme et la multiplication de "f".
 Donc, tout vecteur "V" de "I" s'écrit comme la combinaison linéaire d'éléments de l'image de la base "b" : c'est exactement la définition d'une famille qui génère "F".
 Donc, l'image d'une base de "E" représente une base de l'image de l'application dans "F".
 </p>
+
+<h3>Les matrices</h3>
+
+<h4>4.1.2.0</h4>
+<p>
+Démontrons que faire le produit d'une matrice par une matrice diagonale quelconque revient à obtenir une matrice où les colonnes de votre première matrice sont multipliées par les valeurs dans la diagonale de la même colonne.
+Rappelons la définition du produit matriciel.
+</p>
+<math><mi>c</mi><msub>i, j</msub> = <msum from=1 to=n unknown=k><mi>a</mi><msub>(i,k)</msub><mi>b</mi><msub>(k,j)</msub></math>
+<p>
+Posons une matrice de dimension "(m, n)".
+Considérons une matrice diagonale de taille "p", de telle manière que cette matrice soit compatible au produit matriciel (en tant que deuxième élément) avec notre matrice de départ.
+Appelons l'élément de la diagonale à la ligne / colonne "l" de notre matrice diagonale "d de i".
+Pour rappel, toutes les autres valeurs des lignes / colonnes (hors de la diagonale) de la matrice sont nuls.
+Notre produit matriciel devient :
+</p>
+<math><mi>c</mi><msub>i, j</msub> = <msum from=1 to=n unknown=k><mi>a</mi><msub>(i,k)</msub><mi>b</mi><msub>(k,j)</msub> = <mi>a</mi><msub>(i,j)</msub><mi>d</mi><msub>j</msub></math>
+<p>
+Donc, chaque valeur de la matrice représente la valeur de la matrice de départ multiplié par l'élément de la diagonale de la colonne associée.
+Donc, faire le produit d'une matrice par une matrice diagonale quelconque revient à obtenir une matrice où les colonnes de votre première matrice sont multipliées par les valeurs dans la diagonale de la même colonne.
+Démontrons maintenant le sens inverse : faire le produit d'une matrice diagonale par une matrice quelconque revient à obtenir une matrice où les lignes de votre deuxième matrice sont multipliées par les valeurs dans la diagonale de la même ligne.
+</p>
+<math><mi>c</mi><msub>i, j</msub> = <msum from=1 to=n unknown=k><mi>b</mi><msub>(i,k)</msub><mi>a</mi><msub>(k,j)</msub> = <mi>d</mi><msub>i</msub><mi>a</mi><msub>(i,j)</msub></math>
+<p>
+Donc, chaque valeur de la matrice représente la valeur de la matrice de départ multiplié par l'élément de la lignle de la colonne associée.
+Donc, faire le produit d'une matrice diagonale par une matrice quelconque revient à obtenir une matrice où les lignes de votre deuxième matrice sont multipliées par les valeurs dans la diagonale de la même ligne.
+</p>
+
+<h4>4.1.2.1</h4>
+<p>
+Démontrons que, pour deux matrices carrés de même taille "A" et "B", la trace de "A * B" et la même que celle de "B * A".
+Rappelons la définition du produit matriciel de "A" et "B", puis de "B" et "A".
+</p>
+<math>A * B = C, B * A = D</math></br>
+<math><mi>c</mi><msub>i, j</msub> = <msum from=1 to=n unknown=k><mi>a</mi><msub>(i,k)</msub><mi>b</mi><msub>(k,j)</msub></math></br>
+<math><mi>d</mi><msub>i, j</msub> = <msum from=1 to=n unknown=k><mi>b</mi><msub>(i,k)</msub><mi>a</mi><msub>(k,j)</msub></math>
+<p>
+Posons "l" tel que "l" peut remplacer "i" et "j".
+Dans ce cas :
+</p>
+<math><mi>c</mi><msub>l, l</msub> = <msum from=1 to=n unknown=k><mi>a</mi><msub>(l,k)</msub><mi>b</mi><msub>(k,l)</msub></math></br>
+<math><mi>d</mi><msub>i, j</msub> = <msum from=1 to=n unknown=k><mi>b</mi><msub>(l,k)</msub><mi>a</mi><msub>(k,l)</msub></math>
+<p>
+Ici, la trace de la matrice "C" représente la somme de tous les "c indice l, l" possibles, et la trace de la matrice "D" représente la somme de tous les "d indice l, l" possibles.
+</p>
+<math>Tr(C) = <msum from=1 to=n unknown=l><msum from=1 to=n unknown=k><mi>a</mi><msub>(l,k)</msub><mi>b</mi><msub>(k,l)</msub></math></br>
+<math>Tr(D) = <msum from=1 to=n unknown=l><msum from=1 to=n unknown=k><mi>b</mi><msub>(l,k)</msub><mi>a</mi><msub>(k,l)</msub> = <msum from=1 to=n unknown=l><msum from=1 to=n unknown=k><mi>a</mi><msub>(k,l)</msub><mi>b</mi><msub>(l,k)</msub></math>
+<p>
+Dans le calcul "D", procédons à un changement de nom de variable assez bizarre : appelons "k" la variable "l" et "l" la variable "k".
+En fait, permutons les noms, sans changer la valeur intrasèque de ces variables.
+Si vous voulez faciliter cette étape, décomposez là : commencer par remplacez "l" par "z", puis remplacez "k" par "l", puis "z" par "k" : le résultat est le même, mais permet de ne pas se mélanger les pinceaux.
+</p>
+<math>Tr(D) = <msum from=1 to=n unknown=k><msum from=1 to=n unknown=l><mi>a</mi><msub>(l,k)</msub><mi>b</mi><msub>(k,l)</msub></math>
+<p>
+Maintenant, permutons les deux sommes (ce qui est tout à fait possible dans ce contexte).
+</p>
+<math>Tr(D) = <msum from=1 to=n unknown=l><msum from=1 to=n unknown=k><mi>a</mi><msub>(l,k)</msub><mi>b</mi><msub>(k,l)</msub></math>
+<p>
+Or, nous obtenons que le calcul de "Tr(D)" est exactement le même que celui de "Tr(C)".
+Donc, ils sont égaux.
+</p>
+<math>Tr(C) = Tr(D) <mequi> Tr(AB) = Tr(BA)</math>

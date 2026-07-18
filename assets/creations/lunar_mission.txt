@@ -56,3 +56,102 @@ Donc, pour éviter ce genre de problème, tous les drapeaux seront censurés en 
 Il est aussi possible de suivre ce projet de manière plus proche, via Discord.
 En effet, vous pouvez nous rejoindre sur Discord, avec le lien juste ici : <a href="https://discord.gg/4HuerWR8pG">https://discord.gg/4HuerWR8pG</a>.
 </p>
+
+
+
+<h2>Partie 1 : Re-make d'Apollo 11</h2>
+
+<h3>Les objets 3D</h3>
+<p>
+Comme tout cela se passe en 3D, la première étape est de modéliser en 3D tout le nécessaire pour rendre le tout réaliste.
+</p>
+
+<p>
+La première étape est de modéliser la Terre et son voisinage.
+En soit, il ne s'agit pas d'une étape très compliqué : la Terre n'est qu'une sphère, ce qui est très facile à faire en 3D.
+Pour la texture, nous pouvons faire confiance à la NASA, qui propose <a href="https://commons.wikimedia.org/wiki/File:Blue_Marble_2002.png" target="blank">sur ce lien</a> une carte de la Terre, que nous pouvons ensuite "coller" sur la sphère, avec une technique de projection équidistante.
+</p>
+<img alt="Photo de la Terre en 3D" src="../images/lunar_mission/earth.png" width=300>
+<p>
+Nous pouvons faire l'exacte même chose pour la Lune (et aussi, pour toutes les planètes du système solaire interne).
+Encore, les textures sont fournies par la NASA.
+</p>
+<img alt="Photo de la Lune en 3D" src="../images/lunar_mission/moon.png" width=300>
+<p>
+La suite logique est donc la réalisation de la fusée, des modules, et des infrastructures.
+Commençons par le plus rigolo : la fusée.
+Ici, la fusée est pleinement inspirée du programme Apollo : il s'agit d'une Saturn V.
+Pour les chiffres précis, nous avons utilisé beaucoup de sources différentes : <a href="https://fr.wikipedia.org/wiki/Saturn_V" target="blank">Wikipédia</a>, <a href="https://www.nasa.gov/learning-resources/for-kids-and-students/what-was-the-saturn-v-grades-5-8/" target="blank">la NASA</a>, <a href="https://ia800400.us.archive.org/18/items/saturn-5-flight-manual-sa-506/saturn-5-flight-manual-sa-506.pdf" target="blank">des papiers plus scientifiques</a>...
+Comme toute fusée, elle est très simple à faire, grâce à un détail extraordinaire : elle ne représente presque que de gros cylindre plus ou moins large, et de détails plus ou moins importants.
+C'est la même chose pour la texture : elle ne comporte pas de parties très complexes, mais juste des rectangles bien placés.
+Ici, le modèle de la partie "réservoir" de la fusée est découpé en 5 parties : premier étage, deuxième étage, troisième étage, inter-étage entre le premier et le deuxième étage et inter-étage entre le second et le troisième étage.
+</p>
+<img alt="Photo des 3 premiers étages de la Saturn V" src="../images/lunar_mission/saturn_v_3_stages.png" height=300>
+<p>
+Nous voyons sur cette image un détail un peu différent, qui est pourtant très important : les moteurs.
+Pour cette première partie, les moteurs sont découpés en 2 : la tuyère, et... le reste.
+En réalité, un moteur est d'une extrême complexité à faire, et une très grande partie de cette complexité se situe dans la partie "le reste".
+Cependant, dans un modèle 3D de ce genre, la partie extrêmement complexe n'est pas obligatoire, nous l'avons donc ignoré.
+Nous avons aussi rajouter un système de flamme.
+Ici, le premier étage de la fusée a 5 moteurs de type "F1", le deuxième étage 5 moteurs de type "J2", et le troisième étage 1 moteur "J2".
+Au décollage, les moteurs du deuxième et du troisième étage sont protégés par les parties inter-étages de la fusée.
+</p>
+<img alt="Saturn V en vol" src="../images/lunar_mission/saturn_v_flight.png" height=300>
+<p>
+En suite, nous avons dû faire les modules comportant (dans la vraie vie) les astronautes.
+Ils sont au nombre de 3 : un module de commande (l'endroit où les astronautes sont pendant le trajet et commandent le tout), un module de service (apportant les services nécessaires aux astronautes pour... survivire) et un module lunaire (module permettant aux astronautes de se poser sur la Lune et d'en revenir).
+Comme pour les réservoirs de la Saturn V, le module de commande et le module de service sont très simple à faire : le module de service n'est qu'un gros cylindre avec quelques détails (généralement inutiles) et un moteur, et le module de service n'est qu'une cône.
+</p>
+<img alt="Saturn V en vol" src="../images/lunar_mission/command_and_service_module.png" height=300>
+<p>
+Par contre, pour le module lunaire (généralement appelé "LEM"), c'est plus compliqué.
+</p>
+<p>
+Il manque un dernier détail : au décollage, si la fusée a un problème il est préférable d'évacuer les astronautes à une vitesse... extrêmement élevée.
+Pour cela, un système est équipé sur la fusée : la tour de sauvetage.
+Il s'agit d'une tour montée au dessus du module lunaire, contenant un moteur de fusée, qui a pour mission d'extirper et d'évacuer le module de commande (avec les astronautes dedans) en cas de problème au décollage.
+Avec ceci monté, la fusée ressemble à ça :
+</p>
+<img alt="Saturn V complète" src="../images/lunar_mission/saturn_v_full.png" height=300>
+
+<h3>La physique</h3>
+<p>
+La gestion de la physique est probablement l'une des choses les plus complexes dans un projet comme celui ci.
+</p>
+<p>
+La première étape est d'appliquer les forces nécessaires sur les objets nécessaires.
+Ici, les seules forces vraiment nécessaires sont les forces appliqués par les objets très massifs (astres) sur les parties de la fusée / des modules.
+La force appliquée par la fusée / les modules sur les astres est parfaitement négligeable, et la force entre les différents astres est inutile dans ce contexte (on peut simuler la façon dont fonctionne les astres sans avoir à calculer la force).
+La formule utilisée pour ce calcul est la très célèbre formule de Newton :
+</p>
+<math>f = G <mfrac><mrow><mi>m</mi><msub>1</msub><mi>m</mi><msub>2</msub></mrow><mrow><mi>d</mi><msup>2</msup></mrow></mfrac></math>
+
+<h3>Le déroulé de la mission</h3>
+<p>
+Pour faire la mission, il faut la programmer.
+</p>
+<p>
+La première phase est la mise en orbite.
+Cette phase se décompose en plusieurs parties.
+La première (la plus simple) représente la gestion des modifications apportées à la fusée.
+En effet, nous devons séparer le premier étage, le second étage, les inter-étages et larguer la tour de sauvetage.
+Toutes ces étapes sont très simples à faire, et ne demandent qu'un chronomètre bien cadencé.
+</p>
+<img alt="Séparation du premier étage" src="../images/lunar_mission/saturn_v_first_separation.png" height=300>
+<p>
+La deuxième partie est la gestion de la mise en orbite.
+Cette partie est bien plus complexe, car elle demande de gérer rigoureusement la poussée des moteurs, et l'angle de la fusée.
+L'idée est de trouver la trajectoire idéale minimisant le carburant nécessaire pour atteindre une orbite d'environ 185kms de haut (comme dans la mission Apollo 11).
+</p>
+<p>
+Il existe cependant un algorithme naïf : considérer la poussée de chaque moteur constante, et adapter l'angle de façon à peu prés linéaire.
+Pour la gestion de l'angle, le décollage est décomposé en 3 phases.
+La première phase (juste après le décollage) consiste à pousser à pleine puissance sur les 5 moteurs du premier étage sans aucune modification de l'angle (décoller tout droit).
+Cette phase est une phase qui a eu lieu dans la vraie vie, pour laisser à la fusée le temps de s'aligner vers la bonne trajectoire.
+La deuxième phase revient à tourner de manière linéaire avec un angle précis (appliqué à l'axe "vitesse" de la fusée), jusqu'à une altitude bien définie.
+Cette phase permet d'atteindre une altitude / vitesse qui permettra à la troisième étape de finaliser la mise en orbite.
+Finalement, la troisième étape va aligner le lanceur deux manière parallèle au plan de la Terre en dessous de lui, tout en maintenant un écart pour éviter au lanceur de retomber.
+Avec cet angle, le lanceur va accélérer de telle manière que sa trajectoire va se rapprocher d'une orbite circulaire.
+La poussée s'arrête quand l'orbite atteinte est circulaire.
+Théoriquement, l'altitude maximale de la trajectoire complète du lanceur inculquée par la deuxième phase est (à quelques kilomètres près) la même que l'altitude de l'orbite circulaire.
+</p>

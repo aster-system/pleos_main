@@ -515,11 +515,18 @@ Cette application respecte toutes les propriétés nécessaires (bien que les ca
 <p>
 Comme il existe des formes linéaires, il existe aussi des formes bilinéaires.
 <span class="important"><definition name="linear_form-bilinear"></span>.
-Elle doit cependant respecter une propriété précise : elle doit être bilinéaire sur l'espace vectoriel trivial de "K".
+Si les deux espaces vectoriels sont le même (que l'on va noter "E"), on parle de forme bilinéaire sur "E".
+Elle doit cependant respecter une autre propriété précise : elle doit être bilinéaire sur l'espace vectoriel trivial de "K".
 </p>
 <math>f(x + x', y) = f(x, y) + f(x', y)</math></br>
 <math>f(x, y + y') = f(x, y) + f(x, y')</math></br>
 <math>f(a * x, y) = f(x, a * y) = a * f(x, y)</math>
+<p>
+Avec cela, nous pouvons définir le concept d'orthogonalité.
+<span class="important"><definition name="bilinear_application-orthogonality"></span>.
+Il existe donc une orthogonalité par forme bilinéaire (nous aurons l'occasion de retrouver celle définie en géométrie un peu plus tard dans cette page).
+</p>
+<math>f(x, y) = 0</math>
 
 
 
@@ -539,15 +546,15 @@ Par convention, ces objets se notent avec des lettres majuscules.
 <p>
 Bien que très intuitive, cette définition manque de rigueur.
 D'un point de vue rigoureux, <span class="important"><definition name="matrix-rigorous"></span>.
-Généralement, on n'indique même pas les ensembles de taille "b" et "c", et l'on met directement la taille de "b" et "c" pour définir une matrice, où les ensembles utilisés pour indexer la matrice sont donc "{1, 2, ..., b}" et "{1, 2, ..., c}".
-C'est dans ce genre de cas que la notation "tableau" devient extrêmement intuitive : le premier ensemble représente les lignes, et le deuxième représente les colonnes.
+Comme tout produit cartésien, nous pouvons la noter sous forme de tableau, justifiant la notation "tableau" si souvent utilisée, où chaque case du tableau contient l'élément associé par l'application (permettant d'obtenir les éléments de la matrice).
+D'ailleurs, <span class="important">nous pouvons obtenir un élément précis d'une matrice, en le notant avec le nom de la matrice (en minuscule), et en indice le couple dans le produit cartésien correspondant à l'élément que l'on cherche</span>.
+Donc, pour "i" dans "I" et "j" dans "J", on note :
 </p>
+<math><mi>a</mi><msub>(i, j)</msub></math>
 <p>
-D'un point de vue "rigueur extrême", <span class="important">une matrice est donc une application allant du produit cartésien de ces deux ensembles vers des éléments de l'ensemble de départ</span>.
-Comme tout produit cartésien, nous pouvons la noter sous forme de tableau, justifiant la notation "tableau" si souvent utilisée.
-D'ailleurs, les images des valeurs des couples dans le produit cartésien des ensembles servant à l'indexage se note généralement avec la lettre utilisé pour noter la matrice en minuscule (pour notre matrice "A" il s'agirait donc de "a"), avec le couple du produit cartésien en indice.
-C'est d'ailleurs comme ça que nous allons utiliser une notation pour accéder à un élément précis de la matrice.
-En effet, <span class="important">un élément d'une matrice "A" à la ligne "y" et à la colonne "x" se note "A indice (x, y)"</span>.
+Très très souvent, <span class="important">"I" et "J" sont finis, de taille "m" et "n", et représentent les ensembles "I = {1, 2, ..., m}" et "J = {1, 2, ..., n}"</span>.
+D'ailleurs, très souvent, la définition avec l'application n'est même pas vraiment utilisée.
+Dans ce genre de matrice, <span class="important">un élément d'une matrice "A" à la ligne "y" et à la colonne "x" se note "A indice (y, x)"</span>.
 L'ordre est important : ligne, puis colonne.
 Reprenons notre matrice "A" :
 </p>
@@ -646,7 +653,7 @@ Soyons plus précis, avec une représentation graphique de deux matrices "A" et 
 L'idée ici est de définir une valeur précise pour chaque "c" de la matrice obtenue.
 En fait, <span class="important">pour un "c indice i, j", l'idée va être d'obtenir la somme du produit de chaque valeur de la "i-ième ligne" de la matrice à droite, et de la "j-ième" colonne de la matrice en haut</span>.
 </p>
-<math><mi>c</mi><msub>i, j</msub> = <msum from=1 to=n unknown=k><mi>a</mi><msub>k</msub><mi>b</mi><msub>k</msub></math>
+<math><mi>c</mi><msub>i, j</msub> = <msum from=1 to=n unknown=k><mi>a</mi><msub>(i,k)</msub><mi>b</mi><msub>(k,j)</msub></math>
 <p>
 Généralement, pour deux matrice "A" et "B", le produit matriciel de ces deux matrices se note comme une opération standard, utilisant généralement un "*", ou un "X".
 </p>
@@ -676,7 +683,34 @@ La matrice identité représente donc le neutre du produit matriciel.
 </p>
 <math>A * I = A, I * B = B</math>
 <p>
-Avec ça, on peut définir quelque chose de très intéressant : les matrices inversibles.
+Ici, on peut voir quelque chose de très pratique : toutes les valeurs non-nulles de la matrice identité sont sur la diagonale allant de en haut à gauche à en bas à droite (appelée diagonale principale).
+On peut généraliser ce concept, avec les matrices diagonales.
+<span class="important"><definition name="matrix_diagonal"></span>.
+Cette définition n'empêche pas certains coefficients de la diagonale principale à être nul.
+Si votre matrice n'est pas carré, le concept de "diagonale principale" n'est pas définie.
+</p>
+<math>D = <mrow><mo>[</mo><mtable><mtr><mtd><mi>2</mi></mtd><mtd><mi>0</mi></mtd><mtd><mi>0</mi></mtd></mtr><mtr><mtd><mi>0</mi></mtd><mtd><mi>-5</mi></mtd><mtd><mi>0</mi></mtd></mtr><mtr><mtd><mi>0</mi></mtd><mtd><mi>0</mi></mtd><mtd><mi>4</mi></mtd></mtr></mtable><mo>]</mo></mrow></math>
+<p>
+D'ailleurs, <span class="important">faire le produit d'une matrice par une matrice diagonale quelconque revient à obtenir une matrice où les colonnes de votre première matrice sont multipliées par les valeurs dans la diagonale de la même colonne</span>.
+En plus, à l'inverse, <span class="important">faire le produit d'une matrice diagonale par une matrice quelconque revient à obtenir une matrice où les lignes de votre deuxième matrice sont multipliées par les valeurs dans la diagonale de la même ligne</span>.
+La démonstration (<a href="demo#4_1_2_0">présente juste ici</a>) utilise les propriétés du produit matriciel.
+</p>
+<math><mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd><mtd><mi>1</mi></mtd></mtr><mtr><mtd><mi>1</mi></mtd><mtd><mi>1</mi></mtd></mtr></mtable><mo>]</mo></mrow> * <mrow><mo>[</mo><mtable><mtr><mtd><mi>3</mi></mtd><mtd><mi>0</mi></mtd></mtr><mtr><mtd><mi>0</mi></mtd><mtd><mi>-2</mi></mtd></mtr></mtable><mo>]</mo></mrow> = <mrow><mo>[</mo><mtable><mtr><mtd><mi>3</mi></mtd><mtd><mi>-2</mi></mtd></mtr><mtr><mtd><mi>3</mi></mtd><mtd><mi>-2</mi></mtd></mtr></mtable><mo>]</mo></mrow></math></br>
+<math><mrow><mo>[</mo><mtable><mtr><mtd><mi>3</mi></mtd><mtd><mi>0</mi></mtd></mtr><mtr><mtd><mi>0</mi></mtd><mtd><mi>-2</mi></mtd></mtr></mtable><mo>]</mo></mrow> * <mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd><mtd><mi>1</mi></mtd></mtr><mtr><mtd><mi>1</mi></mtd><mtd><mi>1</mi></mtd></mtr></mtable><mo>]</mo></mrow> = <mrow><mo>[</mo><mtable><mtr><mtd><mi>3</mi></mtd><mtd><mi>3</mi></mtd></mtr><mtr><mtd><mi>-2</mi></mtd><mtd><mi>-2</mi></mtd></mtr></mtable><mo>]</mo></mrow></math>
+<p>
+Ce type de matrice nous permet de facilement définir un concept très important avec les matrices : la trace.
+<span class="important"><definition name="matrix_trace"></span>.
+Pour une matrice carré "A" de hauteur "n", on note sa trace "Tr(a)", et on peut noter :
+</p>
+<math>Tr(A) = <msum from=1 to=n unknown=k><mi>a</mi><msub>k,k</msub></math>
+<p>
+D'ailleurs, <span class="important">pour deux matrices carrés de même taille "A" et "B", la trace de "A * B" et la même que celle de "B * A"</span> <a href="demo#4_1_2_1">démontré ici</a>.
+On peut prouver très facilement que la trace représente une forme linéaire allant de l'espace vectoriel des matrices carrés de hauteur "n" vers leur corps de départ.
+</p>
+<math>Tr(A + B) = <msum from=1 to=n unknown=k>(<mi>a</mi><msub>k,k</msub> + <mi>b</mi><msub>k,k</msub>) = <msum from=1 to=n unknown=k>(<mi>a</mi><msub>k,k</msub>) + <msum from=1 to=n unknown=k>(<mi>b</mi><msub>k,k</msub>) = Tr(A) + Tr(B)</math></br>
+<math>Tr(c * A) = <msum from=1 to=n unknown=k>(c * <mi>a</mi><msub>k,k</msub>) = c * <msum from=1 to=n unknown=k><mi>a</mi><msub>k,k</msub> = c * Tr(A)</math>
+<p>
+Avec tout ça, on peut définir quelque chose de très intéressant : les matrices inversibles.
 <span class="important"><definition name="matrix_inverse"></span>.
 Donc, pour une matrice "A", la condition pour qu'elle soit inversible serait :
 </p>
@@ -689,11 +723,15 @@ La démonstration est très simple :
 <math>A * C = E <mequi> A * C * D = A = E * D <mequi> A * B = I = E * D * B <mequi> E * D * B = I</math></br>
 <math>A * C = E <mequi> B * A * C = C = B * E <mequi> D * C = I = D * B * E <mequi> D * B * E = E * D * B = I</math></br>
 <p>
+<span class="important">Un exemple de matrice inversibles sont les matrices diagonales</span>.
+
+</p>
+<p>
 Les matrices inversibles sont stables par le produit matriciel, associative, admettent un neutre et chaque matrice admet un inverse.
 Donc, <span class="important">nous pouvons définir un groupe sur ces matrices (avec le produit matriciel) : le groupe général linéaire</span>.
 Il se note généralement "Gl(n, K)", où "n" représente la taille des matrices et "K" le corps de coefficient des matrices.
 </p>
-<math>Gl(n, K)<math>
+<math>Gl(n, K)<math> 
 
 <p>
 Une autre opération possible avec une matrice est la transposition.
@@ -1151,6 +1189,36 @@ En fait, <span class="important">on peut prouver que cette nouvelle matrice repr
 
 
 
+<h3>Les champs scalaires et vectoriels</h3>
+<p>
+Le concept que nous allons présenté dans ce qui suit est un concept assez utilisé en mathématique, mais surtout infiniment important en mathématiques appliquées, comme en physique
+Commençons par parles des champs scalaires.
+<span class="important"><definition name="scalar_field"></span>.
+Un champ scalaire se note donc :
+</p>
+<math>f : <mi>R</mi><msup>n</msup> <mto> R</math>
+<p>
+Donc, les éléments passés à cette fonction sont des vecteurs de "(R exposant n, +, *)".
+<span class="important">On peut des fois entendre parler du concept de champ scalaire comme une fonction à plusieurs variables</span>.
+En fait, cette appelation vient du fait que certains auteurs n'écrivent pas "f((x, y, z))", mais "f(x, y, z)" directement.
+Ici, <span class="important">une champ scalaire n'est pas forcément une forme linéaire sur l'espace vectoriel de "R exposant n", car il n'est pas forcément linéaire</span>.
+On peut par exemple imaginer :
+</p>
+<math>f = cos(x) + sin(y)</math>
+<p>
+Si il existe des champs de scalaires, il existe aussi des champs de vecteurs.
+<span class="important"><definition name="vector_field"></span>.
+</p>
+<math>f : <mi>R</mi><msup>n</msup> <mto> <mi>R</mi><msup>n</msup></math>
+<p>
+Comme pour les champs scalaires, <span class="important">On peut des fois entendre parler du concept de champ de vecteur comme une fonction à plusieurs variables</span> (l'explication du pourquoi est la même que pour les champs scalaires).
+Encore une fois, <span class="important">une champ de vecteur n'est pas forcément une application linéaire, car il n'est pas forcément linéaire</span>.
+On peut par exemple imaginer (dans "R²") :
+</p>
+<math>f((x, y)) = (<mi>x</mi><msup>2</msup> - y, x + <mi>y</mi><msup>2</msup>)</math>
+
+
+
 <h2>Les espaces de Hilbert et la géométrie euclidienne</h2>
 
 <h3>Les espaces vectoriels normés</h3>
@@ -1231,14 +1299,70 @@ Cela veut dire que nous pouvons écrire :
 <p>
 Finalement, elle est définie positive.
 Cependant, il faut savoir que ici, les mots "définie" et "positive" sont un peu bizarre dans le cas des formes linéaires.
-Déjà, <span class="important">dire que le produit est positif équivaut à dire que si vous opérez un élément avec lui même, le résultat sera positif ou nul</span>.
-Finalement, <span class="important">si le produit est définie, alors cela veut dire que si vous opérez un élément avec lui même et que le résultat vaut le nul du corps, alors cela veut dire que cet élément vaut le nul de l'espace vectoriel</span>.
+Déjà, <span class="important">dire qu'une forme bilinéaire est positif équivaut à dire que si vous opérez un élément avec lui même, le résultat sera positif ou nul</span>.
+Finalement, <span class="important">dire qu'une forme bilinéaire est définie équivaut à dire si vous opérez un élément avec lui même et que le résultat vaut le nul du corps, alors cela veut dire que cet élément vaut le nul de l'espace vectoriel</span>.
 En fait, dire que le produit est positif, puis définie revient à dire :
 </p>
 <math>f(x, x) <mgtequal> 0, f(x, x) = 0 <mimp> x = 0</math>
 <p>
 Bon, ici, on peut se demander à quoi va nous servir ce produit.
+Pour cela, plaçons nous dans un espace vectoriel normé sur "R" de type "R exposant n".
+Ici, <span class="important">on peut définir une application de cette forme très précise : l'application qui prend deux vecteurs, "envoie" le deuxième sur le premier, et multiplier la norme du vecteur "envoyé" sur le premier par la norme du premier vecteur</span>.
 </p>
+<graphic><background_color white><line x_1=0 y_1=0 x_2=3 y_2=0 border_width=10><line x_1=0 y_1=0 x_2=5/2 y_2=1 border_color=blue border_width=10></graphic>
+<p>
+Ici, on peut se demander comment démontrer que cette application est bien une forme linéaire.
+Pour cela, essayons d'expliciter cette forme dans "R²".
+Posons deux vecteur "u" et "v" tel que "u" soit "(a, b)" et "v" soit "(c, d)".
+Pour obtenir le vecteur "v" envoyé sur "u", nous devons décomposer "v" dans une base "u" et "u'", où "u" représente "u" tourné de 90° (et donc, "(-b, a)").
+</p>
+<math>v = e * (a, b) + f * (-b, a)</math></br>
+<math>c = e * a + f * -b</math></br>
+<math>d = e * b + f * a</math>
+<p>
+Essayons de trouver une valeur pour "e" :
+</p>
+<math>c = e * a + f * -b</math></br>
+<math>d = e * b + f * a</math></br>
+<math><mequi></math></br>
+<math>c = e * a + f * -b</math></br>
+<math>f = <mfrac><mrow><mi>d</mi><mo>-</mo><mi>e</mi><mo>*</mo><mi>b</mi></mrow><mrow><mi>a</mi></mrow></mfrac></math></br>
+<math><mequi></math></br>
+<math>e * a = c - <mfrac><mrow><mi>d</mi><mo>-</mo><mi>e</mi><mo>*</mo><mi>b</mi></mrow><mrow><mi>a</mi></mrow></mfrac> * -b</math></br>
+<math>f = <mfrac><mrow><mi>d</mi><mo>-</mo><mi>e</mi><mo>*</mo><mi>b</mi></mrow><mrow><mi>a</mi></mrow></mfrac></math></br>
+<math><mequi></math></br>
+<math>e = <mfrac><mrow><mi>c</mi></mrow><mrow><mi>a</mi></mrow></mfrac> - <mfrac><mrow><mi>e</mi><mo>*</mo><mi>b</mi><msup>2</msup></mrow><mrow><mi>a</mi><msup>2</msup></mrow></mfrac> + <mfrac><mrow><mi>d</mi><mo>*</mo><mi>b</mi></mrow><mrow><mi>a</mi><msup>2</msup></mrow></mfrac></math></br>
+<math>f = <mfrac><mrow><mi>d</mi><mo>-</mo><mi>e</mi><mo>*</mo><mi>b</mi></mrow><mrow><mi>a</mi></mrow></mfrac></math></br>
+<math><mequi></math></br>
+<math><mfrac><mrow><mi>e</mi><mo>*</mo><mo>(</mo><mi>a</mi><msup>2</msup><mo>+</mo><mi>b</mi><msup>2</msup><mo>)</mo></mrow><mrow><mi>a</mi><msup>2</msup></mrow></mfrac> = <mfrac><mrow><mi>c</mi></mrow><mrow><mi>a</mi></mrow></mfrac> + <mfrac><mrow><mi>d</mi><mo>*</mo><mi>b</mi></mrow><mrow><mi>a</mi><msup>2</msup></mrow></mfrac></math></br>
+<math>f = <mfrac><mrow><mi>d</mi><mo>-</mo><mi>e</mi><mo>*</mo><mi>b</mi></mrow><mrow><mi>a</mi></mrow></mfrac></math></br>
+<math><mequi></math></br>
+<math>e * (<mi>a</mi><msup>2</msup><mo>+</mo><mi>b</mi><msup>2</msup>) = c * a + d * b</math></br>
+<math>f = <mfrac><mrow><mi>d</mi><mo>-</mo><mi>e</mi><mo>*</mo><mi>b</mi></mrow><mrow><mi>a</mi></mrow></mfrac></math></br>
+<math><mequi></math></br>
+<math>e = <mfrac><mrow><mi>c</mi><mo>*</mo><mi>a</mi><mo>+</mo><mi>d</mi><mo>*</mo><mi>b</mi></mrow><mrow><mo>(</mo><mi>a</mi><msup>2</msup><mo>+</mo><mi>b</mi><msup>2</msup><mo>)</mo></mrow></mfrac></math></br>
+<math>f = <mfrac><mrow><mi>d</mi><mo>-</mo><mi>e</mi><mo>*</mo><mi>b</mi></mrow><mrow><mi>a</mi></mrow></mfrac></math></br>
+<p>
+Ici, la proportition du deuxième vecteur "envoyé" sur le premier est exactement "e".
+Pour obtenir la norme de ce vecteur envoyé, on doit le multiplier (une première fois) par la norme du premier vecteur.
+Pour obtenir la valeur démandée que nous avons défini plus haut, nous devons donc le re-multiplier par la norme du premier vecteur.
+Donc, <span class="important">le produit scalaire de "u" et "v" est donc "e" multiplié par la norme au carré de "u"</span>.
+</p>
+<math><mvec>u</mvec> . <mvec>v</mvec> = e * <mrow><mo>||</mo><mvec>u</mvec><mo>||</mo></mrow><msup>2</msup> = e * <msqrt><mi>a</mi><msup>²</msup><mo>+</mo><mi>b</mi><msup>²</msup></msqrt><msup>2</msup> = <mfrac><mrow><mi>c</mi><mo>*</mo><mi>a</mi><mo>+</mo><mi>d</mi><mo>*</mo><mi>b</mi></mrow><mrow><mo>(</mo><mi>a</mi><msup>2</msup><mo>+</mo><mi>b</mi><msup>2</msup><mo>)</mo></mrow></mfrac> * <msqrt><mi>a</mi><msup>²</msup><mo>+</mo><mi>b</mi><msup>²</msup></msqrt><msup>2</msup> = a * c + b * d</math>
+<p>
+Donc, notre application s'explicite de cette façon dans "R²".
+On peut donc très facilement prouver à partir de là qu'elle est bilinéaire, symétrique et définie positive.
+Posons un vecteur "w" égal à "(g, h)".
+</p>
+<p>Bilinéaire :</p>
+<math>(<mvec>u</mvec> + <mvec>w</mvec>) . <mvec>v</mvec> = (a + g) * c + (b + h) * d = a * c + g * c + b * d + h * d = a * c + b * d + g * c + h * d = <mvec>u</mvec> . <mvec>v</mvec> + <mvec>w</mvec> . <mvec>v</mvec></math></br>
+<math><mvec>u</mvec> + (<mvec>v</mvec> + <mvec>w</mvec>) = a * (c + g) + b * (d + h) = a * c + a * g + b * d + b * h = a * c + b * d + a * g + b * h = <mvec>u</mvec> . <mvec>v</mvec> + <mvec>u</mvec> . <mvec>w</mvec></math></br>
+<math><mvec>u</mvec> + (i * <mvec>v</mvec>) = a * (c * i) + b * (d * i) = a * c * i + b * d * i = i * (a * c + b * d) = (a * i) * c + (b * i) * d = i * (<mvec>u</mvec> . <mvec>v</mvec>) = (i * <mvec>u</mvec>) . <mvec>v</mvec></math></br>
+<p>Symétrie et définie positivité</p>
+<math><mvec>u</mvec> . <mvec>v</mvec> = a * c + b * d = c * a + b * d = <mvec>v</mvec> . <mvec>u</mvec></math></br>
+<math><mvec>u</mvec> . <mvec>u</mvec> = a * a + b * b = <mi>a</mi><msup>2</msup> + <mi>b</mi><msup>2</msup> <mgtequal> 0</math></br>
+<math><mvec>u</mvec> . <mvec>u</mvec> = 0 <mimp> a * a + b * b =  0 <mimp> a = b = 0</math></br>
+
 <p>
 Déjà, <span class="important"><definition name="inner_product_space"></span>.
 </p>
