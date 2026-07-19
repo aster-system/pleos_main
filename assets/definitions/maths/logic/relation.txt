@@ -48,6 +48,7 @@
 </new_definition>
 <new_definition name="relation_reflexive">
     <content>une relation binaire sur un ensemble est dite réflexive si, pour tout objet "a", "a" est en relation avec lui même</content>
+    <content name="anti">une relation binaire sur un ensemble est dite antiréflexive si, pour tout objet "a", "a" n'est jamais en relation avec lui même</content>
 </new_definition>
 <new_definition name="relation_symmetric">
     <content>une relation binaire sur un ensemble est dite symétrique si, pour tout objet "a" et "b", si "a" est en relation avec "b", alors "b" est en relation avec "a" (et vice-versa)</content>
@@ -56,9 +57,30 @@
 <new_definition name="equivalence_class">
     <content>une classe d'équivalence d'un élément "x" d'un ensemble "E" représente la classe de tous les éléments de "E" qui peuvent être reliés à "x" par relation d'équivalence "~"</content>
 </new_definition>
+<new_definition name="preorder">
+    <content>une relation binaire sur un ensemble est un préordre quand elle est une relation réflexive et transitive</content>
+</new_definition>
 <new_definition name="relation_equivalence">
     <content>une relation binaire est dite "relation d'équivalence" quand elle est symétrique, réflexive et transitive</content>
 </new_definition>
 <new_definition name="relation_order">
-    <content>une relation binaire est dite "relation d'ordre" quand elle est antisymétrique, réflexive et transitive</content>
+    <content>une relation binaire sur un ensemble est dite "relation d'ordre" quand elle est antisymétrique, réflexive et transitive</content>
+    <content name="strict">une relation binaire sur un ensemble est dite "relation d'ordre stricte" quand elle est antiréflexive et transitive</content>
+</new_definition>
+
+<new_definition name="extremum">
+    <content>les extremums d'une partie "F" d'un ensemble ordonné "E" représentent le minimum de "F" (si il existe) et le maximum de "F" (si il existe)</content>
+    <content name="maximum">le maximum d'une partie "F" d'un ensemble ordonné "E" est (si il existe) l'unique majorant de "F" qui appartient à "F"</content>
+    <content name="minimum">le minimum d'une partie "F" d'un ensemble ordonné "E" est (si il existe) l'unique minorant de "F" qui appartient à "F"</content>
+</new_definition>
+<new_definition name="order_theory">
+    <content>la théorie des ordres est la branche des mathématiques qui étudie tout ce qui touche aux relations d'ordres</content>
+</new_definition>
+<new_definition name="supremum">
+    <content>la borne supérieure d'une partie "F" d'un ensemble ordonné "E" est (si il existe) le majorant de "F" qui précède tous les autres majorants</content>
+    <content name="infimum">la borne inférieure d'une partie "F" d'un ensemble ordonné "E" est (si il existe) le minorant de "F" qui succède tous les autres majorants</content>
+</new_definition>
+<new_definition name="upper_bounds">
+    <content>un majorant d'un sous-ensemble "F" d'un ensemble ordonné "E" est un élément de "E" qui succède (par la relation d'ordre étudiée) tous les éléments de "F"</content>
+    <content name="lower">un minorant d'un sous-ensemble "F" d'un ensemble ordonné "E" est un élément de "E" qui précède (par la relation d'ordre étudiée) tous les éléments de "F"</content>
 </new_definition>

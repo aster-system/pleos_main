@@ -26,6 +26,7 @@ Finalement, nous savons qu'il est possible que plusieurs couples donnent des pro
 Donc, <span class="important">il est possible de définir une relation binaire comme le sous-ensemble du produit cartésien entres les deux ensembles, tel que tous les couples dans ce sous-ensemble forment des propositions vraie via cette relation</span>.
 En fait, savoir si une relation binaire est vraie entre plusieurs éléments équivaut à savoir si le couple de ces éléments appartient au sous-ensemble du produit cartésien représentant la relation.
 Généralement, pour toute relation binaire que nous définissons, nous lui attribuons un symbole précis, et nous notons une proposition (ou un prédicat) entre deux élément "x" et "y" en les notant à gauche et à droite du symbole.
+Très important, <span class="important">comme nous travaillons sur des couples, cela veut dire que l'ordre de l'écriture des objets dans le couple et autour du symbole est extrêmement important, et que modifier l'ordre peut complètement modifier le sens de ce que vous écrivez</span>.
 Ici, il s'agit d'une proposition si l'on note des objets fixés, et un prédicat si l'on note des objets indéterminés.
 Dans le cas d'une proposition, nous disons donc que la proposition est vraie si le couple formé (dans l'ordre) de l'élément à gauche, puis à droite du symbole appartient au sous-ensemble du produit cartésien qui définit la relation.
 Dans le cas d'un prédicat, tout dépend de ce que vous pouvez déduire via cette relation.
@@ -142,12 +143,17 @@ Avec le formalisme de la logique des prédicats, cela veut dire que, pour deux o
 </p>
 <math><mforall> x, y, (x = y) <mequi> (<mforall> P, P(x) <mequi> P(y))</math>
 <p>
+D'ailleurs, comme vu dans la partie logique de ce cours, inverser l'ordre de propositions autour d'équivalences ne change pas son sens et sa véracité.
+Donc, <span class="important">il s'agit d'une des relations où l'ordre des éléments n'importe pas</span>.
+</p>
+<math><mforall> x, y, (x = y) <mequi> (<mforall> P, P(x) <mequi> P(y))<mequi> (<mforall> P, P(y) <mequi> P(x)) <mequi> (y = x)</math>
+<p>
 Cette propriété s'applique d'ailleurs parfaitement avec sa définition en théorie des ensembles.
 Ici, nous pouvons donc définir une relation entre deux ensembles "E" et "F", de symbole "=".
 Pour que cela soit intéressant, il faut cependant qu'il existe au moins un élément de "E" et un élément de "F" qui soit égaux, ce qui équivaut à dire qu'il faut que "E" et "F" soit disjoints.
 Dans le cas contraire, aucune paire d'élément n'obéit à la relation : on obtient la relation vide.
 </p>
-<math><mforall>x <min> E, <mforall> y <min> F, (x = y) <mequi> (<mforall> P, P(x) <mequi> P(y))</math>
+<math><mforall>x <min> E, <mforall> y <min> F, (x = y) <mequi> (<mforall> P, P(x) <mequi> P(y)) <mequi> (<mforall> P, P(y) <mequi> P(x)) <mequi> (y = x)</math>
 <p>
 Ici, nous faisons une méthode simple, mais nous pouvons aussi procéder comme avec la relation d'appartenance, avec une relation sur la classe de tout ce qui existe.
 Nous pouvons aussi obtenir son tableau (ici, dans le cas où "E" est "{1, 2}", et "F" est "{1, 2, 3, 4}").
@@ -241,11 +247,23 @@ Cependant, la relation d'inclusion sur un ensemble des parties est aussi réflex
 </p>
 <math><mforall>a <min> E, a ~ a</math>
 <p>
+On peut aussi énoncer cette propriété avec deux valeurs de "a" et "b".
+Remarquons que ici, comme "a = b", alors "a ~ b" et "b ~ a" sont exactement équivalents.
+</p>
+<math><mforall>a, b <min> E, a = b <mimp> (a ~ b <mand> b ~ a)</math>
+<p>
 Ici, le tableau d'une relation réflexive comporte (encore, à permutation des lignes / colonnes près) une diagonale.
 D'ailleurs, <span class="important">si une relation est réflexive, cela équivaut à dire que le prédicat caractéristique de la relation entre deux éléments "x" et "y" peut toujours être décomposé sous la forme "x est égal à y" ou "un autre précidat" (qui peut d'ailleurs être représenté comme une autre relation)</span>.
 On peut donc écrire :
 </p>
 <math><mforall> x, y <min> E, x ~ y <mequi> (x = y) <mor> (x # y)</math>
+<p>
+Il existe aussi la propriété inverse : l'antiréflexivité.
+<span class="important"><definition name="relation_reflexive-anti"></span>.
+Une relation de ce genre pourrait être la relation "strictement supérieur" dans "N" : si un nombre est égal à lui même, il n'est pas supérieur à lui même, et il n'est pas en relation avec lui même.
+</p>
+<math><mforall>a <min> E, <mno>(a ~ a)</math></br>
+<math><mforall>a, b <min> E, a = b <mimp> <mno>(a ~ b <mand> b ~ a)</math>
 <p>
 Une autre propriété possible d'une relation binaire sur un ensemble (et pas entre deux ensembles différents, obligatoirement un ensemble et lui même) est la totalité.
 <span class="important"><definition name="relation-totality"></span>.
@@ -356,16 +374,37 @@ D'ailleurs, si une relation est antisymétrique et symétrique, elle représente
 <case x=3 y=3 background_color=green>
 
 </table>
+<p>
+À l'inverse, <span class="important">si une relation est antisymétrique et réflexive, alors cette relation permet une équivalence très précise : "a = b" équivaut à dire que "a ~ b ET b ~ a"</span>.
+Dans ce genre de relation, dire que l'ordre des éléments n'importe pas équivaut à dire que ces éléments sont égaux.
+La démonstration s'obtient avec un peu de déduction.
+</p>
+<math><mforall>a, b <min> E, {a = b <mimp> a ~ b <mand> b ~ a} <mand> {a ~ b <mand> b ~ a <mimp> a = b} <mimp> {a = b <mequi> (a ~ b <mand> b ~ a)}</math></br>
+
+
 
 <h3>Les relations d'ordre</h3>
 <p>
 Le type de relation qui est probablement le plus utilisé est la relation d'ordre.
 En effet, <span class="important"><definition name="relation_order"></span>.
+Nous le verrons plus tard, mais ce type de relation a pour objectif de définir un ordre sur un ensemble, dans le sens où nous définissons un moyen de comparer des éléments de manière cohérente.
 Pour rappel, la réflexivité et l'antisymétrie ont était traitées un peu plus haut.
 Finalement, <span class="important"><definition name="relation_transitivity"></span>.
-En d'autres termes, si les éléments "a" et "b" sont en relations et que les éléments "b" et "c" le sont aussi, alors "a" et "c" le sont aussi.
+En d'autres termes, si les éléments "a" et "b" sont en relations par une relation "~" et que les éléments "b" et "c" le sont aussi, alors "a" et "c" le sont aussi.
 </p>
 <math><mforall>a, b, c <min> E, a ~ b <mand> b ~ c <mimp> a ~ c</math>
+<p>
+Ici, <span class="important">l'union de l'antisymétrie et de la réflexivité assure que la relation doit s'écrire dans un certain ordre, sauf dans le cas où les éléments soit égaux</span> (ce qui permet de formuler une sorte de "comparaison" / "d'ordre").
+En effet, ces propriétés assurent que l'ordre autour du symbole de la relation est toujours important si les éléments en question ne sont pas égaux.
+</p>
+<math><mforall> a, b <min> E, a = b <mequi> (a ~ b <mand> b ~ a)</math></br>
+<math><mimp> a <mnotequal> b <mequi> <mnot>(a ~ b) <mor> <mnot>(b ~ a)</math>
+<p>
+Généralement, si on note "a ~ b", <span class="important">on dit que "b" succéde (ou majore) "a" par la relation "~"</span>.
+À l'inverse, toujours si l'on note "a ~ b", <span class="important">on dit que "a" précède (ou minore) "b" par la relation "~"</span>.
+D'ailleurs, si "a = b", on garde cette notation, ce qui veut donc dire que "a" se précède / se minore / se succède / se majore (et la réciproque est vraie : si "a" précède / minore / succède / majore "b", alors ils sont égaux).
+Cependant, par abus de langage, beaucoup d'autres écrivent (toujours si "a ~ b") que "a est plus grand que b" (ce qui est parfaitement cohérent pour certaines relations, mais paradoxal pour certaines autres).
+</p>
 <p>
 Si un ensemble quelconque peut être muni d'une relation d'ordre, l'ensemble est dit ordonné.
 <span class="important">Si une relation d'ordre est totale, l'ensemble est dit "totalement ordonné"</span>.
@@ -374,22 +413,31 @@ Généralement, un ensemble ordonné "E" par une relation "~" est formalisé ave
 <math>(E, ~)</math>
 <p>
 Cependant, <span class="important">il est aussi possible de ne pas définir la relation d'ordre comme totale : on parle d'ensemble partiellement ordonné</span>.
-D'ailleurs, un ensemble bien ordonné est aussi un ensemble partiellement ordonné (puisque certains de ces éléments peuvent se comparer entre eux).
+D'ailleurs, un ensemble totalement ordonné est aussi un ensemble partiellement ordonné (comme tous ces éléments peuvent se comparer entre eux, alors il est évident que... certains de ces éléments peuvent se comparer entre eux).
 </p>
 <p>
-On peut facilement obtenir un ensemble partiellement ordonné que l'on a déjà vu : l'ensemble des parties d'un ensemble "E".
-En effet, <span class="important">l'ensemble des parties d'un ensemble "E" muni de la relation d'inclusion est un ensemble partiellement ordonné</span>.
-Ici, pour une partie quelconque de "E", la relation d'inclusion est belle et bien réflexive, antisymétrique et transitive.
-Cependant, il existe des pairs de parties de "E" qui sont bel et bien des parties de "E", mais tel qu'aucune n'inclue l'autre.
+Un exemple extrêmement simple de relation totale (mais que nous ne pouvons pas définir ultra rigoureusement) est la relation "inférieur ou égal" sur l'ensemble des nombres entiers naturels "N".
+Ici, l'antisymétrie, la réflexivité, la transitivité et la totalité sont assez évidente.
+Remarquez d'ailleurs que, si vous enlevez le "ou égal" pour mettre "strictement inférieur" à la place, il n'y a plus de réflexivité, et cette relation ne serait donc pas une relation d'ordre.
+</p>
+<math>(N, <mltequal>)</math>
+<p>
+C'est l'exact même chose pour la relation "supérieur ou égal", où l'ordre est inversé.
+D'ailleurs, d'un point de vue vocabulaire, si "a" est supérieur ou égal à "b", on devrait dire que "b" succède "a", ce qui peut sembler un peu paradoxal.
+</p>
+<math>(N, <mgtequal>)</math>
+<p>
+On peut cependant obtenir de manière très rigoureuse un ensemble partiellement ordonné que l'on a déjà vu : l'ensemble des parties d'un ensemble "E", où "E" a (au moins) deux éléments.
+En effet, <span class="important">l'ensemble des parties d'un ensemble "E" ayant au moins deux éléments muni de la relation d'inclusion est un ensemble partiellement ordonné</span>.
+Ici, pour une partie quelconque de "E", la relation d'inclusion est belle et bien réflexive, antisymétrique (comme nous l'avons vu plus haut) et transitive.
+</p>
+<math><mforall>a, b, c, a <mincluded> b <mand> b <mincluded> c <mimp> a <mincluded> c</math>
+<p>
+Ici, si "E" a 1 seul élément, la relation est totale, mais inutile.
+Cependant, si "E" a 2 éléments ou plus, il existe des paires de parties de "E" qui sont bel et bien des parties de "E", mais tel qu'aucune n'inclue l'autre (ce qui rend la définition pas totale).
 C'est par exemple le cas de deux singletons non-égaux.
 </p>
-<p>
-De plus, <span class="important">l'existence d'une relation d'ordre sur un ensemble implique l'existence d'une relation d'ordre réciproque, qui est vraie entre deux éléments "a" et "b" si ces éléments sont en relations par la première relation, avec "a" et "b" échangés de place</span>.
-Il s'agit donc d'une relation qui "inverse" l'ordre par rapport à la première.
-Dans le cas de notre ensemble des parties, notre relation définie par "a est inclut dans b" deviendrait "b inclut a comme sous-ensemble".
-Pour une relation "~", sa réciproque "#" s'écrirait :
-</p>
-<math><mforall>a, b <min> E, a ~ b <mequi> b # a</math>
+<math><mforall> a, b, <mno>({a} <mincluded> {b} <mor> {b} <mincluded> {a})</math>
 <p>
 Pour visualiser une relation d'ordre, il existe un moyen assez pratique : le diagramme de Hasse.
 <span class="important"><definition name="hasse_diagram"></span>.
@@ -425,6 +473,171 @@ Prenons un exemple : le diagramme de Hasse de l'ensemble des parties de l'ensemb
 <text x=2 y=-4/3 font_size_in_scale=1>{c}</text>
 <text x=0 y=-4 font_size_in_scale=1>{}</text>
 </graphic>
+
+<p>
+Avec tout ça, <span class="important">l'existence d'une relation d'ordre sur un ensemble implique l'existence d'une relation d'ordre réciproque, qui est vraie entre deux éléments "a" et "b" si ces éléments sont en relations par la première relation, avec "a" et "b" échangés de place</span>.
+Il s'agit donc d'une relation qui "inverse" l'ordre par rapport à la première.
+Construisons cette relation, et prouvons qu'elle est une relation d'ordre.
+Pour une relation "~", sa réciproque "#" s'écrirait :
+</p>
+<math><mforall>a, b <min> E, a ~ b <mequi> b # a</math>
+<p>
+Par définition, comme la condition "est antisymétrique et réflexive" traduit l'équivalence entre "a = b" et "a ~ b", on peut très vite prouver que "#" l'est aussi.
+<p>
+<math><mforall>a, b <min> E, (a = b) <mequi> (a ~ b <mand> b ~ a) <mequi> (b # a <mand> a # b)</math>
+<p>
+Pour la transitivité, cela s'obtient facilement en substituant proprement "~" par "#" (possible grâce à l'équivalence).
+</p>
+<math><mforall>a, b, c <min> E, (a ~ b <mand> b ~ c <mimp> a ~ c) <mequi> (b # a <mand> c # b <mimp> c # a) <mequi> (c # b <mand> b # a <mimp> c # a)</math>
+<p>
+D'ailleurs, <span class="important">si une relation d'ordre est totale, sa relation réciproque l'est aussi</span>.
+Si l'on considère l'ensemble ordonné "(E, ~)", l'ensemble ordonné formé par sa relation d'ordre réciproque "(E, #)" est souvent nommé "ordre dual" ou "ordre opposé".
+Des fois, cette relation est aussi notée "~ exposant op", et l'ensemble obtenu est aussi nommé avec cet exposant (certains auteurs remplacent aussi le "op" par "*").
+</p>
+<math>O = (E, ~)</math></br>
+<math># = <mi>~</mi><msup>op</msup></math></br>
+<math>(E, #) = (E, <mi>~</mi><msup>op</msup>) = <mi>O</mi><msup>op</msup></math>
+<p>
+On va citer deux exemples : "inférieur ou égal" dans "N", et "inclusion" dans "E".
+Pour "inférieur ou égal" dans "N", sa relation d'ordre réciproque est "supérieur ou égal".
+Encore une fois, nous aurons l'occasion de le définir rigoureusement plus tard.
+</p>
+<math><mforall>a, b <min> N, a <mltequal> b <mequi> b <mgtequal> a</math>
+<p>
+Pour la relation "est inclut dans" dans "E" (qui, pour rappel, équivaut à dire "est un sous-ensemble de"), la relation réciproque est donc "est un sur-ensemble de".
+Bien que moins utile, elle existe quand même.
+</p>
+<math><mforall>a, b <min> P(e), a <mincluded> b <mequi> b <mincluded_inversed> a</math>
+<p>
+Revenons sur un aspect vocabulaire.
+Ici, par définition, <span class="important">si "b" majore "a" par la relation "~", alors "a" majore "b" par la relation "#"</span>.
+Dans le cas de nos relations "inférieur ou égal" et "supérieur ou égal", si "b" majore "a" par la relation "inférieur ou égal", alors "a" majore "b" par la relation "supérieur ou égal".
+Il y a donc une inversion d'ordre, et donc de vocabulaire : il faut donc bien faire attention au formalisme utiliser à chaque fois.
+</p>
+<p>
+Dans la même idée, on peut définir un type de relation très similaire : les relations d'ordres strictes.
+<span class="important"><definition name="relation_order-strict"></span>.
+Pour rappel, nous avons défini l'antiréflexivité un peu plus haut.
+En fait, <span class="important">une relation d'ordre stricte peut se voir comme une relation d'ordre sans que les éléments égaux soient en relation entre eux</span>.
+Un exemple est la relation "strictement supérieur" sur les nombres entiers naturels, qui est bel et bien antiréflexive et transitive.
+Encore une fois, nous ne pouvons pas le démontrer de manière ultra rigoureuse, mais l'intuition simple sur ces nombres suffisent à mieux comprendre le concept.
+</p>
+<math><mforall> a <min> N, <mnot>(a <mgt> a)</math></br>
+<math><mforall> a, b, c <min> N, (a <mgt> b) <mand> (b <mgt> c) <mequi> (a <mgt> c)</math>
+<p>
+Nous pouvons aussi citer la relation "strictement inclut".
+</p>
+<math><mforall> a <min> P(E), <mnot>(a <mincluded_strict> a)</math></br>
+<math><mforall> a, b, c <min> P(E), (a <mincluded_strict> b) <mand> (b <mincluded_strict> c) <mequi> (a <mincluded_strict> c)</math>
+<p>
+Le lien est donc très gros : <span class="important">si vous avez une relation d'ordre quelconque, vous pouvez définir une relation d'ordre stricte associée, et si vous avez une relation d'ordre stricte quelconque, vous pouvez définir une relation d'ordre associée</span>.
+Dans le premier cas, une relation reliant deux éléments si ils sont liés par votre relation d'ordre quelconque et qu'ils sont différents est une relation d'ordre stricte.
+Pour une relation d'ordre "~", la relation d'ordre stricte "@" serait donc :
+</p>
+<math><mforall>a, b <min> E, a @ b <mequi> (a ~ b <mand> a <mnotequal> b)</math>
+<p>
+Dans le deuxième cas, une relation reliant deux éléments si ils sont liés par votre relation d'ordre stricte quelconque ou si ils sont égaux est une relation d'ordre.
+Pour une relation d'ordre stricte "@", une relation d'ordre "@" serait donc :
+</p>
+<math><mforall>a, b <min> E, a ~ b <mequi> (a @ b <mor> a = b)</math>
+<p>
+Il existe un dernier type de relation similaire à la relation d'ordre : le préordre.
+<span class="important"><definition name="preorder"></span>.
+Il s'agit donc d'une sorte de relation d'ordre, où des éléments peuvent être liés dans les deux sens possibles sans être égaux.
+D'ailleurs, si un préordre est antisymétrique, il représente donc une relation d'ordre.
+</p>
+<p>
+Revenons sur les ensembles ordonnés, et parlons un peu de leurs sous-ensembles.
+Considérons une partie "F" de notre ensemble ordonné "E", et étudions là sous le prisme de notre relation d'ordre.
+Déjà, commençons par introduire le concept de majorants et minorants.
+<span class="important"><definition name="upper_bounds"></span>.
+Cette définition marche dans un ensemble partiellement ordonné ou totalement ordonné.
+Comme plusieurs éléments peuvent majorer tous les éléments de "F", il existe un ensemble de majorants de "F".
+Malheuresement, il n'existe pas vraiment de notation généralisée pour l'ensemble des majorants d'une partie par une relation d'ordre "~".
+Cependant, il existe beaucoup de notations possibles dans le monde, et la plus utilisée en France est "Maj indice ~ (F)".
+</p>
+<math>P = (E, ~)</math></br>
+<math><mi>Maj</mi><msub>~</msub>(F) = {x <min> E | (<mforall> y <min> F, y ~ x)}</math>
+<p>
+Il existe un concept très similaire : les minorants.
+<span class="important"><definition name="upper_bounds-lower"></span>.
+C'est comme la majorant, mais en inversé.
+</p>
+<math>P = (E, ~)</math></br>
+<math><mi>Min</mi><msub>~</msub>(F) = {x <min> E | (<mforall> y <min> F, x ~ y)}</math>
+<p>
+Ici, <span class="important">une partie possédant un majorant est dite majorée, et la partie possédant un minorant est dite minorée</span>.
+D'ailleurs, <span class="important">si vous avez une relation d'ordre "~" dont la relation réciproque est "#", alors on peut formuler les majorants / minorants de parties de "E" par "#", et des majorants / minorants de parties de "E" par "~"</span>.
+En effet, pour toute partie "F", l'ensemble des majorants d'une partie de "F" par "~" est l'ensemble des minorants de "F" par "#".
+La démonstration est assez simple : si "a" est un majorant de "F" par "~", alors on peut écrire "x ~ a" où "x" représente tous les éléments de "F", ce qui équivaut à dire que "a # x" où "x" représente tous les éléments de "F", ce qui veut dire que "a" est un minorant de "F" par "#".
+De manière analogue, l'ensemble des minorants d'une partie de "F" par "~" est l'ensemble des majorants de "F" par "#" (la démonstration est exactement la même).
+</p>
+<math><mi>Maj</mi><msub>~</msub>(F) = <mi>Min</mi><msub>#</msub>(F), <mi>Min</mi><msub>~</msub>(F) = <mi>Maj</mi><msub>#</msub>(F)</math>
+<p>
+Par exemple, 5 et 8 sont des majorants de la partie "{2, 3, 4}" pour l'ensemble ordonné "(N, inférieur ou égal)" (parce que 2, 3 et 4 sont inférieurs ou égaux à 5 et 8, dans cet ordre).
+Dans le cas de l'ensemble des parties de "{a, b, c}" muni de la relation d'inclusion, la partie "{{a}, {b}, {a, b}}" a deux majorants : "{{a, b}, {a, b, c}}".
+Dans le cas des nombres (entiers naturels, ou de n'importe quel autre type), on voit souvent l'appellation de minorant / majorant sans détails sur la relation d'ordre utilisé.
+Dans presque 99% des cas, <span class="important">quand on parle de majorants et minorants avec des nombres, la relation d'ordre utilisée est "inférieur ou égal", pour permettre de dire que les majorants sont les plus grands, et que les minorants sont les plus petits</span>.
+Comme cet ordre est le plus utilisé sur les nombres (et de très loin), on parle "d'ordre usuel".
+</p>
+<p>
+<span class="important">Il est à noter que certaines parties peuvent ne pas avoir de majorants ou de minorants</span>.
+Par exemple, la partie de "N" représentant tout "N" avec la relation "inférieur ou égal" n'a pas de majorant (si il en avait un, il existerait par définition un élément après noté "n + 1", ce qui impliquerai qui ne soit pas le minorant, et ce qui impliquerait par l'absurde que cette partie n'a pas de majorant).
+Donc, l'ensemble des majorants est vide.
+</p>
+<math><mi>Maj</mi><msub><mltequal></msub>(N) = <mi>Min</mi><msub><mgtequal></msub>(N) = <mempty_set></math>
+<p>
+Dans la même idée, on peut définir pas mal d'autres concepts, comme les bornes supérieures et inférieures.
+<span class="important"><definition name="supremum"></span>.
+En utilisant la terminologie intuitive, il s'agit du "plus petit" majorant de la partie.
+Cependant, il existe des ensembles "E" où il existe des parties "F" qui n'ont pas de borne supérieure.
+Cela peut être dû à plusieurs choses : l'ensemble est partiellement ordonné (et les majorants ne sont pas comparables), ou l'ensemble est totalement ordonné mais a une structure particulière (c'est le cas de l'ensemble "Q", que nous verrons au prochain chapitre).
+Pour l'instant, aucun ensemble que nous avons vu n'admet des parties sans borne supérieure par une relation d'ordre totale.
+D'ailleurs, <span class="important">si une partie admet une borne supérieure, elle est unique</span>.
+En effet, si il y en avait plusieurs, alors ils devraient être comparables, et donc l'un serait "plus petit" que l'autre, et donc il n'y en aurait... qu'un : le plus petit (ce qui veut dire que "plusieurs bornes supérieures" implique "1 borne supérieure", ce qui prouve par l'absurde qu'il y en a qu'un seul).
+Généralement, elle est notée "sup indice ~(F)".
+</p>
+<math><mi>sup</mi><msub>~</msub>(F) = y <mequi> {y <min> <mi>Maj</mi><msub>~</msub>(F) <mand> (<mforall> x <min> <mi>Maj</mi><msub>~</msub>(F), y ~ x)}</math>
+<p>
+Si il existe une borne supérieur, il existe une borne inférieure.
+<span class="important"><definition name="supremum-infimum"></span>.
+En utilisant la terminologie intuitive, il s'agit du "plus grand" minorant de la partie.
+Pareil, il n'existe pas toujours, et si elle existe, elle est unique.
+Généralement, elle est notée "inf indice ~(F)".
+</p>
+<math><mi>inf</mi><msub>~</msub>(F) = y <mequi> {y <min> <mi>Min</mi><msub>~</msub>(F) <mand> (<mforall> x <min> <mi>Min</mi><msub>~</msub>(F), x ~ y)}</math>
+<p>
+Dans la même idée, on peut définir pas mal d'autres concepts, comme les extremums, maximums et minimums.
+<span class="important"><definition name="extremum-maximum"></span>.
+La seule possibilité pour cette valeur est qu'elle représente... le "maximum" de cet ensemble.
+Si cette valeur existe, elle est la borne supérieure de "F" par cette même relation (qui doit donc exister).
+Cependant, il se peut que "F" est une borne supérieure, mais pas de maximum (encore une fois, cela dépend de l'ensemble).
+Généralement, elle est notée "max indice ~(F)".
+</p>
+<math><mi>max</mi><msub>~</msub>(F) = y <mequi> {y <min> F <mand> y <min> <mi>Min</mi><msub>~</msub>(F)}</math>
+<p>
+Encore une fois, si il existe un maximum, il existe un minimum.
+<span class="important"><definition name="extremum-minimum"></span>.
+La seule possibilité pour cette valeur est qu'elle représente... le "minimum" de cet ensemble.
+Si cette valeur existe, elle est la borne inférieure de "F" par cette même relation (qui doit donc exister).
+Cependant, il se peut que "F" est une borne inférieure, mais pas de minimum (encore une fois, cela dépend de l'ensemble).
+Généralement, elle est notée "min indice ~(F)" (avec le "m" en majuscule, là où le "M" de minorant est en majuscule).
+</p>
+<math><mi>min</mi><msub>~</msub>(F) = y <mequi> {y <min> F <mand> y <min> <mi>Min</mi><msub>~</msub>(F)}</math>
+<p>
+Finalement, on peut définir le concept d'extremum.
+<span class="important"><definition name="extremum"></span>.
+On parle souvent d'un extremum pour parler soit du maximum seul, soit du minimum seul.
+</p>
+<p>
+Il existe une théorie mathématique un peu bizarre, mais très remplie : la théorie des ordres.
+<span class="important"><definition name="order_theory"></span>.
+Cette théorie est une théorie avec beaucoup de choses différentes, qui va assez loin.
+Bien que nous n'avons pas l'intention ici de présenter toute cette théorie, nous y reviendrons plus tard, mais sachez que cette théorie est une théorie très remplie.
+</p>
+
+
+
 
 <h3>Les relations d'équivalences</h3>
 <p>
