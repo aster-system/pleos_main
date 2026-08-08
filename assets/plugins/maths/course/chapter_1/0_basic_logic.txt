@@ -439,3 +439,19 @@ Dans le cas du quantificateur existentiel, <span class="important">une propositi
 Donc :
 </p>
 <math><mno><mo>(</mo><mexists></mi>n</mi><mo>,</mo><mi>P(n)</mi><mo>)</mo><mequi><mo>(</mo><mforall></mi>n</mi><mo>,</mo><mno><mi>P(n)</mi><mo>)</mo></math>
+<p>
+Il existe aussi une version un peu modifiée de ce quantificateur : le quantificateur existentiel unique.
+<span class="important"><definition name="quantifier-existential_unique"></span>.
+En d'autres termes, si la proposition constitué d'un quantificateur existentiel unique et d'un prédicat est vraie, alors il existe une seule et unique valeur de la variable quantifié qui rend ce prédicat vraie.
+Généralement, pour une variable "n", <span class="important">ce quantificateur se traduit à l'écrit sous la forme "il existe un unique n tel que"</span>.
+Un exemple peut être une proposition "il existe un unique nombre n égal à 2", une proposition qui est vraie.
+D'ailleurs, remarquons quelque chose : si "il existe un UNIQUE n tel que P(n)", alors "il existe un n tel que P(n)", et donc une proposition formulé comme un prédicat avec un quantificateur existentiel unique implique ce même prédicat avec un quantificateur existentiel.
+Cependant, l'inverse n'est pas vrai : la proposition "il existe un unique nombre n pair" est fausse, puisqu'il en existe plusieurs.
+Pour un prédicat "P(n)", la proposition "il existe un n tel que P(n)" s'écrit comme ça (avec un quantificateur existentiel suivi d'un point d'exclamation) :
+</p>
+<math><mexists>!</mi>n</mi><mo>,</mo><mi>P(n)</mi></math>
+<p>
+D'ailleurs, <span class="important">la vraie définition de ce quantificateur se fait avec le quantificateur existentiel (tout court)</span>.
+En effet, sa définition rigoureuse revient à dire qu'un prédicat est vraie avec ce quantificateur si il existe au moins un élément "n" tel que ce prédicat soit vrai, et tel que, pour tous les éléments possibles "o" avec ce prédicat, si il est vrai, alors "n" et "o" sont forcément égaux (notés avec des noms différents, mais égaux).
+</p>
+<math>[<mexists>!</mi>n</mi><mo>,</mo><mi>P(n)</mi>] <mequi> [<mexists></mi>n</mi><mo>,</mo><mi>P(n)</mi> <mand> <mforall> o (P(o) <mimp> n = o)]</math>

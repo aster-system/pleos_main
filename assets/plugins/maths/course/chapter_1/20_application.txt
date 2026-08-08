@@ -9,30 +9,38 @@
 Avant d'introduire quoi que ce soit d'autre en mathématiques, un objet extrêmement important est la relation mathématique.
 En mathématiques, <span class="important"><definition name="relation"></span>.
 Généralement, ces éléments appartiennent au même ensemble, mais ce n'est pas obligatoire.
+Ici, si la proposition formée par plusieurs éléments de ces ensembles est vraie, alors on dit généralement que ces éléments sont en relation (ou relier, ou lier, ou n'importe quel mot similaire) par la relation en question.
 Par exemple, pour des nombres entiers naturels, la relation "inférieur" est définie, et donne une proposition juste juste pour tout "m" et "n" où... "m" est inférieur à "n" (comme "3 est inférieur à 5").
 </p>
 <math>3 <mlt> 5, <mno>(8 <mlt> 4)</math>
 <p>
-Ici, l'utilité principal est de savoir quels objets forment une relation donnant une proposition juste.
-Démontrons ici le fait que ce concept est possible, en le définissant avec la rigueur extrême nécessaire aux mathématiques.
+Ici, l'utilité principal de ce concept est de définir un moyen de vérifier si une proposition formée par des éléments d'ensembles quelconques est vraie (ou pas), en utilisant un formalisme plus étendu que celui du simple calcul des propositions / prédicats.
+Pour mieux comprendre, définissons rigoureusement ce concept.
 Commençons par le cas le plus simple : la relation binaire.
 <span class="important"><definition name="relation-binary"></span>.
 C'est par exemple le cas de notre relation "inférieur" vue plus haut.
-Ici, ces deux éléments font partie de deux ensembles quelconques (possiblement le même, comme pour notre exemple "inférieur" vue).
-Cependant, si ces deux ensembles sont le même, on parle de relation sur cet ensemble.
-Déjà, disons qu'il est possible de noter tous les couples possibles entre les deux ensembles de la relation, grâce à un produit cartésien.
-De plus, le principe d'une relation est de savoir quels sont les éléments liés entre eux (que nous pouvons donc exprimer sous la forme de couple, qui sont donc dans le produit cartésien).
-Finalement, nous savons qu'il est possible que plusieurs couples donnent des propositions justes.
-Donc, <span class="important">il est possible de définir une relation binaire comme le sous-ensemble du produit cartésien entres les deux ensembles, tel que tous les couples dans ce sous-ensemble forment des propositions vraie via cette relation</span>.
-En fait, savoir si une relation binaire est vraie entre plusieurs éléments équivaut à savoir si le couple de ces éléments appartient au sous-ensemble du produit cartésien représentant la relation.
-Généralement, pour toute relation binaire que nous définissons, nous lui attribuons un symbole précis, et nous notons une proposition (ou un prédicat) entre deux élément "x" et "y" en les notant à gauche et à droite du symbole.
-Très important, <span class="important">comme nous travaillons sur des couples, cela veut dire que l'ordre de l'écriture des objets dans le couple et autour du symbole est extrêmement important, et que modifier l'ordre peut complètement modifier le sens de ce que vous écrivez</span>.
-Ici, il s'agit d'une proposition si l'on note des objets fixés, et un prédicat si l'on note des objets indéterminés.
-Dans le cas d'une proposition, nous disons donc que la proposition est vraie si le couple formé (dans l'ordre) de l'élément à gauche, puis à droite du symbole appartient au sous-ensemble du produit cartésien qui définit la relation.
-Dans le cas d'un prédicat, tout dépend de ce que vous pouvez déduire via cette relation.
-Pour une relation de sous-ensemble du produit cartésien "R" et de symbole "~", on note.
+Ici, pour un couple donné, entre ces deux ensembles, on doit pouvoir savoir si les éléments du couple sont en relation (ou pas) par une relation donnée.
+Il existe donc un ensemble de couple d'élément du premier puis du deuxième ensemble qui sont en relation par cette relation.
+Or, nous savons que chaque couple possible contenant un élément du premier ensemble puis un élément du second ensemble appartient au produit cartésien de ces deux ensembles.
+Donc, <span class="important">il est possible de définir une relation binaire comme le sous-ensemble du produit cartésien entres les deux ensembles, tel que tous les couples dans ce sous-ensemble forment des propositions vraies via cette relation</span>.
+D'ailleurs, cette définition tient même si nous n'avons aucune idée de comment / pourquoi deux éléments sont en relation par une certaine relation : si ils sont dans le sous-ensemble du produit cartésien représentant cette relation, ils sont en relation par cette relation.
+Pour une relation "r" de sous-ensemble du produit cartésien "R" entre "E" et "F", nous formalisons la relation sous la forme d'un triplet, et l'on peut donc noter :
 </p>
-<math>R <mincluded> E X F</math></br>
+<math>r = (E, F, R), R <mincluded> E X F</math></br>
+<p>
+Cependant, en réalité, il est extrêmement rare de définir une application directement via son sous-ensemble associé du produit cartésien.
+En fait, <span class="important">on utilise plus généralement une proposition, tel que tout dire qu'un couple d'élément appartient au sous-ensemble associé du produit cartésien de la relation équivaut à dire que les deux éléments qui le constituent respectent une certaine propriété</span>.
+Dans ce cas, on peut définir "R" par compréhension, comme étant un sous-ensemble du produit cartésien des deux ensembles de la relation.
+</p>
+<math>R = {(x, y) <min> E X F | p(x, y)}</math></br>
+<math><mequi><mforall>x <min> E, <mforall> y <min> F, (x, y) <min> R <mequi> P(x, y)</math>
+<p>
+Généralement, pour toute relation binaire que nous définissons, nous lui attribuons un symbole précis, et nous notons une proposition entre deux élément "x" et "y" par la relation en question en les notant à gauche et à droite du symbole.
+Très important, <span class="important">comme nous travaillons sur des couples, cela veut dire que l'ordre de l'écriture des objets dans le couple et autour du symbole est extrêmement important, et que modifier l'ordre peut complètement modifier le sens de ce que vous écrivez</span>.
+D'ailleurs, pour des raisons de formalisme, on privilégie toujours cette notation plutôt que celle avec la proposition, où que celle avec le sous-ensemble du produit cartésien (qui leur est de toute façon équivalente).
+Et donc, on confirme que le principe du concept de relation est de représenter ces propositions de manière plus élégantes qu'avec de simples propositions.
+Pour notre relation "r", si nous lui attribuons le symbole "~", on note :
+</p>
 <math><mforall>x <min> E, <mforall> y <min> F, x ~ y <mequi> (x, y) <min> R</math>
 <p>
 Cependant, <span class="important">nous connectons ici 2 éléments, mais il est aussi possible d'en connecter plus de deux</span>.
@@ -64,9 +72,10 @@ Ici, le sous-ensemble du produit cartésien associé à cet ensemble représente
 <math>R = <mproduct>X</math></br>
 <math> <mforall> x <min> E, y <min> F, (x ~ y)</math>
 <p>
-Comme pour les sous-ensembles, on peut aussi crée des sous-relations.
+Comme pour les sous-ensembles, on peut aussi créer des sous-relations.
 <span class="important"><definition name="relation-sub_relation"></span>.
 En fait, il s'agit d'une relation dont le sous-ensemble du produit cartésien associé est un sous-ensemble... du sous-ensemble du produit cartésien de "R".
+D'ailleurs, si une relation quelconque est une sous-relation d'une autre, on peut aussi dire que la première relation est une sur-relation de la deuxième.
 Dans le cas d'une relation binaire, une relation "S" notée "~" est une sous-relation d'une autre relation "R" notée "#" si tous les éléments en relation selon "S" le sont aussi selon "R" (mais il peut exister des éléments en relation dans "R" qui ne le sont pas dans "S").
 </p>
 <math>S <mincluded> R</math></br>
@@ -83,24 +92,9 @@ Définissons rigoureusement une première relation : la relation d'inclusion.
 <span class="important">Ici, la relation permet de donner une proposition vraie si le premier élément est inclut dans l'autre</span>.
 Nous avons déjà vue le symbole de cette relation dans la partie de ce cours sur la théorie des ensembles, ainsi qu'une façon de la définir.
 </p>
-<math><math><mforall>a, b, a <mincluded> b <mequi> <mforall> x, (x <min> a <mimp> x <min> b)</math></math>
+<math><math><mforall>a, b <min> P(E), a <mincluded> b <mequi> <mforall> x, (x <min> a <mimp> x <min> b)</math></math>
 <p>
-Chose importante : <span class="important">il est en réalité extrêmement rare de définir une relation directement via le sous-ensemble du produit cartésien qu'elle représente</span>.
-Comme pour beaucoup d'objets, la définition avec le produit cartésien est juste un moyen de définir rigoureusement cet objet.
-De plus, nous n'allons presque plus du tout l'utiliser dans la suite de ce cours (toutes les démonstrations se font généralement avec le symbole associé à la relation).
-En fait, <span class="important">on définit généralement une relation en disant que, si des éléments sont en relation, alors cela équivaut à une propriété autre</span>.
-Pour que cette définition marche, il faut que, pour tout élément des ensembles associés, nous pouvons tout le temps savoir si la propriété est vraie ou pas.
-On en déduit immédiatement qu'il est possible d'en déduire ce fameux sous-ensemble du produit cartésien entre ces ensembles.
-De plus, <span class="important">on en déduit qu'il est aussi possible de noter ce sous-ensemble par compréhension</span>.
-Dans le cas d'une relation binaire, on peut noter :
-</p>
-<math>R = {(x, y) <min> E * F, P(x, y)}, (a, b) <min> R <mequi> a ~ b</math>
-<p>
-Dans le cas de la relation d'inclusion sur les parties de l'ensemble "E", on peut donc noter :
-</p>
-<math>R = {(x, y) <min> P(E) * P(E), (<mforall> z, (z <min> x <mimp> z <min> y))}</math>
-<p>
-Bien que la définition avec le produit cartésien soit plus utile pour le socle du concept qu'autre chose, il permet quand même quelque chose d'utile.
+Bien que la définition avec le sous-ensemble produit cartésien soit plus utile pour le socle du concept qu'autre chose, il permet quand même quelque chose d'utile.
 En effet, dans une relation binaire entre deux ensembles finis, <span class="important">on peut représenter toute la relation avec un tableau à deux entrées</span>.
 Généralement, les informations à gauches représentent le premier ensemble, et celle en haut représentent le second.
 Il s'agit de l'exact même technique que pour la représentation du produit cartésien, où nous colorons les cases où la relation est vraie.
@@ -132,7 +126,75 @@ Voici un exemple : la relation d'inclusion sur l'ensemble des parties de "{a, b}
 <p>
 Le cas le plus intéressant de tableau comme ça représente le cas où la relation relie un ensemble à lui même.
 Dans ce cas, le tableau est un carré parfait.
+Il existe aussi un autre moyen de représenter une relation : le diagramme sagittal.
+<span class="important"><definition name="arrow_diagram"></span>.
+Il s'agit donc d'une visualisation inspirée du concept de graphe.
+Bien évidemment, il est plus que très largement recommandé d'utiliser des ensembles finis (ou, du moins, une partie finie d'un ensemble infini).
+Dans le cas de notre relation vue plus haut, on peut noter :
 </p>
+<graphic>
+<background_color white>
+<base draw=0>
+
+<circle x=-5/2 y=0 radius_x=2 radius_y=4 border_width=0 color=black><circle x=-5/2 y=0 radius_x=2*(8/9) radius_y=4*(19/20) border_width=0 color=white>
+<text x=-5/2 y=2 background_color=transparent>{}</text>
+<text x=-5/2 y=2/3 background_color=transparent>{a}</text>
+<text x=-5/2 y=-2/3 background_color=transparent>{b}</text>
+<text x=-5/2 y=-2 background_color=transparent>{a, b}</text>
+
+<circle x=5/2 y=0 radius_x=2 radius_y=4 border_width=0 color=black><circle x=5/2 y=0 radius_x=2*(8/9) radius_y=4*(19/20) border_width=0 color=white>
+<text x=5/2 y=2 background_color=transparent>{}</text>
+<text x=5/2 y=2/3 background_color=transparent>{a}</text>
+<text x=5/2 y=-2/3 background_color=transparent>{b}</text>
+<text x=5/2 y=-2 background_color=transparent>{a, b}</text>
+
+<arrow hat_proportion=1/2 x_1=-1 y_1=2 x_2=3/2 y_2=2 color=black border_width=4>
+<arrow hat_proportion=1/2 x_1=-1 y_1=2 x_2=3/2 y_2=2/3 color=black border_width=4>
+<arrow hat_proportion=1/2 x_1=-1 y_1=2 x_2=3/2 y_2=-2/3 color=black border_width=4>
+<arrow hat_proportion=1/2 x_1=-1 y_1=2 x_2=1 y_2=-2 color=black border_width=4>
+<arrow hat_proportion=1/2 x_1=-1 y_1=2/3 x_2=3/2 y_2=2/3 color=black border_width=4>
+<arrow hat_proportion=1/2 x_1=-1 y_1=2/3 x_2=1 y_2=-2 color=black border_width=4>
+<arrow hat_proportion=1/2 x_1=-1 y_1=-2/3 x_2=3/2 y_2=-2/3 color=black border_width=4>
+<arrow hat_proportion=1/2 x_1=-1 y_1=-2/3 x_2=1 y_2=-2 color=black border_width=4>
+<arrow hat_proportion=1/2 x_1=-1 y_1=-2 x_2=1 y_2=-2 color=black border_width=4>
+</graphic>
+<p>
+Encore une fois, ce type de diagramme peut être amélioré dans le cas où la relation lie un ensemble à lui même.
+Dans ce cas, pas besoin de deux cercles, un seul suffit (vous pouvez en noter 2 si vous voulez, mais ce n'est plus obligatoire).
+Cependant, dans ce genre de cas, si un élément est lié à lui même, alors on doit faire une flèche allant de cet élément à... lui même.
+</p>
+<graphic>
+<background_color white>
+<base draw=0 height=11>
+
+<circle x=0 y=0 radius_x=5 radius_y=5>
+<text name=t1 x=-2 y=-2>{}</text>
+<text name=t2 x=-2 y=2>{a}</text>
+<text name=t3 x=2 y=-2>{b}</text>
+<text name=t4 x=2 y=2>{a, b}</text>
+
+<arrow hat_proportion=1/2 points=t1;t2 proportion=3/4 color=black border_width=4 behind=t1>
+<arrow hat_proportion=1/2 points=t1;t3 proportion=3/4 color=black border_width=4 behind=t1>
+<arrow hat_proportion=1/2 points=t1;t4 proportion=3/4 color=black border_width=4 behind=t1>
+<arrow hat_proportion=1/2 points=t2;t4 proportion=3/5 color=black border_width=4 behind=t1>
+<arrow hat_proportion=1/2 points=t3;t4 proportion=3/4 color=black border_width=4 behind=t1>
+
+<line points=t1;new(-2,-4) color=black border_width=4 behind=t1>
+<line points=new(-2,-4);new(-1/2,-4) color=black border_width=4 behind=t1>
+<arrow points=new(-1/2,-4);new(-2,-2) hat_proportion=2/3 proportion=3/4 color=black border_width=4 behind=t1>
+
+<line points=t3;new(2,-4) color=black border_width=4 behind=t1>
+<line points=new(2,-4);new(1/2,-4) color=black border_width=4 behind=t1>
+<arrow points=new(1/2,-4);new(2,-2) hat_proportion=2/3 proportion=3/4 color=black border_width=4 behind=t1>
+
+<line points=t2;new(-2,4) color=black border_width=4 behind=t1>
+<line points=new(-2,4);new(-1/2,4) color=black border_width=4 behind=t1>
+<arrow points=new(-1/2,4);new(-2,2) hat_proportion=2/3 proportion=3/4 color=black border_width=4 behind=t1>
+
+<line points=t4;new(2,4) color=black border_width=4 behind=t1>
+<line points=new(2,4);new(1/2,4) color=black border_width=4 behind=t1>
+<arrow points=new(1/2,4);new(2,2) hat_proportion=2/3 proportion=3/4 color=black border_width=4 behind=t1>
+</graphic>
 <p>
 Nous pouvons définir une autre relation, qui semble trop simple pour avoir besoin d'être définie (mais que nous allons quand même définir quand même) : l'égalité.
 Pour rappel, <span class="important">nous avons déjà défini l'égalité entre deux ensembles dans la partie sur la théorie des ensembles ZFC, avec l'axiome d'extensionnalité</span>.
@@ -383,6 +445,12 @@ La démonstration s'obtient avec un peu de déduction.
 
 
 
+
+
+
+
+
+
 <h3>Les relations d'ordre</h3>
 <p>
 Le type de relation qui est probablement le plus utilisé est la relation d'ordre.
@@ -394,16 +462,21 @@ En d'autres termes, si les éléments "a" et "b" sont en relations par une relat
 </p>
 <math><mforall>a, b, c <min> E, a ~ b <mand> b ~ c <mimp> a ~ c</math>
 <p>
+Un exemple extrêmement simple de relation transitive est l'égalité (si "a = b" et "b = c", alors "a = c", ce qui se déduit soit par l'axiome d'extension en théorie des ensembles, soit par la loi de Leibniz).
+Comme on a déjà vu qu'elle était aussi réflexive et antisymétrique, on peut dire que la relation d'égalité sur un ensemble quelconque est une relation d'ordre (bien que pas très utile).
+Bon, pour la transitivité, représenter la relation sous forme de tableau n'apporte pas grand chose en informations.
+De plus, le faire avec le diagramme sagittal seul demanderait beaucoup de flèches, que l'on peut optimiser (d'une façon que nous verrons plus tard).
 Ici, <span class="important">l'union de l'antisymétrie et de la réflexivité assure que la relation doit s'écrire dans un certain ordre, sauf dans le cas où les éléments soit égaux</span> (ce qui permet de formuler une sorte de "comparaison" / "d'ordre").
 En effet, ces propriétés assurent que l'ordre autour du symbole de la relation est toujours important si les éléments en question ne sont pas égaux.
+De plus, la transitivité permet de rendre cette relation globalement cohérente.
 </p>
 <math><mforall> a, b <min> E, a = b <mequi> (a ~ b <mand> b ~ a)</math></br>
 <math><mimp> a <mnotequal> b <mequi> <mnot>(a ~ b) <mor> <mnot>(b ~ a)</math>
 <p>
-Généralement, si on note "a ~ b", <span class="important">on dit que "b" succéde (ou majore) "a" par la relation "~"</span>.
-À l'inverse, toujours si l'on note "a ~ b", <span class="important">on dit que "a" précède (ou minore) "b" par la relation "~"</span>.
-D'ailleurs, si "a = b", on garde cette notation, ce qui veut donc dire que "a" se précède / se minore / se succède / se majore (et la réciproque est vraie : si "a" précède / minore / succède / majore "b", alors ils sont égaux).
-Cependant, par abus de langage, beaucoup d'autres écrivent (toujours si "a ~ b") que "a est plus grand que b" (ce qui est parfaitement cohérent pour certaines relations, mais paradoxal pour certaines autres).
+Généralement, si on note "e ~ f", <span class="important">on dit que "f" succède (ou majore) à "e" par la relation "~"</span>.
+À l'inverse, toujours si l'on note "e ~ f", <span class="important">on dit que "e" précède (ou minore) "f" par la relation "~"</span>.
+D'ailleurs, si "e = f", on garde cette notation, ce qui veut donc dire que "e" se précède / se minore / se succède (à lui même) / se majore (et la réciproque est vraie : si "e" précède / minore / succède / majore "f", alors ils sont égaux).
+Cependant, par abus de langage, beaucoup d'auteurs écrivent (toujours si "e ~ f") que "e est plus petit que f", et que "f est plus grand que e" (ce qui est parfaitement cohérent pour certaines relations, mais paradoxal pour certaines autres).
 </p>
 <p>
 Si un ensemble quelconque peut être muni d'une relation d'ordre, l'ensemble est dit ordonné.
@@ -414,16 +487,19 @@ Généralement, un ensemble ordonné "E" par une relation "~" est formalisé ave
 <p>
 Cependant, <span class="important">il est aussi possible de ne pas définir la relation d'ordre comme totale : on parle d'ensemble partiellement ordonné</span>.
 D'ailleurs, un ensemble totalement ordonné est aussi un ensemble partiellement ordonné (comme tous ces éléments peuvent se comparer entre eux, alors il est évident que... certains de ces éléments peuvent se comparer entre eux).
+Si vous avez un ensemble partiellement ordonné, <span class="important">il est possible de trouver une partie de cette ensemble qui est totalement ordonnée : on appelle ce type de partie une chaîne</span>.
 </p>
 <p>
 Un exemple extrêmement simple de relation totale (mais que nous ne pouvons pas définir ultra rigoureusement) est la relation "inférieur ou égal" sur l'ensemble des nombres entiers naturels "N".
 Ici, l'antisymétrie, la réflexivité, la transitivité et la totalité sont assez évidente.
 Remarquez d'ailleurs que, si vous enlevez le "ou égal" pour mettre "strictement inférieur" à la place, il n'y a plus de réflexivité, et cette relation ne serait donc pas une relation d'ordre.
+Comme cet ordre est le plus utilisé sur les nombres (et de très loin), on parle "d'ordre usuel".
 </p>
 <math>(N, <mltequal>)</math>
 <p>
 C'est l'exact même chose pour la relation "supérieur ou égal", où l'ordre est inversé.
-D'ailleurs, d'un point de vue vocabulaire, si "a" est supérieur ou égal à "b", on devrait dire que "b" succède "a", ce qui peut sembler un peu paradoxal.
+D'ailleurs, d'un point de vue vocabulaire, si "a" est supérieur ou égal à "b", on devrait dire que "b" succède à "a", ce qui peut sembler un peu paradoxal.
+C'est dans ce genre de cas que l'abus de langage "b est plus grand que a" ne marche pas bien.
 </p>
 <math>(N, <mgtequal>)</math>
 <p>
@@ -431,19 +507,20 @@ On peut cependant obtenir de manière très rigoureuse un ensemble partiellement
 En effet, <span class="important">l'ensemble des parties d'un ensemble "E" ayant au moins deux éléments muni de la relation d'inclusion est un ensemble partiellement ordonné</span>.
 Ici, pour une partie quelconque de "E", la relation d'inclusion est belle et bien réflexive, antisymétrique (comme nous l'avons vu plus haut) et transitive.
 </p>
-<math><mforall>a, b, c, a <mincluded> b <mand> b <mincluded> c <mimp> a <mincluded> c</math>
+<math><mforall>a, b, c <min> P(E), a <mincluded> b <mand> b <mincluded> c <mimp> a <mincluded> c</math>
 <p>
 Ici, si "E" a 1 seul élément, la relation est totale, mais inutile.
 Cependant, si "E" a 2 éléments ou plus, il existe des paires de parties de "E" qui sont bel et bien des parties de "E", mais tel qu'aucune n'inclue l'autre (ce qui rend la définition pas totale).
 C'est par exemple le cas de deux singletons non-égaux.
 </p>
-<math><mforall> a, b, <mno>({a} <mincluded> {b} <mor> {b} <mincluded> {a})</math>
+<math><mforall> a, b <min> E, <mno>({a} <mincluded> {b} <mor> {b} <mincluded> {a})</math>
 <p>
-Pour visualiser une relation d'ordre, il existe un moyen assez pratique : le diagramme de Hasse.
+Pour visualiser une relation d'ordre, il existe un moyen assez pratique inspiré du diagramme sagittal : le diagramme de Hasse.
 <span class="important"><definition name="hasse_diagram"></span>.
-Ce type de diagramme permet donc de bien voir quels éléments sont liés entre eux.
-Cependant, il y a une particularité : seul les relations directs sont construites.
-Donc, si il existe un objet "entre" deux éléments, alors on ne les relie pas.
+Donc, si il existe un objet "entre" deux éléments (pour deux éléments "a" et "c", tel que "a ~ b" et "a ~ c"), alors on ne les relie pas.
+De plus, dans une relation d'ordre, par définition, tout objet est lié à lui même : il est donc inutile de le rajouter sur le diagramme de Hasse, qui est donc simplifié.
+Ici, <span class="important">savoir si deux éléments sont en relation si ils ne sont pas connectés directement équivaut à savoir si il existe un chemin de flèches entre ces deux éléments</span>.
+Ce type de diagramme permet donc de bien voir quels éléments sont liés entre eux, en allégant la notation de des diagrammes sagittaux.
 Prenons un exemple : le diagramme de Hasse de l'ensemble des parties de l'ensemble "{a, b, c}" muni de la relation d'inclusion :
 </p>
 <graphic width=400 height=400>
@@ -473,7 +550,37 @@ Prenons un exemple : le diagramme de Hasse de l'ensemble des parties de l'ensemb
 <text x=2 y=-4/3 font_size_in_scale=1>{c}</text>
 <text x=0 y=-4 font_size_in_scale=1>{}</text>
 </graphic>
+<p>
+On peut aussi obtenir des diagrammes de Hasse d'ensembles totalement ordonnés.
+Cependant, ils sont moins intéressants : ils représentent de simples lignes.
+</p>
+<graphic width=300 height=300>
+<background_color white><base draw=0>
 
+<arrow hat_proportion=1/2 x_1=0 y_1=-4 x_2=0 y_2=-7/3 color=black border_width=4>
+<arrow hat_proportion=1/2 x_1=0 y_1=-4/3 x_2=0 y_2=1/3 color=black border_width=4>
+<arrow hat_proportion=1/2 x_1=0 y_1=4/3 x_2=0 y_2=3 color=black border_width=4>
+
+<text x=0 y=4 font_size_in_scale=1>{a, b, c}</text>
+<text x=0 y=4/3 font_size_in_scale=1>{a, b}</text>
+<text x=0 y=-4/3 font_size_in_scale=1>{a}</text>
+<text x=0 y=-4 font_size_in_scale=1>{}</text>
+</graphic>
+<p>
+Dans le cas de nombres (avec l'ordre usuel) :
+</p>
+<graphic width=300 height=300>
+<background_color white><base draw=0>
+
+<arrow hat_proportion=1/2 x_1=0 y_1=-4 x_2=0 y_2=-7/3 color=black border_width=4>
+<arrow hat_proportion=1/2 x_1=0 y_1=-4/3 x_2=0 y_2=1/3 color=black border_width=4>
+<arrow hat_proportion=1/2 x_1=0 y_1=4/3 x_2=0 y_2=3 color=black border_width=4>
+
+<text x=0 y=4 font_size_in_scale=1>3</text>
+<text x=0 y=4/3 font_size_in_scale=1>2</text>
+<text x=0 y=-4/3 font_size_in_scale=1>1</text>
+<text x=0 y=-4 font_size_in_scale=1>0</text>
+</graphic>
 <p>
 Avec tout ça, <span class="important">l'existence d'une relation d'ordre sur un ensemble implique l'existence d'une relation d'ordre réciproque, qui est vraie entre deux éléments "a" et "b" si ces éléments sont en relations par la première relation, avec "a" et "b" échangés de place</span>.
 Il s'agit donc d'une relation qui "inverse" l'ordre par rapport à la première.
@@ -498,16 +605,16 @@ Des fois, cette relation est aussi notée "~ exposant op", et l'ensemble obtenu 
 <math># = <mi>~</mi><msup>op</msup></math></br>
 <math>(E, #) = (E, <mi>~</mi><msup>op</msup>) = <mi>O</mi><msup>op</msup></math>
 <p>
-On va citer deux exemples : "inférieur ou égal" dans "N", et "inclusion" dans "E".
+On va citer deux exemples : "inférieur ou égal" dans "N", et "inclusion" dans "P(E)".
 Pour "inférieur ou égal" dans "N", sa relation d'ordre réciproque est "supérieur ou égal".
 Encore une fois, nous aurons l'occasion de le définir rigoureusement plus tard.
 </p>
 <math><mforall>a, b <min> N, a <mltequal> b <mequi> b <mgtequal> a</math>
 <p>
-Pour la relation "est inclut dans" dans "E" (qui, pour rappel, équivaut à dire "est un sous-ensemble de"), la relation réciproque est donc "est un sur-ensemble de".
+Pour la relation "est inclut dans" dans "P(E)" (qui, pour rappel, équivaut à dire "est un sous-ensemble de"), la relation réciproque est donc "est un sur-ensemble de".
 Bien que moins utile, elle existe quand même.
 </p>
-<math><mforall>a, b <min> P(e), a <mincluded> b <mequi> b <mincluded_inversed> a</math>
+<math><mforall>a, b <min> P(E), a <mincluded> b <mequi> b <mincluded_inversed> a</math>
 <p>
 Revenons sur un aspect vocabulaire.
 Ici, par définition, <span class="important">si "b" majore "a" par la relation "~", alors "a" majore "b" par la relation "#"</span>.
@@ -515,10 +622,71 @@ Dans le cas de nos relations "inférieur ou égal" et "supérieur ou égal", si 
 Il y a donc une inversion d'ordre, et donc de vocabulaire : il faut donc bien faire attention au formalisme utiliser à chaque fois.
 </p>
 <p>
+Si votre relation a un diagramme de Hasse quelconque, <span class="important">vous pouvez obtenir le diagramme de Hasse de sa relation réciproque en inversant le sens de toutes flèches</span>.
+Dans le cas de l'ensemble des parties de l'ensemble "{a, b, c}" muni de la relation d'inclusion, le graphe de sa relation réciproque est donc :
+</p>
+<graphic width=300 height=300>
+<background_color white><base draw=0>
+
+<arrow hat_proportion=2/3 x_1=-3/2 y_1=-2 x_2=-1/2 y_2=-7/2 color=black border_width=4>
+<arrow hat_proportion=1 x_1=0 y_1=-2 x_2=0 y_2=-7/2 color=black border_width=4>
+<arrow hat_proportion=2/3 x_1=3/2 y_1=-2 x_2=1/2 y_2=-7/2 color=black border_width=4>
+
+<arrow hat_proportion=2/3 x_1=-3 y_1=1/2 x_2=-5/2 y_2=-2/3 color=black border_width=4>
+<arrow hat_proportion=2/3 x_1=-1/2 y_1=1/3 x_2=-3/2 y_2=-2/3 color=black border_width=4>
+<arrow hat_proportion=2/3 x_1=3 y_1=1/2 x_2=5/2 y_2=-2/3 color=black border_width=4>
+<arrow hat_proportion=2/3 x_1=1/2 y_1=1/3 x_2=3/2 y_2=-2/3 color=black border_width=4>
+<arrow hat_proportion=1/2 x_1=5/2 y_1=1/3 x_2=1/3 y_2=-2/3 color=black border_width=4>
+<arrow hat_proportion=1/2 x_1=-5/2 y_1=1/3 x_2=-1/3 y_2=-2/3 color=black border_width=4>
+
+<arrow hat_proportion=1/2 x_1=0 y_1=3 x_2=-2 y_2=2 color=black border_width=4>
+<arrow hat_proportion=1 x_1=0 y_1=3 x_2=0 y_2=2 color=black border_width=4>
+<arrow hat_proportion=1/2 x_1=0 y_1=3 x_2=2 y_2=2 color=black border_width=4>
+
+<text x=0 y=4 font_size_in_scale=1>{a, b, c}</text>
+<text x=-3 y=4/3 font_size_in_scale=1>{a, b}</text>
+<text x=0 y=4/3 font_size_in_scale=1>{a, c}</text>
+<text x=3 y=4/3 font_size_in_scale=1>{b, c}</text>
+<text x=-2 y=-4/3 font_size_in_scale=1>{a}</text>
+<text x=0 y=-4/3 font_size_in_scale=1>{b}</text>
+<text x=2 y=-4/3 font_size_in_scale=1>{c}</text>
+<text x=0 y=-4 font_size_in_scale=1>{}</text>
+</graphic>
+<p>
+Si on ne veut pas changer les flèches, on peut aussi permuter l'ordre des éléments verticalement.
+</p>
+<graphic width=300 height=300>
+<background_color white><base draw=0>
+
+<arrow hat_proportion=1/2 x_1=0 y_1=-4 x_2=-3/2 y_2=-5/2 color=black border_width=4>
+<arrow hat_proportion=1/2 x_1=0 y_1=-4 x_2=0 y_2=-5/2 color=black border_width=4>
+<arrow hat_proportion=1/2 x_1=0 y_1=-4 x_2=3/2 y_2=-5/2 color=black border_width=4>
+
+<arrow hat_proportion=1/2 x_1=-2 y_1=-3/2 x_2=-3 y_2=1/3 color=black border_width=4>
+<arrow hat_proportion=1/2 x_1=-2 y_1=-4/3 x_2=-1/2 y_2=1/3 color=black border_width=4>
+<arrow hat_proportion=1/2 x_1=2 y_1=-3/2 x_2=3 y_2=1/3 color=black border_width=4>
+<arrow hat_proportion=1/2 x_1=2 y_1=-4/3 x_2=1/2 y_2=1/3 color=black border_width=4>
+<arrow hat_proportion=1/2 x_1=0 y_1=-4/3 x_2=5/2 y_2=1/3 color=black border_width=4>
+<arrow hat_proportion=1/2 x_1=0 y_1=-4/3 x_2=-5/2 y_2=1/3 color=black border_width=4>
+
+<arrow hat_proportion=1/2 x_1=-3 y_1=4/3 x_2=-1 y_2=3 color=black border_width=4>
+<arrow hat_proportion=1/2 x_1=0 y_1=4/3 x_2=0 y_2=3 color=black border_width=4>
+<arrow hat_proportion=1/2 x_1=3 y_1=4/3 x_2=1 y_2=3 color=black border_width=4>
+
+<text x=0 y=4 font_size_in_scale=1>{}</text>
+<text x=-3 y=4/3 font_size_in_scale=1>{a}</text>
+<text x=0 y=4/3 font_size_in_scale=1>{b}</text>
+<text x=3 y=4/3 font_size_in_scale=1>{c}</text>
+<text x=-3 y=-4/3 font_size_in_scale=1>{a, b}</text>
+<text x=0 y=-4/3 font_size_in_scale=1>{a, b}</text>
+<text x=3 y=-4/3 font_size_in_scale=1>{b, c}</text>
+<text x=0 y=-4 font_size_in_scale=1>{a, b, c}</text>
+</graphic>
+<p>
 Dans la même idée, on peut définir un type de relation très similaire : les relations d'ordres strictes.
 <span class="important"><definition name="relation_order-strict"></span>.
-Pour rappel, nous avons défini l'antiréflexivité un peu plus haut.
-En fait, <span class="important">une relation d'ordre stricte peut se voir comme une relation d'ordre sans que les éléments égaux soient en relation entre eux</span>.
+Pour rappel, nous avons défini l'antiréflexivité (et l'antisymétrie) un peu plus haut.
+En fait, <span class="important">une relation d'ordre stricte peut se voir comme une relation d'ordre où les éléments égaux ne soient pas en relation entre eux</span>.
 Un exemple est la relation "strictement supérieur" sur les nombres entiers naturels, qui est bel et bien antiréflexive et transitive.
 Encore une fois, nous ne pouvons pas le démontrer de manière ultra rigoureuse, mais l'intuition simple sur ces nombres suffisent à mieux comprendre le concept.
 </p>
@@ -548,6 +716,97 @@ D'ailleurs, si un préordre est antisymétrique, il représente donc une relatio
 </p>
 <p>
 Revenons sur les ensembles ordonnés, et parlons un peu de leurs sous-ensembles.
+Un des types de parties possibles dans les ensembles ordonnés sont les intervalles.
+<span class="important"><definition name="interval"></span>.
+Ce terme est généralement très utilisé dans le cas de l'ensemble des réels, mais il se généralise à tout ensemble ordonné.
+Plaçons nous dans un ensemble ordonné "(E, ~)".
+Dans le cas où l'intervalle "A" représente l'ensemble des éléments qui succèdent à "a", on note :
+</p>
+<math>A = {x <min> E | a ~ x}</math>
+<p>
+Dans le cas où l'intervalle "B" représente l'ensemble des éléments qui précèdent "b", on note :
+</p>
+<math>B = {x <min> E | x ~ b}</math>
+<p>
+Dans le cas où l'intervalle "C" représente l'ensemble des éléments qui succèdent à "c" et précèdent "d", on note :
+</p>
+<math>C = {x <min> E | c ~ x <mand> x ~ d}</math>
+<p>
+Ce genre d'intervalles sont nommés des intervalles fermés.
+Il est aussi possible de faire des types d'intervalles utilisant l'ordre stricte de la relation d'ordre (ce qui est très utile dans beaucoup de domaines mathématiques).
+Dans ce cas, on parle d'intervalles ouverts.
+Si l'on note "#" la relation d'ordre stricte associée à "~", on note :
+</p>
+<math>A = {x <min> E | a # x}</math></br>
+<math>B = {x <min> E | x # b}</math></br>
+<math>C = {x <min> E | c # x <mand> x # d}</math>
+<p>
+Généralement, l'ensemble vide et l'ensemble entier sont aussi considérés comme des intervalles ouverts (pour des raisons définitionelles que nous verrons beaucoup plus tard).
+Dans l'ensemble des réels, on utilise généralement la notation avec les crochets, mais dans le cas d'un ensemble quelconque, il est préférable de l'éviter pour ne pas créer de confusion.
+Dans le cas d'ordres totaux (comme avec "inférieur ou égal" et avec des nombres), il est très facile de visualiser le concept, mais dans le cas d'un ordre partiel, il faut généralement un peu plus de détail.
+Il est assez facile de représenter ce concept avec des diagrammes de Hasse.
+Ici, nous voyons en bleu les éléments situés dans l'intervalle fermé des éléments qui précèdent "{b}", et en vert ceux qui succèdent "{b}".
+</p>
+<graphic width=300 height=300>
+<background_color white><base draw=0>
+
+<circle x=0 y=4+-1/5 radius_x=2 radius_y=1 color=light_green border_width=0>
+
+<arrow hat_proportion=1/2 x_1=0 y_1=-4 x_2=-3/2 y_2=-5/2 color=black border_width=4>
+<arrow hat_proportion=1/2 x_1=0 y_1=-4 x_2=0 y_2=-5/2 color=black border_width=4>
+<arrow hat_proportion=1/2 x_1=0 y_1=-4 x_2=3/2 y_2=-5/2 color=black border_width=4>
+
+<arrow hat_proportion=1/2 x_1=-3 y_1=5/3 x_2=-1 y_2=3 color=black border_width=4>
+<arrow hat_proportion=1/2 x_1=0 y_1=5/3 x_2=0 y_2=3 color=black border_width=4>
+<arrow hat_proportion=1/2 x_1=3 y_1=5/3 x_2=1 y_2=3 color=black border_width=4>
+
+<circle x=-3 y=4/3+-1/5 radius_x=3/2 radius_y=1 color=light_green border_width=0>
+<circle x=3 y=4/3+-1/5 radius_x=3/2 radius_y=1 color=light_green border_width=0>
+
+<arrow hat_proportion=1/2 x_1=-2 y_1=-3/2 x_2=-3 y_2=1/3 color=black border_width=4>
+<arrow hat_proportion=1/2 x_1=-2 y_1=-4/3 x_2=-1/2 y_2=1/3 color=black border_width=4>
+<arrow hat_proportion=1/2 x_1=2 y_1=-3/2 x_2=3 y_2=1/3 color=black border_width=4>
+<arrow hat_proportion=1/2 x_1=2 y_1=-4/3 x_2=1/2 y_2=1/3 color=black border_width=4>
+<arrow hat_proportion=1/2 x_1=0 y_1=-4/3 x_2=5/2 y_2=1/3 color=black border_width=4>
+<arrow hat_proportion=1/2 x_1=0 y_1=-4/3 x_2=-5/2 y_2=1/3 color=black border_width=4>
+
+<circle x=0 y=-4+-1/5 radius=2/3 color=light_blue border_width=0>
+<circle x=0 y=-4/3+-1/5 radius=1 color=light_green border_width=0>
+<circle x=0 y=-4/3+-1/5 radius=2/3 color=light_blue border_width=0>
+
+<text x=0 y=4 font_size_in_scale=1 background_color=transparent>{a, b, c}</text>
+<text x=-3 y=4/3 font_size_in_scale=1 background_color=transparent>{a, b}</text>
+<text x=0 y=4/3 font_size_in_scale=1 background_color=transparent>{a, c}</text>
+<text x=3 y=4/3 font_size_in_scale=1 background_color=transparent>{b, c}</text>
+<text x=-2 y=-4/3 font_size_in_scale=1>{a}</text>
+<text x=0 y=-4/3 font_size_in_scale=1 background_color=transparent>{b}</text>
+<text x=2 y=-4/3 font_size_in_scale=1>{c}</text>
+<text x=0 y=-4 font_size_in_scale=1 background_color=transparent>{}</text>
+</graphic>
+<p>
+Dans le cas d'un ordre total, c'est bien plus simple.
+En utilisant les mêmes types d'intervalles :
+</p>
+<graphic width=300 height=300>
+<background_color white><base draw=0>
+
+<circle x=0 y=-4/3+-1/5 radius=1 color=light_green border_width=0>
+<arrow hat_proportion=1/2 x_1=0 y_1=-4 x_2=0 y_2=-7/3 color=black border_width=4>
+<circle x=0 y=4/3+-1/5 radius_x=3/2 radius_y=1 color=light_green border_width=0>
+<arrow hat_proportion=1/2 x_1=0 y_1=-4/3 x_2=0 y_2=1/3 color=black border_width=4>
+<circle x=0 y=4+-1/5 radius_x=2 radius_y=1 color=light_green border_width=0>
+<arrow hat_proportion=1/2 x_1=0 y_1=4/3 x_2=0 y_2=3 color=black border_width=4>
+
+<circle x=0 y=-4/3+-1/5 radius=2/3 color=light_blue border_width=0>
+<circle x=0 y=-4+-1/5 radius=2/3 color=light_blue border_width=0>
+
+<text x=0 y=4 font_size_in_scale=1 background_color=transparent>{a, b, c}</text>
+<text x=0 y=4/3 font_size_in_scale=1 background_color=transparent>{a, b}</text>
+<text x=0 y=-4/3 font_size_in_scale=1 background_color=transparent>{b}</text>
+<text x=0 y=-4 font_size_in_scale=1 background_color=transparent>{}</text>
+</graphic>
+<p>
+Parlons des éléments dans une partie d'ensemble ordonné.
 Considérons une partie "F" de notre ensemble ordonné "E", et étudions là sous le prisme de notre relation d'ordre.
 Déjà, commençons par introduire le concept de majorants et minorants.
 <span class="important"><definition name="upper_bounds"></span>.
@@ -566,7 +825,43 @@ C'est comme la majorant, mais en inversé.
 <math>P = (E, ~)</math></br>
 <math><mi>Min</mi><msub>~</msub>(F) = {x <min> E | (<mforall> y <min> F, x ~ y)}</math>
 <p>
-Ici, <span class="important">une partie possédant un majorant est dite majorée, et la partie possédant un minorant est dite minorée</span>.
+Tout ceci se visualise très bien avec un diagramme de Hasse.
+Faisons le cas de l'ensemble des parties de "{a, b, c}" munit de la relation d'inclusion.
+Ici, nous allons entourer en noir la partie, en bleu ses minorants et en rouge ses majorants.
+</p>
+<graphic width=300 height=300>
+<background_color white><base draw=0>
+
+<circle x=-2 y=-8/3 radius_x=1+1/3 radius_y=2+1/2 border_color=(0,0,255) border_width=4>
+<circle x=-3/2 y=1+1/5 radius_x=3+1/3 radius_y=3/2 border_width=4>
+<circle x=0 y=4+-1/5 radius_x=5/2 radius_y=3/2+-1/3 border_color=(255,0,0) border_width=4>
+
+<arrow hat_proportion=1/2 x_1=-2 y_1=-4 x_2=-2 y_2=-5/2 color=black border_width=4>
+<arrow hat_proportion=1/2 x_1=-2 y_1=-4 x_2=-1/2 y_2=-5/2 color=black border_width=4>
+<arrow hat_proportion=1/2 x_1=-2 y_1=-4 x_2=1 y_2=-5/2 color=black border_width=4>
+
+<arrow hat_proportion=1/2 x_1=-2 y_1=-3/2 x_2=-3 y_2=1/3 color=black border_width=4>
+<arrow hat_proportion=1/2 x_1=-2 y_1=-4/3 x_2=-1/2 y_2=1/3 color=black border_width=4>
+<arrow hat_proportion=1/2 x_1=2 y_1=-3/2 x_2=3 y_2=1/3 color=black border_width=4>
+<arrow hat_proportion=1/2 x_1=2 y_1=-4/3 x_2=1/2 y_2=1/3 color=black border_width=4>
+<arrow hat_proportion=1/2 x_1=0 y_1=-4/3 x_2=5/2 y_2=1/3 color=black border_width=4>
+<arrow hat_proportion=1/2 x_1=0 y_1=-4/3 x_2=-5/2 y_2=1/3 color=black border_width=4>
+
+<arrow hat_proportion=1/2 x_1=-3 y_1=5/3 x_2=-1 y_2=3 color=black border_width=4>
+<arrow hat_proportion=1/2 x_1=0 y_1=5/3 x_2=0 y_2=3 color=black border_width=4>
+<arrow hat_proportion=1/2 x_1=3 y_1=5/3 x_2=1 y_2=3 color=black border_width=4>
+
+<text x=0 y=4 font_size_in_scale=1 background_color=transparent>{a, b, c}</text>
+<text x=-3 y=4/3 font_size_in_scale=1 background_color=transparent>{a, b}</text>
+<text x=0 y=4/3 font_size_in_scale=1 background_color=transparent>{a, c}</text>
+<text x=3 y=4/3 font_size_in_scale=1>{b, c}</text>
+<text x=-2 y=-4/3 font_size_in_scale=1>{a}</text>
+<text x=0 y=-4/3 font_size_in_scale=1>{b}</text>
+<text x=2 y=-4/3 font_size_in_scale=1>{c}</text>
+<text x=-2 y=-4 font_size_in_scale=1>{}</text>
+</graphic>
+<p>
+Ici, <span class="important">une partie possédant un majorant est dite majorée, une partie possédant un minorant est dite minorée, et une partie étant les deux est dite bornée</span>.
 D'ailleurs, <span class="important">si vous avez une relation d'ordre "~" dont la relation réciproque est "#", alors on peut formuler les majorants / minorants de parties de "E" par "#", et des majorants / minorants de parties de "E" par "~"</span>.
 En effet, pour toute partie "F", l'ensemble des majorants d'une partie de "F" par "~" est l'ensemble des minorants de "F" par "#".
 La démonstration est assez simple : si "a" est un majorant de "F" par "~", alors on peut écrire "x ~ a" où "x" représente tous les éléments de "F", ce qui équivaut à dire que "a # x" où "x" représente tous les éléments de "F", ce qui veut dire que "a" est un minorant de "F" par "#".
@@ -577,8 +872,7 @@ De manière analogue, l'ensemble des minorants d'une partie de "F" par "~" est l
 Par exemple, 5 et 8 sont des majorants de la partie "{2, 3, 4}" pour l'ensemble ordonné "(N, inférieur ou égal)" (parce que 2, 3 et 4 sont inférieurs ou égaux à 5 et 8, dans cet ordre).
 Dans le cas de l'ensemble des parties de "{a, b, c}" muni de la relation d'inclusion, la partie "{{a}, {b}, {a, b}}" a deux majorants : "{{a, b}, {a, b, c}}".
 Dans le cas des nombres (entiers naturels, ou de n'importe quel autre type), on voit souvent l'appellation de minorant / majorant sans détails sur la relation d'ordre utilisé.
-Dans presque 99% des cas, <span class="important">quand on parle de majorants et minorants avec des nombres, la relation d'ordre utilisée est "inférieur ou égal", pour permettre de dire que les majorants sont les plus grands, et que les minorants sont les plus petits</span>.
-Comme cet ordre est le plus utilisé sur les nombres (et de très loin), on parle "d'ordre usuel".
+Dans presque 99% des cas, <span class="important">quand on parle de majorants et minorants avec des nombres, la relation d'ordre utilisée est "inférieur ou égal", pour permettre de dire que les majorants sont les plus "grands", et que les minorants sont les plus "petits"</span>.
 </p>
 <p>
 <span class="important">Il est à noter que certaines parties peuvent ne pas avoir de majorants ou de minorants</span>.
@@ -587,6 +881,26 @@ Donc, l'ensemble des majorants est vide.
 </p>
 <math><mi>Maj</mi><msub><mltequal></msub>(N) = <mi>Min</mi><msub><mgtequal></msub>(N) = <mempty_set></math>
 <p>
+On peut aussi imaginer une relation d'ordre partielle "~" dans un ensemble "{a, b, c, d}", où chaque élément est lié avec lui même, et où "a ~ b", "a ~ c", "a ~ d", et c'est tout.
+Ici, <span class="important">la partie "{b, c, d}" n'a pas de majorant</span>.
+En effet, "a" ne succède aucun de ces éléments, et "b", "c" et "d" se succèdent eux-mêmes, mais ne succède pas les autres : il n'y a pas un élément qui les succède tous.
+Cependant, cette partie a un minorant : "a" (qui précède "b", "c" et "d").
+</p>
+<graphic width=200 height=200>
+<background_color white><base draw=0>
+
+<circle x=0 y=3 radius_x=9/2 radius_y=2 border_width=4>
+
+<arrow hat_proportion=2/3 x_1=0 y_1=-3+1 x_2=-3 y_2=3+-1 color=black border_width=4>
+<arrow hat_proportion=2/3 x_1=0 y_1=-3+1 x_2=0 y_2=3+-1 color=black border_width=4>
+<arrow hat_proportion=2/3 x_1=0 y_1=-3+1 x_2=3 y_2=3+-1 color=black border_width=4>
+
+<text x=0 y=-3 font_size_in_scale=3/2>a</text>
+<text x=-3 y=3 font_size_in_scale=3/2>b</text>
+<text x=0 y=3 font_size_in_scale=3/2>c</text>
+<text x=3 y=3 font_size_in_scale=3/2>d</text>
+</graphic>
+<p>
 Dans la même idée, on peut définir pas mal d'autres concepts, comme les bornes supérieures et inférieures.
 <span class="important"><definition name="supremum"></span>.
 En utilisant la terminologie intuitive, il s'agit du "plus petit" majorant de la partie.
@@ -594,7 +908,7 @@ Cependant, il existe des ensembles "E" où il existe des parties "F" qui n'ont p
 Cela peut être dû à plusieurs choses : l'ensemble est partiellement ordonné (et les majorants ne sont pas comparables), ou l'ensemble est totalement ordonné mais a une structure particulière (c'est le cas de l'ensemble "Q", que nous verrons au prochain chapitre).
 Pour l'instant, aucun ensemble que nous avons vu n'admet des parties sans borne supérieure par une relation d'ordre totale.
 D'ailleurs, <span class="important">si une partie admet une borne supérieure, elle est unique</span>.
-En effet, si il y en avait plusieurs, alors ils devraient être comparables, et donc l'un serait "plus petit" que l'autre, et donc il n'y en aurait... qu'un : le plus petit (ce qui veut dire que "plusieurs bornes supérieures" implique "1 borne supérieure", ce qui prouve par l'absurde qu'il y en a qu'un seul).
+En effet, si plusieurs éléments quelconques respectent la propriété pour être une borne supérieure, alors le premier serait en relation avec le deuxième, et le deuxième serait en relation avec le premier, ce qui selon le principe d'antisymétrie, implique qu'ils soient égaux.
 Généralement, elle est notée "sup indice ~(F)".
 </p>
 <math><mi>sup</mi><msub>~</msub>(F) = y <mequi> {y <min> <mi>Maj</mi><msub>~</msub>(F) <mand> (<mforall> x <min> <mi>Maj</mi><msub>~</msub>(F), y ~ x)}</math>
@@ -607,8 +921,47 @@ Généralement, elle est notée "inf indice ~(F)".
 </p>
 <math><mi>inf</mi><msub>~</msub>(F) = y <mequi> {y <min> <mi>Min</mi><msub>~</msub>(F) <mand> (<mforall> x <min> <mi>Min</mi><msub>~</msub>(F), x ~ y)}</math>
 <p>
+Encore une fois, ceci se voit très bien dans un diagramme de Hasse.
+Ici, la borne supérieure est entourée par un cercle de fond rouge, et la borne inférieure est entourée par un cercle de fond bleu.
+</p>
+<graphic width=300 height=300>
+<background_color white><base draw=0>
+
+<circle x=-2 y=-8/3 radius_x=1+1/3 radius_y=2+1/2 border_color=(0,0,255) border_width=4>
+<circle x=-3/2 y=1+1/5 radius_x=3+1/3 radius_y=3/2 border_width=4>
+<circle x=0 y=4+-1/5 radius_x=5/2+1/3 radius_y=3/2 border_color=(255,0,0) border_width=4>
+<circle x=0 y=4+-1/5 radius_x=5/2 radius_y=3/2+-1/3 border_color=(0,0,0) border_width=4 color=(255,0,0,100)>
+
+<arrow hat_proportion=1/2 x_1=-2 y_1=-4 x_2=-2 y_2=-5/2 color=black border_width=4>
+<arrow hat_proportion=1/2 x_1=-2 y_1=-4 x_2=-1/2 y_2=-5/2 color=black border_width=4>
+<arrow hat_proportion=1/2 x_1=-2 y_1=-4 x_2=1 y_2=-5/2 color=black border_width=4>
+
+<arrow hat_proportion=1/2 x_1=-2 y_1=-3/2 x_2=-3 y_2=1/3 color=black border_width=4>
+<arrow hat_proportion=1/2 x_1=-2 y_1=-4/3 x_2=-1/2 y_2=1/3 color=black border_width=4>
+<arrow hat_proportion=1/2 x_1=2 y_1=-3/2 x_2=3 y_2=1/3 color=black border_width=4>
+<arrow hat_proportion=1/2 x_1=2 y_1=-4/3 x_2=1/2 y_2=1/3 color=black border_width=4>
+<arrow hat_proportion=1/2 x_1=0 y_1=-4/3 x_2=5/2 y_2=1/3 color=black border_width=4>
+<arrow hat_proportion=1/2 x_1=0 y_1=-4/3 x_2=-5/2 y_2=1/3 color=black border_width=4>
+
+<arrow hat_proportion=1/2 x_1=-3 y_1=5/3 x_2=-1 y_2=3 color=black border_width=4>
+<arrow hat_proportion=1/2 x_1=0 y_1=5/3 x_2=0 y_2=3 color=black border_width=4>
+<arrow hat_proportion=1/2 x_1=3 y_1=5/3 x_2=1 y_2=3 color=black border_width=4>
+
+<circle x=-2 y=-4/3+-1/10 radius_x=1+-1/5 radius_y=1 border_color=(0,0,0) border_width=4 color=(150,150,255)>
+
+<text x=0 y=4 font_size_in_scale=1 background_color=transparent>{a, b, c}</text>
+<text x=-3 y=4/3 font_size_in_scale=1 background_color=transparent>{a, b}</text>
+<text x=0 y=4/3 font_size_in_scale=1 background_color=transparent>{a, c}</text>
+<text x=3 y=4/3 font_size_in_scale=1>{b, c}</text>
+<text x=-2 y=-4/3 font_size_in_scale=1 background_color=transparent>{a}</text>
+<text x=0 y=-4/3 font_size_in_scale=1>{b}</text>
+<text x=2 y=-4/3 font_size_in_scale=1>{c}</text>
+<text x=-2 y=-4 font_size_in_scale=1>{}</text>
+</graphic>
+<p>
 Dans la même idée, on peut définir pas mal d'autres concepts, comme les extremums, maximums et minimums.
 <span class="important"><definition name="extremum-maximum"></span>.
+Des fois, le maximum est aussi appelé "plus grand élément".
 La seule possibilité pour cette valeur est qu'elle représente... le "maximum" de cet ensemble.
 Si cette valeur existe, elle est la borne supérieure de "F" par cette même relation (qui doit donc exister).
 Cependant, il se peut que "F" est une borne supérieure, mais pas de maximum (encore une fois, cela dépend de l'ensemble).
@@ -618,6 +971,7 @@ Généralement, elle est notée "max indice ~(F)".
 <p>
 Encore une fois, si il existe un maximum, il existe un minimum.
 <span class="important"><definition name="extremum-minimum"></span>.
+Des fois, le minimum est aussi appelé "plus petit élément".
 La seule possibilité pour cette valeur est qu'elle représente... le "minimum" de cet ensemble.
 Si cette valeur existe, elle est la borne inférieure de "F" par cette même relation (qui doit donc exister).
 Cependant, il se peut que "F" est une borne inférieure, mais pas de minimum (encore une fois, cela dépend de l'ensemble).
@@ -630,6 +984,42 @@ Finalement, on peut définir le concept d'extremum.
 On parle souvent d'un extremum pour parler soit du maximum seul, soit du minimum seul.
 </p>
 <p>
+Voyons un dernier concept similaire : les éléments maximaux et minimaux.
+<span class="important"><definition name="maximal"></span>.
+Ici, il est très fréquent de choisir comme partie l'ensemble entier.
+On peut aussi définir le concept d'élément minimal.
+<span class="important"><definition name="maximal-minimal"></span>.
+Comme pour les majorants / minorants, il peut en avoir plusieurs.
+Pour un élément "a" étant un maximal d'une partie "F" dans un ensemble ordonné de "E" (et un élément "b" étant un minimal d'une partie "F" dans un ensemble ordonné de "E"), on note :
+</p>
+<math><mforall> x <min> F, <mno>(x <mnotequal> a <mand> a ~ x)</math></br>
+<math><mforall> y <min> F, <mno>(y <mnotequal> b <mand> y ~ b)</math>
+<p>
+Ou, de façon équivalente (en remarquant que si "x ~ a" ou "b ~ y", le seule moyen pour que ceci soit faux soit que "x = a" et "y = b") :
+</p>
+<math><mnotexist> x <min> F, a ~ x <mimp> x = a</math></br>
+<math><mnotexist> y <min> F, y ~ b <mimp> y = b</math>
+<p>
+Il n'y a pas vraiment de notation pour noter l'ensemble des éléments maximaux / minimaux.
+Bien que leurs noms soit similaires, il ne faut absolument pas les confondre avec les maximums / minimums.
+D'ailleurs, on peut dire qu'il s'agit de version affaiblit de ces deux notions.
+Il est assez simple de voir que tout maximum / minimum est un élément maximal / minimal.
+Par exemple, dans l'ensemble suivant (où la partie que l'on prend et l'entiereté de l'ensemble), si l'on prend l'ensemble entier, on peut voir 3 éléments maximaux : "a", "b" et "c", mais pas de maximum.
+Par contre, nous avons un élément minimal, qui est aussi un minimum.
+</p>
+<graphic width=200 height=200>
+<background_color white><base draw=0>
+
+<arrow hat_proportion=2/3 x_1=0 y_1=-3+1 x_2=-3 y_2=3+-1 color=black border_width=4>
+<arrow hat_proportion=2/3 x_1=0 y_1=-3+1 x_2=0 y_2=3+-1 color=black border_width=4>
+<arrow hat_proportion=2/3 x_1=0 y_1=-3+1 x_2=3 y_2=3+-1 color=black border_width=4>
+
+<text x=0 y=-3 font_size_in_scale=3/2>a</text>
+<text x=-3 y=3 font_size_in_scale=3/2>b</text>
+<text x=0 y=3 font_size_in_scale=3/2>c</text>
+<text x=3 y=3 font_size_in_scale=3/2>d</text>
+</graphic>
+<p>
 Il existe une théorie mathématique un peu bizarre, mais très remplie : la théorie des ordres.
 <span class="important"><definition name="order_theory"></span>.
 Cette théorie est une théorie avec beaucoup de choses différentes, qui va assez loin.
@@ -639,35 +1029,88 @@ Bien que nous n'avons pas l'intention ici de présenter toute cette théorie, no
 
 
 
-<h3>Les relations d'équivalences</h3>
+<h3>Les relations d'équivalence</h3>
 <p>
 Les relations d'équivalences sont un type précis de relations mathématiques.
 En fait, <span class="important"><definition name="relation_equivalence"></span>.
-Ici, <span class="important"><definition name="relation_symmetric"></span>.
-Ce n'est pas le cas de toutes les relations : pour la relation "plus petit que", 2 n'est pas "plus petit que" 2, mais égal.
+Tous ces termes ont déjà était présentés plus haut.
+D'ailleurs, comme une relation d'équivalence est réflexive et transitive, il s'agit d'un préordre.
+Rappelons quand même les bases : <span class="important">dans ce genre de relation, l'ordre des éléments n'importe pas, chaque élément est en relation avec lui même</span>.
+De plus (et c'est probablement la propriété la plus importante des relations d'équivalences) : </span class="important">si il existe une relation entre "a" et "b" et une relation entre "b" et "c", vous pouvez relier ces 3 éléments dans tous les sens possibles (puisque l'ordre n'importe pas)</span>.
+On peut d'ailleurs directement en déduire que, si l'on rajoute des éléments (1, comme 2, comme 100, comme une infinité), c'est la même chose.
+Généralement, pour représenter des relations d'équivalence, on utilise des diagrammes sagittaux (ici, ces diagrammes n'ont pas de flèches, mais de simples traits, puisqu'il n'y a pas d'ordre et que la relation est vraie dans les deux sens).
 </p>
-<math><mforall>a, b <min> E, a ~ b <mimp> b ~ a</math>
+<graphic width=300 height=300>
+<background_color white><base draw=0>
+
+<circle name=c0 x=-4 y=1 radius_x=2/3 radius_y=2/3 border_width=0 color=light_blue><text parent=last_object() y=1/10 font_size_in_scale=1 background_color=transparent>a</text>
+<circle name=c1 x=-5/2 y=3 radius_x=2/3 radius_y=2/3 border_width=0 color=light_blue><text parent=last_object() y=1/10 font_size_in_scale=1 background_color=transparent>b</text>
+<circle name=c2 x=-5/2 y=-1 radius_x=2/3 radius_y=2/3 border_width=0 color=light_blue><text parent=last_object() y=1/10 font_size_in_scale=1 background_color=transparent>c</text>
+<circle name=c3 x=-1 y=3 radius_x=2/3 radius_y=2/3 border_width=0 color=light_blue><text parent=last_object() y=1/10 font_size_in_scale=1 background_color=transparent>d</text>
+<circle name=c4 x=-1 y=-1 radius_x=2/3 radius_y=2/3 border_width=0 color=light_blue><text parent=last_object() y=1/10 font_size_in_scale=1 background_color=transparent>e</text>
+
+<line points=c0;c1 border_color=black border_width=10 behind=c0>
+<line points=c0;c2 border_color=black border_width=10 behind=c0>
+<line points=c0;c3 border_color=black border_width=10 behind=c0>
+<line points=c0;c4 border_color=black border_width=10 behind=c0>
+<line points=c1;c2 border_color=black border_width=10 behind=c0>
+<line points=c1;c3 border_color=black border_width=10 behind=c0>
+<line points=c1;c4 border_color=black border_width=10 behind=c0>
+<line points=c2;c3 border_color=black border_width=10 behind=c0>
+<line points=c2;c4 border_color=black border_width=10 behind=c0>
+<line points=c3;c4 border_color=black border_width=10 behind=c0>
+
+<circle name=c5 x=4 y=2 radius_x=2/3 radius_y=2/3 border_width=0 color=light_blue><text parent=last_object() y=1/10 font_size_in_scale=1 background_color=transparent>f</text>
+<circle name=c6 x=5/2 y=3 radius_x=2/3 radius_y=2/3 border_width=0 color=light_blue><text parent=last_object() y=1/10 font_size_in_scale=1 background_color=transparent>g</text>
+<circle name=c7 x=5/2 y=1 radius_x=2/3 radius_y=2/3 border_width=0 color=light_blue><text parent=last_object() y=1/10 font_size_in_scale=1 background_color=transparent>h</text>
+
+<line points=c5;c6 border_color=black border_width=10 behind=c5>
+<line points=c5;c7 border_color=black border_width=10 behind=c5>
+<line points=c6;c7 border_color=black border_width=10 behind=c5>
+
+<circle name=c8 x=2 y=-1 radius_x=2/3 radius_y=2/3 border_width=0 color=light_blue><text parent=last_object() y=1/10 font_size_in_scale=1 background_color=transparent>i</text>
+<circle name=c9 x=2 y=-4 radius_x=2/3 radius_y=2/3 border_width=0 color=light_blue><text parent=last_object() y=1/10 font_size_in_scale=1 background_color=transparent>j</text>
+<circle name=c10 x=7/2 y=-1 radius_x=2/3 radius_y=2/3 border_width=0 color=light_blue><text parent=last_object() y=1/10 font_size_in_scale=1 background_color=transparent>k</text>
+<circle name=c11 x=7/2 y=-4 radius_x=2/3 radius_y=2/3 border_width=0 color=light_blue><text parent=last_object() y=1/10 font_size_in_scale=1 background_color=transparent>l</text>
+
+<line points=c8;c9 border_color=black border_width=10 behind=c0>
+<line points=c8;c10 border_color=black border_width=10 behind=c0>
+<line points=c8;c11 border_color=black border_width=10 behind=c0>
+<line points=c9;c10 border_color=black border_width=10 behind=c0>
+<line points=c9;c11 border_color=black border_width=10 behind=c0>
+<line points=c10;c11 border_color=black border_width=10 behind=c0>
+
+<circle name=c11 x=-5/2 y=-7/2 radius_x=2/3 radius_y=2/3 border_width=0 color=light_blue><text parent=last_object() y=1/10 font_size_in_scale=1 background_color=transparent>m</text>
+
+</graphic>
 <p>
-En d'autres termes, l'ordre de "a" et "b" n'importe pas.
-L'avantage de ce concept est la façon dont on peut l'utiliser.
-En effet, <span class="important">cette définition complexe est parfaitement équivalente au fait de dire que si deux objets sont en relation, alors ils obéissent à une même propriété quelconque</span> (<a href="demo#1_1_0_0">démontré ici</a>).
-Cette propriété peut être n'importe quoi, et être de n'importe quelle nature (tant que la relation d'égalité est définie sur les résultats possibles de cette dernière) : "parité", "signe", "chiffre des dizaines"...
-Ici, nous la notons "f" :
+Une des utilités de ce concept est la liaison d'éléments par une propriété spécifique qu'ils respectent.
+En effet, <span class="important">si vous avez une propriété quelconque ("associant" à chaque objet de l'ensemble un autre objet précis), alors on peut lier les éléments qui ont la même valeur par cette propriété par une relation d'équivalence</span>.
+Cette propriété peut être n'importe quoi, et être de n'importe quelle nature.
+Par exemple, on peut avoir une propriété "parité" sur "N", qui associe "0" aux éléments impairs et "1" aux éléments pairs, ou même une propriété chiffre des dizaines sur "N", qui associe le chiffre des dizaines à chaque nombre de "N".
+Ici, en considérant que nous notons le moyen d'obtenir la propriété de l'objet "x" comme "P(x)", et la relation "~" qui lie tous les objets de même valeur par cette propriété :
 </p>
-<math><mforall> x, y <min> E, f(x) = f(y) <mequi> x ~ y<math>
+<math><mforall> x, y <min> E, P(x) = P(y) <mequi> x ~ y<math>
 <p>
-Voici un exemple de propriété, se lisant comme "pour tout x appartenant à un ensemble E, f(x) est vraie si l'ensemble vide appartient à x, et fausse sinon".
+Ici, la réflexivité, la symétrie et la transitivité sont immédiate, et proviennent de la relation d'égalité (déjà vue plus haut).
+</p>
+<math><mforall> x <min> E, P(x) = P(x) <mimp> x ~ x<math></br>
+<math><mforall> x, y <min> E, x ~ y <mequi> P(x) = P(y) <mimp> P(y) = P(x) <mequi> y ~ x<math></br>
+<math><mforall> x, y, z <min> E, x ~ y <mand> y ~ z <mequi> P(x) = P(y) <mand> P(y) = P(z) <mimp> P(x) = P(z) <mimp> x ~ z<math></br>
+<p>
+Nous verrons plus tard (dans la partie sur les applications) une façon plus rigoureuse d'écrire tout ceci.
+Voici un exemple de propriété sur un ensemble "E" (avec seulement des ensembles dedans), se lisant comme "pour tout x appartenant à un ensemble E, P(x) est vraie si l'ensemble vide appartient à x, et fausse sinon".
 Nous noterons "~" la relation d'équivalence correspondant à cette propriété.
 </p>
-<math><mforall> x <min> E, f(x) <mequi> <mempty> <min> x<math></br>
-<math><mforall> x, y <min> E, x ~ y <mequi> f(x) = f(y)<math>
+<math><mforall> x <min> E, (P(x) = 1 <mequi> <mempty> <min> x) <mand> (P(x) = 0 <mequi> <mempty> <mnotin> x)<math></br>
+<math><mforall> x, y <min> E, x ~ y <mequi> P(x) = P(y)<math>
 <p>
 Définissons maintenant un "E" précis :
 </p>
 <math>E = {{1, A}, {8, D, <mempty>}, {G}, {<mempty>}, <mempty>, {<mempty>, 7}}</math>
 <p>
-Ici, les éléments de "E" obéissant à la propriété "f(x) est vraie" représentent un sous-ensemble de "E", que nous appellerons "F".
-Tous les éléments de "F" peuvent être reliés par une relation d'équivalence, correspondant ici à la propriété "f".
+Ici, les éléments de "E" obéissant à la propriété "P(x) = 1" représentent un sous-ensemble de "E", que nous appellerons "F".
+Tous les éléments de "F" peuvent être reliés par une relation d'équivalence, correspondant ici à la propriété "P".
 </p>
 <math>F = {{8, D, <mempty>}, {<mempty>}, {<mempty>, 7}}</math>
 <p>
@@ -685,10 +1128,61 @@ Dans notre "E" de tout à l'heure, nous pouvons noter la classe d'équivalence �
 </p>
 <math>a <min> [{<mempty>}] <mequi> a ~ {<mempty>} <mequi> a <min> F</math>
 <p>
+On peut aussi facilement les visualiser dans notre diagramme sagittal de tout à l'heure.
+</p>
+<graphic width=300 height=300>
+<background_color white><base width=12 draw=0>
+
+<circle x=-5/2 y=1 radius_x=3 radius_y=3 color=light_red border_width=0>
+<circle x=3 y=2 radius_x=2+ radius_y=2 color=light_green border_width=0>
+<circle x=3/2+5/4 y=-5/2 radius_x=5/2 radius_y=5/2 color=yellow border_width=0>
+<circle x=-5/2 y=-7/2 radius_x=1 radius_y=1 color=orange border_width=0>
+
+<circle name=c0 x=-4+-1/3 y=1 radius_x=2/3 radius_y=2/3 border_width=0 color=light_blue><text parent=last_object() y=1/10 font_size_in_scale=1 background_color=transparent>a</text>
+<circle name=c1 x=-5/2+-1/3 y=3 radius_x=2/3 radius_y=2/3 border_width=0 color=light_blue><text parent=last_object() y=1/10 font_size_in_scale=1 background_color=transparent>b</text>
+<circle name=c2 x=-5/2+-1/3 y=-1 radius_x=2/3 radius_y=2/3 border_width=0 color=light_blue><text parent=last_object() y=1/10 font_size_in_scale=1 background_color=transparent>c</text>
+<circle name=c3 x=-1+-1/3 y=3 radius_x=2/3 radius_y=2/3 border_width=0 color=light_blue><text parent=last_object() y=1/10 font_size_in_scale=1 background_color=transparent>d</text>
+<circle name=c4 x=-1+-1/3 y=-1 radius_x=2/3 radius_y=2/3 border_width=0 color=light_blue><text parent=last_object() y=1/10 font_size_in_scale=1 background_color=transparent>e</text>
+
+<line points=c0;c1 border_color=black border_width=10 behind=c0>
+<line points=c0;c2 border_color=black border_width=10 behind=c0>
+<line points=c0;c3 border_color=black border_width=10 behind=c0>
+<line points=c0;c4 border_color=black border_width=10 behind=c0>
+<line points=c1;c2 border_color=black border_width=10 behind=c0>
+<line points=c1;c3 border_color=black border_width=10 behind=c0>
+<line points=c1;c4 border_color=black border_width=10 behind=c0>
+<line points=c2;c3 border_color=black border_width=10 behind=c0>
+<line points=c2;c4 border_color=black border_width=10 behind=c0>
+<line points=c3;c4 border_color=black border_width=10 behind=c0>
+
+<circle name=c5 x=4 y=2 radius_x=2/3 radius_y=2/3 border_width=0 color=light_blue><text parent=last_object() y=1/10 font_size_in_scale=1 background_color=transparent>f</text>
+<circle name=c6 x=5/2 y=3 radius_x=2/3 radius_y=2/3 border_width=0 color=light_blue><text parent=last_object() y=1/10 font_size_in_scale=1 background_color=transparent>g</text>
+<circle name=c7 x=5/2 y=1 radius_x=2/3 radius_y=2/3 border_width=0 color=light_blue><text parent=last_object() y=1/10 font_size_in_scale=1 background_color=transparent>h</text>
+
+<line points=c5;c6 border_color=black border_width=10 behind=c5>
+<line points=c5;c7 border_color=black border_width=10 behind=c5>
+<line points=c6;c7 border_color=black border_width=10 behind=c5>
+
+<circle name=c8 x=2 y=-1 radius_x=2/3 radius_y=2/3 border_width=0 color=light_blue><text parent=last_object() y=1/10 font_size_in_scale=1 background_color=transparent>i</text>
+<circle name=c9 x=2 y=-4 radius_x=2/3 radius_y=2/3 border_width=0 color=light_blue><text parent=last_object() y=1/10 font_size_in_scale=1 background_color=transparent>j</text>
+<circle name=c10 x=7/2 y=-1 radius_x=2/3 radius_y=2/3 border_width=0 color=light_blue><text parent=last_object() y=1/10 font_size_in_scale=1 background_color=transparent>k</text>
+<circle name=c11 x=7/2 y=-4 radius_x=2/3 radius_y=2/3 border_width=0 color=light_blue><text parent=last_object() y=1/10 font_size_in_scale=1 background_color=transparent>l</text>
+
+<line points=c8;c9 border_color=black border_width=10 behind=c0>
+<line points=c8;c10 border_color=black border_width=10 behind=c0>
+<line points=c8;c11 border_color=black border_width=10 behind=c0>
+<line points=c9;c10 border_color=black border_width=10 behind=c0>
+<line points=c9;c11 border_color=black border_width=10 behind=c0>
+<line points=c10;c11 border_color=black border_width=10 behind=c0>
+
+<circle name=c11 x=-5/2 y=-7/2 radius_x=2/3 radius_y=2/3 border_width=0 color=light_blue><text parent=last_object() y=1/10 font_size_in_scale=1 background_color=transparent>m</text>
+
+</graphic>
+<p>
 Cet outil nous permet de définir une nouvelle opération pour les ensembles : le quotient d'ensemble.
 <span class="important"><definition name="quotient_set"></span>.
 En d'autres termes, il s'agit d'une découpe d'un ensemble selon toutes les valeurs possibles d'une de ces propriétés.
-D'un point de vue très rigoureux, <span class="important">il s'agit de l'ensemble des classes d'équivalences possibles sur "E"</span>.
+D'un point de vue très rigoureux, <span class="important">comme les classes d'équivalences sont des parties de "E", tout ensemble quotient est un sous-ensemble de l'ensemble des parties de "E"</span>.
 Nous l'utiliserons énormément pour définir des objets mathématiques (même très simples et intuitifs).
 Cette notation utilise le symbôle "/".
 Par exemple, pour un ensemble "E" quotienté par une relation d'équivalence "~", l'ensemble quotient "F" est noté :
@@ -707,45 +1201,71 @@ Par exemple, pour un ensemble "E" quotienté par une relation d'équivalence "~"
 
 <h3>Qu'est ce qu'est une application mathématique ?</h3>
 <p>
+L'application est probablement un des objets les plus utilisés en mathématiques (tellement que, sans les nommer, on en a déjà rencontré plusieurs).
 En mathématiques, <span class="important"><definition name="application"></span>.
+D'un point de vue compréhension, il est aussi possible de dire qu'une application transforme / modifie chaque élément de son ensemble de départ en un unique élément de l'ensemble d'arrivée.
 Une chose très importante : tous les ensembles de l'ensemble de départ doivent être liés à exactement un élément de l'ensemble d'arrivée.
 À l'inverse, il n'est pas obligatoire que tous les éléments de l'ensemble d'arrivée soit lié à un élément de l'ensemble de départ, ni qu'il ne soit lié qu'à un seul objet (il peut être lié à 2 objets, 3 objets, une infinité...).
 D'un point de vue rigoureux, <span class="important"><definition name="application-rigorous"></span>.
-Comme tous ces couples sont des couples contenant un élément de l'ensemble de départ et un élément de l'ensemble d'arrivée, il s'agit d'un sous-ensemble du produit cartésien de l'ensemble de départ et d'arrivée (contenant, lui, tous les couples, même ceux qui ne sont pas concernés par l'application).
-<span class="important">L'ensemble de ces couples formés par l'application est nommé le "graphe" de la fonction</span>.
-Pour une application quelconque "f" ayant comme ensemble de départ "A" vers l'ensemble d'arrivée "B", on dit que "f" est une application allant de "A" vers "B", et l'on note :
+Dans certains exercices, vous pourrez trouver une question du type "vérifiez qu'une application est bien définie" : cela revient à justifier que l'objet mathématique donné respecte toutes les propriétés d'une application.
+Pour une application quelconque "f" ayant comme ensemble de départ "A" vers l'ensemble d'arrivée "B", avec comme sous-ensemble du produit cartésien (représentant la relation) "G", on note :
 </p>
-<math>f : A <mto> B</math>
+<math>f = (A, B, G), G <min> A X B</math></br>
+<math><mforall> x <min> A, <mexists>! y <min> B, (x, y) <min> G</msub></math>
 <p>
-D'un point de vue logique, la notation est assez basique.
-Pour une traduction mathématique - français, lisez "pour tout élément x de l'ensemble de départ A, il existe un unique élément y de l'ensemble d'arrivé B, tel que le couple x et y appartiennent au graphe Gf de la fonction".
+Ici, <span class="important">l'ensemble "G" des couples formés par l'application (et donc, le sous-ensemble du produit cartésien représentant la relation) est nommé le "graphe" de la fonction</span>.
+Dans le cas des applications, il existe tout un formalisme permettant de parfaitement décrire une application (formalisme différent de celui des relations, pour bien les distinguer).
+Déjà, <span class="important">une application ayant comme ensemble de départ "A" et ensemble d'arrivée "B" se définit généralement en notant le nom de l'application suivi de ":", puis de "A", suivi d'une flèche, et finalement suivi de "B"</span>.
+Il est aussi possible si nécessaire de rajouter en suite la façon dont les éléments de "A" sont transformés pour aller dans "B", bien que ce ne soit pas obligatoire.
+Ici, <span class="important">pour en élément "x" de "A", l'élément (unique) dans "B" associé à "x" est noté avec le nom de la relation, et entre parenthèse "x" : "f(x)"</span>.
+De plus, l'élément de "B" "f(x)" est nommé image de "x" par "f", et "x" est nommé antécédent de "f(x)" par "f".
+Il faut faire attention à une chose : "f(x)" est un objet appartenant à l'ensemble d'arrivée, et "f" est un objet représentant une application (et donc, il faut faire attention à utiliser la bonne notation à chaque fois).
+Avec le formalisme des relations, on peut donc dire que "x" et "f(x)" sont en relation, et que "(x, f(x))" est un élément du graphe de "f".
+C'est d'ailleurs pour cela que l'on a utilisé ce formalisme plus haut, pour les relations d'équivalences et les "propriétés".
 </p>
-<math><mforall> x <min> A, <mexists>! y <min> B, (x, y) <min> G<msub>f</msub></math>
+<math>f : A <mto> B, x <mto> f(x)</math></br>
+<math><mforall> x <min> A, <mforall> y <min> B, f(x) = y <mequi> (x, y) <min> G</math>
 <p>
-Pour tout objet "x" appartenant à A, l'objet lié à "x" selon l'application "f" est nommé image de "x" par "f", et se note ainsi :
+En utilisant la condition d'unicité vue plus haut, on peut aussi noter :
 </p>
-<math>x <mto> f(x)</math>
+<math><mforall> x <min> A, <mexists>! y <min> B, f(x) = y</math>
 <p>
-En général, <span class="important">l'ensemble de tous les éléments de l'ensemble d'arrivée appartenant à (au moins) un couple avec un élément de l'ensemble de départ par l'application "f" est nommé "ensemble image de f"</span>.
+En général, <span class="important">pour une application "f", l'ensemble de tous les éléments de l'ensemble d'arrivée appartenant à (au moins) un couple dans "G" est nommé "ensemble image de f"</span>.
 Cependant, il est aussi possible de simplement l'appeler "image de f", qu'il ne faut absolument pas confondre avec "l'image de x par f".
 Pour des raisons de simplicité, nous continuerons à parler d'ensemble image.
-Pour une application "f", cette ensemble se note ainsi :
+Pour une application "f", cette ensemble se note "Im(f)", et peut se définir ainsi (ici, de 2 manières équivalentes) :
 </p>
-<math>Im(f)</math>
+<math>Im(f) = {y <min> B | <mexists> a <min> A, (a, y) <min> G}</math></br>
+<math>Im(f) = {y <min> B | <mexists> a <min> A, f(a) = y}</math></br>
 <p>
-Si besoin, il est possible d'expliciter "f(x)" sous la forme d'une expression précise.
-Généralement, <span class="important">quand une application est explicitée, elle donne une façon de modifier la valeur "x" pour obtenir la valeur de l'ensemble d'arrivée liée à "x" selon cette application</span>.
-Il n'est pas obligatoire qu'une application soit explicité, mais très conseillé pour pouvoir plus facilement savoir quel élément de l'ensemble de départ est lié à quel élément de l'ensemble d'arrivée.
-Dans ce cas, on peut noter la façon dont "x" est modifié par "f".
-Voici un exemple dans le cas où "x" est un nombre entier naturel (que nous nous permettons d'utiliser ici pour l'exemple, bien que nous ne les avons pas encore correctement définis), et "f(x)" aussi :
+En utilisant le formalisme des ensembles, on peut aussi améliorer ces notations, en deux concepts : l'image directe et l'image réciproque.
+<span class="important"><definition name="image-direct"></span>.
+Pour que cela marche, il faut donc que cet ensemble soit un sous-ensemble de l'ensemble de départ de l'application.
+Ici, la notation est la même : l'image directe de l'ensemble "C" par une application "f" se note "f(C)".
+Pour une application "f" allant de "A" vers "B", l'image directe de "C" s'écrit donc :
 </p>
-<math>f(x) = 2 * x</math>
+<math>f(C) = {y <min> B | <mexists> x <min> A,y = f(a)}</math>
 <p>
-Il faut faire attention à une chose : "f(x)" est un objet appartenant à l'ensemble d'arrivée, et "f" est un objet représentant l'application que l'on étudie (et donc, il faut faire attention à utiliser la bonne notation à chaque fois).
-Une façon très utilisé pour représenter ce concept est celui de diagramme sagittal, où l'on peut lier graphiquement les éléments un à un entre les deux ensembles.
+On a aussi le concept "inverse" : l'image réciproque.
+<span class="important"><definition name="image-inverse"></span>.
+Pour que cela marche, il faut donc que cet ensemble soit un sous-ensemble de l'ensemble d'arrivé de l'application.
+Ici, la notation est similaire, mais est un peu différente : l'image réciproque de l'ensemble "D" par une application "f" se note "f exposant -1 (C)".
+Pour une application "f" allant de "A" vers "B", l'image directe de "D" s'écrit donc :
+</p>
+<math><mi>f</mi><msup>-1</msup>(D) = {x <min> A | <mexists> y <min> D, f(x) = y}</math>
+<p>
+Cependant, comme pour les relations, <span class="important">les applications ne se définissent presque jamais directement par leur graphe, mais plutôt en explicitant "f(x)" en fonction de "x"</span>.
+Il y a cependant une chose à prendre en compte : il faut que cette définition permettent de donner les "f(x)" de TOUS les "x" de l'ensemble d'arrivé.
+Dans ce cas précis, l'application est bien définie, et l'on peut en déduire le graphe de la fonction, permettant de la définir rigoureusement comme fait plus haut.
+Néanmoins, il est possible de considérer une application où l'on n'a aucune autre information sur elle, à part qu'il s'agit d'une application (avec un ensemble de départ, d'arrivée et un graphe quelconque).
+Tout dépend du contexte.
+Voici un exemple intuitif d'application explicitée, pour une relation allant de "N" vers "N".
+</p>
+<math>f : N <mto> N, x <mto> 2 * x</math>
+<p>
+Généralement, pour représenter ce genre de concept, on utilise des diagrammes sagittaux (qui sont d'ailleurs toujours constitués de deux cercles pour les deux ensembles, mêmes si ils sont le même ensemble).
 Voici un exemple en bas pour l'application allant de "{0, 1, 2, 3, 4}" vers "{0, 2, 4, 6, 8}", transformant "x" en "2 * x":
 </p>
-
 <graphic>
 <background_color white>
 <base draw=0>
@@ -770,24 +1290,25 @@ Voici un exemple en bas pour l'application allant de "{0, 1, 2, 3, 4}" vers "{0,
 <line x_1=-3/2 y_1=-1 x_2=3/2 y_2=-1 color=black>
 <line x_1=-3/2 y_1=-2 x_2=3/2 y_2=-2 color=black>
 </graphic>
-
 <p>
 Un concept assez similaire est le concept de fonction.
 En mathématiques, <span class="important"><definition name="function"></span>.
-Il s'agit d'une définition légèrement moins forte que celle de l'application : dans une application, tous les éléments de l'ensemble de départ doivent être lié.
+Il s'agit d'une définition légèrement moins forte que celle de l'application : dans une application, TOUS les éléments de l'ensemble de départ doivent être lié.
+Le point commun est qu'une fonction ne permet de lier un objet de l'ensemble de départ que avec un maximum de un objet de l'ensemble d'arrivée.
 D'ailleurs, <span class="important">toute application est une fonction, où tous les éléments de l'ensemble de départ sont liés à un unique élément de l'ensemble d'arrivée</span>.
-Cependant, certaines fonctions ne sont pas des applications (dans le cas où il existe des éléments de l'ensemble de départ qui n'ont pas d'images).
-La notation logique pour une fonction serait :
+Cependant, certaines fonctions ne sont pas des applications (dans le cas où il existe des éléments de l'ensemble de départ qui n'ont pas d'image).
+Nous pouvons noter logiquement une fonction de cette manière :
 </p>
 <math>f : A <mto> B</math></br>
 <math><mforall> x <min> A, (<mexists>! y <min> B, (x, y) <min> G<msub>f</msub>) <mor> <mno>(<mexists> y <min> B, (x, y) <min> G<msub>f</msub>)</math>
 <p>
-Il est néanmoins possible d'obtenir l'ensemble de toutes les valeurs de l'ensemble de départ de la fonction qui sont bel et bien utilisées par cette dernière : cet ensemble se nomme ensemble de définition.
-Ici, pour une application "f", cet ensemble se note généralement "D indice f".
+<span class="important">Il est néanmoins possible d'obtenir l'ensemble de toutes les valeurs de l'ensemble de départ de la fonction qui sont belle et bien utilisées par cette dernière : cet ensemble se nomme ensemble de définition</span>.
+Cet ensemble peut être n'importe qu'elle partie de l'ensemble de départ, et même lui tout entier ou l'ensemble vide (bien que, dans ce cas, la fonction ne serve à rien).
+Par définition, si il s'agit de l'ensemble entier, votre fonction est une application.
+Ici, pour une fonction "f", cet ensemble se note généralement "D indice f".
 </p>
 <math><mi>D</mi><msub>f</msub> = {x <min> A | <mexists> y <min> B, (x, y) <min> G<msub>f</msub>}</math>
 <p>
-Cependant, le point commun est qu'une fonction ne permet de lier un objet de l'ensemble de départ que avec un maximum de un objet de l'ensemble d'arrivée.
 Voici un exemple de diagramme sagittal de fonction :
 </p>
 
@@ -814,62 +1335,235 @@ Voici un exemple de diagramme sagittal de fonction :
 <line x_1=-3/2 y_1=0 x_2=3/2 y_2=0 color=black>
 <line x_1=-3/2 y_1=-2 x_2=3/2 y_2=-1 color=black>
 </graphic>
-
 <p>
-Cependant, ce n'est pas très grave, pour une raison précise : <span class="important">pour toute fonction ayant un ensemble de définition non nul, on peut obtenir une application allant de l'ensemble de définition vers l'ensemble d'arrivée de la fonction</span>.
-Avec la proximité apparente entre ces deux concepts, il est important de dire que les propriétés des applications sont souvent aussi valides pour les fonctions.
+Cependant, ce n'est pas très grave, pour une raison précise : <span class="important">pour toute fonction ayant un ensemble de définition non vide, on peut obtenir une application allant de l'ensemble de définition vers l'ensemble d'arrivée de la fonction, associant à chaque valeur de l'ensemble de définition son image par la fonction de départ</span>.
+Avec la proximité apparente entre ces deux concepts, il est important de dire que les propriétés des fonctions sont généralement exactement les propriétés des applications que l'on peut définir en partant de leur ensemble de définition.
 Néanmoins, il y a un petit problème : <span class="important">certains auteurs considèrent que ces deux concepts sont parfaitement égaux, et que une fonction et une application sont strictement le même objet (et donc que tous les éléments de l'ensemble de départ de la fonction doivent avoir une image)</span>.
-Généralement, en France, la définition exposée au dessus est la définition la plus utilisée.
+Dans ce cas, <span class="important">l'objet que nous avons défini et appelé "fonction" est généralement appelé "fonction partielle" par ces auteurs</span>.
+Généralement, en France, la définition exposée au dessus est la définition la plus utilisée pour le terme "fonction", rendant les termes "fonction partielle" et "fonction" équivalents.
+Cependant, ce terme redevient très utilisé dans des domaines avancés.
+Ici, pour une fonction "f", nous pouvons en obtenir une application que nous allons noter "g", définit comme ceci :
 </p>
-
+<math>f : A <mto> B, a <mto> f(a)</math></br>
+<math>g : <mi>D</mi><msub>f</msub> <mto> B, a <mto> f(a)</math>
 <p>
 Dans les deux cas, nous voyons bien que l'ensemble de départ est très important pour définir une application / fonction.
-Cependant, il est possible de transformer une application / fonction en une autre, en modifiant légèrement sont ensemble de départ grâce à deux concepts : les restrictions et prolongement d'applications / fonctions.
+Cependant, il est possible d'obtenir d'une application / fonction une autre application / fonction, en modifiant légèrement son ensemble de départ grâce à deux concepts : les restrictions et prolongement d'applications / fonctions.
 Pour commencer, <span class="important"><definition name="application-restriction"></span>.
 Comme sont nom le suggère, il s'agit d'une "partie" de l'application / fonction considérée.
-D'un point de vue mathématique, pour une fonction "f" allant de "A" vers "B" et une partie "C" de "A", la restriction de "f" sur "C" que nous noterons "g" se note ainsi :
+D'ailleurs, notre opération vue plus haut pour obtenir une application d'une fonction est une restriction de la fonction à son domaine de définition.
+Il existe une notation très précise pour représenter une restriction de "f" sur une partie "C" : on note "f" indice "|C" (où la barre verticale est incluse).
+D'un point de vue mathématique, pour une fonction "f" allant de "A" vers "B" et une partie "C" de "A", la restriction de "f" sur "C" se note ainsi :
 </p>
 <math>f : A <mto> B, a <mto> f(a)</math></br>
-<math>g : C <mto> B, c <mto> f(c) = g(c)</math>
+<math><mi>f</mi><msub>|C</msub> : C <mto> B, c <mto> f(c)</math>
 <p>
-En fait, <span class="important">il existe beaucoup de fonctions / applications avec des propriétés précises, que l'on peut utiliser aussi sur leurs restrictions</span>.
-C'est le gros avantage de ce concept.
+En fait, <span class="important">il existe beaucoup de propriétés de fonctions / applications, telle que toutes les restrictions de ces fonctions / applications ont les mêmes propriétés</span>.
 Le concept de prolongement est assez similaire, mais à l'opposé.
 <span class="important"><definition name="application-extension"></span>.
-D'un point de vue mathématique, pour une fonction "f" allant de "A" vers "B", une partie "D" de "A" et une extension "E" de "B", le prolongement de "f" que nous noterons "g" se note ainsi :
+Pour les éléments du sur-ensemble de "A" qui ne sont pas dans "A", leurs images peuvent être n'importe quoi dans le sur-ensemble de "B".
+D'un point de vue mathématique, pour une fonction "f" allant de "A" vers "B", un sur-ensemble "D" de "A" et un sur-ensemble "E" de "B", le prolongement de "f" que nous noterons "g" se note ainsi :
 </p>
 <math>f : A <mto> B, a <mto> f(a)</math></br>
-<math>g : D <mto> E, c <mto> g(c), <mforall> d <min> D, [d <min> A <mimp> g(c) = f(d)]</math>
+<math>g : D <mto> E, (<mforall> c <min> D, c <min> A <mimp> g(c) = f(c))</math>
 <p>
-Comme pour la restriction, <span class="important">il existe beaucoup de fonctions / applications avec des propriétés précises, que l'on peut utiliser aussi sur leurs prolongement</span>.
+Comme pour la restriction, <span class="important">il existe beaucoup de propriétés de fonctions / applications, telle que tous les prolongements de ces fonctions / applications ont les mêmes propriétés</span>.
 </p>
 <p>
-Grâce à ce concept, nous pouvons utiliser une nouvelle stratégie pour définir des ensembles : le paramétrage.
-En effet, <span class="important"><definition name="set-parameter"></span>.
-Ce type de définition est utilisé quand nous voulous définir un ensemble via une fonction quelconque (et donc, où l'on connait l'ensemble de départ et l'ensemble d'arrivé, mais pas forcément l'ensemble image).
-Prenons un exemple simple : définissons un ensemble "A" comme étant l'alphabet latin, et une application allant de "A" dans "A".
-Disons que cette application transforme chaque élément de "A" en la voyelle la plus éloignée de dans l'alphabet de cette lettre.
-Bien évidemment, l'ensemble image sera inclut dans "A", et on peut conjecturer qu'il représente l'ensemble des voyelles de l'alphabet.
-Or, tant que nous ne l'avons pas démontré rigoureusement, nous ne pouvons pas l'écrire tel qu'elle.
-Ici, <span class="important">la façon juste de l'écrire est comme un ensemble paramétré</span>.
-Dans cet exemple, si "B" est l'ensemble que l'on cherche :
+Ici, l'ensemble de départ peut être n'importe quoi, et même un produit cartésien d'autres ensembles quelconques.
+Dans ce cas, on relie à des couples de ce produit cartésien un élément de l'ensemble d'arrivé (tous les couples si il s'agit d'une application, où pas tous si il s'agit d'une fonction).
+Pour une application / fonction "f" et un couple "(c, d)", nous devrions donc noter :
 </p>
-<math><mforall> b, {b <min> B <mequi> <mexists> c <min> A, f(c) = b}</math>
+<math>f((c, d)) = b</math>
+<p>
+Or, <span class="important">il est standard d'utiliser cette notation en enlevant une paire de parenthèse, pour alléger la notation</span>.
+D'ailleurs, ce genre d'applications / fonctions sont nommées applications / fonctions à plusieurs variables.
+Attention : tout ceci n'est qu'une notation allégée, le concept reste l'exact même que pour les applications / fonctions standards.
+</p>
+<math>f(c, d) = b</math>
 <p>
 Un concept assez pratique pour parler d'applications est l'espace fonctionnel.
 <span class="important"><definition name="function_space"></span>.
 Cette appellation est aussi utilisée pour parler d'un ensemble quelconque de fonctions respectant des propriétés précises.
-Généralement, cet ensemble peut se noter de deux façons différentes :
+Généralement, l'ensemble fonctionnel contenant toutes les applications (bien applications, et pas fonctions) possibles entre deux ensembles "X" et "Y" (dans cet ordre précis) peut se noter de deux façons différentes :
 </p>
 <math><mi>Y</mi><msup>X</msup> = F(X, Y)</math>
 
+
+
+<h3>La composition de fonction et d'application</h3>
+<p>
+L'opération la plus simple avec les fonctions (et les applications) est la composition.
+<span class="important"><definition name="function-composition"></span>.
+L'idée est donc de créer une nouvelle fonction qui prend un élément, le transforme selon une fonction, puis transforme l'élément transformé en un autre selon une autre fonction.
+D'ailleurs, nous disons bien composition de fonction plutôt qu'une composition d'application, parce qu'une composition d'application est une composition de fonction, mais n'apporte pas de propriétés intéressantes.
+Voici un exemple de deux fonctions "f" et "g" quelconques, et d'une fonction "h" représentant la composée de "g" et "f".
+</p>
+<math>f : B <mto> C</math></br>
+<math>f : y <mto> f(y)</math></br>
+<math>g : A <mto> B</math></br>
+<math>g : z <mto> g(z)</math></br>
+<math>h : A <mto> C</math></br>
+<math>h : x <mto> f(g(x))</math>
+<p>
+Attention : quand on dit la composée de "g" et "f", cela veut dire que "h" est "f(g(x))", et pas l'inverse.
+En fait, <span class="important">cela vient du fait que, pour calculer "h(x)", on fait premièrement "g(x)", puis "f(g(x))"</span>.
+Ici, on peut écrire "h" comme le résultat de l'opération "composition" appliqué sur ces fonctions, opération s'écrivant avec un petit rond (ici, on écrit "f" puis "g", dans cet ordre) :
+</p>
+<math>h = f <mcomp> g</math></br>
+<p>
+On peut faire de même avec "h(x)" (qui est ici un élément de l'ensemble de départ).
+</p>
+<math>h(x) = (f <mcomp> g)(x) = f(g(x))</math>
+<p>
+Le diagramme sagittal de "h" peut se représenter comme cela :
+</p>
+
+<graphic ratio_base>
+<background_color white>
+<base draw=0 width=30 height=10>
+
+<circle x=-10 y=0 radius_x=3/2 radius_y=4>
+<text x=-10 y=2 content="0"></text>
+<text x=-10 y=1 content="1"></text>
+<text x=-10 y=0 content="2"></text>
+<text x=-10 y=-1 content="3"></text>
+<text x=-10 y=-2 content="4"></text>
+
+<circle x=-5 y=0 radius_x=3/2 radius_y=4>
+<text x=-5 y=2 content="0"></text>
+<text x=-5 y=1 content="2"></text>
+<text x=-5 y=0 content="4"></text>
+<text x=-5 y=-1 content="6"></text>
+<text x=-5 y=-2 content="8"></text>
+
+<text x=-15/2 y=4 content="g" font_size_in_scale=1></text>
+<line x_1=-19/2 y_1=2 x_2=-11/2 y_2=1 color=black>
+<line x_1=-19/2 y_1=1 x_2=-11/2 y_2=2 color=black>
+<line x_1=-19/2 y_1=0 x_2=-11/2 y_2=0 color=black>
+<line x_1=-19/2 y_1=-1 x_2=-11/2 y_2=-2 color=black>
+<line x_1=-19/2 y_1=-2 x_2=-11/2 y_2=-1 color=black>
+
+<circle x=0 y=0 radius_x=3/2 radius_y=4>
+<text x=0 y=2 content="0"></text>
+<text x=0 y=1 content="5"></text>
+<text x=0 y=0 content="10"></text>
+<text x=0 y=-1 content="15"></text>
+<text x=0 y=-2 content="20"></text>
+
+<text x=-5/2 y=4 content="f" font_size_in_scale=1></text>
+<line x_1=-9/2 y_1=2 x_2=-1/2 y_2=2 color=black>
+<line x_1=-9/2 y_1=1 x_2=-1/2 y_2=2 color=black>
+<line x_1=-9/2 y_1=0 x_2=-1/2 y_2=2 color=black>
+<line x_1=-9/2 y_1=-1 x_2=-1/2 y_2=1 color=black>
+<line x_1=-9/2 y_1=-2 x_2=-1/2 y_2=1 color=black>
+
+<circle x=5 y=0 radius_x=3/2 radius_y=4>
+<text x=5 y=2 content="0"></text>
+<text x=5 y=1 content="1"></text>
+<text x=5 y=0 content="2"></text>
+<text x=5 y=-1 content="3"></text>
+<text x=5 y=-2 content="4"></text>
+
+<circle x=10 y=0 radius_x=3/2 radius_y=4>
+<text x=10 y=2 content="0"></text>
+<text x=10 y=1 content="5"></text>
+<text x=10 y=0 content="10"></text>
+<text x=10 y=-1 content="15"></text>
+<text x=10 y=-2 content="25"></text>
+
+<text x=15/2 y=4 content="h" font_size_in_scale=1></text>
+<line x_1=11/2 y_1=2 x_2=19/2 y_2=2 color=black>
+<line x_1=11/2 y_1=1 x_2=19/2 y_2=2 color=black>
+<line x_1=11/2 y_1=0 x_2=19/2 y_2=2 color=black>
+<line x_1=11/2 y_1=-1 x_2=19/2 y_2=1 color=black>
+<line x_1=11/2 y_1=-2 x_2=19/2 y_2=1 color=black>
+
+<text x=-26/2 y=0 content="h =" font_size_in_scale=3/2></text>
+<text x=5/2 y=0 content="=" font_size_in_scale=3/2></text>
+</graphic>
+
+<p>
+D'un point de vue définitionnel, selon la composition que vous faites, il y a un détail à prendre en compte : la comptabilité de l'ensemble de départ de "g" et de l'ensemble d'arrivée de "f".
+Avec cela, vous pouvez obtenir beaucoup d'informations sur la fonction que vous obtiendrez après composition.
+Déjà, <span class="important">l'ensemble de définition de votre application composée de "g" et "f" est l'ensemble des éléments de "A" tel que leur image par "g" appartient à l'ensemble de définition de "f"</span>.
+En effet, si l'image d'un élément de "A" par "g" n'appartient pas à l'ensemble de définition de "f", on ne peut pas savoir son comportement avec "f", et il n'a donc pas d'image par "h".
+</p>
+<math><mi>D</mi><msub>h</msub> = {x <min> <mi>D</mi><msub>g</msub> | g(x) <min> <mi>D</mi><msub>f</msub>}</math>
+<p>
+Ici, pour que "h" soit une application, il faut que "D indice h" soit égal à "A".
+Pour cela, il faut 2 choses : que "D indice g" soit égal à A" (et donc, que "g" soit une application) et que tous les "g(x)" possibles soient dans "D indice f" (et donc, que l'ensemble image de "g" soit inclut dans l'ensemble de définition de "f").
+Voici un exemple où la fonction obtenue est en fait une fonction nulle :
+</p>
+
+<graphic ratio_base>
+<background_color white>
+<base draw=0 width=30 height=10>
+
+<circle x=-10 y=0 radius_x=3/2 radius_y=4>
+<text x=-10 y=2 content="0"></text>
+<text x=-10 y=1 content="1"></text>
+<text x=-10 y=0 content="2"></text>
+<text x=-10 y=-1 content="3"></text>
+<text x=-10 y=-2 content="4"></text>
+
+<circle x=-5 y=0 radius_x=3/2 radius_y=4>
+<text x=-5 y=2 content="0"></text>
+<text x=-5 y=1 content="2"></text>
+<text x=-5 y=0 content="4"></text>
+<text x=-5 y=-1 content="6"></text>
+<text x=-5 y=-2 content="8"></text>
+
+<text x=-15/2 y=4 content="g" font_size_in_scale=1></text>
+<line x_1=-19/2 y_1=2 x_2=-11/2 y_2=1 color=black>
+<line x_1=-19/2 y_1=1 x_2=-11/2 y_2=2 color=black>
+<line x_1=-19/2 y_1=0 x_2=-11/2 y_2=0 color=black>
+<line x_1=-19/2 y_1=-1 x_2=-11/2 y_2=1 color=black>
+<line x_1=-19/2 y_1=-2 x_2=-11/2 y_2=2 color=black>
+
+<circle x=0 y=0 radius_x=3/2 radius_y=4>
+<text x=0 y=2 content="0"></text>
+<text x=0 y=1 content="5"></text>
+<text x=0 y=0 content="10"></text>
+<text x=0 y=-1 content="15"></text>
+<text x=0 y=-2 content="20"></text>
+
+<text x=-5/2 y=4 content="f" font_size_in_scale=1></text>
+<line x_1=-9/2 y_1=-1 x_2=-1/2 y_2=1 color=black>
+<line x_1=-9/2 y_1=-2 x_2=-1/2 y_2=1 color=black>
+
+<circle x=5 y=0 radius_x=3/2 radius_y=4>
+<text x=5 y=2 content="0"></text>
+<text x=5 y=1 content="1"></text>
+<text x=5 y=0 content="2"></text>
+<text x=5 y=-1 content="3"></text>
+<text x=5 y=-2 content="4"></text>
+
+<circle x=10 y=0 radius_x=3/2 radius_y=4>
+<text x=10 y=2 content="0"></text>
+<text x=10 y=1 content="5"></text>
+<text x=10 y=0 content="10"></text>
+<text x=10 y=-1 content="15"></text>
+<text x=10 y=-2 content="25"></text>
+
+<text x=15/2 y=4 content="h" font_size_in_scale=1></text>
+
+<text x=-26/2 y=0 content="h =" font_size_in_scale=3/2></text>
+<text x=5/2 y=0 content="=" font_size_in_scale=3/2></text>
+</graphic>
+
+
+
 <h3>Injections, surjections et bijections</h3>
 <p>
-Il existe trois types d'applications majeures : les injections, les surjections et les applications.
+Comme la définition d'une application ne laisse pas beaucoup de place à moduler ce qu'il se passe dans l'ensemble de départ, une grande partie des applications se classent selon ce qu'il se passe dans l'ensemble d'arrivé.
+En effet, il existe trois types d'applications majeures : les injections, les surjections et les applications.
 </p>
 <p>
 Commençons par le commencement : l'injection.
 <span class="important"><definition name="injection"></span>.
+Dans une injection, il n'existe donc pas d'élément de l'ensemble d'arrivé lié à plusieurs éléments de l'ensemble de départ.
+D'ailleurs, dire qu'une fonction est injective revient à dire que l'application que l'on peut en obtenir en restreignant son ensemble de départ à son ensemble de définition l'est.
 </p>
 <graphic>
 <background_color white>
@@ -894,20 +1588,59 @@ Commençons par le commencement : l'injection.
 <line x_1=-3/2 y_1=-1 x_2=3/2 y_2=-2 color=black>
 </graphic>
 <p>
-D'un point de vue mathématique, on peut en déduire quelque chose d'intéressant : chaque élément de départ est lié à un objet, et chaque élément d'arrivée est relié à, au maximum, un élément de départ.
-Donc, <span class="important">si deux objets "a" et "b" ont la même image par une injection, alors ils sont égaux (et la réciproque est vraie dans le cas des antécédents)</span>.
+D'un point de vue mathématique, on peut en déduire quelque chose d'intéressant : chaque élément de départ est lié à un unique objet, de telle manière qu'aucun autre objet de l'ensemble de départ n'y soit lui aussi relié.
+Donc, <span class="important"><definition name="injection-rigorous"></span>.
 Cette définition est généralement la définition utilisée pour parler des injections.
-Dans les formules juste en bas, la première ligne représente la définition de l'application, la deuxième ligne représente la première définition que nous avons vue, et la troisième représente la deuxième que nous avons vue.
-Le passage de l'une à l'autre (sous forme d'équivalence) est <a href="demo">démontré juste ici</a>.
+D'ailleurs, on peut noter que la réciproque (si "a = b", alors "f(a) = f(b)") est immédiate, selon la définition même du concept d'application.
+Dans les formules juste en bas, la première ligne représente la définition de l'application, la deuxième ligne représente la première définition que nous avons vue, la troisième représente une reformulation équivalente, et la quatrième représente la deuxième définition que nous avons vue.
+Le passage de l'une à l'autre est <a href="demo">démontré juste ici</a>.
 </p>
 <math>f : E <mto> F, x <mto> f(x)</math></br>
-<math><mforall>z <min> F, [<mexists>! x <min> E, f(x) = z <mor> <mnot>(<mexists> x <min> E, f(x) = z)]</math></br>
-<math><mforall>x, y <min> E, f(x) = f(y) <mequi> x = y</math>
+<math><mforall>z <min> F, (<mexists>! x <min> E, f(x) = z) <mor> <mnot>(<mexists> x <min> E, f(x) = z)</math></br>
+<math><mequi><mforall>z <min> Im(f), <mexists>! x <min> E, f(x) = z</math></br>
+<math><mequi><mforall>x, y <min> E, f(x) = f(y) <mimp> x = y</math>
+<p>
+Parlons du deuxième type d'application : la surjection.
+<span class="important"><definition name="surjection"></span>.
+Dans une surjection, il n'existe donc pas d'élément de l'ensemble d'arrivé lié à aucun élément de l'ensemble de départ.
+Encore une fois, dire qu'une fonction est injective revient à dire que l'application que l'on peut en obtenir en restreignant son ensemble de départ à son ensemble de définition l'est.
+</p>
+<graphic>
+<background_color white>
+<base draw=0>
+
+<circle x=-2 y=0 radius_x=3/2 radius_y=4>
+<text x=-2 y=5/2 content="0"></text>
+<text x=-2 y=3/2 content="1"></text>
+<text x=-2 y=1/2 content="2"></text>
+<text x=-2 y=-1/2 content="3"></text>
+<text x=-2 y=-3/2 content="4"></text>
+<text x=-2 y=-5/2 content="5"></text>
+
+<circle x=2 y=0 radius_x=3/2 radius_y=4>
+<text x=2 y=2 content="0"></text>
+<text x=2 y=0 content="1"></text>
+<text x=2 y=-2 content="2"></text>
+
+<line x_1=-3/2 y_1=5/2 x_2=3/2 y_2=2 color=black>
+<line x_1=-3/2 y_1=3/2 x_2=3/2 y_2=0 color=black>
+<line x_1=-3/2 y_1=1/2 x_2=3/2 y_2=0 color=black>
+<line x_1=-3/2 y_1=-1/2 x_2=3/2 y_2=0 color=black>
+<line x_1=-3/2 y_1=-3/2 x_2=3/2 y_2=2 color=black>
+<line x_1=-3/2 y_1=-5/2 x_2=3/2 y_2=-2 color=black>
+</graphic>
+<p>
+D'ailleurs, on peut assez vite en déduire que l'ensemble image d'une surjection est l'ensemble d'arrivé entier.
+Ici, la définition logique pure est très simple :
+</p>
+<math>f : E <mto> F, x <mto> f(x)</math></br>
+<math><mforall>y <min> F, <mexists> x <min> E, f(x) = y</math></math></br>
+<math><mequi> Im(f) = F</math>
 <p>
 Le dernier type est donc la bijection.
 <span class="important"><definition name="bijection"></span>.
 D'un point de vue rigoureux, la définition d'une bijection mélange donc celle de l'injection et celle de la surjection.
-Dans une bijection, chaque élément de départ a un antécédent, et chaque élément d'arrivée a une image (<a href="demo">démontré juste ici</a>).
+D'ailleurs, cette définition est équivalente à dire que chaque élément de départ a un antécédent, et chaque élément d'arrivée a une image (<a href="demo">démontré juste ici</a>).
 </p>
 <graphic>
 <background_color white>
@@ -939,9 +1672,133 @@ Mathématiquement, une bijection "f" allant de "B" vers "A" se présente ainsi :
 <math>f : A <mto> B, a <mto> b</math></br>
 <math><mforall>b <min> B, <mexists>! a <min> A, f(a) = b</math>
 <p>
-Ici, il existe une notation pour noter l'ensemble des bijections : "Bij(A, B)".
+Ici, il existe une notation pour noter l'ensemble des bijections entre un ensemble "A" et un ensemble "B" : "Bij(A, B)".
 </p>
 <math>Bij(A, B)</math>
+<p>
+La bijection la plus simple définissable est la bijection identité.
+En fait, <span class="important"><definition name="bijection-identity"></span>.
+Généralement, pour un ensemble "E" donné, l'application identité sur "E" est notée "Id indice E".
+Ici, la façon la plus simple de la définir est donc ceci :
+</p>
+<math><mi>Id</mi><msub>E</msub> : E <mto> E, e <mto> e</math></br>
+<graphic>
+<background_color white>
+<base draw=0>
+
+<circle x=-2 y=0 radius_x=3/2 radius_y=4>
+<text x=-2 y=2 content="0"></text>
+<text x=-2 y=1 content="1"></text>
+<text x=-2 y=0 content="2"></text>
+<text x=-2 y=-1 content="3"></text>
+<text x=-2 y=-2 content="4"></text>
+
+<circle x=2 y=0 radius_x=3/2 radius_y=4>
+<text x=2 y=2 content="0"></text>
+<text x=2 y=1 content="1"></text>
+<text x=2 y=0 content="2"></text>
+<text x=2 y=-1 content="3"></text>
+<text x=2 y=-2 content="4"></text>
+
+<line x_1=-3/2 y_1=2 x_2=3/2 y_2=2 color=black>
+<line x_1=-3/2 y_1=1 x_2=3/2 y_2=1 color=black>
+<line x_1=-3/2 y_1=0 x_2=3/2 y_2=0 color=black>
+<line x_1=-3/2 y_1=-1 x_2=3/2 y_2=-1 color=black>
+<line x_1=-3/2 y_1=-2 x_2=3/2 y_2=-2 color=black>
+</graphic>
+<p>
+On peut facilement démontrer que cette application est une bijection : chaque élément de l'arrivé "E" admet un unique antécédent : lui-même (qui est donc unique).
+</p>
+<math><mforall>e <min> E, <mexists>! y <min> E, <mi>Id</mi><msub>E</msub>(e) = y <mand> e = y</math>
+<p>
+Avec ce type de bijection, on peut obtenir un objet très intéressant : l'application réciproque.
+<span class="important"><definition name="application-reciprocal"></span>.
+L'idée est de dire que l'application réciproque de "f" est une application qui permet de lier via une autre application les images avec leurs antécédents.
+Bien évidemment, la réciproque de la réciproque de "f" est donc... "f".
+En fait, pour une application "f", son application réciproque (généralement notée "f exposant -1") respecte cette propriété :
+</p>
+<math>f : A <mto> B, <mi>f</mi><msup>-1</msup> : B <mto> A</math></br>
+<math><mi>f</mi><msup>-1</msup> <mcomp> f = <mi>Id</mi><msub>A</msub> <mand> f <mcomp> <mi>f</mi><msup>-1</msup> = <mi>Id</mi><msub>B</msub></math></br>
+<math><mequi> <mforall> x <min> A, <mi>f</mi><msup>-1</msup>(f(x)) = x <mand> <mforall> y <min> B, f(<mi>f</mi><msup>-1</msup>(y)) = y</math>
+<p>
+Attention : il ne faut pas confondre cette notation avec la notation de l'image réciproque vue plus haut (bien qu'elles soient parfaitement égales).
+Il existe d'ailleurs beaucoup d'applications qui ne possèdent pas d'application réciproque.
+L'introduction de ce concept précis à cet endroit n'est pas un hasard : <span class="important">dire qu'une application admet une application réciproque équivaut à dire que cette application est bijective</span> (<a href="demo">démontré ici</a>).
+Cela est très facile à illustrer :
+</p>
+<graphic ratio_base>
+<background_color white>
+<base draw=0 width=30 height=10>
+
+<circle x=-10 y=0 radius_x=3/2 radius_y=4>
+<text x=-10 y=2 content="0"></text>
+<text x=-10 y=1 content="1"></text>
+<text x=-10 y=0 content="2"></text>
+<text x=-10 y=-1 content="3"></text>
+<text x=-10 y=-2 content="4"></text>
+
+<circle x=-5 y=0 radius_x=3/2 radius_y=4>
+<text x=-5 y=2 content="0"></text>
+<text x=-5 y=1 content="2"></text>
+<text x=-5 y=0 content="4"></text>
+<text x=-5 y=-1 content="6"></text>
+<text x=-5 y=-2 content="8"></text>
+
+<text x=-15/2 y=4 content="g" font_size_in_scale=1></text>
+<line x_1=-19/2 y_1=2 x_2=-11/2 y_2=1 color=black>
+<line x_1=-19/2 y_1=1 x_2=-11/2 y_2=-1 color=black>
+<line x_1=-19/2 y_1=0 x_2=-11/2 y_2=-2 color=black>
+<line x_1=-19/2 y_1=-1 x_2=-11/2 y_2=0 color=black>
+<line x_1=-19/2 y_1=-2 x_2=-11/2 y_2=2 color=black>
+
+<circle x=0 y=0 radius_x=3/2 radius_y=4>
+<text x=0 y=2 content="0"></text>
+<text x=0 y=1 content="1"></text>
+<text x=0 y=0 content="2"></text>
+<text x=0 y=-1 content="3"></text>
+<text x=0 y=-2 content="4"></text>
+
+<text x=-5/2 y=4 content="f" font_size_in_scale=1></text>
+<line x_1=-9/2 y_1=2 x_2=-1/2 y_2=-2 color=black>
+<line x_1=-9/2 y_1=1 x_2=-1/2 y_2=2 color=black>
+<line x_1=-9/2 y_1=0 x_2=-1/2 y_2=-1 color=black>
+<line x_1=-9/2 y_1=-1 x_2=-1/2 y_2=1 color=black>
+<line x_1=-9/2 y_1=-2 x_2=-1/2 y_2=0 color=black>
+
+<circle x=5 y=0 radius_x=3/2 radius_y=4>
+<text x=5 y=2 content="0"></text>
+<text x=5 y=1 content="1"></text>
+<text x=5 y=0 content="2"></text>
+<text x=5 y=-1 content="3"></text>
+<text x=5 y=-2 content="4"></text>
+
+<circle x=10 y=0 radius_x=3/2 radius_y=4>
+<text x=10 y=2 content="0"></text>
+<text x=10 y=1 content="1"></text>
+<text x=10 y=0 content="2"></text>
+<text x=10 y=-1 content="3"></text>
+<text x=10 y=-2 content="4"></text>
+
+<line x_1=11/2 y_1=2 x_2=19/2 y_2=2 color=black>
+<line x_1=11/2 y_1=1 x_2=19/2 y_2=1 color=black>
+<line x_1=11/2 y_1=0 x_2=19/2 y_2=0 color=black>
+<line x_1=11/2 y_1=-1 x_2=19/2 y_2=-1 color=black>
+<line x_1=11/2 y_1=-2 x_2=19/2 y_2=-2 color=black>
+
+<text x=15/2 y=4 content="h" font_size_in_scale=1></text>
+
+<text x=-26/2 y=0 content="h =" font_size_in_scale=3/2></text>
+<text x=5/2 y=0 content="=" font_size_in_scale=3/2></text>
+</graphic>
+
+
+
+
+
+
+
+
+
 <p>
 Il est d'ailleurs à noter qu'une composition de deux bijections (de "E" vers "F" et de "F" vers "G") donne une nouvelle bijection, de "E" vers "G" (<a href="demo">démontré ici</a>).
 Dans un ensemble "E", il existe une bijection (allant de "E" vers "E") qui, à chaque élément "x" de "E", lui associe... "x" (et donc, qui ne représente pas une modification de l'ensemble à proprement parlé) : <span class="important">cette bijection est nommée application identité de "E"</span>.
@@ -1030,161 +1887,10 @@ Comme le dernier élément prend la place du premier à chaque fois, réaliser u
 <math><mtable><mtd><mi>(1, 2, 3, 4, 5)</mi></mtd><mtd><mi>(4, 1, 2, 3, 5)</mi></mtd></mtable> = (1 2 3 4)</math></br>
 <math>(1 2 3 4<mo>)</mo><msup>4</msup> = Id<msub>E</msub></math>
 
-<h3>La composition de fonction et d'application</h3>
-<p>
-L'opération la plus simple avec les fonctions (et les applications) est la composition.
-<span class="important"><definition name="function-composition"></span>.
-L'idée est donc d'utiliser une fonction (ou une application), puis une autre après celle-ci.
-Voici un exemple de deux fonctions "f" et "g" quelconques, et d'une fonction "h" représentant la composée de "f" et "g".
-</p>
-<math>f : A <mto> B</math></br>
-<math>f : x <mto> f(x)</math></br>
-<math>g : B <mto> C</math></br>
-<math>f : y <mto> g(y)</math></br>
-<math>h : A <mto> C</math></br>
-<math>h : z <mto> f(g(z))</math>
-<p>
-Ici, on peut écrire "h" comme le résultat de l'opération "composition" appliqué sur ces fonctions, opération s'écrivant avec un petit rond :
-</p>
-<math>h = f <mcomp> g</math></br>
-<p>
-On peut faire de même avec "h(x)".
-</p>
-<math>h(x) = (f <mcomp> g)(x) = f(g(x))</math>
-<p>
-Le diagramme sagittal de "h" peut se représenter comme cela :
-</p>
 
-<graphic ratio_base>
-<background_color white>
-<base draw=0 width=30 height=10>
 
-<circle x=-10 y=0 radius_x=3/2 radius_y=4>
-<text x=-10 y=2 content="0"></text>
-<text x=-10 y=1 content="1"></text>
-<text x=-10 y=0 content="2"></text>
-<text x=-10 y=-1 content="3"></text>
-<text x=-10 y=-2 content="4"></text>
 
-<circle x=-5 y=0 radius_x=3/2 radius_y=4>
-<text x=-5 y=2 content="0"></text>
-<text x=-5 y=1 content="2"></text>
-<text x=-5 y=0 content="4"></text>
-<text x=-5 y=-1 content="6"></text>
-<text x=-5 y=-2 content="8"></text>
 
-<text x=-15/2 y=4 content="g" font_size_in_scale=1></text>
-<line x_1=-19/2 y_1=2 x_2=-11/2 y_2=1 color=black>
-<line x_1=-19/2 y_1=1 x_2=-11/2 y_2=2 color=black>
-<line x_1=-19/2 y_1=0 x_2=-11/2 y_2=0 color=black>
-<line x_1=-19/2 y_1=-1 x_2=-11/2 y_2=-2 color=black>
-<line x_1=-19/2 y_1=-2 x_2=-11/2 y_2=-1 color=black>
-
-<circle x=0 y=0 radius_x=3/2 radius_y=4>
-<text x=0 y=2 content="0"></text>
-<text x=0 y=1 content="5"></text>
-<text x=0 y=0 content="10"></text>
-<text x=0 y=-1 content="15"></text>
-<text x=0 y=-2 content="20"></text>
-
-<text x=-5/2 y=4 content="f" font_size_in_scale=1></text>
-<line x_1=-9/2 y_1=2 x_2=-1/2 y_2=2 color=black>
-<line x_1=-9/2 y_1=1 x_2=-1/2 y_2=2 color=black>
-<line x_1=-9/2 y_1=0 x_2=-1/2 y_2=2 color=black>
-<line x_1=-9/2 y_1=-1 x_2=-1/2 y_2=1 color=black>
-<line x_1=-9/2 y_1=-2 x_2=-1/2 y_2=1 color=black>
-
-<circle x=5 y=0 radius_x=3/2 radius_y=4>
-<text x=5 y=2 content="0"></text>
-<text x=5 y=1 content="1"></text>
-<text x=5 y=0 content="2"></text>
-<text x=5 y=-1 content="3"></text>
-<text x=5 y=-2 content="4"></text>
-
-<circle x=10 y=0 radius_x=3/2 radius_y=4>
-<text x=10 y=2 content="0"></text>
-<text x=10 y=1 content="5"></text>
-<text x=10 y=0 content="10"></text>
-<text x=10 y=-1 content="15"></text>
-<text x=10 y=-2 content="25"></text>
-
-<text x=15/2 y=4 content="h" font_size_in_scale=1></text>
-<line x_1=11/2 y_1=2 x_2=19/2 y_2=2 color=black>
-<line x_1=11/2 y_1=1 x_2=19/2 y_2=2 color=black>
-<line x_1=11/2 y_1=0 x_2=19/2 y_2=2 color=black>
-<line x_1=11/2 y_1=-1 x_2=19/2 y_2=1 color=black>
-<line x_1=11/2 y_1=-2 x_2=19/2 y_2=1 color=black>
-
-<text x=-26/2 y=0 content="h =" font_size_in_scale=3/2></text>
-<text x=5/2 y=0 content="=" font_size_in_scale=3/2></text>
-</graphic>
-
-<p>
-D'un point de vue définitionnel, il y a un détail à prendre en compte : <span class="important">la comptabilité de l'ensemble de départ de "g" et de l'ensemble d'arrivée de "f"</span>.
-En effet, <span class="important">l'ensemble image (bel et bien image, pas d'arrivée) de "g" doit obligatoirement posséder un élément en commun avec l'ensemble de définition de "f"</span>.
-Sinon, tous les éléments de l'ensembles de départ n'ont aucune image, et la fonction... n'existe pas.
-</p>
-
-<graphic ratio_base>
-<background_color white>
-<base draw=0 width=30 height=10>
-
-<circle x=-10 y=0 radius_x=3/2 radius_y=4>
-<text x=-10 y=2 content="0"></text>
-<text x=-10 y=1 content="1"></text>
-<text x=-10 y=0 content="2"></text>
-<text x=-10 y=-1 content="3"></text>
-<text x=-10 y=-2 content="4"></text>
-
-<circle x=-5 y=0 radius_x=3/2 radius_y=4>
-<text x=-5 y=2 content="0"></text>
-<text x=-5 y=1 content="2"></text>
-<text x=-5 y=0 content="4"></text>
-<text x=-5 y=-1 content="6"></text>
-<text x=-5 y=-2 content="8"></text>
-
-<text x=-15/2 y=4 content="g" font_size_in_scale=1></text>
-<line x_1=-19/2 y_1=2 x_2=-11/2 y_2=1 color=black>
-<line x_1=-19/2 y_1=1 x_2=-11/2 y_2=2 color=black>
-<line x_1=-19/2 y_1=0 x_2=-11/2 y_2=0 color=black>
-<line x_1=-19/2 y_1=-1 x_2=-11/2 y_2=1 color=black>
-<line x_1=-19/2 y_1=-2 x_2=-11/2 y_2=2 color=black>
-
-<circle x=0 y=0 radius_x=3/2 radius_y=4>
-<text x=0 y=2 content="0"></text>
-<text x=0 y=1 content="5"></text>
-<text x=0 y=0 content="10"></text>
-<text x=0 y=-1 content="15"></text>
-<text x=0 y=-2 content="20"></text>
-
-<text x=-5/2 y=4 content="f" font_size_in_scale=1></text>
-<line x_1=-9/2 y_1=-1 x_2=-1/2 y_2=1 color=black>
-<line x_1=-9/2 y_1=-2 x_2=-1/2 y_2=1 color=black>
-
-<circle x=5 y=0 radius_x=3/2 radius_y=4>
-<text x=5 y=2 content="0"></text>
-<text x=5 y=1 content="1"></text>
-<text x=5 y=0 content="2"></text>
-<text x=5 y=-1 content="3"></text>
-<text x=5 y=-2 content="4"></text>
-
-<circle x=10 y=0 radius_x=3/2 radius_y=4>
-<text x=10 y=2 content="0"></text>
-<text x=10 y=1 content="5"></text>
-<text x=10 y=0 content="10"></text>
-<text x=10 y=-1 content="15"></text>
-<text x=10 y=-2 content="25"></text>
-
-<text x=15/2 y=4 content="h" font_size_in_scale=1></text>
-
-<text x=-26/2 y=0 content="h =" font_size_in_scale=3/2></text>
-<text x=5/2 y=0 content="=" font_size_in_scale=3/2></text>
-</graphic>
-
-<p>
-Dans le cas où l'on compose pour obtenir une application, c'est encore plus strict : <span class="important">l'ensemble image de "g" doit obligatoirement être inclu dans l'ensemble de définition de "f"</span> (sinon, des éléments de l'ensemble de départ peuvent n'avoir aucune image, ce qui est contraire à la définition).
-C'est d'ailleurs pour éviter cette rigidité que l'on compose en général des fonctions plutôt que des applications.
-</p>
 
 <h3>Retour sur des concepts du chapitre précédent</h3>
 <p>
@@ -1192,15 +1898,26 @@ Revenons sur les graphes.
 Grâce au concept d'application, nous pouvons définir un type de graphe bien plus général : les multigraphes.
 <span class="important"><definition name="multigraph-rigorous"></span>.
 En fait, <span class="important"><definition name="multigraph-rigorous"></span>.
-L'idée est de dire que les arêtes ne représentent pas simplement de simples paires (comme dans un graphe simple), mais n'importe quel objet possible.
-Ici, <span class="important">l'application (nommée fonction d'incidence) permet de savoir rigoureusement quels objets sont reliés par chaque arête</span>.
+Ici, l'application (nommée fonction d'incidence et généralement noté avec la lettre grecque "phi") permet de savoir rigoureusement quels objets sont reliés par chaque arête.
 </p>
 <math>G = (V, E, <mphi>)</math></br>
 <math><mphi> : E <mto> {{u, v} | (u, v) <min> V * V}</math>
 <p>
-Ce genre de graphe permet deux choses très importantes (qui sont impossibles avec des graphes simples) : <span class="important">un multigraphe peut comporter des boucles et des arêtes multiples entre deux mêmes éléments</span>.
+Il est aussi possible que cette application ne donne pas des paires, mais des couples.
+Dans ce cas, on parle de multigraphe orienté.
+</p>
+<math>G = (V, E, <mphi>)</math></br>
+<math><mphi> : E <mto> V * V</math>
+<p>
+Finalement, on peut aussi définir des multigraphes mixtes.
+</p>
+<math>G = (V, E, A, <mi><mphi></mi><msub>1</msub>, <mi><mphi></mi><msub>2</msub>)</math></br>
+<math><mi><mphi></mi><msub>1</msub> : E <mto> {{u, v} | (u, v) <min> V * V}</math></br>
+<math><mi><mphi></mi><msub>2</msub> : A <mto> V * V</math></br>
+<p>
+Ce genre de graphe permet deux choses très importantes (qui sont impossibles avec des graphes simples) : <span class="important">un multigraphe peut comporter des boucles et des arêtes / arcs multiples entre deux mêmes éléments</span>.
 Ici, <span class="important"><definition name="multigraph-loop"></span>.
-De plus, deux mêmes éléments peuvent être reliés par autant d'arêtes que l'on veut.
+De plus, deux mêmes éléments peuvent être reliés par autant d'arêtes / arcs que l'on veut.
 Donc, un multigraphe de ce genre est parfaitement licite :
 </p>
 <graphic>

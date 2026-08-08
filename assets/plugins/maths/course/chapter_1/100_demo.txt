@@ -189,65 +189,70 @@ Cet ensemble existe donc pour tout ensemble E et F.
 
 <h2>Relations et applications</h2>
 
-<h3>Les relations d'équivalences</h3>
-<h4>1.1.0.0</h4>
-<p>
-Démontrons que dire que "deux objets ont une propriété f similaire" revient à dire que ces deux objets sont reliés par une relation d'équivalence.
-Nous travaillerons dans un ensemble "E", avec une relation quelconque "~", représentant deux objets liés par cette propriété.
-Commençons par énoncer une propriété "f" quelconque (que nous n'expliciterons pas), représentant un élément d'un autre ensemble quelconque "F".
-</p>
-<math><mforall> x <min> E, <mexists>a <min> F, f(x) = a</math>
-<p>
-Ici, nous pouvons expliciter la relation "~".
-</p>
-<math><mforall>x, y <min> E, x ~ y <mequi> f(x) = f(y)</math>
-<p>
-Par transitivité de l'égalité, nous pouvons prouver que "~" est aussi transitive.
-</p>
-<math><mforall>x, y, z <min> E, [x ~ y <mand> y ~ z <mequi> f(x) = f(y) <mand> f(y) = f(z)] <mimp> [f(x) = f(z) <mequi> x ~ z]</math>
-<p>
-Par symétrie de l'égalité, nous pouvons prouver que "~" est aussi symétrique.
-</p>
-<math><mforall>x, y <min> E, [x ~ y <mequi> f(x) = f(y)] <mimp> [f(y) = f(x) <mequi> y ~ x]</math>
-<p>
-Par réflexitivé de l'égalité, nous pouvons prouver que "~" est aussi réflexive.
-</p>
-<math><mforall>x, y <min> E, x ~ x <mequi> f(x) = f(x)</math>
-<p>
-Donc, "~" est réflexive, symétrique et transitive : c'est une relation d'équivalence.
-</p>
-
 <h3>Les injections, surjections et bijections</h3>
 <h4>1.1.1.0</h4>
 <p>
-Démontrons que une application mathématique où tous les éléments de l'ensemble de départ sont reliés à au plus 1 objet permet de dire que "a = b" équivaut à dire que "f(a) = f(b)" (et sa réciproque).
+Démontrons que une application mathématique où tous les éléments de l'ensemble d'arrivé sont reliés à au plus 1 objet équivaut à dire que chaque élément de l'ensemble image a exactement 1 antécédent, et équivaut à dire que "f(a) = f(b)" implique que "a = b".
+Cette démonstration permet donc de donner deux définitions équivalentes du concept d'injectivité.
 Définissons notre application.
 </p>
 <math>f : E <mto> F, x <mto> f(x)</math>
 <p>
 Supposons que tous les éléments de l'ensemble d'arrivée sont reliés à au plus 1 objet.
 </p>
-<math><mforall>z <min> F, [<mexists>! x <min> E, f(x) = z <mor> <mnot>(<mexists> x <min> E, f(x) = z)]</math>
+<math><mforall>y <min> F, [<mexists>! x <min> E, f(x) = y <mor> <mnot>(<mexists> x <min> E, f(x) = y)]</math>
 <p>
-Posons deux éléments de "E" quelconques, nommés "x" et "y", et que leur image par "f" est égale.
+Par définition, tous les éléments ayant un antécédent par cette application sont dans l'ensemble image de "f".
+Donc, tous les éléments vérifiant la première proposition à gauche du "OU" sont dans l'ensemble image de "f".
 </p>
-<math><mforall>x, y <min> E, f(x) = f(y)</math>
+<math><mforall>y <min> F, [<mexists>! x <min> E, f(x) = y <mimp> y <min> Im(f)]</math>
 <p>
-Selon notre première supposition (tous les éléments de l'ensemble de départ sont reliés à au plus 1 objet) : 
+Cependant, les éléments de "F" vérifiant la deuxième proposition à droite du "OU" n'ont pas d'antécédent, et ne sont donc pas dans l'ensemble image de "f".
 </p>
-<math><mforall> w <min> F, [<mexists>! x <min> E, f(x) = w <mor> <mnot>(<mexists> x <min> E, f(x) = w)]</math></br>
-<math><mforall> z <min> F, [<mexists>! y <min> E, f(y) = z <mor> <mnot>(<mexists> y <min> E, f(y) = z)]</math>
+<math><mforall>y <min> F, [<mnot>(<mexists> x <min> E, f(x) = y) <mequi> y <mnotin> Im(f)]</math>
 <p>
-Comme nous avons supposé que "x" et "y" existent, on peu oublier la deuxième partie de la proposition "OU".
-Ici, comme "f(x)" et "f(y)" appartiennt à "f", nous pouvons changer "w" et "f(y)", ou "z" et "f(x)", pour obtenir les égalité "f(x) = f(y)".
+Réciproquement, tous les éléments qui sont dans l'ensemble image sont dans "F", et doivent rendre vrai au moins l'une des propriétés ci-dessus.
+Ici, il y a deux propriétés possibles : 1 antécédent, ou aucun antécédent.
+Un élément peut être dans l'ensemble image si il a un unique antécédent dans "E", mais il ne peut pas l'être si il n'a pas d'antécédent dans "E".
+Il n'y a donc qu'une possibilité : tous les éléments de l'ensemble image n'ont qu'un antécédent par "E".
 </p>
-<math><mexists>! x <min> E, f(x) = f(y)</math></br>
-<math><mexists>! y <min> E, f(y) = f(x)</math>
+<math><mforall>y <min> F, [y <min> Im(f) <mimp> <mexists>! x <min> E, f(x) = y]</math>
 <p>
-Dans les deux cas, il existe un unique élément étant leur image : "x" et "y".
-Donc, dans les deux cas, la seule possibilité est que "x = y".
+Par douple implication, nous pouvons donc mettre des équivalences entre l'appartenance (ou pas) à l'ensemble image et les deux propriétés autour du "OU".
 </p>
-<math><mforall>x, y <min> E, f(x) = f(y) <mequi> x = y</math>
+<math><mforall>y <min> F, [y <min> Im(f) <mequi> <mexists>! x <min> E, f(x) = y]</math>
+<p>
+Ici, nous savons donc exactement comment se comporte "y" selon si il est dans "Im(f)" ou pas.
+Nous pouvons donc obtenir une nouvelle proposition équivalente, transformant le fait de savoir que "y" est soit dans "Im(f)" soit pas dans "Im(f)", en comment il doit se comporter selon où il est.
+</p>
+<math><mequi><mforall>y <min> F, (y <min> Im(f) <mequi> [<mexists>! x <min> E, f(x) = y]) <mand> (y <mnotin> Im(f) <mequi> <mnot>(<mexists> x <min> E, f(x) = y))</math>
+<p>
+D'ailleurs, par définition de l'ensemble image, la deuxième propriété après le "ET" est toujours vraie : on peut l'enlever et garder l'équivalence.
+Finalement, nous pouvons remplacer la première quantificateur par une seule quantification dans "Im(f)".
+</p>
+<math><mequi><mforall>y <min> F, (y <min> Im(f) <mequi> [<mexists>! x <min> E, f(x) = y])</math></br>
+<math><mequi><mforall>y <min> Im(f), <mexists>! x <min> E, f(x) = y</math>
+<p>
+Prenons un élément "a" de "E".
+Ici, "f(a)" appartient donc à "Im(f)".
+</p>
+<math><mforall>a <min> E, f(a) <min> Im(f)</math>
+<p>
+Ici, "f(a)" respecte la propriété énoncé plus haut, puisqu'elle appartient à "Im(f)".
+Comme nous avons quantifié "a" comme tous les "a" possible de "E", tous les "f(a)" représentent tous les "y" de "Im(f)", ce qui nous permet de dire que ce qui va suivre est équivalent aux propriétés déjà démontrées. 
+</p>
+<math><mequi><mforall>a <min> E, (f(a) <min> Im(f) <mequi><mexists>! x <min> E, f(x) = f(a))</math></br>
+<math><mequi><mforall>a <min> E, (f(a) <min> Im(f) <mequi><mexists> x <min> E, f(x) = f(a) <mand> <mforall> b <min> E (f(x) = f(b) <mimp> x = b))</math>
+<p>
+Déjà, la première partie "f(a)" appartient à "Im(f)" est toujours vraie par définition, donc tout ce qui se situe à droite de l'équivalence l'est aussi.
+</p>
+<math><mequi><mforall>a <min> E, <mexists> x <min> E, f(x) = f(a) <mand> <mforall> b <min> E (f(x) = f(b) <mimp> x = b)</math>
+<p>
+Ici, comme "a" est un antécédent de "f(a)", il en est aussi un de "f(x)", et donc on confirme qu'il existe un "x" tel que "f(x) = f(a)" : "a".
+On peut donc substituer tous les "x" par "a".
+On peut donc réecrire l'autre partie du "ET", et obtenir la propriété souhaitée :
+</p>
+<math><mforall>a, b <min> E, (f(a) = f(b) <mimp> a = b)</math>
 
 <h4>1.1.1.1</h4>
 <p>
@@ -258,25 +263,29 @@ Définissons notre application.
 <p>
 Supposons que tous les éléments de l'ensemble d'arrivée sont reliés à exactement 1 objet.
 </p>
-<math><mforall>z <min> F, <mexists>! x <min> E, f(x) = z</math>
+<math><mforall>y <min> F, <mexists>! x <min> E, f(x) = y</math>
 <p>
-Par définition pure, cette propriété permet de dire que "f" est injective, car tous les éléments d'arrivée sont reliés à 1 ou 0 objet.
+Par définition pure, cette propriété permet de dire que "f" est injective, car tous les éléments d'arrivée sont reliés à 1 ou 0 objet (en l'occurence, ici, à 1 objet).
 </p>
-<math><mforall>z <min> F, [<mexists>! x <min> E, f(x) = z <mor> <mnot>(<mexists> x <min> E, f(x) = z)]</math>
+<math><mforall>y <min> F, [<mexists>! x <min> E, f(x) = y <mor> <mnot>(<mexists> x <min> E, f(x) = y)]</math>
 <p>
 Toujours par définition pure, cette propriété permet de dire que "f" est surjective, car tous les éléments d'arrivée sont reliés à au moins un objet.
 </p>
-<math><mforall>z <min> F, <mexists> x <min> E, f(x) = z</math>
+<math><mforall>y <min> F, <mexists> x <min> E, f(x) = y</math>
 <p>
-Donc, une application mathématique où tous les éléments de l'ensemble de d'arrivée sont reliés à exactement 1 objet est injective et surjective.
+Donc, une application mathématique où tous les éléments de l'ensemble de d'arrivée sont reliés à exactement 1 objet est injective et surjective : une partie de l'équivalence est démontrée.
+De plus, si une application est injective et surjective, alors tous les éléments de l'ensemble d'arrivée sont reliés à au minimum un élément et au maximum un élément.
 </p>
+<math><mforall>y <min> Im(f), <mexists>! x <min> E, f(x) = y</math></br>
+<math><mforall>y <min> F, <mexists> x <min> E, f(x) = y</math></math></br>
 <p>
-De plus, si une application est injective et surjective, alors tous les éléments de l'ensemble d'arrivée sont reliés à au minimum un élément.
-Or, selon l'injectivité, une application injective permet de dire que chaque élément d'arrivée sont reliés à 1 ou 0 élément.
-Donc, chaque élément de l'ensemble d'arrivée est relié à exactement un élément : si une application est injective et surjective, alors tous les éléments de l'ensemble d'arrivée sont reliés à au minimum un élément.
+De plus, dans une application surjective, "Im(f)" est "F".
+Donc, selon l'injectivité de l'application, pour tout élément de "F" :
 </p>
+<math><mforall>y <min> F, <mexists>! x <min> E, f(x) = y</math></math></br>
 <p>
-Par double implication, on conclut donc que application mathématique où tous les éléments de l'ensemble de d'arrivée sont reliés à exactement 1 objet équivaut à dire que l'application est injective et surjective.
+Nous avons l'exact définition du fait que, pour tout élément de "F", il existe un unique élément de "E" qui est sont antécédent.
+Par double implication, on conclut donc que le fait qu'une application mathématique où tous les éléments de l'ensemble de d'arrivée sont reliés à exactement 1 objet équivaut à dire que l'application est injective et surjective.
 </p>
 
 <h4>1.1.1.2</h4>
@@ -290,55 +299,35 @@ Supposons que tous les éléments de l'ensemble d'arrivée sont reliés à exact
 </p>
 <math><mforall>z <min> F, <mexists>! x <min> E, f(x) = z</math>
 <p>
-Cette définition est pratiquement la même que la définition brute du concept d'application.
-Formulons une application "g" allant de "F" vers "E" représentant la définition d'une application adaptée.
+Dans cette définition, on peut reconnaître une similarité avec la définition brute du concept d'application.
+Formulons donc une application "g" allant de "F" vers "E" tel que tous les éléments de "F" sont reliés à leur unique antécédent par "f" dans "E".
 </p>
-<math><mforall>z <min> F, <mexists>! x <min> E, g(z) = x</math>
+<math>g : F <mto> E, z <mto> g(z)</br>
+<math><mforall>z <min> F, <mforall> x <min> E, g(z) = x <mequi> f(x) = z</math>
 <p>
-Composons ces applications "f" et "g" :
+Pour l'instant, le fait que "g" soit bien définie est impliquée par le fait que tous les éléments de "F" ont un unique antécédent par "f".
+Or, si "g" est bien définie (sans avoir plus d'informations sur "f", autre qu'il est une application), alors l'image de "z" par "g" sont les antécédents de "z" par "f".
+Comme "z" n'a qu'une seule image par "g", "z" n'a qu'un seul antécédent par "f", ce qui implique que chaque image de "f" n'a qu'un unique antécédent : "f" est donc injective.
+Finalement, on parle de tous les "z" de "F", et comme (par définition d'une application) "g(z)" existe toujours et est un élément de "E" (comme "x"), la partie gauche de l'équivalence est une fois vraie pour chaque valeur de "F" (qui est mise dans "z").
+Comme il s'agit d'une équivalence, la partie droite devient vraie aussi, confirmant que "z" est une image de "f", et comme tous les "z" (et donc, tous les éléments de "F") rendent l'équivalence vraie au moins une fois, tous les "z" (et donc, tous les éléments de "F") sont des images de "f" : "f" est donc surjective.
+Si "f" est injective et surjective, cela équivaut à dire que tous les éléments de "F" ont un unique antécédent par "f".
+Donc, la proposition juste établie implique le fait que tous les éléments de "F" ont un unique antécédent par "f", ce qui par double implication, fait une équivalence.
 </p>
-<math><mforall> x <min> E, <mexists>! a <min> E, <mexists>! b <min> F, a = g(x), b = f(g(x))</math></br>
-<math><mimp> [<mexists>! e <min> E, b = f(e)] <mand> [<mexists>! h <min> F, h = f(a)] <mand> [<mexists>! d <min> E, g(x) = d] <mand> [<mexists>! c <min> F, g(c) = a]</math></br>
-<math><mimp> [d = e <mand> c = h] <mimp> [b = x]</math>
+<math>f : E <mto> F, x <mto> f(x), g : F <mto> E, z <mto> g(z)</br>
+<math>(<mforall>z <min> F, <mexists>! x <min> E, f(x) = z)<mequi>(<mforall>z <min> F, <mforall> x <min> E, g(z) = x <mequi> f(x) = z)</math>
 <p>
-Nous retrouvons ici la formule de la bijection.
-Donc, "g" est l'application réciproque de "f".
-Faisons dans le sens inverse (ce qui est presque pareil) :
+Concentrons nous sur la partie droite de l'équivalence.
+Par simple substitution immédiate :
 </p>
-<math><mforall> x <min> E, <mexists>! a <min> F, <mexists>! b <min> E, a = f(x), b = g(f(x))</math></br>
-<math><mimp> [<mexists>! e <min> F, b = g(e)] <mand> [<mexists>! h <min> E, h = g(a)] <mand> [<mexists>! d <min> F, f(x) = d] <mand> [<mexists>! c <min> E, f(c) = a]</math></br>
-<math><mimp> [d = e <mand> c = h] <mimp> [b = x]</math>
+<math><mforall>z <min> F, <mforall> x <min> E, g(z) = x <mequi> f(x) = z</math></br>
+<math><mimp>f(g(z)) = z <mand> g(f(x)) = x</math>
 <p>
-Nous retrouvons ici la formule de la bijection.
-Donc, "f" est l'application réciproque de "g".
+D'ailleurs, si l'on fait une disjonction de cas, on peut remarquer que la deuxième ligne implique la première : par double implication, les deux lignes sont équivalentes.
 </p>
+<math><mforall>z <min> F, <mforall> x <min> E, g(z) = x <mequi> f(x) = z</math></br>
+<math><mequi>f(g(z)) = z <mand> g(f(x)) = x</math>
 <p>
-De manière similaire, prouvant que le fait que deux applications "i" et "j" soient réciproques entre elles signifie qu'elles sont bijectives.
-Définissons nos applications.
-</p>
-<math>i : E <mto> F, x <mto> i(x)</math></br>
-<math>j : F <mto> E, x <mto> j(x)</math></br>
-<p>
-Supposons que ces applications soient réciproques entre elles.
-</p>
-<math>i(j(x)) = <mi>Id</mi><msub>E</msub></math>
-<p>
-Par définition d'une application :
-</p>
-<math><mforall> p <min> E, <mexists>! y <min> F, i(p) = y</math></br>
-<math><mforall> q <min> F, <mexists>! z <min> E, j(q) = z</math>
-<p>
-Par définition même de leur composition :
-</p>
-<math><mforall> q <min> F, <mexists>! p <min> E, i(p) = q</math>
-<p>
-Donc, "i" est surjective, car tous les éléments de "F" possèdent au moins un antécédent par "i".
-De plus, elle est injective, car tous les éléments de "F" possèdent au plus un antécédent par "i".
-Donc, selon le théorème 1.1.1.1, "i" est bijective, et donc tous les éléments de l'ensemble de d'arrivée sont reliés à exactement 1 objet.
-Da mnière parfaitement similaire, on en déduit la même chose de "j".
-</p>
-<p>
-Donc, par double implication, on en conclut que une application mathématique où tous les éléments de l'ensemble de d'arrivée sont reliés à exactement 1 objet équivaut à dire que l'application admet une application réciproque.
+Donc, dire que "f" est bijective équivaut à dire que cette application "g" est l'application réciproque de "f".
 </p>
 
 <h4>1.1.1.3</h4>

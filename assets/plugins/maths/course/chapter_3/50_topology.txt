@@ -320,12 +320,12 @@ Cependant, "N" et "Z" ne sont pas denses, et la valeur minimale au dessus de 0 e
 </p>
 <p>
 Avec cela, nous pouvons définir deux termes très pratiques, et très utiles avec les espaces métriques : les boules et les sphères.
-Ici, <span class="important"><definition name="ball"></span>.
+Ici, <span class="important"><definition name="topological_ball"></span>.
 On peut dire que la boule est ouverte (si les points sont à distance strictement inférieure) ou fermée (si les points sont à distance inférieure ou égale).
 Remarquez quelque chose : cette définition représente l'idée intuitive que nous avons tous d'une boule, dans le cas d'un espace 3D.
 En mathématiques, cette définition marche pour tous les espaces métriques.
 Par exemple, dans l'espace métrique usuel de "R", une boule représente un intervalle ouvert, et dans "R2", une boule représente un disque privé de sa frontière.
-La sphère est assez similaire : <span class="important"><definition name="sphere"></span>.
+La sphère est assez similaire : <span class="important"><definition name="topological_sphere"></span>.
 </p>
 <graphic><background_color white><circle x=-3/2 y=0 border_radius=0 color=blue radius=2><circle x=3/2 y=0 border_radius=0 color=blue radius=2></graphic>
 <p>

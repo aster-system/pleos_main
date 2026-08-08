@@ -782,3 +782,37 @@ Dans ce genre de graphe, il n'est pas possible d'avoir deux fois le même lien (
 Il est très facile de dessiner un graphe avec la définition que l'on vient de voir : on dessine premièrement chaque élément du premier ensemble du couple, puis on parcourt le second ensemble, et on relie chaque éléments appairés que l'on trouve dans ce second ensemble.
 </p>
 <math>E <mincluded> {{x, y} | x, y <min> V <mand> x <mnotequal> y}</math>
+<p>
+Cependant, il existe une autre définition similaire : les graphes simples orientés.
+<span class="important"><definition name="graph-oriented"></span>.
+Généralement, les arêtes d'un graphe orienté sont nommées des arcs.
+Encore une fois, il n'est pas possible d'avoir deux fois le même lien (pour rappel, dans un ensemble, si vous avez plusieurs fois le même élément dedans, alors c'est comme si vous l'avez une fois).
+Cependant, il est parfaitement possible d'avoir un lien entre deux éléments "x" et "y", et entre "y" et "x" (et donc, dans les deux sens).
+Dans ce genre de graphe, il faut donc bien prendre en compte le sens des arêtes.
+</p>
+<math>E <mincluded> {(x, y) | x, y <min> V <mand> x <mnotequal> y}</math>
+<p>
+Sur les dessins, on fait généralement avec des flèches.
+</p>
+<graphic>
+<base draw=0>
+<background_color white>
+
+<text name=t0 x=0 y=0>Europe</text>
+<text name=t1 x=3 y=7/2>France</text>
+<text name=t2 x=-2 y=7/2>Allemagne</text>
+<text name=t3 x=2 y=-7/2>Angleterre</text>
+<text name=t4 x=-3 y=-7/2>Italie</text>
+
+<arrow points=t0;t1 proportion=3/4 border_width=5 border_color=black behind=t0>
+<arrow points=t0;t2 proportion=3/4 border_width=5 border_color=black behind=t0>
+<arrow points=t0;t3 proportion=3/4 border_width=5 border_color=black behind=t0>
+<arrow points=t0;t4 proportion=3/4 border_width=5 border_color=black behind=t0>
+</graphic>
+<p>
+On peut mélanger les deux, avec le concept de graphe mixte.
+<span class="important"><definition name="graph-mixed"></span>.
+Il s'agit donc d'un mélange entre un graphe simple et un graphe simple orienté.
+</p>
+<math>G = (V, E, A)</math></br>
+<math>E <mincluded> {{x, y} | x, y <min> V <mand> x <mnotequal> y}, A <mincluded> {(x, y) | x, y <min> V <mand> x <mnotequal> y}</math>

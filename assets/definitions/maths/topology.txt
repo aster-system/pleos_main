@@ -58,6 +58,9 @@
     <content>la topologie grossière (ou topologie triviale) associée à un ensemble E est une topologie sur "E" où les deux seuls ouverts sont l'ensemble vide et "E" entier</content>
 </new_definition>
 
+<new_definition name="topological_ball">
+    <content>une boule est une partie d'un espace métrique qui se situe à une distance d'un point de l'espace (nommé centre de la boule) inférieure (inférieure ou égale ou strictement inférieure) à une valeur précise (nommée rayon de la boule)</content>
+</new_definition>
 <new_definition name="topological_continuity">
     <content name="full">une application entre deux espaces topologiques "E" et "F" est dite continue sur "E" si elle est continue en tous les points de "E"</content>
     <content name="part">une application entre deux espaces topologiques "E" et "F" est dite continue sur une partie de "E" si elle est continue en tous les points de cette partie</content>
@@ -76,6 +79,9 @@
     <content name="t_0">un espace topologique est dit "T-0" (ou de Kolmogorov) lorsque, pour tout couple de points distincts de l'espace, il existe soit un voisinage du premier point ne contenant pas le deuxième, soit un voisinage du deuxième ne contenant pas le premier point</content>
     <content name="t_1">un espace topologique est dit "T-1" (ou accessible) lorsque, pour tout couple de points distincts de l'espace, il existe un voisinage du premier point ne contenant pas le deuxième ET un voisinage du deuxième ne contenant pas le premier point</content>
     <content name="t_2">un espace topologique est dit "T-2" (ou séparé, ou de Hausdorff) lorsque, pour tout couple de points distincts de l'espace, il existe deux voisinages, de respectivement le premier et le deuxième point, disjoints entre eux</content>
+</new_definition>
+<new_definition name="topological_sphere">
+    <content>une sphère est une partie d'un espace métrique qui se situe à une distance d'un point de l'espace (nommé centre de la sphère) égale à une valeur précise (nommée rayon de la boule)</content>
 </new_definition>
 
 <new_definition name="homeomorphism">

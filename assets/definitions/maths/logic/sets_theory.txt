@@ -2,6 +2,7 @@
     <content name="countable">un ensemble infini est dénombrable si il est équipotent (et donc, si il existe une bijection) à l'ensemble des nombres entiers naturels</content>
     <content name="finite">un ensemble est "fini" si, intuitivement, il n'est pas possible de trouver de nouveaux éléments dans l'ensemble (que nous n'avons pas déjà trouvé) après en avoir consulter une certaine quantité précise</content>
     <content name="ordered">un uplet est un ensemble ordonné de taille quelconque</content>
+    <content name="parameter">un ensemble est dit "défini par paramètre" si il est défini comme ensemble image d'une fonction quelconque</content>
     <content name="uncountable">un ensemble infini est indénombrable si il n'existe pas de surjections sur l'ensemble des nombres entiers naturels (il existe des éléments qui ne sont pas reliables à un nombre entier naturel)</content>
 </new_definition>
 <new_definition name="set_theory">
@@ -17,7 +18,6 @@
     <content name="foundation_axiom">l'axiome de fondation est un axiome obligeant tout ensemble "A" à posséder un élément qui, dans sa forme "ensemble", ne contient aucun élément de "A"</content>
     <content name="infinity_axiom">l'axiome de l'infini stipule qu'il existe un ensemble contenant un élément de départ nommé "0", et tel que tous les éléments "n" de cet ensemble admettent un élément précis (défini via une fonction), nommé "successeur de n" ou "successeur(n)"</content>
     <content name="pair_axiom">l'axiome de la paire est un axiome confirmant que, pour deux ensembles quelconques A et B, il existe un ensemble contenant deux éléments : A et B (nommée paire de A et B)</content>
-    <content name="parameter">un ensemble est dit "défini par paramètre" si il est défini grâce comme ensemble image d'une fonction quelconque</content>
     <content name="power_set_axiom">l'axiome de l'ensemble des parties est un axiome qui assure l'existence, pour tout ensemble A, d'un ensemble des parties de A</content>
     <content name="replacement_axiom">le schéma d'axiome de remplacement est un schéma d'axiome garantissant que toute classe se comportant comme une fonction peut être restreinte à un ensemble se comportant comme une fonction (en utilisant comme antécédent un ensemble)</content>
     <content name="reunion_axiom">l'axiome de la réunion affirme que, pour tout ensemble A dont les éléments sont des ensembles, il existe un ensemble B tel que tous ces éléments appartiennent à un sous-ensemble C de A, et tous les éléments des sous-ensembles de A appartiennt à B</content>
@@ -88,7 +88,7 @@
     <content>le produit cartésien fini de n ensembles est une opération sur n ensembles, permettant d'obtenir un ensemble des n-uplets (ensembles de n éléments) de chaque élément des n ensembles avec chaque élément des autres ensembles (et vice-versa)</content>
 </new_definition>
 <new_definition name="quotient_set">
-    <content>un ensemble quotient d'un ensemble "E" sur une relation d'équivalence "~" est une découpe de "E" entre chaque classe d'équivalence formée par "~" dans "E"</content>
+    <content>un ensemble quotient d'un ensemble "E" sur une relation d'équivalence "~" est un ensemble constitué de chaque classe d'équivalence formée par "~" dans "E"</content>
 </new_definition>
 
 
@@ -112,12 +112,12 @@
     <content name="symbols">pour la relation "~" et l'élément "x", "~" est réflexive si : "x ~ x"</content>
 </new_definition>
 <new_definition name="relation_symetrical">
-    <content>une relation binaire est dite symétrique si l'ordre des deux éléments n'importe pas dans l'éccriture de la relation</content>
+    <content>une relation binaire est dite symétrique si l'ordre des deux éléments n'importe pas dans l'écriture de la relation</content>
     <content name="anti">une relation binaire est dite antisymétrique si l'ordre des deux éléments importe dans l'écriture de la relation</content>
     <content name="symbols">pour la relation "~" et les éléments "x" et "y", "~" est symétrique si : "x ~ y &lt;=&gt; y ~ x"</content>
 </new_definition>
 <new_definition name="relation_transitivity">
-    <content>une relation binaire est dite transitive si, pour 3 éléments distints, la relation entre les deux premiers et les deux derniers éléments permet de passer directement a une relation entre le premier et le dernier</content>
+    <content>une relation binaire est dite transitive si, pour 3 éléments distincts, la relation entre les deux premiers et les deux derniers éléments permet de passer directement a une relation entre le premier et le dernier</content>
     <content name="symbols">pour la relation "~" et les éléments "x", "y" et "z", "~" est transitive si : "x ~ y ET y ~ Z &lt;=&gt; x ~ z"</content>
 </new_definition>
 

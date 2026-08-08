@@ -1,21 +1,31 @@
 <new_definition name="application">
     <content>une application est un objet permettant de lier tous les éléments d'un premier ensemble quelconque (nommé ensemble de départ) vers des éléments d'un autre (ou le même) ensemble (nomme ensemble d'arrivée)</content>
-    <content name="extension">un prolongement d'une application / fonction est une nouvelle application / fonction qui prend comme ensemble de départune extension de l'ensemble de départ de la première application / fonction, comme ensemble d'arrivée une extension de l'ensemble d'arrivée de la première application / fonction, et tous les éléments de l'ensemble de départ de la première application / fonction sont associés au même élément de l'ensemble d'arrivée que dans l'application / fonction de départ</content>
-    <content name="restriction">une restriction d'une application / fonction sur une partie "F" est une nouvelle application / fonction qui prend comme ensemble de départ la partie "F" de l'ensemble de départ de la première application / fonction, le même ensemble d'arrivée que la première application / fonction, et tous les éléments de "F" sont associés au même élément de l'ensemble d'arrivée que dans l'application / fonction de départ</content>
-    <content name="rigorous">une application peut se représenter sous la forme d'un ensemble de couples entre un élément de l'ensemble de départ et un élément de l'ensemble d'arrivée, avec un unique couple pour chaque élément de l'ensemble de départ</content>
+    <content name="extension">un prolongement d'une application / fonction "f" allant de "A" vers "B" est une nouvelle application / fonction allant d'un sur-ensemble de "A" vers un sur-ensemble de "B", tel que tous les éléments de "A" aient comme image par l'extension la même image que par "f"</content>
+    <content name="reciprocal">une application réciproque d'une application "f" est une application telle que la composée de "f" et de son application réciproque donne l'application identité de l'ensemble de départ de "f" et que la composée de la réciproque de "f" et de "f" donne l'application identité de l'ensemble d'arrivée de "f"</content>
+    <content name="restriction">une restriction d'une application / fonction "f" allant de "A" vers "B" sur une partie "C" est une nouvelle application / fonction allant de départ "C" vers le même ensemble d'arrivée que "f", et telle que les images des éléments de "C" par la restriction sont les exactes mêmes que par "f"</content>
+    <content name="rigorous">une application est une relation binaire entre l'ensemble de départ et l'ensemble d'arrivée, où chaque élément de l'ensemble de départ est relié à un unique élément de l'ensemble d'arrivée</content>
+</new_definition>
+<new_definition name="arrow_diagram">
+    <content>un diagramme sagittal est une représentation d'un ensemble fini muni d'une relation binaire quelconque, où deux éléments "a" et "b" en relations (dans cet ordre) sont représentés par une flèche allant de "a" vers "b"</content>
 </new_definition>
 <new_definition name="bijection">
     <content>une bijection est une application qui est en même temps surjective et injective</content>
+    <content name="identity">la bijection identité sur un ensemble "E" est l'application qui, à chaque élément "x" de "E", associe "x"</content>
 </new_definition>
 <new_definition name="function">
-    <content>une fonction est un objet permettant de lier les éléments de deux ensembles quelconques entre eux, sans obligatoirement que tous les éléments de l'ensemble de départ soit utilisés</content>
-    <content name="composition">la composition de fonctions (ou d'applications, ce qui est moins commun mais parfaitement possible) est une opération agissant sur des fonctions / applications, prenant deux fonctions / applications de bases et permettant d'obtenir une nouvelle fonction / / application, admettant comme ensemble de départ l'ensemble de départ de la première fonction, comme ensemble d'arrivée celui de la deuxième fonction, et liant les éléments de l'ensemble de départ aux éléments transformés par la première fonction, puis par la deuxième fonction</content>
+    <content>une fonction est un objet permettant de lier certains éléments d'un premier ensemble quelconque (nommé ensemble de départ) vers des éléments d'un autre (ou le même) ensemble (nomme ensemble d'arrivée)</content>
+    <content name="composition">la composition de fonctions est une opération agissant sur des fonctions, prenant deux fonctions de bases et permettant d'obtenir une nouvelle fonction, admettant comme ensemble de départ l'ensemble de départ de la première fonction, comme ensemble d'arrivée celui de la deuxième fonction, et liant les éléments de l'ensemble de départ aux éléments transformés par la première fonction, puis par la deuxième fonction</content>
 </new_definition>
 <new_definition name="hasse_diagram">
-    <content>un diagramme de Hasse est une représentation d'un ensemble fini muni d'un ordre quelconque, où deux éléments "a" et "b" en relations (dans cet ordre) sont représentés par une flèche allant de "a" vers "b"</content>
+    <content>un diagramme de Hasse est un diagramme sagittal où les éléments liés à eux-mêmes par la relation ne sont pas liés entre eux et où deux éléments sont liés si (et seulement si) il n'existe pas d'éléments entre eux</content>
+</new_definition>
+<new_definition name="image">
+    <content name=direct>l'image directe d'un ensemble par une application représente l'ensemble des images de tous les éléments de l'ensemble</content>
+    <content name=inverse>l'image réciproque (aussi nommé préimage) d'un ensemble par une application représente l'ensemble des antécédents de tous les éléments de l'ensemble</content>
 </new_definition>
 <new_definition name="injection">
-    <content>une injection est une application mathématique où tous les éléments de l'ensemble de départ sont reliés à au plus 1 objet (soit à 1 objet précisément, soit à aucun objet)</content>
+    <content>une injection est une application mathématique où tous les éléments de l'ensemble d'arrivée sont reliés à au plus 1 objet de l'ensemble de départ (soit à 1 objet précisément, soit à aucun objet)</content>
+    <content name="rigorous">une injection est une application mathématique tel que si deux objets de l'ensemble de départ ont la même image, alors ils sont égaux</content>
 </new_definition>
 <new_definition name="leibniz_law">
     <content>la loi de Leibniz est une loi qui énonce que dire que deux objets quelconques "x" et "y" sont égaux équivaut à dire que toutes les propriétés de "x" sont des propriétés de "y", et toutes les propriétés de "y" sont des propriétés de "x" (ils ont donc les exactes mêmes propriétés)</content>
@@ -35,6 +45,9 @@
 </new_definition>
 <new_definition name="sequence">
     <content>une suite mathématique est une fonction mathématique allant de "N" à n'importe quel ensemble possible</content>
+</new_definition>
+<new_definition name="surjection">
+    <content>une surjection est une application mathématique où tous les éléments de l'ensemble d'arrivée sont reliés à au moins 1 objet de l'ensemble de départ (soit à 1 objet précisément, soit à plus d'un objet)</content>
 </new_definition>
 
 <new_definition name="arity">
@@ -65,13 +78,20 @@
 </new_definition>
 <new_definition name="relation_order">
     <content>une relation binaire sur un ensemble est dite "relation d'ordre" quand elle est antisymétrique, réflexive et transitive</content>
-    <content name="strict">une relation binaire sur un ensemble est dite "relation d'ordre stricte" quand elle est antiréflexive et transitive</content>
+    <content name="strict">une relation binaire sur un ensemble est dite "relation d'ordre stricte" quand elle est antisymétrique, antiréflexive et transitive</content>
 </new_definition>
 
 <new_definition name="extremum">
     <content>les extremums d'une partie "F" d'un ensemble ordonné "E" représentent le minimum de "F" (si il existe) et le maximum de "F" (si il existe)</content>
     <content name="maximum">le maximum d'une partie "F" d'un ensemble ordonné "E" est (si il existe) l'unique majorant de "F" qui appartient à "F"</content>
     <content name="minimum">le minimum d'une partie "F" d'un ensemble ordonné "E" est (si il existe) l'unique minorant de "F" qui appartient à "F"</content>
+</new_definition>
+<new_definition name="interval">
+    <content>un intervalle est une partie d'un ensemble ordonné représentant soit l'ensemble des éléments qui succède à un autre, soit l'ensemble des éléments qui précède un autre, soit l'ensemble des éléments qui succède à un élément et précède un autre</content>
+</new_definition>
+<new_definition name="maximal">
+    <content>un élément est un élément maximal d'une partie d'un ensemble ordonné si il n'existe aucun élément de la partie qui lui succède</content>
+    <content name="minimal">un élément est un élément minimal d'une partie d'un ensemble ordonné si il n'existe aucun élément de la partie qui le précède</content>
 </new_definition>
 <new_definition name="order_theory">
     <content>la théorie des ordres est la branche des mathématiques qui étudie tout ce qui touche aux relations d'ordres</content>

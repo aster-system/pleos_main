@@ -182,6 +182,14 @@ Dans un cas très simple, voici la structure algébrique correspondant à l'ense
 </p>
 <math>(N, +)</math>
 
+
+
+
+
+
+
+
+
 <h2>Les différents types de structures algébriques</h2>
 
 <h3>Magmas et groupes</h3>
@@ -292,13 +300,22 @@ L'exemple le plus simple est le morphisme identité, encore une fois.
 </p>
 <p>
 Comme il s'agit d'un endomorphisme, ils sont stables par la composition.
-De plus, comme toute application, ils sont associatif.
+De plus, comme toute application, ils sont associatifs.
 Ils contiennent aussi un neutre : l'automorphisme identité.
 Finalement, comme ils sont aussi des isomorphismes, alors ils possèdent tous un inverse.
 Donc, <span class="important">l'ensemble des automorphismes sur une structure quelconque "E" représente un groupe (muni de l'opération de composition)</span>.
 En général, cet ensemble est noté "Aut(E)".
 </p>
 <math>(Aut(E), <mcomp>)</math>
+
+
+
+
+
+
+
+
+
 
 
 

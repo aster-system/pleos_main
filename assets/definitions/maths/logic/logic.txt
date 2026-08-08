@@ -82,6 +82,7 @@
 <new_definition name="quantifier">
     <content>un quantificateur est un objet mathématique utilisable pour poser le contexte d'utilisation de la variable d'un prédicat (la transformant en proposition)</content>
     <content name="existential">le quantificateur existentiel transforme un prédicat en une proposition vraie si il existe AU MOINS UNE proposition vraie formulable avec ce prédicat</content>
+    <content name="existential_unique">le quantificateur existentiel unique transforme un prédicat en une proposition vraie si il existe EXACTEMENT UNE UNIQUE proposition vraie formulable avec ce prédicat</content>
     <content name="universal">le quantificateur universel transforme un prédicat en une proposition vraie si TOUTES les propositions formulables avec ce prédicat sont vraie</content>
 </new_definition>
 

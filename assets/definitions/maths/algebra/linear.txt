@@ -41,6 +41,9 @@
     <content name="normed_1">un espace vectoriel normé avec la norme 1 est un K-espace vectoriel normé de dimension fini "n" et de type "K exposant n" où la norme d'un vecteur quelconque représente la somme des valeurs absolues des coefficients qui constituent le vecteur</content>
     <content name="vector">un vecteur est un élément quelconque d'un espace vectoriel</content>
 </new_definition>
+<new_definition name="vector_space_quotient">
+    <content>un espace vectoriel quotient d'un espace vectoriel "E" par un sous-espace vectoriel "F" est un espace vectoriel sur l'ensemble quotient de "E" par une relation définie à partir de "F"</content>
+</new_definition>
 <new_definition name="vector_space_base">
     <content>une base d'un espace vectoriel est une famille libre et génératrice de cet espace vectoriel</content>
 </new_definition>

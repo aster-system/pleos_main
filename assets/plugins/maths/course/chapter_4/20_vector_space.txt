@@ -305,6 +305,35 @@ De plus, on constate aussi que cet ensemble a les mêmes propriétés que l'espa
 Donc, il s'agit bel et bien d'un espace vectoriel.
 </p>
 
+<h3>Les espaces vectoriels quotients</h3>
+<p>
+Comme il existe des groupes et des anneaux quotients, il existe aussi des espaces vectoriels quotients.
+<span class="important"><definition name="vector_space_quotient"></span>.
+Ici, nous devons définir rigoureusement la relation d'équivalence permettant de définir cet ensemble quotient.
+En fait, <span class="important">deux éléments "u" et "v" sont en relations si "u - v" appartient à "F" (avec ici, "-" étant le symbole de l'inverse de la première loi de l'espace, quelle qu'elle soit)</span>.
+</p>
+<math><mforall> u, v <min> E, u ~ v <mequi> u - v <min> F</math>
+<p>
+Ici, <span class="important">nous devons prouver que cette relation est bel et bien une relation d'équivalence (en prouvant quelle est réflexive, symétrique et transitive)</span>.
+Pour la réflexivité, c'est immédiat : "u - u = 0" avec "0" étant le neutre de la première loi de "E", qui appartient donc à "F" (puisque "F" est un sous-espace vectoriel de "E"), ce qui prouve que "u" est en relation avec lui-même. 
+Pour la symétrie, c'est très simple : permuter l'ordre de "u" et "v" revient à obtenir "v - u", qui est égal à "-(u - v)", qui est bel est bien dans "F", puisqu'il est stable par inversion de la première loi.
+Pour la transitivité, si "u - v" appartient à "F", et "v - w" appartient aussi à "F", cela implique que "(u - v) + (v - w)" appartient à "F" (avec ici, "+" étant le symbole de la première loi de l'espace, quelle qu'elle soit), et "(u - v) + (v - w) = (u - w)", qui appartient à "F", prouvant que "u" et "w" sont en relation aussi.
+</p>
+<math><mforall> u, v <min> E, u ~ v <mequi> u - v <min> F <mequi> -(v - u) <min> F <mequi> v - u <min> F <mequi> v ~ u</math></br>
+<math><mforall> u, v, w <min> E, u ~ v <mand> v ~ w <mequi> u - v <min> F <mand> v - w <min> F <mimp> (u - v) + (v - w) = u - w <min> F <mequi> u ~ w</math>
+<p>
+Maintenant, démontrons que "E/~" a une structure d'espace vectoriel sur "K" (ce qui sera très simple).
+Déjà, définissons la première loi de cette espace comme ceci :
+</p>
+<math><mforall> a, b <min> E/~, <mexists> c, d <min> E, a <min> [c] <mand> b <min> [d]</math></br>
+<math>a + b = [c + d]</math>
+
+
+
+
+
+
+
 <h3>Les systèmes linéaires</h3>
 <p>
 Avant de traiter des systèmes linéaires, parlons des équations linéaires.
@@ -340,6 +369,12 @@ La façon la plus simple de résoudre ce genre d'équation reste la substitution
 <math><mequi></math></br>
 <math>v = <mfrac><mi>1</mi><mi>53</mi></mfrac></math></br>
 <math>u = <mfrac><mi>34</mi><mi>53</mi></mfrac></math></br>
+
+
+
+
+
+
 
 <h3>Les applications linéaires</h3>
 <p>
@@ -488,6 +523,12 @@ Dans ce cas, on peut écrire :
 </p>
 <math>f(u) = <msum from=1 to=n unknown=k><mi>e</mi><msub>n</msub>(u) * f(<mi>b</mi><msub>n</msub>)</math>
 
+
+
+
+
+
+
 <h3>Les applications multilinéaires</h3>
 <p>
 Comme il existe, pour des applications à une variable, des applications "linéaires", il existe aussi une forme de linéarité pour des applications à plusieurs variables.
@@ -533,9 +574,12 @@ Il existe donc une orthogonalité par forme bilinéaire (nous aurons l'occasion 
 
 
 
+
+
+
 <h2>Les matrices</h2>
 
-<h3>Qu'est ce qu'est une matrice ?</h3>
+<h3>Qu'est-ce que une matrice ?</h3>
 <p>
 Les matrices sont des objets très utilisées en algèbre linéaire.
 En fait, <span class="important"><definition name="matrix"></span>.
