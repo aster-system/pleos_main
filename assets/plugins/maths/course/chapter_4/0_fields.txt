@@ -103,24 +103,75 @@ Donc, l'anneau engendré par "{2}" est l'exact même que l'anneau engendré par 
 </p>
 <math><mbracket>{2}</mbracket> = <mbracket>{1, 2}</mbracket></math>
 
+
+
+<h3>Les idéaux et les anneaux quotients</h3>
 <p>
 Il est possible de modifier un peu cette définition, pour obtenir un concept assez similaire : les idéaux.
 <span class="important"><definition name="algebra_ideal"></span>.
-SI l'on parle d'un anneau avec addition et multiplication, il s'agit donc d'un sous-ensemble de l'anneau de départ stable par l'addition, et aussi par la multiplication des éléments de l'anneau entier.
-Cependant, il n'est pas obligé qu'un idéal contienne un neutre multiplicatif : il n'est donc pas obligatoirement un sous-anneau.
-Pour un idéal "A" d'un anneau "B", on peut écrire :
+Il s'agit donc d'un sous-ensemble de l'anneau qui est un sous-groupe pour la première loi, et où l'utilisation de la deuxième loi entre les éléments de l'anneau et les éléments de l'idéal donne toujours un élément de l'idéal.
+Cependant, il n'est pas obligé qu'un idéal contienne un neutre par la deuxième : il n'est donc pas obligatoirement un sous-anneau.
+Il y a néanmoins quelque chose à prendre en compte : <span class="important">si l'utilisation de la deuxième loi entre les éléments de l'anneau PUIS les éléments de votre partie donne toujours un élément de la partie, on parle d'idéal à gauche</span>.
+À l'inverse, si l'utilisation de la deuxième loi entre les éléments de votre partie PUIS les éléments de l'anneau donne toujours un élément de la partie, on parle d'idéal à droite.
+Cela est utile si deuxième loi n'est pas commutative.
+Pour un idéal à gauche "A" d'un anneau "B" (en considérant que "A" est un sous-groupe de "B" par la première loi), on peut écrire :
 </p>
-<math><mforall> a <min> A, {<mforall> b <min> B, a * b <min> A}</math>
+<math><mforall> b <min> B, {<mforall> a <min> A, b * a <min> A}</math>
 <p>
-Prenons un exemple très simple : <span class="important">pour tout "n" dans "N", l'anneau "(nZ, +, .)" est un idéal de "(Z, +, .)"</span>.
+Et pour un idéal à droite "A" d'un anneau "B" (en considérant que "A" est un sous-groupe de "B" par la première loi), on peut écrire :
+</p>
+<math><mforall> b <min> B, {<mforall> a <min> A, a * b <min> A}</math>
+<p>
+Ici, <span class="important">si votre idéal est un idéal à droite et un idéal à gauche, on parle d'idéal bilatère</span>.
+Cela ne veut pas forcément dire que "a * b = b * a", mais on est sur que les deux appartiennent à l'idéal.
+Cependant, <span class="important">si votre anneau est commutatif, tout idéal à gauche et à droite est un idéal bilatère, et "a * b = b * a"</span>.
+Encore pour un idéal bilatère "A" d'un anneau "B" (en considérant que "A" est un sous-groupe de "B" par la première loi), on peut écrire :
+</p>
+<math><mforall> b <min> B, {<mforall> a <min> A, a * b <min> A}</math>
+<p>
+Prenons un exemple très simple : <span class="important">pour tout "n" dans "N", "nZ" est un idéal de "(Z, +, .)"</span>.
 La démonstration est extrêmement simple : comme tout élément de "nZ" s'écrit sous la forme "n * c" (avec "c" un nombre entier décimal quelconque), le multiplier par un élément de l'anneau revient à multiplier "c" par un élément de l'anneau, ce qui donne "n" multiplié par quelque chose : un élément de "nZ".
 </p>
 <math><mforall> a, <min> nZ, <mexists> c <min> Z, a = n * c</math></br>
 <math><mforall> e <min> Z, a * e = n * c * e = n * (c * e)</math>
 <p>
-Comme pour les groupes, <span class="important">si l'anneau n'est pas commutatif, alors on peut parler d'idéal à gauche / à droite selon la multiplication est stable à gauche ou à droite</span>.
-Si l'anneau est commutatif, ces deux termes sont confondus.
+Il existe cependant deux idéaux très simples pour tout anneau : les idéaux triviaux.
+<span class="important"><definition name="algebra_ideal-trivial"></span>.
+Les idéaux qui ne sont pas des idéaux triviaux sont nommés de idéaux propres.
 </p>
+<p>
+Comme pour les anneaux, il existe des idéaux engendrés.
+<span class="important"><definition name="algebra_ideal-generated"></span>.
+En d'autres termes, il s'agit du "plus petit" idéal possible dans "A" contenant "P" (tous les autres idéaux contenant "P" sont des sur-ensembles de "I").
+L'idée pour l'obtenir est donc de prendre "P", et de lui ajouter le minimum d'éléments nécessaires permettant pour faire du sous-ensemble de "P" un idéal.
+Encore une fois, on peut parler d'idéal engendré à gauche ou à droite.
+Pour le définir correctement, imaginons un ensemble "E" contenant toutes les utilisations de la deuxième loi entre un élément de "A" et un élément de "P".
+</p>
+<math>E = {x <min> A | <mexists> (y, z) <min> A X P <mand> x = yz}</math>
+<p>
+Cette ensemble représente donc toutes les utilisations de la seconde loi, qui doivent apparaître dans l'idéal.
+Nous devons maintenant compléter cet ensemble, en le rendant stable par la première loi.
+Pour cela, l'idée est donc de créer un ensemble qui contient toutes les sommes possibles d'éléments de "E".
+Or, <span class="important">toutes ces sommes sont composés d'éléments de "E" dans un ordre précis, et toutes les compositions possibles d'éléments de "E" sont en fait des n-uplets de "E"</span>.
+En prenant le symbole sigma majuscule comme la répétition de la première loi, on peut noter :
+</p>
+<math>I = {x <min> A | <mexists> n <min> N, <mexists>(<mi>q</mi><msub>1</msub>, <mi>q</mi><msub>2</msub>, ..., <mi>q</mi><msub>n</msub>) <min> <mi>E</mi><msup>n</msup>, x = <msum from=1 to=n unknown=k><mi>q</mi><msub>k</msub>}</math>
+<p>
+Dans le cas à droite, nous devons redéfinir un ensemble comme "E", et on peut noter :
+</p>
+<math>F = {x <min> A | <mexists> (y, z) <min> A X P <mand> x = yz}</math></br>
+<math>J = {x <min> A | <mexists> n <min> N, <mexists>(<mi>q</mi><msub>1</msub>, <mi>q</mi><msub>2</msub>, ..., <mi>q</mi><msub>n</msub>) <min> <mi>F</mi><msup>n</msup>, x = <msum from=1 to=n unknown=k><mi>q</mi><msub>k</msub>}</math>
+<p>
+Dans le cas où vous voulez les deux, vous devez redéfinir un nouvel ensemble, où la deuxième loi est utilisée dans les deux sens.
+</p>
+<math>G = {x <min> A | <mexists> (w, y, z) <min> A X A X P <mand> x = wyz}</math></br>
+<math>K = {x <min> A | <mexists> n <min> N, <mexists>(<mi>q</mi><msub>1</msub>, <mi>q</mi><msub>2</msub>, ..., <mi>q</mi><msub>n</msub>) <min> <mi>G</mi><msup>n</msup>, x = <msum from=1 to=n unknown=k><mi>q</mi><msub>k</msub>}</math>
+
+
+
+
+
+
 
 <h3>Les anneaux principaux et euclidiens</h3>
 <p>
@@ -162,21 +213,43 @@ L'exemple le plus simple est le corps "(R, +, .)", qui est une extension du corp
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 <h2>Les polynômes</h2>
 
-<h3>Qu'est ce qu'est un polynôme</h3>
+<h3>Qu'est ce qu'est un polynôme ?</h3>
 <p>
 Plus tôt, nous avons à de multiples reprises envisagé des fonctions de la forme "a * x ² + b * x + c".
 Cependant, ce concept se généralise assez facilement, grâce aux polynômes.
 <span class="important"><definition name="polynomial"></span>.
-Par exemple, "4 * x² + 8", "3 * x + 4 * y - 2 * z" ou "8" sont des polynômes.
-De plus, <span class="important"><definition name="monomial"></span>.
-C'est la version "simplifiée" du polynôme.
-Ici, les indéterminées s'écrivent généralement "x" / "X", "y" / "Y" ou "z" / "Z".
-Pour construire rigoureusement un polynôme, on peut procéder de la sorte :
+Ici, il faut comprendre que cette indéterminée est un objet "formelle" utilisée comme une variable normale.
+On note généralement ce genre d'indéterminé avec des lettres majuscules.
+Donc, dans le corps usuel des réels, un polynôme peut très bien être :
+<p>
+<math>P = 3<mi>X</mi><msup>4</msup> + 2<mi>X</mi><msup>2</msup> - 1</math>
+<p>
+Il existe cependant une définition bien plus rigoureuse : <span class="important"><definition name="polynomial-rigorous"></span>.
+Dans ce cas, notre polynôme vue plus haut serait la suite finie "(-1, 0, 2, 0, 3, 0, 0, 0...)" (pour rappel, dans une suite de ce genre, à partir d'une certaine valeur, toutes les valeurs sont nulles).
+Cela nous permet donc d'utiliser la terminologie d'une suite, et (dans le cas où le dernier élément non-nul de la suite soit à l'indice "n") d'écrire :
 </p>
-<math><msum from=0 to=n> <mi>a</mi><msub>k</msub><mi>X</mi><msup>k</msup></math></br>
-<math>3 * <mi>X</mi><msup>3</msup> - 4 * <mi>X</mi> + 2</math>
+<math>P = <msum from=0 to=n unknown=k><mi>p</mi><msub>k</msub><mi>X</mi><msup>k</msup></math>
+
+
+
+
+
+
+
 <p>
 Une confusion assez courante est de mélanger le concept de polynôme et de fonction.
 En effet, <span class="important">un polynôme n'est qu'une formule, et pas une application, il ne s'agit donc pas directement d'une fonction</span>.
@@ -211,6 +284,8 @@ Généralement, <span class="important">l'ensemble de tous les polynômes d'ind�
 Si nous avons plusieurs indéterminés (comme "X" et "Y"), on note "K[X, Y]".
 De plus, les polynômes peuvent être munis d'une addition et d'une multiplication : <span class="important">l'ensemble des polynômes sur un anneau (unitaire) forme un nouvel anneau unitaire</span>.
 </p>
+
+
 
 <h3>Les racines de polynômes</h3>
 <p>

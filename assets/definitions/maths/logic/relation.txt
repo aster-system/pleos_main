@@ -12,6 +12,9 @@
     <content>une bijection est une application qui est en même temps surjective et injective</content>
     <content name="identity">la bijection identité sur un ensemble "E" est l'application qui, à chaque élément "x" de "E", associe "x"</content>
 </new_definition>
+<new_definition name="family">
+    <content>une famille est une application normale, munit d'une terminologie permettant d'utiliser cette application comme un ensemble où l'on peut "facilement accéder" aux éléments lui appartenant</content>
+</new_definition>
 <new_definition name="function">
     <content>une fonction est un objet permettant de lier certains éléments d'un premier ensemble quelconque (nommé ensemble de départ) vers des éléments d'un autre (ou le même) ensemble (nomme ensemble d'arrivée)</content>
     <content name="composition">la composition de fonctions est une opération agissant sur des fonctions, prenant deux fonctions de bases et permettant d'obtenir une nouvelle fonction, admettant comme ensemble de départ l'ensemble de départ de la première fonction, comme ensemble d'arrivée celui de la deuxième fonction, et liant les éléments de l'ensemble de départ aux éléments transformés par la première fonction, puis par la deuxième fonction</content>
@@ -31,9 +34,9 @@
     <content>la loi de Leibniz est une loi qui énonce que dire que deux objets quelconques "x" et "y" sont égaux équivaut à dire que toutes les propriétés de "x" sont des propriétés de "y", et toutes les propriétés de "y" sont des propriétés de "x" (ils ont donc les exactes mêmes propriétés)</content>
 </new_definition>
 <new_definition name="permutation">
-    <content>une permutation (aussi appelé substition dans certains vieux ouvrages) est une bijection où l'ensemble de départ est le même que l'ensemble d'arrivée</content>
+    <content>une permutation (aussi appelé substitution dans certains ouvrages) est une bijection où l'ensemble de départ est le même que l'ensemble d'arrivée</content>
     <content name="cyclic">une permutation est dite circulaire si elle permute une partie de l'ensemble de départ en avançant (ou reculant) chaque élément de cette partie (de telle manière que le dernier élément prenne la place du premier élément si besoin), et ne modifie pas les éléments or de cette partie</content>
-    <content name="transposition">une transposition est une permutation qui n'échange que deux éléments de l'ensemble entre eux (et ne touche pas aux autres)</content>
+    <content name="transposition">une transposition est une permutation qui ne lie que deux éléments entre eux sans toucher aux autres (et donc, qui n'échange que deux éléments de l'ensemble entre eux sans toucher aux autres)</content>
     <content name="transposition_parity">une transposition est dite paire si elle est la composition d'une quantité paire de transposition (sinon, elle est dite impaire)</content>
     <content name="transposition_signature">une signature d'une transposition est une valeur qui est -1 si la transposition est impaire, et 1 si elle est paire</content>
 </new_definition>
@@ -44,7 +47,7 @@
     <content name="totality">une relation sur un ensemble est dite totale si, pour deux éléments quelconques "a" et "b", la relation est vraie dans le sens "a" puis "b" OU dans le sens "b" puis "a"</content>
 </new_definition>
 <new_definition name="sequence">
-    <content>une suite mathématique est une fonction mathématique allant de "N" à n'importe quel ensemble possible</content>
+    <content>une suite mathématique est une fonction mathématique allant de "N" (ou d'un sous-ensemble de "N") à n'importe quel ensemble possible</content>
 </new_definition>
 <new_definition name="surjection">
     <content>une surjection est une application mathématique où tous les éléments de l'ensemble d'arrivée sont reliés à au moins 1 objet de l'ensemble de départ (soit à 1 objet précisément, soit à plus d'un objet)</content>
@@ -68,7 +71,7 @@
 </new_definition>
 
 <new_definition name="equivalence_class">
-    <content>une classe d'équivalence d'un élément "x" d'un ensemble "E" représente la classe de tous les éléments de "E" qui peuvent être reliés à "x" par relation d'équivalence "~"</content>
+    <content>une classe d'équivalence d'un élément "x" d'un ensemble "E" représente l'ensemble de tous les éléments de "E" qui peuvent être reliés à "x" par relation d'équivalence "~"</content>
 </new_definition>
 <new_definition name="preorder">
     <content>une relation binaire sur un ensemble est un préordre quand elle est une relation réflexive et transitive</content>

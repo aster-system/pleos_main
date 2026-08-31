@@ -281,6 +281,67 @@ Généralement, les espaces de ce genre sont appelés par leur nom "espace sépa
 Dans ce genre d'espace, on trouve une propriété très intéressante : <span class="important">tout compact d'un espace séparé est fermé</span>.
 La démonstration est un bon moyen de se rappeler de comment fonctionne le concept de compacité (et présente <a href="demo#3_2_1_2">juste ici</a>).
 </p>
+<p>
+Le quatrième axiome de séparation est l'axiome "T-3".
+<span class="important"><definition name="topology_separation_axiom-t_3"></span>.
+On pourrait donc l'énoncer mathématiquement :
+</p>
+<math><mforall> x <min> E, <mforall> A <min> F(E), x <mnotin> A <mimp> [<mexists> O, P <min> T, x <min> O <mand> A <mincluded> P <mand> O <minter> P = <mempty_set>]</math>
+<p>
+On peut faire l'illustration générale de cet axiome :
+</p>
+<graphic>
+<background_color white>
+<circle x=-2 y=2 radius=1/5 color=black border_radius=0>
+<circle x=-2 y=2 radius=4/3 color=transparent border_radius=5 border_color=black>
+
+<circle x=2 y=-1 radius=1 color=light_red border_radius=6 border_color=black>
+<circle x=2 y=-1 radius=5/3 color=transparent border_radius=5 border_color=black>
+</graphic>
+<p>
+Tout seul, cet axiome ne sert pas à grand chose.
+Par exemple, <span class="important">la simple topologie grossière sur "E" respecte cette axiome</span>, et la démonstration est très rapide.
+En effet, les deux seuls fermés de la topologie discrètes sont "E" entier et l'ensemble vide.
+Pour "E" entier, tous les éléments lui appartienent : il n'en existe donc pas qui peuvent invalider la propriété.
+Pour l'ensemble vide, aucun élément ne lui appartient pas, mais, pour tout élément, il existe toujours deux ouverts disjoints respectant la propriété : l'ensemble entier (qui contient l'élément) et l'ensemble vide (qui est inclus dans l'ensemble vide).
+</p>
+<p>
+Cependant, il nous permet de définir les espaces réguliers.
+<span class="important">Un espace topologique est dit "régulier" quand il est "T-2" (et donc, qu'il est séparé) et qu'il respecte l'axiome "T-3"</span>.
+Ce genre d'espace représente donc un type d'espace plus fort que les espaces séparés simples.
+D'ailleurs, <span class="important">si un espace quelconque respecte l'axiome "T-3" et soit l'axiome "T-0", soit l'axiome "T-1", soit l'axiome "T-2", on peut démontrer qu'il respecte tous les autres aussi</span>.
+Ces espaces font aussi les frais des différentes littératures : certains considèrent que l'axiome ne s'appelle pas "T-3" mais "axiome de régularité", et d'autres considèrent qu'un espace "régulier" est un espace ne respectant que l'axiome vue au dessus, et qu'il est "T-3" quand il est "T-2" (ou "T-0" ou "T-1").
+Tout dépend de l'auteur.
+</p>
+<p>
+Passons au prochain type d'axiome de séparation : l'axiome "T-4".
+<span class="important"><definition name="topology_separation_axiom-t_4"></span>.
+On pourrait donc l'énoncer mathématiquement :
+</p>
+<math><mforall> A, B <min> F(E), A <minter> B = <mempty_set> <mimp> [<mexists> O, P <min> T, A <mincluded> O <mand> B <mincluded> P <mand> O <minter> P = <mempty_set>]</math>
+<p>
+On peut faire l'illustration générale de cet axiome :
+</p>
+<graphic>
+<background_color white>
+<circle x=-2 y=2 radius=1 color=light_red border_radius=6 border_color=black>
+<circle x=-2 y=2 radius=5/3 color=transparent border_radius=5 border_color=black>
+
+<circle x=2 y=-2 radius=1 color=light_red border_radius=6 border_color=black>
+<circle x=2 y=-2 radius=5/3 color=transparent border_radius=5 border_color=black>
+</graphic>
+<p>
+Encore une fois, tout seul, cet axiome est limité.
+Cependant, il nous permet de définir les espaces normaux.
+<span class="important">Un espace topologique est dit "normal" quand il est "T-2" (et donc, qu'il est séparé) et qu'il respecte l'axiome "T-4"</span>.
+</p>
+<p>
+Passons au dernier axiome de séparation : l'axiome "T-5".
+<span class="important"><definition name="topology_separation_axiom-t_5"></span>.
+<span class="important">Un espace topologique est dit "complétement normal" quand il est "T-2" (et donc, qu'il est séparé) et qu'il respecte l'axiome "T-5"</span>.
+</p>
+
+
 
 <h3>Les espaces métriques</h3>
 <p>
@@ -333,6 +394,8 @@ Ici, on peut se demander pourquoi avoir introduit ce concept à ce moment préci
 En fait, <span class="important">tout espace métrique induit une topologie sur l'ensemble qu'il représente, engendré par l'ensemble des boules de l'espace</span>.
 </p>
 
+
+
 <h3>La topologie usuelle des nombres réels</h3>
 <p>
 Comme les nombres réels représentent un ensemble, il est donc possible d'en obtenir un espace topologique très pratique.
@@ -362,7 +425,7 @@ Ici, nous pouvons poser l'intersection de "[a, b]" et "[c - d, c + d]", que nous
 Donc, l'union de "[a, x]" et "[e, f]" donne "[a, f]", qui est lui aussi un recouvert par un nombre fini d'ouverts du recouvrement de départ (il est recouvert par le nombre fini d'ouverts qui recouvrent "[a, x]", plus l'ouvert qui recouvre "[c - d, c + d]").
 Donc, "e" appartient à "[a, x]", et "f" est donc plus petit ou égal à "c".
 Or, "f" est aussi égal au minimum entre "c + d" et "b".
-Comme "d" est strictement supérieur à "0", il ne peut pas être égal à "c + d" : il est obligatoirement égal à "b", et comme "c" est supérieur ou égal à "f" mais inclut dans "[a, b]", il est forcément égal à "f", et donc à "b".
+Comme "d" est strictement supérieur à "0", il ne peut pas être égal à "c + d" : il est obligatoirement égal à "b", et comme "c" est supérieur ou égal à "f" mais inclus dans "[a, b]", il est forcément égal à "f", et donc à "b".
 Donc, la partie du segment recouverte par une quantité finie d'ouvert est en fait tout le segment.
 </p>
 
@@ -401,7 +464,7 @@ On peut aussi définir une version de la limite utilisant une fonction allant d'
 En effet, <span class="important"><definition name="topological_limit"></span>.
 Nous pouvons aussi obtenir une définition équivalente avec les voisinages (conséquence du fait que si un ouvert contient un point, alors il est un voisinage de ce point).
 Effectivement, <span class="important"><definition name="topological_limit-neighbourhood"></span>.
-Cette définition peut aussi se reformuler en disant que, pour tout voisinage "U" de "l", il existe un voisinage "V" de "a" tel que "V" inter "D" est inclut dans l'image réciproque de "U".
+Cette définition peut aussi se reformuler en disant que, pour tout voisinage "U" de "l", il existe un voisinage "V" de "a" tel que "V" inter "D" est inclus dans l'image réciproque de "U".
 En fait, <span class="important">la fonction admet une limite "l" en "a" si l'on peut se rapprocher autant que l'on veut de "l" (se rapprocher via un voisinage) en faisant se rapprocher le paramètre de la fonction de "a" (toujours via un voisinage)</span>.
 Ici, l'intersection permet d'élargir la définition à des points "a" qui ne font pas partie de "D", mais qui sont sur sa frontière (comme par exemple pour la fonction réelle qui, à "x", associe "1/x²", où "0" n'est pas dans l'ensemble de définition, mais est dans sa frontière).
 </p>
@@ -525,7 +588,7 @@ Dans ce cas :
 <math><mforall> U <min> V(m), <mexists> T <min> V(a), <mforall> x <min> T \ {a}, f(x) <min> U</math>
 <p>
 Comme nous sommes dans un espace "T-2", il existe un voisinage de "m" qui ne contient pas un autre voisinage de "l", et vice-versa.
-Donc, il existe deux voisinages de "a", que nous nommerons "B" et "C", tel que l'image de "f(B)" est incluse dans un voisinage de "l" qui ne contient pas un voisinage de "m, tel que l'image de "f(C)" soit inclut dedans.
+Donc, il existe deux voisinages de "a", que nous nommerons "B" et "C", tel que l'image de "f(B)" est incluse dans un voisinage de "l" qui ne contient pas un voisinage de "m, tel que l'image de "f(C)" soit inclus dedans.
 Pour rappel, une propriété des voisinages en un point est que l'intersection de voisinages en ce point forme un nouveau voisinage en ce point.
 Donc, l'intersection de voisinages de "a" ("B" et "C") forme un nouveau voisinage de "a", que nous nommerons "D".
 </p>
@@ -536,6 +599,8 @@ Cependant, comme "B" admet pour image un ensemble inclu dans un voisinage de "l"
 Ici, nous avons donc une contradiction, et une de nos hypothèses de départ est fausse : notre fonction admet plusieurs limites en "a".
 Donc, <span class="important">toute fonction arrivant dans un espace séparé (espace "T-2") ne peut qu'admettre des limites uniques pour un point donné</span>.
 </p>
+
+
 
 <h3>La continuité topologique</h3>
 <p>
@@ -559,7 +624,7 @@ Par définition de la limite :
 </p>
 <math><mforall> V <min> V(f(a)), <mexists> W <min> V(a), <mforall> x <min> W \ {a}, f(x) <min> V</math>
 <p>
-Pour tout voisinage "V" de "f(a)", il existe un voisinage de "a" tel que l'image de ce voisinage sont inclut dans "V".
+Pour tout voisinage "V" de "f(a)", il existe un voisinage de "a" tel que l'image de ce voisinage sont inclus dans "V".
 Comme on sait que "f(a)" appartient à "V", alors on peut enlever le "\ {a}".
 </p>
 <math><mforall> V <min> V(f(a)), <mexists> W <min> V(a), <mforall> x <min> W, f(x) <min> V</math></br>
@@ -618,7 +683,7 @@ Déjà, on sait que "f(E)" peut être recouvert par des ouverts de "F", avec un 
 </p>
 <math><mforall> <mi>V</mi><msub>i</msub>, <munion><mi>V</mi><msub>k</msub> = f(E)</math>
 <p>
-Donc, on peut en déduire que "E" est inclut dans l'image réciproque de l'union de ces ouverts.
+Donc, on peut en déduire que "E" est inclus dans l'image réciproque de l'union de ces ouverts.
 </p>
 <math>E <mincluded> <mi>f</mi><msup>-1</msup>(<munion><mi>V</mi><msub>k</msub>)</math></br>
 <math>E <mincluded> <munion><mi>f</mi><msup>-1</msup>(<mi>V</mi><msub>k</msub>)</math>
@@ -645,6 +710,8 @@ L'exemple le plus simple est le groupe "(R, +)".
 Ici, les applications de type "(x, y)" vers "x + y" sont des additions, et sont donc continues, et l'application "x" vers "inverse de x" revient à multiplier "x" par "-1", ce qui est aussi continu.
 Nous pouvons aussi citer le groupe "(R*, *)", les applications de type "(x, y)" vers "x * y" sont des multiplications, et sont donc continues, et l'application "x" vers "inverse de x" revient à obtenir l'inverse de "x", ce qui est aussi continu.
 </p>
+
+
 
 <h3>Les homéomorphismes</h3>
 <p>

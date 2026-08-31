@@ -1035,7 +1035,8 @@ Les relations d'équivalences sont un type précis de relations mathématiques.
 En fait, <span class="important"><definition name="relation_equivalence"></span>.
 Tous ces termes ont déjà était présentés plus haut.
 D'ailleurs, comme une relation d'équivalence est réflexive et transitive, il s'agit d'un préordre.
-Rappelons quand même les bases : <span class="important">dans ce genre de relation, l'ordre des éléments n'importe pas, chaque élément est en relation avec lui même</span>.
+Rappelons quand même les bases : <span class="important">dans ce genre de relation, l'ordre des éléments n'importe pas et où chaque élément est en relation avec lui même</span>.
+Cependant, cette relation est symétrique, et pas antisymétrique : l'équivalence que l'on a vu pour les relations d'ordres avec "a ~ b ET b ~ a" équivaut à "a = b" n'est pas vérifiée dans ce cas.
 De plus (et c'est probablement la propriété la plus importante des relations d'équivalences) : </span class="important">si il existe une relation entre "a" et "b" et une relation entre "b" et "c", vous pouvez relier ces 3 éléments dans tous les sens possibles (puisque l'ordre n'importe pas)</span>.
 On peut d'ailleurs directement en déduire que, si l'on rajoute des éléments (1, comme 2, comme 100, comme une infinité), c'est la même chose.
 Généralement, pour représenter des relations d'équivalence, on utilise des diagrammes sagittaux (ici, ces diagrammes n'ont pas de flèches, mais de simples traits, puisqu'il n'y a pas d'ordre et que la relation est vraie dans les deux sens).
@@ -1084,8 +1085,9 @@ Généralement, pour représenter des relations d'équivalence, on utilise des d
 
 </graphic>
 <p>
-Une des utilités de ce concept est la liaison d'éléments par une propriété spécifique qu'ils respectent.
-En effet, <span class="important">si vous avez une propriété quelconque ("associant" à chaque objet de l'ensemble un autre objet précis), alors on peut lier les éléments qui ont la même valeur par cette propriété par une relation d'équivalence</span>.
+L'exemple le plus simple est (encore une fois) la relation d'égalité sur un ensemble "E".
+Une des utilités de ce concept est la liaison d'éléments par une propriété spécifique qu'ils respectent tous ensembles.
+En effet, <span class="important">si vous avez une propriété quelconque ("associant" à chaque objet de l'ensemble un autre objet précis d'un autre ensemble précis), alors on peut lier les éléments qui ont la même valeur par cette propriété par une relation d'équivalence</span>.
 Cette propriété peut être n'importe quoi, et être de n'importe quelle nature.
 Par exemple, on peut avoir une propriété "parité" sur "N", qui associe "0" aux éléments impairs et "1" aux éléments pairs, ou même une propriété chiffre des dizaines sur "N", qui associe le chiffre des dizaines à chaque nombre de "N".
 Ici, en considérant que nous notons le moyen d'obtenir la propriété de l'objet "x" comme "P(x)", et la relation "~" qui lie tous les objets de même valeur par cette propriété :
@@ -1118,9 +1120,10 @@ Plein d'autres propriétés peuvent marcher : "cardinal de l'ensemble", "nombres
 Dans un ensemble quelconque découpé par une relation d'équivalence, <span class="important">la propriété de transitivité permet de dire que, si un élément est reliable à un autre, alors il être reliés à tous les éléments reliables à cet autre objet (et vice-versa)</span>.
 Grâce à ça, nous pouvons définir un objet assez utile : les classes d'équivalences.
 <span class="important"><definition name="equivalence_class"></span>.
-Grâce à ce concept, on peut parler de l’entièreté des éléments possédant une propriété avec un seul objet, sans avoir à tous les citer, facilitant les démonstrations et les calculs.
-D'ailleurs, tous les éléments reliables à "x" peuvent le remplacer, mais n'en garder qu'un est bien plus simple (on choisit généralement le plus simple à utiliser).
-Ce genre de classe se note en entourant l'élément "x" avec des chevrons.
+Encore une fois, si l'on note cette objet "classe", c'est car si l'ensemble sur lequel on définit la relation est une classe, cet objet est une classe (mais dans un ensemble, cet objet est bel et bien un ensemble).
+Grâce à ce concept, on peut parler de l’entièreté des éléments possédant une propriété similaire entre eux, sans avoir à tous les citer, facilitant les démonstrations et les calculs.
+D'ailleurs, tous les éléments dans la classe d'équivalence de "x" par une relation d'équivalence peuvent le remplacer quand on l'utilise par uniquement le prisme de la relation (et donc, possiblement de la propriété qu'elle étudie).
+Ce genre de classe se note en entourant un élément quelconque de la classe (qui peut être n'importe lequel, et où l'on prend généralement le plus simple) avec des chevrons.
 </p>
 <math>a <min> [x] <mequi> a ~ x</math>
 <p>
@@ -1179,11 +1182,19 @@ On peut aussi facilement les visualiser dans notre diagramme sagittal de tout à
 
 </graphic>
 <p>
+D'ailleurs, <span class="important">l'ensemble des classes d'équivalences forme une partition de l'ensemble sur lequel la relation est</span>.
+En effet, tout élément se situe dans au moins une classe, puisqu'il est lié à lui même (et donc, l'union de toutes les classes donne bel et bien tout l'ensemble).
+De plus, si nous avons deux classes différentes quelconques, par définition, aucun élément de la première classe n'est lié à un élément de la seconde : elles sont donc disjointes, et l'ensemble des classes d'équivalence est donc bien une partition.
+À l'inverse, <span class="important">si nous avons une partition quelconque de l'ensemble, on peut définir une relation telle que chaque élément de l'ensemble est lié à tous les éléments de la partie auquel il appartient dans la partition (et à lui-même aussi)</span>.
+Dans ce cas, la réflexivité, la symétrie et la transitivité sont immédiates.
+</p>
+<p>
 Cet outil nous permet de définir une nouvelle opération pour les ensembles : le quotient d'ensemble.
 <span class="important"><definition name="quotient_set"></span>.
 En d'autres termes, il s'agit d'une découpe d'un ensemble selon toutes les valeurs possibles d'une de ces propriétés.
 D'un point de vue très rigoureux, <span class="important">comme les classes d'équivalences sont des parties de "E", tout ensemble quotient est un sous-ensemble de l'ensemble des parties de "E"</span>.
-Nous l'utiliserons énormément pour définir des objets mathématiques (même très simples et intuitifs).
+En fait, <span class="important">l'idée principale de ce concept est que si la relation d'équivalence permet de dire que tous les objets d'une classe se comportent de manière parfaitement similaire dans un certain contexte, on peut définir ce comportement sur la classe entière, et utiliser l'ensemble quotient comme un ensemble d'éléments ayant des comportements strictement différents dans ces contextes</span>.
+Nous l'utiliserons énormément pour définir des objets mathématiques (même très simples et intuitifs, comme les nombres décimaux ou les nombres rationnels).
 Cette notation utilise le symbôle "/".
 Par exemple, pour un ensemble "E" quotienté par une relation d'équivalence "~", l'ensemble quotient "F" est noté :
 </p>
@@ -1198,6 +1209,8 @@ Par exemple, pour un ensemble "E" quotienté par une relation d'équivalence "~"
 
 
 <h2>Les applications mathématiques</h2>
+
+
 
 <h3>Qu'est ce qu'est une application mathématique ?</h3>
 <p>
@@ -1640,7 +1653,7 @@ Ici, la définition logique pure est très simple :
 Le dernier type est donc la bijection.
 <span class="important"><definition name="bijection"></span>.
 D'un point de vue rigoureux, la définition d'une bijection mélange donc celle de l'injection et celle de la surjection.
-D'ailleurs, cette définition est équivalente à dire que chaque élément de départ a un antécédent, et chaque élément d'arrivée a une image (<a href="demo">démontré juste ici</a>).
+D'ailleurs, cette définition est équivalente à dire que chaque élément de départ a un antécédent, et chaque élément d'arrivée a une image (<a href="demo#1_1_1_1">démontré juste ici</a>).
 </p>
 <graphic>
 <background_color white>
@@ -1676,6 +1689,7 @@ Ici, il existe une notation pour noter l'ensemble des bijections entre un ensemb
 </p>
 <math>Bij(A, B)</math>
 <p>
+Il est d'ailleurs à noter qu'une composition de deux bijections (de "E" vers "F" et de "F" vers "G") donne une nouvelle bijection, de "E" vers "G" (<a href="demo#1_1_1_2">démontré ici</a>).
 La bijection la plus simple définissable est la bijection identité.
 En fait, <span class="important"><definition name="bijection-identity"></span>.
 Généralement, pour un ensemble "E" donné, l'application identité sur "E" est notée "Id indice E".
@@ -1723,7 +1737,7 @@ En fait, pour une application "f", son application réciproque (généralement n
 <p>
 Attention : il ne faut pas confondre cette notation avec la notation de l'image réciproque vue plus haut (bien qu'elles soient parfaitement égales).
 Il existe d'ailleurs beaucoup d'applications qui ne possèdent pas d'application réciproque.
-L'introduction de ce concept précis à cet endroit n'est pas un hasard : <span class="important">dire qu'une application admet une application réciproque équivaut à dire que cette application est bijective</span> (<a href="demo">démontré ici</a>).
+L'introduction de ce concept précis à cet endroit n'est pas un hasard : <span class="important">dire qu'une application admet une application réciproque équivaut à dire que cette application est bijective</span> (<a href="demo#1_1_1_3">démontré ici</a>).
 Cela est très facile à illustrer :
 </p>
 <graphic ratio_base>
@@ -1790,84 +1804,46 @@ Cela est très facile à illustrer :
 <text x=-26/2 y=0 content="h =" font_size_in_scale=3/2></text>
 <text x=5/2 y=0 content="=" font_size_in_scale=3/2></text>
 </graphic>
-
-
-
-
-
-
-
-
-
-<p>
-Il est d'ailleurs à noter qu'une composition de deux bijections (de "E" vers "F" et de "F" vers "G") donne une nouvelle bijection, de "E" vers "G" (<a href="demo">démontré ici</a>).
-Dans un ensemble "E", il existe une bijection (allant de "E" vers "E") qui, à chaque élément "x" de "E", lui associe... "x" (et donc, qui ne représente pas une modification de l'ensemble à proprement parlé) : <span class="important">cette bijection est nommée application identité de "E"</span>.
-On l'a note généralement avec les deux lettres "Id", et avec l'ensemble "E" en indice.
-Toute seule, elle ne sert pas à grand chose, mais elle peut être utile pour exprimer formes précises, où l'on veut faire transparaître qu'une forme n'apporte pas de modifications à un ensemble.
-Par exemple, <span class="important">si la composition d'une application "f et d'une autre application "g" donne l'identité, alors "g" est nommée l'application réciproque de "f"</span>.
-Là est une propriété intéressante : si une application est la réciproque d'une autre, alors elle "annule" l'application de départ (par la composition).
-Cela permet une autre définition équivalente des bijections : <span class="important">toute bijection admet une application réciproque (elle aussi une bijection), et tout application qui admet une application réciproque est une bijection</span> (<a href="demo">démontré juste ici</a>)..
-Voici la définition (et une illustration) de l'application identité :
-</p>
-<math><mi>Id</mi><msub>E</msub> : E <mto> E, x <mto> x</math></br>
-<graphic>
-<background_color white>
-<base draw=0>
-
-<circle x=-2 y=0 radius_x=3/2 radius_y=4>
-<text x=-2 y=2 content="0"></text>
-<text x=-2 y=1 content="1"></text>
-<text x=-2 y=0 content="2"></text>
-<text x=-2 y=-1 content="3"></text>
-<text x=-2 y=-2 content="4"></text>
-
-<circle x=2 y=0 radius_x=3/2 radius_y=4>
-<text x=2 y=2 content="0"></text>
-<text x=2 y=1 content="1"></text>
-<text x=2 y=0 content="2"></text>
-<text x=2 y=-1 content="3"></text>
-<text x=2 y=-2 content="4"></text>
-
-<line x_1=-3/2 y_1=2 x_2=3/2 y_2=2 color=black>
-<line x_1=-3/2 y_1=1 x_2=3/2 y_2=1 color=black>
-<line x_1=-3/2 y_1=0 x_2=3/2 y_2=0 color=black>
-<line x_1=-3/2 y_1=-1 x_2=3/2 y_2=-1 color=black>
-<line x_1=-3/2 y_1=-2 x_2=3/2 y_2=-2 color=black>
-</graphic>
-<p>
-En tout, <span class="important">il existe "n!" bijections différentes ("n!" est un nombre précis, que nous définirons plus tard pour tous ceux qui ne le connaissent pas)</span>.
-D'ailleurs, il existe des ensembles pour lesquelles il ne peut pas exister de bijections entre eux, par exemple si ils ont une taille différente.
-Cependant, <span class="important">si il existe une bijection entre deux ensembles "E" et "F", ces ensembles sont dit équipotents</span>.
-</p>
 <p>
 Un type assez utile de bijection est la permutation.
 <span class="important"><definition name="permutation"></span>.
-En effet, dans ce cas, on peut la représenter comme un réarrangement des éléments de l'ensemble, ce qui est généralement le cas des objets "permutations" dans le langage courant.
-D'ailleurs, <span class="important">l'application identité sur "E" est une permutation sur "E"</span>.
+En effet, dans ce cas, en considérant un ordre précis pour les éléments dans l'ensemble, on peut la représenter comme un "réarrangement" des éléments de l'ensemble, ce qui est généralement le cas des objets "permutations" dans le langage courant.
+D'ailleurs, <span class="important">l'application identité sur "E" est une permutation sur "E" (qui "n'échange" aucun élément de l'ensemble)</span>.
 Il s'agit en fait de la permutation... qui ne modifie aucun élément de "E" (dans le langage courant, il ne s'agirait plus d'une permutation, mais en mathématique, cela en reste une, car la définition est toujours respectée).
 </p>
 <math><mi>Id</mi><msub>E</msub> : E <mto> E, x <mto> x</math>
 <p>
-Généralement, la notation d'une permutation dans un ensemble fini de taille "n" représente la façon dont les éléments sont échangés.
-En fait, <span class="important">on les note sous la forme de deux objets l'un sur l'autre, où l'objet dans haut représente un numéro pour chaque élément de l'ensemble, et l'objet dans bas représente le nouvel arrangement de l'objet après le passage de la permutation</span>.
-Il est fortement conseillé de noter les premiers éléments de "1" à "n" si possible, pour des raisons de simplicité.
+Généralement, la notation d'une permutation dans un ensemble fini de taille "n" est faite pour représenter la façon dont les éléments sont échangés.
+En fait, <span class="important">on les note sous la forme de deux "uplets" l'un sur l'autre, notés de tel manière que chaque élément du premier uplet est directement au dessus d'un élément du second uplet</span>.
+L'idée, <span class="important">c'est de dire que la permutation va lier un élémént du premier uplet à l'élément du deuxième uplet juste en dessous, pour tous les éléments du premier uplet</span>.
+Ici, l'ordre des éléments dans le uplet peut être n'importe quoi, et n'influe pas sur la notation (cela marche même si il n'y a pas de relation permettant de définir cet ordre sur l'ensemble).
+Il est fortement conseillé de noter les premiers éléments de "1" à "n" si possible (voir d'associer un nombre de "1" à "n" pour chaque élément de l'ensemble), pour des raisons de simplicité.
 </p>
-<math><mtable><mtd><mi>(1, 2, 3, 4, 5)</mi></mtd><mtd><mi>(4, 2, 5, 1, 3)</mi></mtd></mtable></math>
+<math><mrow><mtable><mtr><mtd><mi>(1, 2, 3, 4, 5)</mi></mtd></mtr><mtr><mtd><mi>(4, 2, 5, 1, 3)</mi></mtd></mtr></mtable></mrow></math>
 <p>
 Il existe cependant une autre notation, plus courte mais un peu plus complexe, dite "notation canonique".
-En fait, <span class="important">cette notation consiste à noter un élément, puis à noter à sa droite l'élément auquel la permutation le permute, et faire de même avec cet élément (en prenant l'élément de même nombre dans l'ensemble de départ) jusqu'à retomber sur l'élément de départ</span>.
+En fait, <span class="important">la notation canonique consiste à noter un élément, puis à noter à sa droite l'élément auquel notre premier élément est lié, et faire de même avec cet élément jusqu'à retomber sur l'élément de départ (tout ça entre parenthèses, et généralement pas espacés d'un quelconque symbole)</span>.
 Cependant, il est possible que des éléments soit ignorés, si ils ne permutent pas avec un élément de départ, ou avec un des éléments suivants.
 Dans ce cas, <span class="important">on refait cela avec les éléments manquant jusqu'à qu'il n'en manque plus, en séparant chaque itération par des parenthèses</span>.
 Voici un exemple avec une permutation simple :
 </p>
-<math><mtable><mtd><mi>(1, 2, 3, 4, 5)</mi></mtd><mtd><mi>(1, 2, 5, 3, 4)</mi></mtd></mtable> = (3 5 4)</math>
+<math><mrow><mtable><mtr><mtd><mi>(1, 2, 3, 4, 5)</mi></mtd></mtr><mtr><mtd><mi>(2, 1, 5, 3, 4)</mi></mtd></mtr></mtable></mrow> = (1 2)(3 5 4)</math>
 <p>
 La forme la plus simple de permutation est la transposition.
 <span class="important"><definition name="permutation-transposition"></span>.
-Ces permutations peuvent s'écrire avec notre nouvelle notation avec seulement deux indices : ceux que l'on échange.
+Ces permutations peuvent s'écrire avec notre nouvelle notation avec seulement deux valeurs : celles que l'on lie / "échange".
 Dans le cas où l'on transpose "3" et "5", on note ceci :
 </p>
-<math><mtable><mtd><mi>(1, 2, 3, 4, 5)</mi></mtd><mtd><mi>(1, 2, 5, 4, 3)</mi></mtd></mtable> = (3 5)</math>
+<math><mrow><mtable><mtr><mtd><mi>(1, 2, 3, 4, 5)</mi></mtd></mtr><mtr><mtd><mi>(1, 2, 5, 4, 3)</mi></mtd></mtr></mtable></mrow> = (3 5)</math>
+
+
+
+
+
+
+
+
+
 <p>
 Ces transpositions permettent quelque chose d'extraordinaire : <span class="important">toute permutation est une composition de transpositions quelconques</span> (<a href="demo">démontré ici par récurrence</a>).
 Donc, on peut décomposer n'importe quelle permutation par une suite de transpositions quelconques.
@@ -1941,3 +1917,121 @@ Donc, un multigraphe de ce genre est parfaitement licite :
 <text x=2 y=-7/2>Angleterre</text>
 <text x=-3 y=-7/2>Italie</text>
 </graphic>
+
+
+
+<h3>Les suites, familles et matrices en mathématiques</h3>
+<p>
+Une des façons de représenter des applications représente la famille mathématique.
+En mathématiques, <span class="important"><definition name="family"></span>.
+Pour cela, la terminologie est très précise : si vous notez votre familel (qui est donc une application) "f", l'image d'un élément "a" de l'ensemble de départ "f" se note d'une manière bien précise : "f indice a".
+</p>
+<math>f(a) = <mi>f</mi><msub>a</msub></math>
+<p>
+Donc, pour une famille étant une application allant de "A" dans "B", <span class="important">on peut donc accéder à des éléments de "B" grâce à des éléments de "A"</span>.
+Ici, <span class="important">l'ensemble de départ de l'application est nommé ensemble des indices de la famille</span>.
+Ce simple formalisme est utilisée dans énormément de définitions en mathématiques.
+Il existe d'ailleurs une autre notation pour représenter la famille (et donc l'application) en elle même : mettre "f indice a" entre parenthèse, et noter à droite en indice "a appartenant à A"
+</p>
+<math>(<mi>f</mi><msub>a</msub>)<msub><mrow>a <min> A</mrow></msub></math>
+<p>
+Le type de famille le plus utilisé est la suite mathématique.
+<span class="important"><definition name="sequence"></span>.
+Si ce sous-ensemble est finie, on parle de suite finie (sinon, on parle de suite infinie).
+Il s'agit donc (littéralement) d'une suite d'éléments quelconques.
+</p>
+<math>A <mincluded> N, u : A <mto> N</math>
+<p>
+Le suites possèdent donc l'exacte même notation que les familles.
+Par exemple, l'image pour une suite "u" du nombre "n" s'écrit "u indice n" :
+</p>
+<math>u(n) = <mi>u</mi><msub>n</msub></math></br>
+<math>(<mi>u</mi><msub>n</msub>)<msub><mrow>n <min> A</mrow></msub></math>
+<p>
+D'ailleurs, <span class="important">on peut noter directement une suite comme une sorte de "uplet" (et donc, comme un ensemble où l'ordre des éléments dans l'écriture compte)</span>.
+Pour cela, on note les images entre parenthèses, tel que l'image du "premier" élément de "A" soit à la première place, l'image du "deuxième" élément de "A" soit à la deuxième place...
+Ceci est possible grâce à la relation d'ordre "inférieur ou égal" possible sur "N", qui permet d'ordonner "N" (et aussi, toutes ces sous-parties), et donc d'ordonner les images de la suite.
+</p>
+<math>(<mi>u</mi><msub>n</msub>)<msub><mrow>n <min> A</mrow></msub> = (0, 1, 0, 0, 1, 0, 0, 0, 1, 0, ...)</math>
+<p>
+Généralement, au lycée, le terme "suite" désigne des suites de nombres réels.
+Cependant, <span class="important">il faut bien comprendre qu'une suite peut comporter des éléments de n'importe quel ensemble possible</span>.
+Il peut donc théoriquement exister des suites d'ensembles, d'applications, d'opérations...
+</p>
+<p>
+Parlons finalement d'un autre type de famille : les matrices.
+Il y a deux définitions : la définition intuitive et la définition rigoureuse.
+D'un point de vue intuitif, <span class="important"><definition name="matrix"></span>.
+D'un point de vue rigoureux, <span class="important"><definition name="matrix-rigorous"></span>.
+Ici, la matrice sera dite "de type (I, J)".
+Comme cette famille est indexée par une produit cartésien, on peut utiliser la notaion "tableau" du produit cartésien, pour noter la matrice.
+En fait, dans les cases du tableau formé par le produit cartésien, à la place de mettre les couples, on met l'élément d'indice le couple qui devrait être à cette case (d'où la notation tableau).
+On peut par exemple imaginer une matrice quelconque :
+</p>
+<table>
+
+<case_plus x=1 y=0 background_color=light_green>a</case_plus>
+<case_plus x=2 y=0 background_color=light_green>b</case_plus>
+<case_plus x=3 y=0 background_color=light_green>c</case_plus>
+<case_plus x=4 y=0 background_color=light_green>d</case_plus>
+
+<case_plus x=0 y=1 background_color=light_blue>u</case_plus>
+<case_plus x=0 y=2 background_color=light_blue>v</case_plus>
+<case_plus x=0 y=3 background_color=light_blue>w</case_plus>
+<case_plus x=0 y=4 background_color=light_blue>x</case_plus>
+
+<case_plus x=1 y=1 background_color=yellow>1</case_plus>
+<case_plus x=2 y=1 background_color=yellow>4</case_plus>
+<case_plus x=3 y=1 background_color=yellow>2</case_plus>
+<case_plus x=4 y=1 background_color=yellow>3</case_plus>
+
+<case_plus x=1 y=2 background_color=yellow>7</case_plus>
+<case_plus x=2 y=2 background_color=yellow>0</case_plus>
+<case_plus x=3 y=2 background_color=yellow>1</case_plus>
+<case_plus x=4 y=2 background_color=yellow>2</case_plus>
+
+<case_plus x=1 y=3 background_color=yellow>3</case_plus>
+<case_plus x=2 y=3 background_color=yellow>8</case_plus>
+<case_plus x=3 y=3 background_color=yellow>7</case_plus>
+<case_plus x=4 y=3 background_color=yellow>5</case_plus>
+
+<case_plus x=1 y=4 background_color=yellow>8</case_plus>
+<case_plus x=2 y=4 background_color=yellow>6</case_plus>
+<case_plus x=3 y=4 background_color=yellow>3</case_plus>
+<case_plus x=4 y=4 background_color=yellow>6</case_plus>
+
+</table>
+<p>
+<span class="important">Les matrices ont donc l'exacte même terminologie que les familles</span>.
+Si nous nommons notre matrice vue plus haut "M" (une matrice se note généralement en majuscule), on utilise généralement la notation des familles avec le nom de la matrice en minuscule (par convention).
+De plus, <span class="important">nous devrions noter en indice le couple associé à l'élément de la matrice que nous voulons désigner</span>.
+Comme dans tous les produits cartésiens, le couple se constitue donc d'un élément de l'ensemble à gauche, puis d'un élément de l'ensemble en haut.
+On peut donc noter :
+</p>
+<math><mi>m</mi><msub>(u, b)</msub> = 4</math></br>
+<math><mi>m</mi><msub>(w, a)</msub> = 3</math></br>
+<math><mi>m</mi><msub>(u, c)</msub> = 2</math></br>
+<math><mi>m</mi><msub>(x, d)</msub> = 6</math></br>
+<p>
+Très très souvent, <span class="important">"I" et "J" sont finis, de taille "m" et "n", et représentent les ensembles de nombres "I = {1, 2, ..., m}" et "J = {1, 2, ..., n}"</span>.
+D'ailleurs, très souvent, la définition avec l'application n'est pas utilisée.
+Dans ce genre de matrice, en utilisant la notation "tableau" avec les éléments dans "I" et "J" dans l'ordre usuel, <span class="important">on peut ignorer la partie du tableau où l'on spécifie "I" et "J", et un élément d'une matrice "A" à la ligne "y" et à la colonne "x" se note "A indice (y, x)"</span>.
+L'ordre est important : ligne, puis colonne.
+On peut donc définir une matrice de cette façon :
+</p>
+<math>A = <mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd><mtd><mi>2</mi></mtd></mtr><mtr><mtd><mi>3</mi></mtd><mtd><mi>4</mi></mtd></mtr></mtable><mo>]</mo></mrow></math>
+<p>
+On peut facilement noter toutes les valeurs de "A" (encore une fois, avec la lettre "A" en minuscule).
+</p>
+<math><mi>a</mi><msub>1, 1</msub> = 1</math></br>
+<math><mi>a</mi><msub>1, 2</msub> = 2</math></br>
+<math><mi>a</mi><msub>2, 1</msub> = 3</math></br>
+<math><mi>a</mi><msub>2, 2</msub> = 4</math>
+<p>
+Dans ce genre de matrice, <span class="important">le couple "(m, n)" utilisé pour le type de la matrice est nommée la dimension (ou la taille) de la matrice</span>.
+On peut aussi dire que "m" est la hauteur de la matrice, et "n" sa longueur.
+Ici, si une matrice est de dimension "(m, 1)", elle représente une colonne, et est appelée matrice colonne.
+À l'inverse, si une matrice est de dimension "(1, n)", elle représente une ligne, et est appelée matrice ligne.
+</p>
+<math>C = <mrow><mo>[</mo><mtable><mtr><mtd><mi>4</mi></mtd></mtr><mtr><mtd><mi>5</mi></mtd></mtr></mtable><mo>]</mo></mrow></math></br>
+<math>L = <mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd><mtd><mi>8</mi></mtd></mtr></mtable><mo>]</mo></mrow></math>

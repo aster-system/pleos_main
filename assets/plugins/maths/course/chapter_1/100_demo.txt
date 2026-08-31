@@ -290,6 +290,29 @@ Par double implication, on conclut donc que le fait qu'une application mathémat
 
 <h4>1.1.1.2</h4>
 <p>
+Prouvons qu'une bijection de bijection donne... une bijection.
+Définissons trois applications différentes.
+</p>
+<math>f : E <mto> F, x <mto> f(x)</math></br>
+<math>g : F <mto> G, x <mto> g(x)</math>
+<math>h : E <mto> G, x <mto> g(f(x))</math>
+<p>
+Supposons "f" et "g" bijectives.
+</p>
+<math><mforall> a <min> F, <mexists>! y <min> E, f(a) = y</math></br>
+<math><mforall> b <min> G, <mexists>! z <min> F, g(b) = z</math>
+<p>
+Donc, pour chaque "z" appartenant à "F", il existe un "y" appartenant à "E" tel que "f(y) = z".
+Donc :
+</p>
+<math><mforall> b <min> G, <mexists>! y <min> E, f(g(y)) = z <mequi> h(x) = z</math>
+<p>
+Or, cela représente exactement la définition d'une bijection.
+Donc, "h" est aussi une bijection, de "E" vers "G".
+</p>
+
+<h4>1.1.1.3</h4>
+<p>
 Démontrons que une application mathématique où tous les éléments de l'ensemble de d'arrivée sont reliés à exactement 1 objet équivaut à dire que l'application admet une application réciproque.
 Définissons notre application.
 </p>
@@ -328,29 +351,6 @@ D'ailleurs, si l'on fait une disjonction de cas, on peut remarquer que la deuxi�
 <math><mequi>f(g(z)) = z <mand> g(f(x)) = x</math>
 <p>
 Donc, dire que "f" est bijective équivaut à dire que cette application "g" est l'application réciproque de "f".
-</p>
-
-<h4>1.1.1.3</h4>
-<p>
-Prouvons qu'une bijection de bijection donne... une bijection.
-Définissons trois applications différentes.
-</p>
-<math>f : E <mto> F, x <mto> f(x)</math></br>
-<math>g : F <mto> G, x <mto> g(x)</math>
-<math>h : E <mto> G, x <mto> g(f(x))</math>
-<p>
-Supposons "f" et "g" bijectives.
-</p>
-<math><mforall> a <min> F, <mexists>! y <min> E, f(a) = y</math></br>
-<math><mforall> b <min> G, <mexists>! z <min> F, g(b) = z</math>
-<p>
-Donc, pour chaque "z" appartenant à "F", il existe un "y" appartenant à "E" tel que "f(y) = z".
-Donc :
-</p>
-<math><mforall> b <min> G, <mexists>! y <min> E, f(g(y)) = z <mequi> h(x) = z</math>
-<p>
-Or, cela représente exactement la définition d'une bijection.
-Donc, "h" est aussi une bijection, de "E" vers "G".
 </p>
 
 <h4>1.1.1.4</h4>

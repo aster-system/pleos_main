@@ -92,7 +92,8 @@ Nous voyons sur cette image un détail un peu différent, qui est pourtant très
 Pour cette première partie, les moteurs sont découpés en 2 : la tuyère, et... le reste.
 En réalité, un moteur est d'une extrême complexité à faire, et une très grande partie de cette complexité se situe dans la partie "le reste".
 Cependant, dans un modèle 3D de ce genre, la partie extrêmement complexe n'est pas obligatoire, nous l'avons donc ignoré.
-Nous avons aussi rajouter un système de flamme.
+Nous avons aussi rajouter un système de flamme, actif si le moteur est actif.
+Cependant, dans l'espace, les propriétés de l'espace font que un moteur n'est pas sensé avoir de flemme : ceci à été ignoré, et la flemme a été gardée pour des raisons d'esthétique et de tests.
 Ici, le premier étage de la fusée a 5 moteurs de type "F1", le deuxième étage 5 moteurs de type "J2", et le troisième étage 1 moteur "J2".
 Au décollage, les moteurs du deuxième et du troisième étage sont protégés par les parties inter-étages de la fusée.
 </p>
@@ -102,10 +103,23 @@ En suite, nous avons dû faire les modules comportant (dans la vraie vie) les as
 Ils sont au nombre de 3 : un module de commande (l'endroit où les astronautes sont pendant le trajet et commandent le tout), un module de service (apportant les services nécessaires aux astronautes pour... survivire) et un module lunaire (module permettant aux astronautes de se poser sur la Lune et d'en revenir).
 Comme pour les réservoirs de la Saturn V, le module de commande et le module de service sont très simple à faire : le module de service n'est qu'un gros cylindre avec quelques détails (généralement inutiles) et un moteur, et le module de service n'est qu'une cône.
 </p>
-<img alt="Saturn V en vol" src="../images/lunar_mission/command_and_service_module.png" height=300>
+<img alt="Module de commande et module de service" src="../images/lunar_mission/command_and_service_module.png" height=300>
 <p>
-Par contre, pour le module lunaire (généralement appelé "LEM"), c'est plus compliqué.
+Cependant, il y a quelque détails à ajouter sur le module de commande.
+Le module de commande est équipé d'un bouclier thermique sur sa partie basse, pour résister à l'entrée atmosphérique sur Terre.
+En plus, le module de commande est équipé d'un parachute, permettant d'atterrir sur Terre sans s'écraser.
 </p>
+<img alt="Module de commande sous parachute" src="../images/lunar_mission/command_module_with_parachute.png" height=300>
+<p>
+Par contre, pour le module lunaire (généralement appelé "LEM" pour "Lunar Excursion Module"), c'est plus compliqué.
+En effet, le module lunaire a une forme assez complexe, qu'il est très difficile de reproduire à la perfection.
+Pour cette première partie du projet, il a été préféré de rendre le module plus simple que dans la vraie vie, en reprenant les cependant des formes extrêmement similaires au module dans la vraie vie.
+Il est découpé en 2 parties : le module de descente (en bas) et le module de remonté (en haut).
+Pour le module de descente, on réalise seulement l'octogone, le moteur de la partie (pour descendre sur la Lune) et les pieds (pour se poser sur la Lune).
+Pour le module de remonté, on réalise la partie où les astronautes sont situés, les réservoirs d'oxygène / de carburant sur le côté, le bloc central et le moteur de remonté.
+La texture est (encore une fois) une copie de la texture dans la vraie vie du LEM.
+</p>
+<img alt="Module lunaire au sol" src="../images/lunar_mission/lunar_module.png" height=300>
 <p>
 Il manque un dernier détail : au décollage, si la fusée a un problème il est préférable d'évacuer les astronautes à une vitesse... extrêmement élevée.
 Pour cela, un système est équipé sur la fusée : la tour de sauvetage.
@@ -155,3 +169,82 @@ Avec cet angle, le lanceur va accélérer de telle manière que sa trajectoire v
 La poussée s'arrête quand l'orbite atteinte est circulaire.
 Théoriquement, l'altitude maximale de la trajectoire complète du lanceur inculquée par la deuxième phase est (à quelques kilomètres près) la même que l'altitude de l'orbite circulaire.
 </p>
+<p>
+La prochaine étape est la poussée permettant aux modules d'atteindre la Lune, nommée "injection trans-lunaire".
+Cette poussée est réalisée avec le moteur du troisième étage de la Saturn V.
+Pour cela, l'idée est assez simple : poussé dans la direction de la trajectoire jusqu'à atteindre une vitesse suffisante pour atteindre la Lune (un peu plus de 10kms/s).
+Bien que le calcul rigoureux de cette poussée est assez complexe, la poussée seule suffit à atteindre la Lune.
+Ici, les données intéressantes à prendre en compte sont : le moment précis de l'injection, la vitesse à atteindre, le moment où l'on va croiser la Lune et la trajectoire à conserver.
+Cependant, pendant le transfert vers la Lune, il n'y a rien d'autre à prendre en compte : on a juste à attendre la prochaine étape.
+</p>
+<img alt="Injection trans-lunaire" src="../images/lunar_mission/translunar_injection.png" height=300>
+<p>
+En suite, nous devons procéder au largage du troisième étage de la Saturn V.
+Or, ce largage est... bien plus complexe que les autres largages.
+En fait, le module lunaire est stationné au décollage sous le module de service et le module de commande.
+Or, le module lunaire doit être atteler (pour le trajet) au dessus du module de commande : il faut donc faire une manœuvre pour se mettre dans la bonne position.
+Après l'injection trans-lunaire, le module de commande et le module de service va se détacher du troisième étage, et s'éloigner de quelques mètres.
+Il va en suite faire un backflip de 180°, pour se mettre en face du module lunaire.
+Pendant ce temps, la coiffe protégeant le module lunaire va être éjectée, laissant le module lunaire à l'espace libre.
+Le duo module de commande - module de service va en suite se rapprocher, puis s'atteler au module lunaire pour se mettre dans la bonne position.
+Finalement, le troisième étage (seulement attaché au module lunaire ici) est largué, et le transfert commence vraiment.
+</p>
+<img alt="Séparation du troisième étage" src="../images/lunar_mission/third_stage_separation.png" height=300>
+<p>
+L'étape suivante est la mise en orbite des modules autour de la Lune.
+Ici, c'est le moteur du module de service qui va procéder à cette poussée.
+Pour cela, l'idée est d'atteindre le point le plus proche de la Lune, et de pousser dans le sens inverse de la trajectoire pour atteindre une orbite permettant de finaliser la mise en orbite.
+Encore une fois, le temps de poussé et la trajectoire est très importante pour ne pas se cracher, ou aller n'importe où.
+Dans la simulation, il y a besoin de deux poussées : une pour se mettre sur une orbite entre 800kms et 2000kms de la Lune, et une autre pour se stabiliser à moins de 1000kms de la Lune.
+Dans la vraie vie, la trajectoire a été un peu mieux optimisé, ce qui n'a permit de se limiter qu'à une seule poussé (un peu plus courte que la somme des durées des deux poussées nécessaires dans la simulation.)
+Au final, l'orbite atteinte est assez instable, mais suffisante pour la mission lunaire.
+</p>
+<img alt="Mise en orbite des deux modules" src="../images/lunar_mission/lunar_orbit.png" height=300>
+<p>
+L'étape d'après (peut être la plus importante) est l'alunissage.
+L'idée est de passer (avec le LEM) de l'orbite lunaire à la surface de la Lune.
+Pour cela, il y a trois manœuvres à réaliser.
+Premièrement, le LEM va se séparer du module de commande.
+Cela va arriver quand le LEM sera (a peu prés) aligné avec la Terre et la Lune (très précisément, la Lune sera entre le LEM et la Terre).
+Un peu après, il va d'ailleurs faire une très légère poussée permettant d'avoir une trajectoire de plus en plus éloignée de la trajectoire du module de commande.
+La deuxième manœuvre est une poussée bien plus longue et intense, qui va permettre de passer de l'orbite lunaire à une orbite de rencontre avec la Lune.
+Cela va arriver quand le LEM aura avancé sur sa trajectoire d'une vingtaine de degrés (comparé à la Lune).
+En suite, si tout se passe bien, le LEM va se rapprocher petit à petit de la Lune.
+Il pourra ensuite entamer la troisième manœuvre : une poussée en direction de la trajectoire (relativement à la Lune), permettant de s'y poser de manière très réaliste.
+Si les angles sont respectés, le LEM se posera sur la Lune de telle manière qu'il verra la Terre vers le milieu de son champ de vision (et donc, que la Terre, le LEM et la Lune seront alignés, de telle manière que le LEM se situera "entre" la Terre et la Lune).
+</p>
+<img alt="LEM sur la Lune" src="../images/lunar_mission/lunar_module_on_the_moon.png" height=300>
+<p>
+À partir de là, le reste de la mission va consister à retourner sur terre.
+La première étape de ce retour est le décollage vers la Lune, après un peu plus d'une heure sur la Lune.
+Ici, seule le module d’ascension va partir de la Lune, et le module de descente va rester sur la Lune (et servir de pas de tir).
+Pour commencer, nous allons procéder à une mise en orbite classique, comme avec la Saturn V sur Terre, en procédant à notre algorithme naïf vue plus haut.
+</p>
+<img alt="LEM sur la Lune" src="../images/lunar_mission/lunar_module_liftoff.png" height=300>
+<p>
+La prochaine étape est le rendez-vous orbital entre le LEM en orbite basse lunaire et le module de commande, toujours en orbite lunaire.
+Pour réussir à bien faire ce rendez-vous, il faut un timing impeccable, car quelques secondes d'erreurs peuvent provoquer des erreurs de plus kilomètres.
+On peut d'ailleurs facilement visualiser la trajectoire des deux modules sur un schéma.
+Ici, la ligne bleue représente la trajectoire du LEM, la ligne rouge représente la trajectoire du module de commande, le point rouge représente le périlune du module de commande et le point vers représente le point de rendez-vous.
+</p>
+<img alt="LEM sur la Lune" src="../images/lunar_mission/lunar_module_trajectory.png" height=300>
+<p>
+Dés que le LEM arrive au point vert, il va procéder à une poussée permettant d'avoir une vitesse similaire au module de commande.
+Après cette poussée, les deux modules seront espacés de à peu prés 30 kilomètres, avec une différence de vitesse d'environ 20m/s.
+En attendant un peu, on arrivera au point où les deux vaisseaux seront les plus proches : 5 kilomètres avec une différence de vitesse d'environ 11m/s.
+Ici, le LEM va ajuster sa vitesse, pour rejoindre le module de commande, et s'y amarrer après quelques minutes de manœuvres.
+</p>
+<img alt="LEM sur la Lune" src="../images/lunar_mission/lunar_module_command_module_rendez_vous.png" height=300>
+<p>
+Cette étape ne va pas durer longtemps, puisque le module lunaire va se désamarrer du module de commande dans la foulée, puisqu'il ne reviendra pas sur Terre.
+Le module de service va ensuite entamer une poussée, permettant de quitter l'orbite lunaire pour revenir sur Terre.
+Cette poussée à lieu derrière la Lune depuis la point de vue de la Terre.
+Dés que cette poussée à eu lieu, le module va se rapprocher petit à petit de la Terre.
+</p>
+<img alt="LEM sur la Lune" src="../images/lunar_mission/command_module_earth.png" height=300>
+<p>
+Quand le module sera arrivé à environ 8000 kilomètres de la Terre, il va largueur le module de service, qui ne servira plus à rien dans la suite (il brûlera dans l'atmosphère).
+Le module va attendre un peu, et présenter son bouclier thermique face à sa trajectoire, pour rentrer dans l'atmosphère.
+Après l'entrée atmosphérique, à approximativement 10 kilomètres d'altitude, le module va déployer ses parachutes (vus plus haut), et atterrir, quelque part au sud d’Hawaï.
+</p>
+<img alt="LEM sur la Lune" src="../images/lunar_mission/command_module_back.png" height=300>

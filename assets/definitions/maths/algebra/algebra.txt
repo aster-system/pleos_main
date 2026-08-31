@@ -82,7 +82,9 @@
     <content>la théorie des groupes représente la discipline qui étudie les groupes algébriques de manière très poussée</content>
 </new_definition>
 <new_definition name="algebra_ideal">
-    <content>un idéal A d'un anneau B est un sous-ensemble de B stable par la première loi dans lui-même, mais aussi stable par la deuxième loi par tous les éléments possibles de "B"</content>
+    <content>un idéal "A" d'un anneau "B" est un sous-ensemble de "B" stable par la première loi de "B", mais aussi stable par la deuxième loi par tous les éléments possibles de "B"</content>
+    <content name="generated">un idéal "I" d'un anneau "A" est dit engendré par une partie "P" quand "I" représente tous les éléments ostensibles avec "P" respectant les propriétés définissant un anneau</content>
+    <content name="trivial">un idéal A d'un anneau B est idéal trivial si il est soit égal à tout "B", soit égal à l'élément nul par la première loi de "B"</content>
 </new_definition>
 <new_definition name="algebra_magma">
     <content>un magma est une structure algébrique représentant un ensemble quelconque et une seule loi de composition interne sur cette ensemble, sans plus de détail</content>
@@ -193,10 +195,11 @@
 </new_definition>
 
 <new_definition name="monomial">
-    <content>un monôme est une forme précise d'objet mathématique, représentant le produit d'éléments (nommés coefficients) dans un corps quelconque par des indéterminés d'un corps quelconque (qui peut être le même, mais pas obligatoirement) élevés à des exposants naturels (et donc, un polynôme ne contenant pas de somme)</content>
+    <content>un monôme est une forme précise d'objet mathématique, représentant le produit d'éléments (nommés coefficients) dans un corps quelconque par des indéterminées d'un corps quelconque (qui peut être le même, mais pas obligatoirement) élevés à des exposants naturels (et donc, un polynôme ne contenant pas de somme)</content>
 </new_definition>
 <new_definition name="polynomial">
-    <content>un polynôme est une forme précise de formule mathématique, représentant la somme du produit d'éléments (nommés coefficients) dans un corps quelconque par des indéterminés d'un corps quelconque (qui peut être le même, mais pas obligatoirement) élevés à des exposants naturels</content>
+    <content>un polynôme est une forme précise de formule mathématique, représentant la somme de produit d'éléments (nommés coefficients) dans un anneau (ou, à fortiori, un corps) quelconque par des variables (nommés indéterminées) élevés à des exposants représentant des nombres naturels</content>
+    <content name="rigorous">un polynôme représente une suite finie d'éléments de la structure dans lequel il est défini, où l'écriture formelle reviendrait à sommer chaque élément de la suite, multiplié par l'indéterminée à l'exposant l'indice de l'élément actuel</content>
 </new_definition>
 <new_definition name="polynomial_root">
     <content>une racine d'un polynôme est une valeur tel que, si on la substitue à l'indéterminée du polynôme, la valeur obtenue est "0"</content>

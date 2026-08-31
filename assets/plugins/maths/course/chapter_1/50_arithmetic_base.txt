@@ -184,7 +184,7 @@ Sa définition la plus générale utilise justement la multiplication.
 <math><mforall>a<min> N, <mforall> b <min> N*, <mexists> c, a / b = c <mequi> a = c * b</math>
 <p>
 Il est à noter que le diviseur ne peut pas être nul, pour une raison assez simple : si "b = 0", il n'existe pas de nombre "b" tel que "c * b" ne soit pas égal à 0, et la division est impossible.
-D'un point de vue notationnel, il est aussi possible de la noter en notant le dividende et le diviseur sur la même colonne, en mettant le dividende au dessus du diviseur, et de de séparer les deux par une barre.
+D'un point de vue notationel, il est aussi possible de la noter en notant le dividende et le diviseur sur la même colonne, en mettant le dividende au dessus du diviseur, et de de séparer les deux par une barre.
 </p>
 <math><mforall>a<min> N, <mforall> b <min> N*, <mexists> c, a / b = c <mequi> <mfrac><mi>a</mi><mi>b</mi></mfrac> = c</math>
 <p>
@@ -193,6 +193,12 @@ Cependant, <span class="important">si "b" est un nombre entier naturel (et que l
 Dans tous les cas, il est assez simple de voir que 1 est un diviseur de tous les nombres entiers naturel existant, et que chaque nombre entier naturel est divisible par lui même.
 De manière réciproque, tous les nombres dans "N" sont des multiples de 1.
 De plus, tous les multiples d'un certain nombre entier naturel "n" forment un ensemble, représentant un sous-ensemble de "N", et généralement noté "aN" (comme "2N", "3N", "18N"...).
+</p>
+<p>
+D'ailleurs, un des thèmes les plus traumatisants de toutes les mathématiques concernent justement la division : les nombres premiers.
+<span class="important"><definition name="prime_number"></span>.
+Ici, "6" ("3 * 2"), "8" ("2 * 4") ou "10" ("5 * 2") ne sont pas premiers.
+Cependant, "2", "3", "7" ou "83" sont premiers.
 </p>
 
 <p>
@@ -403,6 +409,8 @@ Nous avons cependant une extension de ces relations d'ordres : <span class="impo
 </p>
 <math>4 <mlt> 6 <mequi> 4 * -1 <mgt> 6 * -1 <mlt> -4 <mgt> -6</math>
 
+
+
 <h3>Les équations mathématiques</h3>
 <p>
 Avec cette arithmétique, nous pouvons définir un concept très important en mathématiques : les équations.
@@ -466,18 +474,6 @@ Voici un exemple d'inéquation :
 
 
 <h2>Le lien ensembles / nombres entiers</h2>
-
-<h3>Les suites mathématiques</h3>
-<p>
-Une des façons de représenter des applications représente la suite mathématique.
-<span class="important"><definition name="sequence"></span>.
-Il s'agit donc d'une suite d'éléments quelconques.
-</p>
-<p>
-Généralement, au lycée, le terme "suite" désigne des suites de nombres réels.
-Cependant, <span class="important">il faut bien comprendre qu'une suite peut comporter des éléments de n'importe quel ensemble possible</span>.
-Il peut donc théoriquement exister des suites d'ensembles, d'applications, d'opérations...
-</p>
 
 <h3>Le dénombrement et la combinatoire</h3>
 <p>

@@ -20,6 +20,12 @@
     <content>une application bilinéaire est une application prenant deux vecteurs de deux espaces vectoriels "E" et "F" (généralement les mêmes, mais ce n'est pas obligatoire), et allant vers un autre espace vectoriel "G" (et donc, allant de "E X F" vers "G"), de telle manière qu'elle soit linéaire en ses deux variables</content>
     <content name="orthogonality">deux vecteurs de deux espaces vectoriels sur un même corps sont dit orthogonaux par une forme bilinéaire si la valeur de ces deux vecteurs par cette forme bilinéaire vaut le nul multiplicatif du corps de départ</content>
 </new_definition>
+<new_definition name="n_linear_application">
+    <content>une application n-linéaire est une application prenant "n" vecteurs de "n" espaces vectoriels sur un même corps vers un autre espace vectoriel sur ce corps, qui est linéaire en chaque variable</content>
+    <content name="alternate">une application n-linéaire est dite alternée si l'image de vecteurs est égale à 0 si deux vecteurs de ces sont égaux</content>
+    <content name="symmetry">une application n-linéaire est dite symétrique si (et seulement si) l'image de plusieurs vecteurs dans un ordre précis par l'application est la même que l'image de ces vecteurs où vous permutez 2 vecteurs par rapport à l'ordre de départ</content>
+    <content name="antisymmetry">une application n-linéaire est dite symétrique si (et seulement si) l'image de plusieurs vecteurs dans un ordre précis par l'application est l'opposée (par la première loi de l'espace vectoriel d'arrivé) de l'image de ces vecteurs où vous permutez 2 vecteurs par rapport à l'ordre de départ</content>
+</new_definition>
 
 <new_definition name="dual_space">
     <content>l'espace dual d'un espace vectoriel est l'ensemble de toutes les formes linéaires sur cet espace</content>
@@ -51,13 +57,16 @@
     <content>la dimension d'un espace vectoriel (aussi nommée dimension de Hamel) est le cardinal commun de toutes ses bases</content>
 </new_definition>
 
+<new_definition name="column_space">
+    <content>un espace colonne d'une matrice à coefficients dans un corps commutatif "K" représente un espace vectoriel sur "K", qui représente l'espace vectoriel engendré par l'ensemble des matrices colonnes de la matrice</content>
+</new_definition>
 <new_definition name="matrix">
     <content>une matrice à valeur dans un ensemble représente intuitivement un tableau de valeurs de cet ensemble</content>
     <content name="application">une matrice associée à une application linéaire est une matrice dont les propriétés internes permettent de calculer facilement l'image (dans un espace vectoriel de dimension finie) d'un vecteur (toujours dans un espace vectoriel de dimension finie), en transformant les coordonnées du vecteur dans une base de départ en les coordonnées de l'image demandée dans une base d'arrivée</content>
     <content name="basis">une matrice de changement de base (ou matrice de passage) est une matrice carrée permettant d'obtenir les coordonnées d'un vecteur dans une base "c", via l'expression de ce vecteur dans une autre base "b"</content>
     <content name="dimension">la dimension d'une matrice est un couple de nombre entier naturel contenant son nombre de ligne, puis son nombre de colonne</content>
     <content name="identity">une matrice identité de taille "n" est une matrice carrée de dimension "(n, n)", constitué du neutre de la multiplication de son corps de départ (donc "1" si le corps est "R") sur sa diagonale, et de l'absorbant de la multiplication de son corps de départ (donc "0" si le corps est "R") partout ailleurs</content>
-    <content name="rigorous">une matrice à valeur dans un ensemble "K" représente une application allant du produit cartésien de deux ensembles quelconques "I" et "J" vers l'ensemble "K"</content>
+    <content name="rigorous">une matrice à valeur dans un ensemble "K" représente une famille d'éléments de "K" indexés par le produit cartésien de deux ensembles quelconques "I" et "J"</content>
     <content name="transpose">la transposée d'une matrice représente une nouvelle matrice, où les colonnes de cette matrice sont les lignes de la matrice de départ (et donc, où l'on échange les lignes et les colonnes de la matrice)</content>
 </new_definition>
 <new_definition name="matrix_diagonal">

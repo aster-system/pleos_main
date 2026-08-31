@@ -137,8 +137,7 @@ Dans l'exemple pris ici, on démontre que l'ensemble des vecteurs obtenus ne rep
 <math><mequi> a + -3 * b = x <mand> y = 0 <mequi> (x, y) /= (1, 1)</math>
 <p>
 Dans tous les cas, nous formons un ensemble constitué d'une certaine quantité de vecteurs (ici 2), qui permettent d'obtenir des vecteurs possibles dans l'espace.
-Généralement, pour parler d'ensemble de vecteurs, on utilie le terme de famille.
-En mathématiques, <span class="important"><definition name="set_family"></span>.
+Généralement, pour parler d'ensemble de vecteurs, on utilise le terme de famille, présenté au chapitre.
 Donc, nous définissons des ensembles de vecteurs, que nous nommons des familles de vecteurs, tel que leur combinaison linéaire puisse représenter des espaces quelconques.
 </p>
 <p>
@@ -323,10 +322,22 @@ Pour la transitivité, si "u - v" appartient à "F", et "v - w" appartient aussi
 <math><mforall> u, v, w <min> E, u ~ v <mand> v ~ w <mequi> u - v <min> F <mand> v - w <min> F <mimp> (u - v) + (v - w) = u - w <min> F <mequi> u ~ w</math>
 <p>
 Maintenant, démontrons que "E/~" a une structure d'espace vectoriel sur "K" (ce qui sera très simple).
-Déjà, définissons la première loi de cette espace comme ceci :
+Déjà, définissons la première loi de cette espace comme ceci, avec "+" étant la première loi de "E" :
 </p>
 <math><mforall> a, b <min> E/~, <mexists> c, d <min> E, a <min> [c] <mand> b <min> [d]</math></br>
-<math>a + b = [c + d]</math>
+<math>a ~ b = [c + d]</math>
+<p>
+Ici, "c + d" est (par stabilité de "E" par sa première loi) un élément de "E" : "[c + d]" est donc bel et bien un élément de "E/~".
+Maintenant, définissons la deuxième :
+</p>
+<math><mforall> a <min> E/~, <mexists> c <min> E, a <min> [c]</math></br>
+<math><mforall> e <min> K, e * a = [e * c]</math>
+<p>
+Ici, "e * c" est (par stabilité de "K" et "E" par sa deuxième loi) un élément de "E" : "[e * c]" est donc bel et bien un élément de "E/~".
+Les deux lois marchent correctement : <span class="important">"E/~" est un espace vectoriel sur "K"</span>.
+Généralement, cette espace vectoriel est plutôt noté "E/F".
+</p>
+<math>E/~ = E/F</math>
 
 
 
@@ -436,6 +447,15 @@ En effet, <span class="important">l'image d'une base de l'espace vectoriel de d�
 La démonstration de ce théorème (<a href="demo#4_1_1_1">présente ici</a>) utilise les résultats basiques de linéarité.
 </p>
 <p>
+Pour rester sur les bases, nous pouvons obtenir un résultat assez pratique : <span class="important">tout calcul avec une application linéaire peut entièrement être substitué par le résultat de cette application avec des vecteurs d'une base</span>.
+En effet, considérons une application linéaire "f" allent d'un espace vectoriel "E" sur un corps "K" vers un espace vectoriel "F" toujours sur "K", et considérons une base de "E" noté "B", dont tous les éléments sont notés "b indice i" avec "i" étant entre "1" et la dimension de "E".
+Tout vecteur de "E" peut donc s'écrire avec une combinaison linéaire de vecteur de "B", dont les éléments nécessaires pour obtenir le vecteur représentent les coordonnées du vecteur dans "B" (comme vu plus haut).
+Ici, <span class="important">on peut utiliser les propriétés des applications linéaires pour voir que toute image de cette application linéaire peut se calculer avec seulement les images des vecteurs de "B"</span>.
+</p>
+<math>f : E <mto> F</math></br>
+<math><mforall> u <min> E, <mexists> (<mi>x</mi><msub>1</msub>, <mi>x</mi><msub>2</msub>, ...) <min> <mi>K</mi><msup>Dim(E)</msup>, u = <msum from=1 unknown=k to=Dim(E)><mi>x</mi><msub>k</msub><mi>b</mi><msub>k</msub></math></br>
+<math>f(u) = f(<msum from=1 unknown=k to=Dim(E)><mi>x</mi><msub>k</msub><mi>b</mi><msub>k</msub>) = <msum from=1 unknown=k to=Dim(E)>f(<mi>x</mi><msub>k</msub><mi>b</mi><msub>k</msub>) = <msum from=1 unknown=k to=Dim(E)><mi>x</mi><msub>k</msub>f(<mi>b</mi><msub>k</msub>)</math>
+<p>
 Un exemple particulièrement pratique d'application linéaire concerne les coordonnées.
 En effet, <span class="important">l'application allant d'un espace vectoriel quelconque de dimension finie "n" à l'espace des coordonnées dans une base de cet espace vectoriel est un isomorphisme linéaire</span>.
 L'expression de cette application est assez simple :
@@ -477,6 +497,7 @@ La démonstration est immédiate : la composition de deux morphismes donne un mo
 Donc, la composition d'isomorphisme linéaire est bel et bien un isomorphisme linéaire.
 </p>
 <math><mforall>f, g <min> Isom(E, F), f <mcomp> g <min> Isom(E, F)</math>
+
 <p>
 Un type d'application linéaire un peu spécial est la forme linéaire.
 <span class="important"><definition name="linear_form"></span>.
@@ -541,6 +562,36 @@ Ici, les propriétés que l'application doit respecter s'énoncent ainsi :
 <math>f(x, y + y') = f(x, y) + f(x, y')</math></br>
 <math>f(a * x, y) = f(x, a * y) = a * f(x, y)</math>
 <p>
+Essayons de bien comprendre ces propriétés.
+En fait, quand on dit "linéaire en chacune de ces variables", cela doit se comprendre d'une manière très pratique : si l'on considère la deuxième variable constante, alors l'application doit être linéaire (comme vue plus haut) avec la première variable (et vice-versa pour la deuxième variable).
+On peut définir deux nouvelles applications ne prenant qu'une variable à partir de cette application, justement en considérant l'autre variable constante, et vérifier leur linéarité.
+</p>
+<math>g(x) = f(x, C)</math></br>
+<math>g(x + x') = f(x + x', c) = f(x, c) + f(x', c) = g(x) + g(x')</math></br>
+<math>g(a * x) = f(a * x, c) = a * f(x, c) = a * g(x)</math></br>
+<math>h(y) = f(c, y)</math></br>
+<math>h(y + y') = f(x, y + y') = f(x, y) + f(x, y') = h(y) + h(y')</math></br>
+<math>h(a * y) = f(c, a * y) = a * f(c, y) = a * h(x)</math></br>
+<p>
+Ici, dans la dernière ligne, en renommant "c" en "x" et "y" en "c", on obtient la ligne juste avant la définition de "h", ce qui permet de justifier en plus de tout ça pourquoi :
+</p>
+<math>f(a * x, y) = f(x, a * y) = a * f(x, y)</math>
+<p>
+D'ailleurs, on peut aussi raccourcir ces trois propriétés nécessaires en faisant un raccourci similaire que celui que nous avons vue plus haut :
+</p>
+<math>f : E X F <mto> G, (x, y) <mto> z</math></br>
+<math>f(a * x + b * x', y) = a * f(x, y) + b * f(x', y)</math></br>
+<math>f(x, c * y + d * y') = c * f(x, y) + d * f(x, y')</math></br>
+<p>
+L'équivalence entre ces deux façon de faire est elle aussi très simple à démontrer :
+</p>
+<math>f : E X F <mto> G, (x, y) <mto> z</math></br>
+<math>f(x + x', y) = f(x, y) + f(x', y) <mand> f(a * x, y) = a * f(x, y) <mimp> f(a * x + b * x', y) = f(a * x, y) + f(b * x', y) = a * f(x, y) + b * f(x', y)</math></br>
+<math>f(a * x + b * x', y) = a * f(x, y) + b * f(x', y) <mimp> f(x + x', y) = f(1 * x + 1 * x', y) = f(x, y) + f(x', y) <mand> f(a * x + 0 * x', y) = a * f(x, y) + 0 * f(x', y) = a * f(x, y)</math></br>
+<math>f(x, y + y') = f(x, y) + f(x, y') <mand> f(x, c * y) = c * f(x, y) <mimp> f(x, c * y + d * y') = f(x, c * y) + f(x, d * y') = c * f(x, y) + d * f(x, y')</math></br>
+<math>f(x, c * y + d * y') = c * f(x, y) + d * f(x, y') <mimp> f(x, y + y') = f(x, 1 * y + 1 * y') = f(x, y) + f(x, y') <mand> f(x, c * y + 0 * y') = c * f(x, y) + 0 * f(x, y') = c * f(x, y)</math></br>
+<math>f(e * x, y) = e * f(x, y) <mand> f(x, e * y) = e * f(x, y) <mequi> f(e * x, y) = f(x, e * y) = e * f(x, y)</math>
+<p>
 Prenons un exemple, avec une application précise :
 </p>
 <math>f : R² X R² <mto> R², (x, y) X (w, z) <mto> (x * w - y * z, x * z + w * y)</math>
@@ -554,6 +605,20 @@ Cette application respecte toutes les propriétés nécessaires (bien que les ca
 <math>f(a * (x, y), (w, z)) = (a * x * w - a * y * z, a * x * z + w * a * y) = (x * a * w - y * a * z, x * a * z + a * w * y) = f((x, y), a * (w, z))</math></br>
 <math>f(a * (x, y), (w, z)) = (a * x * w - a * y * z, a * x * z + w * a * y) = (a * (x * w - y * z), a * (x * z +  w * y)) = a * (x * w - y * z, x * z + w * y) = a * f((x, y), (w, z))</math>
 <p>
+Un peu plus tôt, <span class="important">nous avons vu qu'il est possible d'obtenir toutes les images d'une application linéaire avec seulement les images des éléments d'une base : c'est la même chose dans le cas d'une application bilinéaire</span>.
+Cependant, le résultat est un peu plus complexe à obtenir, mais l'idée reste la même : sortir chaque valeur petit à petit du calcul, pour obtenir un ensemble de sommes / produits de valeur, où l'application n'est appelé que pour les vecteurs de la bases.
+</p>
+<math>f : E X F <mto> G</math></br>
+<math><mforall> u <min> E, <mexists> (<mi>x</mi><msub>1</msub>, <mi>x</mi><msub>2</msub>, ...) <min> <mi>K</mi><msup>Dim(E)</msup>, u = <msum from=1 unknown=k to=Dim(E)><mi>x</mi><msub>k</msub><mi>b</mi><msub>k</msub></math></br>
+<math><mforall> v <min> F, <mexists> (<mi>y</mi><msub>1</msub>, <mi>y</mi><msub>2</msub>, ...) <min> <mi>K</mi><msup>Dim(F)</msup>, v = <msum from=1 unknown=k to=Dim(F)><mi>y</mi><msub>k</msub><mi>c</mi><msub>k</msub></math></br>
+<math>f(u, v) = f(<msum from=1 unknown=k to=Dim(E)><mi>x</mi><msub>k</msub><mi>b</mi><msub>k</msub>, <msum from=1 unknown=l to=Dim(F)><mi>y</mi><msub>l</msub><mi>c</mi><msub>l</msub>) = <msum from=1 unknown=k to=Dim(E)>f(<mi>x</mi><msub>k</msub><mi>b</mi><msub>k</msub>, <msum from=1 unknown=l to=Dim(F)><mi>y</mi><msub>l</msub><mi>c</mi><msub>l</msub>) = <msum from=1 unknown=k to=Dim(E)><msum from=1 unknown=l to=Dim(F)>f(<mi>x</mi><msub>k</msub><mi>b</mi><msub>k</msub>, <mi>y</mi><msub>l</msub><mi>c</mi><msub>l</msub>) = <msum from=1 unknown=k to=Dim(E)><msum from=1 unknown=l to=Dim(F)><mi>x</mi><msub>k</msub><mi>y</mi><msub>l</msub>f(<mi>b</mi><msub>k</msub>, <mi>c</mi><msub>l</msub>)</math>
+<p>
+Cette formule pose un problème : il existe "Dim(E) * Dim(F)" valeurs possibles pour "f(b indice k, c indice l)".
+Donc, la praticité de cette formule dépend grandement du contexte.
+Cependant, le sens derrière cette formule la rend quand même assez importante : <span class="important">le connaissance des images de toutes les permutations d'éléments des 2 bases possibles suffit à obtenir toutes les images par cette application</span>.
+</p>
+
+<p>
 Comme il existe des formes linéaires, il existe aussi des formes bilinéaires.
 <span class="important"><definition name="linear_form-bilinear"></span>.
 Si les deux espaces vectoriels sont le même (que l'on va noter "E"), on parle de forme bilinéaire sur "E".
@@ -562,6 +627,7 @@ Elle doit cependant respecter une autre propriété précise : elle doit être b
 <math>f(x + x', y) = f(x, y) + f(x', y)</math></br>
 <math>f(x, y + y') = f(x, y) + f(x, y')</math></br>
 <math>f(a * x, y) = f(x, a * y) = a * f(x, y)</math>
+
 <p>
 Avec cela, nous pouvons définir le concept d'orthogonalité.
 <span class="important"><definition name="bilinear_application-orthogonality"></span>.
@@ -571,55 +637,148 @@ Il existe donc une orthogonalité par forme bilinéaire (nous aurons l'occasion 
 
 
 
+<p>
+Généralisons de manière totale ce concept, avec les applications n-linéaires.
+<span class="important"><definition name="n_linear_application"></span>.
+Une application n-linéaire est donc une application qui, quand on la découpe en plusieurs applications avec les autres vecteurs constants (comme vue pour les applications bilinéaires), ne donne que des applications linéaires.
+Encore une fois, les espaces vectoriels de départ peuvent être tous différents : nous allons ici les noter avec une suite finie "E" (où l'on commence à "1", et où les éléments seront ici notés en majuscule), de dernier indice "n".
+On note donc :
+</p>
+<math>D = <mi>E</mi><msub>1</msub> X <mi>E</mi><msub>2</msub> X ... X <mi>E</mi><msub>n</msub></math></br>
+<math>f : D <mto> F, (<mi>x</mi><msub>1</msub>, <mi>x</mi><msub>2</msub>, ..., <mi>x</mi><msub>n</msub>) <mto> y</math></br>
+<p>
+Les conditions de linéarité sont exactement les mêmes que pour les applications bilinéaires.
+Pour la linéarité du i-ème vecteur (avec "i" inférieur ou égal à "n" et supérieur ou égal à "1"), on note :
+</p>
+<math><mforall> (<mi>x</mi><msub>1</msub>, <mi>x</mi><msub>2</msub>, ..., <mi>x</mi><msub>i</msub> + <mi>x'</mi><msub>i</msub>, ..., <mi>x</mi><msub>n</msub>) <min> D, f(<mi>x</mi><msub>1</msub>, <mi>x</mi><msub>2</msub>, ..., <mi>x</mi><msub>i</msub> + <mi>x'</mi><msub>i</msub>, ..., <mi>x</mi><msub>n</msub>) = f(<mi>x</mi><msub>1</msub>, <mi>x</mi><msub>2</msub>, ..., <mi>x'</mi><msub>i</msub>, ..., <mi>x</mi><msub>n</msub>) + f(<mi>x</mi><msub>1</msub>, <mi>x</mi><msub>2</msub>, ..., <mi>x'</mi><msub>i</msub>, ..., <mi>x</mi><msub>n</msub>)</math></br>
+<math><mforall> (<mi>x</mi><msub>1</msub>, <mi>x</mi><msub>2</msub>, ..., <mi>x</mi><msub>i</msub> + <mi>x'</mi><msub>i</msub>, ..., <mi>x</mi><msub>n</msub>) <min> D, <mforall> a <min> K, f(<mi>x</mi><msub>1</msub>, <mi>x</mi><msub>2</msub>, ..., a * <mi>x'</mi><msub>i</msub>, ..., <mi>x</mi><msub>n</msub>) = a * f(<mi>x</mi><msub>1</msub>, <mi>x</mi><msub>2</msub>, ..., <mi>x'</mi><msub>i</msub>, ..., <mi>x</mi><msub>n</msub>)</math>
+<p>
+Ces deux propriétés sont donc vérifiées pour toutes les variables.
+Encore une fois, la deuxième propriété permet de dire que, si on multiplie "a" par n'importe quel vecteur, alors c'est comme si on le multiplié par toute la fonction, et donc pour n'importe quel autre vecteur quelconque.
+Comme pour la bilinéarité, on peut raccourcir ces propriétés.
+</p>
+<math><mforall> (<mi>x</mi><msub>1</msub>, <mi>x</mi><msub>2</msub>, ..., <mi>x</mi><msub>i</msub> + <mi>x'</mi><msub>i</msub>, ..., <mi>x</mi><msub>n</msub>) <min> D, <mforall> a, b <min> K, f(<mi>x</mi><msub>1</msub>, <mi>x</mi><msub>2</msub>, ..., a * <mi>x</mi><msub>i</msub> + b * <mi>x'</mi><msub>i</msub>, ..., <mi>x</mi><msub>n</msub>) = a * f(<mi>x</mi><msub>1</msub>, <mi>x</mi><msub>2</msub>, ..., <mi>x'</mi><msub>i</msub>, ..., <mi>x</mi><msub>n</msub>) + b * f(<mi>x</mi><msub>1</msub>, <mi>x</mi><msub>2</msub>, ..., <mi>x'</mi><msub>i</msub>, ..., <mi>x</mi><msub>n</msub>)</math></br>
+<p>
+La démonstration de leur équivalence est l'exacte même que dans les cas de linéarité et bilinéarité.
+Nous pouvons en plus de ça dégager quelques autres propriétés sur les applications n-linéaires.
+Par exemple, <span class="important"><definition name="n_linear_application-symmetry"></span>.
+Il s'agit d'une sorte de commutativité.
+Pour que cela soit possible, <span class="important">il faut que les éléments qu'on permutant soient dans l'exact même ensemble</span>.
+Généralement, on ne se limite pas qu'aux éléments qu'on permutent, mais à tous les vecteurs de départ de l'application (qui irait donc de "E exposant n" vers "F").
+</p>
+<math><mforall> (<mi>u</mi><msub>1</msub>, ..., <mi>u</mi><msub>n</msub>) <min> <mi>E</mi><msup>n</msup>, <mforall> i, j <min> {1, ..., n}</math></br>
+<math>f(<mi>u</mi><msub>1</msub>, ..., <mi>u</mi><msub>i</msub>, ..., <mi>u</mi><msub>j</msub>, ..., <mi>u</mi><msub>n</msub>) = f(<mi>u</mi><msub>1</msub>, ..., <mi>u</mi><msub>j</msub>, ..., <mi>u</mi><msub>i</msub>, ..., <mi>u</mi><msub>n</msub>)</math>
+<p>
+Si nous pouvons faire une permutation entre deux éléments sans changer la valeur, on peut rajouter une permutation entre deux autres éléments à notre version déjà permutée, et faire plusieurs permutations (2, 3, 81...).
+En fait, <span class="important">toutes les permutations possibles des vecteurs donnent le même résultat</span>.
+Or, le concept de permutation est formalisé en mathématique (sous la forme d'une bijection allant d'un ensemble vers lui même), et l'on peut donc utiliser ce formalisme pour énoncer une formule précise :
+</p>
+<math><mforall> s <min> S({1, ..., n}), f(<mi>u</mi><msub>s(1)</msub>, ..., <mi>u</mi><msub>s(n)</msub>) = f(<mi>u</mi><msub>1</msub>, ..., <mi>u</mi><msub>n</msub>)</math>
+<p>
+Si nous avons une symétrie, nous avons aussi une antisymétrie.
+Ici, <span class="important"><definition name="n_linear_application-antisymmetry"></span>.
+Dans ce cas, on note :
+</p>
+<math><mforall> (<mi>u</mi><msub>1</msub>, ..., <mi>u</mi><msub>n</msub>) <min> <mi>E</mi><msup>n</msup>, <mforall> i, j <min> {1, ..., n}</math></br>
+<math>f(<mi>u</mi><msub>1</msub>, ..., <mi>u</mi><msub>i</msub>, ..., <mi>u</mi><msub>j</msub>, ..., <mi>u</mi><msub>n</msub>) = -f(<mi>u</mi><msub>1</msub>, ..., <mi>u</mi><msub>j</msub>, ..., <mi>u</mi><msub>i</msub>, ..., <mi>u</mi><msub>n</msub>)</math>
+<p>
+Ici, si nous faisons une permutation entre deux vecteurs, nous obtenons l'opposé.
+Or, si nous faisons cette permutation, et que nous lui ajoutons une autre permutation entre deux autres vecteurs, nous obtenons l'opposé de la permutation (qui représente l'opposé de l'image des vecteurs dans l'ordre de départ) : nous obtenons donc l'opposé de l'opposé de l'image des vecteurs dans l'ordre de départ : qui équivaut donc exactement à l'image des vecteurs dans l'ordre de départ.
+Ici, on peut donc dégager une propriété assez simple : <span class="important">si vous avez une image de vecteurs dans un ordre de départ, effectuer un nombre impair de permutations donnera l'opposé de l'image des vecteurs dans l'ordre de départ, et effectuer un nombre pair de permutations donnera exactement l'image des vecteurs dans l'ordre de départ</span>.
+Cependant, on peut encore en soutirer une formule par rapport aux permutations, grâce à la signature d'une permutation.
+Pour rappel, <definition name="permutation-signature">.
+On peut donc écrire :
+</p>
+<math><mforall> s <min> S({1, ..., n}), f(<mi>u</mi><msub>s(1)</msub>, ..., <mi>u</mi><msub>(n)</msub>) = <epsilon>(s)f(<mi>u</mi><msub>1</msub>, ..., <mi>u</mi><msub>n</msub>)</math>
+<p>
+De manière similaire, on peut définir les application n-linéaire dites alternées.
+<span class="important"><definition name="n_linear_application-alternate"></span>.
+Par exemple, "f(u, v, w, u)" serait donc égal à 0.
+</p>
+<math><mforall> (<mi>u</mi><msub>1</msub>, ..., <mi>u</mi><msub>n</msub>) <min> <mi>E</mi><msup>n</msup>, <mforall> i, j <min> {1, ..., n}</math></br>
+<math><mexists> k, l <min> {1, ..., n}, [k <mnotequal> l <mand> <mi>u</mi><msub>k</msub> = <mi>u</mi><msub>l</msub>] <mimp> f(<mi>u</mi><msub>1</msub>, ..., <mi>u</mi><msub>n</msub>) = 0</math>
+<p>
+D'ailleurs, si deux vecteurs dans le calcul sont liés (et donc, que un des vecteurs représente l'autre multiplié par un scalaire précis) donne aussi un résultat nul (puisque l'on peut décomposer l'application pour obtenir la propriété que nous venons juste de voir).
+Donc, on en déduit directement que si un de ces vecteurs est le vecteur nul, l'image est elle aussi nulle.
+</p>
+<math><mexists> k, l <min> {1, ..., n}, <mexists> a <min> K, [k <mnotequal> l <mand> <mi>u</mi><msub>k</msub> = a * <mi>u</mi><msub>l</msub>] <mimp> f(<mi>u</mi><msub>1</msub>, ..., <mi>u</mi><msub>k</msub>, ..., <mi>u</mi><msub>l</msub>, ..., <mi>u</mi><msub>n</msub>) = f(<mi>u</mi><msub>1</msub>, ..., a * <mi>u</mi><msub>l</msub>, ..., <mi>u</mi><msub>l</msub>, ..., <mi>u</mi><msub>n</msub>) = a * f(<mi>u</mi><msub>1</msub>, ..., <mi>u</mi><msub>l</msub>, ..., <mi>u</mi><msub>l</msub>, ..., <mi>u</mi><msub>n</msub>) = a * 0 = 0</math>
+<p>
+On peut (dans la même idée) directement en déduire que les applications n-linéaires alternées sont stable par la multiplication par un scalaire.
+Cependant, <span class="important">on peut aussi démontrer que les applications n-linéaires alternées sont stables par addition</span>.
+Ceci fait donc de l'ensemble des applications n-linéaires une sous-espace vectoriel dans applications n-linéaires tout court.
+</p>
+<math>(f + g)(<mi>u</mi><msub>1</msub>, ..., <mi>u</mi><msub>n</msub>) = f(<mi>u</mi><msub>1</msub>, ..., <mi>u</mi><msub>n</msub>) + g(<mi>u</mi><msub>1</msub>, ..., <mi>u</mi><msub>n</msub>)</math>
+<p>
+D'ailleurs, on peut en déduire un résultat assez intéressant : <span class="important">toute application alternée est antisymétrique</span>.
+</p>
+<math>[k <mnotequal> l <mand> <mi>u</mi><msub>k</msub> = <mi>u</mi><msub>l</msub>] <mimp> f(<mi>u</mi><msub>1</msub>, ..., <mi>u</mi><msub>n</msub>) = 0</math></br>
+<math><mimp> f(<mi>u</mi><msub>1</msub>, ..., <mi>u</mi><msub>i</msub>, ..., <mi>u</mi><msub>j</msub>, ..., <mi>u</mi><msub>n</msub>) = a</math></br>
+<math><mimp> f(<mi>u</mi><msub>1</msub>, ..., <mi>u</mi><msub>i</msub> + (<mi>u</mi><msub>j</msub> - <mi>u</mi><msub>i</msub>), ..., <mi>u</mi><msub>j</msub> + (<mi>u</mi><msub>i</msub> - <mi>u</mi><msub>j</msub>), ..., <mi>u</mi><msub>n</msub>) = b</math></br>
+
+<math><mimp> f(<mi>u</mi><msub>1</msub>, ..., <mi>u</mi><msub>i</msub>, ..., <mi>u</mi><msub>j</msub>, ..., <mi>u</mi><msub>n</msub>) + f(<mi>u</mi><msub>1</msub>, ..., <mi>u</mi><msub>i</msub>, ..., (<mi>u</mi><msub>i</msub> - <mi>u</mi><msub>j</msub>), ..., <mi>u</mi><msub>n</msub>) + f(<mi>u</mi><msub>1</msub>, ..., <mi>u</mi><msub>j</msub> - <mi>u</mi><msub>i</msub>, ..., <mi>u</mi><msub>j</msub>, ..., <mi>u</mi><msub>n</msub>) + f(<mi>u</mi><msub>1</msub>, ..., <mi>u</mi><msub>j</msub> - <mi>u</mi><msub>i</msub>, ..., <mi>u</mi><msub>i</msub> - <mi>u</mi><msub>j</msub>, ..., <mi>u</mi><msub>n</msub>)</math></br>
+<math><mimp> a + f(<mi>u</mi><msub>1</msub>, ..., <mi>u</mi><msub>i</msub>, ..., (<mi>u</mi><msub>i</msub> - <mi>u</mi><msub>j</msub>), ..., <mi>u</mi><msub>n</msub>) + f(<mi>u</mi><msub>1</msub>, ..., <mi>u</mi><msub>j</msub> - <mi>u</mi><msub>i</msub>, ..., <mi>u</mi><msub>j</msub>, ..., <mi>u</mi><msub>n</msub>)</math></br>
+<math><mimp> a + f(<mi>u</mi><msub>1</msub>, ..., <mi>u</mi><msub>i</msub>, ..., <mi>u</mi><msub>i</msub>, ..., <mi>u</mi><msub>n</msub>) - f(<mi>u</mi><msub>1</msub>, ..., <mi>u</mi><msub>i</msub>, ..., <mi>u</mi><msub>j</msub>, ..., <mi>u</mi><msub>n</msub>) + f(<mi>u</mi><msub>1</msub>, ..., <mi>u</mi><msub>j</msub>, ..., <mi>u</mi><msub>j</msub>, ..., <mi>u</mi><msub>n</msub>) - f(<mi>u</mi><msub>1</msub>, ..., <mi>u</mi><msub>i</msub>, ..., <mi>u</mi><msub>j</msub>, ..., <mi>u</mi><msub>n</msub>)</math></br>
+<math><mimp> -f(<mi>u</mi><msub>1</msub>, ..., <mi>u</mi><msub>i</msub>, ..., <mi>u</mi><msub>j</msub>, ..., <mi>u</mi><msub>n</msub>) = -a = b</math></br>
+
+
+<p>
+Dans le cas des applications linéaires et des applications multilinéaires, <span class="important">nous avons vu qu'il est possible d'obtenir toutes les images de ces applications grâces aux bases : c'est la même chose dans le cas d'une application n-linéaire</span>.
+Bien que la façon d'obtenir cette formule est exactement la même que dans le cas linéaire et bilinéaire, dans le cas des applications "n-linéaire", elle devient bien plus infernal à écrire.
+En effet, chaque vecteur a sa propre décomposition, avec une quantité inconnue de vecteurs, et donc d'espaces vectoriels de départ, qu'il faut nommer correctement...
+</p>
+<math>f : (<mi>E</mi><msub>1</msub>, <mi>E</mi><msub>2</msub>, ..., <mi>E</mi><msub>n</msub>) <mto> F</math></br>
+<math><mforall> m <min> {1, 2, ..., n}, <mforall> u <min> <mi>E</mi><msub>m</msub>, <mexists> (<mi>x</mi><msub>1, m</msub>, <mi>x</mi><msub>2, m</msub>, ...) <min> <mi>K</mi><msup>Dim(Em)</msup>, u = <msum from=1 unknown=k to=Dim(Em)><mi>x</mi><msub>k, m</msub><mi>b</mi><msub>k, m</msub></math></br>
+<math>f(<mi>u</mi><msub>1</msub>, ..., <mi>u</mi><msub>n</msub>) = f(<msum from=1 unknown=k1 to=Dim(E1)><mi>x</mi><msub>k1, 1</msub><mi>b</mi><msub>k1, 1</msub>, ..., <msum from=1 unknown=k to=Dim(En)><mi>x</mi><msub>kn, n</msub><mi>b</mi><msub>kn, n</msub>)</math></br>
+<math>f(<mi>u</mi><msub>1</msub>, ..., <mi>u</mi><msub>n</msub>) = <msum from=1 unknown=k1 to=Dim(E1)>...<msum from=1 unknown=kn to=Dim(En)>f(<mi>x</mi><msub>k1, 1</msub><mi>b</mi><msub>k1, 1</msub>, ..., <mi>x</mi><msub>kn, n</msub><mi>b</mi><msub>kn, n</msub>)</math></br>
+<math>f(<mi>u</mi><msub>1</msub>, ..., <mi>u</mi><msub>n</msub>) = <msum from=1 unknown=k1 to=Dim(E1)>...<msum from=1 unknown=kn to=Dim(En)><mproduct from=1 unknown=j to=n><mi>x</mi><msub>kj, j</msub>f(<mi>b</mi><msub>k1, 1</msub>, ..., <mi>b</mi><msub>kn, n</msub>)</math>
+<p>
+Ici, <span class="important">si tous les espaces vectoriels de départ de type "E indice i" sont le même (que nous allons noter "E"), on peut simplifier la formule</span>.
+En effet, on peut la simplifier en ne spécifiant qu'une base pour tous les vecteurs (qui est donc une base de "E").
+</p>
+<math>f : <mi>E</mi><msup>n</msup> <mto> F</math></br>
+<math><mforall> m <min> {1, 2, ..., n}, <mforall> u <min> E, <mexists> (<mi>x</mi><msub>1, m</msub>, <mi>x</mi><msub>2, m</msub>, ...) <min> <mi>K</mi><msup>Dim(E)</msup>, u = <msum from=1 unknown=k to=Dim(E)><mi>x</mi><msub>k, m</msub><mi>b</mi><msub>k</msub></math></br>
+<math>f(<mi>u</mi><msub>1</msub>, ..., <mi>u</mi><msub>n</msub>) = <msum from=1 unknown=k1 to=Dim(E)>...<msum from=1 unknown=kn to=Dim(E)>(<mproduct from=1 unknown=j to=n><mi>x</mi><msub>kj, j</msub>)f(<mi>b</mi><msub>k1</msub>, ..., <mi>b</mi><msub>kn</msub>)</math>
+<p>
+Bien évidemment, sauf dans certains cas ultra précis, cette formule ne nous servira pas.
+D'ailleurs, <span class="important">on peut simplifier cette formule dans le cas où l'application est alternée et dans le cas où "n = Dim(E)"</span>.
+Pour cela, nous devons faire plusieurs observations.
+Premièrement, <span class="important">toutes les itérations de "f(b indice k de 1, ..., b indice k de n)" s'annulent quand deux de ces vecteurs sont égaux</span>.
+Comme tous les "b indice i" sont linéairement indépendant entre eux, la seule raison que "f" s'annule soit que deux fois le même vecteur de la base soit présent dans "f".
+Si l'application s'annule, elle rend toute la partie avec le produit nulle, quel que soit la valeur des éléments dans ce produit.
+Ici, comme "n = Dim(E)", <span class="important">l'application prend autant de vecteur qu'il n'y a de vecteurs dans la base : l'application n'est donc pas nulle si tous les vecteurs de la base apparaissent exactement une fois dans l'application</span>.
+Aussi, l'ensemble des cas possibles où l'application n'est pas nul est l'ensemble des ordres possibles de vecteurs de la base (qui est un n-uplet), qui peut donc s'obtenir grâce à l'ensemble des permutations de "{1, ..., n}".
+Donc, <span class="important">nous pouvons réecrire cette formule comme la somme de tous les produits de coordonnées où "k indice j" représentant (si l'on note la permutation "p") "p(j)" par (toujours, où l'on remplace "k indice i" par "p(i)") "f(b indice p(1), ..., b indice p(n))"</span>.
+En plus de ça, comme l'application est antisymétrique, cette application ne peut qu'avoir deux valeurs : la valeur dans l'ordre de départ des éléments de la base, et son opposé.
+Comme nous l'avons vue plus tôt, si "p" est paire, alors la valeur ne change pas, et si "p" est impaire, on a l'opposé.
+Donc, <span class="important">nous pouvons rajouter la signature au produit pour compter cet opposé, et seulement utiliser "f(b indice 1, ..., b indice n)"</span>.
+Au final, tout ce que nous venons de dire donne cette formule :
+</p>
+<math>f(<mi>u</mi><msub>1</msub>, ..., <mi>u</mi><msub>n</msub>) = (<msum from=S(n) unknown=s><mproduct from=1 unknown=j to=n><mi>x</mi><msub>s(j), j</msub>)f(<mi>b</mi><msub>1</msub>, ..., <mi>b</mi><msub>n</msub>)</math>
 
 
 
 
 
 
-<h2>Les matrices</h2>
 
-<h3>Qu'est-ce que une matrice ?</h3>
+
+
+<h2>Les matrices en algèbre linéaire</h2>
+
+
+
+<h3>Retour sur les matrices</h3>
 <p>
 Les matrices sont des objets très utilisées en algèbre linéaire.
-En fait, <span class="important"><definition name="matrix"></span>.
+Pour rappel (comme définit au chapitre 1), <span class="important"><definition name="matrix"></span>.
+Nous ne reviendrons donc pas ici sur la définition des matrices.
 Ici, il faut voir "tableau" comme un tableau à deux entrées, contenant donc des éléments de cet ensemble.
-Par convention, ces objets se notent avec des lettres majuscules.
 </p>
-<math>A = <mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd><mtd><mi>2</mi></mtd></mtr><mtr><mtd><mi>3</mi></mtd><mtd><mi>4</mi></mtd></mtr></mtable><mo>]</mo></mrow></math>
-<p>
-Bien que très intuitive, cette définition manque de rigueur.
-D'un point de vue rigoureux, <span class="important"><definition name="matrix-rigorous"></span>.
-Comme tout produit cartésien, nous pouvons la noter sous forme de tableau, justifiant la notation "tableau" si souvent utilisée, où chaque case du tableau contient l'élément associé par l'application (permettant d'obtenir les éléments de la matrice).
-D'ailleurs, <span class="important">nous pouvons obtenir un élément précis d'une matrice, en le notant avec le nom de la matrice (en minuscule), et en indice le couple dans le produit cartésien correspondant à l'élément que l'on cherche</span>.
-Donc, pour "i" dans "I" et "j" dans "J", on note :
-</p>
-<math><mi>a</mi><msub>(i, j)</msub></math>
-<p>
-Très très souvent, <span class="important">"I" et "J" sont finis, de taille "m" et "n", et représentent les ensembles "I = {1, 2, ..., m}" et "J = {1, 2, ..., n}"</span>.
-D'ailleurs, très souvent, la définition avec l'application n'est même pas vraiment utilisée.
-Dans ce genre de matrice, <span class="important">un élément d'une matrice "A" à la ligne "y" et à la colonne "x" se note "A indice (y, x)"</span>.
-L'ordre est important : ligne, puis colonne.
-Reprenons notre matrice "A" :
-</p>
-<math>A = <mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd><mtd><mi>2</mi></mtd></mtr><mtr><mtd><mi>3</mi></mtd><mtd><mi>4</mi></mtd></mtr></mtable><mo>]</mo></mrow></math>
-<p>
-On peut facilement noter toutes les valeurs de "A".
-</p>
+<math>A = <mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd><mtd><mi>2</mi></mtd></mtr><mtr><mtd><mi>3</mi></mtd><mtd><mi>4</mi></mtd></mtr></mtable><mo>]</mo></mrow></math></br>
 <math><mi>a</mi><msub>1, 1</msub> = 1</math></br>
 <math><mi>a</mi><msub>1, 2</msub> = 2</math></br>
 <math><mi>a</mi><msub>2, 1</msub> = 3</math></br>
 <math><mi>a</mi><msub>2, 2</msub> = 4</math>
-<p>
-Pour noter les nombres "b" et "c", on parle de dimension de la matrice.
-En effet, <span class="important"><definition name="matrix-dimension"></span>.
-Si une matrice ne possède qu'une ligne, on parle de matrice ligne, et si elle ne possède qu'une colonne, on parle de matrice colonne.
-</p>
-<math>A = <mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd><mtd><mi>2</mi></mtd><mtd><mi>3</mi></mtd></mtr></mtable><mo>]</mo></mrow>, B = <mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd></mtr><mtr><mtd><mi>2</mi></mtd></mtr><mtr><mtd><mi>3</mi></mtd></mtr></mtable><mo>]</mo></mrow></math>
-<p>
-De plus, <span class="important">si "b" et "c" sont les mêmes valeurs, alors la matrice est dite carrée</span>.
-Il s'agit probablement du type de matrice le plus utilisé.
-</p>
 <p>
 Comme pour beaucoup d'objets mathématiques, il est possible de faire des opérations avec ces matrices.
 Si votre matrice représente des nombres, alors nous pouvons y définir une opération très utile : l'addition matricielle.
@@ -653,9 +812,50 @@ En effet, si l'ensemble de départ est un corps, l'addition matricielle est un g
 Avec ça, on peut déduire un isomorphisme assez évident : <span class="important">si l'ensemble des matrices lignes / colonnes de dimension "(a, b)" est un espace vectoriel sur un corps "K", il est isomorphe à l'espace vectoriel usuel sur "K" formé par "K exposant a * b"</span>.
 Ce résultat est encore plus évident si vous travaillez sur des matrices lignes ou des matrices colonnes.
 </p>
+
+
+
+
+
+
+<h3>Les espaces colonnes</h3>
 <p>
-Parlons d'une autre opération, plus complexe mais très utile avec les matrices : le produit matriciel.
+Quand on a une matrice à coefficients dans un corps "K", on peut découper cette matrice comme une matrice ligne de matrices colonnes.
+Ici, si "K" est un corps commutatif, on sait que l'on peut munir l'ensemble des matrices colonnes d'une structure d'espace vectoriel sur "K".
+Avec ceci, on peut définir un concept important : l'espace colonne.
+<span class="important"><definition name="column_space"></span>.
+Il s'agit donc d'un sous-espace vectoriel de l'ensemble des matrices colonnes de taille "n" sur "K".
+Si l'on nomme l'espace colonne "C" et la matrice "A", on peut noter :
+</p>
+<math>C = Vect(Col(A))</math>
+<p>
+Il est possible que "C" représente l'espace entier des matrices colonnes de taille "n" sur "K", comme un sous-espace vectoriel strict.
+On peut prendre un exemple de matrice où "C" n'est pas l'espace entier des matrices colonnes de taille "n" sur "K" :
+</p>
+<math>A = <mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd><mtd><mi>2</mi></mtd></mtr><mtr><mtd><mi>5</mi></mtd><mtd><mi>10</mi></mtd></mtr></mtable><mo>]</mo></mrow></math></br>
+<math><mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd></mtr><mtr><mtd><mi>0</mi></mtd></mtr></mtable><mo>]</mo></mrow> = a * <mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd></mtr><mtr><mtd><mi>5</mi></mtd></mtr></mtable><mo>]</mo></mrow> + b * <mrow><mo>[</mo><mtable><mtr><mtd><mi>2</mi></mtd></mtr><mtr><mtd><mi>10</mi></mtd></mtr></mtable><mo>]</mo></mrow> <mimp> a * <mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd></mtr><mtr><mtd><mi>5</mi></mtd></mtr></mtable><mo>]</mo></mrow> + b * 2 * <mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd></mtr><mtr><mtd><mi>5</mi></mtd></mtr></mtable><mo>]</mo></mrow></math></br>
+<math><mimp> <mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd></mtr><mtr><mtd><mi>0</mi></mtd></mtr></mtable><mo>]</mo></mrow> = (a + b * 2) * <mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd></mtr><mtr><mtd><mi>5</mi></mtd></mtr></mtable><mo>]</mo></mrow></math>
+<p>
+Dans ce cas, il n'existe pas de nombre tel que, si on le multiplie à au vecteur colonne à droite du calcul, on obtient le vecteur colonne à gauche du calcul : ce vecteur n'est pas dans l'espace colonne.
+Ici, cet espace colonne est donc un espace vectoriel, qui a donc une dimension.
+Généralement, <span class="important">la dimension de l'espace colonne est nommée le rang de la matrice</span>.
+</p>
+<math><mrow><mo>[</mo><mtable><mtr><mtd><mi>2</mi></mtd></mtr><mtr><mtd><mi>10</mi></mtd></mtr></mtable><mo>]</mo></mrow> = 2 * <mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd></mtr><mtr><mtd><mi>5</mi></mtd></mtr></mtable><mo>]</mo></mrow> <mimp> Vec((<mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd></mtr><mtr><mtd><mi>5</mi></mtd></mtr></mtable><mo>]</mo></mrow>, <mrow><mo>[</mo><mtable><mtr><mtd><mi>2</mi></mtd></mtr><mtr><mtd><mi>10</mi></mtd></mtr></mtable><mo>]</mo></mrow>)) = Vec((<mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd></mtr><mtr><mtd><mi>5</mi></mtd></mtr></mtable><mo>]</mo></mrow>))</math>
+<math><mimp>Rg(A) = 1</math>
+
+
+
+
+
+
+<h3>Le produit matriciel</h3>
+
+<p>
+Parlons d'une autre opération sur les matrices, plus complexe mais très utile : le produit matriciel.
 <span class="important"><definition name="matrix_product"></span>.
+
+</p>
+<p>
 Soyons plus précis, avec une représentation graphique de deux matrices "A" et "B" de dimension "m, n" et "n, p", dont on va obtenir le produit matriciel.
 </p>
 <table>
@@ -787,6 +987,11 @@ Généralement, pour une matrice "A", la transposée de "A" se note "A" avec un 
 <math><mi>A</mi><msup>T</msup> = <mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd><mtd><mi>3</mi></mtd></mtr><mtr><mtd><mi>2</mi></mtd><mtd><mi>4</mi></mtd></mtr></mtable><mo>]</mo></mrow></math></br>
 <math>B = <mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd><mtd><mi>2</mi></mtd></mtr><mtr><mtd><mi>3</mi></mtd><mtd><mi>4</mi></mtd></mtr><mtr><mtd><mi>5</mi></mtd><mtd><mi>6</mi></mtd></mtr></mtable><mo>]</mo></mrow></math></br>
 <math><mi>B</mi><msup>T</msup> = <mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd><mtd><mi>3</mi></mtd><mtd><mi>5</mi></mtd></mtr><mtr><mtd><mi>2</mi></mtd><mtd><mi>4</mi></mtd><mtd><mi>6</mi></mtd></mtr></mtable><mo>]</mo></mrow></math>
+
+
+
+
+
 
 <h3>Le lien matrice - application linéaire</h3>
 <p>
@@ -1232,6 +1437,13 @@ En fait, <span class="important">on peut prouver que cette nouvelle matrice repr
 
 
 
+<h3>Le déterminant</h3>
+<p>
+Le déterminant est une valeur obtensible via une une application linéaire, qui permet de faciliter son étude.
+En effet, <span class="important"><definition name=""></span>.
+</p>
+
+
 
 <h3>Les champs scalaires et vectoriels</h3>
 <p>
@@ -1263,7 +1475,15 @@ On peut par exemple imaginer (dans "R²") :
 
 
 
+
+
+
+
+
+
 <h2>Les espaces de Hilbert et la géométrie euclidienne</h2>
+
+
 
 <h3>Les espaces vectoriels normés</h3>
 <p>

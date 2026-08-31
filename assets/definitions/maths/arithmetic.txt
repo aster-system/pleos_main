@@ -17,6 +17,9 @@
     <content name="power">une puissance entre deux nombres entiers naturels représente une opération entre deux nombres entiers naturels "a" et "b", donnant comme valeur la valeur partant de "a" obtenue après la répétition de "b" fois l'opération de multiplication de "a" avec lui même</content>
     <content name="soustraction">une soustraction entre deux nombres entiers naturels représente une opération entre deux nombres entiers naturels "a" et "b", donnant comme valeur la valeur partant de "a" obtenue après la répétition de "b" l'application "prédécesseur"</content>
 </new_definition>
+<new_definition name="prime_number">
+    <content>un nombre premier est un nombre possédant précisément deux diviseurs : 1 et lui-même</content>
+</new_definition>
 <new_definition name="rational_number">
     <content>un nombres rationnel représente un nombre entier relatif (nommé "numérateur"), que l'on a découpé (au sens de "diviser") en une quantité finie et non nulle (nommée "dénominateur")</content>
 </new_definition>
