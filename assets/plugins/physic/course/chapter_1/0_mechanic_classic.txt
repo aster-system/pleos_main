@@ -2,7 +2,15 @@
 
 
 
+
+
+
+
+
+
 <h2>La mécanique newtonienne</h2>
+
+
 
 <h3>La mécanique pré-Newton</h3>
 <p>
@@ -20,6 +28,8 @@ Foncièrement parlant, <span class="important">cette mécanique est l'ancêtre d
 <p>
 Le début de la formalisation moderne est apparue avec <scientist name="galileo" type="quote">.
 </p>
+
+
 
 <h3>Les bases de la mécanique newtonienne</h3>
 <p>
@@ -95,6 +105,7 @@ Or, nous pouvons ici obtenir 3 vecteurs déplacements, qui représente des duré
 <arrow color=blue x_1=3 y_1=-3 x_2=1 y_2=-3><arrow color=blue x_1=1 y_1=-3 x_2=1 y_2=-1/2><arrow color=blue x_1=1 y_1=-1/2 x_2=5/2 y_2=-1/2>
 </graphic>
 <p>
+En fait, <span class="important">notre vecteur déplacement ici n'est qu'une moyenne du déplacement "réel" entre les deux endroits où l'on effectue les mesures</span>.
 D'ailleurs, il est évident que nous pouvons encore rendre chacun de ces vecteurs de plus en plus précis.
 Par exemple, entre Marseille et Montpellier, il y a beaucoup de villes : Salon-de-Provence, Saint-Gilles, Gallargues-le-Montueux...
 Et mêmes, entre ces villes, on peut noter chaque village, chaque quartier, chaque rue...
@@ -102,17 +113,29 @@ Dans tous les cas, la durée associée à chaque vecteur et de plus en plus peti
 Ici, l'idée est assez simple : <span class="important">plus les durées sont petites, plus on est précis et proche de la réalité</span>.
 </p>
 <p>
+Il y a autre chose que l'on peut mesure ici : la longueur d'un déplacement.
+En effet, quand on effectue et mesure un déplacement, il est évident qu'il existe une distance entre les deux points du déplacement, distance qui représente un nombre réel positif ou nul.
+Pour formaliser cela, <span class="important">si on note le vecteur déplacement "v", on va noter la distance entre les deux points utilisé "||v||"</span> (notation empruntée des mathématiques).
+Nous pouvons utiliser une formule pour, à partir d'un vecteur, calculer la longueur d'un déplacement.
+</p>
+<p>
 Reprenons les mathématiques.
 Comme tout ce qui existe, on peut représenter la position de la voiture (ou de n'importe quel objet) comme une fonction, allant de l'ensemble des nombres réels positifs vers un ensemble de coordonnées.
-Ici, l'ensemble d'arrivée représente l'ensemble des unités de temps (comme des secondes) possibles après le départ de la voiture.
+Ici, l'ensemble de départ représente l'ensemble des unités de temps (comme des secondes) possibles après le départ de la voiture, et l'image de l'une de ces valeurs représente une position (et donc, les coordonnées) de la voiture.
 De plus, pour notre exemple, nous pouvons représenter les positions des villes avec seulement deux axes : ouest - est et nord - sud.
-Donc, nous avons une fonction (que nous allons noter "p") allant de "R" vers "R²".
+Donc, nous avons une fonction (que nous allons noter "p") allant de "R+" vers "R²".
 </p>
-<math>p : R <mto> <mi>R</mi><msup>2</msup></math>
+<math>p : <mi>R</mi><msub>+</msub> <mto> <mi>R</mi><msup>2</msup></math>
 <p>
-Un déplacement entre deux moments "t indice 1" et "t indice 2" se notre donc très simple "p(t indice 2) - p(t indice 1)".
+Un déplacement de la voiture entre deux moments "t indice 1" et "t indice 2" se note donc très simple "p(t indice 2) - p(t indice 1)".
 </p>
-<math><mdelt>p = p(<mi>t</mi><msub>2</msub>) - p(<mi>t</mi><msub>1</msub>)</math>
+<math><mdelta>p = p(<mi>t</mi><msub>2</msub>) - p(<mi>t</mi><msub>1</msub>)</math>
+
+
+
+
+
+
 
 
 
