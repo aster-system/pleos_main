@@ -115,9 +115,52 @@ Ici, l'idée est assez simple : <span class="important">plus les durées sont pe
 <p>
 Il y a autre chose que l'on peut mesure ici : la longueur d'un déplacement.
 En effet, quand on effectue et mesure un déplacement, il est évident qu'il existe une distance entre les deux points du déplacement, distance qui représente un nombre réel positif ou nul.
-Pour formaliser cela, <span class="important">si on note le vecteur déplacement "v", on va noter la distance entre les deux points utilisé "||v||"</span> (notation empruntée des mathématiques).
-Nous pouvons utiliser une formule pour, à partir d'un vecteur, calculer la longueur d'un déplacement.
+Ici, <span class="important">nous pouvons utiliser une formule pour calculer la longueur d'un déplacement avec son vecteur : la formule de la norme euclidienne de ce vecteur (qui est donc mathématiquement la distance la plus proche entre le point au départ du déplacement et le point à la fin du déplacement)</span>.
+Si nous notons la distance "d", et que nous utilisons un vecteur 3D (noté "(x, y, z)"), "d" se calcule ainsi :
 </p>
+<math>d = <msqrt><mi>x</mi><msup>2</msup><mo>+</mo><mi>y</mi><msup>2</msup><mo>+</mo><mi>z</mi><msup>2</msup></msqrt></math>
+<p>
+Si nous notons la distance "d", et que nous utilisons un vecteur 2D (noté "(x, y)"), "d" se calcule ainsi :
+</p>
+<math>d = <msqrt><mi>x</mi><msup>2</msup><mo>+</mo><mi>y</mi><msup>2</msup></msqrt></math>
+<p>
+Quand vous êtes en une dimension (avec un vecteur 1D noté "(x)"), "d" est tout simplement égal à "x".
+</p>
+<math>d = x</math>
+<p>
+Si votre vecteur s'appelle "v", <span class="important">il est aussi possible de noter sa norme en notons "||v||"</span>.
+</p>
+<math>d = ||<mvec>v</mvec>||<math>
+<p>
+Grâce à ça, nous pouvons introduire un nouveau concept : la vitesse.
+De manière très générale, <span class="important"><definition name="speed"></span>.
+L'idée est donc de prendre une information évoluant dans le temps, et de représenter cette évolution.
+Dans notre contexte actuel, <span class="important"><definition name="speed-position"></span>.
+En fait, pour un déplacement précis, on peut obtenir une moyenne de comment la position de l'objet à varier pendant ce déplacement.
+Pour être précis, <span class="important">on sait que le déplacement a eu lieu de telle manière que, entre le moment du début du déplacement et de la fin du déplacement, l'objet à bouger d'une distance de "d" unités</span>.
+Donc, l'objet à bouger de telle manière qu'il à bouger de "d" unités en "t indice 2" - "t indice 1" secondes.
+Cela veut donc dire que, un 1 unité de temps, l'objet à bouger d'une quantité d'unités telle que si on la multipliez par "t indice 2" - "t indice 1", on obtiendrait "d".
+Donc, <span class="important">en une unité de temps, l'objet à bouger de en moyenne "d" unités divisés par "t indice 2 - t indice 2" unités de temps</span>.
+Généralement, on note cette moyenne "v".
+</p>
+<math>v = <mfrac><mrow><mi>d</mi></mrow><mrow><mi>t</mi><msub>2</msub><mo>-</mo><mi>t</mi><msub>1</msub></mrow></mfrac></math>
+<p>
+Ici, on peut dire que l'objet à bouger de "d" unités, <span class="important">mais on peut aussi préciser comment à bouger l'objet dans chacune des coordonnées qui ont variés pendant le déplacement</span>.
+Dans ce cas, "v" devient un vecteur, où chaque composante représente la différence entre chaque composantes des vecteurs de départ (vecteur d'arrivé moins vecteur de départ), divisé par cette même valeur de temps.
+En 3D, on note :
+</p>
+<math><mvec>v</mvec> = (<mfrac><mrow><mi>x</mi></mrow><mrow><mi>t</mi><msub>2</msub><mo>-</mo><mi>t</mi><msub>1</msub></mrow></mfrac>, <mfrac><mrow><mi>y</mi></mrow><mrow><mi>t</mi><msub>2</msub><mo>-</mo><mi>t</mi><msub>1</msub></mrow></mfrac>, <mfrac><mrow><mi>z</mi></mrow><mrow><mi>t</mi><msub>2</msub><mo>-</mo><mi>t</mi><msub>1</msub></mrow></mfrac>)</math>
+<p>
+En 2D, on note :
+</p>
+<math><mvec>v</mvec> = (<mfrac><mrow><mi>x</mi></mrow><mrow><mi>t</mi><msub>2</msub><mo>-</mo><mi>t</mi><msub>1</msub></mrow></mfrac>, <mfrac><mrow><mi>y</mi></mrow><mrow><mi>t</mi><msub>2</msub><mo>-</mo><mi>t</mi><msub>1</msub></mrow></mfrac>)</math>
+<p>
+Dans tous les cas, on peut par le calcul retrouver les valeurs calculées avec "v" tout seul plus haut :
+</p>
+<math><mvec>v</mvec> = (<mfrac><mrow><mi>x</mi></mrow><mrow><mi>t</mi><msub>2</msub><mo>-</mo><mi>t</mi><msub>1</msub></mrow></mfrac>, <mfrac><mrow><mi>y</mi></mrow><mrow><mi>t</mi><msub>2</msub><mo>-</mo><mi>t</mi><msub>1</msub></mrow></mfrac>, <mfrac><mrow><mi>z</mi></mrow><mrow><mi>t</mi><msub>2</msub><mo>-</mo><mi>t</mi><msub>1</msub></mrow></mfrac>)</math></br>
+<math>||<mvec>v</mvec>|| = <msqrt><mrow><mo>(</mo><mfrac><mrow><mi>x</mi></mrow><mrow><mi>t</mi><msub>2</msub><mo>-</mo><mi>t</mi><msub>1</msub></mrow></mfrac><mo>)</mo></mrow><msup>2</msup><mo>+</mo><mrow><mo>(</mo><mfrac><mrow><mi>y</mi></mrow><mrow><mi>t</mi><msub>2</msub><mo>-</mo><mi>t</mi><msub>1</msub></mrow></mfrac><mo>)</mo></mrow><msup>2</msup><mo>+</mo><mrow><mo>(</mo><mfrac><mrow><mi>z</mi></mrow><mrow><mi>t</mi><msub>2</msub><mo>-</mo><mi>t</mi><msub>1</msub></mrow></mfrac><mo>)</mo></mrow><msup>2</msup></msqrt></math></br>
+<math>||<mvec>v</mvec>|| = <msqrt><mfrac><mrow><mi>x</mi><msup>2</msup></mrow><mrow><mrow><mo>(</mo><mi>t</mi><msub>2</msub><mo>-</mo><mi>t</mi><msub>1</msub><mo>)</mo></mrow><msup>2</msup></mrow></mfrac><mo>+</mo><mfrac><mrow><mi>y</mi><msup>2</msup></mrow><mrow><mrow><mo>(</mo><mi>t</mi><msub>2</msub><mo>-</mo><mi>t</mi><msub>1</msub><mo>)</mo></mrow><msup>2</msup></mrow></mfrac><mo>+</mo><mfrac><mrow><mi>z</mi><msup>2</msup></mrow><mrow><mrow><mo>(</mo><mi>t</mi><msub>2</msub><mo>-</mo><mi>t</mi><msub>1</msub><mo>)</mo></mrow><msup>2</msup></mrow></mfrac></msqrt></math></br>
+<math>||<mvec>v</mvec>|| = <msqrt><mfrac><mrow><mi>x</mi><msup>2</msup><mo>+</mo><mi>y</mi><msup>2</msup><mo>+</mo><mi>z</mi><msup>2</msup></mrow><mrow><mrow><mo>(</mo><mi>t</mi><msub>2</msub><mo>-</mo><mi>t</mi><msub>1</msub><mo>)</mo></mrow><msup>2</msup></mrow></mfrac></msqrt> = <mfrac><mrow><msqrt><mi>x</mi><msup>2</msup><mo>+</mo><mi>y</mi><msup>2</msup><mo>+</mo><mi>z</mi><msup>2</msup></msqrt></mrow><mrow><mi>t</mi><msub>2</msub><mo>-</mo><mi>t</mi><msub>1</msub></mrow></mfrac> = <mfrac><mrow><mi>d</mi></mrow><mrow><mi>t</mi><msub>2</msub><mo>-</mo><mi>t</mi><msub>1</msub></mrow></mfrac></math></math></br>
 <p>
 Reprenons les mathématiques.
 Comme tout ce qui existe, on peut représenter la position de la voiture (ou de n'importe quel objet) comme une fonction, allant de l'ensemble des nombres réels positifs vers un ensemble de coordonnées.
@@ -127,7 +170,7 @@ Donc, nous avons une fonction (que nous allons noter "p") allant de "R+" vers "R
 </p>
 <math>p : <mi>R</mi><msub>+</msub> <mto> <mi>R</mi><msup>2</msup></math>
 <p>
-Un déplacement de la voiture entre deux moments "t indice 1" et "t indice 2" se note donc très simple "p(t indice 2) - p(t indice 1)".
+Un déplacement de la voiture entre deux moments "t indice 1" et "t indice 2" (que l'on peut noter "delta p") se calcul donc très simplement : "p(t indice 2) - p(t indice 1)".
 </p>
 <math><mdelta>p = p(<mi>t</mi><msub>2</msub>) - p(<mi>t</mi><msub>1</msub>)</math>
 

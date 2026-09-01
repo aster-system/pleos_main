@@ -15,5 +15,5 @@
 </new_definition>
 <new_definition name="speed">
     <content>la vitesse représente l'évolution dans le temps d'une information sur un objet</content>
-    <content name="position">la vitesse représente l'évolution dans le temps d'une information sur un objet</content>
+    <content name="position">la vitesse représente l'évolution dans le temps de la position d'un objet</content>
 </new_definition>
