@@ -2,7 +2,15 @@
 
 
 
-<h2>L'intégration simple</h2>
+
+
+
+
+
+
+<h2>L'intégration réelle</h2>
+
+
 
 <h3>Qu'est ce qu'est l'intégration ?</h3>
 <p>
@@ -189,6 +197,8 @@ Généralement, cette propriété est nommée "linéarité" de l'intégrale.
 </p>
 <math><mi><mint></mi><msubsup><mi>a</mi><mi>b</mi></msubsup>(f + g)(x) dx = <mi><mint></mi><msubsup><mi>a</mi><mi>b</mi></msubsup>f(x) dx + <mi><mint></mi><msubsup><mi>a</mi><mi>b</mi></msubsup>g(x) dx</math></br>
 <math><mi><mint></mi><msubsup><mi>a</mi><mi>b</mi></msubsup>(k * f)(x) dx = k * <mi><mint></mi><msubsup><mi>a</mi><mi>b</mi></msubsup>f(x) dx</math>
+
+
 
 <h3>Les propriétés de la Riemann-intégrale</h3>
 <p>

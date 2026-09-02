@@ -2,9 +2,20 @@
 
 
 
+
+
+
+
+
+
+
+
+
 <h2>La dérivation simple</h2>
 
-<h3>Qu'est ce qu'est la dérivation ?</h3>
+
+
+<h3>Qu'est ce qu'est la dérivation réelle ?</h3>
 <p>
 Bien que nous introduisons ce concept assez tard, la dérivation mathématique est un outil important, et donc "l'intuition" est assez simple à obtenir.
 Pour l'utiliser, nous allons commencer par le cas le plus simple : les fonctions réelles.
@@ -139,6 +150,8 @@ Ici, on reconnait les limites fondamentales utilisant le "cosinus" et le "sinus"
 Donc, <span class="important">la dérivée de la fonction cosinus est la fonction sinus multipliée par "-1"</span>.
 </p>
 
+
+
 <h3>Quelques théorèmes pratiques</h3>
 <p>
 Avec les dérivées, nous pouvons énumérer beaucoup de théorèmes très pratiques.
@@ -182,6 +195,8 @@ Reprenons le cas de notre fonction "x²", avec "a = -1" et "b = 2" : le point qu
 </p>
 <graphic><background_color white><function expression="x*x"></function><function expression="x+2"></function><function expression="-1/4+x"></function></graphic>
 
+
+
 <h3>L'arithmétique des dérivées</h3>
 <p>
 Comme pour les limites et la continuité, il existe une forme d'arithmétique sur les formes dérivées.
@@ -223,11 +238,15 @@ Avec ce théorème, nous pourrons utiliser des dérivées bien plus complexes, e
 Sa démonstration est un peu technique, mais abordable (<a href="demo#5_0_1_2">présente juste ici</a>).
 </p>
 
+
+
 <h3>Les primitives</h3>
 <p>
 Mathématiquement parlant, le concept de primitive d'une fonction représente la réciproque du concept de dérivée.
 En effet, <span class="important"><definition name="primitive"></span>.
 </p>
+
+
 
 <h3>Les développements limités</h3>
 <p>

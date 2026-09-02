@@ -71,6 +71,7 @@ Mathématiquement parlant, <span class="important"><definition name="reference-r
 
 
 
+<h3>Le mouvement en mécanique newtonienne</h3>
 <p>
 De manière un peu plus avancée, on peut étudier l'évolution de la position d'un objet, grâce au concept de mouvement.
 <span class="important"><definition name="movement"></span>.
@@ -161,6 +162,7 @@ Dans tous les cas, on peut par le calcul retrouver les valeurs calculées avec "
 <math>||<mvec>v</mvec>|| = <msqrt><mrow><mo>(</mo><mfrac><mrow><mi>x</mi></mrow><mrow><mi>t</mi><msub>2</msub><mo>-</mo><mi>t</mi><msub>1</msub></mrow></mfrac><mo>)</mo></mrow><msup>2</msup><mo>+</mo><mrow><mo>(</mo><mfrac><mrow><mi>y</mi></mrow><mrow><mi>t</mi><msub>2</msub><mo>-</mo><mi>t</mi><msub>1</msub></mrow></mfrac><mo>)</mo></mrow><msup>2</msup><mo>+</mo><mrow><mo>(</mo><mfrac><mrow><mi>z</mi></mrow><mrow><mi>t</mi><msub>2</msub><mo>-</mo><mi>t</mi><msub>1</msub></mrow></mfrac><mo>)</mo></mrow><msup>2</msup></msqrt></math></br>
 <math>||<mvec>v</mvec>|| = <msqrt><mfrac><mrow><mi>x</mi><msup>2</msup></mrow><mrow><mrow><mo>(</mo><mi>t</mi><msub>2</msub><mo>-</mo><mi>t</mi><msub>1</msub><mo>)</mo></mrow><msup>2</msup></mrow></mfrac><mo>+</mo><mfrac><mrow><mi>y</mi><msup>2</msup></mrow><mrow><mrow><mo>(</mo><mi>t</mi><msub>2</msub><mo>-</mo><mi>t</mi><msub>1</msub><mo>)</mo></mrow><msup>2</msup></mrow></mfrac><mo>+</mo><mfrac><mrow><mi>z</mi><msup>2</msup></mrow><mrow><mrow><mo>(</mo><mi>t</mi><msub>2</msub><mo>-</mo><mi>t</mi><msub>1</msub><mo>)</mo></mrow><msup>2</msup></mrow></mfrac></msqrt></math></br>
 <math>||<mvec>v</mvec>|| = <msqrt><mfrac><mrow><mi>x</mi><msup>2</msup><mo>+</mo><mi>y</mi><msup>2</msup><mo>+</mo><mi>z</mi><msup>2</msup></mrow><mrow><mrow><mo>(</mo><mi>t</mi><msub>2</msub><mo>-</mo><mi>t</mi><msub>1</msub><mo>)</mo></mrow><msup>2</msup></mrow></mfrac></msqrt> = <mfrac><mrow><msqrt><mi>x</mi><msup>2</msup><mo>+</mo><mi>y</mi><msup>2</msup><mo>+</mo><mi>z</mi><msup>2</msup></msqrt></mrow><mrow><mi>t</mi><msub>2</msub><mo>-</mo><mi>t</mi><msub>1</msub></mrow></mfrac> = <mfrac><mrow><mi>d</mi></mrow><mrow><mi>t</mi><msub>2</msub><mo>-</mo><mi>t</mi><msub>1</msub></mrow></mfrac></math></math></br>
+
 <p>
 Reprenons les mathématiques.
 Comme tout ce qui existe, on peut représenter la position de la voiture (ou de n'importe quel objet) comme une fonction, allant de l'ensemble des nombres réels positifs vers un ensemble de coordonnées.
@@ -170,9 +172,34 @@ Donc, nous avons une fonction (que nous allons noter "p") allant de "R+" vers "R
 </p>
 <math>p : <mi>R</mi><msub>+</msub> <mto> <mi>R</mi><msup>2</msup></math>
 <p>
+Dans beaucoup de contexte, <span class="important">cette fonction est continue, et même dérivable</span>.
+Ici, nous allons considérer que c'est le cas.
 Un déplacement de la voiture entre deux moments "t indice 1" et "t indice 2" (que l'on peut noter "delta p") se calcul donc très simplement : "p(t indice 2) - p(t indice 1)".
 </p>
 <math><mdelta>p = p(<mi>t</mi><msub>2</msub>) - p(<mi>t</mi><msub>1</msub>)</math>
+<p>
+Pour obtenir une vitesse moyenne entre deux moments sur chaque coordonnées, on peut donc utiliser la formule vue plus haut avec notre fonction.
+</p>
+<math>v = <mfrac><mrow><mi>f</mi><mo>(</mo><mi>t</mi><msub>2</msub><mo>)</mo><mo>-</mo><mi>f</mi><mo>(</mo><mi>t</mi><msub>1</msub><mo>)</mo></mrow><mrow><mi>t</mi><msub>2</msub><mo>-</mo><mi>t</mi><msub>1</msub></mrow></mfrac></math>
+<p>
+Si on note "h" la différence de temps entre "t indice 2" et "t indice 1" (et donc, "h" étant "t indice 2" moins "t indice 1"), on peut modifier la formule de manière plus reconnaissable :
+</p>
+<math><mvec>v</mvec><msub>m<msub> = <mfrac><mrow><mi>f</mi><mo>(</mo><mi>t</mi><msub>1</msub><mo> + h)</mo><mo>-</mo><mi>f</mi><mo>(</mo><mi>t</mi><msub>1</msub><mo>)</mo></mrow><mrow><mi>h</mi></mrow></mfrac></math>
+<p>
+Comme nous l'avons vue, plus "h" est petit, plus nous avons un résultat précis.
+Ici, <span class="important">en utilisant le formalisme des limites mathématiques, on peut donc dire que la vitesse instantanée au moment "t indice 1" est la valeur que nous avons donné à "v indice m" quand "h" tend vers "0"</span>.
+Nous allons noter cette valeur "v".
+</p>
+<math><mvec>v</mvec><msub><mrow><mi>t</mi><msub>1</msub></mrow><msub> = <mlim unknown=h to=0><mfrac><mrow><mi>f</mi><mo>(</mo><mi>t</mi><msub>1</msub><mo> + h)</mo><mo>-</mo><mi>f</mi><mo>(</mo><mi>t</mi><msub>1</msub><mo>)</mo></mrow><mrow><mi>h</mi></mrow></mfrac></math>
+<p>
+Or, mathématiquement parlant, <span class="important">cette valeur représente le nombre dérivée de "f" en "t indice 1"</span>.
+On peut donc obtenir la fonction dérivée de "p", qui pour toute valeur de temps, représente donc la vitesse instantanée de l'objet à ce moment précis.
+En physique, pour utiliser des dérivées, on utilise généralement la notation de Leibniz.
+</p>
+<math><mvec>v</mvec>(t) = <mfrac><mrow><mi>dp</mi></mrow><mrow><mi>dt</mi></mrow></mfrac></math></br>
+<p>
+
+</p>
 
 
 
