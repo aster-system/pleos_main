@@ -237,6 +237,13 @@ Maintenant, généralisons pour de bon ce type de formule, avec une règle très
 Avec ce théorème, nous pourrons utiliser des dérivées bien plus complexes, et assez facilement.
 Sa démonstration est un peu technique, mais abordable (<a href="demo#5_0_1_2">présente juste ici</a>).
 </p>
+<p>
+De manière similaire, <span class="important">si nous avons une fonction quelconque dérivable, et que nous savons que cette fonction admet une fonction réciproque, alors nous pouvons calculer les nombres dérivés de la fonction réciproque via la fonction de départ</span>.
+En effet, le nombre dérivée d'une valeur "a" de la fonction réciproque est égal à l'inverse de l'image de l'image de "a" par la réciproque, par la dérivée de la fonction de départ.
+Comme pour toutes les fonctions, on peut aussi définir ces dérivés grâce à une fonction dérivée (qui est donc la dérivée de la fonction réciproque).
+Sa démonstration (<a href="demo#inverse_derivation_rule">présente juste ici</a>) est accessible.
+</p>
+<math>(<mi>f</mi><msup>-1</msup>)'(a) = <mfrac><mrow><mi>1</mi></mrow><mrow><mi>f'</mi><mo>(</mo><mi>f</mi><msup>-1</msup><mo>(</mo><mi>a</mi><mo>)</mo><mo>)</mo></mrow></mfrac></math>
 
 
 

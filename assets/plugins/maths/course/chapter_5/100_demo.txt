@@ -166,6 +166,46 @@ Donc :
 </p>
 <math>s'(a) = g'(j(a)) * j'(a)</math>
 
+<h4 id="inverse_derivation_rule">5.0.1.2</h4>
+<p>
+Considérons une fonction réelle (dérivable) et sa réciproque.
+Démontrons que le nombre dérivée d'une valeur "a" de la fonction réciproque est égal à l'inverse de l'image de l'image de "a" par la réciproque, par la dérivée de la fonction de départ.
+Rappelons la définition de la dérivée de "f" en "a".
+</p>
+<math>f'(a) = <mlim unknown=a value=b><mfrac><mi>f(b) - f(a)</mi><mi>b - a</mi></mfrac></math>
+<p>
+La définition est similaire pour la réciproque de "f".
+</p>
+<math>(<mi>f</mi><msup>-1</msup>)'(a) = <mlim unknown=a value=b><mfrac><mrow><mi>f</mi><msup>-1</msup><mo>(</mo><mi>b</mi><mo>)</mo><mo>-</mo><mi>f</mi><msup>-1</msup><mo>(</mo><mi>a</mi><mo>)</mo></mrow><mi>b - a</mi></mfrac></math>
+<p>
+Rappelons le lien entre "f" et la réciproque de "f".
+</p>
+<math><mi>f</mi><msup>-1</msup>(f(x)) = f(<mi>f</mi><msup>-1</msup>(x)) = x</math>
+<p>
+Ici prenons la définition de la dérivée de "f" en "a", et passons à son inverse.
+</p>
+<math><mfrac><mi>1</mi><mi>f'(a)</mi></mfrac> = <mlim unknown=a value=b><mfrac><mi>b - a</mi><mrow><mi>f</mi><mo>(</mo><mi>b</mi><mo>)</mo><mo>-</mo><mi>f</mi><mo>(</mo><mi>a</mi><mo>)</mo></mrow></mfrac></math>
+<p>
+Ici, nous allons poser "c" égal à l'image de "a" par la réciproque de "f" et "d" égal à l'image de "b" par la réciproque de "d".
+Nous allons aussi noter comment passer de "a" à "c" et de "b" à "d".
+</p>
+<math>c = f(a) <mequi> a = <mi>f</mi><msup>-1</msup>(c)</math></br>
+<math>d = f(b) <mequi> b = <mi>f</mi><msup>-1</msup>(d)</math>
+<p>
+Nous pouvons ici changer de variable dans la limite, et en obtenir une nouvelle plus intéressante.
+</p>
+<math><mlim unknown=a value=b><mfrac><mi>b - a</mi><mrow><mi>f</mi><mo>(</mo><mi>b</mi><mo>)</mo><mo>-</mo><mi>f</mi><mo>(</mo><mi>a</mi><mo>)</mo></mrow></mfrac> = <mlim unknown=c value=d><mfrac><mrow><mi>f</mi><msup>-1</msup><mo>(</mo><mi>d</mi><mo>)</mo><mo>-</mo><mi>f</mi><msup>-1</msup><mo>(</mo><mi>c</mi><mo>)</mo></mrow><mi>d - c</mi></mfrac></math></br>
+<p>
+Or cette deuxième limite est exactement la dérivée de la réciproque de "f" en "c".
+</p>
+<math>(<mi>f</mi><msup>-1</msup>)'(c) = <mlim unknown=c value=d><mfrac><mrow><mi>f</mi><msup>-1</msup><mo>(</mo><mi>d</mi><mo>)</mo><mo>-</mo><mi>f</mi><msup>-1</msup><mo>(</mo><mi>c</mi><mo>)</mo></mrow><mi>d - c</mi></mfrac></math></br>
+<math>(<mi>f</mi><msup>-1</msup>)'(c) = <mlim unknown=a value=b><mfrac><mi>b - a</mi><mrow><mi>f</mi><mo>(</mo><mi>b</mi><mo>)</mo><mo>-</mo><mi>f</mi><mo>(</mo><mi>a</mi><mo>)</mo></mrow></mfrac></math></br>
+<math>(<mi>f</mi><msup>-1</msup>)'(c) = <mfrac><mi>1</mi><mi>f'(a)</mi></mfrac></math></br>
+<p>
+Or, "a" est égal à l'image de la réciproque de "f" par "c", et nous pouvons retrouve l'égalité recherchée :
+</p>
+<math>(<mi>f</mi><msup>-1</msup>)'(c) = <mfrac><mrow><mi>1</mi></mrow><mrow><mi>f'</mi><mo>(</mo><mi>f</mi><msup>-1</msup><mo>(</mo><mi>c</mi><mo>)</mo><mo>)</mo></mrow></mfrac></math>
+
 
 
 <h2>Le calcul intégral</h2>
