@@ -1918,6 +1918,46 @@ Donc, un multigraphe de ce genre est parfaitement licite :
 <text x=-3 y=-7/2>Italie</text>
 </graphic>
 
+<p>
+Maintenant, parlons des ensembles ordonnés, et des applications dans les ensembles ordonnés.
+En effet, il existe un type précis d'application très utilisé avec ce genre d'ensemble : les applications croissantes (mais aussi décroissantes et monotones).
+<span class="important"><definition name="monotone_function-increasing"></span>.
+En d'autres termes, une fonction croissante "conserve" l'ordre des éléments entre l'ensemble de départ et l'ensemble d'arrivée.
+Une fonction "f" est croissante si elle respecte cette propriété :
+</p>
+<math>(E, ~), (F, @)</math></br>
+<math>f : E <mto> F</math></br>
+<math><mforall> x, y <min> E, x ~ y <mimp> f(x) @ (y)</math>
+<p>
+Un exemple très simple est une application identité, sur par exemple "{0, 1, 2, 3, 4}", tous deux munis de leur relation usuel.
+En fait, ceci marche avec n'importe quel ensemble.
+</p>
+<math>x <mltequal> y <mimp> f(x) <mltequal> f(y)</math>
+<p>
+Nous pouvons aussi parler de fonctions décroissantes.
+<span class="important"><definition name="monotone_function-decreasing"></span>.
+En d'autres termes, une fonction décroissante "inverse" l'ordre des éléments entre l'ensemble de départ et l'ensemble d'arrivée.
+Une fonction "f" est décroissante si elle respecte cette propriété :
+</p>
+<math>(E, ~), (F, @)</math></br>
+<math>f : E <mto> F</math></br>
+<math><mforall> x, y <min> E, x ~ y <mimp> f(x) <mi>@</mi><msup>op</msup> (y) <mand> f(y) @ (x)</math>
+<p>
+Un exemple très simple serait l'application allant "{0, 1, 2, 3}" vers "{0, 1, 2, 3}", où "f(0) = 3", "f(1) = 2", "f(2) = 1" et "f(3) = 0".
+Bien évidemment, on pourrait écrire cette fonction comme "f(x) = 3 - x".
+</p>
+<p>
+Finalement, définissons les fonctions monotones.
+<span class="important"><definition name="monotone_function"></span>.
+</p>
+<p>
+D'ailleurs, <span class="important">si une application entre deux ensembles munis d'une relation d'ordre "conserve" la relation d'ordre stricte, on peut dire que la fonction est strictement croissante</span>.
+À l'inverse, si une application entre deux ensembles munis d'une relation d'ordre "inverse" la relation d'ordre stricte, on peut dire que la fonction est strictement décroissante.
+Encore une fois, <span class="important"><definition name="monotone_function-strict"></span>.
+Ici, l'application identité (dans tous les ensembles ordonnés possibles) respecte cette application.
+</p>
+<math>x <mlt> y <mimp> f(x) <mlt> f(y)</math>
+
 
 
 <h3>Les suites, familles et matrices en mathématiques</h3>

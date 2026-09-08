@@ -70,6 +70,8 @@
     <content>une relation binaire sur un ensemble est dite symétrique si, pour tout objet "a" et "b", si "a" est en relation avec "b", alors "b" est en relation avec "a" (et vice-versa)</content>
 </new_definition>
 
+
+
 <new_definition name="equivalence_class">
     <content>une classe d'équivalence d'un élément "x" d'un ensemble "E" représente l'ensemble de tous les éléments de "E" qui peuvent être reliés à "x" par relation d'équivalence "~"</content>
 </new_definition>
@@ -83,6 +85,8 @@
     <content>une relation binaire sur un ensemble est dite "relation d'ordre" quand elle est antisymétrique, réflexive et transitive</content>
     <content name="strict">une relation binaire sur un ensemble est dite "relation d'ordre stricte" quand elle est antisymétrique, antiréflexive et transitive</content>
 </new_definition>
+
+
 
 <new_definition name="extremum">
     <content>les extremums d'une partie "F" d'un ensemble ordonné "E" représentent le minimum de "F" (si il existe) et le maximum de "F" (si il existe)</content>
@@ -106,4 +110,13 @@
 <new_definition name="upper_bounds">
     <content>un majorant d'un sous-ensemble "F" d'un ensemble ordonné "E" est un élément de "E" qui succède (par la relation d'ordre étudiée) tous les éléments de "F"</content>
     <content name="lower">un minorant d'un sous-ensemble "F" d'un ensemble ordonné "E" est un élément de "E" qui précède (par la relation d'ordre étudiée) tous les éléments de "F"</content>
+</new_definition>
+
+
+
+<new_definition name="monotone_function">
+    <content>une application monotone est une application entre deux ensembles munis d'une relation d'ordre qui est soit croissante, soit décroissante</content>
+    <content name="decreasing">une application décroissante est une application entre deux ensembles munis d'une relation d'ordre, tel que si deux éléments sont en relation dans un sens précis par la relation de l'ensemble de départ, alors leurs images respectent la relation réciproque dans l'ensemble d'arrivée</content>
+    <content name="increasing">une application croissante est une application entre deux ensembles munis d'une relation d'ordre, tel que si deux éléments sont en relation dans un sens précis par la relation de l'ensemble de départ, alors leurs images suivent la relation dans l'ensemble d'arrivée</content>
+    <content name="strict">une application monotone est une application entre deux ensembles munis d'une relation d'ordre qui est soit strictement croissante, soit strictement décroissante</content>
 </new_definition>
