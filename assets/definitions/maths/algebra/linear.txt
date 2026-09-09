@@ -26,6 +26,9 @@
     <content name="symmetry">une application n-linéaire est dite symétrique si (et seulement si) l'image de plusieurs vecteurs dans un ordre précis par l'application est la même que l'image de ces vecteurs où vous permutez 2 vecteurs par rapport à l'ordre de départ</content>
     <content name="antisymmetry">une application n-linéaire est dite symétrique si (et seulement si) l'image de plusieurs vecteurs dans un ordre précis par l'application est l'opposée (par la première loi de l'espace vectoriel d'arrivé) de l'image de ces vecteurs où vous permutez 2 vecteurs par rapport à l'ordre de départ</content>
 </new_definition>
+<new_definition name="determinant">
+    <content name="n_linear">le déterminant d'une base "e" dans un espace vectoriel "E" est l'unique forme multilinéaire alternées sur "E" tel que l'image des vecteurs de "e" vaut "1"</content>
+</new_definition>
 
 <new_definition name="dual_space">
     <content>l'espace dual d'un espace vectoriel est l'ensemble de toutes les formes linéaires sur cet espace</content>

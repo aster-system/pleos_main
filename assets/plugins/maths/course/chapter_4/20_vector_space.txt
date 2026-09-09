@@ -740,7 +740,7 @@ En effet, on peut la simplifier en ne spécifiant qu'une base pour tous les vect
 <math>f(<mi>u</mi><msub>1</msub>, ..., <mi>u</mi><msub>n</msub>) = <msum from=1 unknown=k1 to=Dim(E)>...<msum from=1 unknown=kn to=Dim(E)>(<mproduct from=1 unknown=j to=n><mi>x</mi><msub>kj, j</msub>)f(<mi>b</mi><msub>k1</msub>, ..., <mi>b</mi><msub>kn</msub>)</math>
 <p>
 Bien évidemment, sauf dans certains cas ultra précis, cette formule ne nous servira pas.
-D'ailleurs, <span class="important">on peut simplifier cette formule dans le cas où l'application est alternée et dans le cas où "n = Dim(E)"</span>.
+D'ailleurs, <span class="important">on peut simplifier cette formule dans le cas où l'application est alternée, dans le cas où "n = Dim(E)" et où l'espace d'arrivée est le corps des scalaires (et donc où l'application multilinéaire est une forme multilinéaire)</span>.
 Pour cela, nous devons faire plusieurs observations.
 Premièrement, <span class="important">toutes les itérations de "f(b indice k de 1, ..., b indice k de n)" s'annulent quand deux de ces vecteurs sont égaux</span>.
 Comme tous les "b indice i" sont linéairement indépendant entre eux, la seule raison que "f" s'annule soit que deux fois le même vecteur de la base soit présent dans "f".
@@ -754,6 +754,27 @@ Donc, <span class="important">nous pouvons rajouter la signature au produit pour
 Au final, tout ce que nous venons de dire donne cette formule :
 </p>
 <math>f(<mi>u</mi><msub>1</msub>, ..., <mi>u</mi><msub>n</msub>) = (<msum from=S(n) unknown=s><mproduct from=1 unknown=j to=n><mi>x</mi><msub>s(j), j</msub>)f(<mi>b</mi><msub>1</msub>, ..., <mi>b</mi><msub>n</msub>)</math>
+<p>
+Donc, toutes formes multilinéaires alternées est entièrement déterminée par l'image des vecteurs "e".
+Or, pour chaque valeur du corps des scalaires, on peut parfaitement définir une application multilinéaire telle que l'image des vecteurs de "e" soit ce scalaire.
+Dans l'autre sens, pour toute application multilinéaire, il existe un scalaire tel que l'image des vecteurs de "e" soit ce scalaire.
+Via notre formule vue plus haut, le scalaire obtensible via l'application est unique, et réciproquement l'application obtenue via le scalaire est unique.
+Par les propriétés de multilinéarité, on peut vite déduire que additionner deux scalaires revient à additionner les formes multilinéaires qu'ils représentent, et multiplier un scalaire par un scalaire revient à multiplier la forme multilinéaire qu'il représente.
+Donc, <span class="important">l'ensemble des formes n-linéaires alternées sur un espace vectoriel de dimension "n" est isomorphe à l'espace vectoriel "F" de l'ensemble "K" sur le corps "K"</span>.
+</p>
+<math><mi>A</mi><msub>n</msub>(E, K) <misomorph> F<math>
+<p>
+Prenons le choix d'une base fixe "e".
+Parmi toutes ces formes, l'une d'elle est très intéressante : le déterminant.
+<span class="important"><definition name="determinant-n_linear"></span>.
+Généralement, il est noté "det indice e".
+</p>
+<math><mi>det</mi><msub>e</msub>(<mi>e</mi><msub>1</msub>, ..., <mi>e</mi><msub>n</msub>) = 1</math>
+<p>
+Généralement, <span class="important">il est aussi courant de trouver une notation utilisant une sorte de tableau (un peu comme les matrices)</span>.
+Dans le cas de vecteur de R exposant 3, on peut donc voir :
+</p>
+<math>det(u, v, w) = <math>A = <mo>|</mo><mtable><mtr><mtd><mi>x</mi></mtd><mtd><mi>x'</mi></mtd><mtd><mi>x''</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd><mtd><mi>y'</mi></mtd><mtd><mi>y''</mi></mtd></mtr><mtr><mtd><mi>z</mi></mtd><mtd><mi>z'</mi></mtd><mtd><mi>z''</mi></mtd></mtr></mtable><mo>|</mo></mrow></math>
 
 
 
