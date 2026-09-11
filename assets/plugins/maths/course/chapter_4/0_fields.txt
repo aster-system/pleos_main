@@ -65,6 +65,8 @@ On peut aussi citer ceux formé avec "Q" et "R".
 <math>(Q, +, .)</math></br>
 <math>(R, +, .)</math>
 
+
+
 <h3>Les sous-anneaux, idéaux et anneaux quotients</h3>
 <p>
 Comme il existe des sous-groupes de groupes, il existe des sous-anneaux d'anneaux.

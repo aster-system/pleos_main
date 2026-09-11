@@ -776,6 +776,21 @@ Dans le cas de vecteur de R exposant 3, on peut donc voir :
 </p>
 <math>det(u, v, w) = <math>A = <mo>|</mo><mtable><mtr><mtd><mi>x</mi></mtd><mtd><mi>x'</mi></mtd><mtd><mi>x''</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd><mtd><mi>y'</mi></mtd><mtd><mi>y''</mi></mtd></mtr><mtr><mtd><mi>z</mi></mtd><mtd><mi>z'</mi></mtd><mtd><mi>z''</mi></mtd></mtr></mtable><mo>|</mo></mrow></math>
 
+<h3>Les formes quadratiques</h3>
+<p>
+Après les applications linéaires, parlons d'un autre type d'application sur des espaces vectoriels : les formes quadratiques.
+<span class="important"><definition name="quadratic_form"></span>.
+Par exemple, dans "R exposant 3", un exemple de forme quadratique (probablement le plus standard d'ailleurs) peut-être :
+</p>
+<math>q(v) = q(x, y, z) = x² + y² + z²</math>
+<p>
+Cependant, ce n'est pas la définition officielle, qui est elle plus précise.
+En effet, <span class="important"><definition name="quadratic_form-rigorous"></span>.
+
+</p>
+<math><mexists> b : V <mtimes> V <mto> K</math></br>
+<math><mforall> u <min> V, q(u) = b(u, u)</math>
+
 
 
 
@@ -1458,11 +1473,7 @@ En fait, <span class="important">on peut prouver que cette nouvelle matrice repr
 
 
 
-<h3>Le déterminant</h3>
-<p>
-Le déterminant est une valeur obtensible via une une application linéaire, qui permet de faciliter son étude.
-En effet, <span class="important"><definition name=""></span>.
-</p>
+
 
 
 
@@ -1493,6 +1504,9 @@ Encore une fois, <span class="important">une champ de vecteur n'est pas forcéme
 On peut par exemple imaginer (dans "R²") :
 </p>
 <math>f((x, y)) = (<mi>x</mi><msup>2</msup> - y, x + <mi>y</mi><msup>2</msup>)</math>
+
+
+
 
 
 
@@ -1558,6 +1572,8 @@ L'inégalité triangulaire n'est pas bien plus compliqué à démontrer, mais de
 Cette norme peut s'illustrer assez facilement en 2D.
 </p>
 <graphic><base draw=1><background_color white><line x_1=0 y_1=0 x_2=3 y_2=0 border_color=blue><line x_1=3 y_1=0 x_2=3 y_2=2 border_color=green><line x_1=0 y_1=0 x_2=3 y_2=2></graphic>
+
+
 
 <h3>Les espaces de Hilbert et le produit scalaire</h3>
 <p>
@@ -1647,6 +1663,10 @@ Posons un vecteur "w" égal à "(g, h)".
 <math><mvec>u</mvec> . <mvec>v</mvec> = a * c + b * d = c * a + b * d = <mvec>v</mvec> . <mvec>u</mvec></math></br>
 <math><mvec>u</mvec> . <mvec>u</mvec> = a * a + b * b = <mi>a</mi><msup>2</msup> + <mi>b</mi><msup>2</msup> <mgtequal> 0</math></br>
 <math><mvec>u</mvec> . <mvec>u</mvec> = 0 <mimp> a * a + b * b =  0 <mimp> a = b = 0</math></br>
+<p>
+Nous pouvons aussi expliciter autre chose : si nous avons deux vecteurs de même taille, leur image par cette application semble changer selon ce que nous pourrons intuitivement observer comme étant "l'angle" entre les deux.
+En effet, <span class="important">cette application permet de définir la notion "d'angle" dans un espace vectoriel</span>.
+</p>
 
 <p>
 Déjà, <span class="important"><definition name="inner_product_space"></span>.

@@ -15,6 +15,10 @@
 <new_definition name="linear_system">
     <content>un système linéaire est un système d'équations composé d'équations linéaires</content>
 </new_definition>
+<new_definition name="quadratic_form">
+    <content>une forme quadratique est une application allant d'un espace vectoriel sur un corps "K" vers le corps "K", qui se comporte comme une combinaison linéaire de tous les produits possibles entre des coefficients dans le vecteur qui forment des monômes de degré 2 (ce qui fait de la formule de la forme quadratique un polynome homogène de degré 2)</content>
+    <content name="rigorous">une forme quadratique est une application allant d'un espace vectoriel sur un corps "K" vers le corps "K", telle qu'il existe une forme bilinéaire et symétrique tel que pour tous les vecteurs de l'espace, l'image de ce vecteur par la forme quadratique est égale à l'image de deux fois ce vecteur dans la forme bilinéaire</content>
+</new_definition>
 
 <new_definition name="bilinear_application">
     <content>une application bilinéaire est une application prenant deux vecteurs de deux espaces vectoriels "E" et "F" (généralement les mêmes, mais ce n'est pas obligatoire), et allant vers un autre espace vectoriel "G" (et donc, allant de "E X F" vers "G"), de telle manière qu'elle soit linéaire en ses deux variables</content>
@@ -59,6 +63,8 @@
 <new_definition name="vector_space_dimension">
     <content>la dimension d'un espace vectoriel (aussi nommée dimension de Hamel) est le cardinal commun de toutes ses bases</content>
 </new_definition>
+
+
 
 <new_definition name="column_space">
     <content>un espace colonne d'une matrice à coefficients dans un corps commutatif "K" représente un espace vectoriel sur "K", qui représente l'espace vectoriel engendré par l'ensemble des matrices colonnes de la matrice</content>
