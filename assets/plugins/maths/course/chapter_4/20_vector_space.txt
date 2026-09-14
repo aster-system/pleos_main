@@ -799,6 +799,9 @@ En effet, <span class="important"><definition name="quadratic_form-rigorous"></s
 
 
 
+
+
+
 <h2>Les matrices en algèbre linéaire</h2>
 
 
@@ -885,11 +888,9 @@ Généralement, <span class="important">la dimension de l'espace colonne est nom
 
 
 <h3>Le produit matriciel</h3>
-
 <p>
 Parlons d'une autre opération sur les matrices, plus complexe mais très utile : le produit matriciel.
 <span class="important"><definition name="matrix_product"></span>.
-
 </p>
 <p>
 Soyons plus précis, avec une représentation graphique de deux matrices "A" et "B" de dimension "m, n" et "n, p", dont on va obtenir le produit matriciel.
@@ -1023,6 +1024,9 @@ Généralement, pour une matrice "A", la transposée de "A" se note "A" avec un 
 <math><mi>A</mi><msup>T</msup> = <mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd><mtd><mi>3</mi></mtd></mtr><mtr><mtd><mi>2</mi></mtd><mtd><mi>4</mi></mtd></mtr></mtable><mo>]</mo></mrow></math></br>
 <math>B = <mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd><mtd><mi>2</mi></mtd></mtr><mtr><mtd><mi>3</mi></mtd><mtd><mi>4</mi></mtd></mtr><mtr><mtd><mi>5</mi></mtd><mtd><mi>6</mi></mtd></mtr></mtable><mo>]</mo></mrow></math></br>
 <math><mi>B</mi><msup>T</msup> = <mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd><mtd><mi>3</mi></mtd><mtd><mi>5</mi></mtd></mtr><mtr><mtd><mi>2</mi></mtd><mtd><mi>4</mi></mtd><mtd><mi>6</mi></mtd></mtr></mtable><mo>]</mo></mrow></math>
+
+
+
 
 
 
