@@ -776,6 +776,8 @@ Dans le cas de vecteur de R exposant 3, on peut donc voir :
 </p>
 <math>det(u, v, w) = <math>A = <mo>|</mo><mtable><mtr><mtd><mi>x</mi></mtd><mtd><mi>x'</mi></mtd><mtd><mi>x''</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd><mtd><mi>y'</mi></mtd><mtd><mi>y''</mi></mtd></mtr><mtr><mtd><mi>z</mi></mtd><mtd><mi>z'</mi></mtd><mtd><mi>z''</mi></mtd></mtr></mtable><mo>|</mo></mrow></math>
 
+
+
 <h3>Les formes quadratiques</h3>
 <p>
 Après les applications linéaires, parlons d'un autre type d'application sur des espaces vectoriels : les formes quadratiques.
