@@ -617,7 +617,7 @@ Comme nous l'avons vue plus haut, <span class="important">si une fonction a une 
 De plus, <span class="important">si l'espace d'arrivée de la fonction est séparé, alors sa valeur en "a" sera toujours égale à la valeur de sa limite</span>.
 </p>
 <p>
-Cette définition permet d'établir un théorème extrêmement intéressant avec les fonctions continues sur tout leur intervalle de définition : <span class="important">tout voisinage d'un point "f(a)" de l'ensemble d'arrivée admet comme antécédent un voisinage de "a"</span>.
+Cette définition permet d'établir un théorème extrêmement intéressant avec les fonctions continues sur tout leur intervalle de définition : <span class="important">tout voisinage d'un point "f(a)" de l'ensemble d'arrivée admet comme image réciproque un voisinage de "a"</span>.
 La démonstration est assez intéressante.
 Si une fonction est continue en "a", alors "f(a)" est une limite de "f" en "a".
 Par définition de la limite :
@@ -634,8 +634,11 @@ Selon le concept d'image réciproque, on peut donc dire :
 </p>
 <math><mforall> V <min> V(f(a)), <mexists> W <min> V(a), W <mincluded> <mi>f</mi><msup>-1</msup>(V)</math>
 <p>
-Si "W" est un voisinage de "a" et "W" est incluse dans l'image réciproque de "V", alors l'image réciproque de "f(V)" est un voisinage de "a".
+Si "W" est un voisinage de "a" et "W" est incluse dans l'image réciproque de "V", alors l'image réciproque de "V" par "f" est un voisinage de "a".
 Donc, <span class="important">tout voisinage d'un point "f(a)" de l'ensemble d'arrivée admet comme antécédent un voisinage de "a"</span>.
+</p>
+<math><mforall> V <min> V(f(a)), <mi>f</mi><msup>-1</msup>(V) <min> V(a)</math>
+<p>
 Ici, nous avons dit que cela fonctionne si la fonction est continue sur tout son intervalle de définition.
 Or, <span class="important">si dans un espace topologique quelconque, on peut restreindre cette fonction sur un sous-espace, et qu'elle est continue sur cet espace, alors les résultats s'appliquant aussi dans ce sous-espace</span>.
 Comme ça, si votre fonction n'est continue que sur une partie d'un espace topologique, vous pouvez quand même utiliser ce théorème, grâce à une restriction.
@@ -646,6 +649,13 @@ Par exemple, dans une fonction continue sur tout son ensemble de définition, <s
 Cela se déduit directement du fait qu'un ouvert d'un point est un ensemble de voisinages de tous ses points, qui induisent donc un ensemble de voisinages de tous les antécédents possibles, qui forment donc un ouvert.
 C'est la même chose pour les fermés, puisque comme son complémentaire est un ouvert (et que l'antécédent de cet ouvert est donc... un ouvert), alors son image réciproque est le complémentaire d'un ouvert, et donc un fermé.
 </p>
+<p>
+Comme dans le cas des réels, <span class="important">nous pouvons définir les classes de régularité sur des fonctions continues sur des espaces topologiques quelconques</span>.
+Dans ce cas, les ensembles utilisés dans la notation sont donc l'ensemble de départ et d'arrivée de la fonction, qui ne sont pas forcément des réels.
+Des fois, quand le contexte si prête et que nous n'avons pas besoin de spécifier les ensembles de départ et d'arrivée, il est possible de ne pas les noter, et de ne noter que le "C exposant 0".
+</p>
+<math><mi>C</mi><msup>0</msup>(J, K)</math>
+
 <p>
 Cependant, un théorème d'une très grande importance concerne les parties connexes.
 En effet, <span class="important">toute image d'une partie connexe par une fonction continue est une partie connexe</span>.
@@ -697,6 +707,7 @@ En maniant correctement "E" et "f", on en déduit donc que "f(E)" appartient aus
 <math>E = <munion unknown=k to=n><mi>f</mi><msup>-1</msup>(<mi>V</mi><msub><mrow><mi>a</mi><msub>k</msub></mrow></msub>)</math></br>
 <math>f(E) = f(<munion unknown=k to=n><mi>f</mi><msup>-1</msup>(<mi>V</mi><msub><mrow><mi>a</mi><msub>k</msub></mrow></msub>))</math></br>
 <math>f(E) <mincluded> <munion><mi>V</mi><msub><mrow><mi>a</mi><msub>k</msub></mrow></msub></math>
+
 <p>
 Nous pouvons mélanger l'algèbre basique et ce concept de continuité, pour obtenir des outils très puissants.
 L'outil de base de ce genre de mélange est le groupe topologique.
@@ -720,7 +731,7 @@ Derrière ce terme barbare, nous allons trouver un des concepts les plus importa
 Ici, si ce concept contient le mot "morphisme", c'est pour une raison extraordinaire : les homéomorphismes représentent les isomorphismes d'espace topologiques.
 </p>
 <math>f : E <mto> F</math></br>
-<math>f <min> Bij(E, F) <mand> f <min> C(E, F) <mand> <mi>f</mi><msup>-1</msup> <min> C(F, E)</math>
+<math>f <min> Bij(E, F) <mand> f <min> <mi>C</mi><msup>0</msup>(E, F) <mand> <mi>f</mi><msup>-1</msup> <min> <mi>C</mi><msup>0</msup>(F, E)</math>
 <p>
 On peut légèrement changer la définition, avec le concept d'homéomorphisme local.
 <span class="important"><definition name="homeomorphism-local"></span>.

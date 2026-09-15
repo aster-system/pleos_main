@@ -47,6 +47,9 @@
 <new_definition name="function_graph">
     <content>un graphe de fonction représente l'ensemble des couples formés par (dans l'ordre) chaque élément de l'ensemble du domaine de définition de la fonction et de son image par cette fonction</content>
 </new_definition>
+<new_definition name="regularity_class">
+    <content>les classes de régularité sont des ensembles permettant de classifier des fonctions quelconques selon leur continuité et leur dérivabilité</content>
+</new_definition>
 
 <new_definition name="function_space">
     <content>un espace fonctionnel est un ensemble d'applications (et donc, de fonctions) entre deux ensembles X et Y</content>

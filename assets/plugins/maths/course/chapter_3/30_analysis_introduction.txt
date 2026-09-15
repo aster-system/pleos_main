@@ -335,6 +335,8 @@ Bien que la démonstration soit, encore une fois, ignoble, ce résultat est asse
 En effet, si nous faisons tendre "x" vers "a", alors "g(x)" se rapproche de sa limite en "a", et nous passons cette valeur (se rapprochant de la limite de "g" en "a") à "f".
 </p>
 
+
+
 <h3>Les comparaisons asymptotiques</h3>
 <p>
 Grâce aux limites de suites, <span class="important">on peut comparer des suites selon la façon dont se comporte la limite de la suite</span>.
@@ -398,10 +400,30 @@ Donc, <span class="important">"w" tend vers "0" en "0" : la fonction "g" est né
 Si on avait utilisé notre première fonction "w" (la fonction inverse), notre "w" aurait tendu vers "+ l'infini", ce qui est parfaitement cohérent, mais pas parfaitement égale à cette définition kà, qui est plus forte.
 En plus, on aurait eu un problème si "x = 0" : cette fonction n'a pas ce problème.
 </p>
+<p>
+Il existe un moyen en analyse de classer l'ensemble des fonctions continues : les classes de régularités.
+<span class="important"><definition name="regularity_class"></span>.
+Ici, nous ne verrons que la partie qui traîne de la continuité seule, et nous parlerons de dérivabilité plus tard.
+Dans ce cas, c'est assez simple : <span class="important">il existe une classe permettant de noter l'ensemble des fonctions allant d'un ensemble de départ "J" à un ensemble d'arrivée "K" quelconque, noté "C exposant 0 (J, K)"</span>.
+Toutes les autres classes utilisent la dérivabilité, que nous verrons plus tard.
+</p>
+<math><mi>C</mi><msup>0</msup>(J, K)</math>
+<p>
+Dans ce que nous avons vue ici, "J" est une partie de l'ensemble des réels, et "K" est généralement l'ensemble des réels entier.
+</p>
+<math><mi>C</mi><msup>0</msup>(J, R)</math>
+
+
+
+
+
+
 
 
 
 <h2>La continuité</h2>
+
+
 
 <h3>Qu'est ce qu'est la continuité mathématique ?</h3>
 <p>
@@ -480,6 +502,8 @@ Le premier que nous allons voir est le théorème des bornes atteintes.
 <span class="important"><definition name="extreme_value_theorem"></span>.
 </p>
 
+
+
 <h3>L'arithmétique de la continuité</h3>
 <p>
 Comme avec les limites, <span class="important">il existe une sorte d'arithmétique entre des fonctions continues, pour en déduire d'autres fonctions continues</span>.
@@ -501,6 +525,9 @@ Généralisons ce résultat, avec un autre plus important, et aussi bien plus pr
 En effet, <span class="important">la composition de deux fonctions continues représente une fonction continue</span>.
 Encore une fois, la démonstration est aussi très simple, est présente <a href="#3_1_4_2">juste ici</a>.
 </p>
+
+
+
 
 
 

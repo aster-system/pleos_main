@@ -64,7 +64,7 @@
 <new_definition name="topological_continuity">
     <content name="full">une application entre deux espaces topologiques "E" et "F" est dite continue sur "E" si elle est continue en tous les points de "E"</content>
     <content name="part">une application entre deux espaces topologiques "E" et "F" est dite continue sur une partie de "E" si elle est continue en tous les points de cette partie</content>
-    <content name="point">une application entre deux espaces topologiques "E" et "F" est dite continue en un point "a" de "E" si "f" admet une limite en "a", valant "f(a)"</content>
+    <content name="point">une application entre deux espaces topologiques "E" et "F" est dite continue en un point "a" de "E" si "f" admet une limite en "a" valant "f(a)"</content>
 </new_definition>
 <new_definition name="topology_indistinguishability">
     <content>deux éléments topologiques distincts sont dit indiscernables si tous les voisinages de l'un contient l'autre, et vice-versa</content>
