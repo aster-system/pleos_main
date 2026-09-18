@@ -1466,6 +1466,88 @@ En fait, <span class="important">on peut prouver que cette nouvelle matrice repr
 
 
 
+<h3>La réduction des endomorphismes</h3>
+<p>
+L'un des cauchemars des étudiants en mathématiques en études supérieures est la réduction des endomorphismes.
+En fait, <span class="important"><definition name="endomorphism_reduction"></span>.
+Pour cela, il existe beaucoup de techniques différentes, plus ou moins utiles et simples.
+</p>
+<p>
+Une première façon de faire utilise le concept de diagonalisation.
+<span class="important"><definition name="matrix_diagonalizable-endomorphisme"></span>.
+De plus, <span class="important"><definition name="matrix_diagonalizable"></span>.
+Généralement, pour étudier ce genre de propriété, on utilise très souvent la forme matriciel.
+Si l'on note une matrice "M", elle est diagonalisable si il existe une matrice diagonale "D" tel que :
+</p>
+<math><mexists> P <min> <mi>GL</mi><msub>n</msub>(K), M = PD<mi>P</mi><msup>-1</msup></math>
+<p>
+Bon, cette définition ne sert à rien si l'on n'a aucun moyen de savoir si une matrice est diagonale, et de calculer une de ses matrices diagonales.
+Heureusement, il existe beaucoup de moyens de répondre à ces questions.
+Pour cela, nous devons définir de nouveaux concepts : les vecteurs / produits / espaces propres.
+<span class="important"><definition name="eigenvector-value"></span>.
+Réciproquement, <span class="important"><definition name="eigenvector"></span>.
+Ici, cette valeur utilisé pour le vecteur propre est donc une valeur propre de l'endomorphisme.
+Généralement, on parle de vecteur propre associé à une valeur propre précise.
+Ici, pour un endomorphisme "f", un vecteur "v" est un vecteur propre et une valeur "λ" est une valeur propre "λ" si :
+</p>
+<math>f(v) = <mlambda> * v</math>
+<p>
+Il est assez facile de trouver des exemples.
+En effet, prenons un endomorphisme dans R², transformant "(x, y)" en "(2 * x, y)".
+Ici, on peut identifier deux vecteurs propres simples : "(1, 0)" et "(0, 1)".
+De plus, on peut identifier deux valeurs propres : "2" et "1".
+</p>
+<math>f(1, 0) = (2, 0) = 2 * (1, 0)</math></br>
+<math>f(0, 1) = (0, 1) = 1 * (0, 1)</math>
+<p>
+Pour un endomorphisme, <span class="important">l'ensemble de ces valeurs propres est nommé le spectre de l'endomorphisme</span>.
+Il se note généralement "Sp".
+</p>
+<math>Sp(f)</math>
+<p>
+Avec tout ça, nous pouvons définir le concept d'espace propre.
+<span class="important"><definition name="eigenvector-space"></span>.
+En considérant "u" et "v" des vecteurs propres associés à "λ" et "f" l'endomorphisme utilisé, on peut facilement le démontrer :
+</p>
+<math>u + v = <mlambda> * f(u) + <mlambda> * f(v) = <mlambda> * (f(u) + f(v)) = <mlambda> * f(u + v)</math></br>
+<math><mforall> c <min> K, c * u = c * (<mlambda> * f(u)) = <mlambda> * (c * f(u)) = <mlambda> * f(c * u)</math>
+<p>
+Il existe cependant un autre moyen de représenter cet espace.
+En effet, pour tout élément de cet espace, l'image de ce vecteur est égal à "λ" fois ce vecteur.
+Cependant, <span class="important">nous pouvons soustraite le vecteur multiplié par "λ" des deux côtés, pour obtenir une nouvelle expression</span>.
+</p>
+<math><mlambda> * v = f(v) <mequi> f(v) - <mlambda> * v = 0</math>
+<p>
+D'ailleurs, si nous définissons une application "g" telle que "g(v)" est égal au membre à gauche de cette équation, "g" serait une application linéaire.
+La démonstration est très simple et rapide :
+</p>
+<math>g(v) = f(v) - <mlambda> * v</math></br>
+<math><mforall> u, w <min> E, g(u + w) = f(u + w) - <mlambda> * (u + w) = f(u) + f(w) - <mlambda> * u - <mlambda> * w = f(u) - <mlambda> * u + f(w) - <mlambda> * w = g(u) + g(v)</math></br>
+<math><mforall> a <min> K, <mforall> u <min> E, g(a * u) = f(a * u) - <mlambda> * (a * u) = a * f(u) - a * <mlambda> * u = a * (f(u) - <mlambda> * u) = a * g(u)</math>
+<p>
+Ici, il existe une application qui, à "v", y associe "v" : l'identité.
+Donc, <span class="important">on peut donc échanger "v" par l'application identité, et "f(v)" par "f", pour ne garde que le formalisme des applications</span>.
+De plus, nous pouvons encore réecrire l'équation en utilisant le formalisme des noyaux, puisque nous cherchons les éléments où cette équation s'annule (et que nous savons en plus que la partie à gauche est une application linéaire).
+Finalement, on peut écrire que l'espace propre des vecteurs propres associées à "λ" est donc :
+</p>
+<math>ker(f - <mlambda> * Id)</math>
+<p>
+Avec ça, <span class="important">nous pouvons étudier les propriétés des valeurs propres en utilisant les propriétés du noyau d'une application linéaire</span>.
+Par exemple, si ce noyau est réduit au neutre (et est donc de dimension 0), il n'y a pas de vecteurs propres pour "λ" (pour rappel, le vecteur nul n'est pas un vecteur propre).
+De plus, selon le théorème du rang, si l'application dont on étudie le kernel est de dimension égale à celle de l'espace de départ, son noyau est réduit au nul.
+Donc, <span class="important">on peut savoir si une valeur est une valeur propre en calculant le rang de l'application que nous pouvons obtenir avec la formule ci-dessus</span>.
+Pour savoir si le rang de cette application n'est pas selui de l'espace de départ, on utilise généralement le déterminant (bien que rien n'empêche d'utiliser une autre technique quelconque).
+Nous pouvons donc écrire :
+</p>
+<math><mlambda> <min> Sp(f) <mequi> Det(f - <mlambda> * Id) = 0</math>
+
+
+
+
+
+
+
+
 
 
 

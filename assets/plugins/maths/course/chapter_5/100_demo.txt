@@ -1,280 +1,344 @@
-<h1>Chapitre 5 - démonstrations</h1>
+<h1>Chapitre 4 - démonstrations</h1>
 
 
 
-<h2>Le calcul différentiel</h2>
+<h2>Les anneaux et les corps</h2>
 
-<h3 id="basic_property">Propriétés basiques</h3>
-<h4>5.0.0.0</h4>
+<h3 id="ring">Les anneaux</h3>
+<h4>4.0.0.0</h4>
 <p>
-Démontrons le théorème de Fermat sur les points stationnaires, stipulant que :
+Démontrons que, dans l'anneau "(Z, +, .)", tout sous-ensemble "nZ" (avec "n" un nombre entier naturel) de "Z" forme un sous-anneau de "(Z, +, .)".
+Déjà, nous avons démontré à plusieurs reprises que "nZ" est inclut dans "Z".
 </p>
-<math>a, b <min> R, <mforall> c <min> ]a, b[, <mexists> d <min> R, d = f'(c)</math></br>
-<math><mforall> v <min> [a, b], <mexists> x <min> ]a, b[, {f(x) <mgtequal> v <mor> f(x) <mltequal> v} <mimp> f'(x) = 0</math>
+<math><mforall> a, <mforall> n <min> N, a <min> nZ <mimp> a <min> Z</math>
 <p>
-Rappelons la définition la plus simple de la dérivée :
+De plus, nous avons déjà démontré que le groupe "(nZ, +)" est un sous-groupe de "(Z, +)" : il est stable par l'addition.
+Finalement, la stabilité par la multiplication est aussi assez simple à prouver.
 </p>
-<math>f'(x) = <mlim unknown=h value=0><mfrac><mi>f(x + h) - f(x)</mi><mi>h</mi></mfrac></math>
+<math><mforall> a, b <min> nZ, <mexists> c, d <min> Z, a = n * c, b = n * d</math></br>
+<math>a * b = (n * c) * (n * d) = n * (c * n * d) = n * e, e = (c * n * d)</math>
 <p>
-Si "x" est un extremum local, alors "f(x + h) - f(x)" est toujours de même signe (positif si il s'agit d'un minimum, négatif sinon), quelque soit le signe de "h".
-Or, le signe de "h" dépend... du signe de "h".
-Le signe de la dérivée de "f'(x)" dépend donc entièrement de celui de "h".
-De plus, comme la fonction est supposée continue en "x", alors la limite à gauche (avec un "h" négatif) et à droite (avec un "h" positif) sont les mêmes.
-Donc, f'(x) est en même temps positif et négatif : le seul nombre respectant cette propriété est "0".
+Donc, l'anneau "(nZ, +, .)" est un sous-anneau de "(Z, +, .)"
 </p>
-<math>0 <mgtequal> f'(x) <mltequal> 0</math>
-<p>
-Donc, "f'(x)" s'annule.
-</p>
-<math>f'(x) = 0</math>
 
-<h4>5.0.0.1</h4>
+<h3 id="polynomial">Les polynômes</h3>
+<h4>4.0.1.0</h4>
 <p>
-Démontrons le théorème des accroissements finis, stipulant que :
+Démontrons que dire qu'un polynôme "P(X)" admet une racine "r" équivaut à dire que ce polynôme est divisible par "X - r".
+Procédons par double implication.
 </p>
-<math>a, b <min> R, a <mlt> b, <mforall> d <min> ]a, b[, <mexists> f'(d) </math></br>
-<math><mexists> c <min> ]a, b[, <mfrac><mi>f(b) - f(a)</mi><mi>b - a</mi></mfrac> = f'(c)</math>
 <p>
-Remarquons que la fraction exposée dans le théorème représente un accroissement précis, représentant par définition la moyenne de l'accroissement de la fonction entre "a" et "b".
-Or, il existe énormément de fonction ayant la même moyenne d'accroissement entre "a" et "b", à commencer par la plus simple : la fonction affine de pente l'accroissement moyen de "f" entre "a" et "b" auquel on soustrait le produit de "a" et de cette même pente, puis "f(a)" (pour qu'elle passe bien par "f(a)" en "a" et "f(b)" en "b").
+Prouvons que dire qu'un polynôme "P(X)" est divisible par "X - r" implique que "P(X)" admet une racine "r".
+Si "P" est divisible par "X - r", il existe un "Q(X)" tel que le produit de "Q(X)" et "X - r" donne "P".
 </p>
-<math>g : R <mto> R, x <mto> f(a) + <mfrac><mi>f(b) - f(a)</mi><mi>b - a</mi></mfrac> * (x - a)</math>
+<math><mexists> Q <min> K[X], (X - r) * Q(X) = P(X)<math>
 <p>
-Ici, on peut définir une nouvelle fonction "h", représentant la différence entre "f" et "g".
-Par l'arithmétique des fonctions continues / dérivées, cette nouvelle fonction est continue et dérivable entre "a" et "b".
+De manière évidente, "r" permet d'annuler "(X - r)".
+Par transitivité de l'égalité, "r" annule aussi "P(X)".
 </p>
-<math>h : R <mto> R, x <mto> f(x) - g(x)</math>
+<math>X = r <mimp> (X - r) = 0 <mimp> (X - r) * Q(X) = P(X) = 0</math>
 <p>
-Comme "f(a) = g(a)" et "f(b) = g(b)", alors "h(a) = h(b) = 0".
-Selon le théorème de Rolle (dont "h" rempli toutes les conditions, comme mentionné plus tôt), il existe donc un point "c" entre "a" et "b" tel que "h'(c) = 0".
+Donc, dire qu'un polynôme "P(X)" est divisible par "X - r" implique que "P" admet une racine "r".
 </p>
-<math><mexists> c <min> ]a, b[, h'(c) = 0</math>
 <p>
-Or, selon l'arithmétique des dérivées :
+Prouvons qu'un polynôme "P(X)" admet une racine "r" implique que "P(X)" est divisible par "X - r".
+Pour cela, nous devons juste prouver l'existence d'un polynôme "Q" tel que "X - r" multiplié par "Q" donne "P".
+Cela implique que la division euclidienne de "P(X)" par "X - r" (qui existe bel et bien) donne un reste nul.
 </p>
-<math>h'(x) = f'(x) - g'(x)</math>
+<math>P(X) = Q(X) * (X - r) + R(X)</math>
 <p>
-De plus, comme "g" est une fonction linéaire, la valeur de sa dérivée est égale à la valeur de sa pente.
+Nous savons qu'une division euclidienne de polynômes est unique.
+Donc, la division euclidienne de ce polynôme pour "X = r" est exactement la même que pour tous "X".
+Or, si "X = r", "P(X) = 0" et "Q(X) * (X - r) = 0" : il n'y a pas besoin de reste, qui est bel et bien nul.
 </p>
-<math>g'(x) = <mfrac><mi>f(b) - f(a)</mi><mi>b - a</mi></mfrac></math>
+<math>X = 0 <mimp> (P(X) = Q(X) * (X - r) + R(X) <mand> R(X) = 0 <mequi> P(X) = Q(X) * (X - r)) <mimp> R(X) = 0</math>
 <p>
-Donc, pour ce point "c" :
+Donc, un polynôme "P(X)" admet une racine "r" implique que "P(X)" est divisible par "X - r".
 </p>
-<math>h'(c) = 0 <mimp> f'(c) - g(c) = 0 <mimp> f'(c) - <mfrac><mi>f(b) - f(a)</mi><mi>b - a</mi></mfrac> = 0 <mimp> f'(c) = <mfrac><mi>f(b) - f(a)</mi><mi>b - a</mi></mfrac></math>
 <p>
-Donc, il existe bel et bien un point "c" tel que l'égalité demandée existe.
+Les deux implications sont vérifiées : dire qu'un polynôme "P(X)" admet une racine "r" équivaut à dire que ce polynôme est divisible par "X - r".
 </p>
-<math><mexists> c <min> ]a, b[, f'(c) = <mfrac><mi>f(b) - f(a)</mi><mi>b - a</mi></mfrac></math>
-
-<h3 id="differential_arithmetic">L'arithmétique des dérivées</h3>
-<h4>5.0.1.0</h4>
-<p>
-Démontrons que l'addition de deux fonctions admet comme dérivée en un point la somme / différence des dérivées en ce point des fonctions de départ.
-Soit deux fonctions réels "f" et "g", dérivables en un point "a" :
-</p>
-<math>f : R <mto> R, x <mto> f(x)</math></br>
-<math>g : R <mto> R, x <mto> g(x)</math>
-<p>
-Admettons une fonction "s" comme étant la somme de "f" et "g".
-</p>
-<math>s : R <mto> R, x <mto> s(x) = f(x) + g(x)</math></br>
-<p>
-Déjà, nous savons que "f" et "g" sont dérivables, et donc continues en "a" : "s" est donc continue en "a" selon le théorème <a href="demo#3_1_4_0">3.1.4.0</a>.
-Calculons sa dérivée en "a" :
-</p>
-<math>s'(x) = <mlim unknown=h value=0> <mfrac><mi>s(x + h) - s(x)</mi><mi>h</mi></mfrac> = <mlim unknown=h value=0> <mfrac><mi>f(x + h) + g(x + h) - f(x) - g(x)</mi><mi>h</mi></mfrac> = <mlim unknown=h value=0> <mfrac><mi>f(x + h) - f(x)</mi><mi>h</mi></mfrac> + <mfrac><mi>g(h + x) - g(x)</mi><mi>h</mi></mfrac></math>
-<p>
-Or, nous reconnaissons parfaitement la dérivée de "h" en "a" comme étant la somme de la dérivée de "f" en "a" et de "g" en "a".
-Donc, cette dérivée existe bien, et vaut la dérivée de "f" en "a" plus la dérivée de "g" en "a".
-</p>
-<h4>5.0.1.1</h4>
-<p>
-Démontrons que le produit de deux fonctions admet comme dérivée la somme du produit de "f'" et "g" et du produit de "f" et "g'".
-Soit deux fonctions réels "f" et "g", dérivables en un point "a" :
-</p>
-<math>f : R <mto> R, x <mto> f(x)</math></br>
-<math>g : R <mto> R, x <mto> g(x)</math>
-<p>
-Admettons une fonction "s" comme étant la somme de "f" et "g".
-</p>
-<math>s : R <mto> R, x <mto> s(x) = f(x) * g(x)</math></br>
-<p>
-Déjà, nous savons que "f" et "g" sont dérivables, et donc continues en "a" : "s" est donc continue en "a" selon le théorème <a href="demo#3_1_4_1">3.1.4.1</a>.
-Calculons sa dérivée en "a", en utilisant la formule remplaçant "b - a" par "h" :
-</p>
-<math>s'(x) = <mlim unknown=h value=0> <mfrac><mi>s(x + h) - s(x)</mi><mi>h</mi></mfrac> = <mlim unknown=h value=0> <mfrac><mi>f(x + h) * g(x + h) - f(x) * g(x)</mi><mi>h</mi></mfrac></math></br>
-<p>
-Dans le numérateur, nous allons ajouter deux valeurs qui s'annulent : "-f(x + h)g(x)" et "f(x + h)g(x)".
-</p>
-<math>s'(x) = <mlim unknown=h value=0> <mfrac><mi>f(x + h) * g(x + h) + f(x + h) * g(x) - f(x + h) * g(x) - f(x) * g(x)</mi><mi>h</mi></mfrac></math></br>
-<p>
-Factorisons proprement pour obtenir une forme plus intéressante :
-</p>
-<math>s'(x) = <mlim unknown=h value=0> <mfrac><mi>f(x + h) * (g(x + h) - g(x)) + (f(x + h) - f(x)) * g(x)</mi><mi>h</mi></mfrac> = <mlim unknown=h value=0> f(x + h) * <mfrac><mi>(g(x + h) - g(x))</mi><mi>h</mi></mfrac> + <mlim unknown=h value=0> <mfrac><mi>f(x + h) - f(x)</mi><mi>h</mi></mfrac> * g(x)</math></br>
-<p>
-Ici, comme "h" tend vers "0", alors "f(x + h)" tend vers "f(x)", et "g(x)" tend vers... "g(x)".
-De plus, nous reconnaissons les différentes limites de "f" et "g".
-Donc :
-</p>
-<math>s'(x) = <mlim unknown=h value=0> f(x + h) * <mfrac><mi>(g(x + h) - g(x))</mi><mi>h</mi></mfrac> + <mlim unknown=h value=0> <mfrac><mi>f(x + h) - f(x)</mi><mi>h</mi></mfrac> * g(x) = f'(x) * g(x) + f(x) * g'(x)</math></br>
-<h4>5.0.1.2</h4>
-<p>
-Démontrons la règle de la chaîne, stipulant que la dérivée d'une fonction "f" représentant la composée de deux fonctions "g" et "h" (sous la forme de la fonction "g(h)") en un point "x" se note "g'(h(x)) * h(x)".
-Soit deux fonctions réels "f" et "g", dérivables en un point "a" :
-</p>
-<math>f : R <mto> R, x <mto> f(x)</math></br>
-<math>g : R <mto> R, x <mto> g(x)</math>
-<p>
-Admettons une fonction "s" comme étant la somme de "g" et "j".
-</p>
-<math>s : R <mto> R, x <mto> s(x) = g(j(x))</math></br>
-<p>
-Déjà, nous savons que "g" et "j" sont dérivables, et donc continues en "a" : "s" est donc continue en "a" selon le théorème <a href="demo#3_1_4_1">3.1.4.1</a>.
-Calculons sa dérivée en "a", en utilisant la formule remplaçant "b - a" par "h" :
-</p>
-<math>s'(a) = <mlim unknown=h value=0><mfrac><mi>s(a + h) - s(a)</mi><mi>h</mi></mfrac></math></br>
-<math>s'(a) = <mlim unknown=h value=0><mfrac><mi>g(j(a + h)) - g(j(a))</mi><mi>h</mi></mfrac></math>
-<p>
-Or, nous connaissons "j(a + h)", grâce à la formule de la dérivation associée :
-</p>
-<math>j(a + h) = j(a) + j'(a) * h + t(h) * h</math>
-<p>
-Ici, "t(h)" tend vers "0" quand "h" tend vers "a".
-Donc :
-</p>
-<math>s'(a) = <mlim unknown=h value=0><mfrac><mi>g(j(a) + j'(a) * h + t(h) * h) - g(j(a))</mi><mi>h</mi></mfrac></math>
-<p>
-Considérons une variable "k" avec comme valeur (assez complexe, je l'admet) "j'(a) * h + t(h) * h".
-Dans ce cas, on peut réécrire notre formule :
-</p>
-<math>s'(a) = <mlim unknown=h value=0><mfrac><mi>g(j(a) + k) - g(j(a))</mi><mi>h</mi></mfrac></math>
-<p>
-Nous pouvons ici expliciter "g(j(a) + k)", avec la même formule que nous noterions "g(a + h)" (ici, "a" sera donc égal à "j(a)", et "k" sera égal à "k") :
-</p>
-<math>s'(a) = <mlim unknown=h value=0><mfrac><mi>g(j(a)) + g'(j(a)) * k + r(h) * k - g(j(a))</mi><mi>h</mi></mfrac> = <mlim unknown=h value=0><mfrac><mi>(g'(j(a)) + r(h)) * k</mi><mi>h</mi></mfrac></math>
-<p>
-Ici, explicitons "k", et voyons ce qu'il se passe :
-</p>
-<math>s'(a) = <mlim unknown=h value=0><mfrac><mi>(g'(j(a)) + r(h)) * k</mi><mi>h</mi></mfrac> = <mlim unknown=h value=0><mfrac><mi>(g'(j(a)) + r(h)) * (j'(a) * h + t(h) * h)</mi><mi>h</mi></mfrac> = <mfrac><mi>(g'(j(a)) + r(h)) * (j'(a) + t(h)) * h</mi><mi>h</mi></mfrac></math>
-<p>
-Simplifions par "h" :
-</p>
-<math>s'(a) = <mlim unknown=h value=0><mfrac><mi>(g'(j(a)) + r(h)) * (j'(a) + t(h)) * h</mi><mi>h</mi></mfrac> = <mlim unknown=h value=0>(g'(j(a)) + r(h)) * (j'(a) + t(h))</math>
-<p>
-Pour rappel, "t(h)" et "r(h)" tendent vers "0" si "h" tend vers "0", et le reste de la formule est invariant de "h".
-Donc :
-</p>
-<math>s'(a) = g'(j(a)) * j'(a)</math>
-
-<h4 id="inverse_derivation_rule">5.0.1.2</h4>
-<p>
-Considérons une fonction réelle (dérivable) et sa réciproque.
-Démontrons que le nombre dérivée d'une valeur "a" de la fonction réciproque est égal à l'inverse de l'image de l'image de "a" par la réciproque, par la dérivée de la fonction de départ.
-Rappelons la définition de la dérivée de "f" en "a".
-</p>
-<math>f'(a) = <mlim unknown=a value=b><mfrac><mi>f(b) - f(a)</mi><mi>b - a</mi></mfrac></math>
-<p>
-La définition est similaire pour la réciproque de "f".
-</p>
-<math>(<mi>f</mi><msup>-1</msup>)'(a) = <mlim unknown=a value=b><mfrac><mrow><mi>f</mi><msup>-1</msup><mo>(</mo><mi>b</mi><mo>)</mo><mo>-</mo><mi>f</mi><msup>-1</msup><mo>(</mo><mi>a</mi><mo>)</mo></mrow><mi>b - a</mi></mfrac></math>
-<p>
-Rappelons le lien entre "f" et la réciproque de "f".
-</p>
-<math><mi>f</mi><msup>-1</msup>(f(x)) = f(<mi>f</mi><msup>-1</msup>(x)) = x</math>
-<p>
-Ici prenons la définition de la dérivée de "f" en "a", et passons à son inverse.
-</p>
-<math><mfrac><mi>1</mi><mi>f'(a)</mi></mfrac> = <mlim unknown=a value=b><mfrac><mi>b - a</mi><mrow><mi>f</mi><mo>(</mo><mi>b</mi><mo>)</mo><mo>-</mo><mi>f</mi><mo>(</mo><mi>a</mi><mo>)</mo></mrow></mfrac></math>
-<p>
-Ici, nous allons poser "c" égal à l'image de "a" par la réciproque de "f" et "d" égal à l'image de "b" par la réciproque de "d".
-Nous allons aussi noter comment passer de "a" à "c" et de "b" à "d".
-</p>
-<math>c = f(a) <mequi> a = <mi>f</mi><msup>-1</msup>(c)</math></br>
-<math>d = f(b) <mequi> b = <mi>f</mi><msup>-1</msup>(d)</math>
-<p>
-Nous pouvons ici changer de variable dans la limite, et en obtenir une nouvelle plus intéressante.
-</p>
-<math><mlim unknown=a value=b><mfrac><mi>b - a</mi><mrow><mi>f</mi><mo>(</mo><mi>b</mi><mo>)</mo><mo>-</mo><mi>f</mi><mo>(</mo><mi>a</mi><mo>)</mo></mrow></mfrac> = <mlim unknown=c value=d><mfrac><mrow><mi>f</mi><msup>-1</msup><mo>(</mo><mi>d</mi><mo>)</mo><mo>-</mo><mi>f</mi><msup>-1</msup><mo>(</mo><mi>c</mi><mo>)</mo></mrow><mi>d - c</mi></mfrac></math></br>
-<p>
-Or cette deuxième limite est exactement la dérivée de la réciproque de "f" en "c".
-</p>
-<math>(<mi>f</mi><msup>-1</msup>)'(c) = <mlim unknown=c value=d><mfrac><mrow><mi>f</mi><msup>-1</msup><mo>(</mo><mi>d</mi><mo>)</mo><mo>-</mo><mi>f</mi><msup>-1</msup><mo>(</mo><mi>c</mi><mo>)</mo></mrow><mi>d - c</mi></mfrac></math></br>
-<math>(<mi>f</mi><msup>-1</msup>)'(c) = <mlim unknown=a value=b><mfrac><mi>b - a</mi><mrow><mi>f</mi><mo>(</mo><mi>b</mi><mo>)</mo><mo>-</mo><mi>f</mi><mo>(</mo><mi>a</mi><mo>)</mo></mrow></mfrac></math></br>
-<math>(<mi>f</mi><msup>-1</msup>)'(c) = <mfrac><mi>1</mi><mi>f'(a)</mi></mfrac></math></br>
-<p>
-Or, "a" est égal à l'image de la réciproque de "f" par "c", et nous pouvons retrouve l'égalité recherchée :
-</p>
-<math>(<mi>f</mi><msup>-1</msup>)'(c) = <mfrac><mrow><mi>1</mi></mrow><mrow><mi>f'</mi><mo>(</mo><mi>f</mi><msup>-1</msup><mo>(</mo><mi>c</mi><mo>)</mo><mo>)</mo></mrow></mfrac></math>
 
 
 
-<h2>Le calcul intégral</h2>
+<h2>Les espaces vectoriels</h2>
 
-<h3 id="basic_property">Propriétés basiques</h3>
-<h4>5.1.0.1</h4>
+<h3>Les propriétés de base</h3>
+
+<h4>4.1.0.0</h4>
 <p>
-Démontrons la relation de Chasles concernant les intégrales.
-Considérons une fonction "f" Riemann-intégrable sur un intervalle "[a, c]".
-Déjà, rappelons l'encadrement de l'intégrale entre les fonctions escaliers minimum "l" et maximum "m".
+Considérons une famille libre "w" de "n" vecteur d'un espace vectoriel "E" sur un corps "K".
+Posons une autre famille libre "v" de "m" vecteur générant "E".
 </p>
-<math><mi><mint></mi><msubsup><mi>a</mi><mi>c</mi></msubsup>l(x) dx <mltequal> <mi><mint></mi><msubsup><mi>a</mi><mi>c</mi></msubsup>f(x) dx <mltequal> <mi><mint></mi><msubsup><mi>a</mi><mi>c</mi></msubsup>m(x) dx</math>
+<math>v = {<mi>v</mi><msub>1</msub>, <mi>v</mi><msub>2</msub>, ..., <mi>v</mi><msub>m</msub>}, v <min> <mi>E</mi><msup>m</msup></math></br>
+<math>w = {<mi>w</mi><msub>1</msub>, <mi>w</mi><msub>2</msub>, ..., <mi>w</mi><msub>n</msub>}, w <min> <mi>E</mi><msup>n</msup></math></br>
+<math><mforall> u <min> E, <mexists> {<mi>a</mi><msub>1</msub>, <mi>a</mi><msub>2</msub>, ..., <mi>a</mi><msub>n</msub>} <min> K, u = <msum unknown=k from=1 to=n><mi>a</mi><msub>k</msub> * <mi>w</mi><msub>k</msub></math>
 <p>
-Posons "b" étant un réel appartenant à "[a, c]".
-Déjà, nous savons que "l" et "m" sont des fonctions escaliers, avec chacune une subdivision adaptée sur "[a, c]".
+Le lemme de Steinitz dit deux choses : "m" est inférieur ou égal à "n", et il est possible de trouver un sous-ensemble de "w" tel que l'union de "v" et de ce sous-ensemble engendre "K".
+Démontrons ce lemme.
 </p>
 <p>
-Posons une construction précise pour une fonction escalier "d" de subdivision adaptée "[a, c]".
-Pour chacune de ces subdivisions, nous pouvons obtenir des sous-subdivisions "[a, b]" et "[b, c]" de "[a, c]", que nous allons nommer respectivement "S1" et "S2".
-Théoriquement, des fonctions escaliers construites sur "S1" et "S2" où chaque valeur des intervalles dans la subdivision représente la valeur de l'intervalle respectif sur "d" représente une restriction de "d".
-Cependant, nous pouvons à partir des ces sous-subdivisions, construire deux nouvelles subdivisions sur "[a, c]", l'une représentant "S1" puis où nous passons directement de "b" à "c", et l'autre représentant "S2" puis où nous passons directement de "a" à "b".
-Nommons ces deux nouvelles subdivisions "T1" et "T2".
-Avec cela, nous pouvons construire de nouvelles fonctions escalier "u" et "v" avec "T1" et "T2", où l'intervalle "[b, c]" est nulle dans la fonction de "T1", et où l'intervalle "[a, b]" est nulle dans la fonction de "T2".
-Pour les autres valeurs,  chaque valeur des intervalles dans la subdivision représente la valeur de l'intervalle respectif sur "d".
-Donc, la somme de ces deux fonctions donne notre fonction escalier de départ.
+Déjà, nous savons que tous les vecteurs de "v" appartiennent à "E" : ils sont donc combinaisons linéaires de vecteur de "w".
+De plus, comme ils sont non-nuls, il existe au moins un des scalaires de la combinaison linéaire qui ne s'annule pas.
 </p>
-<math>d = u + v</math>
+<math><mforall> o <min> [0, m], <mexists> {<mi>a</mi><msub>1</msub>, <mi>a</mi><msub>2</msub>, ..., <mi>a</mi><msub>n</msub>} <min> E, <mi>v</mi><msub>o</msub> = <msum unknown=k from=1 to=n><mi>a</mi><msub>k</msub> * <mi>w</mi><msub>k</msub></math></br>
+<math><mexists> q <min> [0, n], <mi>a</mi><msub>q</msub> != 0</math>
 <p>
-Comme "d" est une fonction escalier sur l'intervalle "[a, c]", elle est Riemann-intégrable sur "[a, c]".
-On a donc :
+Prenons le cas du premier élément de "v".
 </p>
-<math><mi><mint></mi><msubsup><mi>a</mi><mi>c</mi></msubsup>d(x) dx = <mi><mint></mi><msubsup><mi>a</mi><mi>c</mi></msubsup>u(x) dx + <mi><mint></mi><msubsup><mi>a</mi><mi>c</mi></msubsup>v(x) dx</math>
+<math><mexists> {<mi>a</mi><msub>1</msub>, <mi>a</mi><msub>2</msub>, ..., <mi>a</mi><msub>n</msub>} <min> K, <mi>v</mi><msub>1</msub> = <msum unknown=k from=1 to=n><mi>a</mi><msub>k</msub> * <mi>w</mi><msub>k</msub></math></br>
 <p>
-Or, comme "u" et "v" sont nulles sur des intervalles précis, ces parties de la fonctions sont nuls dans la somme permettant de donner leur intégrale.
-Donc, on peut écrire :
+Nous pouvons facilement exprimer un élément de "w" (tel que son scalaire associé pour obtenir "v" n'est pas nul) grâce à cet élément de "v".
+Permettons nous de sélectionner un élément de "w" quelconque respectant cette contrainte, et permutons les valeurs dans "w" pour que cet élément devienne le premier élément de "w".
+Appelons "s" le scalaire associé à cet élément de "w".
+Pour cela, passons ce premier élément de "w" de l'autre côté, enlevons l'élément de "v" des deux côtés, et multiplions par l'inverse de "s".
 </p>
-<math><mi><mint></mi><msubsup><mi>a</mi><mi>c</mi></msubsup>u(x) dx = <mi><mint></mi><msubsup><mi>a</mi><mi>b</mi></msubsup>u(x) dx</math></br>
-<math><mi><mint></mi><msubsup><mi>a</mi><mi>c</mi></msubsup>v(x) dx = <mi><mint></mi><msubsup><mi>b</mi><mi>c</mi></msubsup>v(x) dx</math>
+<math><mi>v</mi><msub>1</msub> = <msum unknown=k from=1 to=n><mi>a</mi><msub>k</msub> * <mi>w</mi><msub>k</msub></math></br>
+<math><mequi><mi>v</mi><msub>1</msub> = <mi>v</mi><msub>1</msub> + <msum unknown=k from=2 to=n><mi>a</mi><msub>k</msub> * <mi>w</mi><msub>k</msub></math></br>
+<math><mequi><mi>w</mi><msub>1</msub> = <mi>s</mi><msup>-1</msup> * <mi>v</mi><msub>1</msub> - <mi>s</mi><msup>-1</msup> * <msum unknown=k from=2 to=n><mi>a</mi><msub>k</msub> * <mi>w</mi><msub>k</msub></math></br>
 <p>
-Finalement, on sait que "d" restreinte sur l'intervalle "[a, b]" représente "u", et que "d" restreinte sur l'intervalle "[b, c]" représente "v".
-Donc :
+Dans ce cas, nous voyons que ce premier vecteur de "w" est une combinaison linéaire (un peu complexe et différente, mais une combinaison linéaire quand même) d'élément de "w" et du premier élément de "v".
+Ici, comme tout élément de "k" est une combinaison linéaire d'élément de "w", alors si l'un des "w" est combinaison linéaire d'autres éléments de "w" (sauf lui, bien évidemment) et d'un autre vecteur quelconque, alors cet autre vecteur quelconque et tous les autres éléments de "w" génèrent aussi l'espace vectoriel.
+Donc, le premier élément de "v" et les autres éléments de "w" génère aussi l'espace vectoriel.
+Après avoir pris en compte le fait que nous avons permuté nos éléments dans "w", on pourrait écrire :
 </p>
-<math><mi><mint></mi><msubsup><mi>a</mi><mi>b</mi></msubsup>d(x) dx = <mi><mint></mi><msubsup><mi>a</mi><mi>b</mi></msubsup>u(x) dx</math></br>
-<math><mi><mint></mi><msubsup><mi>b</mi><mi>c</mi></msubsup>d(x) dx = <mi><mint></mi><msubsup><mi>b</mi><mi>c</mi></msubsup>v(x) dx</math>
+<math>Vect({<mi>v</mi><msub>1</msub>, <mi>w</mi><msub>2</msub>, ..., <mi>w</mi><msub>n</msub>}) = Vect(w) = E</math>
 <p>
-Finalement :
+Bien que nous avons fait pour le premier vecteur, cette technique marche parfaitement pour tous les vecteurs possibles.
+Donc, nous pouvons réitérer cette étape, jusqu'à ce que nous avons enlever tous les éléments de "v" (on pourrait poursuivre avec le deuxième, le troisième...).
 </p>
-<math><mi><mint></mi><msubsup><mi>a</mi><mi>c</mi></msubsup>d(x) dx = <mi><mint></mi><msubsup><mi>a</mi><mi>b</mi></msubsup>d(x) dx + <mi><mint></mi><msubsup><mi>b</mi><mi>c</mi></msubsup>d(x) dx</math>
+<math>Vect({<mi>v</mi><msub>1</msub>, <mi>v</mi><msub>2</msub>, <mi>w</mi><msub>3</msub>, ..., <mi>w</mi><msub>n</msub>}) = Vect(w) = E</math></br>
+<math>Vect({<mi>v</mi><msub>1</msub>, <mi>v</mi><msub>2</msub>, <mi>v</mi><msub>3</msub>, <mi>w</mi><msub>4</msub>, ..., <mi>w</mi><msub>n</msub>}) = Vect(w) = E</math>
 <p>
-La relation de Chasles est donc vérifiée dans le cas des fonctions escaliers.
-Utilisons maintenant "l" et "m" pour prouver que la relation de Chasles est vérifiée dans chaque cas.
-Rappelons l'inégalité entre les fonctions minimum, maximim et la fonction de départ.
+Ici, nous pouvons avoir fini de considérer tous les éléments de "v" : il serait donc de taille inférieur à celui de "w".
+De plus, nous aurions une nouvelle famille génératrice de "E" :
 </p>
-<math><mi><mint></mi><msubsup><mi>a</mi><mi>b</mi></msubsup>l(x) dx <mltequal> <mi><mint></mi><msubsup><mi>a</mi><mi>b</mi></msubsup>f(x) dx <mltequal> <mi><mint></mi><msubsup><mi>a</mi><mi>b</mi></msubsup>m(x) dx</math></br>
-<math><mi><mint></mi><msubsup><mi>b</mi><mi>c</mi></msubsup>l(x) dx <mltequal> <mi><mint></mi><msubsup><mi>b</mi><mi>c</mi></msubsup>f(x) dx <mltequal> <mi><mint></mi><msubsup><mi>b</mi><mi>c</mi></msubsup>m(x) dx</math></br>
+<math>Vect({<mi>v</mi><msub>1</msub>, <mi>v</mi><msub>2</msub>, ..., <mi>v</mi><msub>m</msub>, <mi>w</mi><msub>m + 1</msub>, ..., <mi>w</mi><msub>n</msub>}) = Vect(w) = E</math>
 <p>
-Nous pouvons sommer ces deux inégalités.
+De plus, nous pouvons être sur que nous nous arrêterons avant "n" ou précisément à "n" opérations.
+En effet, si il y en avait plus, alors des éléments de "v" serait constitués de "0" éléments de "w", ce qui n'est pas possible puisqu'ils sont tous décomposables en éléments de "w".
+Donc, il y a au plus autant d'éléments dans "v" que dans "w", et donc :
 </p>
-<math><mi><mint></mi><msubsup><mi>a</mi><mi>b</mi></msubsup>l(x) dx + <mi><mint></mi><msubsup><mi>b</mi><mi>c</mi></msubsup>l(x) dx <mltequal> <mi><mint></mi><msubsup><mi>a</mi><mi>b</mi></msubsup>f(x) dx + <mi><mint></mi><msubsup><mi>b</mi><mi>c</mi></msubsup>f(x) dx <mltequal> <mi><mint></mi><msubsup><mi>a</mi><mi>b</mi></msubsup>m(x) dx + <mi><mint></mi><msubsup><mi>b</mi><mi>c</mi></msubsup>m(x) dx</math></br>
+<math>m <mltequal> n</math>
 <p>
-Avec ce que nous avons vue plus haut, comme "l" et "m" sont des fonctions escaliers, on peut noter (pour un pas fixé) :
+Nos deux propositions sont démontrés.
+Le lemme de Steinitz est donc démontré.
 </p>
-<math><mi><mint></mi><msubsup><mi>a</mi><mi>c</mi></msubsup>l(x) dx <mltequal> <mi><mint></mi><msubsup><mi>a</mi><mi>b</mi></msubsup>f(x) dx + <mi><mint></mi><msubsup><mi>b</mi><mi>c</mi></msubsup>f(x) dx <mltequal> <mi><mint></mi><msubsup><mi>a</mi><mi>c</mi></msubsup>m(x) dx</br>
+
+<h4>4.1.0.1</h4>
 <p>
-Comme nous avons vue, si nous faisons tendre le "pas" vers "0", les fonctions "l" et "m" changent, et la valeur de leur intégrale après passage à la limite vaut donc la somme de celle de "f" entre "a" et "b" et entre "b" et "c".
-Donc :
+Démontrons que toutes les bases d'un K-espace vectoriel "E" ont le même cardinal.
+Une grande partie de la preuve utilisera le lemme de Steinitz.
+Commençons par poser une famille libre de vecteur "v" et une base "w" de "E".
 </p>
-<math><mlim unknown=p value=0><mi><mint></mi><msubsup><mi>a</mi><mi>c</mi></msubsup>l(x) dx = <mlim unknown=p value=0><mi><mint></mi><msubsup><mi>a</mi><mi>c</mi></msubsup>m(x) dx = <mi><mint></mi><msubsup><mi>a</mi><mi>b</mi></msubsup>f(x) dx + <mi><mint></mi><msubsup><mi>b</mi><mi>c</mi></msubsup>f(x) dx = <mi><mint></mi><msubsup><mi>a</mi><mi>c</mi></msubsup>f(x) dx</br>
+<math>v = {<mi>v</mi><msub>1</msub>, <mi>v</mi><msub>2</msub>, ..., <mi>v</mi><msub>m</msub>}, v <min> <mi>E</mi><msup>m</msup></math></br>
+<math>w = {<mi>w</mi><msub>1</msub>, <mi>w</mi><msub>2</msub>, ..., <mi>w</mi><msub>n</msub>}, w <min> <mi>E</mi><msup>n</msup></math></br>
+<math><mforall> u <min> E, <mexists> {<mi>a</mi><msub>1</msub>, <mi>a</mi><msub>2</msub>, ..., <mi>a</mi><msub>n</msub>} <min> K, u = <msum unknown=k from=1 to=n><mi>a</mi><msub>k</msub> * <mi>w</mi><msub>k</msub></math>
 <p>
-Donc, nous avons l'égalité prouvée.
-Donc, les intégrales sont bel et bien soumises à une relation de Chasles.
+Déjà, selon le lemme de Steinitz, toute famille de vecteur "v" de "E" a une taille inférieur ou égal à chaque base "w" de "E".
+Donc, "m" est inférieur ou égal à "n".
 </p>
+<math>m <ltequal> n</math>
+<p>
+Démontrons que si "m" est strictement inférieur à "n", alors "v" ne génère pas entièrement "E".
+Selon le lemme de Steinitz, il existe une base de "E" constitué des "m" vecteurs de "v" et de "n - m" vecteurs de "w".
+Si "m" est strictement inférieur à "n", alors il existe au moins un vecteur de "w" dans cette base.
+</p>
+<math>(<mi>v</mi><msub>1</msub>, <mi>v</mi><msub>2</msub>, ..., <mi>v</mi><msub>m</msub>, <mi>w</mi><msub>m + 1</msub>, ..., <mi>w</mi><msub>m</msub>)</math>
+<p>
+Or, cette famille est une base : elle est libre.
+Donc, aucune combinaison des vecteurs de "v" ne génère les vecteurs de "w" restants dans la base.
+Donc, si "m" est strictement inférieur à "n", alors "v" ne génère pas "E".
+</p>
+<math>m <mlt> n <mimp> Vect(v) != E</math>
+<p>
+Donc, si une famille génère entièrement "E", elle est obligatoirement de taille "n".
+Donc, toutes les bases d'un espace vectoriel ont la même taille : ici "n".
+</p>
+<math>Vect(v) = E <mimp> m = n</math>
+<p>
+On peut même prouver la réciproque de ce théorème.
+En effet, si "m = n", alors l'algorithme vue plus haut nous donne une base de "E" qui est égale à... "v".
+Donc, si "m = n", "v" est une base de "E" : par double implication, il s'agit d'une équivalence.
+</p>
+<math>m = n <mequi> Vect(v) = E</math>
+
+<h4>4.1.0.2</h4>
+<p>
+Démontrons que, dans la base "b" écrite : "(4, 1), (8, 4)", le vecteur "(4, 5)" a pour coordonnées "(-3, 2)".
+Pour cela utilisons un système linéaire.
+Ici, posons le système, et résolvons le :
+</p>
+<math>4 = a * 4 + b * 8</math></br>
+<math>5 = a * 1 + b * 4</math></br>
+<math><mequi></math></br>
+<math>a = 5 - 4 * b</math></br>
+<math>4 = a * 4 + b * 8</math></br>
+<math><mequi></math></br>
+<math>a = 5 - 4 * b</math></br>
+<math>4 = (5 - 4 * b) * 4 + b * 8</math></br>
+<math><mequi></math></br>
+<math>a = 5 - 4 * b</math></br>
+<math>4 = 20 - 8 * b</math></br>
+<math><mequi></math></br>
+<math>a = 5 - 4 * b</math></br>
+<math>4 = 20 - 8 * b</math></br>
+<math><mequi></math></br>
+<math>a = -3</math></br>
+<math>b = 2</math></br>
+<p>
+Donc, dans la base "b", les coordonnées de "(4, 5)" sont bien "(-3, 2)".
+</p>
+
+<h4>4.1.0.3</h4>
+<p>
+Démontrons que toute application linéaire entre deux espaces de matrices colonnes peut se représenter avec une matrice.
+Notons "E" un espace vectoriel sur le corps "K" représentant l'ensemble "K exposant m", et "F" un espace vectoriel sur le corps "K" représentant l'ensemble "K exposant n". 
+Considérons une application linéaire :
+</p>
+<math>f : E <mto> F</math>
+<p>
+Comme "E" est un espace vectoriel, nous pouvons exprimer une base "b" de "E".
+</p>
+<math>(<mi>b</mi><msub>1</msub>, <mi>b</mi><msub>2</msub>, ..., <mi>b</mi><msub>m</msub>)</math>
+<p>
+Ici, comme notre application est linéaire, la famille représentant l'image des vecteurs de "b" forme une famille génératrice de l'image de "l'espace d'arrivée".
+Nommons cette famille "c".
+</p>
+<math>(<mi>c</mi><msub>1</msub>, <mi>c</mi><msub>2</msub>, ..., <mi>c</mi><msub>m</msub>)</math>
+<p>
+Donc, tout vecteur de l'image peut s'écrire comme une combinaison linéaire de vecteurs de "c".
+</p>
+<math><mforall> u <min> E, f(u) = <msum unknown=k value=1 to=n><mi>a</mi><msub>k</msub><mi>c</mi><msub>k</msub></math>
+<p>
+Or, cette opération représente le fait de réaliser le produit matriciel entre une matrice dont les colonnes représentent "c" et "u".
+Donc, quelque soit cette application linéaire, elle peut se représenter sous la forme d'une matrice.
+</p>
+<math>f(u) = M * u</math>
+
+<h4>4.1.0.4</h4>
+<p>
+Démontrons que le produit matriciel de deux matrices associées à des applications linéaires revient à obtenir la matrice de la composée de ces deux applications linéaires.
+Posons deux matrices "A" et "B", associées à deux applications linéaires "f" et "g", et à 3 bases : "b" (départ de "f"), "c" (arrivée de "f" et départ de "g") et "d" (arrivée de "g").
+Déjà, pour tout vecteur "v" de coordonnées "E" dans la base de départ de "b", on sait que le produit matriciel de "A" et "E" donne les coordonnées "F" de "v" dans la base "c".
+</p>
+<math>AE = F</math>
+<p>
+De même, le produit matriciel de "B" et "F" donne les coordonnées "G" de "f(v)" dans "d".
+</p>
+<math>BF = G</math>
+<p>
+Donc, "G" représente les coordonnées de "g de f" de "v" dans la base "d".
+Comme le produit matriciel est associatif, on peut donc écrire :
+</p>
+<math>B(AE) = (BA)E = G</math>
+<p>
+Or, on se rend compte que "g de f" peut aussi s'exprimer sous la forme du produit matrice de "B" et "A".
+Donc, le produit matriciel de "B" et "A" représente la composée de "g" et "f", dans cette ordre précis.
+</p>
+
+<h3>Les applications linéaires</h3>
+
+<h4>4.1.1.0</h4>
+<p>
+Démontrons que, pour tout "w" et "z" appartenant à "R", l'application allant de "R²" vers "R²" transformant "(x, y)" en "(w * x, z * y)" est linéaire.
+Déjà, la première propriété est respectée, et l'on peut le vérifier de manière algébrique.
+</p>
+<math><math><mforall>a, b <min> <mi>R</mi><msup>2</msup>, <mexists>x, x', y, y' <min> R, a = (x, y), b = (x', y'), f(a + b) = f(x + x', y + y') = (w * (x + x'), z * (y + y')) = (w * x + w * x', z * y + z * y') = (w * x, z * y) + (w * x', z * y') = f(a) + f(b)</math>
+<p>
+La deuxième propriété est aussi vraie, et ce n'est pas si difficile que ça à démontrer non plus.
+</p>
+<math><math><mforall>a, b <min> <mi>R</mi><msup>2</msup>, <mexists>x, y, c <min> R, a = (x, y), f(c * a) = f(c * x, c * y) = (w * c * x, z * c * y) = c * (w * x, z * y) = c * f(a)</math>
+<p>
+Finalement, "f(0, 0) = (0, 0)", donc cette application est belle est bien linéaire.
+Donc, pour tout "w" et "z" appartenant à "R", l'application allant de "R²" vers "R²" transformant "(x, y)" en "(w * x, z * y)" est linéaire.
+</p>
+
+<h4>4.1.1.1</h4>
+<p>
+Démontrons que, pour une application linéaire allant de 2 K-espace vectoriel "E" vers "F", l'image d'une base de "E" représente une base de l'image de l'application dans "F".
+Considérons une base "b" de "E".
+</p>
+<math>b = (<mi>b</mi><msub>1</msub>, <mi>b</mi><msub>2</msub>, ..., <mi>b</mi><msub>n</msub>) <min> <mi>E*</mi><msub>n</msub></math></br>
+<math><mforall> u <min> E, <mexists> (<mi>a</mi><msub>1</msub>, <mi>a</mi><msub>2</msub>, ..., <mi>a</mi><msub>n</msub>) <min> <mi>N*</mi><msub>n</msub>, u = <msum from=1 to=n unknown=k><mi>a</mi><msub>k</msub><mi>b</mi><msub>k</msub></math>
+<p>
+Appelons "I" l'image de "f".
+Nous savons que, pour tout vecteur de "F", il existe un vecteur de "E" tel que son image appartient à "F".
+</p>
+<math><mforall> v <min> I, <mexists> u <min> E, f(u) = v</math>
+<p>
+Ici, comme "u" appartient à "E", nous pouvons décomposer "u", en utilisant la définition de la base "b".
+</p>
+<math>u = <msum from=1 to=n unknown=k><mi>a</mi><msub>k</msub><mi>b</mi><msub>k</msub></math></br>
+<math>f(<msum from=1 to=n unknown=k><mi>a</mi><msub>k</msub><mi>b</mi><msub>k</msub>) = v</math>
+<p>
+Par linéarité de "f", on peut sortir la somme et la multiplication de "f".
+</p>
+<math>f(<msum from=1 to=n unknown=k><mi>a</mi><msub>k</msub><mi>b</mi><msub>k</msub>) = v</math></br>
+<math><msum from=1 to=n unknown=k><mi>a</mi><msub>k</msub> * f(<mi>b</mi><msub>k</msub>) = v</math>
+<p>
+Donc, tout vecteur "V" de "I" s'écrit comme la combinaison linéaire d'éléments de l'image de la base "b" : c'est exactement la définition d'une famille qui génère "F".
+Donc, l'image d'une base de "E" représente une base de l'image de l'application dans "F".
+</p>
+
+<h3>Les matrices</h3>
+
+<h4>4.1.2.0</h4>
+<p>
+Démontrons que faire le produit d'une matrice par une matrice diagonale quelconque revient à obtenir une matrice où les colonnes de votre première matrice sont multipliées par les valeurs dans la diagonale de la même colonne.
+Rappelons la définition du produit matriciel.
+</p>
+<math><mi>c</mi><msub>i, j</msub> = <msum from=1 to=n unknown=k><mi>a</mi><msub>(i,k)</msub><mi>b</mi><msub>(k,j)</msub></math>
+<p>
+Posons une matrice de dimension "(m, n)".
+Considérons une matrice diagonale de taille "p", de telle manière que cette matrice soit compatible au produit matriciel (en tant que deuxième élément) avec notre matrice de départ.
+Appelons l'élément de la diagonale à la ligne / colonne "l" de notre matrice diagonale "d de i".
+Pour rappel, toutes les autres valeurs des lignes / colonnes (hors de la diagonale) de la matrice sont nuls.
+Notre produit matriciel devient :
+</p>
+<math><mi>c</mi><msub>i, j</msub> = <msum from=1 to=n unknown=k><mi>a</mi><msub>(i,k)</msub><mi>b</mi><msub>(k,j)</msub> = <mi>a</mi><msub>(i,j)</msub><mi>d</mi><msub>j</msub></math>
+<p>
+Donc, chaque valeur de la matrice représente la valeur de la matrice de départ multiplié par l'élément de la diagonale de la colonne associée.
+Donc, faire le produit d'une matrice par une matrice diagonale quelconque revient à obtenir une matrice où les colonnes de votre première matrice sont multipliées par les valeurs dans la diagonale de la même colonne.
+Démontrons maintenant le sens inverse : faire le produit d'une matrice diagonale par une matrice quelconque revient à obtenir une matrice où les lignes de votre deuxième matrice sont multipliées par les valeurs dans la diagonale de la même ligne.
+</p>
+<math><mi>c</mi><msub>i, j</msub> = <msum from=1 to=n unknown=k><mi>b</mi><msub>(i,k)</msub><mi>a</mi><msub>(k,j)</msub> = <mi>d</mi><msub>i</msub><mi>a</mi><msub>(i,j)</msub></math>
+<p>
+Donc, chaque valeur de la matrice représente la valeur de la matrice de départ multiplié par l'élément de la lignle de la colonne associée.
+Donc, faire le produit d'une matrice diagonale par une matrice quelconque revient à obtenir une matrice où les lignes de votre deuxième matrice sont multipliées par les valeurs dans la diagonale de la même ligne.
+</p>
+
+<h4>4.1.2.1</h4>
+<p>
+Démontrons que, pour deux matrices carrés de même taille "A" et "B", la trace de "A * B" et la même que celle de "B * A".
+Rappelons la définition du produit matriciel de "A" et "B", puis de "B" et "A".
+</p>
+<math>A * B = C, B * A = D</math></br>
+<math><mi>c</mi><msub>i, j</msub> = <msum from=1 to=n unknown=k><mi>a</mi><msub>(i,k)</msub><mi>b</mi><msub>(k,j)</msub></math></br>
+<math><mi>d</mi><msub>i, j</msub> = <msum from=1 to=n unknown=k><mi>b</mi><msub>(i,k)</msub><mi>a</mi><msub>(k,j)</msub></math>
+<p>
+Posons "l" tel que "l" peut remplacer "i" et "j".
+Dans ce cas :
+</p>
+<math><mi>c</mi><msub>l, l</msub> = <msum from=1 to=n unknown=k><mi>a</mi><msub>(l,k)</msub><mi>b</mi><msub>(k,l)</msub></math></br>
+<math><mi>d</mi><msub>i, j</msub> = <msum from=1 to=n unknown=k><mi>b</mi><msub>(l,k)</msub><mi>a</mi><msub>(k,l)</msub></math>
+<p>
+Ici, la trace de la matrice "C" représente la somme de tous les "c indice l, l" possibles, et la trace de la matrice "D" représente la somme de tous les "d indice l, l" possibles.
+</p>
+<math>Tr(C) = <msum from=1 to=n unknown=l><msum from=1 to=n unknown=k><mi>a</mi><msub>(l,k)</msub><mi>b</mi><msub>(k,l)</msub></math></br>
+<math>Tr(D) = <msum from=1 to=n unknown=l><msum from=1 to=n unknown=k><mi>b</mi><msub>(l,k)</msub><mi>a</mi><msub>(k,l)</msub> = <msum from=1 to=n unknown=l><msum from=1 to=n unknown=k><mi>a</mi><msub>(k,l)</msub><mi>b</mi><msub>(l,k)</msub></math>
+<p>
+Dans le calcul "D", procédons à un changement de nom de variable assez bizarre : appelons "k" la variable "l" et "l" la variable "k".
+En fait, permutons les noms, sans changer la valeur intrasèque de ces variables.
+Si vous voulez faciliter cette étape, décomposez là : commencer par remplacez "l" par "z", puis remplacez "k" par "l", puis "z" par "k" : le résultat est le même, mais permet de ne pas se mélanger les pinceaux.
+</p>
+<math>Tr(D) = <msum from=1 to=n unknown=k><msum from=1 to=n unknown=l><mi>a</mi><msub>(l,k)</msub><mi>b</mi><msub>(k,l)</msub></math>
+<p>
+Maintenant, permutons les deux sommes (ce qui est tout à fait possible dans ce contexte).
+</p>
+<math>Tr(D) = <msum from=1 to=n unknown=l><msum from=1 to=n unknown=k><mi>a</mi><msub>(l,k)</msub><mi>b</mi><msub>(k,l)</msub></math>
+<p>
+Or, nous obtenons que le calcul de "Tr(D)" est exactement le même que celui de "Tr(C)".
+Donc, ils sont égaux.
+</p>
+<math>Tr(C) = Tr(D) <mequi> Tr(AB) = Tr(BA)</math>

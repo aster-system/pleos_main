@@ -91,6 +91,19 @@
     <content>la trace d'une matrice carrée représente la somme de tous les éléments de sa diagonale principale</content>
 </new_definition>
 
+<new_definition name="eigenvector">
+    <content>un vecteur propre d'un endomorphisme est un vecteur non-nul de l'espace vectoriel de départ tel que son image par l'endomorphisme soit exactement ce vecteur multiplié par un scalaire quelconque</content>
+    <content name="space">un espace propre d'un endomorphisme est un sous-espace vectoriel de l'espace sur lequel l'endomorphisme est défini qui représente l'ensemble des vecteurs propres associés à une valeur propre (auquel on ajoute le vecteur nul)</content>
+    <content name="value">une valeur propre d'un endomorphisme est une valeur du corps de départ tel qu'il existe un vecteur de l'espace vectoriel de départ tel que son image soit un multiple de la valeur propre</content>
+</new_definition>
+<new_definition name="endomorphism_reduction">
+    <content>la réduction des endomorphismes est un procédé qui consiste à transformer des endomorphismes quelconques en des endomorphismes plus simples (si possible)</content>
+</new_definition>
+<new_definition name="matrix_diagonalizable">
+    <content>une matrice carrée est dite diagonalisable si elle est semblable à une matrice diagonale (et donc, que son endomorphisme associé est diagonalisable)</content>
+    <content name="endomorphism">un endomorphisme est dit diagonalisable si il existe une base où l'on peut le représenter comme une matrice diagonale</content>
+</new_definition>
+
 <new_definition name="echelon_vertical">
     <content>l'échelonnement vertical (aussi nommé réduction verticale) est une méthode de transformation d'une matrice en une matrice échelonnée, qui permet de plus facilement déduire des résultats sur la matrice de départ<content>
 </new_definition>
