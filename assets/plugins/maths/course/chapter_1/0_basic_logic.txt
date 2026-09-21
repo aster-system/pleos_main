@@ -201,6 +201,8 @@ Théoriquement, on peut définir des proposition avec encore plus de composantes
 <case content="V" x=0 y=4><case content="V" x=1 y=4><case content="F" x=2 y=4>
 </table>
 
+
+
 <h3>Travailler avec des propositions</h3>
 <p>
 Dans un certain sens, la "logique des propositions" est la version moderne de la "logique classique".
@@ -263,6 +265,8 @@ Sa table de vérité est :</p>
 <case content="V" x=0 y=4><case content="V" x=1 y=4><case content="V" x=2 y=4>
 </table>
 
+
+
 <h3>Le principe du tiers-exclus et la négation logique</h3>
 <p>
 En logique classique, le "principe du tiers-exclus" est une forme d'axiome.
@@ -313,6 +317,8 @@ La négation de "A ou B" est "pas (A et B)".
 Donc, <span class="important">si nous avons une proposition quelconque, on peut en déduire sa négation, et si nous démontrons la validité / fausseté de la négation, alors on obtient la fausseté / validité de la proposition de départ</span>.
 Si la négation est plus simple à démontrer que la proposition de départ, alors cela peut être un bon moyen de gagner du temps.
 </p>
+
+
 
 <h3>L'implication et l'équivalence</h3>
 <p>Maintenant, je vais vous présenter deux autres connecteurs, qui, quand on les découvrent, peuvent paraître plus abstrait : l'implication et l'équivalence.</p>
@@ -378,6 +384,18 @@ Une propriété très intéressante : <span class="important">si deux propriét�
 </table>
 <p>L'équivalence se note comme l'implication, avec une flèches sur les deux bords :</p>
 <math><mi>A</mi><mequi><mi>B</mi></math>
+
+
+
+<h3>L'analyse-synthèse</h3>
+<p>
+Parlons d'une des méthodes démonstratives possibles : l'analyse-synthèse.
+<span class="important"><definition name="analysis_synthesis"></span>.
+Pour cela, l'idée n'est pas d'utiliser directement les valeurs dans l'ensemble, mais plutôt de supposer qu'une valeur quelconque respecte la proposition nécessaire, d'en déduire des choses utiles qui permettront de trier parmi les éléments de l'ensemble entre les éléments qui peuvent respecter cette propriété, et ceux qui ne peuvent pas.
+Cette technique dépend donc fortement des objets concernés.
+</p>
+
+
 
 <h3>Travailler avec les prédicats</h3>
 <p>

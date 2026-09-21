@@ -812,7 +812,7 @@ En effet, <span class="important"><definition name="quadratic_form-rigorous"></s
 <p>
 Les matrices sont des objets très utilisées en algèbre linéaire.
 Pour rappel (comme définit au chapitre 1), <span class="important"><definition name="matrix"></span>.
-Nous ne reviendrons donc pas ici sur la définition des matrices.
+Nous ne reviendrons donc pas ici sur la définition des matrices, que nous avons déjà présenté au chapitre 1.
 Ici, il faut voir "tableau" comme un tableau à deux entrées, contenant donc des éléments de cet ensemble.
 </p>
 <math>A = <mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd><mtd><mi>2</mi></mtd></mtr><mtr><mtd><mi>3</mi></mtd><mtd><mi>4</mi></mtd></mtr></mtable><mo>]</mo></mrow></math></br>
@@ -822,9 +822,9 @@ Ici, il faut voir "tableau" comme un tableau à deux entrées, contenant donc de
 <math><mi>a</mi><msub>2, 2</msub> = 4</math>
 <p>
 Comme pour beaucoup d'objets mathématiques, il est possible de faire des opérations avec ces matrices.
-Si votre matrice représente des nombres, alors nous pouvons y définir une opération très utile : l'addition matricielle.
+Si votre matrice est à coefficient sur un ensemble muni d'une addition, alors nous pouvons y définir une opération très utile : l'addition matricielle.
 En effet, <span class="important">l'addition matricielle est une opération entre deux matrices d'exacte même dimension, où chaque élément d'indice "a, b" du résultat représente la somme des éléments d'indice "a, b" des deux matrices</span>.
-Cette opération est bien définie car les ensembles de nombres ont généralement une addition de définie.
+Cette opération est généralement utilisée quand les coefficients sont des nombres.
 D'un point de vue définition, on peut noter la valeur de chaque élément de la matrice obtenue "C" pour l'addition de matrices "A" et "B" :
 </p>
 <math><mi>c</mi><msub>i, j</msub> = <mi>a</mi><msub>i, j</msub> + <mi>b</mi><msub>i, j</msub></math></br>
@@ -835,22 +835,24 @@ Effectivement, <span class="important">si votre ensemble de départ peut former 
 Cette propriété est immédiate de la façon même dont on écrit les éléments dans l'addition.
 Grâce à ça, on peut rendre cette addition plus permissive.
 </p>
+<math><mi>c</mi><msub>i, j</msub> = <mi>a</mi><msub>i, j</msub> # <mi>b</mi><msub>i, j</msub></math></br>
 <p>
 Nous pouvons définir une autre opération assez utile : la multiplication par un scalaire.
-Pour la définir, repassons dans un ensemble de matrices composés de nombres.
-Ici, <span class="important">la multiplication par un scalaire est une opération entre un élément de l'ensemble de départ (nommé un scalaire) et une matrice, où chaque élément d'indice "a, b" du résultat représente le produit de l'élément d'indice "a, b" et du scalaire</span>.
-Encore une fois, cette opération est bien définie car les ensembles de nombres ont généralement une addition de définie.
+Pour la définir, repassons dans un ensemble de matrices à coefficients dans un ensemble muni d'une opération de multiplication (généralement à gauche).
+Ici, <span class="important">la multiplication par un scalaire est une opération entre un élément de l'ensemble des coefficients (nommé un scalaire) et une matrice, où chaque élément d'indice "a, b" du résultat représente le produit de l'élément d'indice "a, b" et du scalaire</span>.
 D'un point de vue définition, on peut noter la valeur de chaque élément de la matrice obtenue "C" pour la somme du scalaire "s" et de la matrice "A" :
 </p>
 <math><mi>c</mi><msub>i, j</msub> = s * <mi>a</mi><msub>i, j</msub></math></br>
 <p>
 Ici, il est difficile d'aller aussi loin que pour l'addition.
-Généralement, <span class="important">pour que cela fonctionne, il est conseiller de définir vos matrices sur un ensemble représentant un anneau ou un corps, pour que les propriétés de la multiplication soient justement aussi permissive que dans des anneaux ou des corps</span>.
+Généralement, <span class="important">pour que cela fonctionne, il est conseiller de définir vos matrices sur un ensemble représentant un anneau ou un corps (généralement commutatif), pour que les propriétés de la multiplication soient justement aussi permissive que dans des anneaux ou des corps</span>.
+Le corps commutatif le plus utilisé en pratique est bien évidemment le corps des réels.
 </p>
+<math><mi>M</mi><msub>(m, n)</msub>(<mreal>)</math>
 <p>
-Vous l'aurez peut être deviné : <span class="important">avec ces deux lois, si l'ensemble de vos éléments de départ est un corps, nous pouvons définir l'ensemble des matrices comme un espace vectoriel de l'ensemble de départ</span>.
+Vous l'aurez peut être deviné : <span class="important">avec ces deux lois, si l'ensemble de vos éléments de départ est un corps, nous pouvons définir l'ensemble des matrices de dimension "(m, n)" comme un espace vectoriel de l'ensemble de départ</span>.
 En effet, si l'ensemble de départ est un corps, l'addition matricielle est un groupe abélien, et la multiplication par un scalaire est associative, distributive et admet un neutre : il s'agit donc bien d'un espace vectoriel.
-Avec ça, on peut déduire un isomorphisme assez évident : <span class="important">si l'ensemble des matrices lignes / colonnes de dimension "(a, b)" est un espace vectoriel sur un corps "K", il est isomorphe à l'espace vectoriel usuel sur "K" formé par "K exposant a * b"</span>.
+Avec ça, on peut déduire un isomorphisme assez évident : <span class="important">si l'ensemble des matrices de dimension "(a, b)" est un espace vectoriel sur un corps "K", il est isomorphe à l'espace vectoriel usuel sur "K" formé par "K exposant a * b"</span>.
 Ce résultat est encore plus évident si vous travaillez sur des matrices lignes ou des matrices colonnes.
 </p>
 
@@ -934,7 +936,7 @@ Soyons plus précis, avec une représentation graphique de deux matrices "A" et 
 </table>
 <p>
 L'idée ici est de définir une valeur précise pour chaque "c" de la matrice obtenue.
-En fait, <span class="important">pour un "c indice i, j", l'idée va être d'obtenir la somme du produit de chaque valeur de la "i-ième ligne" de la matrice à droite, et de la "j-ième" colonne de la matrice en haut</span>.
+En fait, <span class="important">pour un "c indice i, j", l'idée va être d'obtenir la somme du produit de chaque valeur de la "i-ième ligne" de la matrice à droite à la position "k", et de la "j-ième" colonne de la matrice en haut encore à la position "k"</span>.
 </p>
 <math><mi>c</mi><msub>i, j</msub> = <msum from=1 to=n unknown=k><mi>a</mi><msub>(i,k)</msub><mi>b</mi><msub>(k,j)</msub></math>
 <p>
@@ -954,6 +956,16 @@ Ici, nous pouvons très facilement calculer chaque valeur de la matrice résulta
 <math><mi>c</mi><msub>2, 1</msub> = <mi>a</mi><msub>2, 1</msub> * <mi>b</mi><msub>1, 1</msub> + <mi>a</mi><msub>2, 2</msub> * <mi>c</mi><msub>2, 1</msub> = 3 * 0 + 4 * 1 = 4</math></br>
 <math><mi>c</mi><msub>2, 1</msub> = <mi>a</mi><msub>2, 1</msub> * <mi>b</mi><msub>1, 2</msub> + <mi>a</mi><msub>2, 2</msub> * <mi>c</mi><msub>2, 2</msub> = 3 * 2 + 4 * 0 = 6</math></br>
 <math>C = <mrow><mo>[</mo><mtable><mtr><mtd><mi>4</mi></mtd><mtd><mi>2</mi></mtd></mtr><mtr><mtd><mi>4</mi></mtd><mtd><mi>6</mi></mtd></mtr></mtable><mo>]</mo></mrow></math></br>
+<p>
+Quelque chose de très pratique : <span class="important">ce produit matriciel est associatif</span>.
+</p>
+<math>A * B = C <mand> (A * B) * D = E</math></br>
+<math><mimp> <mi>c</mi><msub>i, j</msub> = <msum from=1 to=n unknown=k><mi>a</mi><msub>(i,k)</msub><mi>b</mi><msub>(k,j)</msub> <mand> <mi>e</mi><msub>i', j'</msub> = <msum from=1 to=n unknown=k'><mi>c</mi><msub>(i',k')</msub><mi>d</mi><msub>(k',j')</msub></math></br>
+<math><mimp> <mi>e</mi><msub>i', j'</msub> = <msum from=1 to=n unknown=k'><mrow><mo>(</mo><msum from=1 to=n unknown=k><mi>a</mi><msub>(i',k)</msub><mi>b</mi><msub>(k,k')</msub><mo>)</mo></mrow><mi>d</mi><msub>(k',j')</msub></math></br>
+<math><mimp> <mi>e</mi><msub>i', j'</msub> = <msum from=1 to=n unknown=k'><mrow><mo>(</mo><msum from=1 to=n unknown=k><mi>a</mi><msub>(i',k)</msub><mi>b</mi><msub>(k,k')</msub><mi>d</mi><msub>(k',j')</msub><mo>)</mo></mrow></math></br>
+<math><mimp> <mi>e</mi><msub>i', j'</msub> = <msum from=1 to=n unknown=k><mrow><mo>(</mo><msum from=1 to=n unknown=k'><mi>a</mi><msub>(i',k)</msub><mi>b</mi><msub>(k,k')</msub><mi>d</mi><msub>(k',j')</msub><mo>)</mo></mrow></math></br>
+<math><mimp> <mi>e</mi><msub>i', j'</msub> = <msum from=1 to=n unknown=k><mi>a</mi><msub>(i',k)</msub><mrow><mo>(</mo><msum from=1 to=n unknown=k'><mi>b</mi><msub>(k,k')</msub><mi>d</mi><msub>(k',j')</msub><mo>)</mo></mrow></math></br>
+<math>(A * B) * C = A * (B * C)</math>
 <p>
 Parmi toutes les matrices utilisables avec des produits matriciels, une catégorie se détache : les matrices identités.
 <span class="important"><definition name="matrix-identity"></span>.
@@ -998,6 +1010,19 @@ Avec tout ça, on peut définir quelque chose de très intéressant : les matric
 Donc, pour une matrice "A", la condition pour qu'elle soit inversible serait :
 </p>
 <math><mexists> B <min> <mi>M</mi><msub>n</msub>, A * B = B * A = <mi>I</mi><msub>n</msub></math>
+<p>
+Pour une matrice donnée, <span class="important">l'inverse de cette matrice est unique</span>.
+La démonstration est très simple, et repose sur l'idée que si l'on a deux matrices quelconques qui sont des inverses de notre matrice de départ, elles sont forcément égales.
+</p>
+<math>A * B = B * A = <mi>I</mi><msub>n</msub> <mand> A * C = C * A = <mi>I</mi><msub>n</msub></math></br>
+<math><mimp> B * A * C = B * (A * C) = B * I = (B * A) * C = I * C <mimp> B = C</math>
+<p>
+Généralement, <span class="important">la matrice inverse d'une matrice "A" se note "A exposant -1"</span>.
+D'ailleurs, on peut très vite voir que l'inverse de l'inverse de "A" est donc la matrice qui donne l'identité quand on la multiplie à gauche ou à droite par l'inverse de l'inverse de "A" : l'inverse "A".
+Donc, <span class="important">l'inverse de l'inverse de "A" est "A", ce qui fait de l'inversion de matrice un opération involutif</span>.
+</p>
+<math>A * <mi>A</mi><msup>-1</msup> = <mi>A</mi><msup>-1</msup> * A = I</math></br>
+<math><mrow><mo>(</mo><mi>A</mi><msup>-1</msup><mo>)</mo></mrow><msup>-1</msup> = A</math>
 <p>
 Ici, on peut voir que "B" est aussi inversible, et admet "A" comme inverse.
 D'ailleurs, <span class="important">faire le produit de deux matrices inversibles donne une nouvelle matrice inversible</span>.

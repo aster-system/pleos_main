@@ -61,6 +61,9 @@
     <content>un syllogisme est une façon de démontrer logiquement un propos (nommé "conclusion"), en s'appuyant sur d'autres propos appelés "prémisses"</content>
 </new_definition>
 
+<new_definition name="analysis-synthesis">
+    <content>l'analyse-synthèse est un procédé permettant de trouver quels objets qu'un ensemble d'objets respecte une proposition précise</content>
+</new_definition>
 <new_definition name="mathematical_induction">
     <content>le raisonnement par récurrence est un principe de raisonnement permettant de prouver que si un prédicat "P(n)" est vraie pour "P(a)" et que, pour tout élément "k" d'un ensemble "N", "P(k) implique p(successeur(k))", alors "P(n)" est vraie pour tout "n" supérieur à "a"</content>
 </new_definition>
