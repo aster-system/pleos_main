@@ -162,6 +162,30 @@ Dans tous les cas, on peut par le calcul retrouver les valeurs calculées avec "
 <math>||<mvec>v</mvec>|| = <msqrt><mrow><mo>(</mo><mfrac><mrow><mi>x</mi></mrow><mrow><mi>t</mi><msub>2</msub><mo>-</mo><mi>t</mi><msub>1</msub></mrow></mfrac><mo>)</mo></mrow><msup>2</msup><mo>+</mo><mrow><mo>(</mo><mfrac><mrow><mi>y</mi></mrow><mrow><mi>t</mi><msub>2</msub><mo>-</mo><mi>t</mi><msub>1</msub></mrow></mfrac><mo>)</mo></mrow><msup>2</msup><mo>+</mo><mrow><mo>(</mo><mfrac><mrow><mi>z</mi></mrow><mrow><mi>t</mi><msub>2</msub><mo>-</mo><mi>t</mi><msub>1</msub></mrow></mfrac><mo>)</mo></mrow><msup>2</msup></msqrt></math></br>
 <math>||<mvec>v</mvec>|| = <msqrt><mfrac><mrow><mi>x</mi><msup>2</msup></mrow><mrow><mrow><mo>(</mo><mi>t</mi><msub>2</msub><mo>-</mo><mi>t</mi><msub>1</msub><mo>)</mo></mrow><msup>2</msup></mrow></mfrac><mo>+</mo><mfrac><mrow><mi>y</mi><msup>2</msup></mrow><mrow><mrow><mo>(</mo><mi>t</mi><msub>2</msub><mo>-</mo><mi>t</mi><msub>1</msub><mo>)</mo></mrow><msup>2</msup></mrow></mfrac><mo>+</mo><mfrac><mrow><mi>z</mi><msup>2</msup></mrow><mrow><mrow><mo>(</mo><mi>t</mi><msub>2</msub><mo>-</mo><mi>t</mi><msub>1</msub><mo>)</mo></mrow><msup>2</msup></mrow></mfrac></msqrt></math></br>
 <math>||<mvec>v</mvec>|| = <msqrt><mfrac><mrow><mi>x</mi><msup>2</msup><mo>+</mo><mi>y</mi><msup>2</msup><mo>+</mo><mi>z</mi><msup>2</msup></mrow><mrow><mrow><mo>(</mo><mi>t</mi><msub>2</msub><mo>-</mo><mi>t</mi><msub>1</msub><mo>)</mo></mrow><msup>2</msup></mrow></mfrac></msqrt> = <mfrac><mrow><msqrt><mi>x</mi><msup>2</msup><mo>+</mo><mi>y</mi><msup>2</msup><mo>+</mo><mi>z</mi><msup>2</msup></msqrt></mrow><mrow><mi>t</mi><msub>2</msub><mo>-</mo><mi>t</mi><msub>1</msub></mrow></mfrac> = <mfrac><mrow><mi>d</mi></mrow><mrow><mi>t</mi><msub>2</msub><mo>-</mo><mi>t</mi><msub>1</msub></mrow></mfrac></math></math></br>
+<p>
+Avec la vitesse, nous pouvons définir un nouveau concept similaire : l'accélération.
+<span class="important"><definition name="acceleration"></span>.
+Dans le contexte actuel, si vous avez une vitesse, vous pouvez étudier la façon dont elle évolue dans le temps grâce au concept d'accélération.
+En fait, l'accélération est à la vitesse ce que la vitesse est à la position (étude de l'évolution dans le temps).
+Encore une fois, une accélération est un vecteur de même nature que la vitesse (vecteur 2D, 3D ou autre).
+</p>
+<math><mvec>a</mvec> = (x, y, z)</math>
+<p>
+Ici, <span class="important">la mesure de cette information se fait de manière parfaitement similaire : on prend deux instants différents, on obtient la vitesse, et on calcule la différence moyenne de la vitesse entre les deux points</span>.
+</p>
+<math><mdelta><mvec>v</mvec> = <mvec>p</mvec><msub>2</msub> - <mvec>p</mvec><msub>1</msub></math></br>
+<math><mvec>a</mvec><msub>m</msub> = <mfrac><mrow><mdelta><mvec>v</mvec></mrow><mrow><mi>t</mi><msub>2</msub><mo>-</mo><mi>t</mi><msub>1</msub></mrow></mfrac></math>
+<p>
+Il est très important de bien distinguer les deux notions : la vitesse mesure la modification de la position, et l'accélération mesure la modification de la vitesse.
+D'ailleurs, une particule peut avoir une certaine vitesse et une accélération totalement opposée à un instant "t", sans que cela pose problème.
+Cependant, si nous évoluons dans le temps, la vitesse sera impactée par l'accélération.
+</p>
+<graphic>
+<background_color white>
+<circle x=3 y=-3 radius=1/3 color=red border_width=5 border_color=black>
+<arrow color=blue x_1=3 y_1=-3 x_2=-2 y_2=2>
+<arrow color=green x_1=3 y_1=-3 x_2=-3 y_2=-4>
+</graphic>
 
 <p>
 Reprenons les mathématiques.
@@ -184,7 +208,7 @@ Pour obtenir une vitesse moyenne entre deux moments sur chaque coordonnées, on 
 <p>
 Si on note "h" la différence de temps entre "t indice 2" et "t indice 1" (et donc, "h" étant "t indice 2" moins "t indice 1"), on peut modifier la formule de manière plus reconnaissable :
 </p>
-<math><mvec>v</mvec><msub>m<msub> = <mfrac><mrow><mi>f</mi><mo>(</mo><mi>t</mi><msub>1</msub><mo> + h)</mo><mo>-</mo><mi>f</mi><mo>(</mo><mi>t</mi><msub>1</msub><mo>)</mo></mrow><mrow><mi>h</mi></mrow></mfrac></math>
+<math><mvec>v</mvec><msub>m</msub> = <mfrac><mrow><mi>f</mi><mo>(</mo><mi>t</mi><msub>1</msub><mo> + h)</mo><mo>-</mo><mi>f</mi><mo>(</mo><mi>t</mi><msub>1</msub><mo>)</mo></mrow><mrow><mi>h</mi></mrow></mfrac></math>
 <p>
 Comme nous l'avons vue, plus "h" est petit, plus nous avons un résultat précis.
 Ici, <span class="important">en utilisant le formalisme des limites mathématiques, on peut donc dire que la vitesse instantanée au moment "t indice 1" est la valeur que nous avons donné à "v indice m" quand "h" tend vers "0"</span>.
@@ -196,10 +220,13 @@ Or, mathématiquement parlant, <span class="important">cette valeur représente 
 On peut donc obtenir la fonction dérivée de "p", qui pour toute valeur de temps, représente donc la vitesse instantanée de l'objet à ce moment précis.
 En physique, pour utiliser des dérivées, on utilise généralement la notation de Leibniz.
 </p>
-<math><mvec>v</mvec>(t) = <mfrac><mrow><mi>dp</mi></mrow><mrow><mi>dt</mi></mrow></mfrac></math></br>
+<math><mvec>v</mvec> = <mfrac><mrow><mi>dp</mi></mrow><mrow><mi>dt</mi></mrow></mfrac></math></br>
 <p>
-
+Ici, nous pouvons raisonner de l'exacte même façon pour quantifier l'accélération.
+En effet, <span class="important">la fonction modélisant l'accélération est la dérivée de la fonction représentant la vitesse</span>.
+D'ailleurs, on peut aussi se rendre compte que la fonction représentant l'accélération représente donc la dérivée seconde de la fonction représentant la position.
 </p>
+<math><mvec>a</mvec> = <mfrac><mrow><mi>dv</mi></mrow><mrow><mi>dt</mi></mrow></mfrac> = <mfrac><mrow><mi>d</mi><msup>2</msup><mi>p</mi></mrow><mrow><mi>dt</mi><msup>2</msup></mrow></mfrac></math></br>
 
 
 

@@ -33,6 +33,9 @@
     <content name="negligible">une suite mathématique "u" est dite négligeable devant une suite "v" lorsque "v" se rapproche plus vite de sa limite que "u"</content>
     <content name="partial_sum">la somme partielle au rang "n" d'une suite mathématique "u" est la somme des "n" premiers éléments de la suite</content>
 </new_definition>
+<new_definition name="analysis_cauchy_sequence">
+    <content>une suite de Cauchy est une suite mathématique telle que plus on avance dans la suite, plus les éléments sont proches entre eux</content>
+</new_definition>
 <new_definition name="analysis_serie">
     <content>une série est un objet permettant d'étudier le comportement d'une suite mathématique "s" définie via une autre suite mathématique "u", où le "n-ième" terme de la suite "s" représente la somme de tous les termes de "u" inférieurs ou égaux à "n"</content>
 </new_definition>

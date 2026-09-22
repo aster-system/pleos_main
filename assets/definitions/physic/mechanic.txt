@@ -2,6 +2,9 @@
     <content>la mécanique est la branche de la physique qui étudie les mouvements / transformations des objets physiques dans le temps</content>
 </new_definition>
 
+<new_definition name="acceleration">
+    <content>l'accélération représentent l'évolution d'une vitesse dans le temps</content>
+</new_definition>
 <new_definition name="movement">
     <content>le mouvement représente l'ensemble des informations correspondant à l'évolution de la position d'un objet</content>
 </new_definition>

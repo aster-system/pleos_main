@@ -44,6 +44,12 @@ Donc, un exemple d'état du système peut être une position de "(2, -1)" unité
 </p>
 <graphic><background_color white><circle x=2 y=-1 radius=1 color=blue border_color=black border_width=3><arrow x_1=2 y_1=-1 x_2=-4 y_2=3 border_width=10 border_color=black></graphic>
 <p>
+Généralement, quand nous voulons ajouter un paramètre au système, <span class="important">nous ajoutons aussi généralement un paramètre représentant la façon dont il varie dans le temps</span>.
+Comme nous l'avons vue plus haut, la variation dans le temps se formalise grâce à des dérivées.
+Donc, ce nouveau paramètre est la "dérivée" de notre paramètre de départ.
+</p>
+<math><mfrac><mrow><mi>dq</mi><msub>i</msub></mrow><mrow><mi>dt</mi></mrow></mfrac></math>
+<p>
 On peut creuser un peu plus ce concept, avec celui d'espace des phases.
 <span class="important"><definition name="phase_space"></span>.
 Selon le contexte, cette espace peut être très petit, ou absolument gigantesque (voir infini).
@@ -64,6 +70,8 @@ Si l'on rajoute une particule, nous devons en plus prendre en compte deux nouvel
 Dans ce cas, nous travaillerons sur "R exposant 8".
 </p>
 <math>R² * R² * R² * R² = <mi>R</mi><msup>8</msup></math>
+
+
 
 <h3>Les espaces dynamiques discrets</h3>
 <p>
