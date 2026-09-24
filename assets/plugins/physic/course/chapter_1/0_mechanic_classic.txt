@@ -236,6 +236,56 @@ D'ailleurs, on peut aussi se rendre compte que la fonction représentant l'accé
 
 
 
+<h3>La dynamique et la cinématique</h3>
+<p>
+Pour l'instant, tout ce que nous avons fait implique du pratique pure : devenons un peu plus théorique.
+
+</p>
+<p>
+Nous avons étudier la conséquence, étudions maintenant la cause.
+Pour cela, parlons d'une discipline précise : la dynamique.
+<span class="important"><definition name="dynamic"></span>.
+Ici, on n'étudie pas ce le mouvement en tant que tel, mais l'on étudie ce qui le fait arriver.
+</p>
+<p>
+Pour cela, nous allons introduire un concept fondamental en physique : la force.
+<span class="important"><definition name="force"></span>.
+En fait, une force permet d'augmenter ou de diminuer la vitesse d'un objet dans le temps.
+Une force est donc un vecteur, de même nature que le vecteur vitesse de l'objet.
+</p>
+<math><mvec>F</mvec></math>
+<p>
+Cette définition peut sembler très similaire à la définition de l'accélération.
+En effet, <span class="important">si une force est appliquée sur on objet, l'objet va acquérir une accélération, avec une valeur proportionnelle à la force</span>.
+Il y a cependant une distinction à faire : une force constante ne fait pas évoluer l'accélération d'un objet dans le temps, mais l'accélération va elle aussi rester constante.
+Nous pouvons donc dresser une sorte d'égalité entre la force et l'accélération : la question ici est comment dresse rigoureusement cette égalité.
+Pour cela, il existe un principe fondamental en physique : la seconde loi de Newton.
+<span class="important"><definition name="newton_second_law"></span>.
+En d'autre terme, la force appliquée sur un objet provoque une accélération qui est égale à exactement la valeur de la force divisée par la masse.
+Algébriquement, cela équivaut à dire que la force est égale à la masse multipliée par l'accélération.
+</p>
+<math><mvec>F</mvec> = m<mvec>a</mvec> <mequi> <mvec>a</mvec> = <mfrac><mrow>1</mrow><mrow>m</mrow></mfrac><mvec>F</mvec></math>
+<p>
+Comme son nom l'indique, on doit celle loi à <scientist name="newton" type=quote>.
+Cependant, nous avons le cas où nous n'avons qu'une seule force, mais nous pouvons généraliser dans le cas où nous avons plusieurs forces.
+En fait, <span class="important">si nous vons un objet tel que plusieurs forces sont appliquées sur lui, l'accélération est égale à la somme des forces divisées par la masse</span>.
+</p>
+<math><mvec>a</mvec> = <mfrac><mrow><msum><mrow><mvec>F</mvec></mrow><msub>i</msub></mrow><mrow><mi>m</mi></mrow></mfrac></math>
+<p>
+Avec cela, nous pouvons introduire un concept permettant de reformuler cette équation : la quantité de mouvement.
+<span class="important"><definition name="momentum"></span>.
+Encore une fois, il s'agit d'un vecteur.
+Il se note généralement avec la lettre "p".
+</p>
+<math><mvec>p</mvec> = m<mvec>v</mvec></math>
+<p>
+Pour rappel, l'accélération représente la dérivée de la vitesse par rapport au temps.
+Cela nous permet de retrouvere algébriquement une nouvelle formule du calcul de la force.
+Nous pouvons donc écrire :
+</p>
+<math><mvec>p</mvec> = m<mfrac><mrow><mi>d</mi><mvec>v</mvec></mrow><mrow>dt</mrow></mfrac> * dt</math></br>
+<math><mfrac><mrow><mvec>p</mvec></mrow><mrow>dt</mrow></mfrac> = m<mfrac><mrow><mi>d</mi><mvec>v</mvec></mrow><mrow>dt</mrow> = m<mvec>a</mvec></mfrac> = <msum><mi>F</mi><msub>i</msub></math>
+
 <h3>Les lois du mouvement de Newton</h3>
 <p>
 En fait, tout le concept de mécanique newtonienne repose sur 3 lois principales, que nous allons énumérer ici.

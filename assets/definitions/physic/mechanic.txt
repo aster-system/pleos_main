@@ -1,9 +1,18 @@
+<new_definition name="dynamic">
+    <content>la dynamique est l'étude de ce qui engendre le mouvement</content>
+</new_definition>
 <new_definition name="mechanic">
     <content>la mécanique est la branche de la physique qui étudie les mouvements / transformations des objets physiques dans le temps</content>
 </new_definition>
 
 <new_definition name="acceleration">
     <content>l'accélération représentent l'évolution d'une vitesse dans le temps</content>
+</new_definition>
+<new_definition name="force">
+    <content>une force est un objet permettant d'étudier une modification de la vitesse d'un objet dans un contexte réaliste</content>
+</new_definition>
+<new_definition name="momentum">
+    <content>la quantité de mouvement d'un objet à un instant "t" est le produit entre la vitesse d'un objet et la masse de cet objett (à cet instant "t")</content>
 </new_definition>
 <new_definition name="movement">
     <content>le mouvement représente l'ensemble des informations correspondant à l'évolution de la position d'un objet</content>
@@ -19,4 +28,8 @@
 <new_definition name="speed">
     <content>la vitesse représente l'évolution dans le temps d'une information sur un objet</content>
     <content name="position">la vitesse représente l'évolution dans le temps de la position d'un objet</content>
+</new_definition>
+
+<new_definition name="newton_second_law">
+    <content>la seconde loi de Newton est une loi de mécanique / dynamique qui dit que si l'on applique une force sur un objet (supposé isolé de tout autre interaction), l'accélération de cet objet va être égale au vecteur de la force divisé par la masse de l'objet</content>
 </new_definition>
