@@ -283,8 +283,8 @@ Pour rappel, l'accélération représente la dérivée de la vitesse par rapport
 Cela nous permet de retrouvere algébriquement une nouvelle formule du calcul de la force.
 Nous pouvons donc écrire :
 </p>
-<math><mvec>p</mvec> = m<mfrac><mrow><mi>d</mi><mvec>v</mvec></mrow><mrow>dt</mrow></mfrac> * dt</math></br>
-<math><mfrac><mrow><mvec>p</mvec></mrow><mrow>dt</mrow></mfrac> = m<mfrac><mrow><mi>d</mi><mvec>v</mvec></mrow><mrow>dt</mrow> = m<mvec>a</mvec></mfrac> = <msum><mi>F</mi><msub>i</msub></math>
+<math><mvec>p</mvec> = m<mfrac><mrow><mi>d</mi><mvec>v</mvec></mrow><mrow><mi>dt</mi></mrow></mfrac> * <mfrac><mrow><mi>dt</mi></mrow><mrow><mi>d</mi></mrow></mfrac></math></br>
+<math><mfrac><mrow><mi>d</mi><mvec>p</mvec></mrow><mrow><mi>dt</mi></mrow></mfrac> = m<mfrac><mrow><mi>d</mi><mvec>v</mvec></mrow><mrow><mi>dt</mi></mrow></mfrac> = m<mvec>a</mvec> = <msum><mi>F</mi><msub>i</msub></math>
 
 <h3>Les lois du mouvement de Newton</h3>
 <p>
