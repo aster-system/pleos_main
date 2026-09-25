@@ -1,0 +1,111 @@
+<h1>La géométrie différentielle</h1>
+
+
+
+
+
+
+
+
+
+<h2>L'analyse vectorielle</h2>
+
+
+
+<h3>De l'analyse sur des espaces vectoriels</h3>
+<p>
+Ici, nous allons aborder une nouvelle branche de la géométrie particulièrement utile en ingénieurie : la géométrie différentielle.
+<span class="important"><definition name="differential_geometry"></span>.
+Pour cela, nous allons retrouver beaucoup de choses que nous avons déjà vue : dérivée, intégrale...
+</p>
+<p>
+Pour commencer, nous allons aborder ce qui est probablement la branche la plus simple de la géométrie différentielle : l'analyse vectorielle.
+<span class="important"><definition name="vector_analysis"></span>.
+Dans une très grand majorité des cas, nous travaillons sur des champs scalaires ou vectoriels réels.
+</p>
+
+
+
+<h3>Les champs scalaires et vectoriels</h3>
+<p>
+Le concept que nous allons présenté dans ce qui suit est un concept assez utilisé en mathématique, mais surtout infiniment important en mathématiques appliquées, comme en physique
+Commençons par parles des champs scalaires.
+<span class="important"><definition name="scalar_field"></span>.
+Un champ scalaire se note donc :
+</p>
+<math>f : <mi>R</mi><msup>n</msup> <mto> R</math>
+<p>
+Donc, les éléments passés à cette fonction sont des vecteurs de "(R exposant n, +, *)".
+<span class="important">On peut des fois entendre parler du concept de champ scalaire comme une fonction à plusieurs variables</span>.
+En fait, cette appelation vient du fait que certains auteurs n'écrivent pas "f((x, y, z))", mais "f(x, y, z)" directement.
+Ici, <span class="important">une champ scalaire n'est pas forcément une forme linéaire sur l'espace vectoriel de "R exposant n", car il n'est pas forcément linéaire</span>.
+On peut par exemple imaginer :
+</p>
+<math>f = cos(x) + sin(y)</math>
+<p>
+Si il existe des champs de scalaires, il existe aussi des champs de vecteurs.
+<span class="important"><definition name="vector_field"></span>.
+</p>
+<math>f : <mi>R</mi><msup>n</msup> <mto> <mi>R</mi><msup>n</msup></math>
+<p>
+Comme pour les champs scalaires, <span class="important">On peut des fois entendre parler du concept de champ de vecteur comme une fonction à plusieurs variables</span> (l'explication du pourquoi est la même que pour les champs scalaires).
+Encore une fois, <span class="important">une champ de vecteur n'est pas forcément une application linéaire, car il n'est pas forcément linéaire</span>.
+On peut par exemple imaginer (dans "R²") :
+</p>
+<math>f((x, y)) = (<mi>x</mi><msup>2</msup> - y, x + <mi>y</mi><msup>2</msup>)</math>
+
+
+
+<h3>La dérivation en plusieurs variables</h3>
+<p>
+Pour l'instant, nous avons dérivé des fonctions allant de l'ensemble des réels vers l'ensemble des réels.
+Cependant, <span class="important">il est possible de définir des sortes de dérivations sur des fonctions à plusieurs variables, allant de "R exposant n" vers "R", ou vers "R exposant m"</span>.
+</p>
+<p>
+Commençons par le type de dérivation le plus simple à définir : la dérivée partielle.
+<span class="important"><definition name="partial_derivative"></span>.
+En d'autres termes, on se ramène à une fonction à une seule variable.
+Comme pour tout ce qui implique de la dérivation, <span class="important">ce type de dérivé peut être défini en 1 seul point précis, sur toute une partie, ou encore sur tout l'espace entier</span>.
+D'un point de vue intuitif, la dérivée partielle d'une fonction par rapport à une variable en un point est une représentation de comment l'image de la fonction évolue quand on fait varier de manière infinitésimale le paramètre "x", en laissant les autres constants.
+</p>
+<p>
+Pour une fonction "f" où l'on veut obtenir la dérivée partielle en une variable "x", on peut utiliser plusieurs notations : nous allons présenter les deux plus utilisées.
+La première est la notation de Leibniz, exactement comme vue plus haut.
+La deuxième utilise le même schéma que la notation de Leibniz, en remplaçant le "d" par un symbôle similaire au delta, nommé "d rond".
+</p>
+<math><mfrac><mi>df</mi><mi>dx</mi></mfrac> = <mfrac><mi><mpartial>f</mi><mi><mpartial>x</mi></mfrac></math>
+<p>
+Si on veut changer de variable en considérant par exemple une variable "y", on permute donc le "x" et le "y".
+</p>
+<math><mfrac><mi>df</mi><mi>dy</mi></mfrac> = <mfrac><mi><mpartial>f</mi><mi><mpartial>y</mi></mfrac></math>
+<p>
+En général, il est forteement conseillé de définir à chaque fois quand / où la fonction est dérivable ou pas dérivable.
+Prenons un exemple avec un champ scalaire :
+</p>
+<math>f : <mi><mreal></mi><msup>3</msup> <mto> <mreal></math></br>
+<math>f(x, y, z) = x + x * y + x * z</math>
+<p>
+Essayons de calculer sa dérivée partielle par rapport à la variable "x".
+Pour cela, <span class="important">on peut simplement définir une nouvelle fonction "f indice x" allant de "R" vers "R", où l'on considère "y" et "z" constants, et calculer sa dérivée</span>.
+La dérivée de cette fonction sera égale à la dérivée partielle de "f" par rapport à "x".
+Dans ce cas, on voit assez vite que cette fonction est dérivable partout, nous pouvons donc écrire :
+</p>
+<math><mi>f</mi><msub>x</msub> : <mreal> <mto> <mreal></math></br>
+<math><mforall>y, z <min> R, <mi>f</mi><msub>x</msub>(x) = x + x * y + x * z</math></br>
+<math>f'(x) = <mfrac><mi><mpartial>f</mi><mi><mpartial>x</mi></mfrac> =  1 + y + z</math>
+<p>
+En procédant de manière similaire, on peut calculer la dérivée partielle de "f" par rapport à "y" et "z".
+Faisons le en accéléré (notons que ces fonctions sont aussi dérivables sur tout leur ensemble de définition) :
+</p>
+<math><mfrac><mi><mpartial>f</mi><mi><mpartial>y</mi></mfrac> = x</math></br>
+<math><mfrac><mi><mpartial>f</mi><mi><mpartial>z</mi></mfrac> = x</math>
+<p>
+Ici, <span class="important">on peut définir les dérivés partielles en utilisant le passage à la limite</span>.
+Dans ce cas, on peut définir la dérivée partielle d'une fonction "f" allant de "R exposant n" vers "R" ou "R exposant m" (ce qui ne change rien à la définition) par rapport à la "i-ième" variable en un point "(a indice 1, ..., a indice n)" comme ceci :
+</p>
+<math><mfrac><mi><mpartial>f</mi><mi><mpartial><mi>x</mi><msub>i</msub></mfrac>(a) = <mlim unknown=h to=0><mfrac><mrow>f(<mi>a</mi><msub>1</msub>, ..., <mi>a</mi><msub>j</msub> + h, ..., <mi>a</mi><msub>n</msub>) - f(<mi>a</mi><msub>1</msub>, ..., <mi>a</mi><msub>j</msub>, ..., <mi>a</mi><msub>n</msub>)</mrow><mrow><mi>h</mi></mrow></mfrac></math>
+<p>
+Encore une fois, cette définition se définit à une partie, voir à tout l'espace si possible.
+Remarquons quelque chose : <span class="important">une dérivée partielle dans le cas où la fonction va vers "R" donne un nombre réel, et donne un vecteur de "R exposant m" dans le cas où la fonction va vers "R exposant m"</span>.
+Donc, la fonction représentant une dérivée partielle est d'exacte même nature que la fonction de départ.
+</p>

@@ -1,0 +1,7 @@
+<new_definition name="vector_analysis">
+    <content>l'analyse vectorielle est une branche de la géométrie différentielle où nous cherchons à combiner les outils de l'algèbre linéaire avec les outils de l'analyse</content>
+</new_definition>
+
+<new_definition name="partial_derivative">
+    <content>la dérivée partielle d'une fonction à plusieurs variables par l'une de ses variables "x" est une fonction représentant la dérivée réelle de la fonction de départ, en considérant les autres variables constantes</content>
+</new_definition>

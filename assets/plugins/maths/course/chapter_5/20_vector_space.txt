@@ -2,7 +2,15 @@
 
 
 
+
+
+
+
+
+
 <h2>Un type précis de structure</h2>
+
+
 
 <h3>Qu'est ce qu'est un espace vectoriel ?</h3>
 <p>
@@ -1590,33 +1598,7 @@ Nous pouvons donc écrire :
 
 
 
-<h3>Les champs scalaires et vectoriels</h3>
-<p>
-Le concept que nous allons présenté dans ce qui suit est un concept assez utilisé en mathématique, mais surtout infiniment important en mathématiques appliquées, comme en physique
-Commençons par parles des champs scalaires.
-<span class="important"><definition name="scalar_field"></span>.
-Un champ scalaire se note donc :
-</p>
-<math>f : <mi>R</mi><msup>n</msup> <mto> R</math>
-<p>
-Donc, les éléments passés à cette fonction sont des vecteurs de "(R exposant n, +, *)".
-<span class="important">On peut des fois entendre parler du concept de champ scalaire comme une fonction à plusieurs variables</span>.
-En fait, cette appelation vient du fait que certains auteurs n'écrivent pas "f((x, y, z))", mais "f(x, y, z)" directement.
-Ici, <span class="important">une champ scalaire n'est pas forcément une forme linéaire sur l'espace vectoriel de "R exposant n", car il n'est pas forcément linéaire</span>.
-On peut par exemple imaginer :
-</p>
-<math>f = cos(x) + sin(y)</math>
-<p>
-Si il existe des champs de scalaires, il existe aussi des champs de vecteurs.
-<span class="important"><definition name="vector_field"></span>.
-</p>
-<math>f : <mi>R</mi><msup>n</msup> <mto> <mi>R</mi><msup>n</msup></math>
-<p>
-Comme pour les champs scalaires, <span class="important">On peut des fois entendre parler du concept de champ de vecteur comme une fonction à plusieurs variables</span> (l'explication du pourquoi est la même que pour les champs scalaires).
-Encore une fois, <span class="important">une champ de vecteur n'est pas forcément une application linéaire, car il n'est pas forcément linéaire</span>.
-On peut par exemple imaginer (dans "R²") :
-</p>
-<math>f((x, y)) = (<mi>x</mi><msup>2</msup> - y, x + <mi>y</mi><msup>2</msup>)</math>
+
 
 
 
