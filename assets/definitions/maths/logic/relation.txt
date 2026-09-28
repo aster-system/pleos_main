@@ -2,7 +2,7 @@
     <content>une application est un objet permettant de lier tous les éléments d'un premier ensemble quelconque (nommé ensemble de départ) vers des éléments d'un autre (ou le même) ensemble (nomme ensemble d'arrivée)</content>
     <content name="extension">un prolongement d'une application / fonction "f" allant de "A" vers "B" est une nouvelle application / fonction allant d'un sur-ensemble de "A" vers un sur-ensemble de "B", tel que tous les éléments de "A" aient comme image par l'extension la même image que par "f"</content>
     <content name="reciprocal">une application réciproque d'une application "f" est une application telle que la composée de "f" et de son application réciproque donne l'application identité de l'ensemble de départ de "f" et que la composée de la réciproque de "f" et de "f" donne l'application identité de l'ensemble d'arrivée de "f"</content>
-    <content name="restriction">une restriction d'une application / fonction "f" allant de "A" vers "B" sur une partie "C" est une nouvelle application / fonction allant de départ "C" vers le même ensemble d'arrivée que "f", et telle que les images des éléments de "C" par la restriction sont les exactes mêmes que par "f"</content>
+    <content name="restriction">une restriction d'une application / fonction "f" allant de "A" vers "B" sur une partie "C" de "A" est une nouvelle application / fonction allant de "C" vers le même ensemble d'arrivée que "f", et telle que les images des éléments de "C" par la restriction sont les exactes mêmes que par "f"</content>
     <content name="rigorous">une application est une relation binaire entre l'ensemble de départ et l'ensemble d'arrivée, où chaque élément de l'ensemble de départ est relié à un unique élément de l'ensemble d'arrivée</content>
 </new_definition>
 <new_definition name="arrow_diagram">
@@ -14,6 +14,9 @@
 </new_definition>
 <new_definition name="family">
     <content>une famille est une application normale, munit d'une terminologie permettant d'utiliser cette application comme un ensemble où l'on peut "facilement accéder" aux éléments lui appartenant</content>
+</new_definition>
+<new_definition name="fixed_point">
+    <content>un point fixe d'une fonction allant d'un ensemble vers lui même est une valeur "x" de l'ensemble de départ de cette fonction telle que "f(x) = x" (et donc, telle que l'image de la valeur soit égale à la valeur)</content>
 </new_definition>
 <new_definition name="function">
     <content>une fonction est un objet permettant de lier certains éléments d'un premier ensemble quelconque (nommé ensemble de départ) vers des éléments d'un autre (ou le même) ensemble (nomme ensemble d'arrivée)</content>

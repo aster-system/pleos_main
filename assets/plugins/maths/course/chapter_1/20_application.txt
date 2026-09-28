@@ -1217,39 +1217,51 @@ Par exemple, pour un ensemble "E" quotienté par une relation d'équivalence "~"
 L'application est probablement un des objets les plus utilisés en mathématiques (tellement que, sans les nommer, on en a déjà rencontré plusieurs).
 En mathématiques, <span class="important"><definition name="application"></span>.
 D'un point de vue compréhension, il est aussi possible de dire qu'une application transforme / modifie chaque élément de son ensemble de départ en un unique élément de l'ensemble d'arrivée.
-Une chose très importante : tous les ensembles de l'ensemble de départ doivent être liés à exactement un élément de l'ensemble d'arrivée.
+Une chose très importante : <span class="important">tous les ensembles de l'ensemble de départ doivent être liés à exactement un élément de l'ensemble d'arrivée</span>.
 À l'inverse, il n'est pas obligatoire que tous les éléments de l'ensemble d'arrivée soit lié à un élément de l'ensemble de départ, ni qu'il ne soit lié qu'à un seul objet (il peut être lié à 2 objets, 3 objets, une infinité...).
 D'un point de vue rigoureux, <span class="important"><definition name="application-rigorous"></span>.
 Dans certains exercices, vous pourrez trouver une question du type "vérifiez qu'une application est bien définie" : cela revient à justifier que l'objet mathématique donné respecte toutes les propriétés d'une application.
 Pour une application quelconque "f" ayant comme ensemble de départ "A" vers l'ensemble d'arrivée "B", avec comme sous-ensemble du produit cartésien (représentant la relation) "G", on note :
 </p>
-<math>f = (A, B, G), G <min> A X B</math></br>
+<math>f = (A, B, G), G <min> A <mtimes> B</math></br>
 <math><mforall> x <min> A, <mexists>! y <min> B, (x, y) <min> G</msub></math>
+<p>
+On peut aussi formuler l'unicité de cette façon :
+</p>
+<math><mforall> x <min> A, <mforall> y, z <min> B, (x, y) <min> G <mand> (x, z) <min> G <mimp> y = z</math>
 <p>
 Ici, <span class="important">l'ensemble "G" des couples formés par l'application (et donc, le sous-ensemble du produit cartésien représentant la relation) est nommé le "graphe" de la fonction</span>.
 Dans le cas des applications, il existe tout un formalisme permettant de parfaitement décrire une application (formalisme différent de celui des relations, pour bien les distinguer).
 Déjà, <span class="important">une application ayant comme ensemble de départ "A" et ensemble d'arrivée "B" se définit généralement en notant le nom de l'application suivi de ":", puis de "A", suivi d'une flèche, et finalement suivi de "B"</span>.
 Il est aussi possible si nécessaire de rajouter en suite la façon dont les éléments de "A" sont transformés pour aller dans "B", bien que ce ne soit pas obligatoire.
 Ici, <span class="important">pour en élément "x" de "A", l'élément (unique) dans "B" associé à "x" est noté avec le nom de la relation, et entre parenthèse "x" : "f(x)"</span>.
-De plus, l'élément de "B" "f(x)" est nommé image de "x" par "f", et "x" est nommé antécédent de "f(x)" par "f".
+De plus, l'unique élément "f(x)" de "B" est nommé l'image de "x" par "f", et "x" est nommé un antécédent de "f(x)" par "f".
 Il faut faire attention à une chose : "f(x)" est un objet appartenant à l'ensemble d'arrivée, et "f" est un objet représentant une application (et donc, il faut faire attention à utiliser la bonne notation à chaque fois).
 Avec le formalisme des relations, on peut donc dire que "x" et "f(x)" sont en relation, et que "(x, f(x))" est un élément du graphe de "f".
 C'est d'ailleurs pour cela que l'on a utilisé ce formalisme plus haut, pour les relations d'équivalences et les "propriétés".
+Ici, nous pouvons donc utiliser une nouvelle notation (avec à la première la définition d'une application allant de "A" vers "B", et à la deuxième ligne la définition de l'écriture "f(x)") :
 </p>
-<math>f : A <mto> B, x <mto> f(x)</math></br>
-<math><mforall> x <min> A, <mforall> y <min> B, f(x) = y <mequi> (x, y) <min> G</math>
+<math>f : A <mto> B</math></br>
+<math><mforall> x <min> A, <mforall> y <min> B, (x, y) <min> G <mequi> f(x) = y</math></br>
 <p>
-En utilisant la condition d'unicité vue plus haut, on peut aussi noter :
+Nous pouvons définir un exemple simple : un ensemble "A" égal à "{1, 2, 3, 4, 5}" et un ensemble "B" égal à "{1, 2, 3}", et une application "f" allant du premier ensemble au deuxième.
+Ici, on va définir le graphe de "f" en indiquant les images de chaque élément du premier ensemble, ce qui est suffisant car tous les couples "(x, f(x))" représentent (par définition d'une application et unicité de l'image) les seuls éléments du graphe de l'application.
+Les images des éléments de "A" seront ici tirés aléatoirement (ou plutot, il n'y a pas de sens utile à dégager de ces couples "(x, f(x))").
 </p>
-<math><mforall> x <min> A, <mexists>! y <min> B, f(x) = y</math>
+<math>A = {1, 2, 3, 4, 5}, B = {1, 2, 3}, f : A <mto> B</math></br>
+<math>f(1) = 1, f(2) = 1, f(3) = 2, f(4) = 2, f(5) = 1</math>
 <p>
 En général, <span class="important">pour une application "f", l'ensemble de tous les éléments de l'ensemble d'arrivée appartenant à (au moins) un couple dans "G" est nommé "ensemble image de f"</span>.
 Cependant, il est aussi possible de simplement l'appeler "image de f", qu'il ne faut absolument pas confondre avec "l'image de x par f".
 Pour des raisons de simplicité, nous continuerons à parler d'ensemble image.
-Pour une application "f", cette ensemble se note "Im(f)", et peut se définir ainsi (ici, de 2 manières équivalentes) :
+Pour une application "f", cette ensemble se note "Im(f)", et peut se définir ainsi :
 </p>
-<math>Im(f) = {y <min> B | <mexists> a <min> A, (a, y) <min> G}</math></br>
-<math>Im(f) = {y <min> B | <mexists> a <min> A, f(a) = y}</math></br>
+<math>Im(f) = {y <min> B | <mexists> a <min> A, f(a) = y}</math>
+<p>
+Dans notre application définie plus haut, on peut facilement trouver l'ensemble image : "{1, 2}".
+Ici, "3" n'a pas d'image, et n'est donc pas dans cet ensemble image.
+</p>
+<math>Im(f) = {1, 2}</math>
 <p>
 En utilisant le formalisme des ensembles, on peut aussi améliorer ces notations, en deux concepts : l'image directe et l'image réciproque.
 <span class="important"><definition name="image-direct"></span>.
@@ -1257,7 +1269,7 @@ Pour que cela marche, il faut donc que cet ensemble soit un sous-ensemble de l'e
 Ici, la notation est la même : l'image directe de l'ensemble "C" par une application "f" se note "f(C)".
 Pour une application "f" allant de "A" vers "B", l'image directe de "C" s'écrit donc :
 </p>
-<math>f(C) = {y <min> B | <mexists> x <min> A,y = f(a)}</math>
+<math>f(C) = {y <min> B | <mexists> x <min> C, y = f(x)}</math>
 <p>
 On a aussi le concept "inverse" : l'image réciproque.
 <span class="important"><definition name="image-inverse"></span>.
@@ -1267,7 +1279,12 @@ Pour une application "f" allant de "A" vers "B", l'image directe de "D" s'écrit
 </p>
 <math><mi>f</mi><msup>-1</msup>(D) = {x <min> A | <mexists> y <min> D, f(x) = y}</math>
 <p>
-Cependant, comme pour les relations, <span class="important">les applications ne se définissent presque jamais directement par leur graphe, mais plutôt en explicitant "f(x)" en fonction de "x"</span>.
+Dans notre application de tout à l'heure, on peut trouver l'image directe de l'ensemble "{1, 2, 5}", qui est donc le singleton "{1}", où encore l'image réciproque de "{2}", qui est "{3, 4}".
+D'ailleurs, on se rend compte ici que l'image réciproque de "{3}" serait donc l'ensemble vide.
+</p>
+<math>f({1, 2, 5}) = {1}, <mi>f</mi><msup>-1</msup>({2}) = {3, 4}</math>
+<p>
+Cependant, comme pour les relations, <span class="important">les applications ne se définissent presque jamais directement par leur graphe, mais plutôt en explicitant "f(x)" en fonction de "x" (généralement, avec une formule)</span>.
 Il y a cependant une chose à prendre en compte : il faut que cette définition permettent de donner les "f(x)" de TOUS les "x" de l'ensemble d'arrivé.
 Dans ce cas précis, l'application est bien définie, et l'on peut en déduire le graphe de la fonction, permettant de la définir rigoureusement comme fait plus haut.
 Néanmoins, il est possible de considérer une application où l'on n'a aucune autre information sur elle, à part qu'il s'agit d'une application (avec un ensemble de départ, d'arrivée et un graphe quelconque).
@@ -1310,10 +1327,21 @@ Il s'agit d'une définition légèrement moins forte que celle de l'application 
 Le point commun est qu'une fonction ne permet de lier un objet de l'ensemble de départ que avec un maximum de un objet de l'ensemble d'arrivée.
 D'ailleurs, <span class="important">toute application est une fonction, où tous les éléments de l'ensemble de départ sont liés à un unique élément de l'ensemble d'arrivée</span>.
 Cependant, certaines fonctions ne sont pas des applications (dans le cas où il existe des éléments de l'ensemble de départ qui n'ont pas d'image).
-Nous pouvons noter logiquement une fonction de cette manière :
+Généralement, les fonctions utilisent la même notation que les applications simples.
+Nous pouvons définir logiquement une fonction "f" de cette manière (avec une définition similaire à celle des applications, utilisant une relation) :
 </p>
-<math>f : A <mto> B</math></br>
+<math>f = (A, B, G), G <min> A <mtimes> B</math></br>
 <math><mforall> x <min> A, (<mexists>! y <min> B, (x, y) <min> G<msub>f</msub>) <mor> <mno>(<mexists> y <min> B, (x, y) <min> G<msub>f</msub>)</math>
+<p>
+Bien qu'assez directe, cette notation est équivalente à une définition plus utilisée :
+</p>
+<math><mforall> x <min> A, <mforall> y, z <min> B, (x, y) <min> G <mand> (x, z) <min> G <mimp> y = z</math>
+<p>
+La démonstration <a href="demo#partial_function_definition_equivalence">présente ici</a> est verbeuse mais assez simple.
+Cette définition un peu bizarre autorise un cas lui aussi bizarre : la fonction où le graphe est vide.
+Bien qu'inutile, cette fonction peut exister.
+</p>
+<math>(A, B, <mempty_set>)</math>
 <p>
 <span class="important">Il est néanmoins possible d'obtenir l'ensemble de toutes les valeurs de l'ensemble de départ de la fonction qui sont belle et bien utilisées par cette dernière : cet ensemble se nomme ensemble de définition</span>.
 Cet ensemble peut être n'importe qu'elle partie de l'ensemble de départ, et même lui tout entier ou l'ensemble vide (bien que, dans ce cas, la fonction ne serve à rien).
@@ -1363,10 +1391,18 @@ Ici, pour une fonction "f", nous pouvons en obtenir une application que nous all
 Dans les deux cas, nous voyons bien que l'ensemble de départ est très important pour définir une application / fonction.
 Cependant, il est possible d'obtenir d'une application / fonction une autre application / fonction, en modifiant légèrement son ensemble de départ grâce à deux concepts : les restrictions et prolongement d'applications / fonctions.
 Pour commencer, <span class="important"><definition name="application-restriction"></span>.
-Comme sont nom le suggère, il s'agit d'une "partie" de l'application / fonction considérée.
+Comme son nom le suggère, il s'agit d'une "partie" de l'application / fonction considérée.
+Ici, on peut très vite voir que, pour une application / fonction donnée, il existe une restriction par partie de l'ensemble de départ.
 D'ailleurs, notre opération vue plus haut pour obtenir une application d'une fonction est une restriction de la fonction à son domaine de définition.
 Il existe une notation très précise pour représenter une restriction de "f" sur une partie "C" : on note "f" indice "|C" (où la barre verticale est incluse).
-D'un point de vue mathématique, pour une fonction "f" allant de "A" vers "B" et une partie "C" de "A", la restriction de "f" sur "C" se note ainsi :
+D'un point de vue mathématique rigoureuse (avec le triplet et le graphe), pour une application / fonction "f" allant de "A" vers "B" et une partie "C" de "A", la restriction de "f" sur "C" se défini ainsi :
+</p>
+<math>f = (A, B, G), <mforall> C <mincluded> A</math></br>
+<math><mi>f</mi><msub>|C</msub> = (C, B, H), H = G <minter> (C <mtimes> B)</math></br>
+<p>
+Ici, si "f" est une application, sa restriction est aussi une application (quelque soit "C").
+Cependant, si "f" est une fonction, sa restriction peut être une fonction comme une application.
+Et en utilisant le formalisme des applications :
 </p>
 <math>f : A <mto> B, a <mto> f(a)</math></br>
 <math><mi>f</mi><msub>|C</msub> : C <mto> B, c <mto> f(c)</math>
@@ -1375,16 +1411,24 @@ En fait, <span class="important">il existe beaucoup de propriétés de fonctions
 Le concept de prolongement est assez similaire, mais à l'opposé.
 <span class="important"><definition name="application-extension"></span>.
 Pour les éléments du sur-ensemble de "A" qui ne sont pas dans "A", leurs images peuvent être n'importe quoi dans le sur-ensemble de "B".
-D'un point de vue mathématique, pour une fonction "f" allant de "A" vers "B", un sur-ensemble "D" de "A" et un sur-ensemble "E" de "B", le prolongement de "f" que nous noterons "g" se note ainsi :
+D'un point de vue mathématique rigoureuse (avec le triplet et le graphe), pour une fonction "f" allant de "A" vers "B", un sur-ensemble "D" de "A" et un sur-ensemble "E" de "B", un prolongement de "f" que nous noterons "g" allant de "D" vers "E" se note ainsi :
+</p>
+<math>f = (A, B, G), A <mincluded> D <mand> B <mincluded> E</math></br>
+<math>g = (D, E, H), (H <mincluded> D <mtimes> E <mand> G <mincluded> H <mand> [<mforall> d <min> D, <mforall> e, e' <min> E, (d, e) <min> H <mand> (d, e') <min> H <mimp> e = e'])</math></br>
+<p>
+Ici, si "f" est une application ou une fonction, son prolongement peut être une application comme une fonction.
+Si vous voulez obligatoirement une application, vous devez donc rajouter en plus la condition de totalité (disant que tous les éléments de "D" ont une image).
+D'ailleurs, il est assez fréquent de prolonger des applications pour en faire des applications, en gardant le même espace de départ (qui est inclut dans lui même, et ne pose donc pas de problème de définition) et en définissant des images aux éléments de départ qui n'en ont pas.
+Et en utilisant le formalisme des applications :
 </p>
 <math>f : A <mto> B, a <mto> f(a)</math></br>
-<math>g : D <mto> E, (<mforall> c <min> D, c <min> A <mimp> g(c) = f(c))</math>
+<math>g : D <mto> E, <mforall> a <min> A, g(a) = f(a)</math>
 <p>
 Comme pour la restriction, <span class="important">il existe beaucoup de propriétés de fonctions / applications, telle que tous les prolongements de ces fonctions / applications ont les mêmes propriétés</span>.
 </p>
 <p>
 Ici, l'ensemble de départ peut être n'importe quoi, et même un produit cartésien d'autres ensembles quelconques.
-Dans ce cas, on relie à des couples de ce produit cartésien un élément de l'ensemble d'arrivé (tous les couples si il s'agit d'une application, où pas tous si il s'agit d'une fonction).
+Dans ce cas, on relie à des couples de ce produit cartésien un élément de l'ensemble d'arrivé (tous les couples si il s'agit d'une application, où pas forcément tous si il s'agit d'une fonction).
 Pour une application / fonction "f" et un couple "(c, d)", nous devrions donc noter :
 </p>
 <math>f((c, d)) = b</math>
@@ -1395,12 +1439,27 @@ Attention : tout ceci n'est qu'une notation allégée, le concept reste l'exact 
 </p>
 <math>f(c, d) = b</math>
 <p>
+Un autre cas d'ensemble de départ / d'arrivée spécial est le cas où l'ensemble de départ est le même que l'ensemble d'arrivée.
+Dans ce cas, on peut définir un concept très pratique : le point fixe.
+<span class="important"><definition name="fixed_point"></span>.
+Ce concept est terriblement important dans beaucoup de domaines des mathématiques.
+Ici, l'ensemble des points fixes d'une fonction "f" se note "Fix(f)".
+</p>
+<math>f : E <mto> E, Fix(f) = {x <min> E | f(x) = x}</math>
+<p>
 Un concept assez pratique pour parler d'applications est l'espace fonctionnel.
 <span class="important"><definition name="function_space"></span>.
 Cette appellation est aussi utilisée pour parler d'un ensemble quelconque de fonctions respectant des propriétés précises.
 Généralement, l'ensemble fonctionnel contenant toutes les applications (bien applications, et pas fonctions) possibles entre deux ensembles "X" et "Y" (dans cet ordre précis) peut se noter de deux façons différentes :
 </p>
 <math><mi>Y</mi><msup>X</msup> = F(X, Y)</math>
+<p>
+Comme pour beaucoup de concept inhérent aux applications, ce concept dépend grandement du type d'application utilisé pour être utile.
+En effet, <span class="important">les applications sont faites pour être utilisées dans beaucoup d'endroits différents en mathématiques</span>.
+C'est pour cela que beaucoup de choses utiles avec les applications ne seront pas définie ici, mais directement dans la partie du site qui traite de l'endroit utilisé.
+En plus de ça, certains termes utiles pour décrire ce type d'objet change de définition selon où l'on est (comme le concept de support de fonction).
+Préparez vous donc à voir, définir, et reformaliser beaucoup d'applications, un peu partout en mathématiques.
+</p>
 
 
 

@@ -3,4 +3,5 @@ Les bases du raisonnement mathématique (logique, ensembles et applications, ens
 Introduction à l'algèbre (nombres rationnels, structures algébriques 1, ensembles de nombres 2)
 Introduction à l'analyse mathématique (ensembles de nombres 3, limites et continuité, topologie 1)
 Le calcul infinitésimal (calcul différentiel, calcul intégral, lien analyse - algèbre - topologie - nombres)
-L'algèbre linéaire (structures algébriques 2, polynômes et nombres complexes, espaces vectoriels et matriciels)
+L'algèbre linéaire (structures algébriques 2, espaces vectoriels et matrices, géométrie)
+Les nombres complexes (structures algébriques 3, analyse complexe)

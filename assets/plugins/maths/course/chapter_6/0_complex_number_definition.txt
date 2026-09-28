@@ -1,0 +1,107 @@
+<h1>Les nombres complexes</h1>
+
+
+
+
+
+
+
+
+
+<h2>Définir les nombres complexes</h2>
+
+<h3>Qu'est-ce que un nombre complexe ?</h3>
+<p>
+Parmi tout ce qui existe en mathématique, l'une des branches de la discipline les plus appréciés est celle traitant des nombres complexes.
+Pour les définir, nous allons premièrement donner la définition simpliste et la définition la plus connue.
+<span class="important"><definition name="complex_number"></span>.
+Ici, nous allons donc définir un objet "i", se comportant exactement comme un objet du corps des réels, tel que son carré vaut "-1".
+</p>
+<math><mi>i</mi><msup>2</msup> = -1</math>
+<p>
+Dans ce cas (en considérant "a" et "b" deux nombres réels), un nombre complexe s'écrit donc ainsi :
+</p>
+<math>a + i * b</math>
+<p>
+Comme pour tous les ensembles de nombre que nous avons défini, nous devons être très rigoureux pour le définir : posons ici une définition bien plus rigoureuse.
+En fait, <span class="important"><definition name="complex_number-rigorous"></span>.
+Tout ce qu'on a fait ici est définir une façon bien plus rigoureuse de définir un nombre réel, en n'ayant pas à définir de nouveaux objets trop complexes.
+Dans ce cas, on peut dire que l'ensemble des nombres complexes représente donc le produit cartésien de "R" par lui même.
+</p>
+<math><mcomplex> = R <mtimes> R</math>
+<p>
+Ici, si on a un couple de réel (qui représente un complexe), on peut passer à la notation avec le "i", en faisant la somme du premier réel par le produit de "i" et du deuxième réel.
+Pour définir rigoureusement les nombres complexes, nous allons devoir nous restreindre à la notation avec le couple, mais nous passerons très vite à la notation présente ci-dessous.
+</p>
+<math><mforall> z = (a, b) <min> <mcomplex>, z = a + i * b</math>
+<p>
+Cependant, cela n'est pas le plus important : <span class="important">le plus important avec l'ensemble des complexes est l'ajout des propriétés calculatoires précises entre les éléments de cet ensemble</span>.
+Ici, on va rajouter deux lois de composition à cet ensemble de complexes : une loi représentant une addition, et une loi représentant une multiplication.
+L'addition va être très proche (voir parfaitement similaire) à celle des vecteurs dans "R²".
+Cependant, la multiplication est plus complexe : <span class="important">la multiplication doit se comporter comme si le deuxième élément du couple de réel se comportait dans le nombre complexe comme étant multiplié par une valeur dont le carré vaut "-1"</span>.
+</p>
+<math><mforall> z, z' <min> <mcomplex>, <mexists> a, b, c, d <min> R, z = (a, b) <mand> z' = (c, d)</math></br>
+<math>z + z' = (a + c, b + d)<math></br>
+<math>z * z' = (a * c - b * d, a * d + b * c)</math>
+<p>
+Pour bien comprendre la multiplication, on va considérer un élément dont le carré vaut "-1", que l'on va appeler "i" (comme plus haut).
+On va aussi considérer que ce fameux "i" se comporte exactement comme un réel de manière calculatoire.
+On pourrait donc écrire :
+</p>
+<math>z * z' = (a + i * b) * (c + i * d) = a * c + a * i * d + i * b * c + <mi>i</mi><msup>2</msup> * b * d = (a * c - b * d) + i * (a * d + b * c)</math>
+<p>
+Dans ce cas, <span class="important">on peut voir que l'ensemble des nombres complexes comme un corps commutatif, avec cette addition et cette multiplication</span>.
+Pour l'addition, la démonstration est parfaitement similaire à celle de la démonstration que "R²" est un groupe additif, nous n'allons pas y revenir ici.
+Cependant, pour la multiplication, cela mérite d'être traité.
+</p>
+Nous pouvons d'un point de vue purement calculatoire vérifier l'associativité :
+</p>
+<math><mforall> x, y, z <min> <mcomplex>, <mexists> a, b, c, d, e, f <min> R, x = (a, b) <mand> y = (c, d) <mand> z = (e, f)</math></br>
+<math>(x * y) * z = (a * c - b * d, a * d + b * c) * (e, f) = ((a * c - b * d) * e - (a * d + b * c) * f, (a * c - b * d) * f + (a * d + b * c) * e)</math></br>
+<math>(x * y) * z = (a * c * e - b * d * e - a * d * f - b * c * f, a * c * f - b * d * f + a * d * e + b * c * e) = (a * c * e - b * d * e - a * d * f - b * c * f, a * c * f - b * d * f + a * d * e + b * c * e)</math></br>
+<math>(x * y) * z = (a * (c * e - d * f) - b * (d * e + c * f), b * (c * e - d * f) + a * (c * f + d * e)) = x * (y * z)</math>
+<p>
+De manière similaire, on peut démontrer la commutativité de cette multiplication.
+</p>
+<math><mforall> x, y <min> <mcomplex>, <mexists> a, b, c, d <min> R, x = (a, b) <mand> y = (c, d)</math></br>
+<math>x * y = (a * c - b * d, a * d + b * c) = (c * a - d * b, b * c + a * d) = y * x</math>
+<p>
+Ici, l'identité représente simplement le nombre "(1, 0)" (ou "1 + i * 0"), ce qui se démontre facilement.
+</p>
+<math><mforall> x <min> <mcomplex>, <mexists> a, b <min> R, x = (a, b)</math></br>
+<math>(1, 0) * x = (a * 1 - 0 * b, 1 * b + 0 * a) = (a, b) = x</math>
+<p>
+De manière similaire, on peut noter un élément absorbant : "(0, 0)".
+Finalement, pour l'inverse, nous allons devoir ruser un peu.
+En effet, nous allons devoir utiliser un gros système assez moche (nous verrons des manières plus simples de calculer l'inverse d'un nombre complexe plus tard).
+Avant, nous devons cependant dresser quelques conditions.
+Déjà, il n'existe pas d'inverse du nombre complexe "(0, 0)".
+De plus, comme (pour tout "a" étant un nombre réel) "(a, 0)" se comporte comme "R", il est très facile de lui trouver un inverse.
+</p>
+<math><mforall> x <min> <mcomplex><msup>*</msup>, <mexists> a, b <min> R, x = (a, b)</math></br>
+<math>b = 0 <mimp> x * (<mfrac><mi>1</mi><mi>a</mi></mfrac>, 0) = (a * <mfrac><mi>1</mi><mi>a</mi></mfrac> - 0 * 0, a * 0 + 0 * <mfrac><mi>1</mi><mi>a</mi></mfrac>) = (1, 0)</math>
+<p>
+On peut aussi généraliser dans le cas où "(a, b)" avec "a" différent de "0" (ce qui est obligatoire, car on va à certain moments diviser par "a").
+Pour cela, nous allons utiliser un petit système linéaire.
+</p>
+<math><mforall> x, y <min> <mcomplex><msup>*</msup>, <mexists> a, b, c, d <min> R, x = (a, b) <mand> y = (c, d)</math></br>
+<math>a <mnotequal> 0 <mimp> x * y = (1, 0) <mequi> (a * c - b * d, a * d + b * c) = (1, 0) <mequi> a * c - b * d = 1 <mand> a * d + b * c = 0</math></br>
+<math><mimp>d = c * -<mfrac><mrow><mi>b</mi></mrow><mrow><mi>a</mi></mrow></mfrac> <mand> a * c - b * c * -<mfrac><mrow><mi>b</mi></mrow><mrow><mi>a</mi></mrow></mfrac> = 1 <mimp> c * (b * <mfrac><mrow><mi>b</mi></mrow><mrow><mi>a</mi></mrow></mfrac> + a) = 1 <mimp> c = <mfrac><mrow><mi>1</mi></mrow><mrow>(<mfrac><mrow><mi>b</mi><msup>2</msup></mrow><mrow><mi>a</mi></mrow></mfrac><mo>+</mo><mi>a</mi>)</mfrac> = <mfrac><mrow><mi>a</mi></mrow><mrow><mi>a</mi><msup>2</msup><mo>+</mo><mi>b</mi><msup>2</msup></mrow></mfrac></math></br>
+<math><mimp>d = <mfrac><mrow><mi>a</mi></mrow><mrow><mi>a</mi><msup>2</msup><mo>+</mo><mi>b</mi><msup>2</msup></mrow></mfrac> * -<mfrac><mrow><mi>b</mi></mrow><mrow><mi>a</mi></mrow></mfrac> = -<mfrac><mrow><mi>b</mi></mrow><mrow><mi>a</mi><msup>2</msup><mo>+</mo><mi>b</mi><msup>2</msup></mrow></mfrac></math></br>
+<p>
+D'ailleurs, dans le cas "(a, 0)" avec "a" quelconque, les formules que nous venons juste d'obtenir pour "c" et "d" marche.
+</p>
+<math>b = 0 <mimp> c = <mfrac><mrow><mi>a</mi></mrow><mrow><mi>a</mi><msup>2</msup><mo>+</mo><mi>b</mi><msup>2</msup></mrow></mfrac> = <mfrac><mrow><mi>a</mi></mrow><mrow><mi>a</mi><msup>2</msup></mrow></mfrac> = <mfrac><mrow><mi>1</mi></mrow><mrow><mi>a</mi></mrow></mfrac> <mand> d = -<mfrac><mrow><mi>b</mi></mrow><mrow><mi>a</mi><msup>2</msup><mo>+</mo><mi>b</mi><msup>2</msup></mrow></mfrac> = 0</math>
+<p>
+Comme l'opération est commutative, on peut rapidement vérifier que la valeur que nous avons obtenu est un inverse à droite et à gauche.
+Donc, dans tous les cas (les cas "(a, b)" avec "a" et "b" quelconques, mais aussi "(c, 0)" avec "c" quelconque), <span class="important">on peut trouver un inverse par la multiplication d'un nombre complexe avec une formule</span> :
+</p>
+<math><mforall> z <min> <mcomplex><msup>*</msup>, <mexists> a, b <min> R, z = (a, b)</math></br>
+<math><mi>z</mi><msup>-1</msup> = (<mfrac><mrow><mi>a</mi></mrow><mrow><mi>a</mi><msup>2</msup><mo>+</mo><mi>b</mi><msup>2</msup></mrow></mfrac>, -<mfrac><mrow><mi>b</mi></mrow><mrow><mi>a</mi><msup>2</msup><mo>+</mo><mi>b</mi><msup>2</msup></mrow></mfrac>)</math>
+<p>
+Nous avons donc un groupe abélien sur l'ensemble des complexes muni de l'addition, et un groupe abélien sur l'ensemble des complexes privé de "0" muni de la multiplication : <span class="important">l'ensemble des complexes est donc un corps commutatif</span>.
+Ici, on peut donc définir rigoureusement la façon de noter les nombres complexes avec une somme d'un réel et d'un produit d'un autre réel et de "i".
+En fait, <span class="important">"i" est égal à "(0, 1)" dans la définition que nous avons adopté ici, et les propriétés calculatoires que nous venons de déduire rendent la formule parfaitement définie</span>.
+</p>
+<math>i = (0, 1)</math></br>
+<math><mforall> z <min> <mcomplex>, <mforall> a, b <min> R, z = (a, b) <mequi> z = a + i * b</math>

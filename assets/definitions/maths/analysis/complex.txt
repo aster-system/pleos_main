@@ -1,0 +1,4 @@
+<new_definition name="complex_number">
+    <content>un nombre complexe est un objet mathématique représentant la somme d'un nombre réel par le produit d'un nombre réel et d'un objet mathématique précis noté "i", se comportant comme un nombre réel, à la différence près que son carré vaut "-1"</content>
+    <content name="rigorous">un nombre complexe est un couple de deux réels, auquel on défini des propriétés calculatoires précises, permettant de faire à ce que ce nombre se comporte (de manière aléatoire) comme si il représentait la somme du premier réel par le produit du second réel et d'une valeur telle que son carré vaut "-1"</content>
+</new_definition>

@@ -205,13 +205,6 @@
     <content>une racine d'un polynôme est une valeur tel que, si on la substitue à l'indéterminée du polynôme, la valeur obtenue est "0"</content>
 </new_definition>
 
-<new_definition name="complex_number">
-    <content>un nombre complexe est un nombre représentant la somme de deux nombres d'unités différentes : un par l'unité "1" (nommé nombre réel, car étant un nombre réel) et un par l'unité "1" (nommé imaginaire, car étant un nombre imaginaire)</content>
-</new_definition>
-<new_definition name="imaginary_number">
-    <content>un nombre imaginaire est un nombre réel quelconque multiplié à une autre unité que "1" : l'unité "i" (définie comme le nombre dont le carré vaut -1)</content>
-</new_definition>
-
 <new_definition name="chasles_relation">
     <content name="integral">la relation de Chasles sur les intégrales stipule que pour une fonction "f" Riemann-intégrable sur un intervalle "I", pour tout "a", "b" et "c" dans "I", l'intégrale de "f" entre "a" et "c" représente la somme de l'intégrale de "f" entre "a" et "b" et entre "b" et "c"</content>
 </new_definition>

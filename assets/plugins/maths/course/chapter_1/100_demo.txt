@@ -189,6 +189,35 @@ Cet ensemble existe donc pour tout ensemble E et F.
 
 <h2>Relations et applications</h2>
 
+<h3>Les bases des applications</h3>
+<h4 id="partial_function_definition_equivalence">1.1.0.0</h4>
+<p>
+Considérons un triplet d'ensembles :
+</p>
+<math>f = (A, B, G), G <min> A <mtimes> B</math></br>
+<p>
+Démontrons l'équivalence entre ces deux formules (permettant de faire de notre triple d'ensembles une fonction) :
+</p>
+<math>P = <mforall> x <min> A, (<mexists>! y <min> B, (x, y) <min> G) <mor> <mno>(<mexists> y <min> B, (x, y) <min> G)</math></br>
+<math>Q = <mforall> x <min> A, <mforall> y, z <min> B, (x, y) <min> G <mand> (x, z) <min> G <mimp> y = z</math>
+<p>
+Ici, on peut développer la première condition du "ou" en développant le quantificateur "il existe un unique" grâce à la formule de ce quantificateur utilisant les autres quantificateurs.
+Comme la définition du quantificateur existentiel unique est équivalente à celle avec les autres quantificateurs, on peut noter une équivalence.
+</p>
+<math>P <mequi> <mforall> x <min> A, (<mexists> y <min> B, (x, y) <min> G <mand> <mforall> y, z <min> B, (x, y) <min> G <mand> (x, z) <min> G <mimp> y = z) <mor> <mno>(<mexists> y <min> B, (x, y) <min> G)</math>
+<p>
+Dans cette nouvelle formule, on se rend compte d'une chose : pour tout "x", savoir si il existe "y" tel que "(x, y)" appartient (ou pas) à "G" ne change pas la valeur de vérité de la formule.
+En effet, si il n'existe pas, la deuxième partie du "ou" est vérifiée et la formule est toujours juste.
+Cependant, si il existe, la formule devient un indicateur de l'unicité de l'image.
+D'un point de vue global, la véracité de la formule ne dépend que de la véracité de l'unicité de l'image.
+D'ailleurs, on peut assez facilement remarquer que l'unicité de l'image n'oblige pas tous les éléments de départ à avoir une image, ce qui permet de dire que l'unciité de l'image est vérifiée même avec la seconde condition.
+On peut donc écrire :
+</p>
+<math>P <mequi> (<mforall> x <min> A, <mforall> y, z <min> B, (x, y) <min> G <mand> (x, z) <min> G <mimp> y = z)</math>
+<p>
+Or, nous retrouvons ici exactement "Q", ce qui justifie que "P" équivaut à "Q".
+</p>
+
 <h3>Les injections, surjections et bijections</h3>
 <h4>1.1.1.0</h4>
 <p>
