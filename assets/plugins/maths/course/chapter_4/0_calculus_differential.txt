@@ -104,6 +104,7 @@ En effet, <span class="important">la notation la plus utilisée en mathématique
 Ici, l'idée est de noter la fonction dérivée de "f" avec une apostrophe sur le côté : elle se noterait donc "f'".
 </p>
 <math>f'(x) = 3</math>
+
 <p>
 Prenons un exemple assez simple : la fonction qui transforme "x" en "3 * x²".
 Comme nous l'avons vue, cette fonction est dérivable et continue sur tout "R" : essayons de généraliser le calcul de ses nombres dérivés.

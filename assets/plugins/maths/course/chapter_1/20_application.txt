@@ -1251,6 +1251,12 @@ Les images des éléments de "A" seront ici tirés aléatoirement (ou plutot, il
 <math>A = {1, 2, 3, 4, 5}, B = {1, 2, 3}, f : A <mto> B</math></br>
 <math>f(1) = 1, f(2) = 1, f(3) = 2, f(4) = 2, f(5) = 1</math>
 <p>
+Ici, <span class="important">cette définition autorise l'existence d'une application où le triplet représente l'ensemblei vide, un ensemble quelconque, et encore une fois l'ensemble vide</span>.
+Généralement, cette application est nommée application vide.
+En effet, comme l'ensemble de départ est vide, la seule possibilité pour que les propriétés nécessaires à une application soient respectées ici est que le graphe soit vide.
+</p>
+<math>(<mempty>, B, <mempty>)</math>
+<p>
 En général, <span class="important">pour une application "f", l'ensemble de tous les éléments de l'ensemble d'arrivée appartenant à (au moins) un couple dans "G" est nommé "ensemble image de f"</span>.
 Cependant, il est aussi possible de simplement l'appeler "image de f", qu'il ne faut absolument pas confondre avec "l'image de x par f".
 Pour des raisons de simplicité, nous continuerons à parler d'ensemble image.
@@ -1338,7 +1344,7 @@ Bien qu'assez directe, cette notation est équivalente à une définition plus u
 <math><mforall> x <min> A, <mforall> y, z <min> B, (x, y) <min> G <mand> (x, z) <min> G <mimp> y = z</math>
 <p>
 La démonstration <a href="demo#partial_function_definition_equivalence">présente ici</a> est verbeuse mais assez simple.
-Cette définition un peu bizarre autorise un cas lui aussi bizarre : la fonction où le graphe est vide.
+Cette définition un peu bizarre autorise un cas lui aussi bizarre : la fonction où le graphe est vide (généralement nommée fonction vide).
 Bien qu'inutile, cette fonction peut exister.
 </p>
 <math>(A, B, <mempty_set>)</math>
@@ -1375,6 +1381,15 @@ Voici un exemple de diagramme sagittal de fonction :
 <line x_1=-3/2 y_1=1 x_2=3/2 y_2=1 color=black>
 <line x_1=-3/2 y_1=0 x_2=3/2 y_2=0 color=black>
 <line x_1=-3/2 y_1=-2 x_2=3/2 y_2=-1 color=black>
+</graphic>
+<p>
+Cependant, l'exemple le plus standard (qui demande déjà de connaître un peu les mathématiques) est la fonction inverse sur "R".
+En effet, cette fonction n'est pas définie en "0", mais elle est très souvent utilisée comme une fonction allant de "R" vers "R".
+</p>
+<graphic>
+<background_color white>
+<base draw=1>
+<function expression=1/x></function>
 </graphic>
 <p>
 Cependant, ce n'est pas très grave, pour une raison précise : <span class="important">pour toute fonction ayant un ensemble de définition non vide, on peut obtenir une application allant de l'ensemble de définition vers l'ensemble d'arrivée de la fonction, associant à chaque valeur de l'ensemble de définition son image par la fonction de départ</span>.
@@ -1468,8 +1483,8 @@ Préparez vous donc à voir, définir, et reformaliser beaucoup d'applications, 
 L'opération la plus simple avec les fonctions (et les applications) est la composition.
 <span class="important"><definition name="function-composition"></span>.
 L'idée est donc de créer une nouvelle fonction qui prend un élément, le transforme selon une fonction, puis transforme l'élément transformé en un autre selon une autre fonction.
-D'ailleurs, nous disons bien composition de fonction plutôt qu'une composition d'application, parce qu'une composition d'application est une composition de fonction, mais n'apporte pas de propriétés intéressantes.
-Voici un exemple de deux fonctions "f" et "g" quelconques, et d'une fonction "h" représentant la composée de "g" et "f".
+D'ailleurs, nous disons bien composition de fonction plutôt qu'une composition d'application, parce qu'une composition d'application est une composition de fonction, mais le concept de composition d'applications seul n'apporte pas de propriétés intéressantes.
+Voici un exemple intuitif de deux fonctions "f" et "g" quelconques, et d'une fonction "h" représentant la composée de "g" par "f".
 </p>
 <math>f : B <mto> C</math></br>
 <math>f : y <mto> f(y)</math></br>
@@ -1478,17 +1493,33 @@ Voici un exemple de deux fonctions "f" et "g" quelconques, et d'une fonction "h"
 <math>h : A <mto> C</math></br>
 <math>h : x <mto> f(g(x))</math>
 <p>
-Attention : quand on dit la composée de "g" et "f", cela veut dire que "h" est "f(g(x))", et pas l'inverse.
+Attention : quand on dit la composée de "g" par "f", cela veut dire que "h" est égal "f(g(x))", et pas l'inverse.
 En fait, <span class="important">cela vient du fait que, pour calculer "h(x)", on fait premièrement "g(x)", puis "f(g(x))"</span>.
 Ici, on peut écrire "h" comme le résultat de l'opération "composition" appliqué sur ces fonctions, opération s'écrivant avec un petit rond (ici, on écrit "f" puis "g", dans cet ordre) :
 </p>
 <math>h = f <mcomp> g</math></br>
 <p>
+Encore une fois, si l'on a "f rong g", cela veut dire que l'on obtient la composée de "g" par "f".
 On peut faire de même avec "h(x)" (qui est ici un élément de l'ensemble de départ).
 </p>
 <math>h(x) = (f <mcomp> g)(x) = f(g(x))</math>
 <p>
-Le diagramme sagittal de "h" peut se représenter comme cela :
+D'un point de vue définitionnel, selon la composition que vous faites, il y a un détail à prendre en compte : la comptabilité de l'ensemble de départ de "f" et de l'ensemble image de "g".
+Déjà, <span class="important">l'ensemble de définition de l'application composée de "f" par "g" est l'ensemble des éléments de "A" tel que leur image par "g" appartient à l'ensemble de définition de "f"</span>.
+En effet, si l'image d'un élément de "A" par "g" n'appartient pas à l'ensemble de définition de "f", on ne peut pas savoir son comportement avec "f", et il n'a donc pas d'image par "h".
+</p>
+<math><mi>D</mi><msub>h</msub> = {x <min> <mi>D</mi><msub>g</msub> | g(x) <min> <mi>D</mi><msub>f</msub>}</math>
+<p>
+D'ailleurs, nous n'avons pas encore défini ultra-rigoureusement le concept de composition (nous ne l'avons fait que "intuitivement").
+Cependant, cet ensemble "D indice h" va nous permettre de le faire.
+Déjà, remarquons que "D indice h" ne nécessite pas "h" dans sa définition : on va pouvoir l'utiliser pour définir le concept de composition.
+</p>
+<math>h = f <mcomp> g <mequi> <mforall> x <min> <mi>D</mi><msub>h</msub>, h(x) = f(g(x))</math>
+<p>
+Ici, pour que "h" soit une application, il faut que "D indice h" soit égal à "A".
+Pour cela, il faut 2 choses : <span class="important">que "D indice g" soit égal à A" (et donc, que "g" soit une application) et que tous les "g(x)" possibles soient dans "D indice f" (et donc, que l'ensemble image de "g" soit inclut dans l'ensemble de définition de "f")</span>.
+Une condition suffisante est donc que "f" et "g" soient toutes les deux des applications, et que l'ensemble image de "g" soit inclu dans l'ensemble de départ de "f".
+Voici un exemple de diagramme sagittal de "f", "g" et "h" où cela fonctionne :
 </p>
 
 <graphic ratio_base>
@@ -1556,18 +1587,8 @@ Le diagramme sagittal de "h" peut se représenter comme cela :
 </graphic>
 
 <p>
-D'un point de vue définitionnel, selon la composition que vous faites, il y a un détail à prendre en compte : la comptabilité de l'ensemble de départ de "g" et de l'ensemble d'arrivée de "f".
-Avec cela, vous pouvez obtenir beaucoup d'informations sur la fonction que vous obtiendrez après composition.
-Déjà, <span class="important">l'ensemble de définition de votre application composée de "g" et "f" est l'ensemble des éléments de "A" tel que leur image par "g" appartient à l'ensemble de définition de "f"</span>.
-En effet, si l'image d'un élément de "A" par "g" n'appartient pas à l'ensemble de définition de "f", on ne peut pas savoir son comportement avec "f", et il n'a donc pas d'image par "h".
-</p>
-<math><mi>D</mi><msub>h</msub> = {x <min> <mi>D</mi><msub>g</msub> | g(x) <min> <mi>D</mi><msub>f</msub>}</math>
-<p>
-Ici, pour que "h" soit une application, il faut que "D indice h" soit égal à "A".
-Pour cela, il faut 2 choses : que "D indice g" soit égal à A" (et donc, que "g" soit une application) et que tous les "g(x)" possibles soient dans "D indice f" (et donc, que l'ensemble image de "g" soit inclut dans l'ensemble de définition de "f").
 Voici un exemple où la fonction obtenue est en fait une fonction nulle :
 </p>
-
 <graphic ratio_base>
 <background_color white>
 <base draw=0 width=30 height=10>
@@ -1623,6 +1644,21 @@ Voici un exemple où la fonction obtenue est en fait une fonction nulle :
 <text x=-26/2 y=0 content="h =" font_size_in_scale=3/2></text>
 <text x=5/2 y=0 content="=" font_size_in_scale=3/2></text>
 </graphic>
+
+<p>
+Maintenant, parlons d'un résultat intéressant, qui nous sera utile pour plus tard.
+Imaginons 3 applications / fonctions quelconques "a", "b" et "c", et supposons que nous pouvons faire ces deux compositions précises :
+</p>
+<math>d = a <mcomp> (b <mcomp> c)</math></br>
+<math>e = (a <mcomp> b) <mcomp> c</math>
+<p>
+Ici, nous avons changé la disposition des parenthèses entre les deux formules, donnant deux applications quelconques.
+En fait, <span class="important">si l'on change la disposition des parenthèses (et donc, l'ordre dans lequel on effectue les compositions), l'application / fonction obtenue ne change pas, et donc "d" et "e" sont la même application</span>.
+Cette propriété se déduit très rapidement en prenant en compte l'écriture "a(x)", "b(x)" et "c(x)".
+</p>
+<math>d = a <mcomp> (b <mcomp> c) <mequi> <mforall> x <min> <mi>D</mi><msub>d</msub>, a((b <mcomp> c)(x)) = a(b(c(x)))</math></br>
+<math>e = (a <mcomp> b) <mcomp> c <mequi> <mforall> x <min> <mi>D</mi><msub>d</msub>, (a <mcomp> b)(c(x)) = a(b(c(x)))</math></br>
+<math><mimp> d = e = a <mcomp> (b <mcomp> c) = (a <mcomp> b) <mcomp> c</math>
 
 
 
