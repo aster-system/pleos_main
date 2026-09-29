@@ -280,18 +280,8 @@ Il se note généralement avec la lettre "p".
 <math><mvec>p</mvec> = m<mvec>v</mvec></math>
 <p>
 Pour rappel, l'accélération représente la dérivée de la vitesse par rapport au temps.
-Cela nous permet de retrouvere algébriquement une nouvelle formule du calcul de la force.
+Cela nous permet de retrouver algébriquement une nouvelle formule du calcul de la force.
 Nous pouvons donc écrire :
 </p>
 <math><mvec>p</mvec> = m<mfrac><mrow><mi>d</mi><mvec>v</mvec></mrow><mrow><mi>dt</mi></mrow></mfrac> * <mfrac><mrow><mi>dt</mi></mrow><mrow><mi>d</mi></mrow></mfrac></math></br>
 <math><mfrac><mrow><mi>d</mi><mvec>p</mvec></mrow><mrow><mi>dt</mi></mrow></mfrac> = m<mfrac><mrow><mi>d</mi><mvec>v</mvec></mrow><mrow><mi>dt</mi></mrow></mfrac> = m<mvec>a</mvec> = <msum><mi>F</mi><msub>i</msub></math>
-
-<h3>Les lois du mouvement de Newton</h3>
-<p>
-En fait, tout le concept de mécanique newtonienne repose sur 3 lois principales, que nous allons énumérer ici.
-Elle furent énumérer en premier dans le livre de Newton "Philosophiæ naturalis principia mathematica" en 1687.
-</p>
-<p>
-La première loi est le principe d'inertie.
-<span class="important"><definition name="inertia"></span>.
-</p>
