@@ -218,6 +218,71 @@ On peut donc écrire :
 Or, nous retrouvons ici exactement "Q", ce qui justifie que "P" équivaut à "Q".
 </p>
 
+<h4 id="function_composition_associativity">1.1.0.1</h4>
+<p>
+Considérons 5 fonctions "a", "b", "c", "d", "e" tel qu'il soit possible d'écrire :
+</p>
+<math>d = a <mcomp> (b <mcomp> c)</math></br>
+<math>e = (a <mcomp> b) <mcomp> c</math></br>
+<p>
+Posons deux autres fonctions "f" et "g", pour découper ce résultat :
+</p>
+<math>f = b <mcomp> c, g = a <mcomp> b</math>
+<p>
+Démontrons que "d = e".
+Déjà, il est immédiat de remarquer que l'ensemble d'arrivée de ces deux fonctions est l'ensemble d'arrivée de "a".
+Commençons par démontrer qu'elles partagent le même ensemble de définition.
+Ce résultat est immédiat quand toutes ces fonctions sont des applications, mais plus complexe quand ce n'est pas le cas.
+Ici, notons tous les ensembles de définition des fonctions ci-dessus :
+</p>
+<math><mi>D</mi><msub>f</msub> = {x <min> <mi>D</mi><msub>c</msub> | c(x) <min> <mi>D</mi><msub>b</msub>}</math></br>
+<math><mi>D</mi><msub>g</msub> = {x <min> <mi>D</mi><msub>b</msub> | b(x) <min> <mi>D</mi><msub>a</msub>}</math></br>
+<math><mi>D</mi><msub>d</msub> = {x <min> <mi>D</mi><msub>f</msub> | f(x) <min> <mi>D</mi><msub>a</msub>}</math></br>
+<math><mi>D</mi><msub>e</msub> = {x <min> <mi>D</mi><msub>c</msub> | c(x) <min> <mi>D</mi><msub>g</msub>}</math></br>
+<p>
+Démontrons que tout élément de l'ensemble de définition de "d" est dans l'ensemble de définition de "e".
+Si un élément appartient à l'ensemble de définition de "d", son image par "f" est alors dans l'ensemble de définition de "a".
+Or, on peut énoncer "f(x)" comme ceci :
+</p>
+<math>f(x) = b(c(x))</math>
+<p>
+Cela implique qu'il a une image par "c", que cette image est dans l'ensemble de définition de "b", et que l'image par "b" de cette image est dans l'ensemble de définition de "a".
+Or, cela veut exactement dire qu'il est dans l'ensemble de définition de "g", ce qui veut dire que l'image de notre élément par "c" est dans l'ensemble de définition de "g" : il respecte donc les propriétés nécessaires pour être dans l'ensemble de définition de "e", ce qui en fait un élément de l'ensemble de définition de "e".
+</p>
+<math><mforall> x <min> <mi>D</mi><msub>d</msub>, x <min> <mi>D</mi><msub>e</msub></math>
+<p>
+Démontrons le sens inverse.
+Si nous avons un élément dans l'ensemble de définition de "e", nous savons qu'il est dans l'ensemble de définition de "c", et que son image par "c" est dans l'ensemble de définition "g".
+Or, si un élément est de l'ensemble de définition de "g", cela implique qu'il est dans l'ensemble de définition de "b", et que son image par "b" est dans l'ensemble de définition de "a".
+Cela veut donc dire que notre élément est dans l'ensemble de définition de "c", et que son image est dans l'ensemble de définition de "b".
+Ceci veut exactement dire que notre élément est dans l'ensemble de définition de "f".
+De plus, comme notre l'image par "b" de l'image par "c" de notre élément de départ appartient à "a", alors l'image de notre élément par "f" appartient aussi à "a".
+Or, cela veut dire que notre élément est dans l'ensemble de définition de "d".
+</p>
+<math><mforall> x <min> <mi>D</mi><msub>e</msub>, x <min> <mi>D</mi><msub>d</msub></math>
+<p>
+Tous les éléments de l'ensemble de définition de "d" sont dans l'ensemble de définition de "e" et vice-versa : cela équivaut à dire que l'ensemble de définition de "d" est inclu dans l'ensemble de définition de "e" (et vice-versa).
+Par double inclusion, ces ensembles sont égaux.
+</p>
+<math><mi>D</mi><msub>d</msub> = <mi>D</mi><msub>e</msub></math>
+<p>
+Finalement, posons un élément "x" faisant partie de l'ensemble de définition de "d" (qui est le même que celui de "e").
+</p>
+<math><mforall> x <min> <mi>D</mi><msub>d</msub></math>
+<p>
+Nous savons que ce quantificateur quantifie tous les éléments de l'ensemble de départ de "d" et "e" qui ont une image.
+Maintenant, écrivons "d" et "e" dans leur forme finale, et démontrons le résultat attendu.
+</p>
+<math>d(x) = (a <mcomp> (b <mcomp> c))(x) = a((b <mcomp> c)(x)) = a(b(c(x)))</math></br>
+<math>e(x) = ((a <mcomp> b) <mcomp> c)(x) = (a <mcomp> b)(c(x)) = a(b(c(x)))</math>
+<p>
+Ici, ces deux fonctions ont le même ensemble de départ, d'arrivée, de définition, et chaque élément de l'ensemble de définition à la même image dans les deux fonctions (et donc, elles sont le même graphe) : les deux fonctions sont donc parfaitement égales.
+</p>
+<math>d = e</math></br>
+<math>a <mcomp> (b <mcomp> c) = (a <mcomp> b) <mcomp> c</math>
+
+
+
 <h3>Les injections, surjections et bijections</h3>
 <h4>1.1.1.0</h4>
 <p>

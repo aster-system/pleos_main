@@ -1649,19 +1649,12 @@ Voici un exemple où la fonction obtenue est en fait une fonction nulle :
 Maintenant, parlons d'un résultat intéressant, qui nous sera utile pour plus tard.
 Imaginons 3 applications / fonctions quelconques "a", "b" et "c", et supposons que nous pouvons faire ces deux compositions précises :
 </p>
-<math>f = b <mcomp> c, g = a <mcomp> b</math>
 <math>d = a <mcomp> (b <mcomp> c)</math></br>
-<math>e = (a <mcomp> b) <mcomp> c</math>
-
-<math><mi>D</mi><msub>f</msub> = {x <min> <mi>D</mi><msub>c</msub> | c(x) <min> <mi>D</mi><msub>b</msub>}</math></br>
-<math><mi>D</mi><msub>g</msub> = {x <min> <mi>D</mi><msub>b</msub> | b(x) <min> <mi>D</mi><msub>a</msub>}</math></br>
-<math><mi>D</mi><msub>e</msub> = {x <min> <mi>D</mi><msub>f</msub> | f(x) = b(c(x)) <min> <mi>D</mi><msub>a</msub>}</math></br>
-<math><mi>D</mi><msub>d</msub> = {x <min> <mi>D</mi><msub>c</msub> | c(x) <min> <mi>D</mi><msub>g</msub>}</math></br>
-
+<math>e = (a <mcomp> b) <mcomp> c</math></br>
 <p>
 Ici, nous avons changé la disposition des parenthèses entre les deux formules, donnant deux applications quelconques.
 En fait, <span class="important">si l'on change la disposition des parenthèses (et donc, l'ordre dans lequel on effectue les compositions), l'application / fonction obtenue ne change pas, et donc "d" et "e" sont la même application</span>.
-Cette propriété se déduit très rapidement en prenant en compte l'écriture "a(x)", "b(x)" et "c(x)".
+Cette propriété est démontrée <a href="demo#function_composition_associativity">juste ici</a>.
 </p>
 <math>d = a <mcomp> (b <mcomp> c) <mequi> <mforall> x <min> <mi>D</mi><msub>d</msub>, a((b <mcomp> c)(x)) = a(b(c(x)))</math></br>
 <math>e = (a <mcomp> b) <mcomp> c <mequi> <mforall> x <min> <mi>D</mi><msub>d</msub>, (a <mcomp> b)(c(x)) = a(b(c(x)))</math></br>
