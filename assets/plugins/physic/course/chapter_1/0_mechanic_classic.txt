@@ -163,29 +163,23 @@ Dans tous les cas, on peut par le calcul retrouver les valeurs calculées avec "
 <math>||<mvec>v</mvec>|| = <msqrt><mfrac><mrow><mi>x</mi><msup>2</msup></mrow><mrow><mrow><mo>(</mo><mi>t</mi><msub>2</msub><mo>-</mo><mi>t</mi><msub>1</msub><mo>)</mo></mrow><msup>2</msup></mrow></mfrac><mo>+</mo><mfrac><mrow><mi>y</mi><msup>2</msup></mrow><mrow><mrow><mo>(</mo><mi>t</mi><msub>2</msub><mo>-</mo><mi>t</mi><msub>1</msub><mo>)</mo></mrow><msup>2</msup></mrow></mfrac><mo>+</mo><mfrac><mrow><mi>z</mi><msup>2</msup></mrow><mrow><mrow><mo>(</mo><mi>t</mi><msub>2</msub><mo>-</mo><mi>t</mi><msub>1</msub><mo>)</mo></mrow><msup>2</msup></mrow></mfrac></msqrt></math></br>
 <math>||<mvec>v</mvec>|| = <msqrt><mfrac><mrow><mi>x</mi><msup>2</msup><mo>+</mo><mi>y</mi><msup>2</msup><mo>+</mo><mi>z</mi><msup>2</msup></mrow><mrow><mrow><mo>(</mo><mi>t</mi><msub>2</msub><mo>-</mo><mi>t</mi><msub>1</msub><mo>)</mo></mrow><msup>2</msup></mrow></mfrac></msqrt> = <mfrac><mrow><msqrt><mi>x</mi><msup>2</msup><mo>+</mo><mi>y</mi><msup>2</msup><mo>+</mo><mi>z</mi><msup>2</msup></msqrt></mrow><mrow><mi>t</mi><msub>2</msub><mo>-</mo><mi>t</mi><msub>1</msub></mrow></mfrac> = <mfrac><mrow><mi>d</mi></mrow><mrow><mi>t</mi><msub>2</msub><mo>-</mo><mi>t</mi><msub>1</msub></mrow></mfrac></math></math></br>
 <p>
-Avec la vitesse, nous pouvons définir un nouveau concept similaire : l'accélération.
-<span class="important"><definition name="acceleration"></span>.
-Dans le contexte actuel, si vous avez une vitesse, vous pouvez étudier la façon dont elle évolue dans le temps grâce au concept d'accélération.
-En fait, l'accélération est à la vitesse ce que la vitesse est à la position (étude de l'évolution dans le temps).
-Encore une fois, une accélération est un vecteur de même nature que la vitesse (vecteur 2D, 3D ou autre).
+Comme cette grandeur mesure la variation de la position (grandeur qui dépend du référentiel d'étude), <span class="important">la vitesse dépend aussi du référentiel d'étude</span>.
+Par exemple, considérons 3 objets "a", "b" et "c" en 2D tel que, depuis un référentiel extérieur, la vitesse de "a" est "(0, 0)", celle de "b" est "(4, 0)" et celle de "c" est "(5, 0)".
+Après une unité de temps, "a" n'aura pas bougé, "b" aura bougé de "(4, 0)", et "c" aura bougé de "(5, 0)".
+Depuis "a", "b" aura bougé de "(4, 0)" et "c" aura bougé de "(5, 0)".
+Cependant, depuis "b", "a" aura bougé de "(-4, 0)", et "c" aura bougé de "(1, 0)".
+Finalement, depuis "c", "a" aura bougé de "(-5, 0)" et "b" aura bougé de "(-1, 0)".
 </p>
-<math><mvec>a</mvec> = (x, y, z)</math>
+<graphic><circle x=-3 y=3 radius=1/4></graphic>
 <p>
-Ici, <span class="important">la mesure de cette information se fait de manière parfaitement similaire : on prend deux instants différents, on obtient la vitesse, et on calcule la différence moyenne de la vitesse entre les deux points</span>.
+Cependant, cet exemple est un peu simple, prenons un exemple plus technique.
+Imagineons que (depuis un référentiel extérieur) "a" ai toujours une vitesse de "(0, 0)", que "b" ai une vitesse de "(5, 0)" et "c" ai une vitesse de "(0, 5)".
+Ici, depuis "a", la vitesse de "b" est "(5, 0)" et la vitesse de "c" est "(0, 5)".
+Or, si nous étudions la vitesse de "c" dans le référentiel de "b", tout devient plus difficile.
+En effet, on peut confirmer (soit calculatoirement, soit par un dessin) que la vitesse de "c" dans le référentiel de "c" est de "(-5, 5)".
+De même, la vitesse de "b" dans le référentiel de "c" est "(5, -5)".
 </p>
-<math><mdelta><mvec>v</mvec> = <mvec>p</mvec><msub>2</msub> - <mvec>p</mvec><msub>1</msub></math></br>
-<math><mvec>a</mvec><msub>m</msub> = <mfrac><mrow><mdelta><mvec>v</mvec></mrow><mrow><mi>t</mi><msub>2</msub><mo>-</mo><mi>t</mi><msub>1</msub></mrow></mfrac></math>
-<p>
-Il est très important de bien distinguer les deux notions : la vitesse mesure la modification de la position, et l'accélération mesure la modification de la vitesse.
-D'ailleurs, une particule peut avoir une certaine vitesse et une accélération totalement opposée à un instant "t", sans que cela pose problème.
-Cependant, si nous évoluons dans le temps, la vitesse sera impactée par l'accélération.
-</p>
-<graphic>
-<background_color white>
-<circle x=3 y=-3 radius=1/3 color=red border_width=5 border_color=black>
-<arrow color=blue x_1=3 y_1=-3 x_2=-2 y_2=2>
-<arrow color=green x_1=3 y_1=-3 x_2=-3 y_2=-4>
-</graphic>
+<graphic><circle x=-3 y=3 radius=1/4></graphic>
 
 <p>
 Reprenons les mathématiques.
@@ -222,11 +216,64 @@ En physique, pour utiliser des dérivées, on utilise généralement la notation
 </p>
 <math><mvec>v</mvec> = <mfrac><mrow><mi>dp</mi></mrow><mrow><mi>dt</mi></mrow></mfrac></math></br>
 <p>
-Ici, nous pouvons raisonner de l'exacte même façon pour quantifier l'accélération.
+Nous pouvons aussi faire le chemin inverse.
+En effet, si l'on a la fonction représentant la vitesse d'un objet dans le temps dans un référentiel donné, <span class="important">nous pouvons calculer la trajectoire (toujours dans ce référentiel) parcourue par l'objet dans le temps avec une intégrale</span>.
+</p>
+<math><mint from=0 to=x>v(t)dt</math>
+<p>
+Ici, nous savons que la résolution de cette intégrale va nous donner la somme d'une fonction et d'un réel quelconque.
+En fait, <span class="important">la fonction associe à chaque valeur "t" la position de l'objet à cet instant "t" à partir de la position de départ</span>.
+Pour obtenir la position précise dans le référentiel, il faut sommer à cette fonction la position de départ de l'objet.
+</p>
+
+<p>
+Avec la vitesse, nous pouvons définir un nouveau concept similaire : l'accélération.
+<span class="important"><definition name="acceleration"></span>.
+Dans le contexte actuel, si vous avez une vitesse, vous pouvez étudier la façon dont elle évolue dans le temps grâce au concept d'accélération.
+En fait, l'accélération est à la vitesse ce que la vitesse est à la position (étude de l'évolution dans le temps).
+Encore une fois, une accélération est un vecteur de même nature que la vitesse (vecteur 2D, 3D ou autre).
+</p>
+<math><mvec>a</mvec> = (x, y, z)</math>
+<p>
+Ici, <span class="important">la mesure de cette information se fait de manière parfaitement similaire : on prend deux instants différents, on obtient la vitesse, et on calcule la différence moyenne de la vitesse entre les deux points</span>.
+</p>
+<math><mdelta><mvec>v</mvec> = <mvec>p</mvec><msub>2</msub> - <mvec>p</mvec><msub>1</msub></math></br>
+<math><mvec>a</mvec><msub>m</msub> = <mfrac><mrow><mdelta><mvec>v</mvec></mrow><mrow><mi>t</mi><msub>2</msub><mo>-</mo><mi>t</mi><msub>1</msub></mrow></mfrac></math>
+<p>
+Il est très important de bien distinguer les deux notions : la vitesse mesure la modification de la position, et l'accélération mesure la modification de la vitesse.
+D'ailleurs, une particule peut avoir une certaine vitesse et une accélération totalement opposée à un instant "t", sans que cela pose problème.
+Cependant, si nous évoluons dans le temps, la vitesse sera impactée par l'accélération.
+</p>
+<graphic>
+<background_color white>
+<circle x=3 y=-3 radius=1/3 color=red border_width=5 border_color=black>
+<arrow color=blue x_1=3 y_1=-3 x_2=-2 y_2=2>
+<arrow color=green x_1=3 y_1=-3 x_2=-3 y_2=-4>
+</graphic>
+<p>
+Comme pour la vitesse, <span class="important">l'accélération dépend aussi du référentiel d'étude</span>.
+Prenons le même exemple qu'avec la vitesse, avec nos objets "a", "b" et "c".
+Imagineons que (depuis un référentiel extérieur) "a" ai une accélération de "(0, 0)", que "b" ai une accélération de "(5, 0)" et "c" ai une accélération de "(0, 5)".
+Ici, depuis "a", l'accélération de "b" est "(5, 0)" et l'acceleration de "c" est "(0, 5)".
+Depuis "b", l'accélération de "a" est "(-5, 0)" et l'accélération de "c" est aussi "(-5, 5)".
+Finalement, depuis "c", l'accélération de "a" est "(0, -5)"et l'accélération de "b" est "(5, -5)".
+</p>
+
+<p>
+Mathématiquement parlant, nous pouvons raisonner comme pour la vitesse pour quantifier l'accélération.
 En effet, <span class="important">la fonction modélisant l'accélération est la dérivée de la fonction représentant la vitesse</span>.
 D'ailleurs, on peut aussi se rendre compte que la fonction représentant l'accélération représente donc la dérivée seconde de la fonction représentant la position.
 </p>
 <math><mvec>a</mvec> = <mfrac><mrow><mi>dv</mi></mrow><mrow><mi>dt</mi></mrow></mfrac> = <mfrac><mrow><mi>d</mi><msup>2</msup><mi>p</mi></mrow><mrow><mi>dt</mi><msup>2</msup></mrow></mfrac></math></br>
+<p>
+Encore une fois, nous pouvons aussi faire le chemin inverse.
+En effet, si l'on a la fonction représentant l'accélération d'un objet dans le temps dans un référentiel donné, <span class="important">nous pouvons calculer la vitesse (toujours dans ce référentiel) atteinte par l'objet dans le temps avec une intégrale</span>.
+</p>
+<math><mint from=0 to=x>a(t)dt</math>
+<p>
+Encore une fois, <span class="important">la fonction obtenue via l'intégrale (en considérant la constante étant nulle) associe à chaque valeur "t" la vitesse de l'objet à cet instant "t" à partir de la vitesse de départ</span>.
+Pour obtenir la vitesse précise dans le référentiel, il faut sommer à cette fonction la vitesse de départ de l'objet.
+</p>
 
 
 
@@ -272,6 +319,10 @@ En fait, <span class="important">si nous vons un objet tel que plusieurs forces 
 </p>
 <math><mvec>a</mvec> = <mfrac><mrow><msum><mrow><mvec>F</mvec></mrow><msub>i</msub></mrow><mrow><mi>m</mi></mrow></mfrac></math>
 <p>
+Il faut cependant 
+</p>
+
+<p>
 Avec cela, nous pouvons introduire un concept permettant de reformuler cette équation : la quantité de mouvement.
 <span class="important"><definition name="momentum"></span>.
 Encore une fois, il s'agit d'un vecteur.
@@ -285,3 +336,7 @@ Nous pouvons donc écrire :
 </p>
 <math><mvec>p</mvec> = m<mfrac><mrow><mi>d</mi><mvec>v</mvec></mrow><mrow><mi>dt</mi></mrow></mfrac> * <mfrac><mrow><mi>dt</mi></mrow><mrow><mi>d</mi></mrow></mfrac></math></br>
 <math><mfrac><mrow><mi>d</mi><mvec>p</mvec></mrow><mrow><mi>dt</mi></mrow></mfrac> = m<mfrac><mrow><mi>d</mi><mvec>v</mvec></mrow><mrow><mi>dt</mi></mrow></mfrac> = m<mvec>a</mvec> = <msum><mi>F</mi><msub>i</msub></math>
+<p>
+Parlons maintenant d'un autre principe de la mécanique : le principe d'inertie.
+<span class="important"><definition name="inertia"></span>.
+</p>

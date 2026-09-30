@@ -30,6 +30,9 @@
     <content name="position">la vitesse représente l'évolution dans le temps de la position d'un objet</content>
 </new_definition>
 
+<new_definition name="inertia">
+    <content>l'inertie est un principe de mécanique qui stipule que si aucune force n'agit sur un objet, alors l'objet ne va pas accélérer (et vice-versa), et garder une trajectoire rectiligne et uniforme</content>
+</new_definition>
 <new_definition name="newton_second_law">
     <content>la seconde loi de Newton est une loi de mécanique / dynamique qui dit que si l'on applique une force sur un objet (supposé isolé de tout autre interaction), l'accélération de cet objet va être égale au vecteur de la force divisé par la masse de l'objet</content>
 </new_definition>
