@@ -286,7 +286,6 @@ Pour obtenir la vitesse précise dans le référentiel, il faut sommer à cette 
 <h3>La dynamique et la cinématique</h3>
 <p>
 Pour l'instant, tout ce que nous avons fait implique du pratique pure : devenons un peu plus théorique.
-
 </p>
 <p>
 Nous avons étudier la conséquence, étudions maintenant la cause.
@@ -311,15 +310,40 @@ Pour cela, il existe un principe fondamental en physique : la seconde loi de New
 En d'autre terme, la force appliquée sur un objet provoque une accélération qui est égale à exactement la valeur de la force divisée par la masse.
 Algébriquement, cela équivaut à dire que la force est égale à la masse multipliée par l'accélération.
 </p>
-<math><mvec>F</mvec> = m<mvec>a</mvec> <mequi> <mvec>a</mvec> = <mfrac><mrow>1</mrow><mrow>m</mrow></mfrac><mvec>F</mvec></math>
+<math><mvec>F</mvec> = m<mvec>a</mvec> <mequi> <mvec>a</mvec> = <mfrac><mrow><mi>1</mi></mrow><mrow><mi>m</mi></mrow></mfrac><mvec>F</mvec></math>
 <p>
 Comme son nom l'indique, on doit celle loi à <scientist name="newton" type=quote>.
 Cependant, nous avons le cas où nous n'avons qu'une seule force, mais nous pouvons généraliser dans le cas où nous avons plusieurs forces.
-En fait, <span class="important">si nous vons un objet tel que plusieurs forces sont appliquées sur lui, l'accélération est égale à la somme des forces divisées par la masse</span>.
+En fait, <span class="important">si nous avons un objet tel que plusieurs forces sont appliquées sur lui, l'accélération est égale à la somme des forces divisées par la masse</span>.
 </p>
 <math><mvec>a</mvec> = <mfrac><mrow><msum><mrow><mvec>F</mvec></mrow><msub>i</msub></mrow><mrow><mi>m</mi></mrow></mfrac></math>
 <p>
-Il faut cependant 
+Ici, nous pouvons citer plein d'exemples de forces.
+Un premier exemple de force peut être la force appliqué sur un ballon de football quand on tape dessus (lui créant une accélération, et donc un mouvement au ballon).
+Ici, <span class="important">nous avons à faire à une force provoquée par un contact direct</span>.
+Cependant, on peut citer un deuxième exemple : la force faisant descendre le ballon, si nous envoyons le ballon en l'air.
+Ici, <span class="important">cette force est la même force qui fait tomber les objets (la célèbre gravité), qui n'est pas provoquée par un contact direct, mais qui agit à distance de l'objet</span>.
+Généralement, <span class="important">les forces engendrés par des phénomènes naturels observables de ce genre sont nommés des forces réelles</span>.
+Cette appelation implique qu'il existe des forces qui ne sont pas vraiment "réelles", que nous verrons un peu plus tard.
+</p>
+
+<p>
+Parlons maintenant d'un autre principe de la mécanique : le principe d'inertie.
+<span class="important"><definition name="inertia"></span>.
+En d'autres termes, si ce principe est vérifiée, seules les forces peuvent créer un changement de vitesse, et (réciproquement) un changement de vitesse est forcément engendré par une force.
+D'ailleurs, ce principe nous dit aussi que si plusieurs forces agissent sur un objet mais s'annulent entre elles, l'objet ne bouge pas.
+Mathématiquement, on note :
+</p>
+<math><mvec>a</mvec> = 0 <mequi> <msum><mvec>F</mvec> = 0</math>
+<p>
+En réalité, ce principe n'est pas toujours respectée dans tous les référentiels d'études possibles.
+En fait, <span class="important">pour savoir si ce principe est respécté, nous avons juste à avoir quelques informations sur le référentiel d'étude utilisé</span>.
+Ce concept va nous permettre dans introduire un autre très pratique : les référentiels galiléens.
+<span class="important"><definition name="reference-inertial"></span>.
+</p>
+
+<p>
+Il faut cependant distinguer deux types de forces : les forces réelles et les forces d'inertie.
 </p>
 
 <p>
@@ -336,7 +360,3 @@ Nous pouvons donc écrire :
 </p>
 <math><mvec>p</mvec> = m<mfrac><mrow><mi>d</mi><mvec>v</mvec></mrow><mrow><mi>dt</mi></mrow></mfrac> * <mfrac><mrow><mi>dt</mi></mrow><mrow><mi>d</mi></mrow></mfrac></math></br>
 <math><mfrac><mrow><mi>d</mi><mvec>p</mvec></mrow><mrow><mi>dt</mi></mrow></mfrac> = m<mfrac><mrow><mi>d</mi><mvec>v</mvec></mrow><mrow><mi>dt</mi></mrow></mfrac> = m<mvec>a</mvec> = <msum><mi>F</mi><msub>i</msub></math>
-<p>
-Parlons maintenant d'un autre principe de la mécanique : le principe d'inertie.
-<span class="important"><definition name="inertia"></span>.
-</p>

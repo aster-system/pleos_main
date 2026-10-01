@@ -23,6 +23,7 @@
 </new_definition>
 <new_definition name="reference">
     <content>un référentiel (aussi nommé un repère) est un objet du système à partir duquel on observe le système entier</content>
+    <content name="inertial">un référentiel est dit galiléen si le principe d'inertie y est toujours respecté</content>
     <content name="rigorous">un référentiel représente un système de coordonnées possible dans le système, à partir du quel on peut observer le système entier</content>
 </new_definition>
 <new_definition name="speed">
@@ -31,7 +32,7 @@
 </new_definition>
 
 <new_definition name="inertia">
-    <content>l'inertie est un principe de mécanique qui stipule que si aucune force n'agit sur un objet, alors l'objet ne va pas accélérer (et vice-versa), et garder une trajectoire rectiligne et uniforme</content>
+    <content>l'inertie est un principe de mécanique qui stipule que si la somme des forces qui agissent sur un objet est nulle, alors l'objet ne va pas accélérer (et vice-versa)</content>
 </new_definition>
 <new_definition name="newton_second_law">
     <content>la seconde loi de Newton est une loi de mécanique / dynamique qui dit que si l'on applique une force sur un objet (supposé isolé de tout autre interaction), l'accélération de cet objet va être égale au vecteur de la force divisé par la masse de l'objet</content>

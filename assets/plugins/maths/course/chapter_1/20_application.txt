@@ -1478,6 +1478,12 @@ Préparez vous donc à voir, définir, et reformaliser beaucoup d'applications, 
 
 
 
+
+
+
+
+
+
 <h3>La composition de fonction et d'application</h3>
 <p>
 L'opération la plus simple avec les fonctions (et les applications) est la composition.
@@ -1659,6 +1665,229 @@ Cette propriété est démontrée <a href="demo#function_composition_associativi
 <math>d = a <mcomp> (b <mcomp> c) <mequi> <mforall> x <min> <mi>D</mi><msub>d</msub>, a((b <mcomp> c)(x)) = a(b(c(x)))</math></br>
 <math>e = (a <mcomp> b) <mcomp> c <mequi> <mforall> x <min> <mi>D</mi><msub>d</msub>, (a <mcomp> b)(c(x)) = a(b(c(x)))</math></br>
 <math><mimp> d = e = a <mcomp> (b <mcomp> c) = (a <mcomp> b) <mcomp> c</math>
+
+
+
+
+
+
+
+
+
+
+<h3>Retour sur des concepts du chapitre précédent</h3>
+<p>
+Revenons sur les graphes.
+Grâce au concept d'application, nous pouvons définir un type de graphe bien plus général : les multigraphes.
+<span class="important"><definition name="multigraph-rigorous"></span>.
+En fait, <span class="important"><definition name="multigraph-rigorous"></span>.
+Ici, l'application (nommée fonction d'incidence et généralement noté avec la lettre grecque "phi") permet de savoir rigoureusement quels objets sont reliés par chaque arête.
+</p>
+<math>G = (V, E, <mphi>)</math></br>
+<math><mphi> : E <mto> {{u, v} | (u, v) <min> V * V}</math>
+<p>
+Il est aussi possible que cette application ne donne pas des paires, mais des couples.
+Dans ce cas, on parle de multigraphe orienté.
+</p>
+<math>G = (V, E, <mphi>)</math></br>
+<math><mphi> : E <mto> V * V</math>
+<p>
+Finalement, on peut aussi définir des multigraphes mixtes.
+</p>
+<math>G = (V, E, A, <mi><mphi></mi><msub>1</msub>, <mi><mphi></mi><msub>2</msub>)</math></br>
+<math><mi><mphi></mi><msub>1</msub> : E <mto> {{u, v} | (u, v) <min> V * V}</math></br>
+<math><mi><mphi></mi><msub>2</msub> : A <mto> V * V</math></br>
+<p>
+Ce genre de graphe permet deux choses très importantes (qui sont impossibles avec des graphes simples) : <span class="important">un multigraphe peut comporter des boucles et des arêtes / arcs multiples entre deux mêmes éléments</span>.
+Ici, <span class="important"><definition name="multigraph-loop"></span>.
+De plus, deux mêmes éléments peuvent être reliés par autant d'arêtes / arcs que l'on veut.
+Donc, un multigraphe de ce genre est parfaitement licite :
+</p>
+<graphic>
+<base draw=0>
+<background_color white>
+
+<line x_1=-3 y_1=-7/2 x_2=0 y_2=0 border_width=5 border_color=black>
+<line x_1=1 y_1=-7/2 x_2=0 y_2=0 border_width=5 border_color=black>
+<line x_1=-3 y_1=7/2 x_2=0 y_2=0 border_width=5 border_color=black>
+<line x_1=-3+-1/2 y_1=7/2 x_2=-1/2 y_2=0 border_width=5 border_color=black>
+<line x_1=-3+-1 y_1=7/2 x_2=-1 y_2=0 border_width=5 border_color=black>
+<line x_1=3 y_1=7/2 x_2=0 y_2=0 border_width=5 border_color=black>
+
+<line x_1=2 y_1=-7/2 x_2=2 y_2=-2 border_width=5 border_color=black>
+<line x_1=2 y_1=-2 x_2=3 y_2=-2 border_width=5 border_color=black>
+<line x_1=3 y_1=-7/2 x_2=3 y_2=-2 border_width=5 border_color=black>
+
+<text x=0 y=0>Europe</text>
+<text x=3 y=7/2>France</text>
+<text x=-2 y=7/2>Allemagne</text>
+<text x=2 y=-7/2>Angleterre</text>
+<text x=-3 y=-7/2>Italie</text>
+</graphic>
+
+<p>
+Maintenant, parlons des ensembles ordonnés, et des applications dans les ensembles ordonnés.
+En effet, il existe un type précis d'application très utilisé avec ce genre d'ensemble : les applications croissantes (mais aussi décroissantes et monotones).
+<span class="important"><definition name="monotone_function-increasing"></span>.
+En d'autres termes, une fonction croissante "conserve" l'ordre des éléments entre l'ensemble de départ et l'ensemble d'arrivée.
+Une fonction "f" est croissante si elle respecte cette propriété :
+</p>
+<math>(E, ~), (F, @)</math></br>
+<math>f : E <mto> F</math></br>
+<math><mforall> x, y <min> E, x ~ y <mimp> f(x) @ (y)</math>
+<p>
+Un exemple très simple est une application identité, sur par exemple "{0, 1, 2, 3, 4}", tous deux munis de leur relation usuel.
+En fait, ceci marche avec n'importe quel ensemble.
+</p>
+<math>x <mltequal> y <mimp> f(x) <mltequal> f(y)</math>
+<p>
+Nous pouvons aussi parler de fonctions décroissantes.
+<span class="important"><definition name="monotone_function-decreasing"></span>.
+En d'autres termes, une fonction décroissante "inverse" l'ordre des éléments entre l'ensemble de départ et l'ensemble d'arrivée.
+Une fonction "f" est décroissante si elle respecte cette propriété :
+</p>
+<math>(E, ~), (F, @)</math></br>
+<math>f : E <mto> F</math></br>
+<math><mforall> x, y <min> E, x ~ y <mimp> f(x) <mi>@</mi><msup>op</msup> (y) <mand> f(y) @ (x)</math>
+<p>
+Un exemple très simple serait l'application allant "{0, 1, 2, 3}" vers "{0, 1, 2, 3}", où "f(0) = 3", "f(1) = 2", "f(2) = 1" et "f(3) = 0".
+Bien évidemment, on pourrait écrire cette fonction comme "f(x) = 3 - x".
+</p>
+<p>
+Finalement, définissons les fonctions monotones.
+<span class="important"><definition name="monotone_function"></span>.
+</p>
+<p>
+D'ailleurs, <span class="important">si une application entre deux ensembles munis d'une relation d'ordre "conserve" la relation d'ordre stricte, on peut dire que la fonction est strictement croissante</span>.
+À l'inverse, si une application entre deux ensembles munis d'une relation d'ordre "inverse" la relation d'ordre stricte, on peut dire que la fonction est strictement décroissante.
+Encore une fois, <span class="important"><definition name="monotone_function-strict"></span>.
+Ici, l'application identité (dans tous les ensembles ordonnés possibles) respecte cette application.
+</p>
+<math>x <mlt> y <mimp> f(x) <mlt> f(y)</math>
+
+
+
+<h3>Les suites, familles et matrices en mathématiques</h3>
+<p>
+Une des façons de représenter des applications représente la famille mathématique.
+En mathématiques, <span class="important"><definition name="family"></span>.
+Pour cela, la terminologie est très précise : si vous notez votre familel (qui est donc une application) "f", l'image d'un élément "a" de l'ensemble de départ "f" se note d'une manière bien précise : "f indice a".
+</p>
+<math>f(a) = <mi>f</mi><msub>a</msub></math>
+<p>
+Donc, pour une famille étant une application allant de "A" dans "B", <span class="important">on peut donc accéder à des éléments de "B" grâce à des éléments de "A"</span>.
+Ici, <span class="important">l'ensemble de départ de l'application est nommé ensemble des indices de la famille</span>.
+Ce simple formalisme est utilisée dans énormément de définitions en mathématiques.
+Il existe d'ailleurs une autre notation pour représenter la famille (et donc l'application) en elle même : mettre "f indice a" entre parenthèse, et noter à droite en indice "a appartenant à A"
+</p>
+<math>(<mi>f</mi><msub>a</msub>)<msub><mrow>a <min> A</mrow></msub></math>
+<p>
+Le type de famille le plus utilisé est la suite mathématique.
+<span class="important"><definition name="sequence"></span>.
+Si ce sous-ensemble est finie, on parle de suite finie (sinon, on parle de suite infinie).
+Il s'agit donc (littéralement) d'une suite d'éléments quelconques.
+</p>
+<math>A <mincluded> N, u : A <mto> N</math>
+<p>
+Le suites possèdent donc l'exacte même notation que les familles.
+Par exemple, l'image pour une suite "u" du nombre "n" s'écrit "u indice n" :
+</p>
+<math>u(n) = <mi>u</mi><msub>n</msub></math></br>
+<math>(<mi>u</mi><msub>n</msub>)<msub><mrow>n <min> A</mrow></msub></math>
+<p>
+D'ailleurs, <span class="important">on peut noter directement une suite comme une sorte de "uplet" (et donc, comme un ensemble où l'ordre des éléments dans l'écriture compte)</span>.
+Pour cela, on note les images entre parenthèses, tel que l'image du "premier" élément de "A" soit à la première place, l'image du "deuxième" élément de "A" soit à la deuxième place...
+Ceci est possible grâce à la relation d'ordre "inférieur ou égal" possible sur "N", qui permet d'ordonner "N" (et aussi, toutes ces sous-parties), et donc d'ordonner les images de la suite.
+</p>
+<math>(<mi>u</mi><msub>n</msub>)<msub><mrow>n <min> A</mrow></msub> = (0, 1, 0, 0, 1, 0, 0, 0, 1, 0, ...)</math>
+<p>
+Généralement, au lycée, le terme "suite" désigne des suites de nombres réels.
+Cependant, <span class="important">il faut bien comprendre qu'une suite peut comporter des éléments de n'importe quel ensemble possible</span>.
+Il peut donc théoriquement exister des suites d'ensembles, d'applications, d'opérations...
+</p>
+<p>
+Parlons finalement d'un autre type de famille : les matrices.
+Il y a deux définitions : la définition intuitive et la définition rigoureuse.
+D'un point de vue intuitif, <span class="important"><definition name="matrix"></span>.
+D'un point de vue rigoureux, <span class="important"><definition name="matrix-rigorous"></span>.
+Ici, la matrice sera dite "de type (I, J)".
+Comme cette famille est indexée par une produit cartésien, on peut utiliser la notaion "tableau" du produit cartésien, pour noter la matrice.
+En fait, dans les cases du tableau formé par le produit cartésien, à la place de mettre les couples, on met l'élément d'indice le couple qui devrait être à cette case (d'où la notation tableau).
+On peut par exemple imaginer une matrice quelconque :
+</p>
+<table>
+
+<case_plus x=1 y=0 background_color=light_green>a</case_plus>
+<case_plus x=2 y=0 background_color=light_green>b</case_plus>
+<case_plus x=3 y=0 background_color=light_green>c</case_plus>
+<case_plus x=4 y=0 background_color=light_green>d</case_plus>
+
+<case_plus x=0 y=1 background_color=light_blue>u</case_plus>
+<case_plus x=0 y=2 background_color=light_blue>v</case_plus>
+<case_plus x=0 y=3 background_color=light_blue>w</case_plus>
+<case_plus x=0 y=4 background_color=light_blue>x</case_plus>
+
+<case_plus x=1 y=1 background_color=yellow>1</case_plus>
+<case_plus x=2 y=1 background_color=yellow>4</case_plus>
+<case_plus x=3 y=1 background_color=yellow>2</case_plus>
+<case_plus x=4 y=1 background_color=yellow>3</case_plus>
+
+<case_plus x=1 y=2 background_color=yellow>7</case_plus>
+<case_plus x=2 y=2 background_color=yellow>0</case_plus>
+<case_plus x=3 y=2 background_color=yellow>1</case_plus>
+<case_plus x=4 y=2 background_color=yellow>2</case_plus>
+
+<case_plus x=1 y=3 background_color=yellow>3</case_plus>
+<case_plus x=2 y=3 background_color=yellow>8</case_plus>
+<case_plus x=3 y=3 background_color=yellow>7</case_plus>
+<case_plus x=4 y=3 background_color=yellow>5</case_plus>
+
+<case_plus x=1 y=4 background_color=yellow>8</case_plus>
+<case_plus x=2 y=4 background_color=yellow>6</case_plus>
+<case_plus x=3 y=4 background_color=yellow>3</case_plus>
+<case_plus x=4 y=4 background_color=yellow>6</case_plus>
+
+</table>
+<p>
+<span class="important">Les matrices ont donc l'exacte même terminologie que les familles</span>.
+Si nous nommons notre matrice vue plus haut "M" (une matrice se note généralement en majuscule), on utilise généralement la notation des familles avec le nom de la matrice en minuscule (par convention).
+De plus, <span class="important">nous devrions noter en indice le couple associé à l'élément de la matrice que nous voulons désigner</span>.
+Comme dans tous les produits cartésiens, le couple se constitue donc d'un élément de l'ensemble à gauche, puis d'un élément de l'ensemble en haut.
+On peut donc noter :
+</p>
+<math><mi>m</mi><msub>(u, b)</msub> = 4</math></br>
+<math><mi>m</mi><msub>(w, a)</msub> = 3</math></br>
+<math><mi>m</mi><msub>(u, c)</msub> = 2</math></br>
+<math><mi>m</mi><msub>(x, d)</msub> = 6</math></br>
+<p>
+Très très souvent, <span class="important">"I" et "J" sont finis, de taille "m" et "n", et représentent les ensembles de nombres "I = {1, 2, ..., m}" et "J = {1, 2, ..., n}"</span>.
+D'ailleurs, très souvent, la définition avec l'application n'est pas utilisée.
+Dans ce genre de matrice, en utilisant la notation "tableau" avec les éléments dans "I" et "J" dans l'ordre usuel, <span class="important">on peut ignorer la partie du tableau où l'on spécifie "I" et "J", et un élément d'une matrice "A" à la ligne "y" et à la colonne "x" se note "A indice (y, x)"</span>.
+L'ordre est important : ligne, puis colonne.
+On peut donc définir une matrice de cette façon :
+</p>
+<math>A = <mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd><mtd><mi>2</mi></mtd></mtr><mtr><mtd><mi>3</mi></mtd><mtd><mi>4</mi></mtd></mtr></mtable><mo>]</mo></mrow></math>
+<p>
+On peut facilement noter toutes les valeurs de "A" (encore une fois, avec la lettre "A" en minuscule).
+</p>
+<math><mi>a</mi><msub>1, 1</msub> = 1</math></br>
+<math><mi>a</mi><msub>1, 2</msub> = 2</math></br>
+<math><mi>a</mi><msub>2, 1</msub> = 3</math></br>
+<math><mi>a</mi><msub>2, 2</msub> = 4</math>
+<p>
+Dans ce genre de matrice, <span class="important">le couple "(m, n)" utilisé pour le type de la matrice est nommée la dimension (ou la taille) de la matrice</span>.
+On peut aussi dire que "m" est la hauteur de la matrice, et "n" sa longueur.
+Ici, si une matrice est de dimension "(m, 1)", elle représente une colonne, et est appelée matrice colonne.
+À l'inverse, si une matrice est de dimension "(1, n)", elle représente une ligne, et est appelée matrice ligne.
+</p>
+<math>C = <mrow><mo>[</mo><mtable><mtr><mtd><mi>4</mi></mtd></mtr><mtr><mtd><mi>5</mi></mtd></mtr></mtable><mo>]</mo></mrow></math></br>
+<math>L = <mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd><mtd><mi>8</mi></mtd></mtr></mtable><mo>]</mo></mrow></math>
+
+
+
+
+
+
 
 
 
@@ -1957,216 +2186,3 @@ Comme le dernier élément prend la place du premier à chaque fois, réaliser u
 </p>
 <math><mtable><mtd><mi>(1, 2, 3, 4, 5)</mi></mtd><mtd><mi>(4, 1, 2, 3, 5)</mi></mtd></mtable> = (1 2 3 4)</math></br>
 <math>(1 2 3 4<mo>)</mo><msup>4</msup> = Id<msub>E</msub></math>
-
-
-
-
-
-
-<h3>Retour sur des concepts du chapitre précédent</h3>
-<p>
-Revenons sur les graphes.
-Grâce au concept d'application, nous pouvons définir un type de graphe bien plus général : les multigraphes.
-<span class="important"><definition name="multigraph-rigorous"></span>.
-En fait, <span class="important"><definition name="multigraph-rigorous"></span>.
-Ici, l'application (nommée fonction d'incidence et généralement noté avec la lettre grecque "phi") permet de savoir rigoureusement quels objets sont reliés par chaque arête.
-</p>
-<math>G = (V, E, <mphi>)</math></br>
-<math><mphi> : E <mto> {{u, v} | (u, v) <min> V * V}</math>
-<p>
-Il est aussi possible que cette application ne donne pas des paires, mais des couples.
-Dans ce cas, on parle de multigraphe orienté.
-</p>
-<math>G = (V, E, <mphi>)</math></br>
-<math><mphi> : E <mto> V * V</math>
-<p>
-Finalement, on peut aussi définir des multigraphes mixtes.
-</p>
-<math>G = (V, E, A, <mi><mphi></mi><msub>1</msub>, <mi><mphi></mi><msub>2</msub>)</math></br>
-<math><mi><mphi></mi><msub>1</msub> : E <mto> {{u, v} | (u, v) <min> V * V}</math></br>
-<math><mi><mphi></mi><msub>2</msub> : A <mto> V * V</math></br>
-<p>
-Ce genre de graphe permet deux choses très importantes (qui sont impossibles avec des graphes simples) : <span class="important">un multigraphe peut comporter des boucles et des arêtes / arcs multiples entre deux mêmes éléments</span>.
-Ici, <span class="important"><definition name="multigraph-loop"></span>.
-De plus, deux mêmes éléments peuvent être reliés par autant d'arêtes / arcs que l'on veut.
-Donc, un multigraphe de ce genre est parfaitement licite :
-</p>
-<graphic>
-<base draw=0>
-<background_color white>
-
-<line x_1=-3 y_1=-7/2 x_2=0 y_2=0 border_width=5 border_color=black>
-<line x_1=1 y_1=-7/2 x_2=0 y_2=0 border_width=5 border_color=black>
-<line x_1=-3 y_1=7/2 x_2=0 y_2=0 border_width=5 border_color=black>
-<line x_1=-3+-1/2 y_1=7/2 x_2=-1/2 y_2=0 border_width=5 border_color=black>
-<line x_1=-3+-1 y_1=7/2 x_2=-1 y_2=0 border_width=5 border_color=black>
-<line x_1=3 y_1=7/2 x_2=0 y_2=0 border_width=5 border_color=black>
-
-<line x_1=2 y_1=-7/2 x_2=2 y_2=-2 border_width=5 border_color=black>
-<line x_1=2 y_1=-2 x_2=3 y_2=-2 border_width=5 border_color=black>
-<line x_1=3 y_1=-7/2 x_2=3 y_2=-2 border_width=5 border_color=black>
-
-<text x=0 y=0>Europe</text>
-<text x=3 y=7/2>France</text>
-<text x=-2 y=7/2>Allemagne</text>
-<text x=2 y=-7/2>Angleterre</text>
-<text x=-3 y=-7/2>Italie</text>
-</graphic>
-
-<p>
-Maintenant, parlons des ensembles ordonnés, et des applications dans les ensembles ordonnés.
-En effet, il existe un type précis d'application très utilisé avec ce genre d'ensemble : les applications croissantes (mais aussi décroissantes et monotones).
-<span class="important"><definition name="monotone_function-increasing"></span>.
-En d'autres termes, une fonction croissante "conserve" l'ordre des éléments entre l'ensemble de départ et l'ensemble d'arrivée.
-Une fonction "f" est croissante si elle respecte cette propriété :
-</p>
-<math>(E, ~), (F, @)</math></br>
-<math>f : E <mto> F</math></br>
-<math><mforall> x, y <min> E, x ~ y <mimp> f(x) @ (y)</math>
-<p>
-Un exemple très simple est une application identité, sur par exemple "{0, 1, 2, 3, 4}", tous deux munis de leur relation usuel.
-En fait, ceci marche avec n'importe quel ensemble.
-</p>
-<math>x <mltequal> y <mimp> f(x) <mltequal> f(y)</math>
-<p>
-Nous pouvons aussi parler de fonctions décroissantes.
-<span class="important"><definition name="monotone_function-decreasing"></span>.
-En d'autres termes, une fonction décroissante "inverse" l'ordre des éléments entre l'ensemble de départ et l'ensemble d'arrivée.
-Une fonction "f" est décroissante si elle respecte cette propriété :
-</p>
-<math>(E, ~), (F, @)</math></br>
-<math>f : E <mto> F</math></br>
-<math><mforall> x, y <min> E, x ~ y <mimp> f(x) <mi>@</mi><msup>op</msup> (y) <mand> f(y) @ (x)</math>
-<p>
-Un exemple très simple serait l'application allant "{0, 1, 2, 3}" vers "{0, 1, 2, 3}", où "f(0) = 3", "f(1) = 2", "f(2) = 1" et "f(3) = 0".
-Bien évidemment, on pourrait écrire cette fonction comme "f(x) = 3 - x".
-</p>
-<p>
-Finalement, définissons les fonctions monotones.
-<span class="important"><definition name="monotone_function"></span>.
-</p>
-<p>
-D'ailleurs, <span class="important">si une application entre deux ensembles munis d'une relation d'ordre "conserve" la relation d'ordre stricte, on peut dire que la fonction est strictement croissante</span>.
-À l'inverse, si une application entre deux ensembles munis d'une relation d'ordre "inverse" la relation d'ordre stricte, on peut dire que la fonction est strictement décroissante.
-Encore une fois, <span class="important"><definition name="monotone_function-strict"></span>.
-Ici, l'application identité (dans tous les ensembles ordonnés possibles) respecte cette application.
-</p>
-<math>x <mlt> y <mimp> f(x) <mlt> f(y)</math>
-
-
-
-<h3>Les suites, familles et matrices en mathématiques</h3>
-<p>
-Une des façons de représenter des applications représente la famille mathématique.
-En mathématiques, <span class="important"><definition name="family"></span>.
-Pour cela, la terminologie est très précise : si vous notez votre familel (qui est donc une application) "f", l'image d'un élément "a" de l'ensemble de départ "f" se note d'une manière bien précise : "f indice a".
-</p>
-<math>f(a) = <mi>f</mi><msub>a</msub></math>
-<p>
-Donc, pour une famille étant une application allant de "A" dans "B", <span class="important">on peut donc accéder à des éléments de "B" grâce à des éléments de "A"</span>.
-Ici, <span class="important">l'ensemble de départ de l'application est nommé ensemble des indices de la famille</span>.
-Ce simple formalisme est utilisée dans énormément de définitions en mathématiques.
-Il existe d'ailleurs une autre notation pour représenter la famille (et donc l'application) en elle même : mettre "f indice a" entre parenthèse, et noter à droite en indice "a appartenant à A"
-</p>
-<math>(<mi>f</mi><msub>a</msub>)<msub><mrow>a <min> A</mrow></msub></math>
-<p>
-Le type de famille le plus utilisé est la suite mathématique.
-<span class="important"><definition name="sequence"></span>.
-Si ce sous-ensemble est finie, on parle de suite finie (sinon, on parle de suite infinie).
-Il s'agit donc (littéralement) d'une suite d'éléments quelconques.
-</p>
-<math>A <mincluded> N, u : A <mto> N</math>
-<p>
-Le suites possèdent donc l'exacte même notation que les familles.
-Par exemple, l'image pour une suite "u" du nombre "n" s'écrit "u indice n" :
-</p>
-<math>u(n) = <mi>u</mi><msub>n</msub></math></br>
-<math>(<mi>u</mi><msub>n</msub>)<msub><mrow>n <min> A</mrow></msub></math>
-<p>
-D'ailleurs, <span class="important">on peut noter directement une suite comme une sorte de "uplet" (et donc, comme un ensemble où l'ordre des éléments dans l'écriture compte)</span>.
-Pour cela, on note les images entre parenthèses, tel que l'image du "premier" élément de "A" soit à la première place, l'image du "deuxième" élément de "A" soit à la deuxième place...
-Ceci est possible grâce à la relation d'ordre "inférieur ou égal" possible sur "N", qui permet d'ordonner "N" (et aussi, toutes ces sous-parties), et donc d'ordonner les images de la suite.
-</p>
-<math>(<mi>u</mi><msub>n</msub>)<msub><mrow>n <min> A</mrow></msub> = (0, 1, 0, 0, 1, 0, 0, 0, 1, 0, ...)</math>
-<p>
-Généralement, au lycée, le terme "suite" désigne des suites de nombres réels.
-Cependant, <span class="important">il faut bien comprendre qu'une suite peut comporter des éléments de n'importe quel ensemble possible</span>.
-Il peut donc théoriquement exister des suites d'ensembles, d'applications, d'opérations...
-</p>
-<p>
-Parlons finalement d'un autre type de famille : les matrices.
-Il y a deux définitions : la définition intuitive et la définition rigoureuse.
-D'un point de vue intuitif, <span class="important"><definition name="matrix"></span>.
-D'un point de vue rigoureux, <span class="important"><definition name="matrix-rigorous"></span>.
-Ici, la matrice sera dite "de type (I, J)".
-Comme cette famille est indexée par une produit cartésien, on peut utiliser la notaion "tableau" du produit cartésien, pour noter la matrice.
-En fait, dans les cases du tableau formé par le produit cartésien, à la place de mettre les couples, on met l'élément d'indice le couple qui devrait être à cette case (d'où la notation tableau).
-On peut par exemple imaginer une matrice quelconque :
-</p>
-<table>
-
-<case_plus x=1 y=0 background_color=light_green>a</case_plus>
-<case_plus x=2 y=0 background_color=light_green>b</case_plus>
-<case_plus x=3 y=0 background_color=light_green>c</case_plus>
-<case_plus x=4 y=0 background_color=light_green>d</case_plus>
-
-<case_plus x=0 y=1 background_color=light_blue>u</case_plus>
-<case_plus x=0 y=2 background_color=light_blue>v</case_plus>
-<case_plus x=0 y=3 background_color=light_blue>w</case_plus>
-<case_plus x=0 y=4 background_color=light_blue>x</case_plus>
-
-<case_plus x=1 y=1 background_color=yellow>1</case_plus>
-<case_plus x=2 y=1 background_color=yellow>4</case_plus>
-<case_plus x=3 y=1 background_color=yellow>2</case_plus>
-<case_plus x=4 y=1 background_color=yellow>3</case_plus>
-
-<case_plus x=1 y=2 background_color=yellow>7</case_plus>
-<case_plus x=2 y=2 background_color=yellow>0</case_plus>
-<case_plus x=3 y=2 background_color=yellow>1</case_plus>
-<case_plus x=4 y=2 background_color=yellow>2</case_plus>
-
-<case_plus x=1 y=3 background_color=yellow>3</case_plus>
-<case_plus x=2 y=3 background_color=yellow>8</case_plus>
-<case_plus x=3 y=3 background_color=yellow>7</case_plus>
-<case_plus x=4 y=3 background_color=yellow>5</case_plus>
-
-<case_plus x=1 y=4 background_color=yellow>8</case_plus>
-<case_plus x=2 y=4 background_color=yellow>6</case_plus>
-<case_plus x=3 y=4 background_color=yellow>3</case_plus>
-<case_plus x=4 y=4 background_color=yellow>6</case_plus>
-
-</table>
-<p>
-<span class="important">Les matrices ont donc l'exacte même terminologie que les familles</span>.
-Si nous nommons notre matrice vue plus haut "M" (une matrice se note généralement en majuscule), on utilise généralement la notation des familles avec le nom de la matrice en minuscule (par convention).
-De plus, <span class="important">nous devrions noter en indice le couple associé à l'élément de la matrice que nous voulons désigner</span>.
-Comme dans tous les produits cartésiens, le couple se constitue donc d'un élément de l'ensemble à gauche, puis d'un élément de l'ensemble en haut.
-On peut donc noter :
-</p>
-<math><mi>m</mi><msub>(u, b)</msub> = 4</math></br>
-<math><mi>m</mi><msub>(w, a)</msub> = 3</math></br>
-<math><mi>m</mi><msub>(u, c)</msub> = 2</math></br>
-<math><mi>m</mi><msub>(x, d)</msub> = 6</math></br>
-<p>
-Très très souvent, <span class="important">"I" et "J" sont finis, de taille "m" et "n", et représentent les ensembles de nombres "I = {1, 2, ..., m}" et "J = {1, 2, ..., n}"</span>.
-D'ailleurs, très souvent, la définition avec l'application n'est pas utilisée.
-Dans ce genre de matrice, en utilisant la notation "tableau" avec les éléments dans "I" et "J" dans l'ordre usuel, <span class="important">on peut ignorer la partie du tableau où l'on spécifie "I" et "J", et un élément d'une matrice "A" à la ligne "y" et à la colonne "x" se note "A indice (y, x)"</span>.
-L'ordre est important : ligne, puis colonne.
-On peut donc définir une matrice de cette façon :
-</p>
-<math>A = <mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd><mtd><mi>2</mi></mtd></mtr><mtr><mtd><mi>3</mi></mtd><mtd><mi>4</mi></mtd></mtr></mtable><mo>]</mo></mrow></math>
-<p>
-On peut facilement noter toutes les valeurs de "A" (encore une fois, avec la lettre "A" en minuscule).
-</p>
-<math><mi>a</mi><msub>1, 1</msub> = 1</math></br>
-<math><mi>a</mi><msub>1, 2</msub> = 2</math></br>
-<math><mi>a</mi><msub>2, 1</msub> = 3</math></br>
-<math><mi>a</mi><msub>2, 2</msub> = 4</math>
-<p>
-Dans ce genre de matrice, <span class="important">le couple "(m, n)" utilisé pour le type de la matrice est nommée la dimension (ou la taille) de la matrice</span>.
-On peut aussi dire que "m" est la hauteur de la matrice, et "n" sa longueur.
-Ici, si une matrice est de dimension "(m, 1)", elle représente une colonne, et est appelée matrice colonne.
-À l'inverse, si une matrice est de dimension "(1, n)", elle représente une ligne, et est appelée matrice ligne.
-</p>
-<math>C = <mrow><mo>[</mo><mtable><mtr><mtd><mi>4</mi></mtd></mtr><mtr><mtd><mi>5</mi></mtd></mtr></mtable><mo>]</mo></mrow></math></br>
-<math>L = <mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd><mtd><mi>8</mi></mtd></mtr></mtable><mo>]</mo></mrow></math>
