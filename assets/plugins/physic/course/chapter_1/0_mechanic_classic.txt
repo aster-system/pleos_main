@@ -320,11 +320,37 @@ En fait, <span class="important">si nous avons un objet tel que plusieurs forces
 <p>
 Ici, nous pouvons citer plein d'exemples de forces.
 Un premier exemple de force peut être la force appliqué sur un ballon de football quand on tape dessus (lui créant une accélération, et donc un mouvement au ballon).
-Ici, <span class="important">nous avons à faire à une force provoquée par un contact direct</span>.
+Ici, <span class="important">nous avons à faire à une force provoquée par un contact direct (nommée force de contact)</span>.
 Cependant, on peut citer un deuxième exemple : la force faisant descendre le ballon, si nous envoyons le ballon en l'air.
 Ici, <span class="important">cette force est la même force qui fait tomber les objets (la célèbre gravité), qui n'est pas provoquée par un contact direct, mais qui agit à distance de l'objet</span>.
 Généralement, <span class="important">les forces engendrées par des phénomènes naturels observables de ce genre sont nommés des forces réelles</span>.
 Cette appelation implique qu'il existe des forces qui ne sont pas vraiment "réelles", que nous verrons un peu plus tard.
+</p>
+<p>
+Si un objet subit une force réelle, on aura donc toujours une accélération.
+Cependant, il y a une distinction importante à faire.
+En effet, imagineons une expérience extrêmement simple : un stylo fermé que l'on pose sur une table.
+Considérons que nous poussons ce stylo au niveau de son bouchon, avec une force perpendiculaire à la longueur du stylo.
+</p>
+<graphic>
+<rect x=-4 y=2 width=9 height=2> border_width=5 border_color=black color=blue>
+<arrow x_1=3 y_1=-3 x_2=3 y_2=2 border_width=5 border_color=black>
+</graphic>
+<p>
+Si vous le voulez, vous pouvons faire cette expérience chez vous.
+On peut remarquer plusieurs choses.
+La moins intéressantes (dans notre contexte actuel) est que le stylo est très vite freiné par le frottement sur la table (c'est pour cela qu'il vaut mieux faire ça sur une table très lisse).
+Cependant, parlons de la plus intéressante.
+Si vous poussez le stylo de cette manière, <span class="important">le stylo va accéléré vers l'avant, mais va aussi gagner une légère rotation</span>.
+En effet, <span class="important">il y a certains cas où une partie de l'accélération provoquée sur l'objet est utilisée pour augmenter la vitesse de rotation de l'objet</span>.
+Cependant, si vous reprenez votre stylo et que vous le poussez au niveau de (plus ou moins) son milieu, la modification de la vitesse de rotation va être beaucoup plus faible, mais la modification de la vitesse de la position est beaucoup plus fort.
+</p>
+<graphic>
+<rect x=-4 y=2 width=9 height=2> border_width=5 border_color=black color=blue>
+<arrow x_1=0 y_1=-3 x_2=0 y_2=2 border_width=5 border_color=black>
+</graphic>
+<p>
+En fait, <span class="important"></span>.
 </p>
 
 <p>
