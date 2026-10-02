@@ -23,7 +23,7 @@
 </new_definition>
 <new_definition name="reference">
     <content>un référentiel (aussi nommé un repère) est un objet du système à partir duquel on observe le système entier</content>
-    <content name="inertial">un référentiel est dit galiléen si le principe d'inertie y est toujours respecté</content>
+    <content name="inertial">un référentiel est dit galiléen (ou inertiel) si le principe d'inertie y est toujours respecté</content>
     <content name="rigorous">un référentiel représente un système de coordonnées possible dans le système, à partir du quel on peut observer le système entier</content>
 </new_definition>
 <new_definition name="speed">

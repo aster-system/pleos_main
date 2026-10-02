@@ -1257,6 +1257,11 @@ En effet, comme l'ensemble de départ est vide, la seule possibilité pour que l
 </p>
 <math>(<mempty>, B, <mempty>)</math>
 <p>
+Avec cette définition, on peut facilement savoir quand deux applications sont égales.
+En effet, <span class="important">deux applications sont égales si leur ensemble de départ, leur ensemble d'arrivée, et leur graphe sont égaux</span>.
+</p>
+<math>(A, B, C) = (D, E, F) <mequi> A = D <mand> B = E <mand> C = F</math>
+<p>
 En général, <span class="important">pour une application "f", l'ensemble de tous les éléments de l'ensemble d'arrivée appartenant à (au moins) un couple dans "G" est nommé "ensemble image de f"</span>.
 Cependant, il est aussi possible de simplement l'appeler "image de f", qu'il ne faut absolument pas confondre avec "l'image de x par f".
 Pour des raisons de simplicité, nous continuerons à parler d'ensemble image.
@@ -1326,6 +1331,14 @@ Voici un exemple en bas pour l'application allant de "{0, 1, 2, 3, 4}" vers "{0,
 <line x_1=-3/2 y_1=-1 x_2=3/2 y_2=-1 color=black>
 <line x_1=-3/2 y_1=-2 x_2=3/2 y_2=-2 color=black>
 </graphic>
+<p>
+Faisons revenir un concept que nous avons déjà vue plus haut : les relations d'équivalences.
+En effet, <span class="important">pour toute application "f", il existe une relation d'équivalence (dite canonique) sur l'ensemble de départ, où dire que deux éléments dans cet ensemble de départ sont en relation équivaut à dire que ces deux éléments ont la même image par "f"</span>.
+En fait, cette propriété est l'exacte reformulation avec des applications de la propriété vue plus haut disant que deux éléments ayant une "même propriété" sont en relation d'équivalence (et la démonstration vue plus haut fonctionne parfaitement avec le formalisme des applications aussi).
+Si l'on note cette relation "~", on peut donc écrire :
+</p>
+<math>f : E <mto> F</math></br>
+<math><mforall> x, y <min> E, f(x) = f(y) <mequi> x ~ y</math>
 <p>
 Un concept assez similaire est le concept de fonction.
 En mathématiques, <span class="important"><definition name="function"></span>.
@@ -1461,6 +1474,15 @@ Ce concept est terriblement important dans beaucoup de domaines des mathématiqu
 Ici, l'ensemble des points fixes d'une fonction "f" se note "Fix(f)".
 </p>
 <math>f : E <mto> E, Fix(f) = {x <min> E | f(x) = x}</math>
+<p>
+D'ailleurs, ce type d'application permet de définir ce qui est probablement l'application la plus simple de toutes : l'application identité.
+<span class="important"><definition name="application-identity"></span>.
+Bien qu'elle puisse paraître un peu inutile, nous verrons qu'elle sera en réalité fondamental à pas mal d'endroits.
+Généralement, l'application identité d'un ensemble "E" est notée "Id indice E".
+On peut aussi remarquer quelque chose de très simple : l'ensemble des points fixes de cette application est l'ensemble "E" entier.
+</p>
+<math><mi>Id</mi><msub>E</msub> : E <mto> E, x <mto> x</math></br>
+<math><mforall> x <min> E, f(x) = x</math>
 <p>
 Un concept assez pratique pour parler d'applications est l'espace fonctionnel.
 <span class="important"><definition name="function_space"></span>.
@@ -1658,13 +1680,22 @@ Imaginons 3 applications / fonctions quelconques "a", "b" et "c", et supposons q
 <math>d = a <mcomp> (b <mcomp> c)</math></br>
 <math>e = (a <mcomp> b) <mcomp> c</math></br>
 <p>
-Ici, nous avons changé la disposition des parenthèses entre les deux formules, donnant deux applications quelconques.
+Ici, nous avons changé la disposition des parenthèses entre les deux formules, donnant deux applications / fonctions quelconques.
 En fait, <span class="important">si l'on change la disposition des parenthèses (et donc, l'ordre dans lequel on effectue les compositions), l'application / fonction obtenue ne change pas, et donc "d" et "e" sont la même application</span>.
 Cette propriété est démontrée <a href="demo#function_composition_associativity">juste ici</a>.
 </p>
-<math>d = a <mcomp> (b <mcomp> c) <mequi> <mforall> x <min> <mi>D</mi><msub>d</msub>, a((b <mcomp> c)(x)) = a(b(c(x)))</math></br>
-<math>e = (a <mcomp> b) <mcomp> c <mequi> <mforall> x <min> <mi>D</mi><msub>d</msub>, (a <mcomp> b)(c(x)) = a(b(c(x)))</math></br>
-<math><mimp> d = e = a <mcomp> (b <mcomp> c) = (a <mcomp> b) <mcomp> c</math>
+<math>d = e = a <mcomp> (b <mcomp> c) = (a <mcomp> b) <mcomp> c</math>
+<p>
+D'ailleurs, nous pouvons introduire une notation, permettant de simplifier certains types de composition d'applications / fonctions.
+En effet, imagineons une application / fonction "f", allant d'un ensemble "E" vers lui même.
+Déjà, "f" a le même ensemble de départ / d'arrivée que lui même : il est donc possible que "f" soit composable avec elle même (tout dépendra de l'ensemble image et l'ensemble de définition de "f").
+Supposons que "f" est bel et bien composable avec elle même.
+Ici, <span class="important">si l'on veut composer "f" avec elle même plusieurs fois, on peut se passer de noter le petit, et noter à la place "f" exposant le nombre de fois que vous voulez effectuer cette composition en exposant</span>.
+Il faut cependant faire attention à ne pas confondre cette notation avec l'exposant avec d'autres notations utilisant l'exposant (comme pour les puissances, que nous verrons plus tard).
+On peut donc écrire :
+</p>
+<math>f <mcomp> f <mcomp> f = <mi>f</mi><msup>3</msup></math></br>
+<math>f <mcomp> f <mcomp> f <mcomp> f <mcomp> f = <mi>f</mi><msup>5</msup></math>
 
 
 

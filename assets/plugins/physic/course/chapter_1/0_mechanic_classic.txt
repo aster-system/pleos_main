@@ -323,7 +323,7 @@ Un premier exemple de force peut être la force appliqué sur un ballon de footb
 Ici, <span class="important">nous avons à faire à une force provoquée par un contact direct</span>.
 Cependant, on peut citer un deuxième exemple : la force faisant descendre le ballon, si nous envoyons le ballon en l'air.
 Ici, <span class="important">cette force est la même force qui fait tomber les objets (la célèbre gravité), qui n'est pas provoquée par un contact direct, mais qui agit à distance de l'objet</span>.
-Généralement, <span class="important">les forces engendrés par des phénomènes naturels observables de ce genre sont nommés des forces réelles</span>.
+Généralement, <span class="important">les forces engendrées par des phénomènes naturels observables de ce genre sont nommés des forces réelles</span>.
 Cette appelation implique qu'il existe des forces qui ne sont pas vraiment "réelles", que nous verrons un peu plus tard.
 </p>
 
@@ -335,16 +335,71 @@ D'ailleurs, ce principe nous dit aussi que si plusieurs forces agissent sur un o
 Mathématiquement, on note :
 </p>
 <math><mvec>a</mvec> = 0 <mequi> <msum><mvec>F</mvec> = 0</math>
+
 <p>
 En réalité, ce principe n'est pas toujours respectée dans tous les référentiels d'études possibles.
 En fait, <span class="important">pour savoir si ce principe est respécté, nous avons juste à avoir quelques informations sur le référentiel d'étude utilisé</span>.
 Ce concept va nous permettre dans introduire un autre très pratique : les référentiels galiléens.
 <span class="important"><definition name="reference-inertial"></span>.
+En d'autres termes, un référentiel n'est pas inertiel si des accélérations arrivent sans qu'une force réelle puisse expliquer leur existence.
+</p>
+<p>
+Prenons un exemple concret.
+Imaginez un système avec quatres boules, tel que trois de ces boules soit liées à des ficelles, que nous allons tirer indéfiniment (pour provoquer une fource sur ces boules).
+Prenons première le référentiel de la première boule (qui est la boule non-reliée à une ficelle).
+Ici, considérons que la deuxième boule se situe au départ en "(1, 0)", la troisième boule se situe en "(0, 1)" et la quatrième boule se situe en "(1, 1)".
+Nous allons tirer la deuxième boule vers la droite, de telle manière que la force engendre une accélération de "(1, 0)" unité d'accélération.
+De plus, nous allons tirer la troisième boule vers la droite, de telle manière que la force engendre une accélération de "(0, 1)" unité d'accélération.
+Finalement, nous allons tirer la quatrième boule vers la droite, de telle manière que la force engendre une accélération de "(2, 0)" unité d'accélération.
+Depuis ce référentiel (première boule), toutes les accélérations sont explicables par des forces réelles (ici, les seules accélérations sont les accélérations causées par la ficelle) : ce référentiel est galiléen.
+</p>
+<graphic>
+<circle x=0 y=0 radius=2/3 border_radius=5 border_color=black color=red>
+<circle x=1 y=0 radius=2/3 border_radius=5 border_color=black color=green>
+<arrow x_1=1 y_1=0 x_2=3 y_2=0 border_radius=10 border_color=black>
+<circle x=0 y=1 radius=2/3 border_radius=5 border_color=black color=blue>
+<arrow x_1=0 y_1=1 x_2=0 y_2=3 border_radius=10 border_color=black>
+<circle x=1 y=1 radius=2/3 border_radius=5 border_color=black color=yellow>
+<arrow x_1=1 y_1=1 x_2=5 y_2=1 border_radius=10 border_color=black>
+</graphic>
+<p>
+Cependant, prenons le référentiel de la deuxième boule.
+Depuis ce référentiel, la position au départ de la première boule est "(-1, 0)", et la position de la troisième boule est "(-1, 1)".
+Si nous mesurons l'accélération, nous nous rendons compte que l'accélération de la premire boule est "(-1, 0)", l'accélération de la troisième boule est "(-1, 1)" et l'accélération de la quatrième boule est "(1, 0)".
+</p>
+<graphic>
+<circle x=-1 y=0 radius=2/3 border_radius=5 border_color=black color=red>
+<arrow x_1=-1 y_1=0 x_2=-3 y_2=0 border_radius=10 border_color=black>
+<circle x=0 y=0 radius=2/3 border_radius=5 border_color=black color=green>
+<circle x=-1 y=1 radius=2/3 border_radius=5 border_color=black color=blue>
+<arrow x_1=0 y_1=1 x_2=2 y_2=1 border_radius=10 border_color=black>
+<circle x=0 y=1 radius=2/3 border_radius=5 border_color=black color=yellow>
+<arrow x_1=-1 y_1=1 x_2=-3 y_2=3 border_radius=10 border_color=black>
+</graphic>
+<p>
+Ici, on peut décomposer l'accélération de la troisième boule en "(-1, 0) + (0, 1)".
+La deuxième partie de cette somme est explicable par l'action de la ficelle sur cette boule, mais la première partie n'est pas explicable par une force subit par cette troisième boule.
+C'est l'exacte même chose dans le cas de la quatrième boule : on peut décomposer l'accélération en "(2, 0) + (-, 0)", où le premier est explicable par l'action de sa ficelle, mais le deuxième n'est pas explicable par une force subit par cette quatrième boule.
+C'est la même chose pour la première boule.
+D'ailleurs, si vous changer de référentiel d'étude pour prendre celui de la troisième ou quatrième boule, vous aurez l'exact même problème.
+En d'autres termes, <span class="important">si l'on prend le référentiel de la première boule, le principe d'inertie est respecté, mais si l'on prend le référentie de la deuxième, troisième ou quatrième boule, le principe d'inertie n'est pas respecté</span>.
+</p>
+<p>
+
 </p>
 
 <p>
-Il faut cependant distinguer deux types de forces : les forces réelles et les forces d'inertie.
+Ce principe implique quelque chose d'autre : <span class="important">dans un référentiel galiléen, tout objet ne subissant pas de force évolue dans un mouvement rectiligne et uniforme</span>.
+Ici, dire que le mouvement est rectiligne équivaut à dire que la trajectoire est une simple droite, et dire que le mouvement est uniforme équivaut à dire que la vitesse est constante.
+Le fait que la vitesse soit constante est assez évident si il n'y a pas de force (pas d'accélération = pas de modification de la vitesse), et la trajectoire en droite est du au fait que l'intégrale de la vitesse donne donc une fonction linéaire (et donc, la position évolue de façon linéaire).
 </p>
+<graphic>
+<circle x=0 y=0 radius=2/3 border_radius=5 border_color=black color=red>
+<circle x=-2 y=-2 radius=2/3 border_radius=5 border_color=black color=green>
+<line x_1=-2 y_1=-2 x_2=2 y_2=6 border_radius=10 border_color=black>
+<circle x=3 y=3 radius=2/3 border_radius=5 border_color=black color=blue>
+<line x_1=3 y_1=3 x_2=-6 y_2=2 border_radius=10 border_color=black>
+</graphic>
 
 <p>
 Avec cela, nous pouvons introduire un concept permettant de reformuler cette équation : la quantité de mouvement.

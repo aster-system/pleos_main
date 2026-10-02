@@ -1540,7 +1540,7 @@ Il se note généralement "Sp".
 <p>
 Avec tout ça, nous pouvons définir le concept d'espace propre.
 <span class="important"><definition name="eigenvector-space"></span>.
-En considérant "u" et "v" des vecteurs propres associés à "λ" et "f" l'endomorphisme utilisé, on peut facilement le démontrer :
+En considérant "u" et "v" des vecteurs propres associés à "λ" et "f" l'endomorphisme utilisé, on peut facilement démontrer que l'ensemble des valeurs propres associées à un vecteur propre est un sous-esapce vectoriel :
 </p>
 <math>u + v = <mlambda> * f(u) + <mlambda> * f(v) = <mlambda> * (f(u) + f(v)) = <mlambda> * f(u + v)</math></br>
 <math><mforall> c <min> K, c * u = c * (<mlambda> * f(u)) = <mlambda> * (c * f(u)) = <mlambda> * f(c * u)</math>
@@ -1569,10 +1569,14 @@ Avec ça, <span class="important">nous pouvons étudier les propriétés des val
 Par exemple, si ce noyau est réduit au neutre (et est donc de dimension 0), il n'y a pas de vecteurs propres pour "λ" (pour rappel, le vecteur nul n'est pas un vecteur propre).
 De plus, selon le théorème du rang, si l'application dont on étudie le kernel est de dimension égale à celle de l'espace de départ, son noyau est réduit au nul.
 Donc, <span class="important">on peut savoir si une valeur est une valeur propre en calculant le rang de l'application que nous pouvons obtenir avec la formule ci-dessus</span>.
-Pour savoir si le rang de cette application n'est pas selui de l'espace de départ, on utilise généralement le déterminant (bien que rien n'empêche d'utiliser une autre technique quelconque).
+Pour savoir si le rang de cette application n'est pas selui de l'espace de départ (et donc, que le noyau n'est pas que le vecteur nul), on utilise généralement le déterminant (bien que rien n'empêche d'utiliser une autre technique quelconque).
 Nous pouvons donc écrire :
 </p>
 <math><mlambda> <min> Sp(f) <mequi> Det(f - <mlambda> * Id) = 0</math>
+<p>
+Avec cette propriété, on va pouvoir introduire une façon très pratique d'obtenir les valeurs propres d'une matrice : le polynôme caractéristique.
+<span class="important"><definition name="characteristic_polynomial"></span>.
+</p>
 
 
 

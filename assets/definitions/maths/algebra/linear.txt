@@ -91,6 +91,9 @@
     <content>la trace d'une matrice carrée représente la somme de tous les éléments de sa diagonale principale</content>
 </new_definition>
 
+<new_definition name="characteristic_polynomial">
+    <content>le polynôme caractéristique d'une matrice</content>
+</new_definition>
 <new_definition name="eigenvector">
     <content>un vecteur propre d'un endomorphisme est un vecteur non-nul de l'espace vectoriel de départ tel que son image par l'endomorphisme soit exactement ce vecteur multiplié par un scalaire quelconque</content>
     <content name="space">un espace propre d'un endomorphisme est un sous-espace vectoriel de l'espace sur lequel l'endomorphisme est défini qui représente l'ensemble des vecteurs propres associés à une valeur propre (auquel on ajoute le vecteur nul)</content>
