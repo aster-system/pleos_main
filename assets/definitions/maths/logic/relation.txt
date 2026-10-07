@@ -50,7 +50,8 @@
     <content name="totality">une relation sur un ensemble est dite totale si, pour deux éléments quelconques "a" et "b", la relation est vraie dans le sens "a" puis "b" OU dans le sens "b" puis "a"</content>
 </new_definition>
 <new_definition name="sequence">
-    <content>une suite mathématique est une fonction mathématique allant de "N" (ou d'un sous-ensemble de "N") à n'importe quel ensemble possible</content>
+    <content>une suite mathématique est une application mathématique allant de l'ensemble des nombres entiers naturels à n'importe quel ensemble possible</content>
+    <content name="finite">une suite finie est une application mathématique allant d'une partie de l'ensemble des nombres entiers naturels représentant l'ensemble des éléments entre "0" et une valeur "n" quelconque à n'importe quel ensemble possible</content>
 </new_definition>
 <new_definition name="surjection">
     <content>une surjection est une application mathématique où tous les éléments de l'ensemble d'arrivée sont reliés à au moins 1 objet de l'ensemble de départ (soit à 1 objet précisément, soit à plus d'un objet)</content>

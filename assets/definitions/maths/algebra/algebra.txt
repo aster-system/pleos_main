@@ -106,6 +106,9 @@
 <new_definition name="algebra_subring">
     <content>un sous-anneau A d'un anneau B est un anneau sur un sous-ensemble de l'ensemble de B</content>
 </new_definition>
+<new_definition name="ring_quotient">
+    <content>l'anneau quotient d'un anneau "A" et d'un idéal bilatère "I" représente un nouvel anneau sur l'ensemble de "A" quotienté par la relation d'équivalence reliant de manière calculatoire chaque élément de "I" avec les éléments de "A"</content>
+</new_definition>
 
 <new_definition name="morphism">
     <content>un morphisme est une application entre deux ensembles de deux structures quelconques (mais de même nature), où les relations possibles dans la première structure permettent de déduire directement les relations similaires dans la seconde, en utilisant le morphisme</content>

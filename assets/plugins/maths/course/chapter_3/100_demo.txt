@@ -225,6 +225,40 @@ L'inégalité triangulaire est démontrée dans tous les cas : elle est vérifi�
 Donc, cet opérateur et "R" forme un espace métrique.
 </p>
 
+<h4 id="convergent_sequence_are_cauchy_sequence">3.1.0.1</h4>
+<p>
+Démontrons que toute suite convergente dans un espace métrique est une suite de Cauchy.
+Rappelons la définition d'une suite convergente en un élément "v" :
+</p>
+<math><mforall> r <min> <mreal><msubsup><mi>*</mi><mi>+</mi></msubsup>, <mexists> n <min> <mnatural>, <mforall> b <min> <mnatural>, b <mgt> n <mimp> d(<mi>u</mi><msub>b</msub> , v) <mlt> r</math></br>
+<p>
+Ici, introduisons un nouveau nombre entier naturel "c".
+Comme "c" est un nombre entier naturel, on peut écrire :
+</p>
+<math><mimp> <mforall> b <min> <mnatural>, <mforall> c <min> <mnatural>, b <mgt> n <mand> c <mgt> n <mimp> d(<mi>u</mi><msub>b</msub>, v) <mlt> r <mand> d(<mi>u</mi><msub>c</msub>, v) <mlt> r</math></br>
+<p>
+Ici, l'une des propriétés de la distance est que l'on peut permuter les éléments dans la distance (en effet, elle est symétrique) :
+</p>
+<math><mimp> <mforall> b <min> <mnatural>, <mforall> c <min> <mnatural>, b <mgt> n <mand> c <mgt> n <mimp> d(<mi>u</mi><msub>b</msub>, v) <mlt> r <mand> d(v, <mi>u</mi><msub>c</msub>) <mlt> r</math></br>
+<p>
+Ici, comme nous avons deux relations d'ordres strictes, on peut obtenir (via une implication) une relation avec la somme des parties à gauche de "r" dans la relation d'ordre de départ, et la somme des deux "r" :
+</p>
+<math><mimp> d(<mi>u</mi><msub>b</msub>, v) + d(v, <mi>u</mi><msub>c</msub>) <mlt> 2 * r</math></br>
+<p>
+Pour rappel, la distance respecte l'inégalité triangulaire.
+On peut donc écrire :
+</p>
+<math><mimp> d(<mi>u</mi><msub>b</msub>, <mi>u</mi><msub>c</msub>) <mltequal> d(<mi>u</mi><msub>b</msub>, v) + d(v, <mi>u</mi><msub>c</msub>) <mlt> 2 * r</math></br>
+<math><mimp> d(<mi>u</mi><msub>b</msub>, <mi>u</mi><msub>c</msub>) <mlt> 2 * r</math>
+<p>
+Nous savons ici que l'application allant de l'ensemble des réels strictement positifs à lui-même qui transforme "r" en "2 * r" est bijective : tout "r" a une unique image, et tout "2 * r" a un unique antécédent.
+On peut donc en déduire que "2 * r" peut dans ce contexte représenter tous les nombres réels possibles.
+Donc, pour chaque valeur réelle strictement positive, il existe toujours un indice tel que la distance entre deux éléments quelconques de la suite après cet indice soit inférieure à cette valeur.
+C'est exactement la définition d'une suite de Cauchy.
+Si nous renommons "2 * r" en epsilon, nous pouvons finalement écrire :
+</p>
+<math><mforall> <mepsilon> <min> <mreal><msubsup><mi>*</mi><mi>+</mi></msubsup>, <mexists> n <min> <mnatural>, <mforall> b <min> <mnatural>, <mforall> c <min> <mnatural>, b <mgt> n <mand> c <mgt> n <mimp> d(<mi>u</mi><msub>b</msub>, <mi>u</mi><msub>c</msub>) <mlt> <mepsilon></math></br>
+
 <h3>Les limites de suites usuelles</h3>
 <h4>3.1.1.0</h4>
 <p>
@@ -296,6 +330,49 @@ Donc, "m" doit être supérieur à la racine de "x" divisé par "a" (qui est un 
 Donc, pour tout nombre réel "x" inférieur à 0, il existe une valeur "b" tel que, pour toute valeur "m" de la suite supérieure à "b", "u(m)" est inférieur à "x".
 Donc, par définition de la limite, la suite représentant le produit de "n" par un nombre "a" négatif avec une puissance positive tend vers "- l'infini".
 </p>
+
+<h4 id="convergent_sequence_are_cauchy_sequence_real">3.1.1.2</h4>
+<p>
+Démontrons que toute suite réelle convergente est une suite de Cauchy.
+Rappelons la définition d'une suite convergente en un réel "v" :
+</p>
+<math><mforall> r <min> <mreal><msubsup><mi>*</mi><mi>+</mi></msubsup>, <mexists> n <min> <mnatural>, <mforall> b <min> <mnatural>, b <mgt> n <mimp> |<mi>u</mi><msub>b</msub> - v| <mlt> r</math></br>
+<p>
+Ici, introduisons un nouveau nombre entier naturel "c".
+Comme "c" est un nombre entier naturel, on peut écrire :
+</p>
+<math><mimp> <mforall> b <min> <mnatural>, <mforall> c <min> <mnatural>, b <mgt> n <mand> c <mgt> n <mimp> |<mi>u</mi><msub>b</msub> - v| <mlt> r <mand> |<mi>u</mi><msub>c</msub> - v| <mlt> r</math></br>
+<p>
+Ici, l'une des propriétés de la valeur absolue est que multiplier l'élément dans la valeur absolue par "-1" ne change pas la valeur de la valeur absolue entière.
+On peut donc multiplier par "-1" dans l'une de nos valeurs absolues (ce qui revient à échanger tous les signes dans la valeur absolue) :
+</p>
+<math><mimp> <mforall> b <min> <mnatural>, <mforall> c <min> <mnatural>, b <mgt> n <mand> c <mgt> n <mimp> |<mi>u</mi><msub>b</msub> - v| <mlt> r <mand> |-<mi>u</mi><msub>c</msub> + v| <mlt> r</math></br>
+<p>
+Ici, comme nous avons deux relations d'ordre stricte, on peut obtenir (via une implication) une relation avec la somme des parties à gauche de "r" dans la relation d'ordre de départ, et la somme des deux "r" :
+</p>
+<math><mimp> |<mi>u</mi><msub>b</msub> - v| + |-<mi>u</mi><msub>c</msub> + v| <mlt> 2 * r</math></br>
+<p>
+Pour rappel, la valeur absolue respecte l'inégalité triangulaire.
+On peut donc écrire :
+</p>
+<math><mimp> |<mi>u</mi><msub>b</msub> - v - <mi>u</mi><msub>c</msub> + v| <mltequal> |<mi>u</mi><msub>b</msub> - v| + |<mi>u</mi><msub>c</msub> - v| <mlt> 2 * r</math></br>
+<math><mimp> |<mi>u</mi><msub>b</msub> - <mi>u</mi><msub>c</msub>| <mlt> 2 * r</math>
+<p>
+Nous savons ici que l'application allant de l'ensemble des réels strictement positifs à lui-même qui transforme "r" en "2 * r" est bijective : tout "r" a une unique image, et tout "2 * r" a un unique antécédent.
+On peut donc en déduire que "2 * r" peut dans ce contexte représenter tous les nombres réels possibles.
+Donc, pour chaque valeur réelle strictement positive, il existe toujours un indice tel que la valeur absolue de la différence entre deux éléments quelconques de la suite après cet indice soit inférieure à cette valeur.
+C'est exactement la définition d'une suite de Cauchy.
+Si nous renommons "2 * r" en epsilon, nous pouvons finalement écrire :
+</p>
+<math><mforall> <mepsilon> <min> <mreal><msubsup><mi>*</mi><mi>+</mi></msubsup>, <mexists> n <min> <mnatural>, <mforall> b <min> <mnatural>, <mforall> c <min> <mnatural>, b <mgt> n <mand> c <mgt> n <mimp> |<mi>u</mi><msub>b</msub> - <mi>u</mi><msub>c</msub>| <mlt> <mepsilon></math></br>
+
+
+
+
+
+
+
+
 
 <h3>Les limites de fonctions usuelles</h3>
 <h4>3.1.2.0</h4>

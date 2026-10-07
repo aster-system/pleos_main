@@ -1402,7 +1402,7 @@ En effet, cette fonction n'est pas définie en "0", mais elle est très souvent 
 <graphic>
 <background_color white>
 <base draw=1>
-<function expression=1/x></function>
+<function expression=1/x line_width=8></function>
 </graphic>
 <p>
 Cependant, ce n'est pas très grave, pour une raison précise : <span class="important">pour toute fonction ayant un ensemble de définition non vide, on peut obtenir une application allant de l'ensemble de définition vers l'ensemble d'arrivée de la fonction, associant à chaque valeur de l'ensemble de définition son image par la fonction de départ</span>.
@@ -1690,7 +1690,7 @@ D'ailleurs, nous pouvons introduire une notation, permettant de simplifier certa
 En effet, imagineons une application / fonction "f", allant d'un ensemble "E" vers lui même.
 Déjà, "f" a le même ensemble de départ / d'arrivée que lui même : il est donc possible que "f" soit composable avec elle même (tout dépendra de l'ensemble image et l'ensemble de définition de "f").
 Supposons que "f" est bel et bien composable avec elle même.
-Ici, <span class="important">si l'on veut composer "f" avec elle même plusieurs fois, on peut se passer de noter le petit, et noter à la place "f" exposant le nombre de fois que vous voulez effectuer cette composition en exposant</span>.
+Ici, <span class="important">si l'on veut composer "f" avec elle même plusieurs fois, on peut se passer de noter le petit rond, et noter à la place "f" exposant le nombre de fois que vous voulez effectuer cette composition en exposant</span>.
 Il faut cependant faire attention à ne pas confondre cette notation avec l'exposant avec d'autres notations utilisant l'exposant (comme pour les puissances, que nous verrons plus tard).
 On peut donc écrire :
 </p>
@@ -1710,28 +1710,30 @@ On peut donc écrire :
 <p>
 Revenons sur les graphes.
 Grâce au concept d'application, nous pouvons définir un type de graphe bien plus général : les multigraphes.
-<span class="important"><definition name="multigraph-rigorous"></span>.
+<span class="important"><definition name="multigraph"></span>.
 En fait, <span class="important"><definition name="multigraph-rigorous"></span>.
 Ici, l'application (nommée fonction d'incidence et généralement noté avec la lettre grecque "phi") permet de savoir rigoureusement quels objets sont reliés par chaque arête.
 </p>
-<math>G = (V, E, <mphi>)</math></br>
-<math><mphi> : E <mto> {{u, v} | (u, v) <min> V * V}</math>
+<math><mphi> : E <mto> {{u, v} | (u, v) <min> V <mtimes> V}</math></br>
+<math>G = (V, E, <mphi>)</math>
 <p>
 Il est aussi possible que cette application ne donne pas des paires, mais des couples.
 Dans ce cas, on parle de multigraphe orienté.
 </p>
+<math><mphi> : E <mto> V * V</math></br>
 <math>G = (V, E, <mphi>)</math></br>
-<math><mphi> : E <mto> V * V</math>
 <p>
-Finalement, on peut aussi définir des multigraphes mixtes.
+Finalement, on peut aussi définir des multigraphes mixtes (contenant en même temps des arêtes non-orientées et des arêtes orientées).
 </p>
 <math>G = (V, E, A, <mi><mphi></mi><msub>1</msub>, <mi><mphi></mi><msub>2</msub>)</math></br>
-<math><mi><mphi></mi><msub>1</msub> : E <mto> {{u, v} | (u, v) <min> V * V}</math></br>
+<math><mi><mphi></mi><msub>1</msub> : E <mto> {{u, v} | (u, v) <min> V <mtimes> V}</math></br>
 <math><mi><mphi></mi><msub>2</msub> : A <mto> V * V</math></br>
 <p>
 Ce genre de graphe permet deux choses très importantes (qui sont impossibles avec des graphes simples) : <span class="important">un multigraphe peut comporter des boucles et des arêtes / arcs multiples entre deux mêmes éléments</span>.
 Ici, <span class="important"><definition name="multigraph-loop"></span>.
 De plus, deux mêmes éléments peuvent être reliés par autant d'arêtes / arcs que l'on veut.
+En effet, on peut très bien imaginer deux objets distincts de "E" (ou de "A") qui ont la même image par leur application respective (et donc, qui définissent la même arête / arc).
+Ici, bien que cette arête / arc définisse le même objet (et donc, qu'il est présent qu'une fois dans l'ensemble image de l'application respective), on va le considérer autant de fois qu'il n'y a d'éléments l'ayant en image pour tracer le graphe.
 Donc, un multigraphe de ce genre est parfaitement licite :
 </p>
 <graphic>
@@ -1765,7 +1767,7 @@ Une fonction "f" est croissante si elle respecte cette propriété :
 </p>
 <math>(E, ~), (F, @)</math></br>
 <math>f : E <mto> F</math></br>
-<math><mforall> x, y <min> E, x ~ y <mimp> f(x) @ (y)</math>
+<math><mforall> x, y <min> E, x ~ y <mimp> f(x) @ f(y)</math>
 <p>
 Un exemple très simple est une application identité, sur par exemple "{0, 1, 2, 3, 4}", tous deux munis de leur relation usuel.
 En fait, ceci marche avec n'importe quel ensemble.
@@ -1779,11 +1781,18 @@ Une fonction "f" est décroissante si elle respecte cette propriété :
 </p>
 <math>(E, ~), (F, @)</math></br>
 <math>f : E <mto> F</math></br>
-<math><mforall> x, y <min> E, x ~ y <mimp> f(x) <mi>@</mi><msup>op</msup> (y) <mand> f(y) @ (x)</math>
+<math><mforall> x, y <min> E, x ~ y <mimp> f(y) @ f(x)</math>
 <p>
 Un exemple très simple serait l'application allant "{0, 1, 2, 3}" vers "{0, 1, 2, 3}", où "f(0) = 3", "f(1) = 2", "f(2) = 1" et "f(3) = 0".
-Bien évidemment, on pourrait écrire cette fonction comme "f(x) = 3 - x".
+Bien évidemment, en utilisant le formalisme des nombres, on pourrait écrire cette fonction comme "f(x) = 3 - x".
 </p>
+<table>
+<case x=0 y=0 content="x"><case x=1 y=0 content="f(x)">
+<case x=0 y=1 content="0"><case x=1 y=1 content="3">
+<case x=0 y=2 content="1"><case x=1 y=2 content="2">
+<case x=0 y=3 content="2"><case x=1 y=3 content="1">
+<case x=0 y=4 content="3"><case x=1 y=4 content="0">
+</table>
 <p>
 Finalement, définissons les fonctions monotones.
 <span class="important"><definition name="monotone_function"></span>.
@@ -1792,9 +1801,66 @@ Finalement, définissons les fonctions monotones.
 D'ailleurs, <span class="important">si une application entre deux ensembles munis d'une relation d'ordre "conserve" la relation d'ordre stricte, on peut dire que la fonction est strictement croissante</span>.
 À l'inverse, si une application entre deux ensembles munis d'une relation d'ordre "inverse" la relation d'ordre stricte, on peut dire que la fonction est strictement décroissante.
 Encore une fois, <span class="important"><definition name="monotone_function-strict"></span>.
-Ici, l'application identité (dans tous les ensembles ordonnés possibles) respecte cette application.
+L'application identité (dans tous les ensembles ordonnés possibles) respecte cette application.
 </p>
-<math>x <mlt> y <mimp> f(x) <mlt> f(y)</math>
+
+<p>
+Revenons sur un dernier concept : l'axiome du choix.
+Pour rappel, <span class="important"><definition name="set_theory-choice_axiom"></span>.
+Nous l'avons laissé tomber lors du premier chapitre, mais nous pouvons y revenir dés à présent.
+</p>
+<math><mforall>X[(X<mnotequal><mempty_set><mand><mforall>A<min>X,A<mnotequal><mempty_set>)<mimp><mexists>f:X<mto><munion>X<mforall>A<min>X(f(A)<min>A)]</math>
+<p>
+Ici, la méthode de construction de cet ensemble non-vide utilise une application (l'ensemble que l'on a construit ici est le graphe de l'application).
+En fait, <span class="important">si on a un ensemble quelconque contenant d'autres ensembles, cet axiome garanti l'existence d'une application allant de cet ensemble à l'ensemble représentant l'union de tous ces ensembles, et qui associe à chaque ensemble appartenant au premier ensemble un unique élément quelconque lui appartenant</span>.
+Ici, une question peut apparaître : dans quel cas cet axiome est indispensable.
+En fait, parmi toutes les propriétés nécessaires pour faire une application, une seule peut poser problème dans certains cas : l'unicité (on ne peut donc pas construire ce type d'application).
+Cet axiome permet justement de régler ce problème, en garantissant l'existence d'au moins une de ces applications, de manière axiomatique.
+En réalité, <span class="important">il est très rare d'avoir besoin d'utiliser cet axiome, puisqu'il n'est nécessaire que dans des ensembles / logiques assez avancées</span>.
+Les cas les plus fréquents d'utilisation sont les ensembles infinis (tous les ensembles nécessitant cet axiome sont forcément infinis) et où les éléments dans les ensembles sont indistinguables entre eux.
+</p>
+<graphic ratio_base>
+<base draw=0 width=25 height=10>
+<background_color white>
+
+<circle x=-10 y=3 radius_x=2 radius_y=3/2>
+<text x=-11 y=3 font_size_in_scale=1>a</text>
+<text x=-10 y=3 font_size_in_scale=1>b</text>
+<text x=-9 y=3 font_size_in_scale=1>c</text>
+<arrow color=black x_1=-10 y_1=3/2 x_2=-10 y_2=-3/2>
+<text x=-10 y=-3 font_size_in_scale=1>b</text>
+
+<circle x=-6 y=3 radius_x=2 radius_y=3/2>
+<text x=-7 y=3 font_size_in_scale=1>d</text>
+<text x=-6 y=3 font_size_in_scale=1>e</text>
+<text x=-5 y=3 font_size_in_scale=1>f</text>
+<arrow color=black x_1=-6 y_1=3/2 x_2=-6 y_2=-3/2>
+<text x=-6 y=-3 font_size_in_scale=1>e</text>
+
+<circle x=-2 y=3 radius_x=2 radius_y=3/2>
+<text x=-3 y=3 font_size_in_scale=1>g</text>
+<text x=-2 y=3 font_size_in_scale=1>h</text>
+<text x=-1 y=3 font_size_in_scale=1>i</text>
+<arrow color=black x_1=-2 y_1=3/2 x_2=-2 y_2=-3/2>
+<text x=-2 y=-3 font_size_in_scale=1>h</text>
+
+<circle x=2 y=3 radius_x=2 radius_y=3/2>
+<text x=1 y=3 font_size_in_scale=1>j</text>
+<text x=2 y=3 font_size_in_scale=1>k</text>
+<text x=3 y=3 font_size_in_scale=1>l</text>
+<arrow color=black x_1=2 y_1=3/2 x_2=2 y_2=-3/2>
+<text x=2 y=-3 font_size_in_scale=1>j</text>
+
+<circle x=6 y=3 radius_x=2 radius_y=3/2>
+<text x=5 y=3 font_size_in_scale=1>m</text>
+<text x=6 y=3 font_size_in_scale=1>n</text>
+<text x=7 y=3 font_size_in_scale=1>o</text>
+<arrow color=black x_1=6 y_1=3/2 x_2=6 y_2=-3/2>
+<text x=6 y=-3 font_size_in_scale=1>n</text>
+
+<text x=10 y=0 font_size_in_scale=1>...</text>
+
+</graphic>
 
 
 
@@ -1812,13 +1878,14 @@ Ce simple formalisme est utilisée dans énormément de définitions en mathéma
 Il existe d'ailleurs une autre notation pour représenter la famille (et donc l'application) en elle même : mettre "f indice a" entre parenthèse, et noter à droite en indice "a appartenant à A"
 </p>
 <math>(<mi>f</mi><msub>a</msub>)<msub><mrow>a <min> A</mrow></msub></math>
+
 <p>
 Le type de famille le plus utilisé est la suite mathématique.
 <span class="important"><definition name="sequence"></span>.
-Si ce sous-ensemble est finie, on parle de suite finie (sinon, on parle de suite infinie).
+Il est aussi possible d'utiliser comme ensemble de départ une partie de l'ensemble des nombres entiers naturels représentant tous les éléments supérieurs ou égaux à un autre (par exemple "{4, 5, 6, ...}").
 Il s'agit donc (littéralement) d'une suite d'éléments quelconques.
 </p>
-<math>A <mincluded> N, u : A <mto> N</math>
+<math>u : <mnatural> <mto> E</math>
 <p>
 Le suites possèdent donc l'exacte même notation que les familles.
 Par exemple, l'image pour une suite "u" du nombre "n" s'écrit "u indice n" :
@@ -1831,6 +1898,12 @@ Pour cela, on note les images entre parenthèses, tel que l'image du "premier" �
 Ceci est possible grâce à la relation d'ordre "inférieur ou égal" possible sur "N", qui permet d'ordonner "N" (et aussi, toutes ces sous-parties), et donc d'ordonner les images de la suite.
 </p>
 <math>(<mi>u</mi><msub>n</msub>)<msub><mrow>n <min> A</mrow></msub> = (0, 1, 0, 0, 1, 0, 0, 0, 1, 0, ...)</math>
+<p>
+On peut aussi obtenir un objet similaire : les suites finies.
+<span class="important"><definition name="sequence-finite"></span>.
+Il s'agit donc de l'adaptation de la définition des suites dans le cas fini.
+</p>
+<math>A = [0, n], u : A <mto> E</math>
 <p>
 Généralement, au lycée, le terme "suite" désigne des suites de nombres réels.
 Cependant, <span class="important">il faut bien comprendre qu'une suite peut comporter des éléments de n'importe quel ensemble possible</span>.
@@ -1913,6 +1986,30 @@ Ici, si une matrice est de dimension "(m, 1)", elle représente une colonne, et 
 </p>
 <math>C = <mrow><mo>[</mo><mtable><mtr><mtd><mi>4</mi></mtd></mtr><mtr><mtd><mi>5</mi></mtd></mtr></mtable><mo>]</mo></mrow></math></br>
 <math>L = <mrow><mo>[</mo><mtable><mtr><mtd><mi>1</mi></mtd><mtd><mi>8</mi></mtd></mtr></mtable><mo>]</mo></mrow></math>
+<p>
+D'ailleurs, <span class="important">il existe une notation permettant de noter l'ensemble de toutes les matrices à coefficients dans "E" de taille "(m, n)"</span>.
+Pour cela, on note "M indice m, n (E)" :
+</p>
+<math><mi>M</mi><msub>m, n</msub>(E)</math>
+<p>
+Dans une matrice, il existe d'ailleurs une opération travaillant sur les lignes / colonnes : la transposition.
+<span class="important"><definition name="matrix-transpose"></span>.
+En fait, la transposée d'une matrice de départ est une matrice où les lignes de la matrice de départ deviennent les colonnes de la matrice transposée.
+Généralement, la matrice transposée d'une matrice "A" se note "A exposant t".
+</p>
+<math>A = <mrow><mo>[</mo><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd><mtd><mi>c</mi></mtd></mtr><mtr><mtd><mi>d</mi></mtd><mtd><mi>e</mi></mtd><mtd><mi>f</mi></mtd></mtr></mtable><mo>]</mo></mrow></math></br></br>
+<math><mi>A</mi><msup>t</msup> = <mrow><mo>[</mo><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>d</mi></mtd></mtr><mtr><mtd><mi>b</mi></mtd><mtd><mi>e</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>f</mi></mtd></mtr></mtable><mo>]</mo></mrow></math>
+<p>
+La nouvelle matrice obtenue est unique, et a donc comme largeur la hauteur de la matrice de départ, et comme hauteur la largeur de la matrice de départ.
+D'un point de vue rigoureux, on peut définir la matrice transposée de "a" avec une application, via ces indices.
+Ici, on peut noter :
+</p>
+<math><mforall> <mi>A</mi> <min> <mi>M</mi><msub>m, n</msub>(E), <mexists>! <mi>A</mi><msup>t</msup> <min> <mi>M</mi><msub>n, m</msub>(E)</math></br>
+<math><mforall>i <min> [1, m], <mforall> j <min> [1, n], <mi>a</mi><msub>i, j</msub> = <mi>a</mi><msubsup><mrow><mi>j, i</mi></mrow><mrow><mi>t</mi></mrow></msubsup></math>
+<p>
+En théorie des ensembles pures, il n'y a pas grand chose à faire avec les matrices.
+Cependant, <span class="important">cet outil est extrêmement utilisé dans beaucoup d'autres domaines, ce qui le rend très important</span>.
+</p>
 
 
 

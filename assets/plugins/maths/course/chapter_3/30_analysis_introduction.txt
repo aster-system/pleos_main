@@ -65,7 +65,15 @@ C'est pour ça que, en 1902, une nouvelle définition est proposée, par <scient
 
 
 
+
+
+
+
+
+
 <h2>Les limites</h2>
+
+
 
 <h3>Les limites de suites</h3>
 <p>
@@ -161,12 +169,10 @@ Ici, l'idée est assez simple : pour tout nombre réel positif, il existe un nom
 <math><mforall> r <min> <mreal><msubsup><mi>*</mi><mi>+</mi></msubsup>, <mexists> n <min> <mnatural>, <mforall> p <min> <mnatural>, <mforall> q <min> <mnatural>, p <mgtequal> n <mand> q <mgtequal> n <mimp> [|<mi>u</mi><msub>q</msub> - <mi>u</mi><msub>q</msub>| <mlt> r]</math>
 <p>
 Nous pouvons d'ailleurs déduire un théorème assez intéressant : <span class="important">toute suite convergente est une suite de Cauchy</span>.
+La démonstration est présente <a href="demo#convergent_sequence_are_cauchy_sequence_real">juste ici</a>.
+Bien que la réciproque ne soit pas vraie dans tous les contextes possibles et imaginables, <span class="important">dans le cas de suites réelles, la réciproque est vraie : toute suite réelle de Cauchy est une suite convergente</span>.
+Ici (et nous aurons l'occasion d'y revenir dans la partie traitant de la topologie), comme l'ensemble des suites de réels respecte cette propriété, on dit que l'ensemble des réels est complet.
 </p>
-<math><mforall> r <min> <mreal><msubsup><mi>*</mi><mi>+</mi></msubsup>, <mexists> n <min> N, <mforall> b <min> <mnatural>, b <mgt> n <mimp> |<mi>u</mi><msub>b</msub> - v| <mlt> r</math></br>
-<math><mimp> <mforall> b <min> <mnatural>, <mforall> c <min> <mnatural>, b <mgt> n <mand> c <mgt> n <mimp> |<mi>u</mi><msub>b</msub> - v| <mlt> r <mand> |<mi>u</mi><msub>c</msub> - v| <mlt> r</math></br>
-<math><mimp> |<mi>u</mi><msub>b</msub> - v| + |-<mi>u</mi><msub>c</msub> + v| <mlt> 2 * r</math></br>
-<math><mimp> |<mi>u</mi><msub>b</msub> - v - <mi>u</mi><msub>c</msub> + v| <mltequal> |<mi>u</mi><msub>b</msub> - v| + |<mi>u</mi><msub>c</msub> - v| <mlt> 2 * r</math></br>
-<math><mimp> |<mi>u</mi><msub>b</msub> - <mi>u</mi><msub>c</msub>| <mlt> 2 * r</math>
 
 
 
@@ -280,6 +286,8 @@ Cela est dû au fait que N soit inclu dans "R".
 Avec ça, on peut prouver quelque chose de très pratique : <span class="important">la limite en "+ l'infini" de la fonction réelle est la même que la limite de la suite qui lui est associée</span>.
 Donc, démontrer des résultats avec des limites en "+ l'infini" de fonctions réelles revient à les démontrer pour les suites associées.
 </p>
+
+
 
 <h3>Les opérations sur les limites</h3>
 <p>

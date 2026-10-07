@@ -327,13 +327,35 @@ Généralement, <span class="important">les forces engendrées par des phénomè
 Cette appelation implique qu'il existe des forces qui ne sont pas vraiment "réelles", que nous verrons un peu plus tard.
 </p>
 <p>
+Pour étudier une force, nous devons prendre en compte un autre paramètre : le point d'application de la force.
+<span class="important"><definition name="application_point"></span>.
+Par exemple, si vous poussez un objet, le point d'application sera à l'endroit où vous êtes en contact avec l'objet (et où vous lui transmettez la force).
+Bon, il y a cependant une chose à dire : si vous poussez un objet, la zone de contact exacte n'est pas un simple point, mais toute une surface 2D.
+En fait, <span class="important">le point choisi ici est le centre de la surface par rapport à l'intensité de la force transmise par chaque partie de cette surface</span>.
+Bien que l'on peut (plus ou moins) perdre en précision, cette façon de faire facilite grandement l'étude de l'action de la force sur l'objet.
+</p>
+<graphic>
+<background_color white><base draw=0>
+<rect x=-4 y=0 width=8 height=4> border_width=5 border_color=black color=blue>
+<arrow x_1=-4 y_1=-4 x_2=-3 y_2=0 border_width=5 border_color=black>
+<arrow x_1=-2 y_1=-4 x_2=1 y_2=0 border_width=5 border_color=black>
+<arrow x_1=4 y_1=-4 x_2=3 y_2=0 border_width=5 border_color=black>
+</graphic>
+<p>
+Ici, on peut se demander si il est possible de généraliser ce concept dans le cas d'une force à distance.
+Dans le cas d'une force à distance, nous avons le même problème que dans le cas d'une force de contact : la force ne s'applique pas sur un point, mais sur chaque point de l'objet, il va donc falloir approximer.
+En fait, <span class="important">le point que nous allons choisir est le point de l'objet où la grandeur qui provoque la force (masse dans le cas de la gravité, charge électrique dans le cas d'une force électrique) se situe en moyenne dans tout l'objet</span>.
+</p>
+<p>
+Ce concept va nous permettre d'observer quelque chose de (plus ou moins) étrange.
 Si un objet subit une force réelle, on aura donc toujours une accélération.
 Cependant, il y a une distinction importante à faire.
 En effet, imagineons une expérience extrêmement simple : un stylo fermé que l'on pose sur une table.
 Considérons que nous poussons ce stylo au niveau de son bouchon, avec une force perpendiculaire à la longueur du stylo.
 </p>
 <graphic>
-<rect x=-4 y=2 width=9 height=2> border_width=5 border_color=black color=blue>
+<background_color white><base draw=0>
+<rect x=-4 y=2 width=8 height=2> border_width=5 border_color=black color=blue>
 <arrow x_1=3 y_1=-3 x_2=3 y_2=2 border_width=5 border_color=black>
 </graphic>
 <p>
@@ -343,14 +365,32 @@ La moins intéressantes (dans notre contexte actuel) est que le stylo est très 
 Cependant, parlons de la plus intéressante.
 Si vous poussez le stylo de cette manière, <span class="important">le stylo va accéléré vers l'avant, mais va aussi gagner une légère rotation</span>.
 En effet, <span class="important">il y a certains cas où une partie de l'accélération provoquée sur l'objet est utilisée pour augmenter la vitesse de rotation de l'objet</span>.
-Cependant, si vous reprenez votre stylo et que vous le poussez au niveau de (plus ou moins) son milieu, la modification de la vitesse de rotation va être beaucoup plus faible, mais la modification de la vitesse de la position est beaucoup plus fort.
+Cependant, si vous reprenez votre stylo et que vous le poussez au niveau de (plus ou moins) son milieu, la modification de la vitesse de rotation va être beaucoup plus faible, mais la modification de la vitesse de la position est beaucoup plus forte.
 </p>
 <graphic>
-<rect x=-4 y=2 width=9 height=2> border_width=5 border_color=black color=blue>
+<background_color white><base draw=0>
+<rect x=-4 y=2 width=8 height=2> border_width=5 border_color=black color=blue>
 <arrow x_1=0 y_1=-3 x_2=0 y_2=2 border_width=5 border_color=black>
 </graphic>
 <p>
-En fait, <span class="important"></span>.
+Pour expliquer rigoureusement ce qu'il se passe, nous allons devoir définir un concept : le centre d'inertie.
+<span class="important"><definition name="center_of_mass"></span>.
+En d'autres termes, il s'agit de l'endroit dans l'objet qui représente la position moyenne de la masse dans l'objet.
+On peut aussi dire que ce point est là où toute la masse de l'objet se projette le mieux.
+Nous pouvons donc déduire quelque chose de très importante : <span class="important">l'étude d'un objet quelconque se fait généralement presque exclusivement via son centre d'inertie</span>.
+Quand on dit que l'objet a une vitesse / une accélération, nous parlons du centre d'inertie.
+Il est cependant possible d'étudier un autre point qui a un mouvement parfaitement similaire au centre d'inertie, mais cela présente un risque, pour des raisons que nous verrons dans quelques phrases.
+</p>
+<graphic>
+<background_color white><base draw=0>
+<rect x=-4 y=-3 width=8 height=6> border_width=5 border_color=black color=blue>
+<circle x=0 y=0 border_width=5 border_color=black color=red>
+<arrow x_1=0 y_1=0 x_2=2 y_2=4 border_width=5 border_color=black>
+</graphic>
+<p>
+En fait, <span class="important">quand nous observons une rotation du stylo après l'avoir poussé, nous observons une rotation autour du centre d'inertie du stylo</span>.
+On peut d'ailleurs observer que plus on est loin de ce point, plus la force est mise dans la rotation, et moins la force est mise dans l'accélération de l'objet (via le centre d'inertie).
+Nous avons d'ailleurs un léger paradoxe : si on force loin du centre d'inertie, les points à l'endroit où on touche vont accélérer de manière cohérente avec le principe fondamental de la dynamique vue plus haut, mais pas le centre d'inertie.
 </p>
 
 <p>

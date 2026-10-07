@@ -343,6 +343,9 @@ Passons au dernier axiome de séparation : l'axiome "T-5".
 
 
 
+
+
+
 <h3>Les espaces métriques</h3>
 <p>
 Un type d'espace très utilisé en topologie est l'espace métrique.
@@ -391,8 +394,32 @@ La sphère est assez similaire : <span class="important"><definition name="topol
 <graphic><background_color white><circle x=-3/2 y=0 border_radius=0 color=blue radius=2><circle x=3/2 y=0 border_radius=0 color=blue radius=2></graphic>
 <p>
 Ici, on peut se demander pourquoi avoir introduit ce concept à ce moment précis.
-En fait, <span class="important">tout espace métrique induit une topologie sur l'ensemble qu'il représente, engendré par l'ensemble des boules de l'espace</span>.
+En fait, <span class="important">tout espace métrique induit une topologie sur l'ensemble qu'il représente, engendré par l'ensemble des boules ouvertes de l'espace</span>.
 </p>
+<p>
+Parmi les concepts qui se généralisent dans des espaces métriques, nous pouvons citer le concept de suite de Cauchy (déjà vue au début de la partie traitant de l'analyse réelle).
+Pour rappel, <definition name="analysis_cauchy_sequence">.
+Dans la partie sur l'analyse réelle, nous avons défini la notion de "proximité" avec la valeur absolue de la différence des deux éléments.
+Dans le cas des espaces métriques, <span class="important">nous allons définir cette notion avec le concept de "distance"</span>.
+Si nous nous plaçons dans un espace métrique "(E, d)", la définition devient donc :
+</p>
+<math><mforall> r <min> <mreal><msubsup><mi>*</mi><mi>+</mi></msubsup>, <mexists> n <min> <mnatural>, <mforall> p <min> <mnatural>, <mforall> q <min> <mnatural>, p <mgtequal> n <mand> q <mgtequal> n <mimp> [d(<mi>u</mi><msub>q</msub>, <mi>u</mi><msub>q</msub>) <mlt> r]</math>
+<p>
+Comme la valeur absolue de la différence est une distance dans l'ensemble des réels, on voit que cette définition peut marcher dans l'espace métrique engendré par cette distance dans les réels.
+En fait, <span class="important">certaines propriétés des suite de Cauchy réels fonctionnent dans le cas général</span>.
+C'est, par exemple, le cas de la propriété disant qu'une suite convergente dans un espace métrique est de Cauchy (<a href="demo#convergent_sequence_are_cauchy_sequence">démontré ici</a>).
+Cependant, la propriété réciproque (toute suite de Cauchy est convergente) n'est pas tout le temps vraie.
+Prenons un exemple standard : plaçons nous dans l'espace métrique des nombres rationnels muni de la distance représentant la valeur absolue de la différence.
+Considérons la suite de rationnels permettant d'approximer la valeur de racine carré de deux :
+</p>
+<math><mi>u</mi><msub>0</msub> = 2, <mi>u</mi><msub>n + 1</msub> = <mfrac><mrow><mi>u</mi><msub>n</msub><mo>+</mo><mfrac><mrow><mi>2</mi></mrow><mrow><mi>u</mi><msub>n</msub></mrow></mfrac></mrow><mrow><mi>2</mi></mrow></mfrac></math>
+<p>
+Nous pouvons démontrer que cette suite est une suite de Cauchy.
+</p>
+<math><mfrac><mrow><mi>u</mi><msub>p</msub><mo>+</mo><mfrac><mrow><mi>2</mi></mrow><mrow><mi>u</mi><msub>p</msub></mrow></mfrac></mrow><mrow><mi>2</mi></mrow></mfrac> - <mfrac><mrow><mi>u</mi><msub>q</msub><mo>+</mo><mfrac><mrow><mi>2</mi></mrow><mrow><mi>u</mi><msub>q</msub></mrow></mfrac></mrow><mrow><mi>2</mi></mrow></mfrac> = <mfrac><mrow><mi>u</mi><msub>p</msub><mo>+</mo><mfrac><mrow><mi>2</mi></mrow><mrow><mi>u</mi><msub>p</msub></mrow></mfrac><mo>-</mo><mrow><mi>u</mi><msub>q</msub><mo>-</mo><mfrac><mrow><mi>2</mi></mrow><mrow><mi>u</mi><msub>q</msub></mrow></mfrac></mrow></mrow><mrow><mi>2</mi></mrow></mfrac></math></br>
+<math></math>
+
+
 
 
 

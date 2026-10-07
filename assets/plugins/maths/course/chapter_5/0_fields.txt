@@ -2,7 +2,15 @@
 
 
 
+
+
+
+
+
+
 <h2>Des structures algébriques avancées</h2>
+
+
 
 <h3>Qu'est ce qu'est un anneau ?</h3>
 <p>
@@ -67,7 +75,10 @@ On peut aussi citer ceux formé avec "Q" et "R".
 
 
 
-<h3>Les sous-anneaux, idéaux et anneaux quotients</h3>
+
+
+
+<h3>Les sous-anneaux</h3>
 <p>
 Comme il existe des sous-groupes de groupes, il existe des sous-anneaux d'anneaux.
 <span class="important"><definition name="algebra_subring"></span>.
@@ -104,6 +115,9 @@ En fait, <span class="important">on rajoute toujours le neutre multiplicatif de 
 Donc, l'anneau engendré par "{2}" est l'exact même que l'anneau engendré par "{1, 2}".
 </p>
 <math><mbracket>{2}</mbracket> = <mbracket>{1, 2}</mbracket></math>
+
+
+
 
 
 
@@ -149,7 +163,7 @@ L'idée pour l'obtenir est donc de prendre "P", et de lui ajouter le minimum d'�
 Encore une fois, on peut parler d'idéal engendré à gauche ou à droite.
 Pour le définir correctement, imaginons un ensemble "E" contenant toutes les utilisations de la deuxième loi entre un élément de "A" et un élément de "P".
 </p>
-<math>E = {x <min> A | <mexists> (y, z) <min> A X P <mand> x = yz}</math>
+<math>E = {x <min> A | <mexists> (y, z) <min> A <mtimes> P <mand> x = yz}</math>
 <p>
 Cette ensemble représente donc toutes les utilisations de la seconde loi, qui doivent apparaître dans l'idéal.
 Nous devons maintenant compléter cet ensemble, en le rendant stable par la première loi.
@@ -168,7 +182,55 @@ Dans le cas où vous voulez les deux, vous devez redéfinir un nouvel ensemble, 
 </p>
 <math>G = {x <min> A | <mexists> (w, y, z) <min> A X A X P <mand> x = wyz}</math></br>
 <math>K = {x <min> A | <mexists> n <min> N, <mexists>(<mi>q</mi><msub>1</msub>, <mi>q</mi><msub>2</msub>, ..., <mi>q</mi><msub>n</msub>) <min> <mi>G</mi><msup>n</msup>, x = <msum from=1 to=n unknown=k><mi>q</mi><msub>k</msub>}</math>
-
+<p>
+Grâce aux idéaux, on peut définir un type d'anneau très spécial et pratique : les anneaux quotients.
+<span class="important"><definition name="ring_quotient"></span>.
+Il s'agit donc d'une version des groupes quotients avec des anneaux.
+Ici, définissons rigoureusement cette relation d'équivalence, et expliquons là.
+Posons cette relation "~" :
+</p>
+<math><mforall> x, y <min> A, x ~ y <mequi> x - y <min> I</math>
+<p>
+Ici, vérifions que cette relation est une relation d'équivalence.
+Déjà, la symétrie est très rapide : il existe un élément de l'anneau qui, quand on le multiplie à un élément "e", donne l'opposé de "e" par la premère loi.
+Dans le cas des entiers relatifs, cet élément serait "-1" (nous le nommerons comme ceci).
+En utilisant les propriétés algébrique des anneaux, on peut utiliser cet élément et vérifier la symétrie ainsi :
+</p>
+<math><mforall> x, y <min> A, x ~ y <mequi> x - y <min> I <mequi> (x - y) * -1 <min> I <mequi> y - x <min> I <mequi> y ~ x</math>
+<p>
+Deuxièmement, prouvons la réflexivité.
+Cette propriété est immédiate : elle équivaut à dire que "x - x" appartient à "I", ce qui est obligatoire car tout idéal d'un anneau contient le neutre de la première loi.
+</p>
+<math><mforall> x, y <min> A, x ~ x <mequi> x - x <min> I <mequi> 0 <min> I</math>
+<p>
+Finalement, prouvons la transitivité.
+Pour cela, posons trois éléments en relation entre eux, et démontrons algébriquement la transitivité.
+</p>
+<math><mforall> x, y, z <min> A, x ~ y <mand> y ~ z <mequi> x - y <min> I <mand> y - z <min> I <mimp> (x - y) + (y - z) <min> I <mimp> x - z <min> I <mimp> x ~ z</math>
+<p>
+Donc, "~" est une relation d'équivalence, et l'on peut quotienter "A" par "~" pour obtenir un ensemble quotient.
+Maintenant, <span class="important">définissons deux lois qui donnent une structure d'anneau à cet ensemble quotient</span>.
+La première (que nous noterons "+") sera une addition très similaire à l'addition dans un anneau tout court :
+</p>
+<math><mforall> m, n <min> E/~, <mexists>x, y <min> A, <mexists> a, b <min> I, m = x + a, n = y + b</math></br>
+<math>m + n = [x + a] + [y + b] = [x + y]</math>
+<p>
+On peut voir que les propriétés de cette nouvelle première opération sont exactement les mêmes que celles de la première opération de l'anneau.
+Maintenant, définissons la multiplication :
+</p>
+<math>m * n = [x + a] * [y + b] = [x * y]</math>
+<p>
+Nous obtenons donc un ensemble avec des propriétés calculatoires d'un anneau.
+Donc, <span class="important">l'ensemble quotient a une structure d'anneau (nous pouvons donc donc l'appeler anneau quotient)</span>.
+Généralement, comme pour les groupes quotients, cet anneau sera noté avec le nom de l'anneau, puis le symbôle "/", suivit du nom de l'idéal utilisé.
+</p>
+<math>A/I</math>
+<p>
+Prenons l'exemple le plus utilisé : l'anneau "Z/nZ".
+En effet, pour rappel, "(Z, +, *)" est un anneau, et pour tout nombre entier naturel "n", "nZ" est un idéal bilatère de cet anneau.
+Donc, <span class="important">on peut construire l'anneau quotient de "Z" par "nZ", que l'on note "Z/nZ"</span>.
+</p>
+<math><minteger>/n<minteger></math>
 
 
 
