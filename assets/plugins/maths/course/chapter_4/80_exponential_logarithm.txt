@@ -3,3 +3,171 @@
 
 
 <h2>Des fonctions indispensables</h2>
+
+
+
+<h3>Les équations différentielles ordinaires</h3>
+
+<p>
+Pour introduire tout ceci, nous avons besoin d'un premier concept pratique : les équations différentielles.
+<span class="important"><definition name="differential_equation"></span>.
+Par exemple, l'exemple le plus simple d'équation différentiel est :
+</p>
+<math>f = f' <mequi> <mforall> t <min> <mi>D</mi><msub>f</msub>, f(t) = f'(t)</math>
+<p>
+Dans le cas où notre fonction ne contient qu'une variable, on parle d'équation linéaire ordinaire (aussi nommé "EDO").
+
+</p>
+<p>
+Le type d'équation différentiel ordinaire le plus simple à résoudre est l'équation différentielle ordinaire linéaire.
+<span class="important"><definition name="differential_equation-ordinary_linear"></span>.
+Un exemple d'équation différentiel linéaire serait :
+</p>
+<math>4f''(t) - 2f'(t) + 3f(t) = 1</math>
+<p>
+Bien qu'ici nous ayons pris des coefficients représentant des nombres réels constants, on peut aussi utiliser des fonctions (qui doivent obligatoirement utiliser la même variable que la fonction inconnue).
+Pour que cela marche, il faut que ces fonctions soient continues sur l'ensemble dans lequel évolue "t".
+</p>
+<math>a(t) * f''(t) + b(t) * f'(t) + c(t) * f(t) = d(t)</math>
+<p>
+La définition rigoureuse est donc :
+</p>
+<math><msum from=1 unknown=k value=n> <mi>a</mi><msub>k</msub>(t)<mi>f</mi><msup>(k)</msup>(t) = b(t)</math>
+<p>
+Si il existe des équations différentielles linéaires, <span class="important">il existe aussi des équations différentielles non-linéaires</span>.
+Cependant, elles sont généralement bien plus infernales à calculer.
+</p>
+<math><msqrt>(y'(t))</msqrt> - (|sin(y(t))| - <mfrac><mrow>1</mrow><mrow>3</mrow></mfrac>)*(cos(t)+4) = 42 * |t + 87|</math>
+<p>
+Avec ces observations, nous allons définir un moyen plus pratique d'écrire une équation différentielle.
+Pour utiliser cette notation, nous allons commencer par isoler la fonction dérivée au plus haut degré, de telle manière qu'il ne reste qu'elle dans sa partie de l'équation (si cela est possible).
+Dans le cas de notre équation non-linéaire, après quelques manipulations algébriques, on obtient :
+</p>
+<math><msqrt>(y'(t))</msqrt> - (|sin(y(t))| - <mfrac><mrow>1</mrow><mrow>3</mrow></mfrac>)*(cos(t)+4) = 42 * |t + 87|</math></br>
+<math><mequi> <msqrt>(y(t)')</msqrt> = (|sin(y(t))| - <mfrac><mrow>1</mrow><mrow>3</mrow></mfrac>)*(cos(t)+4) + 42 * |t + 87|</math></br>
+<math><mequi> y'(t) = <mrow>(|sin(y(t))| - <mfrac><mrow>1</mrow><mrow>3</mrow></mfrac>)*(cos(t)+4) + 42 * |t + 87|</mrow><msup>2</msup></math>
+<p>
+Ici, on est tous d'accord pour dire que le membre de droite est affreux.
+Cependant, <span class="important">nous pouvons écrire ce membre en une fonction, prenant deux paramètres : "t" et "y(t)"</span>.
+Pour l'ensemble de départ, nous allons prendre un ouvert "U" représentant l'ensemble des valeurs que peuvent prendre "t" et "y(t)".
+</p>
+<math>U <mincluded> <mreal> <mtimes> <mreal>, f : U <mto> <mreal>, (t, y(t)) <mto> f(t, y(t))</math></br>
+<math>y'(t) = f(t, y(t))</math>
+<p>
+Cependant, ce type de fonction ne généralise pas le cas des dérivées d'ordre supérieur.
+Avec un procédé parfaitement similaire, on peut isoler la dérivée d'ordre supérieur, et poser le reste comme fonction.
+</p>
+<math>U <mincluded> <mreal> <mtimes> ... <mtimes> <mreal>, f : U <mto> <mreal>, (t, y(t), ..., <mi>y</mi><msup>-1</msup>(t)) <mto> f(t, y(t), ..., <mi>y</mi><msup>n-1</msup>(t))</math></br>
+<math><mi>y</mi><msup>n</msup>(t) = f(t, y(t), ..., <mi>y</mi><msup>n-1</msup>(t))</math>
+<p>
+Via cette fonction, <span class="important">on peut se ramener à une fonction de l'ordre "1"</span>.
+</p>
+<math>V <mincluded> <mreal> <mtimes> ... <mtimes> <mreal>, F : <mreal> <mto> V, t <mto> (y(t), ..., <mi>y</mi><msup>n-1</msup>(t))</math></br>
+<math>F'(t) = (y'(t), ..., <mi>y</mi><msup>n</msup>(t)) = (y'(t), ..., f(t, y(t), ..., <mi>y</mi><msup>n-1</msup>(t))) = (y'(t), ..., f(t, F(t)))</math></br>
+<p>
+On peut définir une nouvelle fonction "G", qui prenant un réel "t" et "n" réels quelconque.
+</p>
+<math>G(t, (v, w, x)) = (w, x, f(t, v, w, x))</math></br>
+<math>(y'(t), ..., f(t, F(t))) = G(t, (y(t), ..., <mi>y</mi><msup>n-1</msup>(t))) = G(t, F(t))</math></br>
+<math>F'(t) = G(t, F(t))</math>
+<p>
+On passe donc à un nouveau ensemble de fonction faisant une équation d'ordre 1 : nous avons donc simplifié l'équation de départ.
+</p>
+<p>
+Nous le verrons un peu plus tard, mais l'ensemble des solutions d'un système différentiel seul n'est pas obligatoirement réduit à une fonction, mais à une énorme quantité de fonctions.
+Il existe cependant un moyen de rendre ces solutions plus précises, grâce aux conditions initiales.
+<span class="important"><definition name="initial_condition-differential_equation"></span>.
+Dans le cas d'une équation d'ordre 1, on peut donc écrire une condition initiale de cette façon :
+</p>
+<math>y(<mi>t</mi><msub>0</msub>) = <mi>y</mi><msub>0</msub></math>
+<p>
+D'ailleurs, ce concept se généralise à tout ordre "n".
+En fait, <span class="important">à l'ordre "n", toutes les dérivées "n - 1" ième doivent avoir une valeur pour que le critère soit valide</span>.
+Par exemple, à l'ordre 3 :
+</p>
+<math>y(<mi>t</mi><msub>0</msub>) = <mi>y</mi><msub>0, 0</msub></math></br>
+<math>y'(<mi>t</mi><msub>0</msub>) = <mi>y</mi><msub>0, 1</msub></math></br>
+<math>y''(<mi>t</mi><msub>0</msub>) = <mi>y</mi><msub>0, 2</msub></math>
+<p>
+Finalement, introduisons le dernier concept nécessaire : les problème de Cauchy.
+<span class="important"><definition name="cauchy_problem"></span>.
+</p>
+
+
+
+<h3>Qu'est-ce que la fonction exponentielle ?</h3>
+<p>
+Pour définir la fonction exponentielle, nous aurons besoin d'une équation différentielle bien précise.
+<span class="important"><definition name="exponential"></span>.
+Il s'agit donc de l'unique fonction qui est sa propre dérivée, et telle qu'elle vaut "1" en "0".
+Pour l'instant, nous la noterons "exp".
+</p>
+<math>exp = exp', exp(0) = 1</math>
+<p>
+Ici, nous avons deux choses à démontrer : la solution de ce système différentiel existe, et est unique.
+Pour cela, nous allons utiliser un outil que nous avons déjà rencontré plus haut : les séries de Taylor.
+En effet, si cette fonction existe, alors elle est égale à sa dérivée, mais aussi à sa dérivée seconde, troisième...
+Elle est donc infiniment dérivable.
+</p>
+<math>exp' = exp <mimp> (exp')' = (exp)' = exp</math>
+<p>
+De plus, en "0", on sait par définition qu'elle vaut "1".
+Donc, <span class="important"> on peut donc connaître la valeur de "exp(0)", "exp'(0)", "exp''(0)"..., qui est donc "1"</span>.
+Ici, on pourrait tenter de constuire une série qui serait égal à la série de Taylor autour de "0" de cette fonction exponentielle, en prenant une série simple, que l'on peut déduire qu'elle serait la série de Taylor de notre fonction autour de "0" :
+</p>
+<math><msum from=0 to=inf unknown=n><mfrac><mrow><mrow>x</mrow><msup>n</msup></mrow><mrow>n!</mrow></mfrac> = <msum from=0 to=inf unknown=n><mfrac><mrow><mi>f</mi><msup>(n)</msup>(0)</mrow><mrow>n!</mrow></mfrac><mrow>(x - 0)</mrow><msup>n</msup> = exp(x)</math>
+<p>
+Or, nous avons besoin d'une dernière vérification : savoir si cette série converge.
+Pour cela, <span class="important">nous allons utiliser la règle de d'Alembert, permettant de prouver directement la convergence de cette série</span>.
+</p>
+<math>L = <mfrac><mrow><mrow>x</mrow><msup>n+1</msup></mrow><mrow>(n+1)!</mrow></mfrac> / <mfrac><mrow><mrow>x</mrow><msup>n</msup></mrow><mrow>n!</mrow></mfrac> = <mfrac><mrow>x</mrow><mrow>n + 1</mrow></mfrac></math></br>
+<math><mlim unknown=n to_infinity=true>L = 0</math>
+<p>
+Cette série converge pour tout "x" dans l'ensemble des réels, et peut représenter la série de Taylor de notre fonction exponentielle.
+Donc, <span class="important">la fonction exponentielle existe, est déterminée par cette série de Taylor (ce qui la rend infiniment dérivable), et est unique</span>.
+On peut d'ailleurs tracer son graphe :
+</p>
+<graphic><background_color white><function expression="exp(x)" color=red></function></graphic>
+<p>
+D'ailleurs parlons d'une valeur particulière de la fonction exponentielle : sa valeur en "1".
+En effet, en "1" la fonction exponentielle vaut une valeur très précise, notée "e" et nommée "constante d'Euler" ou "constante de Napier".
+Par approximation numérique obtenue par la série de Taylor, on peut approximer assez facilement cette valeur :
+</p>
+<math>exp(1) = e <mapprox> 2.718281828459045</math>
+<p>
+Il faut cependant faire attention à quelque chose : <span class="important">cette fonction n'est pas la seule fonction qui est égale à sa propre dérivée</span>.
+En effet, considérons un nombre réel quelconque "r".
+Ici, la fonction réelle qui, à "x" associe le produit de "r" et de l'exponentielle de "x" est aussi une fonction qui est égale à sa propre dérivée.
+Dans ce cas, "f(0)" est donc égal à "r" (et c'est d'ailleurs comme ça que nous allons les caractériser).
+En fait, <span class="important">il existe une unique fonction exponentielle par "r" réel possible</span>.
+L'unicité est ici garantie par le fait que l'exponentielle toute seule est unique.
+</p>
+<math>(r <mtimes> exp(x))' = r <mtimes> exp(x)</math>
+<p>
+Elle a d'ailleurs une propriété fondamentale : <span class="important">l'exponentielle est une fonction qui transforme la somme en produit</span>.
+Cette propriété est démontrée <a href="demo#exponential_transforms_sums_to_products">juste ici</a>.
+Pour être précis, elle respecte cette propriété :
+</p>
+<math>exp(u + v) = exp(u) <mtimes> exp(v)</math>
+<p>
+En fait, cette propriété est exactement la même que la propriété des puissances disant que un nombre exposant "a + b" est égal à ce nombre exposant "a" fois ce nombre exposant "b".
+Et justement, <span class="important">une des propriétés les plus importantes est que la fonction exponentielle en "x" est égale à la valeur en "1" (ce fameux "e") exposant "x"</span>.
+On peut voir ici que cela fonctionne parfaitement pour tout nombre entier naturel :
+</p>
+<math><mforall> n <min> <mnatural>, exp(n) = exp(n <mtimes> 1) = exp(1 + 1 + ... + 1) = exp(1) <mtimes> exp(1) <mtimes> ... <mtimes> exp(1) = <mrow>exp(1)</mrow><msup>n</msup></math>
+<p>
+Cela marche aussi dans le cas de nombres entiers négatifs, où nous obtenons la même propriété permettant d'obtenir des inverse.
+</p>
+<math><mforall> n <min> <mnatural>, exp(-n + n)= exp(0) = 1  = exp(-n) <mtimes> exp(n) <mimp> exp(-n) = <mfrac><mrow>1</mrow><mrow>exp(n)</mrow></mfrac></math></br>
+<math><mforall> d <min> <minteger>, d <mlt> 0 <mimp> <mexists> n <min> <mnatural>, d = -n <mimp> exp(d) = exp(-n) = <mfrac><mrow>1</mrow><mrow>exp(n)</mrow></mfrac> = <mrow>exp(1)</mrow><msup>-n</msup></math>
+<p>
+C'est la même chose pour les nombres rationnels entre "0" et "1" (qui permettent de généraliser à tous les nombres rationnels) :
+</p>
+<math>exp(1) = exp(n * <mfrac><mrow>1</mrow><mrow>n</mrow></mfrac>) = exp(<mfrac><mrow>1</mrow><mrow>n</mrow></mfrac> + ... + <mfrac><mrow>1</mrow><mrow>n</mrow></mfrac>) = <mrow>exp(<mfrac><mrow>1</mrow><mrow>n</mrow></mfrac>)</mrow><msup>n</msup></math></br>
+<math><mequi> exp(<mfrac><mrow>1</mrow><mrow>n</mrow></mfrac>) = <msqrt base=n>exp(1)</msqrt> = <mrow>exp(1)</mrow><msup><mfrac><mrow>1</mrow><mrow>n</mrow></mfrac></msup></math></br>
+<math><mimp> exp(<mfrac><mrow>p</mrow><mrow>n</mrow></mfrac>) = exp(<mfrac><mrow>1</mrow><mrow>n</mrow></mfrac> + ... + <mfrac><mrow>1</mrow><mrow>n</mrow></mfrac>) = <mrow>exp(<mfrac><mrow>1</mrow><mrow>n</mrow></mfrac>)</mrow><msup>p</msup> = <mrow><msqrt base=n>exp(1)</msqrt></mrow><msup>p</msup></math>
+<p>
+En réalité, <span class="important">la définition même des puissances par des nombres qui ne sont pas des nombres entiers naturels (que nous avons introduite plus tôt) provient de cette fonction, et pas l'inverse</span>.
+C'est donc pour ceci que nous pouvons définir que la puissance "x" de "e" est égale à l'exponentielle de "x".
+</p>
+<math>exp(x) = <mi>e</mi><msup>x</msup></math>

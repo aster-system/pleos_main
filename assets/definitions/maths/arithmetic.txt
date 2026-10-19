@@ -27,6 +27,10 @@
     <content>les nombres entiers relatifs représentent une extension de l'ensemble des nombres entiers naturels, rajoutant des nombres inférieur à 0, nommés nombres négatifs</content>
 </new_definition>
 
+<new_definition name="logarithm">
+    <content>le logarithme est une fonction, prenant un nombre "a" quelconque et qui, pour un nombre "b" fixé, y associe le nombre auquel il faut mettre "b" à la puissance pour obtenir "a"</content>
+</new_definition>
+
 <new_definition name="real_number">
     <content>un nombre réel représente un nombre constitué d'une partie entière (représentant un nombre naturel) et d'une partie décimale quelconque (qui peut être infinie et non-périodique)</content>
 </new_definition>

@@ -440,6 +440,7 @@ namespace pleos {
 								final_file_name += std::string(".html");
 
                             	// Add the needed file
+                            	scls::print("PLEOS SAASF Generator", "Parsing sub-subject \"" + sub_subject_name + "\".");
 								std::shared_ptr<scls::Replica_File> needed_file = needed_replica.get()->new_replica_file(final_file_name, needed_pattern.get()->pattern_by_name("main"));
 								needed_file.get()->set_variable_value(std::string("main_title"), title);
 								needed_file.get()->set_variable_value(std::string("main_description"), std::string());
@@ -496,8 +497,10 @@ namespace pleos {
                             }
                         }
                         std::sort(parts.begin(), parts.end(), __saasf_sort_subjects);
+
                         // Add each parts
-                        for(int k = 0;k<static_cast<int>(parts.size());k++) {
+                        for(std::size_t k = 0;k<parts.size();k++) {
+                            scls::print("PLEOS SAASF Generator", "Parsing school \"" + parts.at(k).name + "\".");
                             std::shared_ptr<scls::XML_Text_Base> file_content = scls::xml(window_struct()->balises_shared_ptr(), scls::format_string_break_line(scls::read_file(parts[k].path), std::string(" ")));
                             file_content.get()->replace_balise_by_name("h3", "h4");file_content.get()->replace_balise_by_name("h2", "h3");
                             file_content.get()->replace_balise_by_name("important", "span class=\"important\"");
@@ -551,6 +554,7 @@ namespace pleos {
             needed_file.get()->set_variable_value(std::string("page_title"), std::string("SAASF - ") + __saasf_translate(creation_name, false, true));
 
             // Add the text
+            scls::print("PLEOS SAASF Generator", "Parsing creation \"" + creations.at(i) + "\".");
             std::shared_ptr<scls::XML_Text_Base> file_content = scls::xml(window_struct()->balises_shared_ptr(), scls::format_string_break_line(scls::read_file(assets + std::string("/creations/") + creation_name + std::string(".txt")), std::string(" ")));;
             file_content.get()->replace_balise_by_name("h3", "h4");file_content.get()->replace_balise_by_name("h2", "h3");
             file_content.get()->replace_balise_by_name("important", "span class=\"important\"");
@@ -573,6 +577,6 @@ namespace pleos {
         arrow.get()->fill_triangle(0, arrow.get()->height(), arrow.get()->width(), arrow.get()->height(), arrow.get()->width() / 2, 0, scls::Color(255, 0, 0));
         arrow.get()->save_png(path + std::string("/images/arrow.png"));
 
-        std::cout << "L " << path << std::endl;
+        scls::print(std::string("PLEOS SAASF Generator"), std::string("Generated web-site at path \"") + path + std::string("\"."));
     };
 }

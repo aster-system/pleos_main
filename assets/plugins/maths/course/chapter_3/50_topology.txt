@@ -186,6 +186,10 @@ Un des concepts les plus importants avec les filtres est le concept de base de f
 <span class="important"><definition name="topological_filter-base"></span>.
 </p>
 
+
+
+
+
 <h3>Les propriétés topologiques de base</h3>
 <p>
 Dans pas mal de théorèmes topologiques, une propriété précise revient souvent : la connexité topologique.
@@ -219,6 +223,10 @@ Cependant, pour un espace entier, on parle plus généralement de l'axiome de Bo
 En effet, <span class="important">un espace respecte l'axiome de Borel-Lebesgue si, pour tout recouvrement de cet espace par des ouverts de cet espace, il en existe un sous-recouvrement fini</span>.
 Encore une fois, l'idée est de dire qu'il n'y a jamais besoin d'une quantité infinie d'ouverts pour recouvrir un espace respectant cette propriété.
 </p>
+
+
+
+
 
 <h3>Les axiomes de séparation</h3>
 <p>
@@ -345,7 +353,6 @@ Passons au dernier axiome de séparation : l'axiome "T-5".
 
 
 
-
 <h3>Les espaces métriques</h3>
 <p>
 Un type d'espace très utilisé en topologie est l'espace métrique.
@@ -433,7 +440,8 @@ Généralement, <span class="important">l'espace topologique usuelle formé avec
 <p>
 Ici la question est comment définir cette topologie.
 En fait, <span class="important">la topologie usuelle des nombres réels est une topologie de l'ordre</span>.
-Cependant, <span class="important">on peut prouver que la topologie engendré par la distance fomé par la soustraction est la même que la topologie de l'ordre sur les réels</span>.
+Cependant, <span class="important">on peut prouver que la topologie engendré par la distance fomé par la valeur absolue de la soustraction est la même que la topologie de l'ordre sur les réels</span>.
+La démonstration se trouve <a href="demo#real_metric_topology_is_real_order_topology">juste ici</a>.
 </p>
 <p>
 Un théorème fondamental avec cette topologie est le théorème de Borel-Lebesgue.

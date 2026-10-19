@@ -1035,7 +1035,11 @@ Donc, "h" est continue en "a".
 
 <h2>La topologie</h2>
 
+
+
 <h3>Les propriétés basiques de topologie</h3>
+
+
 
 <h3>Les axiomes de séparation</h3>
 <h4>3.2.1.0</h4>
@@ -1106,3 +1110,45 @@ Si nous faisons l'union de tous ces "W" qui contiennent "x", nous obtenons un ou
 Or, comme tous les "W" sont disjoints de "F", cet ensemble l'est aussi : il s'agit donc de "E \ F".
 Donc, <span class="important">pour tout espace séparé "E" avec une partie "F" compacte, "E \ F" est ouvert, donc "F" est fermé</span>.
 </p>
+
+
+
+<h3>La topologie usuelle des réelles</h3>
+
+<h4 id="real_metric_topology_is_real_order_topology">3.2.2.0</h4>
+<p>
+Démontrons que, dans l'ensemble des réels, la topologie engendré par la distance formée par la valeur absolue de la soustraction est la même que la topologie de l'ordre (ici l'ordre usuel).
+Pour rappel, la topologie engendrée par la distance représentant la valeur absolue de la soustraction est la topologie engendrée par l'ensemble des boules ouvertes réelles via cette distance.
+De plus, la topologie engendrée par l'ordre est la topologie engendrée par l'ensemble de toutes les parties représentant l'ensemble des éléments strictement entre deux autres éléments (ce qui, nous l'avons vue, permet aussi d'engendrer l'ensemble des parties représentant l'ensemble des éléments strictement plus grands / petits qu'un autre).
+Ici, l'ensemble des éléments strictement entre deux autres éléments est donc un intervalle ouvert.
+</p>
+<math>]a, b[</math>
+<p>
+Pour commencer, démontrons que chaque élément de la base pour la topologie métrique est un élément de la base de la topologie de l'ordre.
+Prenons une boule ouverte quelconque de centre un réel "a", et de rayon un réel strictement positif "r".
+</p>
+<math><mforall> a <min> <mreal>, <mforall> r <min> <mreal><msubsup><mrow>+</mrow><mrow>*</mrow></msubsup>, <mball><msub>d</msub>(a, r) = {x <min> <mreal>, d(a, x) <mlt> r}</math>
+<p>
+Substituons "d" par sa vraie valeur :
+</p>
+<math><mball><msub>d</msub>(a, r) = {x <min> <mreal>, |x - a| <mlt> r}</math>
+<p>
+Ici, nous remarquons que l'ensemble que nous avons est une façon de définir une intervalle : cet intervalle se situe dans la topologie de l'ordre.
+</p>
+<math><mball><msub>d</msub>(a, r) = = ]a - r, a + r[</math>
+<p>
+Maintenant, démontrons que chaque élément de la base pour la topologie de l'ordre est un élément de la base de la topologie métrique.
+Prenons un intervalle représentant les éléments entre "a" et "b".
+</p>
+<math><mforall> a, b <min> <mreal>, ]a, b[ = {x <min> <mreal>, x <mgt> a <mand> x <mlt> b}</math>
+<p>
+Ici, on voit bien que la distance de "a" avec l'élément "au milieu" entre "a" et "b" est donc la moitié de la distance entre "a" et "b".
+C'est la même chose : on voit bien que la distance de "b" avec l'élément "au milieu" de "a" et "b" est donc la moitié de la distance entre "a" et "b".
+</p>
+<math>d(a, <mfrac><mrow>a + b</mrow><mrow>2</mrow></mfrac>) = d(b, <mfrac><mrow>a + b</mrow><mrow>2</mrow></mfrac>) = <mfrac><mrow>a + b</mrow><mrow>2</mrow></mfrac></math>
+<p>
+Un élément entre "a" et "b" est donc plus proche du mileu entre "a" et "b" que "a" l'est de ce milieu (même chose pour "b").
+On peut donc représenter cet ensemble comme étant l'ensemble des éléments strictement plus proche de ce milieu que la moitié de la distance entre "a" et "b".
+Or, c'est exactement la définition d'une boule ouverte : tout intervalle ouvert peut donc être représenté comme une boule ouverte, qui est donc dans la topologie métrique.
+</p>
+<math>]a, b[ = <mball><msub>d</msub>(<mfrac><mrow>a + b</mrow><mrow>2</mrow></mfrac>, <mfrac><mrow>|a - b|</mrow><mrow>2</mrow></mfrac>)</math>

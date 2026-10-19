@@ -76,6 +76,28 @@ Grâce à ce résultat, <span class="important">on peut lier géométrie et alg�
 Ce résultat nous donne une façon précise de définir certains types précis de transformation géométrique, grâce à de l'algèbre.
 </p>
 <p>
+Un exemple assez bizarre d'espace vectoriel est l'espace fonctionnel.
+Pour rappel, <span class="important"><definition name="function_space"></span>.
+Avec cette simple définition, un espace fonctionnel n'est pas obligatoirement un espace vectoriel.
+Or, <span class="important">si l'ensemble d'arrivée représente un espace vectoriel "F" sur un corps "K", l'espace fonctionnel est lui aussi un espace vectoriel sur "K"</span>.
+Pour cela, nous devons munir cet espace de lois assez similaires aux lois de "F" :
+</p>
+<math>f : X <mto> F, x <mto> f(x)</math></br>
+<math>g : X <mto> F, x <mto> g(x)</math></br>
+<math>(f + g)(x) = f(x) + g(x)</math></br>
+<math><mforall> a <min> F, (a * f)(x) = a * f(x)</math>
+<p>
+Dans tous les cas, on remarque que l'espace d'arrivée des fonctions obtenues par somme et par multiplication par un scalaire est "F", et donc que ces applications représentent de nouvelles applications allant de "X" vers "F".
+Donc, on constate la stabilité de cet ensemble par l'addition et la multiplication par un scalaire (elle sont elles aussi des applications allant de "X" vers "F").
+De plus, on constate aussi que cet ensemble a les mêmes propriétés que l'espace d'arrivée (et donc, cet ensemble a les mêmes propriétés qu'un espace vectoriel).
+Donc, il s'agit bel et bien d'un espace vectoriel.
+</p>
+<p>
+Avec ce concept, on peut en introduire un autre qu'il lui est directement lié : les vecteurs.
+<span class="important"><definition name="vector_space-vector"></span>.
+Par exemple, dans l'espace vectoriel formé par "R²" (comme défini plus haut), "(4, 8)" est un vecteur.
+</p>
+<p>
 Comme pour beaucoup de structures algébriques de ce genre, si il existe un "espace vectoriel", il existe la notion de "sous-espace vectoriel".
 <span class="important"><definition name="sub_vector_space"></span>.
 Un exemple très simple : l'ensemble des vecteurs de la forme "(a, 0)" avec "a" un nombre réel quelconque de "R²" forme un sous-espace vectoriel de "R²".
@@ -83,11 +105,10 @@ En effet, additionner deux éléments de ce genre "(b, 0)" et "(c, 0)" revient �
 Graphiquement parlant, ce sous-espace vectoriel de "R²" représente... la droite des abscisses.
 </p>
 <graphic><background_color white><line name=type_number() x_1=-10 y_1=0 x_2=10 y_2=0></graphic>
-<p>
-Avec ce concept, on peut en introduire un autre qu'il lui est directement lié : les vecteurs.
-<span class="important"><definition name="vector_space-vector"></span>.
-Par exemple, dans l'espace vectoriel formé par "R²" (comme défini plus haut), "(4, 8)" est un vecteur.
-</p>
+
+
+
+<h3>Les combinaisons linéaires</h3>
 <p>
 Les espaces vectoriels possèdent aussi des propriétés permettant de définir un type de formule précis : les combinaisons linéaires.
 <span class="important"><definition name="linear_combination"></span>.
@@ -145,7 +166,7 @@ Dans l'exemple pris ici, on démontre que l'ensemble des vecteurs obtenus ne rep
 <math><mequi> a + -3 * b = x <mand> y = 0 <mequi> (x, y) /= (1, 1)</math>
 <p>
 Dans tous les cas, nous formons un ensemble constitué d'une certaine quantité de vecteurs (ici 2), qui permettent d'obtenir des vecteurs possibles dans l'espace.
-Généralement, pour parler d'ensemble de vecteurs, on utilise le terme de famille, présenté au chapitre.
+Généralement, pour parler d'ensemble de vecteurs, on utilise le terme de famille, présenté au chapitre 1.
 Donc, nous définissons des ensembles de vecteurs, que nous nommons des familles de vecteurs, tel que leur combinaison linéaire puisse représenter des espaces quelconques.
 </p>
 <p>
@@ -167,6 +188,10 @@ Finalement, on peut facilement prouver la stabilité par la multiplication par u
 <p>
 Les deux stabilités demandées sont bel et bien respectées : <span class="important">tout ensemble formé des vecteurs calculables avec une combinaison linéaire dans un espace vectoriel donne un sous-espace vectoriel de ce même ensemble</span>.
 </p>
+
+
+
+<h3>Les sous-espaces vectoriels engendrés</h3>
 <p>
 Avec ceci, nous pouvons introduire un concept primordial en algèbre linéaire : les sous-espaces vectoriels engendrés.
 <span class="important"><definition name="sub_vector_space-span"></span>.
@@ -275,6 +300,10 @@ Donc, <span class="important">l'ensemble des coordonnées possibles dans une bas
 De plus, <span class="important">on peut en déduire que l'ensemble des coordonnées dans une base forme un espace vectoriel sur "K" lui aussi</span>.
 Dans le cas où "d" est fini, la démonstration est immédiate : la somme des coordonnées de deux vecteurs donne les coordonnées du vecteur représentant la somme des vecteurs (stabilité de la somme), et multiplier les coordonnées par un scalaire donne les coordonnées du vecteur multiplié par ce même scalaire.
 </p>
+
+
+
+<h3>Les sommes directes et les sous-espaces supplémentaires</h3>
 <p>
 Il existe d'ailleurs une opération possible avec des sous-espaces vectoriels : la somme directe.
 Cet opération est inspirée de la somme des semi-groupes (qui est d'ailleurs possible ici, puisque les espaces vectoriels sont aussi des semi-groupes).
@@ -295,22 +324,11 @@ Comme le couple que nous voulons être unique représente une expression du vect
 <math>(x, y) = (a, 0) + (0, c) <mimp> x = a <mand> y = c</math></br>
 <math>(7, 4) = (7, 0) + (0, 4)</math>
 <p>
-Un exemple assez bizarre d'espace vectoriel est l'espace fonctionnel.
-Pour rappel, <span class="important"><definition name="function_space"></span>.
-Avec cette simple définition, un espace fonctionnel n'est pas obligatoirement un espace vectoriel.
-Or, <span class="important">si l'ensemble d'arrivée représente un espace vectoriel "F" sur un corps "K", l'espace fonctionnel est lui aussi un espace vectoriel sur "K"</span>.
-Pour cela, nous devons munir cet espace de lois assez similaires aux lois de "F" :
+Parlons d'un cas intéressant d'espace vectoriels utilisés en somme directe : les sous-espaces supplémentaires.
+<span class="important"><definition name="sub_vector_space-supplementary"></span>.
 </p>
-<math>f : X <mto> F, x <mto> f(x)</math></br>
-<math>g : X <mto> F, x <mto> g(x)</math></br>
-<math>(f + g)(x) = f(x) + g(x)</math></br>
-<math><mforall> a <min> F, (a * f)(x) = a * f(x)</math>
-<p>
-Dans tous les cas, on remarque que l'espace d'arrivée des fonctions obtenues par somme et par multiplication par un scalaire est "F", et donc que ces applications représentent de nouvelles applications allant de "X" vers "F".
-Donc, on constate la stabilité de cet ensemble par l'addition et la multiplication par un scalaire (elle sont elles aussi des applications allant de "X" vers "F").
-De plus, on constate aussi que cet ensemble a les mêmes propriétés que l'espace d'arrivée (et donc, cet ensemble a les mêmes propriétés qu'un espace vectoriel).
-Donc, il s'agit bel et bien d'un espace vectoriel.
-</p>
+
+
 
 <h3>Les espaces vectoriels quotients</h3>
 <p>
@@ -346,6 +364,17 @@ Les deux lois marchent correctement : <span class="important">"E/~" est un espac
 Généralement, cette espace vectoriel est plutôt noté "E/F".
 </p>
 <math>E/~ = E/F</math>
+<p>
+D'ailleurs, <span class="important">on peut définir une application allant d'un espace vectoriel "E" vers "E/F", liant chaque "u" de "E" avec "[u]", qui est une application linéaire surjective</span>.
+La linéarité et la surjectivité de cette application sont immédiates.
+</p>
+<math>f : E <mto> E/F, u <mmapsto> [u]</math></br>
+<math><mforall> u, v <min> E, f(u + v) = [u + v] = [u] + [v] = f(u) + f(v)</math></br>
+<math><mforall> a <min> K, <mforall> u <min> E, f(a * u) = [a * u] = a * [u] = a * f(u)</math>
+<p>
+Cette application permet de déduire un théorème très important : le théorème de factorisation.
+<span class="important"><definition name="vector_space_quotient-factorization"></span>.
+</p>
 
 
 
@@ -395,7 +424,14 @@ La façon la plus simple de résoudre ce genre d'équation reste la substitution
 
 
 
-<h3>Les applications linéaires</h3>
+
+
+
+<h2>Les applications linéaires</h2>
+
+
+
+<h3>Des applications entre espaces vectoriels</h3>
 <p>
 Les applications linéaires sont un objet élémentaire dans l'étude des espaces vectoriels.
 De manière un peu complexe, <span class="important"><definition name="linear_application-morphism"></span>.
@@ -438,11 +474,11 @@ Prenons un exemple très simple : l'application allant de "R²" vers "R²", en t
 Cette application est parfaitement linéaire, et on peut facilement le démontrer.
 Déjà, la première propriété est respectée, et l'on peut le vérifier de manière algébrique.
 </p>
-<math><math><mforall>a, b <min> <mi>R</mi><msup>2</msup>, <mexists>x, x', y, y' <min> R, a = (x, y), b = (x', y'), f(a + b) = f(x + x', y + y') = 2 * (x + x', y + y') = 2 * (x, y) + 2 * (x', y') = f(a) + f(b)</math>
+<math><mforall>a, b <min> <mi>R</mi><msup>2</msup>, <mexists>x, x', y, y' <min> R, a = (x, y), b = (x', y'), f(a + b) = f(x + x', y + y') = 2 * (x + x', y + y') = 2 * (x, y) + 2 * (x', y') = f(a) + f(b)</math>
 <p>
 La deuxième propriété est aussi vraie, et ce n'est pas si difficile que ça à démontrer non plus.
 </p>
-<math><math><mforall>a, b <min> <mi>R</mi><msup>2</msup>, <mexists>x, y, c <min> R, a = (x, y), f(c * a) = f(c * x, c * y) = 2 * (c * x, c * y) = c * 2 * (x, y) = c * f(a)</math>
+<math><mforall>a, b <min> <mi>R</mi><msup>2</msup>, <mexists>x, y, c <min> R, a = (x, y), f(c * a) = f(c * x, c * y) = 2 * (c * x, c * y) = c * 2 * (x, y) = c * f(a)</math>
 <p>
 Finalement, "f(0, 0) = (0, 0)", <span class="important">donc cette application est belle est bien linéaire</span>.
 On peut même généraliser ce résultat.
@@ -520,7 +556,7 @@ Pour un vecteur "u" où les coefficients de ces coordonnées s'écrivent "u indi
 </p>
 <math>f : E <mto> K, u <mto> <msum from=1 to=n unknown=k><mi>u</mi><msub>n</msub></math></br>
 <math>f(u + v) = <msum from=1 to=n unknown=k>(<mi>u</mi><msub>n</msub> + <mi>v</mi><msub>n</msub>) = <msum from=1 to=n unknown=k><mi>u</mi><msub>n</msub> + <msum from=1 to=n unknown=k><mi>v</mi><msub>n</msub> = f(u) + f(v)</math></br>
-<math>f(a * u) = <msum from=1 to=n unknown=k>(a * <mi>u</mi><msub>n</msub>) = <math>f(u) = a * <msum from=1 to=n unknown=k><mi>u</mi><msub>n</msub> = a * f(u)</math></br>
+<math>f(a * u) = <msum from=1 to=n unknown=k>(a * <mi>u</mi><msub>n</msub>) = f(u) = a * <msum from=1 to=n unknown=k><mi>u</mi><msub>n</msub> = a * f(u)</math></br>
 <p>
 Il existe d'ailleurs un espace spécial engendré par les formes linéaires : l'espace dual.
 <span class="important"><definition name="dual_space"></span>.
@@ -770,7 +806,7 @@ Via notre formule vue plus haut, le scalaire obtensible via l'application est un
 Par les propriétés de multilinéarité, on peut vite déduire que additionner deux scalaires revient à additionner les formes multilinéaires qu'ils représentent, et multiplier un scalaire par un scalaire revient à multiplier la forme multilinéaire qu'il représente.
 Donc, <span class="important">l'ensemble des formes n-linéaires alternées sur un espace vectoriel de dimension "n" est isomorphe à l'espace vectoriel "F" de l'ensemble "K" sur le corps "K"</span>.
 </p>
-<math><mi>A</mi><msub>n</msub>(E, K) <misomorph> F<math>
+<math><mi>A</mi><msub>n</msub>(E, K) <misomorph> F</math>
 <p>
 Prenons le choix d'une base fixe "e".
 Parmi toutes ces formes, l'une d'elle est très intéressante : le déterminant.
@@ -782,7 +818,7 @@ Généralement, il est noté "det indice e".
 Généralement, <span class="important">il est aussi courant de trouver une notation utilisant une sorte de tableau (un peu comme les matrices)</span>.
 Dans le cas de vecteur de R exposant 3, on peut donc voir :
 </p>
-<math>det(u, v, w) = <math>A = <mo>|</mo><mtable><mtr><mtd><mi>x</mi></mtd><mtd><mi>x'</mi></mtd><mtd><mi>x''</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd><mtd><mi>y'</mi></mtd><mtd><mi>y''</mi></mtd></mtr><mtr><mtd><mi>z</mi></mtd><mtd><mi>z'</mi></mtd><mtd><mi>z''</mi></mtd></mtr></mtable><mo>|</mo></mrow></math>
+<math>det(u, v, w) = <mo>|</mo><mtable><mtr><mtd><mi>x</mi></mtd><mtd><mi>x'</mi></mtd><mtd><mi>x''</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd><mtd><mi>y'</mi></mtd><mtd><mi>y''</mi></mtd></mtr><mtr><mtd><mi>z</mi></mtd><mtd><mi>z'</mi></mtd><mtd><mi>z''</mi></mtd></mtr></mtable><mo>|</mo></mrow></math>
 
 
 

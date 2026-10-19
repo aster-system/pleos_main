@@ -62,7 +62,7 @@ On peut aussi utiliser cette formule pour en déduire une limite avec le taux d'
 Finalement, on peut aussi avoir une forme utilisant une fonction "alternative" nommée "r" tendant vers "0" quand son paramètre "x" tend vers "0" :
 </p>
 <math>r : R <mto> R, x <mto> r(x)</math></br>
-<math>r(x) = <mfrac><mi>f(a + x) - f(a)</mi><mi>x</mi></mfrac> - <mlim unknown=h value=0><mfrac><mi>f(a + h) - f(a)</mi><mi>h</mi></mfrac> <mand><mlim unknown=x value=0> r(x) = 0</math>
+<math>r(x) = <mfrac><mi>f(a + x) - f(a)</mi><mi>x</mi></mfrac> - <mlim unknown=h value=0><mfrac><mi>f(a + h) - f(a)</mi><mi>h</mi></mfrac> = <mfrac><mi>f(a + x) - f(a)</mi><mi>x</mi></mfrac> - s <mand><mlim unknown=x value=0> r(x) = 0</math></br>
 <p>
 Ici, notre valeur "s" est donc une approximation de comment "f" croît en "a" (en sachant que les 3 formules sont équivalentes).
 De plus, <span class="important">"s" est nommé le nombre dérivé de "f" en "a", et représente la forme "locale" de la dérivation</span>.
@@ -153,6 +153,12 @@ Donc, <span class="important">la dérivée de la fonction cosinus est la fonctio
 
 
 
+
+
+
+
+
+
 <h3>Quelques théorèmes pratiques</h3>
 <p>
 Avec les dérivées, nous pouvons énumérer beaucoup de théorèmes très pratiques.
@@ -189,12 +195,31 @@ Ce théorème est un peu moins évident, mais sa démonstration est assez facile
 Il peut se noter ainsi :
 </p>
 <math>a, b <min> R, a <mlt> b, <mforall> d <min> ]a, b[, <mexists> f'(d) </math></br>
-<math><mexists> c <min> ]a, b[, <mfrac><mi>f(b) - f(a)</mi><mi>b - a</mi></mfrac> = f'(c)</math>
+<math><mexists> c <min> ]a, b[, <mfrac><mi>f(b) - f(a)</mi><mi>b - a</mi></mfrac> = f'(c)</math></br>
+<math><mequi> <mexists> c <min> ]a, b[, f(b) - f(a) = f'(c) * (b - a)</math>
 <p>
 Graphiquement parlant, ce théorème stipule qu'il existe un point entre "a" et "b" tel que la tengante à la courbe de la fonction en ce point est parallèle à la droite formée par "a" et "b".
 Reprenons le cas de notre fonction "x²", avec "a = -1" et "b = 2" : le point que nous cherchons existe (ici, la valeur de la dérivée cherchée est de "1"), et se situe en "1/2".
 </p>
 <graphic><background_color white><function expression="x*x"></function><function expression="x+2"></function><function expression="-1/4+x"></function></graphic>
+<p>
+Il existe une version un peu différente de ce théorème, que l'on appelle généralement le théorème des accroissements finis généralisé.
+En fait, <span class="important"><definition name="mean_value_theorem-generalized"></span>.
+Imagineons que nous avons deux fonctions "f" et "g" continues sur "[a, b]" (avec "a" et "b" des réels quelconques) et dérivables sur "]a, b[".
+Ce théorème stipule ceci :
+</p>
+<math><mexists> c <min> ]a, b[, (f(b) - f(a)) * g'(c) = (g(b) - g(a)) * f'(c)</math>
+<p>
+La démonstration de ce théorème est présente <a href="demo#mean_value_theorem_generalized">juste ici</a>.
+Si "g'" n'est jamais égale à 0, il est possible de le reformuler de manière assez pratique (généralement, cette reformulation se nomme théorème de la moyenne de Cauchy) :
+</p>
+<math><mexists> c <min> ]a, b[, <mfrac><mrow>f(b) - f(a)</mrow><mrow>g(b) - g(a)</mrow></mfrac> = <mfrac><mrow>f'(c)</mrow><mrow>g'(c)</mrow></mfrac></math>
+
+
+
+
+
+
 
 
 
@@ -248,11 +273,23 @@ Sa démonstration (<a href="demo#inverse_derivation_rule">présente juste ici</a
 
 
 
+
+
+
+
+
+
 <h3>Les primitives</h3>
 <p>
 Mathématiquement parlant, le concept de primitive d'une fonction représente la réciproque du concept de dérivée.
 En effet, <span class="important"><definition name="primitive"></span>.
 </p>
+
+
+
+
+
+
 
 
 
@@ -432,4 +469,112 @@ Chose très importante : <span class="important">les valeurs nommées derrière 
 Or, <span class="important">la formule la plus simple de calcul de ces valeurs utilise des dérivés, et c'est pourquoi nous les avons utilisés pour notre "sin"</span>.
 Dans notre exemple, "a = 0" et la valeur "0" de "b" était "sin(a)", la valeur "1" de "b" était "sin'(a)", et nous nous sommes arrêté là (ce qui représente l'ordre "1" du développement), sans oublier le petit "o", bien sur.
 <span class="important">Il est à noter que cette approximation n'existe pas toujours, et que pour certaines fonctions, il n'existe pas de formule valide permettant d'approcher une fonction en un certain point</span>.
+</p>
+<p>
+Nous pouvons modifier cette formule, en donnant une expression plus satisfaisante pour notre reste.
+En effet, reprenons la formule à l'ordre "1" :
+</p>
+<math>f(x) = f(a) + f'(a) + o(x - a)</math>
+<p>
+Pour rappel, ce "o(x - a)" peut s'écrire comme ceci :
+</p>
+<math>o(x - a) = R(x) * (x - a)</math></br>
+<math>R(x) = f(x) - f(a) - f'(a) * (x - a)</math></br>
+<p>
+Pour des raisons de simplicité, on va restreindre cette fonction à l'intervalle "[a, x]", et appeler sa variable "t".
+</p>
+<math><mforall> t <min> [a, b], R(t) = f(t) - f(a) - f'(a) * (t - a)</math></br>
+<p>
+Ici, on va définir une nouvelle fonction nommé "g", aussi définie sur cet intervalle, qui va tout simplement valoir "(t - a)²".
+</p>
+<math>g : [a, b] <mto> <mreal>, g(t) = <mrow>(t - a)</mrow><msup>2</msup></math></br>
+<p>
+On peut facilement voir que "R(a) = 0" et "g(a) = 0".
+</p>
+<math>R(a) = f(a) - f(a) - f'(a) * (a - a) = 0</math></br>
+<math>g(a) = <mrow>(t - a)</mrow><msup>2</msup> = 0</math></br>
+<p>
+Dérivons la fonction de "R" (en gardons en tête que l'on dérive par "t", "f(a)" et "f'(a)" sont donc constants) :
+</p>
+<math>R'(t) = f'(t) - f'(a)</math>
+<p>
+Ensuite, dérivons la fonction de "g" (en gardons en tête que l'on dérive par "t", "a" est donc constant) :
+</p>
+<math>g'(t) = 2 * t - 2 * a = 2 * (t - a)</math>
+<p>
+On peut remarquer ici que "g'(t)" s'annule quand "t = a", ce qui n'est pas le cas dans "]a, x]".
+On peut donc utiliser le théorème de la moyenne de Cauchy :
+</p>
+<math><mexists> c <min> ]a, x[, <mfrac><mrow>R(x) - R(a)</mrow><mrow>g(x) - g(a)</mrow></mfrac> = <mfrac><mrow>R(x)</mrow><mrow>g(x)</mrow></mfrac> = <mfrac><mrow>R'(c)</mrow><mrow>g'(c)</mrow></mfrac> = <mfrac><mrow>f'(c) - f'(a)</mrow><mrow>2 * (c - a)</mrow></mfrac></math></br>
+<p>
+Revenons sur la fonction "f", et plus précisément "f'".
+Nous savons qu'elle est continue sur "[a, c]" et dérivable sur "]a, c[".
+On peut donc utiliser le théorème des accroissements finis sur cette fonction.
+</p>
+<math><mexists> d <min> ]a, c[, <mfrac><mrow>f'(c) - f'(a)</mrow><mrow>c - a</mrow></mfrac> = f''(d) <mequi> f'(c) - f'(a) = f''(d) * (c - a)</math></br>
+<p>
+Substituons dans notre formule obtenue plus haut :
+</p>
+<math><mfrac><mrow>f'(c) - f'(a)</mrow><mrow>2 * (c - a)</mrow></mfrac> = <mfrac><mrow>f''(d) * (c - a)</mrow><mrow>2 * (c - a)</mrow></mfrac> = <mfrac><mrow>f''(d)</mrow><mrow>2</mrow></mfrac></math></br>
+<p>
+Faisons une dernière substitution :
+</p>
+<math><mfrac><mrow>f''(d)</mrow><mrow>2</mrow></mfrac> = <mfrac><mrow>R(x)</mrow><mrow>g(x)</mrow></mfrac> <mequi> <mfrac><mrow>f''(d)</mrow><mrow>2</mrow></mfrac>g(x) = R(x)</math>
+<p>
+Ici, <span class="important">nous avons trouvé un moyen d'écrire le reste d'un développement limité à l'ordre 1 plus proprement</span>.
+Mantenant, essayons de généraliser ce résultat à n'importe quel ordre par récurrence.
+Par définition, à ordre "n + 1", on peut noter "R indice n + 1" de cette façon :
+</p>
+<math><mi>R</mi><msub>n + 1</msub>(x) = f(x) - <msum unknown=k to=n+1><mfrac><mrow><mi>f</mi><msup>(k)</msup><mi>(a)</mi></mrow><mi>k!</mi></mfrac> * <mi>(x - a)</mi><msup>k</msup></math>
+
+<p>
+Pour des raisons de simplicité, on va restreindre cette fonction à l'intervalle "[a, x]", et appeler sa variable "t".
+</p>
+<math><mforall> t <min> [a, b], <mi>R</mi><msub>n + 1</msub>(t) = f(t) - <msum unknown=k to=n+1><mfrac><mrow><mi>f</mi><msup>(k)</msup><mi>(a)</mi></mrow><mi>k!</mi></mfrac> * <mi>(t - a)</mi><msup>k</msup></math></br>
+<p>
+Ici, on va définir une nouvelle fonction nommé "g", aussi définie sur cet intervalle, qui va tout simplement valoir "(t - a) exposant n + 1".
+</p>
+<math>g : [a, b] <mto> <mreal>, g(t) = <mrow>(t - a)</mrow><msup>n + 2</msup></math></br>
+<p>
+On peut facilement voir que "R(a) = 0" et "g(a) = 0".
+</p>
+<math>R(a) = f(a) - <msum unknown=k to=n+1><mfrac><mrow><mi>f</mi><msup>(k)</msup><mi>(a)</mi></mrow><mi>k!</mi></mfrac> * <mi>(a - a)</mi><msup>k</msup> = 0</math></br>
+<math>g(a) = <mrow>(t - a)</mrow><msup>n + 1</msup> = 0</math></br>
+<p>
+Dérivons la fonction de "R" (en gardons en tête que l'on dérive par "t", tous les "f(a)", "f'(a)", "f''(a)"... sont donc constants) :
+</p>
+<math>R'(t) = <msum unknown=k from=1 to=n+1><mfrac><mrow><mi>f</mi><msup>(k)</msup><mi>(a)</mi></mrow><mi>(k-1)!</mi></mfrac> * <mi>(t - a)</mi><msup>(k-1)</msup></math>
+<p>
+Ensuite, dérivons la fonction de "g" (en gardons en tête que l'on dérive par "t", "a" est donc constant) :
+</p>
+<math>g'(t) = (n + 2) * <mrow>(t - a)</mrow><msup>n + 1</msup></math>
+<p>
+On peut remarquer ici que "g'(t)" s'annule quand "t = a", ce qui n'est pas le cas dans "]a, x]".
+On peut donc utiliser le théorème de la moyenne de Cauchy :
+</p>
+<math><mexists> c <min> ]a, x[, <mfrac><mrow>R(x) - R(a)</mrow><mrow>g(x) - g(a)</mrow></mfrac> = <mfrac><mrow>R(x)</mrow><mrow>g(x)</mrow></mfrac> = <mfrac><mrow>R'(c)</mrow><mrow>g'(c)</mrow></mfrac> = <mfrac><mrow><msum unknown=k from=1 to=n+1><mfrac><mrow><mi>f</mi><msup>(k)</msup><mi>(a)</mi></mrow><mi>(k-1)!</mi></mfrac> * <mi>(c - a)</mi><msup>(k-1)</msup></mrow><mrow>(n + 2) * <mrow>(c - a)</mrow><msup>n + 1</msup></mrow></mfrac></math></br>
+<p>
+Revenons sur la fonction "f", et plus précisément "f'".
+Nous savons qu'elle est continue sur "[a, c]" et dérivable sur "]a, c[".
+On peut donc utiliser le théorème des accroissements finis sur cette fonction.
+</p>
+<math><mexists> d <min> ]a, c[, <mfrac><mrow>f'(c) - f'(a)</mrow><mrow>c - a</mrow></mfrac> = f''(d) <mequi> f'(c) - f'(a) = f''(d) * (c - a)</math></br>
+<p>
+Substituons dans notre formule obtenue plus haut :
+</p>
+<math><mfrac><mrow>f'(c) - f'(a)</mrow><mrow>2 * (c - a)</mrow></mfrac> = <mfrac><mrow>f''(d) * (c - a)</mrow><mrow>2 * (c - a)</mrow></mfrac> = <mfrac><mrow>f''(d)</mrow><mrow>2</mrow></mfrac></math></br>
+<p>
+Faisons une dernière substitution :
+</p>
+<math><mfrac><mrow>f''(d)</mrow><mrow>2</mrow></mfrac> = <mfrac><mrow>R(x)</mrow><mrow>g(x)</mrow></mfrac> <mequi> <mfrac><mrow>f''(d)</mrow><mrow>2</mrow></mfrac>g(x) = R(x)</math>
+
+
+
+
+
+
+<h3>Les séries de Taylor et les fonctions analytiques</h3>
+<p>
+Reprenons tout ce que nous avons fait sur les développements limités, et tentons d'en obtenir un résultat encore plus puissant.
+
 </p>

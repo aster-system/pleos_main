@@ -1092,20 +1092,20 @@ Cette propriété peut être n'importe quoi, et être de n'importe quelle nature
 Par exemple, on peut avoir une propriété "parité" sur "N", qui associe "0" aux éléments impairs et "1" aux éléments pairs, ou même une propriété chiffre des dizaines sur "N", qui associe le chiffre des dizaines à chaque nombre de "N".
 Ici, en considérant que nous notons le moyen d'obtenir la propriété de l'objet "x" comme "P(x)", et la relation "~" qui lie tous les objets de même valeur par cette propriété :
 </p>
-<math><mforall> x, y <min> E, P(x) = P(y) <mequi> x ~ y<math>
+<math><mforall> x, y <min> E, P(x) = P(y) <mequi> x ~ y</math>
 <p>
 Ici, la réflexivité, la symétrie et la transitivité sont immédiate, et proviennent de la relation d'égalité (déjà vue plus haut).
 </p>
-<math><mforall> x <min> E, P(x) = P(x) <mimp> x ~ x<math></br>
-<math><mforall> x, y <min> E, x ~ y <mequi> P(x) = P(y) <mimp> P(y) = P(x) <mequi> y ~ x<math></br>
-<math><mforall> x, y, z <min> E, x ~ y <mand> y ~ z <mequi> P(x) = P(y) <mand> P(y) = P(z) <mimp> P(x) = P(z) <mimp> x ~ z<math></br>
+<math><mforall> x <min> E, P(x) = P(x) <mimp> x ~ x</math></br>
+<math><mforall> x, y <min> E, x ~ y <mequi> P(x) = P(y) <mimp> P(y) = P(x) <mequi> y ~ x</math></br>
+<math><mforall> x, y, z <min> E, x ~ y <mand> y ~ z <mequi> P(x) = P(y) <mand> P(y) = P(z) <mimp> P(x) = P(z) <mimp> x ~ z</math></br>
 <p>
 Nous verrons plus tard (dans la partie sur les applications) une façon plus rigoureuse d'écrire tout ceci.
 Voici un exemple de propriété sur un ensemble "E" (avec seulement des ensembles dedans), se lisant comme "pour tout x appartenant à un ensemble E, P(x) est vraie si l'ensemble vide appartient à x, et fausse sinon".
 Nous noterons "~" la relation d'équivalence correspondant à cette propriété.
 </p>
-<math><mforall> x <min> E, (P(x) = 1 <mequi> <mempty> <min> x) <mand> (P(x) = 0 <mequi> <mempty> <mnotin> x)<math></br>
-<math><mforall> x, y <min> E, x ~ y <mequi> P(x) = P(y)<math>
+<math><mforall> x <min> E, (P(x) = 1 <mequi> <mempty> <min> x) <mand> (P(x) = 0 <mequi> <mempty> <mnotin> x)</math></br>
+<math><mforall> x, y <min> E, x ~ y <mequi> P(x) = P(y)</math>
 <p>
 Définissons maintenant un "E" précis :
 </p>
@@ -1216,6 +1216,7 @@ Par exemple, pour un ensemble "E" quotienté par une relation d'équivalence "~"
 <p>
 L'application est probablement un des objets les plus utilisés en mathématiques (tellement que, sans les nommer, on en a déjà rencontré plusieurs).
 En mathématiques, <span class="important"><definition name="application"></span>.
+Il est aussi assez courant de voir l'ensemble de départ nommé le "domaine" de l'application.
 D'un point de vue compréhension, il est aussi possible de dire qu'une application transforme / modifie chaque élément de son ensemble de départ en un unique élément de l'ensemble d'arrivée.
 Une chose très importante : <span class="important">tous les ensembles de l'ensemble de départ doivent être liés à exactement un élément de l'ensemble d'arrivée</span>.
 À l'inverse, il n'est pas obligatoire que tous les éléments de l'ensemble d'arrivée soit lié à un élément de l'ensemble de départ, ni qu'il ne soit lié qu'à un seul objet (il peut être lié à 2 objets, 3 objets, une infinité...).
@@ -1223,7 +1224,7 @@ D'un point de vue rigoureux, <span class="important"><definition name="applicati
 Dans certains exercices, vous pourrez trouver une question du type "vérifiez qu'une application est bien définie" : cela revient à justifier que l'objet mathématique donné respecte toutes les propriétés d'une application.
 Pour une application quelconque "f" ayant comme ensemble de départ "A" vers l'ensemble d'arrivée "B", avec comme sous-ensemble du produit cartésien (représentant la relation) "G", on note :
 </p>
-<math>f = (A, B, G), G <min> A <mtimes> B</math></br>
+<math>f = (A, B, G), G <mincluded> A <mtimes> B</math></br>
 <math><mforall> x <min> A, <mexists>! y <min> B, (x, y) <min> G</msub></math>
 <p>
 On peut aussi formuler l'unicité de cette façon :
@@ -1251,7 +1252,33 @@ Les images des éléments de "A" seront ici tirés aléatoirement (ou plutot, il
 <math>A = {1, 2, 3, 4, 5}, B = {1, 2, 3}, f : A <mto> B</math></br>
 <math>f(1) = 1, f(2) = 1, f(3) = 2, f(4) = 2, f(5) = 1</math>
 <p>
-Ici, <span class="important">cette définition autorise l'existence d'une application où le triplet représente l'ensemblei vide, un ensemble quelconque, et encore une fois l'ensemble vide</span>.
+Généralement, pour représenter ce genre de concept, on peut utiliser des diagrammes sagittaux (qui sont d'ailleurs toujours constitués de deux cercles pour les deux ensembles, mêmes si ils sont le même ensemble).
+Voici la représentation sous forme de digramme sagittal de notre exemple :
+</p>
+<graphic>
+<background_color white>
+<base draw=0>
+
+<circle x=-2 y=0 radius_x=3/2 radius_y=4>
+<text x=-2 y=2 content="1"></text>
+<text x=-2 y=1 content="2"></text>
+<text x=-2 y=0 content="3"></text>
+<text x=-2 y=-1 content="4"></text>
+<text x=-2 y=-2 content="5"></text>
+
+<circle x=2 y=0 radius_x=3/2 radius_y=4>
+<text x=2 y=1 content="1"></text>
+<text x=2 y=0 content="2"></text>
+<text x=2 y=-1 content="3"></text>
+
+<line x_1=-3/2 y_1=2 x_2=3/2 y_2=1 color=black>
+<line x_1=-3/2 y_1=1 x_2=3/2 y_2=1 color=black>
+<line x_1=-3/2 y_1=0 x_2=3/2 y_2=0 color=black>
+<line x_1=-3/2 y_1=-1 x_2=3/2 y_2=0 color=black>
+<line x_1=-3/2 y_1=-2 x_2=3/2 y_2=1 color=black>
+</graphic>
+<p>
+Ici, <span class="important">cette définition autorise l'existence d'une application où le triplet représente l'ensemble vide, un ensemble quelconque, et encore une fois l'ensemble vide</span>.
 Généralement, cette application est nommée application vide.
 En effet, comme l'ensemble de départ est vide, la seule possibilité pour que les propriétés nécessaires à une application soient respectées ici est que le graphe soit vide.
 </p>
@@ -1274,6 +1301,32 @@ Ici, "3" n'a pas d'image, et n'est donc pas dans cet ensemble image.
 </p>
 <math>Im(f) = {1, 2}</math>
 <p>
+Dans notre diagramme sagittal, on peut facilement visualiser l'ensemble image de "f", que nous allons ici surligner en rouge :
+</p>
+<graphic>
+<background_color white>
+<base draw=0>
+
+<circle x=-2 y=0 radius_x=3/2 radius_y=4>
+<text x=-2 y=2 content="1"></text>
+<text x=-2 y=1 content="2"></text>
+<text x=-2 y=0 content="3"></text>
+<text x=-2 y=-1 content="4"></text>
+<text x=-2 y=-2 content="5"></text>
+
+<circle x=2 y=0 radius_x=3/2 radius_y=4>
+<circle x=2 y=1/2 radius_x=1 radius_y=6/5 color=(255,150,150) border_width=0>
+<text x=2 y=1 content="1" background_color=transparent></text>
+<text x=2 y=0 content="2" background_color=transparent></text>
+<text x=2 y=-1 content="3" background_color=transparent></text>
+
+<line x_1=-3/2 y_1=2 x_2=3/2 y_2=1 color=black>
+<line x_1=-3/2 y_1=1 x_2=3/2 y_2=1 color=black>
+<line x_1=-3/2 y_1=0 x_2=3/2 y_2=0 color=black>
+<line x_1=-3/2 y_1=-1 x_2=3/2 y_2=0 color=black>
+<line x_1=-3/2 y_1=-2 x_2=3/2 y_2=1 color=black>
+</graphic>
+<p>
 En utilisant le formalisme des ensembles, on peut aussi améliorer ces notations, en deux concepts : l'image directe et l'image réciproque.
 <span class="important"><definition name="image-direct"></span>.
 Pour que cela marche, il faut donc que cet ensemble soit un sous-ensemble de l'ensemble de départ de l'application.
@@ -1282,55 +1335,80 @@ Pour une application "f" allant de "A" vers "B", l'image directe de "C" s'écrit
 </p>
 <math>f(C) = {y <min> B | <mexists> x <min> C, y = f(x)}</math>
 <p>
-On a aussi le concept "inverse" : l'image réciproque.
-<span class="important"><definition name="image-inverse"></span>.
-Pour que cela marche, il faut donc que cet ensemble soit un sous-ensemble de l'ensemble d'arrivé de l'application.
-Ici, la notation est similaire, mais est un peu différente : l'image réciproque de l'ensemble "D" par une application "f" se note "f exposant -1 (C)".
-Pour une application "f" allant de "A" vers "B", l'image directe de "D" s'écrit donc :
-</p>
-<math><mi>f</mi><msup>-1</msup>(D) = {x <min> A | <mexists> y <min> D, f(x) = y}</math>
-<p>
-Dans notre application de tout à l'heure, on peut trouver l'image directe de l'ensemble "{1, 2, 5}", qui est donc le singleton "{1}", où encore l'image réciproque de "{2}", qui est "{3, 4}".
-D'ailleurs, on se rend compte ici que l'image réciproque de "{3}" serait donc l'ensemble vide.
-</p>
-<math>f({1, 2, 5}) = {1}, <mi>f</mi><msup>-1</msup>({2}) = {3, 4}</math>
-<p>
-Cependant, comme pour les relations, <span class="important">les applications ne se définissent presque jamais directement par leur graphe, mais plutôt en explicitant "f(x)" en fonction de "x" (généralement, avec une formule)</span>.
-Il y a cependant une chose à prendre en compte : il faut que cette définition permettent de donner les "f(x)" de TOUS les "x" de l'ensemble d'arrivé.
-Dans ce cas précis, l'application est bien définie, et l'on peut en déduire le graphe de la fonction, permettant de la définir rigoureusement comme fait plus haut.
-Néanmoins, il est possible de considérer une application où l'on n'a aucune autre information sur elle, à part qu'il s'agit d'une application (avec un ensemble de départ, d'arrivée et un graphe quelconque).
-Tout dépend du contexte.
-Voici un exemple intuitif d'application explicitée, pour une relation allant de "N" vers "N".
-</p>
-<math>f : N <mto> N, x <mto> 2 * x</math>
-<p>
-Généralement, pour représenter ce genre de concept, on utilise des diagrammes sagittaux (qui sont d'ailleurs toujours constitués de deux cercles pour les deux ensembles, mêmes si ils sont le même ensemble).
-Voici un exemple en bas pour l'application allant de "{0, 1, 2, 3, 4}" vers "{0, 2, 4, 6, 8}", transformant "x" en "2 * x":
+Dans notre application de tout à l'heure, on peut trouver l'image directe de l'ensemble "{1, 2, 5}", qui est donc le singleton "{1}".
+Dans notre diagramme sagittal, on peut facilement visualiser une image directe par "f", avec un ensemble "C" surligné en vert, et son image directe surlignée en rouge :
 </p>
 <graphic>
 <background_color white>
 <base draw=0>
 
 <circle x=-2 y=0 radius_x=3/2 radius_y=4>
-<text x=-2 y=2 content="0"></text>
-<text x=-2 y=1 content="1"></text>
-<text x=-2 y=0 content="2"></text>
-<text x=-2 y=-1 content="3"></text>
-<text x=-2 y=-2 content="4"></text>
+<circle x=-2 y=3/2 radius_x=3/5 radius_y=6/5 color=green border_width=0>
+<circle x=-2 y=-2 radius_x=3/5 radius_y=3/5 color=green border_width=0>
+<text x=-2 y=2 content="1" background_color=transparent></text>
+<text x=-2 y=1 content="2" background_color=transparent></text>
+<text x=-2 y=0 content="3" background_color=transparent></text>
+<text x=-2 y=-1 content="4" background_color=transparent></text>
+<text x=-2 y=-2 content="5" background_color=transparent></text>
 
 <circle x=2 y=0 radius_x=3/2 radius_y=4>
-<text x=2 y=2 content="0"></text>
-<text x=2 y=1 content="2"></text>
-<text x=2 y=0 content="4"></text>
-<text x=2 y=-1 content="6"></text>
-<text x=2 y=-2 content="8"></text>
+<circle x=2 y=1 radius_x=3/5 radius_y=3/5 color=(255,150,150) border_width=0>
+<text x=2 y=1 content="1" background_color=transparent></text>
+<text x=2 y=0 content="2" background_color=transparent></text>
+<text x=2 y=-1 content="3" background_color=transparent></text>
 
-<line x_1=-3/2 y_1=2 x_2=3/2 y_2=2 color=black>
+<line x_1=-3/2 y_1=2 x_2=3/2 y_2=1 color=black>
 <line x_1=-3/2 y_1=1 x_2=3/2 y_2=1 color=black>
 <line x_1=-3/2 y_1=0 x_2=3/2 y_2=0 color=black>
-<line x_1=-3/2 y_1=-1 x_2=3/2 y_2=-1 color=black>
-<line x_1=-3/2 y_1=-2 x_2=3/2 y_2=-2 color=black>
+<line x_1=-3/2 y_1=-1 x_2=3/2 y_2=0 color=black>
+<line x_1=-3/2 y_1=-2 x_2=3/2 y_2=1 color=black>
 </graphic>
+<p>
+On a aussi le concept "inverse" : l'image réciproque.
+<span class="important"><definition name="image-inverse"></span>.
+Pour que cela marche, il faut donc que cet ensemble soit un sous-ensemble de l'ensemble d'arrivé de l'application.
+Ici, la notation est similaire, mais est un peu différente : l'image réciproque de l'ensemble "D" par une application "f" se note "f exposant -1 (D)".
+Pour une application "f" allant de "A" vers "B", l'image réciproque de "D" s'écrit donc :
+</p>
+<math><mi>f</mi><msup>-1</msup>(D) = {x <min> A | <mexists> y <min> D, f(x) = y}</math>
+<p>
+Dans notre application de tout à l'heure, on peut trouver l'image réciproque de "{2}", qui est "{3, 4}".
+D'ailleurs, on se rend compte ici que l'image réciproque de "{3}" serait donc l'ensemble vide.
+Dans notre diagramme sagittal, on peut facilement visualiser une image réciproque par "f", avec un ensemble "D" surligné en vert, et son image réciproque surlignée en rouge :
+</p>
+<graphic>
+<background_color white>
+<base draw=0>
+
+<circle x=-2 y=0 radius_x=3/2 radius_y=4>
+<circle x=-2 y=-1/2 radius_x=1 radius_y=6/5 color=(255,150,150) border_width=0>
+<text x=-2 y=2 content="1" background_color=transparent></text>
+<text x=-2 y=1 content="2" background_color=transparent></text>
+<text x=-2 y=0 content="3" background_color=transparent></text>
+<text x=-2 y=-1 content="4" background_color=transparent></text>
+<text x=-2 y=-2 content="5" background_color=transparent></text>
+
+<circle x=2 y=0 radius_x=3/2 radius_y=4>
+<circle x=2 y=-1/15 radius_x=3/5 radius_y=3/5 color=green border_width=0>
+<text x=2 y=1 content="1" background_color=transparent></text>
+<text x=2 y=0 content="2" background_color=transparent></text>
+<text x=2 y=-1 content="3" background_color=transparent></text>
+
+<line x_1=-3/2 y_1=2 x_2=3/2 y_2=1 color=black>
+<line x_1=-3/2 y_1=1 x_2=3/2 y_2=1 color=black>
+<line x_1=-3/2 y_1=0 x_2=3/2 y_2=0 color=black>
+<line x_1=-3/2 y_1=-1 x_2=3/2 y_2=0 color=black>
+<line x_1=-3/2 y_1=-2 x_2=3/2 y_2=1 color=black>
+</graphic>
+<p>
+Cependant, comme pour les relations, <span class="important">les applications ne se définissent presque jamais directement par leur graphe, mais plutôt en explicitant "f(x)" en fonction de "x" (généralement, avec une formule)</span>.
+Il y a cependant une chose à prendre en compte : il faut que cette définition permettent de donner les "f(x)" de TOUS les "x" de l'ensemble d'arrivé.
+Dans ce cas précis, l'application est bien définie, et l'on peut en déduire le graphe de l'application, permettant de la définir rigoureusement comme fait plus haut.
+Néanmoins, il est possible de considérer une application où l'on n'a aucune autre information sur elle, à part qu'il s'agit d'une application (avec un ensemble de départ, d'arrivée et un graphe quelconque).
+Tout dépend du contexte.
+Voici un exemple intuitif d'application explicitée, pour une relation allant de "N" vers "N".
+</p>
+<math>f : N <mto> N, x <mto> 2 * x</math>
 <p>
 Faisons revenir un concept que nous avons déjà vue plus haut : les relations d'équivalences.
 En effet, <span class="important">pour toute application "f", il existe une relation d'équivalence (dite canonique) sur l'ensemble de départ, où dire que deux éléments dans cet ensemble de départ sont en relation équivaut à dire que ces deux éléments ont la même image par "f"</span>.
@@ -1338,7 +1416,35 @@ En fait, cette propriété est l'exacte reformulation avec des applications de l
 Si l'on note cette relation "~", on peut donc écrire :
 </p>
 <math>f : E <mto> F</math></br>
-<math><mforall> x, y <min> E, f(x) = f(y) <mequi> x ~ y</math>
+<math><mforall> x, y <min> E, f(x) = f(y) <mequi> x ~ y</math></br>
+<p>
+On pourrait dessiner les classes d'équivalences de cette façon :
+</p>
+<graphic>
+<background_color white>
+<base draw=0>
+
+<circle x=-2 y=0 radius_x=3/2 radius_y=4>
+<circle x=-2 y=-1/2 radius_x=3/5 radius_y=6/5 color=(255,150,150) border_width=0>
+<circle x=-2 y=3/2 radius_x=3/5 radius_y=6/5 color=green border_width=0>
+<circle x=-2 y=-2 radius_x=3/5 radius_y=3/5 color=green border_width=0>
+<text x=-2 y=2 content="1" background_color=transparent></text>
+<text x=-2 y=1 content="2" background_color=transparent></text>
+<text x=-2 y=0 content="3" background_color=transparent></text>
+<text x=-2 y=-1 content="4" background_color=transparent></text>
+<text x=-2 y=-2 content="5" background_color=transparent></text>
+
+<circle x=2 y=0 radius_x=3/2 radius_y=4>
+<text x=2 y=1 content="1" background_color=transparent></text>
+<text x=2 y=0 content="2" background_color=transparent></text>
+<text x=2 y=-1 content="3" background_color=transparent></text>
+
+<line x_1=-3/2 y_1=2 x_2=3/2 y_2=1 color=black>
+<line x_1=-3/2 y_1=1 x_2=3/2 y_2=1 color=black>
+<line x_1=-3/2 y_1=0 x_2=3/2 y_2=0 color=black>
+<line x_1=-3/2 y_1=-1 x_2=3/2 y_2=0 color=black>
+<line x_1=-3/2 y_1=-2 x_2=3/2 y_2=1 color=black>
+</graphic>
 <p>
 Un concept assez similaire est le concept de fonction.
 En mathématiques, <span class="important"><definition name="function"></span>.
@@ -1357,21 +1463,8 @@ Bien qu'assez directe, cette notation est équivalente à une définition plus u
 <math><mforall> x <min> A, <mforall> y, z <min> B, (x, y) <min> G <mand> (x, z) <min> G <mimp> y = z</math>
 <p>
 La démonstration <a href="demo#partial_function_definition_equivalence">présente ici</a> est verbeuse mais assez simple.
-Cette définition un peu bizarre autorise un cas lui aussi bizarre : la fonction où le graphe est vide (généralement nommée fonction vide).
-Bien qu'inutile, cette fonction peut exister.
-</p>
-<math>(A, B, <mempty_set>)</math>
-<p>
-<span class="important">Il est néanmoins possible d'obtenir l'ensemble de toutes les valeurs de l'ensemble de départ de la fonction qui sont belle et bien utilisées par cette dernière : cet ensemble se nomme ensemble de définition</span>.
-Cet ensemble peut être n'importe qu'elle partie de l'ensemble de départ, et même lui tout entier ou l'ensemble vide (bien que, dans ce cas, la fonction ne serve à rien).
-Par définition, si il s'agit de l'ensemble entier, votre fonction est une application.
-Ici, pour une fonction "f", cet ensemble se note généralement "D indice f".
-</p>
-<math><mi>D</mi><msub>f</msub> = {x <min> A | <mexists> y <min> B, (x, y) <min> G<msub>f</msub>}</math>
-<p>
 Voici un exemple de diagramme sagittal de fonction :
 </p>
-
 <graphic>
 <background_color white>
 <base draw=0>
@@ -1396,13 +1489,54 @@ Voici un exemple de diagramme sagittal de fonction :
 <line x_1=-3/2 y_1=-2 x_2=3/2 y_2=-1 color=black>
 </graphic>
 <p>
+Cette définition un peu bizarre autorise un cas lui aussi bizarre : la fonction où le graphe est vide (généralement nommée fonction vide).
+Bien qu'inutile, cette fonction peut exister.
+</p>
+<math>(A, B, <mempty_set>)</math>
+<p>
+<span class="important">Il est néanmoins possible d'obtenir l'ensemble de toutes les valeurs de l'ensemble de départ de la fonction qui sont belle et bien utilisées par cette dernière : cet ensemble se nomme ensemble de définition</span>.
+Il est aussi assez courant de voir l'ensemble de départ nommé le "domaine de définition" de la fonction.
+Cet ensemble peut être n'importe qu'elle partie de l'ensemble de départ, et même lui tout entier ou l'ensemble vide (bien que, dans ce cas, la fonction ne serve à rien).
+Par définition, si il s'agit de l'ensemble entier, votre fonction est une application.
+Ici, pour une fonction "f", cet ensemble se note généralement "D indice f".
+</p>
+<math><mi>D</mi><msub>f</msub> = {x <min> A | <mexists> y <min> B, (x, y) <min> G<msub>f</msub>}</math>
+<p>
+Nous pouvons représenter facilement un ensemble de définition via un diagramme sagittal :
+</p>
+<graphic>
+<background_color white>
+<base draw=0>
+
+<circle x=-2 y=0 radius_x=3/2 radius_y=4>
+<circle x=-2 y=1 radius_x=3/5 radius_y=9/5 color=green border_width=0>
+<circle x=-2 y=-2 radius_x=3/5 radius_y=3/5 color=green border_width=0>
+<text x=-2 y=2 background_color=transparent content="0"></text>
+<text x=-2 y=1 background_color=transparent content="1"></text>
+<text x=-2 y=0 background_color=transparent content="2"></text>
+<text x=-2 y=-1 background_color=transparent content="3"></text>
+<text x=-2 y=-2 background_color=transparent content="4"></text>
+
+<circle x=2 y=0 radius_x=3/2 radius_y=4>
+<text x=2 y=2 content="0"></text>
+<text x=2 y=1 content="2"></text>
+<text x=2 y=0 content="4"></text>
+<text x=2 y=-1 content="6"></text>
+<text x=2 y=-2 content="8"></text>
+
+<line x_1=-3/2 y_1=2 x_2=3/2 y_2=2 color=black>
+<line x_1=-3/2 y_1=1 x_2=3/2 y_2=1 color=black>
+<line x_1=-3/2 y_1=0 x_2=3/2 y_2=0 color=black>
+<line x_1=-3/2 y_1=-2 x_2=3/2 y_2=-1 color=black>
+</graphic>
+<p>
 Cependant, l'exemple le plus standard (qui demande déjà de connaître un peu les mathématiques) est la fonction inverse sur "R".
 En effet, cette fonction n'est pas définie en "0", mais elle est très souvent utilisée comme une fonction allant de "R" vers "R".
 </p>
 <graphic>
 <background_color white>
 <base draw=1>
-<function expression=1/x line_width=8></function>
+<function expression=1/x line_width=6></function>
 </graphic>
 <p>
 Cependant, ce n'est pas très grave, pour une raison précise : <span class="important">pour toute fonction ayant un ensemble de définition non vide, on peut obtenir une application allant de l'ensemble de définition vers l'ensemble d'arrivée de la fonction, associant à chaque valeur de l'ensemble de définition son image par la fonction de départ</span>.
@@ -1428,12 +1562,53 @@ D'un point de vue mathématique rigoureuse (avec le triplet et le graphe), pour 
 <math>f = (A, B, G), <mforall> C <mincluded> A</math></br>
 <math><mi>f</mi><msub>|C</msub> = (C, B, H), H = G <minter> (C <mtimes> B)</math></br>
 <p>
+D'ailleurs, pour une partie "C" et une application / fonction "f", la restriction de "C" par "f" est unique.
 Ici, si "f" est une application, sa restriction est aussi une application (quelque soit "C").
 Cependant, si "f" est une fonction, sa restriction peut être une fonction comme une application.
 Et en utilisant le formalisme des applications :
 </p>
 <math>f : A <mto> B, a <mto> f(a)</math></br>
 <math><mi>f</mi><msub>|C</msub> : C <mto> B, c <mto> f(c)</math>
+<p>
+On peut représenter une restriction de cette façon (avec une fonction à gauche, et la restriction par une partie à droite) :
+</p>
+<graphic ratio_base>
+<background_color white>
+<base draw=0 width=20 height=10>
+
+<circle x=-7 y=0 radius_x=3/2 radius_y=4>
+<text x=-7 y=2 background_color=transparent content="0"></text>
+<text x=-7 y=1 background_color=transparent content="1"></text>
+<text x=-7 y=0 background_color=transparent content="2"></text>
+<text x=-7 y=-1 background_color=transparent content="3"></text>
+<text x=-7 y=-2 background_color=transparent content="4"></text>
+
+<circle x=-3 y=0 radius_x=3/2 radius_y=4>
+<text x=-3 y=2 content="0"></text>
+<text x=-3 y=1 content="2"></text>
+<text x=-3 y=0 content="4"></text>
+<text x=-3 y=-1 content="6"></text>
+<text x=-3 y=-2 content="8"></text>
+
+<line x_1=-13/2 y_1=2 x_2=-7/2 y_2=2 color=black>
+<line x_1=-13/2 y_1=1 x_2=-7/2 y_2=1 color=black>
+<line x_1=-13/2 y_1=0 x_2=-7/2 y_2=0 color=black>
+<line x_1=-13/2 y_1=-2 x_2=-7/2 y_2=-1 color=black>
+
+<circle x=3 y=0 radius_x=3/2 radius_y=4>
+<text x=3 y=1 background_color=transparent content="1"></text>
+<text x=3 y=-2 background_color=transparent content="4"></text>
+
+<circle x=7 y=0 radius_x=3/2 radius_y=4>
+<text x=7 y=2 content="0"></text>
+<text x=7 y=1 content="2"></text>
+<text x=7 y=0 content="4"></text>
+<text x=7 y=-1 content="6"></text>
+<text x=7 y=-2 content="8"></text>
+
+<line x_1=7/2 y_1=1 x_2=13/2 y_2=1 color=black>
+<line x_1=7/2 y_1=-2 x_2=13/2 y_2=-1 color=black>
+</graphic>
 <p>
 En fait, <span class="important">il existe beaucoup de propriétés de fonctions / applications, telle que toutes les restrictions de ces fonctions / applications ont les mêmes propriétés</span>.
 Le concept de prolongement est assez similaire, mais à l'opposé.
@@ -1451,6 +1626,45 @@ Et en utilisant le formalisme des applications :
 </p>
 <math>f : A <mto> B, a <mto> f(a)</math></br>
 <math>g : D <mto> E, <mforall> a <min> A, g(a) = f(a)</math>
+<p>
+On peut représenter un exemple de plongement de cette façon (avec une fonction à gauche, et un plongement à droite avec les liens rajoutés en rouge) :
+</p>
+<graphic ratio_base>
+<background_color white>
+<base draw=0 width=20 height=10>
+
+<circle x=-7 y=0 radius_x=3/2 radius_y=4>
+<text x=-7 y=2 background_color=transparent content="0"></text>
+<text x=-7 y=0 background_color=transparent content="2"></text>
+
+<circle x=-3 y=0 radius_x=3/2 radius_y=4>
+<text x=-3 y=2 content="0"></text>
+<text x=-3 y=1 content="2"></text>
+<text x=-3 y=-2 content="8"></text>
+
+<line x_1=-13/2 y_1=2 x_2=-7/2 y_2=-2 color=black>
+<line x_1=-13/2 y_1=0 x_2=-7/2 y_2=1 color=black>
+
+<circle x=3 y=0 radius_x=3/2 radius_y=4>
+<text x=3 y=2 background_color=transparent content="0"></text>
+<text x=3 y=1 background_color=transparent content="1"></text>
+<text x=3 y=0 background_color=transparent content="2"></text>
+<text x=3 y=-1 background_color=transparent content="3"></text>
+<text x=3 y=-2 background_color=transparent content="4"></text>
+
+<circle x=7 y=0 radius_x=3/2 radius_y=4>
+<text x=7 y=2 content="0"></text>
+<text x=7 y=1 content="2"></text>
+<text x=7 y=0 content="4"></text>
+<text x=7 y=-1 content="6"></text>
+<text x=7 y=-2 content="8"></text>
+
+<line x_1=7/2 y_1=2 x_2=13/2 y_2=-2 color=black>
+<line x_1=7/2 y_1=1 x_2=13/2 y_2=2 color=red>
+<line x_1=7/2 y_1=0 x_2=13/2 y_2=1 color=black>
+<line x_1=7/2 y_1=-1 x_2=13/2 y_2=0 color=red>
+<line x_1=7/2 y_1=-2 x_2=13/2 y_2=-1 color=red>
+</graphic>
 <p>
 Comme pour la restriction, <span class="important">il existe beaucoup de propriétés de fonctions / applications, telle que tous les prolongements de ces fonctions / applications ont les mêmes propriétés</span>.
 </p>
@@ -1475,6 +1689,33 @@ Ici, l'ensemble des points fixes d'une fonction "f" se note "Fix(f)".
 </p>
 <math>f : E <mto> E, Fix(f) = {x <min> E | f(x) = x}</math>
 <p>
+Voici une application allant de "{0, 1, 2, 3, 4}" vers lui même, avec l'ensemble des points fixes étant "{1, 2, 4}".
+</p>
+<graphic>
+<background_color white>
+<base draw=0>
+
+<circle x=-2 y=0 radius_x=3/2 radius_y=4>
+<text x=-2 y=2 content="0"></text>
+<text x=-2 y=1 content="1"></text>
+<text x=-2 y=0 content="2"></text>
+<text x=-2 y=-1 content="3"></text>
+<text x=-2 y=-2 content="4"></text>
+
+<circle x=2 y=0 radius_x=3/2 radius_y=4>
+<text x=2 y=2 content="0"></text>
+<text x=2 y=1 content="1"></text>
+<text x=2 y=0 content="2"></text>
+<text x=2 y=-1 content="3"></text>
+<text x=2 y=-2 content="4"></text>
+
+<line x_1=-3/2 y_1=2 x_2=3/2 y_2=-1 color=black>
+<line x_1=-3/2 y_1=1 x_2=3/2 y_2=1 color=black>
+<line x_1=-3/2 y_1=0 x_2=3/2 y_2=0 color=black>
+<line x_1=-3/2 y_1=-1 x_2=3/2 y_2=2 color=black>
+<line x_1=-3/2 y_1=-2 x_2=3/2 y_2=-2 color=black>
+</graphic>
+<p>
 D'ailleurs, ce type d'application permet de définir ce qui est probablement l'application la plus simple de toutes : l'application identité.
 <span class="important"><definition name="application-identity"></span>.
 Bien qu'elle puisse paraître un peu inutile, nous verrons qu'elle sera en réalité fondamental à pas mal d'endroits.
@@ -1483,6 +1724,33 @@ On peut aussi remarquer quelque chose de très simple : l'ensemble des points fi
 </p>
 <math><mi>Id</mi><msub>E</msub> : E <mto> E, x <mto> x</math></br>
 <math><mforall> x <min> E, f(x) = x</math>
+<p>
+Et sous la forme d'un diagramme sagittal :
+</p>
+<graphic>
+<background_color white>
+<base draw=0>
+
+<circle x=-2 y=0 radius_x=3/2 radius_y=4>
+<text x=-2 y=2 content="0"></text>
+<text x=-2 y=1 content="1"></text>
+<text x=-2 y=0 content="2"></text>
+<text x=-2 y=-1 content="3"></text>
+<text x=-2 y=-2 content="4"></text>
+
+<circle x=2 y=0 radius_x=3/2 radius_y=4>
+<text x=2 y=2 content="0"></text>
+<text x=2 y=1 content="1"></text>
+<text x=2 y=0 content="2"></text>
+<text x=2 y=-1 content="3"></text>
+<text x=2 y=-2 content="4"></text>
+
+<line x_1=-3/2 y_1=2 x_2=3/2 y_2=2 color=black>
+<line x_1=-3/2 y_1=1 x_2=3/2 y_2=1 color=black>
+<line x_1=-3/2 y_1=0 x_2=3/2 y_2=0 color=black>
+<line x_1=-3/2 y_1=-1 x_2=3/2 y_2=-1 color=black>
+<line x_1=-3/2 y_1=-2 x_2=3/2 y_2=-2 color=black>
+</graphic>
 <p>
 Un concept assez pratique pour parler d'applications est l'espace fonctionnel.
 <span class="important"><definition name="function_space"></span>.
@@ -1532,22 +1800,9 @@ On peut faire de même avec "h(x)" (qui est ici un élément de l'ensemble de d�
 </p>
 <math>h(x) = (f <mcomp> g)(x) = f(g(x))</math>
 <p>
-D'un point de vue définitionnel, selon la composition que vous faites, il y a un détail à prendre en compte : la comptabilité de l'ensemble de départ de "f" et de l'ensemble image de "g".
-Déjà, <span class="important">l'ensemble de définition de l'application composée de "f" par "g" est l'ensemble des éléments de "A" tel que leur image par "g" appartient à l'ensemble de définition de "f"</span>.
-En effet, si l'image d'un élément de "A" par "g" n'appartient pas à l'ensemble de définition de "f", on ne peut pas savoir son comportement avec "f", et il n'a donc pas d'image par "h".
-</p>
-<math><mi>D</mi><msub>h</msub> = {x <min> <mi>D</mi><msub>g</msub> | g(x) <min> <mi>D</mi><msub>f</msub>}</math>
-<p>
-D'ailleurs, nous n'avons pas encore défini ultra-rigoureusement le concept de composition (nous ne l'avons fait que "intuitivement").
-Cependant, cet ensemble "D indice h" va nous permettre de le faire.
-Déjà, remarquons que "D indice h" ne nécessite pas "h" dans sa définition : on va pouvoir l'utiliser pour définir le concept de composition.
-</p>
-<math>h = f <mcomp> g <mequi> <mforall> x <min> <mi>D</mi><msub>h</msub>, h(x) = f(g(x))</math>
-<p>
-Ici, pour que "h" soit une application, il faut que "D indice h" soit égal à "A".
-Pour cela, il faut 2 choses : <span class="important">que "D indice g" soit égal à A" (et donc, que "g" soit une application) et que tous les "g(x)" possibles soient dans "D indice f" (et donc, que l'ensemble image de "g" soit inclut dans l'ensemble de définition de "f")</span>.
-Une condition suffisante est donc que "f" et "g" soient toutes les deux des applications, et que l'ensemble image de "g" soit inclu dans l'ensemble de départ de "f".
-Voici un exemple de diagramme sagittal de "f", "g" et "h" où cela fonctionne :
+Encore une fois, <span class="important">la composition d'application peut se faire avec un diagramme sagittal</span>.
+Voici un exemple d'une fonction "h" étant la composé de "g" par "f".
+Remarquons ici que "g" est en premier, puis "f" est en deuxième (encore une fois, car l'on passe par "g" puis par "f").
 </p>
 
 <graphic ratio_base>
@@ -1614,6 +1869,87 @@ Voici un exemple de diagramme sagittal de "f", "g" et "h" où cela fonctionne :
 <text x=5/2 y=0 content="=" font_size_in_scale=3/2></text>
 </graphic>
 
+<p>
+D'un point de vue définitionnel, selon la composition que vous faites, il y a un détail à prendre en compte : la comptabilité de l'ensemble de départ de "f" et de l'ensemble image de "g".
+Déjà, <span class="important">l'ensemble de définition de l'application composée de "f" par "g" est l'ensemble des éléments de "A" tel que leur image par "g" appartient à l'ensemble de définition de "f"</span>.
+En effet, si l'image d'un élément de "A" par "g" n'appartient pas à l'ensemble de définition de "f", on ne peut pas savoir son comportement avec "f", et il n'a donc pas d'image par "h".
+</p>
+<math><mi>D</mi><msub>h</msub> = {x <min> <mi>D</mi><msub>g</msub> | g(x) <min> <mi>D</mi><msub>f</msub>}</math>
+<p>
+D'ailleurs, nous n'avons pas encore défini ultra-rigoureusement le concept de composition (nous ne l'avons fait que "intuitivement").
+Cependant, cet ensemble "D indice h" va nous permettre de le faire.
+Déjà, remarquons que "D indice h" ne nécessite pas "h" dans sa définition : on va pouvoir l'utiliser pour définir le concept de composition.
+</p>
+<math>h = f <mcomp> g <mequi> <mforall> x <min> <mi>D</mi><msub>h</msub>, h(x) = f(g(x))</math>
+<p>
+Ici, pour que "h" soit une application, il faut que "D indice h" soit égal à "A".
+Pour cela, il faut 2 choses : <span class="important">que "D indice g" soit égal à A" (et donc, que "g" soit une application) et que tous les "g(x)" possibles soient dans "D indice f" (et donc, que l'ensemble image de "g" soit inclut dans l'ensemble de définition de "f")</span>.
+Une condition suffisante est donc que "f" et "g" soient toutes les deux des applications, et que l'ensemble image de "g" soit inclu dans l'ensemble de départ de "f".
+Dans les autres cas, "h" est donc une fonction (plus ou moins complexe).
+C'est par exemple le cas dans notre diagramme sagittal vue plus haut.
+On peut cependant obtenir un exemple où certains éléments de l'ensemble de départ n'ont pas d'image.
+</p>
+<graphic ratio_base>
+<background_color white>
+<base draw=0 width=30 height=10>
+
+<circle x=-10 y=0 radius_x=3/2 radius_y=4>
+<text x=-10 y=2 content="0"></text>
+<text x=-10 y=1 content="1"></text>
+<text x=-10 y=0 content="2"></text>
+<text x=-10 y=-1 content="3"></text>
+<text x=-10 y=-2 content="4"></text>
+
+<circle x=-5 y=0 radius_x=3/2 radius_y=4>
+<text x=-5 y=2 content="0"></text>
+<text x=-5 y=1 content="2"></text>
+<text x=-5 y=0 content="4"></text>
+<text x=-5 y=-1 content="6"></text>
+<text x=-5 y=-2 content="8"></text>
+
+<text x=-15/2 y=4 content="g" font_size_in_scale=1></text>
+<line x_1=-19/2 y_1=2 x_2=-11/2 y_2=0 color=black>
+<line x_1=-19/2 y_1=1 x_2=-11/2 y_2=2 color=black>
+<line x_1=-19/2 y_1=0 x_2=-11/2 y_2=1 color=black>
+<line x_1=-19/2 y_1=-1 x_2=-11/2 y_2=-1 color=black>
+<line x_1=-19/2 y_1=-2 x_2=-11/2 y_2=-2 color=black>
+
+<circle x=0 y=0 radius_x=3/2 radius_y=4>
+<text x=0 y=2 content="0"></text>
+<text x=0 y=1 content="5"></text>
+<text x=0 y=0 content="10"></text>
+<text x=0 y=-1 content="15"></text>
+<text x=0 y=-2 content="20"></text>
+
+<text x=-5/2 y=4 content="f" font_size_in_scale=1></text>
+<line x_1=-9/2 y_1=2 x_2=-1/2 y_2=-2 color=black>
+<line x_1=-9/2 y_1=1 x_2=-1/2 y_2=2 color=black>
+<line x_1=-9/2 y_1=0 x_2=-1/2 y_2=2 color=black>
+<line x_1=-9/2 y_1=-2 x_2=-1/2 y_2=1 color=black>
+
+<circle x=5 y=0 radius_x=3/2 radius_y=4>
+<text x=5 y=2 content="0"></text>
+<text x=5 y=1 content="1"></text>
+<text x=5 y=0 content="2"></text>
+<text x=5 y=-1 content="3"></text>
+<text x=5 y=-2 content="4"></text>
+
+<circle x=10 y=0 radius_x=3/2 radius_y=4>
+<text x=10 y=2 content="0"></text>
+<text x=10 y=1 content="5"></text>
+<text x=10 y=0 content="10"></text>
+<text x=10 y=-1 content="15"></text>
+<text x=10 y=-2 content="25"></text>
+
+<text x=15/2 y=4 content="h" font_size_in_scale=1></text>
+<line x_1=11/2 y_1=2 x_2=19/2 y_2=2 color=black>
+<line x_1=11/2 y_1=1 x_2=19/2 y_2=-2 color=black>
+<line x_1=11/2 y_1=0 x_2=19/2 y_2=2 color=black>
+<line x_1=11/2 y_1=-2 x_2=19/2 y_2=1 color=black>
+
+<text x=-26/2 y=0 content="h =" font_size_in_scale=3/2></text>
+<text x=5/2 y=0 content="=" font_size_in_scale=3/2></text>
+</graphic>
 <p>
 Voici un exemple où la fonction obtenue est en fait une fonction nulle :
 </p>

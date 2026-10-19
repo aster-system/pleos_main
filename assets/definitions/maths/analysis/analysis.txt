@@ -54,9 +54,13 @@
     <content>les classes de régularité sont des ensembles permettant de classifier des fonctions quelconques selon leur continuité et leur dérivabilité</content>
 </new_definition>
 
+
+
 <new_definition name="function_space">
     <content>un espace fonctionnel est un ensemble d'applications (et donc, de fonctions) entre deux ensembles X et Y</content>
 </new_definition>
+
+
 
 <new_definition name="metric_space">
     <content>un espace métrique est un couple représentant un ensemble quelconque, et une opération binaire sur cet ensemble pouvant s'interpréter comme la distance entre deux éléments quelconques de l'ensemble</content>
@@ -87,6 +91,7 @@
 </new_definition>
 <new_definition name="mean_value_theorem">
     <content>le théorème des accroissements finis est un théorème garantissant que, entre deux points d'une fonction, il existe une des valeurs de la fonction dérivée entre ces deux valeurs qui vaut le taux d'accroissement de la fonction de départ entre ces deux points</content>
+    <content name="generalized">le théorème des accroissements finis généralisé est un théorème représentant une extension du théorème des accroissements finis, dans le cas où nous avons deux fonctions</content>
     <content name="rolle">le théorème de Rolle (ou lemme de Rolle) est un théorème garantissant que, entre deux points (distincts) de même image dans une fonction, il existe obligatoirement une valeur de la fonction dérivée qui est égale à 0 entre ces deux points</content>
 </new_definition>
 <new_definition name="primitive">
@@ -98,4 +103,23 @@
 <new_definition name="taylor_young_formula">
     <content>la formule de Taylor-Young est une formule permettant de représenter une fonction comme la somme d'un polynôme quelconque et d'un reste négligeable devant le monôme de degré maximal de ce polynôme</content>
     <content name="theorem">le théorème de Taylor garantit l'égalité entre une fonction quelconque et son développement avec la formule de Taylor-Young</content>
+</new_definition>
+
+
+
+<new_definition name="cauchy_problem">
+    <content>un problème de Cauchy est une équation fonctionnelle, où nous cherchons à trouver l'ensemble des fonctions respectant une équation différentielle et respectant une condition initiale précise</content>
+</new_definition>
+<new_definition name="initial_condition">
+    <content name="differential_equation">dans le cadre d'une équation différentielle, une condition initiale (aussi nommée condition de Cauchy) est une valeur que les solutions doivent valoir pour une certaine valeur de départ</content>
+</new_definition>
+
+
+
+<new_definition name="differential_equation">
+    <content>une équation différentielle est une équation fonctionnelle où certains inconnus sont dérivés</content>
+    <content name="ordinary_linear">une équation différentielle ordinaire linéaire est une équation différentielle linéaire représentant la somme de produit entre des valeurs quelconques et la fonction inconnue dérivée à des degrés quelconques</content>
+</new_definition>
+<new_definition name="exponential">
+    <content>la fonction exponentielle est la fonction solution au système différentiel "f = f'" et où "f(0) = 1"</content>
 </new_definition>

@@ -293,8 +293,9 @@ Pour cela, parlons d'une discipline précise : la dynamique.
 <span class="important"><definition name="dynamic"></span>.
 Ici, on n'étudie pas ce le mouvement en tant que tel, mais l'on étudie ce qui le fait arriver.
 </p>
+
 <p>
-Pour cela, nous allons introduire un concept fondamental en physique : la force.
+Pour commencer, nous allons introduire un concept fondamental en physique : la force.
 <span class="important"><definition name="force"></span>.
 En fait, une force permet d'augmenter ou de diminuer la vitesse d'un objet dans le temps.
 Une force est donc un vecteur, de même nature que le vecteur vitesse de l'objet.
@@ -342,10 +343,23 @@ Bien que l'on peut (plus ou moins) perdre en précision, cette façon de faire f
 <arrow x_1=4 y_1=-4 x_2=3 y_2=0 border_width=5 border_color=black>
 </graphic>
 <p>
+Si une force génère une accélération, elle génère immédiatement une vitesse qui modifie continuellement la position de l'objet.
+Dans ce cas, si l'objet bouge, l'endroit où on applique la force bouge avec l'objet.
+Donc, <span class="important">un point d'application peut bouger dans le temps, de manière similaire à la façon dont l'objet bouge</span>.
+</p>
+<p>
 Ici, on peut se demander si il est possible de généraliser ce concept dans le cas d'une force à distance.
 Dans le cas d'une force à distance, nous avons le même problème que dans le cas d'une force de contact : la force ne s'applique pas sur un point, mais sur chaque point de l'objet, il va donc falloir approximer.
 En fait, <span class="important">le point que nous allons choisir est le point de l'objet où la grandeur qui provoque la force (masse dans le cas de la gravité, charge électrique dans le cas d'une force électrique) se situe en moyenne dans tout l'objet</span>.
 </p>
+<p>
+Si nous appliquons une force sur un objet, on peut d'ailleurs faire une remarque intéressante : l'objet qui applique la force subit aussi une force (qui semble être une force de résistance) provenant de l'objet sur lequel la force de départ est appliquée.
+Ce phénomène est expliqué par une loi nommée la troisième loi de Newton.
+<span class="important"><definition name="newton_third_law"></span>.
+En d'autres termes, si un objet applique une action sur un autre, cet autre objet va appliquer une réaction sur l'objet de départ (d'où l'autre nom de la loi : le principe d'action - réaction).
+Le vecteur decrivant cette nouvelle force est égal au vecteur de la force de départ multiplié par "-1".
+</p>
+<math><mvec>F</mvec><msub>A/B</msub> = -<mvec>F</mvec><msub>B/A</msub></math>
 <p>
 Ce concept va nous permettre d'observer quelque chose de (plus ou moins) étrange.
 Si un objet subit une force réelle, on aura donc toujours une accélération.
@@ -391,6 +405,26 @@ Il est cependant possible d'étudier un autre point qui a un mouvement parfaitem
 En fait, <span class="important">quand nous observons une rotation du stylo après l'avoir poussé, nous observons une rotation autour du centre d'inertie du stylo</span>.
 On peut d'ailleurs observer que plus on est loin de ce point, plus la force est mise dans la rotation, et moins la force est mise dans l'accélération de l'objet (via le centre d'inertie).
 Nous avons d'ailleurs un léger paradoxe : si on force loin du centre d'inertie, les points à l'endroit où on touche vont accélérer de manière cohérente avec le principe fondamental de la dynamique vue plus haut, mais pas le centre d'inertie.
+</p>
+
+<p>
+Pour la suite, nous aurons besoin d'un concept fondamental en physique : l'énergie.
+<span class="important"><definition name="energy"></span>.
+Quand on dit modifier un système, le meilleur moyen de se le représenter est de dire que si nous avons un objet quelconque et que nous le lançons à pleine patate sur un autre (considéré peu lourd comparé à notre premier objet), ce second objet va bouger un peu suite au choc avec le premier.
+Comme notre second objet bouge, son état est modifié, et a été modifié par l'objet que nous avons lancé.
+Ici, <span class="important">on peut dire que notre premier objet a eu de l'énergie (qui semble être induite par sa vitesse), et a modifié notre second objet avec lui</span>.
+</p>
+<p>
+Nous pouvons remarquer autre chose : si réitérer cette expérience avec des objets différents, quelque chose peut sembler étrange.
+En effet, si vous lancez une petit bille, il y a énormément de chances que vous fassiez bien moins de dégats que si vous lanciez une boule de bowling à la même vitesse.
+Il y a donc quelque chose qui change entre les deux : la masse.
+Effectivement, <span class="important">la masse de l'objet est utilisé dans le calcul de l'énergie d'un objet</span>.
+Bien que l'idée physique soit assez évident, la compréhension mathématique est assez simple : un changement d'état dans un système ne peut se faire que par un changement d'accélération (qui, selon la seconde loi de Newton), ne peut être provoquée que par une force.
+Or, selon la troisième loi de Newton, une force va donc aussi être subit par l'objet que nous avons lancé.
+Plus il est lourd, moins cette force va freiner l'objet, plus il aura le temps de modifier le système.
+</p>
+<p>
+
 </p>
 
 <p>

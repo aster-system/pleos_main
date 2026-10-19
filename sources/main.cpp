@@ -149,8 +149,17 @@ void draw_triangle_from_middle_and_rotation(scls::Image img, scls::Point_2D posi
     img.fill_form({left, right, top}, scls::Color(255, 0, 0));
 }
 
+double temp_v = 0;
+scls::Complex temp(scls::Complex c){return (c - scls::Complex(temp_v)) * (c - scls::Complex(-temp_v)) * (c - scls::Complex(0, temp_v)) * (c - scls::Complex(0, -temp_v));}
+
 int main(int argc, char* argv[]) {
     //return command(argc, argv);
+
+    //std::shared_ptr<scls::__Balise_Container> b = std::make_shared<scls::__Balise_Container>();b.get()->__load_built_in_balises_html();
+    //std::shared_ptr<scls::XML_Text_Base> t = scls::xml(b, "<math>4 * 5 + 2x - 2, <mfrac><mrow>f'(c) - f'(a)</mrow><mrow>2 * (c - a)</mrow></mfrac> = <mfrac><mrow>f''(d) * (c - a)</mrow><mrow>2 * (c - a)</mrow></mfrac> = <mfrac><mrow>f''(d)</mrow><mrow>2</mrow></mfrac></math>");
+    //scls::format_math(t);
+    //std::cout << "U " << t.get()->full_text() << std::endl;
+    //return 0;
 
     /*std::shared_ptr<scls::Transform_Object_2D> transform = std::make_shared<scls::Transform_Object_2D>();
     scls::Physic_Engine engine;
@@ -168,17 +177,20 @@ int main(int argc, char* argv[]) {
     turtle.add_action_follow(transform, b);
 
     std::shared_ptr<scls::Formula_Base> formula_x = scls::string_to_algebra_element<scls::Formula_Base>("-y");
-    std::shared_ptr<scls::Formula_Base> formula_y = scls::string_to_algebra_element<scls::Formula_Base>("x");
+    std::shared_ptr<scls::Formula_Base> formula_y = scls::string_to_algebra_element<scls::Formula_Base>("x");//*/
 
-    scls::Video_Encoder enc = scls::Video_Encoder(std::string("./tests/t.mp4"), 15, 1000, 1000);
-    for(int i=0;i<1200;i++) {
-        engine.update_physic(0.02);
-        turtle.update_actions(0.02);
-        van_der_pol_oscillator(t.get(), formula_x.get(), formula_y.get(), 0.02);
+    /*
 
-        scls::Image current_image = image.copy_image();
-        draw_triangle_from_middle_and_rotation(current_image, turtle.position(), turtle.rotation() * SCLS_RADIANS_TO_ANGLE);
-        enc.write_video_frame(current_image);
+    scls::Video_Encoder enc = scls::Video_Encoder(std::string("./tests/t.mp4"), 15, 1080, 1920);
+    for(int i=0;i<420;i++) {
+        //engine.update_physic(0.02);
+        //turtle.update_actions(0.02);
+        //van_der_pol_oscillator(t.get(), formula_x.get(), formula_y.get(), 0.02);
+
+        //scls::Image current_image = image.copy_image();
+        //draw_triangle_from_middle_and_rotation(current_image, turtle.position(), turtle.rotation() * SCLS_RADIANS_TO_ANGLE);
+        temp_v = (static_cast<double>(i) / 300.0) * 5.0;
+        enc.write_video_frame(scls::function_complex_to_module_image(&temp, 1080, 1920));
         enc.go_to_next_frame();
     }
     enc.close_encoding();
@@ -196,7 +208,7 @@ int main(int argc, char* argv[]) {
         window.update();
 
         window.render();
-    }//*/
+    }
 
     /*double branches = 8;
     double center_x = 0;

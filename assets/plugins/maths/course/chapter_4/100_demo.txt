@@ -28,6 +28,8 @@ Donc, "f'(x)" s'annule.
 </p>
 <math>f'(x) = 0</math>
 
+
+
 <h4>5.0.0.1</h4>
 <p>
 Démontrons le théorème des accroissements finis, stipulant que :
@@ -65,6 +67,29 @@ Donc, pour ce point "c" :
 Donc, il existe bel et bien un point "c" tel que l'égalité demandée existe.
 </p>
 <math><mexists> c <min> ]a, b[, f'(c) = <mfrac><mi>f(b) - f(a)</mi><mi>b - a</mi></mfrac></math>
+<h4 id="mean_value_theorem_generalized">5.0.0.2</h4>
+<p>
+Démontrons le théorème des accroissements finis généralisé, stipulant que pour toutes fonctions "f" et "g" continues sur "[a, b]" (avec "a" et "b" des réels quelconques) et dérivables sur "]a, b[" :
+</p>
+<math><mexists> c <min> ]a, b[, (f(b) - f(a)) * g'(c) = (g(b) - g(a)) * f'(c)</math>
+<p>
+Imaginons que nous avons deux fonctions "f" et "g" continues sur "[a, b]" (avec "a" et "b" des réels quelconques) et dérivables sur "]a, b[".
+Considérons une nouvelle fonction :
+</p>
+<math>h [a, b] <mto> <mreal>, h(x) = (f(b) - f(a)) * g(x) - (g(b) - g(a)) * f(x)</math></br>
+<p>
+Réalisons la différence entre "h(a)" et "h(b)" :
+</p>
+<math>h(b) - h(a) = ((f(b) - f(a)) * g(b) - (g(b) - g(a)) * f(b)) - ((f(b) - f(a)) * g(a) - (g(b) - g(a)) * f(a))</math></br>
+<math>= ((f(b) * g(b) - f(a) * g(b)) - (g(b) * f(b) - g(a) * f(b))) - ((f(b) * g(a) - f(a) * g(a)) - (g(b) * f(a) - g(a) * f(a))) = 0</math></br>
+<p>
+La différence est égale à "0" : "h(b) = h(a)".
+Cette fonction respecte toutes les propriétés nécessaires pour appliquer le théorème de Rolle.
+Selon le théorème de Rolle, il existe une valeur "c" entre "a" et "b" tel que "h'(c) = 0".
+</p>
+<math><mexists> c <min> [a, b], h'(c) = 0 <mimp> (f(b) - f(a)) * g'(c) - (g(b) - g(a)) * f'(c) = 0 <mimp> (f(b) - f(a)) * g'(c) = (g(b) - g(a)) * f'(c)</math>
+
+
 
 <h3 id="differential_arithmetic">L'arithmétique des dérivées</h3>
 <h4>5.0.1.0</h4>
@@ -277,4 +302,40 @@ Donc :
 <p>
 Donc, nous avons l'égalité prouvée.
 Donc, les intégrales sont bel et bien soumises à une relation de Chasles.
+</p>
+
+
+
+
+
+
+
+
+
+<h2>L'exponentielle et le logarithme</h2>
+
+
+
+<h3 id="basic_property">Propriétés basiques</h3>
+
+<h4 id="exponential_transforms_sums_to_products">5.2.0.0</h4>
+<p>
+Démontrons cette relation avec la fonction exponentielle :
+</p>
+<math>exp(u + v) = exp(u) <mtimes> exp(v)</math>
+<p>
+Pour le démontrer, posons une fonction "f" provisoire :
+</p>
+<math>f : <mreal> <mto> <mreal>, x <mto> exp(x + a)</math></br>
+<math>f(0) = exp(a), f'(x) = exp(x) = f(x)</math></br>
+<p>
+Cette fonction est donc la représentation d'une somme dans la fonction exponentielle.
+Maintenant, posons une nouvelle fonction "g" provisoire :
+</p>
+<math>g : <mreal> <mto> <mreal>, x <mto> exp(x) * exp(a)</math></br>
+<math>g(0) = exp(a), g'(x) = exp(a) * exp(x) = g'(x)</math>
+<p>
+Nous avons donc deux fonctions étant leur propre dérivée, avec une même valeur en "0".
+Or, il n'existe qu'une unique fonction qui est sa propre dérivée et que a une valeur précise en "0".
+Donc, "f" et "g" sont les mêmes fonctions, et sont donc égales.
 </p>

@@ -41,6 +41,7 @@
 <new_definition name="sub_vector_space">
     <content>un sous-espace vectoriel est une structure algébrique construire à partir d'un espace vectoriel, sur un ensemble inclut dans l'espace vectoriel de départ, et où les éléments de cet ensemble sont stables par addition et par multiplication par un scalaire</content>
     <content name="span">un sous-espace vectoriel engendré par une famille de vecteurs "A" est un sous-espace vectoriel dont les éléments ne représentent que des combinaisons linéaires des vecteurs de la famille "A"</content>
+    <content name="supplementary">des sous-espaces vectoriels d'un espace vectoriel "E" sont dit supplémentaires si ils sont en somme directe et que leur somme directe est égale à "E"</content>
 </new_definition>
 <new_definition name="vector_family">
     <content name="free">une famille de vecteur est dite libre (ou linéairement indépendante) si aucun vecteur de la famille ne peut s'écrire comme combinaison linéaire non-nulle des autres vecteurs de la famille</content>
@@ -56,6 +57,7 @@
 </new_definition>
 <new_definition name="vector_space_quotient">
     <content>un espace vectoriel quotient d'un espace vectoriel "E" par un sous-espace vectoriel "F" est un espace vectoriel sur l'ensemble quotient de "E" par une relation définie à partir de "F"</content>
+    <content name="factorization">le théorème de factorisation (dans les espaces vectoriels) est un théorème permettant de déduire des applications linéaires précises gràce à un espace vectoriel quotient</content>
 </new_definition>
 <new_definition name="vector_space_base">
     <content>une base d'un espace vectoriel est une famille libre et génératrice de cet espace vectoriel</content>

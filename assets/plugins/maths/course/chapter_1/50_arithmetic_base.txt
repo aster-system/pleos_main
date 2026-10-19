@@ -221,6 +221,25 @@ Pour tout nombre entier naturel, <span class="important">obtenir la puissance d'
 Par définition, pour tout nombre entier naturel, élever un nombre à la puissance "0" donne "1".
 Toujours par définition, dans le cas où l'un des deux nombres est 1 (et ou aucun des nombres n'est 0), <span class="important">le résultat de l'opération donne le nombre qui n'est pas 1 (ou 1 si les deux nombres sont 1)</span>.
 </p>
+<p>
+En plus, il existe une opération réciproque à la puissance : le logarithme.
+<span class="important"><definition name="logarithm"></span>.
+Quand on parle de nombre, on parle pour l'instant de nombres entiers naturels.
+Ici, cette opération est plus une fonction qu"une "opération" comme nous l'avons vue.
+Cela est dû à l'extrême complexité qui entoure cet opérateur.
+En fait, il existe une occurence de cette fonction là pour chaque "b" possible (et donc, pour chaque nombre entier naturel possible).
+Pour différencier chacune de ces fonctions, <span class="important">on utiliser le formalisme des familles, en indexant l'ensemble de ces logarithmes par l'ensemble des nombres entiers naturels non-nuls</span>.
+</p>
+<math>c = <mi>log</mi><msub>b</msub>(a) <mequi> <mi>b</mi><msup>c</msup> = a</math></br>
+<math><mi>log</mi><msub>4</msub>(16) = 2</math>
+<p>
+Ici, <span class="important">le nombre "b" se nomme la base du logarithme dans lequel on travaille</span>.
+En réalité, il est assez rare de trouver des paires de "{a, b}" tel que cela marche.
+Par exemple, le logarithme de 3 base 2 ne semble pas être un nombre entier naturel (et ne l'est pas du tout).
+Pour totalement comprendre cet outil, il nous faudra d'autres outils bien plus complexes, que nous verrons plus tard.
+</p>
+
+
 
 <p>
 De plus, nous pouvons définir deux relations d'ordres précises dans l'ensemble des nombres entiers naturels : supérieur et inférieur.
