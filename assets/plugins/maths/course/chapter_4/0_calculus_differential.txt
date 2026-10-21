@@ -283,7 +283,18 @@ Sa démonstration (<a href="demo#inverse_derivation_rule">présente juste ici</a
 <p>
 Mathématiquement parlant, le concept de primitive d'une fonction représente la réciproque du concept de dérivée.
 En effet, <span class="important"><definition name="primitive"></span>.
+Généralement, la primitive d'une fonction se note avec le même nom que la fonction en majuscule.
 </p>
+<math>(F'(x)) = f(x)</math>
+<p>
+Il y a une grande différence entre une primitive et une fonction dérivée : <span class="important">la fonction dérivée est unique mais une primitive ne l'est pas</span>.
+En effet, imaginons une fonction "f" et une primitive "F" de "f".
+Si nous dérivons "F", nous obtenons par définition "f".
+Or, si nous dérivons la somme de "F" par un réel quelconque, nous obtenons... "f" (confère l'arithmétique des dérivées).
+Donc, <span class="important">il existe une infinité de primitive de "f"</span>.
+Cependant, si vous trouvez une primitive "F" de "f", toute fonction représentant "F" auquel on additionne un réel quelconque est aussi une primitive de "f".
+</p>
+<math><mforall> c <min> <mreal>, (F')(x) = f(x) <mimp> (F' + c)(x) = f(x)</math>
 
 
 

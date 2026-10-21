@@ -200,6 +200,12 @@ Généralement, cette propriété est nommée "linéarité" de l'intégrale.
 
 
 
+
+
+
+
+
+
 <h3>Les propriétés de la Riemann-intégrale</h3>
 <p>
 L'intégrale de Riemann a une grande quantité de propriétés.
