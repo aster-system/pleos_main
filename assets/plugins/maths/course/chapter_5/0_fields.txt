@@ -231,6 +231,12 @@ En effet, pour rappel, "(Z, +, *)" est un anneau, et pour tout nombre entier nat
 Donc, <span class="important">on peut construire l'anneau quotient de "Z" par "nZ", que l'on note "Z/nZ"</span>.
 </p>
 <math><minteger>/n<minteger></math>
+<p>
+Nous pouvons remarquer une chose très pratique avec cet anneau : <span class="important">les calculs dans l'anneau "Z/nZ" se comportent exactement comme les calculs de congruences modulo "n"</span>.
+On peut facilement démontrer que le fait que deux entiers soient dans la même classe dans cet anneau implique qu'ils sont congrus modulo "n".
+</p>
+<math><mforall> a, b <min> <minteger>/n<minteger>, <mexists> c, d <min> <minteger>, c <min> a <mand> d <min> d</math></br>
+<math>a = b <mequi> c - d <min> n<minteger> <mequi> <mexists> k <min> <minteger>, c - d = k * n <mequi> c = k * n + d</math>
 
 
 

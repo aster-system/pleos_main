@@ -230,7 +230,7 @@ Posons deux autres fonctions "f" et "g", pour découper ce résultat :
 <math>f = b <mcomp> c, g = a <mcomp> b</math>
 <p>
 Démontrons que "d = e".
-Déjà, il est immédiat de remarquer que l'ensemble d'arrivée de ces deux fonctions est l'ensemble d'arrivée de "a".
+Déjà, il est immédiat de remarquer que l'ensemble d'arrivée de ces deux fonctions est l'ensemble d'arrivée de "a" et que l'ensemble de départ de ces deux fonctions est l'ensemble de départ de "c".
 Commençons par démontrer qu'elles partagent le même ensemble de définition.
 Ce résultat est immédiat quand toutes ces fonctions sont des applications, mais plus complexe quand ce n'est pas le cas.
 Ici, notons tous les ensembles de définition des fonctions ci-dessus :

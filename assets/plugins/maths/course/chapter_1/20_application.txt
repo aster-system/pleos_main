@@ -1800,6 +1800,7 @@ On peut faire de même avec "h(x)" (qui est ici un élément de l'ensemble de d�
 </p>
 <math>h(x) = (f <mcomp> g)(x) = f(g(x))</math>
 <p>
+Cette écriture permet de faire des "opération" d'applications / fonctions de manière simple (bien qu'elle ne dispose pas d'autant de propriétés que les opérations usuelles sur des nombres).
 Encore une fois, <span class="important">la composition d'application peut se faire avec un diagramme sagittal</span>.
 Voici un exemple d'une fonction "h" étant la composé de "g" par "f".
 Remarquons ici que "g" est en premier, puis "f" est en deuxième (encore une fois, car l'on passe par "g" puis par "f").
@@ -2018,12 +2019,259 @@ Imaginons 3 applications / fonctions quelconques "a", "b" et "c", et supposons q
 <p>
 Ici, nous avons changé la disposition des parenthèses entre les deux formules, donnant deux applications / fonctions quelconques.
 En fait, <span class="important">si l'on change la disposition des parenthèses (et donc, l'ordre dans lequel on effectue les compositions), l'application / fonction obtenue ne change pas, et donc "d" et "e" sont la même application</span>.
-Cette propriété est démontrée <a href="demo#function_composition_associativity">juste ici</a>.
+Cette propriété (qui, et nous le verrons plus tard dans le cours, se nomme "associativité") est démontrée <a href="demo#function_composition_associativity">juste ici</a>.
 </p>
 <math>d = e = a <mcomp> (b <mcomp> c) = (a <mcomp> b) <mcomp> c</math>
 <p>
+La meilleure façon de le voir est d'expliciter l'image d'un élément "x" par cette application.
+Pour que cela marche, il faut que ces deux applications aient le même ensemble de définition (ce qui est démontré plus haut).
+</p>
+<math><mforall> x <min> <mi>D</mi><msub>d</msub>, d(x) = (a <mcomp> (b <mcomp> c))(x) = a((b <mcomp> c)(x)) = a(b(c(x)))</math></br>
+<math><mforall> x <min> <mi>D</mi><msub>e</msub>, e(x) = ((a <mcomp> b) <mcomp> c)(x) = (a <mcomp> b)(c(x)) = a(b(c(x))) = d(x)</math>
+<p>
+Ce résultat peut aussi se voir assez facilement sur un diagramme sagittal.
+En effet, si l'on dessine l'application qui représente "a rond b rond c", et que l'on dessine en bas l'application "b rond c" et "a rond b", on peut facilement voir que "b rond c" peut substituer "b" et "c" et que "a rond b" peut substituer "a" et "b".
+</p>
+<graphic width=500 height=600>
+<background_color white>
+<base x=9/4 y=10 draw=0 width=25 height=30>
+
+<circle x=-10 y=0 radius_x=3/2 radius_y=4>
+<text x=-10 y=2 content="0"></text>
+<text x=-10 y=1 content="1"></text>
+<text x=-10 y=0 content="2"></text>
+<text x=-10 y=-1 content="3"></text>
+<text x=-10 y=-2 content="4"></text>
+
+<circle x=-5 y=0 radius_x=3/2 radius_y=4>
+<text x=-5 y=2 content="0"></text>
+<text x=-5 y=1 content="1"></text>
+<text x=-5 y=0 content="2"></text>
+<text x=-5 y=-1 content="3"></text>
+<text x=-5 y=-2 content="4"></text>
+
+<text x=-15/2 y=4 content="c" font_size_in_scale=1></text>
+<line x_1=-19/2 y_1=2 x_2=-11/2 y_2=1 color=black>
+<line x_1=-19/2 y_1=1 x_2=-11/2 y_2=2 color=black>
+<line x_1=-19/2 y_1=0 x_2=-11/2 y_2=0 color=black>
+<line x_1=-19/2 y_1=-1 x_2=-11/2 y_2=1 color=black>
+<line x_1=-19/2 y_1=-2 x_2=-11/2 y_2=2 color=black>
+
+<circle x=0 y=0 radius_x=3/2 radius_y=4>
+<text x=0 y=2 content="0"></text>
+<text x=0 y=1 content="1"></text>
+<text x=0 y=0 content="2"></text>
+<text x=0 y=-1 content="3"></text>
+<text x=0 y=-2 content="4"></text>
+
+<text x=-5/2 y=4 content="b" font_size_in_scale=1></text>
+<line x_1=-9/2 y_1=-2 x_2=-1/2 y_2=1 color=black>
+<line x_1=-9/2 y_1=-1 x_2=-1/2 y_2=2 color=black>
+<line x_1=-9/2 y_1=0 x_2=-1/2 y_2=0 color=black>
+<line x_1=-9/2 y_1=1 x_2=-1/2 y_2=-1 color=black>
+<line x_1=-9/2 y_1=2 x_2=-1/2 y_2=-2 color=black>
+
+<circle x=5 y=0 radius_x=3/2 radius_y=4>
+<text x=5 y=2 content="0"></text>
+<text x=5 y=1 content="1"></text>
+<text x=5 y=0 content="2"></text>
+<text x=5 y=-1 content="3"></text>
+<text x=5 y=-2 content="4"></text>
+
+<text x=5/2 y=4 content="a" font_size_in_scale=1></text>
+<line x_1=1/2 y_1=-2 x_2=9/2 y_2=-1 color=black>
+<line x_1=1/2 y_1=-1 x_2=9/2 y_2=2 color=black>
+<line x_1=1/2 y_1=0 x_2=9/2 y_2=0 color=black>
+<line x_1=1/2 y_1=1 x_2=9/2 y_2=-2 color=black>
+<line x_1=1/2 y_1=2 x_2=9/2 y_2=-2 color=black>
+
+<circle x=-15/2 y=0+-10 radius_x=3/2 radius_y=4>
+<text x=-15/2 y=2+-10 content="0"></text>
+<text x=-15/2 y=1+-10 content="1"></text>
+<text x=-15/2 y=0+-10 content="2"></text>
+<text x=-15/2 y=-1+-10 content="3"></text>
+<text x=-15/2 y=-2+-10 content="4"></text>
+
+<circle x=-5/2 y=0+-10 radius_x=3/2 radius_y=4>
+<text x=-5/2 y=2+-10 content="0"></text>
+<text x=-5/2 y=1+-10 content="1"></text>
+<text x=-5/2 y=0+-10 content="2"></text>
+<text x=-5/2 y=-1+-10 content="3"></text>
+<text x=-5/2 y=-2+-10 content="4"></text>
+
+<text x=-15/2+5/2 y=-6 font_size_in_scale=1>b   c</text>
+<circle x=-15/2+5/2 y=-6+-1/8 radius=1/4 border_width=2 color=transparent>
+<line x_1=-19/2+5/2 y_1=2+-10 x_2=-11/2+5/2 y_2=-1+-10 color=black>
+<line x_1=-19/2+5/2 y_1=1+-10 x_2=-11/2+5/2 y_2=-2+-10 color=black>
+<line x_1=-19/2+5/2 y_1=0+-10 x_2=-11/2+5/2 y_2=0+-10 color=black>
+<line x_1=-19/2+5/2 y_1=-1+-10 x_2=-11/2+5/2 y_2=-1+-10 color=black>
+<line x_1=-19/2+5/2 y_1=-2+-10 x_2=-11/2+5/2 y_2=-2+-10 color=black>
+
+<circle x=-5/2 y=0+-20 radius_x=3/2 radius_y=4>
+<text x=-5/2 y=2+-20 content="0"></text>
+<text x=-5/2 y=1+-20 content="1"></text>
+<text x=-5/2 y=0+-20 content="2"></text>
+<text x=-5/2 y=-1+-20 content="3"></text>
+<text x=-5/2 y=-2+-20 content="4"></text>
+
+<circle x=5/2 y=0+-20 radius_x=3/2 radius_y=4>
+<text x=5/2 y=2+-20 content="0"></text>
+<text x=5/2 y=1+-20 content="1"></text>
+<text x=5/2 y=0+-20 content="2"></text>
+<text x=5/2 y=-1+-20 content="3"></text>
+<text x=5/2 y=-2+-20 content="4"></text>
+
+<text x=0 y=-16 font_size_in_scale=1>a   b</text>
+<circle x=0 y=-16+-1/8 radius=1/4 border_width=2 color=transparent>
+<line x_1=1/2+-5/2 y_1=2+-20 x_2=9/2+-5/2 y_2=-1+-20 color=black>
+<line x_1=1/2+-5/2 y_1=1+-20 x_2=9/2+-5/2 y_2=2+-20 color=black>
+<line x_1=1/2+-5/2 y_1=0+-20 x_2=9/2+-5/2 y_2=0+-20 color=black>
+<line x_1=1/2+-5/2 y_1=-1+-20 x_2=9/2+-5/2 y_2=-2+-20 color=black>
+<line x_1=1/2+-5/2 y_1=-2+-20 x_2=9/2+-5/2 y_2=-2+-20 color=black>
+
+</graphic>
+<p>
+Cette propriété est vérifiée dans pas mal de cas en mathématiques, avec l'exemple le plus simple étant celui des nombres (que nous démontrerons dans la partie traitant des nombres) et de l'addition.
+</p>
+<math>(3 + 4) + 5 = 3 + (4 + 5)</math>
+<p>
+Cependant, certaines propriétés comme l'échange des éléments autour du "rond" ne sont pas toujours vraies pour des applications.
+</p>
+<math>f <mcomp> g <mnotequal> g <mcomp> f</math>
+<p>
+Pour cela, le plus simple est de faire un dessin, avec deux application "f" et "g".
+</p>
+<graphic ratio_base>
+<background_color white>
+<base x=-1/4 draw=0 width=30 height=10>
+
+<circle x=-10 y=0 radius_x=3/2 radius_y=4>
+<text x=-10 y=2 content="0"></text>
+<text x=-10 y=1 content="1"></text>
+<text x=-10 y=0 content="2"></text>
+<text x=-10 y=-1 content="3"></text>
+<text x=-10 y=-2 content="4"></text>
+
+<circle x=-5 y=0 radius_x=3/2 radius_y=4>
+<text x=-5 y=2 content="0"></text>
+<text x=-5 y=1 content="1"></text>
+<text x=-5 y=0 content="2"></text>
+<text x=-5 y=-1 content="3"></text>
+<text x=-5 y=-2 content="4"></text>
+
+<text x=-15/2 y=4 content="f" font_size_in_scale=1></text>
+<line x_1=-19/2 y_1=2 x_2=-11/2 y_2=2 color=black>
+<line x_1=-19/2 y_1=1 x_2=-11/2 y_2=0 color=black>
+<line x_1=-19/2 y_1=0 x_2=-11/2 y_2=1 color=black>
+<line x_1=-19/2 y_1=-1 x_2=-11/2 y_2=-1 color=black>
+<line x_1=-19/2 y_1=-2 x_2=-11/2 y_2=-2 color=black>
+
+<circle x=0 y=0 radius_x=3/2 radius_y=4>
+<text x=0 y=2 content="0"></text>
+<text x=0 y=1 content="1"></text>
+<text x=0 y=0 content="2"></text>
+<text x=0 y=-1 content="3"></text>
+<text x=0 y=-2 content="4"></text>
+
+<text x=-5/2 y=4 content="g" font_size_in_scale=1></text>
+<line x_1=-9/2 y_1=2 x_2=-1/2 y_2=1 color=black>
+<line x_1=-9/2 y_1=1 x_2=-1/2 y_2=2 color=black>
+<line x_1=-9/2 y_1=0 x_2=-1/2 y_2=0 color=black>
+<line x_1=-9/2 y_1=-1 x_2=-1/2 y_2=-1 color=black>
+<line x_1=-9/2 y_1=-2 x_2=-1/2 y_2=-2 color=black>
+
+<circle x=5 y=0 radius_x=3/2 radius_y=4>
+<text x=5 y=2 content="0"></text>
+<text x=5 y=1 content="1"></text>
+<text x=5 y=0 content="2"></text>
+<text x=5 y=-1 content="3"></text>
+<text x=5 y=-2 content="4"></text>
+
+<circle x=10 y=0 radius_x=3/2 radius_y=4>
+<line x_1=11/2 y_1=2 x_2=19/2 y_2=1 color=black>
+<line x_1=11/2 y_1=1 x_2=19/2 y_2=0 color=black>
+<line x_1=11/2 y_1=0 x_2=19/2 y_2=2 color=black>
+<line x_1=11/2 y_1=-1 x_2=19/2 y_2=-1 color=black>
+<line x_1=11/2 y_1=-2 x_2=19/2 y_2=-2 color=black>
+
+<text x=10 y=2 content="0"></text>
+<text x=10 y=1 content="1"></text>
+<text x=10 y=0 content="2"></text>
+<text x=10 y=-1 content="3"></text>
+<text x=10 y=-2 content="4"></text>
+
+<text x=5/2 y=0 content="=" font_size_in_scale=3/2></text>
+</graphic>
+</br>
+<graphic ratio_base>
+<background_color white>
+<base x=-1/4 draw=0 width=30 height=10>
+
+<circle x=-10 y=0 radius_x=3/2 radius_y=4>
+<text x=-10 y=2 content="0"></text>
+<text x=-10 y=1 content="1"></text>
+<text x=-10 y=0 content="2"></text>
+<text x=-10 y=-1 content="3"></text>
+<text x=-10 y=-2 content="4"></text>
+
+<circle x=-5 y=0 radius_x=3/2 radius_y=4>
+<text x=-5 y=2 content="0"></text>
+<text x=-5 y=1 content="1"></text>
+<text x=-5 y=0 content="2"></text>
+<text x=-5 y=-1 content="3"></text>
+<text x=-5 y=-2 content="4"></text>
+
+<text x=-15/2 y=4 content="g" font_size_in_scale=1></text>
+<line x_1=-19/2 y_1=2 x_2=-11/2 y_2=1 color=black>
+<line x_1=-19/2 y_1=1 x_2=-11/2 y_2=2 color=black>
+<line x_1=-19/2 y_1=0 x_2=-11/2 y_2=0 color=black>
+<line x_1=-19/2 y_1=-1 x_2=-11/2 y_2=-1 color=black>
+<line x_1=-19/2 y_1=-2 x_2=-11/2 y_2=-2 color=black>
+
+<circle x=0 y=0 radius_x=3/2 radius_y=4>
+<text x=0 y=2 content="0"></text>
+<text x=0 y=1 content="1"></text>
+<text x=0 y=0 content="2"></text>
+<text x=0 y=-1 content="3"></text>
+<text x=0 y=-2 content="4"></text>
+
+<text x=-5/2 y=4 content="f" font_size_in_scale=1></text>
+<line x_1=-9/2 y_1=2 x_2=-1/2 y_2=2 color=black>
+<line x_1=-9/2 y_1=1 x_2=-1/2 y_2=0 color=black>
+<line x_1=-9/2 y_1=0 x_2=-1/2 y_2=1 color=black>
+<line x_1=-9/2 y_1=-1 x_2=-1/2 y_2=-1 color=black>
+<line x_1=-9/2 y_1=-2 x_2=-1/2 y_2=-2 color=black>
+
+<circle x=5 y=0 radius_x=3/2 radius_y=4>
+<text x=5 y=2 content="0"></text>
+<text x=5 y=1 content="1"></text>
+<text x=5 y=0 content="2"></text>
+<text x=5 y=-1 content="3"></text>
+<text x=5 y=-2 content="4"></text>
+
+<circle x=10 y=0 radius_x=3/2 radius_y=4>
+<line x_1=11/2 y_1=2 x_2=19/2 y_2=0 color=black>
+<line x_1=11/2 y_1=1 x_2=19/2 y_2=2 color=black>
+<line x_1=11/2 y_1=0 x_2=19/2 y_2=1 color=black>
+<line x_1=11/2 y_1=-1 x_2=19/2 y_2=-1 color=black>
+<line x_1=11/2 y_1=-2 x_2=19/2 y_2=-2 color=black>
+
+<text x=10 y=2 content="0"></text>
+<text x=10 y=1 content="1"></text>
+<text x=10 y=0 content="2"></text>
+<text x=10 y=-1 content="3"></text>
+<text x=10 y=-2 content="4"></text>
+
+<text x=5/2 y=0 content="=" font_size_in_scale=3/2></text>
+</graphic>
+<p>
+C'est bien dommage, car cela marche pour beaucoup d'opérations sur les nombres, comme l'addition.
+Nous verrons lors du prochain chapitre dans la partie sur l'algèbre comment bien formaliser et lier toutes ces propriétés entre elles.
+</p>
+<math>2 + 3 = 3 + 2</math>
+<p>
 D'ailleurs, nous pouvons introduire une notation, permettant de simplifier certains types de composition d'applications / fonctions.
-En effet, imagineons une application / fonction "f", allant d'un ensemble "E" vers lui même.
+En effet, imaginons une application / fonction "f", allant d'un ensemble "E" vers lui même.
 Déjà, "f" a le même ensemble de départ / d'arrivée que lui même : il est donc possible que "f" soit composable avec elle même (tout dépendra de l'ensemble image et l'ensemble de définition de "f").
 Supposons que "f" est bel et bien composable avec elle même.
 Ici, <span class="important">si l'on veut composer "f" avec elle même plusieurs fois, on peut se passer de noter le petit rond, et noter à la place "f" exposant le nombre de fois que vous voulez effectuer cette composition en exposant</span>.
@@ -2032,6 +2280,12 @@ On peut donc écrire :
 </p>
 <math>f <mcomp> f <mcomp> f = <mi>f</mi><msup>3</msup></math></br>
 <math>f <mcomp> f <mcomp> f <mcomp> f <mcomp> f = <mi>f</mi><msup>5</msup></math>
+<p>
+Comme pour tout le reste des propriétés des applications / fonctions, <span class="important">l'intérêt de ce concept sera plus visible quand nous avancerons dans le cours</span>.
+Cependant, il est aussi vraie qu'avec ce que l'on a déjà vue, nous pouvons déduire beaucoup de propriétés, plus ou moins intéressantes.
+Par exemple, tout ce que nous avons vue nous permet de démontrer immédiatement que la composée de deux applications appartenant à l'espace fonctionnel des applications allant d'un ensemble vers lui-même donne toujours une application de ce même espace fonctionnel.
+</p>
+<math><mforall> f, g <min> <mi>E</mi><msup>E</msup>, f <mcomp> g <min> <mi>E</mi><msup>E</msup></math>
 
 
 
@@ -2200,6 +2454,12 @@ Les cas les plus fréquents d'utilisation sont les ensembles infinis (tous les e
 
 
 
+
+
+
+
+
+
 <h3>Les suites, familles et matrices en mathématiques</h3>
 <p>
 Une des façons de représenter des applications représente la famille mathématique.
@@ -2211,9 +2471,42 @@ Pour cela, la terminologie est très précise : si vous notez votre familel (qui
 Donc, pour une famille étant une application allant de "A" dans "B", <span class="important">on peut donc accéder à des éléments de "B" grâce à des éléments de "A"</span>.
 Ici, <span class="important">l'ensemble de départ de l'application est nommé ensemble des indices de la famille</span>.
 Ce simple formalisme est utilisée dans énormément de définitions en mathématiques.
-Il existe d'ailleurs une autre notation pour représenter la famille (et donc l'application) en elle même : mettre "f indice a" entre parenthèse, et noter à droite en indice "a appartenant à A"
+Il existe d'ailleurs une autre notation pour représenter la famille (et donc l'application) en elle même : mettre "f indice a" entre parenthèse, et noter à droite en indice "a appartenant à A" (ce qui se traduit par tous les "f indice a" pour tous les "a" dans "A").
 </p>
 <math>(<mi>f</mi><msub>a</msub>)<msub><mrow>a <min> A</mrow></msub></math>
+<p>
+Ici, la représentation des familles sous forme de diagramme sagittal n'est pas très intéressante, car parfaitement similaire à celle des applications.
+Cependant, on peut faire un dessin utilisant la nouvelle terminologie :
+</p>
+<graphic>
+<background_color white>
+<base draw=0>
+
+<text x=-2 y=2 content="a" font_size_in_scale=2/3></text>
+<text x=-2 y=1 content="b" font_size_in_scale=2/3></text>
+<text x=-2 y=0 content="c" font_size_in_scale=2/3></text>
+<text x=-2 y=-1 content="d" font_size_in_scale=2/3></text>
+<text x=-2 y=-2 content="e" font_size_in_scale=2/3></text>
+
+<text x=-5/2 y=2+1/4 content="f" font_size_in_scale=1></text>
+<text x=-5/2 y=1+1/4 content="f" font_size_in_scale=1></text>
+<text x=-5/2 y=0+1/4 content="f" font_size_in_scale=1></text>
+<text x=-5/2 y=-1+1/4 content="f" font_size_in_scale=1></text>
+<text x=-5/2 y=-2+1/4 content="f" font_size_in_scale=1></text>
+
+<circle x=2 y=0 radius_x=3/2 radius_y=4>
+<text x=2 y=2 content="0"></text>
+<text x=2 y=1 content="1"></text>
+<text x=2 y=0 content="2"></text>
+<text x=2 y=-1 content="3"></text>
+<text x=2 y=-2 content="4"></text>
+
+<line x_1=-3/2 y_1=2 x_2=3/2 y_2=2 color=black>
+<line x_1=-3/2 y_1=1 x_2=3/2 y_2=1 color=black>
+<line x_1=-3/2 y_1=0 x_2=3/2 y_2=0 color=black>
+<line x_1=-3/2 y_1=-1 x_2=3/2 y_2=-1 color=black>
+<line x_1=-3/2 y_1=-2 x_2=3/2 y_2=-2 color=black>
+</graphic>
 
 <p>
 Le type de famille le plus utilisé est la suite mathématique.
@@ -2240,6 +2533,39 @@ On peut aussi obtenir un objet similaire : les suites finies.
 Il s'agit donc de l'adaptation de la définition des suites dans le cas fini.
 </p>
 <math>A = [0, n], u : A <mto> E</math>
+<p>
+Encore une fois, la représentation des suites sous la forme de diagramme sagittal n'est pas très intéressante, car parfaitement similaire à celle des applications.
+Encore une fois, on peut faire un dessin utilisant la nouvelle terminologie :
+</p>
+<graphic>
+<background_color white>
+<base x=-1/5 draw=0>
+
+<text x=-2 y=2 content="0" font_size_in_scale=2/3></text>
+<text x=-2 y=1 content="1" font_size_in_scale=2/3></text>
+<text x=-2 y=0 content="2" font_size_in_scale=2/3></text>
+<text x=-2 y=-1 content="3" font_size_in_scale=2/3></text>
+<text x=-2 y=-2 content="4" font_size_in_scale=2/3></text>
+
+<text x=-5/2 y=2+1/4 content="u" font_size_in_scale=1></text>
+<text x=-5/2 y=1+1/4 content="u" font_size_in_scale=1></text>
+<text x=-5/2 y=0+1/4 content="u" font_size_in_scale=1></text>
+<text x=-5/2 y=-1+1/4 content="u" font_size_in_scale=1></text>
+<text x=-5/2 y=-2+1/4 content="u" font_size_in_scale=1></text>
+
+<circle x=2+1/4 y=0 radius_x=3/2 radius_y=4>
+<text x=2+1/4 y=2 content="1"></text>
+<text x=2+1/4 y=1 content="2"></text>
+<text x=2+1/4 y=0 content="4"></text>
+<text x=2+1/4 y=-1 content="8"></text>
+<text x=2+1/4 y=-2 content="16"></text>
+
+<line x_1=-3/2 y_1=2 x_2=3/2 y_2=2 color=black>
+<line x_1=-3/2 y_1=1 x_2=3/2 y_2=1 color=black>
+<line x_1=-3/2 y_1=0 x_2=3/2 y_2=0 color=black>
+<line x_1=-3/2 y_1=-1 x_2=3/2 y_2=-1 color=black>
+<line x_1=-3/2 y_1=-2 x_2=3/2 y_2=-2 color=black>
+</graphic>
 <p>
 Généralement, au lycée, le terme "suite" désigne des suites de nombres réels.
 Cependant, <span class="important">il faut bien comprendre qu'une suite peut comporter des éléments de n'importe quel ensemble possible</span>.
