@@ -1780,30 +1780,30 @@ L'opération la plus simple avec les fonctions (et les applications) est la comp
 <span class="important"><definition name="function-composition"></span>.
 L'idée est donc de créer une nouvelle fonction qui prend un élément, le transforme selon une fonction, puis transforme l'élément transformé en un autre selon une autre fonction.
 D'ailleurs, nous disons bien composition de fonction plutôt qu'une composition d'application, parce qu'une composition d'application est une composition de fonction, mais le concept de composition d'applications seul n'apporte pas de propriétés intéressantes.
-Voici un exemple intuitif de deux fonctions "f" et "g" quelconques, et d'une fonction "h" représentant la composée de "g" par "f".
+Voici un exemple intuitif de deux fonctions "f" et "g" quelconques, et d'une fonction "h" représentant la composée de "f" par "g".
 </p>
-<math>f : B <mto> C</math></br>
+<math>f : A <mto> B</math></br>
 <math>f : y <mto> f(y)</math></br>
-<math>g : A <mto> B</math></br>
+<math>g : B <mto> C</math></br>
 <math>g : z <mto> g(z)</math></br>
 <math>h : A <mto> C</math></br>
-<math>h : x <mto> f(g(x))</math>
+<math>h : x <mto> g(f(x))</math>
 <p>
-Attention : quand on dit la composée de "g" par "f", cela veut dire que "h" est égal "f(g(x))", et pas l'inverse.
-En fait, <span class="important">cela vient du fait que, pour calculer "h(x)", on fait premièrement "g(x)", puis "f(g(x))"</span>.
-Ici, on peut écrire "h" comme le résultat de l'opération "composition" appliqué sur ces fonctions, opération s'écrivant avec un petit rond (ici, on écrit "f" puis "g", dans cet ordre) :
+Attention : quand on dit la composée de "f" par "g", cela veut dire que "h" est égal "g(f(x))", et pas l'inverse.
+En fait, <span class="important">cela vient du fait que, pour calculer "h(x)", on fait premièrement "f(x)", puis "g(f(x))"</span>.
+Ici, on peut écrire "h" comme le résultat de l'opération "composition" appliqué sur ces fonctions, opération s'écrivant avec un petit rond (ici, on écrit "g" puis "f", dans cet ordre) :
 </p>
-<math>h = f <mcomp> g</math></br>
+<math>h = g <mcomp> f</math></br>
 <p>
-Encore une fois, si l'on a "f rong g", cela veut dire que l'on obtient la composée de "g" par "f".
+Encore une fois, si l'on a "g rong f", cela veut dire que l'on obtient la composée de "f" par "g".
 On peut faire de même avec "h(x)" (qui est ici un élément de l'ensemble de départ).
 </p>
-<math>h(x) = (f <mcomp> g)(x) = f(g(x))</math>
+<math>h(x) = (g <mcomp> f)(x) = g(f(x))</math>
 <p>
 Cette écriture permet de faire des "opération" d'applications / fonctions de manière simple (bien qu'elle ne dispose pas d'autant de propriétés que les opérations usuelles sur des nombres).
 Encore une fois, <span class="important">la composition d'application peut se faire avec un diagramme sagittal</span>.
-Voici un exemple d'une fonction "h" étant la composé de "g" par "f".
-Remarquons ici que "g" est en premier, puis "f" est en deuxième (encore une fois, car l'on passe par "g" puis par "f").
+Voici un exemple d'une fonction "h" étant la composée de "f" par "g".
+Remarquons ici que "f" est en premier, puis "g" est en deuxième (encore une fois, car l'on passe par "f" puis par "g").
 </p>
 
 <graphic ratio_base>
@@ -1824,7 +1824,7 @@ Remarquons ici que "g" est en premier, puis "f" est en deuxième (encore une foi
 <text x=-5 y=-1 content="6"></text>
 <text x=-5 y=-2 content="8"></text>
 
-<text x=-15/2 y=4 content="g" font_size_in_scale=1></text>
+<text x=-15/2 y=4 content="f" font_size_in_scale=1></text>
 <line x_1=-19/2 y_1=2 x_2=-11/2 y_2=1 color=black>
 <line x_1=-19/2 y_1=1 x_2=-11/2 y_2=2 color=black>
 <line x_1=-19/2 y_1=0 x_2=-11/2 y_2=0 color=black>
@@ -1838,7 +1838,7 @@ Remarquons ici que "g" est en premier, puis "f" est en deuxième (encore une foi
 <text x=0 y=-1 content="15"></text>
 <text x=0 y=-2 content="20"></text>
 
-<text x=-5/2 y=4 content="f" font_size_in_scale=1></text>
+<text x=-5/2 y=4 content="g" font_size_in_scale=1></text>
 <line x_1=-9/2 y_1=2 x_2=-1/2 y_2=2 color=black>
 <line x_1=-9/2 y_1=1 x_2=-1/2 y_2=2 color=black>
 <line x_1=-9/2 y_1=0 x_2=-1/2 y_2=2 color=black>
@@ -1871,21 +1871,21 @@ Remarquons ici que "g" est en premier, puis "f" est en deuxième (encore une foi
 </graphic>
 
 <p>
-D'un point de vue définitionnel, selon la composition que vous faites, il y a un détail à prendre en compte : la comptabilité de l'ensemble de départ de "f" et de l'ensemble image de "g".
-Déjà, <span class="important">l'ensemble de définition de l'application composée de "f" par "g" est l'ensemble des éléments de "A" tel que leur image par "g" appartient à l'ensemble de définition de "f"</span>.
-En effet, si l'image d'un élément de "A" par "g" n'appartient pas à l'ensemble de définition de "f", on ne peut pas savoir son comportement avec "f", et il n'a donc pas d'image par "h".
+D'un point de vue définitionnel, selon la composition que vous faites, il y a un détail à prendre en compte : la comptabilité de l'ensemble de départ de "g" et de l'ensemble d'arrivée de "f".
+Déjà, <span class="important">l'ensemble de définition de l'application composée de "f" par "g" est l'ensemble des éléments de "A" tel que leur image par "f" appartient à l'ensemble de définition de "g"</span>.
+En effet, si l'image d'un élément de "A" par "f" n'appartient pas à l'ensemble de définition de "g", on ne peut pas savoir son comportement avec "g", et il n'a donc pas d'image par "h".
 </p>
-<math><mi>D</mi><msub>h</msub> = {x <min> <mi>D</mi><msub>g</msub> | g(x) <min> <mi>D</mi><msub>f</msub>}</math>
+<math><mi>D</mi><msub>h</msub> = {x <min> <mi>D</mi><msub>f</msub> | f(x) <min> <mi>D</mi><msub>g</msub>}</math>
 <p>
-D'ailleurs, nous n'avons pas encore défini ultra-rigoureusement le concept de composition (nous ne l'avons fait que "intuitivement").
+D'ailleurs, nous n'avons pas encore défini ultra-rigoureusement le concept de composition (nous ne l'avons fait que "intuitivement", sans compter les élément où l'on ne sait pas si il y a une image ou pas).
 Cependant, cet ensemble "D indice h" va nous permettre de le faire.
 Déjà, remarquons que "D indice h" ne nécessite pas "h" dans sa définition : on va pouvoir l'utiliser pour définir le concept de composition.
 </p>
-<math>h = f <mcomp> g <mequi> <mforall> x <min> <mi>D</mi><msub>h</msub>, h(x) = f(g(x))</math>
+<math>h = g <mcomp> f <mequi> <mforall> x <min> <mi>D</mi><msub>h</msub>, h(x) = g(f(x))</math>
 <p>
 Ici, pour que "h" soit une application, il faut que "D indice h" soit égal à "A".
-Pour cela, il faut 2 choses : <span class="important">que "D indice g" soit égal à A" (et donc, que "g" soit une application) et que tous les "g(x)" possibles soient dans "D indice f" (et donc, que l'ensemble image de "g" soit inclut dans l'ensemble de définition de "f")</span>.
-Une condition suffisante est donc que "f" et "g" soient toutes les deux des applications, et que l'ensemble image de "g" soit inclu dans l'ensemble de départ de "f".
+Pour cela, il faut 2 choses : <span class="important">que "D indice f" soit égal à A" (et donc, que "f" soit une application) et que tous les "f(x)" possibles soient dans "D indice g" (et donc, que l'ensemble image de "f" soit inclut dans l'ensemble de définition de "g")</span>.
+Une condition suffisante est donc que "f" et "g" soient toutes les deux des applications, et que l'ensemble image de "f" soit inclu dans l'ensemble de départ de "g".
 Dans les autres cas, "h" est donc une fonction (plus ou moins complexe).
 C'est par exemple le cas dans notre diagramme sagittal vue plus haut.
 On peut cependant obtenir un exemple où certains éléments de l'ensemble de départ n'ont pas d'image.
@@ -1908,7 +1908,7 @@ On peut cependant obtenir un exemple où certains éléments de l'ensemble de d�
 <text x=-5 y=-1 content="6"></text>
 <text x=-5 y=-2 content="8"></text>
 
-<text x=-15/2 y=4 content="g" font_size_in_scale=1></text>
+<text x=-15/2 y=4 content="f" font_size_in_scale=1></text>
 <line x_1=-19/2 y_1=2 x_2=-11/2 y_2=0 color=black>
 <line x_1=-19/2 y_1=1 x_2=-11/2 y_2=2 color=black>
 <line x_1=-19/2 y_1=0 x_2=-11/2 y_2=1 color=black>
@@ -1922,7 +1922,7 @@ On peut cependant obtenir un exemple où certains éléments de l'ensemble de d�
 <text x=0 y=-1 content="15"></text>
 <text x=0 y=-2 content="20"></text>
 
-<text x=-5/2 y=4 content="f" font_size_in_scale=1></text>
+<text x=-5/2 y=4 content="g" font_size_in_scale=1></text>
 <line x_1=-9/2 y_1=2 x_2=-1/2 y_2=-2 color=black>
 <line x_1=-9/2 y_1=1 x_2=-1/2 y_2=2 color=black>
 <line x_1=-9/2 y_1=0 x_2=-1/2 y_2=2 color=black>
@@ -1972,7 +1972,7 @@ Voici un exemple où la fonction obtenue est en fait une fonction nulle :
 <text x=-5 y=-1 content="6"></text>
 <text x=-5 y=-2 content="8"></text>
 
-<text x=-15/2 y=4 content="g" font_size_in_scale=1></text>
+<text x=-15/2 y=4 content="f" font_size_in_scale=1></text>
 <line x_1=-19/2 y_1=2 x_2=-11/2 y_2=1 color=black>
 <line x_1=-19/2 y_1=1 x_2=-11/2 y_2=2 color=black>
 <line x_1=-19/2 y_1=0 x_2=-11/2 y_2=0 color=black>
@@ -1986,7 +1986,7 @@ Voici un exemple où la fonction obtenue est en fait une fonction nulle :
 <text x=0 y=-1 content="15"></text>
 <text x=0 y=-2 content="20"></text>
 
-<text x=-5/2 y=4 content="f" font_size_in_scale=1></text>
+<text x=-5/2 y=4 content="g" font_size_in_scale=1></text>
 <line x_1=-9/2 y_1=-1 x_2=-1/2 y_2=1 color=black>
 <line x_1=-9/2 y_1=-2 x_2=-1/2 y_2=1 color=black>
 
