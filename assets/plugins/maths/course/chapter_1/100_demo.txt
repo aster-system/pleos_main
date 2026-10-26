@@ -284,22 +284,51 @@ Ici, ces deux fonctions ont le même ensemble de départ, d'arrivée, de défini
 
 
 <h3>Les injections, surjections et bijections</h3>
-<h4>1.1.1.0</h4>
+<h4 id="injection_definition_equivalence">1.1.1.0</h4>
 <p>
-Démontrons que une application mathématique où tous les éléments de l'ensemble d'arrivé sont reliés à au plus 1 objet équivaut à dire que chaque élément de l'ensemble image a exactement 1 antécédent, et équivaut à dire que "f(a) = f(b)" implique que "a = b".
-Cette démonstration permet donc de donner deux définitions équivalentes du concept d'injectivité.
-Définissons notre application.
+Définissons une application "f".
 </p>
 <math>f : E <mto> F, x <mto> f(x)</math>
 <p>
-Supposons que tous les éléments de l'ensemble d'arrivée sont reliés à au plus 1 objet.
+Démontrons l'équivalence entre ces deux propositions :
 </p>
-<math><mforall>y <min> F, [<mexists>! x <min> E, f(x) = y <mor> <mnot>(<mexists> x <min> E, f(x) = y)]</math>
+<math><mforall>z <min> F, (<mexists>! a <min> E, f(a) = z) <mor> <mnot>(<mexists> a <min> E, f(a) = z)</math></br>
+<math><mforall>a, y <min> E, f(a) = f(y) <mimp> a = y</math>
 <p>
-Par définition, tous les éléments ayant un antécédent par cette application sont dans l'ensemble image de "f".
-Donc, tous les éléments vérifiant la première proposition à gauche du "OU" sont dans l'ensemble image de "f".
+Procédons par double-implication.
+Considérons la première proposition vraie.
+Si nous avons un élément "x" de "E", on sait que "f(x)" appartient à "F" : "f(x)" doit donc respecter la première proposition énoncé plus haut.
+Cela veut donc dire qu'il doit soit respecter la partie à gauche du "OU", soit la partie à droite du "OU".
+De plus, on sait que "f(x)" a au moins une image par "f", ce qui veut dire que "f(x)" ne peut que respecter la propriété à gauche du "OU".
 </p>
-<math><mforall>y <min> F, [<mexists>! x <min> E, f(x) = y <mimp> y <min> Im(f)]</math>
+<math><mimp><mforall>x <min> E, <mexists>! a <min> E, f(a) = f(x)</math>
+<p>
+Prenons un élément "y", toujours appartenant à "E".
+Supposons que "f(y)" est égal à "f(x)".
+Ici, on sait qu'il existe un unique élément "a" de "E" tel que "f(a) = f(x)".
+Donc, il ne peut exister qu'une valeur pour "y" : "x".
+</p>
+<math><mimp><mforall>x, y <min> E, f(x) = f(y) <mimp> x = y</math>
+<p>
+Procédons à l'autre implication.
+Imaginons que la deuxième formule est vérifiée.
+Dans ce cas, posons un élément quelconque de "F".
+Si il a un antécédent, son antécédent (et tous les éléments de "E") respecte la propriété énumérée parle deuxième formule, on peut donc noter :
+</p>
+<math><mforall> a <min> F, <mexists> x <min> E, f(x) = a <mimp> {<mexists> x <min> E, f(x) = a <mand> <mforall>y <min> E, f(x) = f(y) <mimp> x = y}</math></br>
+<math><mforall> a <min> F, <mexists> x <min> E, f(x) = a <mimp> {<mexists>! x <min> E, f(x) = a}</math>
+<p>
+Si il n'a pas d'antécédent, alors la propriété de la deuxième proposition ne sert pas à grand chose.
+</p>
+<math><mforall> a <min> F, <mnot>(<mexists> x <min> E, f(x) = a) <mimp> <mnot>(<mexists> x <min> E, f(x) = a)</math>
+<p>
+Comme chaque élément de "F" a soit 0 antécédent, soit 1 (ou plus) antécédent, alors on peut combiner les deux proprositions avec un "OU".
+</p>
+<math><mimp> <mforall>z <min> F, (<mexists>! a <min> E, f(a) = z) <mor> <mnot>(<mexists> a <min> E, f(a) = z)</math>
+
+
+
+
 <p>
 Cependant, les éléments de "F" vérifiant la deuxième proposition à droite du "OU" n'ont pas d'antécédent, et ne sont donc pas dans l'ensemble image de "f".
 </p>
@@ -310,7 +339,7 @@ Ici, il y a deux propriétés possibles : 1 antécédent, ou aucun antécédent.
 Un élément peut être dans l'ensemble image si il a un unique antécédent dans "E", mais il ne peut pas l'être si il n'a pas d'antécédent dans "E".
 Il n'y a donc qu'une possibilité : tous les éléments de l'ensemble image n'ont qu'un antécédent par "E".
 </p>
-<math><mforall>y <min> F, [y <min> Im(f) <mimp> <mexists>! x <min> E, f(x) = y]</math>
+<math><mforall>y <min> F, [y <min> Im(f) <mequi> <mexists>! x <min> E, f(x) = y]</math>
 <p>
 Par douple implication, nous pouvons donc mettre des équivalences entre l'appartenance (ou pas) à l'ensemble image et les deux propriétés autour du "OU".
 </p>

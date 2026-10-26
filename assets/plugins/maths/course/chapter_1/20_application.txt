@@ -2683,13 +2683,13 @@ Cependant, <span class="important">cet outil est extrêmement utilisé dans beau
 
 <h3>Injections, surjections et bijections</h3>
 <p>
-Comme la définition d'une application ne laisse pas beaucoup de place à moduler ce qu'il se passe dans l'ensemble de départ, une grande partie des applications se classent selon ce qu'il se passe dans l'ensemble d'arrivé.
+Comme la définition d'une application ne laisse pas beaucoup de place pour ce qu'il se passe dans l'ensemble de départ, une grande partie des applications se classent selon ce qu'il se passe dans l'ensemble d'arrivée.
 En effet, il existe trois types d'applications majeures : les injections, les surjections et les applications.
 </p>
 <p>
 Commençons par le commencement : l'injection.
-<span class="important"><definition name="injection"></span>.
-Dans une injection, il n'existe donc pas d'élément de l'ensemble d'arrivé lié à plusieurs éléments de l'ensemble de départ.
+intuitivement parlant, <span class="important"><definition name="injection"></span>.
+Dans une injection, il n'existe donc pas d'élément de l'ensemble d'arrivée lié à plus d'un élément de l'ensemble de départ.
 D'ailleurs, dire qu'une fonction est injective revient à dire que l'application que l'on peut en obtenir en restreignant son ensemble de départ à son ensemble de définition l'est.
 </p>
 <graphic>
@@ -2720,11 +2720,10 @@ Donc, <span class="important"><definition name="injection-rigorous"></span>.
 Cette définition est généralement la définition utilisée pour parler des injections.
 D'ailleurs, on peut noter que la réciproque (si "a = b", alors "f(a) = f(b)") est immédiate, selon la définition même du concept d'application.
 Dans les formules juste en bas, la première ligne représente la définition de l'application, la deuxième ligne représente la première définition que nous avons vue, la troisième représente une reformulation équivalente, et la quatrième représente la deuxième définition que nous avons vue.
-Le passage de l'une à l'autre est <a href="demo">démontré juste ici</a>.
+Le passage de l'une à l'autre est <a href="demo#injection_definition_equivalence">démontré juste ici</a>.
 </p>
 <math>f : E <mto> F, x <mto> f(x)</math></br>
 <math><mforall>z <min> F, (<mexists>! x <min> E, f(x) = z) <mor> <mnot>(<mexists> x <min> E, f(x) = z)</math></br>
-<math><mequi><mforall>z <min> Im(f), <mexists>! x <min> E, f(x) = z</math></br>
 <math><mequi><mforall>x, y <min> E, f(x) = f(y) <mimp> x = y</math>
 <p>
 Parlons du deuxième type d'application : la surjection.
