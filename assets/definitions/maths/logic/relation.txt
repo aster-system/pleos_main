@@ -38,7 +38,9 @@
 </new_definition>
 <new_definition name="permutation">
     <content>une permutation (aussi appelé substitution dans certains ouvrages) est une bijection où l'ensemble de départ est le même que l'ensemble d'arrivée</content>
-    <content name="cyclic">une permutation est dite circulaire si elle permute une partie de l'ensemble de départ en avançant (ou reculant) chaque élément de cette partie (de telle manière que le dernier élément prenne la place du premier élément si besoin), et ne modifie pas les éléments or de cette partie</content>
+    <content name="cyclic">un cycle est une permutation qui envoie un élément sur un autre, et envoie cet autre élément sur encore un autre... jusqu'à arriver à un élément qui est envoyé sur le premier</content>
+    <content name="orbit">l'orbite d'un élément de l'ensemble de départ d'une permutation est l'ensemble des éléments de notre élément de départ qui sont l'image de la permutation portée à tous les exposants possibles</content>
+    <content name="support">le support d'une permutation est l'ensemble des éléments de "E" qui ne sont pas un point fixe</content>
     <content name="transposition">une transposition est une permutation qui ne lie que deux éléments entre eux sans toucher aux autres (et donc, qui n'échange que deux éléments de l'ensemble entre eux sans toucher aux autres)</content>
     <content name="transposition_parity">une transposition est dite paire si elle est la composition d'une quantité paire de transposition (sinon, elle est dite impaire)</content>
     <content name="transposition_signature">une signature d'une transposition est une valeur qui est -1 si la transposition est impaire, et 1 si elle est paire</content>

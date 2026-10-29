@@ -2726,6 +2726,12 @@ Le passage de l'une à l'autre est <a href="demo#injection_definition_equivalenc
 <math><mforall>z <min> F, (<mexists>! x <min> E, f(x) = z) <mor> <mnot>(<mexists> x <min> E, f(x) = z)</math></br>
 <math><mequi><mforall>x, y <min> E, f(x) = f(y) <mimp> x = y</math>
 <p>
+L'intérêt principal de ce concept est le suivant : imaginons que nous avons la formule "x = y", que nous n'avons pas la capacité de savoir si elle est vraie ou fausse.
+En fait, <span class="important">si on a une injection "f", on peut donc voir que le fait que "x = y" équivaut au fait que "f(x) = f(y)"</span>.
+Dans ce cas, si l'injection permet de prouver l'égalité entre les images plus facilement, on peut en déduire l'égalité entre les antécédents.
+</p>
+<math>x = y <mequi> f(x) = f(y)</math>
+<p>
 Parlons du deuxième type d'application : la surjection.
 <span class="important"><definition name="surjection"></span>.
 Dans une surjection, il n'existe donc pas d'élément de l'ensemble d'arrivé lié à aucun élément de l'ensemble de départ.
@@ -2760,13 +2766,19 @@ D'ailleurs, on peut assez vite en déduire que l'ensemble image d'une surjection
 Ici, la définition logique pure est très simple :
 </p>
 <math>f : E <mto> F, x <mto> f(x)</math></br>
-<math><mforall>y <min> F, <mexists> x <min> E, f(x) = y</math></math></br>
+<math><mforall>y <min> F, <mexists> x <min> E, f(x) = y</math></br>
 <math><mequi> Im(f) = F</math>
+<p>
+Parmi toutes les propriétés possibles d'une surjection, l'une d'elle consiste à dire que pour toutes parties de "F", chaque élément de la partie a au moins un antécédent.
+Cela veut donc dire que l'image réciproque de cette partie contient tous les antécédents de chaque élément de la partie de "F", et pas d'antécédent d'éléments hors de la partie de "F".
+Donc, <span class="important">l'image directe de l'image réciproque d'une partie quelconque de "F" est égale à cette partie de "F"</span>.
+</p>
+<math><mforall> Y <mincluded> F, f(<mi>f</mi><msup>-1</msup>(Y)) = Y</math>
 <p>
 Le dernier type est donc la bijection.
 <span class="important"><definition name="bijection"></span>.
 D'un point de vue rigoureux, la définition d'une bijection mélange donc celle de l'injection et celle de la surjection.
-D'ailleurs, cette définition est équivalente à dire que chaque élément de départ a un antécédent, et chaque élément d'arrivée a une image (<a href="demo#1_1_1_1">démontré juste ici</a>).
+D'ailleurs, cette définition est équivalente à dire que chaque élément de départ a un antécédent, et chaque élément d'arrivée a une image (<a href="demo#bijection_is_injection_and_surjection">démontré juste ici</a>).
 </p>
 <graphic>
 <background_color white>
@@ -2802,7 +2814,8 @@ Ici, il existe une notation pour noter l'ensemble des bijections entre un ensemb
 </p>
 <math>Bij(A, B)</math>
 <p>
-Il est d'ailleurs à noter qu'une composition de deux bijections (de "E" vers "F" et de "F" vers "G") donne une nouvelle bijection, de "E" vers "G" (<a href="demo#1_1_1_2">démontré ici</a>).
+Il est d'ailleurs à noter que <span class="important">la composition de deux bijections (de "E" vers "F" et de "F" vers "G") donne une nouvelle bijection, de "E" vers "G"</span> (<a href="demo#bijection_composition_is_bijection">démontré ici</a>).
+D'ailleurs, il existe un résultat similaire (mais plus faible) dans l'autre sens : <span class="important">si une application étant la composée "g rond f" de deux autre est une bijection, alors "f" est injective et "g" est surjective</span> (<a href="demo#bijection_composition_made_of_injective_surjective">démontré ici</a>).
 La bijection la plus simple définissable est la bijection identité.
 En fait, <span class="important"><definition name="bijection-identity"></span>.
 Généralement, pour un ensemble "E" donné, l'application identité sur "E" est notée "Id indice E".
@@ -2850,7 +2863,7 @@ En fait, pour une application "f", son application réciproque (généralement n
 <p>
 Attention : il ne faut pas confondre cette notation avec la notation de l'image réciproque vue plus haut (bien qu'elles soient parfaitement égales).
 Il existe d'ailleurs beaucoup d'applications qui ne possèdent pas d'application réciproque.
-L'introduction de ce concept précis à cet endroit n'est pas un hasard : <span class="important">dire qu'une application admet une application réciproque équivaut à dire que cette application est bijective</span> (<a href="demo#1_1_1_3">démontré ici</a>).
+L'introduction de ce concept précis à cet endroit n'est pas un hasard : <span class="important">dire qu'une application admet une application réciproque équivaut à dire que cette application est bijective</span> (<a href="demo#application_reciprocal_is_bijection">démontré ici</a>).
 Cela est très facile à illustrer :
 </p>
 <graphic ratio_base>
@@ -2921,42 +2934,213 @@ Cela est très facile à illustrer :
 Un type assez utile de bijection est la permutation.
 <span class="important"><definition name="permutation"></span>.
 En effet, dans ce cas, en considérant un ordre précis pour les éléments dans l'ensemble, on peut la représenter comme un "réarrangement" des éléments de l'ensemble, ce qui est généralement le cas des objets "permutations" dans le langage courant.
+Généralement, une permutation se nomme avec la lettre grecque "sigma".
+</p>
+<math><msigma> : E <mto> E, <mforall> y <min> E, <mexists>! x <min> E, f(x) = y</math>
+<p>
 D'ailleurs, <span class="important">l'application identité sur "E" est une permutation sur "E" (qui "n'échange" aucun élément de l'ensemble)</span>.
 Il s'agit en fait de la permutation... qui ne modifie aucun élément de "E" (dans le langage courant, il ne s'agirait plus d'une permutation, mais en mathématique, cela en reste une, car la définition est toujours respectée).
 </p>
 <math><mi>Id</mi><msub>E</msub> : E <mto> E, x <mto> x</math>
 <p>
-Généralement, la notation d'une permutation dans un ensemble fini de taille "n" est faite pour représenter la façon dont les éléments sont échangés.
-En fait, <span class="important">on les note sous la forme de deux "uplets" l'un sur l'autre, notés de tel manière que chaque élément du premier uplet est directement au dessus d'un élément du second uplet</span>.
-L'idée, <span class="important">c'est de dire que la permutation va lier un élémént du premier uplet à l'élément du deuxième uplet juste en dessous, pour tous les éléments du premier uplet</span>.
-Ici, l'ordre des éléments dans le uplet peut être n'importe quoi, et n'influe pas sur la notation (cela marche même si il n'y a pas de relation permettant de définir cet ordre sur l'ensemble).
-Il est fortement conseillé de noter les premiers éléments de "1" à "n" si possible (voir d'associer un nombre de "1" à "n" pour chaque élément de l'ensemble), pour des raisons de simplicité.
+Généralement, <span class="important">l'ensemble des permutations d'un ensemble "E" se note "S(E)"</span>.
+Il est aussi standard de rencontrer cette notation avec le "S" écrit dans un style gothique.
+Cet ensemble est nommé "groupe symétrique" ou "groupe des permutations".
+La notion de "groupe" est une notion que nous traiterons dans le prochain chapitre, mais qui est l'une des utilités principales de ce concept.
 </p>
-<math><mrow><mtable><mtr><mtd><mi>(1, 2, 3, 4, 5)</mi></mtd></mtr><mtr><mtd><mi>(4, 2, 5, 1, 3)</mi></mtd></mtr></mtable></mrow></math>
+<math>S(E)</math>
 <p>
-Il existe cependant une autre notation, plus courte mais un peu plus complexe, dite "notation canonique".
-En fait, <span class="important">la notation canonique consiste à noter un élément, puis à noter à sa droite l'élément auquel notre premier élément est lié, et faire de même avec cet élément jusqu'à retomber sur l'élément de départ (tout ça entre parenthèses, et généralement pas espacés d'un quelconque symbole)</span>.
-Cependant, il est possible que des éléments soit ignorés, si ils ne permutent pas avec un élément de départ, ou avec un des éléments suivants.
-Dans ce cas, <span class="important">on refait cela avec les éléments manquant jusqu'à qu'il n'en manque plus, en séparant chaque itération par des parenthèses</span>.
+Avec ces permutations, il existe une propriété très importante et immédiate : toute composition de permutation de "E" est une nouvelle permutation de "E".
+Comme ces permutations sont des applications allant d'un ensemble vers lui-même, on peut étudier si elle a des points fixes.
+Cependant, avec ce type d'application, on peut aussi définir un concept similaire : le support.
+<span class="important"><definition name="permutation-support"></span>.
+Il s'agit donc de l'ensemble des éléments tel que leur image n'est pas eux même.
+Généralement, cet ensemble est nommé "supp".
+</p>
+<math>supp(<msigma>)</math>
+<p>
+Dans le cas le plus simple (l'application identité), le support est vide.
+D'ailleurs, il existe une propriété intéressante avec ce support : <span class="important">si deux applications ont deux supports disjoints, alors on peut les échanger autour du symbôle de composition et quand même obtenir le même résultat</span>.
+C'est l'un des rares cas où l'on peut faire ceci avec des applications.
+Cependant, ce n'est pas une équivalence : une application et son application réciproque respectent cette propriété, mais peuvent avoir deux supports non-disjoints.
+La démonstration est présente <a href="demo#disjoint_support_implies_commutativity">juste ici</a>.
+</p>
+<math>supp(f) <minter> supp(g) = <mempty_set> <mimp> g <mcomp> f = f <mcomp> g</math>
+<p>
+D'ailleurs, si vous avez une permutation dans un ensemble fini de taille "n", il existe un moyen très simple et visuel de représenter cette permutation.
+En fait, <span class="important">on la note sous la forme d'un gros "uplets" à deux étages, noté de telle manière que chaque élément du premier ensemble est directement au dessus d'un élément du second ensemble</span>.
+L'idée, <span class="important">c'est de dire que la permutation va lier un élémént du premier ensemble vers l'élément du deuxième ensemble juste en dessous, pour tous les éléments du premier ensemble</span>.
+Pour que la notation fonctionne, il faut s'assurer qu'elle représente bien une bijection (et donc, que chaque élément distinct d'en bas est relié à un unique élément d'en haut).
+Il y a une dernière chose à noter : <span class="important">on ne note pas les éléments avec leur nom direct, mais on associe à chaque élément un unique nombre entre "1" et le cardinal des ensembles (ils ont le même cardinal)</span>.
+Dans ce cas, la notation garde l'exacte même forme, quelque soit l'ensemble avec le cardinal demandé.
+</p>
+<math><mrow><mo>(</mo><mtable><mtr><mtd><mi>1 2 3 4 5</mi></mtd></mtr><mtr><mtd><mi>4 2 5 1 3</mi></mtd></mtr></mtable><mo>)</mo></mrow></math>
+<p>
+Ici, cette permutation désigne :
+</p>
+<graphic>
+<background_color white>
+<base draw=0>
+
+<circle x=-2 y=0 radius_x=3/2 radius_y=4>
+<text x=-2 y=2 content="1"></text>
+<text x=-2 y=1 content="2"></text>
+<text x=-2 y=0 content="3"></text>
+<text x=-2 y=-1 content="4"></text>
+<text x=-2 y=-2 content="5"></text>
+
+<circle x=2 y=0 radius_x=3/2 radius_y=4>
+<text x=2 y=2 content="1"></text>
+<text x=2 y=1 content="2"></text>
+<text x=2 y=0 content="3"></text>
+<text x=2 y=-1 content="4"></text>
+<text x=2 y=-2 content="5"></text>
+
+<line x_1=-3/2 y_1=2 x_2=3/2 y_2=-1 color=black>
+<line x_1=-3/2 y_1=1 x_2=3/2 y_2=1 color=black>
+<line x_1=-3/2 y_1=0 x_2=3/2 y_2=-2 color=black>
+<line x_1=-3/2 y_1=-1 x_2=3/2 y_2=2 color=black>
+<line x_1=-3/2 y_1=-2 x_2=3/2 y_2=0 color=black>
+</graphic>
+<p>
+Un des types de permutation les plus pratiques est le cycle.
+<span class="important"><definition name="permutation-cyclic"></span>.
+Un cycle forme donc une sorte de cycle : un élément va vers un autre, qui va vers un autre, qui va vers un autre... qui revient vers le premier.
+Cela équivaut à dire que "a" est envoyé vers "f(a)", "f(a)" est envoyé vers "f(f(a))"... jusqu'à ce qu'un "f(f( ... f(a)))" soit envoyé sur "a".
+Tous les autres éléments sont donc des points fixes du cycle.
+Un exemple de cycle serait ceci :
+</p>
+<math><mrow><mo>(</mo><mtable><mtr><mtd><mi>1 2 3 4 5</mi></mtd></mtr><mtr><mtd><mi>4 5 3 2 1</mi></mtd></mtr></mtable><mo>)</mo></mrow></math>
+<p>
+On peut le représenter comme ceci :
+</p>
+<graphic>
+<background_color white>
+<base draw=0>
+
+<circle x=-2 y=0 radius_x=3/2 radius_y=4>
+<text x=-2 y=2 content="1"></text>
+<text x=-2 y=1 content="2"></text>
+<text x=-2 y=0 content="3"></text>
+<text x=-2 y=-1 content="4"></text>
+<text x=-2 y=-2 content="5"></text>
+
+<circle x=2 y=0 radius_x=3/2 radius_y=4>
+<text x=2 y=2 content="1"></text>
+<text x=2 y=1 content="2"></text>
+<text x=2 y=0 content="3"></text>
+<text x=2 y=-1 content="4"></text>
+<text x=2 y=-2 content="5"></text>
+
+<line x_1=-3/2 y_1=2 x_2=3/2 y_2=-1 color=black>
+<line x_1=-3/2 y_1=1 x_2=3/2 y_2=-2 color=black>
+<line x_1=-3/2 y_1=0 x_2=3/2 y_2=0 color=black>
+<line x_1=-3/2 y_1=-1 x_2=3/2 y_2=1 color=black>
+<line x_1=-3/2 y_1=-2 x_2=3/2 y_2=2 color=black>
+</graphic>
+<p>
+Avec le cycle, nous pouvons définir un concept très pratique : l'orbite d'un élément.
+<span class="important"><definition name="permutation-orbit"></span>.
+Donc, l'orbite d'un élément "a" est l'ensemble qui contient "a", "f(a)", "f(f(a))", "f(f(f(a)))"...
+Si "E" est fini, à un moment donné, nous allons retomber (via un "f(f( ... f(a)))") sur "a", ce qui rend l'orbite finie.
+Nous pouvons d'ailleurs voir que nous ne retomberons jamais sur un "f(f( ... f(a)))" à partir d'un autre "f(f( ... f(a)))" qui n'est pas "a", car cela voudrait dire qu'un élément de "E" a plusieurs antécédents, ce qui n'est pas possible (car on travaille sur une bijection).
+Pour une permutation "sigma" et un élément "x", cet ensemble se note "Orb indice sigma(x)".
+</p>
+<math><mi>Orb</mi><msub><msigma></msub>(x)</math>
+<p>
+Pour un point fixe de sigma, l'orbite de ce point fixe est donc le singleton ne contenant que cet élément.
+Le cas le plus intéressant est l'orbite d'éléments d'un cycle.
+En effet, <span class="important">l'orbite d'un élément quelconque du support d'un cycle est l'ensemble des éléments du support du cycle</span>.
+Effectivement, par définition d'un cycle, on sait que dans un cycle "f", "a" va vers "f(a)", "f(a)" va vers "f(f(a))"...
+On sait aussi que, toujours par définition d'un cycle, on retombe sur "a" à partir d'un moment.
+Donc, <span class="important">l'orbite d'un élément du support du cycle représente tous les éléments par lequel passe le cycle, et donc tout le support du cycle</span>.
+Dans le cas de notre cycle de tout à l'heure :
+</p>
+<math><mi>Orb</mi><msub><msigma></msub>(1) = {1, 2, 4, 5}</math>
+<p>
+D'ailleurs, <span class="important">tous les éléments du support d'un cycle ont la même orbite</span>.
+Ceci se vérifie très vite : si vous prenez une orbite déjà connue d'un élément "x" et que vous prenez un élément "y" dans cette orbite, on sait par défition de l'orbite que tous les "f(y)", "f(f(y))"... sont dedans, et que tous les éléments dans l'orbite après "y" sont des "f(y)", "f(f(y))"...
+Nous allons à un moment donné retomber sur "x", qui sera donc un "f(f( ... f(y)))", et on peut continuer les ainsi jusqu'à retomber sur "y" (en passant par tous les éléments intermédiaires), terminant l'orbite.
+</p>
+<math><mi>Orb</mi><msub><msigma></msub>(1) = <mi>Orb</mi><msub><msigma></msub>(2) = <mi>Orb</mi><msub><msigma></msub>(4) = <mi>Orb</mi><msub><msigma></msub>(5)</math>
+<p>
+On en déduit par contraposée que chaque orbite est disjointes de toutes les autres qui ne lui sont pas égales (si un élément et dans l'orbite d'un autre, l'orbite des deux éléments est la même, ce qui veut dire que si deux orbites ne sont pas similaires, aucun élément de la première est dans la seconde et vice-versa : elles sont disjointes).
+Grâce à ça, <span class="important">on peut déduire que l'ensemble des orbites différentes de tous les éléments de l'ensemble de départ partitionne l'ensemble d'arrivée (tous les éléments de l'ensemble d'arrivée sont dans une orbite, et chaque orbite est disjointe de tous les autres)</span>.
+Ce concept va permettre de déduire une des notations possibles d'un cycle.
+En effet, l'orbite représente l'ensemble des éléments affectés par le cycle, <span class="important">mais on peut aussi représenter un cycle sous la forme d'un n-uplet où le premier élément est un élément "a" du support du cycle, le deuxième est "f(a)", le troisième est "f(f(a))"... jusqu'à avoir tous les éléments du support</span>.
+Cette notation plus courte permet d'écrire un cycle en une seule ligne, en spécifiant un élément du cycle, puis son image, puis l'image de son image...
+Ici, le dernier élément que l'on va noter est l'élément tel que son image soit le premier élément du cycle.
+Les autres éléments du cycle (qui sont donc les points fixes) sont donc ignorés, et l'on comprend donc par notre nouvelle notation qu'il sont des points fixes.
+Notre cycle de tout à l'heure se noterai donc :
+</p>
+<math><mrow><mo>(</mo><mtable><mtr><mtd><mi>1 2 3 4 5</mi></mtd></mtr><mtr><mtd><mi>4 5 3 2 1</mi></mtd></mtr></mtable><mo>)</mo></mrow> = (1 4 2 5)</math>
+<p>
+Cette notation a cependant un léger défaut : <span class="important">elle n'est pas unique</span>.
+Ici, la permutation notée "(1 4 2 5)" est la même que "(4 2 5 1)", "(2 5 1 4)" et "(5 1 4 2)".
+En effet, on peut glisser les éléments, ce qui nous permettra d'obtenir la même permutations.
+La démonstration est très simple : quelque soit ces permutations, le prochain élément reste inchangé, ce qui fait que tous les éléments du support du cycle ont la même image dans les permutations.
+Ici, l'ensemble de départ, d'arrivée et le support reste évidemment inchangé.
+</p>
+<math>(1 4 2 5) = (4 2 5 1) = (2 5 1 4) = (5 1 4 2)</math>
+<p>
+Ces cycles sont très pratiques, car ils permettent d'énoncer un résultat très important dans l'étude des permutations : la décomposition en cycles disjoints.
+En effet, <span class="important">toute permutation peut se décomposer en composition de cycles disjoints</span>.
+Généralement, le nom usuel de ce résultat est "permutation en produit de cycles disjoints", où l'on utilise le mot produit à la place du mot composition.
+Pour obtenir cette décomposition, <span class="important">on parcourt les éléments de l'ensemble de départ, on calcul leur orbite, on forme un cycle à partir de cet orbite, et si on n'a pas déjà croisé ce cycle avec un autre élément, on compose ce cycle avec tous les autres cycles obtenus avec tous les autres éléments</span>.
+Pour simplifier la notation, on ignore les éléments qui sont seuls dans leur cycle (ils sont donc points fixe de la permutation, et leur absence de la notation sera considérer ainsi).
 Voici un exemple avec une permutation simple :
 </p>
-<math><mrow><mtable><mtr><mtd><mi>(1, 2, 3, 4, 5)</mi></mtd></mtr><mtr><mtd><mi>(2, 1, 5, 3, 4)</mi></mtd></mtr></mtable></mrow> = (1 2)(3 5 4)</math>
+<math><mrow><mo>(</mo><mtable><mtr><mtd><mi>1 2 3 4 5</mi></mtd></mtr><mtr><mtd><mi>2 1 5 3 4</mi></mtd></mtr></mtable><mo>)</mo></mrow> = (1 2)(3 5 4)</math>
+<p>
+On peut l'illustre assez facilement :
+</p>
+<graphic>
+<background_color white>
+<base draw=0>
+
+<circle x=-2 y=0 radius_x=3/2 radius_y=4>
+<text x=-2 y=2 content="1"></text>
+<text x=-2 y=1 content="2"></text>
+<text x=-2 y=0 content="3"></text>
+<text x=-2 y=-1 content="4"></text>
+<text x=-2 y=-2 content="5"></text>
+
+<circle x=2 y=0 radius_x=3/2 radius_y=4>
+<text x=2 y=2 content="1"></text>
+<text x=2 y=1 content="2"></text>
+<text x=2 y=0 content="3"></text>
+<text x=2 y=-1 content="4"></text>
+<text x=2 y=-2 content="5"></text>
+
+<line x_1=-3/2 y_1=2 x_2=3/2 y_2=1 color=red>
+<line x_1=-3/2 y_1=1 x_2=3/2 y_2=2 color=red>
+<line x_1=-3/2 y_1=0 x_2=3/2 y_2=-2 color=blue>
+<line x_1=-3/2 y_1=-1 x_2=3/2 y_2=0 color=blue>
+<line x_1=-3/2 y_1=-2 x_2=3/2 y_2=-1 color=blue>
+</graphic>
+<p>
+Ici, <span class="important">cette décomposition est unique</span>.
+Pour le voir, c'est assez simple : on sait que l'orbite des éléments partitionne (de manière unique) la permutation.
+Or, on peut aussi voir que l'orbite de chaque élément est l'orbite du cycle dans lequel est cet élément.
+Il existe donc un unique ensemble d'orbite qui représente l'ensemble des orbites des cycles.
+Finalement, pour chaque orbite, il existe un unique cycle qui donne la permutation attendue : il existe donc un unique ensemble de cycle qui donne cette permutation.
+D'ailleurs, <span class="important">comme ces cycles sont disjoints, on peut les mettre dans l'ordre que l'on veut</span>.
+De plus, comme la notation d'un cycle n'est pas unique, la notation de la décomposition ne l'est pas non plus.
+</p>
+<math>(1 2)(3 5 4) = (3 5 4)(1 2) = (5 4 3)(2 1)</math>
+
+
+
+
+
+
 <p>
 La forme la plus simple de permutation est la transposition.
 <span class="important"><definition name="permutation-transposition"></span>.
 Ces permutations peuvent s'écrire avec notre nouvelle notation avec seulement deux valeurs : celles que l'on lie / "échange".
 Dans le cas où l'on transpose "3" et "5", on note ceci :
 </p>
-<math><mrow><mtable><mtr><mtd><mi>(1, 2, 3, 4, 5)</mi></mtd></mtr><mtr><mtd><mi>(1, 2, 5, 4, 3)</mi></mtd></mtr></mtable></mrow> = (3 5)</math>
-
-
-
-
-
-
-
-
-
+<math><mrow><mo>(</mo><mtable><mtr><mtd><mi>1 2 3 4 5</mi></mtd></mtr><mtr><mtd><mi>1 2 5 4 3</mi></mtd></mtr></mtable><mo>)</mo></mrow> = (3 5)</math>
 <p>
 Ces transpositions permettent quelque chose d'extraordinaire : <span class="important">toute permutation est une composition de transpositions quelconques</span> (<a href="demo">démontré ici par récurrence</a>).
 Donc, on peut décomposer n'importe quelle permutation par une suite de transpositions quelconques.

@@ -34,6 +34,9 @@
     <content name="n_linear">le déterminant d'une base "e" dans un espace vectoriel "E" est l'unique forme multilinéaire alternées sur "E" tel que l'image des vecteurs de "e" vaut "1"</content>
 </new_definition>
 
+<new_definition name="affine_space">
+    <content>un espace affine est une structure mathématique construire grâce à un espace vectoriel (nommé direction de l'espace affine), se comportant comme un espace géométrique usuel</content>
+</new_definition>
 <new_definition name="dual_space">
     <content>l'espace dual d'un espace vectoriel est l'ensemble de toutes les formes linéaires sur cet espace</content>
     <content name="base">la base duale d'un espace dual (d'un espace vectoriel sur un corps "K") est une base de l'espace dual</content>

@@ -382,6 +382,70 @@ Cette application permet de déduire un théorème très important : le théorè
 
 
 
+<h3>Les espaces affines</h3>
+<p>
+Une version un peu modifiée du concept d'espace vectoriel est le concept d'espace affine.
+<span class="important"><definition name="affine_space"></span>.
+Pour définir correctement un espace affine "E", il va nous falloir un espace vectoriel "V" sur un corps "K", que nous nommerons donc la direction de "E".
+Ici, "E" va être un ensemble munit d'une application précise, permettant de construire la structure affine.
+Cette application va prendre deux éléments "A" et "B" de "E", et leur associer un élément de "V" (que nous noterons "AB" avec une flèche au dessus).
+</p>
+<math><mphi> : E <mtimes> E <mto> V</math></br>
+<math>(A, B) <mto> <mvec>AB</mvec></math>
+<p>
+Comme pour beaucoup d'applications définissant des structures, cette application va devoir respecter quelques propriétés.
+Déjà, <span class="important">elle va devoir respecter une première propriété nommée la relation de Chasles, qui permet de faire le pont entre 3 éléments de "E"</span>.
+Cette propriété s'énonce ainsi :
+</p>
+<math><mforall> (A, B, C) <min> <mi>E</mi><msup>3</msup>, <mvec>AB</mvec> + <mvec>BC</mvec> = <mvec>AC</mvec></math>
+<p>
+La deuxième propriété nécessaire est un peu plus technique, <span class="important">mais permet de dire que, pour tout point "A" de "E", il est possible de construire un nouveau point "B" de "E" avec un vecteur "v" de "V"</span>.
+Ici, ce nouveau point "B" va se nommer le translaté de "A" par "v".
+Elle oblige aussi ce nouveau point à être unique.
+</p>
+<math><mforall> A <min> E, <mforall> v <min> V, <mexists>! B <min> E, <mvec>AB</mvec> = v</math>
+<p>
+En fait, toutes ces propriétés sont des propriétés de géométrie standard, adapté en utilisant comme support un espace vectoriel.
+L'idée, <span class="important">c'est de dire que l'objet "AB" avec la flèche au dessus représente le segment allant de "A" vers "B"</span>.
+Si vous avez un espace vectoriel quelconque, vous pouvez en déduire un espace affine.
+En effet, imaginons un espace vectoriel "V", représentant l'espace vectoriel usuel de "R²".
+De plus, posons un ensemble "E" qui est aussi égal à "R²" (et donc, à "V").
+Ici, <span class="important">on peut définir une application allant de "E²" vers "V", qui est une application respectant les propriétés des espaces affines</span>.
+</p>
+<math><mphi> E <mtimes> E <mto> V, (u, v) <mto> v - u</math>
+<p>
+Les propriétés se vérifient très vite.
+</p>
+<math><mforall> (u, v, w) <min> <mi>E</mi><msup>3</msup>, (v - u) + (w - v) = (w - u)</math></br>
+<math><mforall> u <min> E, <mforall> a <min> V, <mexists>! v <min> E, v = u + a</math>
+<p>
+Donc, tout espace vectoriel peut avoir une structure d'espace affine.
+D'ailleurs, <span class="important">le cas de "R²" nous permet de faire des illustrations qui rendent le tout plus simple à comprendre</span>.
+Par exemple, on peut facilement illustrer la première propriété (avec "AB" et "BC" en rouge, et "AC" en bleu) :
+</p>
+<graphic>
+<base draw=1><background_color white>
+<arrow x_1=0 y_1=0 x_2=2 y_2=4 border_width=5 border_color=blue>
+<arrow x_1=2 y_1=4 x_2=3 y_2=-1 border_width=5 border_color=blue>
+<arrow x_1=0 y_1=0 x_2=3 y_2=-1 border_width=5 border_color=red>
+</graphic>
+<p>
+Ici, on comprend parfaitement ce qu'elle veut dire : si vous avez un élément représentant "AB" et un élément représentant "BC", leur somme permet d'obtenir directement "AC".
+D'un point de vue plus géométrique, <span class="important">si vous avez l'élément allant de "A" vers "B" et l'élément allant de "B" vers "C", leur somme donne l'élément allant de "A" vers "C" (ou, d'un point de vue plus détaillé, allant à "A", puis à "B", puis à "C", que l'on peut réduire en allant de "A" vers "C")</span>.
+C'est d'ailleurs la même chose pour la deuxième propriété (avec en rouge "A", en vert "v" et en bleu l'élément entre "A" et son translaté par "v") :
+</p>
+<graphic>
+<base draw=1><background_color white>
+<circle x=-1 y=-3 radius=1/5 border_width=0 color=red>
+<arrow x_1=-1 y_1=-3 x_2=3 y_2=1 border_width=5 border_color=blue>
+<arrow x_1=0 y_1=0 x_2=4 y_2=4 border_width=5 border_color=green>
+</graphic>
+
+
+
+
+
+
 <h3>Les systèmes linéaires</h3>
 <p>
 Avant de traiter des systèmes linéaires, parlons des équations linéaires.
