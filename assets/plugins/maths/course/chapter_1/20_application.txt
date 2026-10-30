@@ -2009,7 +2009,14 @@ Voici un exemple où la fonction obtenue est en fait une fonction nulle :
 <text x=-26/2 y=0 content="h =" font_size_in_scale=3/2></text>
 <text x=5/2 y=0 content="=" font_size_in_scale=3/2></text>
 </graphic>
-
+<p>
+Il existe d'ailleurs une composition possible assez utile : la composition par l'application identité d'un ensemble.
+En effet, <span class="important">faire la composition d'une application par l'application identité d'un ensemble (compatible pour la composition) revient à ne pas faire du tout de composition</span>.
+Effectivement, par définition, l'application identité envoie chaque élément vers lui-même : elle ne produit donc pas de modification des éléments, ce qui fait qu'on peut l'ignorer dans les compositions.
+</p>
+<math>f : E <mto> F, x <mto> f(x)</math></br>
+<math><mforall> x <min> E, (f <mcomp> <mi>Id</mi><msub>E</msub>)(x) = f(<mi>Id</mi><msub>E</msub>(x)) = f(x) <mand> (<mi>Id</mi><msub>F</msub> <mcomp> f)(x) = <mi>Id</mi><msub>F</msub>(f(x)) = f(x)</math></br>
+<math><mequi> f <mcomp> <mi>Id</mi><msub>E</msub> = f, <mi>Id</mi><msub>F</msub> <mcomp> f = f</math>
 <p>
 Maintenant, parlons d'un résultat intéressant, qui nous sera utile pour plus tard.
 Imaginons 3 applications / fonctions quelconques "a", "b" et "c", et supposons que nous pouvons faire ces deux compositions précises :
@@ -2684,7 +2691,7 @@ Cependant, <span class="important">cet outil est extrêmement utilisé dans beau
 <h3>Injections, surjections et bijections</h3>
 <p>
 Comme la définition d'une application ne laisse pas beaucoup de place pour ce qu'il se passe dans l'ensemble de départ, une grande partie des applications se classent selon ce qu'il se passe dans l'ensemble d'arrivée.
-En effet, il existe trois types d'applications majeures : les injections, les surjections et les applications.
+En effet, il existe trois types d'applications majeures : les injections, les surjections et les bijections.
 </p>
 <p>
 Commençons par le commencement : l'injection.
@@ -2858,12 +2865,18 @@ Bien évidemment, la réciproque de la réciproque de "f" est donc... "f".
 En fait, pour une application "f", son application réciproque (généralement notée "f exposant -1") respecte cette propriété :
 </p>
 <math>f : A <mto> B, <mi>f</mi><msup>-1</msup> : B <mto> A</math></br>
-<math><mi>f</mi><msup>-1</msup> <mcomp> f = <mi>Id</mi><msub>A</msub> <mand> f <mcomp> <mi>f</mi><msup>-1</msup> = <mi>Id</mi><msub>B</msub></math></br>
-<math><mequi> <mforall> x <min> A, <mi>f</mi><msup>-1</msup>(f(x)) = x <mand> <mforall> y <min> B, f(<mi>f</mi><msup>-1</msup>(y)) = y</math>
+<math><mforall> x <min> A, <mi>f</mi><msup>-1</msup>(f(x)) = x <mand> <mforall> y <min> B, f(<mi>f</mi><msup>-1</msup>(y)) = y</math>
+<math><mequi> <mi>f</mi><msup>-1</msup> <mcomp> f = <mi>Id</mi><msub>A</msub> <mand> f <mcomp> <mi>f</mi><msup>-1</msup> = <mi>Id</mi><msub>B</msub></math></br>
+<p>
+D'ailleurs, <span class="important">si une application admet une application réciproque, cette application réciproque est unique</span>.
+La démonstration (présente <a href="demo#application_reciprocal_is_unique">présente juste ici</a>) est tirée d'une autre discipline mathématique (l'algèbre), mais qui est tout à fait applicable ici.
+C'est d'ailleurs pour cela que l'on peut noter "f exposant -1" (cette notation ne peut marcher que si la réciproque est unique).
+</p>
+<math><mforall> f <min> <mi>F</mi><msup>E</msup>, <mforall> g, h <min> <mi>E</mi><msup>F</msup>, (g <mcomp> f = <mi>I</mi><msub>E</msub> <mand> f <mcomp> g = <mi>I</mi><msub>F</msub>) <mand> (h <mcomp> f = <mi>I</mi><msub>E</msub> <mand> f <mcomp> h = <mi>I</mi><msub>F</msub>) <mimp> g = h</math>
 <p>
 Attention : il ne faut pas confondre cette notation avec la notation de l'image réciproque vue plus haut (bien qu'elles soient parfaitement égales).
 Il existe d'ailleurs beaucoup d'applications qui ne possèdent pas d'application réciproque.
-L'introduction de ce concept précis à cet endroit n'est pas un hasard : <span class="important">dire qu'une application admet une application réciproque équivaut à dire que cette application est bijective</span> (<a href="demo#application_reciprocal_is_bijection">démontré ici</a>).
+L'introduction de ce concept précis à cet endroit n'est pas un hasard : <span class="important">dire qu'une application admet une application réciproque équivaut à dire que cette application est bijective (et donc, que ça réciproque est bijective aussi)</span> (<a href="demo#application_reciprocal_is_bijection">démontré ici</a>).
 Cela est très facile à illustrer :
 </p>
 <graphic ratio_base>
@@ -2930,6 +2943,30 @@ Cela est très facile à illustrer :
 <text x=-26/2 y=0 content="h =" font_size_in_scale=3/2></text>
 <text x=5/2 y=0 content="=" font_size_in_scale=3/2></text>
 </graphic>
+<p>
+D'ailleurs, <span class="important">si on a une bijection qui représente la composée "g rond f" de deux bijection "f" et "g", l'application réciproque de cette composée est la composée de la réciproque de "g" par la réciproque de "f"</span>.
+Cette propriété se déduit très vite de par les propriétés que nous avons déjà vue sur les bijections.
+</p>
+<math>f <min> Bij(E, F), g <min> Bij(F, G)</math></br>
+<math>(g <mcomp> f) <mcomp> (<mi>f</mi><msup>-1</msup> <mcomp> <mi>g</mi><msup>-1</msup>) = g <mcomp> (f <mcomp> <mi>f</mi><msup>-1</msup>) <mcomp> <mi>g</mi><msup>-1</msup> = g <mcomp> <mi>g</mi><msup>-1</msup> = <mi>Id</mi><msub>G</msub></math></br>
+<math>(<mi>f</mi><msup>-1</msup> <mcomp> <mi>g</mi><msup>-1</msup>) <mcomp> (g <mcomp> f) = <mi>f</mi><msup>-1</msup> <mcomp> (<mi>g</mi><msup>-1</msup> <mcomp> g) <mcomp> f = <mi>f</mi><msup>-1</msup> <mcomp> f = <mi>Id</mi><msub>E</msub></math></br>
+<math><mimp> <mrow>(g <mcomp> f)</mrow><msup>-1</msup> = <mi>f</mi><msup>-1</msup> <mcomp> <mi>g</mi><msup>-1</msup></math>
+<p>
+Nous avons vue ici beaucoup de propriétés pratiques sur les injections, les surjections et les bijections, qui permettent de bien démarrer.
+Cependant, <span class="important">il faut garder en tête que ces concepts sont extrêmement étendus, et très présents en mathématiques</span>.
+C'est pour cela que, pour totalement les comprendre, il va falloir avancer un peu dans la suite.
+Heureusement, nous les croiseront très bientôt en très grand nombre !
+</p>
+
+
+
+
+
+
+
+
+
+<h3>Les permutations</h3>
 <p>
 Un type assez utile de bijection est la permutation.
 <span class="important"><definition name="permutation"></span>.
@@ -3088,6 +3125,7 @@ En effet, <span class="important">toute permutation peut se décomposer en compo
 Généralement, le nom usuel de ce résultat est "permutation en produit de cycles disjoints", où l'on utilise le mot produit à la place du mot composition.
 Pour obtenir cette décomposition, <span class="important">on parcourt les éléments de l'ensemble de départ, on calcul leur orbite, on forme un cycle à partir de cet orbite, et si on n'a pas déjà croisé ce cycle avec un autre élément, on compose ce cycle avec tous les autres cycles obtenus avec tous les autres éléments</span>.
 Pour simplifier la notation, on ignore les éléments qui sont seuls dans leur cycle (ils sont donc points fixe de la permutation, et leur absence de la notation sera considérer ainsi).
+De plus, on ne note souvent pas le "rond", et l'on note directement les cycles côte à côte.
 Voici un exemple avec une permutation simple :
 </p>
 <math><mrow><mo>(</mo><mtable><mtr><mtd><mi>1 2 3 4 5</mi></mtd></mtr><mtr><mtd><mi>2 1 5 3 4</mi></mtd></mtr></mtable><mo>)</mo></mrow> = (1 2)(3 5 4)</math>
@@ -3128,34 +3166,108 @@ D'ailleurs, <span class="important">comme ces cycles sont disjoints, on peut les
 De plus, comme la notation d'un cycle n'est pas unique, la notation de la décomposition ne l'est pas non plus.
 </p>
 <math>(1 2)(3 5 4) = (3 5 4)(1 2) = (5 4 3)(2 1)</math>
-
-
-
-
-
-
 <p>
-La forme la plus simple de permutation est la transposition.
+La forme la plus simple de permutation (et même de cycle) est la transposition.
 <span class="important"><definition name="permutation-transposition"></span>.
 Ces permutations peuvent s'écrire avec notre nouvelle notation avec seulement deux valeurs : celles que l'on lie / "échange".
 Dans le cas où l'on transpose "3" et "5", on note ceci :
 </p>
-<math><mrow><mo>(</mo><mtable><mtr><mtd><mi>1 2 3 4 5</mi></mtd></mtr><mtr><mtd><mi>1 2 5 4 3</mi></mtd></mtr></mtable><mo>)</mo></mrow> = (3 5)</math>
+<math><mrow><mo>(</mo><mtable><mtr><mtd><mi>1 2 3 4 5</mi></mtd></mtr><mtr><mtd><mi>1 2 5 4 3</mi></mtd></mtr></mtable><mo>)</mo></mrow> = (3 5) = (5 3)</math>
 <p>
-Ces transpositions permettent quelque chose d'extraordinaire : <span class="important">toute permutation est une composition de transpositions quelconques</span> (<a href="demo">démontré ici par récurrence</a>).
-Donc, on peut décomposer n'importe quelle permutation par une suite de transpositions quelconques.
-Généralement, <span class="important">on peut étudier les propriétés d'une permutation en étudiant sa décomposition en transposition</span>.
-Grâce à ça, on peut introduire le concept de parité et de signature d'une permutation.
-En fait, <span class="important"><definition name="permutation-transposition_parity"></span>.
-Une propriété intéressante : une composition de permutations paires donne une permutation paire (<a href="demo">démontré ici</a>).
-De plus, <definition name="permutation-transposition_signature">.
-Voici un exemple de permutation paire :
+Ces transpositions permettent quelque chose d'extraordinaire : <span class="important">tout cycle est une composition de transpositions quelconques</span>.
+En effet, imaginez avoir un cycle quelconque avec "n" éléments dans l'orbite : <span class="important">on peut décomposer ce cycle en un produit de "n - 1" transpositions, représentant la composition de la transposition du premier élément et du second, puis du premier et du troisième... jusqu'au premier et au "n-ième"</span>.
+Voici un exemple de décomposition de ce genre (où, encore une fois, je ne note pas le rond, et note les transpositions côte à côte) :
 </p>
-<math>(3 5 4) = (3 5) <mcomp> (5 4)</math>
+<math>(1 2 3 4) = (4 1)(3 1)(2 1)</math>
 <p>
-De plus, <span class="important"><definition name="permutation-cyclic"></span>..
-Il s'agit juste de bouger dans un sens et d'une unité une partie de l'ensemble, et de déplacer tous ces éléments de la même manière.
-Comme le dernier élément prend la place du premier à chaque fois, réaliser une même permutation circulaire autant de fois que la taille de la partie revient à ne pas modifier l'ensemble (tous les éléments auront repris leur place).
+On peut facilement le voir avec un dessin :
 </p>
-<math><mtable><mtd><mi>(1, 2, 3, 4, 5)</mi></mtd><mtd><mi>(4, 1, 2, 3, 5)</mi></mtd></mtable> = (1 2 3 4)</math></br>
-<math>(1 2 3 4<mo>)</mo><msup>4</msup> = Id<msub>E</msub></math>
+<graphic width=600 height=200>
+<background_color white>
+<base x=-5/2 y=0 draw=0 width=30 height=10>
+
+<circle x=-10 y=0 radius_x=3/2 radius_y=4>
+<text x=-10 y=2 content="1"></text>
+<text x=-10 y=1 content="2"></text>
+<text x=-10 y=0 content="3"></text>
+<text x=-10 y=-1 content="4"></text>
+<text x=-10 y=-2 content="5"></text>
+
+<circle x=-5 y=0 radius_x=3/2 radius_y=4>
+<text x=-5 y=2 content="1"></text>
+<text x=-5 y=1 content="2"></text>
+<text x=-5 y=0 content="3"></text>
+<text x=-5 y=-1 content="4"></text>
+<text x=-5 y=-2 content="5"></text>
+
+<line x_1=-19/2 y_1=2 x_2=-11/2 y_2=1 color=black>
+<line x_1=-19/2 y_1=1 x_2=-11/2 y_2=2 color=black>
+<line x_1=-19/2 y_1=0 x_2=-11/2 y_2=0 color=black>
+<line x_1=-19/2 y_1=-1 x_2=-11/2 y_2=-1 color=black>
+<line x_1=-19/2 y_1=-2 x_2=-11/2 y_2=-2 color=black>
+
+<circle x=0 y=0 radius_x=3/2 radius_y=4>
+<text x=0 y=2 content="1"></text>
+<text x=0 y=1 content="2"></text>
+<text x=0 y=0 content="3"></text>
+<text x=0 y=-1 content="4"></text>
+<text x=0 y=-2 content="5"></text>
+
+<line x_1=-9/2 y_1=-2 x_2=-1/2 y_2=-2 color=black>
+<line x_1=-9/2 y_1=-1 x_2=-1/2 y_2=-1 color=black>
+<line x_1=-9/2 y_1=0 x_2=-1/2 y_2=2 color=black>
+<line x_1=-9/2 y_1=1 x_2=-1/2 y_2=1 color=black>
+<line x_1=-9/2 y_1=2 x_2=-1/2 y_2=0 color=black>
+
+<circle x=5 y=0 radius_x=3/2 radius_y=4>
+<text x=5 y=2 content="1"></text>
+<text x=5 y=1 content="2"></text>
+<text x=5 y=0 content="3"></text>
+<text x=5 y=-1 content="4"></text>
+<text x=5 y=-2 content="5"></text>
+
+<line x_1=1/2 y_1=-2 x_2=9/2 y_2=-2 color=black>
+<line x_1=1/2 y_1=-1 x_2=9/2 y_2=2 color=black>
+<line x_1=1/2 y_1=0 x_2=9/2 y_2=0 color=black>
+<line x_1=1/2 y_1=1 x_2=9/2 y_2=1 color=black>
+<line x_1=1/2 y_1=2 x_2=9/2 y_2=-1 color=black>
+
+<circle x=10 y=0 radius_x=3/2 radius_y=4>
+<text x=5+5 y=2 content="1"></text>
+<text x=5+5 y=1 content="2"></text>
+<text x=5+5 y=0 content="3"></text>
+<text x=5+5 y=-1 content="4"></text>
+<text x=5+5 y=-2 content="5"></text>
+
+<circle x=15 y=0 radius_x=3/2 radius_y=4>
+<text x=5+10 y=2 content="1"></text>
+<text x=5+10 y=1 content="2"></text>
+<text x=5+10 y=0 content="3"></text>
+<text x=5+10 y=-1 content="4"></text>
+<text x=5+10 y=-2 content="5"></text>
+
+<text x=5+5/2 y=1/5 content="=" font_size_in_scale=2></text>
+
+<line x_1=1/2+10 y_1=-2 x_2=9/2+10 y_2=-2 color=black>
+<line x_1=1/2+10 y_1=-1 x_2=9/2+10 y_2=2 color=black>
+<line x_1=1/2+10 y_1=0 x_2=9/2+10 y_2=-1 color=black>
+<line x_1=1/2+10 y_1=1 x_2=9/2+10 y_2=0 color=black>
+<line x_1=1/2+10 y_1=2 x_2=9/2+10 y_2=1 color=black>
+
+</graphic>
+<p>
+Comprendre pourquoi cela marche toujours est assez simple.
+Prenons une cycle "(a b c d ...)", et construisons un ensemble de transposition permettant de donner ce cycle.
+On commence par permuter les deux premiers éléments : "a" va sur "b" et "b" va sur "a".
+Cette permutation seule fera aller "a" sur "c" et "c" sur "a".
+Or, nous avons déjà fait une permutation, où "a" est devenue "b" et "b" est devenue "a".
+Donc, l'ajout de la deuxième permutation va faire que "b" va aller sur "c" et "a" va rester sur "b" (la deuxième transposition ne modifie pas "b").
+L'ajout d'une autre permutation "a" vers "d" va avoir le même effet : "a" va rester sur "b", "b" va rester sur "c", mais "c" va aller sur "d", et "d" va aller sur "a".
+Et donc, rajouter d'autres permutations va échanger le dernier élément avec "a", et placer l'avant-dernier élément sur le dernier (en ne touchant pas aux autres).
+Cependant, <span class="important">cette décomposition en transpositions n'est pas unique</span>.
+Par exemple, on peut prendre un cycle simple, et trouver plusieurs décompositions possibles :
+</p>
+<math>(1 2 3) = (1 3)(1 2) = (2 1)(2 3)</math></br></br>
+<p>
+
+</p>

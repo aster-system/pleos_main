@@ -371,7 +371,7 @@ Prouvons qu'une composition de bijections donne une bijection.
 Définissons trois applications différentes.
 </p>
 <math>f : E <mto> F, x <mto> f(x)</math></br>
-<math>g : F <mto> G, x <mto> g(x)</math>
+<math>g : F <mto> G, x <mto> g(x)</math></br>
 <math>h : E <mto> G, x <mto> g(f(x))</math>
 <p>
 Supposons "f" et "g" bijectives.
@@ -398,7 +398,7 @@ Prouvons que si une application bijective est une composition "g rond f", "f" es
 Définissons trois application différentes.
 </p>
 <math>f : E <mto> F, x <mto> f(x)</math></br>
-<math>g : F <mto> G, x <mto> g(x)</math>
+<math>g : F <mto> G, x <mto> g(x)</math></br>
 <math>h : E <mto> G, x <mto> g(f(x))</math>
 <p>
 Considérons "f" non injective.
@@ -412,7 +412,7 @@ Donc, si "f" n'est pas injective, "h" ne peut pas être bijective.
 </p>
 <p>
 Maintenant, considérons "f" injective et considérons "g" non surjective.
-Par définition, il existe donc un élément de "G" qui n'a pas d'image par "g".
+Par définition, il existe donc un élément de "G" qui n'a pas d'antécédent par "g".
 </p>
 <math><mexists> a <min> G, a <mnotin> Im(g)</math>
 <p>
@@ -426,7 +426,41 @@ En fait, nous avons mené ici un raisonnement par contraposée.
 Donc, pour que "h" soit une bijection, il faut forcément que "f" soit injective et "g" surjective.
 </p>
 
-<h4 id="application_reciprocal_is_bijection">1.1.1.4</h4>
+<h4 id="application_reciprocal_is_unique">1.1.1.4</h4>
+<p>
+Démontrons que si une applciation admet un application réciproque, cette application réciproque est unique.
+Définissons trois applications :
+</p>
+<math>f : E <mto> F, x <mto> f(x)</math></br>
+<math>g : F <mto> E, x <mto> g(x)</math></br>
+<math>h : F <mto> E, x <mto> h(x)</math>
+<p>
+Considérons que "g" est la réciproque de "f".
+</p>
+<math>g <mcomp> f = <mi>I</mi><msub>E</msub> <mand> f <mcomp> g = <mi>I</mi><msub>F</msub></math>
+<p>
+Maintenant, considérons aussi que "h" est la réciproque de "f".
+</p>
+<math>h <mcomp> f = <mi>I</mi><msub>E</msub> <mand> f <mcomp> h = <mi>I</mi><msub>F</msub></math>
+<p>
+Ici, nous pouvons écrire une égalité évidente entre deux composition :
+</p>
+<math>(g <mcomp> f) <mcomp> h = (g <mcomp> f) <mcomp> h</math>
+<p>
+Or, nous savons qu'écrire "(g rond f) rond h" donne l'exact même résultat qu'écrire "g rond (f rond h)".
+</p>
+<math>(g <mcomp> f) <mcomp> h = g <mcomp> (f <mcomp> h)</math>
+<p>
+Finalement, nous pouvons simplifier "(g rond f)" en "Id indice E" et "(f rond h)" en "Id indice F".
+</p>
+<math><mi>I</mi><msub>E</msub> <mcomp> h = g <mcomp> <mi>I</mi><msub>F</msub></math>
+<p>
+On peut ici supprimer les identités, qui ne modifie pas le résultat final.
+Finalement, nous obtenons l'égalité voulue.
+</p>
+<math>h = g</math>
+
+<h4 id="application_reciprocal_is_bijection">1.1.1.5</h4>
 <p>
 Démontrons que une application mathématique où tous les éléments de l'ensemble d'arrivée sont reliés à exactement 1 objet équivaut à dire que l'application admet une application réciproque.
 Procédons par double-implication.
@@ -467,7 +501,7 @@ Donc, "f" est bijective et surjective : "f" est donc une bijection (et "g" aussi
 Donc, si "f" admet une application réciproque, elle est bijective.
 </p>
 
-<h4 id="disjoint_support_implies_commutativity">1.1.1.5</h4>
+<h4 id="disjoint_support_implies_commutativity">1.1.1.6</h4>
 <p>
 Démontrons que si deux permutations ont des supports disjoints, alors on peut les échanger autour du symbôle de composition et quand même obtenir le même résultat.
 Définissons deux permutations :
@@ -504,43 +538,6 @@ Donc :
 Ici, on a traité tous les cas de "x" possibles.
 Dans tous les cas, "g(f(x))" est égal à "f(g(x))".
 Donc, si deux permutations ont des supports disjoints, alors on peut les échanger autour du symbôle de composition et quand même obtenir le même résultat.
-</p>
-
-<h4>1.1.1.6</h4>
-<p>
-Prouvons que toute permutation de "E" (de cardinal supérieur ou égal à 2) est composition de transpositions de "E".
-Procédons par récurrence.
-<p>
-Posons l'hypothèse de récurrence pour tout ensemble "E" de cardinal "n" supérieur ou égal à 2, P(n) = "toute permutation de E est composition de transpositions de E".</br>
-Déjà, par définition des ensembles de taille 2, il n'existe que deux permutations, qui transforment de manière parfaitement égal l'ensemble.
-Notons l'ensemble des permutations de "E" comme "S(E)", et l'ensemble des transpositions "T(E)" :
-</p>
-<math>S(E) = {(a, b), (b, a)} = T(E)</math>
-<p>
-Ces deux permutations échangent seulement deux éléments entre eux : ce sont des transpositions.
-Donc, P(0) est vraie.
-</p>
-<p>
-En suite, prouvons que si P(k) avec k un nombre entier naturel quelconque, alors P(k + 1).
-Commençons par supposer que P(k) soit vrai. 
-</p>
-<math><mforall> f <min> S(E), <mexists> n <min> N, <mexists> (a, b, ..., c) <min> <mi>N</mi><mi>n</mi>, {<mexists> (<mi>t</mi><msub>a</msub>, <mi>t</mi><msub>b</msub>, ..., <mi>t</mi><msub>c</msub>) <min> <mi>T(E)</mi><msup>n</msup>, f = <mi>t</mi><msub>a</msub> <mcomp> <mi>t</mi><msub>b</msub> <mcomp> ... <mcomp> <mi>t</mi><msub>c</msub>}</math>
-<p>
-Posons un ensemble "F" représentant l'ensemble "E" auquel on ajoute un élément "z", et qui est donc de cardinal "n + 1".
-Donc, "S(F)" contient toutes les permutations possibles dans "S(E)", qui sont selon l'hypothèse de récurrence toutes des compositions de transpositions de "E" (qui sont donc des transpositions de "F").
-Or, les autres éléments de "S(F)" sont les compositions de tous les éléments de "S(E)" et de toutes les transpositions entre des éléments de "E" dans "F" et de l'élément dans "F" qui n'est pas dans "E".
-</p>
-<math>f <min> S(F) <mimp> f <min> S(E) <mor> {<mexists> g <min> S(E), <mexists> e <min> E, f = g <mcomp> (e z)}</math>
-<p>
-Bien évidemment, cette transposition à ajouter représente tous les éléments de "S(E)" auquelles on compose une transposition de "F".
-Donc, si "P(k)", alors "P(k) + 1".
-</p>
-<math><mforall> f <min> S(F), <mexists> n <min> N, <mexists> (a, b, ..., c) <min> <mi>N</mi><mi>n</mi>, {<mexists> (<mi>t</mi><msub>a</msub>, <mi>t</mi><msub>b</msub>, ..., <mi>t</mi><msub>c</msub>) <min> <mi>T(F)</mi><msup>n</msup>, f = <mi>t</mi><msub>a</msub> <mcomp> <mi>t</mi><msub>b</msub> <mcomp> ... <mcomp> <mi>t</mi><msub>c</msub>}</math>
-<p>
-Comme tout ensemble de cardinal "n + 1" représente un ensemble de cardinal "n" union un élément, alors cela marche pour tous les ensembles finis.
-Donc, P(0) est vraie et P(k) implique P(k + 1).
-Selon le principe de récurrence, P est vraie pour tout nombre entier naturel.
-Finalement : toute permutation de "E" (de cardinal supérieur ou égal à 2) est composition de transpositions de "E".
 </p>
 
 
