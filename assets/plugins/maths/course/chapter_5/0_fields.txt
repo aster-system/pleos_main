@@ -297,6 +297,8 @@ L'exemple le plus simple est le corps "(R, +, .)", qui est une extension du corp
 
 <h2>Les polynômes</h2>
 
+
+
 <h3>Qu'est ce qu'est un polynôme ?</h3>
 <p>
 Plus tôt, nous avons à de multiples reprises envisagé des fonctions de la forme "a * x ² + b * x + c".
@@ -348,7 +350,7 @@ L'idée est de multiplier tous les coefficients du polynôme par celui de monôm
 Donc, multiplier deux polynômes revient à en décomposer un en monôme, effectuer tous les multiplications comme vue, et d'additionner tous les résultats obtenus.
 </p>
 <math>(<msum from=0 to=m> <mi>a</mi><msub>k</msub><mi>X</mi><msup>k</msup>) * (<msum from=0 to=n> <mi>b</mi><msub>k</msub><mi>X</mi><msup>k</msup>) = <msum from=0 to=m> <mi>a</mi><msub>k</msub> * <msum from=0 to=n+m> (a * <mi>b</mi><msub>k</msub>) * <mi>X</mi><msup>k + m</msup></math></br>
-<math><math>(3 * <mi>X</mi><msup>2</msup> + 2) * (2 * <mi>X</mi> - 4) = (6 * <mi>X</mi><msup>3</msup> - 12 * <mi>X</mi><msup>2</msup>) + (4 * <mi>X</mi> - 8) = 6 * <mi>X</mi><msup>3</msup> - 12 * <mi>X</mi><msup>2</msup> + 4 * <mi>X</mi> - 8</math>
+<math>(3 * <mi>X</mi><msup>2</msup> + 2) * (2 * <mi>X</mi> - 4) = (6 * <mi>X</mi><msup>3</msup> - 12 * <mi>X</mi><msup>2</msup>) + (4 * <mi>X</mi> - 8) = 6 * <mi>X</mi><msup>3</msup> - 12 * <mi>X</mi><msup>2</msup> + 4 * <mi>X</mi> - 8</math>
 <p>
 Généralement, <span class="important">l'ensemble de tous les polynômes d'indéterminé "X" sur un anneau "A" est noté "A[X]"</span>.
 Si nous avons plusieurs indéterminés (comme "X" et "Y"), on note "K[X, Y]".
@@ -385,5 +387,54 @@ La démonstration (<a href="demo">présente ici</a>) est assez simple et n'utili
 </p>
 <p>
 Selon l'appartenance ou la non-appartenance de racines de polynômes à coefficients dans un corps K dans ce même corps K, on peut en déduire certaines propriétés sur le corps.
-
 </p>
+
+
+
+<h3>L'interpolation polynomiale</h3>
+<p>
+Dans certaines branches de calculs, un concept très utile est l'interpolation.
+<span class="important"><definition name="interpolation"></span>.
+C'est grâce à cette technique que nous pouvons par exemple tracer des fonctions sur ce site web.
+</p>
+<graphic><background_color white><function expression="cos(x)"></graphic>
+<p>
+Parmi tous les types d'interpolations, l'une d'elle est l'interpolation polynomiale.
+<span class="important"><definition name="interpolation-polynomial"></span>.
+</p>
+
+<p>
+La technique d'interpolation polynomiale la plus simple est l'interpolation de Lagrange.
+Pour être précis, <span class="important">cette méthode d'interpolation va nous permettre de trouver une fonction polynomiale dont la courbe va passer par un ensemble quelconque de points (avec des valeurs "x" distinctes) de "R²"</span>.
+Pour cela, nous allons utiliser un type de polynôme très précis : les polynômes de Lagrange.
+Laissons deux minutes notre famille de point, pour bien comprendre ce type de polynôme.
+Prenons un ensemble de "n + 1" (avec "n" un nombre entier naturel) points quelconques (avec des "x" distincts), où nous noterons les points "(x indice i, y indice i)" avec "i" représentant des valeurs entre "0" et "n".
+</p>
+<math>(<mi>x</mi><msub>0</msub>, <mi>y</mi><msub>0</msub>), ..., (<mi>x</mi><msub>n</msub>, <mi>y</mi><msub>n</msub>)</math></br>
+<math><mforall> i, j <min> [0, <mnatural>], i <mnotequal> j <mimp> <mi>x</mi><msub>i</msub> <mnotequal> <mi>x</mi><msub>j</msub></math>
+<p>
+Nous pouvons ici définir les polynômes de Lagrange.
+En fait, <span class="important"><definition name="polynomial_lagrange"></span>.
+Considérons une famille de valeurs "x indice m" avec "m" étant dans "[0, n]". 
+La construction de ses polynômes de Lagrange est assez simple : nous construire le "i-ème" polynôme ainsi (que nous allons nommer "L indice i").
+</p>
+<math><mi>L</mi><msub>i</msub>(X) = <mproduct bottom="j=0,i≠j" top="n"><mfrac><mrow>X - <mi>x</mi><msub>j</msub></mrow><mrow><mi>x</mi><msub>i</msub> - <mi>x</mi><msub>j</msub></mrow></mfrac></math>
+<p>
+Ici, on peut facilement voir que "L indice i (X)" est de degré "n" : il représente le produit de "n" polynômes de degré "1" (comme on exclu "j" des valeurs possibles, on prend toutes les valeurs entre "0" et "n" sauf "j", ce qui représente "n" valeurs).
+On peut aussi voir que <span class="important">tous les "x indice m" avec "m" différent de "i" et situé entre "0" et "n" annulent se polynôme</span> : pour chaque "m" avec "m" différent de "i" et situé entre "0" et "n", il y a un "(X - x indice m)" dans le produit, qui vaut "0" quand on substitue "X" par "x indice m", et qui annule tout le polynôme.
+Finalement, on voit aussi que <span class="important">substituer "x indice i" à "X" donne "1"</span> : pour chaque "m" avec "m" différent de "i" et situé entre "0" et "n", "(X - x indice m)/(x indice i - x indice m)" devient "(x indice i - x indice m)/(x indice i - x indice m)", qui vaut "1", ce qui fait que le polynôme devient le produit de "n" fois "1", ce qui vaut "1".
+Ce polynôme respecte donc exactement les propriétés nécessaire pour un polynôme de Lagrange.
+</p>
+<math><mforall> j <min> [0, n] \ {i}, <mi>L</mi><msub>i</msub>(<mi>x</mi><msub>j</msub>) = 0</math></br>
+<math><mi>L</mi><msub>i</msub>(<mi>x</mi><msub>i</msub>) = 1</math>
+<p>
+Résultat intéressant : <span class="important">pour une famille de valeurs données et pour un "i" donné, le polynôme de Lagrange associé est unique</span> (<a href="demo#polynomial_langrange_unique">démontré ici</a>).
+Maintenant que ceci est dit, reprenons notre famille de points de "R²", et construisons finalement le polynôme où la courbe passe par tous ces points.
+Premièrement, on va isoler toutes les valeurs des "x" de la famille de point, ce qui va nous donner une famille de valeurs avec laquelle on pourra utiliser des polynômes de Lagrange.
+Avec ces polynômes, on peut voir quelque chose : <span class="important">pour tout "i" appartenant à "[0, n]", le polynôme représentant "y indice i * L indice i(X)" vaut "0" pour toutes les valeurs de "x indice m" avec "m" différent de "i" et situé entre "0" et "n", et vaut "y indice i" en "x indice i"</span>.
+On obtient donc une nouvelle famille de polynômes.
+Ici, on peut remarquer quelque chose de très simple : <span class="important">la somme de deux de ces polynômes quelconques (distincts) d'indice "a" et "b" va donner un nouveau polynôme égal à "y indice a" en "x indice a", à "y indice b" en "x indice b", et "0" pour toutes les autres "x indice m" avec "m" différent de "a" et de "b" et situé entre "0" et "n"</span>.
+On peut donc obtenir le polynôme d'interpolation final : <span class="important">faire la somme de tous les polynômes de la famille va donner un polynôme qui, pour tout "m" entre "0" et "n", vaudra "y indice m" en "x indice m"</span>.
+Ceci donne donc la formule finale :
+</p>
+<math>L(X) = <mproduct bottom="i=0" top="n"><mi>y</mi><msub>i</msub><mi>L</mi><msub>i</msub>(X)</math>

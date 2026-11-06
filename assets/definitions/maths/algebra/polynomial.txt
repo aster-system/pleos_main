@@ -1,0 +1,15 @@
+<new_definition name="monomial">
+    <content>un monôme est une forme précise d'objet mathématique, représentant le produit d'éléments (nommés coefficients) dans un corps quelconque par des indéterminées d'un corps quelconque (qui peut être le même, mais pas obligatoirement) élevés à des exposants naturels (et donc, un polynôme ne contenant pas de somme)</content>
+</new_definition>
+<new_definition name="polynomial">
+    <content>un polynôme est une forme précise de formule mathématique, représentant la somme de produit d'éléments (nommés coefficients) dans un anneau (ou, à fortiori, un corps) quelconque par des variables (nommés indéterminées) élevés à des exposants représentant des nombres naturels</content>
+    <content name="rigorous">un polynôme représente une suite finie d'éléments de la structure dans lequel il est défini, où l'écriture formelle reviendrait à sommer chaque élément de la suite, multiplié par l'indéterminée à l'exposant l'indice de l'élément actuel</content>
+</new_definition>
+
+<new_definition name="polynomial_root">
+    <content>une racine d'un polynôme est une valeur tel que, si on la substitue à l'indéterminée du polynôme, la valeur obtenue est "0"</content>
+</new_definition>
+
+<new_definition name="polynomial_lagrange">
+    <content>pour une famille de "n + 1" (avec "n" un nombre entier naturel) valeurs, le polynôme de Lagrange associé à une valeur "i" (étant un nombre entre "0" et "n") est un polynôme de degré "n" tel que l'image de sa fonction polynomiale associée à la valeur de la famille représentant la i-ème valeur vaut "1", et que l'image des autres valeurs de la famille vaut "0"</content>
+</new_definition>

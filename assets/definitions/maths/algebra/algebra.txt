@@ -197,15 +197,9 @@
     <content>le théorème de Wedderburn est un théorème d'algèbre, affirmant que un corps fini (d'ensemble fini) est obligatoirement commutatif</content>
 </new_definition>
 
-<new_definition name="monomial">
-    <content>un monôme est une forme précise d'objet mathématique, représentant le produit d'éléments (nommés coefficients) dans un corps quelconque par des indéterminées d'un corps quelconque (qui peut être le même, mais pas obligatoirement) élevés à des exposants naturels (et donc, un polynôme ne contenant pas de somme)</content>
-</new_definition>
-<new_definition name="polynomial">
-    <content>un polynôme est une forme précise de formule mathématique, représentant la somme de produit d'éléments (nommés coefficients) dans un anneau (ou, à fortiori, un corps) quelconque par des variables (nommés indéterminées) élevés à des exposants représentant des nombres naturels</content>
-    <content name="rigorous">un polynôme représente une suite finie d'éléments de la structure dans lequel il est défini, où l'écriture formelle reviendrait à sommer chaque élément de la suite, multiplié par l'indéterminée à l'exposant l'indice de l'élément actuel</content>
-</new_definition>
-<new_definition name="polynomial_root">
-    <content>une racine d'un polynôme est une valeur tel que, si on la substitue à l'indéterminée du polynôme, la valeur obtenue est "0"</content>
+<new_definition name="interpolation">
+    <content>l'interpolation est une méthode mathématique permettant d'approximer la valeur d'une courbe quelconque</content>
+    <content name="polynomial">l'interpolation polynomiale est une branche de l'interpolation utilisant des polynômes</content>
 </new_definition>
 
 <new_definition name="chasles_relation">
