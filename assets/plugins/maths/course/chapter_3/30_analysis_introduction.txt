@@ -582,17 +582,22 @@ Encore une fois, la démonstration est aussi très simple, est présente <a href
 <p>
 Les séries représentent une version "avancée" des sommes, couplées au concept de suite.
 En effet, <span class="important"><definition name="analysis_serie"></span>.
-D'un point de vue vocabulaire, on peut tisser un lien entre la série et "u" : cette série est dite série de terme général "u indice n".
-De plus, les différents "s(n)" sont nommés sommes partielles de la série d'ordre "n".
+Pour bien définir ce concept, nous allons définir une suite réelle "u".
+Ici, <span class="important">nous allons définir une nouvelle suite réelle "s" telle que pour chaque nombre entier naturel "n", "s indice n" va être égal à la somme de tous les "u indice m" avec "m" inférieur ou égal à "n"</span>.
+Les différents "s indice n" sont nommés sommes partielles de "u" d'ordre "n".
 </p>
-<math>s(n) = <msum from=1 to=n unknown=k>u(n)</math>
+<math><mi>s</mi><msub>n</msub> = <msum from=0 to=n unknown=k><mi>u</mi><msub>n</msub></math>
 <p>
-Finalement, <span class="important">la valeur de "s(n)" quand "n" tend vers l'infini est nommé "somme" de la série</span>.
+Ici, <span class="important">l'objet permettant d'étudier ce type de somme est nommé une série ""</span>.
+Pour la définition rigorueuse pure, il existe plusieurs moyens de faire : on peut n'utiliser que "u", que "s" (ce qui est la définition usuelle), les deux en même temps (comme Bourbaki, qui définit la série comme un couple)...
+Malgré cela, le vocabulaire utilisé est toujours le même : chaque élément "s indice n" est nommé somme partielle d'ordre "n" de la série, et les "u indice n" sont nommés termes de la série.
+Généralement, <span class="important">la chose la plus intéressant à étudier est la limite de "s indice n" quand "n" tend vers l'infini, qui représente donc une sorte de "somme infinie"</span>.
 C'est généralement l'étude de cette limite qui rend le concept de série intéressant.
 Si cette limite représente un infini ou n'existe pas, on dit que la série diverge.
 À l'inverse, si il existe une limite finie, on dit qu'elle converge.
 </p>
-<math><mlim unknown=n value=inf>(s(n)) = <msum from=1 to_infinity=1 unknown=n>u(n)</math>
+<math><mlim unknown=n value=inf><mi>s</mi><msub>n</msub> = <msum from=0 to_infinity=1 unknown=n><mi>u</mi><msub>n</msub></math>
+
 <p>
 Pour cela, <span class="important">une des façons les plus simples de faire est d'obtenir la valeur de "s(n)" comme une valeur ne contenant pas de somme, et donc de simplifier la forme</span>.
 C'est avec cette technique que nous pouvons calculer la série de terme général "n".

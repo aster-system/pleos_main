@@ -36,9 +36,6 @@
 <new_definition name="analysis_cauchy_sequence">
     <content>une suite de Cauchy est une suite mathématique telle que plus on avance dans la suite, plus les éléments sont proches entre eux</content>
 </new_definition>
-<new_definition name="analysis_serie">
-    <content>une série est un objet permettant d'étudier le comportement d'une suite mathématique "s" définie via une autre suite mathématique "u", où le "n-ième" terme de la suite "s" représente la somme de tous les termes de "u" inférieurs ou égaux à "n"</content>
-</new_definition>
 <new_definition name="analysis_limit">
     <content>une limite mathématique représente en quelque sorte une valeur d'on se rapproche indéfiniment quand, dans une fonction (admettant comme ensemble d'arrivée un espace métrique), on se rapproche indéfiniment d'un point précis (sans jamais réellement l'atteindre)</content>
     <content name="rigorous">une limite mathématique de fonction en une valeur "a" est une valeur "v" telle que, pour tout nombre réel possible "x", il existe toujours un nombre réel "b" (supérieur à "a" si on calcul la limite à droite, et inférieur sinon) tel que toute valeur entre "a" et "b" admet comme image une distance à "v" inférieure au nombre "x"</content>
