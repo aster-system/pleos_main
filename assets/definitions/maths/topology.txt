@@ -69,10 +69,16 @@
 <new_definition name="topology_indistinguishability">
     <content>deux éléments topologiques distincts sont dit indiscernables si tous les voisinages de l'un contient l'autre, et vice-versa</content>
 </new_definition>
+<new_definition name="topological_initial">
+    <content>la topologie initiale sur un ensemble muni d'une famille d'applications quelconques allant de cet ensemble vers un espace topologique quelconque est la topologie la moins fine de l'ensemble de départ qui rend toutes les applications de la famille continues</content>
+</new_definition>
 <new_definition name="topological_limit">
     <content>une fonction entre deux parties d'espaces topologiques "E" et "F" (et de domaine de définition "D") admet une limite "l" en un point adhérent "a" de "D" si, pour tout ouvert "L" contenant "l", il existe un ouvert "A" contenant "a" tel que "f(A inter D)" soit inclut dans "L"</content>
     <content name="neighbourhood">une fonction entre deux parties d'espaces topologiques "E" et "F" (et de domaine de définition "D") admet une limite "l" en un point adhérent "a" de "D" si, pour tout voisinage "U" de "l", il existe un voisinage "W" de "a" tel que "f(W inter D)" soit inclut dans "U"</content>
     <content name="sequence">une suite allant dans une partie d'un espace topologique "E" admet une limite "l" si, pour tout voisinage "V" de "l", il existe un rang "n" à partir du quel toutes les valeurs de la suite appartiennent à "V"</content>
+</new_definition>
+<new_definition name="topological_product">
+    <content>la topologie produit d'un produit cartésien d'ensembles d'espaces topologiques est une topologie sur ce produit cartésien, où chaque ouvert est induit via les ouverts des espaces topologiques dans le produit</content>
 </new_definition>
 <new_definition name="topology_separation_axiom">
     <content>un axiome de séparation est, en topologie, une propriété possible de certains ensembles topologiques, concernant la façon dont les voisinages de ces ensembles se comportent entre eux</content>

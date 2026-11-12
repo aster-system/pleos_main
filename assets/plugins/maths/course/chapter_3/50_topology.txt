@@ -2,7 +2,15 @@
 
 
 
+
+
+
+
+
+
 <h2>Qu'est ce qu'est la topologie ?</h2>
+
+
 
 <h3>Les espaces topologiques et les ouverts</h3>
 <p>
@@ -132,7 +140,6 @@ Pour la deuxième propriété, il s'agit d'une propriété permettant de s'assur
 <math><mforall> x <min> E, <mexists> A <min> B, x <min> A</math></br>
 <math><mforall>C, D <min> B, <mexists> F <mincluded> B, C <minter> D = <munion> F</math>
 </p>
-
 <p>
 Sur un ensemble muni d'une relation d'ordre quelconque, il est possible de définir une topologie extrêmement efficace : la topologie de l'ordre.
 <span class="important"><definition name="topology_order"></span>.
@@ -146,6 +153,14 @@ Voici l'écriture mathématique de ces 3 types d'ouverts qui engendrent cette to
 Ici, <span class="important">un ensemble ordonné muni d'une topologie est nommée un espace topologique ordonné</span>.
 C'est par exemple le cas dans "R" : <span class="important">comme l'ensemble que nous venons de citer représente exactement l'ensemble des intervalles réels ouverts, une topologie de l'ordre existe bel et bien sur l'ensemble des nombres réels</span>.
 </p>
+<p>
+Il est aussi possible de définir des topologies précises construites via des produits cartésiens : les topologies produits.
+<span class="important"><definition name="topological_product"></span>.
+</p>
+
+
+
+
 
 <h3>Les filtres topologiques</h3>
 <p>
@@ -473,7 +488,18 @@ En fait, <span class="important">cette topologie contient tous les ouverts de "R
 
 
 
+
+
+
+
+
+
+
+
+
 <h2>Le lien analyse - topologie</h2>
+
+
 
 <h3>La limite topologique</h3>
 <p>
@@ -690,6 +716,13 @@ Dans ce cas, les ensembles utilisés dans la notation sont donc l'ensemble de d�
 Des fois, quand le contexte si prête et que nous n'avons pas besoin de spécifier les ensembles de départ et d'arrivée, il est possible de ne pas les noter, et de ne noter que le "C exposant 0".
 </p>
 <math><mi>C</mi><msup>0</msup>(J, K)</math>
+
+<p>
+Ici, on prend deux espaces topologiques, et on en déduit des applications continues.
+Cependant, il existe un moyen de faire "l'inverse", avec un ensemble quelconque, un espace topologique quelconque et une famille d'applications allant du premier ensemble vers l'espace topologique.
+En effet, avec ceci, on peut définir un type précis d'espace : la topologie initiale.
+<span class="important"><definition name="topological_initial"></span>.
+</p>
 
 <p>
 Cependant, un théorème d'une très grande importance concerne les parties connexes.

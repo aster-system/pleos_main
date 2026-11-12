@@ -1737,7 +1737,7 @@ Ici, il est important de prendre la valeur absolue de "b", pour ne pas qu'un sig
 <math>N(x) = a <mimp> N(b * x) = |b| * a</math>
 <p>
 Finalement, <span class="important">cette application respecte une inégalité triangulaire : la norme de la somme de deux vecteurs "x" et "y" est inférieur ou égale à la somme de la norme du vecteur "x" et de la norme du vecteur "y"</span>.
-Comme pour les espaces métriques, cette inégalité triangulaire traduit que le chemin entre "0" et "x + y" est plus court que celui entre "x", 0 puis "y" : le chemin direct est plus court que de passer par un autre point.
+Comme pour les espaces métriques, cette inégalité triangulaire traduit que le chemin entre "0" et "x + y" est plus court que celui entre "0" et "x", concaténé par celui entre 0 et "y" : le chemin direct est plus court que de passer par un autre point.
 </p>
 <math><mforall>x, y <min> E, N(x + y) <mltequal> N(x) + N(y)</math>
 <p>

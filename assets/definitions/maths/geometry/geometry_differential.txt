@@ -1,0 +1,11 @@
+<new_definition name="manifold">
+    <content>une variété (nommée "manifold" en anglais) est un espace topologique qui ressemble localement à un espace euclidien</content>
+    <content name="rigorous">une variété topologique est un espace topologique séparé et à base dénombrable tel que chacun de ces points possède un voisinage homéomorphe à un sous-ensemble ouvert de l'espace euclidien de dimension "n"</content>
+</new_definition>
+
+<new_definition name="atlas">
+    <content>un atlas sur un espace topologique "X" est une famille de carte de "X" tel que l'union de tous les ouverts de "X" représentant les premiers éléments des cartes vaut "X" (et donc, tel que la famille composé de tous les ouverts de "X" représentant les premiers éléments des cartes recouvre "X")</content>
+</new_definition>
+<new_definition name="chart">
+    <content>une carte (aussi nommée carte locale) d'un espace topologique "X" est un couple représentant une partie ouverte de "X" et un homéomorphisme entre cette partie de "X" et un ouvert de l'espace euclidien de dimension "n"</content>
+</new_definition>

@@ -64,48 +64,96 @@ Cependant, <span class="important">il est possible de définir des sortes de dé
 <p>
 Commençons par le type de dérivation le plus simple à définir : la dérivée partielle.
 <span class="important"><definition name="partial_derivative"></span>.
-En d'autres termes, on se ramène à une fonction à une seule variable.
+En d'autres termes, on se ramène à une fonction où l'ensemble image est l'ensemble des réels, tout en gardant l'ensemble de départ inchangé.
 Comme pour tout ce qui implique de la dérivation, <span class="important">ce type de dérivé peut être défini en 1 seul point précis, sur toute une partie, ou encore sur tout l'espace entier</span>.
 D'un point de vue intuitif, la dérivée partielle d'une fonction par rapport à une variable en un point est une représentation de comment l'image de la fonction évolue quand on fait varier de manière infinitésimale le paramètre "x", en laissant les autres constants.
+Dans le cas d'une partie de l'espace de départ, pour représenter une dérivée partielle, on doit donc utiliser une fonction qui à chaque point de cette espace de départ, y associe comment l'évolution du paramètre "x" fait grossir l'image autour de ce point.
 </p>
 <p>
 Pour une fonction "f" où l'on veut obtenir la dérivée partielle en une variable "x", on peut utiliser plusieurs notations : nous allons présenter les deux plus utilisées.
 La première est la notation de Leibniz, exactement comme vue plus haut.
 La deuxième utilise le même schéma que la notation de Leibniz, en remplaçant le "d" par un symbôle similaire au delta, nommé "d rond".
 </p>
-<math><mfrac><mi>df</mi><mi>dx</mi></mfrac> = <mfrac><mi><mpartial>f</mi><mi><mpartial>x</mi></mfrac></math>
+<math><mfrac><mrow>df</mrow><mrow>dx</mrow></mfrac> = <mfrac><mrow><mpartial>f</mrow><mrow><mpartial>x</mrow></mfrac></math>
 <p>
 Si on veut changer de variable en considérant par exemple une variable "y", on permute donc le "x" et le "y".
 </p>
-<math><mfrac><mi>df</mi><mi>dy</mi></mfrac> = <mfrac><mi><mpartial>f</mi><mi><mpartial>y</mi></mfrac></math>
+<math><mfrac><mrow>df</mrow><mrow>dy</mrow></mfrac> = <mfrac><mrow><mpartial>f</mrow><mrow><mpartial>y</mrow></mfrac></math>
 <p>
-En général, il est forteement conseillé de définir à chaque fois quand / où la fonction est dérivable ou pas dérivable.
+En général, il est fortement conseillé de définir à chaque fois quand / où la fonction est dérivable ou pas dérivable.
 Prenons un exemple avec un champ scalaire :
 </p>
 <math>f : <mi><mreal></mi><msup>3</msup> <mto> <mreal></math></br>
 <math>f(x, y, z) = x + x * y + x * z</math>
 <p>
 Essayons de calculer sa dérivée partielle par rapport à la variable "x".
-Pour cela, <span class="important">on peut simplement définir une nouvelle fonction "f indice x" allant de "R" vers "R", où l'on considère "y" et "z" constants, et calculer sa dérivée</span>.
+Pour cela, <span class="important">on peut simplement définir une nouvelle fonction "f indice x" allant de "R exposant 3" vers "R", où l'on considère "y" et "z" constants, et calculer sa dérivée</span>.
 La dérivée de cette fonction sera égale à la dérivée partielle de "f" par rapport à "x".
 Dans ce cas, on voit assez vite que cette fonction est dérivable partout, nous pouvons donc écrire :
 </p>
 <math><mi>f</mi><msub>x</msub> : <mreal> <mto> <mreal></math></br>
 <math><mforall>y, z <min> R, <mi>f</mi><msub>x</msub>(x) = x + x * y + x * z</math></br>
-<math>f'(x) = <mfrac><mi><mpartial>f</mi><mi><mpartial>x</mi></mfrac> =  1 + y + z</math>
+<math><mfrac><mrow><mpartial>f</mrow><mrow><mpartial>x</mrow></mfrac>(x, y, z) =  1 + y + z</math>
 <p>
 En procédant de manière similaire, on peut calculer la dérivée partielle de "f" par rapport à "y" et "z".
 Faisons le en accéléré (notons que ces fonctions sont aussi dérivables sur tout leur ensemble de définition) :
 </p>
-<math><mfrac><mi><mpartial>f</mi><mi><mpartial>y</mi></mfrac> = x</math></br>
-<math><mfrac><mi><mpartial>f</mi><mi><mpartial>z</mi></mfrac> = x</math>
+<math><mfrac><mrow><mpartial>f</mrow><mrow><mpartial>y</mrow></mfrac>(x, y, z) = x</math></br>
+<math><mfrac><mrow><mpartial>f</mrow><mrow><mpartial>z</mrow></mfrac>(x, y, z) = x</math>
 <p>
 Ici, <span class="important">on peut définir les dérivés partielles en utilisant le passage à la limite</span>.
 Dans ce cas, on peut définir la dérivée partielle d'une fonction "f" allant de "R exposant n" vers "R" ou "R exposant m" (ce qui ne change rien à la définition) par rapport à la "i-ième" variable en un point "(a indice 1, ..., a indice n)" comme ceci :
 </p>
-<math><mfrac><mi><mpartial>f</mi><mi><mpartial><mi>x</mi><msub>i</msub></mfrac>(a) = <mlim unknown=h to=0><mfrac><mrow>f(<mi>a</mi><msub>1</msub>, ..., <mi>a</mi><msub>j</msub> + h, ..., <mi>a</mi><msub>n</msub>) - f(<mi>a</mi><msub>1</msub>, ..., <mi>a</mi><msub>j</msub>, ..., <mi>a</mi><msub>n</msub>)</mrow><mrow><mi>h</mi></mrow></mfrac></math>
+<math><mfrac><mrow><mpartial>f</mrow><mrow><mpartial><mi>x</mi><msub>i</msub></mrow></mfrac>(a) = <mlim unknown=h to=0><mfrac><mrow>f(<mi>a</mi><msub>1</msub>, ..., <mi>a</mi><msub>j</msub> + h, ..., <mi>a</mi><msub>n</msub>) - f(<mi>a</mi><msub>1</msub>, ..., <mi>a</mi><msub>j</msub>, ..., <mi>a</mi><msub>n</msub>)</mrow><mrow><mi>h</mi></mrow></mfrac></math>
 <p>
 Encore une fois, cette définition se définit à une partie, voir à tout l'espace si possible.
 Remarquons quelque chose : <span class="important">une dérivée partielle dans le cas où la fonction va vers "R" donne un nombre réel, et donne un vecteur de "R exposant m" dans le cas où la fonction va vers "R exposant m"</span>.
 Donc, la fonction représentant une dérivée partielle est d'exacte même nature que la fonction de départ.
+</p>
+
+
+
+<h3>Les variétés</h3>
+<p>
+En géométrie différentielle (et même, en géométrie tout court), un des objets les plus intéressants sont les variétés.
+<span class="important"><definition name="manifold"></span>.
+En d'autre termes, c'est un espace topologique tel que, pour tout point de cet espace, si l'on "zoome" assez dessus, on peut obtenir un voisinage de cet espace ressemblant fortement à un espace euclidien (et, plus précisément, à un ouvert d'un espace euclidien).
+</p>
+<p>
+Cette définition reste trop générale.
+En plus, cette définition est très intuitive : présentant une version plus rigoureuse.
+Pour cela, nous allons introduire le type de variété le plus simple : la variété topologique.
+<span class="important"><definition name="manifold-rigorous"></span>.
+Ici, "n" est appelée "dimension" de la variété topologique (comme il est la dimension de l'espace euclidien).
+Selon les définitions, "n" est constant, comme il peut changer selon le point (la définition usuelle force un "n" constant).
+</p>
+<p>
+Il existe une façon similaire de définir ce concept, mais utilisant un vocabulaire plus précis : les cartes et les atlas.
+<span class="important"><definition name="chart"></span>.
+Une carte est donc la donnée d'une partie de "X", et de comment passer de "X" vers l'espace euclidien nécessaire.
+De plus, si une carte existe, tous les points de la partie ont donc bel et bien un voisinage homéomorphe à un ouvert de l'espace euclidien de dimension "n".
+Pour un ouvert "U" de "X" et un homéomorphisme "φ" allant de "U" vers une partie ouverte "V" de l'espace euclidien de dimension "n", une carte "C" est donc :
+</p>
+<math><mphi> : U <mto> V</math></br>
+<math>C = (U, <mphi>)</math>
+<p>
+De plus, <span class="important"><definition name="atlas"></span>.
+Avec un atlas, on peut donc dire que tous les points de "X" ont donc bel et bien un voisinage homéomorphe à un ouvert de l'espace euclidien de dimension "n".
+En fait, <span class="important">dire que "X" est une variété topologique équivaut à dire que "X" est séparé, à base dénombrable, et qu'il existe un atlas sur "X"</span>.
+</p>
+<p>
+Imaginons que, pour une variété topologique "X", nous avons deux cartes quelconques différentes.
+Ici, <span class="important">il est possible de définir un moyen de comparer deux cartes entre elles, avec des applications qui se comportent comme des applications de "changement de carte"</span>.
+L'idée est assez simple : imaginons un point quelconque de l'espace vectoriel, voyons quel point il représente grâce à la réciproque de l'application de la première carte, et voyons ce que le point que nous avons obtenu devient avec l'application de la seconde carte.
+Ici, on doit utiliser la réciproque de la première application, parce que la première application va de l'ouvert de "X" vers l'espace vectoriel, et que l'on veut le sens inverse (espace vectoriel vers "X").
+Comme cette application est un homéomorphisme, on est assuré que sa réciproque existe et est continue.
+Cependant, pour que la composition soit possible, il faut restreindre l'application réciproque à l'ensemble des éléments de "E" tel que leur image par la réciproque soit dans l'ensemble de départ de la deuxième application.
+En fait, <span class="important">cet ensemble d'élément de "E" est l'ensemble image de la première application étant dans l'ensemble de définition de la première fonction et de la deuxième fonction (et donc, dans l'ensemble image par la première application de l'intersection de l'ouvert de "X" de la première carte par l'ouvert de "X" de la deuxième carte)</span>.
+En plus, on peut en déduire que l'ensemble d'arrivée de l'application de changement de carte est donc l'ensemble des éléments de "E" qui ont un antécédent part la deuxième application, mais aussi par la première application (et donc, il s'agit de l'ensemble image par la deuxième application de l'intersection de l'ouvert de "X" de la première carte par l'ouvert de "X" de la deuxième carte).
+Au final, <span class="important">l'application de changement de carte est donc la composée de la réciproque de la première application par la seconde</span>.
+</p>
+<math><mphi> : <mphi><msub>1</msub>(<mi>U</mi><msub>1</msub> <minter> <mi>U</mi><msub>2</msub>) <mto> <mphi><msub>2</msub>(<mi>U</mi><msub>1</msub> <minter> <mi>U</mi><msub>2</msub>)</math></br>
+<math><mphi> = <mphi><msub>2</msub> <mcomp> <mphi><msubsup><mrow>1</mrow><mrow>-1</mrow></msubsup></math>
+<p>
+
 </p>
