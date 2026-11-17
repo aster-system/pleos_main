@@ -1,0 +1,1 @@
+<metadata firstname="pythagore" birth="-580" death="-495">
