@@ -4,7 +4,12 @@
 
 
 
+
+
+
 <h2>La géométrie classique</h2>
+
+
 
 <h3>Qu'est ce qu'est la géométrie ?</h3>
 <p>
@@ -52,6 +57,8 @@ Aussi rigoureuse qu'était cette géométrie, elle ne l'était pas assez pour le
 En effet, dés ce siècle, les mathématiciens ont mis leurs efforts à une formalisation rigoureuse de toutes les mathématiques, géométrie incluse.
 </p>
 
+
+
 <h3>Les bases de la géométrie classique</h3>
 <p>
 Avant de s'attaquer à la sombre partie de la géométrie, re-voyons les bases de la géométrie classique.
@@ -97,7 +104,12 @@ Nous pouvons donc faire assez aisément des conversions "degré - radian" et "ra
 
 
 
+
+
+
 <h2>La géométrie analytique</h2>
+
+
 
 <h3>Le lien nombres réels - géométrie analytique</h3>
 
@@ -167,6 +179,8 @@ Avec ça, nous pouvons définir un autre concept primordial en géométrie : les
 Généralement, les segments formant le polygone sont nommés les côtés du polygône.
 C'est ce concept qui permet de définir des termes biens connus : triangles (3 côtés), rectangle (4 côtés)...
 </p>
+
+
 
 <h3>La trigonométrie</h3>
 
@@ -282,6 +296,8 @@ On peut faire l'exact même calcul pour "sin(a - b)" :
 <math><mimp> sin(a - b) = sin(a) * cos(c) + cos(a) * sin(c) = sin(a) * cos(-b) + cos(a) * sin(-b)</math></br>
 <math><mimp> sin(a - b) = sin(a) * cos(b) - cos(a) * sin(b)</math>
 
+
+
 <h3>Les graphes de fonctions</h3>
 <p>
 Nous avons déjà parlé des graphes de fonctions dans le chapitre 1, dans la partie application.
@@ -318,24 +334,46 @@ Effectivement, le "y" n'a aucune importance sur le déroulé de la droite : les 
 </p>
 <math><mforall> a <min> R, <mforall> (x, y) <min> <mi>R</mi><msup>2</msup>, x = a</math>
 
+
+
 <h3>Les représentations paramétriques</h3>
 <p>
 Comme les ensembles de points sont des ensembles, on peut donc les définir comme des ensembles.
-L'une des façons possibles de faire est donc de paramétrer ces ensembles.
-En fait, <span class="important">l'idée est de définir des fonctions admettant comme image un ensemble de point précis</span>.
+L'une des façons possibles de faire un ensemble de point est donc de paramétrer cet ensemble.
+En fait, <span class="important">l'idée est de définir des fonctions admettant comme ensemble image un ensemble de point précis dans un espace géométrique quelconque, représentant une forme quelconque</span>.
 Un exemple très simple s'obtient avec toutes les fonctions de "R" vers "R" admettant un graphe (comme nous l'avons vu plus haut).
-En effet, on peut en obtenir une application allant de "R" vers "R²", transformant "x" en "(x, f(x))".
+En effet, on peut en obtenir une application allant de "R" vers "R²" (pour obtenir un ensemble de points en 2 dimensions, et donc une forme en 2 dimensions), transformant "x" en "(x, f(x))".
 Dans ce cas, l'ensemble image de cette application représente exactement la forme obtenue sur le graphe.
 </p>
 <graphic><background_color white><function expression="(x-4)*(x-4)"></function></graphic>
 <p>
-<span class="important">Il s'agit donc d'une façon différente de définir un ensemble de points, qui peut s'avérer très utile dans plein de cas</span>.
+Nous pouvons donc facilement représenter tout graphe comme une forme en 2 dimensions.
+On peut aussi voir (et nous le démontrerons bien après) que beaucoup de graphes semble être des sortes de lignes courbées.
+Ce concept se généralise en géométrie, avec le terme de courbe.
+<span class="important"><definition name="curve"></span>.
+L'information intéressante ici est qu'elle s'apparente très fortement à un espace à 1 dimension (et donc, à la droite des réels) : si l'on choisit un point quelconque (qui représentera un 0) et d'un sens de déplacement, on peut se déplacer sur cette ligne comme on se déplace sur la droite des réels.
 </p>
 <p>
-Dans notre exemple, nous transformons "x" en "(x, f(x))", mais nous pouvons aussi théoriquement définir une nouvelle fonction "g", et définir une application allant de "x" vers "(g(x), f(x))".
-En effet, rien ne vous empêche nous plus de mettre des valeurs constantes, comme une application qui transforme "x" en "(3, f(x))".
-En fait, <span class="important">le plus difficile est de transformer un ensemble de points défini autrement en ensemble défini par paramètre, et vice-versa</span>.
+Imaginons que nous voulons obtenir une courbe quelconque grâce à un paramétrage.
+On sait ici que la courbe formée par un graphe de fonction réel et très facile à paramétrer : on peut donc se demander si il est possible d'utiliser cette technique pour généraliser ce paramétrage à toutes les fonctions possibles.
+Si nous essayons cela, nous allons nous confronter à un problème précis : tous les défauts du graphe des fonctions vont empêcher de correctement paramétrer certaines courbes.
+Par exemple, dans un graphe de fonction, deux points ne peuvent pas être dans le graphe si ils ont le même "x".
+Cependant, il est très facile de trouver des courbes qui ont deux points ayant le même "x" (par exemple, la courbe qui forme un cercle).
+Nous allons donc devoir trouver une autre solution.
 </p>
+<p>
+Pour cela, l'objet nécessaire est la courbe paramétrée.
+<span class="important"><definition name="curve-parametric"></span>.
+L'idée ici est donc en quelque sorte de prendre la droite des réels et de la courber dans "R exposant n" avec une application pour obtenir une nouvelle courbe, qui va représenter la courbe que l'on veut avoir.
+D'un point de vue conventionnel, le paramètre de cette application est noté "t" (en référence au "temps", car ce concept permet généralement de modéliser des trajectoires en physique).
+Pour que ce concept soit intéressant, il est grandement conseillé de choisir un "n" strictement supérieur à 1.
+Généralement, <span class="important">on découpe cette application en "n" applications allant de "R" vers "R", avec chacune d'entre elles donnant l'une des "n" coordonnées de l'image</span>.
+Ici, le problème de "deux points ne peuvent pas avoir le même "x" est résolu : pour que deux points est le même "x", il faut que pour deux réels "t" et "t'" distints, "x(t)" soit égal à "x(t')", ce qui est parfaitement possible.
+Dans le cas de "R²", on peut donc définir une courbe comme ceci :
+</p>
+<math>x : <mreal> <mto> <mreal>, t <mto> x(t)</math></br>
+<math>y : <mreal> <mto> <mreal>, t <mto> y(t)</math></br>
+<math>c : <mreal> <mto> <mreal><msup>2</msup>, t <mto> (x(t), y(t))</math></br>
 <p>
 Une des figures les plus utiles (mais pas des plus simples) à paramétrer est le cercle.
 En effet, <span class="important">il existe un moyen précis et facile d'obtenir un demi cercle</span>.
@@ -359,3 +397,23 @@ Bien que cette formule utilise simplement de l'arithmétique basique, elle n'est
 Nous allons donc obtenir une autre façon de faire, grâce aux triangles, et aussi à une branche très spécifique de la géométrie : la trigonométrie.
 <span class="important"><definition name="trigonometry"></span>.
 </p>
+
+<p>
+Ici, nous avons paramétrer des courbes (et donc, des lignes en 1 dimension) dans des "R exponsant n" avec "n" un nombre entier naturel quelconque.
+Cependant, il est possible de généraliser ceci à des surfaces.
+Déjà, <span class="important"><definition name="surface"></span>.
+En fait, il s'agit d'une forme géométrie quelconque où l'on peut décrire chaque point avec 2 informations.
+Par exemple, on peut penser à la surface d'une sphère 3D, qui est certe dans un espace 3D, mais qui peut être étudiée avec 2 informations (comme la latitude et la longitude).
+</p>
+<p>
+Pour paramétrer une surface, nous allons définir un objet assez simple : une nappe paramétrée.
+<span class="important"><definition name="surface-parametric"></span>.
+L'idée ici est donc en quelque sorte de prendre le plan des réels et de la courber dans "R exposant n" avec une application pour obtenir une nouvelle courbe, qui va représenter la courbe que l'on veut avoir.
+Pour que ce concept soit intéressant, il est grandement conseillé de choisir un "n" strictement supérieur à 2.
+Généralement, <span class="important">on découpe cette application en "n" applications allant de "R²" vers "R", avec chacune d'entre elles donnant l'une des "n" coordonnées de l'image</span>.
+Dans le cas de "R exposant 3", on peut définir une nappe paramétrée de cette façon :
+</p>
+<math>x : <mreal><msup>2</msup> <mto> <mreal>, (u, v) <mto> x(u, v)</math></br>
+<math>y : <mreal><msup>2</msup> <mto> <mreal>, (u, v) <mto> y(u, v)</math></br>
+<math>Z : <mreal><msup>2</msup> <mto> <mreal>, (u, v) <mto> z(u, v)</math></br>
+<math>c : <mreal><msup>2</msup> <mto> <mreal><msup>3</msup>, (u, v) <mto> (x(u, v), y(u, v), z(u, v))</math></br>

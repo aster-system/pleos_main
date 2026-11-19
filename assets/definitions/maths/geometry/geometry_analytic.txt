@@ -1,0 +1,9 @@
+<new_definition name="curve">
+    <content>une courbe est un ensemble de points mathématique qui représente une ligne quelconque (pas forcément droite / courbée)</content>
+    <content name="parametric">une courbe paramétrée (aussi nommée arc paramétrée) est une courbe obtenue comme ensemble image d'une application allant de "R" vers un "R exposant n" (avec "n" un nombre entier naturel)</content>
+</new_definition>
+
+<new_definition name="surface">
+    <content>une surface est un ensemble de points mathématique qui représente une forme 2D quelconque (pas forcément plane / courbée)</content>
+    <content>une nappe paramétrée est une surface obtenue comme ensemble image d'une application allant de "R²" vers un "R exposant n" (avec "n" un nombre entier naturel)</content>
+</new_definition>
