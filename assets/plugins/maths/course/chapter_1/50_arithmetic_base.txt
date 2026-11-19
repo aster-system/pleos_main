@@ -20,7 +20,15 @@ De plus, elle permet de nous donner un premier objet défini "dans le marbre" po
 <p>
 Comme pour la théorie des ensembles, l'arithmétique a subit de nombreux remaniement pendant son histoire.
 Historiquement, <span class="important">on retrouve des choses semblant ressembler à de l'arithmétique sur des pierres babyloniennes de plus datant d'environ 1800 avec J.C. (avec la pierre "Plimpton 322"), et on retrouve déjà des traces d'études précises des nombres 1000 ans avant J.C., via les phéniciens</span>.
-Plus récemment (dernier millénaire avec J.C.), les grecs se sont aussi emparés de l'affaire, avec de très grands noms : <scientist name="pythagoras" type="presentation">, <scientist name="archimedian" type="presentation">, <scientist name="euclid" type="presentation">...
+Plus récemment (dernier millénaire avec J.C.), les grecs se sont aussi emparés de l'affaire, avec de très grands noms : <scientist name="diophantus" type="presentation">, <scientist name="archimedian" type="presentation">, <scientist name="euclid" type="presentation">...
+L'évolution de cette discipline a en suite parcouru les siècle, avec les chinois (comme <scientist name="sunzi" type="presentation">), les indiens (comme <scientist name="aryabhata" type="presentation">), les perses (comme <scientist name="khayyam" type="presentation">), les arabes (comme <scientist name="kamil" type="presentation">)...
+Bien évidemment, cette liste est non-exhaustive : pourrait citer une quantité absurdes d'autres mathématiciens ayant contribué à cette discipline.
+Malgré toutes ces avancés aux 4 coins du monde, les résultats les plus connus aujourd'hui sont les résultats formulés par les occidentaux à partir du XVIIème siècle.
+On peut citer quelques noms célèbres : comme <scientist name="viete" type="presentation">, <scientist name="fermat" type="presentation">, <scientist name="bezout" type="presentation">...
+Plus le temps passait, plus les théorèmes devinez compliqué et abstrait.
+Bien que le concept de nombre puisse sembler simple, <span class="important">il existe encore beaucoup de problèmes modernes les concernant</span>.
+Par exemple, on problème résolu de ce type dont la résolution à fait beaucoup de bruit est le dernier théorème de Fermat (aussi nommé théorème de Fermat-Wiles), énoncé par Fermat en 1638, démontré par (entre autres) <scientist name="wiles" type="presentation"> en 1994, après plus de 350 ans de développement de la discipline.
+Cette discipline a donc accompagné les mathématiques pendant quasiment toute leur histoire.
 </p>
 
 

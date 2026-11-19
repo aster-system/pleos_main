@@ -1,0 +1,1 @@
+<metadata firstname="Bézout" lastname="étienne" birth="1730" death="1783">

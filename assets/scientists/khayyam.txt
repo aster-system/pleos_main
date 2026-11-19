@@ -1,0 +1,1 @@
+<metadata firstname="khayyam" lastname="omar" birth="1048" death="1131">
