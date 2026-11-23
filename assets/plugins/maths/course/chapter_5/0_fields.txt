@@ -12,7 +12,7 @@
 
 
 
-<h3>Qu'est ce qu'est un anneau ?</h3>
+<h3>Qu'est-ce qu'est un corps ?</h3>
 <p>
 L'anneau est une structure algébrique très importante, et la première que nous introduirons avec deux lois de compositions internes.
 En algèbre, <span class="important"><definition name="algebra_ring"></span>.
@@ -75,10 +75,74 @@ On peut aussi citer ceux formé avec "Q" et "R".
 
 
 
+<h3>Qu'est ce qu'est un corps ?</h3>
+<p>
+Un corps représente une version des anneaux possédant plus de propriétés.
+En effet, <span class="important"><definition name="algebra_field"></span>.
+La deuxième opération permet donc de former un groupe avec l'ensemble associé au corps.
+</p>
+<math>K = (E, +, .)</math>
+<p>La structure (E*, .) est un groupe.</p>
+<math><mforall>a <min> E*, <mexists> b <min> E, a . b = n</math>
+
+<p>
+Comme pour les anneaux, <span class="important">un corps dont la deuxième loi est commutative est nommée un corps commutatif</span>.
+Selon les auteurs, tous les corps sont commutatifs, mais nous allons dire ici que seul les "corps commutatifs" le sont.
+</p>
+<math><mforall>a, b <min> E, a . b = b . a</math>
+
+<p>
+Grossièrement, <span class="important">un corps est une structure algébrique où l'on peut utiliser les opération "+", "-", "*" et "/"</span>.
+L'exemple le plus simple est le corps formé par "Q", et par l'addition et la multiplication sur "Q".
+</p>
+<math>(Q, +, .)</math>
+<p>
+Le corps le plus utile est probablement le corps formé par "R", et par l'addition et la multiplication sur "R".
+</p>
+<math>(R, +, .)</math>
 
 
 
-<h3>Les sous-anneaux</h3>
+<h3>Les morphismes d'anneaux et de corps</h3>
+<p>
+Comme toute structure algébrique, nous pouvons utiliser le concept de morphisme avec des anneaux et des corps.
+Pour commencer, <span class="important"><definition name="algebra_ring-morphism"></span>.
+Un morphisme conserve donc la première loi, la seconde loi et le neutre (si les anneaux sont unitaires).
+</p>
+<math>f : A <mto> B</math></br>
+<math>f(x + y) = f(x) + f(y)</math></br>
+<math>f(x * y) = f(x) * f(y)</math></br>
+<math>f(<mi>1</mi><msub>A</msub>) = <mi>1</mi><msub>B</msub></math>
+<p>
+Comme tout morphisme qui se respecte, <span class="important">un morphisme de corps admet un noyau (l'ensemble des éléments de départ qui sont envoyés dans le neutre de l'addition)</span>.
+</p>
+<math>{x <min> A, f(x) = <mi>0</mi><msub>B</msub>}</math>
+<p>
+D'ailleurs, <span class="important">on peut démontrer que dire que ce morphisme est injectif équivaut à dire que le noyau est réduit au seul vecteur nul</span>.
+La prochaine ligne est la démonstration de "injectif implique noyau réduit au nul", et la ligne d'après représente l'autre sens.
+</p>
+<math>(<mforall> (x, y) <min> <mi>A</mi><sup>2</msup>, f(x) = f(y) <mimp> x = y) <mimp> (<mforall> x <min> A, f(x) = f(<mi>0</mi><msub>A</msub>) = <mi>0</mi><msub>B</msub> <mimp> x = <mi>0</mi><msub>A</msub>)</math></br>
+<math>(<mforall> x <min> A, f(x) = <mi>0</mi><msub>B</msub> <mimp> x = <mi>0</mi><msub>A</msub>) <mimp> (<mforall> x, y <min> A, f(x - y) = <mi>0</mi><msub>B</msub> <mimp> x - y = <mi>0</mi><msub>A</msub> <mimp> x = y)</math></br>
+
+<p>
+On peut aussi définir des morphismes avec des corps.
+Encore une fois, <span class="important"><definition name="algebra_field-morphism"></span>.
+La définition d'un morphisme de corps est exactement la même que la définition d'un morphisme d'anneau.
+On peut cependant rajouter une propriété : l'inverse de l'image est égal à l'image de l'inverse.
+</p>
+<math>f(x <mtimes> <mi>x</mi><msup>-1</msup>) = f(x) * f(x <mtimes> <mi>x</mi><msup>-1</msup>)</math></br>
+<math>f(x <mtimes> <mi>x</mi><msup>-1</msup>) = f(<mi>1</mi><msub>A</msub>) = <mi>1</mi><msub>B</msub></math></br>
+<math><mimp>f(x) * f(x <mtimes> <mi>x</mi><msup>-1</msup>) = <mi>1</mi><msub>B</msub> <mimp> f(x <mtimes> <mi>x</mi><msup>-1</msup>) = <mi>f(x)</mi><msup>-1</msup></math></br>
+<p>
+Ce type de morphisme a une propriété assez intéressante : <span class="important">tout morphisme de corps est injectif</span>.
+Cela s'obtient en démontrant que tout morphisme de corps a un noyau réduit au nul (si un autre élément que le nul était dans le noyau, son image n'aurait pas d'inverse dans le corps d'arrivée sans être le vecteur nul, ce qui est absurde).
+</p>
+<math><mforall> x <min> A, x <mnotequal> <mi>0</mi><msub>A</msub> <mand> f(x) = <mi>1</mi><msub>B</msub> <mimp> <mnot> (<mi>f(x)</mi><msup>-1</msup> <min> B)</math>
+
+
+
+
+<h3>Les sous-anneaux et extensions de corps</h3>
 <p>
 Comme il existe des sous-groupes de groupes, il existe des sous-anneaux d'anneaux.
 <span class="important"><definition name="algebra_subring"></span>.
@@ -115,6 +179,18 @@ En fait, <span class="important">on rajoute toujours le neutre multiplicatif de 
 Donc, l'anneau engendré par "{2}" est l'exact même que l'anneau engendré par "{1, 2}".
 </p>
 <math><mbracket>{2}</mbracket> = <mbracket>{1, 2}</mbracket></math>
+
+<p>
+Ici, on peut essayer de généraliser ce concept dans le cas des corps.
+En effet, <span class="important"><definition name="algebra_subfield"></span>.
+Dans l'autre sens, <span class="important"><definition name="algebra_subfield-sup"></span>.
+</p>
+<p>
+Cependant, il existe un concept généralisant le concept de sur-corps : les extensions de corps.
+<span class="important"><definition name="algebra_field_extension"></span>.
+Ici, "L" n'est pas forcément un sur-corps de "K".
+Cependant, le morphisme (qui est donc forcément injectif) affirme que "L" est "plus grand" que "K" et que les propriétés calculatoires de "K" peuvent être copiées dans "L".
+</p>
 
 
 
@@ -240,39 +316,12 @@ On peut facilement démontrer que le fait que deux entiers soient dans la même 
 
 
 
-
-
-
 <h3>Les anneaux principaux et euclidiens</h3>
 <p>
 Les anneaux principaux et euclidiens sont des anneaux extrêmement importants pour étudier le concept de division en mathématiques, de manière plus avancée qu'avec des nombres entiers.
 </p>
 
-<h3>Qu'est ce qu'est un corps ?</h3>
-<p>
-Un corps représente une version des anneaux possédant plus de propriétés.
-En effet, <span class="important"><definition name="algebra_field"></span>.
-La deuxième opération permet donc de former un groupe avec l'ensemble associé au corps.
-</p>
-<math>K = (E, +, .)</math>
-<p>La structure (E*, .) est un groupe.</p>
-<math><mforall>a <min> E*, <mexists> b <min> E, a . b = n</math>
 
-<p>
-Comme pour les anneaux, <span class="important">un corps dont la deuxième loi est commutative est nommée un corps commutatif</span>.
-Selon les auteurs, tous les corps sont commutatifs, mais nous allons dire ici que seul les "corps commutatifs" le sont.
-</p>
-<math><mforall>a, b <min> E, a . b = b . a</math>
-
-<p>
-Grossièrement, <span class="important">un corps est une structure algébrique où l'on peut utiliser les opération "+", "-", "*" et "/"</span>.
-L'exemple le plus simple est le corps formé par "Q", et par l'addition et la multiplication sur "Q".
-</p>
-<math>(Q, +, .)</math>
-<p>
-Le corps le plus utile est probablement le corps formé par "R", et par l'addition et la multiplication sur "R".
-</p>
-<math>(R, +, .)</math>
 
 <p>
 Il est possible de trouver des corps qui contiennent d'autres corps, grâce au concept d'extension de corps.

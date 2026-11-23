@@ -61,7 +61,10 @@
 </new_definition>
 <new_definition name="algebra_field">
     <content>un corps est un anneau où chaque élement (non-nul) possède un inverse par la deuxième opération</content>
-    <content name="extension">une extension de corps "K" est un couple composé d'un corps "L" tel que "K" soit un sous-corps de "L", et d'un morphisme de "K" dans "L"</content>
+    <content name="morphism">un morphisme de corps est une application entre deux corps qui conserve les règles opératoires entre ces corps</content>
+</new_definition>
+<new_definition name="algebra_field_extension">
+    <content>une extension de corps "K" est un couple composé d'un corps "L" et d'un morphisme de "K" dans "L"</content>
 </new_definition>
 <new_definition name="algebra_group">
     <content>un groupe est un magma dont la loi de composition interne est associative, admet un neutre, et est inversible</content>
@@ -95,6 +98,7 @@
 </new_definition>
 <new_definition name="algebra_ring">
     <content>un anneau est une structure algébrique définie sur un ensemble, avec deux lois de compositions internes : une formant un groupe abélien, et une formant un monoïde, distributive par rapport à la première</content>
+    <content name="morphism">un morphisme d'anneau est une application entre deux anneaux qui conserve les règles opératoires entre ces anneaux</content>
     <content name="pseudo">un pseudo-anneau est un anneau où la deuxième loi de composition n'admet pas forcément un neutre</content>
 </new_definition>
 <new_definition name="algebra_subgroup">
@@ -102,6 +106,10 @@
     <content name="class">une classe à gauche (ou à droite) d'un élément "a" suivant un sous-groupe représente l'ensemble des modifications possibles dans un sous-groupe, en ne faisant qu'utiliser la loi de composition à gauche (ou à droite) des éléments du sous-groupe avec l'élément "a" du groupe</content>
     <content name="index">l'indice d'un sous-groupe représente le cardinal des classes à gauche (ou à droite) d'un sous-ensemble</content>
     <content name="normal">un sous-groupe normal (ou sous-groupe distingué) "H" d'un groupe "G" est un sous-groupe de "G" tel que l'image de l'automorphisme intérieur associé à chaque élément de "G" sur "H" est toujours "H"</content>
+</new_definition>
+<new_definition name="algebra_subfield">
+    <content>un sous-corps "K" d'un corps "L" est un corps sur un sous-ensemble de l'ensemble de "L"</content>
+    <content name="sup">un sur-corps "L" d'un corps "K" est un corps sur un sur-ensemble de l'ensemble de "K"</content>
 </new_definition>
 <new_definition name="algebra_subring">
     <content>un sous-anneau A d'un anneau B est un anneau sur un sous-ensemble de l'ensemble de B</content>
