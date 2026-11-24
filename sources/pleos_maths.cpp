@@ -500,7 +500,7 @@ namespace pleos {
         for(int i = 0;i<static_cast<int>(functions_created().size());i++) {
             std::shared_ptr<pleos::Function_Studied> needed_function = functions_created()[i];
             std::string function_name = needed_function.get()->name();
-            scls::Formula_Base* needed_formula = needed_function.get()->formula();
+            scls::Formula_Base_Template<scls::Double>* needed_formula = needed_function.get()->formula();
             std::cout << i << " " << needed_formula->to_std_string(&settings) << std::endl;
 
             // Do the redaction

@@ -25,7 +25,7 @@ L'évolution de cette discipline a en suite parcouru les siècle, avec les chino
 Bien évidemment, cette liste est non-exhaustive : pourrait citer une quantité absurdes d'autres mathématiciens ayant contribué à cette discipline.
 Malgré toutes ces avancés aux 4 coins du monde, les résultats les plus connus aujourd'hui sont les résultats formulés par les occidentaux à partir du XVIIème siècle.
 On peut citer quelques noms célèbres : comme <scientist name="viete" type="presentation">, <scientist name="fermat" type="presentation">, <scientist name="bezout" type="presentation">...
-Plus le temps passait, plus les théorèmes devinez compliqué et abstrait.
+Plus le temps passait, plus les théorèmes devinez compliqué et abstrait, et plus la discipline s'émancipée.
 Bien que le concept de nombre puisse sembler simple, <span class="important">il existe encore beaucoup de problèmes modernes les concernant</span>.
 Par exemple, on problème résolu de ce type dont la résolution à fait beaucoup de bruit est le dernier théorème de Fermat (aussi nommé théorème de Fermat-Wiles), énoncé par Fermat en 1638, démontré par (entre autres) <scientist name="wiles" type="presentation"> en 1994, après plus de 350 ans de développement de la discipline.
 Cette discipline a donc accompagné les mathématiques pendant quasiment toute leur histoire.
@@ -40,24 +40,66 @@ Cette discipline a donc accompagné les mathématiques pendant quasiment toute l
 <p>
 Historiquement, définir précisément les nombres entiers naturels n'a pas été une mince affaire.
 Au début (de l'histoire humaine), <span class="important">un nombre entier naturel représentait une quantité précise d'un certain objet, que l'on peut donc compter</span>.
-Cette définition est très concrète (avec la notion d'objet à compter), bien que l'abstraction apparaitra petit à petit avec l'invention d'une notation précise pour les nombres.
-D'un point de vue notationnelle, <span class="important">les nombres ont longtemps étaient notés de manière très concrète, comme le nombre de points que représentait le nombre en question</span> (c'est le cas des nombres hiéroglyphes égyptiens ou des os d'Ishango).
-Cependant, des systèmes plus abstraits utilisant des symbôles à la place de dénombrage apparaissent des l'arrivée des sumériens, avec leur système base 60, et chez les civilisations suivantes : grecques, romains...
-Le grecs <scientist name="euclid" type=quote> les défini comme une collection d'objets unitaire (valant 1).
+Cette définition est très concrète (avec la notion d'objet à compter), bien que l'abstraction apparaîtra petit à petit avec l'invention d'une notation précise pour les nombres.
+</p>
+<graphic>
+<background_color white>
+<circle x=-5/2 y=-5/2 radius=2 border_width=6 border_color=black>
+<circle x=-2 y=-3 radius=1/4 border_width=0 color=black>
+<circle x=-3 y=-3 radius=1/4 border_width=0 color=black>
+<circle x=-5/2 y=-2 radius=1/4 border_width=0 color=black>
+<circle x=5/2 y=-5/2 radius=2 border_width=6 border_color=black>
+<circle x=2 y=-3 radius=1/4 border_width=0 color=black>
+<circle x=3 y=-3 radius=1/4 border_width=0 color=black>
+<circle x=2 y=-2 radius=1/4 border_width=0 color=black>
+<circle x=3 y=-2 radius=1/4 border_width=0 color=black>
+<circle x=-5/2 y=5/2 radius=2 border_width=6 border_color=black>
+<circle x=-5/2 y=5/2 radius=1/4 border_width=0 color=black>
+<circle x=5/2 y=5/2 radius=2 border_width=6 border_color=black>
+<circle x=5/2 y=3 radius=1/4 border_width=0 color=black>
+<circle x=5/2 y=2 radius=1/4 border_width=0 color=black>
+</graphic>
+<p>
+D'un point de vue notationnel, <span class="important">les nombres ont longtemps étaient notés de manière très concrète, comme le nombre de points que représentait le nombre en question</span> (c'est le cas des nombres hiéroglyphes égyptiens ou des os d'Ishango).
+Cependant, des systèmes plus abstraits utilisant des symboles à la place de la quantité en elle-même apparaissent des l'arrivée des sumériens, avec leur système base 60, et chez les civilisations suivantes : grecques, romains...
+Le grec <scientist name="euclid" type=quote> les défini comme une collection d'objets unitaire (valant 1).
 Dans ce cas, l'addition (et, globalement, toutes propriétés des nombres entiers naturels) est très facilement définie, en rapprochant physiquement deux collections d'objets représentant les nombres à additionner.
+</p>
+<graphic ratio_base>
+<background_color white>
+<base draw=0 width=15 height=10>
+<circle x=-5 y=0 radius_x=2 radius_y=4 border_width=6 border_color=black>
+<circle x=-5 y=1 radius=1/4 border_width=0 color=black>
+<circle x=-5 y=-1 radius=1/4 border_width=0 color=black>
+<text x=-5/2 y=0 font_size_in_scale=1>+</text>
+<circle x=0 y=0 radius_x=2 radius_y=4 border_width=6 border_color=black>
+<circle x=0 y=1 radius=1/4 border_width=0 color=black>
+<circle x=0 y=0 radius=1/4 border_width=0 color=black>
+<circle x=0 y=-1 radius=1/4 border_width=0 color=black>
+<text x=5/2 y=0 font_size_in_scale=1>=</text>
+<circle x=5 y=0 radius_x=2 radius_y=4 border_width=6 border_color=black>
+<circle x=5 y=2 radius=1/4 border_width=0 color=black>
+<circle x=5 y=1 radius=1/4 border_width=0 color=black>
+<circle x=5 y=0 radius=1/4 border_width=0 color=black>
+<circle x=5 y=-1 radius=1/4 border_width=0 color=black>
+<circle x=5 y=-2 radius=1/4 border_width=0 color=black>
+</graphic>
+<p>
 Pendant longtemps, le nombre "zéro" n'était pas normalisé comme étant un nombre entier naturel, et son utilisation de la sorte dépend des auteurs.
 Cependant, <span class="important">l'arrivée de la logique avancée à la fin du XIXème siècle va forcer les mathématiciens à vouloir axiomatiser tout ça</span>.
-Pour cela, de nombreux mathématiciens tentent des choses : <scientist name="dedekind" type=quote>, <scientist name="peano" type=quote> avec son système d'axiome précis, <scientist name="frege" type=quote>...
+Pour cela, de nombreux mathématiciens tentent des choses : <scientist name="dedekind" type=presentation>, <scientist name="peano" type=presentation> avec son système d'axiome précis, <scientist name="frege" type=presentation>...
 La célèbre théorie des ensembles ZFC (que l'on a déjà présenté plus tôt dans ce cours) offre un axiome permettant de les définir : l'axiome de l'infini.
 L'arrivée de la crise des fondements va bouleverser toutes ces définitions, mais cela ne va pas arrêter les mathématiciens ayant travaillé dessus.
 </p>
 <p>
 Grâce à la théorie des ensembles ZFC, <span class="important">on peut axiomatiquement définir l'ensemble des nombres entiers naturels</span>, comme étudié au collège.
+La façon que nous allons présenter ici est la façon la plus standard de construire l'ensemble des nombres entiers naturels.
 Pour cela, nous allons utiliser l'axiome de l'infini.
-Pou rappel, <definition name="set_theory-infinity_axiom">.
+Pour rappel, <definition name="set_theory-infinity_axiom">.
 Donc, cet ensemble contient "successeur(0)", "successeur(successeur(0))"...
 En fait, <span class="important">cet ensemble se comporte exactement comme l'ensemble des nombres entiers naturels, noté "N"</span>.
-En effet, on peut définir "successeur(0) = 1", "successeur(successeur(0)) = 2"...
+En effet, on peut définir "1" comme "successeur(0) ", "2" comme "successeur(successeur(0))"...
+On doit aussi noter qu'il n'existe pas d'élément tel que "0" soit sont successeur.
 D'un point de vue vocabulaire, il est parfaitement évident que le successeur de 0 est 1, que celui de 1 est 2, que celui de 56 est 57...
 </p>
 
@@ -69,7 +111,8 @@ D'un point de vue vocabulaire, il est parfaitement évident que le successeur de
 <text name=type_number() content="0" x=-10 y=5/2></text>
 <text name=type_number() content="1" x=-10 y=1></text>
 <text name=type_number() content="2" x=-10 y=-1/2></text>
-<text name=type_number() content="..." x=-10 y=-2></text>
+<text name=type_number() content="3" x=-10 y=-3/2></text>
+<text name=type_number() content="..." x=-10 y=-5/2></text>
 
 <text name=type_number() font_size_in_scale=3/2 content="=" x=-7 y=-1/6></text>
 
@@ -80,12 +123,48 @@ D'un point de vue vocabulaire, il est parfaitement évident que le successeur de
 <text name=type_number() font_size_in_scale=2/3 content="successeur(successeur(successeur(0)))" x=3 y=-1></text>
 <text name=type_number() content="..." x=3 y=-5/2></text>
 </graphic>
-
 <p>
-Par définition, <span class="important">cette application "successeur" est une injection de "N" vers "N"</span>.
-De plus, on peut trouver que ce fameux "successeur" est une application bijective de "N" vers "N sans 0" (<a href="demo">démontré ici par récurrence</a>).
-Dans ce cas, <span class="important">il existe une application réciproque à "successeur" allant de "N sans 0" vers "N", que nous nommerons "prédécesseur"</span>.
+Ici, on peut cependant se poser une question : comment rigoureusement définir le successeur d'un élément de l'ensemble.
+La réponse est assez simple : <span class="important">nous allons définir le successeur d'un élément "n" comme un ensemble représentant l'union de "n" et du singleton "{n}"</span>.
+Le successeur de "n" contiendra donc tous les éléments de "n" (ce qui fait que "n" est inclus dans sont successeur), et "n" aussi (ce qui fait que "n" appartient à son successeur).
+Intuitivement parlant, pour un élément "m", <span class="important">tous les éléments succédés par "m" appartiennent ET sont inclus dans "m"</span>.
+En notation mathématique, on peut donc noter cet axiome garantissant l'existence de cet ensemble (que l'on notera "N") ainsi :
 </p>
+<math><mexists><mnatural><mo>[</mo><mempty_set><min><mnatural><mand><mforall><mi>b</mi><mo>(</mo><mi>b</mi><min><mnatural><mimp><mi>b</mi><munion><mi>{b}</mi><min><mnatural><mo>)</mo><mo>]</mo></math>
+<p>
+Ici, on construit donc chaque nombre entier naturel comme un ensemble.
+En réalité, nous n'utiliserons cette façon de faire que pour la définition ultra rigoureuse du concept, mais plus jamais après.
+Nous allons aussi dorénavant utiliser la notation standard (avec l'ensemble vide étant "0", le successeur de l'ensemble vide étant "1"...).
+<p>
+<math>0 := <memptyset></math></br>
+<math>1 := successeur(0) = successeur(<memptyset>) = {<memptyset>}</math></br>
+<math>2 := successeur(1) = successeur({<memptyset>}) = {<memptyset>, {<memptyset>}}</math></br>
+<p>
+En utilisant les propriétés des ensembles, <span class="important">on peut donc voir que chaque élément a un unique successeur</span>.
+Donc, <span class="important">on peut rigoureusement définir l'objet "successeur" comme une fonction allant de "N" vers "N", et associant "n U {n}" à chaque "n"</span>.
+</p>
+<math>successeur : <mnatural> <mto> <mnatural>, n <mto> n <munion> {n}</math>
+</p>
+L'utilisation d'un axiome ici permet de dire qu'on est sur qu'il existe l'ensemble "N" dans la théorie "ZFC".
+Or, certaines autres théories utilisent des axiomes plus variées pour construire un ensemble de cet forme.
+Cependant, <span class="important">presque toutes les théories utilisent l'idée d'un ensemble contenant "0" et tel que tous les éléments de cet ensemble ont un "successeur"</span>.
+</p>
+<p>
+Ici, <span class="important">on peut démontre que cette application "successeur" est une injection</span> (<a href="demo#successor_is_injective">démontré ici</a>).
+De plus, on sait par définition que "0" n'a pas d'antécédent par cette application, mais que tous les autres éléments oui : restreindre l'ensemble d'arrivée de l'application "successeur" à "N privé 0" (généralement noté "N*") donne donc une application bijective.
+Dans ce cas, <span class="important">il existe une application réciproque à cette restriction de "successeur" allant de "N*" vers "N", que nous nommerons "prédécesseur"</span>.
+</p>
+<math>predecesseur : <mnatural>* <mto> <mnatural></math></br>
+<math><mforall> m <min> <mnatural>*, <mforall> n <min> <mnatural>, m = successeur(n) <mequi> predecesseur(m) = n</math>
+
+
+
+
+
+
+
+
+
 
 <p>
 Pour manipuler les nombres entiers naturels, il existe un élément de syntaxe très pratique : l'opération.

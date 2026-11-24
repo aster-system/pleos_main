@@ -16,7 +16,7 @@
     <content name="extension">un ensemble est dit "défini par extension" quand ses éléments sont explicitement notés dans sa définition</content>
     <content name="extensionality">l'axiome d'extensionnalité dit que si deux ensembles possèdent exactement les mêmes éléments, alors ils sont égaux</content>
     <content name="foundation_axiom">l'axiome de fondation est un axiome obligeant tout ensemble "A" à posséder un élément qui, dans sa forme "ensemble", ne contient aucun élément de "A"</content>
-    <content name="infinity_axiom">l'axiome de l'infini stipule qu'il existe un ensemble contenant un élément de départ nommé "0", et tel que tous les éléments "n" de cet ensemble admettent un élément précis (défini via une fonction), nommé "successeur de n" ou "successeur(n)"</content>
+    <content name="infinity_axiom">l'axiome de l'infini stipule qu'il existe un ensemble contenant un élément de départ nommé "0", et tel que tous les éléments "n" de cet ensemble admettent un élément précis, nommé "successeur de n" ou "successeur(n)"</content>
     <content name="pair_axiom">l'axiome de la paire est un axiome confirmant que, pour deux ensembles quelconques A et B, il existe un ensemble contenant deux éléments : A et B (nommée paire de A et B)</content>
     <content name="power_set_axiom">l'axiome de l'ensemble des parties est un axiome qui assure l'existence, pour tout ensemble A, d'un ensemble des parties de A</content>
     <content name="replacement_axiom">le schéma d'axiome de remplacement est un schéma d'axiome garantissant que toute classe se comportant comme une fonction peut être restreinte à un ensemble se comportant comme une fonction (en utilisant comme antécédent un ensemble)</content>

@@ -501,6 +501,14 @@ Donc, "f" est bijective et surjective : "f" est donc une bijection (et "g" aussi
 Donc, si "f" admet une application réciproque, elle est bijective.
 </p>
 
+
+
+
+
+
+
+
+
 <h4 id="disjoint_support_implies_commutativity">1.1.1.6</h4>
 <p>
 Démontrons que si deux permutations ont des supports disjoints, alors on peut les échanger autour du symbôle de composition et quand même obtenir le même résultat.
@@ -552,39 +560,56 @@ Donc, si deux permutations ont des supports disjoints, alors on peut les échang
 
 <h3 id="successor">Étude de l'objet "successeur"</h3>
 
-<h4>1.2.0.0</h4>
+<h4 id="successor_is_injective">1.2.0.0</h4>
 <p>
-Prouvons que l'objet "successeur" défini par l'axiome de l'infini est une application bijective de "N" vers "N sans 0".
+Prouvons que l'application "successeur" entre "N" et "N" est une application injective.
+Rappelons la définition de cette application :
 </p>
-<math><mforall>n<min>N*, <mexists>! k <min> N, n = successeur(k)</math>
+<math>successeur : <mnatural> <mto> <mnatural>, n <mto> n <munion> {n}</math>
 <p>
-Par définition pure, chaque élément de l'ensemble des nombres entiers naturels possède un seul élément étant son successeur.
-Donc, cet objet est bien une application.
+Pour commencer, démontrons un premier lemme par récurrence.
+Posons le prédicat "P(m)" énonçant "pour tout n un nombre entier naturel, le fait que n appartienne à m implique que n est inclus dans m".
+Pour "P(0)", aucun élément n'appartient à l'ensemble vide, il n'existe donc pas d'élément pouvant réfuter cette hypothèse : "P(0)" est vrai.
+Considérons un élément "k" de "N" tel que "P(k)" soit vrai, et posons un autre élément "n" de "N".
+Considérons que "n" appartienne à "successeur(k)".
+Si "k = n", alors "n" est donc inclus dans "successeur(k)" (par la construction même de l'application).
+Si "k" n'est pas égal à "n", "n" appartient forcément à "k", et donc est inclus dans "k" (car "P(k)" est vrai) et, à fortiori, dans "successeur(k)".
+Dans tous les cas, si "n" appartient à "successeur(k)", il est inclus dans "successeur(k)".
+Donc, "P(k)" implique "P(successeur(k))" et "P(0)" est vrai : la propriété est établie pour tout élément de "N".
+Donc, pour tout "m" et "n" dans "N", le fait que "n" appartienne à "m" implique que "n" soit inclus dans "m".
 </p>
-<math><mforall>m<min>N,<mexists>! n <min>N, n = successeur(m)</math></br>
-<math><mforall>m [m <min> N <mimp> <mexists>! n <min>N, n = successeur(m)</math>]</math>
+<math><mforall> m, n <min> <mnatural>, n <min> m <mimp> n <mincluded> m</math>
 <p>
-En suite, par définition, pour tout nombre entier naturel qui n'est pas 0, le nombre s'écrit sous la forme d'un successeur d'un autre nombre.
+Procédons par l'absurde.
+Considérons deux "m" et "n" distincts de "N" tels que "successeur(m) = successeur(n)".
 </p>
-<math><mforall>n<min>N*,<mexists> k <min>N, n = successeur(k)</math>
+<math>m <mnotequal> n <mand> successeur(m) = successeur(n)</math>
 <p>
-Par définition de la surjectivité, cette application est donc surjective.
+Par définition du successeur, "m" appartient à "successeur(m)", qui est égal à "successeur(n)" et donc à "n U {n}".
+Cela implique donc que "m" appartient soit à "n", soit à "{n}".
+Comme "m" est distinct de "n", il ne peut pas appartenir à "{n}", et appartient donc forcément à "n".
 </p>
+<math>m <min> successeur(m) = successeur(n) = n <munion> {n} <mimp> m <min> n</math>
 <p>
-De plus, par définition de l'objet "successeur", on sait que :
+C'est l'exact même chose dans l'autre sens.
 </p>
-<math><mforall>m, n<min>N*, successeur(m) = successeur(n) <mequi> n = m</math>
+<math>n <min> successeur(n) = successeur(m) = m <munion> {m} <mimp> n <min> m</math>
 <p>
-Par définition de l'injectivité, cette application est donc injective.
+Selon le lemme établi plus tôt, "m" est donc inclus dans "n" et "n" est donc inclus dans "m", ce qui implique (par double-inclusion) qu'ils sont égaux.
+Or, on les a supposés différents, ce qui est absurde.
+Donc, si "successeur(m) = successeur(n)", "m" ne peut pas être différent de "n" : ils sont donc forcément égaux.
+Cela équivaut exactement à la définition de l'injectivité de "successeur".
 </p>
-<p>
-Cette application est injective et surjective : selon la définition de la bijectivité, elle est bijective.
-</p>
-<p>
-Donc, tout nombre venant de "N sans 0" admet un unique antécédent par la fonction successeur.
-L'application "successeur" est une application bijective de "N" vers "N sans 0".
-</p>
-<math><mforall>n<min>N*, <mexists>! k <min> N, n = successeur(k)</math>
+<math><mforall> m, n <min> <mnatural>, successeur(m) = successeur(n) <mimp> m = n</math>
+
+
+
+
+
+
+
+
+
 
 <h4>1.2.0.1</h4>
 <p>
