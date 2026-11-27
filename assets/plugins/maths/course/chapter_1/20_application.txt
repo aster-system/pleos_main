@@ -2782,6 +2782,57 @@ Donc, <span class="important">l'image directe de l'image réciproque d'une parti
 </p>
 <math><mforall> Y <mincluded> F, f(<mi>f</mi><msup>-1</msup>(Y)) = Y</math>
 <p>
+Il existe aussi un théorème assez important qui traite des surjections : le théorème de Cantor.
+<span class="important"><theorem name="cantor_theorem"></span>.
+En d'autres termes, si vous prenez toutes les applications possibles entre un ensemble et son ensemble des parties, aucune n'est une surjection.
+En soit, ce théorème peut sembler assez évident : il veut dire qu'il y a "trop" d'éléments dans l'ensemble des parties comparé à l'ensemble de départ pour pouvoir avoir une surjection entre l'ensemble de départ et l'ensemble des parties.
+Cette façon de penser est tout à fait juste dans le cas des ensembles finis.
+Cependant, dans le cas des ensembles infinis (comme avec l'ensemble dont l'existence est garantie par l'axiome de l'infini), ce type de résultat devient bien plus complexe (si l'ensemble est infini, son ensemble des parties le sera aussi, ce qui ne permet pas d'utiliser la terminologie du "trop d'éléments").
+Or, <span class="important">ce théorème marche aussi bien avec des ensembles finis qu'infinis</span>.
+Dans le cas fini, on peut très bien visualiser avec un dessin que trouver une surjection semble impossible.
+</p>
+<graphic>
+<background_color white>
+<base draw=0>
+
+<circle x=-2 y=0 radius_x=3/2 radius_y=4>
+<text x=-2 y=1 content="a"></text>
+<text x=-2 y=-1 content="b"></text>
+
+<circle x=2 y=0 radius_x=2 radius_y=4>
+<text x=2 y=-2+12/3 content="{}"></text>
+<text x=2 y=-2+4/3 content="{a}"></text>
+<text x=2 y=-2+0/3 content="{b}"></text>
+<text x=2 y=-2+8/3 content="{a, b}"></text>
+
+<line x_1=-3/2 y_1=1 x_2=3/2+-1/6 y_2=-2+12/3 color=black>
+<line x_1=-3/2 y_1=-1 x_2=3/2+-1/6 y_2=-2 color=black>
+</graphic>
+<p>
+Passons à la démonstration rigoureuse.
+Pour démontrer ce théorème, on va utiliser un type d'argument assez stylé : l'argument diagonal.
+<span class="important"><definition name="diagonal_argument"></span>.
+Pour bien comprendre, imaginons un ensemble "E" quelconque, et construisons un tableau à deux entrées, avec les éléments de "E" à gauche et les éléments de "E" en haut (dans le même ordre).
+Ici, <span class="important">on peut dire que les éléments dans l'entrée à gauche représente les antécédents d'une application quelconque allant de "E" vers son ensemble des parties, où chaque ligne contient l'information de la présence (ou non) des éléments dans la partie représentant l'image de son entrée</span>.
+Assurer le même ordre entre les entrées à gauche et en haut permet de dire que la diagonale du tableau donne l'information de si chaque élément se situe dans la partie qui représente son image.
+</p>
+<table><case x=0 y=1 content=a><case x=0 y=2 content=b><case x=1 y=0 content=a><case x=2 y=0 content=b><case x=2 y=2 content=x></table>
+<p>
+Grâce à cette diagonale, <span class="important">on va pouvoir trouver une partie qui ne peut pas être l'image d'un élément de "E"</span>.
+En effet, prenez la partie telle que le premier élément de l'entrée est dedans si le premier élément de la diagonale (en partant d'en haut à gauche) n'est pas noté, le deuxième élément de l'entrée est dedans si le deuxième élément de la diagonale n'est pas noté...
+Il s'agit donc de la partie représentée par tous les éléments sauf ceux étant indiqués dans la diagonale.
+Ici, <span class="important">cette partie n'a pas d'antécédent dans "E" par l'application</span>.
+En effet, elle ne peut pas être l'image du premier élément de "E" dans les entrées, car le fait que l'image de cet élément contient le premier élément de "E" implique que notre partie ne le contient pas, et le fait que l'image ne le contient pas implique que notre partie le contient (il y'a donc un élément manquant ou de trop, les parties ne peuvent pas être égales).
+De plus, elle ne peut pas être l'image du deuxième élément de "E" dans les entrées, car le fait que l'image de cet élément contient le deuxième élément de "E" implique que notre partie ne le contient pas, et le fait que l'image ne le contient pas implique que notre partie le contient (il y'a donc un élément manquant ou de trop, les parties ne peuvent pas être égales).
+C'est la même chose pour le troisième, quatrième, cinquième... autant de fois que nécessaire, jusqu'à avoir parcouru tout "E" (qu'il soit fini ou infini) : <span class="important">cette partie n'a pas d'antécédent par l'application</span>.
+Bien évidemment, cet argument fonctionne avec tous les types d'ensembles, et toutes les applications entre ces ensembles et leur ensemble des parties (bien qu'il soit infiniment plus simple de le visualiser sur un ensemble fini).
+Petite remarque : grâce à la construction de notre tableau, dire que l'image du premier élément de "E" dans les entrées contient le premier élément de "E" équivaut à dire que le premier élément de "E" appartient à son image (et c'est la même chose pour tous les éléments de "E").
+Donc, la diagonale représente l'ensemble des éléments de "E" qui appartiennent à leur image, <span class="important">et la partie que nous venons de construire (n'ayant donc pas d'antécédent) est l'ensemble des éléments de "E" qui n'appartiennent pas à leur image</span>.
+Tout ce que nous venons de dire est intuitif, mais c'est avec cette idée précise que l'on pourra démontrer rigoureusement le théorème de Cantor (<a href="demo#cantor_theorem">démonstration présente ici</a>).
+Cette fameuse partie s'écrit donc :
+</p>
+<math>{x <min> E, x <mnotin> f(x)}</math>
+<p>
 Le dernier type est donc la bijection.
 <span class="important"><definition name="bijection"></span>.
 D'un point de vue rigoureux, la définition d'une bijection mélange donc celle de l'injection et celle de la surjection.

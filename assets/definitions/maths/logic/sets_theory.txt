@@ -43,13 +43,16 @@
 </new_definition>
 
 <new_definition name="cantor_theorem">
-    <content type="theorem">le cardinal d'un ensemble est toujours strictement inférieur au cardinal de son ensemble des parties</content>
+    <content type="theorem">pour tout ensemble "E", il n'existe pas de surjection de "E" sur son ensemble des parties</content>
 </new_definition>
 <new_definition name="complement">
     <content>le complémentaire d'une partie "B" d'un ensemble "A" est l'ensemble des éléments de "A" qui ne sont pas dans "B"</content>
 </new_definition>
 <new_definition name="dedeking_cut">
     <content>une coupure de Dedekind est un couple de parties complémentaires d'un ensemble totalement ordonné, tel que tous les éléments de la première partie sont strictement supérieur à tous les éléments de la première partie</content>
+</new_definition>
+<new_definition name="diagonal_argument">
+    <content>l'argument diagonal est un argument utilisable pour des démonstrations avec des relations (et, à fortiori, des fonctions), que l'on peut représenter grâce à la diagonale d'un tableau construit via la relation</content>
 </new_definition>
 <new_definition name="difference">
     <content>la différence entre deux ensembles "A" et "B" représente une opération donnant un nouvel ensemble représentant tous les éléments de "A" qui ne sont pas dans "B"</content>
